@@ -21,13 +21,14 @@ export function HeroBackground() {
         )}
       />
 
-      {/* Video — subdued, cropped toward the right on desktop */}
+      {/* Video — full strength; readability handled by overlays */}
       <video
         className={cn(
-          "absolute inset-0 h-full w-full scale-110 object-cover object-center transition-opacity duration-1000",
-          "lg:scale-105 lg:object-[82%_center]",
-          "[@media(prefers-reduced-motion:reduce)]:!opacity-60",
-          ready ? "opacity-25 lg:opacity-45" : "opacity-0",
+          "absolute inset-0 h-full w-full object-cover transition-opacity duration-1000",
+          "scale-105 object-center max-lg:object-[60%_center]",
+          "lg:scale-100 lg:object-[78%_center]",
+          "[@media(prefers-reduced-motion:reduce)]:opacity-100",
+          ready ? "opacity-100" : "opacity-0",
         )}
         autoPlay
         muted
@@ -42,27 +43,29 @@ export function HeroBackground() {
         <source src={HERO_VIDEO_URL} type="video/mp4" />
       </video>
 
-      {/* Global darken — pushes video into background texture territory */}
-      <div className="absolute inset-0 bg-brand-black/75 max-lg:bg-brand-black/85" />
+      {/* Light global grade — keeps texture without killing the video */}
+      <div className="absolute inset-0 bg-brand-black/35 max-lg:bg-brand-black/45" />
 
-      {/* Left-heavy calm zone for headline copy */}
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/95 to-transparent max-lg:from-brand-black max-lg:via-brand-black/98 max-lg:to-brand-black/90" />
+      {/* Left-heavy gradient: calm copy zone, clearer video on the right */}
+      <div
+        className={cn(
+          "absolute inset-0",
+          "bg-gradient-to-r from-brand-black/95 from-0% via-brand-black/75 via-35% to-brand-black/15 to-100%",
+          "max-lg:bg-gradient-to-r max-lg:from-brand-black/92 max-lg:via-brand-black/80 max-lg:via-50% max-lg:to-brand-black/35 max-lg:to-100%",
+        )}
+      />
 
-      {/* Extra mobile wash — video mostly texture, not focal */}
-      <div className="absolute inset-0 bg-brand-black/55 lg:hidden" />
+      {/* Bottom weight for CTAs / stats */}
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-black/25 via-transparent to-brand-black/80" />
 
-      {/* Vertical depth for bottom-aligned content */}
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-black/70 via-brand-black/40 to-brand-black/95" />
+      {/* Vignette on copy side only — not full-frame */}
+      <div className="absolute inset-0 max-w-[min(100%,52rem)] bg-[radial-gradient(ellipse_100%_90%_at_0%_50%,rgba(0,0,0,0.55),transparent_70%)]" />
 
-      {/* Soft vignette — darker where copy lives (left/center-left) */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_80%_at_15%_45%,rgba(0,0,0,0.85),transparent_55%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_100%,rgba(0,0,0,0.7),transparent_50%)]" />
+      {/* Brand red — upper-right, away from headline */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_95%_12%,rgba(185,28,28,0.12),transparent_65%)]" />
 
-      {/* Brand red — restrained, upper-right only (away from headline) */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_45%_35%_at_92%_8%,rgba(185,28,28,0.14),transparent_70%)] max-lg:opacity-40" />
-
-      {/* Edge falloff */}
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-brand-black/60" />
+      {/* Top edge falloff */}
+      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-brand-black/50" />
     </div>
   );
 }
