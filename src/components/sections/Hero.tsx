@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { HeroBackground } from "./HeroBackground";
 
 export function Hero() {
   return (
@@ -7,19 +8,7 @@ export function Hero() {
       aria-labelledby="hero-heading"
       className="relative min-h-[100svh] overflow-hidden bg-brand-black"
     >
-      <div className="absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(185,28,28,0.18),transparent_55%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/40 via-brand-black/70 to-brand-black" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="h-full w-full bg-gradient-to-br from-zinc-900 via-brand-black to-black">
-            <div className="flex h-full min-h-[100svh] items-center justify-center border border-dashed border-white/10">
-              <p className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-600">
-                Hero video
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HeroBackground />
 
       <Container className="relative z-10 flex min-h-[100svh] flex-col justify-end pb-16 pt-32 sm:pb-20 sm:pt-36 lg:pb-28">
         <div className="max-w-4xl">
@@ -67,7 +56,7 @@ export function Hero() {
 
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brand-black to-transparent"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-32 bg-gradient-to-t from-brand-black to-transparent"
       />
     </section>
   );
