@@ -29,7 +29,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-white/10 bg-brand-black/80 py-3 backdrop-blur-xl"
+          ? "border-b border-white/15 bg-brand-black/85 py-3 backdrop-blur-xl"
           : "bg-transparent py-5",
       )}
     >
@@ -40,7 +40,7 @@ export function Navbar() {
         <Link href="/" className="group flex items-center gap-2">
           <span
             aria-hidden
-            className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-red text-sm font-bold text-white shadow-lg shadow-brand-red/30"
+            className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-red text-sm font-bold text-white shadow-lg shadow-brand-red/40 ring-1 ring-white/15"
           >
             CN
           </span>
@@ -54,7 +54,7 @@ export function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
+                className="text-sm font-medium text-zinc-300 transition-colors hover:text-white"
               >
                 {link.label}
               </Link>
@@ -70,7 +70,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/18 text-white md:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -106,7 +106,7 @@ export function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="block rounded-lg px-4 py-3 text-lg font-medium text-zinc-200 hover:bg-white/5"
+                className="block rounded-lg px-4 py-3 text-lg font-medium text-zinc-200 hover:bg-white/8"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}

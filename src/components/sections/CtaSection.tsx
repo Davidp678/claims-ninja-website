@@ -5,10 +5,10 @@ import { SITE } from "@/lib/constants";
 export function CtaSection() {
   return (
     <Section id="contact" bordered className="pb-24 sm:pb-28">
-      <div className="relative overflow-hidden rounded-3xl border border-brand-red/20 bg-gradient-to-br from-brand-red/20 via-brand-surface to-brand-black p-8 sm:p-12 lg:p-16">
+      <div className="relative overflow-hidden rounded-3xl border border-brand-red/45 bg-gradient-to-br from-brand-red/25 via-brand-surface to-brand-black p-8 shadow-[0_0_60px_-15px_rgba(185,28,28,0.35)] sm:p-12 lg:p-16">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-red/20 blur-3xl"
+          className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-red/35 blur-3xl"
         />
         <div className="relative max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
@@ -17,7 +17,7 @@ export function CtaSection() {
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
             Start with a free claim review
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-zinc-400">
+          <p className="mt-4 text-lg leading-relaxed text-zinc-300">
             Tell us about your loss. We&apos;ll assess your situation and outline
             next steps—no pressure, no jargon.
           </p>
@@ -29,7 +29,7 @@ export function CtaSection() {
               Call {SITE.phone}
             </Button>
           </div>
-          <p className="mt-6 text-sm text-zinc-500">
+          <p className="mt-6 text-sm text-zinc-400">
             Intake forms, file uploads, and customer workflows will plug in here.
           </p>
         </div>

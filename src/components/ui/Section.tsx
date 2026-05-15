@@ -22,14 +22,14 @@ export function Section({
       id={id}
       className={cn(
         "relative py-20 sm:py-24 lg:py-28",
-        bordered && "border-t border-white/5",
+        bordered && "border-t border-white/12",
         className,
       )}
     >
       {bordered ? (
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-red/40 to-transparent"
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-red/50 to-transparent"
         />
       ) : null}
       <Container className={containerClassName}>{children}</Container>

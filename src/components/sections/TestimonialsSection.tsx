@@ -34,9 +34,9 @@ export function TestimonialsSection() {
         {PLACEHOLDER_REVIEWS.map((review) => (
           <li
             key={review.author}
-            className="flex flex-col rounded-2xl border border-white/8 bg-brand-surface p-8"
+            className="flex flex-col rounded-2xl border border-white/15 bg-brand-surface p-8 shadow-lg shadow-black/25 transition-colors hover:border-brand-red/35"
           >
-            <div className="flex gap-1 text-brand-red" aria-hidden>
+            <div className="flex gap-1 text-brand-red-light" aria-hidden>
               {Array.from({ length: 5 }).map((_, i) => (
                 <span key={i} className="text-sm">
                   ★
@@ -46,10 +46,10 @@ export function TestimonialsSection() {
             <blockquote className="mt-4 flex-1 text-base leading-relaxed text-zinc-300">
               &ldquo;{review.quote}&rdquo;
             </blockquote>
-            <footer className="mt-6 border-t border-white/8 pt-6">
+            <footer className="mt-6 border-t border-white/12 pt-6">
               <cite className="not-italic">
-                <p className="font-medium text-white">{review.author}</p>
-                <p className="text-sm text-zinc-500">{review.location}</p>
+                <p className="font-semibold text-white">{review.author}</p>
+                <p className="text-sm text-zinc-400">{review.location}</p>
               </cite>
             </footer>
           </li>

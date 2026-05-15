@@ -22,7 +22,7 @@ export function PartnersSection() {
         {PLACEHOLDER_PARTNERS.map((name) => (
           <li
             key={name}
-            className="flex h-24 items-center justify-center rounded-xl border border-white/8 bg-brand-surface px-4 text-center text-xs font-medium uppercase tracking-wider text-zinc-600"
+            className="flex h-24 items-center justify-center rounded-xl border border-white/15 bg-brand-surface px-4 text-center text-xs font-semibold uppercase tracking-wider text-zinc-400 shadow-md shadow-black/20 transition-colors hover:border-brand-red/40 hover:text-zinc-200"
           >
             {name}
           </li>
