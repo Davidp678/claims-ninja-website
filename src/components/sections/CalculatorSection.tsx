@@ -12,7 +12,7 @@ export function CalculatorSection() {
           title="See what your claim could be worth"
           description="Interactive cost-benefit calculator coming in Phase 2. Estimate recovery potential before you commit."
         />
-        <div className="rounded-2xl border border-white/15 bg-brand-surface p-8 shadow-2xl shadow-black/50 ring-1 ring-brand-red/25 sm:p-10">
+        <div className="rounded-2xl border border-white/15 bg-brand-surface p-8 shadow-[0_0_48px_-28px_rgba(185,28,28,0.12)] shadow-2xl shadow-black/50 ring-1 ring-brand-red/25 sm:p-10">
           <div className="space-y-6">
             {["Claim type", "Estimated damage", "Policy deductible"].map(
               (label) => (

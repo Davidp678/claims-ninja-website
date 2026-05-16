@@ -36,7 +36,7 @@ export function ProcessSection() {
         {STEPS.map((item) => (
           <li
             key={item.step}
-            className="group relative rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-lg shadow-black/25 transition-colors hover:border-brand-red/45"
+            className="group relative rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(185,28,28,0.12)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/45"
           >
             <span className="font-display text-4xl font-semibold text-brand-red/60 transition-colors group-hover:text-brand-red-light">
               {item.step}

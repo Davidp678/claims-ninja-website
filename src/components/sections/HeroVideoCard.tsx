@@ -13,17 +13,27 @@ export function HeroVideoCard() {
 
   return (
     <div
-      className={cn(
-        "relative w-full max-w-xl rounded-2xl p-px shadow-[0_0_48px_-12px_rgba(185,28,28,0.55)] ring-1 ring-brand-red/50 lg:rounded-3xl",
-        "bg-gradient-to-br from-brand-red/30 via-brand-red/10 to-white/5",
-      )}
+      className="relative w-full max-w-2xl lg:max-w-[32rem] xl:max-w-[36rem]"
       aria-hidden
     >
-      <div className="overflow-hidden rounded-[calc(1rem-1px)] bg-brand-black ring-1 ring-inset ring-white/12 lg:rounded-[calc(1.5rem-1px)]">
-        <div className="relative aspect-video bg-brand-surface">
+      <div
+        aria-hidden
+        className="absolute -inset-3 rounded-[1.35rem] bg-[radial-gradient(ellipse_75%_65%_at_50%_100%,rgba(185,28,28,0.22),transparent_68%)] opacity-90 blur-xl lg:-inset-4 lg:rounded-[1.65rem]"
+      />
+      <div
+        className={cn(
+          "relative overflow-hidden rounded-2xl bg-brand-black shadow-2xl shadow-black/60 ring-1 ring-white/14 lg:rounded-3xl",
+          "ring-offset-4 ring-offset-brand-black lg:ring-offset-[10px]",
+        )}
+      >
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-brand-red/25 lg:rounded-3xl"
+        />
+        <div className="relative aspect-video bg-brand-black">
           <div
             className={cn(
-              "absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/80 to-brand-black transition-opacity duration-700",
+              "absolute inset-0 bg-brand-elevated transition-opacity duration-700",
               ready ? "opacity-0" : "opacity-100",
             )}
           />
@@ -44,10 +54,6 @@ export function HeroVideoCard() {
           >
             <source src={HERO_VIDEO_URL} type="video/mp4" />
           </video>
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-black/60 via-transparent to-brand-black/20"
-          />
         </div>
       </div>
     </div>
