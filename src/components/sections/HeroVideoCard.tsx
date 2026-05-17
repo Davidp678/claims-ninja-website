@@ -14,7 +14,7 @@ export function HeroVideoCard() {
   return (
     <div
       className={cn(
-        "relative w-full rounded-2xl p-px lg:rounded-3xl",
+        "relative w-full max-w-[760px] rounded-2xl p-px lg:rounded-3xl",
         "shadow-[0_0_80px_-4px_rgba(185,28,28,0.7)] ring-1 ring-brand-red/60",
         "bg-gradient-to-br from-brand-red/30 via-brand-red/10 to-white/5",
       )}
