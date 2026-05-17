@@ -14,8 +14,8 @@ export function HeroVideoCard() {
   return (
     <div
       className={cn(
-        "relative w-full max-w-2xl rounded-2xl p-px lg:max-w-[32rem] lg:rounded-3xl xl:max-w-[36rem]",
-        "shadow-[0_0_48px_-12px_rgba(185,28,28,0.55)] ring-1 ring-brand-red/50",
+        "relative w-full max-w-2xl rounded-2xl p-px lg:max-w-[36rem] lg:rounded-3xl xl:max-w-[42rem]",
+        "shadow-[0_0_64px_-8px_rgba(185,28,28,0.65)] ring-1 ring-brand-red/60",
         "bg-gradient-to-br from-brand-red/30 via-brand-red/10 to-white/5",
       )}
       aria-hidden
@@ -47,7 +47,7 @@ export function HeroVideoCard() {
           </video>
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-black/60 via-transparent to-brand-black/20"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-black/35 via-transparent to-transparent"
           />
         </div>
       </div>
