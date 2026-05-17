@@ -91,7 +91,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="w-full lg:col-start-2 lg:row-start-1">
+        <div className="w-full lg:col-start-2 lg:row-start-1 lg:mt-2">
           <HeroVideoCard />
         </div>
 
