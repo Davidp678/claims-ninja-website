@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { NAV_LINKS, SITE } from "@/lib/constants";
@@ -37,16 +38,19 @@ export function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8"
         aria-label="Main"
       >
-        <Link href="/" className="group flex items-center gap-2">
-          <span
-            aria-hidden
-            className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-red text-sm font-bold text-white shadow-lg shadow-brand-red/40 ring-1 ring-white/15"
-          >
-            CN
-          </span>
-          <span className="font-display text-lg font-semibold tracking-tight text-white">
-            {SITE.name}
-          </span>
+        <Link
+          href="/"
+          className="flex items-center"
+          aria-label={SITE.name}
+        >
+          <Image
+            src="/logo.png"
+            alt={SITE.name}
+            width={44}
+            height={44}
+            priority
+            className="h-11 w-11"
+          />
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
