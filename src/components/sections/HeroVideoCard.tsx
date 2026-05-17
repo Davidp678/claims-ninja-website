@@ -21,7 +21,7 @@ export function HeroVideoCard() {
       aria-hidden
     >
       <div className="overflow-hidden rounded-[calc(1rem-1px)] bg-brand-black ring-1 ring-inset ring-white/12 lg:rounded-[calc(1.5rem-1px)]">
-        <div className="relative aspect-video bg-brand-surface">
+        <div className="relative aspect-[27/20] bg-brand-surface">
           <div
             className={cn(
               "absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/80 to-brand-black transition-opacity duration-700",
