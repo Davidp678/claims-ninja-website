@@ -5,7 +5,7 @@ const variants = {
   primary:
     "bg-brand-red text-white shadow-lg shadow-brand-red/40 ring-1 ring-white/15 hover:brightness-110 hover:shadow-brand-red/55 focus-visible:ring-brand-red-light",
   secondary:
-    "border border-white/25 bg-white/10 text-white shadow-md shadow-black/20 backdrop-blur-sm hover:border-white/40 hover:bg-white/[0.14] focus-visible:ring-white/60",
+    "border border-white/25 bg-brand-elevated/85 text-white shadow-md shadow-black/40 backdrop-blur-sm hover:border-white/45 hover:bg-brand-elevated focus-visible:ring-white/60",
   ghost:
     "text-zinc-200 hover:text-white hover:bg-white/8 focus-visible:ring-white/35",
 } as const;
