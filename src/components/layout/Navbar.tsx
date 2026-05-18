@@ -30,8 +30,8 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-white/15 bg-brand-black/85 py-2 backdrop-blur-xl"
-          : "bg-transparent py-3",
+          ? "border-b border-white/15 bg-brand-black/85 py-1 backdrop-blur-xl"
+          : "bg-transparent py-2",
       )}
     >
       <nav
@@ -46,10 +46,10 @@ export function Navbar() {
           <Image
             src="/logo.png"
             alt={SITE.name}
-            width={64}
-            height={64}
+            width={96}
+            height={96}
             priority
-            className="h-16 w-16"
+            className="h-24 w-24"
           />
         </Link>
 
@@ -101,7 +101,7 @@ export function Navbar() {
       <div
         id="mobile-menu"
         className={cn(
-          "fixed inset-0 top-[88px] z-40 bg-brand-black/95 backdrop-blur-xl transition-opacity md:hidden",
+          "fixed inset-0 top-[112px] z-40 bg-brand-black/95 backdrop-blur-xl transition-opacity md:hidden",
           menuOpen ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       >
