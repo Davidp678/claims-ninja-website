@@ -1,48 +1,62 @@
+"use client";
+
+import { useState } from "react";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Button } from "@/components/ui/Button";
+import { cn } from "@/lib/cn";
+import { SingleClaimReview } from "./calculator/SingleClaimReview";
+import { OrganizationRoi } from "./calculator/OrganizationRoi";
+
+type Tab = "single" | "org";
+
+const TABS = [
+  { id: "single", label: "Single Claim Review" },
+  { id: "org", label: "Organization ROI" },
+] as const;
 
 export function CalculatorSection() {
+  const [tab, setTab] = useState<Tab>("single");
+
   return (
     <Section id="calculator" bordered>
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <SectionHeading
-          align="left"
-          eyebrow="ROI clarity"
-          title="See what your claim could be worth"
-          description="Interactive cost-benefit calculator coming in Phase 2. Estimate recovery potential before you commit."
-        />
-        <div className="rounded-2xl border border-white/15 bg-brand-surface p-8 shadow-[0_0_48px_-28px_rgba(185,28,28,0.12)] shadow-2xl shadow-black/50 ring-1 ring-brand-red/25 sm:p-10">
-          <div className="space-y-6">
-            {["Claim type", "Estimated damage", "Policy deductible"].map(
-              (label) => (
-                <div key={label}>
-                  <label className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                    {label}
-                  </label>
-                  <div
-                    className="mt-2 h-12 rounded-lg border border-dashed border-white/22 bg-brand-black/60"
-                    aria-hidden
-                  />
-                </div>
-              ),
-            )}
-            <div className="rounded-xl border border-brand-red/35 bg-brand-red/10 p-6 ring-1 ring-brand-red/20">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand-red-light">
-                Projected recovery range
-              </p>
-              <p className="mt-2 font-display text-3xl font-semibold text-white">
-                $— — —
-              </p>
-              <p className="mt-1 text-sm text-zinc-400">
-                Placeholder — calculator logic ships next phase
-              </p>
-            </div>
-            <Button href="#contact" className="w-full sm:w-auto">
-              Talk to an adjuster
-            </Button>
-          </div>
+      <SectionHeading
+        eyebrow="Calculators"
+        title="Evaluate one claim or your entire pipeline"
+        description="Run a quick AI-assisted single-claim triage, or model how Claims Ninja stacks up against an in-house team across all your jobs."
+      />
+
+      <div
+        className="mt-10 flex justify-center"
+        role="tablist"
+        aria-label="Calculator selector"
+      >
+        <div className="inline-flex max-w-full overflow-hidden rounded-full border border-white/15 bg-brand-elevated/70 p-1 shadow-[0_8px_24px_-18px_rgba(0,0,0,0.85)]">
+          {TABS.map((opt) => {
+            const active = tab === opt.id;
+            return (
+              <button
+                key={opt.id}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                aria-pressed={active}
+                onClick={() => setTab(opt.id)}
+                className={cn(
+                  "whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors sm:px-5",
+                  active
+                    ? "bg-brand-red text-white shadow-[0_8px_24px_-12px_rgba(185,28,28,0.9)]"
+                    : "text-zinc-300 hover:text-white",
+                )}
+              >
+                {opt.label}
+              </button>
+            );
+          })}
         </div>
+      </div>
+
+      <div className="mt-10">
+        {tab === "single" ? <SingleClaimReview /> : <OrganizationRoi />}
       </div>
     </Section>
   );
