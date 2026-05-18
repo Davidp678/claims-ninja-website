@@ -1,3 +1,5 @@
+import type { AnalyzeClaimRequest } from "@/lib/claim-analysis";
+
 export const CLAIM_FILES_BUCKET = "claim-files";
 
 export const MAX_CLAIM_FILES = 10;
@@ -32,6 +34,17 @@ export type ClaimFileValidationInput = {
   name: string;
   type: string;
   size: number;
+};
+
+export type ClaimFilePrepareRequest = {
+  sessionId: string;
+  file: ClaimFileValidationInput;
+};
+
+export type ClaimFilePrepareResponse = {
+  sessionId: string;
+  signedUrl: string;
+  file: ClaimFileRecord;
 };
 
 const UUID_RE =
@@ -145,5 +158,170 @@ export function toClaimFileRecord(
     size,
     storagePath,
     bucket: CLAIM_FILES_BUCKET,
+  };
+}
+
+export type UploadedFileMetaInput = {
+  fileName: string;
+  originalName: string;
+  contentType: string;
+  size: number;
+  storagePath: string;
+  bucket: string;
+};
+
+function isUploadedFileMetaShape(
+  value: unknown,
+): value is UploadedFileMetaInput {
+  if (!value || typeof value !== "object") return false;
+  const o = value as Record<string, unknown>;
+  return (
+    typeof o.fileName === "string" &&
+    typeof o.originalName === "string" &&
+    typeof o.contentType === "string" &&
+    typeof o.size === "number" &&
+    typeof o.storagePath === "string" &&
+    typeof o.bucket === "string"
+  );
+}
+
+export function validateUploadedFileMetaForSession(
+  meta: UploadedFileMetaInput,
+  claimSessionId: string,
+): { ok: true } | { ok: false; reason: string } {
+  if (meta.bucket !== CLAIM_FILES_BUCKET) {
+    return { ok: false, reason: "Invalid file bucket." };
+  }
+  const expectedPath = buildClaimStoragePath(claimSessionId, meta.fileName);
+  if (meta.storagePath !== expectedPath) {
+    return { ok: false, reason: "File path does not match session." };
+  }
+  if (meta.storagePath.includes("..") || meta.storagePath.startsWith("/")) {
+    return { ok: false, reason: "Invalid file path." };
+  }
+  return validateClaimFileInput({
+    name: meta.originalName,
+    type: meta.contentType,
+    size: meta.size,
+  });
+}
+
+export function parseClaimFilePrepareRequest(
+  body: unknown,
+): { ok: true; data: ClaimFilePrepareRequest } | { ok: false; reason: string } {
+  if (!body || typeof body !== "object") {
+    return { ok: false, reason: "Request body must be a JSON object." };
+  }
+  const o = body as Record<string, unknown>;
+
+  const sessionIdRaw = o.sessionId;
+  if (typeof sessionIdRaw !== "string" || !isValidClaimSessionId(sessionIdRaw)) {
+    return { ok: false, reason: "A valid sessionId is required." };
+  }
+
+  const fileRaw = o.file;
+  if (!fileRaw || typeof fileRaw !== "object") {
+    return { ok: false, reason: "A file descriptor is required." };
+  }
+  const f = fileRaw as Record<string, unknown>;
+  if (typeof f.name !== "string" || !f.name.trim()) {
+    return { ok: false, reason: "file.name is required." };
+  }
+  if (typeof f.type !== "string") {
+    return { ok: false, reason: "file.type must be a string." };
+  }
+  if (typeof f.size !== "number" || !Number.isFinite(f.size)) {
+    return { ok: false, reason: "file.size must be a number." };
+  }
+
+  const file: ClaimFileValidationInput = {
+    name: f.name.trim(),
+    type: f.type,
+    size: f.size,
+  };
+
+  const check = validateClaimFileInput(file);
+  if (!check.ok) {
+    return { ok: false, reason: check.reason };
+  }
+
+  return {
+    ok: true,
+    data: { sessionId: sessionIdRaw.trim(), file },
+  };
+}
+
+export function validateAnalyzeClaimRequest(
+  body: unknown,
+): { ok: true; data: AnalyzeClaimRequest } | { ok: false; reason: string } {
+  if (!body || typeof body !== "object") {
+    return { ok: false, reason: "Request body must be a JSON object." };
+  }
+  const o = body as Record<string, unknown>;
+
+  const claimSessionId = o.claimSessionId;
+  if (typeof claimSessionId !== "string" || !isValidClaimSessionId(claimSessionId)) {
+    return { ok: false, reason: "A valid claimSessionId is required." };
+  }
+  const sessionId = claimSessionId.trim();
+
+  const claimType = o.claimType;
+  if (typeof claimType !== "string" || !claimType.trim()) {
+    return { ok: false, reason: "claimType is required." };
+  }
+  if (claimType.trim().length > 64) {
+    return { ok: false, reason: "claimType is too long." };
+  }
+
+  const carrierEstimate = o.carrierEstimate;
+  if (typeof carrierEstimate !== "string") {
+    return { ok: false, reason: "carrierEstimate must be a string." };
+  }
+  const estTrimmed = carrierEstimate.trim();
+  if (estTrimmed !== "") {
+    const n = Number(estTrimmed);
+    if (!Number.isFinite(n) || n < 0) {
+      return { ok: false, reason: "carrierEstimate must be a non-negative number." };
+    }
+  }
+
+  const description = o.description;
+  if (typeof description !== "string") {
+    return { ok: false, reason: "description must be a string." };
+  }
+  if (description.length > 8000) {
+    return { ok: false, reason: "description is too long." };
+  }
+
+  const metaRaw = o.uploadedFilesMeta;
+  if (!Array.isArray(metaRaw)) {
+    return { ok: false, reason: "uploadedFilesMeta must be an array." };
+  }
+  if (metaRaw.length > MAX_CLAIM_FILES) {
+    return {
+      ok: false,
+      reason: `uploadedFilesMeta cannot exceed ${MAX_CLAIM_FILES} files.`,
+    };
+  }
+
+  const uploadedFilesMeta: UploadedFileMetaInput[] = [];
+  for (const item of metaRaw) {
+    if (!isUploadedFileMetaShape(item)) {
+      return { ok: false, reason: "Invalid uploadedFilesMeta entry." };
+    }
+    const check = validateUploadedFileMetaForSession(item, sessionId);
+    if (!check.ok) return check;
+    uploadedFilesMeta.push(item);
+  }
+
+  return {
+    ok: true,
+    data: {
+      claimSessionId: sessionId,
+      uploadedFilesMeta,
+      claimType: claimType.trim(),
+      carrierEstimate: estTrimmed,
+      description: description.trim(),
+    },
   };
 }

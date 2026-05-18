@@ -2,7 +2,9 @@
 
 import { useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
+import type { ClaimAnalysisResult } from "@/lib/claim-analysis";
 import {
+  type ClaimFilePrepareResponse,
   type ClaimFileRecord,
   validateClaimFileSelection,
 } from "@/lib/claim-files";
@@ -26,66 +28,96 @@ const inputClass =
 const labelClass =
   "text-xs font-semibold uppercase tracking-wider text-zinc-400";
 
-type ResultCard = {
-  eyebrow: string;
-  body: string;
-};
+const currencyFmt = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0,
+});
 
-type ClaimFilesUploadResponse = {
-  sessionId: string;
-  files: ClaimFileRecord[];
+type ClaimFilePrepareApiResponse = ClaimFilePrepareResponse & {
+  error?: string;
+  code?: string;
 };
 
 async function uploadSingleClaimFile(
   sessionId: string,
   file: File,
 ): Promise<ClaimFileRecord> {
-  const formData = new FormData();
-  formData.append("sessionId", sessionId);
-  formData.append("files", file);
-
-  const res = await fetch("/api/claim-files", {
+  const prepareRes = await fetch("/api/claim-files", {
     method: "POST",
-    body: formData,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      sessionId,
+      file: { name: file.name, type: file.type, size: file.size },
+    }),
   });
 
-  let data: ClaimFilesUploadResponse & { error?: string } = {
+  let prepareData: ClaimFilePrepareApiResponse = {
     sessionId,
-    files: [],
+    signedUrl: "",
+    file: {} as ClaimFileRecord,
   };
   try {
-    data = (await res.json()) as typeof data;
+    prepareData = (await prepareRes.json()) as ClaimFilePrepareApiResponse;
   } catch {
-    data = { sessionId, files: [] };
+    prepareData = { sessionId, signedUrl: "", file: {} as ClaimFileRecord };
   }
 
-  if (!res.ok || !data.files?.[0]) {
-    throw new Error(data.error ?? "Upload failed");
+  if (!prepareRes.ok || !prepareData.signedUrl || !prepareData.file?.storagePath) {
+    if (prepareRes.status === 413) {
+      throw new Error(
+        "File is too large for the upload proxy. Please try again or use a smaller file.",
+      );
+    }
+    throw new Error(prepareData.error ?? "Upload failed");
   }
 
-  return data.files[0];
+  const contentType =
+    file.type.split(";")[0]?.trim() || "application/octet-stream";
+
+  const uploadRes = await fetch(prepareData.signedUrl, {
+    method: "PUT",
+    body: file,
+    headers: { "Content-Type": contentType },
+  });
+
+  if (!uploadRes.ok) {
+    throw new Error("Failed to upload file to storage.");
+  }
+
+  return prepareData.file;
 }
 
-function buildResults(claimType: ClaimType): ResultCard[] {
-  const lower = claimType.toLowerCase();
-  return [
-    {
-      eyebrow: "Potential missed scope",
-      body: `Common ${lower} losses often miss adjacent damage, code upgrades, and overhead/profit line items in the carrier's initial estimate.`,
-    },
-    {
-      eyebrow: "Documentation gaps",
-      body: "Photos, moisture readings, and material specs may be incomplete for full supplement leverage. We'll flag what's missing before submission.",
-    },
-    {
-      eyebrow: "Pricing/supplement opportunity",
-      body: "Line-item pricing typically lags Xactimate by 6–18 months in many regions; a supplement review surfaces line items priced under market.",
-    },
-    {
-      eyebrow: "Recommended next step",
-      body: "Send the carrier estimate, scope notes, and photo set to a Claims Ninja adjuster for a full review and supplement plan.",
-    },
-  ];
+type AnalyzeClaimResponse = {
+  analysis: ClaimAnalysisResult;
+  error?: string;
+};
+
+async function requestClaimAnalysis(body: {
+  claimSessionId: string;
+  uploadedFilesMeta: ClaimFileRecord[];
+  claimType: string;
+  carrierEstimate: string;
+  description: string;
+}): Promise<ClaimAnalysisResult> {
+  const res = await fetch("/api/analyze-claim", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+
+  let data: AnalyzeClaimResponse = { analysis: {} as ClaimAnalysisResult };
+  try {
+    data = (await res.json()) as AnalyzeClaimResponse;
+  } catch {
+    data = { analysis: {} as ClaimAnalysisResult };
+  }
+
+  if (!res.ok || !data.analysis?.summary) {
+    throw new Error(data.error ?? "Analysis failed");
+  }
+
+  return data.analysis;
 }
 
 export function SingleClaimReview() {
@@ -103,8 +135,11 @@ export function SingleClaimReview() {
   const [carrierEstimate, setCarrierEstimate] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [analyzed, setAnalyzed] = useState(false);
+  const [analysis, setAnalysis] = useState<ClaimAnalysisResult | null>(null);
   const [isUploading, setIsUploading] = useState(false);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
+  const [analysisError, setAnalysisError] = useState<string | null>(null);
   const [filePickError, setFilePickError] = useState<string | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -112,7 +147,9 @@ export function SingleClaimReview() {
   const handleFilesSelected = (list: File[]) => {
     setFilePickError(null);
     setUploadError(null);
+    setAnalysisError(null);
     setAnalyzed(false);
+    setAnalysis(null);
     setPersistedFiles([]);
     setClaimSessionId(crypto.randomUUID());
 
@@ -130,28 +167,56 @@ export function SingleClaimReview() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setUploadError(null);
+    setAnalysisError(null);
+    setAnalyzed(false);
+    setAnalysis(null);
 
-    if (files.length === 0) {
-      setAnalyzed(true);
-      return;
+    let uploadedMeta: ClaimFileRecord[] = [];
+
+    if (files.length > 0) {
+      setIsUploading(true);
+      try {
+        const uploaded: ClaimFileRecord[] = [];
+        for (const file of files) {
+          const record = await uploadSingleClaimFile(claimSessionId, file);
+          uploaded.push(record);
+        }
+        uploadedMeta = uploaded;
+        setPersistedFiles(uploaded);
+      } catch {
+        setUploadError("We couldn't upload your files. Please try again.");
+        return;
+      } finally {
+        setIsUploading(false);
+      }
     }
 
-    setIsUploading(true);
+    setIsAnalyzing(true);
     try {
-      const uploaded: ClaimFileRecord[] = [];
-      for (const file of files) {
-        const record = await uploadSingleClaimFile(claimSessionId, file);
-        uploaded.push(record);
-      }
-      setPersistedFiles(uploaded);
+      const result = await requestClaimAnalysis({
+        claimSessionId,
+        uploadedFilesMeta: uploadedMeta,
+        claimType,
+        carrierEstimate,
+        description,
+      });
+      setAnalysis(result);
       setAnalyzed(true);
     } catch {
-      setUploadError("We couldn't upload your files. Please try again.");
+      setAnalysisError(
+        "We couldn't complete the claim analysis. Please try again.",
+      );
       setAnalyzed(false);
     } finally {
-      setIsUploading(false);
+      setIsAnalyzing(false);
     }
   };
+
+  const submitLabel = isUploading
+    ? "Uploading files…"
+    : isAnalyzing
+      ? "Analyzing…"
+      : "Analyze claim opportunity";
 
   return (
     <div className="rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-2xl shadow-black/50 ring-1 ring-brand-red/25 sm:p-10">
@@ -185,7 +250,7 @@ export function SingleClaimReview() {
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
                   className="rounded-full border border-white/25 bg-brand-elevated/80 px-4 py-2 text-sm font-medium text-white hover:bg-brand-elevated"
-                  disabled={isUploading}
+                  disabled={isUploading || isAnalyzing}
                 >
                   Choose files
                 </button>
@@ -295,35 +360,52 @@ export function SingleClaimReview() {
                 {uploadError}
               </p>
             )}
+            {analysisError && (
+              <p
+                className="rounded-lg border border-brand-red/40 bg-brand-red/10 px-3 py-2 text-xs text-red-200"
+                role="alert"
+              >
+                {analysisError}
+              </p>
+            )}
           </div>
           <Button
             type="submit"
             size="lg"
             className="w-full sm:w-auto"
-            disabled={isUploading}
+            disabled={isUploading || isAnalyzing}
           >
-            {isUploading ? "Uploading files…" : "Analyze claim opportunity"}
+            {submitLabel}
           </Button>
         </div>
       </form>
 
-      {analyzed && (
+      {analyzed && analysis && (
         <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
               Preliminary triage — {claimType}
             </p>
+            <p className="mt-3 text-sm leading-relaxed text-zinc-300">
+              {analysis.summary}
+            </p>
+            <p className="mt-2 text-xs text-zinc-500">
+              Opportunity score: {analysis.opportunityScore}/100 · Estimated
+              missed revenue:{" "}
+              {currencyFmt.format(analysis.estimatedMissedRevenueRange.low)}–
+              {currencyFmt.format(analysis.estimatedMissedRevenueRange.high)}
+            </p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              {buildResults(claimType).map((card) => (
+              {analysis.findings.map((finding) => (
                 <div
-                  key={card.eyebrow}
+                  key={`${finding.title}-${finding.category}`}
                   className="rounded-xl border border-white/12 bg-brand-black/55 p-5 ring-1 ring-white/5"
                 >
                   <p className="text-xs font-semibold uppercase tracking-wider text-brand-red-light">
-                    {card.eyebrow}
+                    {finding.title}
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                    {card.body}
+                    {finding.explanation}
                   </p>
                 </div>
               ))}

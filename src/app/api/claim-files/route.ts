@@ -1,15 +1,10 @@
 import { NextResponse } from "next/server";
 
+import { parseClaimFilePrepareRequest } from "@/lib/claim-files";
 import {
-  buildClaimStoragePath,
-  CLAIM_FILES_BUCKET,
-  isValidClaimSessionId,
-  MAX_CLAIM_FILES,
-  sanitizeStorageFileName,
-  toClaimFileRecord,
-  validateClaimFileInput,
-  type ClaimFileRecord,
-} from "@/lib/claim-files";
+  ClaimFileUploadPrepareError,
+  prepareClaimFileUpload,
+} from "@/lib/claim-storage-upload";
 import {
   createSupabaseServerClient,
   SupabaseServerConfigError,
@@ -17,66 +12,41 @@ import {
 
 export const runtime = "nodejs";
 
-function isFileLike(value: FormDataEntryValue): value is File {
-  return (
-    typeof value === "object" &&
-    value !== null &&
-    "arrayBuffer" in value &&
-    typeof (value as File).arrayBuffer === "function"
-  );
-}
-
 export async function POST(request: Request) {
   try {
-    let formData: FormData;
-    try {
-      formData = await request.formData();
-    } catch {
-      return NextResponse.json(
-        { error: "Invalid multipart form data", code: "INVALID_FORM" },
-        { status: 400 },
-      );
-    }
-
-    const sessionIdRaw = formData.get("sessionId");
-    if (typeof sessionIdRaw !== "string" || !isValidClaimSessionId(sessionIdRaw)) {
-      return NextResponse.json(
-        { error: "A valid sessionId is required.", code: "INVALID_SESSION" },
-        { status: 400 },
-      );
-    }
-    const sessionId = sessionIdRaw.trim();
-
-    const entries = formData.getAll("files").filter(isFileLike);
-    if (entries.length === 0) {
-      return NextResponse.json(
-        { error: "No files provided.", code: "NO_FILES" },
-        { status: 400 },
-      );
-    }
-    if (entries.length > MAX_CLAIM_FILES) {
+    const contentType = request.headers.get("content-type") ?? "";
+    if (contentType.includes("multipart/form-data")) {
       return NextResponse.json(
         {
-          error: `You can upload up to ${MAX_CLAIM_FILES} files per request.`,
-          code: "TOO_MANY_FILES",
+          error:
+            "Multipart uploads are not supported. Use JSON prepare + direct Storage upload.",
+          code: "USE_SIGNED_UPLOAD",
         },
         { status: 400 },
       );
     }
 
-    for (const file of entries) {
-      const check = validateClaimFileInput({
-        name: file.name,
-        type: file.type,
-        size: file.size,
-      });
-      if (!check.ok) {
-        return NextResponse.json(
-          { error: check.reason, code: "INVALID_FILE" },
-          { status: 400 },
-        );
-      }
+    let body: unknown;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json(
+        { error: "Invalid JSON body", code: "INVALID_JSON" },
+        { status: 400 },
+      );
     }
+
+    const parsed = parseClaimFilePrepareRequest(body);
+    if (!parsed.ok) {
+      const code =
+        parsed.reason.includes("sessionId") ? "INVALID_SESSION" : "INVALID_FILE";
+      return NextResponse.json(
+        { error: parsed.reason, code },
+        { status: 400 },
+      );
+    }
+
+    const { sessionId, file } = parsed.data;
 
     let supabase;
     try {
@@ -92,45 +62,22 @@ export async function POST(request: Request) {
       throw err;
     }
 
-    const uploaded: ClaimFileRecord[] = [];
-
-    for (const file of entries) {
-      const fileName = sanitizeStorageFileName(file.name);
-      const storagePath = buildClaimStoragePath(sessionId, fileName);
-      const contentType =
-        file.type.split(";")[0]?.trim() || "application/octet-stream";
-      const buffer = Buffer.from(await file.arrayBuffer());
-
-      const { error } = await supabase.storage
-        .from(CLAIM_FILES_BUCKET)
-        .upload(storagePath, buffer, {
-          contentType,
-          upsert: false,
-        });
-
-      if (error) {
-        console.error("[api/claim-files] Storage upload error:", {
-          message: error.message,
-          storagePath,
-        });
+    try {
+      const prepared = await prepareClaimFileUpload(supabase, sessionId, file);
+      return NextResponse.json({
+        sessionId,
+        signedUrl: prepared.signedUrl,
+        file: prepared.record,
+      });
+    } catch (err) {
+      if (err instanceof ClaimFileUploadPrepareError) {
         return NextResponse.json(
-          { error: "Failed to upload file.", code: "STORAGE_UPLOAD_FAILED" },
-          { status: 500 },
+          { error: err.message, code: err.code },
+          { status: err.code === "INVALID_FILE" ? 400 : 500 },
         );
       }
-
-      uploaded.push(
-        toClaimFileRecord(
-          sessionId,
-          fileName,
-          file.name,
-          contentType,
-          file.size,
-        ),
-      );
+      throw err;
     }
-
-    return NextResponse.json({ sessionId, files: uploaded });
   } catch (err) {
     console.error("[api/claim-files] Unhandled error:", err);
     return NextResponse.json(
