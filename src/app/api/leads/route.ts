@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
 
 import type { LeadSubmissionPayload } from "@/lib/calculator-lead";
-import { createSupabaseServerClient } from "@/lib/supabase";
+import {
+  createSupabaseServerClient,
+  getSupabaseEnvDiagnostics,
+  SupabaseServerConfigError,
+} from "@/lib/supabase";
 
 function isValidLeadPayload(
   data: unknown,
@@ -18,6 +22,24 @@ function isValidLeadPayload(
   if (typeof L.email !== "string" || !L.email.trim()) return false;
 
   return true;
+}
+
+function logSupabaseEnvDiag(context: string) {
+  const d = getSupabaseEnvDiagnostics();
+  console.info(`[api/leads] ${context}`, {
+    NEXT_PUBLIC_SUPABASE_URL_set: d.nextPublicSupabaseUrlPresent,
+    SUPABASE_SECRET_KEY_set: d.supabaseSecretKeyPresent,
+    supabaseUrlHost: d.supabaseUrlHost,
+    urlParseFailed: d.urlParseFailed,
+    urlUsesHttps: d.urlUsesHttps,
+    urlHostnameIncludesSupabaseCo: d.urlHostnameIncludesSupabaseCo,
+  });
+}
+
+function looksLikeOutboundNetworkFailure(message: string): boolean {
+  return /fetch failed|network|ECONNREFUSED|ENOTFOUND|ETIMEDOUT|EAI_AGAIN/i.test(
+    message,
+  );
 }
 
 export async function POST(request: Request) {
@@ -40,31 +62,117 @@ export async function POST(request: Request) {
     }
 
     const payload = body as LeadSubmissionPayload;
-    const supabase = createSupabaseServerClient();
 
-    const { error } = await supabase.from("leads").insert({
-      calculator_type: payload.calculatorType,
-      lead_name: payload.lead.fullName,
-      company: payload.lead.company ?? "",
-      email: payload.lead.email,
-      phone: payload.lead.phone ?? "",
-      payload,
-      status: "new",
-    });
+    logSupabaseEnvDiag("Supabase env diagnostics (before client)");
 
-    if (error) {
-      console.error("[api/leads] Supabase insert error:", error.message, error);
+    let supabase;
+    try {
+      supabase = createSupabaseServerClient();
+    } catch (err) {
+      if (err instanceof SupabaseServerConfigError) {
+        console.error(
+          "[api/leads] Supabase configuration rejected:",
+          err.message,
+        );
+        logSupabaseEnvDiag("Supabase env diagnostics (after config error)");
+        return NextResponse.json(
+          { error: "Lead intake is not configured.", code: err.code },
+          { status: 503 },
+        );
+      }
+      throw err;
+    }
+
+    let insertError: {
+      message: string;
+      code?: string;
+      details?: string;
+      hint?: string;
+    } | null = null;
+
+    try {
+      const { error } = await supabase.from("leads").insert({
+        calculator_type: payload.calculatorType,
+        lead_name: payload.lead.fullName,
+        company: payload.lead.company ?? "",
+        email: payload.lead.email,
+        phone: payload.lead.phone ?? "",
+        payload,
+        status: "new",
+      });
+
+      if (error) {
+        insertError = {
+          message: error.message,
+          code: "code" in error ? String(error.code) : undefined,
+          details: "details" in error ? error.details : undefined,
+          hint: "hint" in error ? error.hint : undefined,
+        };
+      }
+    } catch (runtimeErr) {
+      const msg =
+        runtimeErr instanceof Error ? runtimeErr.message : String(runtimeErr);
+      const cause =
+        runtimeErr instanceof Error && runtimeErr.cause != null
+          ? runtimeErr.cause
+          : undefined;
+
+      console.error("[api/leads] Supabase insert threw (runtime):", {
+        errorName: runtimeErr instanceof Error ? runtimeErr.name : typeof runtimeErr,
+        errorMessage: msg,
+        cause,
+      });
+      logSupabaseEnvDiag("Supabase env diagnostics (after insert throw)");
+
+      if (
+        runtimeErr instanceof TypeError &&
+        runtimeErr.message === "fetch failed"
+      ) {
+        console.error(
+          "[api/leads] TypeError: fetch failed — likely outbound TLS/DNS/network from Vercel to Supabase, or invalid URL. See supabaseUrlHost above.",
+        );
+      } else if (looksLikeOutboundNetworkFailure(msg)) {
+        console.error(
+          "[api/leads] Insert runtime error matches network/DNS pattern — verify Vercel region, Supabase status, and firewall.",
+        );
+      }
+
       return NextResponse.json(
-        { error: "Failed to save lead" },
+        {
+          error: "Failed to save lead",
+          code: "SUPABASE_INSERT_RUNTIME",
+        },
+        { status: 500 },
+      );
+    }
+
+    if (insertError) {
+      console.error("[api/leads] Supabase insert error (PostgREST/client):", {
+        message: insertError.message,
+        code: insertError.code,
+        details: insertError.details,
+        hint: insertError.hint,
+      });
+      logSupabaseEnvDiag("Supabase env diagnostics (after insert error object)");
+
+      if (looksLikeOutboundNetworkFailure(insertError.message)) {
+        console.error(
+          "[api/leads] Insert returned error that looks like a network/fetch failure, not a row/RLS issue.",
+        );
+      }
+
+      return NextResponse.json(
+        { error: "Failed to save lead", code: "SUPABASE_INSERT_ERROR" },
         { status: 500 },
       );
     }
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error("[api/leads]", err);
+    console.error("[api/leads] Unhandled error:", err);
+    logSupabaseEnvDiag("Supabase env diagnostics (unhandled)");
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Internal server error", code: "INTERNAL" },
       { status: 500 },
     );
   }
