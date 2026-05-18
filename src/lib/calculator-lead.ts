@@ -18,9 +18,12 @@ export type LeadContactFields = {
 };
 
 export type UploadedFileMeta = {
-  name: string;
-  type: string;
+  fileName: string;
+  originalName: string;
+  contentType: string;
   size: number;
+  storagePath: string;
+  bucket: string;
 };
 
 export type ClaimReviewCalculatorInputs = {
@@ -56,6 +59,7 @@ export type ClaimReviewLeadSubmission = {
   lead: LeadContactFields;
   claimCalculatorInputs: ClaimReviewCalculatorInputs;
   uploadedFilesMeta: UploadedFileMeta[];
+  claimSessionId?: string;
 };
 
 export type RoiReportLeadSubmission = {

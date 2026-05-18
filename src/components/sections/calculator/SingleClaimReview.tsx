@@ -2,6 +2,10 @@
 
 import { useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
+import {
+  type ClaimFileRecord,
+  validateClaimFileSelection,
+} from "@/lib/claim-files";
 import { cn } from "@/lib/cn";
 import type { LeadContactFields } from "@/lib/calculator-lead";
 import { LeadCaptureForm } from "./LeadCaptureForm";
@@ -26,6 +30,41 @@ type ResultCard = {
   eyebrow: string;
   body: string;
 };
+
+type ClaimFilesUploadResponse = {
+  sessionId: string;
+  files: ClaimFileRecord[];
+};
+
+async function uploadSingleClaimFile(
+  sessionId: string,
+  file: File,
+): Promise<ClaimFileRecord> {
+  const formData = new FormData();
+  formData.append("sessionId", sessionId);
+  formData.append("files", file);
+
+  const res = await fetch("/api/claim-files", {
+    method: "POST",
+    body: formData,
+  });
+
+  let data: ClaimFilesUploadResponse & { error?: string } = {
+    sessionId,
+    files: [],
+  };
+  try {
+    data = (await res.json()) as typeof data;
+  } catch {
+    data = { sessionId, files: [] };
+  }
+
+  if (!res.ok || !data.files?.[0]) {
+    throw new Error(data.error ?? "Upload failed");
+  }
+
+  return data.files[0];
+}
 
 function buildResults(claimType: ClaimType): ResultCard[] {
   const lower = claimType.toLowerCase();
@@ -55,148 +94,215 @@ export function SingleClaimReview() {
   const carrierEstId = useId();
   const descriptionId = useId();
 
+  const [claimSessionId, setClaimSessionId] = useState(() =>
+    crypto.randomUUID(),
+  );
   const [files, setFiles] = useState<File[]>([]);
+  const [persistedFiles, setPersistedFiles] = useState<ClaimFileRecord[]>([]);
   const [claimType, setClaimType] = useState<ClaimType>("Water");
   const [carrierEstimate, setCarrierEstimate] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [analyzed, setAnalyzed] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+  const [filePickError, setFilePickError] = useState<string | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleFilesSelected = (list: File[]) => {
+    setFilePickError(null);
+    setUploadError(null);
+    setAnalyzed(false);
+    setPersistedFiles([]);
+    setClaimSessionId(crypto.randomUUID());
+
+    const check = validateClaimFileSelection(list);
+    if (!check.ok) {
+      setFilePickError(check.reason);
+      setFiles([]);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+      return;
+    }
+
+    setFiles(list);
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setAnalyzed(true);
+    setUploadError(null);
+
+    if (files.length === 0) {
+      setAnalyzed(true);
+      return;
+    }
+
+    setIsUploading(true);
+    try {
+      const uploaded: ClaimFileRecord[] = [];
+      for (const file of files) {
+        const record = await uploadSingleClaimFile(claimSessionId, file);
+        uploaded.push(record);
+      }
+      setPersistedFiles(uploaded);
+      setAnalyzed(true);
+    } catch {
+      setUploadError("We couldn't upload your files. Please try again.");
+      setAnalyzed(false);
+    } finally {
+      setIsUploading(false);
+    }
   };
 
   return (
     <div className="rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-2xl shadow-black/50 ring-1 ring-brand-red/25 sm:p-10">
       <form onSubmit={handleSubmit} noValidate>
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
-        <div className="space-y-6">
-          <div>
-            <label htmlFor={uploadId} className={labelClass}>
-              Upload photos or documents
-            </label>
-            <div
-              className={cn(
-                "mt-2 flex flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-white/25 bg-brand-black/50 px-4 py-8 text-center text-sm text-zinc-400 transition-colors hover:border-brand-red/50",
-              )}
-            >
-              <input
-                ref={fileInputRef}
-                id={uploadId}
-                type="file"
-                multiple
-                accept="image/*,application/pdf"
-                className="sr-only"
-                onChange={(event) => {
-                  const list = event.target.files
-                    ? Array.from(event.target.files)
-                    : [];
-                  setFiles(list);
-                }}
-              />
-              <button
-                type="button"
-                onClick={() => fileInputRef.current?.click()}
-                className="rounded-full border border-white/25 bg-brand-elevated/80 px-4 py-2 text-sm font-medium text-white hover:bg-brand-elevated"
+          <div className="space-y-6">
+            <div>
+              <label htmlFor={uploadId} className={labelClass}>
+                Upload photos or documents
+              </label>
+              <div
+                className={cn(
+                  "mt-2 flex flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-white/25 bg-brand-black/50 px-4 py-8 text-center text-sm text-zinc-400 transition-colors hover:border-brand-red/50",
+                )}
               >
-                Choose files
-              </button>
-              <p className="text-xs text-zinc-500">
-                Photos, PDFs of estimates, or scope notes. Files stay in your browser.
-              </p>
-              {files.length > 0 && (
-                <ul className="mt-2 w-full space-y-1 text-left text-xs text-zinc-300">
-                  {files.slice(0, 6).map((f, i) => (
-                    <li
-                      key={`${f.name}-${i}`}
-                      className="truncate rounded bg-white/[0.04] px-2 py-1"
-                    >
-                      {f.name}
-                    </li>
-                  ))}
-                  {files.length > 6 && (
-                    <li className="text-zinc-500">
-                      +{files.length - 6} more file(s)
-                    </li>
-                  )}
-                </ul>
-              )}
+                <input
+                  ref={fileInputRef}
+                  id={uploadId}
+                  type="file"
+                  multiple
+                  accept=".pdf,.jpg,.jpeg,.png,.webp,application/pdf,image/jpeg,image/png,image/webp"
+                  className="sr-only"
+                  onChange={(event) => {
+                    const list = event.target.files
+                      ? Array.from(event.target.files)
+                      : [];
+                    handleFilesSelected(list);
+                  }}
+                />
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="rounded-full border border-white/25 bg-brand-elevated/80 px-4 py-2 text-sm font-medium text-white hover:bg-brand-elevated"
+                  disabled={isUploading}
+                >
+                  Choose files
+                </button>
+                <p className="text-xs text-zinc-500">
+                  PDF or image files, up to 20MB each.
+                </p>
+                {filePickError && (
+                  <p
+                    className="mt-2 w-full rounded-lg border border-brand-red/40 bg-brand-red/10 px-3 py-2 text-left text-xs text-red-200"
+                    role="alert"
+                  >
+                    {filePickError}
+                  </p>
+                )}
+                {files.length > 0 && (
+                  <ul className="mt-2 w-full space-y-1 text-left text-xs text-zinc-300">
+                    {files.slice(0, 6).map((f, i) => (
+                      <li
+                        key={`${f.name}-${i}`}
+                        className="truncate rounded bg-white/[0.04] px-2 py-1"
+                      >
+                        {f.name}
+                      </li>
+                    ))}
+                    {files.length > 6 && (
+                      <li className="text-zinc-500">
+                        +{files.length - 6} more file(s)
+                      </li>
+                    )}
+                  </ul>
+                )}
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor={claimTypeId} className={labelClass}>
+                Claim type
+              </label>
+              <select
+                id={claimTypeId}
+                value={claimType}
+                onChange={(e) => setClaimType(e.target.value as ClaimType)}
+                className={inputClass}
+              >
+                {CLAIM_TYPES.map((t) => (
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
 
-          <div>
-            <label htmlFor={claimTypeId} className={labelClass}>
-              Claim type
-            </label>
-            <select
-              id={claimTypeId}
-              value={claimType}
-              onChange={(e) => setClaimType(e.target.value as ClaimType)}
-              className={inputClass}
-            >
-              {CLAIM_TYPES.map((t) => (
-                <option key={t} value={t}>
-                  {t}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
+          <div className="space-y-6">
+            <div>
+              <label htmlFor={carrierEstId} className={labelClass}>
+                Carrier estimate amount
+              </label>
+              <div className="relative">
+                <span
+                  className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-base text-zinc-500"
+                  aria-hidden
+                >
+                  $
+                </span>
+                <input
+                  id={carrierEstId}
+                  inputMode="decimal"
+                  type="number"
+                  min={0}
+                  step="0.01"
+                  value={carrierEstimate}
+                  onChange={(e) => setCarrierEstimate(e.target.value)}
+                  placeholder="0"
+                  className={cn(inputClass, "pl-8 mt-2")}
+                />
+              </div>
+            </div>
 
-        <div className="space-y-6">
-          <div>
-            <label htmlFor={carrierEstId} className={labelClass}>
-              Carrier estimate amount
-            </label>
-            <div className="relative">
-              <span
-                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-base text-zinc-500"
-                aria-hidden
-              >
-                $
-              </span>
-              <input
-                id={carrierEstId}
-                inputMode="decimal"
-                type="number"
-                min={0}
-                step="0.01"
-                value={carrierEstimate}
-                onChange={(e) => setCarrierEstimate(e.target.value)}
-                placeholder="0"
-                className={cn(inputClass, "pl-8 mt-2")}
+            <div>
+              <label htmlFor={descriptionId} className={labelClass}>
+                Brief description of loss / scope
+              </label>
+              <textarea
+                id={descriptionId}
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="What happened, what's been documented, any disputes so far..."
+                className={cn(inputClass, "min-h-[7.5rem] py-3")}
+                style={{ height: "auto" }}
               />
             </div>
           </div>
-
-          <div>
-            <label htmlFor={descriptionId} className={labelClass}>
-              Brief description of loss / scope
-            </label>
-            <textarea
-              id={descriptionId}
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              placeholder="What happened, what's been documented, any disputes so far..."
-              className={cn(
-                inputClass,
-                "min-h-[7.5rem] py-3",
-              )}
-              style={{ height: "auto" }}
-            />
-          </div>
-        </div>
         </div>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-zinc-500">
-            This is a preliminary review only — not a final estimate, legal
-            opinion, or coverage determination.
-          </p>
-          <Button type="submit" size="lg" className="w-full sm:w-auto">
-            Analyze claim opportunity
+          <div className="space-y-2">
+            <p className="text-xs text-zinc-500">
+              This is a preliminary review only — not a final estimate, legal
+              opinion, or coverage determination.
+            </p>
+            {uploadError && (
+              <p
+                className="rounded-lg border border-brand-red/40 bg-brand-red/10 px-3 py-2 text-xs text-red-200"
+                role="alert"
+              >
+                {uploadError}
+              </p>
+            )}
+          </div>
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full sm:w-auto"
+            disabled={isUploading}
+          >
+            {isUploading ? "Uploading files…" : "Analyze claim opportunity"}
           </Button>
         </div>
       </form>
@@ -231,16 +337,13 @@ export function SingleClaimReview() {
             mergePayload={(lead: LeadContactFields) => ({
               calculatorType: "claim-review",
               lead,
+              claimSessionId,
               claimCalculatorInputs: {
                 claimType,
                 carrierEstimate,
                 description,
               },
-              uploadedFilesMeta: files.map((f) => ({
-                name: f.name,
-                type: f.type,
-                size: f.size,
-              })),
+              uploadedFilesMeta: persistedFiles,
             })}
           />
         </div>
