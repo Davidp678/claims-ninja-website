@@ -11,21 +11,22 @@ export function Footer() {
       <Container className="py-14 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <Link href="/" className="inline-flex items-center gap-2">
+            <Link href="/" className="inline-flex items-center">
               <Image
                 src="/logo.png"
                 alt={SITE.name}
-                width={64}
-                height={64}
-                className="h-12 w-12"
+                width={96}
+                height={96}
+                className="h-16 w-16"
               />
-              <span className="font-display text-lg font-semibold text-white">
-                {SITE.name}
-              </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-400">
-              {SITE.tagline} Built for homeowners, property managers, and
-              businesses navigating complex insurance claims.
+              The Claims Ninja ensures you get maximum compensation. As an
+              insurance supplementing company, we handle everything: thorough
+              claim assessments, contractor settlement agreements, detailed
+              documentation, and expert negotiation with insurance companies. If
+              needed, we provide appraisal representation, advocating for your
+              best interests.
             </p>
           </div>
 
