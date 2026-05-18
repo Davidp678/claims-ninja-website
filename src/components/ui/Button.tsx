@@ -3,9 +3,9 @@ import { cn } from "@/lib/cn";
 
 const variants = {
   primary:
-    "bg-brand-red text-white shadow-lg shadow-brand-red/40 ring-1 ring-white/15 hover:brightness-110 hover:shadow-brand-red/55 focus-visible:ring-brand-red-light",
+    "bg-brand-red text-white shadow-[0_10px_30px_-12px_rgba(185,28,28,0.9)] ring-1 ring-white/20 hover:brightness-110 hover:shadow-[0_14px_38px_-14px_rgba(185,28,28,0.95)] focus-visible:ring-brand-red-light",
   secondary:
-    "border border-white/25 bg-brand-elevated/85 text-white shadow-md shadow-black/40 backdrop-blur-sm hover:border-white/45 hover:bg-brand-elevated focus-visible:ring-white/60",
+    "border border-white/30 bg-brand-elevated/92 text-white shadow-[0_10px_26px_-16px_rgba(0,0,0,0.95)] backdrop-blur-sm hover:border-white/50 hover:bg-brand-elevated focus-visible:ring-white/60",
   ghost:
     "text-zinc-200 hover:text-white hover:bg-white/8 focus-visible:ring-white/35",
 } as const;
@@ -13,7 +13,7 @@ const variants = {
 const sizes = {
   sm: "h-9 px-4 text-sm",
   md: "h-11 px-6 text-sm",
-  lg: "h-12 px-8 text-base font-semibold",
+  lg: "h-[3.25rem] px-9 text-base font-semibold",
 } as const;
 
 type ButtonProps = {

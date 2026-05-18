@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FOOTER_LINKS, SITE } from "@/lib/constants";
 import { Container } from "@/components/ui/Container";
@@ -11,12 +12,13 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Link href="/" className="inline-flex items-center gap-2">
-              <span
-                aria-hidden
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-red text-sm font-bold text-white shadow-md shadow-brand-red/35 ring-1 ring-white/12"
-              >
-                CN
-              </span>
+              <Image
+                src="/logo.png"
+                alt={SITE.name}
+                width={64}
+                height={64}
+                className="h-12 w-12"
+              />
               <span className="font-display text-lg font-semibold text-white">
                 {SITE.name}
               </span>

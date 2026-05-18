@@ -6,7 +6,7 @@ import { HeroVideoCard } from "./HeroVideoCard";
 type StatIconName = "bars" | "shield" | "star";
 
 const stats: { label: string; value: string; icon: StatIconName }[] = [
-  { label: "Avg. claim uplift", value: "23%+", icon: "bars" },
+  { label: "Avg. claim uplift", value: "40%+", icon: "bars" },
   { label: "Claims handled", value: "2,400+", icon: "shield" },
   { label: "Client satisfaction", value: "4.9★", icon: "star" },
 ];
@@ -78,8 +78,9 @@ export function Hero() {
             <span className="block text-brand-red-light">Minimize the stress.</span>
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-zinc-300 sm:text-xl">
-            We negotiate with insurers on your behalf—so you recover more, faster,
-            with a team that treats your claim like enterprise-level litigation.
+            The Claims Ninja writes, negotiates, and manages your insurance
+            supplements so you get paid more, faster, without hiring an in-house
+            claims team.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Button href="#contact" size="lg">
