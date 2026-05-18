@@ -63,14 +63,17 @@ export function LeadCaptureForm({
   const [storedPayload, setStoredPayload] =
     useState<LeadSubmissionPayload | null>(null);
   const [errors, setErrors] = useState<string[]>([]);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     setMonthlyClaimVolume(defaultMonthlyVolume);
   }, [defaultMonthlyVolume]);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const nextErrors: string[] = [];
+    setSubmitError(null);
 
     if (!fullName.trim()) nextErrors.push("Full name is required.");
     if (!company.trim()) nextErrors.push("Company is required.");
@@ -106,11 +109,34 @@ export function LeadCaptureForm({
       timestamp: new Date().toISOString(),
     } as LeadSubmissionPayload;
 
-    setStoredPayload(merged);
-    onSubmit?.(merged);
-    console.log("[ClaimsNinja Lead] Calculator lead payload:", merged);
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(merged),
+      });
 
-    setSubmitted(true);
+      let data: { success?: boolean } = {};
+      try {
+        data = (await res.json()) as { success?: boolean };
+      } catch {
+        data = {};
+      }
+
+      if (!res.ok || !data.success) {
+        setSubmitError("Something went wrong. Please try again.");
+        return;
+      }
+
+      setStoredPayload(merged);
+      onSubmit?.(merged);
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted && storedPayload) {
@@ -180,6 +206,16 @@ export function LeadCaptureForm({
               <li key={err}>{err}</li>
             ))}
           </ul>
+        </div>
+      )}
+
+      {submitError && (
+        <div
+          className="mt-5 rounded-lg border border-white/20 bg-white/[0.06] px-4 py-3 text-sm text-zinc-200"
+          role="alert"
+          aria-live="assertive"
+        >
+          {submitError}
         </div>
       )}
 
@@ -289,8 +325,13 @@ export function LeadCaptureForm({
       </div>
 
       <div className="mt-8">
-        <Button type="submit" size="lg" className="w-full sm:w-auto">
-          {submitLabel}
+        <Button
+          type="submit"
+          size="lg"
+          className="w-full sm:w-auto"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Sending…" : submitLabel}
         </Button>
       </div>
     </form>
