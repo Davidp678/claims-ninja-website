@@ -69,11 +69,9 @@ export function SingleClaimReview() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-2xl shadow-black/50 ring-1 ring-brand-red/25 sm:p-10"
-    >
-      <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
+    <div className="rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-2xl shadow-black/50 ring-1 ring-brand-red/25 sm:p-10">
+      <form onSubmit={handleSubmit} noValidate>
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
         <div className="space-y-6">
           <div>
             <label htmlFor={uploadId} className={labelClass}>
@@ -190,17 +188,18 @@ export function SingleClaimReview() {
             />
           </div>
         </div>
-      </div>
+        </div>
 
-      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-zinc-500">
-          This is a preliminary review only — not a final estimate, legal
-          opinion, or coverage determination.
-        </p>
-        <Button type="submit" size="lg" className="w-full sm:w-auto">
-          Analyze claim opportunity
-        </Button>
-      </div>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-zinc-500">
+            This is a preliminary review only — not a final estimate, legal
+            opinion, or coverage determination.
+          </p>
+          <Button type="submit" size="lg" className="w-full sm:w-auto">
+            Analyze claim opportunity
+          </Button>
+        </div>
+      </form>
 
       {analyzed && (
         <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-start">
@@ -246,6 +245,6 @@ export function SingleClaimReview() {
           />
         </div>
       )}
-    </form>
+    </div>
   );
 }
