@@ -1,7 +1,10 @@
 "use client";
 
 import { useId, useMemo, useState } from "react";
+import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
+import type { LeadContactFields } from "@/lib/calculator-lead";
+import { LeadCaptureForm } from "./LeadCaptureForm";
 
 const inputClass =
   "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 h-12 text-base text-white placeholder-zinc-500 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
@@ -31,6 +34,7 @@ export function OrganizationRoi() {
   const [jobsPerMonth, setJobsPerMonth] = useState<string>("8");
   const [upliftPct, setUpliftPct] = useState<string>("25");
   const [inHouseMonthly, setInHouseMonthly] = useState<string>("7500");
+  const [showLeadForm, setShowLeadForm] = useState(false);
 
   const numbers = useMemo(() => {
     const carrier = parseNumber(carrierEstimate);
@@ -63,11 +67,16 @@ export function OrganizationRoi() {
 
     return {
       hasCarrier,
+      documentedIncreasePerJob,
+      finalRcvPerJob,
+      ninjaFeePerJob,
+      netUpliftPerJob,
       annualNet,
       annualFee,
       inHouseAnnual,
       vsInHouse,
       monthlyNet,
+      monthlyFee,
     };
   }, [carrierEstimate, jobsPerMonth, upliftPct, inHouseMonthly]);
 
@@ -204,6 +213,49 @@ export function OrganizationRoi() {
               In-house baseline: {currency.format(numbers.inHouseAnnual)} per year.
             </p>
           </div>
+
+          <Button
+            type="button"
+            variant="secondary"
+            size="lg"
+            className="w-full"
+            onClick={() => setShowLeadForm(true)}
+          >
+            Send my ROI report
+          </Button>
+
+          {showLeadForm && (
+            <LeadCaptureForm
+              variant="roi-report"
+              defaultMonthlyVolume={jobsPerMonth}
+              submitLabel="Send my ROI report"
+              successMessage="Your ROI report request has been received. We’ll follow up with next steps."
+              className="mt-2"
+              mergePayload={(lead: LeadContactFields) => ({
+                calculatorType: "roi-report",
+                lead,
+                roiCalculatorInputs: {
+                  averageCarrierEstimatePerJob: parseNumber(carrierEstimate),
+                  jobsPerMonth: parseNumber(jobsPerMonth),
+                  assumedUpliftPercent: parseNumber(upliftPct),
+                  inHouseMonthlyCost: parseNumber(inHouseMonthly),
+                },
+                roiCalculatorOutputs: {
+                  usesCarrierEstimateFeeModel: numbers.hasCarrier,
+                  documentedIncreasePerJob: numbers.documentedIncreasePerJob,
+                  finalRcvPerJob: numbers.finalRcvPerJob,
+                  ninjaFeePerJob: numbers.ninjaFeePerJob,
+                  netUpliftPerJob: numbers.netUpliftPerJob,
+                  monthlyNetUplift: numbers.monthlyNet,
+                  monthlyNinjaFee: numbers.monthlyFee,
+                  annualNetUplift: numbers.annualNet,
+                  annualNinjaFee: numbers.annualFee,
+                  annualInHouseCost: numbers.inHouseAnnual,
+                  annualVsInHouseDelta: numbers.vsInHouse,
+                },
+              })}
+            />
+          )}
         </div>
       </div>
 

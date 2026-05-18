@@ -1,0 +1,76 @@
+/**
+ * Lead submission payloads for calculator flows.
+ * Structured for future API / CRM integration (POST body shape).
+ */
+
+export type PreferredContactMethod = "email" | "phone" | "either";
+
+/** Contact fields collected in the shared lead form. */
+export type LeadContactFields = {
+  fullName: string;
+  company: string;
+  email: string;
+  phone: string;
+  /** claim-review */
+  preferredContactMethod?: PreferredContactMethod;
+  /** roi-report — e.g. jobs/claims per month */
+  monthlyClaimVolume?: string;
+};
+
+export type UploadedFileMeta = {
+  name: string;
+  type: string;
+  size: number;
+};
+
+export type ClaimReviewCalculatorInputs = {
+  claimType: string;
+  carrierEstimate: string;
+  description: string;
+};
+
+export type RoiCalculatorInputsSnapshot = {
+  averageCarrierEstimatePerJob: number;
+  jobsPerMonth: number;
+  assumedUpliftPercent: number;
+  inHouseMonthlyCost: number;
+};
+
+export type RoiCalculatorOutputsSnapshot = {
+  usesCarrierEstimateFeeModel: boolean;
+  documentedIncreasePerJob: number;
+  finalRcvPerJob: number;
+  ninjaFeePerJob: number;
+  netUpliftPerJob: number;
+  monthlyNetUplift: number;
+  monthlyNinjaFee: number;
+  annualNetUplift: number;
+  annualNinjaFee: number;
+  annualInHouseCost: number;
+  annualVsInHouseDelta: number;
+};
+
+export type ClaimReviewLeadSubmission = {
+  calculatorType: "claim-review";
+  timestamp: string;
+  lead: LeadContactFields;
+  claimCalculatorInputs: ClaimReviewCalculatorInputs;
+  uploadedFilesMeta: UploadedFileMeta[];
+};
+
+export type RoiReportLeadSubmission = {
+  calculatorType: "roi-report";
+  timestamp: string;
+  lead: LeadContactFields;
+  roiCalculatorInputs: RoiCalculatorInputsSnapshot;
+  roiCalculatorOutputs: RoiCalculatorOutputsSnapshot;
+};
+
+export type LeadSubmissionPayload =
+  | ClaimReviewLeadSubmission
+  | RoiReportLeadSubmission;
+
+export type LeadSubmissionPayloadWithoutTimestamp = Omit<
+  LeadSubmissionPayload,
+  "timestamp"
+>;

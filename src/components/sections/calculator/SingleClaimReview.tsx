@@ -3,6 +3,8 @@
 import { useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
+import type { LeadContactFields } from "@/lib/calculator-lead";
+import { LeadCaptureForm } from "./LeadCaptureForm";
 
 const CLAIM_TYPES = [
   "Water",
@@ -201,25 +203,47 @@ export function SingleClaimReview() {
       </div>
 
       {analyzed && (
-        <div className="mt-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
-            Preliminary triage — {claimType}
-          </p>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            {buildResults(claimType).map((card) => (
-              <div
-                key={card.eyebrow}
-                className="rounded-xl border border-white/12 bg-brand-black/55 p-5 ring-1 ring-white/5"
-              >
-                <p className="text-xs font-semibold uppercase tracking-wider text-brand-red-light">
-                  {card.eyebrow}
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                  {card.body}
-                </p>
-              </div>
-            ))}
+        <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-start">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
+              Preliminary triage — {claimType}
+            </p>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {buildResults(claimType).map((card) => (
+                <div
+                  key={card.eyebrow}
+                  className="rounded-xl border border-white/12 bg-brand-black/55 p-5 ring-1 ring-white/5"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-red-light">
+                    {card.eyebrow}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                    {card.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
+
+          <LeadCaptureForm
+            variant="claim-review"
+            submitLabel="Send my claim review"
+            successMessage="Your claim review request has been received. Our team will review your details and follow up shortly."
+            mergePayload={(lead: LeadContactFields) => ({
+              calculatorType: "claim-review",
+              lead,
+              claimCalculatorInputs: {
+                claimType,
+                carrierEstimate,
+                description,
+              },
+              uploadedFilesMeta: files.map((f) => ({
+                name: f.name,
+                type: f.type,
+                size: f.size,
+              })),
+            })}
+          />
         </div>
       )}
     </form>
