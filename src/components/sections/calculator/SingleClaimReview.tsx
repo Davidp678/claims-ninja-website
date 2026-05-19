@@ -395,6 +395,15 @@ export function SingleClaimReview() {
               {currencyFmt.format(analysis.estimatedMissedRevenueRange.low)}–
               {currencyFmt.format(analysis.estimatedMissedRevenueRange.high)}
             </p>
+            <div className="mt-6">
+              <Button
+                href={`/claim-report/${claimSessionId}`}
+                size="lg"
+                className="w-full sm:w-auto"
+              >
+                View full intelligence report
+              </Button>
+            </div>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               {analysis.findings.map((finding) => (
                 <div

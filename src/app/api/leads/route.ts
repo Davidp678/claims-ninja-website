@@ -130,6 +130,12 @@ export async function POST(request: Request) {
 
     const payloadToInsert = await buildLeadPayloadForInsert(supabase, payload);
 
+    const initialStatus =
+      payloadToInsert.calculatorType === "claim-review" &&
+      payloadToInsert.aiAnalysis
+        ? "ai_reviewed"
+        : "new";
+
     let insertError: {
       message: string;
       code?: string;
@@ -145,7 +151,7 @@ export async function POST(request: Request) {
         email: payloadToInsert.lead.email,
         phone: payloadToInsert.lead.phone ?? "",
         payload: payloadToInsert,
-        status: "new",
+        status: initialStatus,
       });
 
       if (error) {
