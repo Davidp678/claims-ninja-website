@@ -414,7 +414,7 @@ export function SingleClaimReview() {
 
           <LeadCaptureForm
             variant="claim-review"
-            submitLabel="Send my claim review"
+            submitLabel="Request full review"
             successMessage="Your claim review request has been received. Our team will review your details and follow up shortly."
             mergePayload={(lead: LeadContactFields) => ({
               calculatorType: "claim-review",

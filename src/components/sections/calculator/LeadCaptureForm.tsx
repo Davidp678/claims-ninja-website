@@ -186,12 +186,12 @@ export function LeadCaptureForm({
     >
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
         {variant === "claim-review"
-          ? "Request your claim review"
+          ? "Full supplement review"
           : "Request your ROI report"}
       </p>
       <p className="mt-2 text-sm text-zinc-400">
         {variant === "claim-review"
-          ? "Share your contact details and we’ll follow up with a tailored review."
+          ? "Preliminary opportunities identified. Submit your information for a deeper line-item and carrier review from the Claims Ninja team."
           : "We’ll validate your numbers and send a concise readout your leadership team can use."}
       </p>
 
@@ -325,6 +325,11 @@ export function LeadCaptureForm({
       </div>
 
       <div className="mt-8">
+        {variant === "claim-review" && (
+          <p className="mb-3 text-xs font-medium uppercase tracking-wider text-zinc-500">
+            Potential missed revenue detected.
+          </p>
+        )}
         <Button
           type="submit"
           size="lg"
