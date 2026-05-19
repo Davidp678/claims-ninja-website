@@ -35,6 +35,15 @@ export type ClaimAnalysisResult = {
   disclaimers: string[];
 };
 
+export const CLAIM_ANALYSIS_VERSION = "1";
+
+export type PersistedClaimAnalysis = {
+  aiAnalysis: ClaimAnalysisResult;
+  analyzedAt: string;
+  aiModel: string;
+  analysisVersion: string;
+};
+
 export type AnalyzeClaimRequest = {
   claimSessionId: string;
   uploadedFilesMeta: UploadedFileMeta[];
@@ -214,4 +223,46 @@ export function parseAndValidateAnalysisResult(raw: unknown): ClaimAnalysisResul
     nextSteps: parseStringArray(raw.nextSteps),
     disclaimers,
   };
+}
+
+export function toPersistedClaimAnalysis(
+  analysis: ClaimAnalysisResult,
+  aiModel: string,
+  analyzedAt: string = new Date().toISOString(),
+): PersistedClaimAnalysis {
+  return {
+    aiAnalysis: analysis,
+    analyzedAt,
+    aiModel: aiModel.trim() || "gpt-4o",
+    analysisVersion: CLAIM_ANALYSIS_VERSION,
+  };
+}
+
+export function parsePersistedClaimAnalysis(
+  raw: unknown,
+): PersistedClaimAnalysis | null {
+  if (!isRecord(raw)) return null;
+
+  const analyzedAt = raw.analyzedAt;
+  const aiModel = raw.aiModel;
+  const analysisVersion = raw.analysisVersion;
+  const aiAnalysisRaw = raw.aiAnalysis;
+
+  if (typeof analyzedAt !== "string" || !analyzedAt.trim()) return null;
+  if (typeof aiModel !== "string" || !aiModel.trim()) return null;
+  if (typeof analysisVersion !== "string" || !analysisVersion.trim()) {
+    return null;
+  }
+
+  try {
+    const aiAnalysis = parseAndValidateAnalysisResult(aiAnalysisRaw);
+    return {
+      aiAnalysis,
+      analyzedAt: analyzedAt.trim(),
+      aiModel: aiModel.trim(),
+      analysisVersion: analysisVersion.trim(),
+    };
+  } catch {
+    return null;
+  }
 }

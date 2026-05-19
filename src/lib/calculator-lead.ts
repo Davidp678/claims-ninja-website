@@ -3,6 +3,8 @@
  * Structured for future API / CRM integration (POST body shape).
  */
 
+import type { ClaimAnalysisResult } from "@/lib/claim-analysis";
+
 export type PreferredContactMethod = "email" | "phone" | "either";
 
 /** Contact fields collected in the shared lead form. */
@@ -60,6 +62,11 @@ export type ClaimReviewLeadSubmission = {
   claimCalculatorInputs: ClaimReviewCalculatorInputs;
   uploadedFilesMeta: UploadedFileMeta[];
   claimSessionId?: string;
+  /** Merged server-side from `claim_analyses` when available. */
+  aiAnalysis?: ClaimAnalysisResult;
+  analyzedAt?: string;
+  aiModel?: string;
+  analysisVersion?: string;
 };
 
 export type RoiReportLeadSubmission = {

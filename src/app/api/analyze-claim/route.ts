@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 
+import { saveClaimAnalysis } from "@/lib/claim-analysis-persistence";
 import {
+  getClaimAnalysisModel,
   OpenAIAnalysisError,
   OpenAIConfigError,
   runClaimAnalysis,
@@ -40,22 +42,22 @@ export async function POST(request: Request) {
 
     const claimRequest = validated.data;
 
+    let supabase;
+    try {
+      supabase = createSupabaseServerClient();
+    } catch (err) {
+      if (err instanceof SupabaseServerConfigError) {
+        console.error("[api/analyze-claim] Supabase config:", err.message);
+        return NextResponse.json(
+          { error: "Analysis is not configured.", code: err.code },
+          { status: 503 },
+        );
+      }
+      throw err;
+    }
+
     let signedFiles: Awaited<ReturnType<typeof createClaimFileSignedUrls>> = [];
     if (claimRequest.uploadedFilesMeta.length > 0) {
-      let supabase;
-      try {
-        supabase = createSupabaseServerClient();
-      } catch (err) {
-        if (err instanceof SupabaseServerConfigError) {
-          console.error("[api/analyze-claim] Supabase config:", err.message);
-          return NextResponse.json(
-            { error: "Analysis is not configured.", code: err.code },
-            { status: 503 },
-          );
-        }
-        throw err;
-      }
-
       try {
         signedFiles = await createClaimFileSignedUrls(
           supabase,
@@ -76,6 +78,19 @@ export async function POST(request: Request) {
       request: claimRequest,
       signedFiles,
     });
+
+    const saveResult = await saveClaimAnalysis(
+      supabase,
+      claimRequest.claimSessionId,
+      analysis,
+      getClaimAnalysisModel(),
+    );
+    if (!saveResult.ok) {
+      console.error(
+        "[api/analyze-claim] Failed to persist analysis (response still returned):",
+        saveResult.error,
+      );
+    }
 
     return NextResponse.json({ analysis });
   } catch (err) {

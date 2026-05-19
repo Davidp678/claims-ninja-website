@@ -1,11 +1,56 @@
 import { NextResponse } from "next/server";
 
-import type { LeadSubmissionPayload } from "@/lib/calculator-lead";
+import type { SupabaseClient } from "@supabase/supabase-js";
+
+import { loadClaimAnalysisForSession } from "@/lib/claim-analysis-persistence";
+import type {
+  ClaimReviewLeadSubmission,
+  LeadSubmissionPayload,
+} from "@/lib/calculator-lead";
 import {
   createSupabaseServerClient,
   getSupabaseEnvDiagnostics,
   SupabaseServerConfigError,
 } from "@/lib/supabase";
+
+function stripClientAiFields(
+  payload: ClaimReviewLeadSubmission,
+): ClaimReviewLeadSubmission {
+  const rest = { ...payload };
+  delete rest.aiAnalysis;
+  delete rest.analyzedAt;
+  delete rest.aiModel;
+  delete rest.analysisVersion;
+  return rest;
+}
+
+async function buildLeadPayloadForInsert(
+  supabase: SupabaseClient,
+  payload: LeadSubmissionPayload,
+): Promise<LeadSubmissionPayload> {
+  if (payload.calculatorType !== "claim-review") {
+    return payload;
+  }
+
+  const stripped = stripClientAiFields(payload);
+  const sessionId = stripped.claimSessionId?.trim();
+  if (!sessionId) {
+    return stripped;
+  }
+
+  const persisted = await loadClaimAnalysisForSession(supabase, sessionId);
+  if (!persisted) {
+    return stripped;
+  }
+
+  return {
+    ...stripped,
+    aiAnalysis: persisted.aiAnalysis,
+    analyzedAt: persisted.analyzedAt,
+    aiModel: persisted.aiModel,
+    analysisVersion: persisted.analysisVersion,
+  };
+}
 
 function isValidLeadPayload(
   data: unknown,
@@ -83,6 +128,8 @@ export async function POST(request: Request) {
       throw err;
     }
 
+    const payloadToInsert = await buildLeadPayloadForInsert(supabase, payload);
+
     let insertError: {
       message: string;
       code?: string;
@@ -92,12 +139,12 @@ export async function POST(request: Request) {
 
     try {
       const { error } = await supabase.from("leads").insert({
-        calculator_type: payload.calculatorType,
-        lead_name: payload.lead.fullName,
-        company: payload.lead.company ?? "",
-        email: payload.lead.email,
-        phone: payload.lead.phone ?? "",
-        payload,
+        calculator_type: payloadToInsert.calculatorType,
+        lead_name: payloadToInsert.lead.fullName,
+        company: payloadToInsert.lead.company ?? "",
+        email: payloadToInsert.lead.email,
+        phone: payloadToInsert.lead.phone ?? "",
+        payload: payloadToInsert,
         status: "new",
       });
 

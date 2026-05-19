@@ -40,7 +40,7 @@ function createOpenAIClient(): OpenAI {
   return new OpenAI({ apiKey: key });
 }
 
-function getModel(): string {
+export function getClaimAnalysisModel(): string {
   return process.env.OPENAI_MODEL?.trim() || "gpt-4o";
 }
 
@@ -156,7 +156,7 @@ export async function runClaimAnalysis(params: {
   signedFiles: SignedClaimFileInput[];
 }): Promise<ClaimAnalysisResult> {
   const client = createOpenAIClient();
-  const model = getModel();
+  const model = getClaimAnalysisModel();
 
   const userParts = await buildUserContentParts(
     client,
