@@ -5,7 +5,7 @@ import { ProofIntelligenceOperationsPanel } from "./proof-intelligence/ProofInte
 
 export function ProofIntelligenceSection() {
   return (
-    <Section bordered className="py-14 sm:py-16 lg:py-20">
+    <Section bordered className="py-14 sm:py-16 lg:py-20" containerClassName="max-w-[90rem]">
       <SectionHeading
         eyebrow="High-speed claims operations"
         title="AI-Assisted Claims Operations For Restoration Contractors"

@@ -254,7 +254,7 @@ export function OperationsIntelligenceNetwork({
     <div className="flex min-h-0 flex-1 flex-col">
       <motion.div
         ref={containerRef}
-        className="relative h-[300px] w-full flex-1 overflow-visible rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/15 sm:h-[320px] lg:h-full lg:min-h-[440px]"
+        className="relative h-[300px] w-full flex-1 overflow-visible rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/15 sm:h-[320px] lg:h-full lg:min-h-[560px]"
         variants={networkPanelReveal}
         initial="hidden"
         whileInView="visible"
@@ -266,7 +266,7 @@ export function OperationsIntelligenceNetwork({
           aria-hidden
         />
 
-        <div className="absolute inset-0 lg:inset-1">
+        <div className="absolute inset-0">
           <NetworkSpokes
             activeId={activeId}
             reduceMotion={reduceMotion}
