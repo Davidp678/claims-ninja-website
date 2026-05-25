@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 import type { NetworkModule, NetworkModuleId } from "@/lib/homepage-proof-intelligence";
 import {
-  NETWORK_CORE,
+  getNetworkCore,
   getNetworkEllipse,
   getNetworkPositions,
   NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY,
@@ -62,6 +62,7 @@ function NetworkSpokes({
   positions: readonly NetworkNodePosition[];
 }) {
   const ellipse = getNetworkEllipse(layout);
+  const core = getNetworkCore(layout);
 
   return (
     <svg
@@ -81,15 +82,15 @@ function NetworkSpokes({
             ? `rgba(185, 28, 28, ${NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY})`
             : "rgba(185, 28, 28, 0.14)"
         }
-        strokeWidth="0.35"
+        strokeWidth={layout === "desktop" ? "0.25" : "0.35"}
       />
       {positions.map((node) => {
         const isActive = activeId === node.id;
         return (
           <line
             key={node.id}
-            x1={NETWORK_CORE.xPct}
-            y1={NETWORK_CORE.yPct}
+            x1={core.xPct}
+            y1={core.yPct}
             x2={node.xPct}
             y2={node.yPct}
             stroke={isActive ? "rgba(239, 68, 68, 0.62)" : "rgba(185, 28, 28, 0.26)"}
@@ -165,6 +166,9 @@ function NetworkModuleNode({
           isActive &&
             "border-brand-red/55 bg-brand-elevated/85 shadow-[0_0_32px_-10px_rgba(185,28,28,0.55)]",
           isNeighbor && !isActive && "border-brand-red/30 bg-brand-elevated/55",
+          isDesktopLayout &&
+            module.id === "ai_intelligence" &&
+            "lg:shadow-[0_0_24px_-12px_rgba(185,28,28,0.35)] lg:ring-1 lg:ring-brand-red/20",
           isDesktopLayout
             ? "flex w-[11.5rem] flex-row items-center gap-3 px-4 py-3 xl:w-[12.5rem]"
             : "flex max-w-[9.5rem] flex-col gap-1.5 px-3 py-2.5 sm:max-w-[10.5rem] sm:py-3",
@@ -229,6 +233,7 @@ export function OperationsIntelligenceNetwork({
   const [activeId, setActiveId] = useState<NetworkModuleId | null>(null);
 
   const positions = getNetworkPositions(layout);
+  const core = getNetworkCore(layout);
   const isDesktopLayout = layout === "desktop";
 
   const activeModule = modules.find((m) => m.id === activeId);
@@ -249,7 +254,7 @@ export function OperationsIntelligenceNetwork({
     <div className="flex min-h-0 flex-1 flex-col">
       <motion.div
         ref={containerRef}
-        className="relative h-[300px] w-full flex-1 overflow-visible rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/15 sm:h-[320px] lg:h-full lg:min-h-[420px]"
+        className="relative h-[300px] w-full flex-1 overflow-visible rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/15 sm:h-[320px] lg:h-full lg:min-h-[440px]"
         variants={networkPanelReveal}
         initial="hidden"
         whileInView="visible"
@@ -257,7 +262,7 @@ export function OperationsIntelligenceNetwork({
         onClick={handleContainerClick}
       >
         <div
-          className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_85%_70%_at_50%_50%,rgba(185,28,28,0.12),transparent_65%)]"
+          className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_85%_70%_at_50%_50%,rgba(185,28,28,0.12),transparent_65%)] lg:bg-[radial-gradient(ellipse_90%_75%_at_50%_58%,rgba(185,28,28,0.12),transparent_65%)]"
           aria-hidden
         />
 
@@ -271,7 +276,8 @@ export function OperationsIntelligenceNetwork({
 
           <motion.div
             variants={networkCoreReveal}
-            className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
+            className="absolute z-20 -translate-x-1/2 -translate-y-1/2"
+            style={{ left: `${core.xPct}%`, top: `${core.yPct}%` }}
           >
             <div
               className={cn(

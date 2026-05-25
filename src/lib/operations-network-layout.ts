@@ -3,9 +3,11 @@ import type { NetworkModuleId } from "@/lib/homepage-proof-intelligence";
 export type NetworkLayout = "desktop" | "mobile";
 
 const CORE_X = 50;
-const CORE_Y = 50;
+const CORE_Y_MOBILE = 50;
+const CORE_Y_DESKTOP = 57;
 
-export const NETWORK_CORE = { xPct: CORE_X, yPct: CORE_Y } as const;
+/** @deprecated Prefer getNetworkCore(layout) for layout-aware positioning. */
+export const NETWORK_CORE = { xPct: CORE_X, yPct: CORE_Y_MOBILE } as const;
 
 export type NetworkNodePosition = {
   id: NetworkModuleId;
@@ -13,20 +15,20 @@ export type NetworkNodePosition = {
   yPct: number;
 };
 
-/** Wide system-map ellipse guide (desktop) — soft frame for 2–1–2–1 layout. */
+/** Flat atmospheric field (desktop) — compositional only, not a node path. */
 export const NETWORK_ELLIPSE_DESKTOP = {
   cx: CORE_X,
-  cy: CORE_Y,
-  rx: 38,
-  ry: 32,
+  cy: 58,
+  rx: 44,
+  ry: 22,
 } as const;
 
-export const NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY = 0.09;
+export const NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY = 0.05;
 
 /** Compact ellipse guide (mobile polar orbit). */
 export const NETWORK_ELLIPSE_MOBILE = {
   cx: CORE_X,
-  cy: CORE_Y,
+  cy: CORE_Y_MOBILE,
   rx: 34,
   ry: 34,
 } as const;
@@ -42,16 +44,16 @@ const MODULE_ORDER: readonly NetworkModuleId[] = [
 ] as const;
 
 /**
- * Desktop: balanced 2–1–2–1 system map (explicit coordinates).
- * Row1: AI top-center | Row2: Estimate + Supplement | Row3: Coordination + PA | Row4: Portal
+ * Desktop: asymmetric command map (optical balance, hierarchical cadence).
+ * AI supervisory → wings → core → lower ops → grounded portal.
  */
 export const NETWORK_DESKTOP_POSITIONS: readonly NetworkNodePosition[] = [
-  { id: "ai_intelligence", xPct: 50, yPct: 12 },
-  { id: "estimate_delivery", xPct: 22, yPct: 25 },
-  { id: "supplement_team", xPct: 78, yPct: 25 },
-  { id: "claim_coordination", xPct: 22, yPct: 66 },
-  { id: "pa_support", xPct: 78, yPct: 66 },
-  { id: "client_portal", xPct: 50, yPct: 86 },
+  { id: "ai_intelligence", xPct: 50, yPct: 16 },
+  { id: "estimate_delivery", xPct: 12, yPct: 36 },
+  { id: "supplement_team", xPct: 88, yPct: 36 },
+  { id: "claim_coordination", xPct: 14, yPct: 74 },
+  { id: "pa_support", xPct: 86, yPct: 74 },
+  { id: "client_portal", xPct: 50, yPct: 91 },
 ] as const;
 
 const ORBIT_RADIUS_MOBILE = 34;
@@ -60,7 +62,7 @@ function polarToPercent(angleDeg: number, radius: number): { xPct: number; yPct:
   const rad = (angleDeg * Math.PI) / 180;
   return {
     xPct: CORE_X + radius * Math.cos(rad),
-    yPct: CORE_Y + radius * Math.sin(rad),
+    yPct: CORE_Y_MOBILE + radius * Math.sin(rad),
   };
 }
 
@@ -73,6 +75,12 @@ export const NETWORK_MOBILE_POSITIONS: readonly NetworkNodePosition[] = [
   { id: "claim_coordination", ...polarToPercent(150, ORBIT_RADIUS_MOBILE) },
   { id: "estimate_delivery", ...polarToPercent(210, ORBIT_RADIUS_MOBILE) },
 ] as const;
+
+export function getNetworkCore(layout: NetworkLayout) {
+  return layout === "desktop"
+    ? { xPct: CORE_X, yPct: CORE_Y_DESKTOP }
+    : { xPct: CORE_X, yPct: CORE_Y_MOBILE };
+}
 
 export function getNetworkPositions(layout: NetworkLayout): readonly NetworkNodePosition[] {
   return layout === "desktop" ? NETWORK_DESKTOP_POSITIONS : NETWORK_MOBILE_POSITIONS;
