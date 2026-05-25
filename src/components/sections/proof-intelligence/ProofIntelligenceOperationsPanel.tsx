@@ -13,6 +13,7 @@ import {
 import { cn } from "@/lib/cn";
 
 import { OperationsAmbientLayer } from "./OperationsAmbientLayer";
+import { MetricsTelemetryRail } from "./MetricsTelemetryRail";
 import { OperationsIntelligenceNetwork } from "./OperationsIntelligenceNetwork";
 
 function PerformanceMetricCard({ metric }: { metric: OperationalMetric }) {
@@ -28,7 +29,7 @@ function PerformanceMetricCard({ metric }: { metric: OperationalMetric }) {
     <motion.li
       variants={metricCardOuter}
       className={cn(
-        "relative overflow-hidden rounded-xl border border-white/12 bg-brand-surface/80 p-4",
+        "relative overflow-hidden rounded-xl border border-white/12 bg-brand-surface/80 p-4 lg:py-[1.125rem]",
         "shadow-[0_0_32px_-20px_rgba(185,28,28,0.2)] ring-1 ring-white/5 backdrop-blur-sm",
         "transition-[border-color,box-shadow] duration-300",
         "hover:border-brand-red/40 hover:shadow-[0_0_40px_-16px_rgba(185,28,28,0.35)]",
@@ -60,21 +61,24 @@ export function ProofIntelligenceOperationsPanel() {
       <OperationsAmbientLayer />
 
       <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,0.36fr)_minmax(0,0.64fr)] lg:items-stretch lg:gap-10 xl:gap-14">
-        <div>
+        <div className="flex min-h-0 flex-col">
           <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Operational performance
           </h3>
-          <motion.ul
-            className="mt-4 space-y-3"
-            initial="hidden"
-            whileInView="visible"
-            viewport={VIEWPORT_ONCE}
-            variants={staggerContainer}
-          >
-            {OPERATIONAL_METRICS.map((metric) => (
-              <PerformanceMetricCard key={metric.id} metric={metric} />
-            ))}
-          </motion.ul>
+          <div className="relative mt-4 flex min-h-0 flex-1 flex-col">
+            <MetricsTelemetryRail />
+            <motion.ul
+              className="relative flex flex-col gap-3 lg:flex-1 lg:justify-between lg:gap-0 lg:pl-5"
+              initial="hidden"
+              whileInView="visible"
+              viewport={VIEWPORT_ONCE}
+              variants={staggerContainer}
+            >
+              {OPERATIONAL_METRICS.map((metric) => (
+                <PerformanceMetricCard key={metric.id} metric={metric} />
+              ))}
+            </motion.ul>
+          </div>
         </div>
 
         <div className="flex min-h-0 flex-col">

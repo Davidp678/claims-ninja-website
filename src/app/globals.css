@@ -123,8 +123,18 @@ body {
   animation: gridShift 40s linear infinite;
 }
 
-.animate-signal-pulse {
-  animation: signalPulse 2.8s ease-in-out infinite;
+@keyframes telemetryPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.animate-telemetry-pulse {
+  animation: telemetryPulse 4s ease-in-out infinite;
 }
 
 .animate-connector-flow {
@@ -136,7 +146,8 @@ body {
   .animate-ambient-drift-reverse,
   .animate-grid-shift,
   .animate-signal-pulse,
-  .animate-connector-flow {
+  .animate-connector-flow,
+  .animate-telemetry-pulse {
     animation: none;
   }
 }
