@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import type { ClaimReportData } from "@/lib/claim-report-data";
 
 import { ClaimReportBackdrop } from "./ClaimReportBackdrop";
+import { ClaimReportConversionCTA } from "./ClaimReportConversionCTA";
 import { ClaimReportHero } from "./ClaimReportHero";
 import { ExecutiveSummaryPanel } from "./ExecutiveSummaryPanel";
 import { FindingsGrid } from "./FindingsGrid";
@@ -35,14 +35,7 @@ export function ClaimReportView({ data }: ClaimReportViewProps) {
           <FindingsGrid findings={aiAnalysis.findings} />
           <NextStepsList steps={aiAnalysis.nextSteps} />
           <ReportDisclaimers disclaimers={aiAnalysis.disclaimers} />
-          <div className="flex flex-col items-center gap-4 border-t border-white/8 pt-12 text-center sm:flex-row sm:justify-center">
-            <Button href="/#calculator" size="lg">
-              Request full supplement review
-            </Button>
-            <Button href="/" variant="secondary" size="lg">
-              Back to Claims Ninja
-            </Button>
-          </div>
+          <ClaimReportConversionCTA analysis={aiAnalysis} />
         </div>
       </Container>
     </div>
