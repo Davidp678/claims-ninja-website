@@ -13,13 +13,15 @@ export type NetworkNodePosition = {
   yPct: number;
 };
 
-/** Wide system-map ellipse guide (desktop). */
+/** Wide system-map ellipse guide (desktop) — soft frame for 2–1–2–1 layout. */
 export const NETWORK_ELLIPSE_DESKTOP = {
   cx: CORE_X,
   cy: CORE_Y,
-  rx: 40,
-  ry: 28,
+  rx: 38,
+  ry: 32,
 } as const;
+
+export const NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY = 0.09;
 
 /** Compact ellipse guide (mobile polar orbit). */
 export const NETWORK_ELLIPSE_MOBILE = {
@@ -39,14 +41,17 @@ const MODULE_ORDER: readonly NetworkModuleId[] = [
   "estimate_delivery",
 ] as const;
 
-/** Desktop: wide elliptical system map with explicit coordinates. */
+/**
+ * Desktop: balanced 2–1–2–1 system map (explicit coordinates).
+ * Row1: AI top-center | Row2: Estimate + Supplement | Row3: Coordination + PA | Row4: Portal
+ */
 export const NETWORK_DESKTOP_POSITIONS: readonly NetworkNodePosition[] = [
-  { id: "ai_intelligence", xPct: 50, yPct: 11 },
-  { id: "supplement_team", xPct: 76, yPct: 20 },
-  { id: "pa_support", xPct: 80, yPct: 62 },
+  { id: "ai_intelligence", xPct: 50, yPct: 12 },
+  { id: "estimate_delivery", xPct: 22, yPct: 25 },
+  { id: "supplement_team", xPct: 78, yPct: 25 },
+  { id: "claim_coordination", xPct: 22, yPct: 66 },
+  { id: "pa_support", xPct: 78, yPct: 66 },
   { id: "client_portal", xPct: 50, yPct: 86 },
-  { id: "claim_coordination", xPct: 20, yPct: 62 },
-  { id: "estimate_delivery", xPct: 24, yPct: 20 },
 ] as const;
 
 const ORBIT_RADIUS_MOBILE = 34;
@@ -84,4 +89,18 @@ export function getNodeIndex(id: NetworkModuleId, layout: NetworkLayout): number
 export function getNeighborIndices(index: number): [number, number] {
   const len = MODULE_ORDER.length;
   return [(index - 1 + len) % len, (index + 1) % len];
+}
+
+/** Desktop anchor: top/bottom pins for vertical band nodes; center elsewhere. */
+export function getNodeAnchorClass(id: NetworkModuleId, layout: NetworkLayout): string {
+  if (layout !== "desktop") {
+    return "-translate-x-1/2 -translate-y-1/2";
+  }
+  if (id === "ai_intelligence") {
+    return "-translate-x-1/2 translate-y-0";
+  }
+  if (id === "client_portal") {
+    return "-translate-x-1/2 -translate-y-full";
+  }
+  return "-translate-x-1/2 -translate-y-1/2";
 }

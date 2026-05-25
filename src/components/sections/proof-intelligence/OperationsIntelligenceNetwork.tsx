@@ -8,7 +8,9 @@ import {
   NETWORK_CORE,
   getNetworkEllipse,
   getNetworkPositions,
+  NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY,
   getNeighborIndices,
+  getNodeAnchorClass,
   getNodeIndex,
   type NetworkLayout,
   type NetworkNodePosition,
@@ -74,7 +76,11 @@ function NetworkSpokes({
         rx={ellipse.rx}
         ry={ellipse.ry}
         fill="none"
-        stroke="rgba(185, 28, 28, 0.14)"
+        stroke={
+          layout === "desktop"
+            ? `rgba(185, 28, 28, ${NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY})`
+            : "rgba(185, 28, 28, 0.14)"
+        }
         strokeWidth="0.35"
       />
       {positions.map((node) => {
@@ -114,6 +120,7 @@ function NetworkModuleNode({
   isActive,
   isNeighbor,
   reduceMotion,
+  layout,
   isDesktopLayout,
   onActivate,
   onDeactivate,
@@ -125,6 +132,7 @@ function NetworkModuleNode({
   isActive: boolean;
   isNeighbor: boolean;
   reduceMotion: boolean | null;
+  layout: NetworkLayout;
   isDesktopLayout: boolean;
   onActivate: () => void;
   onDeactivate: () => void;
@@ -135,7 +143,7 @@ function NetworkModuleNode({
   return (
     <motion.div
       variants={networkNodeReveal}
-      className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
+      className={cn("absolute z-10", getNodeAnchorClass(module.id, layout))}
       style={{ left: `${position.xPct}%`, top: `${position.yPct}%` }}
     >
       <button
@@ -158,7 +166,7 @@ function NetworkModuleNode({
             "border-brand-red/55 bg-brand-elevated/85 shadow-[0_0_32px_-10px_rgba(185,28,28,0.55)]",
           isNeighbor && !isActive && "border-brand-red/30 bg-brand-elevated/55",
           isDesktopLayout
-            ? "flex w-[12.5rem] flex-row items-center gap-3 px-4 py-3 xl:w-[13.75rem]"
+            ? "flex w-[11.5rem] flex-row items-center gap-3 px-4 py-3 xl:w-[12.5rem]"
             : "flex max-w-[9.5rem] flex-col gap-1.5 px-3 py-2.5 sm:max-w-[10.5rem] sm:py-3",
         )}
       >
@@ -241,7 +249,7 @@ export function OperationsIntelligenceNetwork({
     <div className="flex min-h-0 flex-1 flex-col">
       <motion.div
         ref={containerRef}
-        className="relative h-[300px] w-full flex-1 overflow-visible rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/15 sm:h-[320px] lg:h-full lg:min-h-[400px]"
+        className="relative h-[300px] w-full flex-1 overflow-visible rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/15 sm:h-[320px] lg:h-full lg:min-h-[420px]"
         variants={networkPanelReveal}
         initial="hidden"
         whileInView="visible"
@@ -315,6 +323,7 @@ export function OperationsIntelligenceNetwork({
                   isActive={activeId === module.id}
                   isNeighbor={neighborIndices.includes(index)}
                   reduceMotion={reduceMotion}
+                  layout={layout}
                   isDesktopLayout={isDesktopLayout}
                   onActivate={() => setActiveId(module.id)}
                   onDeactivate={() => setActiveId(null)}
