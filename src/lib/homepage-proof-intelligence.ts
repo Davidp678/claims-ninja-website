@@ -5,16 +5,16 @@ export type OperationalMetric = {
   detail: string;
 };
 
-export type PlatformCapabilityId =
+export type NetworkModuleId =
   | "ai_intelligence"
   | "supplement_team"
   | "pa_support"
   | "client_portal"
   | "claim_coordination"
-  | "centralized_visibility";
+  | "estimate_delivery";
 
-export type PlatformCapability = {
-  id: PlatformCapabilityId;
+export type NetworkModule = {
+  id: NetworkModuleId;
   label: string;
   subline: string;
 };
@@ -46,7 +46,7 @@ export const OPERATIONAL_METRICS: readonly OperationalMetric[] = [
   },
 ] as const;
 
-export const PLATFORM_CAPABILITIES: readonly PlatformCapability[] = [
+export const NETWORK_MODULES: readonly NetworkModule[] = [
   {
     id: "ai_intelligence",
     label: "AI Claim Intelligence",
@@ -54,7 +54,7 @@ export const PLATFORM_CAPABILITIES: readonly PlatformCapability[] = [
   },
   {
     id: "supplement_team",
-    label: "Experienced Supplement Team",
+    label: "Supplement Team",
     subline: "Contractor-focused supplement execution",
   },
   {
@@ -73,8 +73,17 @@ export const PLATFORM_CAPABILITIES: readonly PlatformCapability[] = [
     subline: "Status, notes, and workflow alignment",
   },
   {
-    id: "centralized_visibility",
-    label: "Centralized Visibility",
-    subline: "One platform for claim progression",
+    id: "estimate_delivery",
+    label: "Estimate Delivery",
+    subline: "24hr AI-assisted estimate turnaround",
   },
 ] as const;
+
+/** @deprecated Use NetworkModuleId */
+export type PlatformCapabilityId = NetworkModuleId;
+
+/** @deprecated Use NetworkModule */
+export type PlatformCapability = NetworkModule;
+
+/** @deprecated Use NETWORK_MODULES */
+export const PLATFORM_CAPABILITIES = NETWORK_MODULES;

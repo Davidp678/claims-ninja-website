@@ -131,31 +131,6 @@ body {
   animation: connectorFlow 3s linear infinite;
 }
 
-.operations-tile-scan {
-  position: relative;
-}
-
-@media (min-width: 1024px) {
-  .operations-tile-scan::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(239, 68, 68, 0.1),
-      transparent
-    );
-    transform: translateX(-100%);
-    pointer-events: none;
-    opacity: 0;
-  }
-
-  .operations-tile-scan:hover::after {
-    animation: scanLine 0.85s ease-out forwards;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .animate-ambient-drift,
   .animate-ambient-drift-reverse,
@@ -163,10 +138,5 @@ body {
   .animate-signal-pulse,
   .animate-connector-flow {
     animation: none;
-  }
-
-  .operations-tile-scan:hover::after {
-    animation: none;
-    opacity: 0;
   }
 }
