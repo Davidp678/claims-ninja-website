@@ -49,3 +49,124 @@ body {
     transform: translateY(0);
   }
 }
+
+@keyframes ambientDrift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(2%, -1.5%) scale(1.03);
+  }
+}
+
+@keyframes ambientDriftReverse {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-2%, 1.5%) scale(1.02);
+  }
+}
+
+@keyframes gridShift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 48px 48px;
+  }
+}
+
+@keyframes signalPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.2);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 6px 1px rgba(239, 68, 68, 0.35);
+  }
+}
+
+@keyframes scanLine {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes connectorFlow {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.animate-ambient-drift {
+  animation: ambientDrift 28s ease-in-out infinite;
+}
+
+.animate-ambient-drift-reverse {
+  animation: ambientDriftReverse 32s ease-in-out infinite;
+}
+
+.animate-grid-shift {
+  animation: gridShift 40s linear infinite;
+}
+
+.animate-signal-pulse {
+  animation: signalPulse 2.8s ease-in-out infinite;
+}
+
+.animate-connector-flow {
+  animation: connectorFlow 3s linear infinite;
+}
+
+.operations-tile-scan {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .operations-tile-scan::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(239, 68, 68, 0.1),
+      transparent
+    );
+    transform: translateX(-100%);
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .operations-tile-scan:hover::after {
+    animation: scanLine 0.85s ease-out forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ambient-drift,
+  .animate-ambient-drift-reverse,
+  .animate-grid-shift,
+  .animate-signal-pulse,
+  .animate-connector-flow {
+    animation: none;
+  }
+
+  .operations-tile-scan:hover::after {
+    animation: none;
+    opacity: 0;
+  }
+}
