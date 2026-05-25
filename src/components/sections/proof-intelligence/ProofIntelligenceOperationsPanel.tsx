@@ -59,7 +59,7 @@ export function ProofIntelligenceOperationsPanel() {
     <div className="relative mt-10 overflow-hidden lg:mt-12">
       <OperationsAmbientLayer />
 
-      <div className="relative z-10 grid gap-10 lg:grid-cols-2 lg:gap-10 xl:gap-12">
+      <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)] lg:items-stretch lg:gap-10 xl:gap-12">
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Operational performance
@@ -77,11 +77,13 @@ export function ProofIntelligenceOperationsPanel() {
           </motion.ul>
         </div>
 
-        <div>
+        <div className="flex min-h-0 flex-col">
           <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Operations intelligence network
           </h3>
-          <OperationsIntelligenceNetwork modules={NETWORK_MODULES} />
+          <div className="mt-4 flex min-h-0 flex-1 flex-col">
+            <OperationsIntelligenceNetwork modules={NETWORK_MODULES} />
+          </div>
         </div>
       </div>
     </div>

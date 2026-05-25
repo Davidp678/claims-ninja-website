@@ -2,7 +2,9 @@ import type { NetworkModuleId } from "@/lib/homepage-proof-intelligence";
 
 const CORE_X = 50;
 const CORE_Y = 50;
-const ORBIT_RADIUS = 38;
+const ORBIT_RADIUS = 43;
+
+export const NETWORK_ORBIT_RING_RADIUS = ORBIT_RADIUS;
 
 export type NetworkNodePosition = {
   id: NetworkModuleId;

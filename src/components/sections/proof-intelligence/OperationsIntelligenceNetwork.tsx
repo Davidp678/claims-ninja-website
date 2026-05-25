@@ -7,6 +7,7 @@ import type { NetworkModule, NetworkModuleId } from "@/lib/homepage-proof-intell
 import {
   NETWORK_CORE,
   NETWORK_NODE_POSITIONS,
+  NETWORK_ORBIT_RING_RADIUS,
   getNeighborIndices,
   getNodeIndex,
 } from "@/lib/operations-network-layout";
@@ -42,10 +43,10 @@ function NetworkSpokes({
       <circle
         cx={NETWORK_CORE.xPct}
         cy={NETWORK_CORE.yPct}
-        r={38}
+        r={NETWORK_ORBIT_RING_RADIUS}
         fill="none"
-        stroke="rgba(185, 28, 28, 0.06)"
-        strokeWidth="0.25"
+        stroke="rgba(185, 28, 28, 0.1)"
+        strokeWidth="0.3"
       />
       {NETWORK_NODE_POSITIONS.map((node) => {
         const isActive = activeId === node.id;
@@ -56,14 +57,14 @@ function NetworkSpokes({
             y1={NETWORK_CORE.yPct}
             x2={node.xPct}
             y2={node.yPct}
-            stroke={isActive ? "rgba(239, 68, 68, 0.4)" : "rgba(185, 28, 28, 0.14)"}
-            strokeWidth={isActive ? "0.5" : "0.35"}
-            strokeDasharray="2 3"
+            stroke={isActive ? "rgba(239, 68, 68, 0.55)" : "rgba(185, 28, 28, 0.22)"}
+            strokeWidth={isActive ? "0.65" : "0.45"}
+            strokeDasharray="3 4"
             className={cn(
               !reduceMotion && isActive && "animate-connector-flow",
               !reduceMotion &&
                 !activeId &&
-                "max-sm:opacity-25 sm:animate-connector-flow sm:opacity-45",
+                "max-sm:opacity-25 sm:animate-connector-flow sm:opacity-65",
             )}
             style={
               !reduceMotion
@@ -116,18 +117,19 @@ function NetworkModuleNode({
         onBlur={onDeactivate}
         onClick={onToggle}
         className={cn(
-          "group flex max-w-[108px] items-center gap-1.5 rounded-lg border px-2 py-1.5 text-left sm:max-w-[120px] sm:gap-2 sm:px-2.5 sm:py-2",
+          "group flex max-w-[128px] items-start gap-2 rounded-lg border px-3 py-2.5 text-left sm:max-w-[140px] lg:max-w-[152px] lg:px-3.5 lg:py-3",
           "border-white/10 bg-brand-black/70 backdrop-blur-sm",
           "transition-[border-color,box-shadow,background-color] duration-300",
-          "hover:border-brand-red/40 hover:bg-brand-elevated/70",
-          "focus-visible:border-brand-red/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/30",
-          isActive && "border-brand-red/50 bg-brand-elevated/80 shadow-[0_0_20px_-8px_rgba(185,28,28,0.45)]",
-          isNeighbor && !isActive && "border-brand-red/25 bg-brand-elevated/50",
+          "hover:border-brand-red/45 hover:bg-brand-elevated/70",
+          "focus-visible:border-brand-red/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/30",
+          isActive &&
+            "border-brand-red/55 bg-brand-elevated/85 shadow-[0_0_28px_-10px_rgba(185,28,28,0.55)]",
+          isNeighbor && !isActive && "border-brand-red/30 bg-brand-elevated/55",
         )}
       >
         <span
           className={cn(
-            "h-1 w-1 shrink-0 rounded-full bg-brand-red-light",
+            "mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-red-light",
             !reduceMotion && (isActive || isNeighbor) && "animate-signal-pulse",
             !isActive && !isNeighbor && "opacity-50",
           )}
@@ -140,7 +142,7 @@ function NetworkModuleNode({
             (isActive || isNeighbor) && "text-brand-red-light drop-shadow-[0_0_6px_rgba(239,68,68,0.4)]",
           )}
         />
-        <span className="truncate text-[10px] font-semibold leading-tight text-white sm:text-[11px]">
+        <span className="line-clamp-2 text-left text-xs font-semibold leading-snug text-white max-sm:truncate max-sm:line-clamp-none sm:text-sm">
           {module.label}
         </span>
       </button>
@@ -170,10 +172,10 @@ export function OperationsIntelligenceNetwork({
   );
 
   return (
-    <div className="mt-1">
+    <div className="flex min-h-0 flex-1 flex-col">
       <motion.div
         ref={containerRef}
-        className="relative mx-auto h-[280px] w-full max-w-md rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-white/5 sm:h-[320px] lg:max-w-none"
+        className="relative h-[280px] w-full flex-1 rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/15 sm:h-[300px] lg:h-full lg:min-h-[300px]"
         variants={networkPanelReveal}
         initial="hidden"
         whileInView="visible"
@@ -181,7 +183,7 @@ export function OperationsIntelligenceNetwork({
         onClick={handleContainerClick}
       >
         <div
-          className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_70%_55%_at_50%_50%,rgba(185,28,28,0.08),transparent_65%)]"
+          className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_70%_55%_at_50%_50%,rgba(185,28,28,0.12),transparent_65%)]"
           aria-hidden
         />
 
@@ -193,19 +195,27 @@ export function OperationsIntelligenceNetwork({
         >
           <div
             className={cn(
-              "flex h-14 w-14 flex-col items-center justify-center rounded-full border border-brand-red/30 bg-brand-elevated/90 sm:h-16 sm:w-16",
-              "shadow-[0_0_32px_-8px_rgba(185,28,28,0.5)] ring-1 ring-white/10 backdrop-blur-sm",
-              activeId && "border-brand-red/50 shadow-[0_0_40px_-6px_rgba(239,68,68,0.55)]",
+              "relative flex h-[4.5rem] w-[4.5rem] flex-col items-center justify-center rounded-full border border-brand-red/35 bg-brand-elevated/90 sm:h-20 sm:w-20 lg:h-[5.5rem] lg:w-[5.5rem]",
+              "shadow-[0_0_48px_-8px_rgba(185,28,28,0.65)] ring-1 ring-white/10 backdrop-blur-sm",
+              activeId && "border-brand-red/55 shadow-[0_0_56px_-6px_rgba(239,68,68,0.6)]",
             )}
           >
             <span
               className={cn(
-                "absolute inset-0 rounded-full border border-brand-red/20",
+                "absolute -inset-3 rounded-full bg-brand-red/10 blur-xl",
+                !reduceMotion && "animate-signal-pulse",
+                activeId && "bg-brand-red/15",
+              )}
+              aria-hidden
+            />
+            <span
+              className={cn(
+                "absolute inset-0 rounded-full border border-brand-red/25",
                 !reduceMotion && "animate-signal-pulse",
               )}
               aria-hidden
             />
-            <span className="relative text-center text-[9px] font-semibold uppercase leading-tight tracking-wide text-brand-red-light sm:text-[10px]">
+            <span className="relative text-center text-[10px] font-semibold uppercase leading-tight tracking-[0.12em] text-brand-red-light sm:text-xs">
               Claim
               <br />
               Intelligence
@@ -242,7 +252,7 @@ export function OperationsIntelligenceNetwork({
 
       <p
         className={cn(
-          "mt-3 min-h-[1.25rem] text-center text-xs text-zinc-500 transition-opacity duration-200",
+          "mt-2 min-h-[1.25rem] text-center text-xs text-zinc-500 transition-opacity duration-200 sm:text-sm",
           activeModule ? "opacity-100" : "opacity-0",
         )}
         aria-live="polite"
