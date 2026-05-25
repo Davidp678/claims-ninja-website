@@ -1,15 +1,16 @@
-export type RecoveredRevenueProof = {
-  amount: string;
-  detail: string;
+export type ClaimIntelligenceSnapshot = {
+  id: string;
+  tradeLabel: string;
+  insights: readonly string[];
 };
 
 export type IntelligenceCategoryId =
-  | "code_gaps"
-  | "op"
-  | "pricing_errors"
-  | "missing_scope"
-  | "roofing_components"
-  | "labor_discrepancies";
+  | "code_compliance"
+  | "scope_gaps"
+  | "pricing_discrepancies"
+  | "moisture_mitigation"
+  | "op_opportunities"
+  | "interior_reconstruction";
 
 export type IntelligenceCategory = {
   id: IntelligenceCategoryId;
@@ -17,26 +18,45 @@ export type IntelligenceCategory = {
   subline: string;
 };
 
-export const RECOVERED_REVENUE_PROOFS: readonly RecoveredRevenueProof[] = [
+export const CLAIM_INTELLIGENCE_SNAPSHOTS: readonly ClaimIntelligenceSnapshot[] = [
   {
-    amount: "+ $14,200 recovered",
-    detail: "Code compliance upgrades identified",
+    id: "water_mitigation",
+    tradeLabel: "Water mitigation",
+    insights: [
+      "Interior drying scope expanded",
+      "Additional moisture mapping documented",
+      "Recovery opportunity identified",
+    ],
   },
   {
-    amount: "+ $8,700 supplement increase",
-    detail: "Missed roofing accessories + O&P",
+    id: "fire_restoration",
+    tradeLabel: "Fire restoration",
+    insights: [
+      "Content manipulation gaps flagged",
+      "Code-related scope discrepancies detected",
+      "Supplement escalation recommended",
+    ],
   },
   {
-    amount: "+ $11,400 approved",
-    detail: "Interior scope expansion documented",
+    id: "commercial_reconstruction",
+    tradeLabel: "Commercial / reconstruction",
+    insights: [
+      "Line item variance identified",
+      "Scope sequencing inconsistencies detected",
+      "Additional recoverable scope documented",
+    ],
   },
 ] as const;
 
 export const INTELLIGENCE_CATEGORIES: readonly IntelligenceCategory[] = [
-  { id: "code_gaps", label: "Code Gaps", subline: "Compliance line items" },
-  { id: "op", label: "O&P", subline: "Overhead & profit" },
-  { id: "pricing_errors", label: "Pricing Errors", subline: "Unit cost validation" },
-  { id: "missing_scope", label: "Missing Scope", subline: "Scope expansion" },
-  { id: "roofing_components", label: "Roofing Components", subline: "Accessory bundles" },
-  { id: "labor_discrepancies", label: "Labor Discrepancies", subline: "Trade hour gaps" },
+  { id: "code_compliance", label: "Code Compliance", subline: "Upgrade & compliance gaps" },
+  { id: "scope_gaps", label: "Scope Gaps", subline: "Missing trade scope" },
+  { id: "pricing_discrepancies", label: "Pricing Discrepancies", subline: "Unit cost & quantity" },
+  { id: "moisture_mitigation", label: "Moisture / Mitigation", subline: "Drying & mapping scope" },
+  { id: "op_opportunities", label: "O&P Opportunities", subline: "Overhead & profit review" },
+  {
+    id: "interior_reconstruction",
+    label: "Interior Reconstruction",
+    subline: "Finish & build-back scope",
+  },
 ] as const;
