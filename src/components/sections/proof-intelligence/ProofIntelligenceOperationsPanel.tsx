@@ -59,7 +59,7 @@ export function ProofIntelligenceOperationsPanel() {
     <div className="relative mt-10 overflow-x-hidden lg:mt-12">
       <OperationsAmbientLayer />
 
-      <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] lg:items-stretch lg:gap-10 xl:gap-12">
+      <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,0.4fr)_minmax(0,0.6fr)] lg:items-stretch lg:gap-10 xl:gap-12">
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Operational performance

@@ -117,7 +117,7 @@ function NetworkModuleNode({
         onBlur={onDeactivate}
         onClick={onToggle}
         className={cn(
-          "group flex max-w-[9.5rem] flex-col gap-1.5 rounded-lg border px-3 py-2.5 text-left sm:max-w-[10.5rem] sm:py-3 lg:max-w-[11.75rem] lg:gap-2 lg:px-4 lg:py-3",
+          "group flex max-w-[9.5rem] flex-col gap-1.5 rounded-lg border px-3 py-2.5 text-left sm:max-w-[10.5rem] sm:py-3 lg:max-w-[13rem] lg:gap-2.5 lg:px-4 lg:py-3.5",
           "border-white/12 bg-brand-black/75 backdrop-blur-sm",
           "transition-[border-color,box-shadow,background-color] duration-300",
           "hover:border-brand-red/45 hover:bg-brand-elevated/70",
@@ -144,7 +144,7 @@ function NetworkModuleNode({
             )}
           />
         </span>
-        <span className="block w-full whitespace-normal break-words text-left text-xs font-semibold leading-snug text-white sm:text-sm lg:tracking-tight">
+        <span className="block w-full whitespace-normal break-words text-left text-xs font-semibold leading-snug text-white sm:text-sm lg:min-h-[2.75rem] lg:leading-relaxed lg:tracking-tight">
           {module.label}
         </span>
       </button>
@@ -177,7 +177,7 @@ export function OperationsIntelligenceNetwork({
     <div className="flex min-h-0 flex-1 flex-col">
       <motion.div
         ref={containerRef}
-        className="relative h-[280px] w-full flex-1 overflow-visible rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/15 sm:h-[300px] lg:h-full lg:min-h-[300px]"
+        className="relative h-[280px] w-full flex-1 overflow-visible rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/15 sm:h-[300px] lg:h-full lg:min-h-[320px]"
         variants={networkPanelReveal}
         initial="hidden"
         whileInView="visible"
@@ -189,7 +189,7 @@ export function OperationsIntelligenceNetwork({
           aria-hidden
         />
 
-        <div className="absolute inset-3 sm:inset-4 lg:inset-5">
+        <div className="absolute inset-2 sm:inset-2.5 lg:inset-3">
           <NetworkSpokes activeId={activeId} reduceMotion={reduceMotion} />
 
           <motion.div
@@ -198,7 +198,7 @@ export function OperationsIntelligenceNetwork({
           >
             <div
               className={cn(
-                "relative flex h-[4.5rem] w-[4.5rem] flex-col items-center justify-center rounded-full border border-brand-red/35 bg-brand-elevated/90 sm:h-20 sm:w-20 lg:h-24 lg:w-24",
+                "relative flex h-[4.5rem] w-[4.5rem] flex-col items-center justify-center rounded-full border border-brand-red/35 bg-brand-elevated/90 sm:h-20 sm:w-20 lg:h-[6.5rem] lg:w-[6.5rem]",
                 "shadow-[0_0_56px_-6px_rgba(185,28,28,0.7)] ring-1 ring-white/10 backdrop-blur-sm",
                 activeId && "border-brand-red/55 shadow-[0_0_64px_-4px_rgba(239,68,68,0.65)]",
               )}
@@ -218,7 +218,7 @@ export function OperationsIntelligenceNetwork({
                 )}
                 aria-hidden
               />
-              <span className="relative text-center text-[10px] font-semibold uppercase leading-tight tracking-[0.12em] text-brand-red-light sm:text-xs">
+              <span className="relative text-center text-[10px] font-semibold uppercase leading-tight tracking-[0.12em] text-brand-red-light sm:text-xs lg:text-[11px]">
                 Claim
                 <br />
                 Intelligence
