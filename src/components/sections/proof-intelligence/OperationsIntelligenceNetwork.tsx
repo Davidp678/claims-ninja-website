@@ -45,8 +45,8 @@ function NetworkSpokes({
         cy={NETWORK_CORE.yPct}
         r={NETWORK_ORBIT_RING_RADIUS}
         fill="none"
-        stroke="rgba(185, 28, 28, 0.1)"
-        strokeWidth="0.3"
+        stroke="rgba(185, 28, 28, 0.14)"
+        strokeWidth="0.35"
       />
       {NETWORK_NODE_POSITIONS.map((node) => {
         const isActive = activeId === node.id;
@@ -57,14 +57,14 @@ function NetworkSpokes({
             y1={NETWORK_CORE.yPct}
             x2={node.xPct}
             y2={node.yPct}
-            stroke={isActive ? "rgba(239, 68, 68, 0.55)" : "rgba(185, 28, 28, 0.22)"}
-            strokeWidth={isActive ? "0.65" : "0.45"}
+            stroke={isActive ? "rgba(239, 68, 68, 0.62)" : "rgba(185, 28, 28, 0.26)"}
+            strokeWidth={isActive ? "0.75" : "0.5"}
             strokeDasharray="3 4"
             className={cn(
               !reduceMotion && isActive && "animate-connector-flow",
               !reduceMotion &&
                 !activeId &&
-                "max-sm:opacity-25 sm:animate-connector-flow sm:opacity-65",
+                "max-sm:opacity-25 sm:animate-connector-flow sm:opacity-70",
             )}
             style={
               !reduceMotion
@@ -117,32 +117,34 @@ function NetworkModuleNode({
         onBlur={onDeactivate}
         onClick={onToggle}
         className={cn(
-          "group flex max-w-[128px] items-start gap-2 rounded-lg border px-3 py-2.5 text-left sm:max-w-[140px] lg:max-w-[152px] lg:px-3.5 lg:py-3",
-          "border-white/10 bg-brand-black/70 backdrop-blur-sm",
+          "group flex max-w-[9.5rem] flex-col gap-1.5 rounded-lg border px-3 py-2.5 text-left sm:max-w-[10.5rem] sm:py-3 lg:max-w-[11.75rem] lg:gap-2 lg:px-4 lg:py-3",
+          "border-white/12 bg-brand-black/75 backdrop-blur-sm",
           "transition-[border-color,box-shadow,background-color] duration-300",
           "hover:border-brand-red/45 hover:bg-brand-elevated/70",
           "focus-visible:border-brand-red/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/30",
           isActive &&
-            "border-brand-red/55 bg-brand-elevated/85 shadow-[0_0_28px_-10px_rgba(185,28,28,0.55)]",
+            "border-brand-red/55 bg-brand-elevated/85 shadow-[0_0_32px_-10px_rgba(185,28,28,0.55)]",
           isNeighbor && !isActive && "border-brand-red/30 bg-brand-elevated/55",
         )}
       >
-        <span
-          className={cn(
-            "mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-red-light",
-            !reduceMotion && (isActive || isNeighbor) && "animate-signal-pulse",
-            !isActive && !isNeighbor && "opacity-50",
-          )}
-          aria-hidden
-        />
-        <NetworkModuleIcon
-          id={module.id}
-          className={cn(
-            "text-brand-red-light/80 transition-all duration-200",
-            (isActive || isNeighbor) && "text-brand-red-light drop-shadow-[0_0_6px_rgba(239,68,68,0.4)]",
-          )}
-        />
-        <span className="line-clamp-2 text-left text-xs font-semibold leading-snug text-white max-sm:truncate max-sm:line-clamp-none sm:text-sm">
+        <span className="flex items-center gap-2">
+          <span
+            className={cn(
+              "h-2 w-2 shrink-0 rounded-full bg-brand-red-light",
+              !reduceMotion && (isActive || isNeighbor) && "animate-signal-pulse",
+              !isActive && !isNeighbor && "opacity-50",
+            )}
+            aria-hidden
+          />
+          <NetworkModuleIcon
+            id={module.id}
+            className={cn(
+              "h-5 w-5 text-brand-red-light/80 transition-all duration-200 lg:h-6 lg:w-6",
+              (isActive || isNeighbor) && "text-brand-red-light drop-shadow-[0_0_6px_rgba(239,68,68,0.4)]",
+            )}
+          />
+        </span>
+        <span className="block w-full whitespace-normal break-words text-left text-xs font-semibold leading-snug text-white sm:text-sm lg:tracking-tight">
           {module.label}
         </span>
       </button>
@@ -175,7 +177,7 @@ export function OperationsIntelligenceNetwork({
     <div className="flex min-h-0 flex-1 flex-col">
       <motion.div
         ref={containerRef}
-        className="relative h-[280px] w-full flex-1 rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/15 sm:h-[300px] lg:h-full lg:min-h-[300px]"
+        className="relative h-[280px] w-full flex-1 overflow-visible rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/15 sm:h-[300px] lg:h-full lg:min-h-[300px]"
         variants={networkPanelReveal}
         initial="hidden"
         whileInView="visible"
@@ -187,67 +189,69 @@ export function OperationsIntelligenceNetwork({
           aria-hidden
         />
 
-        <NetworkSpokes activeId={activeId} reduceMotion={reduceMotion} />
+        <div className="absolute inset-3 sm:inset-4 lg:inset-5">
+          <NetworkSpokes activeId={activeId} reduceMotion={reduceMotion} />
 
-        <motion.div
-          variants={networkCoreReveal}
-          className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
-        >
-          <div
-            className={cn(
-              "relative flex h-[4.5rem] w-[4.5rem] flex-col items-center justify-center rounded-full border border-brand-red/35 bg-brand-elevated/90 sm:h-20 sm:w-20 lg:h-[5.5rem] lg:w-[5.5rem]",
-              "shadow-[0_0_48px_-8px_rgba(185,28,28,0.65)] ring-1 ring-white/10 backdrop-blur-sm",
-              activeId && "border-brand-red/55 shadow-[0_0_56px_-6px_rgba(239,68,68,0.6)]",
-            )}
+          <motion.div
+            variants={networkCoreReveal}
+            className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
           >
-            <span
+            <div
               className={cn(
-                "absolute -inset-3 rounded-full bg-brand-red/10 blur-xl",
-                !reduceMotion && "animate-signal-pulse",
-                activeId && "bg-brand-red/15",
+                "relative flex h-[4.5rem] w-[4.5rem] flex-col items-center justify-center rounded-full border border-brand-red/35 bg-brand-elevated/90 sm:h-20 sm:w-20 lg:h-24 lg:w-24",
+                "shadow-[0_0_56px_-6px_rgba(185,28,28,0.7)] ring-1 ring-white/10 backdrop-blur-sm",
+                activeId && "border-brand-red/55 shadow-[0_0_64px_-4px_rgba(239,68,68,0.65)]",
               )}
-              aria-hidden
-            />
-            <span
-              className={cn(
-                "absolute inset-0 rounded-full border border-brand-red/25",
-                !reduceMotion && "animate-signal-pulse",
-              )}
-              aria-hidden
-            />
-            <span className="relative text-center text-[10px] font-semibold uppercase leading-tight tracking-[0.12em] text-brand-red-light sm:text-xs">
-              Claim
-              <br />
-              Intelligence
-              <br />
-              Core
-            </span>
-          </div>
-        </motion.div>
+            >
+              <span
+                className={cn(
+                  "absolute -inset-4 rounded-full bg-brand-red/12 blur-xl",
+                  !reduceMotion && "animate-signal-pulse",
+                  activeId && "bg-brand-red/18",
+                )}
+                aria-hidden
+              />
+              <span
+                className={cn(
+                  "absolute inset-0 rounded-full border border-brand-red/25",
+                  !reduceMotion && "animate-signal-pulse",
+                )}
+                aria-hidden
+              />
+              <span className="relative text-center text-[10px] font-semibold uppercase leading-tight tracking-[0.12em] text-brand-red-light sm:text-xs">
+                Claim
+                <br />
+                Intelligence
+                <br />
+                Core
+              </span>
+            </div>
+          </motion.div>
 
-        <motion.div
-          className="absolute inset-0"
-          variants={networkNodesContainer}
-        >
-          {modules.map((module) => {
-            const index = getNodeIndex(module.id);
-            return (
-            <NetworkModuleNode
-              key={module.id}
-              module={module}
-              index={index}
-              isActive={activeId === module.id}
-              isNeighbor={neighborIndices.includes(index)}
-              reduceMotion={reduceMotion}
-              onActivate={() => setActiveId(module.id)}
-              onDeactivate={() => setActiveId(null)}
-              onToggle={() =>
-                setActiveId((prev) => (prev === module.id ? null : module.id))
-              }
-            />
-            );
-          })}
-        </motion.div>
+          <motion.div
+            className="absolute inset-0"
+            variants={networkNodesContainer}
+          >
+            {modules.map((module) => {
+              const index = getNodeIndex(module.id);
+              return (
+                <NetworkModuleNode
+                  key={module.id}
+                  module={module}
+                  index={index}
+                  isActive={activeId === module.id}
+                  isNeighbor={neighborIndices.includes(index)}
+                  reduceMotion={reduceMotion}
+                  onActivate={() => setActiveId(module.id)}
+                  onDeactivate={() => setActiveId(null)}
+                  onToggle={() =>
+                    setActiveId((prev) => (prev === module.id ? null : module.id))
+                  }
+                />
+              );
+            })}
+          </motion.div>
+        </div>
       </motion.div>
 
       <p
