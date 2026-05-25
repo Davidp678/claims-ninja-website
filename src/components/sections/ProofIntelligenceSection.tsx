@@ -1,18 +1,18 @@
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import {
-  CLAIM_INTELLIGENCE_SNAPSHOTS,
-  INTELLIGENCE_CATEGORIES,
-  type ClaimIntelligenceSnapshot,
-  type IntelligenceCategoryId,
+  OPERATIONAL_METRICS,
+  PLATFORM_CAPABILITIES,
+  type OperationalMetric,
+  type PlatformCapabilityId,
 } from "@/lib/homepage-proof-intelligence";
 import { cn } from "@/lib/cn";
 
-function IntelligenceSnapshotCard({
-  snapshot,
+function PerformanceMetricCard({
+  metric,
   index,
 }: {
-  snapshot: ClaimIntelligenceSnapshot;
+  metric: OperationalMetric;
   index: number;
 }) {
   return (
@@ -24,76 +24,75 @@ function IntelligenceSnapshotCard({
       )}
       style={{ animationDelay: `${index * 80}ms` }}
     >
-      <p className="text-xs font-semibold uppercase tracking-wider text-brand-red-light">
-        {snapshot.tradeLabel}
+      <p className="font-display text-xl font-semibold tracking-tight text-white sm:text-2xl">
+        {metric.value}
       </p>
-      <ul className="mt-2.5 space-y-1">
-        {snapshot.insights.map((insight) => (
-          <li key={insight} className="flex gap-2 text-sm leading-snug text-zinc-400">
-            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-zinc-600" aria-hidden />
-            <span>{insight}</span>
-          </li>
-        ))}
-      </ul>
+      <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-brand-red-light">
+        {metric.label}
+      </p>
+      <p className="mt-1.5 text-sm leading-snug text-zinc-400">{metric.detail}</p>
     </li>
   );
 }
 
-function IntelligenceIcon({
+function PlatformCapabilityIcon({
   id,
   className,
 }: {
-  id: IntelligenceCategoryId;
+  id: PlatformCapabilityId;
   className?: string;
 }) {
   const base = cn("h-5 w-5 shrink-0 text-brand-red-light/90", className);
 
   switch (id) {
-    case "code_compliance":
+    case "ai_intelligence":
       return (
         <svg aria-hidden viewBox="0 0 24 24" className={base} fill="none" stroke="currentColor" strokeWidth="1.75">
-          <path strokeLinecap="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" />
-          <path strokeLinecap="round" d="M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L8 21l-1.5-4M14.25 17L16 21l1.5-4M12 3v2" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 11a4 4 0 118 0 4 4 0 01-8 0z" />
+          <path strokeLinecap="round" d="M4 19h16" />
         </svg>
       );
-    case "scope_gaps":
+    case "supplement_team":
+      return (
+        <svg aria-hidden viewBox="0 0 24 24" className={base} fill="none" stroke="currentColor" strokeWidth="1.75">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+        </svg>
+      );
+    case "pa_support":
+      return (
+        <svg aria-hidden viewBox="0 0 24 24" className={base} fill="none" stroke="currentColor" strokeWidth="1.75">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l7 4v6c0 3.5-2.5 6.5-7 8-4.5-1.5-7-4.5-7-8V7l7-4z" />
+          <path strokeLinecap="round" d="M9 12l2 2 4-4" />
+        </svg>
+      );
+    case "client_portal":
+      return (
+        <svg aria-hidden viewBox="0 0 24 24" className={base} fill="none" stroke="currentColor" strokeWidth="1.75">
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <path strokeLinecap="round" d="M3 9h18M8 4v5M16 4v5" />
+        </svg>
+      );
+    case "claim_coordination":
       return (
         <svg aria-hidden viewBox="0 0 24 24" className={base} fill="none" stroke="currentColor" strokeWidth="1.75">
           <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h10M4 18h6" />
-          <path strokeLinecap="round" d="M18 10v8m-3-3h6" />
+          <path strokeLinecap="round" d="M15 15l4 4m0-4l-4 4" />
         </svg>
       );
-    case "pricing_discrepancies":
+    case "centralized_visibility":
       return (
         <svg aria-hidden viewBox="0 0 24 24" className={base} fill="none" stroke="currentColor" strokeWidth="1.75">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M7 7h10M7 12h6M7 17h4" />
-          <path strokeLinecap="round" d="M15 15l3 3m0-3l-3 3" />
-        </svg>
-      );
-    case "moisture_mitigation":
-      return (
-        <svg aria-hidden viewBox="0 0 24 24" className={base} fill="none" stroke="currentColor" strokeWidth="1.75">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-2 4-6 5-6 11a6 6 0 1012 0c0-6-4-7-6-11z" />
-        </svg>
-      );
-    case "op_opportunities":
-      return (
-        <svg aria-hidden viewBox="0 0 24 24" className={base} fill="none" stroke="currentColor" strokeWidth="1.75">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V6m0 12v-2" />
-          <circle cx="12" cy="12" r="9" />
-        </svg>
-      );
-    case "interior_reconstruction":
-      return (
-        <svg aria-hidden viewBox="0 0 24 24" className={base} fill="none" stroke="currentColor" strokeWidth="1.75">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4 20V8l8-4 8 4v12" />
-          <path strokeLinecap="round" d="M9 20v-5h6v5" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
+          <circle cx="12" cy="12" r="3" />
         </svg>
       );
   }
 }
 
-function IntelligenceTile({
+function PlatformCapabilityTile({
   label,
   subline,
   id,
@@ -101,7 +100,7 @@ function IntelligenceTile({
 }: {
   label: string;
   subline: string;
-  id: IntelligenceCategoryId;
+  id: PlatformCapabilityId;
   index: number;
 }) {
   return (
@@ -113,7 +112,7 @@ function IntelligenceTile({
       )}
       style={{ animationDelay: `${120 + index * 60}ms` }}
     >
-      <IntelligenceIcon id={id} />
+      <PlatformCapabilityIcon id={id} />
       <div>
         <p className="text-sm font-semibold text-white">{label}</p>
         <p className="mt-0.5 text-xs text-zinc-500">{subline}</p>
@@ -126,9 +125,9 @@ export function ProofIntelligenceSection() {
   return (
     <Section bordered className="py-14 sm:py-16 lg:py-20">
       <SectionHeading
-        eyebrow="Restoration claim intelligence"
-        title="AI Claim Intelligence Across Restoration Losses"
-        description="Identify overlooked scope, pricing, and documentation opportunities across water, fire, reconstruction, and commercial claims — without staffing an in-house department."
+        eyebrow="High-speed claims operations"
+        title="AI-Assisted Claims Operations For Restoration Contractors"
+        description="Claims Ninja combines AI-assisted review, experienced supplement professionals, public adjuster support, and a centralized contractor platform to accelerate estimate delivery and supplement resolution — without an in-house estimator."
         align="left"
         className="max-w-2xl"
       />
@@ -136,26 +135,22 @@ export function ProofIntelligenceSection() {
       <div className="mt-10 grid gap-10 lg:mt-12 lg:grid-cols-2 lg:gap-10 xl:gap-12">
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-            Claim intelligence snapshots
+            Operational performance
           </h3>
           <ul className="mt-4 space-y-3">
-            {CLAIM_INTELLIGENCE_SNAPSHOTS.map((snapshot, index) => (
-              <IntelligenceSnapshotCard
-                key={snapshot.id}
-                snapshot={snapshot}
-                index={index}
-              />
+            {OPERATIONAL_METRICS.map((metric, index) => (
+              <PerformanceMetricCard key={metric.id} metric={metric} index={index} />
             ))}
           </ul>
         </div>
 
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-            What Claims Ninja identifies
+            How Claims Ninja works
           </h3>
           <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
-            {INTELLIGENCE_CATEGORIES.map((item, index) => (
-              <IntelligenceTile
+            {PLATFORM_CAPABILITIES.map((item, index) => (
+              <PlatformCapabilityTile
                 key={item.id}
                 id={item.id}
                 label={item.label}

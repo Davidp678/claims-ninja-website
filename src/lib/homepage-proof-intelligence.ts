@@ -1,62 +1,80 @@
-export type ClaimIntelligenceSnapshot = {
+export type OperationalMetric = {
   id: string;
-  tradeLabel: string;
-  insights: readonly string[];
+  value: string;
+  label: string;
+  detail: string;
 };
 
-export type IntelligenceCategoryId =
-  | "code_compliance"
-  | "scope_gaps"
-  | "pricing_discrepancies"
-  | "moisture_mitigation"
-  | "op_opportunities"
-  | "interior_reconstruction";
+export type PlatformCapabilityId =
+  | "ai_intelligence"
+  | "supplement_team"
+  | "pa_support"
+  | "client_portal"
+  | "claim_coordination"
+  | "centralized_visibility";
 
-export type IntelligenceCategory = {
-  id: IntelligenceCategoryId;
+export type PlatformCapability = {
+  id: PlatformCapabilityId;
   label: string;
   subline: string;
 };
 
-export const CLAIM_INTELLIGENCE_SNAPSHOTS: readonly ClaimIntelligenceSnapshot[] = [
+export const OPERATIONAL_METRICS: readonly OperationalMetric[] = [
   {
-    id: "water_mitigation",
-    tradeLabel: "Water mitigation",
-    insights: [
-      "Interior drying scope expanded",
-      "Additional moisture mapping documented",
-      "Recovery opportunity identified",
-    ],
+    id: "estimate_delivery",
+    value: "24hr",
+    label: "Estimate delivery",
+    detail: "AI-assisted triage + supplement team review",
   },
   {
-    id: "fire_restoration",
-    tradeLabel: "Fire restoration",
-    insights: [
-      "Content manipulation gaps flagged",
-      "Code-related scope discrepancies detected",
-      "Supplement escalation recommended",
-    ],
+    id: "settlement_cycle",
+    value: "~3 weeks",
+    label: "Average settlement cycle",
+    detail: "Operational execution, not inbox backlog",
   },
   {
-    id: "commercial_reconstruction",
-    tradeLabel: "Commercial / reconstruction",
-    insights: [
-      "Line item variance identified",
-      "Scope sequencing inconsistencies detected",
-      "Additional recoverable scope documented",
-    ],
+    id: "carrier_increase",
+    value: "40–45%",
+    label: "Avg. increase over carrier estimate",
+    detail: "Documented supplement outcomes across restoration trades",
+  },
+  {
+    id: "review_workflow",
+    value: "AI + expert",
+    label: "Review workflow",
+    detail: "Intelligence flagged; experienced supplement professionals finalize",
   },
 ] as const;
 
-export const INTELLIGENCE_CATEGORIES: readonly IntelligenceCategory[] = [
-  { id: "code_compliance", label: "Code Compliance", subline: "Upgrade & compliance gaps" },
-  { id: "scope_gaps", label: "Scope Gaps", subline: "Missing trade scope" },
-  { id: "pricing_discrepancies", label: "Pricing Discrepancies", subline: "Unit cost & quantity" },
-  { id: "moisture_mitigation", label: "Moisture / Mitigation", subline: "Drying & mapping scope" },
-  { id: "op_opportunities", label: "O&P Opportunities", subline: "Overhead & profit review" },
+export const PLATFORM_CAPABILITIES: readonly PlatformCapability[] = [
   {
-    id: "interior_reconstruction",
-    label: "Interior Reconstruction",
-    subline: "Finish & build-back scope",
+    id: "ai_intelligence",
+    label: "AI Claim Intelligence",
+    subline: "Scope, pricing & documentation signals",
+  },
+  {
+    id: "supplement_team",
+    label: "Experienced Supplement Team",
+    subline: "Contractor-focused supplement execution",
+  },
+  {
+    id: "pa_support",
+    label: "Public Adjuster Support",
+    subline: "PA escalation when claims require it",
+  },
+  {
+    id: "client_portal",
+    label: "Contractor Client Portal",
+    subline: "Centralized claim intake & files",
+  },
+  {
+    id: "claim_coordination",
+    label: "Claim Coordination",
+    subline: "Status, notes, and workflow alignment",
+  },
+  {
+    id: "centralized_visibility",
+    label: "Centralized Visibility",
+    subline: "One platform for claim progression",
   },
 ] as const;
