@@ -19,8 +19,8 @@ export type NetworkNodePosition = {
 export const NETWORK_ELLIPSE_DESKTOP = {
   cx: CORE_X,
   cy: 58,
-  rx: 44,
-  ry: 22,
+  rx: 46,
+  ry: 24,
 } as const;
 
 export const NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY = 0.05;
@@ -48,12 +48,12 @@ const MODULE_ORDER: readonly NetworkModuleId[] = [
  * AI supervisory → wings → core → lower ops → grounded portal.
  */
 export const NETWORK_DESKTOP_POSITIONS: readonly NetworkNodePosition[] = [
-  { id: "ai_intelligence", xPct: 50, yPct: 16 },
-  { id: "estimate_delivery", xPct: 12, yPct: 36 },
-  { id: "supplement_team", xPct: 88, yPct: 36 },
-  { id: "claim_coordination", xPct: 14, yPct: 74 },
-  { id: "pa_support", xPct: 86, yPct: 74 },
-  { id: "client_portal", xPct: 50, yPct: 91 },
+  { id: "ai_intelligence", xPct: 50, yPct: 10 },
+  { id: "estimate_delivery", xPct: 7, yPct: 32 },
+  { id: "supplement_team", xPct: 93, yPct: 32 },
+  { id: "claim_coordination", xPct: 8, yPct: 79 },
+  { id: "pa_support", xPct: 92, yPct: 79 },
+  { id: "client_portal", xPct: 50, yPct: 95 },
 ] as const;
 
 const ORBIT_RADIUS_MOBILE = 34;

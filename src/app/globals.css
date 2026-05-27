@@ -133,8 +133,24 @@ body {
   }
 }
 
+@keyframes telemetryNodePulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    box-shadow: 0 0 4px rgba(239, 68, 68, 0.25);
+  }
+  50% {
+    opacity: 0.9;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.55);
+  }
+}
+
 .animate-telemetry-pulse {
   animation: telemetryPulse 4s ease-in-out infinite;
+}
+
+.animate-telemetry-node-pulse {
+  animation: telemetryNodePulse 4s ease-in-out infinite;
 }
 
 .animate-connector-flow {
@@ -147,7 +163,8 @@ body {
   .animate-grid-shift,
   .animate-signal-pulse,
   .animate-connector-flow,
-  .animate-telemetry-pulse {
+  .animate-telemetry-pulse,
+  .animate-telemetry-node-pulse {
     animation: none;
   }
 }
