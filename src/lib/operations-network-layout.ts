@@ -1,4 +1,5 @@
 import type { NetworkModuleId } from "@/lib/homepage-proof-intelligence";
+import { OPERATIONS_VERTICAL_BANDS } from "@/lib/operations-section-composition";
 
 export type NetworkLayout = "desktop" | "mobile";
 
@@ -47,13 +48,17 @@ const MODULE_ORDER: readonly NetworkModuleId[] = [
  * Desktop: asymmetric command map (optical balance, hierarchical cadence).
  * AI supervisory → wings → core → lower ops → grounded portal.
  */
+/**
+ * Desktop nodes share y bands with OPERATIONS_VERTICAL_BANDS
+ * (upperOperations 32, lowerOperations 79, bottomDestination 87, topAuthority ~11).
+ */
 export const NETWORK_DESKTOP_POSITIONS: readonly NetworkNodePosition[] = [
-  { id: "ai_intelligence", xPct: 50, yPct: 10 },
-  { id: "estimate_delivery", xPct: 7, yPct: 32 },
-  { id: "supplement_team", xPct: 93, yPct: 32 },
-  { id: "claim_coordination", xPct: 8, yPct: 79 },
-  { id: "pa_support", xPct: 92, yPct: 79 },
-  { id: "client_portal", xPct: 50, yPct: 95 },
+  { id: "ai_intelligence", xPct: 50, yPct: 11 },
+  { id: "estimate_delivery", xPct: 10, yPct: OPERATIONS_VERTICAL_BANDS.upperOperations },
+  { id: "supplement_team", xPct: 90, yPct: OPERATIONS_VERTICAL_BANDS.upperOperations },
+  { id: "claim_coordination", xPct: 11, yPct: OPERATIONS_VERTICAL_BANDS.lowerOperations },
+  { id: "pa_support", xPct: 89, yPct: OPERATIONS_VERTICAL_BANDS.lowerOperations },
+  { id: "client_portal", xPct: 50, yPct: 92 },
 ] as const;
 
 const ORBIT_RADIUS_MOBILE = 34;
