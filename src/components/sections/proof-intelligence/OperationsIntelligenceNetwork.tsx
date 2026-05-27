@@ -84,30 +84,44 @@ function NetworkSpokes({
         }
         strokeWidth={layout === "desktop" ? "0.25" : "0.35"}
       />
+      <circle
+        cx={core.xPct}
+        cy={core.yPct}
+        r="0.85"
+        fill="rgba(239, 68, 68, 0.55)"
+        className={!reduceMotion ? "animate-signal-pulse" : undefined}
+      />
       {positions.map((node) => {
         const isActive = activeId === node.id;
         return (
-          <line
-            key={node.id}
-            x1={core.xPct}
-            y1={core.yPct}
-            x2={node.xPct}
-            y2={node.yPct}
-            stroke={isActive ? "rgba(239, 68, 68, 0.62)" : "rgba(185, 28, 28, 0.26)"}
-            strokeWidth={isActive ? "0.75" : "0.5"}
-            strokeDasharray="3 4"
-            className={cn(
-              !reduceMotion && isActive && "animate-connector-flow",
-              !reduceMotion &&
-                !activeId &&
-                "max-lg:opacity-25 lg:animate-connector-flow lg:opacity-70",
-            )}
-            style={
-              !reduceMotion
-                ? { animationDuration: isActive ? "2s" : "4s" }
-                : undefined
-            }
-          />
+          <g key={node.id}>
+            <line
+              x1={core.xPct}
+              y1={core.yPct}
+              x2={node.xPct}
+              y2={node.yPct}
+              stroke={isActive ? "rgba(239, 68, 68, 0.55)" : "rgba(185, 28, 28, 0.35)"}
+              strokeWidth={isActive ? "0.75" : "0.55"}
+              strokeDasharray="3 4"
+              className={cn(
+                !reduceMotion && isActive && "animate-connector-flow",
+                !reduceMotion &&
+                  !activeId &&
+                  "max-lg:opacity-30 lg:animate-connector-flow lg:opacity-80",
+              )}
+              style={
+                !reduceMotion
+                  ? { animationDuration: isActive ? "2s" : "4s" }
+                  : undefined
+              }
+            />
+            <circle
+              cx={node.xPct}
+              cy={node.yPct}
+              r="0.6"
+              fill={isActive ? "rgba(239, 68, 68, 0.7)" : "rgba(185, 28, 28, 0.45)"}
+            />
+          </g>
         );
       })}
     </svg>
@@ -170,7 +184,7 @@ function NetworkModuleNode({
             module.id === "ai_intelligence" &&
             "lg:shadow-[0_0_24px_-12px_rgba(185,28,28,0.35)] lg:ring-1 lg:ring-brand-red/20",
           isDesktopLayout
-            ? "flex w-[11.5rem] flex-row items-center gap-3 px-4 py-3 xl:w-[12.5rem]"
+            ? "flex w-[12rem] flex-row items-center gap-3 px-4 py-3 xl:w-[12.5rem]"
             : "flex max-w-[9.5rem] flex-col gap-1.5 px-3 py-2.5 sm:max-w-[10.5rem] sm:py-3",
         )}
       >
@@ -262,11 +276,22 @@ export function OperationsIntelligenceNetwork({
         onClick={handleContainerClick}
       >
         <div
-          className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_85%_70%_at_50%_50%,rgba(185,28,28,0.12),transparent_65%)] lg:bg-[radial-gradient(ellipse_90%_75%_at_50%_58%,rgba(185,28,28,0.12),transparent_65%)]"
+          className="pointer-events-none absolute inset-0 rounded-2xl opacity-[0.03]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
+            `,
+            backgroundSize: "48px 48px",
+          }}
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_85%_70%_at_50%_50%,rgba(185,28,28,0.14),transparent_65%)]"
           aria-hidden
         />
 
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 overflow-visible">
           <NetworkSpokes
             activeId={activeId}
             reduceMotion={reduceMotion}
@@ -281,9 +306,9 @@ export function OperationsIntelligenceNetwork({
           >
             <div
               className={cn(
-                "relative flex h-[4.5rem] w-[4.5rem] flex-col items-center justify-center rounded-full border border-brand-red/35 bg-brand-elevated/90 sm:h-20 sm:w-20 lg:h-28 lg:w-28",
-                "shadow-[0_0_56px_-6px_rgba(185,28,28,0.7)] ring-1 ring-white/10 backdrop-blur-sm",
-                activeId && "border-brand-red/55 shadow-[0_0_64px_-4px_rgba(239,68,68,0.65)]",
+                "relative flex h-[4.5rem] w-[4.5rem] flex-col items-center justify-center rounded-full border-2 border-brand-red/40 bg-brand-elevated/90 sm:h-20 sm:w-20 lg:h-[7.5rem] lg:w-[7.5rem]",
+                "shadow-[0_0_56px_-6px_rgba(185,28,28,0.7)] ring-2 ring-brand-red/25 backdrop-blur-sm",
+                activeId && "border-brand-red/60 shadow-[0_0_64px_-4px_rgba(239,68,68,0.65)] ring-brand-red/40",
               )}
             >
               <span

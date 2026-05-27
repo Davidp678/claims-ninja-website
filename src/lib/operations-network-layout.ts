@@ -1,14 +1,12 @@
 import type { NetworkModuleId } from "@/lib/homepage-proof-intelligence";
-import { OPERATIONS_VERTICAL_BANDS } from "@/lib/operations-section-composition";
 
 export type NetworkLayout = "desktop" | "mobile";
 
 const CORE_X = 50;
-const CORE_Y_MOBILE = 50;
-const CORE_Y_DESKTOP = 57;
+const CORE_Y = 50;
 
 /** @deprecated Prefer getNetworkCore(layout) for layout-aware positioning. */
-export const NETWORK_CORE = { xPct: CORE_X, yPct: CORE_Y_MOBILE } as const;
+export const NETWORK_CORE = { xPct: CORE_X, yPct: CORE_Y } as const;
 
 export type NetworkNodePosition = {
   id: NetworkModuleId;
@@ -16,12 +14,12 @@ export type NetworkNodePosition = {
   yPct: number;
 };
 
-/** Flat atmospheric field (desktop) — compositional only, not a node path. */
+/** Flat atmospheric field (desktop) — decorative only, not a node path. */
 export const NETWORK_ELLIPSE_DESKTOP = {
   cx: CORE_X,
-  cy: 58,
-  rx: 46,
-  ry: 24,
+  cy: CORE_Y,
+  rx: 42,
+  ry: 22,
 } as const;
 
 export const NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY = 0.05;
@@ -29,7 +27,7 @@ export const NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY = 0.05;
 /** Compact ellipse guide (mobile polar orbit). */
 export const NETWORK_ELLIPSE_MOBILE = {
   cx: CORE_X,
-  cy: CORE_Y_MOBILE,
+  cy: CORE_Y,
   rx: 34,
   ry: 34,
 } as const;
@@ -44,21 +42,14 @@ const MODULE_ORDER: readonly NetworkModuleId[] = [
   "estimate_delivery",
 ] as const;
 
-/**
- * Desktop: asymmetric command map (optical balance, hierarchical cadence).
- * AI supervisory → wings → core → lower ops → grounded portal.
- */
-/**
- * Desktop nodes share y bands with OPERATIONS_VERTICAL_BANDS
- * (upperOperations 32, lowerOperations 79, bottomDestination 87, topAuthority ~11).
- */
+/** Desktop hub-and-spoke map — symmetric radius around centered core. */
 export const NETWORK_DESKTOP_POSITIONS: readonly NetworkNodePosition[] = [
-  { id: "ai_intelligence", xPct: 50, yPct: 11 },
-  { id: "estimate_delivery", xPct: 10, yPct: OPERATIONS_VERTICAL_BANDS.upperOperations },
-  { id: "supplement_team", xPct: 90, yPct: OPERATIONS_VERTICAL_BANDS.upperOperations },
-  { id: "claim_coordination", xPct: 11, yPct: OPERATIONS_VERTICAL_BANDS.lowerOperations },
-  { id: "pa_support", xPct: 89, yPct: OPERATIONS_VERTICAL_BANDS.lowerOperations },
-  { id: "client_portal", xPct: 50, yPct: 92 },
+  { id: "ai_intelligence", xPct: 50, yPct: 15 },
+  { id: "estimate_delivery", xPct: 22, yPct: 33 },
+  { id: "supplement_team", xPct: 78, yPct: 33 },
+  { id: "claim_coordination", xPct: 22, yPct: 68 },
+  { id: "pa_support", xPct: 78, yPct: 68 },
+  { id: "client_portal", xPct: 50, yPct: 84 },
 ] as const;
 
 const ORBIT_RADIUS_MOBILE = 34;
@@ -67,7 +58,7 @@ function polarToPercent(angleDeg: number, radius: number): { xPct: number; yPct:
   const rad = (angleDeg * Math.PI) / 180;
   return {
     xPct: CORE_X + radius * Math.cos(rad),
-    yPct: CORE_Y_MOBILE + radius * Math.sin(rad),
+    yPct: CORE_Y + radius * Math.sin(rad),
   };
 }
 
@@ -82,9 +73,7 @@ export const NETWORK_MOBILE_POSITIONS: readonly NetworkNodePosition[] = [
 ] as const;
 
 export function getNetworkCore(layout: NetworkLayout) {
-  return layout === "desktop"
-    ? { xPct: CORE_X, yPct: CORE_Y_DESKTOP }
-    : { xPct: CORE_X, yPct: CORE_Y_MOBILE };
+  return { xPct: CORE_X, yPct: CORE_Y };
 }
 
 export function getNetworkPositions(layout: NetworkLayout): readonly NetworkNodePosition[] {
@@ -104,16 +93,6 @@ export function getNeighborIndices(index: number): [number, number] {
   return [(index - 1 + len) % len, (index + 1) % len];
 }
 
-/** Desktop anchor: top/bottom pins for vertical band nodes; center elsewhere. */
-export function getNodeAnchorClass(id: NetworkModuleId, layout: NetworkLayout): string {
-  if (layout !== "desktop") {
-    return "-translate-x-1/2 -translate-y-1/2";
-  }
-  if (id === "ai_intelligence") {
-    return "-translate-x-1/2 translate-y-0";
-  }
-  if (id === "client_portal") {
-    return "-translate-x-1/2 -translate-y-full";
-  }
+export function getNodeAnchorClass(_id: NetworkModuleId, _layout: NetworkLayout): string {
   return "-translate-x-1/2 -translate-y-1/2";
 }
