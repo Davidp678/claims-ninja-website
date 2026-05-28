@@ -79,8 +79,8 @@ function NetworkSpokes({
         fill="none"
         stroke={
           layout === "desktop"
-            ? `rgba(185, 28, 28, ${NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY})`
-            : "rgba(185, 28, 28, 0.14)"
+            ? `rgba(220, 38, 38, ${NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY})`
+            : "rgba(220, 38, 38, 0.2)"
         }
         strokeWidth={layout === "desktop" ? "0.25" : "0.35"}
       />
@@ -100,7 +100,7 @@ function NetworkSpokes({
               y1={core.yPct}
               x2={node.xPct}
               y2={node.yPct}
-              stroke={isActive ? "rgba(239, 68, 68, 0.55)" : "rgba(185, 28, 28, 0.35)"}
+              stroke={isActive ? "rgba(239, 68, 68, 0.6)" : "rgba(220, 38, 38, 0.42)"}
               strokeWidth={isActive ? "0.75" : "0.55"}
               strokeDasharray="3 4"
               className={cn(
@@ -119,7 +119,7 @@ function NetworkSpokes({
               cx={node.xPct}
               cy={node.yPct}
               r="0.6"
-              fill={isActive ? "rgba(239, 68, 68, 0.7)" : "rgba(185, 28, 28, 0.45)"}
+              fill={isActive ? "rgba(239, 68, 68, 0.75)" : "rgba(220, 38, 38, 0.52)"}
             />
           </g>
         );
@@ -178,11 +178,11 @@ function NetworkModuleNode({
           "hover:border-brand-red/45 hover:bg-brand-elevated/70",
           "focus-visible:border-brand-red/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/30",
           isActive &&
-            "border-brand-red/55 bg-brand-elevated/85 shadow-[0_0_32px_-10px_rgba(185,28,28,0.55)]",
+            "border-brand-red/55 bg-brand-elevated/85 shadow-[0_0_32px_-10px_rgba(220,38,38,0.58)]",
           isNeighbor && !isActive && "border-brand-red/30 bg-brand-elevated/55",
           isDesktopLayout &&
             module.id === "ai_intelligence" &&
-            "lg:shadow-[0_0_24px_-12px_rgba(185,28,28,0.35)] lg:ring-1 lg:ring-brand-red/20",
+            "lg:shadow-[0_0_24px_-12px_rgba(220,38,38,0.4)] lg:ring-1 lg:ring-brand-red/28",
           isDesktopLayout
             ? "flex w-[12rem] flex-row items-center gap-3 px-4 py-3 xl:w-[12.5rem]"
             : "flex max-w-[9.5rem] flex-col gap-1.5 px-3 py-2.5 sm:max-w-[10.5rem] sm:py-3",
@@ -268,7 +268,7 @@ export function OperationsIntelligenceNetwork({
     <div className="flex min-h-0 flex-1 flex-col">
       <motion.div
         ref={containerRef}
-        className="relative h-[300px] w-full flex-1 overflow-visible rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/15 sm:h-[320px] lg:h-full lg:min-h-[560px]"
+        className="relative h-[300px] w-full flex-1 overflow-visible rounded-2xl border border-white/10 bg-brand-black/40 ring-1 ring-brand-red/25 sm:h-[320px] lg:h-full lg:min-h-[560px]"
         variants={networkPanelReveal}
         initial="hidden"
         whileInView="visible"
@@ -287,7 +287,7 @@ export function OperationsIntelligenceNetwork({
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_85%_70%_at_50%_50%,rgba(185,28,28,0.14),transparent_65%)]"
+          className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_85%_70%_at_50%_50%,rgba(220,38,38,0.2),transparent_65%)]"
           aria-hidden
         />
 
@@ -307,15 +307,15 @@ export function OperationsIntelligenceNetwork({
             <div
               className={cn(
                 "relative flex h-[4.5rem] w-[4.5rem] flex-col items-center justify-center rounded-full border-2 border-brand-red/40 bg-brand-elevated/90 sm:h-20 sm:w-20 lg:h-[7.5rem] lg:w-[7.5rem]",
-                "shadow-[0_0_56px_-6px_rgba(185,28,28,0.7)] ring-2 ring-brand-red/25 backdrop-blur-sm",
+                "shadow-[0_0_56px_-6px_rgba(220,38,38,0.72)] ring-2 ring-brand-red/30 backdrop-blur-sm",
                 activeId && "border-brand-red/60 shadow-[0_0_64px_-4px_rgba(239,68,68,0.65)] ring-brand-red/40",
               )}
             >
               <span
                 className={cn(
-                  "absolute -inset-4 rounded-full bg-brand-red/12 blur-xl",
+                  "absolute -inset-4 rounded-full bg-brand-red/16 blur-xl",
                   !reduceMotion && "animate-signal-pulse",
-                  activeId && "bg-brand-red/18",
+                  activeId && "bg-brand-red/22",
                 )}
                 aria-hidden
               />

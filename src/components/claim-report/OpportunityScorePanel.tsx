@@ -20,9 +20,9 @@ export function OpportunityScorePanel({ analysis }: OpportunityScorePanelProps) 
   return (
     <section
       aria-labelledby="opportunity-score-heading"
-      className="relative overflow-hidden rounded-2xl border border-white/12 bg-brand-elevated/70 p-6 shadow-[0_24px_80px_-40px_rgba(185,28,28,0.35)] ring-1 ring-white/5 sm:p-10"
+      className="relative overflow-hidden rounded-2xl border border-white/12 bg-brand-elevated/70 p-6 shadow-[0_24px_80px_-40px_rgba(220,38,38,0.4)] ring-1 ring-white/5 sm:p-10"
     >
-      <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-brand-red/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-brand-red/14 blur-3xl" />
       <div className="relative grid gap-10 lg:grid-cols-[auto_1fr] lg:items-center">
         <div className="flex flex-col items-center lg:items-start">
           <h2
@@ -59,7 +59,7 @@ export function OpportunityScorePanel({ analysis }: OpportunityScorePanelProps) 
               />
               <defs>
                 <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#b91c1c" />
+                  <stop offset="0%" stopColor="#dc2626" />
                   <stop offset="100%" stopColor="#ef4444" />
                 </linearGradient>
               </defs>

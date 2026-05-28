@@ -219,7 +219,7 @@ export function SingleClaimReview() {
       : "Analyze claim opportunity";
 
   return (
-    <div className="rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-2xl shadow-black/50 ring-1 ring-brand-red/25 sm:p-10">
+    <div className="rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-2xl shadow-black/50 ring-1 ring-brand-red/30 sm:p-10">
       <form onSubmit={handleSubmit} noValidate>
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
           <div className="space-y-6">

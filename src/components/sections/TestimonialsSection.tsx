@@ -34,7 +34,7 @@ export function TestimonialsSection() {
         {PLACEHOLDER_REVIEWS.map((review) => (
           <li
             key={review.author}
-            className="flex flex-col rounded-2xl border border-white/15 bg-brand-surface p-8 shadow-[0_0_48px_-28px_rgba(185,28,28,0.12)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/35"
+            className="flex flex-col rounded-2xl border border-white/15 bg-brand-surface p-8 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/35"
           >
             <div className="flex gap-1 text-brand-red-light" aria-hidden>
               {Array.from({ length: 5 }).map((_, i) => (

@@ -11,7 +11,7 @@ export function RevenueOpportunityBand({ range }: RevenueOpportunityBandProps) {
       aria-labelledby="revenue-opportunity-heading"
       className="relative overflow-hidden rounded-2xl border border-brand-red/30 bg-gradient-to-br from-brand-red/20 via-brand-elevated/80 to-brand-black px-6 py-10 sm:px-10"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(239,68,68,0.12),transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(239,68,68,0.16),transparent_60%)]" />
       <div className="relative text-center">
         <h2
           id="revenue-opportunity-heading"

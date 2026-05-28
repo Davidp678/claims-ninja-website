@@ -99,7 +99,7 @@ export const SEVERITY_STYLES: Record<
 > = {
   high: {
     label: "High",
-    badge: "border-brand-red/50 bg-brand-red/15 text-brand-red-light",
+    badge: "border-brand-red/55 bg-brand-red/18 text-brand-red-light",
     dot: "bg-brand-red-light",
   },
   medium: {

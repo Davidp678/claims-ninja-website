@@ -57,7 +57,7 @@ export function PartnersSection() {
         {PARTNER_LOGOS.map((partner) => (
           <li
             key={partner.name}
-            className="flex h-24 items-center justify-center rounded-xl border border-white/15 bg-brand-surface px-4 shadow-[0_0_48px_-28px_rgba(185,28,28,0.12)] shadow-md shadow-black/20 transition-colors hover:border-brand-red/40"
+            className="flex h-24 items-center justify-center rounded-xl border border-white/15 bg-brand-surface px-4 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-md shadow-black/20 transition-colors hover:border-brand-red/40"
           >
             <div className={`relative h-full w-full ${partner.wrapperClassName}`}>
               <Image

@@ -31,18 +31,18 @@ export function ClaimReportConversionCTA({ analysis }: ClaimReportConversionCTAP
       className="border-t border-white/10 pt-16 opacity-0 animate-[fadeSlideIn_0.6s_ease-out_forwards]"
       style={{ animationDelay: "120ms" }}
     >
-      <div className="relative overflow-hidden rounded-3xl border border-brand-red/30 bg-gradient-to-br from-brand-red/15 via-brand-elevated/90 to-brand-black p-8 shadow-[0_0_80px_-24px_rgba(185,28,28,0.4)] ring-1 ring-white/5 backdrop-blur-sm sm:p-10 lg:p-12">
+      <div className="relative overflow-hidden rounded-3xl border border-brand-red/30 bg-gradient-to-br from-brand-red/15 via-brand-elevated/90 to-brand-black p-8 shadow-[0_0_80px_-24px_rgba(220,38,38,0.45)] ring-1 ring-white/5 backdrop-blur-sm sm:p-10 lg:p-12">
         <div
           aria-hidden
           className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand-red/20 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-brand-red/8 blur-3xl"
+          className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-brand-red/12 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_0%,rgba(239,68,68,0.1),transparent_55%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_0%,rgba(239,68,68,0.14),transparent_55%)]"
         />
 
         <div className="relative max-w-3xl">

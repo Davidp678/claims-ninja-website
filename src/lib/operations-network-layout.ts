@@ -22,7 +22,7 @@ export const NETWORK_ELLIPSE_DESKTOP = {
   ry: 22,
 } as const;
 
-export const NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY = 0.05;
+export const NETWORK_ELLIPSE_DESKTOP_STROKE_OPACITY = 0.1;
 
 /** Compact ellipse guide (mobile polar orbit). */
 export const NETWORK_ELLIPSE_MOBILE = {

@@ -13,8 +13,8 @@ export function OperationsAmbientLayer() {
           backgroundSize: "48px 48px",
         }}
       />
-      <div className="animate-ambient-drift absolute -left-1/4 top-0 h-64 w-64 rounded-full bg-brand-red/10 blur-3xl" />
-      <div className="animate-ambient-drift-reverse absolute -right-1/4 bottom-0 h-56 w-56 rounded-full bg-brand-red/8 blur-3xl" />
+      <div className="animate-ambient-drift absolute -left-1/4 top-0 h-64 w-64 rounded-full bg-brand-red/14 blur-3xl" />
+      <div className="animate-ambient-drift-reverse absolute -right-1/4 bottom-0 h-56 w-56 rounded-full bg-brand-red/12 blur-3xl" />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { cn } from "@/lib/cn";
 
 const variants = {
   primary:
-    "bg-brand-red text-white shadow-[0_10px_30px_-12px_rgba(185,28,28,0.9)] ring-1 ring-white/20 hover:brightness-110 hover:shadow-[0_14px_38px_-14px_rgba(185,28,28,0.95)] focus-visible:ring-brand-red-light",
+    "bg-brand-red text-white shadow-[0_10px_30px_-12px_rgba(220,38,38,0.85)] ring-1 ring-white/20 hover:brightness-110 hover:shadow-[0_14px_38px_-14px_rgba(220,38,38,0.9)] focus-visible:ring-brand-red-light",
   secondary:
     "border border-white/30 bg-brand-elevated/92 text-white shadow-[0_10px_26px_-16px_rgba(0,0,0,0.95)] backdrop-blur-sm hover:border-white/50 hover:bg-brand-elevated focus-visible:ring-white/60",
   ghost:

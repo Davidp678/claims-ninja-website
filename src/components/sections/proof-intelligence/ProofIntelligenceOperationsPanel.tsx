@@ -32,12 +32,12 @@ function PerformanceMetricCard({ metric }: { metric: OperationalMetric }) {
     <div
       className={cn(
         "relative flex-1 overflow-hidden rounded-xl border border-white/12 bg-brand-surface/80 p-4",
-        "shadow-[0_0_32px_-20px_rgba(185,28,28,0.2)] ring-1 ring-white/5 backdrop-blur-sm",
+        "shadow-[0_0_32px_-20px_rgba(220,38,38,0.28)] ring-1 ring-white/5 backdrop-blur-sm",
         "transition-[border-color,box-shadow] duration-300",
-        "hover:border-brand-red/45 hover:shadow-[0_0_40px_-16px_rgba(185,28,28,0.35)]",
+        "hover:border-brand-red/45 hover:shadow-[0_0_40px_-16px_rgba(220,38,38,0.4)]",
         "active:border-brand-red/35 lg:active:border-white/12",
         "lg:min-h-[7.5rem] lg:px-4 lg:py-3.5",
-        "lg:shadow-[0_0_24px_-22px_rgba(185,28,28,0.15)]",
+        "lg:shadow-[0_0_24px_-22px_rgba(220,38,38,0.22)]",
       )}
     >
       <motion.p

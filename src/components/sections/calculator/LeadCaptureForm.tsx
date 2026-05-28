@@ -143,7 +143,7 @@ export function LeadCaptureForm({
     return (
       <div
         className={cn(
-          "rounded-xl border border-brand-red/35 bg-gradient-to-b from-brand-red/15 to-brand-black/60 p-8 text-center shadow-[0_12px_40px_-24px_rgba(185,28,28,0.65)] ring-1 ring-brand-red/25",
+          "rounded-xl border border-brand-red/35 bg-gradient-to-b from-brand-red/15 to-brand-black/60 p-8 text-center shadow-[0_12px_40px_-24px_rgba(220,38,38,0.68)] ring-1 ring-brand-red/25",
           className,
         )}
         role="status"

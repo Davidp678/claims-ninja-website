@@ -4,8 +4,8 @@ export function HeroBackdrop() {
   return (
     <div className="pointer-events-none absolute inset-0" aria-hidden>
       <div className="absolute inset-0 bg-brand-black" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_50%_at_92%_8%,rgba(185,28,28,0.11),transparent_58%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_45%_at_70%_92%,rgba(185,28,28,0.05),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_50%_at_92%_8%,rgba(220,38,38,0.15),transparent_58%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_45%_at_70%_92%,rgba(220,38,38,0.09),transparent_55%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_70%_at_0%_35%,rgba(0,0,0,0.55),transparent_62%)]" />
       <div className="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/40 to-brand-black" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent sm:from-black/40" />

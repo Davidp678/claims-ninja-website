@@ -67,7 +67,7 @@ export function FindingsGrid({ findings }: FindingsGridProps) {
                 />
               </div>
               <p className="mt-4 text-sm leading-relaxed text-zinc-300">{finding.explanation}</p>
-              <div className="mt-5 rounded-lg border border-brand-red/25 bg-brand-red/8 px-4 py-3">
+              <div className="mt-5 rounded-lg border border-brand-red/35 bg-brand-red/12 px-4 py-3">
                 <p className="text-xs font-semibold uppercase tracking-wider text-brand-red-light">
                   Recommended action
                 </p>

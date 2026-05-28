@@ -107,7 +107,7 @@ export function LoginForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-xl border border-white/12 bg-brand-surface p-8 shadow-2xl shadow-black/50 ring-1 ring-brand-red/25"
+      className="rounded-xl border border-white/12 bg-brand-surface p-8 shadow-2xl shadow-black/50 ring-1 ring-brand-red/30"
       noValidate
     >
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">

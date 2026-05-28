@@ -5,8 +5,8 @@ export function MetricsTelemetryRailBackdrop() {
       className="pointer-events-none absolute bottom-0 left-[0.4375rem] top-0 hidden w-px lg:block"
       aria-hidden
     >
-      <div className="absolute inset-0 w-3 -translate-x-1/2 bg-brand-red/5 blur-md" />
-      <div className="absolute inset-0 w-px animate-telemetry-pulse bg-gradient-to-b from-transparent via-brand-red/30 to-transparent shadow-[0_0_12px_-4px_rgba(185,28,28,0.3)]" />
+      <div className="absolute inset-0 w-3 -translate-x-1/2 bg-brand-red/10 blur-md" />
+      <div className="absolute inset-0 w-px animate-telemetry-pulse bg-gradient-to-b from-transparent via-brand-red/45 to-transparent shadow-[0_0_12px_-4px_rgba(220,38,38,0.38)]" />
     </div>
   );
 }
@@ -25,7 +25,7 @@ export function TelemetryRowConnector({ index }: TelemetryRowConnectorProps) {
       >
         <span className="absolute left-1/2 top-1/2 h-0.5 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/90" />
       </span>
-      <span className="h-px flex-1 bg-gradient-to-r from-brand-red/50 to-brand-red/10" />
+      <span className="h-px flex-1 bg-gradient-to-r from-brand-red/60 to-brand-red/15" />
     </div>
   );
 }
