@@ -4,9 +4,20 @@ export const HERO_VIDEO_URL =
 export const SITE = {
   name: "The Claims Ninja",
   tagline: "Public adjusting that fights for what you're owed.",
-  phone: "(555) 000-0000",
-  email: "hello@theclaimsninja.com",
+  phone: "(615) 479-2438",
+  email: "info@theclaimsninja.com",
 } as const;
+
+/** Official social profiles — footer and brand touchpoints. */
+export const SOCIAL_LINKS = [
+  { label: "LinkedIn", href: "https://linkedin.com/company/104983847/" },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61563366512133",
+  },
+  { label: "Instagram", href: "https://www.instagram.com/theclaimsninja1/" },
+  { label: "YouTube", href: "https://www.youtube.com/@TheClaimsNinja" },
+] as const;
 
 /** Live conversion destinations — primary onboarding vs strategy consultation. */
 export const CTA_LINKS = {

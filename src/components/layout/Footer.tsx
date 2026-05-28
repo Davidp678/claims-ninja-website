@@ -3,6 +3,8 @@ import Link from "next/link";
 import { FOOTER_LINKS, SITE } from "@/lib/constants";
 import { Container } from "@/components/ui/Container";
 
+import { FooterSocialLinks } from "./FooterSocialLinks";
+
 const footerLinkClass =
   "text-sm font-medium text-zinc-300 transition-colors hover:text-white";
 
@@ -87,17 +89,26 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/12 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-6 border-t border-white/12 pt-8 lg:flex-row lg:items-center lg:justify-between">
           <p className="text-sm text-zinc-400">
             © {year} {SITE.name}. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-6 text-sm text-zinc-300">
-            <a href={`tel:${SITE.phone}`} className="font-medium hover:text-white">
-              {SITE.phone}
-            </a>
-            <a href={`mailto:${SITE.email}`} className="font-medium hover:text-white">
-              {SITE.email}
-            </a>
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
+            <FooterSocialLinks />
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-300">
+              <a
+                href="tel:+16154792438"
+                className="font-medium transition-colors hover:text-white"
+              >
+                {SITE.phone}
+              </a>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="font-medium transition-colors hover:text-white"
+              >
+                {SITE.email}
+              </a>
+            </div>
           </div>
         </div>
       </Container>
