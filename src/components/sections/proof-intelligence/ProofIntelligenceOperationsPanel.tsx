@@ -49,7 +49,7 @@ function PerformanceMetricCard({ metric }: { metric: OperationalMetric }) {
       <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-brand-red-light">
         {metric.label}
       </p>
-      <p className="mt-1.5 text-sm leading-snug text-zinc-400 lg:mt-1.5">{metric.detail}</p>
+      <p className="mt-1.5 text-sm leading-snug text-zinc-300 lg:mt-1.5">{metric.detail}</p>
       <motion.div
         variants={progressVariants}
         className="absolute inset-x-4 bottom-0 h-px origin-left bg-gradient-to-r from-brand-red/60 via-brand-red-light/40 to-transparent"
@@ -66,7 +66,7 @@ export function ProofIntelligenceOperationsPanel() {
 
       <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,0.36fr)_minmax(0,0.64fr)] lg:items-stretch lg:gap-10 xl:gap-14">
         <div className="flex min-h-0 flex-col">
-          <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400">
             Operational performance
           </h3>
           <div className="relative mt-4 flex min-h-0 flex-1 flex-col lg:min-h-[560px]">
@@ -93,7 +93,7 @@ export function ProofIntelligenceOperationsPanel() {
         </div>
 
         <div className="flex min-h-0 flex-col">
-          <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400">
             Operations intelligence network
           </h3>
           <div className="mt-4 flex min-h-0 flex-1 flex-col">

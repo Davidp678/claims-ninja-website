@@ -370,7 +370,7 @@ export function OperationsIntelligenceNetwork({
 
       <p
         className={cn(
-          "mt-2 min-h-[1.25rem] text-center text-xs text-zinc-500 transition-opacity duration-200 sm:text-sm",
+          "mt-2 min-h-[1.25rem] text-center text-xs text-zinc-400 transition-opacity duration-200 sm:text-sm",
           activeModule ? "opacity-100" : "opacity-0",
         )}
         aria-live="polite"

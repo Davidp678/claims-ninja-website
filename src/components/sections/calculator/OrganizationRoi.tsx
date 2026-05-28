@@ -7,10 +7,10 @@ import type { LeadContactFields } from "@/lib/calculator-lead";
 import { LeadCaptureForm } from "./LeadCaptureForm";
 
 const inputClass =
-  "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 h-12 text-base text-white placeholder-zinc-500 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
+  "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 h-12 text-base text-white placeholder-zinc-400 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
 
 const labelClass =
-  "text-xs font-semibold uppercase tracking-wider text-zinc-400";
+  "text-xs font-semibold uppercase tracking-wider text-zinc-300";
 
 const currency = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -90,7 +90,7 @@ export function OrganizationRoi() {
             </label>
             <div className="relative">
               <span
-                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-base text-zinc-500"
+                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-base text-zinc-400"
                 aria-hidden
               >
                 $
@@ -106,7 +106,7 @@ export function OrganizationRoi() {
                 className={cn(inputClass, "pl-8 mt-2")}
               />
             </div>
-            <p className="mt-1 text-xs text-zinc-500">
+            <p className="mt-1 text-xs text-zinc-400">
               Leave blank or 0 to model the 4%-of-RCV fallback.
             </p>
           </div>
@@ -149,7 +149,7 @@ export function OrganizationRoi() {
             </label>
             <div className="relative">
               <span
-                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-base text-zinc-500"
+                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-base text-zinc-400"
                 aria-hidden
               >
                 $
@@ -182,13 +182,13 @@ export function OrganizationRoi() {
           </div>
 
           <div className="rounded-xl border border-white/12 bg-brand-black/55 p-5 ring-1 ring-white/5">
-            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
               Claims Ninja fee (annual)
             </p>
             <p className="mt-1 font-display text-2xl font-semibold text-white">
               {currency.format(Math.max(0, numbers.annualFee))}
             </p>
-            <p className="mt-1 text-xs text-zinc-500">
+            <p className="mt-1 text-xs text-zinc-400">
               {numbers.hasCarrier
                 ? "15% of documented settlement increase."
                 : "4% of final RCV fallback (no carrier estimate)."}
@@ -196,7 +196,7 @@ export function OrganizationRoi() {
           </div>
 
           <div className="rounded-xl border border-white/12 bg-brand-black/55 p-5 ring-1 ring-white/5">
-            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
               Vs. in-house claims team
             </p>
             <p
@@ -209,7 +209,7 @@ export function OrganizationRoi() {
                 ? `${currency.format(numbers.vsInHouse)} saved`
                 : `${currency.format(Math.abs(numbers.vsInHouse))} short`}
             </p>
-            <p className="mt-1 text-xs text-zinc-500">
+            <p className="mt-1 text-xs text-zinc-400">
               In-house baseline: {currency.format(numbers.inHouseAnnual)} per year.
             </p>
           </div>
@@ -260,7 +260,7 @@ export function OrganizationRoi() {
       </div>
 
       <details className="mt-8 rounded-xl border border-white/12 bg-brand-black/40 p-5 text-sm text-zinc-300">
-        <summary className="cursor-pointer select-none text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400 hover:text-white">
+        <summary className="cursor-pointer select-none text-xs font-semibold uppercase tracking-[0.18em] text-zinc-300 hover:text-white">
           Assumptions
         </summary>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-zinc-300">

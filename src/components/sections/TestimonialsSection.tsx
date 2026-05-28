@@ -49,7 +49,7 @@ export function TestimonialsSection() {
             <footer className="mt-6 border-t border-white/12 pt-6">
               <cite className="not-italic">
                 <p className="font-semibold text-white">{review.author}</p>
-                <p className="text-sm text-zinc-400">{review.location}</p>
+                <p className="text-sm text-zinc-300">{review.location}</p>
               </cite>
             </footer>
           </li>

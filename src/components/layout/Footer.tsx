@@ -50,7 +50,7 @@ export function Footer() {
                 className="h-20 w-20"
               />
             </Link>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-400">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-300">
               The Claims Ninja ensures you get maximum compensation. As an
               insurance supplementing company, we handle everything: thorough
               claim assessments, contractor settlement agreements, detailed
@@ -61,7 +61,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-300">
               Company
             </p>
             <ul className="mt-4 space-y-3">
@@ -74,7 +74,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-300">
               Resources
             </p>
             <ul className="mt-4 space-y-3">
@@ -88,10 +88,10 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-white/12 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-zinc-500">
+          <p className="text-sm text-zinc-400">
             © {year} {SITE.name}. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-6 text-sm text-zinc-400">
+          <div className="flex flex-wrap gap-6 text-sm text-zinc-300">
             <a href={`tel:${SITE.phone}`} className="font-medium hover:text-white">
               {SITE.phone}
             </a>

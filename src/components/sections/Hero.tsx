@@ -106,7 +106,7 @@ export function Hero() {
                   name={stat.icon}
                   className="h-4 w-4 text-brand-red-light"
                 />
-                <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-zinc-400">
+                <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-zinc-300">
                   {stat.label}
                 </dt>
               </div>

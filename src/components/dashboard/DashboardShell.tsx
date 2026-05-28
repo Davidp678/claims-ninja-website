@@ -21,7 +21,7 @@ export function DashboardShell({ children, title }: DashboardShellProps) {
           <form action={signOutAction}>
             <button
               type="submit"
-              className="text-xs font-semibold uppercase tracking-wider text-zinc-400 hover:text-white"
+              className="text-xs font-semibold uppercase tracking-wider text-zinc-300 hover:text-white"
             >
               Sign out
             </button>
@@ -64,7 +64,7 @@ export function DashboardShell({ children, title }: DashboardShellProps) {
             <form action={signOutAction} className="mt-auto">
               <button
                 type="submit"
-                className="w-full rounded-lg border border-white/15 px-3 py-2 text-left text-sm text-zinc-400 transition-colors hover:border-white/25 hover:text-white"
+                className="w-full rounded-lg border border-white/15 px-3 py-2 text-left text-sm text-zinc-300 transition-colors hover:border-white/25 hover:text-white"
               >
                 Sign out
               </button>

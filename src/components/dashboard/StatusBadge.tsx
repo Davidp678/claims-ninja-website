@@ -8,7 +8,7 @@ const statusStyles: Partial<Record<ClaimStatus, string>> = {
   supplement_drafted: "border-sky-500/30 bg-sky-500/10 text-sky-200",
   sent_to_carrier: "border-violet-500/30 bg-violet-500/10 text-violet-200",
   closed_won: "border-emerald-500/30 bg-emerald-500/10 text-emerald-200",
-  closed_lost: "border-zinc-500/40 bg-zinc-500/10 text-zinc-400",
+  closed_lost: "border-zinc-500/40 bg-zinc-500/10 text-zinc-300",
 };
 
 type StatusBadgeProps = {

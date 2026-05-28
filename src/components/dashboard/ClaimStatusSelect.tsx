@@ -48,7 +48,7 @@ export function ClaimStatusSelect({ leadId, initialStatus }: ClaimStatusSelectPr
 
   return (
     <div>
-      <label htmlFor="claim-status" className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+      <label htmlFor="claim-status" className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
         Pipeline status
       </label>
       <select
@@ -65,7 +65,7 @@ export function ClaimStatusSelect({ leadId, initialStatus }: ClaimStatusSelectPr
         ))}
       </select>
       {isSaving && (
-        <p className="mt-1 text-xs text-zinc-500">Saving…</p>
+        <p className="mt-1 text-xs text-zinc-400">Saving…</p>
       )}
       {error && (
         <p className="mt-2 text-xs text-red-300" role="alert">

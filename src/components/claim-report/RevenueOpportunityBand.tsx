@@ -21,7 +21,7 @@ export function RevenueOpportunityBand({ range }: RevenueOpportunityBandProps) {
         </h2>
         <p className="mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
           {currencyFmt.format(range.low)}
-          <span className="mx-3 text-2xl font-normal text-zinc-500 sm:text-3xl">to</span>
+          <span className="mx-3 text-2xl font-normal text-zinc-400 sm:text-3xl">to</span>
           {currencyFmt.format(range.high)}
         </p>
         <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-zinc-300">

@@ -75,7 +75,7 @@ export default async function ClaimDetailPage({ params }: PageProps) {
       <div className="mb-6 flex flex-wrap items-center gap-3">
         <Link
           href="/dashboard/claims"
-          className="text-xs font-semibold uppercase tracking-wider text-zinc-500 hover:text-white"
+          className="text-xs font-semibold uppercase tracking-wider text-zinc-400 hover:text-white"
         >
           ← Back to queue
         </Link>
@@ -87,32 +87,32 @@ export default async function ClaimDetailPage({ params }: PageProps) {
           <Section title="Contact">
             <dl className="grid gap-3 text-sm sm:grid-cols-2">
               <div>
-                <dt className="text-zinc-500">Name</dt>
+                <dt className="text-zinc-400">Name</dt>
                 <dd className="mt-0.5 text-white">{claim.contactName}</dd>
               </div>
               <div>
-                <dt className="text-zinc-500">Company</dt>
+                <dt className="text-zinc-400">Company</dt>
                 <dd className="mt-0.5 text-white">{claim.company}</dd>
               </div>
               <div>
-                <dt className="text-zinc-500">Email</dt>
+                <dt className="text-zinc-400">Email</dt>
                 <dd className="mt-0.5 text-zinc-300">{claim.email}</dd>
               </div>
               <div>
-                <dt className="text-zinc-500">Phone</dt>
+                <dt className="text-zinc-400">Phone</dt>
                 <dd className="mt-0.5 text-zinc-300">{claim.phone}</dd>
               </div>
               {claim.preferredContactMethod && (
                 <div>
-                  <dt className="text-zinc-500">Preferred contact</dt>
+                  <dt className="text-zinc-400">Preferred contact</dt>
                   <dd className="mt-0.5 capitalize text-zinc-300">
                     {claim.preferredContactMethod}
                   </dd>
                 </div>
               )}
               <div>
-                <dt className="text-zinc-500">Submitted</dt>
-                <dd className="mt-0.5 text-zinc-400">
+                <dt className="text-zinc-400">Submitted</dt>
+                <dd className="mt-0.5 text-zinc-300">
                   {dateFmt.format(new Date(claim.createdAt))}
                 </dd>
               </div>
@@ -125,7 +125,7 @@ export default async function ClaimDetailPage({ params }: PageProps) {
           <Section title="Claim context">
             <dl className="space-y-3 text-sm">
               <div>
-                <dt className="text-zinc-500">Session ID</dt>
+                <dt className="text-zinc-400">Session ID</dt>
                 <dd className="mt-0.5 break-all font-mono text-xs text-zinc-300">
                   {claim.claimSessionId ?? "—"}
                 </dd>
@@ -133,19 +133,19 @@ export default async function ClaimDetailPage({ params }: PageProps) {
               {claim.claimCalculatorInputs && (
                 <>
                   <div>
-                    <dt className="text-zinc-500">Claim type</dt>
+                    <dt className="text-zinc-400">Claim type</dt>
                     <dd className="mt-0.5 text-zinc-200">
                       {claim.claimCalculatorInputs.claimType}
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-zinc-500">Carrier estimate</dt>
+                    <dt className="text-zinc-400">Carrier estimate</dt>
                     <dd className="mt-0.5 text-zinc-200">
                       {claim.claimCalculatorInputs.carrierEstimate || "—"}
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-zinc-500">Description</dt>
+                    <dt className="text-zinc-400">Description</dt>
                     <dd className="mt-0.5 whitespace-pre-wrap text-zinc-300">
                       {claim.claimCalculatorInputs.description || "—"}
                     </dd>
@@ -157,12 +157,12 @@ export default async function ClaimDetailPage({ params }: PageProps) {
 
           <Section title="Uploaded files">
             {claim.uploadedFilesMeta.length === 0 ? (
-              <p className="text-sm text-zinc-500">No files uploaded.</p>
+              <p className="text-sm text-zinc-400">No files uploaded.</p>
             ) : (
               <div className="overflow-x-auto">
                 <table className="min-w-full text-sm">
                   <thead>
-                    <tr className="text-left text-xs uppercase tracking-wider text-zinc-500">
+                    <tr className="text-left text-xs uppercase tracking-wider text-zinc-400">
                       <th className="pb-2 pr-4">File</th>
                       <th className="pb-2 pr-4">Type</th>
                       <th className="pb-2">Size</th>
@@ -174,8 +174,8 @@ export default async function ClaimDetailPage({ params }: PageProps) {
                         <td className="py-2 pr-4 text-zinc-200">
                           {file.originalName}
                         </td>
-                        <td className="py-2 pr-4 text-zinc-500">{file.contentType}</td>
-                        <td className="py-2 text-zinc-500">
+                        <td className="py-2 pr-4 text-zinc-400">{file.contentType}</td>
+                        <td className="py-2 text-zinc-400">
                           {(file.size / 1024).toFixed(0)} KB
                         </td>
                       </tr>
@@ -190,19 +190,19 @@ export default async function ClaimDetailPage({ params }: PageProps) {
         <div className="space-y-6">
           <Section title="AI analysis">
             {!analysis ? (
-              <p className="text-sm text-zinc-500">No AI analysis available.</p>
+              <p className="text-sm text-zinc-400">No AI analysis available.</p>
             ) : (
               <div className="space-y-5">
                 <p className="text-sm leading-relaxed text-zinc-200">{analysis.summary}</p>
                 <dl className="grid grid-cols-2 gap-4 text-sm">
                   <div>
-                    <dt className="text-zinc-500">Opportunity score</dt>
+                    <dt className="text-zinc-400">Opportunity score</dt>
                     <dd className="mt-0.5 text-2xl font-semibold text-brand-red-light">
                       {analysis.opportunityScore}/100
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-zinc-500">Est. missed revenue</dt>
+                    <dt className="text-zinc-400">Est. missed revenue</dt>
                     <dd className="mt-0.5 text-zinc-200">
                       {currencyFmt.format(analysis.estimatedMissedRevenueRange.low)}
                       {" – "}
@@ -211,7 +211,7 @@ export default async function ClaimDetailPage({ params }: PageProps) {
                   </div>
                 </dl>
                 {(claim.analyzedAt || claim.aiModel) && (
-                  <p className="text-xs text-zinc-500">
+                  <p className="text-xs text-zinc-400">
                     {claim.analyzedAt &&
                       `Analyzed ${dateFmt.format(new Date(claim.analyzedAt))}`}
                     {claim.aiModel && ` · ${claim.aiModel}`}
@@ -220,7 +220,7 @@ export default async function ClaimDetailPage({ params }: PageProps) {
                 )}
                 {analysis.findings.length > 0 && (
                   <div>
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
                       Findings
                     </h3>
                     <ul className="mt-3 space-y-3">
@@ -230,7 +230,7 @@ export default async function ClaimDetailPage({ params }: PageProps) {
                           className="rounded-lg border border-white/10 bg-brand-black/40 p-4"
                         >
                           <p className="font-medium text-white">{f.title}</p>
-                          <p className="mt-1 text-xs uppercase text-zinc-500">
+                          <p className="mt-1 text-xs uppercase text-zinc-400">
                             {f.severity} · {f.category}
                           </p>
                           <p className="mt-2 text-sm text-zinc-300">{f.explanation}</p>
@@ -244,7 +244,7 @@ export default async function ClaimDetailPage({ params }: PageProps) {
                 )}
                 {analysis.nextSteps.length > 0 && (
                   <div>
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
                       Next steps
                     </h3>
                     <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-zinc-300">
@@ -256,10 +256,10 @@ export default async function ClaimDetailPage({ params }: PageProps) {
                 )}
                 {analysis.disclaimers.length > 0 && (
                   <div>
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
                       Disclaimers
                     </h3>
-                    <ul className="mt-2 space-y-1 text-xs text-zinc-500">
+                    <ul className="mt-2 space-y-1 text-xs text-zinc-400">
                       {analysis.disclaimers.map((d) => (
                         <li key={d}>{d}</li>
                       ))}

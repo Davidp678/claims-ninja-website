@@ -74,7 +74,7 @@ export function Navbar() {
             href={CTA_LINKS.schedule}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
+            className="text-sm font-medium text-zinc-300 transition-colors hover:text-white"
           >
             Schedule Call
           </a>
@@ -137,7 +137,7 @@ export function Navbar() {
               href={CTA_LINKS.schedule}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center text-sm font-medium text-zinc-400 transition-colors hover:text-white"
+              className="block text-center text-sm font-medium text-zinc-300 transition-colors hover:text-white"
               onClick={() => setMenuOpen(false)}
             >
               Schedule Call

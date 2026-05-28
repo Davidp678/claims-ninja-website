@@ -11,11 +11,11 @@ export function NextStepsList({ steps }: NextStepsListProps) {
     <section aria-labelledby="next-steps-heading">
       <h2
         id="next-steps-heading"
-        className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400"
+        className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-300"
       >
         Recommended next steps
       </h2>
-      <p className="mt-2 text-sm text-zinc-500">
+      <p className="mt-2 text-sm text-zinc-400">
         Contractor-ready actions to move this claim toward maximum recovery.
       </p>
       <ol className="mt-8 space-y-4">

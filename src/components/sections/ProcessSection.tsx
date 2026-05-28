@@ -48,7 +48,7 @@ export function ProcessSection() {
             <h3 className="mt-4 font-display text-xl font-semibold text-white">
               {item.title}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+            <p className="mt-2 text-sm leading-relaxed text-zinc-300">
               {item.description}
             </p>
           </li>

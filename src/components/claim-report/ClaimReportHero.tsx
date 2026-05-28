@@ -27,7 +27,7 @@ export function ClaimReportHero({
       <div className="mt-5 h-px w-24 bg-gradient-to-r from-brand-red to-brand-red/20" />
       <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-4 text-sm">
         <div>
-          <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+          <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
             Report reference
           </dt>
           <dd className="mt-1 font-mono text-lg font-medium tracking-wide text-white">
@@ -35,14 +35,14 @@ export function ClaimReportHero({
           </dd>
         </div>
         <div>
-          <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+          <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
             Analyzed
           </dt>
           <dd className="mt-1 text-zinc-200">{analyzedLabel}</dd>
         </div>
         {context?.claimType ? (
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
               Claim type
             </dt>
             <dd className="mt-1">
@@ -54,7 +54,7 @@ export function ClaimReportHero({
         ) : null}
         {context?.carrierEstimate ? (
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
               Carrier estimate
             </dt>
             <dd className="mt-1 text-zinc-200">{context.carrierEstimate}</dd>
@@ -62,7 +62,7 @@ export function ClaimReportHero({
         ) : null}
         {context?.fileCount !== undefined && context.fileCount > 0 ? (
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
               Documents reviewed
             </dt>
             <dd className="mt-1 text-zinc-200">
@@ -72,10 +72,10 @@ export function ClaimReportHero({
         ) : null}
         {aiModel ? (
           <div className="hidden sm:block">
-            <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
               Engine
             </dt>
-            <dd className="mt-1 text-zinc-400">{aiModel}</dd>
+            <dd className="mt-1 text-zinc-300">{aiModel}</dd>
           </div>
         ) : null}
       </dl>

@@ -27,7 +27,7 @@ export function OpportunityScorePanel({ analysis }: OpportunityScorePanelProps) 
         <div className="flex flex-col items-center lg:items-start">
           <h2
             id="opportunity-score-heading"
-            className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400"
+            className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-300"
           >
             Opportunity score
           </h2>
@@ -68,7 +68,7 @@ export function OpportunityScorePanel({ analysis }: OpportunityScorePanelProps) 
               <span className="font-display text-5xl font-bold tabular-nums text-white sm:text-6xl">
                 {score}
               </span>
-              <span className="text-sm font-medium uppercase tracking-wider text-zinc-500">
+              <span className="text-sm font-medium uppercase tracking-wider text-zinc-400">
                 / 100
               </span>
             </div>
@@ -88,7 +88,7 @@ export function OpportunityScorePanel({ analysis }: OpportunityScorePanelProps) 
 
           <dl className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-xl border border-white/10 bg-brand-black/50 px-4 py-3">
-              <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
                 Est. missed revenue
               </dt>
               <dd className="mt-1 font-display text-xl font-semibold text-white">
@@ -96,15 +96,15 @@ export function OpportunityScorePanel({ analysis }: OpportunityScorePanelProps) 
               </dd>
             </div>
             <div className="rounded-xl border border-white/10 bg-brand-black/50 px-4 py-3">
-              <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
                 Claim complexity
               </dt>
               <dd className="mt-1 font-medium text-zinc-100">{complexity.label}</dd>
-              <dd className="mt-1 text-xs text-zinc-400">{complexity.detail}</dd>
+              <dd className="mt-1 text-xs text-zinc-300">{complexity.detail}</dd>
             </div>
           </dl>
 
-          <p className="text-xs text-zinc-500">
+          <p className="text-xs text-zinc-400">
             Range reflects AI-assisted triage based on uploaded scope and estimate documents — not
             a binding valuation.
           </p>

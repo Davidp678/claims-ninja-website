@@ -19,11 +19,11 @@ export function FindingsGrid({ findings }: FindingsGridProps) {
     <section aria-labelledby="findings-heading">
       <h2
         id="findings-heading"
-        className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400"
+        className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-300"
       >
         Key findings
       </h2>
-      <p className="mt-2 text-sm text-zinc-500">
+      <p className="mt-2 text-sm text-zinc-400">
         Prioritized gaps and recovery opportunities identified in your claim file.
       </p>
       <ul className="mt-8 grid gap-5 md:grid-cols-2">
@@ -56,7 +56,7 @@ export function FindingsGrid({ findings }: FindingsGridProps) {
                 <span className="rounded-md bg-white/5 px-2 py-1 text-xs font-medium text-zinc-300">
                   {CATEGORY_LABELS[finding.category]}
                 </span>
-                <span className="rounded-md bg-white/5 px-2 py-1 text-xs text-zinc-400">
+                <span className="rounded-md bg-white/5 px-2 py-1 text-xs text-zinc-300">
                   {confidencePct}% confidence
                 </span>
               </div>

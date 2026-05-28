@@ -11,7 +11,7 @@ import {
 } from "@/lib/supabase/browser";
 
 const inputClass =
-  "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 h-12 text-base text-white placeholder-zinc-500 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
+  "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 h-12 text-base text-white placeholder-zinc-400 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
 
 function logLoginError(err: unknown) {
   if (process.env.NODE_ENV !== "development") return;
@@ -116,7 +116,7 @@ export function LoginForm() {
       <h1 className="mt-2 font-display text-2xl font-semibold text-white">
         Claims Ninja Ops
       </h1>
-      <p className="mt-2 text-sm text-zinc-400">
+      <p className="mt-2 text-sm text-zinc-300">
         Sign in to review AI claim submissions.
       </p>
 
@@ -131,7 +131,7 @@ export function LoginForm() {
 
       <div className="mt-6 space-y-5">
         <div>
-          <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+          <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
             Email
           </label>
           <input
@@ -146,7 +146,7 @@ export function LoginForm() {
           />
         </div>
         <div>
-          <label htmlFor="password" className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+          <label htmlFor="password" className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
             Password
           </label>
           <input

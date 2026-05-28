@@ -12,10 +12,10 @@ import type {
 } from "@/lib/calculator-lead";
 
 const inputClass =
-  "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 h-12 text-base text-white placeholder-zinc-500 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
+  "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 h-12 text-base text-white placeholder-zinc-400 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
 
 const labelClass =
-  "text-xs font-semibold uppercase tracking-wider text-zinc-400";
+  "text-xs font-semibold uppercase tracking-wider text-zinc-300";
 
 function isValidEmail(value: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
@@ -173,7 +173,7 @@ export function LeadCaptureForm({
         <p className="mt-5 text-base font-medium leading-relaxed text-white">
           {successMessage}
         </p>
-        <p className="mt-2 text-sm text-zinc-400">
+        <p className="mt-2 text-sm text-zinc-300">
           A specialist will reach out using the details you provided.
         </p>
         <div className="mt-6">
@@ -199,7 +199,7 @@ export function LeadCaptureForm({
           ? "Full supplement review"
           : "Request your ROI report"}
       </p>
-      <p className="mt-2 text-sm text-zinc-400">
+      <p className="mt-2 text-sm text-zinc-300">
         {variant === "claim-review"
           ? "Preliminary opportunities identified. Submit your information for a deeper line-item and carrier review from the Claims Ninja team."
           : "We’ll validate your numbers and send a concise readout your leadership team can use."}
@@ -326,7 +326,7 @@ export function LeadCaptureForm({
               className={inputClass}
               placeholder="e.g. number of jobs or claims per month"
             />
-            <p className="mt-1 text-xs text-zinc-500">
+            <p className="mt-1 text-xs text-zinc-400">
               Pre-filled from your calculator where possible — adjust to match
               your organization.
             </p>
@@ -336,7 +336,7 @@ export function LeadCaptureForm({
 
       <div className="mt-8">
         {variant === "claim-review" && (
-          <p className="mb-3 text-xs font-medium uppercase tracking-wider text-zinc-500">
+          <p className="mb-3 text-xs font-medium uppercase tracking-wider text-zinc-400">
             Potential missed revenue detected.
           </p>
         )}
@@ -348,13 +348,13 @@ export function LeadCaptureForm({
         >
           {isSubmitting ? "Sending…" : submitLabel}
         </Button>
-        <p className="mt-4 text-sm text-zinc-500">
+        <p className="mt-4 text-sm text-zinc-400">
           Prefer to talk first?{" "}
           <a
             href={CTA_LINKS.schedule}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-zinc-400 underline-offset-2 transition-colors hover:text-brand-red-light hover:underline"
+            className="font-medium text-zinc-300 underline-offset-2 transition-colors hover:text-brand-red-light hover:underline"
           >
             Schedule a strategy call
           </a>

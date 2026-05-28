@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import type { ClaimNote } from "@/lib/dashboard/types";
 
 const textareaClass =
-  "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 py-3 text-sm text-white placeholder-zinc-500 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
+  "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 py-3 text-sm text-white placeholder-zinc-400 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
 
 const dateFmt = new Intl.DateTimeFormat("en-US", {
   dateStyle: "medium",
@@ -61,7 +61,7 @@ export function ClaimNotes({ leadId, initialNotes }: ClaimNotesProps) {
       </p>
 
       <form onSubmit={handleSubmit} className="mt-4">
-        <label htmlFor="note-text" className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+        <label htmlFor="note-text" className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
           Add note
         </label>
         <textarea
@@ -86,7 +86,7 @@ export function ClaimNotes({ leadId, initialNotes }: ClaimNotesProps) {
 
       <ul className="mt-8 space-y-4">
         {initialNotes.length === 0 ? (
-          <li className="text-sm text-zinc-500">No notes yet.</li>
+          <li className="text-sm text-zinc-400">No notes yet.</li>
         ) : (
           initialNotes.map((note) => (
             <li
@@ -94,7 +94,7 @@ export function ClaimNotes({ leadId, initialNotes }: ClaimNotesProps) {
               className="rounded-lg border border-white/10 bg-brand-black/40 px-4 py-3"
             >
               <p className="text-sm leading-relaxed text-zinc-200">{note.noteText}</p>
-              <p className="mt-2 text-xs text-zinc-500">
+              <p className="mt-2 text-xs text-zinc-400">
                 {dateFmt.format(new Date(note.createdAt))}
               </p>
             </li>

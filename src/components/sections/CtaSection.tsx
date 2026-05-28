@@ -26,7 +26,7 @@ export function CtaSection() {
             primaryLabel="Begin Claim Intake"
             secondaryLabel="Schedule Strategy Call"
           />
-          <p className="mt-6 text-sm text-zinc-400">
+          <p className="mt-6 text-sm text-zinc-300">
             <a
               href={`tel:${SITE.phone}`}
               className="font-medium text-zinc-300 transition-colors hover:text-white"

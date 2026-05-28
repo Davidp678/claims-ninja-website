@@ -66,7 +66,7 @@ export function ClaimReportConversionCTA({ analysis }: ClaimReportConversionCTAP
             in overlooked scope, pricing discrepancies, and code-driven line items.
           </p>
 
-          <p className="mt-4 text-sm leading-relaxed text-zinc-400">
+          <p className="mt-4 text-sm leading-relaxed text-zinc-300">
             Claims Ninja applies supplement intelligence built for contractors — not generic
             estimating software. Our team documents gaps, validates carrier scope, and
             prepares negotiation-ready supplements without you staffing an in-house claims
@@ -77,7 +77,7 @@ export function ClaimReportConversionCTA({ analysis }: ClaimReportConversionCTAP
             {TRUST_INDICATORS.map((indicator) => (
               <li
                 key={indicator}
-                className="rounded-full border border-white/12 bg-brand-black/40 px-3 py-1.5 text-xs text-zinc-400"
+                className="rounded-full border border-white/12 bg-brand-black/40 px-3 py-1.5 text-xs text-zinc-300"
               >
                 {indicator}
               </li>

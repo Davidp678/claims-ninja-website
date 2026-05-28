@@ -55,7 +55,7 @@ export function ConversionCtaGroup({
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                "text-sm font-medium text-zinc-400 transition-colors hover:text-white",
+                "text-sm font-medium text-zinc-300 transition-colors hover:text-white",
                 secondaryClassName,
               )}
             >
@@ -73,13 +73,13 @@ export function ConversionCtaGroup({
           ))}
       </div>
       {scheduleHint ? (
-        <p className="mt-3 text-sm text-zinc-500">
+        <p className="mt-3 text-sm text-zinc-400">
           Prefer to talk first?{" "}
           <a
             href={CTA_LINKS.schedule}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-zinc-400 underline-offset-2 transition-colors hover:text-brand-red-light hover:underline"
+            className="font-medium text-zinc-300 underline-offset-2 transition-colors hover:text-brand-red-light hover:underline"
           >
             {scheduleHint}
           </a>

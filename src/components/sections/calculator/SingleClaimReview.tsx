@@ -24,10 +24,10 @@ const CLAIM_TYPES = [
 type ClaimType = (typeof CLAIM_TYPES)[number];
 
 const inputClass =
-  "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 h-12 text-base text-white placeholder-zinc-500 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
+  "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 h-12 text-base text-white placeholder-zinc-400 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
 
 const labelClass =
-  "text-xs font-semibold uppercase tracking-wider text-zinc-400";
+  "text-xs font-semibold uppercase tracking-wider text-zinc-300";
 
 const currencyFmt = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -230,7 +230,7 @@ export function SingleClaimReview() {
               </label>
               <div
                 className={cn(
-                  "mt-2 flex flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-white/25 bg-brand-black/50 px-4 py-8 text-center text-sm text-zinc-400 transition-colors hover:border-brand-red/50",
+                  "mt-2 flex flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-white/25 bg-brand-black/50 px-4 py-8 text-center text-sm text-zinc-300 transition-colors hover:border-brand-red/50",
                 )}
               >
                 <input
@@ -255,7 +255,7 @@ export function SingleClaimReview() {
                 >
                   Choose files
                 </button>
-                <p className="text-xs text-zinc-500">
+                <p className="text-xs text-zinc-400">
                   PDF or image files, up to 20MB each.
                 </p>
                 {filePickError && (
@@ -277,7 +277,7 @@ export function SingleClaimReview() {
                       </li>
                     ))}
                     {files.length > 6 && (
-                      <li className="text-zinc-500">
+                      <li className="text-zinc-400">
                         +{files.length - 6} more file(s)
                       </li>
                     )}
@@ -312,7 +312,7 @@ export function SingleClaimReview() {
               </label>
               <div className="relative">
                 <span
-                  className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-base text-zinc-500"
+                  className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-base text-zinc-400"
                   aria-hidden
                 >
                   $
@@ -349,7 +349,7 @@ export function SingleClaimReview() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-2">
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-zinc-400">
               This is a preliminary review only — not a final estimate, legal
               opinion, or coverage determination.
             </p>
@@ -390,7 +390,7 @@ export function SingleClaimReview() {
             <p className="mt-3 text-sm leading-relaxed text-zinc-300">
               {analysis.summary}
             </p>
-            <p className="mt-2 text-xs text-zinc-500">
+            <p className="mt-2 text-xs text-zinc-400">
               Opportunity score: {analysis.opportunityScore}/100 · Estimated
               missed revenue:{" "}
               {currencyFmt.format(analysis.estimatedMissedRevenueRange.low)}–

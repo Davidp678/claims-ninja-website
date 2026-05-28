@@ -15,7 +15,7 @@ export default function ClaimReportNotFound() {
           <h1 className="mt-4 font-display text-3xl font-semibold text-white">
             Intelligence report not found
           </h1>
-          <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-zinc-400">
+          <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-zinc-300">
             This report may not exist yet, or the link may be incorrect. Complete a claim analysis
             on our calculator to generate a new report.
           </p>
