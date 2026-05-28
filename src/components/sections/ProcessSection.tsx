@@ -4,23 +4,27 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 const STEPS = [
   {
     step: "01",
-    title: "Free consultation",
-    description: "We review your policy, damage, and insurer position—no obligation.",
+    title: "Access Your Client Platform",
+    description:
+      "Upload project details to our secure contractor platform for streamlined collaboration and claim management.",
   },
   {
     step: "02",
-    title: "Documentation & strategy",
-    description: "Our team builds a claim package designed to withstand scrutiny.",
+    title: "Expert Estimate Writing",
+    description:
+      "Receive a professional insurance-ready estimate prepared for carrier review and supplement support.",
   },
   {
     step: "03",
-    title: "Negotiation",
-    description: "We advocate directly with adjusters to maximize your settlement.",
+    title: "Negotiation & Approval",
+    description:
+      "We manage carrier communication, supplement negotiations, and approval workflows to maximize recovery.",
   },
   {
     step: "04",
-    title: "Settlement & close",
-    description: "You receive what you're owed—with full transparency along the way.",
+    title: "Public Adjuster Services",
+    description:
+      "When needed, our nationwide PA license allows us to keep the claim fully managed in-house.",
   },
 ] as const;
 
