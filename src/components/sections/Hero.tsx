@@ -74,7 +74,7 @@ export function Hero() {
             id="hero-heading"
             className="font-display text-4xl font-semibold leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl"
           >
-            Maximize your claim.
+            Maximize your claims.
             <span className="block text-brand-red-light">Minimize the stress.</span>
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-zinc-300 sm:text-xl">
@@ -83,11 +83,16 @@ export function Hero() {
             claims team.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button href="#contact" size="lg">
-              Get your free claim review
+            <Button href="#contact" size="lg" className="whitespace-nowrap">
+              Get Your Free Review
             </Button>
-            <Button href="#calculator" variant="secondary" size="lg">
-              Estimate your recovery
+            <Button
+              href="#calculator"
+              variant="secondary"
+              size="lg"
+              className="whitespace-nowrap"
+            >
+              Estimate Recovery
             </Button>
           </div>
         </div>
