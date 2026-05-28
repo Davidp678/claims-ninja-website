@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { NAV_LINKS, SITE } from "@/lib/constants";
+import { CTA_LINKS, NAV_LINKS, SITE } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 
@@ -66,10 +66,18 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:block">
-          <Button href="#contact" size="sm">
-            Free claim review
+        <div className="hidden items-center gap-5 md:flex">
+          <Button href={CTA_LINKS.onboarding} size="sm">
+            Start Claim Review
           </Button>
+          <a
+            href={CTA_LINKS.schedule}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
+          >
+            Schedule Call
+          </a>
         </div>
 
         <button
@@ -117,10 +125,23 @@ export function Navbar() {
               </Link>
             </li>
           ))}
-          <li className="mt-4 px-4">
-            <Button href="#contact" className="w-full" onClick={() => setMenuOpen(false)}>
-              Free claim review
+          <li className="mt-4 space-y-3 px-4">
+            <Button
+              href={CTA_LINKS.onboarding}
+              className="w-full"
+              onClick={() => setMenuOpen(false)}
+            >
+              Start Claim Review
             </Button>
+            <a
+              href={CTA_LINKS.schedule}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center text-sm font-medium text-zinc-400 transition-colors hover:text-white"
+              onClick={() => setMenuOpen(false)}
+            >
+              Schedule Call
+            </a>
           </li>
         </ul>
       </div>

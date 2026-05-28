@@ -1,5 +1,5 @@
+import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
 import { SITE } from "@/lib/constants";
 
 export function CtaSection() {
@@ -21,16 +21,18 @@ export function CtaSection() {
             Tell us about your loss. We&apos;ll assess your situation and outline
             next steps—no pressure, no jargon.
           </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button href="#" size="lg">
-              Begin claim intake
-            </Button>
-            <Button href={`tel:${SITE.phone}`} variant="secondary" size="lg">
-              Call {SITE.phone}
-            </Button>
-          </div>
+          <ConversionCtaGroup
+            className="mt-8"
+            primaryLabel="Begin Claim Intake"
+            secondaryLabel="Schedule Strategy Call"
+          />
           <p className="mt-6 text-sm text-zinc-400">
-            Intake forms, file uploads, and customer workflows will plug in here.
+            <a
+              href={`tel:${SITE.phone}`}
+              className="font-medium text-zinc-300 transition-colors hover:text-white"
+            >
+              Call {SITE.phone}
+            </a>
           </p>
         </div>
       </div>

@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useId, useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { CTA_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 import type {
   LeadContactFields,
@@ -59,6 +60,9 @@ export function LeadCaptureForm({
   const [monthlyClaimVolume, setMonthlyClaimVolume] = useState(
     defaultMonthlyVolume,
   );
+  const [prevDefaultMonthlyVolume, setPrevDefaultMonthlyVolume] = useState(
+    defaultMonthlyVolume,
+  );
   const [submitted, setSubmitted] = useState(false);
   const [storedPayload, setStoredPayload] =
     useState<LeadSubmissionPayload | null>(null);
@@ -66,9 +70,10 @@ export function LeadCaptureForm({
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
+  if (defaultMonthlyVolume !== prevDefaultMonthlyVolume) {
+    setPrevDefaultMonthlyVolume(defaultMonthlyVolume);
     setMonthlyClaimVolume(defaultMonthlyVolume);
-  }, [defaultMonthlyVolume]);
+  }
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -171,6 +176,11 @@ export function LeadCaptureForm({
         <p className="mt-2 text-sm text-zinc-400">
           A specialist will reach out using the details you provided.
         </p>
+        <div className="mt-6">
+          <Button href={CTA_LINKS.onboarding} size="lg" className="w-full sm:w-auto">
+            Start Claim Review
+          </Button>
+        </div>
       </div>
     );
   }
@@ -338,6 +348,17 @@ export function LeadCaptureForm({
         >
           {isSubmitting ? "Sending…" : submitLabel}
         </Button>
+        <p className="mt-4 text-sm text-zinc-500">
+          Prefer to talk first?{" "}
+          <a
+            href={CTA_LINKS.schedule}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-zinc-400 underline-offset-2 transition-colors hover:text-brand-red-light hover:underline"
+          >
+            Schedule a strategy call
+          </a>
+        </p>
       </div>
     </form>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/cn";
@@ -23,6 +24,15 @@ export function CalculatorSection() {
         eyebrow="Calculators"
         title="Evaluate one claim or your entire pipeline"
         description="Run a quick AI-assisted single-claim triage, or model how Claims Ninja stacks up against an in-house team across all your jobs."
+      />
+
+      <ConversionCtaGroup
+        className="mt-8"
+        size="md"
+        primaryLabel="Start Claim Review"
+        secondaryLabel=""
+        hideSecondaryButton
+        scheduleHint="Schedule a strategy call."
       />
 
       <div

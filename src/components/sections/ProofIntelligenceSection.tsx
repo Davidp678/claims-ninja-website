@@ -1,3 +1,4 @@
+import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -12,6 +13,13 @@ export function ProofIntelligenceSection() {
         description="Claims Ninja combines AI-assisted review, experienced supplement professionals, public adjuster support, and a centralized contractor platform to accelerate estimate delivery and supplement resolution — without an in-house estimator."
         align="left"
         className="max-w-2xl"
+      />
+
+      <ConversionCtaGroup
+        className="mt-8 lg:mt-10"
+        size="md"
+        primaryLabel="Start Claim Review"
+        secondaryLabel="Talk With Our Team"
       />
 
       <ProofIntelligenceOperationsPanel />

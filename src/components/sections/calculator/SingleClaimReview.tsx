@@ -3,6 +3,7 @@
 import { useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import type { ClaimAnalysisResult } from "@/lib/claim-analysis";
+import { CTA_LINKS } from "@/lib/constants";
 import {
   type ClaimFilePrepareResponse,
   type ClaimFileRecord,
@@ -395,9 +396,13 @@ export function SingleClaimReview() {
               {currencyFmt.format(analysis.estimatedMissedRevenueRange.low)}–
               {currencyFmt.format(analysis.estimatedMissedRevenueRange.high)}
             </p>
-            <div className="mt-6">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <Button href={CTA_LINKS.onboarding} size="lg" className="w-full sm:w-auto">
+                Start My Review
+              </Button>
               <Button
                 href={`/claim-report/${claimSessionId}`}
+                variant="secondary"
                 size="lg"
                 className="w-full sm:w-auto"
               >
@@ -423,7 +428,7 @@ export function SingleClaimReview() {
 
           <LeadCaptureForm
             variant="claim-review"
-            submitLabel="Request full review"
+            submitLabel="Start My Review"
             successMessage="Your claim review request has been received. Our team will review your details and follow up shortly."
             mergePayload={(lead: LeadContactFields) => ({
               calculatorType: "claim-review",

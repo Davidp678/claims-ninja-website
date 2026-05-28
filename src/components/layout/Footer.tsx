@@ -3,6 +3,36 @@ import Link from "next/link";
 import { FOOTER_LINKS, SITE } from "@/lib/constants";
 import { Container } from "@/components/ui/Container";
 
+const footerLinkClass =
+  "text-sm font-medium text-zinc-300 transition-colors hover:text-white";
+
+type FooterLinkItem = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+function FooterNavLink({ link }: { link: FooterLinkItem }) {
+  if (link.external || link.href.startsWith("http")) {
+    return (
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={footerLinkClass}
+      >
+        {link.label}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={link.href} className={footerLinkClass}>
+      {link.label}
+    </Link>
+  );
+}
+
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -37,12 +67,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               {FOOTER_LINKS.company.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm font-medium text-zinc-300 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
+                  <FooterNavLink link={link} />
                 </li>
               ))}
             </ul>
@@ -55,12 +80,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               {FOOTER_LINKS.resources.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm font-medium text-zinc-300 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
+                  <FooterNavLink link={link} />
                 </li>
               ))}
             </ul>

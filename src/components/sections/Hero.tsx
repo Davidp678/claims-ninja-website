@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/Button";
+import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Container } from "@/components/ui/Container";
 import { HeroBackdrop } from "./HeroBackdrop";
 import { HeroVideoCard } from "./HeroVideoCard";
@@ -82,19 +82,11 @@ export function Hero() {
             supplements so you get paid more, faster, without hiring an in-house
             claims team.
           </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button href="#contact" size="lg" className="whitespace-nowrap">
-              Get Your Free Review
-            </Button>
-            <Button
-              href="#calculator"
-              variant="secondary"
-              size="lg"
-              className="whitespace-nowrap"
-            >
-              Estimate Recovery
-            </Button>
-          </div>
+          <ConversionCtaGroup
+            className="mt-8"
+            primaryLabel="Get Your Free Review"
+            secondaryLabel="Schedule Strategy Call"
+          />
         </div>
 
         <div className="w-full lg:col-start-2 lg:row-start-1 lg:mt-2">

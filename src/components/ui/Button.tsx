@@ -16,6 +16,10 @@ const sizes = {
   lg: "h-[3.25rem] px-9 text-base font-semibold",
 } as const;
 
+function isExternalHref(href: string): boolean {
+  return href.startsWith("http://") || href.startsWith("https://") || href.startsWith("mailto:") || href.startsWith("tel:");
+}
+
 type ButtonProps = {
   children: React.ReactNode;
   variant?: keyof typeof variants;
@@ -25,6 +29,8 @@ type ButtonProps = {
   type?: "button" | "submit";
   onClick?: () => void;
   disabled?: boolean;
+  /** Open external href in a new tab with noopener. Auto-detected for http(s) URLs. */
+  external?: boolean;
 };
 
 export function Button({
@@ -36,6 +42,7 @@ export function Button({
   type = "button",
   onClick,
   disabled = false,
+  external,
 }: ButtonProps) {
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black disabled:pointer-events-none disabled:opacity-55",
@@ -45,6 +52,22 @@ export function Button({
   );
 
   if (href) {
+    const openExternal = external ?? isExternalHref(href);
+
+    if (openExternal) {
+      return (
+        <a
+          href={href}
+          className={classes}
+          onClick={onClick}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {children}
+        </a>
+      );
+    }
+
     return (
       <Link href={href} className={classes} onClick={onClick}>
         {children}
