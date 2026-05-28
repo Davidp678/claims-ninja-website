@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import daylitLogo from "@/lib/partners/Daylit-logo.png";
+import daylitLogo from "@/lib/partners/Daylit-logo.svg";
 import coreLogo from "@/lib/partners/CORE-Logo (1).png";
 import restoration911Logo from "@/lib/partners/logo.png";
 import morganMorganLogo from "@/lib/partners/Morgan_&_Morgan_Logo.svg.png";
@@ -31,8 +31,8 @@ const PARTNER_LOGOS = [
   {
     name: "Daylit Finance",
     src: daylitLogo,
-    imageClassName: "brightness-105 scale-[1.12]",
-    wrapperClassName: "py-1.5",
+    imageClassName: "brightness-105 scale-[1.18]",
+    wrapperClassName: "py-1",
   },
 ] as const;
 
