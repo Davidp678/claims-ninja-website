@@ -1,6 +1,5 @@
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
-import { SITE } from "@/lib/constants";
 
 export function CtaSection() {
   return (
@@ -26,14 +25,6 @@ export function CtaSection() {
             primaryLabel="Begin Claim Intake"
             secondaryLabel="Schedule Strategy Call"
           />
-          <p className="mt-6 text-sm text-zinc-300">
-            <a
-              href={`tel:${SITE.phone}`}
-              className="font-medium text-zinc-300 transition-colors hover:text-white"
-            >
-              Call {SITE.phone}
-            </a>
-          </p>
         </div>
       </div>
     </Section>
