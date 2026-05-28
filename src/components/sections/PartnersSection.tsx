@@ -15,7 +15,13 @@ const PARTNER_LOGOS = [
     imageClassName: "brightness-110",
     wrapperClassName: "py-3",
   },
-  { name: "CORE Group", src: coreLogo, imageClassName: "brightness-110", wrapperClassName: "py-3" },
+  {
+    name: "CORE Group",
+    src: coreLogo,
+    imageClassName: "brightness-110",
+    wrapperClassName: "py-3",
+    textOverlay: "CORE",
+  },
   {
     name: "911 Restoration",
     src: restoration911Logo,
@@ -36,13 +42,16 @@ const PARTNER_LOGOS = [
   },
 ] as const;
 
+function getTextOverlay(partner: (typeof PARTNER_LOGOS)[number]): string | null {
+  return "textOverlay" in partner ? partner.textOverlay : null;
+}
+
 export function PartnersSection() {
   return (
     <Section id="partners" bordered className="bg-brand-elevated">
       <SectionHeading
         eyebrow="Trusted network"
         title="Partners who stand behind every claim"
-        description="Vendor and carrier relationships that reinforce credibility—not generic logo walls."
       />
       <ul className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {PARTNER_LOGOS.map((partner) => (
@@ -58,6 +67,11 @@ export function PartnersSection() {
                 className={`object-contain transition-transform duration-300 ${partner.imageClassName}`}
                 sizes="(min-width: 1024px) 12vw, (min-width: 640px) 26vw, 44vw"
               />
+              {getTextOverlay(partner) ? (
+                <span className="pointer-events-none absolute inset-0 flex items-center justify-center font-display text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-white/95 drop-shadow-[0_0_4px_rgba(255,255,255,0.35)]">
+                  {getTextOverlay(partner)}
+                </span>
+              ) : null}
             </div>
           </li>
         ))}
