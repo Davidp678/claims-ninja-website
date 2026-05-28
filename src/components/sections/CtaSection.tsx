@@ -17,8 +17,8 @@ export function CtaSection() {
             Start with a free claim review
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-zinc-300">
-            Tell us about your loss. We&apos;ll assess your situation and outline
-            next steps—no pressure, no jargon.
+            Tell us about your operation. We&apos;ll assess your claim workflow,
+            identify recovery opportunities, and outline next steps.
           </p>
           <ConversionCtaGroup
             className="mt-8"
