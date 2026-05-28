@@ -9,11 +9,31 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const PARTNER_LOGOS = [
-  { name: "Morgan & Morgan", src: morganMorganLogo, imageClassName: "brightness-110" },
-  { name: "CORE Group", src: coreLogo, imageClassName: "brightness-110" },
-  { name: "911 Restoration", src: restoration911Logo, imageClassName: "brightness-110" },
-  { name: "Profile Gorilla", src: profileGorillaLogo, imageClassName: "brightness-110" },
-  { name: "Daylit Finance", src: daylitLogo, imageClassName: "brightness-105" },
+  {
+    name: "Morgan & Morgan",
+    src: morganMorganLogo,
+    imageClassName: "brightness-110",
+    wrapperClassName: "py-3",
+  },
+  { name: "CORE Group", src: coreLogo, imageClassName: "brightness-110", wrapperClassName: "py-3" },
+  {
+    name: "911 Restoration",
+    src: restoration911Logo,
+    imageClassName: "brightness-110",
+    wrapperClassName: "py-3",
+  },
+  {
+    name: "Profile Gorilla",
+    src: profileGorillaLogo,
+    imageClassName: "brightness-110",
+    wrapperClassName: "py-3",
+  },
+  {
+    name: "Daylit Finance",
+    src: daylitLogo,
+    imageClassName: "brightness-105 scale-[1.12]",
+    wrapperClassName: "py-1.5",
+  },
 ] as const;
 
 export function PartnersSection() {
@@ -30,12 +50,12 @@ export function PartnersSection() {
             key={partner.name}
             className="flex h-24 items-center justify-center rounded-xl border border-white/15 bg-brand-surface px-4 shadow-[0_0_48px_-28px_rgba(185,28,28,0.12)] shadow-md shadow-black/20 transition-colors hover:border-brand-red/40"
           >
-            <div className="relative h-full w-full py-3">
+            <div className={`relative h-full w-full ${partner.wrapperClassName}`}>
               <Image
                 src={partner.src}
                 alt={partner.name}
                 fill
-                className={`object-contain ${partner.imageClassName}`}
+                className={`object-contain transition-transform duration-300 ${partner.imageClassName}`}
                 sizes="(min-width: 1024px) 12vw, (min-width: 640px) 26vw, 44vw"
               />
             </div>
