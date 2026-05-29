@@ -30,7 +30,8 @@ export function PlatformOverviewPage() {
           />
           <HeroVideoCard
             src={PLATFORM_HERO_VIDEO_URL}
-            className="mx-auto mt-8 w-full max-w-[1000px] lg:mt-10"
+            variant="embedded"
+            className="mx-auto mt-6 w-full max-w-[640px] sm:mt-8 lg:mt-8"
           />
           <ConversionCtaGroup
             className="mt-8 lg:mt-10"

@@ -4,16 +4,41 @@ import { useCallback, useState } from "react";
 import { HERO_VIDEO_URL } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 
+type HeroVideoCardVariant = "default" | "embedded";
+
 type HeroVideoCardProps = {
   src?: string;
   className?: string;
+  variant?: HeroVideoCardVariant;
+};
+
+const VARIANT_FRAME: Record<
+  HeroVideoCardVariant,
+  { frame: string; media: string }
+> = {
+  default: {
+    frame: cn(
+      "shadow-[0_0_80px_-4px_rgba(220,38,38,0.72)] ring-1 ring-brand-red/60",
+      "bg-gradient-to-br from-brand-red/30 via-brand-red/10 to-white/5",
+    ),
+    media: "aspect-[27/20]",
+  },
+  embedded: {
+    frame: cn(
+      "shadow-[0_0_48px_-20px_rgba(220,38,38,0.4)] ring-1 ring-brand-red/40",
+      "bg-gradient-to-br from-brand-red/20 via-brand-red/8 to-white/5",
+    ),
+    media: "aspect-video",
+  },
 };
 
 export function HeroVideoCard({
   src = HERO_VIDEO_URL,
   className,
+  variant = "default",
 }: HeroVideoCardProps) {
   const [ready, setReady] = useState(false);
+  const styles = VARIANT_FRAME[variant];
 
   const markReady = useCallback(() => {
     setReady(true);
@@ -23,14 +48,13 @@ export function HeroVideoCard({
     <div
       className={cn(
         "relative w-full max-w-[760px] rounded-2xl p-px lg:rounded-3xl",
-        "shadow-[0_0_80px_-4px_rgba(220,38,38,0.72)] ring-1 ring-brand-red/60",
-        "bg-gradient-to-br from-brand-red/30 via-brand-red/10 to-white/5",
+        styles.frame,
         className,
       )}
       aria-hidden
     >
       <div className="overflow-hidden rounded-[calc(1rem-1px)] bg-brand-black ring-1 ring-inset ring-white/12 lg:rounded-[calc(1.5rem-1px)]">
-        <div className="relative aspect-[27/20] bg-brand-surface">
+        <div className={cn("relative bg-brand-surface", styles.media)}>
           <div
             className={cn(
               "absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/80 to-brand-black transition-opacity duration-700",
