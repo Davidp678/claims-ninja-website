@@ -7,7 +7,7 @@ import { cn } from "@/lib/cn";
 type PillarId = (typeof PLATFORM_PILLARS)[number]["id"];
 
 function PillarIcon({ id, className }: { id: PillarId; className?: string }) {
-  const base = cn("h-5 w-5 shrink-0 text-brand-red-light", className);
+  const base = cn("h-[18px] w-[18px] shrink-0 text-brand-red-light", className);
 
   switch (id) {
     case "expert-support":
@@ -81,28 +81,39 @@ function PillarCard({
     <article
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-2xl p-7 lg:p-8",
-        "border border-white/10 bg-white/[0.04] backdrop-blur-sm",
-        "shadow-[0_1px_0_0_rgba(255,255,255,0.06)_inset,0_20px_40px_-32px_rgba(0,0,0,0.8)]",
+        "border border-white/15 bg-gradient-to-b from-white/[0.09] via-white/[0.05] to-white/[0.02]",
+        "shadow-[0_1px_0_0_rgba(255,255,255,0.1)_inset,0_30px_60px_-32px_rgba(0,0,0,0.9)]",
         "transition-[border-color,box-shadow,transform] duration-300",
-        "hover:-translate-y-0.5 hover:border-white/20 hover:shadow-[0_0_40px_-20px_rgba(220,38,38,0.35)]",
+        "hover:-translate-y-1 hover:border-white/25 hover:shadow-[0_1px_0_0_rgba(255,255,255,0.12)_inset,0_40px_70px_-30px_rgba(0,0,0,0.9),0_0_50px_-24px_rgba(220,38,38,0.45)]",
       )}
     >
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/[0.1] to-transparent"
       />
-      <div
-        className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03]"
+      <span
         aria-hidden
-      >
-        <PillarIcon id={pillar.id} />
+        className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-brand-red/15 blur-3xl"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent"
+      />
+
+      <div className="relative">
+        <div
+          className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/15 bg-white/[0.06] shadow-[0_1px_0_0_rgba(255,255,255,0.12)_inset]"
+          aria-hidden
+        >
+          <PillarIcon id={pillar.id} />
+        </div>
+        <h3 className="mt-6 font-display text-lg font-semibold tracking-tight text-white lg:text-xl">
+          {pillar.title}
+        </h3>
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-300">
+          {pillar.description}
+        </p>
       </div>
-      <h3 className="mt-5 font-display text-lg font-semibold tracking-tight text-white lg:text-xl">
-        {pillar.title}
-      </h3>
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-400">
-        {pillar.description}
-      </p>
     </article>
   );
 }
