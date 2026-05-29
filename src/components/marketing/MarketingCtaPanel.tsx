@@ -1,7 +1,17 @@
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 
-export function MarketingCtaPanel() {
+type MarketingCtaPanelProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+};
+
+export function MarketingCtaPanel({
+  eyebrow = "Ready when you are",
+  title = "Start with a free claim review",
+  description = "Tell us about your operation. We'll assess your claim workflow, identify recovery opportunities, and outline next steps.",
+}: MarketingCtaPanelProps) {
   return (
     <Section bordered className="pb-20 sm:pb-24">
       <div className="relative overflow-hidden rounded-2xl border border-brand-red/40 bg-gradient-to-br from-brand-red/20 via-brand-surface to-brand-black p-8 shadow-[0_0_48px_-18px_rgba(220,38,38,0.45)] sm:p-10">
@@ -11,14 +21,13 @@ export function MarketingCtaPanel() {
         />
         <div className="relative max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
-            Ready when you are
+            {eyebrow}
           </p>
           <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-            Start with a free claim review
+            {title}
           </h2>
           <p className="mt-3 text-base leading-relaxed text-zinc-300">
-            Tell us about your operation. We&apos;ll assess your claim workflow,
-            identify recovery opportunities, and outline next steps.
+            {description}
           </p>
           <ConversionCtaGroup
             className="mt-6"

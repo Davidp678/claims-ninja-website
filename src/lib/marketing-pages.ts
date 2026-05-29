@@ -52,29 +52,37 @@ export const platformOverviewPage = page({
 
 export const clientPortalPage = page({
   path: "/platform/client-portal",
-  eyebrow: "Platform",
-  title: "Client Portal",
+  eyebrow: "Client Portal",
+  title: "Your Claims Command Center",
   metaTitle: "Client Portal",
   metaDescription:
-    "Secure Claims Ninja client portal for documents, project updates, and claim activity. Keep restoration and roofing teams aligned on every job.",
+    "Claims Ninja Client Portal is your contractor command center—submit claim documents, communicate with our team, track projects, and keep billing connected in one workspace.",
   description:
-    "Give contractors and project stakeholders a secure hub for documents, updates, and claim-related activity.",
+    "Contractors get a centralized workspace to submit claim documents, communicate with the Claims Ninja team, monitor project progress, and keep claim activity organized from intake through recovery.",
   features: [
     {
-      title: "Document management",
-      description: "Centralize photos, estimates, scopes, and carrier correspondence per job.",
+      title: "Document Uploads",
+      description: "Submit photos, estimates, scopes, and carrier correspondence directly to the claim file.",
     },
     {
-      title: "Project activity feed",
-      description: "Track milestones, submissions, and team actions without scattered email threads.",
+      title: "Claim File Management",
+      description: "Every job stays organized with a dedicated claim workspace for field and office teams.",
     },
     {
-      title: "Role-based access",
-      description: "Share the right level of detail with field teams, leadership, and partners.",
+      title: "Real-Time Communication",
+      description: "Message the Claims Ninja team inside the portal so conversations stay tied to the claim.",
     },
     {
-      title: "Faster handoffs",
-      description: "Reduce rework when estimates, supplements, and approvals change mid-project.",
+      title: "Project Tracking",
+      description: "Monitor milestones, open requests, and claim activity in real time.",
+    },
+    {
+      title: "Billing Visibility",
+      description: "Keep invoices, payment status, and claim-related billing connected to the job.",
+    },
+    {
+      title: "Team Collaboration",
+      description: "Give field teams, project managers, and leadership the right visibility on every job.",
     },
   ],
 });

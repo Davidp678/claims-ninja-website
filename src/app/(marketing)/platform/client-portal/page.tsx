@@ -1,20 +1,13 @@
-import { MarketingPageShell } from "@/components/marketing/MarketingPageShell";
+import { ClientPortalPage } from "@/components/platform/ClientPortalPage";
 import { pageMetadata } from "@/lib/metadata";
-import { clientPortalPage } from "@/lib/marketing-pages";
+import { CLIENT_PORTAL_META } from "@/lib/client-portal-page";
 
 export const metadata = pageMetadata({
-  title: clientPortalPage.metaTitle,
-  description: clientPortalPage.metaDescription,
-  path: clientPortalPage.path,
+  title: CLIENT_PORTAL_META.metaTitle,
+  description: CLIENT_PORTAL_META.metaDescription,
+  path: CLIENT_PORTAL_META.path,
 });
 
-export default function ClientPortalPage() {
-  return (
-    <MarketingPageShell
-      eyebrow={clientPortalPage.eyebrow}
-      title={clientPortalPage.title}
-      description={clientPortalPage.description}
-      features={clientPortalPage.features}
-    />
-  );
+export default function ClientPortalPageRoute() {
+  return <ClientPortalPage />;
 }
