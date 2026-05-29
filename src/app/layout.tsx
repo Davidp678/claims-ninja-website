@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     default: `${SITE.name} | Public Adjusting Experts`,
     template: `%s | ${SITE.name}`,
   },
-  description: SITE.tagline,
+  description: SITE.description,
   metadataBase: new URL("https://theclaimsninja.com"),
   openGraph: {
     title: SITE.name,
-    description: SITE.tagline,
+    description: SITE.description,
     type: "website",
     locale: "en_US",
   },

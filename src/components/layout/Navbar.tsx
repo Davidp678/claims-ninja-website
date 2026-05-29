@@ -3,9 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { CTA_LINKS, NAV_LINKS, SITE } from "@/lib/constants";
+import { CTA_LINKS, SITE } from "@/lib/constants";
+import { MAIN_NAV } from "@/lib/navigation";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
+
+import { MobileNavMenu } from "./MobileNavMenu";
+import { NavDropdown } from "./NavDropdown";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,35 +42,40 @@ export function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8"
         aria-label="Main"
       >
-        <Link
-          href="/"
-          className="flex items-center"
-          aria-label={SITE.name}
-        >
+        <Link href="/" className="flex shrink-0 items-center" aria-label={SITE.name}>
           <Image
             src="/logo.png"
             alt={SITE.name}
             width={96}
             height={96}
             priority
-            className="h-24 w-24"
+            className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24"
           />
         </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="text-sm font-medium text-zinc-300 transition-colors hover:text-white"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+        <ul className="hidden items-center gap-4 md:flex md:gap-5 lg:gap-6 xl:gap-8">
+          {MAIN_NAV.map((entry) =>
+            entry.type === "dropdown" ? (
+              <NavDropdown
+                key={entry.label}
+                label={entry.label}
+                items={entry.items}
+                align={entry.label === "Company" ? "end" : "start"}
+              />
+            ) : (
+              <li key={entry.href}>
+                <Link
+                  href={entry.href}
+                  className="text-sm font-medium text-zinc-300 transition-colors hover:text-white"
+                >
+                  {entry.label}
+                </Link>
+              </li>
+            ),
+          )}
         </ul>
 
-        <div className="hidden items-center gap-5 md:flex">
+        <div className="hidden shrink-0 items-center gap-3 md:flex md:gap-4 lg:gap-5">
           <Button href={CTA_LINKS.onboarding} size="sm">
             Start Claim Review
           </Button>
@@ -82,7 +91,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/18 text-white md:hidden"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/18 text-white md:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -109,41 +118,11 @@ export function Navbar() {
       <div
         id="mobile-menu"
         className={cn(
-          "fixed inset-0 top-[112px] z-40 bg-brand-black/95 backdrop-blur-xl transition-opacity md:hidden",
+          "fixed inset-0 top-20 z-40 overflow-y-auto bg-brand-black/95 backdrop-blur-xl transition-opacity md:hidden",
           menuOpen ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       >
-        <ul className="flex flex-col gap-1 px-5 py-6">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="block rounded-lg px-4 py-3 text-lg font-medium text-zinc-200 hover:bg-white/8"
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-          <li className="mt-4 space-y-3 px-4">
-            <Button
-              href={CTA_LINKS.onboarding}
-              className="w-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              Start Claim Review
-            </Button>
-            <a
-              href={CTA_LINKS.schedule}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-center text-sm font-medium text-zinc-300 transition-colors hover:text-white"
-              onClick={() => setMenuOpen(false)}
-            >
-              Schedule Call
-            </a>
-          </li>
-        </ul>
+        <MobileNavMenu nav={MAIN_NAV} onNavigate={() => setMenuOpen(false)} />
       </div>
     </header>
   );

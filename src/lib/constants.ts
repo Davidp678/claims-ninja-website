@@ -4,6 +4,8 @@ export const HERO_VIDEO_URL =
 export const SITE = {
   name: "The Claims Ninja",
   tagline: "Public adjusting that fights for what you're owed.",
+  description:
+    "Claims Ninja is a contractor claims operations platform combining expert claim support, claims management technology, and AI intelligence for restoration teams.",
   phone: "(615) 479-2438",
   email: "info@theclaimsninja.com",
 } as const;
@@ -25,23 +27,16 @@ export const CTA_LINKS = {
   schedule: "https://meetings.hubspot.com/taylor-handsel/team",
 } as const;
 
-export const NAV_LINKS = [
-  { label: "Process", href: "#process" },
-  { label: "Calculator", href: "#calculator" },
-  { label: "Partners", href: "#partners" },
-  { label: "Reviews", href: "#reviews" },
-] as const;
-
 export const FOOTER_LINKS = {
   company: [
-    { label: "About", href: "#" },
-    { label: "Process", href: "#process" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/about" },
+    { label: "Partner Network", href: "/partner-network" },
+    { label: "Contact", href: "/contact" },
   ],
   resources: [
     { label: "Claim intake", href: CTA_LINKS.onboarding, external: true },
     { label: "Schedule consultation", href: CTA_LINKS.schedule, external: true },
-    { label: "FAQ", href: "#" },
-    { label: "Privacy", href: "#" },
+    { label: "Blog", href: "/blog" },
+    { label: "FAQ", href: "/faq" },
   ],
 } as const;
