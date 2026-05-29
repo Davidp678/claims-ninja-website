@@ -11,6 +11,13 @@ export const CLIENT_PORTAL_HERO_VIDEO = {
   mediaAspectClass: "aspect-[1414/720]",
 } as const;
 
+export const CLAIM_TRACKING_HERO_VIDEO = {
+  embedUrl:
+    "https://customer-qmgpb08arenbn1zo.cloudflarestream.com/1542c249c16455b997a45ff1f01f4311/iframe?poster=https%3A%2F%2Fcustomer-qmgpb08arenbn1zo.cloudflarestream.com%2F1542c249c16455b997a45ff1f01f4311%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&autoplay=true&muted=true&loop=true&controls=false&letterboxColor=transparent",
+  aspect: "484/480",
+  mediaAspectClass: "aspect-[484/480]",
+} as const;
+
 export const SITE = {
   name: "The Claims Ninja",
   tagline: "Public adjusting that fights for what you're owed.",

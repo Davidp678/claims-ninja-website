@@ -1,4 +1,4 @@
-import { MarketingPageShell } from "@/components/marketing/MarketingPageShell";
+import { ClaimTrackingPage } from "@/components/platform/ClaimTrackingPage";
 import { pageMetadata } from "@/lib/metadata";
 import { claimTrackingPage } from "@/lib/marketing-pages";
 
@@ -8,13 +8,6 @@ export const metadata = pageMetadata({
   path: claimTrackingPage.path,
 });
 
-export default function ClaimTrackingPage() {
-  return (
-    <MarketingPageShell
-      eyebrow={claimTrackingPage.eyebrow}
-      title={claimTrackingPage.title}
-      description={claimTrackingPage.description}
-      features={claimTrackingPage.features}
-    />
-  );
+export default function ClaimTrackingPageRoute() {
+  return <ClaimTrackingPage />;
 }
