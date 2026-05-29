@@ -7,7 +7,7 @@ import { cn } from "@/lib/cn";
 type PillarId = (typeof PLATFORM_PILLARS)[number]["id"];
 
 function PillarIcon({ id, className }: { id: PillarId; className?: string }) {
-  const base = cn("h-6 w-6 shrink-0 text-brand-red-light", className);
+  const base = cn("h-5 w-5 shrink-0 text-brand-red-light", className);
 
   switch (id) {
     case "expert-support":
@@ -18,7 +18,7 @@ function PillarIcon({ id, className }: { id: PillarId; className?: string }) {
           className={base}
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.75"
+          strokeWidth="1.5"
         >
           <path
             strokeLinecap="round"
@@ -41,7 +41,7 @@ function PillarIcon({ id, className }: { id: PillarId; className?: string }) {
           className={base}
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.75"
+          strokeWidth="1.5"
         >
           <rect x="3" y="3" width="7" height="7" rx="1" />
           <rect x="14" y="3" width="7" height="7" rx="1" />
@@ -57,7 +57,7 @@ function PillarIcon({ id, className }: { id: PillarId; className?: string }) {
           className={base}
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.75"
+          strokeWidth="1.5"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2" />
           <path
@@ -72,17 +72,6 @@ function PillarIcon({ id, className }: { id: PillarId; className?: string }) {
   }
 }
 
-function PillarPlus() {
-  return (
-    <span
-      className="font-display text-2xl font-light text-zinc-600 lg:self-center"
-      aria-hidden
-    >
-      +
-    </span>
-  );
-}
-
 function PillarCard({
   pillar,
 }: {
@@ -91,22 +80,27 @@ function PillarCard({
   return (
     <article
       className={cn(
-        "flex h-full max-w-md flex-1 flex-col rounded-2xl border border-white/15 bg-brand-surface p-8 lg:p-9",
-        "shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25",
-        "transition-[border-color,box-shadow] duration-300",
-        "hover:border-brand-red/45 hover:shadow-[0_0_56px_-20px_rgba(220,38,38,0.35)]",
+        "group relative flex h-full flex-col overflow-hidden rounded-2xl p-7 lg:p-8",
+        "border border-white/10 bg-white/[0.04] backdrop-blur-sm",
+        "shadow-[0_1px_0_0_rgba(255,255,255,0.06)_inset,0_20px_40px_-32px_rgba(0,0,0,0.8)]",
+        "transition-[border-color,box-shadow,transform] duration-300",
+        "hover:-translate-y-0.5 hover:border-white/20 hover:shadow-[0_0_40px_-20px_rgba(220,38,38,0.35)]",
       )}
     >
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
+      />
       <div
-        className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/12 ring-1 ring-brand-red/35"
+        className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03]"
         aria-hidden
       >
         <PillarIcon id={pillar.id} />
       </div>
-      <h3 className="mt-6 font-display text-xl font-semibold tracking-tight text-white lg:text-2xl">
+      <h3 className="mt-5 font-display text-lg font-semibold tracking-tight text-white lg:text-xl">
         {pillar.title}
       </h3>
-      <p className="mt-4 flex-1 text-base leading-relaxed text-zinc-300">
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-400">
         {pillar.description}
       </p>
     </article>
@@ -114,27 +108,15 @@ function PillarCard({
 }
 
 export function PlatformEcosystemPanel() {
-  const [first, second, third] = PLATFORM_PILLARS;
-
   return (
-    <div className="mt-14">
-      <div className="hidden items-stretch justify-center gap-6 lg:flex xl:gap-8">
-        <PillarCard pillar={first} />
-        <PillarPlus />
-        <PillarCard pillar={second} />
-        <PillarPlus />
-        <PillarCard pillar={third} />
+    <div className="mt-12">
+      <div className="grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-3 lg:items-stretch">
+        {PLATFORM_PILLARS.map((pillar) => (
+          <PillarCard key={pillar.id} pillar={pillar} />
+        ))}
       </div>
 
-      <div className="flex flex-col items-center gap-4 lg:hidden">
-        <PillarCard pillar={first} />
-        <PillarPlus />
-        <PillarCard pillar={second} />
-        <PillarPlus />
-        <PillarCard pillar={third} />
-      </div>
-
-      <p className="mx-auto mt-12 max-w-2xl text-center text-sm leading-relaxed text-zinc-500 sm:text-base lg:mt-14">
+      <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-relaxed text-zinc-500 sm:text-base">
         {PLATFORM_PILLARS_FOOTER}
       </p>
     </div>
