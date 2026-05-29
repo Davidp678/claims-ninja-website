@@ -55,9 +55,9 @@ export function PlatformOverviewPage() {
           {PLATFORM_PILLARS.map((pillar) => (
             <li
               key={pillar.title}
-              className="rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/45"
+              className="group rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/45"
             >
-              <h3 className="font-display text-xl font-semibold text-white">
+              <h3 className="font-display text-xl font-semibold text-white transition-colors group-hover:text-brand-red-light">
                 {pillar.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-zinc-300">
@@ -82,9 +82,9 @@ export function PlatformOverviewPage() {
           {PLATFORM_AI.capabilities.map((capability) => (
             <li
               key={capability.title}
-              className="rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25"
+              className="group rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25"
             >
-              <h3 className="font-display text-lg font-semibold text-white">
+              <h3 className="font-display text-lg font-semibold text-white transition-colors group-hover:text-brand-red-light">
                 {capability.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-zinc-300">
