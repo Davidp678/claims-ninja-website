@@ -33,7 +33,8 @@ export function ClaimTrackingPage() {
             <HeroVideoCard
               embedSrc={CLAIM_TRACKING_HERO_VIDEO.embedUrl}
               title="Claim tracking demo"
-              mediaAspect={CLAIM_TRACKING_HERO_VIDEO.mediaAspectClass}
+              embedFit={CLAIM_TRACKING_HERO_VIDEO.embedFit}
+              sourceAspect={CLAIM_TRACKING_HERO_VIDEO.sourceAspect}
             />
           </div>
         </Container>

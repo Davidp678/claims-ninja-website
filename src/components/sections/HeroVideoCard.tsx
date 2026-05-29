@@ -1,23 +1,26 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { HERO_VIDEO_URL } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 
 type HeroVideoCardVariant = "default" | "embedded";
+type EmbedFit = "contain" | "cover";
 
 type HeroVideoCardProps = {
   src?: string;
   embedSrc?: string;
   title?: string;
   mediaAspect?: string;
+  embedFit?: EmbedFit;
+  sourceAspect?: number;
   className?: string;
   variant?: HeroVideoCardVariant;
 };
 
 const VARIANT_FRAME: Record<
   HeroVideoCardVariant,
-  { frame: string; media: string }
+  { frame: string; media: string; aspect: number }
 > = {
   default: {
     frame: cn(
@@ -25,6 +28,7 @@ const VARIANT_FRAME: Record<
       "bg-gradient-to-br from-brand-red/30 via-brand-red/10 to-white/5",
     ),
     media: "aspect-[27/20]",
+    aspect: 27 / 20,
   },
   embedded: {
     frame: cn(
@@ -32,14 +36,34 @@ const VARIANT_FRAME: Record<
       "bg-gradient-to-br from-brand-red/20 via-brand-red/8 to-white/5",
     ),
     media: "aspect-video",
+    aspect: 16 / 9,
   },
 };
+
+function getEmbedCoverStyle(
+  containerAspect: number,
+  sourceAspect: number,
+): React.CSSProperties {
+  if (sourceAspect < containerAspect) {
+    return {
+      width: "100%",
+      height: `${(containerAspect / sourceAspect) * 100}%`,
+    };
+  }
+
+  return {
+    width: `${(sourceAspect / containerAspect) * 100}%`,
+    height: "100%",
+  };
+}
 
 export function HeroVideoCard({
   src = HERO_VIDEO_URL,
   embedSrc,
   title = "Product demo video",
   mediaAspect,
+  embedFit = "contain",
+  sourceAspect,
   className,
   variant = "default",
 }: HeroVideoCardProps) {
@@ -50,9 +74,22 @@ export function HeroVideoCard({
     setReady(true);
   }, []);
 
+  const useEmbedCover = embedFit === "cover" && sourceAspect !== undefined;
+
+  const embedCoverStyle = useMemo(() => {
+    if (!useEmbedCover) {
+      return undefined;
+    }
+
+    return getEmbedCoverStyle(styles.aspect, sourceAspect);
+  }, [sourceAspect, styles.aspect, useEmbedCover]);
+
   const mediaClassName = cn(
-    "absolute inset-0 h-full w-full transition-opacity duration-700",
+    "transition-opacity duration-700",
     ready ? "opacity-100" : "opacity-0",
+    useEmbedCover
+      ? "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-0"
+      : "absolute inset-0 h-full w-full border-0",
   );
 
   return (
@@ -76,7 +113,8 @@ export function HeroVideoCard({
             <iframe
               src={embedSrc}
               title={title}
-              className={cn(mediaClassName, "border-0")}
+              className={mediaClassName}
+              style={embedCoverStyle}
               allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
               onLoad={markReady}
