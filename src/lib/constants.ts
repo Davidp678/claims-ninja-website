@@ -4,6 +4,9 @@ export const HERO_VIDEO_URL =
 export const PLATFORM_HERO_VIDEO_URL =
   "https://www.theclaimsninja.com/wp-content/uploads/2025/11/Monday-Video.mp4";
 
+export const CLIENT_PORTAL_HERO_VIDEO_URL =
+  "https://customer-qmgpb08arenbn1zo.cloudflarestream.com/2ed5c9a05d2de831e1158f89161d2e1e/iframe?poster=https%3A%2F%2Fcustomer-qmgpb08arenbn1zo.cloudflarestream.com%2F2ed5c9a05d2de831e1158f89161d2e1e%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&autoplay=true&muted=true&loop=true&controls=false";
+
 export const SITE = {
   name: "The Claims Ninja",
   tagline: "Public adjusting that fights for what you're owed.",
