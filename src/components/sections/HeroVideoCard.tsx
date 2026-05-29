@@ -4,7 +4,15 @@ import { useCallback, useState } from "react";
 import { HERO_VIDEO_URL } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 
-export function HeroVideoCard() {
+type HeroVideoCardProps = {
+  src?: string;
+  className?: string;
+};
+
+export function HeroVideoCard({
+  src = HERO_VIDEO_URL,
+  className,
+}: HeroVideoCardProps) {
   const [ready, setReady] = useState(false);
 
   const markReady = useCallback(() => {
@@ -17,6 +25,7 @@ export function HeroVideoCard() {
         "relative w-full max-w-[760px] rounded-2xl p-px lg:rounded-3xl",
         "shadow-[0_0_80px_-4px_rgba(220,38,38,0.72)] ring-1 ring-brand-red/60",
         "bg-gradient-to-br from-brand-red/30 via-brand-red/10 to-white/5",
+        className,
       )}
       aria-hidden
     >
@@ -43,7 +52,7 @@ export function HeroVideoCard() {
             onLoadedData={markReady}
             onCanPlay={markReady}
           >
-            <source src={HERO_VIDEO_URL} type="video/mp4" />
+            <source src={src} type="video/mp4" />
           </video>
           <div
             aria-hidden

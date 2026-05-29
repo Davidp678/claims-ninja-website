@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
+import { HeroVideoCard } from "@/components/sections/HeroVideoCard";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
@@ -10,6 +11,7 @@ import {
   PLATFORM_PILLARS,
   PLATFORM_VISION,
 } from "@/lib/platform-overview";
+import { PLATFORM_HERO_VIDEO_URL } from "@/lib/constants";
 
 import { PlatformModulesSection } from "./PlatformModulesSection";
 
@@ -25,6 +27,10 @@ export function PlatformOverviewPage() {
             description={PLATFORM_HERO.description}
             align="left"
             className="max-w-3xl"
+          />
+          <HeroVideoCard
+            src={PLATFORM_HERO_VIDEO_URL}
+            className="mx-auto mt-8 w-full max-w-[1000px] lg:mt-10"
           />
           <ConversionCtaGroup
             className="mt-8 lg:mt-10"

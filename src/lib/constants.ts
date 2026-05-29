@@ -1,6 +1,9 @@
 export const HERO_VIDEO_URL =
   "https://customer-qmgpb08arenbn1zo.cloudflarestream.com/1df6b7b88fc207a3eb3fa6f7323f6420/downloads/default.mp4";
 
+export const PLATFORM_HERO_VIDEO_URL =
+  "https://www.theclaimsninja.com/wp-content/uploads/2025/11/Monday-Video.mp4";
+
 export const SITE = {
   name: "The Claims Ninja",
   tagline: "Public adjusting that fights for what you're owed.",
