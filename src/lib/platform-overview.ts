@@ -5,14 +5,23 @@ export const PLATFORM_HERO = {
     "Claims Ninja combines seasoned supplement professionals, a live management platform, and an expanding AI intelligence layer—so restoration and roofing teams run claims with the rigor of a dedicated operations department.",
 } as const;
 
-export const PLATFORM_MANIFESTO_TERMS = [
-  "Human Expertise",
-  "Platform Technology",
-  "AI Intelligence",
+export const PLATFORM_PILLARS = [
+  {
+    title: "Expert claim support",
+    description:
+      "Supplement professionals, negotiation support, and public adjuster services when you need full claim ownership—without building an in-house team.",
+  },
+  {
+    title: "Claims management technology",
+    description:
+      "Client portal, claim tracking, document management, real-time communication, billing, and project visibility—operational today across your book of business.",
+  },
+  {
+    title: "AI intelligence",
+    description:
+      "AI-assisted triage, opportunity scoring, and scope analysis that accelerate expert review and surface recovery potential before money is left on the table.",
+  },
 ] as const;
-
-export const PLATFORM_PILLARS_FOOTER =
-  "Built for Contractors. Powered by Claims Experts." as const;
 
 export const PLATFORM_AI = {
   eyebrow: "AI intelligence layer",
