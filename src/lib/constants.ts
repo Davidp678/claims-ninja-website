@@ -18,6 +18,13 @@ export const CLAIM_TRACKING_HERO_VIDEO = {
   embedFit: "cover" as const,
 } as const;
 
+export const COMMUNICATION_HUB_HERO_VIDEO = {
+  embedUrl:
+    "https://customer-qmgpb08arenbn1zo.cloudflarestream.com/bbba7807bcd48536180cd07749f73931/iframe?poster=https%3A%2F%2Fcustomer-qmgpb08arenbn1zo.cloudflarestream.com%2Fbbba7807bcd48536180cd07749f73931%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&autoplay=true&muted=true&loop=true&controls=false&letterboxColor=transparent",
+  sourceAspect: 1442 / 720,
+  embedFit: "cover" as const,
+} as const;
+
 export const SITE = {
   name: "The Claims Ninja",
   tagline: "Public adjusting that fights for what you're owed.",

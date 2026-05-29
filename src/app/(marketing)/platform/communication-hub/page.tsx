@@ -1,4 +1,4 @@
-import { MarketingPageShell } from "@/components/marketing/MarketingPageShell";
+import { CommunicationHubPage } from "@/components/platform/CommunicationHubPage";
 import { pageMetadata } from "@/lib/metadata";
 import { communicationHubPage } from "@/lib/marketing-pages";
 
@@ -8,13 +8,6 @@ export const metadata = pageMetadata({
   path: communicationHubPage.path,
 });
 
-export default function CommunicationHubPage() {
-  return (
-    <MarketingPageShell
-      eyebrow={communicationHubPage.eyebrow}
-      title={communicationHubPage.title}
-      description={communicationHubPage.description}
-      features={communicationHubPage.features}
-    />
-  );
+export default function CommunicationHubPageRoute() {
+  return <CommunicationHubPage />;
 }
