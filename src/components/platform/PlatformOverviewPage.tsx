@@ -19,9 +19,9 @@ import { PlatformModulesSection } from "./PlatformModulesSection";
 export function PlatformOverviewPage() {
   return (
     <>
-      <section className="relative min-h-[100svh] overflow-hidden bg-brand-black">
+      <section className="relative overflow-hidden bg-brand-black">
         <HeroBackdrop />
-        <Container className="relative z-10 grid grid-cols-1 gap-10 pb-14 pt-28 sm:gap-12 sm:pb-16 sm:pt-32 lg:grid-cols-[minmax(0,0.9fr)_minmax(620px,1.15fr)] lg:items-start lg:gap-x-16 lg:pb-20 lg:pt-28">
+        <Container className="relative z-10 grid grid-cols-1 gap-8 pb-10 pt-24 sm:gap-10 sm:pb-12 sm:pt-28 lg:grid-cols-[minmax(0,0.9fr)_minmax(620px,1.15fr)] lg:items-center lg:gap-x-16 lg:pb-14 lg:pt-24">
           <div className="max-w-2xl lg:col-start-1 lg:max-w-none">
             <SectionHeading
               eyebrow={PLATFORM_HERO.eyebrow}
@@ -31,7 +31,7 @@ export function PlatformOverviewPage() {
               className="max-w-none"
             />
             <ConversionCtaGroup
-              className="mt-8"
+              className="mt-10 lg:mt-12"
               size="md"
               primaryLabel="Start Claim Review"
               secondaryLabel="Schedule Strategy Call"
