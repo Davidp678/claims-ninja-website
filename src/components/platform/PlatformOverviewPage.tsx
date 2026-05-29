@@ -9,11 +9,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import {
   PLATFORM_AI,
   PLATFORM_HERO,
-  PLATFORM_PILLARS,
   PLATFORM_VISION,
 } from "@/lib/platform-overview";
 import { PLATFORM_HERO_VIDEO_URL } from "@/lib/constants";
 
+import { PlatformEcosystemPanel } from "./PlatformEcosystemPanel";
 import { PlatformModulesSection } from "./PlatformModulesSection";
 
 export function PlatformOverviewPage() {
@@ -51,21 +51,7 @@ export function PlatformOverviewPage() {
           align="left"
           className="max-w-3xl"
         />
-        <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PLATFORM_PILLARS.map((pillar) => (
-            <li
-              key={pillar.title}
-              className="rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/45"
-            >
-              <h3 className="font-display text-xl font-semibold text-white">
-                {pillar.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                {pillar.description}
-              </p>
-            </li>
-          ))}
-        </ul>
+        <PlatformEcosystemPanel />
       </Section>
 
       <PlatformModulesSection />
