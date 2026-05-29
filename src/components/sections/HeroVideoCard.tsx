@@ -10,6 +10,7 @@ type HeroVideoCardProps = {
   src?: string;
   embedSrc?: string;
   title?: string;
+  mediaAspect?: string;
   className?: string;
   variant?: HeroVideoCardVariant;
 };
@@ -38,6 +39,7 @@ export function HeroVideoCard({
   src = HERO_VIDEO_URL,
   embedSrc,
   title = "Product demo video",
+  mediaAspect,
   className,
   variant = "default",
 }: HeroVideoCardProps) {
@@ -63,7 +65,7 @@ export function HeroVideoCard({
       aria-hidden={embedSrc ? undefined : true}
     >
       <div className="overflow-hidden rounded-[calc(1rem-1px)] bg-brand-black ring-1 ring-inset ring-white/12 lg:rounded-[calc(1.5rem-1px)]">
-        <div className={cn("relative bg-brand-surface", styles.media)}>
+        <div className={cn("relative bg-brand-surface", mediaAspect ?? styles.media)}>
           <div
             className={cn(
               "absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/80 to-brand-black transition-opacity duration-700",
