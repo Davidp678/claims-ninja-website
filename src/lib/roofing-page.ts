@@ -49,32 +49,32 @@ export const ROOFING_FEATURES = {
     {
       title: "Scope Accuracy",
       description:
-        "Line-item detail aligned to manufacturer specs, damage patterns, and how the roof was actually built—not a generic carrier template.",
-    },
-    {
-      title: "Supplement Strategy",
-      description:
-        "Structured revisions when adjusters under-scope steep-slope, accessory, and flat-roof assemblies on the first pass.",
+        "Line-item detail aligned to manufacturer specs, damage patterns, roof system components, and how the roof was actually built.",
     },
     {
       title: "Code & Compliance Items",
       description:
-        "Identify code-driven upgrades and compliance line items that may require review depending on jurisdiction and documentation.",
+        "Items such as drip edge, ice and water shield, ventilation, decking requirements, and jurisdiction-specific upgrades may require review.",
     },
     {
-      title: "Waste, Measurements & Accessories",
+      title: "Waste & Measurement Factors",
       description:
-        "Quantities, waste factors, ventilation, and accessory scope aligned to EagleView, field measurements, and carrier math.",
+        "Roof geometry, waste factors, pitch, layers, cut-up complexity, and measurement discrepancies can materially affect the final scope.",
     },
     {
-      title: "Carrier Negotiation",
+      title: "Flashing & Penetrations",
       description:
-        "Expert advocacy when adjusters push back on quantity, matching, steep charges, or scope interpretation.",
+        "Step flashing, counter flashing, pipe boots, vents, valleys, skylights, and wall intersections often deserve a closer look.",
     },
     {
-      title: "Volume-Ready Workflows",
+      title: "Steep, High & Access Charges",
       description:
-        "Repeatable intake and review processes for storm books and ongoing retail—without building an internal claims department.",
+        "Pitch, height, access limitations, safety requirements, and labor conditions may create legitimate scope considerations.",
+    },
+    {
+      title: "Roofing Accessories",
+      description:
+        "Starter course, ridge cap, hip cap, vents, drip edge, valley components, and other accessories can be missed or under-scoped.",
     },
   ],
 } as const;
