@@ -209,9 +209,9 @@ export const roofingPage = page({
   title: "Roofing Claims",
   metaTitle: "Roofing Claims",
   metaDescription:
-    "Maximize roofing claim recoveries with Claims Ninja documentation, supplement strategy, and carrier negotiation for residential and commercial losses.",
+    "Maximize recoveries on residential and commercial roofing losses with Claims Ninja documentation, supplement strategy, and carrier negotiation built for real roofing operations.",
   description:
-    "Maximize recoveries on residential and commercial roofing losses with documentation built for carrier scrutiny.",
+    "Maximize recoveries on residential and commercial roofing losses with documentation, supplement strategy, and carrier negotiation built for real roofing operations.",
   features: [
     {
       title: "Scope accuracy",

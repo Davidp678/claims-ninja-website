@@ -1,20 +1,13 @@
-import { MarketingPageShell } from "@/components/marketing/MarketingPageShell";
+import { RoofingClaimsPage } from "@/components/solutions/RoofingClaimsPage";
 import { pageMetadata } from "@/lib/metadata";
-import { roofingPage } from "@/lib/marketing-pages";
+import { ROOFING_META } from "@/lib/roofing-page";
 
 export const metadata = pageMetadata({
-  title: roofingPage.metaTitle,
-  description: roofingPage.metaDescription,
-  path: roofingPage.path,
+  title: ROOFING_META.metaTitle,
+  description: ROOFING_META.metaDescription,
+  path: ROOFING_META.path,
 });
 
 export default function RoofingPage() {
-  return (
-    <MarketingPageShell
-      eyebrow={roofingPage.eyebrow}
-      title={roofingPage.title}
-      description={roofingPage.description}
-      features={roofingPage.features}
-    />
-  );
+  return <RoofingClaimsPage />;
 }
