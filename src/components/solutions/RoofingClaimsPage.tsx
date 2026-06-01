@@ -68,27 +68,6 @@ export function RoofingClaimsPage() {
         </ul>
       </Section>
 
-      <Section bordered className="bg-brand-elevated py-16 sm:py-20">
-        <SectionHeading
-          eyebrow={ROOFING_FEATURES.eyebrow}
-          title={ROOFING_FEATURES.title}
-          align="left"
-          className="max-w-3xl"
-        />
-        <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {ROOFING_FEATURES.items.map((feature) => (
-            <li key={feature.title} className={ROOFING_FEATURE_CARD_CLASS}>
-              <h3 className="font-display text-lg font-semibold text-white">
-                {feature.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                {feature.description}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
       <Section bordered className="py-16 sm:py-20">
         <SectionHeading
           eyebrow={ROOFING_WORKFLOW.eyebrow}
@@ -111,6 +90,27 @@ export function RoofingClaimsPage() {
             </li>
           ))}
         </ol>
+      </Section>
+
+      <Section bordered className="bg-brand-elevated py-16 sm:py-20">
+        <SectionHeading
+          eyebrow={ROOFING_FEATURES.eyebrow}
+          title={ROOFING_FEATURES.title}
+          align="left"
+          className="max-w-3xl"
+        />
+        <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {ROOFING_FEATURES.items.map((feature) => (
+            <li key={feature.title} className={ROOFING_FEATURE_CARD_CLASS}>
+              <h3 className="font-display text-lg font-semibold text-white">
+                {feature.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                {feature.description}
+              </p>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       <Section bordered className="bg-brand-elevated py-16 sm:py-20">
