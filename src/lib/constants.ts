@@ -25,6 +25,13 @@ export const COMMUNICATION_HUB_HERO_VIDEO = {
   embedFit: "cover" as const,
 } as const;
 
+export const BILLING_PAYMENTS_HERO_VIDEO = {
+  embedUrl:
+    "https://customer-qmgpb08arenbn1zo.cloudflarestream.com/5c97536fd368879c1e849aa6e6c8f522/iframe?poster=https%3A%2F%2Fcustomer-qmgpb08arenbn1zo.cloudflarestream.com%2F5c97536fd368879c1e849aa6e6c8f522%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&autoplay=true&muted=true&loop=true&controls=false&letterboxColor=transparent",
+  sourceAspect: 1620 / 720,
+  embedFit: "cover" as const,
+} as const;
+
 export const SITE = {
   name: "The Claims Ninja",
   tagline: "Public adjusting that fights for what you're owed.",

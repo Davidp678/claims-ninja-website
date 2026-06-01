@@ -1,4 +1,4 @@
-import { MarketingPageShell } from "@/components/marketing/MarketingPageShell";
+import { BillingPaymentsPage } from "@/components/platform/BillingPaymentsPage";
 import { pageMetadata } from "@/lib/metadata";
 import { billingPaymentsPage } from "@/lib/marketing-pages";
 
@@ -8,13 +8,6 @@ export const metadata = pageMetadata({
   path: billingPaymentsPage.path,
 });
 
-export default function BillingPaymentsPage() {
-  return (
-    <MarketingPageShell
-      eyebrow={billingPaymentsPage.eyebrow}
-      title={billingPaymentsPage.title}
-      description={billingPaymentsPage.description}
-      features={billingPaymentsPage.features}
-    />
-  );
+export default function BillingPaymentsPageRoute() {
+  return <BillingPaymentsPage />;
 }
