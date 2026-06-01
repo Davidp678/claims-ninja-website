@@ -43,7 +43,8 @@ export function ClientPortalPage() {
             <HeroVideoCard
               embedSrc={CLIENT_PORTAL_HERO_VIDEO.embedUrl}
               title="Client portal demo"
-              mediaAspect={CLIENT_PORTAL_HERO_VIDEO.mediaAspectClass}
+              embedFit={CLIENT_PORTAL_HERO_VIDEO.embedFit}
+              sourceAspect={CLIENT_PORTAL_HERO_VIDEO.sourceAspect}
             />
           </div>
         </Container>

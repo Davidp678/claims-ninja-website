@@ -11,8 +11,8 @@ export const PLATFORM_HERO_VIDEO = {
 export const CLIENT_PORTAL_HERO_VIDEO = {
   embedUrl:
     "https://customer-qmgpb08arenbn1zo.cloudflarestream.com/2ed5c9a05d2de831e1158f89161d2e1e/iframe?poster=https%3A%2F%2Fcustomer-qmgpb08arenbn1zo.cloudflarestream.com%2F2ed5c9a05d2de831e1158f89161d2e1e%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&autoplay=true&muted=true&loop=true&controls=false&letterboxColor=transparent",
-  aspect: "1414/720",
-  mediaAspectClass: "aspect-[1414/720]",
+  sourceAspect: 1414 / 720,
+  embedFit: "cover" as const,
 } as const;
 
 export const CLAIM_TRACKING_HERO_VIDEO = {
