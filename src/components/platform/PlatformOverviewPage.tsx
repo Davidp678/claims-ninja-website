@@ -12,7 +12,7 @@ import {
   PLATFORM_PILLARS,
   PLATFORM_VISION,
 } from "@/lib/platform-overview";
-import { PLATFORM_HERO_VIDEO_URL } from "@/lib/constants";
+import { PLATFORM_HERO_VIDEO } from "@/lib/constants";
 
 import { PlatformModulesSection } from "./PlatformModulesSection";
 
@@ -38,7 +38,12 @@ export function PlatformOverviewPage() {
             />
           </div>
           <div className="w-full lg:col-start-2 lg:mt-2">
-            <HeroVideoCard src={PLATFORM_HERO_VIDEO_URL} />
+            <HeroVideoCard
+              embedSrc={PLATFORM_HERO_VIDEO.embedUrl}
+              title="Platform overview demo"
+              embedFit={PLATFORM_HERO_VIDEO.embedFit}
+              sourceAspect={PLATFORM_HERO_VIDEO.sourceAspect}
+            />
           </div>
         </Container>
       </section>
