@@ -26,7 +26,7 @@ export function FaqAccordionItem({
       id={`faq-${id}`}
       className={cn(
         "scroll-mt-28 border-b border-white/10 last:border-b-0",
-        open && "border-brand-red/15",
+        open && "border-brand-red/20",
       )}
     >
       <h3>
@@ -37,8 +37,8 @@ export function FaqAccordionItem({
           aria-controls={panelId}
           onClick={() => setOpen((prev) => !prev)}
           className={cn(
-            "flex w-full items-start justify-between gap-4 py-4 text-left transition-colors",
-            "hover:text-brand-red-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-surface",
+            "flex w-full items-start justify-between gap-5 px-1 py-4 text-left transition-colors sm:px-2 sm:py-5",
+            "hover:text-brand-red-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black",
             open && "text-brand-red-light",
           )}
         >
@@ -49,14 +49,23 @@ export function FaqAccordionItem({
             aria-hidden
             viewBox="0 0 24 24"
             className={cn(
-              "mt-0.5 h-5 w-5 shrink-0 text-zinc-400 transition-transform duration-200 motion-reduce:transition-none",
-              open && "rotate-180 text-brand-red-light",
+              "mt-0.5 h-5 w-5 shrink-0 text-zinc-400 transition-colors duration-200 motion-reduce:transition-none",
+              open && "text-brand-red-light",
             )}
             fill="none"
             stroke="currentColor"
             strokeWidth="1.75"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 5v14"
+              className={cn(
+                "origin-center transition-opacity duration-200 motion-reduce:transition-none",
+                open && "opacity-0",
+              )}
+            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
           </svg>
         </button>
       </h3>
@@ -70,7 +79,7 @@ export function FaqAccordionItem({
         )}
       >
         <div className="overflow-hidden">
-          <div className="pb-4 pr-2">
+          <div className="px-1 pb-5 pr-6 sm:px-2">
             <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
               {answer}
             </p>

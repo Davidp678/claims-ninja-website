@@ -1,8 +1,6 @@
 import { FaqAccordionItem } from "./FaqAccordionItem";
 import { FaqCategoryIcon } from "./FaqCategoryIcon";
 import type { FaqItem, FaqCategoryId } from "@/lib/faq-page";
-import { FAQ_CARD_CLASS } from "@/lib/faq-page";
-import { cn } from "@/lib/cn";
 
 type FaqAccordionSectionProps = {
   categoryId: FaqCategoryId;
@@ -20,22 +18,22 @@ export function FaqAccordionSection({
   return (
     <section
       id={`faq-category-${categoryId}`}
-      className={cn("scroll-mt-28", FAQ_CARD_CLASS, "hover:border-white/15")}
+      className="scroll-mt-28 border-t border-white/10 pt-10 first:border-t-0 first:pt-0"
     >
-      <div className="flex items-start gap-4">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-brand-elevated/80 text-brand-red-light">
+      <div className="flex items-start gap-3">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-brand-elevated/60 text-brand-red-light">
           <FaqCategoryIcon id={categoryId} />
         </div>
         <div>
-          <h2 className="font-display text-xl font-semibold text-white sm:text-2xl">
+          <h2 className="font-display text-lg font-semibold text-white sm:text-xl">
             {title}
           </h2>
-          <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+          <p className="mt-1 text-sm leading-relaxed text-zinc-400">
             {description}
           </p>
         </div>
       </div>
-      <div className="mt-6 border-t border-white/10">
+      <div className="mt-5 border-t border-white/10">
         {items.map((item) => (
           <FaqAccordionItem
             key={item.id}

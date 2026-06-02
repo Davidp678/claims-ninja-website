@@ -13,7 +13,7 @@ export function FaqLibrary() {
       title={FAQ_LIBRARY_SECTION.title}
       description={FAQ_LIBRARY_SECTION.description}
     >
-      <div className="mt-14 space-y-8">
+      <div className="mt-12">
         {groups.map(({ category, items }) => (
           <FaqAccordionSection
             key={category.id}
