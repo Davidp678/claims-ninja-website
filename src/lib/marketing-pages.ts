@@ -450,31 +450,14 @@ export const videosPage = page({
 
 export const faqPage = page({
   path: "/faq",
-  eyebrow: "Resources",
-  title: "FAQ",
+  eyebrow: "Claims Knowledge Center",
+  title: "Frequently Asked Questions",
   metaTitle: "FAQ",
   metaDescription:
-    "Claims Ninja FAQ covers onboarding, pricing, platform security, and what expert claim teams handle versus your field operation—clear, direct answers.",
+    "Claims Ninja FAQ covers onboarding, pricing, supplements, carrier negotiations, and platform security — clear answers for contractors and restoration professionals.",
   description:
-    "Answers to common questions about Claims Ninja platform capabilities, partnerships, and claim support services.",
-  features: [
-    {
-      title: "Getting started",
-      description: "How onboarding, intake, and first claim reviews work.",
-    },
-    {
-      title: "Pricing & billing",
-      description: "Fee structures, invoicing, and what is included in partnership tiers.",
-    },
-    {
-      title: "Platform & security",
-      description: "Data handling, access controls, and document storage practices.",
-    },
-    {
-      title: "Claim support scope",
-      description: "What expert teams handle versus what stays with your field operation.",
-    },
-  ],
+    "Practical answers for contractors, restoration companies, and property claim professionals — from onboarding and pricing to supplements, documentation, and carrier negotiations.",
+  features: [],
 });
 
 export const aboutPage = page({
