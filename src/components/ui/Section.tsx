@@ -10,6 +10,8 @@ type SectionProps = {
   bordered?: boolean;
   /** Tighter vertical padding (py-16 sm:py-20) instead of default section rhythm */
   compact?: boolean;
+  /** Extra-tight padding for stacked intro sections (py-12 sm:py-14) */
+  tight?: boolean;
 };
 
 export function Section({
@@ -19,13 +21,18 @@ export function Section({
   containerClassName,
   bordered = false,
   compact = false,
+  tight = false,
 }: SectionProps) {
   return (
     <section
       id={id}
       className={cn(
         "relative overflow-hidden",
-        compact ? "py-16 sm:py-20" : "py-20 sm:py-24 lg:py-28",
+        tight
+          ? "py-12 sm:py-14"
+          : compact
+            ? "py-16 sm:py-20"
+            : "py-20 sm:py-24 lg:py-28",
         bordered && "border-t border-white/12",
         className,
       )}

@@ -17,7 +17,10 @@ export function FaqLibraryContent() {
   return (
     <div className="mt-12">
       {isFiltering && filtered.length === 0 ? (
-        <div className="rounded-2xl border border-white/15 bg-brand-surface px-6 py-10 text-center shadow-[0_0_48px_-28px_rgba(220,38,38,0.15)] sm:px-10">
+        <div
+          role="status"
+          className="rounded-2xl border border-white/15 bg-brand-surface px-6 py-10 text-center shadow-[0_0_48px_-28px_rgba(220,38,38,0.15)] sm:px-10"
+        >
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-brand-elevated/60 text-brand-red-light">
             <svg
               aria-hidden

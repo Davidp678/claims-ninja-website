@@ -9,6 +9,7 @@ export function FaqSearchSection() {
       eyebrow={FAQ_SEARCH.eyebrow}
       title={FAQ_SEARCH.title}
       description={FAQ_SEARCH.description}
+      tight
     >
       <FaqSearchBar />
     </FaqPageSection>

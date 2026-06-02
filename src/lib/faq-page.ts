@@ -148,6 +148,9 @@ export const FAQ_LIBRARY_SECTION = {
 export const FAQ_CARD_CLASS =
   "rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/45";
 
+export const FAQ_ANCHOR_SCROLL_CLASS =
+  "scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32";
+
 export function getCategoryById(id: FaqCategoryId) {
   const category = FAQ_CATEGORIES.find((entry) => entry.id === id);
   if (!category) {

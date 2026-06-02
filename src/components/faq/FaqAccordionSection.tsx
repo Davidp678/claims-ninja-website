@@ -2,7 +2,8 @@
 
 import { FaqAccordionItem } from "./FaqAccordionItem";
 import { FaqCategoryIcon } from "./FaqCategoryIcon";
-import type { FaqItem, FaqCategoryId } from "@/lib/faq-page";
+import { FAQ_ANCHOR_SCROLL_CLASS, type FaqItem, type FaqCategoryId } from "@/lib/faq-page";
+import { cn } from "@/lib/cn";
 
 type FaqAccordionSectionProps = {
   categoryId: FaqCategoryId;
@@ -22,7 +23,10 @@ export function FaqAccordionSection({
   return (
     <section
       id={`faq-category-${categoryId}`}
-      className="scroll-mt-28 border-t border-white/10 pt-10 first:border-t-0 first:pt-0"
+      className={cn(
+        FAQ_ANCHOR_SCROLL_CLASS,
+        "border-t border-white/10 pt-10 first:border-t-0 first:pt-0",
+      )}
     >
       <div className="flex items-start gap-3">
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-brand-elevated/60 text-brand-red-light">

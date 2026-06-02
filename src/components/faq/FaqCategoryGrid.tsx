@@ -9,8 +9,9 @@ export function FaqCategoryGrid() {
       eyebrow={FAQ_CATEGORY_SECTION.eyebrow}
       title={FAQ_CATEGORY_SECTION.title}
       description={FAQ_CATEGORY_SECTION.description}
+      tight
     >
-      <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {FAQ_CATEGORIES.map((category) => (
           <li key={category.id}>
             <FaqCategoryCard

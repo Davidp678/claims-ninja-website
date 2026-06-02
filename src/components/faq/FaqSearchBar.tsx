@@ -1,5 +1,7 @@
 "use client";
 
+import { useCallback, useRef } from "react";
+
 import { FAQ_ITEMS } from "@/lib/faq-data";
 import { FAQ_SEARCH, getCategoryTitle } from "@/lib/faq-page";
 import { filterFaqItems } from "@/lib/faq-search";
@@ -9,6 +11,7 @@ import { useFaqSearch } from "./FaqSearchProvider";
 
 export function FaqSearchBar() {
   const { query, setQuery, clearQuery } = useFaqSearch();
+  const inputRef = useRef<HTMLInputElement>(null);
   const trimmedQuery = query.trim();
   const resultCount = filterFaqItems(
     FAQ_ITEMS,
@@ -16,8 +19,13 @@ export function FaqSearchBar() {
     getCategoryTitle,
   ).length;
 
+  const handleClear = useCallback(() => {
+    clearQuery();
+    inputRef.current?.focus();
+  }, [clearQuery]);
+
   return (
-    <div className="mt-10 max-w-2xl">
+    <div className="mt-8 max-w-2xl">
       <label htmlFor="faq-search" className="sr-only">
         Search claims questions
       </label>
@@ -34,10 +42,17 @@ export function FaqSearchBar() {
           <path strokeLinecap="round" d="M20 20l-3-3" />
         </svg>
         <input
+          ref={inputRef}
           id="faq-search"
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === "Escape" && trimmedQuery) {
+              event.preventDefault();
+              handleClear();
+            }
+          }}
           aria-label="Search claims questions"
           placeholder={FAQ_SEARCH.placeholder}
           className={cn(
@@ -48,7 +63,7 @@ export function FaqSearchBar() {
         {trimmedQuery ? (
           <button
             type="button"
-            onClick={clearQuery}
+            onClick={handleClear}
             aria-label="Clear search"
             className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-lg text-zinc-400 transition-colors hover:bg-white/8 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40"
           >

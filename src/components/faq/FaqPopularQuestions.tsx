@@ -17,8 +17,9 @@ export function FaqPopularQuestions() {
       eyebrow={FAQ_POPULAR_SECTION.eyebrow}
       title={FAQ_POPULAR_SECTION.title}
       description={FAQ_POPULAR_SECTION.description}
+      tight
     >
-      <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:gap-6">
+      <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:gap-6">
         {featured.map((item) => (
           <li key={item.id}>
             <PopularQuestionCard

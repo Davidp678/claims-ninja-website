@@ -6,6 +6,7 @@ type FaqPageSectionProps = {
   title: string;
   description?: string;
   bordered?: boolean;
+  tight?: boolean;
   className?: string;
   children: React.ReactNode;
 };
@@ -15,11 +16,17 @@ export function FaqPageSection({
   title,
   description,
   bordered = true,
+  tight = false,
   className,
   children,
 }: FaqPageSectionProps) {
   return (
-    <Section compact bordered={bordered} className={className}>
+    <Section
+      compact={!tight}
+      tight={tight}
+      bordered={bordered}
+      className={className}
+    >
       <SectionHeading
         eyebrow={eyebrow}
         title={title}

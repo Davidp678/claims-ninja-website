@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 
 import type { FaqItem } from "@/lib/faq-page";
+import { FAQ_ANCHOR_SCROLL_CLASS } from "@/lib/faq-page";
 import { cn } from "@/lib/cn";
 
 type FaqAccordionItemProps = Pick<
@@ -40,7 +41,8 @@ export function FaqAccordionItem({
     <div
       id={`faq-${id}`}
       className={cn(
-        "scroll-mt-28 border-b border-white/10 last:border-b-0",
+        FAQ_ANCHOR_SCROLL_CLASS,
+        "border-b border-white/10 last:border-b-0",
         open && "border-brand-red/20",
       )}
     >

@@ -4,6 +4,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -17,12 +18,28 @@ type FaqSearchContextValue = {
 
 const FaqSearchContext = createContext<FaqSearchContextValue | null>(null);
 
+function isFaqItemHash(hash: string) {
+  return hash.startsWith("#faq-") && !hash.startsWith("#faq-category-");
+}
+
 export function FaqSearchProvider({ children }: { children: ReactNode }) {
   const [query, setQuery] = useState("");
 
   const clearQuery = useCallback(() => {
     setQuery("");
   }, []);
+
+  useEffect(() => {
+    const syncHash = () => {
+      if (isFaqItemHash(window.location.hash)) {
+        clearQuery();
+      }
+    };
+
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+    return () => window.removeEventListener("hashchange", syncHash);
+  }, [clearQuery]);
 
   const value = useMemo(
     () => ({
