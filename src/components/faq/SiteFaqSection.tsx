@@ -16,7 +16,7 @@ export function SiteFaqSection({ topic, faqIds }: SiteFaqSectionProps) {
 
   return (
     <Section bordered compact>
-      <div className="max-w-[850px]">
+      <div className="max-w-[850px] lg:-ml-6 xl:-ml-8">
         <SectionHeading
           title="Frequently Asked Questions"
           description={`Answers to common questions about ${topic}.`}
