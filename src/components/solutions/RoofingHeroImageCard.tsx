@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 
 type RoofingHeroImageCardProps = {
@@ -11,11 +11,19 @@ type RoofingHeroImageCardProps = {
 };
 
 export function RoofingHeroImageCard({ src, alt, className }: RoofingHeroImageCardProps) {
+  const imgRef = useRef<HTMLImageElement>(null);
   const [ready, setReady] = useState(false);
 
   const markReady = useCallback(() => {
     setReady(true);
   }, []);
+
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img?.complete) {
+      setReady(true);
+    }
+  }, [src]);
 
   return (
     <div
@@ -36,6 +44,7 @@ export function RoofingHeroImageCard({ src, alt, className }: RoofingHeroImageCa
             aria-hidden
           />
           <Image
+            ref={imgRef}
             src={src}
             alt={alt}
             fill
@@ -46,6 +55,8 @@ export function RoofingHeroImageCard({ src, alt, className }: RoofingHeroImageCa
               ready ? "opacity-100" : "opacity-0",
             )}
             onLoad={markReady}
+            onLoadingComplete={markReady}
+            onError={markReady}
           />
           <div
             aria-hidden

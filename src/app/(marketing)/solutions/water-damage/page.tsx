@@ -1,20 +1,13 @@
-import { MarketingPageShell } from "@/components/marketing/MarketingPageShell";
+import { WaterDamageClaimsPage } from "@/components/solutions/WaterDamageClaimsPage";
 import { pageMetadata } from "@/lib/metadata";
-import { waterDamagePage } from "@/lib/marketing-pages";
+import { WATER_DAMAGE_META } from "@/lib/water-damage-page";
 
 export const metadata = pageMetadata({
-  title: waterDamagePage.metaTitle,
-  description: waterDamagePage.metaDescription,
-  path: waterDamagePage.path,
+  title: WATER_DAMAGE_META.metaTitle,
+  description: WATER_DAMAGE_META.metaDescription,
+  path: WATER_DAMAGE_META.path,
 });
 
 export default function WaterDamagePage() {
-  return (
-    <MarketingPageShell
-      eyebrow={waterDamagePage.eyebrow}
-      title={waterDamagePage.title}
-      description={waterDamagePage.description}
-      features={waterDamagePage.features}
-    />
-  );
+  return <WaterDamageClaimsPage />;
 }

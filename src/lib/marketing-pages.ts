@@ -238,9 +238,9 @@ export const waterDamagePage = page({
   title: "Water Damage Claims",
   metaTitle: "Water Damage Claims",
   metaDescription:
-    "Water damage claim support from Claims Ninja: mitigation documentation, rebuild scope alignment, and supplement strategy for restoration contractors.",
+    "Water damage claim support from Claims Ninja—mitigation documentation, moisture readings, rebuild scopes, and supplement strategy built for restoration contractors.",
   description:
-    "Documentation, scope development, and supplement strategy for mitigation and reconstruction water losses.",
+    "Turn mitigation documentation, moisture readings, rebuild scopes, and carrier correspondence into organized claim support built for restoration contractors.",
   features: [
     {
       title: "Mitigation documentation",
