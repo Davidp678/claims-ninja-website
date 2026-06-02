@@ -38,7 +38,7 @@ export const BILLING_PAYMENTS_HERO_VIDEO = {
 
 export const SITE = {
   name: "The Claims Ninja",
-  tagline: "Public adjusting that fights for what you're owed.",
+  tagline: "Contractor claims support that maximizes recovery.",
   description:
     "Claims Ninja is a contractor claims operations platform combining expert claim support, claims management technology, and AI intelligence for restoration teams.",
   phone: "(615) 479-2438",

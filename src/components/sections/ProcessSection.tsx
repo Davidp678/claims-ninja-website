@@ -24,7 +24,7 @@ const STEPS = [
     step: "04",
     title: "Public Adjuster Services",
     description:
-      "When needed, our nationwide PA license allows us to keep the claim fully managed in-house.",
+      "When needed, licensed public adjuster support is available for full claim ownership — keeping complex files managed without building an in-house team.",
   },
 ] as const;
 

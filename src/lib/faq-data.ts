@@ -49,7 +49,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Yes. Most partners continue using Xactimate, Symbility, or internal estimating workflows. Claims Ninja reviews and organizes what you produce — we do not require you to abandon your field tools or rewrite estimates from scratch.",
   },
 
-  // Pricing (6)
+  // Pricing (14)
   {
     id: "pricing-fee-structure",
     category: "pricing",
@@ -96,6 +96,64 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "Are there hidden markups or pass-through charges?",
     answer:
       "No hidden markups on line items. Fees are defined in your partnership terms — tied to documented recovery or agreed RCV basis depending on claim type and scope. Your team sees what was pursued, what was approved, and what was billed.",
+  },
+  {
+    id: "billing-how-paid",
+    category: "pricing",
+    question: "How does Claims Ninja get paid?",
+    answer:
+      "Claims Ninja is typically compensated through a percentage-based success fee tied to documented claim increases. Fee structures vary depending on claim type and engagement model.",
+    relatedLinks: [{ label: "Billing & Payments", href: "/platform/billing-payments" }],
+  },
+  {
+    id: "billing-percentage-charged",
+    category: "pricing",
+    question: "What percentage does Claims Ninja charge?",
+    answer:
+      "For claims with an existing carrier estimate, Claims Ninja generally charges 15% of the documented increase obtained through the supplement process. Certain no-estimate scenarios may use a fee based on a percentage of RCV.",
+    relatedLinks: [{ label: "Pricing", href: "/pricing" }],
+  },
+  {
+    id: "billing-upfront-fees",
+    category: "pricing",
+    question: "Do I pay anything upfront?",
+    answer:
+      "In most cases, no upfront fees are required. Our compensation is typically tied to successful claim outcomes.",
+  },
+  {
+    id: "billing-fee-calculated",
+    category: "pricing",
+    question: "How is the fee calculated?",
+    answer:
+      "Fees are calculated using documented claim results and approved carrier payments according to the agreed engagement structure.",
+  },
+  {
+    id: "billing-payment-due",
+    category: "pricing",
+    question: "When is payment due?",
+    answer:
+      "Payment terms are outlined in your service agreement and are generally tied to claim funding milestones.",
+  },
+  {
+    id: "billing-long-term-contracts",
+    category: "pricing",
+    question: "Are there long-term contracts?",
+    answer:
+      "No. Contractors engage Claims Ninja on a claim-by-claim basis or through ongoing partnership arrangements depending on their operational needs.",
+  },
+  {
+    id: "billing-selective-claims",
+    category: "pricing",
+    question: "Can I use Claims Ninja for only certain claims?",
+    answer:
+      "Yes. Many contractors use Claims Ninja selectively on complex, high-value, or resource-intensive claims.",
+  },
+  {
+    id: "billing-replace-estimator",
+    category: "pricing",
+    question: "Does Claims Ninja replace my internal estimator?",
+    answer:
+      "No. Claims Ninja can supplement existing teams, act as an overflow resource, or function as a complete outsourced claims department.",
   },
 
   // Insurance Supplements (7)
@@ -402,7 +460,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "carrier_negotiations",
     question: "Is Claims Ninja a public adjuster?",
     answer:
-      "No. Claims Ninja supports contractors and restoration companies with claim documentation, estimate review, supplements, and carrier communication. We work behind your operation — you remain the contractor of record on the job.",
+      "Claims Ninja is a contractor-focused claims support platform that includes access to licensed public adjusters, estimators, supplement specialists, and other claims professionals when needed. We help contractors maximize claim recovery through documentation, estimate review, supplements, and carrier communication while supporting the overall claims process.",
   },
   {
     id: "carrier-timeline",

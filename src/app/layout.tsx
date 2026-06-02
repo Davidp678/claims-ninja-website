@@ -17,7 +17,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE.name} | Public Adjusting Experts`,
+    default: `${SITE.name} | Contractor Claims Support`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,

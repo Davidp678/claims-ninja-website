@@ -1,6 +1,7 @@
 import { MarketingPageShell } from "@/components/marketing/MarketingPageShell";
 import { pageMetadata } from "@/lib/metadata";
 import { caseStudiesPage } from "@/lib/marketing-pages";
+import { SITE_FAQ } from "@/lib/site-faq-selections";
 
 export const metadata = pageMetadata({
   title: caseStudiesPage.metaTitle,
@@ -15,6 +16,7 @@ export default function CaseStudiesPage() {
       title={caseStudiesPage.title}
       description={caseStudiesPage.description}
       features={caseStudiesPage.features}
+      siteFaq={SITE_FAQ.caseStudies}
     />
   );
 }

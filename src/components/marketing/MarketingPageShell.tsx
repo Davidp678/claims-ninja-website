@@ -1,4 +1,6 @@
 import type { MarketingPageConfig } from "@/lib/marketing-pages";
+import type { SiteFaqConfig } from "@/lib/site-faq-selections";
+import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -7,13 +9,16 @@ import { MarketingCtaPanel } from "./MarketingCtaPanel";
 type MarketingPageShellProps = Pick<
   MarketingPageConfig,
   "eyebrow" | "title" | "description" | "features"
->;
+> & {
+  siteFaq?: SiteFaqConfig;
+};
 
 export function MarketingPageShell({
   eyebrow,
   title,
   description,
   features,
+  siteFaq,
 }: MarketingPageShellProps) {
   return (
     <>
@@ -45,6 +50,7 @@ export function MarketingPageShell({
         </ul>
       </Section>
 
+      {siteFaq ? <SiteFaqSection {...siteFaq} /> : null}
       <MarketingCtaPanel />
     </>
   );

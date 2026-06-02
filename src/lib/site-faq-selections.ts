@@ -2,6 +2,7 @@ export type SiteFaqPageKey =
   | "home"
   | "platform"
   | "pricing"
+  | "billingPayments"
   | "aiClaimAnalysis"
   | "clientPortal"
   | "claimTracking"
@@ -10,7 +11,15 @@ export type SiteFaqPageKey =
   | "waterDamage"
   | "fireDamage"
   | "mold"
-  | "contents";
+  | "contents"
+  | "about"
+  | "contact"
+  | "partnerNetwork"
+  | "reviews"
+  | "blog"
+  | "guides"
+  | "caseStudies"
+  | "videos";
 
 export type SiteFaqConfig = {
   topic: string;
@@ -53,6 +62,19 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "pricing-volume",
       "pricing-hidden-fees",
       "supplements-denied",
+    ],
+  },
+  billingPayments: {
+    topic: "billing and payments",
+    faqIds: [
+      "billing-how-paid",
+      "billing-percentage-charged",
+      "billing-upfront-fees",
+      "billing-fee-calculated",
+      "billing-payment-due",
+      "billing-long-term-contracts",
+      "billing-selective-claims",
+      "billing-replace-estimator",
     ],
   },
   aiClaimAnalysis: {
@@ -144,6 +166,87 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "contents-storage",
       "contents-specialty-items",
       "contents-fire-water",
+    ],
+  },
+  about: {
+    topic: "Claims Ninja",
+    faqIds: [
+      "getting-started-who-for",
+      "getting-started-onboarding",
+      "getting-started-field-vs-support",
+      "carrier-public-adjuster",
+      "platform-data-secure",
+      "supplements-whats-included",
+    ],
+  },
+  contact: {
+    topic: "getting started with Claims Ninja",
+    faqIds: [
+      "getting-started-onboarding",
+      "getting-started-intake-info",
+      "getting-started-first-claim",
+      "pricing-fee-structure",
+      "carrier-who-talks",
+    ],
+  },
+  partnerNetwork: {
+    topic: "partnering with Claims Ninja",
+    faqIds: [
+      "getting-started-who-for",
+      "supplements-whats-included",
+      "carrier-how-handled",
+      "pricing-volume",
+      "getting-started-field-vs-support",
+    ],
+  },
+  reviews: {
+    topic: "partnering with Claims Ninja",
+    faqIds: [
+      "getting-started-who-for",
+      "supplements-whats-included",
+      "supplements-turnaround",
+      "carrier-how-handled",
+      "carrier-timeline",
+    ],
+  },
+  blog: {
+    topic: "contractor claims operations",
+    faqIds: [
+      "supplements-whats-included",
+      "documentation-essentials",
+      "carrier-how-handled",
+      "roofing-carrier-documentation",
+      "water-mitigation-scope",
+    ],
+  },
+  guides: {
+    topic: "claims documentation and supplements",
+    faqIds: [
+      "documentation-essentials",
+      "supplements-process",
+      "documentation-photos",
+      "getting-started-onboarding",
+      "supplements-documentation",
+    ],
+  },
+  caseStudies: {
+    topic: "Claims Ninja outcomes",
+    faqIds: [
+      "getting-started-who-for",
+      "supplements-whats-included",
+      "pricing-fee-structure",
+      "carrier-how-handled",
+      "supplements-denied",
+    ],
+  },
+  videos: {
+    topic: "the Claims Ninja platform",
+    faqIds: [
+      "getting-started-onboarding",
+      "platform-claim-tracking",
+      "ai-how-helps",
+      "platform-communication",
+      "getting-started-first-claim",
     ],
   },
 } as const;
