@@ -1,0 +1,545 @@
+import type { FaqItem } from "@/lib/faq-page";
+
+export const FAQ_ITEMS: readonly FaqItem[] = [
+  // Getting Started (6)
+  {
+    id: "getting-started-onboarding",
+    category: "getting_started",
+    question: "How does Claims Ninja onboarding work?",
+    answer:
+      "Onboarding starts with intake — we review your operation, claim volume, and current workflow. Your team gets platform access, documentation standards, and a clear handoff process for first claim submissions. Most contractors are submitting claims within the first week, depending on claim type and scope.",
+    featured: true,
+    relatedLinks: [{ label: "Contact us", href: "/contact" }],
+  },
+  {
+    id: "getting-started-field-vs-support",
+    category: "getting_started",
+    question: "What stays with my field team versus Claims Ninja?",
+    answer:
+      "Your crew handles production — mitigation, repairs, roofing, contents handling, and customer communication on site. Claims Ninja supports estimate review, supplement strategy, documentation organization, and carrier communication. You stay in control of the job; we strengthen the claim file behind you.",
+    featured: true,
+  },
+  {
+    id: "getting-started-who-for",
+    category: "getting_started",
+    question: "Who is Claims Ninja built for?",
+    answer:
+      "Claims Ninja is built for contractors, restoration companies, and property claim professionals managing insurance work at volume. If your team handles storm, water, fire, mold, or contents losses and needs stronger documentation and supplement support without building an internal claims department, the platform is designed for you.",
+  },
+  {
+    id: "getting-started-first-claim",
+    category: "getting_started",
+    question: "How quickly can we submit our first claim?",
+    answer:
+      "After intake and workflow setup, most teams submit their first claim within a few business days. Timing depends on how quickly you can provide photos, estimates, and policy details. We walk through your first file so the process is repeatable across your book.",
+    relatedLinks: [{ label: "Platform overview", href: "/platform" }],
+  },
+  {
+    id: "getting-started-intake-info",
+    category: "getting_started",
+    question: "What information do you need to start a claim file?",
+    answer:
+      "Typical intake includes the carrier estimate or scope (if available), site photos, your contractor estimate, policyholder details, claim number, and loss type. Additional items like moisture logs, testing reports, or contents inventories may apply depending on claim type and scope.",
+  },
+  {
+    id: "getting-started-estimating-tools",
+    category: "getting_started",
+    question: "Can we keep using our existing estimating software?",
+    answer:
+      "Yes. Most partners continue using Xactimate, Symbility, or internal estimating workflows. Claims Ninja reviews and organizes what you produce — we do not require you to abandon your field tools or rewrite estimates from scratch.",
+  },
+
+  // Pricing (6)
+  {
+    id: "pricing-fee-structure",
+    category: "pricing",
+    question: "How are partnership fees structured?",
+    answer:
+      "Fees align to documented claim recovery, not flat retainers on every file. When a carrier estimate exists, the model is typically 15% of the documented increase. In certain no-estimate scenarios, a 4% of RCV structure may apply depending on claim type and scope. We confirm the fee basis before work begins.",
+    featured: true,
+    relatedLinks: [{ label: "Pricing", href: "/pricing" }],
+  },
+  {
+    id: "pricing-15-percent",
+    category: "pricing",
+    question: "When does the 15% documented increase fee apply?",
+    answer:
+      "The 15% model generally applies when a carrier estimate or approved scope already exists and Claims Ninja helps document and pursue additional line items through supplements or negotiation. The fee is tied to documented settlement increase — not gross invoice totals.",
+    relatedLinks: [{ label: "Pricing", href: "/pricing" }],
+  },
+  {
+    id: "pricing-4-percent-rcv",
+    category: "pricing",
+    question: "When does the 4% of RCV fee apply?",
+    answer:
+      "In select scenarios where no carrier estimate exists at intake, a 4% of replacement cost value (RCV) structure may apply depending on claim type and scope. This is evaluated case by case so your team understands the fee basis before proceeding.",
+    relatedLinks: [{ label: "Pricing", href: "/pricing" }],
+  },
+  {
+    id: "pricing-when-charged",
+    category: "pricing",
+    question: "When are fees invoiced?",
+    answer:
+      "Invoicing is tied to documented recovery milestones — not simply opening a file. Your partnership agreement outlines when fees apply and how documented increases are calculated. Transparent reporting keeps your office aligned with what was recovered and what was billed.",
+  },
+  {
+    id: "pricing-volume",
+    category: "pricing",
+    question: "Do you offer volume-based partnership tiers?",
+    answer:
+      "Yes. Higher claim volume and broader service scope may qualify for adjusted partnership structures. We review your book, loss mix, and supplement needs during intake to recommend a tier that fits your operation.",
+    relatedLinks: [{ label: "Pricing", href: "/pricing" }],
+  },
+  {
+    id: "pricing-hidden-fees",
+    category: "pricing",
+    question: "Are there hidden markups or pass-through charges?",
+    answer:
+      "No hidden markups on line items. Fees are defined in your partnership terms — tied to documented recovery or agreed RCV basis depending on claim type and scope. Your team sees what was pursued, what was approved, and what was billed.",
+  },
+
+  // Insurance Supplements (7)
+  {
+    id: "supplements-whats-included",
+    category: "insurance_supplements",
+    question: "What is included in supplement support?",
+    answer:
+      "Supplement support includes scope review, line-item analysis, documentation guidance, and carrier-ready supplement submissions. Expert teams identify missing items, pricing gaps, and code-related opportunities — then organize the file so adjusters can review efficiently.",
+    featured: true,
+    relatedLinks: [{ label: "Roofing claims", href: "/solutions/roofing" }],
+  },
+  {
+    id: "supplements-process",
+    category: "insurance_supplements",
+    question: "What does the supplement process look like?",
+    answer:
+      "We compare carrier scope to field conditions and your estimate, flag defensible line items, and build organized supplement packages with photos and notes. After your review, submissions go to the carrier with clear change summaries. Follow-up continues through adjuster responses.",
+  },
+  {
+    id: "supplements-turnaround",
+    category: "insurance_supplements",
+    question: "How long does supplement preparation take?",
+    answer:
+      "Turnaround depends on documentation completeness and claim complexity. Straightforward scope gaps may move quickly; large commercial or multi-trade files take longer. We prioritize files based on your production schedule and carrier deadlines.",
+  },
+  {
+    id: "supplements-who-submits",
+    category: "insurance_supplements",
+    question: "Who submits supplements to the carrier?",
+    answer:
+      "Claims Ninja prepares and submits supplement packages on your behalf, aligned to your authorization and partnership terms. Your team retains visibility through the platform — you see what went out, when, and how the carrier responded.",
+    relatedLinks: [{ label: "Claim tracking", href: "/platform/claim-tracking" }],
+  },
+  {
+    id: "supplements-documentation",
+    category: "insurance_supplements",
+    question: "What documentation strengthens a supplement?",
+    answer:
+      "Strong supplements pair line-item detail with photos, measurements, code references, manufacturer specs, and moisture or testing data where relevant. Organized narratives help adjusters understand why each item belongs on the scope — not just that it was missed.",
+    relatedLinks: [{ label: "Documentation guidance", href: "/faq#faq-category-documentation" }],
+  },
+  {
+    id: "supplements-multiple",
+    category: "insurance_supplements",
+    question: "Can we submit multiple supplements on one claim?",
+    answer:
+      "Yes. Many claims require sequential supplements as demolition reveals additional damage or as trades complete work. We track prior submissions and carrier responses so each round stays organized and defensible.",
+  },
+  {
+    id: "supplements-denied",
+    category: "insurance_supplements",
+    question: "What happens if a supplement is denied or partially approved?",
+    answer:
+      "We document the carrier's position, identify gaps in their reasoning, and advise on next steps — revised documentation, re-inspection requests, or escalation when appropriate. Outcomes vary by carrier and file; we focus on building the strongest record possible.",
+  },
+
+  // Roofing Claims (6)
+  {
+    id: "roofing-carrier-documentation",
+    category: "roofing_claims",
+    question: "What documentation do carriers expect on roofing claims?",
+    answer:
+      "Carriers expect photos of all slopes and damage, accurate measurements, line items aligned to how the roof was built, and code-related accessories where applicable. Supplement opportunities often hinge on drip edge, ice and water shield, ventilation, steep charges, and waste factors documented clearly.",
+    featured: true,
+    relatedLinks: [{ label: "Roofing solutions", href: "/solutions/roofing" }],
+  },
+  {
+    id: "roofing-storm-vs-retail",
+    category: "roofing_claims",
+    question: "Do you support both storm restoration and retail roofing claims?",
+    answer:
+      "Yes. Storm books need consistency across high volume; retail jobs need precision on scope and code items. We adapt documentation and supplement strategy to how your roofing operation actually runs — residential, commercial, or both.",
+    relatedLinks: [{ label: "Roofing solutions", href: "/solutions/roofing" }],
+  },
+  {
+    id: "roofing-code-items",
+    category: "roofing_claims",
+    question: "How do code and compliance items get handled on roof supplements?",
+    answer:
+      "We review jurisdiction requirements, manufacturer specs, and field conditions to identify code-driven line items carriers often omit. Items like drip edge, starter course, ice barrier, and ventilation are evaluated based on what the job requires — not automatically added to every file.",
+  },
+  {
+    id: "roofing-commercial",
+    category: "roofing_claims",
+    question: "Can you support commercial roofing claims?",
+    answer:
+      "Yes. Commercial roofing often involves membranes, coatings, metal systems, and larger scopes with heavier documentation requirements. We organize complex estimates and trade coordination so carrier review stays manageable.",
+    relatedLinks: [{ label: "Roofing solutions", href: "/solutions/roofing" }],
+  },
+  {
+    id: "roofing-measurements",
+    category: "roofing_claims",
+    question: "How important are roof measurements and waste factors?",
+    answer:
+      "Accurate measurements anchor defensible quantity arguments. Waste, pitch, and cut-up factors should reflect actual roof geometry — not generic defaults. We compare carrier quantities to field documentation and flag gaps worth pursuing.",
+  },
+  {
+    id: "roofing-op",
+    category: "roofing_claims",
+    question: "When is overhead and profit relevant on roofing claims?",
+    answer:
+      "O&P depends on carrier guidelines, number of trades, and how the claim is structured. We evaluate whether O&P applies to your file and document the basis when pursuing it — outcomes vary by carrier and claim circumstances.",
+  },
+
+  // Water Damage Claims (6)
+  {
+    id: "water-mitigation-scope",
+    category: "water_damage_claims",
+    question: "How do you support water mitigation and reconstruction claims?",
+    answer:
+      "We review mitigation invoices, drying logs, moisture readings, and rebuild scopes for completeness. Common gaps include equipment days, containment, antimicrobial treatment, demolition, and rebuild line items carriers trim on first pass.",
+    relatedLinks: [{ label: "Water damage solutions", href: "/solutions/water-damage" }],
+  },
+  {
+    id: "water-drying-documentation",
+    category: "water_damage_claims",
+    question: "What drying documentation do carriers review most closely?",
+    answer:
+      "Daily moisture logs, equipment placement photos, atmospheric readings, and clear drying goals carry weight in review. Gaps in documentation often lead to reduced equipment days or disputed mitigation charges.",
+  },
+  {
+    id: "water-category-class",
+    category: "water_damage_claims",
+    question: "Do you help with category and class of water documentation?",
+    answer:
+      "Yes. We ensure field notes, photos, and line items align with how the loss was classified. Misalignment between mitigation narrative and billed scope is a common reason carriers reduce payment.",
+    relatedLinks: [{ label: "Water damage solutions", href: "/solutions/water-damage" }],
+  },
+  {
+    id: "water-rebuild-supplements",
+    category: "water_damage_claims",
+    question: "Can supplements cover both mitigation and reconstruction?",
+    answer:
+      "Absolutely. Many water claims span emergency services and rebuild. We track both phases, compare carrier scopes to field conditions, and pursue missing items across mitigation and construction line items.",
+  },
+  {
+    id: "water-emergency-vs-rebuild",
+    category: "water_damage_claims",
+    question: "How do you handle emergency service vs. rebuild on the same claim?",
+    answer:
+      "We separate mitigation documentation from rebuild estimating so carriers can follow the timeline. Clear phase separation reduces confusion when adjusters review equipment charges alongside finished reconstruction scope.",
+  },
+  {
+    id: "water-commercial-losses",
+    category: "water_damage_claims",
+    question: "Do you support commercial water losses?",
+    answer:
+      "Yes. Commercial water claims often involve larger drying footprints, business interruption considerations, and multi-trade rebuild scopes. Documentation organization becomes critical at that scale.",
+  },
+
+  // Fire Damage Claims (5)
+  {
+    id: "fire-smoke-soot",
+    category: "fire_damage_claims",
+    question: "How are smoke and soot damage documented for carriers?",
+    answer:
+      "Effective files combine visual evidence, scope detail by room, cleaning method notes, and trade separation. Carriers scrutinize whether smoke damage is localized or systemic — documentation should match what your crew observed on site.",
+    relatedLinks: [{ label: "Fire damage solutions", href: "/solutions/fire-damage" }],
+  },
+  {
+    id: "fire-structural-vs-contents",
+    category: "fire_damage_claims",
+    question: "Do you handle structural fire damage and contents on the same file?",
+    answer:
+      "Yes. Fire losses often span structure, contents pack-out, and deodorization. We organize scopes so carriers can review building and contents separately while keeping the overall claim narrative coherent.",
+    relatedLinks: [{ label: "Contents restoration", href: "/solutions/contents" }],
+  },
+  {
+    id: "fire-demo-rebuild",
+    category: "fire_damage_claims",
+    question: "How do demolition and rebuild scopes get supplemented on fire claims?",
+    answer:
+      "Fire claims frequently evolve after demo reveals hidden damage. We track change orders and revised scopes so supplements reflect conditions discovered during tear-out — not just the initial adjuster walkthrough.",
+  },
+  {
+    id: "fire-odor-deodorization",
+    category: "fire_damage_claims",
+    question: "Are deodorization and air quality items commonly missed?",
+    answer:
+      "They can be. HEPA filtration, ozone or hydroxyl treatment, sealers, and content cleaning lines are often under-scoped on first carrier estimates. We evaluate whether your documentation supports pursuing those items.",
+  },
+  {
+    id: "fire-total-loss-partial",
+    category: "fire_damage_claims",
+    question: "Do you support partial fire losses and major rebuilds?",
+    answer:
+      "Yes. From localized kitchen fires to major structural rebuilds, supplement strategy adapts to loss severity. Larger files benefit from organized trade breakdowns and phased documentation as work progresses.",
+    relatedLinks: [{ label: "Fire damage solutions", href: "/solutions/fire-damage" }],
+  },
+
+  // Mold Claims (5)
+  {
+    id: "mold-remediation-docs",
+    category: "mold_claims",
+    question: "What documentation supports mold remediation claims?",
+    answer:
+      "Carriers typically review moisture source documentation, remediation protocol, containment detail, air scrubbing, and clearance testing where required. Photos, room-by-room scope, and alignment with IICRC-oriented practices strengthen the file.",
+    relatedLinks: [{ label: "Mold solutions", href: "/solutions/mold" }],
+  },
+  {
+    id: "mold-testing",
+    category: "mold_claims",
+    question: "How do testing and clearance reports factor into mold claims?",
+    answer:
+      "Pre- and post-remediation testing can support scope justification and clearance verification. We help organize lab results and tie them to billed line items so adjusters understand why testing was necessary.",
+  },
+  {
+    id: "mold-carrier-pushback",
+    category: "mold_claims",
+    question: "Why do carriers often push back on mold line items?",
+    answer:
+      "Mold coverage varies by policy and causation. Carriers question whether damage resulted from a covered water event versus long-term conditions. Strong documentation on sudden water intrusion and timely mitigation helps address those reviews.",
+  },
+  {
+    id: "mold-containment-equipment",
+    category: "mold_claims",
+    question: "Are containment and air scrubbing commonly underpaid?",
+    answer:
+      "They can be. Negative air, HEPA filtration, and containment labor are frequently trimmed on initial scopes. We compare your field setup to carrier line items and pursue gaps when documentation supports the work performed.",
+  },
+  {
+    id: "mold-water-relationship",
+    category: "mold_claims",
+    question: "Can mold supplements tie back to a water loss claim?",
+    answer:
+      "Yes. Mold often follows an underlying water event. Linking moisture source documentation, drying history, and remediation scope helps carriers follow the causal chain on the file.",
+    relatedLinks: [{ label: "Water damage solutions", href: "/solutions/water-damage" }],
+  },
+
+  // Contents Restoration (5)
+  {
+    id: "contents-pack-out",
+    category: "contents_restoration",
+    question: "How do you support contents pack-out and cleaning claims?",
+    answer:
+      "We review inventories, pack-out labor, storage, cleaning method codes, and specialty item handling. Contents files fail when inventories are incomplete or cleaning lines do not match item types — we help tighten that documentation.",
+    relatedLinks: [{ label: "Contents solutions", href: "/solutions/contents" }],
+  },
+  {
+    id: "contents-inventory",
+    category: "contents_restoration",
+    question: "What makes a contents inventory carrier-ready?",
+    answer:
+      "Detailed descriptions, condition notes, photos, and consistent room labeling matter. High-value items need supporting detail. Organized inventories speed adjuster review and reduce back-and-forth on line counts.",
+  },
+  {
+    id: "contents-storage",
+    category: "contents_restoration",
+    question: "Are storage and handling charges commonly disputed?",
+    answer:
+      "Yes. Carriers question duration, unit counts, and whether storage was necessary. Documenting pack-out timing, vault or pod usage, and return-to-site logistics helps defend those charges.",
+  },
+  {
+    id: "contents-specialty-items",
+    category: "contents_restoration",
+    question: "Can you help with specialty contents like electronics or art?",
+    answer:
+      "We organize specialty line items with vendor quotes and handling notes where available. Specialty contents often require separate justification — generic cleaning codes rarely suffice.",
+    relatedLinks: [{ label: "Contents solutions", href: "/solutions/contents" }],
+  },
+  {
+    id: "contents-fire-water",
+    category: "contents_restoration",
+    question: "Do contents claims differ between fire and water losses?",
+    answer:
+      "Yes. Fire contents emphasize smoke residue, deodorization, and replacement vs. restore decisions. Water contents focus on contamination category, drying timelines, and salvageability. Documentation should match the loss type.",
+  },
+
+  // Carrier Negotiations (6)
+  {
+    id: "carrier-how-handled",
+    category: "carrier_negotiations",
+    question: "How does Claims Ninja handle carrier negotiations?",
+    answer:
+      "Expert teams engage adjusters with organized documentation, clear change summaries, and scope support backed by photos and estimates. We track responses, revise submissions when needed, and escalate through appropriate channels — always aligned to your authorization.",
+    featured: true,
+    relatedLinks: [{ label: "Communication hub", href: "/platform/communication-hub" }],
+  },
+  {
+    id: "carrier-who-talks",
+    category: "carrier_negotiations",
+    question: "Who communicates with the adjuster on our behalf?",
+    answer:
+      "Claims Ninja supplement and negotiation specialists handle carrier communication within your partnership terms. Your team stays informed through the platform — you see correspondence history and status without managing every adjuster call yourself.",
+    relatedLinks: [{ label: "Communication hub", href: "/platform/communication-hub" }],
+  },
+  {
+    id: "carrier-disputes",
+    category: "carrier_negotiations",
+    question: "What happens when carriers dispute line items?",
+    answer:
+      "We document the dispute, gather supporting evidence, and respond with organized rebuttals or revised scopes. Outcomes depend on carrier guidelines and file strength — we focus on building the clearest record rather than promising specific results.",
+  },
+  {
+    id: "carrier-reinspection",
+    category: "carrier_negotiations",
+    question: "Can you request re-inspections or desk reviews?",
+    answer:
+      "Yes, when documentation supports it. Re-inspections help when field conditions differ from the adjuster's initial scope. We coordinate requests and prepare the file so reviewers arrive with context.",
+  },
+  {
+    id: "carrier-public-adjuster",
+    category: "carrier_negotiations",
+    question: "Is Claims Ninja a public adjuster?",
+    answer:
+      "No. Claims Ninja supports contractors and restoration companies with claim documentation, estimate review, supplements, and carrier communication. We work behind your operation — you remain the contractor of record on the job.",
+  },
+  {
+    id: "carrier-timeline",
+    category: "carrier_negotiations",
+    question: "How long do carrier negotiations typically take?",
+    answer:
+      "Timelines vary widely by carrier, adjuster workload, and claim complexity. Simple supplement responses may resolve in days; contested commercial files can take weeks. We keep your team updated on status throughout.",
+    relatedLinks: [{ label: "Claim tracking", href: "/platform/claim-tracking" }],
+  },
+
+  // Documentation (6)
+  {
+    id: "documentation-essentials",
+    category: "documentation",
+    question: "What claim documentation should our field teams capture?",
+    answer:
+      "At minimum: dated photos of damage and repairs, moisture readings where applicable, scope notes, and estimate detail aligned to field conditions. Strong files tell the story of what happened, what you found, and what was required to restore the property.",
+  },
+  {
+    id: "documentation-photos",
+    category: "documentation",
+    question: "How should photos be organized for carrier review?",
+    answer:
+      "Group photos by room, elevation, or trade with clear labels and dates. Before-and-after sequences help adjusters follow the work. Random photo dumps slow review and invite scope reductions.",
+  },
+  {
+    id: "documentation-estimates",
+    category: "documentation",
+    question: "Should our estimates match carrier format?",
+    answer:
+      "Your estimates should reflect actual field conditions and local pricing — not mirror carrier omissions. We compare your scope to the carrier file and identify defensible differences worth pursuing.",
+  },
+  {
+    id: "documentation-moisture-logs",
+    category: "documentation",
+    question: "When are moisture logs required?",
+    answer:
+      "Moisture logs are standard on water mitigation jobs and often expected on mold-related work. Daily readings, equipment notes, and dry-standard documentation support equipment day charges and rebuild timing.",
+    relatedLinks: [{ label: "Water damage solutions", href: "/solutions/water-damage" }],
+  },
+  {
+    id: "documentation-policyholder",
+    category: "documentation",
+    question: "What policyholder information should we collect early?",
+    answer:
+      "Claim number, policy details, contact information, date of loss, and authorization signatures when required. Early collection prevents delays when supplements or payments need carrier verification.",
+  },
+  {
+    id: "documentation-platform-upload",
+    category: "documentation",
+    question: "How do we upload documentation to the platform?",
+    answer:
+      "Partners upload photos, estimates, and supporting files through the client portal or intake workflow established during onboarding. Organized uploads speed review — your team can batch by claim phase or trade.",
+    relatedLinks: [{ label: "Client portal", href: "/platform/client-portal" }],
+  },
+
+  // Platform & Security (5)
+  {
+    id: "platform-data-secure",
+    category: "platform_security",
+    question: "Is my claim data secure on the platform?",
+    answer:
+      "Claim files are stored with encrypted access controls and role-based permissions. Document handling follows practices aligned to contractor and carrier workflows. Your team controls who sees what within your organization.",
+    featured: true,
+    relatedLinks: [{ label: "Platform overview", href: "/platform" }],
+  },
+  {
+    id: "platform-access-controls",
+    category: "platform_security",
+    question: "Can we control who on our team accesses claim files?",
+    answer:
+      "Yes. Role-based access lets you limit visibility by user, office, or function. Owners and managers typically see full claim history; field users may see only assigned files.",
+    relatedLinks: [{ label: "Client portal", href: "/platform/client-portal" }],
+  },
+  {
+    id: "platform-claim-tracking",
+    category: "platform_security",
+    question: "How do we track claim status in the platform?",
+    answer:
+      "The claim tracking module shows file status, supplement history, carrier responses, and next steps. Your office gets visibility without chasing email threads or spreadsheet updates.",
+    relatedLinks: [{ label: "Claim tracking", href: "/platform/claim-tracking" }],
+  },
+  {
+    id: "platform-communication",
+    category: "platform_security",
+    question: "Does the platform centralize carrier and internal communication?",
+    answer:
+      "Yes. The communication hub keeps correspondence, notes, and status updates tied to each claim. Centralized history reduces miscommunication when multiple team members touch the same file.",
+    relatedLinks: [{ label: "Communication hub", href: "/platform/communication-hub" }],
+  },
+  {
+    id: "platform-data-retention",
+    category: "platform_security",
+    question: "How long is claim data retained?",
+    answer:
+      "Retention follows partnership terms and applicable data handling practices. Archived files remain accessible for reference and audit — contact us for specifics on your partnership agreement.",
+    relatedLinks: [{ label: "Contact us", href: "/contact" }],
+  },
+
+  // AI Claim Analysis (5)
+  {
+    id: "ai-how-helps",
+    category: "ai_claim_analysis",
+    question: "How does AI claim analysis help my operation?",
+    answer:
+      "AI-assisted review scans estimates and documentation for scope gaps, pricing inconsistencies, and supplement opportunities. Expert teams validate findings before anything goes to a carrier — AI accelerates review, humans make the call.",
+    featured: true,
+    relatedLinks: [{ label: "AI claim analysis", href: "/platform/ai-claim-analysis" }],
+  },
+  {
+    id: "ai-replace-experts",
+    category: "ai_claim_analysis",
+    question: "Does AI replace your supplement team?",
+    answer:
+      "No. AI is assistive — it flags items worth a closer look. Experienced supplement specialists interpret results, apply carrier context, and decide what belongs on the file. Technology speeds the process; expertise drives outcomes.",
+    relatedLinks: [{ label: "AI claim analysis", href: "/platform/ai-claim-analysis" }],
+  },
+  {
+    id: "ai-accuracy",
+    category: "ai_claim_analysis",
+    question: "How accurate is AI claim analysis?",
+    answer:
+      "AI is effective at pattern recognition across large scopes — missing line items, quantity gaps, and inconsistent pricing. It is not infallible. Every flagged item is reviewed by your Claims Ninja team before submission.",
+  },
+  {
+    id: "ai-what-analyzed",
+    category: "ai_claim_analysis",
+    question: "What files can AI analyze?",
+    answer:
+      "Estimates, carrier scopes, photos, and structured claim documentation can feed AI review depending on claim type and scope. The system works best when intake documentation is complete and organized.",
+  },
+  {
+    id: "ai-data-privacy",
+    category: "ai_claim_analysis",
+    question: "Is our claim data used to train AI models?",
+    answer:
+      "Your claim files are handled under partnership data practices. AI analysis runs within controlled workflows — we do not treat your proprietary claim data as public training material. Ask us for details on your agreement.",
+    relatedLinks: [{ label: "Platform overview", href: "/platform" }],
+  },
+] as const;

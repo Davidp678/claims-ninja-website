@@ -8,6 +8,8 @@ type SectionProps = {
   containerClassName?: string;
   /** Subtle top border + gradient fade for section transitions */
   bordered?: boolean;
+  /** Tighter vertical padding (py-16 sm:py-20) instead of default section rhythm */
+  compact?: boolean;
 };
 
 export function Section({
@@ -16,12 +18,14 @@ export function Section({
   className,
   containerClassName,
   bordered = false,
+  compact = false,
 }: SectionProps) {
   return (
     <section
       id={id}
       className={cn(
-        "relative overflow-hidden py-20 sm:py-24 lg:py-28",
+        "relative overflow-hidden",
+        compact ? "py-16 sm:py-20" : "py-20 sm:py-24 lg:py-28",
         bordered && "border-t border-white/12",
         className,
       )}

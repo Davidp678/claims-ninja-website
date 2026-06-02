@@ -4,7 +4,7 @@ export function FaqSearchBar() {
   return (
     <div className="mt-10 max-w-2xl">
       <label htmlFor="faq-search" className="sr-only">
-        Search FAQ (coming soon)
+        Search claims questions
       </label>
       <div className="relative">
         <svg
@@ -22,7 +22,7 @@ export function FaqSearchBar() {
           id="faq-search"
           type="search"
           readOnly
-          aria-label="Search FAQ (coming soon)"
+          aria-label="Search claims questions"
           placeholder={FAQ_SEARCH.placeholder}
           className="w-full rounded-xl border border-white/15 bg-brand-surface py-3.5 pl-12 pr-4 text-sm text-white placeholder:text-zinc-500 shadow-[0_0_48px_-28px_rgba(220,38,38,0.15)] transition-colors focus:border-brand-red/45 focus:outline-none focus:ring-2 focus:ring-brand-red/20"
         />

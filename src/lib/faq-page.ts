@@ -107,7 +107,7 @@ export const FAQ_SEARCH = {
   description:
     "Browse by topic below or use search to jump to specific questions about claims, platform use, and partnership support.",
   placeholder: "Search claims questions…",
-  helperText: "Full searchable FAQ library — coming soon.",
+  helperText: "Use search to jump to questions — filtering expands in a future update.",
 } as const;
 
 export const FAQ_CATEGORY_SECTION = {
@@ -121,66 +121,64 @@ export const FAQ_POPULAR_SECTION = {
   eyebrow: "Popular questions",
   title: "What teams ask us most",
   description:
-    "A preview of common questions — full answers and expandable detail coming in the complete library.",
+    "Common questions across onboarding, supplements, pricing, and platform use.",
 } as const;
 
-export const FAQ_POPULAR_QUESTIONS = [
-  {
-    question: "How does Claims Ninja onboarding work?",
-    preview:
-      "Intake, workflow review, and first claim setup — typically within your first week of partnership.",
-    category: "Getting Started",
-  },
-  {
-    question: "What is included in supplement support?",
-    preview:
-      "Scope review, line-item analysis, documentation guidance, and carrier-ready supplement submissions.",
-    category: "Insurance Supplements",
-  },
-  {
-    question: "How are partnership fees structured?",
-    preview:
-      "Tiered models based on claim volume and service scope — transparent invoicing with no hidden markups.",
-    category: "Pricing",
-  },
-  {
-    question: "What documentation do carriers expect on roofing claims?",
-    preview:
-      "Photos, measurements, code items, and estimate detail aligned to how the roof was actually built.",
-    category: "Roofing Claims",
-  },
-  {
-    question: "How does Claims Ninja handle carrier negotiations?",
-    preview:
-      "Expert teams engage adjusters with organized documentation, scope support, and dispute escalation when needed.",
-    category: "Carrier Negotiations",
-  },
-  {
-    question: "Is my claim data secure on the platform?",
-    preview:
-      "Encrypted storage, role-based access, and document handling aligned to contractor and carrier workflows.",
-    category: "Platform & Security",
-  },
-  {
-    question: "How does AI claim analysis help my operation?",
-    preview:
-      "AI-assisted review flags scope gaps and supplement opportunities — expert teams validate before submission.",
-    category: "AI Claim Analysis",
-  },
-  {
-    question: "What stays with my field team versus Claims Ninja?",
-    preview:
-      "Your crew handles production; expert teams support documentation, supplements, and carrier engagement.",
-    category: "Getting Started",
-  },
-] as const;
+export type FaqRelatedLink = {
+  label: string;
+  href: string;
+};
 
-export const FAQ_LIBRARY_PLACEHOLDER = {
+export type FaqItem = {
+  id: string;
+  category: FaqCategoryId;
+  question: string;
+  answer: string;
+  relatedLinks?: readonly FaqRelatedLink[];
+  featured?: boolean;
+};
+
+export const FAQ_LIBRARY_SECTION = {
   eyebrow: "Full library",
-  title: "The complete searchable FAQ is being built",
+  title: "Explore the complete claims knowledge library",
   description:
-    "We are expanding this knowledge center with detailed answers, category navigation, and full-text search — so your team can find claim guidance without waiting on a call.",
+    "Browse by topic, review popular questions, and find practical guidance on claims, supplements, documentation, and platform use — organized for contractors and restoration teams.",
 } as const;
 
 export const FAQ_CARD_CLASS =
   "rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/45";
+
+export function getCategoryById(id: FaqCategoryId) {
+  const category = FAQ_CATEGORIES.find((entry) => entry.id === id);
+  if (!category) {
+    throw new Error(`Unknown FAQ category: ${id}`);
+  }
+  return category;
+}
+
+export function getCategoryTitle(id: FaqCategoryId): string {
+  return getCategoryById(id).title;
+}
+
+export function getFaqsByCategory(
+  items: readonly FaqItem[],
+): { category: (typeof FAQ_CATEGORIES)[number]; items: FaqItem[] }[] {
+  return FAQ_CATEGORIES.map((category) => ({
+    category,
+    items: items.filter((item) => item.category === category.id),
+  })).filter((group) => group.items.length > 0);
+}
+
+export function getFeaturedFaqs(
+  items: readonly FaqItem[],
+  limit = 8,
+): FaqItem[] {
+  return items.filter((item) => item.featured).slice(0, limit);
+}
+
+export function getFaqPreview(item: FaqItem): string {
+  if (item.answer.length <= 120) {
+    return item.answer;
+  }
+  return `${item.answer.slice(0, 117).trimEnd()}…`;
+}

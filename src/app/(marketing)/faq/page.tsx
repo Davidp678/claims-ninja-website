@@ -1,6 +1,7 @@
 import { FaqCategoryGrid } from "@/components/faq/FaqCategoryGrid";
 import { FaqHero } from "@/components/faq/FaqHero";
-import { FaqLibraryPlaceholder } from "@/components/faq/FaqLibraryPlaceholder";
+import { FaqJsonLd } from "@/components/faq/FaqJsonLd";
+import { FaqLibrary } from "@/components/faq/FaqLibrary";
 import { FaqPopularQuestions } from "@/components/faq/FaqPopularQuestions";
 import { FaqSearchSection } from "@/components/faq/FaqSearchSection";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
@@ -20,8 +21,9 @@ export default function FaqPage() {
       <FaqSearchSection />
       <FaqCategoryGrid />
       <FaqPopularQuestions />
-      <FaqLibraryPlaceholder />
+      <FaqLibrary />
       <MarketingCtaPanel />
+      <FaqJsonLd />
     </>
   );
 }

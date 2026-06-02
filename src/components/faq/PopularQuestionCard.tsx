@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { FAQ_CARD_CLASS } from "@/lib/faq-page";
 import { cn } from "@/lib/cn";
 
@@ -5,15 +7,17 @@ type PopularQuestionCardProps = {
   question: string;
   preview: string;
   category: string;
+  href?: string;
 };
 
 export function PopularQuestionCard({
   question,
   preview,
   category,
+  href,
 }: PopularQuestionCardProps) {
-  return (
-    <div className={cn("group flex gap-4", FAQ_CARD_CLASS)}>
+  const content = (
+    <>
       <div className="min-w-0 flex-1">
         <span className="inline-block rounded-full border border-white/10 bg-brand-elevated/80 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-zinc-400">
           {category}
@@ -33,6 +37,19 @@ export function PopularQuestionCard({
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6" />
       </svg>
-    </div>
+    </>
   );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className={cn("group flex gap-4", FAQ_CARD_CLASS)}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return <div className={cn("group flex gap-4", FAQ_CARD_CLASS)}>{content}</div>;
 }
