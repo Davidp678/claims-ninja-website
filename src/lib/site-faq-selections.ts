@@ -1,4 +1,5 @@
 export type SiteFaqPageKey =
+  | "home"
   | "platform"
   | "pricing"
   | "aiClaimAnalysis"
@@ -17,6 +18,18 @@ export type SiteFaqConfig = {
 };
 
 export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
+  home: {
+    topic: "Claims Ninja",
+    faqIds: [
+      "getting-started-who-for",
+      "getting-started-onboarding",
+      "supplements-whats-included",
+      "pricing-fee-structure",
+      "carrier-how-handled",
+      "ai-how-helps",
+      "carrier-public-adjuster",
+    ],
+  },
   platform: {
     topic: "the Claims Ninja platform",
     faqIds: [
