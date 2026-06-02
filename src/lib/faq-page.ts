@@ -107,7 +107,7 @@ export const FAQ_SEARCH = {
   description:
     "Browse by topic below or use search to jump to specific questions about claims, platform use, and partnership support.",
   placeholder: "Search claims questions…",
-  helperText: "Use search to jump to questions — filtering expands in a future update.",
+  helperText: "Search questions, answers, and topics across the full library.",
 } as const;
 
 export const FAQ_CATEGORY_SECTION = {

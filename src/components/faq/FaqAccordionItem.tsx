@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 
 import type { FaqItem } from "@/lib/faq-page";
 import { cn } from "@/lib/cn";
@@ -9,17 +9,32 @@ import { cn } from "@/lib/cn";
 type FaqAccordionItemProps = Pick<
   FaqItem,
   "id" | "question" | "answer" | "relatedLinks"
->;
+> & {
+  defaultOpen?: boolean;
+};
 
 export function FaqAccordionItem({
   id,
   question,
   answer,
   relatedLinks,
+  defaultOpen = false,
 }: FaqAccordionItemProps) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(defaultOpen);
   const triggerId = useId();
   const panelId = `${id}-panel`;
+
+  useEffect(() => {
+    const openFromHash = () => {
+      if (window.location.hash === `#faq-${id}`) {
+        setOpen(true);
+      }
+    };
+
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, [id]);
 
   return (
     <div

@@ -1,3 +1,5 @@
+"use client";
+
 import { FaqAccordionItem } from "./FaqAccordionItem";
 import { FaqCategoryIcon } from "./FaqCategoryIcon";
 import type { FaqItem, FaqCategoryId } from "@/lib/faq-page";
@@ -7,6 +9,7 @@ type FaqAccordionSectionProps = {
   title: string;
   description: string;
   items: FaqItem[];
+  defaultOpen?: boolean;
 };
 
 export function FaqAccordionSection({
@@ -14,6 +17,7 @@ export function FaqAccordionSection({
   title,
   description,
   items,
+  defaultOpen = false,
 }: FaqAccordionSectionProps) {
   return (
     <section
@@ -36,11 +40,12 @@ export function FaqAccordionSection({
       <div className="mt-5 border-t border-white/10">
         {items.map((item) => (
           <FaqAccordionItem
-            key={item.id}
+            key={`${item.id}-${defaultOpen}`}
             id={item.id}
             question={item.question}
             answer={item.answer}
             relatedLinks={item.relatedLinks}
+            defaultOpen={defaultOpen}
           />
         ))}
       </div>
