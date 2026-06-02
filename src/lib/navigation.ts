@@ -110,6 +110,6 @@ export const MAIN_NAV: readonly NavEntry[] = [
   { type: "dropdown", label: "Platform", items: PLATFORM_NAV },
   { type: "dropdown", label: "Solutions", items: SOLUTIONS_NAV },
   { type: "dropdown", label: "Resources", items: RESOURCES_NAV },
-  { type: "link", label: "Pricing", href: "/pricing" },
   { type: "dropdown", label: "Company", items: COMPANY_NAV },
+  { type: "link", label: "Pricing", href: "/pricing" },
 ] as const;
