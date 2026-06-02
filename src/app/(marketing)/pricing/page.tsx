@@ -1,4 +1,4 @@
-import { MarketingPageShell } from "@/components/marketing/MarketingPageShell";
+import { PricingPage } from "@/components/marketing/PricingPage";
 import { pageMetadata } from "@/lib/metadata";
 import { pricingPage } from "@/lib/marketing-pages";
 
@@ -8,13 +8,6 @@ export const metadata = pageMetadata({
   path: pricingPage.path,
 });
 
-export default function PricingPage() {
-  return (
-    <MarketingPageShell
-      eyebrow={pricingPage.eyebrow}
-      title={pricingPage.title}
-      description={pricingPage.description}
-      features={pricingPage.features}
-    />
-  );
+export default function Page() {
+  return <PricingPage />;
 }

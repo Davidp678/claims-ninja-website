@@ -1,8 +1,10 @@
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
+import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AI_CLAIM_WORKFLOW } from "@/lib/ai-claim-analysis-page";
 import { aiClaimAnalysisPage } from "@/lib/marketing-pages";
+import { SITE_FAQ } from "@/lib/site-faq-selections";
 
 const WORKFLOW_CARD_CLASS =
   "rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25";
@@ -68,6 +70,7 @@ export function AiClaimAnalysisPage() {
         </ul>
       </Section>
 
+      <SiteFaqSection {...SITE_FAQ.aiClaimAnalysis} />
       <MarketingCtaPanel />
     </>
   );

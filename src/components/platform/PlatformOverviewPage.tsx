@@ -2,6 +2,7 @@ import Link from "next/link";
 import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
 import { HeroVideoCard } from "@/components/sections/HeroVideoCard";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
+import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
 import { Container } from "@/components/ui/Container";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
@@ -12,6 +13,7 @@ import {
   PLATFORM_PILLARS,
   PLATFORM_VISION,
 } from "@/lib/platform-overview";
+import { SITE_FAQ } from "@/lib/site-faq-selections";
 import { PLATFORM_HERO_VIDEO } from "@/lib/constants";
 
 import { PlatformModulesSection } from "./PlatformModulesSection";
@@ -132,6 +134,7 @@ export function PlatformOverviewPage() {
         </ul>
       </Section>
 
+      <SiteFaqSection {...SITE_FAQ.platform} />
       <MarketingCtaPanel />
     </>
   );

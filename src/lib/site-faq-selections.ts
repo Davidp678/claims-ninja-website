@@ -1,0 +1,140 @@
+export type SiteFaqPageKey =
+  | "platform"
+  | "pricing"
+  | "aiClaimAnalysis"
+  | "clientPortal"
+  | "claimTracking"
+  | "communicationHub"
+  | "roofing"
+  | "waterDamage"
+  | "fireDamage"
+  | "mold"
+  | "contents";
+
+export type SiteFaqConfig = {
+  topic: string;
+  faqIds: readonly string[];
+};
+
+export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
+  platform: {
+    topic: "the Claims Ninja platform",
+    faqIds: [
+      "getting-started-who-for",
+      "getting-started-field-vs-support",
+      "platform-data-secure",
+      "platform-access-controls",
+      "platform-claim-tracking",
+      "platform-communication",
+      "supplements-whats-included",
+      "carrier-public-adjuster",
+    ],
+  },
+  pricing: {
+    topic: "pricing and partnership fees",
+    faqIds: [
+      "pricing-fee-structure",
+      "pricing-15-percent",
+      "pricing-4-percent-rcv",
+      "pricing-when-charged",
+      "pricing-volume",
+      "pricing-hidden-fees",
+      "supplements-denied",
+    ],
+  },
+  aiClaimAnalysis: {
+    topic: "AI claim analysis",
+    faqIds: [
+      "ai-how-helps",
+      "ai-replace-experts",
+      "ai-accuracy",
+      "ai-what-analyzed",
+      "ai-data-privacy",
+    ],
+  },
+  clientPortal: {
+    topic: "the client portal",
+    faqIds: [
+      "platform-access-controls",
+      "documentation-platform-upload",
+      "platform-data-secure",
+      "getting-started-intake-info",
+      "getting-started-first-claim",
+    ],
+  },
+  claimTracking: {
+    topic: "claim tracking",
+    faqIds: [
+      "platform-claim-tracking",
+      "carrier-timeline",
+      "supplements-turnaround",
+      "carrier-who-talks",
+      "documentation-essentials",
+    ],
+  },
+  communicationHub: {
+    topic: "carrier communication",
+    faqIds: [
+      "platform-communication",
+      "carrier-who-talks",
+      "carrier-how-handled",
+      "carrier-timeline",
+      "carrier-disputes",
+    ],
+  },
+  roofing: {
+    topic: "roofing claims",
+    faqIds: [
+      "roofing-carrier-documentation",
+      "roofing-storm-vs-retail",
+      "roofing-code-items",
+      "roofing-measurements",
+      "roofing-op",
+      "supplements-whats-included",
+    ],
+  },
+  waterDamage: {
+    topic: "water damage claims",
+    faqIds: [
+      "water-mitigation-scope",
+      "water-drying-documentation",
+      "water-category-class",
+      "water-rebuild-supplements",
+      "water-emergency-vs-rebuild",
+    ],
+  },
+  fireDamage: {
+    topic: "fire damage claims",
+    faqIds: [
+      "fire-smoke-soot",
+      "fire-structural-vs-contents",
+      "fire-demo-rebuild",
+      "fire-odor-deodorization",
+      "fire-total-loss-partial",
+    ],
+  },
+  mold: {
+    topic: "mold claims",
+    faqIds: [
+      "mold-remediation-docs",
+      "mold-testing",
+      "mold-carrier-pushback",
+      "mold-containment-equipment",
+      "mold-water-relationship",
+    ],
+  },
+  contents: {
+    topic: "contents restoration",
+    faqIds: [
+      "contents-pack-out",
+      "contents-inventory",
+      "contents-storage",
+      "contents-specialty-items",
+      "contents-fire-water",
+    ],
+  },
+} as const;
+
+export function getSiteFaqConfig(key: SiteFaqPageKey): SiteFaqConfig {
+  return SITE_FAQ[key];
+}

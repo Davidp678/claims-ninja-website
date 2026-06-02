@@ -1,5 +1,6 @@
 import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
+import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
 import { Container } from "@/components/ui/Container";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
@@ -13,6 +14,7 @@ import {
   WATER_DAMAGE_SEGMENTS,
   WATER_DAMAGE_WORKFLOW,
 } from "@/lib/water-damage-page";
+import { SITE_FAQ } from "@/lib/site-faq-selections";
 
 import { RoofingHeroImageCard } from "./RoofingHeroImageCard";
 
@@ -137,6 +139,7 @@ export function WaterDamageClaimsPage() {
         </ul>
       </Section>
 
+      <SiteFaqSection {...SITE_FAQ.waterDamage} />
       <MarketingCtaPanel />
     </>
   );

@@ -1,5 +1,6 @@
 import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
+import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
 import { Container } from "@/components/ui/Container";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
@@ -13,6 +14,7 @@ import {
   ROOFING_SEGMENTS,
   ROOFING_WORKFLOW,
 } from "@/lib/roofing-page";
+import { SITE_FAQ } from "@/lib/site-faq-selections";
 
 import { RoofingHeroImageCard } from "./RoofingHeroImageCard";
 
@@ -136,6 +138,7 @@ export function RoofingClaimsPage() {
         </ul>
       </Section>
 
+      <SiteFaqSection {...SITE_FAQ.roofing} />
       <MarketingCtaPanel />
     </>
   );

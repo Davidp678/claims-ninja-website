@@ -1,6 +1,7 @@
 import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
 import { HeroVideoCard } from "@/components/sections/HeroVideoCard";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
+import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
 import { Container } from "@/components/ui/Container";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
@@ -13,6 +14,7 @@ import {
   CLIENT_PORTAL_TRUST,
   CLIENT_PORTAL_WORKFLOW,
 } from "@/lib/client-portal-page";
+import { SITE_FAQ } from "@/lib/site-faq-selections";
 import { CLIENT_PORTAL_HERO_VIDEO } from "@/lib/constants";
 
 const FEATURE_CARD_CLASS =
@@ -151,6 +153,7 @@ export function ClientPortalPage() {
         </p>
       </Section>
 
+      <SiteFaqSection {...SITE_FAQ.clientPortal} />
       <MarketingCtaPanel
         eyebrow={CLIENT_PORTAL_CTA.eyebrow}
         title={CLIENT_PORTAL_CTA.title}

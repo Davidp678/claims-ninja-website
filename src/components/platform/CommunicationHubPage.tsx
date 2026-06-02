@@ -1,12 +1,14 @@
 import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
 import { HeroVideoCard } from "@/components/sections/HeroVideoCard";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
+import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
 import { Container } from "@/components/ui/Container";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { COMMUNICATION_HUB_HERO_VIDEO } from "@/lib/constants";
 import { communicationHubPage } from "@/lib/marketing-pages";
+import { SITE_FAQ } from "@/lib/site-faq-selections";
 
 export function CommunicationHubPage() {
   return (
@@ -58,6 +60,7 @@ export function CommunicationHubPage() {
         </ul>
       </Section>
 
+      <SiteFaqSection {...SITE_FAQ.communicationHub} />
       <MarketingCtaPanel />
     </>
   );

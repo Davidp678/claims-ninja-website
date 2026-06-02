@@ -1,3 +1,5 @@
+import { FAQ_ITEMS } from "@/lib/faq-data";
+
 export const FAQ_META = {
   path: "/faq",
   metaTitle: "FAQ",
@@ -184,4 +186,14 @@ export function getFaqPreview(item: FaqItem): string {
     return item.answer;
   }
   return `${item.answer.slice(0, 117).trimEnd()}…`;
+}
+
+export function getFaqItemsByIds(ids: readonly string[]): FaqItem[] {
+  return ids.map((id) => {
+    const item = FAQ_ITEMS.find((entry) => entry.id === id);
+    if (!item) {
+      throw new Error(`Unknown FAQ id: ${id}`);
+    }
+    return item;
+  });
 }
