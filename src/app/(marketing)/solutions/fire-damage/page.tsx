@@ -1,20 +1,13 @@
-import { MarketingPageShell } from "@/components/marketing/MarketingPageShell";
+import { FireDamageClaimsPage } from "@/components/solutions/FireDamageClaimsPage";
 import { pageMetadata } from "@/lib/metadata";
-import { fireDamagePage } from "@/lib/marketing-pages";
+import { FIRE_DAMAGE_META } from "@/lib/fire-damage-page";
 
 export const metadata = pageMetadata({
-  title: fireDamagePage.metaTitle,
-  description: fireDamagePage.metaDescription,
-  path: fireDamagePage.path,
+  title: FIRE_DAMAGE_META.metaTitle,
+  description: FIRE_DAMAGE_META.metaDescription,
+  path: FIRE_DAMAGE_META.path,
 });
 
 export default function FireDamagePage() {
-  return (
-    <MarketingPageShell
-      eyebrow={fireDamagePage.eyebrow}
-      title={fireDamagePage.title}
-      description={fireDamagePage.description}
-      features={fireDamagePage.features}
-    />
-  );
+  return <FireDamageClaimsPage />;
 }

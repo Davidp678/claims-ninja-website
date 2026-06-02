@@ -267,9 +267,9 @@ export const fireDamagePage = page({
   title: "Fire Damage Claims",
   metaTitle: "Fire Damage Claims",
   metaDescription:
-    "Fire and smoke loss support with Claims Ninja: multi-trade scopes, code and ordinance items, and long-cycle carrier advocacy for complex rebuilds.",
+    "We help restoration contractors organize fire, smoke, structural, contents, and rebuild documentation into claim support built for complex carrier review.",
   description:
-    "Complex reconstruction and carrier negotiation support for fire, smoke, and structural losses.",
+    "We help restoration contractors organize fire, smoke, structural, contents, and rebuild documentation into claim support built for complex carrier review.",
   features: [
     {
       title: "Multi-trade coordination",
