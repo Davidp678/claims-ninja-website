@@ -41,6 +41,7 @@ export function WaterDamageClaimsPage() {
             <RoofingHeroImageCard
               src={WATER_DAMAGE_HERO_IMAGE.src}
               alt={WATER_DAMAGE_HERO_IMAGE.alt}
+              objectPosition="22% center"
             />
           </div>
         </Container>

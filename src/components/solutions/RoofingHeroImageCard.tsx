@@ -8,9 +8,15 @@ type RoofingHeroImageCardProps = {
   src: string;
   alt: string;
   className?: string;
+  objectPosition?: string;
 };
 
-export function RoofingHeroImageCard({ src, alt, className }: RoofingHeroImageCardProps) {
+export function RoofingHeroImageCard({
+  src,
+  alt,
+  className,
+  objectPosition,
+}: RoofingHeroImageCardProps) {
   const imgRef = useRef<HTMLImageElement>(null);
   const [ready, setReady] = useState(false);
 
@@ -54,6 +60,7 @@ export function RoofingHeroImageCard({ src, alt, className }: RoofingHeroImageCa
               "object-cover transition-opacity duration-700",
               ready ? "opacity-100" : "opacity-0",
             )}
+            style={objectPosition ? { objectPosition } : undefined}
             onLoad={markReady}
             onLoadingComplete={markReady}
             onError={markReady}

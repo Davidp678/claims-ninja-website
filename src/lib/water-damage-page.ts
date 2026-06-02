@@ -9,7 +9,7 @@ export const WATER_DAMAGE_HERO = {
   eyebrow: "Solutions",
   title: "Water Damage Claims",
   description:
-    "Turn mitigation documentation, moisture readings, rebuild scopes, and carrier correspondence into organized claim support built for restoration contractors.",
+    "We turn mitigation documentation, moisture readings, rebuild scopes, and carrier correspondence into organized claim support built for restoration contractors.",
 } as const;
 
 /** Add a licensed cinematic water mitigation/restoration photo at this path. */
