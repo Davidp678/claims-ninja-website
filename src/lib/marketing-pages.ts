@@ -296,9 +296,9 @@ export const moldPage = page({
   title: "Mold Claims",
   metaTitle: "Mold Claims",
   metaDescription:
-    "Mold remediation and rebuild claim support from Claims Ninja with protocol-driven documentation and dispute-ready files restoration teams rely on.",
+    "We help restoration contractors organize mold remediation, containment, clearance, rebuild, and carrier documentation into claim support built for disputed or protocol-driven losses.",
   description:
-    "Claim support for remediation and rebuild projects where documentation and protocol matter most.",
+    "We help restoration contractors organize mold remediation, containment, clearance, rebuild, and carrier documentation into claim support built for disputed or protocol-driven losses.",
   features: [
     {
       title: "Remediation protocols",

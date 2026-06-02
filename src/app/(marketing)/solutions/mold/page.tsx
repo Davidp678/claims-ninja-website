@@ -1,20 +1,13 @@
-import { MarketingPageShell } from "@/components/marketing/MarketingPageShell";
+import { MoldClaimsPage } from "@/components/solutions/MoldClaimsPage";
 import { pageMetadata } from "@/lib/metadata";
-import { moldPage } from "@/lib/marketing-pages";
+import { MOLD_META } from "@/lib/mold-page";
 
 export const metadata = pageMetadata({
-  title: moldPage.metaTitle,
-  description: moldPage.metaDescription,
-  path: moldPage.path,
+  title: MOLD_META.metaTitle,
+  description: MOLD_META.metaDescription,
+  path: MOLD_META.path,
 });
 
 export default function MoldPage() {
-  return (
-    <MarketingPageShell
-      eyebrow={moldPage.eyebrow}
-      title={moldPage.title}
-      description={moldPage.description}
-      features={moldPage.features}
-    />
-  );
+  return <MoldClaimsPage />;
 }
