@@ -322,12 +322,12 @@ export const moldPage = page({
 export const contentsPage = page({
   path: "/solutions/contents",
   eyebrow: "Solutions",
-  title: "Contents Claims",
-  metaTitle: "Contents Claims",
+  title: "Contents Restoration Claims",
+  metaTitle: "Contents Restoration Claims",
   metaDescription:
-    "Contents claim inventory and valuation support from Claims Ninja—structured documentation and recovery optimization for personal property losses.",
+    "Claims support for inventory-heavy, documentation-heavy contents losses—pack-out operations, specialty restoration, chain of custody, and carrier-ready files for contents restoration firms.",
   description:
-    "Inventory, valuation, and documentation assistance for personal property and commercial contents losses.",
+    "Claims support for inventory-heavy, documentation-heavy contents losses—pack-out operations, specialty restoration, chain of custody, and carrier-ready files for contents restoration firms.",
   features: [
     {
       title: "Structured inventory",

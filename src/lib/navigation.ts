@@ -73,9 +73,9 @@ export const SOLUTIONS_NAV: readonly NavDropdownItem[] = [
     description: "Claim support for remediation and rebuild projects.",
   },
   {
-    label: "Contents Claims",
+    label: "Contents Restoration Claims",
     href: "/solutions/contents",
-    description: "Inventory, valuation, and documentation assistance.",
+    description: "Pack-out, inventory, and specialty contents restoration claim support.",
   },
 ] as const;
 

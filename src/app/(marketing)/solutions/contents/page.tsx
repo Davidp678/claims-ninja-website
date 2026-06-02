@@ -1,20 +1,13 @@
-import { MarketingPageShell } from "@/components/marketing/MarketingPageShell";
+import { ContentsRestorationClaimsPage } from "@/components/solutions/ContentsRestorationClaimsPage";
 import { pageMetadata } from "@/lib/metadata";
-import { contentsPage } from "@/lib/marketing-pages";
+import { CONTENTS_RESTORATION_META } from "@/lib/contents-restoration-page";
 
 export const metadata = pageMetadata({
-  title: contentsPage.metaTitle,
-  description: contentsPage.metaDescription,
-  path: contentsPage.path,
+  title: CONTENTS_RESTORATION_META.metaTitle,
+  description: CONTENTS_RESTORATION_META.metaDescription,
+  path: CONTENTS_RESTORATION_META.path,
 });
 
 export default function ContentsPage() {
-  return (
-    <MarketingPageShell
-      eyebrow={contentsPage.eyebrow}
-      title={contentsPage.title}
-      description={contentsPage.description}
-      features={contentsPage.features}
-    />
-  );
+  return <ContentsRestorationClaimsPage />;
 }
