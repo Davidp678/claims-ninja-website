@@ -150,7 +150,7 @@ export function ChatWidget() {
       return;
     }
 
-    const delayMs = 8000 + Math.floor(Math.random() * 4001);
+    const delayMs = 2500 + Math.floor(Math.random() * 1501);
     const timer = window.setTimeout(() => {
       setTeaserVisible(true);
     }, delayMs);
