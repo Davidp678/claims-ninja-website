@@ -1,0 +1,303 @@
+import { normalizeInput } from "@/components/chatbot/chat-match";
+
+import {
+  CHAT_KNOWLEDGE_CHUNKS,
+  type ChatKnowledgeChunk,
+} from "./chat-knowledge";
+
+const PHRASE_SCORE = 10;
+const KEYWORD_SCORE = 3;
+const MIN_SCORE = 5;
+const MAX_SNIPPETS = 5;
+const MAX_CONTEXT_CHARS = 2800;
+const MAX_TOKEN_OVERLAP_BONUS = 15;
+
+const STOP_WORDS = new Set([
+  "a",
+  "an",
+  "and",
+  "are",
+  "can",
+  "do",
+  "does",
+  "for",
+  "how",
+  "i",
+  "in",
+  "is",
+  "it",
+  "me",
+  "my",
+  "of",
+  "on",
+  "or",
+  "our",
+  "the",
+  "this",
+  "to",
+  "we",
+  "what",
+  "when",
+  "where",
+  "which",
+  "who",
+  "why",
+  "with",
+  "you",
+  "your",
+]);
+
+export type RetrievedSnippet = {
+  source: string;
+  text: string;
+};
+
+export type RetrieveKnowledgeResult = {
+  snippets: RetrievedSnippet[];
+  formatted: string;
+};
+
+const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
+  pricing: ["price", "fee", "cost", "charge", "rcv", "15%", "4%", "billing", "percent"],
+  supplements: [
+    "supplement",
+    "line item",
+    "scope",
+    "carrier estimate",
+    "under-scope",
+  ],
+  public_adjuster: [
+    "public adjuster",
+    "licensed adjuster",
+    "pa",
+    "adjuster access",
+  ],
+  ai: ["ai", "analysis", "triage", "scope gap", "intelligence", "machine"],
+  onboarding: [
+    "onboard",
+    "intake",
+    "getting started",
+    "first claim",
+    "partnership",
+  ],
+  billing: ["invoice", "payment", "billed", "billing", "paid"],
+  platform: ["portal", "platform", "tracking", "communication"],
+  contractor_fit: ["contractor", "restoration", "roofing", "fit"],
+};
+
+function matchesWordBoundary(input: string, token: string): boolean {
+  const pattern = new RegExp(
+    `\\b${token.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`,
+    "i",
+  );
+  return pattern.test(input);
+}
+
+function scoreChunk(
+  normalizedMessage: string,
+  chunk: ChatKnowledgeChunk,
+): number {
+  let score = 0;
+
+  for (const phrase of chunk.phrases ?? []) {
+    if (normalizedMessage.includes(phrase.toLowerCase())) {
+      score += PHRASE_SCORE;
+    }
+  }
+
+  for (const keyword of chunk.keywords ?? []) {
+    const kw = keyword.toLowerCase();
+    if (kw.length <= 2) {
+      if (matchesWordBoundary(normalizedMessage, kw)) {
+        score += KEYWORD_SCORE;
+      }
+    } else if (normalizedMessage.includes(kw)) {
+      score += KEYWORD_SCORE;
+    }
+  }
+
+  for (const topic of chunk.topics) {
+    const topicKeywords = TOPIC_KEYWORD_MAP[topic];
+    if (!topicKeywords) {
+      continue;
+    }
+    for (const kw of topicKeywords) {
+      const normalized = kw.toLowerCase();
+      if (normalized.length <= 2) {
+        if (matchesWordBoundary(normalizedMessage, normalized)) {
+          score += KEYWORD_SCORE;
+        }
+      } else if (normalizedMessage.includes(normalized)) {
+        score += KEYWORD_SCORE;
+      }
+    }
+  }
+
+  const structuredScore = score;
+
+  const messageTokens = normalizedMessage
+    .split(" ")
+    .filter((token) => token.length >= 4 && !STOP_WORDS.has(token));
+  let overlapBonus = 0;
+  const chunkText = chunk.text.toLowerCase();
+  for (const token of messageTokens) {
+    if (chunkText.includes(token)) {
+      overlapBonus += 1;
+      if (overlapBonus >= MAX_TOKEN_OVERLAP_BONUS) {
+        break;
+      }
+    }
+  }
+
+  if (structuredScore >= KEYWORD_SCORE) {
+    score += overlapBonus;
+  }
+
+  return score;
+}
+
+export function formatApprovedSiteContext(
+  snippets: readonly RetrievedSnippet[],
+): string {
+  if (snippets.length === 0) {
+    return "";
+  }
+
+  const body = snippets
+    .map(
+      (snippet) =>
+        `[Source: ${snippet.source}]\n${snippet.text.trim()}`,
+    )
+    .join("\n\n");
+
+  return `APPROVED CLAIMS NINJA SITE CONTEXT
+Prioritize the excerpts below over general knowledge. Do not contradict them. Do not invent services, fees, or policies not stated here. If excerpts do not cover the question, answer using system guardrails only.
+
+${body}`;
+}
+
+export function retrieveKnowledgeSnippets(
+  message: string,
+  options?: { minScore?: number; maxSnippets?: number; maxChars?: number },
+): RetrieveKnowledgeResult {
+  const normalized = normalizeInput(message);
+  const minScore = options?.minScore ?? MIN_SCORE;
+  const maxSnippets = options?.maxSnippets ?? MAX_SNIPPETS;
+  const maxChars = options?.maxChars ?? MAX_CONTEXT_CHARS;
+
+  if (normalized.length === 0) {
+    return { snippets: [], formatted: "" };
+  }
+
+  const scored = CHAT_KNOWLEDGE_CHUNKS.map((chunk, index) => ({
+    chunk,
+    score: scoreChunk(normalized, chunk),
+    index,
+  }))
+    .filter((entry) => entry.score >= minScore)
+    .sort((a, b) => b.score - a.score || a.index - b.index);
+
+  const snippets: RetrievedSnippet[] = [];
+  let charCount = 0;
+
+  for (const { chunk } of scored) {
+    if (snippets.length >= maxSnippets) {
+      break;
+    }
+
+    const snippetText = chunk.text.trim();
+    const snippetBlock = `[Source: ${chunk.source}]\n${snippetText}`;
+    const addedLength = snippetBlock.length + (snippets.length > 0 ? 2 : 0);
+
+    if (charCount + addedLength > maxChars && snippets.length > 0) {
+      break;
+    }
+
+    snippets.push({ source: chunk.source, text: snippetText });
+    charCount += addedLength;
+  }
+
+  return {
+    snippets,
+    formatted: formatApprovedSiteContext(snippets),
+  };
+}
+
+type RetrievalCheck = {
+  label: string;
+  message: string;
+  assert: (result: RetrieveKnowledgeResult) => boolean;
+};
+
+const RETRIEVAL_CHECKS: RetrievalCheck[] = [
+  {
+    label: "pricing question retrieves pricing context",
+    message: "How much do you charge?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /15%|documented increase|fee|pricing|rcv/i.test(s.text) ||
+          /pricing/i.test(s.source),
+      ),
+  },
+  {
+    label: "billing question retrieves billing context",
+    message: "When do I get billed?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /bill|invoice|payment|fee/i.test(s.text) ||
+          /billing|pricing/i.test(s.source),
+      ),
+  },
+  {
+    label: "supplement question retrieves supplement context",
+    message: "Do you help with supplements?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) => /supplement|line item|scope/i.test(s.text)),
+  },
+  {
+    label: "AI analysis question retrieves AI context",
+    message: "What does AI claim analysis review?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /ai|analysis|scope gap|line item|carrier estimate/i.test(s.text) ||
+          /ai-claim-analysis/i.test(s.source),
+      ),
+  },
+  {
+    label: "public adjuster question retrieves PA context",
+    message: "Are you a public adjuster?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /public adjuster|licensed|supplement|negotiation/i.test(s.text),
+      ),
+  },
+  {
+    label: "off-topic question returns no snippets",
+    message: "What's the weather?",
+    assert: (result) => result.snippets.length === 0,
+  },
+];
+
+export function runKnowledgeRetrievalChecks(): {
+  ok: boolean;
+  failures: string[];
+} {
+  const failures: string[] = [];
+
+  for (const check of RETRIEVAL_CHECKS) {
+    const result = retrieveKnowledgeSnippets(check.message);
+    if (!check.assert(result)) {
+      failures.push(check.label);
+    }
+  }
+
+  return { ok: failures.length === 0, failures };
+}

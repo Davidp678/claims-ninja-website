@@ -12,6 +12,7 @@ import {
   getSupabaseEnvDiagnostics,
   SupabaseServerConfigError,
 } from "@/lib/supabase";
+import { isValidEmail, isValidPhoneOptional } from "@/lib/validation/email";
 
 function stripClientAiFields(
   payload: ClaimReviewLeadSubmission,
@@ -58,7 +59,13 @@ function isValidLeadPayload(
   if (!data || typeof data !== "object") return false;
   const row = data as Record<string, unknown>;
   const type = row.calculatorType;
-  if (type !== "claim-review" && type !== "roi-report") return false;
+  if (
+    type !== "claim-review" &&
+    type !== "roi-report" &&
+    type !== "chatbot"
+  ) {
+    return false;
+  }
 
   const lead = row.lead;
   if (!lead || typeof lead !== "object") return false;
@@ -66,7 +73,27 @@ function isValidLeadPayload(
   if (typeof L.fullName !== "string" || !L.fullName.trim()) return false;
   if (typeof L.email !== "string" || !L.email.trim()) return false;
 
+  if (type === "chatbot") {
+    const details = row.chatbotDetails;
+    if (!details || typeof details !== "object") return false;
+  }
+
   return true;
+}
+
+function validateChatbotLead(body: Record<string, unknown>): string | null {
+  const lead = body.lead as Record<string, unknown>;
+  const email = typeof lead.email === "string" ? lead.email : "";
+  if (!isValidEmail(email)) {
+    return "Invalid email address.";
+  }
+
+  const phone = typeof lead.phone === "string" ? lead.phone : "";
+  if (!isValidPhoneOptional(phone)) {
+    return "Invalid phone number.";
+  }
+
+  return null;
 }
 
 function logSupabaseEnvDiag(context: string) {
@@ -107,6 +134,13 @@ export async function POST(request: Request) {
     }
 
     const payload = body as LeadSubmissionPayload;
+
+    if (payload.calculatorType === "chatbot") {
+      const chatbotError = validateChatbotLead(body as Record<string, unknown>);
+      if (chatbotError) {
+        return NextResponse.json({ error: chatbotError }, { status: 400 });
+      }
+    }
 
     logSupabaseEnvDiag("Supabase env diagnostics (before client)");
 

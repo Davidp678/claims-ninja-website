@@ -77,9 +77,41 @@ export type RoiReportLeadSubmission = {
   roiCalculatorOutputs: RoiCalculatorOutputsSnapshot;
 };
 
+export type ChatbotPrimaryNeed =
+  | "supplements"
+  | "public-adjuster"
+  | "ai-analysis"
+  | "platform-partnership"
+  | "general";
+
+export type CarrierEstimateStatus = "yes" | "no" | "not-sure";
+
+export type ChatbotPreferredNextStep =
+  | "claim-intake"
+  | "strategy-call"
+  | "team-follow-up";
+
+export type ChatbotLeadDetails = {
+  source: "claims-ninja-ai-chatbot";
+  primaryNeed: ChatbotPrimaryNeed | string;
+  carrierEstimateStatus: CarrierEstimateStatus | string;
+  approximateClaimValue?: string;
+  preferredNextStep: ChatbotPreferredNextStep | string;
+  conversationSummary?: string;
+  submittedAt: string;
+};
+
+export type ChatbotLeadSubmission = {
+  calculatorType: "chatbot";
+  timestamp: string;
+  lead: LeadContactFields;
+  chatbotDetails: ChatbotLeadDetails;
+};
+
 export type LeadSubmissionPayload =
   | ClaimReviewLeadSubmission
-  | RoiReportLeadSubmission;
+  | RoiReportLeadSubmission
+  | ChatbotLeadSubmission;
 
 export type LeadSubmissionPayloadWithoutTimestamp = Omit<
   LeadSubmissionPayload,

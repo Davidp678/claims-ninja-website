@@ -10,16 +10,13 @@ import type {
   LeadSubmissionPayloadWithoutTimestamp,
   PreferredContactMethod,
 } from "@/lib/calculator-lead";
+import { isValidEmail } from "@/lib/validation/email";
 
 const inputClass =
   "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 h-12 text-base text-white placeholder-zinc-400 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
 
 const labelClass =
   "text-xs font-semibold uppercase tracking-wider text-zinc-300";
-
-function isValidEmail(value: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
-}
 
 export type LeadCaptureFormProps = {
   variant: "claim-review" | "roi-report";
