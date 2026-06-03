@@ -312,6 +312,13 @@ export const first48HoursAfterCarrierEstimate: BlogPost = {
       paragraphs: [
         "Capture all affected areas referenced in the estimate plus areas the estimate omitted. Include pitch labels on roofing and pre-tear-off conditions you may not see again.",
         "If supplement opportunities depend on matching or manufacturer rules, photograph product labels and existing installations before removal.",
+        "On fire losses, photograph soot and smoke in halls, closets, and upper rooms the carrier sketch may omit — the fire damage claim documentation guide lists room-by-room and migration standards for supplement-ready files.",
+      ],
+      links: [
+        {
+          label: "Fire damage claim documentation guide",
+          href: "/resources/blog/fire-damage-claim-documentation-guide",
+        },
       ],
     },
     {

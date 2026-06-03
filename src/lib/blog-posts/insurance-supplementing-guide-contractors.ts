@@ -338,7 +338,13 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
         "Cite jurisdiction, edition year, and section when claiming code-driven upgrades. Permit applications or inspector comments are powerful supporting documents.",
         "If code research is outside your staff skill set, partner with a supplementing service or consultant for complex commercial losses — errors here damage credibility across the file.",
       ],
-      links: [{ label: "Fire damage claims", href: "/solutions/fire-damage" }],
+      links: [
+        {
+          label: "Fire damage claim documentation guide",
+          href: "/resources/blog/fire-damage-claim-documentation-guide",
+        },
+        { label: "Fire damage claims", href: "/solutions/fire-damage" },
+      ],
     },
     {
       id: "when-to-submit-supplements",

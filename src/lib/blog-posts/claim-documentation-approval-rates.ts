@@ -30,8 +30,13 @@ export const claimDocumentationApprovalRates: BlogPost = {
         "On water mitigation files, dry logs and equipment placement notes are the approval equation — see the dry log documentation guide for daily standards, daily monitoring documentation best practices for visit records, the water mitigation supplement playbook for field phases and line items, and equipment charges in water damage claims for utilization proof and billing disputes.",
         "When a water mitigation supplement is formally denied, the water damage supplement denial recovery guide walks drying-specific resubmission — logs, maps, partial approvals, and re-inspection judgment.",
         "When approvals stall and payment feels short, why water mitigation claims get underpaid explains documentation-driven payment gaps contractors can fix.",
+        "On fire and smoke losses, room-by-room photos, soot and smoke proof, contents inventories, and HVAC documentation are the approval equation — see the fire damage claim documentation guide for field standards and supplement support.",
       ],
       links: [
+        {
+          label: "Fire damage claim documentation guide",
+          href: "/resources/blog/fire-damage-claim-documentation-guide",
+        },
         {
           label: "Water damage supplement denial recovery",
           href: "/resources/blog/water-damage-supplement-denial-recovery",
@@ -77,8 +82,15 @@ export const claimDocumentationApprovalRates: BlogPost = {
         "Code references only when jurisdiction actually requires them.",
         "Daily dry log entries with moisture readings and equipment changes on water jobs.",
         "Roof elevation photos, pitch labels, and measurement reports on storm and replacement jobs.",
+        "Room-by-room fire photos with soot, smoke migration, and odor notes on fire restoration jobs.",
+        "Contents inventories with photos for high-value items and pack-out chain of custody on fire losses.",
+        "HVAC inspection excerpts and duct photos when HVAC cleaning or replacement is claimed.",
       ],
       links: [
+        {
+          label: "Fire damage claim documentation guide",
+          href: "/resources/blog/fire-damage-claim-documentation-guide",
+        },
         { label: "Fire damage claims", href: "/solutions/fire-damage" },
         {
           label: "Roofing supplement playbook",
