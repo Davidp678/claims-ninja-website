@@ -94,9 +94,13 @@ export const supplementDenialRecoveryGuide: BlogPost = {
         "This is educational content, not legal advice. Policy language, state requirements, and carrier programs govern outcomes. Use the insurance supplementing pillar and linked resources for estimate review, trade-specific playbooks, and documentation standards while you work through recovery on a specific file.",
         "High commercial intent does not mean aggressive tactics. The contractors who recover the most after a supplement denial are usually the ones who read the carrier response carefully, fix evidence gaps, and resubmit a packet the desk reviewer can approve without a fight.",
         "On water mitigation files, drying duration and monitoring denials need dry logs, moisture maps, and equipment proof — see the water damage supplement denial recovery guide for trade-specific causes and resubmission habits alongside the steps below.",
-        "On fire and smoke files, denials often target migration rooms, contents inventories, HVAC scope, and cleaning versus replacement — use the fire damage claim documentation guide for soot, smoke, and resubmission standards before resending the same photo dump.",
+        "On fire and smoke files, denials often target migration rooms, contents inventories, HVAC scope, and cleaning versus replacement — use the fire damage claim documentation guide for soot, smoke, and resubmission standards, and the fire damage supplement playbook for line items and supplement process before resending the same photo dump.",
       ],
       links: [
+        {
+          label: "Fire damage supplement playbook",
+          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        },
         {
           label: "Fire damage claim documentation guide",
           href: "/resources/blog/fire-damage-claim-documentation-guide",

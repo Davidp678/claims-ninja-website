@@ -4,6 +4,7 @@ import { claimDocumentationApprovalRates } from "./claim-documentation-approval-
 import { dryLogDocumentationGuideInsuranceClaims } from "./dry-log-documentation-guide-insurance-claims";
 import { moistureMappingBestPracticesInsuranceClaims } from "./moisture-mapping-best-practices-insurance-claims";
 import { fireDamageClaimDocumentationGuide } from "./fire-damage-claim-documentation-guide";
+import { fireDamageSupplementPlaybookForContractors } from "./fire-damage-supplement-playbook-for-contractors";
 import { dailyMonitoringDocumentationBestPractices } from "./daily-monitoring-documentation-best-practices";
 import { equipmentChargesWaterDamageClaims } from "./equipment-charges-water-damage-claims";
 import { waterDamageSupplementDenialRecovery } from "./water-damage-supplement-denial-recovery";
@@ -35,6 +36,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   equipmentChargesWaterDamageClaims,
   dailyMonitoringDocumentationBestPractices,
   fireDamageClaimDocumentationGuide,
+  fireDamageSupplementPlaybookForContractors,
   opOnInsuranceClaims,
   supplementDenialRecoveryGuide,
   first48HoursAfterCarrierEstimate,

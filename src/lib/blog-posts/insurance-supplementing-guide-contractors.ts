@@ -30,6 +30,7 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
     "first-48-hours-after-carrier-estimate",
     "supplement-denial-recovery-guide",
     "water-damage-mitigation-supplement-playbook",
+    "fire-damage-supplement-playbook-for-contractors",
   ],
   faq: [
     {
@@ -207,6 +208,7 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
         "Scope gaps are omissions of work you will perform that never appear on the carrier estimate — not just underpriced lines. Classic scope gaps include failure to separate rooms correctly, missing alternate repairs, ignoring adjoining rooms affected by smoke or water migration, and omitting exterior items damaged by fallen trees or fire ops.",
         "Walk the structure with a supplement mindset before production locks you in. Compare room by room, elevation by elevation, and trade by trade. Your revised estimate should tell a coherent story: what happened, what you observed, what you will do, and what each line item costs.",
         "Scope gaps on roofing supplements often involve accessories and flashings rather than field shingles alone. On water losses, scope gaps cluster around wet material removal, floor protection in unaffected areas, and content manipulation — a common path to underpaid mitigation when estimates are treated as final.",
+        "On fire and smoke losses, scope gaps cluster around migration rooms, contents pack-out, HVAC systems, and demolition discovery — the fire damage supplement playbook lists trade-specific missed lines and supplement workflow.",
         "Train field leads to flag scope gaps in daily notes — not only catastrophic finds. Small recurring omissions (protection, detach and reset, disposal) aggregate into meaningful annual recovery when captured consistently.",
       ],
       links: [
@@ -214,6 +216,10 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
         {
           label: "Water mitigation supplement playbook",
           href: "/resources/blog/water-damage-mitigation-supplement-playbook",
+        },
+        {
+          label: "Fire damage supplement playbook",
+          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Why water mitigation claims get underpaid",
@@ -342,6 +348,10 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
         {
           label: "Fire damage claim documentation guide",
           href: "/resources/blog/fire-damage-claim-documentation-guide",
+        },
+        {
+          label: "Fire damage supplement playbook",
+          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
         },
         { label: "Fire damage claims", href: "/solutions/fire-damage" },
       ],

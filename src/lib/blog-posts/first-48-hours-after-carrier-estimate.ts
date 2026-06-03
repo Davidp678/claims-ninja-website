@@ -181,8 +181,17 @@ export const first48HoursAfterCarrierEstimate: BlogPost = {
         "On water losses, verify whether mitigation-only scope is separated from reconstruction — carriers sometimes stop at dry-out while you face full interior rebuild.",
         "Walk equipment days, monitoring, containment, and moisture mapping against your drying plan — the water mitigation supplement playbook lists trade-specific missed lines; complete intake moisture maps per the moisture mapping best practices guide before production outruns the sketch.",
         "When the carrier template understates air movers, dehumidifiers, or drying days, document the gap early — equipment charges in water damage claims explains how to support utilization before supplements or denials.",
+        "On fire losses, compare the sketch to migration rooms, contents scope, and HVAC lines — the fire damage supplement playbook lists missed fire line items and supplement workflow; the fire damage claim documentation guide covers field capture standards.",
       ],
       links: [
+        {
+          label: "Fire damage supplement playbook",
+          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        },
+        {
+          label: "Fire damage claim documentation guide",
+          href: "/resources/blog/fire-damage-claim-documentation-guide",
+        },
         {
           label: "Equipment charges in water damage claims",
           href: "/resources/blog/equipment-charges-water-damage-claims",
