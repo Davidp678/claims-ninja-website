@@ -5,19 +5,6 @@ import Image from "next/image";
 
 export const TEASER_DISMISS_STORAGE_KEY = "claims-ninja-chat-teaser-dismissed";
 
-export const TEASER_COPY = [
-  "Questions about supplements, pricing, or claim recovery?",
-  "Need a second set of eyes on a claim?",
-  "Claims Ninja AI can explain pricing, supplements, and next steps.",
-  "Contractors: ask anything about claim workflows.",
-  "Wondering if a claim has supplement potential?",
-] as const;
-
-export function pickTeaserCopy(): string {
-  const index = Math.floor(Math.random() * TEASER_COPY.length);
-  return TEASER_COPY[index] ?? TEASER_COPY[0];
-}
-
 export function isTeaserDismissed(): boolean {
   if (typeof window === "undefined") {
     return false;

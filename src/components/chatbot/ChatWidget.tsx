@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { CTA_LINKS } from "@/lib/constants";
 import { ChatPanel } from "./ChatPanel";
@@ -9,8 +9,8 @@ import {
   ChatTeaser,
   dismissTeaser,
   isTeaserDismissed,
-  pickTeaserCopy,
 } from "./ChatTeaser";
+import { pickTeaserMessage } from "./chat-teaser-messages";
 import { fetchAssistantReply } from "./chat-client";
 import { shouldStartLeadFlow } from "./chat-lead-flow";
 import { OPENING_MESSAGE, getAssistantReply } from "./chat-responses";
@@ -87,10 +87,11 @@ function findLatestLeadSuccessMessage(
 
 export function ChatWidget() {
   const router = useRouter();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>(loadInitialMessages);
   const [isTyping, setIsTyping] = useState(false);
-  const [teaserMessage] = useState(() => pickTeaserCopy());
+  const [teaserMessage] = useState(() => pickTeaserMessage(pathname ?? ""));
   const [teaserEligible, setTeaserEligible] = useState(
     () => !isTeaserDismissed(),
   );
