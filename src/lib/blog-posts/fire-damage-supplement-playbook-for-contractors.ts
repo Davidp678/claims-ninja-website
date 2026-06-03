@@ -236,6 +236,13 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
         "HVAC scope includes duct inspection, register staining, filter condition, and cleaning versus replacement recommendations. Carriers frequently omit duct lines or pay one register wipe while the system distributed particulate through the structure.",
         "Document system type, affected runs, and inspection report excerpts. Diagram partial system scope when only portions require cleaning — avoid all-or-nothing claims without proof.",
         "Undocumented HVAC supplements are among the most common partial denials on fire files. Separate HVAC lines from general smoke wipe in narrative and photo folders.",
+        "For inspection workflows, component documentation, and duct supplement evidence, see the HVAC contamination in fire damage claims guide.",
+      ],
+      links: [
+        {
+          label: "HVAC contamination in fire damage claims",
+          href: "/resources/blog/hvac-contamination-in-fire-damage-claims",
+        },
       ],
     },
     {
@@ -399,6 +406,13 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
       level: 3,
       paragraphs: [
         "HVAC documentation includes duct layout photos, register staining, filter condition, and inspection report excerpts referenced in the cover letter map.",
+        "For full inspection process, contamination assessment, and component-level standards, see the HVAC contamination in fire damage claims guide.",
+      ],
+      links: [
+        {
+          label: "HVAC contamination in fire damage claims",
+          href: "/resources/blog/hvac-contamination-in-fire-damage-claims",
+        },
       ],
     },
     {

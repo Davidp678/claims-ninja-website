@@ -223,11 +223,15 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
       paragraphs: [
         "Smoke travels with air movement: convection rises, pressure differentials push particulate through gaps, and HVAC systems distribute contamination far from the fire room. Path documentation explains how unaffected-looking rooms became impacted.",
         "Document stair chases, wall cavities at outlets, gaps at top plates, and open doors or windows that shaped movement during the fire event. Photos at these penetrations support migration supplements.",
-        "HVAC paths are primary smoke highways. When registers show staining distant from origin, correlate duct layout photos with inspection findings — see HVAC documentation requirements below.",
+        "HVAC paths are primary smoke highways. When registers show staining distant from origin, correlate duct layout photos with inspection findings — see the HVAC contamination in fire damage claims guide for system inspection and documentation standards.",
         "Multi-unit and commercial losses need unit-to-unit path narrative: shared walls, demising cavities, and common corridors. Label tenant or unit IDs consistently across photos and sketch.",
         "Write a one-paragraph path summary for supplement cover letters: origin room, route through hall and stair, impact in upper bedrooms — with attachment names for each segment.",
       ],
       links: [
+        {
+          label: "HVAC contamination in fire damage claims",
+          href: "/resources/blog/hvac-contamination-in-fire-damage-claims",
+        },
         {
           label: "Fire damage supplement playbook",
           href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
@@ -280,6 +284,13 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
       paragraphs: [
         "Photograph equipment, filters, registers, returns, and accessible duct runs. Attach inspection report excerpts with findings tied to line numbers. Diagram partial system scope when only portions require cleaning.",
         "Undocumented HVAC smoke claims are frequent partial denials — treat HVAC as its own subfolder, not mixed into general wipe photos.",
+        "For duct spread mechanics, inspection workflows, and component documentation standards, see the HVAC contamination in fire damage claims guide.",
+      ],
+      links: [
+        {
+          label: "HVAC contamination in fire damage claims",
+          href: "/resources/blog/hvac-contamination-in-fire-damage-claims",
+        },
       ],
     },
     {

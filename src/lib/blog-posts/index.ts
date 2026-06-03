@@ -6,6 +6,7 @@ import { moistureMappingBestPracticesInsuranceClaims } from "./moisture-mapping-
 import { fireDamageClaimDocumentationGuide } from "./fire-damage-claim-documentation-guide";
 import { fireDamageSupplementPlaybookForContractors } from "./fire-damage-supplement-playbook-for-contractors";
 import { smokeAndSootDamageDocumentationGuide } from "./smoke-and-soot-damage-documentation-guide";
+import { hvacContaminationInFireDamageClaims } from "./hvac-contamination-in-fire-damage-claims";
 import { dailyMonitoringDocumentationBestPractices } from "./daily-monitoring-documentation-best-practices";
 import { equipmentChargesWaterDamageClaims } from "./equipment-charges-water-damage-claims";
 import { waterDamageSupplementDenialRecovery } from "./water-damage-supplement-denial-recovery";
@@ -39,6 +40,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   fireDamageClaimDocumentationGuide,
   fireDamageSupplementPlaybookForContractors,
   smokeAndSootDamageDocumentationGuide,
+  hvacContaminationInFireDamageClaims,
   opOnInsuranceClaims,
   supplementDenialRecoveryGuide,
   first48HoursAfterCarrierEstimate,

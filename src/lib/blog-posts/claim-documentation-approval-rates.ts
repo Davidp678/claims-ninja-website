@@ -30,9 +30,13 @@ export const claimDocumentationApprovalRates: BlogPost = {
         "On water mitigation files, dry logs and equipment placement notes are the approval equation — see the dry log documentation guide for daily standards, daily monitoring documentation best practices for visit records, the water mitigation supplement playbook for field phases and line items, and equipment charges in water damage claims for utilization proof and billing disputes.",
         "When a water mitigation supplement is formally denied, the water damage supplement denial recovery guide walks drying-specific resubmission — logs, maps, partial approvals, and re-inspection judgment.",
         "When approvals stall and payment feels short, why water mitigation claims get underpaid explains documentation-driven payment gaps contractors can fix.",
-        "On fire and smoke losses, room-by-room photos, soot and smoke proof, contents inventories, and HVAC documentation are the approval equation — see the fire damage claim documentation guide for full-file standards, the smoke and soot damage documentation guide for contamination evidence, and the fire damage supplement playbook for line items and supplement workflow.",
+        "On fire and smoke losses, room-by-room photos, soot and smoke proof, contents inventories, and HVAC documentation are the approval equation — see the fire damage claim documentation guide for full-file standards, the smoke and soot damage documentation guide for contamination evidence, the HVAC contamination in fire damage claims guide for system inspection and duct scope, and the fire damage supplement playbook for line items and supplement workflow.",
       ],
       links: [
+        {
+          label: "HVAC contamination in fire damage claims",
+          href: "/resources/blog/hvac-contamination-in-fire-damage-claims",
+        },
         {
           label: "Smoke and soot damage documentation guide",
           href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
@@ -95,6 +99,10 @@ export const claimDocumentationApprovalRates: BlogPost = {
         "HVAC inspection excerpts and duct photos when HVAC cleaning or replacement is claimed.",
       ],
       links: [
+        {
+          label: "HVAC contamination in fire damage claims",
+          href: "/resources/blog/hvac-contamination-in-fire-damage-claims",
+        },
         {
           label: "Smoke and soot damage documentation guide",
           href: "/resources/blog/smoke-and-soot-damage-documentation-guide",

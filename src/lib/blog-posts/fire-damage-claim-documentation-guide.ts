@@ -26,7 +26,7 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
   relatedPostSlugs: [
     "fire-damage-supplement-playbook-for-contractors",
     "smoke-and-soot-damage-documentation-guide",
-    "supplement-denial-recovery-guide",
+    "hvac-contamination-in-fire-damage-claims",
   ],
   faq: [
     {
@@ -92,7 +92,7 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
       paragraphs: [
         "Fire damage insurance claims fail on documentation more often than on policy language. Contractors perform legitimate soot cleaning, smoke sealing, contents handling, demolition, and rebuild — then absorb scope when photos are unlabeled, inventories are incomplete, and the estimate sketch omits rooms that clearly smoked on walkthrough.",
         "This fire damage claim documentation guide is the foundational resource for restoration and reconstruction contractors, project managers, estimators, and supplement leads handling fire and smoke losses. It explains what to capture, how carriers evaluate files, how documentation drives supplements and denial recovery, and how to build restoration workflows that pay for provable work.",
-        "Use the fire damage supplement playbook for line items and supplement workflow, the smoke and soot damage documentation guide for contamination evidence standards, the claim documentation approval rates article for cross-trade approval habits, the insurance supplementing guide for supplement process, and the supplement denial recovery guide when carriers push back. This guide goes deep on fire-specific evidence so your team can train one documentation standard across structure and contents phases.",
+        "Use the fire damage supplement playbook for line items and supplement workflow, the smoke and soot damage documentation guide for contamination evidence standards, the HVAC contamination in fire damage claims guide for system inspection and duct documentation, the claim documentation approval rates article for cross-trade approval habits, the insurance supplementing guide for supplement process, and the supplement denial recovery guide when carriers push back. This guide goes deep on fire-specific evidence so your team can train one documentation standard across structure and contents phases.",
         "Educational guidance for contractors — not legal advice. Policy forms, carrier programs, and local code authorities vary by file.",
       ],
       links: [
@@ -111,6 +111,10 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
         {
           label: "Smoke and soot damage documentation guide",
           href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
+        },
+        {
+          label: "HVAC contamination in fire damage claims",
+          href: "/resources/blog/hvac-contamination-in-fire-damage-claims",
         },
         { label: "Fire damage solutions", href: "/solutions/fire-damage" },
         { label: "Claims FAQ", href: "/faq" },
@@ -339,6 +343,13 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
       paragraphs: [
         "HVAC documentation includes system type, duct layout photos, filter condition, register staining, inspection report excerpts, and cleaning versus replacement recommendation. Undocumented duct cleaning lines are frequent partial denials.",
         "If only portions of the system are affected, diagram which runs are included and excluded — avoid all-or-nothing claims without proof.",
+        "For inspection workflows, component documentation, duct spread mechanics, and supplement opportunities on HVAC scope, see the HVAC contamination in fire damage claims guide.",
+      ],
+      links: [
+        {
+          label: "HVAC contamination in fire damage claims",
+          href: "/resources/blog/hvac-contamination-in-fire-damage-claims",
+        },
       ],
     },
     {
@@ -516,9 +527,13 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
         "Fire damage claim documentation is the cornerstone of fire restoration insurance recovery: room-by-room photos, soot and smoke proof, contents inventories, structural and HVAC evidence, organized supplements, and disciplined denial resubmission.",
         "Build documentation during the job with one naming convention across every artifact. Use the insurance supplementing guide for process, claim documentation approval rates for approval habits, and supplement denial recovery guide when carriers say no.",
         "Claims Ninja helps contractors turn fire documentation discipline into paid scope — with organized packages, gap analysis, and performance-aligned supplement support.",
-        "This guide is the documentation authority in the Fire Damage Claims cluster — pair it with the fire damage supplement playbook for line items and the smoke and soot damage documentation guide for contamination evidence depth.",
+        "This guide is the documentation authority in the Fire Damage Claims cluster — pair it with the fire damage supplement playbook for line items, the smoke and soot damage documentation guide for contamination evidence, and the HVAC contamination in fire damage claims guide for system inspection and duct scope.",
       ],
       links: [
+        {
+          label: "HVAC contamination in fire damage claims",
+          href: "/resources/blog/hvac-contamination-in-fire-damage-claims",
+        },
         {
           label: "Smoke and soot damage documentation guide",
           href: "/resources/blog/smoke-and-soot-damage-documentation-guide",

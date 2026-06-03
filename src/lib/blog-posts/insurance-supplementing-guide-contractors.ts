@@ -357,6 +357,10 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
           label: "Smoke and soot damage documentation guide",
           href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
         },
+        {
+          label: "HVAC contamination in fire damage claims",
+          href: "/resources/blog/hvac-contamination-in-fire-damage-claims",
+        },
         { label: "Fire damage claims", href: "/solutions/fire-damage" },
       ],
     },
