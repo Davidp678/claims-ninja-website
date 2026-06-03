@@ -25,7 +25,7 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
     "Water mitigation supplements for contractors: drying documentation, missed line items, estimate review, carrier approvals, and mitigation claim recovery.",
   relatedPostSlugs: [
     "insurance-supplementing-guide-contractors",
-    "claim-documentation-approval-rates",
+    "dry-log-documentation-guide-insurance-claims",
     "supplement-denial-recovery-guide",
   ],
   faq: [
@@ -315,6 +315,10 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
           label: "How documentation improves approvals",
           href: "/resources/blog/claim-documentation-approval-rates",
         },
+        {
+          label: "Dry log documentation guide",
+          href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+        },
       ],
     },
     {
@@ -339,6 +343,13 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
       level: 3,
       paragraphs: [
         "Dry logs summarize daily readings, equipment on site, and observations. Many carriers accept industry-standard drying reports or your template if consistent. Gaps in dates invite proportional reductions in equipment payment.",
+        "For field standards, carrier review habits, common logging mistakes, and audit-ready templates, use the dry log documentation guide — this playbook links drying evidence to supplement line items.",
+      ],
+      links: [
+        {
+          label: "Dry log documentation guide",
+          href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+        },
       ],
     },
     {

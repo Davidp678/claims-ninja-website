@@ -16,7 +16,7 @@ export const claimDocumentationApprovalRates: BlogPost = {
     "How better insurance claim documentation improves supplement approval rates for contractors — photos, moisture logs, scope notes, and estimate alignment.",
   relatedPostSlugs: [
     "insurance-supplementing-guide-contractors",
-    "roofing-supplement-playbook",
+    "dry-log-documentation-guide-insurance-claims",
     "why-carrier-estimates-miss-line-items",
   ],
   sections: [
@@ -28,12 +28,16 @@ export const claimDocumentationApprovalRates: BlogPost = {
         "When a supplement is denied, the same documentation standards apply on resubmission — organized evidence tied to each line, not a larger photo dump without a cover letter map.",
         "Teams that batch-upload random photos at supplement time lose weeks. Teams that document daily win faster — even on difficult carriers.",
         "When a supplement is denied, the same documentation standards apply on resubmission — organized evidence tied to each line, not a larger photo dump without a cover letter map.",
-        "On water mitigation files, dry logs and equipment placement notes are the approval equation — see the water mitigation supplement playbook for field standards by phase.",
+        "On water mitigation files, dry logs and equipment placement notes are the approval equation — see the dry log documentation guide for daily standards and the water mitigation supplement playbook for field phases and line items.",
       ],
       links: [
         {
           label: "Supplement denial recovery guide",
           href: "/resources/blog/supplement-denial-recovery-guide",
+        },
+        {
+          label: "Dry log documentation guide",
+          href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
         },
         {
           label: "Water mitigation supplement playbook",
@@ -49,7 +53,7 @@ export const claimDocumentationApprovalRates: BlogPost = {
         "Pre-mitigation and post-mitigation moisture readings on water jobs.",
         "Inventory or pack-out lists tied to room locations on contents losses.",
         "Code references only when jurisdiction actually requires them.",
-        "Daily notes on equipment placement and drying changes.",
+        "Daily dry log entries with moisture readings and equipment changes on water jobs.",
         "Roof elevation photos, pitch labels, and measurement reports on storm and replacement jobs.",
       ],
       links: [
@@ -61,6 +65,10 @@ export const claimDocumentationApprovalRates: BlogPost = {
         {
           label: "Water mitigation supplement playbook",
           href: "/resources/blog/water-damage-mitigation-supplement-playbook",
+        },
+        {
+          label: "Dry log documentation guide",
+          href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
         },
       ],
     },

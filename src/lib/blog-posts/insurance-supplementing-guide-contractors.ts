@@ -282,7 +282,13 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
       level: 3,
       paragraphs: [
         "Take wide shots for context and close shots for damage or assembly detail. Include reference objects for scale where helpful. Photograph pre-existing conditions separately from storm or sudden loss damage when matching disputes are likely.",
-        "On roofing supplements, photograph pitch labels, eave and valley conditions, ventilation before and after, and any structural decking damage when tear-off occurs. On water losses, photograph water lines, material delamination, and equipment placement each day.",
+        "On roofing supplements, photograph pitch labels, eave and valley conditions, ventilation before and after, and any structural decking damage when tear-off occurs. On water losses, photograph water lines, material delamination, and equipment placement each day — and maintain daily dry logs with moisture readings tied to the same room names.",
+      ],
+      links: [
+        {
+          label: "Dry log documentation guide",
+          href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+        },
       ],
     },
     {

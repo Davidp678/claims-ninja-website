@@ -361,6 +361,10 @@ export const xactimateEstimateReviewChecklistContractors: BlogPost = {
           label: "Claim documentation and approval rates",
           href: "/resources/blog/claim-documentation-approval-rates",
         },
+        {
+          label: "Dry log documentation guide",
+          href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+        },
       ],
     },
     {

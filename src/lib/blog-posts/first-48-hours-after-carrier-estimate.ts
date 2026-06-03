@@ -186,6 +186,10 @@ export const first48HoursAfterCarrierEstimate: BlogPost = {
           label: "Water mitigation supplement playbook",
           href: "/resources/blog/water-damage-mitigation-supplement-playbook",
         },
+        {
+          label: "Dry log documentation guide",
+          href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+        },
       ],
     },
     {
@@ -275,12 +279,16 @@ export const first48HoursAfterCarrierEstimate: BlogPost = {
       ],
       callout: {
         title: "Documentation tips",
-        body: "Name photos with claim number, elevation or room, and date. Wide context plus close damage. On water, same-day moisture readings. Adjusters approve files they can navigate without calling for labels.",
+        body: "Name photos with claim number, elevation or room, and date. Wide context plus close damage. On water, same-day moisture readings in the dry log. Adjusters approve files they can navigate without calling for labels.",
       },
       links: [
         {
           label: "Claim documentation and approval rates",
           href: "/resources/blog/claim-documentation-approval-rates",
+        },
+        {
+          label: "Dry log documentation guide",
+          href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
         },
       ],
     },
