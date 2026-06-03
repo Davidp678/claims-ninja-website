@@ -26,7 +26,7 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
   relatedPostSlugs: [
     "water-damage-supplement-denial-recovery",
     "dry-log-documentation-guide-insurance-claims",
-    "moisture-mapping-best-practices-insurance-claims",
+    "equipment-charges-water-damage-claims",
   ],
   faq: [
     {
@@ -237,6 +237,13 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
       paragraphs: [
         "Dehumidifiers, air movers, HEPA filtration, heaters, desiccant, and injectidry systems each map to distinct Xactimate lines. Missed revenue appears when the carrier pays one dehu and three air movers but you ran five movers and two dehus for twelve days across three rooms.",
         "Match equipment count to placement photos. When you downgrade equipment, note the date so you are not arguing for lines you removed in the field.",
+        "For carrier scrutiny, utilization proof, dispute patterns, and tracking SOPs on equipment billing, see equipment charges in water damage claims — this playbook links line items to the evidence those lines require.",
+      ],
+      links: [
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
       ],
     },
     {
@@ -331,6 +338,10 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
           label: "Dry log documentation guide",
           href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
         },
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
       ],
     },
     {
@@ -370,6 +381,13 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
       level: 3,
       paragraphs: [
         "Equipment logs track which assets ran where and when — especially when you rotate serial numbers between jobs. Align logs to invoice rental periods when you bill above Xactimate defaults.",
+        "Equipment logs should reconcile to dry log equipment rows and placement photos — see equipment charges in water damage claims for tracking best practices and audit-ready exports.",
+      ],
+      links: [
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
       ],
     },
     {
@@ -507,13 +525,17 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
       heading: "Final takeaway",
       paragraphs: [
         "Water mitigation supplements are a discipline: compare estimates early, dry with logs, document daily, submit line items you can prove, and follow up professionally. Equipment days, monitoring, and containment are where margin hides on otherwise approved extraction lines.",
-        "Use the insurance supplementing guide as your cluster pillar, the documentation article for approval tactics, the Xactimate checklist for estimate literacy, and the water damage supplement denial recovery guide when carriers push back on mitigation scope. This water damage mitigation supplement playbook ties them into a mitigation-ready workflow.",
+        "Use the insurance supplementing guide as your cluster pillar, the documentation article for approval tactics, equipment charges in water damage claims for rental and utilization proof, the Xactimate checklist for estimate literacy, and the water damage supplement denial recovery guide when carriers push back on mitigation scope. This water damage mitigation supplement playbook ties them into a mitigation-ready workflow.",
         "When volume exceeds internal capacity or denial rates climb on drying extensions, Claims Ninja is built to help mitigation contractors recover documented scope with performance-aligned economics — not unnecessary fights with adjusters.",
       ],
       links: [
         {
           label: "Water damage supplement denial recovery",
           href: "/resources/blog/water-damage-supplement-denial-recovery",
+        },
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
         },
         {
           label: "Why water mitigation claims get underpaid",

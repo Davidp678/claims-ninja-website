@@ -274,6 +274,13 @@ export const moistureMappingBestPracticesInsuranceClaims: BlogPost = {
       paragraphs: [
         "Show planned or placed air movers and dehumidifiers at intake. Equipment on the map should match placement photos the same day.",
         "When equipment moves, update the map or cross-reference dry log equipment rows so reviewers see intentional changes.",
+        "Chamber layout on the map supports equipment count on the estimate — see equipment charges in water damage claims when disputes target units, duration, or specialty drying systems.",
+      ],
+      links: [
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
       ],
     },
     {

@@ -180,8 +180,13 @@ export const first48HoursAfterCarrierEstimate: BlogPost = {
         "Compare room list, categories, and sketch to your site walk or inspection. Flag missing areas, collapsed assemblies, and trades not represented. Scope errors invalidate every downstream line.",
         "On water losses, verify whether mitigation-only scope is separated from reconstruction — carriers sometimes stop at dry-out while you face full interior rebuild.",
         "Walk equipment days, monitoring, containment, and moisture mapping against your drying plan — the water mitigation supplement playbook lists trade-specific missed lines; complete intake moisture maps per the moisture mapping best practices guide before production outruns the sketch.",
+        "When the carrier template understates air movers, dehumidifiers, or drying days, document the gap early — equipment charges in water damage claims explains how to support utilization before supplements or denials.",
       ],
       links: [
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
         {
           label: "Water mitigation supplement playbook",
           href: "/resources/blog/water-damage-mitigation-supplement-playbook",

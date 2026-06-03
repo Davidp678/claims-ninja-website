@@ -235,6 +235,13 @@ export const waterDamageSupplementDenialRecovery: BlogPost = {
         "Equipment disputes challenge unit count, specialty rental, or days without placement proof. Photos and logs must match invoice and estimate quantities.",
         "Recovery: equipment log with serial or asset tags on commercial files; placement photos on setup and changes.",
         "Desiccant, injectidry, and large-loss equipment denials need same-day placement photos and log notes explaining why standard air movers and dehumidifiers were insufficient for the assembly.",
+        "For equipment-focused denial and resubmission standards — utilization, quantity, duration, tracking — see equipment charges in water damage claims.",
+      ],
+      links: [
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
       ],
     },
     {
@@ -425,6 +432,13 @@ export const waterDamageSupplementDenialRecovery: BlogPost = {
       paragraphs: [
         "Equipment table: type, count, location, start and end dates, photo reference. Align to invoice when challenging rental unit price.",
         "Commercial losses benefit from asset tags or rental contract pages redacted to the claim; residential files still need count consistency across log, photos, and estimate on every resubmission after equipment disputes.",
+        "Equipment records on resubmission should mirror the tracking best practices in equipment charges in water damage claims — one table keyed to estimate line numbers and photo filenames.",
+      ],
+      links: [
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
       ],
     },
     {

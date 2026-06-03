@@ -208,6 +208,13 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
       level: 3,
       paragraphs: [
         "Equipment on invoice but not in photos, logs, or map layout invites unit count reductions. Asset tags and placement photos align rental charges to field reality.",
+        "Poor tracking is fixable with same-day placement photos, dry log equipment rows, and estimate reconciliation — equipment charges in water damage claims covers utilization proof and common dispute patterns in depth.",
+      ],
+      links: [
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
       ],
     },
     {
@@ -415,7 +422,7 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
       paragraphs: [
         "Recovery starts with classifying the gap: scope, pricing, documentation, or communication. Open the carrier estimate beside your map and log; list unpaid lines with the evidence you have and the evidence you need.",
         "Submit organized supplements with revised estimates, index, and dated proof. Accept partial approvals, bill accepted scope, resubmit remaining lines with added documentation — do not resend the same PDF louder.",
-        "For denials or harsh cuts, follow the supplement denial recovery guide for cross-trade workflow, then the water damage supplement denial recovery guide when drying lines, monitoring, or maps were the stated reason: read denial language, fix evidence gaps, resubmit once professionally.",
+        "For denials or harsh cuts, follow the supplement denial recovery guide for cross-trade workflow, then the water damage supplement denial recovery guide when drying lines, monitoring, or maps were the stated reason. When payment cuts target equipment count or rental days specifically, use equipment charges in water damage claims for utilization and tracking fixes before resubmitting.",
         "When internal bandwidth is thin, supplement partners should extend your process with the same documentation standards — not replace field capture.",
         "Track recovery outcomes by carrier and adjuster: which programs approve extended drying with complete logs versus which require re-inspection. Your supplement strategy should adapt to patterns, not treat every file identically.",
       ],
@@ -424,6 +431,10 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
         body: "Audit the last ten closed water files: sum carrier-paid drying and monitoring versus your submitted amounts. Patterns in misses tell you whether to train maps, logs, or estimate review first.",
       },
       links: [
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
         {
           label: "Water damage supplement denial recovery",
           href: "/resources/blog/water-damage-supplement-denial-recovery",

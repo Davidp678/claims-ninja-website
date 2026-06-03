@@ -217,6 +217,13 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
       paragraphs: [
         "List each piece of equipment by type and quantity per room or chamber: air movers, dehumidifiers, HEPA, heaters, desiccant, injectidry. Note placement intent — airflow direction, dehu exhaust path, negative air if contained.",
         "Cross-reference placement photos taken the same day. Supplement reviewers match serial numbers or asset tags when disputes arise on large commercial losses.",
+        "For carrier evaluation of equipment lines, utilization disputes, and supplement identification beyond log fields, see equipment charges in water damage claims.",
+      ],
+      links: [
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
       ],
     },
     {
@@ -226,6 +233,13 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
       paragraphs: [
         "Log additions, removals, and relocations with date and reason. If you add a dehu on day three because readings plateaued, the log must say so — otherwise the extra unit looks invented at billing.",
         "When downgrading equipment, record final readings for the closed zone and release date. Carriers challenge full-week rental when logs show dry standard on day four but invoice shows seven days.",
+        "Equipment change rows are how dry logs defend billed unit count — align with the equipment charges guide when disputes target quantity or duration.",
+      ],
+      links: [
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
       ],
     },
     {
@@ -434,8 +448,13 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
         "When drying extensions are denied, read the denial letter for documentation language before arguing scope. Most drying denials cite insufficient proof of duration or necessity — fix the log, then resubmit.",
         "Rebuild the log chronology if needed from contemporaneous photos, equipment GPS, or visit tickets — only where authentic. Do not fabricate; the supplement denial recovery guide covers ethical resubmission sequencing, and the water damage supplement denial recovery guide applies that workflow to drying-day and monitoring denials.",
         "Add a cover letter table: Date, Reading summary, Equipment, Why still drying. Cross-walk to estimate line numbers. Resubmit once with stronger evidence; repeated weak resubmits train adjusters to deny your next file faster.",
+        "When denial targets equipment count or rental days specifically, pair log fixes with equipment charges in water damage claims for utilization and placement standards.",
       ],
       links: [
+        {
+          label: "Equipment charges in water damage claims",
+          href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
         {
           label: "Water damage supplement denial recovery",
           href: "/resources/blog/water-damage-supplement-denial-recovery",
