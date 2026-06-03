@@ -353,6 +353,10 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
           label: "Fire damage supplement playbook",
           href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
         },
+        {
+          label: "Smoke and soot damage documentation guide",
+          href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
+        },
         { label: "Fire damage claims", href: "/solutions/fire-damage" },
       ],
     },

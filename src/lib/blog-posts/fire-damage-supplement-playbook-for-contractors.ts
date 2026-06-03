@@ -202,6 +202,13 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
         "Smoke damage lines cover staining, particulate migration, and porous material impact beyond visible soot in the origin room. Carriers omit second-floor bedrooms, halls, and closets when the sketch focuses on the kitchen or garage fire source.",
         "Supplement smoke scope with path narrative — stairwells, chases, penetrations — and photos at each affected room. Submit migration supplements when discovery is documented, not after rebuild paint covers evidence.",
         "Separate smoke cleaning from smoke sealing and odor treatment in the estimate. Desk reviewers apply different macros; blended lines invite proportional reduction.",
+        "For smoke types, migration paths, and field capture standards on contamination evidence, see the smoke and soot damage documentation guide.",
+      ],
+      links: [
+        {
+          label: "Smoke and soot damage documentation guide",
+          href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
+        },
       ],
     },
     {
@@ -212,6 +219,13 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
         "Soot lines address visible particulate on surfaces — dry, oily, or protein-based where relevant. Carriers may pay one generic wipe while you perform test cleaning, specialty agents, or replacement on substrates that will not release soot.",
         "Document soot type, distribution, and clean-versus-replace trials with close substrate photos. Protein soot from kitchen fires behaves differently than dry soot — one-size cleaning macros fail on mixed losses.",
         "Mechanical and electrical components with soot load may need specialist evaluation — note equipment affected and inspection outcomes in site notes tied to supplement lines.",
+        "For soot types, test-clean documentation, and substrate evidence standards, see the smoke and soot damage documentation guide.",
+      ],
+      links: [
+        {
+          label: "Smoke and soot damage documentation guide",
+          href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
+        },
       ],
     },
     {
@@ -355,6 +369,13 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
       level: 3,
       paragraphs: [
         "Smoke documentation addresses migration beyond visible soot — staining, odor, and hidden cavities. Photos at outlets, behind toe kicks, attic openings, and stair chases support migration arguments.",
+        "For smoke travel paths, attic inspection, and migration supplement evidence, see the smoke and soot damage documentation guide.",
+      ],
+      links: [
+        {
+          label: "Smoke and soot damage documentation guide",
+          href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
+        },
       ],
     },
     {
@@ -363,6 +384,13 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
       level: 3,
       paragraphs: [
         "Document soot type, distribution, and test cleaning results to support clean versus replace decisions. Close substrate photos prevent reviewers from assuming the cheaper cleaning option.",
+        "For soot contamination types and carrier evaluation habits, see the smoke and soot damage documentation guide.",
+      ],
+      links: [
+        {
+          label: "Smoke and soot damage documentation guide",
+          href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
+        },
       ],
     },
     {

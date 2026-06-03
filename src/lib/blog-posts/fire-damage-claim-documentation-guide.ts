@@ -25,7 +25,7 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
     "Fire damage claim documentation for contractors: photos, soot and smoke evidence, contents inventories, structural scope, supplements, denial recovery, and restoration workflows.",
   relatedPostSlugs: [
     "fire-damage-supplement-playbook-for-contractors",
-    "insurance-supplementing-guide-contractors",
+    "smoke-and-soot-damage-documentation-guide",
     "supplement-denial-recovery-guide",
   ],
   faq: [
@@ -92,7 +92,7 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
       paragraphs: [
         "Fire damage insurance claims fail on documentation more often than on policy language. Contractors perform legitimate soot cleaning, smoke sealing, contents handling, demolition, and rebuild — then absorb scope when photos are unlabeled, inventories are incomplete, and the estimate sketch omits rooms that clearly smoked on walkthrough.",
         "This fire damage claim documentation guide is the foundational resource for restoration and reconstruction contractors, project managers, estimators, and supplement leads handling fire and smoke losses. It explains what to capture, how carriers evaluate files, how documentation drives supplements and denial recovery, and how to build restoration workflows that pay for provable work.",
-        "Use the fire damage supplement playbook for line items and supplement workflow, the claim documentation approval rates article for cross-trade approval habits, the insurance supplementing guide for supplement process, and the supplement denial recovery guide when carriers push back. This guide goes deep on fire-specific evidence so your team can train one documentation standard across structure and contents phases.",
+        "Use the fire damage supplement playbook for line items and supplement workflow, the smoke and soot damage documentation guide for contamination evidence standards, the claim documentation approval rates article for cross-trade approval habits, the insurance supplementing guide for supplement process, and the supplement denial recovery guide when carriers push back. This guide goes deep on fire-specific evidence so your team can train one documentation standard across structure and contents phases.",
         "Educational guidance for contractors — not legal advice. Policy forms, carrier programs, and local code authorities vary by file.",
       ],
       links: [
@@ -107,6 +107,10 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
         {
           label: "Fire damage supplement playbook",
           href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        },
+        {
+          label: "Smoke and soot damage documentation guide",
+          href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
         },
         { label: "Fire damage solutions", href: "/solutions/fire-damage" },
         { label: "Claims FAQ", href: "/faq" },
@@ -230,6 +234,13 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
       paragraphs: [
         "Document soot type and distribution — dry, oily, protein-based where relevant — and affected substrates. Test cleaning areas when appropriate and photograph results to support clean versus replace decisions.",
         "Soot on mechanical and electrical components may need specialist evaluation — note equipment affected and inspection outcomes in site notes.",
+        "For soot types, spread patterns, test-clean standards, and carrier evaluation habits, see the smoke and soot damage documentation guide.",
+      ],
+      links: [
+        {
+          label: "Smoke and soot damage documentation guide",
+          href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
+        },
       ],
     },
     {
@@ -239,6 +250,13 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
       paragraphs: [
         "Smoke documentation addresses migration beyond visible soot — staining, acrid odor, particulate in porous materials, and hidden cavities. Use photos at outlets, behind toe kicks, in attic openings, and at stair chases when migration is claimed.",
         "Correlate smoke claims to HVAC paths when duct systems may have distributed particulate — see HVAC section in specialized considerations.",
+        "For smoke types, travel paths, attic and crawlspace inspection, and migration supplement evidence, see the smoke and soot damage documentation guide.",
+      ],
+      links: [
+        {
+          label: "Smoke and soot damage documentation guide",
+          href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
+        },
       ],
     },
     {
@@ -498,9 +516,13 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
         "Fire damage claim documentation is the cornerstone of fire restoration insurance recovery: room-by-room photos, soot and smoke proof, contents inventories, structural and HVAC evidence, organized supplements, and disciplined denial resubmission.",
         "Build documentation during the job with one naming convention across every artifact. Use the insurance supplementing guide for process, claim documentation approval rates for approval habits, and supplement denial recovery guide when carriers say no.",
         "Claims Ninja helps contractors turn fire documentation discipline into paid scope — with organized packages, gap analysis, and performance-aligned supplement support.",
-        "This guide is the documentation authority in the Fire Damage Claims cluster — pair it with the fire damage supplement playbook for line items, estimate review, and supplement submission workflow.",
+        "This guide is the documentation authority in the Fire Damage Claims cluster — pair it with the fire damage supplement playbook for line items and the smoke and soot damage documentation guide for contamination evidence depth.",
       ],
       links: [
+        {
+          label: "Smoke and soot damage documentation guide",
+          href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
+        },
         {
           label: "Fire damage supplement playbook",
           href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
