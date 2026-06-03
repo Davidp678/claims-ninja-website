@@ -43,6 +43,10 @@ export const claimDocumentationApprovalRates: BlogPost = {
           label: "Water mitigation supplement playbook",
           href: "/resources/blog/water-damage-mitigation-supplement-playbook",
         },
+        {
+          label: "Moisture mapping best practices",
+          href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+        },
       ],
     },
     {
@@ -50,6 +54,7 @@ export const claimDocumentationApprovalRates: BlogPost = {
       heading: "Field standards that move approvals",
       bullets: [
         "Wide and close photos per room with consistent naming.",
+        "Intake moisture maps with labeled reading points on water jobs.",
         "Pre-mitigation and post-mitigation moisture readings on water jobs.",
         "Inventory or pack-out lists tied to room locations on contents losses.",
         "Code references only when jurisdiction actually requires them.",
@@ -69,6 +74,10 @@ export const claimDocumentationApprovalRates: BlogPost = {
         {
           label: "Dry log documentation guide",
           href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+        },
+        {
+          label: "Moisture mapping best practices",
+          href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
         },
       ],
     },

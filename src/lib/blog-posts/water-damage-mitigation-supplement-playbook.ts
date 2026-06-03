@@ -26,7 +26,7 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
   relatedPostSlugs: [
     "insurance-supplementing-guide-contractors",
     "dry-log-documentation-guide-insurance-claims",
-    "supplement-denial-recovery-guide",
+    "moisture-mapping-best-practices-insurance-claims",
   ],
   faq: [
     {
@@ -248,6 +248,13 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
       level: 3,
       paragraphs: [
         "Moisture mapping documents initial extent: which rooms, which assemblies, which readings at intake. It supports later proof that hidden areas were not invented at day five. Carriers who deny mapping never saw an intake diagram or labeled reading sheet.",
+        "For boundaries, reading-point IDs, photo integration, and audit-ready intake standards, use the moisture mapping best practices guide — this playbook links mapping evidence to line items and supplements.",
+      ],
+      links: [
+        {
+          label: "Moisture mapping best practices",
+          href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+        },
       ],
     },
     {
@@ -422,6 +429,10 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
         {
           label: "First 48 hours after a carrier estimate",
           href: "/resources/blog/first-48-hours-after-carrier-estimate",
+        },
+        {
+          label: "Moisture mapping best practices",
+          href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
         },
         {
           label: "Insurance supplementing guide",

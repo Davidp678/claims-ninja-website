@@ -24,7 +24,7 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
     "Dry logs for insurance claims: what to record, carrier review habits, common mistakes, supplement support, and mitigation documentation best practices for contractors.",
   relatedPostSlugs: [
     "water-damage-mitigation-supplement-playbook",
-    "claim-documentation-approval-rates",
+    "moisture-mapping-best-practices-insurance-claims",
     "supplement-denial-recovery-guide",
   ],
   faq: [
@@ -378,6 +378,12 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
         "Attach the moisture map to the claim file at intake and reference map point IDs in daily readings. Reviewers trust trends when they see the same points tracked daily.",
         "Update the map when migration or new wet areas appear — then extend the log and supplement narrative together.",
       ],
+      links: [
+        {
+          label: "Moisture mapping best practices",
+          href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+        },
+      ],
     },
     {
       id: "equipment-tracking",
@@ -442,6 +448,13 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
         "Moisture mapping is the snapshot at intake — where water went, where you will read, which chambers exist. The dry log is the movie — daily progress from wet toward dry at those points.",
         "Submit mapping with the first supplement or initial carrier packet when hidden moisture is claimed. Reference map points in every log row so adjusters see continuity.",
         "When mapping reveals multiple chambers, the log should track each chamber separately — not one blended reading for the whole house.",
+        "For intake map standards, boundaries, and reading-point setup, see the moisture mapping best practices guide.",
+      ],
+      links: [
+        {
+          label: "Moisture mapping best practices",
+          href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+        },
       ],
     },
     {

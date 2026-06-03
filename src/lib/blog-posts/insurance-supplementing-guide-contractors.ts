@@ -289,6 +289,10 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
           label: "Dry log documentation guide",
           href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
         },
+        {
+          label: "Moisture mapping best practices",
+          href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+        },
       ],
     },
     {

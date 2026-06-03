@@ -302,6 +302,10 @@ export const supplementDenialRecoveryGuide: BlogPost = {
           label: "Water mitigation supplement playbook",
           href: "/resources/blog/water-damage-mitigation-supplement-playbook",
         },
+        {
+          label: "Moisture mapping best practices",
+          href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+        },
       ],
     },
     {

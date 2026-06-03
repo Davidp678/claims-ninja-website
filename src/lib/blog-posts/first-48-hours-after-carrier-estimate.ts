@@ -179,7 +179,7 @@ export const first48HoursAfterCarrierEstimate: BlogPost = {
       paragraphs: [
         "Compare room list, categories, and sketch to your site walk or inspection. Flag missing areas, collapsed assemblies, and trades not represented. Scope errors invalidate every downstream line.",
         "On water losses, verify whether mitigation-only scope is separated from reconstruction — carriers sometimes stop at dry-out while you face full interior rebuild.",
-        "Walk equipment days, monitoring, containment, and moisture mapping against your drying plan — the water mitigation supplement playbook lists trade-specific missed lines.",
+        "Walk equipment days, monitoring, containment, and moisture mapping against your drying plan — the water mitigation supplement playbook lists trade-specific missed lines; complete intake moisture maps per the moisture mapping best practices guide before production outruns the sketch.",
       ],
       links: [
         {
@@ -189,6 +189,10 @@ export const first48HoursAfterCarrierEstimate: BlogPost = {
         {
           label: "Dry log documentation guide",
           href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+        },
+        {
+          label: "Moisture mapping best practices",
+          href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
         },
       ],
     },
