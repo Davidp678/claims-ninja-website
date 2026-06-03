@@ -433,11 +433,11 @@ export function ChatWidget() {
             whileTap={{ scale: 0.96 }}
             aria-label="Open Claims Ninja AI chat"
             aria-expanded={isOpen}
-            className={`group pointer-events-auto fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] inline-flex h-14 w-14 items-center justify-center rounded-full border border-brand-red-light/50 bg-gradient-to-br from-brand-red-light to-brand-red text-white shadow-[0_8px_32px_-12px_rgba(239,68,68,0.55)] ring-1 ring-white/15 transition-shadow hover:border-brand-red-light/65 hover:shadow-[0_10px_36px_-10px_rgba(239,68,68,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black${launcherPulse && showTeaser && !prefersReducedMotion ? " ring-2 ring-brand-red-light/42 shadow-[0_10px_36px_-8px_rgba(239,68,68,0.55)] motion-reduce:ring-1" : ""}`}
+            className={`group pointer-events-auto fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] inline-flex h-14 w-14 items-center justify-center rounded-full border border-brand-red/45 bg-gradient-to-br from-[#e02828] to-brand-red-deep text-white shadow-[0_8px_32px_-12px_rgba(224,40,40,0.55)] ring-1 ring-white/15 transition-shadow hover:border-brand-red/58 hover:shadow-[0_10px_36px_-10px_rgba(224,40,40,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black${launcherPulse && showTeaser && !prefersReducedMotion ? " ring-2 ring-brand-red/38 shadow-[0_10px_36px_-8px_rgba(224,40,40,0.55)] motion-reduce:ring-1" : ""}`}
           >
             <span
               aria-hidden
-              className="absolute inset-0 rounded-full bg-brand-red-light/35 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100 motion-reduce:hidden"
+              className="absolute inset-0 rounded-full bg-brand-red/30 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100 motion-reduce:hidden"
             />
             <svg
               aria-hidden

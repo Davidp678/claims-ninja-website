@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { CHAT_CRIMSON } from "./chat-accent";
 import Image from "next/image";
 
 export const TEASER_DISMISS_STORAGE_KEY = "claims-ninja-chat-teaser-dismissed";
@@ -68,14 +69,14 @@ export function ChatTeaser({
       transition={transition}
       className="pointer-events-auto fixed bottom-[calc(max(1.25rem,env(safe-area-inset-bottom))+4.75rem)] right-[max(1.25rem,env(safe-area-inset-right))] z-[61] w-[min(17rem,calc(100vw-2.5rem))] sm:w-[19rem]"
     >
-      <div className="relative rounded-2xl border border-white/12 bg-brand-elevated/95 shadow-[0_16px_48px_-20px_rgba(0,0,0,0.9),0_0_32px_-16px_rgba(239,68,68,0.42)] ring-1 ring-brand-red-light/25 backdrop-blur-xl">
+      <div className="relative rounded-2xl border border-white/12 bg-brand-elevated/95 shadow-[0_16px_48px_-20px_rgba(0,0,0,0.9),0_0_32px_-16px_rgba(224,40,40,0.36)] ring-1 ring-brand-red/20 backdrop-blur-xl">
         <button
           type="button"
           onClick={onOpen}
           aria-label="Open Claims Ninja AI chat"
           className="flex w-full items-start gap-3 rounded-2xl p-3.5 pr-10 text-left transition-colors hover:bg-white/[0.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-elevated"
         >
-          <div className="relative mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border border-brand-red-light/50 bg-brand-black ring-1 ring-white/10">
+          <div className="relative mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border border-brand-red/45 bg-brand-black ring-1 ring-white/10">
             <Image
               src="/logo.png"
               alt=""
@@ -85,7 +86,10 @@ export function ChatTeaser({
             />
           </div>
           <div className="min-w-0 flex-1">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-red-300">
+            <p
+              className="text-[10px] font-semibold uppercase tracking-wider"
+              style={{ color: CHAT_CRIMSON }}
+            >
               Claims Ninja AI
             </p>
             <p className="mt-1 text-sm leading-snug text-zinc-100">{message}</p>
