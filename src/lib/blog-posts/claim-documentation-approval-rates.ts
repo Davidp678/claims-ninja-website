@@ -29,6 +29,7 @@ export const claimDocumentationApprovalRates: BlogPost = {
         "Teams that batch-upload random photos at supplement time lose weeks. Teams that document daily win faster — even on difficult carriers.",
         "When a supplement is denied, the same documentation standards apply on resubmission — organized evidence tied to each line, not a larger photo dump without a cover letter map.",
         "On water mitigation files, dry logs and equipment placement notes are the approval equation — see the dry log documentation guide for daily standards and the water mitigation supplement playbook for field phases and line items.",
+        "When approvals stall and payment feels short, why water mitigation claims get underpaid explains documentation-driven payment gaps contractors can fix.",
       ],
       links: [
         {
@@ -46,6 +47,10 @@ export const claimDocumentationApprovalRates: BlogPost = {
         {
           label: "Moisture mapping best practices",
           href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+        },
+        {
+          label: "Why water mitigation claims get underpaid",
+          href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
         },
       ],
     },

@@ -24,7 +24,7 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
   seoDescription:
     "Water mitigation supplements for contractors: drying documentation, missed line items, estimate review, carrier approvals, and mitigation claim recovery.",
   relatedPostSlugs: [
-    "insurance-supplementing-guide-contractors",
+    "why-water-mitigation-claims-get-underpaid",
     "dry-log-documentation-guide-insurance-claims",
     "moisture-mapping-best-practices-insurance-claims",
   ],
@@ -94,9 +94,14 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
         "This water damage mitigation supplement playbook is built for mitigation and restoration owners, project managers, and supplement leads who need a repeatable process from emergency response through supplement submission and approval. It complements the insurance supplementing pillar and the documentation guide: this article is water-trade authority on drying, logs, and line items; those resources cover cross-trade fundamentals and approval habits.",
         "The standard throughout is documentation-first supplementing on water damage claims. You are aligning payment with provable drying and demolition scope, not inflating Category labels or equipment counts without evidence.",
         "Whether you run a local mitigation crew or a regional restoration network, the sections below follow the order your supplement lead should use on every file: understand how carriers think about water, walk the mitigation process, audit missed line items, document daily, review the estimate, submit cleanly, and follow up until mitigation scope is paid in full.",
+        "If payment consistently lags field scope, read why water mitigation claims get underpaid for root causes — then return here for line items and supplement workflow.",
         "This article is educational guidance for contractors, not legal advice. Policy language, state regulations, and carrier guidelines vary — confirm all requirements on each file.",
       ],
       links: [
+        {
+          label: "Why water mitigation claims get underpaid",
+          href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
+        },
         {
           label: "Complete insurance supplementing guide",
           href: "/resources/blog/insurance-supplementing-guide-contractors",
@@ -502,6 +507,10 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
         "When volume exceeds internal capacity or denial rates climb on drying extensions, Claims Ninja is built to help mitigation contractors recover documented scope with performance-aligned economics — not unnecessary fights with adjusters.",
       ],
       links: [
+        {
+          label: "Why water mitigation claims get underpaid",
+          href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
+        },
         {
           label: "Complete insurance supplementing guide",
           href: "/resources/blog/insurance-supplementing-guide-contractors",

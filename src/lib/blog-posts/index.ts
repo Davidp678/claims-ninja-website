@@ -3,6 +3,7 @@ import type { BlogPost } from "@/lib/blog-types";
 import { claimDocumentationApprovalRates } from "./claim-documentation-approval-rates";
 import { dryLogDocumentationGuideInsuranceClaims } from "./dry-log-documentation-guide-insurance-claims";
 import { moistureMappingBestPracticesInsuranceClaims } from "./moisture-mapping-best-practices-insurance-claims";
+import { whyWaterMitigationClaimsGetUnderpaid } from "./why-water-mitigation-claims-get-underpaid";
 import { first48HoursAfterCarrierEstimate } from "./first-48-hours-after-carrier-estimate";
 import { INSURANCE_SUPPLEMENTING_PILLAR } from "./insurance-supplementing-guide-contractors";
 import { opOnInsuranceClaims } from "./op-on-insurance-claims";
@@ -25,6 +26,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   waterDamageMitigationSupplementPlaybook,
   dryLogDocumentationGuideInsuranceClaims,
   moistureMappingBestPracticesInsuranceClaims,
+  whyWaterMitigationClaimsGetUnderpaid,
   opOnInsuranceClaims,
   supplementDenialRecoveryGuide,
   first48HoursAfterCarrierEstimate,

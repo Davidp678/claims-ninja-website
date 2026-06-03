@@ -369,6 +369,10 @@ export const xactimateEstimateReviewChecklistContractors: BlogPost = {
           label: "Moisture mapping best practices",
           href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
         },
+        {
+          label: "Why water mitigation claims get underpaid",
+          href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
+        },
       ],
     },
     {

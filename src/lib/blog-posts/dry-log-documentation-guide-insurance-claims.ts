@@ -90,6 +90,7 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
       heading: "Introduction",
       paragraphs: [
         "On water losses, the dry log is often the difference between paid drying days and a desk adjustment that cuts equipment in half. Carriers do not pay for hope that materials dried — they pay for records that show readings moved toward dry standard while dehumidifiers and air movers were on site. When logs are thin, contractors still perform the work; payment simply lags or disappears on monitoring and rental lines.",
+        "For why mitigation files get underpaid before you fix logging habits, see why water mitigation claims get underpaid — then apply the standards in this guide.",
         "This dry log documentation guide is written for mitigation technicians, project managers, estimators, and supplement leads who need a field-ready standard — not theory. It explains what belongs in a dry log, how carriers and reviewers use it, which mistakes trigger denials, and how consistent logging supports supplements and claim recovery.",
         "The guide complements the water damage mitigation supplement playbook (line items and estimate review) and the claim documentation article (approval habits). This article goes deep on drying records alone so your team can train one SOP across every loss.",
         "This is educational guidance for contractors, not legal advice. Carrier requirements, software formats, and retention rules vary by market and contract — confirm standards on each file.",
@@ -102,6 +103,10 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
         {
           label: "First 48 hours after a carrier estimate",
           href: "/resources/blog/first-48-hours-after-carrier-estimate",
+        },
+        {
+          label: "Why water mitigation claims get underpaid",
+          href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
         },
         { label: "Claims FAQ", href: "/faq" },
       ],

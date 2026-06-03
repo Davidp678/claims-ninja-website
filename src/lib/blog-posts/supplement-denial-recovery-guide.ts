@@ -292,8 +292,13 @@ export const supplementDenialRecoveryGuide: BlogPost = {
         "Upgrade labels, narratives, and file naming. Add measurement tables, moisture logs on water jobs, or equipment logs where duration was denied.",
         "If documentation was thin on first submit, treat this as a documentation reset — not a tweak.",
         "On drying denials, use the dry log documentation guide to rebuild chronology and the water mitigation supplement playbook to align monitoring visits and equipment lines before resubmission.",
+        "Partial payment and silent line cuts are underpayment patterns — distinguish them from formal denials using why water mitigation claims get underpaid before resubmitting.",
       ],
       links: [
+        {
+          label: "Why water mitigation claims get underpaid",
+          href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
+        },
         {
           label: "Dry log documentation guide",
           href: "/resources/blog/dry-log-documentation-guide-insurance-claims",

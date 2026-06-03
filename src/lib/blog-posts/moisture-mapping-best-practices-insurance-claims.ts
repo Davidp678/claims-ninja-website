@@ -92,6 +92,7 @@ export const moistureMappingBestPracticesInsuranceClaims: BlogPost = {
         "On water losses, adjusters ask a version of the same question at intake: How wet is it, where did water go, and how will you prove it? Moisture mapping answers that question in a form desk reviewers can forward without re-walking the property. When mapping is skipped or sloppy, contractors still dry the structure — but supplements for extra rooms, mapping line items, and hidden assemblies fight an uphill battle.",
         "This guide is moisture mapping best practices for insurance claims — written for mitigation technicians, project managers, estimators, and supplement leads. It covers what belongs on a map, how carriers and reviewers use it, how maps connect to dry logs and photos, and which mistakes cost approvals.",
         "Use it alongside the water damage mitigation supplement playbook for line items and estimate review, and the dry log documentation guide for daily drying records. This article owns intake extent and reading-point discipline; those articles own chronology, supplements, and carrier line-item strategy.",
+        "Weak maps are a common underpayment driver — see why water mitigation claims get underpaid for the full payment-gap picture.",
         "Educational guidance for contractors only — not legal advice. Carrier formats, software exports, and retention rules vary; confirm requirements per file and per software vendor export standards.",
       ],
       links: [
@@ -102,6 +103,10 @@ export const moistureMappingBestPracticesInsuranceClaims: BlogPost = {
         {
           label: "Dry log documentation guide",
           href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+        },
+        {
+          label: "Why water mitigation claims get underpaid",
+          href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
         },
         {
           label: "First 48 hours after a carrier estimate",

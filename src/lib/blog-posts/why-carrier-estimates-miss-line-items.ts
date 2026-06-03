@@ -34,7 +34,7 @@ export const whyCarrierEstimatesMissLineItems: BlogPost = {
       heading: "Line items carriers miss most often",
       bullets: [
         "General conditions: protection, debris, permits, and project management time.",
-        "Equipment extensions: extra drying days, monitoring, or large-loss equipment.",
+        "Equipment extensions: extra drying days, monitoring, or large-loss equipment — common underpayment drivers on water mitigation when templates stop early.",
         "Roofing accessories: steep charges, ridge ventilation, ice barrier, and matching rules.",
         "Code-driven items: AFCI, smoke sealing, or jurisdiction-specific requirements.",
         "Contents or pack-out support on larger residential losses.",
@@ -59,6 +59,10 @@ export const whyCarrierEstimatesMissLineItems: BlogPost = {
         },
         { label: "Roofing claims support", href: "/solutions/roofing" },
         { label: "Water damage claims", href: "/solutions/water-damage" },
+        {
+          label: "Why water mitigation claims get underpaid",
+          href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
+        },
       ],
     },
   ],
