@@ -26,7 +26,7 @@ export function TypingIndicator() {
   const prefersReducedMotion = useReducedMotion();
 
   const bubble = (
-    <div className="flex items-center gap-1.5 rounded-2xl rounded-tl-sm border border-white/14 bg-zinc-800/95 px-4 py-3 shadow-[0_6px_20px_-14px_rgba(0,0,0,0.75)] ring-1 ring-brand-red/18">
+    <div className="flex items-center gap-1.5 rounded-2xl rounded-tl-sm border border-white/10 bg-brand-surface/90 px-4 py-3 shadow-[0_6px_20px_-14px_rgba(0,0,0,0.85)] ring-1 ring-brand-red/18">
       {prefersReducedMotion ? (
         <StaticDots />
       ) : (

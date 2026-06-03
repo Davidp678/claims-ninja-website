@@ -110,7 +110,7 @@ export function ChatPanel({
       role="dialog"
       aria-modal="true"
       aria-labelledby={titleId}
-      className="flex h-full w-full flex-col overflow-hidden border border-white/16 bg-zinc-900/98 shadow-[0_24px_64px_-20px_rgba(0,0,0,0.92)] ring-1 ring-brand-red/20 backdrop-blur-xl sm:rounded-2xl"
+      className="flex h-full w-full flex-col overflow-hidden border border-white/12 bg-brand-elevated/95 shadow-[0_24px_64px_-20px_rgba(0,0,0,0.92)] ring-1 ring-brand-red/20 backdrop-blur-xl sm:rounded-2xl"
     >
       <div className="flex shrink-0 flex-col sm:hidden">
         <div className="flex justify-center pt-2.5 pb-1">
@@ -157,9 +157,9 @@ export function ChatPanel({
 
       <form
         onSubmit={handleSubmit}
-        className="shrink-0 border-t border-white/14 bg-zinc-950/55 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:pb-3"
+        className="shrink-0 border-t border-white/10 bg-brand-black/40 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:pb-3"
       >
-        <div className="flex items-end gap-2 rounded-xl border border-white/16 bg-zinc-800/75 px-3 py-2 focus-within:border-brand-red/55 focus-within:ring-1 focus-within:ring-brand-red/32">
+        <div className="flex items-end gap-2 rounded-xl border border-white/12 bg-brand-surface/80 px-3 py-2 focus-within:border-brand-red/55 focus-within:ring-1 focus-within:ring-brand-red/32">
           <label htmlFor="claims-ninja-chat-input" className="sr-only">
             Message Claims Ninja AI
           </label>
@@ -188,7 +188,7 @@ export function ChatPanel({
             disabled={!canSend}
             aria-label="Send message"
             aria-disabled={!canSend}
-            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-red text-white shadow-[0_6px_18px_-10px_rgba(220,38,38,0.92),0_0_22px_-2px_rgba(220,38,38,0.5)] ring-1 ring-white/15 transition-all duration-200 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light disabled:cursor-not-allowed disabled:opacity-45"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-red text-white shadow-[0_6px_18px_-10px_rgba(220,38,38,0.88)] ring-1 ring-white/15 transition-all duration-200 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light disabled:cursor-not-allowed disabled:opacity-45"
           >
             <svg
               aria-hidden
@@ -222,7 +222,7 @@ type ChatHeaderProps = {
 
 function ChatHeader({ titleId, onClose, onMinimize, closeButtonRef }: ChatHeaderProps) {
   return (
-    <header className="flex shrink-0 items-center gap-3 border-t border-brand-red/38 border-b border-b-white/14 bg-gradient-to-r from-brand-red/18 via-zinc-900 to-zinc-900 px-4 py-3.5 sm:border-t-0">
+    <header className="flex shrink-0 items-center gap-3 border-t border-brand-red/38 border-b border-b-white/10 bg-gradient-to-r from-brand-red/18 via-brand-elevated to-brand-elevated px-4 py-3.5 sm:border-t-0">
       <div className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-brand-red/45 bg-brand-black shadow-[0_0_14px_-4px_rgba(220,38,38,0.48)] ring-1 ring-white/10">
         <Image
           src="/logo.png"
