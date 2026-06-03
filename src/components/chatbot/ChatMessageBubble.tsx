@@ -29,7 +29,7 @@ export function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
   const bubbleClasses = cn(
     "max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed sm:max-w-[92%]",
     isAssistant
-      ? "rounded-tl-sm border border-white/10 bg-brand-surface/90 text-zinc-100 shadow-[0_6px_20px_-14px_rgba(0,0,0,0.85)] ring-1 ring-brand-red/18"
+      ? "rounded-tl-sm border border-white/14 bg-zinc-800/95 text-zinc-100 shadow-[0_6px_20px_-14px_rgba(0,0,0,0.75)] ring-1 ring-brand-red/18"
       : "rounded-tr-sm bg-gradient-to-br from-brand-red to-brand-red-deep text-white shadow-[0_8px_24px_-14px_rgba(220,38,38,0.72)]",
   );
 

@@ -69,7 +69,7 @@ export function ChatTeaser({
       transition={transition}
       className="pointer-events-auto fixed bottom-[calc(max(1.25rem,env(safe-area-inset-bottom))+4.75rem)] right-[max(1.25rem,env(safe-area-inset-right))] z-[61] w-[min(17rem,calc(100vw-2.5rem))] sm:w-[19rem]"
     >
-      <div className="relative rounded-2xl border border-white/12 bg-brand-elevated/95 shadow-[0_16px_48px_-20px_rgba(0,0,0,0.9),0_0_32px_-16px_rgba(224,40,40,0.36)] ring-1 ring-brand-red/20 backdrop-blur-xl">
+      <div className="relative rounded-2xl border border-white/16 bg-zinc-900/98 shadow-[0_16px_48px_-20px_rgba(0,0,0,0.9),0_0_32px_-16px_rgba(224,40,40,0.44)] ring-1 ring-brand-red/20 backdrop-blur-xl">
         <button
           type="button"
           onClick={onOpen}

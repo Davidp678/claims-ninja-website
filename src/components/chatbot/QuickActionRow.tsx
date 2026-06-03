@@ -46,7 +46,7 @@ export function QuickActionRow({
               "inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-medium tracking-wide transition-all duration-200 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-elevated",
               isConversion
                 ? "border-brand-red/50 bg-brand-red/16 text-white font-semibold hover:border-brand-red/62 hover:bg-brand-red/24"
-                : "border-white/15 bg-white/5 text-zinc-200 hover:border-white/30 hover:bg-white/10 hover:text-white",
+                : "border-white/18 bg-white/8 text-zinc-200 hover:border-white/30 hover:bg-white/13 hover:text-white",
             )}
           >
             {action.label}
