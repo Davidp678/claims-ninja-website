@@ -5,6 +5,12 @@ import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { CTA_LINKS } from "@/lib/constants";
 import { ChatPanel } from "./ChatPanel";
+import {
+  ChatTeaser,
+  dismissTeaser,
+  isTeaserDismissed,
+  pickTeaserCopy,
+} from "./ChatTeaser";
 import { fetchAssistantReply } from "./chat-client";
 import { shouldStartLeadFlow } from "./chat-lead-flow";
 import { OPENING_MESSAGE, getAssistantReply } from "./chat-responses";
@@ -84,6 +90,12 @@ export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>(loadInitialMessages);
   const [isTyping, setIsTyping] = useState(false);
+  const [teaserMessage] = useState(() => pickTeaserCopy());
+  const [teaserEligible, setTeaserEligible] = useState(
+    () => !isTeaserDismissed(),
+  );
+  const [teaserVisible, setTeaserVisible] = useState(false);
+  const [launcherPulse, setLauncherPulse] = useState(false);
 
   const abortRef = useRef<AbortController | null>(null);
   const requestIdRef = useRef(0);
@@ -117,6 +129,74 @@ export function ChatWidget() {
       launcherRef.current?.focus();
     });
   }, []);
+
+  const openChat = useCallback(() => {
+    setTeaserVisible(false);
+    setLauncherPulse(false);
+    setIsOpen(true);
+  }, []);
+
+  const handleTeaserDismiss = useCallback(() => {
+    dismissTeaser();
+    setTeaserVisible(false);
+    setTeaserEligible(false);
+    setLauncherPulse(false);
+  }, []);
+
+  const showTeaser = !isOpen && teaserVisible && teaserEligible;
+
+  useEffect(() => {
+    if (!teaserEligible || isOpen) {
+      return;
+    }
+
+    const delayMs = 8000 + Math.floor(Math.random() * 4001);
+    const timer = window.setTimeout(() => {
+      setTeaserVisible(true);
+    }, delayMs);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, [teaserEligible, isOpen]);
+
+  useEffect(() => {
+    if (!showTeaser || prefersReducedMotion) {
+      return;
+    }
+
+    let cancelled = false;
+    let pulseOffTimer: number | undefined;
+    let nextTimer: number | undefined;
+
+    const scheduleNext = () => {
+      const waitMs = 30000 + Math.floor(Math.random() * 15001);
+      nextTimer = window.setTimeout(() => {
+        if (cancelled) {
+          return;
+        }
+        setLauncherPulse(true);
+        pulseOffTimer = window.setTimeout(() => {
+          if (!cancelled) {
+            setLauncherPulse(false);
+          }
+        }, 1400);
+        scheduleNext();
+      }, waitMs);
+    };
+
+    scheduleNext();
+
+    return () => {
+      cancelled = true;
+      if (nextTimer !== undefined) {
+        window.clearTimeout(nextTimer);
+      }
+      if (pulseOffTimer !== undefined) {
+        window.clearTimeout(pulseOffTimer);
+      }
+    };
+  }, [showTeaser, prefersReducedMotion]);
 
   useEffect(() => {
     try {
@@ -321,12 +401,24 @@ export function ChatWidget() {
       </AnimatePresence>
 
       <AnimatePresence>
+        {showTeaser && (
+          <ChatTeaser
+            key="teaser"
+            message={teaserMessage}
+            onOpen={openChat}
+            onDismiss={handleTeaserDismiss}
+            prefersReducedMotion={prefersReducedMotion}
+          />
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
         {!isOpen && (
           <motion.button
             ref={launcherRef}
             key="launcher"
             type="button"
-            onClick={() => setIsOpen(true)}
+            onClick={openChat}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
@@ -335,7 +427,7 @@ export function ChatWidget() {
             whileTap={{ scale: 0.96 }}
             aria-label="Open Claims Ninja AI chat"
             aria-expanded={isOpen}
-            className="group pointer-events-auto fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] inline-flex h-14 w-14 items-center justify-center rounded-full border border-brand-red/40 bg-gradient-to-br from-brand-red to-brand-red-deep text-white shadow-[0_8px_32px_-12px_rgba(220,38,38,0.55)] ring-1 ring-white/15 transition-shadow hover:border-brand-red/55 hover:shadow-[0_10px_36px_-10px_rgba(220,38,38,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black"
+            className={`group pointer-events-auto fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] inline-flex h-14 w-14 items-center justify-center rounded-full border border-brand-red/40 bg-gradient-to-br from-brand-red to-brand-red-deep text-white shadow-[0_8px_32px_-12px_rgba(220,38,38,0.55)] ring-1 ring-white/15 transition-shadow hover:border-brand-red/55 hover:shadow-[0_10px_36px_-10px_rgba(220,38,38,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black${launcherPulse && showTeaser && !prefersReducedMotion ? " ring-2 ring-brand-red/35 shadow-[0_10px_36px_-8px_rgba(220,38,38,0.55)] motion-reduce:ring-1" : ""}`}
           >
             <span
               aria-hidden
