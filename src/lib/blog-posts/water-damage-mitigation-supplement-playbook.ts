@@ -26,7 +26,7 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
   relatedPostSlugs: [
     "water-damage-supplement-denial-recovery",
     "dry-log-documentation-guide-insurance-claims",
-    "equipment-charges-water-damage-claims",
+    "daily-monitoring-documentation-best-practices",
   ],
   faq: [
     {
@@ -208,6 +208,13 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
       paragraphs: [
         "Monitoring visits are separate from setup: adjusters visit or approve daily or every-other-day trips to take readings, adjust equipment, and confirm progress. Carriers often allow fewer monitoring lines than you perform — daily visits with documented readings justify the line.",
         "Each visit should note who was on site, what changed, and whether dry standard is approaching room by room. Monitoring without written readings is a frequent partial approval: approved visits, denied extensions.",
+        "For field standards, carrier evaluation, visit components, and supplement support on monitoring lines, see daily monitoring documentation best practices.",
+      ],
+      links: [
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
+        },
       ],
     },
     {
@@ -252,6 +259,13 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
       level: 3,
       paragraphs: [
         "Monitoring is not the same as equipment rental — it is labor and expertise to interpret readings. Files that omit monitoring visits entirely expect you to absorb daily trips. Add visits with dates aligned to dry logs.",
+        "Document each visit in the dry log the same day — one entry per billed monitoring line with readings and equipment check. Daily monitoring documentation best practices covers visit components, mistakes, and denial recovery.",
+      ],
+      links: [
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
+        },
       ],
     },
     {
@@ -341,6 +355,10 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
         {
           label: "Equipment charges in water damage claims",
           href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
         },
       ],
     },
@@ -525,7 +543,7 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
       heading: "Final takeaway",
       paragraphs: [
         "Water mitigation supplements are a discipline: compare estimates early, dry with logs, document daily, submit line items you can prove, and follow up professionally. Equipment days, monitoring, and containment are where margin hides on otherwise approved extraction lines.",
-        "Use the insurance supplementing guide as your cluster pillar, the documentation article for approval tactics, equipment charges in water damage claims for rental and utilization proof, the Xactimate checklist for estimate literacy, and the water damage supplement denial recovery guide when carriers push back on mitigation scope. This water damage mitigation supplement playbook ties them into a mitigation-ready workflow.",
+        "Use the insurance supplementing guide as your cluster pillar, the documentation article for approval tactics, daily monitoring documentation best practices for visit records, equipment charges in water damage claims for rental and utilization proof, the Xactimate checklist for estimate literacy, and the water damage supplement denial recovery guide when carriers push back on mitigation scope. This water damage mitigation supplement playbook ties them into a mitigation-ready workflow.",
         "When volume exceeds internal capacity or denial rates climb on drying extensions, Claims Ninja is built to help mitigation contractors recover documented scope with performance-aligned economics — not unnecessary fights with adjusters.",
       ],
       links: [
@@ -534,8 +552,8 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
           href: "/resources/blog/water-damage-supplement-denial-recovery",
         },
         {
-          label: "Equipment charges in water damage claims",
-          href: "/resources/blog/equipment-charges-water-damage-claims",
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
         },
         {
           label: "Why water mitigation claims get underpaid",

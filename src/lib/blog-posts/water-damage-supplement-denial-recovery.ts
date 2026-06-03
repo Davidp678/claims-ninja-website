@@ -209,6 +209,13 @@ export const waterDamageSupplementDenialRecovery: BlogPost = {
         "Monitoring denials cite visits without readings or visits not aligned to billed monitoring lines. Monitoring is labor and interpretation — not implied in equipment rental.",
         "Recovery: one log entry per billed visit with readings, equipment check, and narrative on progress or stall.",
         "If the carrier approved fewer visits than performed, either align the estimate to defensible visits or document why each extra trip was required by flat readings or equipment changes — every-other-day templates lose to daily logs on Category 2 losses.",
+        "For monitoring-specific field standards and visit documentation habits, see daily monitoring documentation best practices.",
+      ],
+      links: [
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
+        },
       ],
     },
     {
@@ -423,6 +430,13 @@ export const waterDamageSupplementDenialRecovery: BlogPost = {
       paragraphs: [
         "One section per billed visit: date, tech, readings, changes, progress note. Match visit count to estimate monitoring lines exactly.",
         "When monitoring alone was denied, export only the visit rows that correspond to denied lines — do not bury three defended visits inside a fifty-page log export without a summary table on page one.",
+        "Daily monitoring documentation best practices covers visit components, field SOPs, and audit-ready monitoring exports for resubmission.",
+      ],
+      links: [
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
+        },
       ],
     },
     {

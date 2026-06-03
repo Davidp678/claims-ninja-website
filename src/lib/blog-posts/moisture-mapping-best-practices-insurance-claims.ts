@@ -211,9 +211,14 @@ export const moistureMappingBestPracticesInsuranceClaims: BlogPost = {
       paragraphs: [
         "Reconcile the carrier sketch to your moisture map in the first 48 hours after estimate receipt. Every mapped wet room should appear on the estimate or on your supplement gap list.",
         "Equipment counts and monitoring visits should reflect chamber count and complexity on the map — multi-room losses with one chamber on paper and three on the map trigger cuts.",
+        "Reading points on the map set where daily monitoring visits take measurements — daily monitoring documentation best practices explains visit records and carrier review habits.",
         "Use the water mitigation supplement playbook to walk missed line items after map-to-estimate comparison: mapping, containment, extraction SF, and equipment setup.",
       ],
       links: [
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
+        },
         {
           label: "Water mitigation supplement playbook",
           href: "/resources/blog/water-damage-mitigation-supplement-playbook",

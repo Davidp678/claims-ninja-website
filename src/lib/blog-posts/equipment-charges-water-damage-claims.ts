@@ -281,6 +281,13 @@ export const equipmentChargesWaterDamageClaims: BlogPost = {
       paragraphs: [
         "Daily monitoring is the visit where readings are taken and equipment is verified — separate from passive rental. Each billed monitoring line needs a log entry with readings, equipment check, and progress or stall narrative.",
         "Every-other-day carrier templates lose to daily logs on Category 2 and 3 residential jobs when your procedure requires daily trips.",
+        "For visit components, field SOPs, and supplement support beyond the equipment stack, see daily monitoring documentation best practices.",
+      ],
+      links: [
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
+        },
       ],
     },
     {
@@ -468,6 +475,13 @@ export const equipmentChargesWaterDamageClaims: BlogPost = {
       level: 3,
       paragraphs: [
         "One log entry per billed monitoring visit with readings and equipment verification. Monitoring defends labor lines; logs defend both monitoring and rental together.",
+        "Daily monitoring documentation best practices covers visit summaries, denial recovery, and audit-ready monitoring records in depth.",
+      ],
+      links: [
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
+        },
       ],
     },
     {

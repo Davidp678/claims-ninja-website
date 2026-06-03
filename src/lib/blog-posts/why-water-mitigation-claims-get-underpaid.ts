@@ -225,6 +225,13 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
         "Monitoring is labor plus interpretation — not implied inside equipment rental. Each billed visit needs a log entry with readings and notes.",
         "Mismatch between three monitoring lines and one log visit is a predictable partial underpayment.",
         "Treat monitoring documentation with the same priority as equipment placement photos — both defend lines desk reviewers cut first.",
+        "Daily monitoring documentation best practices explains visit-level standards, carrier evaluation, and recovery when monitoring lines are cut.",
+      ],
+      links: [
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
+        },
       ],
     },
     {
@@ -342,6 +349,13 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
       level: 3,
       paragraphs: [
         "Monitoring records tie billed visits to readings. Without them, monitoring looks like duplicate equipment rental.",
+        "See daily monitoring documentation best practices for how to structure each visit record and align to estimate lines.",
+      ],
+      links: [
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
+        },
       ],
     },
     {

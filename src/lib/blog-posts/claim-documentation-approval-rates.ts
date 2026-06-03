@@ -27,7 +27,7 @@ export const claimDocumentationApprovalRates: BlogPost = {
         "Carriers approve what they can defend to their superiors. Documentation is that defense: labeled photos, continuous narrative from intake through completion, moisture or equipment logs where applicable, and an estimate that mirrors the story.",
         "When a supplement is denied, the same documentation standards apply on resubmission — organized evidence tied to each line, not a larger photo dump without a cover letter map.",
         "Teams that batch-upload random photos at supplement time lose weeks. Teams that document daily win faster — even on difficult carriers.",
-        "On water mitigation files, dry logs and equipment placement notes are the approval equation — see the dry log documentation guide for daily standards, the water mitigation supplement playbook for field phases and line items, and equipment charges in water damage claims for utilization proof and billing disputes.",
+        "On water mitigation files, dry logs and equipment placement notes are the approval equation — see the dry log documentation guide for daily standards, daily monitoring documentation best practices for visit records, the water mitigation supplement playbook for field phases and line items, and equipment charges in water damage claims for utilization proof and billing disputes.",
         "When a water mitigation supplement is formally denied, the water damage supplement denial recovery guide walks drying-specific resubmission — logs, maps, partial approvals, and re-inspection judgment.",
         "When approvals stall and payment feels short, why water mitigation claims get underpaid explains documentation-driven payment gaps contractors can fix.",
       ],
@@ -59,6 +59,10 @@ export const claimDocumentationApprovalRates: BlogPost = {
         {
           label: "Equipment charges in water damage claims",
           href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
         },
       ],
     },

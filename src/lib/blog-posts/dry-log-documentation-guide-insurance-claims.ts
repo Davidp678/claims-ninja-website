@@ -507,6 +507,13 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
         "Monitoring is labor to interpret readings and manage drying — not passive equipment rental. Each billed monitoring visit should appear as a log entry with readings, equipment check, and narrative.",
         "Every-other-day carrier templates still lose to daily logs when Category and materials require daily trips — but only if logs prove improvement or justified stall each time.",
         "Mismatch between three monitoring lines and one log entry is a predictable partial denial. Align before submit, not after denial.",
+        "For monitoring-specific field standards, carrier and reviewer habits, visit components, and supplement support beyond log rows, see daily monitoring documentation best practices.",
+      ],
+      links: [
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
+        },
       ],
     },
     {
@@ -543,7 +550,7 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
       heading: "Final takeaway",
       paragraphs: [
         "Dry logs are the operational core of water damage documentation for insurance claims. Record readings daily, track equipment honestly, integrate photos and moisture maps, and align logs to monitoring and rental lines before submit.",
-        "Use this guide to train technicians and PMs; use the water mitigation supplement playbook for estimate and line-item strategy; use the documentation and denial recovery articles when approvals stall.",
+        "Use daily monitoring documentation best practices for visit-level standards; use the water mitigation supplement playbook for estimate and line-item strategy; use the documentation and denial recovery articles when approvals stall.",
         "Claims Ninja helps mitigation contractors turn consistent dry log discipline into faster approvals and recovered drying revenue — with documentation coaching and performance-aligned supplement support.",
       ],
       links: [
@@ -554,6 +561,10 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
         {
           label: "Complete insurance supplementing guide",
           href: "/resources/blog/insurance-supplementing-guide-contractors",
+        },
+        {
+          label: "Daily monitoring documentation best practices",
+          href: "/resources/blog/daily-monitoring-documentation-best-practices",
         },
         { label: "Full FAQ library", href: "/faq" },
       ],
