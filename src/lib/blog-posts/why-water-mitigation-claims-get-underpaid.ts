@@ -415,7 +415,7 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
       paragraphs: [
         "Recovery starts with classifying the gap: scope, pricing, documentation, or communication. Open the carrier estimate beside your map and log; list unpaid lines with the evidence you have and the evidence you need.",
         "Submit organized supplements with revised estimates, index, and dated proof. Accept partial approvals, bill accepted scope, resubmit remaining lines with added documentation — do not resend the same PDF louder.",
-        "For denials or harsh cuts, follow the supplement denial recovery guide: read denial language, fix evidence gaps, resubmit once professionally.",
+        "For denials or harsh cuts, follow the supplement denial recovery guide for cross-trade workflow, then the water damage supplement denial recovery guide when drying lines, monitoring, or maps were the stated reason: read denial language, fix evidence gaps, resubmit once professionally.",
         "When internal bandwidth is thin, supplement partners should extend your process with the same documentation standards — not replace field capture.",
         "Track recovery outcomes by carrier and adjuster: which programs approve extended drying with complete logs versus which require re-inspection. Your supplement strategy should adapt to patterns, not treat every file identically.",
       ],
@@ -424,6 +424,10 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
         body: "Audit the last ten closed water files: sum carrier-paid drying and monitoring versus your submitted amounts. Patterns in misses tell you whether to train maps, logs, or estimate review first.",
       },
       links: [
+        {
+          label: "Water damage supplement denial recovery",
+          href: "/resources/blog/water-damage-supplement-denial-recovery",
+        },
         {
           label: "Supplement denial recovery guide",
           href: "/resources/blog/supplement-denial-recovery-guide",

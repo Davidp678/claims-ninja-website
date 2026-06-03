@@ -24,7 +24,7 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
   seoDescription:
     "Water mitigation supplements for contractors: drying documentation, missed line items, estimate review, carrier approvals, and mitigation claim recovery.",
   relatedPostSlugs: [
-    "why-water-mitigation-claims-get-underpaid",
+    "water-damage-supplement-denial-recovery",
     "dry-log-documentation-guide-insurance-claims",
     "moisture-mapping-best-practices-insurance-claims",
   ],
@@ -402,13 +402,17 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
         "Aggressive tone or inflated quantities that damage adjuster trust.",
       ],
       paragraphs: [
-        "Treat denials as feedback on evidence gaps. Revise the package with added logs or photos — do not resubmit the same PDF with a louder email. The supplement denial recovery guide walks resubmission sequencing and partial approvals.",
+        "Treat denials as feedback on evidence gaps. Revise the package with added logs or photos — do not resubmit the same PDF with a louder email. The supplement denial recovery guide walks cross-trade resubmission sequencing and partial approvals; the water damage supplement denial recovery guide covers drying-specific denial causes, dry log fixes, and re-inspection judgment on mitigation files.",
       ],
       callout: {
         title: "Denial prevention",
         body: "Submit mitigation supplements while drying is active or immediately after release with a complete log set. Late submissions after rebuild started invite arguments that equipment days were excessive or unnecessary.",
       },
       links: [
+        {
+          label: "Water damage supplement denial recovery",
+          href: "/resources/blog/water-damage-supplement-denial-recovery",
+        },
         {
           label: "Supplement denial recovery guide",
           href: "/resources/blog/supplement-denial-recovery-guide",
@@ -503,10 +507,14 @@ export const waterDamageMitigationSupplementPlaybook: BlogPost = {
       heading: "Final takeaway",
       paragraphs: [
         "Water mitigation supplements are a discipline: compare estimates early, dry with logs, document daily, submit line items you can prove, and follow up professionally. Equipment days, monitoring, and containment are where margin hides on otherwise approved extraction lines.",
-        "Use the insurance supplementing guide as your cluster pillar, the documentation article for approval tactics, the Xactimate checklist for estimate literacy, and the denial recovery guide when carriers push back. This water damage mitigation supplement playbook ties them into a mitigation-ready workflow.",
+        "Use the insurance supplementing guide as your cluster pillar, the documentation article for approval tactics, the Xactimate checklist for estimate literacy, and the water damage supplement denial recovery guide when carriers push back on mitigation scope. This water damage mitigation supplement playbook ties them into a mitigation-ready workflow.",
         "When volume exceeds internal capacity or denial rates climb on drying extensions, Claims Ninja is built to help mitigation contractors recover documented scope with performance-aligned economics — not unnecessary fights with adjusters.",
       ],
       links: [
+        {
+          label: "Water damage supplement denial recovery",
+          href: "/resources/blog/water-damage-supplement-denial-recovery",
+        },
         {
           label: "Why water mitigation claims get underpaid",
           href: "/resources/blog/why-water-mitigation-claims-get-underpaid",

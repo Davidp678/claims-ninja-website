@@ -432,10 +432,14 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
       heading: "How dry logs support denied supplement recovery",
       paragraphs: [
         "When drying extensions are denied, read the denial letter for documentation language before arguing scope. Most drying denials cite insufficient proof of duration or necessity — fix the log, then resubmit.",
-        "Rebuild the log chronology if needed from contemporaneous photos, equipment GPS, or visit tickets — only where authentic. Do not fabricate; supplement denial recovery guide covers ethical resubmission sequencing.",
+        "Rebuild the log chronology if needed from contemporaneous photos, equipment GPS, or visit tickets — only where authentic. Do not fabricate; the supplement denial recovery guide covers ethical resubmission sequencing, and the water damage supplement denial recovery guide applies that workflow to drying-day and monitoring denials.",
         "Add a cover letter table: Date, Reading summary, Equipment, Why still drying. Cross-walk to estimate line numbers. Resubmit once with stronger evidence; repeated weak resubmits train adjusters to deny your next file faster.",
       ],
       links: [
+        {
+          label: "Water damage supplement denial recovery",
+          href: "/resources/blog/water-damage-supplement-denial-recovery",
+        },
         {
           label: "Supplement denial recovery guide",
           href: "/resources/blog/supplement-denial-recovery-guide",

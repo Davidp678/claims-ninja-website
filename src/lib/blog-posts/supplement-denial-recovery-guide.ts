@@ -93,8 +93,13 @@ export const supplementDenialRecoveryGuide: BlogPost = {
         "This supplement denial recovery guide is for owners, estimators, and supplement leads actively handling denied or partially approved insurance claim supplements. It focuses on documentation, scope support, communication, and claim administration — not confrontation with carriers.",
         "This is educational content, not legal advice. Policy language, state requirements, and carrier programs govern outcomes. Use the insurance supplementing pillar and linked resources for estimate review, trade-specific playbooks, and documentation standards while you work through recovery on a specific file.",
         "High commercial intent does not mean aggressive tactics. The contractors who recover the most after a supplement denial are usually the ones who read the carrier response carefully, fix evidence gaps, and resubmit a packet the desk reviewer can approve without a fight.",
+        "On water mitigation files, drying duration and monitoring denials need dry logs, moisture maps, and equipment proof — see the water damage supplement denial recovery guide for trade-specific causes and resubmission habits alongside the steps below.",
       ],
       links: [
+        {
+          label: "Water damage supplement denial recovery",
+          href: "/resources/blog/water-damage-supplement-denial-recovery",
+        },
         {
           label: "Complete insurance supplementing guide",
           href: "/resources/blog/insurance-supplementing-guide-contractors",
@@ -292,9 +297,14 @@ export const supplementDenialRecoveryGuide: BlogPost = {
         "Upgrade labels, narratives, and file naming. Add measurement tables, moisture logs on water jobs, or equipment logs where duration was denied.",
         "If documentation was thin on first submit, treat this as a documentation reset — not a tweak.",
         "On drying denials, use the dry log documentation guide to rebuild chronology and the water mitigation supplement playbook to align monitoring visits and equipment lines before resubmission.",
+        "For denied water supplements — partial drying cuts, mapping disputes, equipment day denials — follow the water damage supplement denial recovery guide for denial-specific documentation and re-inspection timing.",
         "Partial payment and silent line cuts are underpayment patterns — distinguish them from formal denials using why water mitigation claims get underpaid before resubmitting.",
       ],
       links: [
+        {
+          label: "Water damage supplement denial recovery",
+          href: "/resources/blog/water-damage-supplement-denial-recovery",
+        },
         {
           label: "Why water mitigation claims get underpaid",
           href: "/resources/blog/why-water-mitigation-claims-get-underpaid",

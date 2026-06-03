@@ -447,9 +447,13 @@ export const moistureMappingBestPracticesInsuranceClaims: BlogPost = {
       paragraphs: [
         "When mapping or extent lines are denied, rebuild the intake story: dated map, intake photos, early dry log rows at map points, and narrative explaining why extent was reasonable at mobilization.",
         "If no intake map exists, recovery is harder — use contemporaneous photos, equipment records, and visit tickets only if authentic. Prevention beats reconstruction.",
-        "Follow supplement denial recovery guide sequencing: read denial language, fix evidence, resubmit once with index.",
+        "Follow supplement denial recovery guide sequencing for cross-trade workflow; use the water damage supplement denial recovery guide when weak mapping or extent lines drove the denial on a mitigation supplement.",
       ],
       links: [
+        {
+          label: "Water damage supplement denial recovery",
+          href: "/resources/blog/water-damage-supplement-denial-recovery",
+        },
         {
           label: "Supplement denial recovery guide",
           href: "/resources/blog/supplement-denial-recovery-guide",
