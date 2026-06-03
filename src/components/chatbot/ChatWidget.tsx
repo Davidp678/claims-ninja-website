@@ -91,11 +91,11 @@ export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>(loadInitialMessages);
   const [isTyping, setIsTyping] = useState(false);
-  const [teaserMessage] = useState(() => pickTeaserMessage(pathname ?? ""));
+  const [teaserMessage, setTeaserMessage] = useState("");
   const [teaserEligible, setTeaserEligible] = useState(
     () => !isTeaserDismissed(),
   );
-  const [teaserVisible, setTeaserVisible] = useState(false);
+  const [activeTeaserPath, setActiveTeaserPath] = useState<string | null>(null);
   const [launcherPulse, setLauncherPulse] = useState(false);
 
   const abortRef = useRef<AbortController | null>(null);
@@ -132,34 +132,39 @@ export function ChatWidget() {
   }, []);
 
   const openChat = useCallback(() => {
-    setTeaserVisible(false);
+    setActiveTeaserPath(null);
     setLauncherPulse(false);
     setIsOpen(true);
   }, []);
 
   const handleTeaserDismiss = useCallback(() => {
     dismissTeaser();
-    setTeaserVisible(false);
     setTeaserEligible(false);
+    setActiveTeaserPath(null);
     setLauncherPulse(false);
   }, []);
 
-  const showTeaser = !isOpen && teaserVisible && teaserEligible;
+  const showTeaser =
+    !isOpen &&
+    teaserEligible &&
+    activeTeaserPath === (pathname ?? "");
 
   useEffect(() => {
     if (!teaserEligible || isOpen) {
       return;
     }
 
+    const currentPath = pathname ?? "";
     const delayMs = 2500 + Math.floor(Math.random() * 1501);
     const timer = window.setTimeout(() => {
-      setTeaserVisible(true);
+      setTeaserMessage(pickTeaserMessage(currentPath));
+      setActiveTeaserPath(currentPath);
     }, delayMs);
 
     return () => {
       window.clearTimeout(timer);
     };
-  }, [teaserEligible, isOpen]);
+  }, [pathname, teaserEligible, isOpen]);
 
   useEffect(() => {
     if (!showTeaser || prefersReducedMotion) {
@@ -404,7 +409,7 @@ export function ChatWidget() {
       <AnimatePresence>
         {showTeaser && (
           <ChatTeaser
-            key="teaser"
+            key={pathname}
             message={teaserMessage}
             onOpen={openChat}
             onDismiss={handleTeaserDismiss}
