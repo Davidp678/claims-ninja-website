@@ -71,7 +71,7 @@ export const FOOTER_LINKS = {
   resources: [
     { label: "Claim intake", href: CTA_LINKS.onboarding, external: true },
     { label: "Schedule consultation", href: CTA_LINKS.schedule, external: true },
-    { label: "Blog", href: "/blog" },
+    { label: "Blog", href: "/resources/blog" },
     { label: "FAQ", href: "/faq" },
   ],
 } as const;

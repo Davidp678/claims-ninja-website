@@ -80,7 +80,11 @@ export const SOLUTIONS_NAV: readonly NavDropdownItem[] = [
 ] as const;
 
 export const RESOURCES_NAV: readonly NavDropdownItem[] = [
-  { label: "Blog", href: "/blog", description: "Insights on claims operations and recovery." },
+  {
+    label: "Blog",
+    href: "/resources/blog",
+    description: "Insights on claims operations and recovery.",
+  },
   {
     label: "Case Studies",
     href: "/case-studies",

@@ -349,7 +349,7 @@ export const contentsPage = page({
 });
 
 export const blogPage = page({
-  path: "/blog",
+  path: "/resources/blog",
   eyebrow: "Resources",
   title: "Blog",
   metaTitle: "Blog",
