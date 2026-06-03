@@ -110,7 +110,7 @@ export function ChatPanel({
       role="dialog"
       aria-modal="true"
       aria-labelledby={titleId}
-      className="flex h-full w-full flex-col overflow-hidden border border-white/12 bg-brand-elevated/95 shadow-[0_24px_64px_-20px_rgba(0,0,0,0.92)] ring-1 ring-brand-red/12 backdrop-blur-xl sm:rounded-2xl"
+      className="flex h-full w-full flex-col overflow-hidden border border-white/12 bg-brand-elevated/95 shadow-[0_24px_64px_-20px_rgba(0,0,0,0.92)] ring-1 ring-brand-red-light/22 backdrop-blur-xl sm:rounded-2xl"
     >
       <div className="flex shrink-0 flex-col sm:hidden">
         <div className="flex justify-center pt-2.5 pb-1">
@@ -159,7 +159,7 @@ export function ChatPanel({
         onSubmit={handleSubmit}
         className="shrink-0 border-t border-white/10 bg-brand-black/40 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:pb-3"
       >
-        <div className="flex items-end gap-2 rounded-xl border border-white/12 bg-brand-surface/80 px-3 py-2 focus-within:border-brand-red/50 focus-within:ring-1 focus-within:ring-brand-red/30">
+        <div className="flex items-end gap-2 rounded-xl border border-white/12 bg-brand-surface/80 px-3 py-2 focus-within:border-brand-red-light/60 focus-within:ring-1 focus-within:ring-brand-red-light/38">
           <label htmlFor="claims-ninja-chat-input" className="sr-only">
             Message Claims Ninja AI
           </label>
@@ -188,7 +188,7 @@ export function ChatPanel({
             disabled={!canSend}
             aria-label="Send message"
             aria-disabled={!canSend}
-            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-red text-white shadow-[0_6px_18px_-10px_rgba(220,38,38,0.85)] ring-1 ring-white/15 transition-all duration-200 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light disabled:cursor-not-allowed disabled:opacity-45"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-red-light text-white shadow-[0_6px_18px_-10px_rgba(239,68,68,0.85)] ring-1 ring-white/15 transition-all duration-200 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light disabled:cursor-not-allowed disabled:opacity-45"
           >
             <svg
               aria-hidden
@@ -222,8 +222,8 @@ type ChatHeaderProps = {
 
 function ChatHeader({ titleId, onClose, onMinimize, closeButtonRef }: ChatHeaderProps) {
   return (
-    <header className="flex shrink-0 items-center gap-3 border-t border-brand-red/30 border-b border-b-white/10 bg-gradient-to-r from-brand-red/15 via-brand-elevated to-brand-elevated px-4 py-3.5 sm:border-t-0">
-      <div className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-brand-red/40 bg-brand-black shadow-[0_0_14px_-4px_rgba(220,38,38,0.5)] ring-1 ring-white/10">
+    <header className="flex shrink-0 items-center gap-3 border-t border-brand-red-light/42 border-b border-b-white/10 bg-gradient-to-r from-brand-red-light/22 via-brand-elevated to-brand-elevated px-4 py-3.5 sm:border-t-0">
+      <div className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-brand-red-light/50 bg-brand-black shadow-[0_0_14px_-4px_rgba(239,68,68,0.55)] ring-1 ring-white/10">
         <Image
           src="/logo.png"
           alt=""

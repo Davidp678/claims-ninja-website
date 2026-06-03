@@ -41,7 +41,7 @@ export function LeadFlowChoiceRow({
               "inline-flex shrink-0 items-center rounded-full border px-3.5 py-1.5 text-xs font-medium tracking-wide transition-all duration-200 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-elevated disabled:cursor-not-allowed disabled:opacity-50",
               isCancel || isRestart
                 ? "border-white/15 bg-white/5 text-zinc-300 hover:border-white/30 hover:bg-white/10"
-                : "border-brand-red/45 bg-brand-red/12 text-white hover:border-brand-red/60 hover:bg-brand-red/22",
+                : "border-brand-red-light/55 bg-brand-red-light/18 text-white hover:border-brand-red-light/70 hover:bg-brand-red-light/28",
             )}
           >
             {choice.label}
