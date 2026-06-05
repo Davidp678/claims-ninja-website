@@ -394,9 +394,13 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
         "Denied smoke and soot supplements usually cite insufficient migration proof, missing HVAC support, or cleaning scope excessive for shown damage. Read denial language; add evidence for each sentence.",
         "Resubmit denied rooms only with targeted folders — labeled photos, path narrative, test clean results — not the entire unindexed roll. Quote denial reasons in the cover letter and name new attachments.",
         "Partial denials on migration are common: origin room approved, upper floors denied. Acknowledge paid scope; fight unpaid scope with hall, stair, and bedroom photos plus path summary.",
-        "Follow supplement denial recovery guide sequencing: strengthen documentation, organize index, resubmit once professionally, follow up with factual status request.",
+        "Follow the fire damage supplement denial recovery guide for smoke and migration resubmission — and supplement denial recovery guide for cross-trade sequencing: strengthen documentation, organize index, resubmit once professionally, follow up with factual status request.",
       ],
       links: [
+        {
+          label: "Fire damage supplement denial recovery",
+          href: "/resources/blog/fire-damage-supplement-denial-recovery",
+        },
         {
           label: "Supplement denial recovery guide",
           href: "/resources/blog/supplement-denial-recovery-guide",

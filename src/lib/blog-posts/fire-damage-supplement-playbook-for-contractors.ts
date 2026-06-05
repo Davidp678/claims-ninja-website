@@ -25,8 +25,8 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
     "Fire damage supplements for contractors: missed line items, smoke and soot scope, documentation, carrier submissions, approval rates, and fire claim recovery.",
   relatedPostSlugs: [
     "fire-damage-claim-documentation-guide",
+    "fire-damage-supplement-denial-recovery",
     "insurance-supplementing-guide-contractors",
-    "supplement-denial-recovery-guide",
   ],
   faq: [
     {
@@ -518,9 +518,13 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
         "Mixing fire residue and firefighting water mitigation without phase separation.",
       ],
       paragraphs: [
-        "Treat denials as feedback on evidence gaps. Revise the package with targeted room folders — do not resubmit the same PDF with a louder email. The supplement denial recovery guide walks cross-trade resubmission sequencing and partial approvals on fire and smoke files.",
+        "Treat denials as feedback on evidence gaps. Revise the package with targeted room folders — do not resubmit the same PDF with a louder email. The fire damage supplement denial recovery guide walks fire-specific resubmission habits; the supplement denial recovery guide covers cross-trade sequencing and partial approvals.",
       ],
       links: [
+        {
+          label: "Fire damage supplement denial recovery",
+          href: "/resources/blog/fire-damage-supplement-denial-recovery",
+        },
         {
           label: "Supplement denial recovery guide",
           href: "/resources/blog/supplement-denial-recovery-guide",

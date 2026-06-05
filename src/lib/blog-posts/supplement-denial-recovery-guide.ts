@@ -94,7 +94,7 @@ export const supplementDenialRecoveryGuide: BlogPost = {
         "This is educational content, not legal advice. Policy language, state requirements, and carrier programs govern outcomes. Use the insurance supplementing pillar and linked resources for estimate review, trade-specific playbooks, and documentation standards while you work through recovery on a specific file.",
         "High commercial intent does not mean aggressive tactics. The contractors who recover the most after a supplement denial are usually the ones who read the carrier response carefully, fix evidence gaps, and resubmit a packet the desk reviewer can approve without a fight.",
         "On water mitigation files, drying duration and monitoring denials need dry logs, moisture maps, and equipment proof — see the water damage supplement denial recovery guide for trade-specific causes and resubmission habits alongside the steps below.",
-        "On fire and smoke files, denials often target migration rooms, contents inventories, HVAC scope, and cleaning versus replacement — use the smoke and soot damage documentation guide for migration and soot resubmission evidence, the HVAC contamination in fire damage claims guide for duct and component resubmission, the fire damage claim documentation guide for full-file standards, and the fire damage supplement playbook for line items and supplement process before resending the same photo dump.",
+        "On fire and smoke files, denials often target migration rooms, contents inventories, HVAC scope, and cleaning versus replacement — see the fire damage supplement denial recovery guide for trade-specific causes and resubmission habits alongside the steps below.",
       ],
       links: [
         {
@@ -112,6 +112,10 @@ export const supplementDenialRecoveryGuide: BlogPost = {
         {
           label: "Fire damage claim documentation guide",
           href: "/resources/blog/fire-damage-claim-documentation-guide",
+        },
+        {
+          label: "Fire damage supplement denial recovery",
+          href: "/resources/blog/fire-damage-supplement-denial-recovery",
         },
         {
           label: "Water damage supplement denial recovery",
@@ -315,9 +319,14 @@ export const supplementDenialRecoveryGuide: BlogPost = {
         "If documentation was thin on first submit, treat this as a documentation reset — not a tweak.",
         "On drying denials, use the dry log documentation guide to rebuild chronology and the water mitigation supplement playbook to align monitoring visits and equipment lines before resubmission.",
         "For denied water supplements — partial drying cuts, mapping disputes, equipment day denials — follow the water damage supplement denial recovery guide for denial-specific documentation and re-inspection timing.",
+        "For denied fire supplements — migration room cuts, HVAC scope, contents inventories, cleaning disputes — follow the fire damage supplement denial recovery guide for smoke, soot, and system resubmission habits.",
         "Partial payment and silent line cuts are underpayment patterns — distinguish them from formal denials using why water mitigation claims get underpaid before resubmitting.",
       ],
       links: [
+        {
+          label: "Fire damage supplement denial recovery",
+          href: "/resources/blog/fire-damage-supplement-denial-recovery",
+        },
         {
           label: "Water damage supplement denial recovery",
           href: "/resources/blog/water-damage-supplement-denial-recovery",

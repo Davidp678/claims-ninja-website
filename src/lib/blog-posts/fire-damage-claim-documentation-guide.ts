@@ -458,11 +458,15 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
         "Resubmit denied lines only with targeted room folders — not the entire unindexed photo roll. Quote denial reasons in the cover letter and name new attachments.",
         "Partial denials on fire are common: cleaning approved in origin room, migration denied in bedrooms. Acknowledge paid scope; fight unpaid scope with migration photos and odor notes from those rooms.",
         "Re-inspection helps when cavity smoke or structural char cannot be shown in photos alone — pair visits with updated estimate the same week.",
-        "Follow supplement denial recovery guide sequencing: strengthen documentation, organize index, resubmit once professionally, follow up with factual status request.",
+        "Follow fire damage supplement denial recovery guide sequencing for smoke, soot, HVAC, and contents resubmissions — and supplement denial recovery guide for cross-trade workflow: strengthen documentation, organize index, resubmit once professionally, follow up with factual status request.",
         "Document adjuster and engineer site comments in dated notes — verbal agreements to add migration or HVAC scope fail at desk review without written file history.",
         "When denial cites policy limits on contents, separate structure and contents resubmissions so structure evidence is not buried under inventory disputes.",
       ],
       links: [
+        {
+          label: "Fire damage supplement denial recovery",
+          href: "/resources/blog/fire-damage-supplement-denial-recovery",
+        },
         {
           label: "Supplement denial recovery guide",
           href: "/resources/blog/supplement-denial-recovery-guide",

@@ -513,9 +513,13 @@ export const hvacContaminationInFireDamageClaims: BlogPost = {
         "Denied HVAC supplements cite insufficient duct proof, excessive scope, missing reports, or cleaning lines without component photos. Read denial language; add evidence per sentence.",
         "Resubmit duct lines with new access photos, report excerpts, and partial scope diagrams — not the same register wide shots without interior duct proof.",
         "When migration was denied but HVAC was approved, ensure room folders and duct folders tell a consistent path story — contradictions trigger full file review.",
-        "Follow supplement denial recovery guide sequencing: strengthen HVAC attachments, quote denial reasons, resubmit once professionally.",
+        "Follow the fire damage supplement denial recovery guide for HVAC and migration resubmission — and supplement denial recovery guide for cross-trade sequencing: strengthen HVAC attachments, quote denial reasons, resubmit once professionally.",
       ],
       links: [
+        {
+          label: "Fire damage supplement denial recovery",
+          href: "/resources/blog/fire-damage-supplement-denial-recovery",
+        },
         {
           label: "Supplement denial recovery guide",
           href: "/resources/blog/supplement-denial-recovery-guide",

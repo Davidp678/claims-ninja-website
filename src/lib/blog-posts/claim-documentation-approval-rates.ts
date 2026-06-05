@@ -31,6 +31,7 @@ export const claimDocumentationApprovalRates: BlogPost = {
         "When a water mitigation supplement is formally denied, the water damage supplement denial recovery guide walks drying-specific resubmission — logs, maps, partial approvals, and re-inspection judgment.",
         "When approvals stall and payment feels short, why water mitigation claims get underpaid explains documentation-driven payment gaps contractors can fix.",
         "On fire and smoke losses, room-by-room photos, soot and smoke proof, contents inventories, and HVAC documentation are the approval equation — see the fire damage claim documentation guide for full-file standards, the smoke and soot damage documentation guide for contamination evidence, the HVAC contamination in fire damage claims guide for system inspection and duct scope, and the fire damage supplement playbook for line items and supplement workflow.",
+        "When a fire supplement is formally denied, the fire damage supplement denial recovery guide walks smoke, soot, HVAC, and contents resubmission — partial approvals, re-inspection judgment, and targeted evidence fixes.",
       ],
       links: [
         {
@@ -48,6 +49,10 @@ export const claimDocumentationApprovalRates: BlogPost = {
         {
           label: "Fire damage claim documentation guide",
           href: "/resources/blog/fire-damage-claim-documentation-guide",
+        },
+        {
+          label: "Fire damage supplement denial recovery",
+          href: "/resources/blog/fire-damage-supplement-denial-recovery",
         },
         {
           label: "Water damage supplement denial recovery",

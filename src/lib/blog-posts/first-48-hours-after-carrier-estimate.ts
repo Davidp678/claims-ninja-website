@@ -445,7 +445,7 @@ export const first48HoursAfterCarrierEstimate: BlogPost = {
         "Treating emergency mitigation as approval for full rebuild scope.",
       ],
       paragraphs: [
-        "These mistakes drive supplement denials later. Fixing habits in the first 48 hours reduces load on the denial recovery workflow — on water losses, the water damage supplement denial recovery guide lists drying documentation gaps that are cheaper to prevent at estimate receipt than to fix after equipment pull.",
+        "These mistakes drive supplement denials later. Fixing habits in the first 48 hours reduces load on the denial recovery workflow — on water losses, the water damage supplement denial recovery guide lists drying documentation gaps that are cheaper to prevent at estimate receipt than to fix after equipment pull. On fire losses, the fire damage supplement denial recovery guide lists smoke, HVAC, and migration gaps with the same prevention logic.",
         "Homeowner sales teams and production leads should share the same vocabulary: approved scope, pending supplement, and customer-pay work — misalignment in hour 48 creates disputes in week six.",
       ],
       callout: {
@@ -453,6 +453,10 @@ export const first48HoursAfterCarrierEstimate: BlogPost = {
         body: "The costliest mistake is silent acceptance — production starts, the homeowner assumes approval, and the supplement fight begins after margin is sunk. Say explicitly what is approved versus pending when scope is in flux.",
       },
       links: [
+        {
+          label: "Fire damage supplement denial recovery",
+          href: "/resources/blog/fire-damage-supplement-denial-recovery",
+        },
         {
           label: "Water damage supplement denial recovery",
           href: "/resources/blog/water-damage-supplement-denial-recovery",
