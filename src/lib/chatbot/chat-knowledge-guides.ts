@@ -114,6 +114,97 @@ const GUIDE_SLUG_BOOSTS: Record<
     phrases: ["fire claim intake", "fire intake checklist"],
     keywords: ["fire intake"],
   },
+  "claim-file-audit-guide": {
+    phrases: ["claim file audit", "audit claim file"],
+    keywords: ["claim audit", "file audit"],
+  },
+  "op-qualification-guide": {
+    phrases: ["o&p qualification", "overhead and profit documentation", "op documentation"],
+    keywords: ["o&p", "overhead profit"],
+    topics: ["op_claims"],
+  },
+  "documentation-standards-guide": {
+    phrases: ["documentation standards", "claim documentation standard"],
+    keywords: ["documentation standard"],
+  },
+  "photo-documentation-standards-guide": {
+    phrases: ["photo documentation", "field photo procedure"],
+    keywords: ["photo documentation"],
+  },
+  "roofing-documentation-guide": {
+    phrases: ["roofing documentation", "roof claim documentation"],
+    keywords: ["roofing documentation"],
+  },
+  "reinspection-preparation-guide": {
+    phrases: [
+      "reinspection preparation",
+      "roof reinspection",
+      "how do i prepare for reinspection",
+      "adjuster reinspection",
+    ],
+    keywords: ["reinspection", "re-inspection"],
+  },
+  "code-upgrade-documentation-guide": {
+    phrases: ["code upgrade documentation", "roof code upgrade"],
+    keywords: ["code upgrade"],
+  },
+  "steep-high-documentation-guide": {
+    phrases: ["steep roof documentation", "high roof documentation", "steep and high"],
+    keywords: ["steep", "high roof"],
+  },
+  "roof-measurement-documentation-guide": {
+    phrases: ["roof measurement documentation", "measurement report"],
+    keywords: ["roof measurement"],
+  },
+  "moisture-mapping-guide": {
+    phrases: ["moisture mapping", "moisture map procedure", "how do i moisture map"],
+    keywords: ["moisture mapping", "moisture map"],
+    topics: ["moisture_mapping"],
+  },
+  "equipment-documentation-guide": {
+    phrases: ["equipment documentation", "document equipment charges", "dehumidifier documentation"],
+    keywords: ["equipment documentation", "equipment charge"],
+    topics: ["equipment_charges"],
+  },
+  "daily-monitoring-guide": {
+    phrases: ["daily monitoring checklist", "monitoring visit documentation"],
+    keywords: ["daily monitoring", "monitoring visit"],
+    topics: ["monitoring"],
+  },
+  "contents-manipulation-documentation-guide": {
+    phrases: ["contents manipulation documentation", "contents manipulation"],
+    keywords: ["contents manipulation"],
+  },
+  "smoke-documentation-guide": {
+    phrases: ["smoke documentation", "smoke and soot documentation"],
+    keywords: ["smoke documentation", "soot"],
+  },
+  "hvac-contamination-guide": {
+    phrases: ["hvac contamination documentation", "hvac duct documentation fire"],
+    keywords: ["hvac contamination", "duct contamination"],
+    topics: ["hvac_fire"],
+  },
+  "odor-documentation-guide": {
+    phrases: ["odor documentation", "odor mitigation documentation", "deodorization documentation"],
+    keywords: ["odor documentation", "deodorization"],
+    topics: ["odor_mitigation"],
+  },
+  "contents-documentation-guide": {
+    phrases: ["contents documentation fire", "fire contents documentation"],
+    keywords: ["contents documentation"],
+  },
+  "structural-stabilization-documentation-guide": {
+    phrases: ["structural stabilization documentation", "shoring documentation"],
+    keywords: ["structural stabilization"],
+  },
+  "siding-envelope-documentation-guide": {
+    phrases: ["siding documentation", "envelope documentation"],
+    keywords: ["siding documentation", "envelope"],
+  },
+  "window-door-documentation-guide": {
+    phrases: ["window door documentation", "window and door documentation"],
+    keywords: ["window documentation", "door documentation"],
+  },
 };
 
 function truncate(text: string, max: number): string {

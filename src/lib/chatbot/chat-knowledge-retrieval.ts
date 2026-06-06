@@ -549,6 +549,90 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
           /\/resources\/guides\/water-damage\/dry-log-collection-guide/i.test(s.text),
       ),
   },
+  {
+    label: "client portal question retrieves portal context",
+    message: "What can I do in the client portal?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /client portal|client-portal|claims command center/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "claim tracking question retrieves tracking context",
+    message: "How do I track claim status in the platform?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /claim tracking|claim-tracking|pipeline visibility|claim status/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "reviews question retrieves testimonial context",
+    message: "What do contractors say about Claims Ninja?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /review|testimonial|steve kranz|kenneth valentine|daniel deerwater/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "calculator question retrieves calculator context",
+    message: "How does the claim review calculator work?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /calculator|single claim review|organization roi|preliminary triage/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "contact question retrieves phone and email",
+    message: "How do I contact Claims Ninja?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /615.*479.*2438|info@theclaimsninja\.com|page:\/contact/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "reinspection procedural question retrieves guide",
+    message: "how do i prepare for a roof reinspection",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /reinspection|reinspection-preparation-guide|guide — roof reinspection/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "mold solution question retrieves solution context",
+    message: "Do you support mold remediation claims?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /mold claims|solutions\/mold|remediation protocol/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
 ];
 
 export function runKnowledgeRetrievalChecks(): {
