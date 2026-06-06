@@ -399,7 +399,7 @@ export const caseStudiesPage = page({
 });
 
 export const guidesPage = page({
-  path: "/guides",
+  path: "/resources/guides",
   eyebrow: "Resources",
   title: "Claim Guides",
   metaTitle: "Claim Guides",

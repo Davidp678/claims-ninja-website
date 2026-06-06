@@ -8,6 +8,21 @@ const nextConfig: NextConfig = {
         destination: "/resources/blog",
         permanent: true,
       },
+      {
+        source: "/guides",
+        destination: "/resources/guides",
+        permanent: true,
+      },
+      {
+        source: "/guides/:category/:slug",
+        destination: "/resources/guides/:category/:slug",
+        permanent: true,
+      },
+      {
+        source: "/guides/:category",
+        destination: "/resources/guides/:category",
+        permanent: true,
+      },
     ];
   },
 };

@@ -92,7 +92,7 @@ export const RESOURCES_NAV: readonly NavDropdownItem[] = [
   },
   {
     label: "Claim Guides",
-    href: "/guides",
+    href: "/resources/guides",
     description: "Practical playbooks for claim workflow excellence.",
   },
   { label: "Videos", href: "/videos", description: "Walkthroughs and operational best practices." },

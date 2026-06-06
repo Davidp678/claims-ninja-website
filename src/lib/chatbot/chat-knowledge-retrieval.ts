@@ -21,6 +21,20 @@ const RESOURCE_INTENT_TERMS = [
   "library",
 ] as const;
 
+const PROCEDURAL_INTENT_TERMS = [
+  "how do i",
+  "how to",
+  "checklist",
+  "step-by-step",
+  "steps to",
+  "steps for",
+  "what should i document",
+  "field guide",
+  "procedure",
+  "on site",
+  "on-site",
+] as const;
+
 const CATEGORY_HUB_RESOURCE_BOOST = 6;
 
 const STOP_WORDS = new Set([
@@ -134,6 +148,16 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "library",
     "blog",
   ],
+  claim_guides: [
+    "claim guides",
+    "operational guide",
+    "checklist",
+    "field guide",
+    "playbook",
+    "sop",
+    "step-by-step",
+    "how do i",
+  ],
   mitigation: ["mitigation", "water mitigation", "drying", "restoration"],
 };
 
@@ -206,10 +230,17 @@ function scoreChunk(
   }
 
   if (
-    chunk.id.startsWith("blog-category:") &&
+    (chunk.id.startsWith("blog-category:") || chunk.id.startsWith("guide-category:")) &&
     RESOURCE_INTENT_TERMS.some((term) => normalizedMessage.includes(term))
   ) {
     score += CATEGORY_HUB_RESOURCE_BOOST;
+  }
+
+  if (
+    chunk.id.startsWith("guide:") &&
+    PROCEDURAL_INTENT_TERMS.some((term) => normalizedMessage.includes(term))
+  ) {
+    score += 10;
   }
 
   return score;
@@ -395,7 +426,7 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some(
         (s) =>
-          /fire-damage-claims|blog category — fire damage claims/i.test(
+          /fire-damage|guide category — fire damage|blog category — fire damage claims/i.test(
             `${s.text} ${s.source}`,
           ),
       ),
@@ -431,7 +462,76 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some(
         (s) =>
-          /claim-documentation|blog category — claim documentation/i.test(
+          /claim-documentation|guide category|blog category — claim documentation|documentation standards guide/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "claim guides hub retrieves guide context",
+    message: "claim guides checklist",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /guide —|guide category —|\/resources\/guides/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "dry log collection procedural question retrieves guide",
+    message: "how do i collect dry logs on a water job",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /dry log collection|dry-log-collection-guide|guide — dry log collection/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "supplement submission guide retrieves guide context",
+    message: "supplement submission steps for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /supplement submission|supplement-submission-guide|guide — supplement submission/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "water mitigation documentation procedural question retrieves guide",
+    message: "How do I document a water mitigation claim?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) => /^guide —/i.test(s.source)),
+  },
+  {
+    label: "insurance supplementing educational question retrieves blog or faq",
+    message: "What is insurance supplementing?",
+    assert: (result) => {
+      if (result.snippets.length === 0) return false;
+      const hasEducational = result.snippets.some(
+        (s) => /^blog —|^faq —/i.test(s.source),
+      );
+      const guideOnly =
+        result.snippets.length > 0 &&
+        result.snippets.every((s) => /^guide —|^guide category —/i.test(s.source));
+      return hasEducational && !guideOnly;
+    },
+  },
+  {
+    label: "water mitigation resources retrieves guide or blog category hub",
+    message: "water mitigation resources",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /guide category — water damage|blog category — water damage claims|water-damage-claims/i.test(
             `${s.text} ${s.source}`,
           ),
       ),

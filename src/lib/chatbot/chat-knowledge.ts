@@ -8,7 +8,9 @@ import { getCategoryTitle } from "@/lib/faq-page";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 import { FAQ_ITEMS } from "@/lib/faq-data";
 import { blogToChunks, blogCategoryToChunks } from "./chat-knowledge-blog";
+import { guideToChunks, guideCategoryToChunks } from "./chat-knowledge-guides";
 import { AI_CLAIM_WORKFLOW } from "@/lib/ai-claim-analysis-page";
+import { CLAIM_GUIDES } from "@/lib/guides";
 import type { MarketingPageConfig } from "@/lib/marketing-pages";
 import {
   aboutPage,
@@ -16,6 +18,7 @@ import {
   billingPaymentsPage,
   contentsPage,
   fireDamagePage,
+  guidesPage,
   moldPage,
   platformOverviewPage,
   pricingPage,
@@ -193,6 +196,15 @@ export const CHAT_KNOWLEDGE_CHUNKS: readonly ChatKnowledgeChunk[] = [
   ...faqToChunks(FAQ_ITEMS),
   ...blogToChunks(BLOG_POSTS),
   ...blogCategoryToChunks(),
+  ...guideToChunks(CLAIM_GUIDES),
+  ...guideCategoryToChunks(),
+  ...pageToChunks(guidesPage, ["claim_guides", "documentation"], [
+    "guides",
+    "checklist",
+    "playbook",
+    "claim guides",
+    "operational",
+  ]),
   ...pageToChunks(pricingPage, ["pricing", "billing"], [
     "pricing",
     "fee",

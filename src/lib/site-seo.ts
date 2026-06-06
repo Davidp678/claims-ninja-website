@@ -3,6 +3,9 @@ import type { MetadataRoute } from "next";
 import { getAllCategorySlugs, getCategoryPath } from "@/lib/blog-categories";
 import { BLOG_POSTS } from "@/lib/blog-data";
 import { BLOG_BASE_PATH, getBlogPostPath } from "@/lib/blog-page";
+import { getAllGuideCategorySlugs, getGuideCategoryPath } from "@/lib/guide-categories";
+import { CLAIM_GUIDES } from "@/lib/guide-data";
+import { GUIDE_BASE_PATH, getGuidePathForGuide } from "@/lib/guide-page";
 import { MARKETING_PAGES_BY_PATH } from "@/lib/marketing-pages";
 
 export const SITE_URL = "https://theclaimsninja.com" as const;
@@ -31,7 +34,7 @@ function getMarketingSitemapConfig(path: string): SitemapEntryConfig {
   if (HIGH_PRIORITY_PATHS.has(path)) {
     return { priority: 0.9, changeFrequency: "weekly" };
   }
-  if (path === BLOG_BASE_PATH) {
+  if (path === BLOG_BASE_PATH || path === GUIDE_BASE_PATH) {
     return { priority: 0.85, changeFrequency: "weekly" };
   }
   return { priority: 0.8, changeFrequency: "monthly" };
@@ -72,10 +75,30 @@ export function getBlogCategorySitemapEntries(): MetadataRoute.Sitemap {
   }));
 }
 
+export function getGuideSitemapEntries(): MetadataRoute.Sitemap {
+  return CLAIM_GUIDES.map((guide) => ({
+    url: getGuidePathForGuide(guide),
+    lastModified: new Date(guide.updatedAt ?? guide.publishedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+}
+
+export function getGuideCategorySitemapEntries(): MetadataRoute.Sitemap {
+  return getAllGuideCategorySlugs().map((slug) => ({
+    url: getGuideCategoryPath(slug),
+    lastModified: undefined,
+    changeFrequency: "weekly" as const,
+    priority: 0.75,
+  }));
+}
+
 export function getFullSitemap(): MetadataRoute.Sitemap {
   return [
     ...getMarketingSitemapEntries(),
     ...getBlogCategorySitemapEntries(),
     ...getBlogSitemapEntries(),
+    ...getGuideCategorySitemapEntries(),
+    ...getGuideSitemapEntries(),
   ];
 }

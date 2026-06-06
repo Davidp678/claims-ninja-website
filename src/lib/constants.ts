@@ -72,6 +72,7 @@ export const FOOTER_LINKS = {
     { label: "Claim intake", href: CTA_LINKS.onboarding, external: true },
     { label: "Schedule consultation", href: CTA_LINKS.schedule, external: true },
     { label: "Blog", href: "/resources/blog" },
+    { label: "Claim Guides", href: "/resources/guides" },
     { label: "FAQ", href: "/faq" },
   ],
 } as const;
