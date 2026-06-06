@@ -88,7 +88,7 @@ export const RESOURCES_NAV: readonly NavDropdownItem[] = [
   {
     label: "Case Studies",
     href: "/case-studies",
-    description: "Real outcomes from contractor partnerships.",
+    description: "Portfolio recovery outcomes and representative claim results.",
   },
   {
     label: "Claim Guides",

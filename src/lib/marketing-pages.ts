@@ -376,26 +376,13 @@ export const blogPage = page({
 export const caseStudiesPage = page({
   path: "/case-studies",
   eyebrow: "Resources",
-  title: "Case Studies",
-  metaTitle: "Case Studies",
+  title: "Case Studies & Recovery Results",
+  metaTitle: "Case Studies & Recovery Results",
   metaDescription:
-    "Claims Ninja case studies show how restoration and roofing contractors improve recovery, cycle time, and claim operations with expert partnership.",
+    "Explore representative recovery outcomes, contractor success stories, and portfolio-level insurance claim results from Claims Ninja. See how contractors recover more without building an internal claims department.",
   description:
-    "Real outcomes from restoration and roofing contractors who partner with Claims Ninja for claim operations.",
-  features: [
-    {
-      title: "Recovery benchmarks",
-      description: "See uplift examples across claim types and carrier environments.",
-    },
-    {
-      title: "Workflow transformation",
-      description: "How teams reduced cycle time and improved supplement capture.",
-    },
-    {
-      title: "Partnership models",
-      description: "Ways contractors integrate expert support without building in-house teams.",
-    },
-  ],
+    "Representative recovery outcomes, portfolio-level results, and industry expertise from Claims Ninja — proof that contractors can recover more without building an internal claims department.",
+  features: [],
 });
 
 export const guidesPage = page({
