@@ -141,12 +141,15 @@ Chunks are built at module load from existing site exports (single source of tru
 
 | Source file | Content |
 |---|---|
-| `src/lib/faq-data.ts` | Full FAQ library (~76 Q&A items) |
+| `src/lib/faq-data.ts` | Full FAQ library (~81 Q&A items) |
+| `src/lib/blog-posts/index.ts` | Blog articles via `chat-knowledge-blog.ts` (compact excerpts + headings, not full posts) |
 | `src/lib/marketing-pages.ts` | Pricing, platform, billing, AI analysis, about, solutions pages |
 | `src/lib/platform-overview.ts` | Platform hero, pillars, AI capabilities |
 | `src/lib/ai-claim-analysis-page.ts` | AI workflow cards |
 
-To expand chatbot knowledge, edit those source files — chunks rebuild on deploy. No separate knowledge CMS yet.
+Blog chunks are built by `src/lib/chatbot/chat-knowledge-blog.ts`: one chunk per post with title, category, tags, truncated excerpt, up to eight section headings, and URL. Full article bodies are not injected — retrieval caps at five snippets and ~2800 characters per request.
+
+To expand chatbot knowledge, edit FAQ/marketing source files or add blog posts to the registry — chunks rebuild on deploy. No separate knowledge CMS yet.
 
 ### Retrieval
 
@@ -172,7 +175,11 @@ Pricing accuracy (15% documented increase, 4% RCV in qualifying no-estimate scen
 npm run test:chat-knowledge
 ```
 
-Example questions covered: pricing, billing, supplements, AI analysis, public adjuster, off-topic (no snippets).
+Example questions covered: pricing, billing, supplements, AI analysis, public adjuster, dry log documentation, fire denial recovery, Xactimate checklist, off-topic (no snippets).
+
+### FAQ bridge pattern
+
+New bridge FAQs in `faq-data.ts` link to blog articles via `relatedLinks` (rendered below answers on FAQ accordions). Answers stay concise — no full article text in FAQ bodies. Site FAQ selections on blog hub, water/fire solutions, AI analysis, and guides pages surface selected bridge items.
 
 ## Lead capture
 
@@ -344,6 +351,7 @@ Before merging / deploying to Production:
 | `src/components/chatbot/chat-lead-client.ts` | Client submit helper |
 | `src/lib/calculator-lead.ts` | Lead payload types (incl. chatbot) |
 | `src/lib/chatbot/chat-knowledge.ts` | Static knowledge chunks from site content |
+| `src/lib/chatbot/chat-knowledge-blog.ts` | Compact blog post chunks for retrieval |
 | `src/lib/chatbot/chat-knowledge-retrieval.ts` | Score-based snippet retrieval |
 | `src/lib/chatbot/chat-knowledge-retrieval.test.ts` | Retrieval unit tests |
 | `scripts/chat-api-smoke.mjs` | Automated smoke tests |

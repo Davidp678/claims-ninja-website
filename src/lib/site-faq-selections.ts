@@ -85,6 +85,7 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "ai-accuracy",
       "ai-what-analyzed",
       "ai-data-privacy",
+      "help-missed-line-items",
     ],
   },
   clientPortal: {
@@ -133,6 +134,7 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
     faqIds: [
       "water-mitigation-scope",
       "water-drying-documentation",
+      "resources-water-mitigation-documentation",
       "water-category-class",
       "water-rebuild-supplements",
       "water-emergency-vs-rebuild",
@@ -142,6 +144,7 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
     topic: "fire damage claims",
     faqIds: [
       "fire-smoke-soot",
+      "resources-fire-damage-documentation",
       "fire-structural-vs-contents",
       "fire-demo-rebuild",
       "fire-odor-deodorization",
@@ -212,11 +215,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
   blog: {
     topic: "contractor claims operations",
     faqIds: [
+      "resources-water-mitigation-documentation",
+      "resources-fire-damage-documentation",
+      "help-denied-supplements",
       "supplements-whats-included",
       "documentation-essentials",
-      "carrier-how-handled",
-      "roofing-carrier-documentation",
-      "water-mitigation-scope",
     ],
   },
   guides: {
@@ -227,6 +230,7 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "documentation-photos",
       "getting-started-onboarding",
       "supplements-documentation",
+      "help-denied-supplements",
     ],
   },
   caseStudies: {

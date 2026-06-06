@@ -83,6 +83,34 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
   billing: ["invoice", "payment", "billed", "billing", "paid"],
   platform: ["portal", "platform", "tracking", "communication"],
   contractor_fit: ["contractor", "restoration", "roofing", "fit"],
+  dry_logs: ["dry log", "drying log", "moisture log", "dry standard"],
+  moisture_mapping: ["moisture map", "mapping", "moisture mapping"],
+  denial_recovery: [
+    "denied supplement",
+    "denial recovery",
+    "partial denial",
+    "resubmission",
+    "denied",
+  ],
+  xactimate: ["xactimate", "estimate review", "line item", "missed line"],
+  odor_mitigation: [
+    "odor",
+    "deodorization",
+    "hydroxyl",
+    "ozone",
+    "thermal fog",
+    "smoke odor",
+  ],
+  hvac_fire: ["hvac", "duct", "duct contamination", "ductwork"],
+  first_48: ["first 48", "carrier estimate", "estimate receipt"],
+  equipment_charges: [
+    "equipment charge",
+    "dehumidifier",
+    "equipment day",
+    "air mover",
+  ],
+  monitoring: ["monitoring visit", "daily monitoring", "monitoring log"],
+  op_claims: ["o&p", "overhead", "profit", "overhead and profit"],
 };
 
 function matchesWordBoundary(input: string, token: string): boolean {
@@ -283,6 +311,39 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
     label: "off-topic question returns no snippets",
     message: "What's the weather?",
     assert: (result) => result.snippets.length === 0,
+  },
+  {
+    label: "dry log question retrieves blog context",
+    message: "dry log documentation for insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /dry log|dry-log-documentation/i.test(s.text) ||
+          /dry log|dry-log-documentation/i.test(s.source),
+      ),
+  },
+  {
+    label: "fire denial question retrieves blog context",
+    message: "fire supplement denial recovery",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /fire.*denial|fire-damage-supplement-denial/i.test(s.text) ||
+          /fire damage supplement denial/i.test(s.source),
+      ),
+  },
+  {
+    label: "xactimate checklist question retrieves blog context",
+    message: "xactimate estimate review checklist for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /xactimate|estimate review checklist/i.test(s.text) ||
+          /xactimate estimate review/i.test(s.source),
+      ),
   },
 ];
 

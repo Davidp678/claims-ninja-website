@@ -194,7 +194,17 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "What documentation strengthens a supplement?",
     answer:
       "Strong supplements pair line-item detail with photos, measurements, code references, manufacturer specs, and moisture or testing data where relevant. Organized narratives help adjusters understand why each item belongs on the scope — not just that it was missed.",
-    relatedLinks: [{ label: "Documentation guidance", href: "/faq#faq-category-documentation" }],
+    relatedLinks: [
+      { label: "Documentation guidance", href: "/faq#faq-category-documentation" },
+      {
+        label: "Insurance supplementing guide",
+        href: "/resources/blog/insurance-supplementing-guide-contractors",
+      },
+      {
+        label: "Claim documentation approval rates",
+        href: "/resources/blog/claim-documentation-approval-rates",
+      },
+    ],
   },
   {
     id: "supplements-multiple",
@@ -209,6 +219,47 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "What happens if a supplement is denied or partially approved?",
     answer:
       "We document the carrier's position, identify gaps in their reasoning, and advise on next steps — revised documentation, re-inspection requests, or escalation when appropriate. Outcomes vary by carrier and file; we focus on building the strongest record possible.",
+    relatedLinks: [
+      {
+        label: "Supplement denial recovery guide",
+        href: "/resources/blog/supplement-denial-recovery-guide",
+      },
+    ],
+  },
+  {
+    id: "help-denied-supplements",
+    category: "insurance_supplements",
+    question: "Can Claims Ninja help with denied supplements?",
+    answer:
+      "Yes. We review denial language, identify documentation gaps, organize resubmission packages, and advise on re-inspection when site conditions require it. Recovery varies by carrier and file — we focus on building the strongest record possible.",
+    relatedLinks: [
+      {
+        label: "Supplement denial recovery guide",
+        href: "/resources/blog/supplement-denial-recovery-guide",
+      },
+      {
+        label: "Insurance supplementing guide",
+        href: "/resources/blog/insurance-supplementing-guide-contractors",
+      },
+    ],
+  },
+  {
+    id: "help-missed-line-items",
+    category: "insurance_supplements",
+    question: "Can Claims Ninja help contractors identify missed line items?",
+    answer:
+      "Yes. We compare carrier estimates to field scope and your documentation to flag defensible gaps — quantities, trade separation, code items, and documentation-supported scope. AI-assisted review can accelerate first-pass triage; expert teams validate before carrier submission.",
+    relatedLinks: [
+      {
+        label: "Xactimate estimate review checklist",
+        href: "/resources/blog/xactimate-estimate-review-checklist-contractors",
+      },
+      {
+        label: "Why carrier estimates miss line items",
+        href: "/resources/blog/why-carrier-estimates-miss-line-items",
+      },
+      { label: "AI claim analysis", href: "/platform/ai-claim-analysis" },
+    ],
   },
 
   // Roofing Claims (6)
@@ -274,6 +325,52 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "What drying documentation do carriers review most closely?",
     answer:
       "Daily moisture logs, equipment placement photos, atmospheric readings, and clear drying goals carry weight in review. Gaps in documentation often lead to reduced equipment days or disputed mitigation charges.",
+    relatedLinks: [
+      {
+        label: "Dry log documentation guide",
+        href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+      },
+      { label: "Water damage solutions", href: "/solutions/water-damage" },
+    ],
+  },
+  {
+    id: "resources-water-mitigation-documentation",
+    category: "water_damage_claims",
+    question: "Do you have resources on water mitigation claim documentation?",
+    answer:
+      "Yes. Our contractor resources library covers water mitigation supplements, dry logs, moisture mapping, equipment charges, monitoring visits, and denial recovery — written for field and supplement teams.",
+    relatedLinks: [
+      {
+        label: "Water mitigation supplement playbook",
+        href: "/resources/blog/water-damage-mitigation-supplement-playbook",
+      },
+      {
+        label: "Dry log documentation guide",
+        href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+      },
+      { label: "Contractor resources", href: "/resources/blog" },
+    ],
+  },
+  {
+    id: "help-equipment-drying-documentation",
+    category: "water_damage_claims",
+    question: "Can Claims Ninja review equipment charges or drying documentation?",
+    answer:
+      "Yes. We review dry logs, moisture maps, equipment utilization, and monitoring records against carrier line items — common dispute areas on water mitigation files. Strong field documentation supports equipment days and monitoring visits at desk review.",
+    relatedLinks: [
+      {
+        label: "Equipment charges in water damage claims",
+        href: "/resources/blog/equipment-charges-water-damage-claims",
+      },
+      {
+        label: "Dry log documentation guide",
+        href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+      },
+      {
+        label: "Daily monitoring documentation",
+        href: "/resources/blog/daily-monitoring-documentation-best-practices",
+      },
+    ],
   },
   {
     id: "water-category-class",
@@ -312,7 +409,27 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "How are smoke and soot damage documented for carriers?",
     answer:
       "Effective files combine visual evidence, scope detail by room, cleaning method notes, and trade separation. Carriers scrutinize whether smoke damage is localized or systemic — documentation should match what your crew observed on site.",
-    relatedLinks: [{ label: "Fire damage solutions", href: "/solutions/fire-damage" }],
+    relatedLinks: [
+      { label: "Fire damage solutions", href: "/solutions/fire-damage" },
+      {
+        label: "Fire damage claim documentation guide",
+        href: "/resources/blog/fire-damage-claim-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "resources-fire-damage-documentation",
+    category: "fire_damage_claims",
+    question: "Do you have resources on fire damage claim documentation?",
+    answer:
+      "Yes. Our contractor resources library covers fire documentation, supplements, smoke and soot evidence, HVAC contamination, odor mitigation, and supplement denial recovery — organized for restoration and supplement teams.",
+    relatedLinks: [
+      {
+        label: "Fire damage claim documentation guide",
+        href: "/resources/blog/fire-damage-claim-documentation-guide",
+      },
+      { label: "Contractor resources", href: "/resources/blog" },
+    ],
   },
   {
     id: "fire-structural-vs-contents",
@@ -499,7 +616,13 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "When are moisture logs required?",
     answer:
       "Moisture logs are standard on water mitigation jobs and often expected on mold-related work. Daily readings, equipment notes, and dry-standard documentation support equipment day charges and rebuild timing.",
-    relatedLinks: [{ label: "Water damage solutions", href: "/solutions/water-damage" }],
+    relatedLinks: [
+      { label: "Water damage solutions", href: "/solutions/water-damage" },
+      {
+        label: "Dry log documentation guide",
+        href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+      },
+    ],
   },
   {
     id: "documentation-policyholder",
