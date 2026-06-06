@@ -282,7 +282,13 @@ export const fireDamageSupplementDenialRecovery: BlogPost = {
       level: 3,
       paragraphs: [
         "Odor mitigation denials cite ozone, hydroxyl, or sealant lines without documentation of persistent odor, source removal, or post-treatment verification. Odor scope without structural cleaning narrative often fails desk review.",
-        "Recovery: site notes on odor source, photos of char or soot removal before odor equipment, and treatment log with dates and areas treated. Link odor lines to rooms already approved for smoke cleaning when possible.",
+        "Recovery: site notes on odor source, photos of char or soot removal before odor equipment, and treatment log with dates and areas treated. Link odor lines to rooms already approved for smoke cleaning when possible. Full odor assessment and verification standards are in the odor mitigation in fire damage claims guide.",
+      ],
+      links: [
+        {
+          label: "Odor mitigation in fire damage claims",
+          href: "/resources/blog/odor-mitigation-in-fire-damage-claims",
+        },
       ],
     },
     {

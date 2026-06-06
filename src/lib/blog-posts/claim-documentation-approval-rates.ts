@@ -32,8 +32,13 @@ export const claimDocumentationApprovalRates: BlogPost = {
         "When approvals stall and payment feels short, why water mitigation claims get underpaid explains documentation-driven payment gaps contractors can fix.",
         "On fire and smoke losses, room-by-room photos, soot and smoke proof, contents inventories, and HVAC documentation are the approval equation — see the fire damage claim documentation guide for full-file standards, the smoke and soot damage documentation guide for contamination evidence, the HVAC contamination in fire damage claims guide for system inspection and duct scope, and the fire damage supplement playbook for line items and supplement workflow.",
         "When a fire supplement is formally denied, the fire damage supplement denial recovery guide walks smoke, soot, HVAC, and contents resubmission — partial approvals, re-inspection judgment, and targeted evidence fixes.",
+        "Odor mitigation lines need procedure logs, source-removal photos, and verification notes — see the odor mitigation in fire damage claims guide for assessment and treatment documentation that prevents and recovers odor denials.",
       ],
       links: [
+        {
+          label: "Odor mitigation in fire damage claims",
+          href: "/resources/blog/odor-mitigation-in-fire-damage-claims",
+        },
         {
           label: "HVAC contamination in fire damage claims",
           href: "/resources/blog/hvac-contamination-in-fire-damage-claims",

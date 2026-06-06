@@ -77,7 +77,7 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
     {
       question: "How should odor be documented on fire claims?",
       answer:
-        "Record pre-treatment odor by room, procedures used with dates and equipment placement, and post-treatment verification notes. Contemporaneous technician logs beat invoice-only odor claims. Pair with smoke migration photos when odor pathways follow duct or chase routes.",
+        "Record pre-treatment odor by room, procedures used with dates and equipment placement, and post-treatment verification notes. Contemporaneous technician logs beat invoice-only odor claims. Pair with smoke migration photos when odor pathways follow duct or chase routes. See the odor mitigation in fire damage claims guide for full assessment and treatment documentation.",
     },
     {
       question: "How does Claims Ninja help with smoke and soot documentation?",
@@ -326,7 +326,13 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
       level: 3,
       paragraphs: [
         "Log odor presence by room before treatment — technician dated notes, not only homeowner complaints. Record equipment type, placement, duration, and post-treatment verification.",
-        "Odor lines without procedure photos and revisit notes reduce often. Pair odor documentation with smoke path narrative when ducts or chases explain distribution.",
+        "Odor lines without procedure photos and revisit notes reduce often. Pair odor documentation with smoke path narrative when ducts or chases explain distribution. Full treatment and verification standards are in the odor mitigation in fire damage claims guide.",
+      ],
+      links: [
+        {
+          label: "Odor mitigation in fire damage claims",
+          href: "/resources/blog/odor-mitigation-in-fire-damage-claims",
+        },
       ],
     },
     {
@@ -486,7 +492,7 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
       heading: "Final takeaway",
       paragraphs: [
         "Smoke and soot damage documentation is the contamination spine of fire restoration insurance recovery: typed residue evidence, migration path narrative, room-indexed photos, HVAC and cavity inspection, odor logs, and disciplined supplement and denial resubmission.",
-        "Build documentation during inspection and cleaning with one naming convention across every artifact. Use the fire damage claim documentation guide for full-file standards, the fire damage supplement playbook for line items and process, claim documentation approval rates for approval habits, and supplement denial recovery guide when carriers say no.",
+        "Build documentation during inspection and cleaning with one naming convention across every artifact. Use the fire damage claim documentation guide for full-file standards, the odor mitigation in fire damage claims guide for treatment and verification depth, the fire damage supplement playbook for line items and process, claim documentation approval rates for approval habits, and supplement denial recovery guide when carriers say no.",
         "This guide is the third major resource in the Fire Damage Claims cluster — specialized authority on smoke and soot evidence paired with the broader documentation guide and supplement playbook.",
         "Claims Ninja helps contractors turn smoke and soot documentation discipline into paid scope — with organized packages, gap analysis, and performance-aligned supplement support.",
       ],
@@ -498,6 +504,10 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
         {
           label: "Fire damage supplement playbook",
           href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        },
+        {
+          label: "Odor mitigation in fire damage claims",
+          href: "/resources/blog/odor-mitigation-in-fire-damage-claims",
         },
         {
           label: "How documentation improves approvals",

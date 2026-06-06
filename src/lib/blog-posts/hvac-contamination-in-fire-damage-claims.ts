@@ -210,7 +210,13 @@ export const hvacContaminationInFireDamageClaims: BlogPost = {
       level: 3,
       paragraphs: [
         "Odor that persists after room cleaning often traces to ducts, filters, and coils still distributing compounds. Log odor at registers and equipment before HVAC treatment; document post-treatment verification.",
-        "Pair odor logs with HVAC procedure photos — ozone or hydroxyl at equipment, filter changes, coil cleaning — tied to odor line items.",
+        "Pair odor logs with HVAC procedure photos — ozone or hydroxyl at equipment, filter changes, coil cleaning — tied to odor line items. Room-level odor assessment and verification standards are in the odor mitigation in fire damage claims guide.",
+      ],
+      links: [
+        {
+          label: "Odor mitigation in fire damage claims",
+          href: "/resources/blog/odor-mitigation-in-fire-damage-claims",
+        },
       ],
     },
     {
@@ -369,7 +375,13 @@ export const hvacContaminationInFireDamageClaims: BlogPost = {
       heading: "Odor observations",
       level: 3,
       paragraphs: [
-        "Odor at registers and equipment before HVAC treatment; post-treatment verification notes. Correlate with odor equipment lines when ducts were treatment pathways.",
+        "Odor at registers and equipment before HVAC treatment; post-treatment verification notes. Correlate with odor equipment lines when ducts were treatment pathways. Full room-level odor logging and verification standards are in the odor mitigation in fire damage claims guide.",
+      ],
+      links: [
+        {
+          label: "Odor mitigation in fire damage claims",
+          href: "/resources/blog/odor-mitigation-in-fire-damage-claims",
+        },
       ],
     },
     {

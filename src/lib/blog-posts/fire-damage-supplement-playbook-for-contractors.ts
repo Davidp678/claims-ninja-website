@@ -287,7 +287,13 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
       level: 3,
       paragraphs: [
         "Odor mitigation includes equipment placement, treatment duration by room, sealers, and post-treatment verification. Odor lines without procedure photos and revisit notes reduce often.",
-        "Pair odor scope with HVAC when duct pathways distributed particulate. Document why standard cleaning alone was insufficient when supplemental odor lines are billed.",
+        "Pair odor scope with HVAC when duct pathways distributed particulate. Document why standard cleaning alone was insufficient when supplemental odor lines are billed. Full assessment and treatment standards are in the odor mitigation in fire damage claims guide.",
+      ],
+      links: [
+        {
+          label: "Odor mitigation in fire damage claims",
+          href: "/resources/blog/odor-mitigation-in-fire-damage-claims",
+        },
       ],
     },
     {

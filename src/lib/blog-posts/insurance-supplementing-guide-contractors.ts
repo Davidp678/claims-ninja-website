@@ -365,6 +365,10 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
           label: "Fire damage supplement denial recovery",
           href: "/resources/blog/fire-damage-supplement-denial-recovery",
         },
+        {
+          label: "Odor mitigation in fire damage claims",
+          href: "/resources/blog/odor-mitigation-in-fire-damage-claims",
+        },
         { label: "Fire damage claims", href: "/solutions/fire-damage" },
       ],
     },

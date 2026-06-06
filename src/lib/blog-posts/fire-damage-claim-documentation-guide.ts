@@ -92,7 +92,7 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
       paragraphs: [
         "Fire damage insurance claims fail on documentation more often than on policy language. Contractors perform legitimate soot cleaning, smoke sealing, contents handling, demolition, and rebuild — then absorb scope when photos are unlabeled, inventories are incomplete, and the estimate sketch omits rooms that clearly smoked on walkthrough.",
         "This fire damage claim documentation guide is the foundational resource for restoration and reconstruction contractors, project managers, estimators, and supplement leads handling fire and smoke losses. It explains what to capture, how carriers evaluate files, how documentation drives supplements and denial recovery, and how to build restoration workflows that pay for provable work.",
-        "Use the fire damage supplement playbook for line items and supplement workflow, the smoke and soot damage documentation guide for contamination evidence standards, the HVAC contamination in fire damage claims guide for system inspection and duct documentation, the claim documentation approval rates article for cross-trade approval habits, the insurance supplementing guide for supplement process, and the supplement denial recovery guide when carriers push back. This guide goes deep on fire-specific evidence so your team can train one documentation standard across structure and contents phases.",
+        "Use the fire damage supplement playbook for line items and supplement workflow, the smoke and soot damage documentation guide for contamination evidence standards, the HVAC contamination in fire damage claims guide for system inspection and duct documentation, the odor mitigation in fire damage claims guide for assessment and treatment documentation, the claim documentation approval rates article for cross-trade approval habits, the insurance supplementing guide for supplement process, and the supplement denial recovery guide when carriers push back. This guide goes deep on fire-specific evidence so your team can train one documentation standard across structure and contents phases.",
         "Educational guidance for contractors — not legal advice. Policy forms, carrier programs, and local code authorities vary by file.",
       ],
       links: [
@@ -269,7 +269,13 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
       level: 3,
       paragraphs: [
         "Odor documentation records pre-treatment odor presence by room, procedures used — hydroxyl, ozone, thermal fogging, sealing — with dates and equipment, and post-treatment verification notes. Odor lines without procedure and revisit notes reduce often.",
-        "Homeowner or occupant complaints in writing can support severity; technician observations in log form are stronger when dated contemporaneously.",
+        "Homeowner or occupant complaints in writing can support severity; technician observations in log form are stronger when dated contemporaneously. See the odor mitigation in fire damage claims guide for full assessment, treatment, and verification standards.",
+      ],
+      links: [
+        {
+          label: "Odor mitigation in fire damage claims",
+          href: "/resources/blog/odor-mitigation-in-fire-damage-claims",
+        },
       ],
     },
     {
@@ -376,7 +382,13 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
       level: 3,
       paragraphs: [
         "Odor mitigation documentation lists equipment placement, treatment duration by room, sealers applied, and post-treatment verification. Pair with HVAC scope when odor pathways involve duct distribution.",
-        "Document why standard cleaning alone was insufficient when supplemental odor lines are billed.",
+        "Document why standard cleaning alone was insufficient when supplemental odor lines are billed. Full assessment and procedure standards are in the odor mitigation in fire damage claims guide.",
+      ],
+      links: [
+        {
+          label: "Odor mitigation in fire damage claims",
+          href: "/resources/blog/odor-mitigation-in-fire-damage-claims",
+        },
       ],
     },
     {
