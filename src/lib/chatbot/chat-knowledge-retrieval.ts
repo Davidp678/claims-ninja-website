@@ -536,6 +536,19 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
           ),
       ),
   },
+  {
+    label: "dry log documentation blog chunk links to dry log collection guide",
+    message: "dry log documentation guide",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /dry-log-documentation-guide-insurance-claims|dry log documentation/i.test(
+            `${s.text} ${s.source}`,
+          ) &&
+          /\/resources\/guides\/water-damage\/dry-log-collection-guide/i.test(s.text),
+      ),
+  },
 ];
 
 export function runKnowledgeRetrievalChecks(): {

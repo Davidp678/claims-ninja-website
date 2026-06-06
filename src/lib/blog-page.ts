@@ -27,6 +27,9 @@ import {
   resolveRelatedPosts,
 } from "@/lib/blog-related";
 import { resolveBlogAuthor } from "@/lib/blog-authors";
+import {
+  getPracticeGuidesForBlog,
+} from "@/lib/blog-guide-companions";
 
 export { BLOG_CATEGORY_REGISTRY as BLOG_CATEGORIES };
 export type { BlogCategorySlug };
@@ -53,6 +56,7 @@ export {
   getFallbackRelatedPosts,
   getSuggestedRelatedPosts,
   resolveBlogAuthor,
+  getPracticeGuidesForBlog,
 };
 
 export const BLOG_BASE_PATH = "/resources/blog" as const;

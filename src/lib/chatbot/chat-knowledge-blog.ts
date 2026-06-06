@@ -12,6 +12,7 @@ import {
   getCategoryPostCount,
 } from "@/lib/blog-categories";
 import { getPostsByCategorySlug } from "@/lib/blog-registry";
+import { formatPracticeGuidesForChatbot } from "@/lib/blog-guide-companions";
 import type { BlogPost } from "@/lib/blog-types";
 
 type BlogKnowledgeChunk = {
@@ -308,6 +309,11 @@ function buildChunkText(post: BlogPost): string {
 
   if (sections) {
     lines.push(`Sections: ${sections}`);
+  }
+
+  const practiceGuides = formatPracticeGuidesForChatbot(post.slug);
+  if (practiceGuides) {
+    lines.push(practiceGuides);
   }
 
   lines.push(`URL: ${url}`);

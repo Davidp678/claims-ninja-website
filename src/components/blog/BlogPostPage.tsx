@@ -6,6 +6,7 @@ import { resolveRelatedPosts } from "@/lib/blog-page";
 import { BlogPostingJsonLd } from "./BlogPostingJsonLd";
 import { BlogBackLink } from "./BlogBackLink";
 import { BlogPostContent } from "./BlogPostContent";
+import { BlogPutIntoPractice } from "./BlogPutIntoPractice";
 import { BlogPostCta } from "./BlogPostCta";
 import { BlogPostFaq } from "./BlogPostFaq";
 import { BlogPostHero } from "./BlogPostHero";
@@ -34,6 +35,7 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
             </div>
             <div className="min-w-0 max-w-3xl">
               <BlogPostContent sections={post.sections} />
+              <BlogPutIntoPractice post={post} />
               <BlogPostCta />
             </div>
           </div>
