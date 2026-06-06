@@ -1,10 +1,17 @@
 /**
  * Compact blog knowledge chunks for chatbot retrieval.
- * One chunk per post — excerpt + headings only, not full article bodies.
+ * Article chunks: one per post (excerpt + headings only).
+ * Category chunks: one per category hub (metadata + titles only).
  */
 
 import type { BlogCategorySlug } from "@/lib/blog-categories";
-import { getCategoryName } from "@/lib/blog-categories";
+import {
+  BLOG_CATEGORY_REGISTRY,
+  getCategoryName,
+  getCategoryPath,
+  getCategoryPostCount,
+} from "@/lib/blog-categories";
+import { getPostsByCategorySlug } from "@/lib/blog-registry";
 import type { BlogPost } from "@/lib/blog-types";
 
 type BlogKnowledgeChunk = {
@@ -19,6 +26,113 @@ type BlogKnowledgeChunk = {
 const BLOG_BASE_PATH = "/resources/blog" as const;
 const MAX_EXCERPT_CHARS = 240;
 const MAX_SECTION_HEADINGS = 8;
+const MAX_RECOMMENDED_TITLES = 3;
+const MAX_TOP_ARTICLE_TITLES = 5;
+
+const CATEGORY_CLUSTER_SUMMARIES: Record<BlogCategorySlug, string> = {
+  "insurance-supplementing":
+    "Foundational supplement strategy, scope review, and carrier submission guidance for contractors.",
+  "roofing-claims":
+    "Roof supplements, storm documentation, steep charges, and roofing-specific recovery playbooks.",
+  "water-damage-claims":
+    "Guides on mitigation scope, drying logs, moisture mapping, equipment charges, and water supplement recovery.",
+  "fire-damage-claims":
+    "Fire and smoke documentation, HVAC contamination, odor mitigation, and fire supplement denial recovery.",
+  xactimate:
+    "Xactimate estimate review, pricing gaps, line-item checklists, and carrier estimate accuracy.",
+  "claim-documentation":
+    "Photos, scope notes, moisture logs, and evidence practices that improve supplement approval rates.",
+  "contractor-operations":
+    "Workflows, supplementing partnerships, and scaling claim operations without in-house overhead.",
+  "public-adjusters":
+    "No articles published yet in this hub. Content on public adjuster coordination is planned.",
+  "insurance-estimating":
+    "Carrier estimate review, missed line items, scope development, and estimating accuracy.",
+  "claim-recovery":
+    "Supplement denial recovery, first-48-hour strategy, O&P, and maximizing legitimate claim payment.",
+};
+
+const CATEGORY_PHRASE_BOOSTS: Record<
+  BlogCategorySlug,
+  { keywords?: readonly string[]; phrases?: readonly string[] }
+> = {
+  "insurance-supplementing": {
+    phrases: [
+      "insurance supplementing resources",
+      "supplementing guides",
+      "supplement articles",
+    ],
+    keywords: ["insurance supplementing", "supplementing guide"],
+  },
+  "roofing-claims": {
+    phrases: ["roofing claim guides", "roof supplement resources", "roofing articles"],
+    keywords: ["roofing claims", "roof supplement"],
+  },
+  "water-damage-claims": {
+    phrases: [
+      "water mitigation resources",
+      "water damage guides",
+      "mitigation articles",
+      "water damage articles",
+    ],
+    keywords: ["water mitigation", "water damage claims", "mitigation resources"],
+  },
+  "fire-damage-claims": {
+    phrases: [
+      "fire claim guides",
+      "fire damage resources",
+      "fire damage guides",
+      "fire damage articles",
+    ],
+    keywords: ["fire damage claims", "fire claim"],
+  },
+  xactimate: {
+    phrases: [
+      "xactimate articles",
+      "what should i read about xactimate",
+      "xactimate resources",
+      "xactimate guides",
+    ],
+    keywords: ["xactimate"],
+  },
+  "claim-documentation": {
+    phrases: [
+      "documentation guides",
+      "claim documentation resources",
+      "claim documentation guides",
+    ],
+    keywords: ["claim documentation", "documentation guide"],
+  },
+  "contractor-operations": {
+    phrases: [
+      "contractor operations resources",
+      "contractor operations guides",
+      "scaling claim operations",
+    ],
+    keywords: ["contractor operations"],
+  },
+  "public-adjusters": {
+    phrases: ["public adjuster resources", "public adjuster articles", "public adjuster guides"],
+    keywords: ["public adjuster"],
+  },
+  "insurance-estimating": {
+    phrases: [
+      "insurance estimating resources",
+      "insurance estimating guides",
+      "estimating articles",
+    ],
+    keywords: ["insurance estimating", "carrier estimate"],
+  },
+  "claim-recovery": {
+    phrases: [
+      "denied supplement resources",
+      "supplement denial resources",
+      "claim recovery resources",
+      "claim recovery guides",
+    ],
+    keywords: ["claim recovery", "denial recovery", "denied supplement"],
+  },
+};
 
 const BLOG_CATEGORY_TOPICS: Record<BlogCategorySlug, readonly string[]> = {
   "insurance-supplementing": ["supplements", "insurance_supplements"],
@@ -226,6 +340,90 @@ export function blogToChunks(posts: readonly BlogPost[]): BlogKnowledgeChunk[] {
       phrases: [...new Set(phrases)],
       keywords: [...new Set(keywords)],
       text: buildChunkText(post),
+    };
+  });
+}
+
+function buildCategoryChunkText(
+  slug: BlogCategorySlug,
+  name: string,
+  description: string,
+  postCount: number,
+  recommendedTitles: readonly string[],
+  topTitles: readonly string[],
+): string {
+  const url = getCategoryPath(slug);
+  const lines = [
+    `Category hub: ${name}`,
+    `Slug: ${slug}`,
+    `URL: ${url}`,
+    `Posts: ${postCount}`,
+    `Description: ${description}`,
+  ];
+
+  if (recommendedTitles.length > 0) {
+    lines.push(`Recommended: ${recommendedTitles.join(" • ")}`);
+  }
+
+  if (topTitles.length > 0) {
+    lines.push(`Top articles: ${topTitles.join(" • ")}`);
+  }
+
+  lines.push(`Cluster summary: ${CATEGORY_CLUSTER_SUMMARIES[slug]}`);
+  return lines.join("\n");
+}
+
+export function blogCategoryToChunks(): BlogKnowledgeChunk[] {
+  return BLOG_CATEGORY_REGISTRY.map((category) => {
+    const posts = getPostsByCategorySlug(category.slug);
+    const postCount = getCategoryPostCount(category.slug);
+    const boost = CATEGORY_PHRASE_BOOSTS[category.slug];
+
+    const recommendedTitles = posts
+      .filter((post) => post.recommended)
+      .slice(0, MAX_RECOMMENDED_TITLES)
+      .map((post) => post.title);
+
+    const recommendedSet = new Set(recommendedTitles);
+    const topTitles = posts
+      .filter((post) => !recommendedSet.has(post.title))
+      .slice(0, MAX_TOP_ARTICLE_TITLES)
+      .map((post) => post.title);
+
+    const categoryTopics = BLOG_CATEGORY_TOPICS[category.slug] ?? ["contractor_fit"];
+    const topics = [...new Set([...categoryTopics, "blog_resources"])];
+
+    const nameLower = category.name.toLowerCase();
+    const slugSpaced = category.slug.replace(/-/g, " ");
+    const phrases = [
+      nameLower,
+      `${slugSpaced} resources`,
+      `${slugSpaced} guides`,
+      `${slugSpaced} articles`,
+      ...(boost.phrases ?? []),
+    ];
+
+    const keywords = [
+      slugSpaced,
+      nameLower,
+      category.slug,
+      ...(boost.keywords ?? []),
+    ];
+
+    return {
+      id: `blog-category:${category.slug}`,
+      source: `blog category — ${category.name}`,
+      topics,
+      phrases: [...new Set(phrases)],
+      keywords: [...new Set(keywords)],
+      text: buildCategoryChunkText(
+        category.slug,
+        category.name,
+        category.description,
+        postCount,
+        recommendedTitles,
+        topTitles,
+      ),
     };
   });
 }

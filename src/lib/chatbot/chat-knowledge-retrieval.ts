@@ -12,6 +12,17 @@ const MAX_SNIPPETS = 5;
 const MAX_CONTEXT_CHARS = 2800;
 const MAX_TOKEN_OVERLAP_BONUS = 15;
 
+const RESOURCE_INTENT_TERMS = [
+  "resources",
+  "guides",
+  "articles",
+  "what should i read",
+  "do you have",
+  "library",
+] as const;
+
+const CATEGORY_HUB_RESOURCE_BOOST = 6;
+
 const STOP_WORDS = new Set([
   "a",
   "an",
@@ -83,6 +94,8 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
   billing: ["invoice", "payment", "billed", "billing", "paid"],
   platform: ["portal", "platform", "tracking", "communication"],
   contractor_fit: ["contractor", "restoration", "roofing", "fit"],
+  water_damage_claims: ["water damage", "water mitigation", "mitigation", "drying"],
+  fire_damage_claims: ["fire damage", "fire claim", "smoke", "soot"],
   dry_logs: ["dry log", "drying log", "moisture log", "dry standard"],
   moisture_mapping: ["moisture map", "mapping", "moisture mapping"],
   denial_recovery: [
@@ -111,6 +124,17 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
   ],
   monitoring: ["monitoring visit", "daily monitoring", "monitoring log"],
   op_claims: ["o&p", "overhead", "profit", "overhead and profit"],
+  blog_resources: [
+    "resources",
+    "guides",
+    "articles",
+    "documentation guides",
+    "what should i read",
+    "do you have",
+    "library",
+    "blog",
+  ],
+  mitigation: ["mitigation", "water mitigation", "drying", "restoration"],
 };
 
 function matchesWordBoundary(input: string, token: string): boolean {
@@ -179,6 +203,13 @@ function scoreChunk(
 
   if (structuredScore >= KEYWORD_SCORE) {
     score += overlapBonus;
+  }
+
+  if (
+    chunk.id.startsWith("blog-category:") &&
+    RESOURCE_INTENT_TERMS.some((term) => normalizedMessage.includes(term))
+  ) {
+    score += CATEGORY_HUB_RESOURCE_BOOST;
   }
 
   return score;
@@ -343,6 +374,66 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
         (s) =>
           /xactimate|estimate review checklist/i.test(s.text) ||
           /xactimate estimate review/i.test(s.source),
+      ),
+  },
+  {
+    label: "water mitigation resources retrieves category hub",
+    message: "water mitigation resources",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /water-damage-claims|blog category — water damage claims/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "fire damage guides retrieves category hub",
+    message: "fire damage guides",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /fire-damage-claims|blog category — fire damage claims/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "xactimate articles retrieves category hub",
+    message: "xactimate articles",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /blog category — xactimate|\/resources\/blog\/category\/xactimate/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "denied supplement resources retrieves recovery context",
+    message: "denied supplement resources",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /claim-recovery|denial recovery|supplement denial|blog category — claim recovery/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "claim documentation guides retrieves category hub",
+    message: "claim documentation guides",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /claim-documentation|blog category — claim documentation/i.test(
+            `${s.text} ${s.source}`,
+          ),
       ),
   },
 ];

@@ -7,7 +7,7 @@ import type { FaqItem } from "@/lib/faq-page";
 import { getCategoryTitle } from "@/lib/faq-page";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 import { FAQ_ITEMS } from "@/lib/faq-data";
-import { blogToChunks } from "./chat-knowledge-blog";
+import { blogToChunks, blogCategoryToChunks } from "./chat-knowledge-blog";
 import { AI_CLAIM_WORKFLOW } from "@/lib/ai-claim-analysis-page";
 import type { MarketingPageConfig } from "@/lib/marketing-pages";
 import {
@@ -192,6 +192,7 @@ function platformAiChunks(): ChatKnowledgeChunk[] {
 export const CHAT_KNOWLEDGE_CHUNKS: readonly ChatKnowledgeChunk[] = [
   ...faqToChunks(FAQ_ITEMS),
   ...blogToChunks(BLOG_POSTS),
+  ...blogCategoryToChunks(),
   ...pageToChunks(pricingPage, ["pricing", "billing"], [
     "pricing",
     "fee",

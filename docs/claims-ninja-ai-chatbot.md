@@ -143,11 +143,17 @@ Chunks are built at module load from existing site exports (single source of tru
 |---|---|
 | `src/lib/faq-data.ts` | Full FAQ library (~81 Q&A items) |
 | `src/lib/blog-posts/index.ts` | Blog articles via `chat-knowledge-blog.ts` (compact excerpts + headings, not full posts) |
+| `src/lib/blog-categories.ts` | Category hub summaries via `blogCategoryToChunks()` (metadata + article titles, not full posts) |
 | `src/lib/marketing-pages.ts` | Pricing, platform, billing, AI analysis, about, solutions pages |
 | `src/lib/platform-overview.ts` | Platform hero, pillars, AI capabilities |
 | `src/lib/ai-claim-analysis-page.ts` | AI workflow cards |
 
-Blog chunks are built by `src/lib/chatbot/chat-knowledge-blog.ts`: one chunk per post with title, category, tags, truncated excerpt, up to eight section headings, and URL. Full article bodies are not injected — retrieval caps at five snippets and ~2800 characters per request.
+Blog chunks are built by `src/lib/chatbot/chat-knowledge-blog.ts`:
+
+- **Article chunks** (`blogToChunks`): one chunk per post with title, category, tags, truncated excerpt, up to eight section headings, and URL.
+- **Category hub chunks** (`blogCategoryToChunks`): one chunk per blog category with name, slug, description, hub URL, post count, recommended/top article titles (titles only), and a short cluster summary. Zero-post categories (e.g. Public Adjusters) omit article lists and state honestly that no articles are published yet.
+
+Full article bodies are not injected — retrieval caps at five snippets and ~2800 characters per request.
 
 To expand chatbot knowledge, edit FAQ/marketing source files or add blog posts to the registry — chunks rebuild on deploy. No separate knowledge CMS yet.
 
@@ -175,7 +181,9 @@ Pricing accuracy (15% documented increase, 4% RCV in qualifying no-estimate scen
 npm run test:chat-knowledge
 ```
 
-Example questions covered: pricing, billing, supplements, AI analysis, public adjuster, dry log documentation, fire denial recovery, Xactimate checklist, off-topic (no snippets).
+Example questions covered: pricing, billing, supplements, AI analysis, public adjuster, dry log documentation, fire denial recovery, Xactimate checklist, water mitigation resources, fire damage guides, Xactimate articles, denied supplement resources, claim documentation guides, off-topic (no snippets).
+
+Category hub retrieval uses the `blog_resources` topic plus per-category phrase boosts (e.g. "water mitigation resources" → Water Damage Claims hub).
 
 ### FAQ bridge pattern
 
