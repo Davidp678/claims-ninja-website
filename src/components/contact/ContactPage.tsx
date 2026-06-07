@@ -1,23 +1,13 @@
 import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
 import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
+import { ContactInfoSection } from "@/components/contact/ContactInfoSection";
 import { ContactInquirySection } from "@/components/contact/ContactInquirySection";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { Section } from "@/components/ui/Section";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ABOUT_CARD_CLASS } from "@/lib/about-page";
-import { CTA_LINKS, SITE } from "@/lib/constants";
-import {
-  CONTACT_HERO,
-  CONTACT_INFO,
-} from "@/lib/contact-page";
+import { CTA_LINKS } from "@/lib/constants";
+import { CONTACT_HERO } from "@/lib/contact-page";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
-import { cn } from "@/lib/cn";
-
-function phoneHref(phone: string): string {
-  return `tel:${phone.replace(/\D/g, "")}`;
-}
 
 export function ContactPage() {
   return (
@@ -55,51 +45,7 @@ export function ContactPage() {
 
       <ContactInquirySection />
 
-      <Section bordered compact>
-        <SectionHeading
-          eyebrow={CONTACT_INFO.eyebrow}
-          title={CONTACT_INFO.title}
-          description={CONTACT_INFO.description}
-          align="left"
-          className="max-w-3xl"
-        />
-        <div
-          className={cn(
-            ABOUT_CARD_CLASS,
-            "mt-10 max-w-2xl border-brand-red/25 bg-brand-black/60 p-8 sm:p-10",
-            "shadow-[0_0_64px_-24px_rgba(220,38,38,0.35)]",
-          )}
-        >
-          <dl className="space-y-6">
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                Phone
-              </dt>
-              <dd className="mt-2">
-                <a
-                  href={phoneHref(SITE.phone)}
-                  className="font-display text-2xl font-semibold text-white transition-colors hover:text-brand-red-light sm:text-3xl"
-                >
-                  {SITE.phone}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                Email
-              </dt>
-              <dd className="mt-2">
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="text-lg font-medium text-white transition-colors hover:text-brand-red-light sm:text-xl"
-                >
-                  {SITE.email}
-                </a>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </Section>
+      <ContactInfoSection />
 
       <SiteFaqSection {...SITE_FAQ.contact} />
 

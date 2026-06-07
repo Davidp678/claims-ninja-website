@@ -79,3 +79,20 @@ export const CONTACT_INFO = {
   description:
     "Most inquiries receive a response within one business day.",
 } as const;
+
+export const CONTACT_INFO_METHODS = [
+  {
+    id: "phone",
+    label: "Call Claims Ninja",
+    helper:
+      "Speak with our team about claim reviews, partnerships, or active file support.",
+    hrefKind: "tel" as const,
+  },
+  {
+    id: "email",
+    label: "Email Claims Ninja",
+    helper:
+      "Send claim questions, partnership inquiries, or general requests.",
+    hrefKind: "mailto" as const,
+  },
+] as const;
