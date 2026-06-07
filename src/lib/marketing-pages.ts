@@ -451,27 +451,31 @@ export const aboutPage = page({
   path: "/about",
   eyebrow: "Company",
   title: "About Claims Ninja",
-  metaTitle: "About",
+  metaTitle: "About Claims Ninja",
   metaDescription:
-    "Claims Ninja helps restoration contractors and roofing companies run claims like a professional operation with expert support and management technology.",
+    "Claims Ninja is the contractor claims operations platform—expert insurance claim support, claims management technology, and workflows for restoration and roofing contractors nationwide.",
   description:
-    "We help restoration contractors, roofing companies, and multi-location operators run claims like a professional operation—not a side task.",
+    "Founded in 2024, Claims Ninja gives contractors a reliable claims operation—expertise, systems, workflows, and technology to support claim operations at scale.",
   features: [
     {
-      title: "Contractor-first mission",
-      description: "Built by operators who understand production schedules and carrier pressure.",
+      title: "Mission",
+      description:
+        "Help contractors scale without building an internal claims department.",
     },
     {
-      title: "Expert + platform",
-      description: "Technology accelerates triage; people drive negotiation and outcomes.",
+      title: "Vision",
+      description:
+        "Create the most trusted claims operations platform in the industry.",
     },
     {
-      title: "Nationwide support",
-      description: "Scale supplement and PA capabilities without hiring a full in-house team.",
+      title: "Approach",
+      description:
+        "Combine technology, process, and expert claim support.",
     },
     {
-      title: "Long-term partnerships",
-      description: "We grow with your book of business and operational maturity.",
+      title: "Impact",
+      description:
+        "Support contractors with systems that improve efficiency, visibility, and recovery opportunities.",
     },
   ],
 });

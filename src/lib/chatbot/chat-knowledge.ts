@@ -9,6 +9,7 @@ import { BLOG_POSTS } from "@/lib/blog-posts";
 import { FAQ_ITEMS } from "@/lib/faq-data";
 import { blogToChunks, blogCategoryToChunks } from "./chat-knowledge-blog";
 import { guideToChunks, guideCategoryToChunks } from "./chat-knowledge-guides";
+import { aboutPageToChunks } from "./chat-knowledge-about";
 import { resultsInsightsToChunks } from "./chat-knowledge-results-insights";
 import { AI_CLAIM_WORKFLOW } from "@/lib/ai-claim-analysis-page";
 import { CLAIM_GUIDES } from "@/lib/guides";
@@ -22,7 +23,6 @@ import { FIRE_DAMAGE_HERO, FIRE_DAMAGE_SEGMENTS, FIRE_DAMAGE_WORKFLOW } from "@/
 import { MOLD_HERO, MOLD_SEGMENTS, MOLD_WORKFLOW } from "@/lib/mold-page";
 import type { MarketingPageConfig } from "@/lib/marketing-pages";
 import {
-  aboutPage,
   aiClaimAnalysisPage,
   billingPaymentsPage,
   caseStudiesPage,
@@ -470,11 +470,7 @@ export const CHAT_KNOWLEDGE_CHUNKS: readonly ChatKnowledgeChunk[] = [
     ],
   ),
   ...companyAndToolChunks(),
-  ...pageToChunks(aboutPage, ["how_it_works", "onboarding"], [
-    "about",
-    "contractor",
-    "partnership",
-  ]),
+  ...aboutPageToChunks(),
   ...solutionPageChunks(
     roofingPage,
     {
