@@ -48,6 +48,38 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     answer:
       "Yes. Most partners continue using Xactimate, Symbility, or internal estimating workflows. Claims Ninja reviews and organizes what you produce — we do not require you to abandon your field tools or rewrite estimates from scratch.",
   },
+  {
+    id: "partner-network-strategic-partners",
+    category: "getting_started",
+    question: "Who are Claims Ninja's strategic partners?",
+    answer:
+      "Claims Ninja's strategic partner network includes ProfileGorilla (contractor reputation and review management), CORE Group (restoration industry leadership network), 911 Restoration Corporate (preferred claims settlement vendor relationship), Daylit (authorized contractor financing partner), and Morgan & Morgan (exclusive legal partner). Each partner supports a different operational need — from claim recovery and cash flow to legal escalation and business growth. Learn more at /partner-network.",
+    relatedLinks: [{ label: "Partner network", href: "/partner-network" }],
+  },
+  {
+    id: "partner-network-financing",
+    category: "getting_started",
+    question: "Can Claims Ninja connect contractors with financing resources?",
+    answer:
+      "Claims Ninja is an authorized partner with Daylit, which offers short-term financing assistance for contractor partners. When project timing, material needs, payroll, or working capital require additional support, Claims Ninja may help connect qualified contractor partners with Daylit financing resources — subject to partner approval and qualification. Financing is not guaranteed and depends on individual circumstances.",
+    relatedLinks: [{ label: "Partner network", href: "/partner-network" }],
+  },
+  {
+    id: "partner-network-legal-partner",
+    category: "getting_started",
+    question: "Does Claims Ninja have a legal partner?",
+    answer:
+      "Yes. Morgan & Morgan is Claims Ninja's exclusive legal partner. When a claim escalates beyond traditional supplement negotiation, legal support may become appropriate. Qualified clients may access preferred partner-rate legal resources when a claim requires legal escalation — such as bad faith disputes, coverage disagreements, or significant underpayment situations. Legal outcomes are not guaranteed.",
+    relatedLinks: [{ label: "Partner network", href: "/partner-network" }],
+  },
+  {
+    id: "partner-network-911-restoration",
+    category: "getting_started",
+    question: "What does the 911 Restoration partnership mean?",
+    answer:
+      "Claims Ninja serves as a preferred claims settlement resource for 911 Restoration Corporate, franchise directors, national leadership, and participating franchise operators. This relationship supports supplement strategy, documentation quality, carrier communication, and claim recovery opportunities across the 911 Restoration system.",
+    relatedLinks: [{ label: "Partner network", href: "/partner-network" }],
+  },
 
   // Pricing (14)
   {

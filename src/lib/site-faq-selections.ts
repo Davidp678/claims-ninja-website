@@ -195,11 +195,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
   partnerNetwork: {
     topic: "partnering with Claims Ninja",
     faqIds: [
+      "partner-network-strategic-partners",
+      "partner-network-financing",
+      "partner-network-legal-partner",
+      "partner-network-911-restoration",
       "getting-started-who-for",
-      "supplements-whats-included",
-      "carrier-how-handled",
-      "pricing-volume",
-      "getting-started-field-vs-support",
     ],
   },
   reviews: {

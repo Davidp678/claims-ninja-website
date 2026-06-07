@@ -1,22 +1,13 @@
-import { MarketingPageShell } from "@/components/marketing/MarketingPageShell";
+import { PartnerNetworkPage } from "@/components/partner-network/PartnerNetworkPage";
+import { PARTNER_NETWORK_META } from "@/lib/partner-network-page";
 import { pageMetadata } from "@/lib/metadata";
-import { partnerNetworkPage } from "@/lib/marketing-pages";
-import { SITE_FAQ } from "@/lib/site-faq-selections";
 
 export const metadata = pageMetadata({
-  title: partnerNetworkPage.metaTitle,
-  description: partnerNetworkPage.metaDescription,
-  path: partnerNetworkPage.path,
+  title: PARTNER_NETWORK_META.metaTitle,
+  description: PARTNER_NETWORK_META.metaDescription,
+  path: PARTNER_NETWORK_META.path,
 });
 
-export default function PartnerNetworkPage() {
-  return (
-    <MarketingPageShell
-      eyebrow={partnerNetworkPage.eyebrow}
-      title={partnerNetworkPage.title}
-      description={partnerNetworkPage.description}
-      features={partnerNetworkPage.features}
-      siteFaq={SITE_FAQ.partnerNetwork}
-    />
-  );
+export default function PartnerNetworkRoute() {
+  return <PartnerNetworkPage />;
 }

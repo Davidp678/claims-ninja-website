@@ -483,26 +483,13 @@ export const aboutPage = page({
 export const partnerNetworkPage = page({
   path: "/partner-network",
   eyebrow: "Company",
-  title: "Partner Network",
-  metaTitle: "Partner Network",
+  title: "Strategic partner network",
+  metaTitle: "Partner Network | Strategic Industry Partnerships | The Claims Ninja",
   metaDescription:
-    "Claims Ninja partner network connects restoration and roofing contractors with vetted collaborators for complex, trade-aligned claim outcomes.",
+    "Explore the Claims Ninja partner network, including ProfileGorilla, CORE Group, 911 Restoration, Daylit, and Morgan & Morgan. Trusted resources for contractors, restoration companies, and insurance claim professionals.",
   description:
-    "Trusted partners across restoration, roofing, and adjacent trades who work with Claims Ninja on complex claims.",
-  features: [
-    {
-      title: "Vetted collaborators",
-      description: "Relationships that strengthen outcomes on large or specialized losses.",
-    },
-    {
-      title: "Trade alignment",
-      description: "Partners who understand documentation standards carriers require.",
-    },
-    {
-      title: "Referral integrity",
-      description: "Introductions that serve the contractor and policyholder—not noise.",
-    },
-  ],
+    "Claims Ninja connects contractors with trusted organizations that strengthen claim outcomes, accelerate cash flow, provide legal resources, and support operational growth.",
+  features: [],
 });
 
 export const reviewsPage = page({

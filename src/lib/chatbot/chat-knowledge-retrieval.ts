@@ -710,6 +710,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
         ),
       ),
   },
+  {
+    label: "partner network overview",
+    message: "Who are Claims Ninja's partners?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /partner network|ProfileGorilla|CORE Group|Daylit|Morgan & Morgan|911 Restoration/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "legal partner",
+    message: "Does Claims Ninja have a legal partner?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /Morgan & Morgan|legal partner|legal escalation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "contractor financing",
+    message: "Can Claims Ninja help with contractor financing?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /Daylit|financing|cash flow|working capital/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "daylit partnership",
+    message: "What is the Daylit partnership?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /Daylit|authorized partner|short-term financing/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "911 restoration partnership",
+    message: "Is Claims Ninja partnered with 911 Restoration?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /911 Restoration|preferred claims settlement|franchise/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "profilegorilla partner",
+    message: "What is ProfileGorilla?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /ProfileGorilla|reputation|review management/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
 ];
 
 export function runKnowledgeRetrievalChecks(): {
