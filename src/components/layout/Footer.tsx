@@ -56,9 +56,10 @@ export function Footer() {
               The Claims Ninja ensures you get maximum compensation. As an
               insurance supplementing company, we handle everything: thorough
               claim assessments, contractor settlement agreements, detailed
-              documentation, and expert negotiation with insurance companies. If
-              needed, we provide appraisal representation, advocating for your
-              best interests.
+              documentation, and expert negotiation with insurance companies. When
+              additional advocacy is required, our Public Adjuster team provides
+              policyholder representation and strategic claim support to help achieve
+              the best possible outcome.
             </p>
           </div>
 
