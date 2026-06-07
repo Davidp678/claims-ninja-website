@@ -23,11 +23,11 @@ import { cn } from "@/lib/cn";
 
 function PricingRateRowItem({ range, rate }: PricingRateRow) {
   return (
-    <div className="flex flex-col gap-1 border-t border-white/10 py-4 first:border-t-0 first:pt-0 last:pb-0 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
-      <span className="text-sm leading-relaxed text-zinc-300 sm:max-w-[55%]">
+    <div className="grid grid-cols-1 gap-1 border-t border-white/10 py-4 first:border-t-0 first:pt-0 last:pb-0 sm:grid-cols-[minmax(0,1fr)_minmax(14rem,1.2fr)] sm:items-start sm:gap-x-6 sm:gap-y-1">
+      <span className="min-w-0 text-sm leading-relaxed text-zinc-300">
         {range}
       </span>
-      <span className="shrink-0 text-sm font-semibold text-brand-red-light sm:text-right">
+      <span className="min-w-0 break-words text-sm font-semibold leading-relaxed text-brand-red-light sm:text-right">
         {rate}
       </span>
     </div>
@@ -49,7 +49,7 @@ function PricingRateCard({
     <div
       className={cn(
         ABOUT_CARD_CLASS,
-        "relative overflow-hidden p-6 sm:p-8",
+        "relative p-6 sm:p-8",
         className,
       )}
     >
