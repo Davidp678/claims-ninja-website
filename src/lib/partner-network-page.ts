@@ -165,3 +165,16 @@ export const PARTNER_NETWORK_BECOME = {
   ctaLabel: "Discuss partnership opportunities",
   ctaHref: "/contact",
 } as const;
+
+export const PARTNER_NETWORK_POLICY = {
+  optionalUse:
+    "Partner network services are optional. Contractors can use Claims Ninja for core claim support without using any network partner. Network partners are available when they may add value to a contractor's operation.",
+  selectionCriteria:
+    "Strategic partners are selected because they solve real contractor problems — including financing, legal escalation, reputation management, franchise operations, and restoration industry leadership. Claims Ninja prioritizes quality, fit, and measurable contractor value over partner volume.",
+  introductions:
+    "Contractors may request an introduction to a network partner when appropriate. Claims Ninja may facilitate introductions for qualified contractor partners, subject to partner approval and qualification. Partner use is independent of Claims Ninja fee agreements.",
+  eligibility:
+    "Network partner resources are primarily positioned for Claims Ninja contractor partners. Access varies by partner, engagement, and qualification — not every contractor automatically qualifies for financing, legal, or other partner services.",
+  goodPartnerTypes:
+    "Good strategic partner candidates include organizations that support contractor growth, claim outcomes, financing, legal resources, technology, operational excellence, reputation management, or restoration industry leadership.",
+} as const;

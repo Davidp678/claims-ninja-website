@@ -196,10 +196,14 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
     topic: "partnering with Claims Ninja",
     faqIds: [
       "partner-network-strategic-partners",
+      "partner-network-services-required",
+      "partner-network-how-selected",
+      "partner-network-request-introduction",
+      "partner-network-who-eligible",
       "partner-network-financing",
       "partner-network-legal-partner",
       "partner-network-911-restoration",
-      "getting-started-who-for",
+      "partner-network-become-partner",
     ],
   },
   reviews: {

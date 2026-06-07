@@ -35,6 +35,40 @@ const PROCEDURAL_INTENT_TERMS = [
   "on-site",
 ] as const;
 
+const PARTNER_CHUNK_INTENT_TERMS: Record<string, readonly string[]> = {
+  "partner-network:page": [
+    "partner network",
+    "strategic partners",
+    "who are claims ninja partners",
+    "claims ninja partner network",
+  ],
+  "partner-network:policies": [
+    "partner services required",
+    "do i have to use partners",
+    "request an introduction",
+    "who can use network partners",
+    "how are partners selected",
+    "network partners work with all contractors",
+  ],
+  "partner-network:become-partner": [
+    "become a partner",
+    "become a claims ninja partner",
+    "strategic partner application",
+    "discuss partnership opportunities",
+  ],
+  "partner-network:profile-gorilla": ["profilegorilla", "profile gorilla"],
+  "partner-network:core-group": ["core group"],
+  "partner-network:911-restoration": ["911 restoration"],
+  "partner-network:daylit": ["daylit", "contractor financing"],
+  "partner-network:morgan-morgan": [
+    "morgan and morgan",
+    "morgan & morgan",
+    "legal partner",
+  ],
+};
+
+const PARTNER_CHUNK_BOOST = 10;
+
 const CATEGORY_HUB_RESOURCE_BOOST = 6;
 
 const STOP_WORDS = new Set([
@@ -254,6 +288,13 @@ function scoreChunk(
     PROCEDURAL_INTENT_TERMS.some((term) => normalizedMessage.includes(term))
   ) {
     score += 10;
+  }
+
+  const partnerIntentTerms = PARTNER_CHUNK_INTENT_TERMS[chunk.id];
+  if (
+    partnerIntentTerms?.some((term) => normalizedMessage.includes(term))
+  ) {
+    score += PARTNER_CHUNK_BOOST;
   }
 
   return score;
@@ -772,6 +813,39 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /ProfileGorilla|reputation|review management/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "core group partner",
+    message: "What is CORE Group?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /CORE Group|restoration industry leadership|operator network/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "become a partner",
+    message: "Can I become a Claims Ninja partner?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /become a strategic partner|partnership opportunities|\/contact/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "partner services required",
+    message: "Are partner services required?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /optional|not required|partner services/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

@@ -80,6 +80,49 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Claims Ninja serves as a preferred claims settlement resource for 911 Restoration Corporate, franchise directors, national leadership, and participating franchise operators. This relationship supports supplement strategy, documentation quality, carrier communication, and claim recovery opportunities across the 911 Restoration system.",
     relatedLinks: [{ label: "Partner network", href: "/partner-network" }],
   },
+  {
+    id: "partner-network-services-required",
+    category: "getting_started",
+    question: "Are partner network services required to work with Claims Ninja?",
+    answer:
+      "No. Core Claims Ninja services — documentation, supplements, carrier communication support, and claim workflow strategy — stand on their own. The partner network provides optional resources for financing, legal escalation, reputation growth, and operational support when they may add value to your operation.",
+    relatedLinks: [{ label: "Partner network", href: "/partner-network" }],
+  },
+  {
+    id: "partner-network-how-selected",
+    category: "getting_started",
+    question: "How does Claims Ninja select strategic partners?",
+    answer:
+      "Every partner in the network is selected because they solve real problems contractors face — across financing, legal escalation, reputation management, franchise operations, and restoration industry leadership. Claims Ninja prioritizes quality, fit, and measurable contractor value over partner volume.",
+    relatedLinks: [{ label: "Partner network", href: "/partner-network" }],
+  },
+  {
+    id: "partner-network-request-introduction",
+    category: "getting_started",
+    question: "Can contractors request an introduction to a network partner?",
+    answer:
+      "Yes, when appropriate. Contractors working with Claims Ninja may request an introduction to a network partner. Claims Ninja may facilitate introductions for qualified contractor partners — subject to partner approval and qualification. Using a network partner is optional and separate from your Claims Ninja fee agreement.",
+    relatedLinks: [{ label: "Partner network", href: "/partner-network" }],
+  },
+  {
+    id: "partner-network-who-eligible",
+    category: "getting_started",
+    question: "Do network partners work with all contractors or only Claims Ninja clients?",
+    answer:
+      "Network partner resources are primarily positioned for Claims Ninja contractor partners. Access varies by partner, engagement, and qualification — financing, legal, and other partner services are not automatically available to every contractor.",
+    relatedLinks: [{ label: "Partner network", href: "/partner-network" }],
+  },
+  {
+    id: "partner-network-become-partner",
+    category: "getting_started",
+    question: "Can my company become a Claims Ninja strategic partner?",
+    answer:
+      "Claims Ninja is open to exploring strategic relationships with organizations that support contractor growth, claim outcomes, financing, legal resources, technology, or operational excellence. If your company serves restoration companies, roofing operators, or insurance claim professionals, reach out through /contact to discuss partnership opportunities.",
+    relatedLinks: [
+      { label: "Partner network", href: "/partner-network" },
+      { label: "Contact us", href: "/contact" },
+    ],
+  },
 
   // Pricing (14)
   {
