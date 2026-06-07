@@ -519,28 +519,32 @@ export const contactPage = page({
 export const pricingPage = page({
   path: "/pricing",
   eyebrow: "Pricing",
-  title: "Pricing built for contractor operations",
+  title: "Transparent pricing for claim operations",
   metaTitle: "Pricing",
   metaDescription:
-    "Claims Ninja pricing aligns to your claim volume and service level with transparent fees, volume tiers, and ROI-focused partnership models for contractors.",
+    "Transparent Claims Ninja pricing for estimate writing, supplement support, insurance negotiation, and advanced claim services — structured by claim stage and value recovered.",
   description:
-    "Flexible partnership models aligned to claim volume, service level, and how much expert support your team needs.",
+    "Pricing is structured around the work required, the claim stage, and the value recovered. Whether you need estimate writing, supplement support, negotiation, or advanced claim services, Claims Ninja keeps pricing clear before work begins.",
   features: [
     {
-      title: "Volume-based tiers",
-      description: "Structure that scales with your book of business—not one-size-fits-all.",
+      title: "Estimate writing",
+      description:
+        "Tiered rates by estimate value — from a $100 minimum on smaller files to percentage-based pricing on larger scopes.",
     },
     {
-      title: "Transparent fees",
-      description: "Understand what is included in platform access versus per-claim support.",
+      title: "Supplement support",
+      description:
+        "15% of documented increase approved by the carrier from submitted supplemental scope.",
     },
     {
-      title: "ROI-focused",
-      description: "Designed so recovery uplift and operational efficiency justify investment.",
+      title: "Insurance negotiation",
+      description:
+        "$150 minimum; 15% of documented settlement increase when a carrier estimate exists, or 4% of final RCV when none has been provided.",
     },
     {
-      title: "Custom enterprise",
-      description: "Multi-location operators can discuss dedicated workflows and SLAs.",
+      title: "Advanced claim support",
+      description:
+        "Appraisal services, EagleView reports, and payment processing options with clear pass-through or convenience fees.",
     },
   ],
 });

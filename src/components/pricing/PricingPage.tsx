@@ -1,0 +1,248 @@
+import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
+import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
+import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ABOUT_CARD_CLASS } from "@/lib/about-page";
+import { CTA_LINKS } from "@/lib/constants";
+import type { PricingRateRow } from "@/lib/pricing-page";
+import {
+  PRICING_ADDITIONAL_SERVICES,
+  PRICING_BILLING,
+  PRICING_ESTIMATE_WRITING,
+  PRICING_HERO,
+  PRICING_NEGOTIATION,
+  PRICING_NEGOTIATION_SUPPLEMENT_SECTION,
+  PRICING_OVERVIEW,
+  PRICING_SUPPLEMENT,
+} from "@/lib/pricing-page";
+import { SITE_FAQ } from "@/lib/site-faq-selections";
+import { cn } from "@/lib/cn";
+
+function PricingRateRowItem({ range, rate }: PricingRateRow) {
+  return (
+    <div className="flex flex-col gap-1 border-t border-white/10 py-4 first:border-t-0 first:pt-0 last:pb-0 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+      <span className="text-sm leading-relaxed text-zinc-300 sm:max-w-[55%]">
+        {range}
+      </span>
+      <span className="shrink-0 text-sm font-semibold text-brand-red-light sm:text-right">
+        {rate}
+      </span>
+    </div>
+  );
+}
+
+function PricingRateCard({
+  title,
+  rows,
+  invoiceNote,
+  className,
+}: {
+  title: string;
+  rows: readonly PricingRateRow[];
+  invoiceNote?: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        ABOUT_CARD_CLASS,
+        "relative overflow-hidden p-6 sm:p-8",
+        className,
+      )}
+    >
+      <span
+        className="absolute left-0 top-6 h-10 w-0.5 rounded-full bg-brand-red/70"
+        aria-hidden
+      />
+      <h3 className="pl-4 font-display text-xl font-semibold text-white">
+        {title}
+      </h3>
+      <div className="mt-6 pl-4">
+        {rows.map((row) => (
+          <PricingRateRowItem key={row.range} {...row} />
+        ))}
+      </div>
+      {invoiceNote ? (
+        <p className="mt-6 border-t border-white/10 pl-4 pt-5 text-sm leading-relaxed text-zinc-400">
+          {invoiceNote}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+function BillingStepLabel({ label }: { label: string }) {
+  return (
+    <span className="font-display text-2xl font-semibold text-brand-red/75 transition-colors group-hover:text-brand-red-light sm:text-3xl">
+      {label}
+    </span>
+  );
+}
+
+export function PricingPage() {
+  return (
+    <>
+      <section className="relative overflow-hidden bg-brand-black">
+        <HeroBackdrop />
+        <Container className="relative z-10 pb-14 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
+          <div className="max-w-3xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
+              {PRICING_HERO.eyebrow}
+            </p>
+            <h1 className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+              {PRICING_HERO.title}
+            </h1>
+            <p className="mt-5 text-lg leading-relaxed text-zinc-300 sm:text-xl">
+              {PRICING_HERO.description}
+            </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <Button
+                href={CTA_LINKS.onboarding}
+                size="md"
+                className="whitespace-nowrap"
+                external
+              >
+                {PRICING_HERO.primaryCtaLabel}
+              </Button>
+              <Button
+                href={CTA_LINKS.schedule}
+                variant="secondary"
+                size="md"
+                className="whitespace-nowrap"
+                external
+              >
+                {PRICING_HERO.secondaryCtaLabel}
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <Section bordered compact>
+        <SectionHeading
+          eyebrow={PRICING_OVERVIEW.eyebrow}
+          title={PRICING_OVERVIEW.title}
+          description={PRICING_OVERVIEW.description}
+          align="left"
+          className="max-w-3xl"
+        />
+        <ul className="mt-14 grid gap-6 sm:grid-cols-2">
+          {PRICING_OVERVIEW.cards.map((card) => (
+            <li key={card.title} className={cn(ABOUT_CARD_CLASS, "group h-full")}>
+              <h3 className="font-display text-xl font-semibold text-white transition-colors group-hover:text-brand-red-light">
+                {card.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                {card.description}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section bordered compact className="bg-brand-elevated">
+        <SectionHeading
+          eyebrow={PRICING_ESTIMATE_WRITING.eyebrow}
+          title={PRICING_ESTIMATE_WRITING.title}
+          description={PRICING_ESTIMATE_WRITING.intro}
+          align="left"
+          className="max-w-3xl"
+        />
+        <div className="mt-10 max-w-3xl">
+          <PricingRateCard
+            title={PRICING_ESTIMATE_WRITING.title}
+            rows={PRICING_ESTIMATE_WRITING.rows}
+            invoiceNote={PRICING_ESTIMATE_WRITING.invoiceNote}
+          />
+        </div>
+      </Section>
+
+      <Section bordered compact>
+        <SectionHeading
+          eyebrow={PRICING_NEGOTIATION_SUPPLEMENT_SECTION.eyebrow}
+          title={PRICING_NEGOTIATION_SUPPLEMENT_SECTION.title}
+          description={PRICING_NEGOTIATION_SUPPLEMENT_SECTION.description}
+          align="left"
+          className="max-w-3xl"
+        />
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <PricingRateCard
+            title={PRICING_NEGOTIATION.title}
+            rows={PRICING_NEGOTIATION.rows}
+            invoiceNote={PRICING_NEGOTIATION.invoiceNote}
+          />
+          <PricingRateCard
+            title={PRICING_SUPPLEMENT.title}
+            rows={PRICING_SUPPLEMENT.rows}
+            invoiceNote={PRICING_SUPPLEMENT.invoiceNote}
+          />
+        </div>
+        <p className="mt-6 max-w-3xl text-sm leading-relaxed text-zinc-400">
+          {PRICING_NEGOTIATION_SUPPLEMENT_SECTION.sharedInvoiceNote}
+        </p>
+      </Section>
+
+      <Section bordered compact className="bg-brand-elevated">
+        <SectionHeading
+          eyebrow={PRICING_ADDITIONAL_SERVICES.eyebrow}
+          title={PRICING_ADDITIONAL_SERVICES.title}
+          description={PRICING_ADDITIONAL_SERVICES.description}
+          align="left"
+          className="max-w-3xl"
+        />
+        <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {PRICING_ADDITIONAL_SERVICES.services.map((service) => (
+            <li
+              key={service.title}
+              className={cn(
+                ABOUT_CARD_CLASS,
+                "group relative h-full overflow-hidden pl-7 pr-6 py-6 sm:py-7",
+              )}
+            >
+              <span
+                className="absolute left-0 top-6 h-10 w-0.5 rounded-full bg-brand-red/70"
+                aria-hidden
+              />
+              <h3 className="font-display text-lg font-semibold text-white transition-colors group-hover:text-brand-red-light">
+                {service.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                {service.description}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section bordered compact>
+        <SectionHeading
+          eyebrow={PRICING_BILLING.eyebrow}
+          title={PRICING_BILLING.title}
+          description={PRICING_BILLING.description}
+          align="left"
+          className="max-w-3xl"
+        />
+        <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
+          {PRICING_BILLING.steps.map((step) => (
+            <li key={step.label} className={cn("group h-full", ABOUT_CARD_CLASS)}>
+              <BillingStepLabel label={step.label} />
+              <h3 className="mt-4 font-display text-lg font-semibold text-white">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                {step.description}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      <SiteFaqSection {...SITE_FAQ.pricing} />
+
+      <MarketingCtaPanel />
+    </>
+  );
+}

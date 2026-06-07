@@ -26,6 +26,24 @@ describe("chat knowledge retrieval", () => {
     );
   });
 
+  it("returns estimate writing context for estimate writing questions", () => {
+    const result = retrieveKnowledgeSnippets(
+      "How much does estimate writing cost?",
+    );
+    assert.ok(result.snippets.length > 0);
+    assert.ok(
+      result.snippets.some((s) =>
+        /\$100|1\.25%|estimate writing/i.test(s.text),
+      ),
+    );
+  });
+
+  it("returns EagleView pricing context", () => {
+    const result = retrieveKnowledgeSnippets("What does an EagleView report cost?");
+    assert.ok(result.snippets.length > 0);
+    assert.ok(result.snippets.some((s) => /\$60|eagleview/i.test(s.text)));
+  });
+
   it("returns empty snippets for off-topic questions", () => {
     const result = retrieveKnowledgeSnippets("What's the weather?");
     assert.equal(result.snippets.length, 0);

@@ -117,7 +117,26 @@ export type RetrieveKnowledgeResult = {
 };
 
 const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
-  pricing: ["price", "fee", "cost", "charge", "rcv", "15%", "4%", "billing", "percent"],
+  pricing: [
+    "price",
+    "fee",
+    "cost",
+    "charge",
+    "rcv",
+    "15%",
+    "4%",
+    "billing",
+    "percent",
+    "estimate writing",
+    "eagleview",
+    "appraisal",
+    "ach",
+    "minimum",
+    "1.25%",
+    "0.75%",
+    "0.50%",
+    "invoice",
+  ],
   supplements: [
     "supplement",
     "line item",
@@ -394,6 +413,71 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
         (s) =>
           /bill|invoice|payment|fee/i.test(s.text) ||
           /billing|pricing/i.test(s.source),
+      ),
+  },
+  {
+    label: "estimate writing cost retrieves estimate writing rates",
+    message: "How much does estimate writing cost?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /\$100|1\.25%|estimate writing/i.test(s.text) ||
+          /estimate writing/i.test(s.source),
+      ),
+  },
+  {
+    label: "negotiation fee retrieves negotiation rates",
+    message: "What does Claims Ninja charge for negotiation?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) => /15%|\$150|negotiation/i.test(s.text) || /negotiation/i.test(s.source),
+      ),
+  },
+  {
+    label: "supplement cost retrieves supplement rates",
+    message: "What do supplements cost?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /15%|supplement|approved increase/i.test(s.text) ||
+          /supplement/i.test(s.source),
+      ),
+  },
+  {
+    label: "EagleView cost retrieves additional services context",
+    message: "What does an EagleView report cost?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) => /\$60|eagleview/i.test(s.text) || /additional services/i.test(s.source),
+      ),
+  },
+  {
+    label: "ACH payment retrieves free ACH context",
+    message: "Is ACH free?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) => /ach/i.test(s.text) && /free|no processing fee|no fee/i.test(s.text),
+      ),
+  },
+  {
+    label: "credit card fee retrieves convenience fee context",
+    message: "Are there credit card fees?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) => /3%|credit card|convenience fee/i.test(s.text)),
+  },
+  {
+    label: "invoices due retrieves immediate payment context",
+    message: "When are invoices due?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) => /immediately|once approved|invoice/i.test(s.text),
       ),
   },
   {

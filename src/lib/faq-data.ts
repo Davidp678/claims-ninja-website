@@ -148,14 +148,30 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
-  // Pricing (14)
+  // Pricing (18)
   {
     id: "pricing-fee-structure",
     category: "pricing",
     question: "How are partnership fees structured?",
     answer:
-      "Fees align to documented claim recovery, not flat retainers on every file. When a carrier estimate exists, the model is typically 15% of the documented increase. In certain no-estimate scenarios, a 4% of RCV structure may apply depending on claim type and scope. We confirm the fee basis before work begins.",
+      "Fees are structured by service type — not a single flat rate on every file. Estimate writing uses tiered rates by estimate value. Insurance negotiation uses a $150 minimum plus 15% of documented settlement increase when a carrier estimate exists, or 4% of final RCV when no carrier estimate has been provided. Supplement support is 15% of the documented increase approved from submitted supplemental scope. Additional services such as appraisal support or EagleView reports are quoted based on claim complexity.",
     featured: true,
+    relatedLinks: [{ label: "Pricing", href: "/pricing" }],
+  },
+  {
+    id: "pricing-estimate-writing",
+    category: "pricing",
+    question: "How are estimate writing fees calculated?",
+    answer:
+      "Estimate writing rates are tiered by estimate value: $100 minimum for estimate value under $12,500; 1.25% for $12,500–$100,000; 0.75% for $100,001–$200,000; and 0.50% for estimate value over $200,000. Estimate invoices are issued upon completion and client approval through the Client Portal.",
+    relatedLinks: [{ label: "Pricing", href: "/pricing" }],
+  },
+  {
+    id: "pricing-minimum-fees",
+    category: "pricing",
+    question: "Are there minimum fees?",
+    answer:
+      "Yes. Estimate writing has a $100 minimum for estimate value under $12,500. Insurance negotiation has a $150 minimum fee. These minimums apply before percentage-based calculations on larger scopes.",
     relatedLinks: [{ label: "Pricing", href: "/pricing" }],
   },
   {
@@ -163,7 +179,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "pricing",
     question: "When does the 15% documented increase fee apply?",
     answer:
-      "The 15% model generally applies when a carrier estimate or approved scope already exists and Claims Ninja helps document and pursue additional line items through supplements or negotiation. The fee is tied to documented settlement increase — not gross invoice totals.",
+      "The 15% fee applies to the documented settlement increase above the carrier's original estimate when a carrier estimate is available — through insurance negotiation. It also applies to supplement support: 15% of the documented increase approved by the insurance carrier from submitted supplemental scope. The fee is tied to carrier-approved increases, not gross invoice totals.",
     relatedLinks: [{ label: "Pricing", href: "/pricing" }],
   },
   {
@@ -171,7 +187,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "pricing",
     question: "When does the 4% of RCV fee apply?",
     answer:
-      "In select scenarios where no carrier estimate exists at intake, a 4% of replacement cost value (RCV) structure may apply depending on claim type and scope. This is evaluated case by case so your team understands the fee basis before proceeding.",
+      "The 4% of final RCV settlement fee applies to insurance negotiation when no carrier estimate has been provided by the carrier. This structure is used in qualifying no-estimate scenarios so your team understands the fee basis before work proceeds.",
     relatedLinks: [{ label: "Pricing", href: "/pricing" }],
   },
   {
@@ -179,14 +195,34 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "pricing",
     question: "When are fees invoiced?",
     answer:
-      "Invoicing is tied to documented recovery milestones — not simply opening a file. Your partnership agreement outlines when fees apply and how documented increases are calculated. Transparent reporting keeps your office aligned with what was recovered and what was billed.",
+      "Estimate invoices are issued upon completion and client approval through the Client Portal. Negotiation and supplement invoices are issued after successful negotiation and final approval. Invoices are due immediately once approved.",
+    relatedLinks: [{ label: "Pricing", href: "/pricing" }],
+  },
+  {
+    id: "pricing-payment-processing",
+    category: "pricing",
+    question: "Are there payment processing fees?",
+    answer:
+      "ACH is available as a free payment processing option — no processing fee. Credit card payments include a 3% convenience fee. Payment is processed through the method on file after invoice approval.",
+    relatedLinks: [
+      { label: "Pricing", href: "/pricing" },
+      { label: "Billing & Payments", href: "/platform/billing-payments" },
+    ],
+  },
+  {
+    id: "pricing-additional-services",
+    category: "pricing",
+    question: "What additional service fees may apply?",
+    answer:
+      "Appraisal services are typically $500–$1,200 depending on claim complexity and scope. EagleView reports, when required for roofing documentation, are $60 per project. These are quoted or pass-through fees separate from core estimate, negotiation, and supplement rates.",
+    relatedLinks: [{ label: "Pricing", href: "/pricing" }],
   },
   {
     id: "pricing-volume",
     category: "pricing",
     question: "Do you offer volume-based partnership tiers?",
     answer:
-      "Yes. Higher claim volume and broader service scope may qualify for adjusted partnership structures. We review your book, loss mix, and supplement needs during intake to recommend a tier that fits your operation.",
+      "Pricing is structured by service type and claim scope rather than generic volume tiers. Your team selects estimate writing, supplement support, negotiation, or advanced services as needed — with rates defined before work begins. Contact us to discuss how pricing applies across your book of business.",
     relatedLinks: [{ label: "Pricing", href: "/pricing" }],
   },
   {
@@ -201,15 +237,18 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "pricing",
     question: "How does Claims Ninja get paid?",
     answer:
-      "Claims Ninja is typically compensated through a percentage-based success fee tied to documented claim increases. Fee structures vary depending on claim type and engagement model.",
-    relatedLinks: [{ label: "Billing & Payments", href: "/platform/billing-payments" }],
+      "Fees depend on the service performed — tiered estimate writing rates, negotiation percentages, or supplement recovery fees. Invoices are issued after work is completed and approved, then paid via ACH (no processing fee) or credit card (3% convenience fee).",
+    relatedLinks: [
+      { label: "Pricing", href: "/pricing" },
+      { label: "Billing & Payments", href: "/platform/billing-payments" },
+    ],
   },
   {
     id: "billing-percentage-charged",
     category: "pricing",
     question: "What percentage does Claims Ninja charge?",
     answer:
-      "For claims with an existing carrier estimate, Claims Ninja generally charges 15% of the documented increase obtained through the supplement process. Certain no-estimate scenarios may use a fee based on a percentage of RCV.",
+      "Percentages vary by service: estimate writing uses tiered rates from 0.50% to 1.25% by estimate value (with a $100 minimum on smaller files). Negotiation is 15% of documented settlement increase when a carrier estimate exists, or 4% of final RCV when none has been provided. Supplements are 15% of the carrier-approved increase from submitted supplemental scope.",
     relatedLinks: [{ label: "Pricing", href: "/pricing" }],
   },
   {
@@ -224,14 +263,16 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "pricing",
     question: "How is the fee calculated?",
     answer:
-      "Fees are calculated using documented claim results and approved carrier payments according to the agreed engagement structure.",
+      "Estimate writing fees use tiered percentages by estimate value or a $100 minimum on smaller scopes. Negotiation fees use a $150 minimum plus 15% of documented settlement increase above the carrier's original estimate, or 4% of final RCV when no carrier estimate exists. Supplement fees are 15% of the increase approved from submitted supplemental scope.",
+    relatedLinks: [{ label: "Pricing", href: "/pricing" }],
   },
   {
     id: "billing-payment-due",
     category: "pricing",
     question: "When is payment due?",
     answer:
-      "Payment terms are outlined in your service agreement and are generally tied to claim funding milestones.",
+      "Invoices are due immediately once approved. Estimate invoices are issued upon completion and client approval. Negotiation and supplement invoices are issued after successful negotiation and final approval.",
+    relatedLinks: [{ label: "Pricing", href: "/pricing" }],
   },
   {
     id: "billing-long-term-contracts",

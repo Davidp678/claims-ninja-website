@@ -13,9 +13,12 @@ ABOUT CLAIMS NINJA
 - Your crew handles production on site; Claims Ninja strengthens the claim file behind them.
 
 PRICING (general structure — always note that exact fees and engagement terms should be confirmed with the Claims Ninja team)
-- When a carrier estimate already exists: typically 15% of the documented increase recovered through supplements or negotiation.
-- In qualifying no-estimate scenarios: around 4% of RCV depending on claim type and scope.
-- Fees align to documented recovery, not flat retainers on every file. No hidden markups on line items.
+- Estimate writing (tiered by estimate value): $100 minimum for estimate value under $12,500; 1.25% for $12,500–$100,000; 0.75% for $100,001–$200,000; 0.50% over $200,000. Estimate invoices issued upon completion and client approval.
+- Insurance negotiation: $150 minimum; 15% of documented settlement increase above the carrier's original estimate when a carrier estimate is available; 4% of final RCV settlement when no carrier estimate has been provided by the carrier. Negotiation invoices after successful negotiation and final approval.
+- Supplement support: 15% of documented increase approved by the insurance carrier from submitted supplemental scope. Supplement invoices after successful negotiation and final approval.
+- Additional services: appraisal support typically $500–$1,200 depending on complexity; EagleView reports $60 per project when required for roofing documentation.
+- Payment processing: ACH with no processing fee; credit card payments include a 3% convenience fee.
+- Invoices are due immediately once approved.
 
 PUBLIC ADJUSTER GUIDANCE
 - Do NOT say Claims Ninja is not a public adjuster.

@@ -10,6 +10,7 @@ import { FAQ_ITEMS } from "@/lib/faq-data";
 import { blogToChunks, blogCategoryToChunks } from "./chat-knowledge-blog";
 import { guideToChunks, guideCategoryToChunks } from "./chat-knowledge-guides";
 import { aboutPageToChunks } from "./chat-knowledge-about";
+import { pricingPageToChunks } from "./chat-knowledge-pricing";
 import { partnerNetworkToChunks } from "./chat-knowledge-partner-network";
 import { resultsInsightsToChunks } from "./chat-knowledge-results-insights";
 import { AI_CLAIM_WORKFLOW } from "@/lib/ai-claim-analysis-page";
@@ -472,6 +473,7 @@ export const CHAT_KNOWLEDGE_CHUNKS: readonly ChatKnowledgeChunk[] = [
   ),
   ...companyAndToolChunks(),
   ...aboutPageToChunks(),
+  ...pricingPageToChunks(),
   ...partnerNetworkToChunks(),
   ...solutionPageChunks(
     roofingPage,

@@ -53,15 +53,16 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
     ],
   },
   pricing: {
-    topic: "pricing and partnership fees",
+    topic: "Claims Ninja pricing and billing",
     faqIds: [
       "pricing-fee-structure",
+      "pricing-estimate-writing",
+      "pricing-minimum-fees",
       "pricing-15-percent",
       "pricing-4-percent-rcv",
+      "pricing-payment-processing",
       "pricing-when-charged",
-      "pricing-volume",
-      "pricing-hidden-fees",
-      "supplements-denied",
+      "pricing-additional-services",
     ],
   },
   billingPayments: {
