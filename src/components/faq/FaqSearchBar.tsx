@@ -2,22 +2,17 @@
 
 import { useCallback, useRef } from "react";
 
-import { FAQ_ITEMS } from "@/lib/faq-data";
-import { FAQ_SEARCH, getCategoryTitle } from "@/lib/faq-page";
-import { filterFaqItems } from "@/lib/faq-search";
+import { FAQ_SEARCH } from "@/lib/faq-page";
 import { cn } from "@/lib/cn";
 
-import { useFaqSearch } from "./FaqSearchProvider";
+import { useFaqSearch, useFilteredFaqs } from "./FaqSearchProvider";
 
 export function FaqSearchBar() {
   const { query, setQuery, clearQuery } = useFaqSearch();
+  const filteredFaqs = useFilteredFaqs();
   const inputRef = useRef<HTMLInputElement>(null);
   const trimmedQuery = query.trim();
-  const resultCount = filterFaqItems(
-    FAQ_ITEMS,
-    query,
-    getCategoryTitle,
-  ).length;
+  const resultCount = filteredFaqs.length;
 
   const handleClear = useCallback(() => {
     clearQuery();

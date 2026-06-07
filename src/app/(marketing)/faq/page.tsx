@@ -1,3 +1,4 @@
+import { FaqBrowseSections } from "@/components/faq/FaqBrowseSections";
 import { FaqCategoryGrid } from "@/components/faq/FaqCategoryGrid";
 import { FaqHero } from "@/components/faq/FaqHero";
 import { FaqJsonLd } from "@/components/faq/FaqJsonLd";
@@ -21,9 +22,11 @@ export default function FaqPage() {
       <FaqHero />
       <FaqSearchProvider>
         <FaqSearchSection />
-        <FaqCategoryGrid />
-        <FaqPopularQuestions />
-        <FaqLibrary />
+        <FaqBrowseSections>
+          <FaqCategoryGrid />
+          <FaqPopularQuestions />
+          <FaqLibrary />
+        </FaqBrowseSections>
       </FaqSearchProvider>
       <MarketingCtaPanel />
       <FaqJsonLd />

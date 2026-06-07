@@ -1,7 +1,7 @@
 import { FAQ_SEARCH } from "@/lib/faq-page";
 
 import { FaqPageSection } from "./FaqPageSection";
-import { FaqSearchBar } from "./FaqSearchBar";
+import { FaqSearchPanel } from "./FaqSearchPanel";
 
 export function FaqSearchSection() {
   return (
@@ -11,7 +11,7 @@ export function FaqSearchSection() {
       description={FAQ_SEARCH.description}
       tight
     >
-      <FaqSearchBar />
+      <FaqSearchPanel />
     </FaqPageSection>
   );
 }

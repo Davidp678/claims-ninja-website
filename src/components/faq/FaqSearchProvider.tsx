@@ -10,6 +10,10 @@ import {
   type ReactNode,
 } from "react";
 
+import { FAQ_ITEMS } from "@/lib/faq-data";
+import { getCategoryTitle } from "@/lib/faq-page";
+import { filterFaqItems } from "@/lib/faq-search";
+
 type FaqSearchContextValue = {
   query: string;
   setQuery: (query: string) => void;
@@ -61,4 +65,12 @@ export function useFaqSearch() {
     throw new Error("useFaqSearch must be used within FaqSearchProvider");
   }
   return context;
+}
+
+export function useFilteredFaqs() {
+  const { query } = useFaqSearch();
+  return useMemo(
+    () => filterFaqItems(FAQ_ITEMS, query, getCategoryTitle),
+    [query],
+  );
 }
