@@ -455,7 +455,7 @@ export const aboutPage = page({
   metaDescription:
     "Claims Ninja is the contractor claims operations platform—expert insurance claim support, claims management technology, and workflows for restoration and roofing contractors nationwide.",
   description:
-    "Founded in 2024, Claims Ninja gives contractors a reliable claims operation—expertise, systems, workflows, and technology to support claim operations at scale.",
+    "Founded in 2024, Claims Ninja gives contractors claim recovery expertise and enterprise-level execution—systems, workflows, and technology to support claim operations at scale.",
   features: [
     {
       title: "Mission",

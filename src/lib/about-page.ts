@@ -10,7 +10,7 @@ export const ABOUT_META = {
 
 export const ABOUT_HERO = {
   eyebrow: "Company",
-  title: "Built to Give Contractors a Real Claims Operation",
+  title: "Claim recovery expertise. Enterprise-level execution.",
   paragraphs: [
     "Founded in 2024, Claims Ninja was created to help contractors manage insurance claims with the structure, expertise, and visibility of a professional claims department—without having to build one in-house.",
     "We support roofing, restoration, mitigation, reconstruction, and contents contractors with the workflows, technology, and claim expertise needed to recover more, move faster, and stay focused on growth.",
@@ -19,7 +19,7 @@ export const ABOUT_HERO = {
 
 export const ABOUT_WHY_WE_EXIST = {
   eyebrow: "Why we exist",
-  title: "Contractors Shouldn't Need an In-House Claims Department",
+  title: "Contractors shouldn't need an in-house claims department",
   paragraphs: [
     "Growing claim volume creates operational complexity that most production-focused teams were never built to absorb. Documentation, supplements, carrier communication, estimate review, claim tracking, and workflow management all compete for the same limited bandwidth.",
     "Most contractors don't want to build an entire internal claims department—they want to run jobs, serve customers, and grow revenue without leaving money trapped in underdeveloped files.",
@@ -41,17 +41,17 @@ export const ABOUT_BELIEFS = {
   title: "Principles that guide how we work",
   items: [
     {
-      title: "Contractors Deserve To Be Paid For The Work They Perform",
+      title: "Contractors deserve to be paid for the work they perform",
       description:
         "Insurance claims should accurately reflect the work required to restore a property.",
     },
     {
-      title: "Process Creates Predictable Outcomes",
+      title: "Process creates predictable outcomes",
       description:
         "Strong documentation, disciplined workflows, and clear communication consistently outperform reactive claim management.",
     },
     {
-      title: "Technology Should Support Experts, Not Replace Them",
+      title: "Technology should support experts, not replace them",
       description:
         "Technology accelerates efficiency. Experience drives results. Claims Ninja combines both.",
     },
@@ -71,47 +71,47 @@ export const ABOUT_AUDIENCE = {
     "Claims Ninja supports the trades and operators that manage insurance-driven work every day—from single-location restoration companies to multi-state operators scaling claim volume.",
   items: [
     {
-      title: "Roofing Contractors",
+      title: "Roofing contractors",
       description:
         "Storm, hail, and repair claims with supplement strategy, scope development, and carrier negotiation built for roofing production teams.",
       href: "/solutions/roofing",
     },
     {
-      title: "Water Mitigation Companies",
+      title: "Water mitigation companies",
       description:
         "Mitigation documentation, moisture mapping, dry logs, and rebuild scope alignment for water losses that move fast and get scrutinized.",
       href: "/solutions/water-damage",
     },
     {
-      title: "Fire Restoration Contractors",
+      title: "Fire restoration contractors",
       description:
         "Smoke, soot, odor, and structural scope support for fire losses that require coordinated trades and documentation-heavy carrier review.",
       href: "/solutions/fire-damage",
     },
     {
-      title: "Mold Remediation Firms",
+      title: "Mold remediation firms",
       description:
         "Containment, remediation protocols, and scope documentation for mold claims where carrier scrutiny and compliance matter.",
       href: "/solutions/mold",
     },
     {
-      title: "Reconstruction Contractors",
+      title: "Reconstruction contractors",
       description:
         "Rebuild scope development, estimate review, and supplement support for complex restoration projects from demo through completion.",
     },
     {
-      title: "Contents Restoration Companies",
+      title: "Contents restoration companies",
       description:
         "Pack-out, inventory, cleaning, and storage scope support for contents claims that require detailed documentation and valuation.",
       href: "/solutions/contents",
     },
     {
-      title: "Multi-Location Operators",
+      title: "Multi-location operators",
       description:
         "Centralized claim visibility, consistent workflows, and expert support across branches without building regional claims departments.",
     },
     {
-      title: "Growing Restoration Businesses",
+      title: "Growing restoration businesses",
       description:
         "Scalable claim operations for teams adding volume, new trades, or geographic reach without sacrificing file quality or recovery.",
     },
@@ -126,7 +126,7 @@ export const ABOUT_JOURNEY = {
       label: "2024",
       title: "Founded with a clear mission",
       description:
-        "Claims Ninja launches with a mission to simplify insurance claim management for contractors.",
+        "Claims Ninja launches with a mission to deliver structured insurance claim operations for contractors.",
     },
     {
       label: "2025",
@@ -144,13 +144,13 @@ export const ABOUT_JOURNEY = {
       label: "Tomorrow",
       title: "The complete claims operations platform",
       description:
-        "Building the industry's most complete contractor claims operations platform powered by expertise, technology, and claims intelligence.",
+        "Building the contractor claims operations platform contractors rely on at scale, powered by expertise, technology, and claims intelligence.",
     },
   ],
 } as const;
 
 export const ABOUT_VALUES = {
-  title: "Mission · Vision · Approach · Impact",
+  title: "Mission · vision · approach · impact",
   items: [
     {
       title: "Mission",
@@ -176,7 +176,7 @@ export const ABOUT_VALUES = {
 } as const;
 
 export const ABOUT_PARTNERSHIP = {
-  title: "More Than A Supplementing Company",
+  title: "More than a supplementing company",
   paragraphs: [
     "Claims Ninja is not a transactional supplement vendor.",
     "Our goal is to become an extension of a contractor's operation—helping teams improve claim outcomes, strengthen workflows, increase visibility, and scale confidently as they grow.",
