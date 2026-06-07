@@ -95,7 +95,6 @@ export const RESOURCES_NAV: readonly NavDropdownItem[] = [
     href: "/resources/guides",
     description: "Practical playbooks for claim workflow excellence.",
   },
-  { label: "Videos", href: "/videos", description: "Walkthroughs and operational best practices." },
   { label: "FAQ", href: "/faq", description: "Answers to common platform and service questions." },
 ] as const;
 
