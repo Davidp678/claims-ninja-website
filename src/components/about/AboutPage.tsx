@@ -96,13 +96,13 @@ export function AboutPage() {
         <HeroBackdrop />
         <Container className="relative z-10 pb-14 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
           <div className="max-w-3xl">
-            <SectionHeading
-              eyebrow={ABOUT_HERO.eyebrow}
-              title={ABOUT_HERO.title}
-              align="left"
-              className="max-w-none"
-            />
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
+              {ABOUT_HERO.eyebrow}
+            </p>
+            <h1 className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+              {ABOUT_HERO.title}
+            </h1>
+            <div className="mt-5 space-y-5 text-lg leading-relaxed text-zinc-300 sm:text-xl">
               {ABOUT_HERO.paragraphs.map((paragraph) => (
                 <p key={paragraph.slice(0, 32)}>{paragraph}</p>
               ))}

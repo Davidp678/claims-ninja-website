@@ -10,12 +10,10 @@ export const ABOUT_META = {
 
 export const ABOUT_HERO = {
   eyebrow: "Company",
-  title: "About Claims Ninja",
+  title: "Built to Give Contractors a Real Claims Operation",
   paragraphs: [
-    "Founded in 2024, Claims Ninja was built with a simple mission: give contractors a reliable claims operation so they can focus on growing their business.",
-    "Every year, contractors leave significant revenue trapped inside insurance claims—not because the work wasn't performed, but because documentation, estimate development, supplement strategy, and claim management demand time most teams don't have.",
-    "Claims Ninja was created to solve that problem.",
-    "We help roofing contractors, restoration companies, mitigation firms, reconstruction teams, and multi-location operators manage the insurance side of the job with the same level of professionalism they bring to production.",
+    "Founded in 2024, Claims Ninja was created to help contractors manage insurance claims with the structure, expertise, and visibility of a professional claims department—without having to build one in-house.",
+    "We support roofing, restoration, mitigation, reconstruction, and contents contractors with the workflows, technology, and claim expertise needed to recover more, move faster, and stay focused on growth.",
   ],
 } as const;
 
