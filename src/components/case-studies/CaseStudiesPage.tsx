@@ -2,7 +2,7 @@ import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
 import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
+import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import {
@@ -12,13 +12,10 @@ import {
   CASE_STUDIES_PORTFOLIO,
   CASE_STUDIES_RECOVERY_EXAMPLES,
   CASE_STUDIES_RECOVERY_EXAMPLES_SECTION,
-  CASE_STUDIES_REVIEWS_BRIDGE,
   CASE_STUDIES_TRADE_CARDS,
   CASE_STUDIES_TRADE_RESULTS,
 } from "@/lib/case-studies-page";
-import { CTA_LINKS } from "@/lib/constants";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
-import { CLIENT_REVIEWS } from "@/lib/testimonials";
 import { cn } from "@/lib/cn";
 
 const CARD_SUBLABEL_CLASS = "text-xs font-medium text-zinc-400";
@@ -50,14 +47,12 @@ export function CaseStudiesPage() {
             <p className="mt-5 text-lg leading-relaxed text-zinc-300 sm:text-xl">
               {CASE_STUDIES_HERO.description}
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Button href={CTA_LINKS.schedule} size="md" external>
-                Schedule Strategy Call
-              </Button>
-              <Button href="/contact" variant="secondary" size="md">
-                Talk With Our Team
-              </Button>
-            </div>
+            <ConversionCtaGroup
+              className="mt-10"
+              size="md"
+              primaryLabel="Begin Claim Intake"
+              secondaryLabel="Schedule Strategy Call"
+            />
           </div>
         </Container>
       </section>
@@ -207,50 +202,10 @@ export function CaseStudiesPage() {
         </ul>
       </Section>
 
-      {/* Section 5: Reviews Bridge */}
-      <Section bordered compact>
-        <SectionHeading
-          title={CASE_STUDIES_REVIEWS_BRIDGE.title}
-          description={CASE_STUDIES_REVIEWS_BRIDGE.description}
-          align="left"
-          className="max-w-3xl"
-        />
-        <ul className="mt-14 grid gap-6 md:grid-cols-3">
-          {CLIENT_REVIEWS.map((review) => (
-            <li
-              key={review.author}
-              className="flex min-h-0 flex-col rounded-2xl border border-white/15 bg-brand-surface p-8 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/35"
-            >
-              <div className="flex gap-1 text-brand-red-light" aria-hidden>
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i} className="text-sm">
-                    ★
-                  </span>
-                ))}
-              </div>
-              <blockquote className="mt-3.5 flex-1 text-base leading-snug text-zinc-300">
-                &ldquo;{review.quote}&rdquo;
-              </blockquote>
-              <footer className="mt-5 border-t border-white/12 pt-6">
-                <cite className="not-italic">
-                  <p className="font-semibold text-white">{review.author}</p>
-                  <p className="text-sm text-zinc-300">{review.location}</p>
-                </cite>
-              </footer>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-10">
-          <Button href="/reviews" variant="secondary" size="md">
-            View All Contractor Reviews
-          </Button>
-        </div>
-      </Section>
-
-      {/* Section 6: FAQ */}
+      {/* Section 5: FAQ */}
       <SiteFaqSection {...SITE_FAQ.caseStudies} />
 
-      {/* Section 7: CTA */}
+      {/* Section 6: CTA */}
       <MarketingCtaPanel />
     </>
   );

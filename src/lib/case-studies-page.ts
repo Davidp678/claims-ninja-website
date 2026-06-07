@@ -309,9 +309,3 @@ export const CASE_STUDIES_RECOVERY_EXAMPLES_SECTION = {
   description:
     "Concise benchmarks from reviewed claims — illustrative of recovery patterns, not the focus of this page.",
 } as const;
-
-export const CASE_STUDIES_REVIEWS_BRIDGE = {
-  title: "Trusted By Contractors Nationwide",
-  description:
-    "Contractors across roofing, mitigation, restoration, and reconstruction rely on Claims Ninja to strengthen claim outcomes, improve operational efficiency, and maximize recoverable revenue.",
-} as const;
