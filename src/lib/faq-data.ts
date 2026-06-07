@@ -42,6 +42,30 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Typical intake includes the carrier estimate or scope (if available), site photos, your contractor estimate, policyholder details, claim number, and loss type. Additional items like moisture logs, testing reports, or contents inventories may apply depending on claim type and scope.",
   },
   {
+    id: "contact-response-time",
+    category: "getting_started",
+    question: "How quickly will someone respond?",
+    answer:
+      "Most inquiries submitted through our contact form or email receive a response within one business day. Complex claim reviews or partnership evaluations may take slightly longer while we review your details — we'll confirm timing when we reply.",
+    relatedLinks: [{ label: "Contact us", href: "/contact" }],
+  },
+  {
+    id: "contact-multiple-claims",
+    category: "getting_started",
+    question: "Can I submit multiple claims?",
+    answer:
+      "Yes. Contractors and partners routinely work with Claims Ninja across multiple active files. Use the contact form to describe your situation, or begin claim intake for individual files through our standard onboarding process.",
+    relatedLinks: [{ label: "Contact us", href: "/contact" }],
+  },
+  {
+    id: "contact-carrier-estimate",
+    category: "getting_started",
+    question: "Do I need a carrier estimate before contacting Claims Ninja?",
+    answer:
+      "No. You can reach out before a carrier estimate exists — we'll help you understand next steps based on your claim type and documentation. If an estimate is available, sharing it accelerates review, but it is not required to start a conversation.",
+    relatedLinks: [{ label: "Contact us", href: "/contact" }],
+  },
+  {
     id: "getting-started-estimating-tools",
     category: "getting_started",
     question: "Can we keep using our existing estimating software?",

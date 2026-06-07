@@ -108,10 +108,42 @@ export type ChatbotLeadSubmission = {
   chatbotDetails: ChatbotLeadDetails;
 };
 
+export type ContactInquiryType =
+  | "claim-review"
+  | "partnership-inquiry"
+  | "existing-client-support"
+  | "strategic-partner-inquiry"
+  | "general-question";
+
+export const CONTACT_INQUIRY_TYPES: readonly ContactInquiryType[] = [
+  "claim-review",
+  "partnership-inquiry",
+  "existing-client-support",
+  "strategic-partner-inquiry",
+  "general-question",
+] as const;
+
+export type ContactInquiryDetails = {
+  inquiryType: ContactInquiryType;
+  message: string;
+  website?: string;
+  monthlyClaimVolume?: string;
+  sourcePage: "/contact";
+  submittedAt: string;
+};
+
+export type ContactInquiryLeadSubmission = {
+  calculatorType: "contact-inquiry";
+  timestamp: string;
+  lead: LeadContactFields;
+  contactDetails: ContactInquiryDetails;
+};
+
 export type LeadSubmissionPayload =
   | ClaimReviewLeadSubmission
   | RoiReportLeadSubmission
-  | ChatbotLeadSubmission;
+  | ChatbotLeadSubmission
+  | ContactInquiryLeadSubmission;
 
 export type LeadSubmissionPayloadWithoutTimestamp = Omit<
   LeadSubmissionPayload,

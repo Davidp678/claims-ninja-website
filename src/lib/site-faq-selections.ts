@@ -183,13 +183,13 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
     ],
   },
   contact: {
-    topic: "getting started with Claims Ninja",
+    topic: "contacting Claims Ninja",
     faqIds: [
+      "contact-response-time",
+      "contact-multiple-claims",
+      "contact-carrier-estimate",
+      "getting-started-who-for",
       "getting-started-onboarding",
-      "getting-started-intake-info",
-      "getting-started-first-claim",
-      "pricing-fee-structure",
-      "carrier-who-talks",
     ],
   },
   partnerNetwork: {

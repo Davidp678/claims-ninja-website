@@ -5,14 +5,20 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { loadClaimAnalysisForSession } from "@/lib/claim-analysis-persistence";
 import type {
   ClaimReviewLeadSubmission,
+  ContactInquiryType,
   LeadSubmissionPayload,
 } from "@/lib/calculator-lead";
+import { CONTACT_INQUIRY_TYPES } from "@/lib/calculator-lead";
 import {
   createSupabaseServerClient,
   getSupabaseEnvDiagnostics,
   SupabaseServerConfigError,
 } from "@/lib/supabase";
-import { isValidEmail, isValidPhoneOptional } from "@/lib/validation/email";
+import {
+  countPhoneDigits,
+  isValidEmail,
+  isValidPhoneOptional,
+} from "@/lib/validation/email";
 
 function stripClientAiFields(
   payload: ClaimReviewLeadSubmission,
@@ -62,7 +68,8 @@ function isValidLeadPayload(
   if (
     type !== "claim-review" &&
     type !== "roi-report" &&
-    type !== "chatbot"
+    type !== "chatbot" &&
+    type !== "contact-inquiry"
   ) {
     return false;
   }
@@ -75,6 +82,11 @@ function isValidLeadPayload(
 
   if (type === "chatbot") {
     const details = row.chatbotDetails;
+    if (!details || typeof details !== "object") return false;
+  }
+
+  if (type === "contact-inquiry") {
+    const details = row.contactDetails;
     if (!details || typeof details !== "object") return false;
   }
 
@@ -91,6 +103,45 @@ function validateChatbotLead(body: Record<string, unknown>): string | null {
   const phone = typeof lead.phone === "string" ? lead.phone : "";
   if (!isValidPhoneOptional(phone)) {
     return "Invalid phone number.";
+  }
+
+  return null;
+}
+
+function isContactInquiryType(value: string): value is ContactInquiryType {
+  return (CONTACT_INQUIRY_TYPES as readonly string[]).includes(value);
+}
+
+function validateContactInquiryLead(
+  body: Record<string, unknown>,
+): string | null {
+  const lead = body.lead as Record<string, unknown>;
+  const email = typeof lead.email === "string" ? lead.email : "";
+  if (!isValidEmail(email)) {
+    return "Invalid email address.";
+  }
+
+  const phone = typeof lead.phone === "string" ? lead.phone : "";
+  if (!phone.trim() || countPhoneDigits(phone) < 7) {
+    return "Invalid phone number.";
+  }
+
+  const company = typeof lead.company === "string" ? lead.company : "";
+  if (!company.trim()) {
+    return "Company is required.";
+  }
+
+  const details = body.contactDetails as Record<string, unknown>;
+  const message =
+    typeof details.message === "string" ? details.message.trim() : "";
+  if (!message) {
+    return "Message is required.";
+  }
+
+  const inquiryType =
+    typeof details.inquiryType === "string" ? details.inquiryType : "";
+  if (!isContactInquiryType(inquiryType)) {
+    return "Invalid inquiry type.";
   }
 
   return null;
@@ -139,6 +190,15 @@ export async function POST(request: Request) {
       const chatbotError = validateChatbotLead(body as Record<string, unknown>);
       if (chatbotError) {
         return NextResponse.json({ error: chatbotError }, { status: 400 });
+      }
+    }
+
+    if (payload.calculatorType === "contact-inquiry") {
+      const contactError = validateContactInquiryLead(
+        body as Record<string, unknown>,
+      );
+      if (contactError) {
+        return NextResponse.json({ error: contactError }, { status: 400 });
       }
     }
 

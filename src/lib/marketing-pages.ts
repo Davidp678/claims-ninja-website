@@ -510,23 +510,10 @@ export const contactPage = page({
   title: "Contact",
   metaTitle: "Contact",
   metaDescription:
-    "Contact Claims Ninja for partnership inquiries, platform demos, or active claim support. Tell us about your operation and claim workflow goals.",
+    "Contact Claims Ninja for claim reviews, partnership inquiries, client support, or strategic partner opportunities. Tell us about your operation and claim workflow.",
   description:
-    "Tell us about your operation. We will assess your claim workflow, identify recovery opportunities, and outline next steps.",
-  features: [
-    {
-      title: "Partnership inquiries",
-      description: "For restoration, roofing, and contractors scaling claim volume.",
-    },
-    {
-      title: "Platform demos",
-      description: "See portal, tracking, and AI analysis in context for your team.",
-    },
-    {
-      title: "Existing partners",
-      description: "Reach your Claims Ninja team for active claim support.",
-    },
-  ],
+    "Tell us about your business, claim workflow, or current challenges. We'll review your situation, identify opportunities, and recommend next steps.",
+  features: [],
 });
 
 export const pricingPage = page({
