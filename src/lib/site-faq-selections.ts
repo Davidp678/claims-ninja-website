@@ -208,7 +208,7 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
     ],
   },
   reviews: {
-    topic: "partnering with Claims Ninja",
+    topic: "contractor reviews and partnerships",
     faqIds: [
       "getting-started-who-for",
       "supplements-whats-included",

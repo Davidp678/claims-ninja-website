@@ -30,9 +30,17 @@ export function pageMetadata({
       canonical: path,
     },
     openGraph: {
+      type: "website",
       title,
       description,
       url: path,
+      images: DEFAULT_OG_IMAGE,
+    },
+    twitter: {
+      card: TWITTER_CARD,
+      title,
+      description,
+      images: [DEFAULT_OG_IMAGE_PATH],
     },
   };
 }

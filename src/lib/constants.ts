@@ -66,11 +66,14 @@ export const FOOTER_LINKS = {
   company: [
     { label: "About", href: "/about" },
     { label: "Partner Network", href: "/partner-network" },
+    { label: "Reviews", href: "/reviews" },
     { label: "Contact", href: "/contact" },
   ],
   resources: [
     { label: "Claim intake", href: CTA_LINKS.onboarding, external: true },
     { label: "Schedule consultation", href: CTA_LINKS.schedule, external: true },
+    { label: "Results & Insights", href: "/case-studies" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Blog", href: "/resources/blog" },
     { label: "Claim Guides", href: "/resources/guides" },
     { label: "FAQ", href: "/faq" },

@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
         destination: "/resources/guides/:category",
         permanent: true,
       },
+      {
+        source: "/videos",
+        destination: "/platform",
+        permanent: true,
+      },
     ];
   },
 };

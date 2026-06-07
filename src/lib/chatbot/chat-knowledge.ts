@@ -21,6 +21,12 @@ import {
   CLIENT_PORTAL_WORKFLOW,
 } from "@/lib/client-portal-page";
 import { CONTENTS_RESTORATION_HERO, CONTENTS_RESTORATION_SEGMENTS, CONTENTS_RESTORATION_WORKFLOW } from "@/lib/contents-restoration-page";
+import {
+  CONTACT_HERO,
+  CONTACT_INFO,
+  CONTACT_META,
+  CONTACT_ROUTING,
+} from "@/lib/contact-page";
 import { FIRE_DAMAGE_HERO, FIRE_DAMAGE_SEGMENTS, FIRE_DAMAGE_WORKFLOW } from "@/lib/fire-damage-page";
 import { MOLD_HERO, MOLD_SEGMENTS, MOLD_WORKFLOW } from "@/lib/mold-page";
 import type { MarketingPageConfig } from "@/lib/marketing-pages";
@@ -31,7 +37,6 @@ import {
   claimTrackingPage,
   clientPortalPage,
   communicationHubPage,
-  contactPage,
   contentsPage,
   fireDamagePage,
   guidesPage,
@@ -295,15 +300,17 @@ function companyAndToolChunks(): ChatKnowledgeChunk[] {
         "what is your phone number",
       ],
       text: [
-        contactPage.title,
-        contactPage.description,
+        CONTACT_HERO.title,
+        CONTACT_HERO.description,
+        CONTACT_ROUTING.description,
+        CONTACT_ROUTING.cards
+          .map((card) => `• ${card.title}: ${card.description}`)
+          .join("\n"),
         `Phone: ${SITE.phone}`,
         `Email: ${SITE.email}`,
-        contactPage.features
-          .map((feature) => `• ${feature.title}: ${feature.description}`)
-          .join("\n"),
-        `URL: ${contactPage.path}`,
-      ].join("\n"),
+        CONTACT_INFO.description,
+        `URL: ${CONTACT_META.path}`,
+      ].join("\n\n"),
     },
     {
       id: "tool:homepage-calculator",

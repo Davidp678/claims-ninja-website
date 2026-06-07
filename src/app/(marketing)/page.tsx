@@ -6,7 +6,15 @@ import { ProofIntelligenceSection } from "@/components/sections/ProofIntelligenc
 import { PartnersSection } from "@/components/sections/PartnersSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { CtaSection } from "@/components/sections/CtaSection";
+import { HOME_META } from "@/lib/home-page";
+import { pageMetadata } from "@/lib/metadata";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
+
+export const metadata = pageMetadata({
+  title: HOME_META.metaTitle,
+  description: HOME_META.metaDescription,
+  path: HOME_META.path,
+});
 
 export default function Home() {
   return (

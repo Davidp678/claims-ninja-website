@@ -4,7 +4,7 @@ export const PARTNER_NETWORK_CARD_CLASS = ABOUT_CARD_CLASS;
 
 export const PARTNER_NETWORK_META = {
   path: "/partner-network",
-  metaTitle: "Partner Network | Strategic Industry Partnerships | The Claims Ninja",
+  metaTitle: "Partner Network | Strategic Industry Partnerships",
   metaDescription:
     "Explore the Claims Ninja partner network, including ProfileGorilla, CORE Group, 911 Restoration, Daylit, and Morgan & Morgan. Trusted resources for contractors, restoration companies, and insurance claim professionals.",
 } as const;

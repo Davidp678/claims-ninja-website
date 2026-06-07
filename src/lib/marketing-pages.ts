@@ -410,31 +410,6 @@ export const guidesPage = page({
   ],
 });
 
-export const videosPage = page({
-  path: "/videos",
-  eyebrow: "Resources",
-  title: "Videos",
-  metaTitle: "Videos",
-  metaDescription:
-    "Claims Ninja videos: platform walkthroughs, supplement explainers, and onboarding for contractors using expert claim support and our platform.",
-  description:
-    "Walkthroughs and operational best practices for contractors using Claims Ninja and expert claim support.",
-  features: [
-    {
-      title: "Platform tours",
-      description: "See how portal, tracking, and analysis tools work together.",
-    },
-    {
-      title: "Expert sessions",
-      description: "Short explainers on supplements, negotiations, and common denials.",
-    },
-    {
-      title: "Onboarding series",
-      description: "Get new team members productive on claim workflows quickly.",
-    },
-  ],
-});
-
 export const faqPage = page({
   path: "/faq",
   eyebrow: "Claims Knowledge Center",
@@ -484,7 +459,7 @@ export const partnerNetworkPage = page({
   path: "/partner-network",
   eyebrow: "Company",
   title: "Strategic partner network",
-  metaTitle: "Partner Network | Strategic Industry Partnerships | The Claims Ninja",
+  metaTitle: "Partner Network | Strategic Industry Partnerships",
   metaDescription:
     "Explore the Claims Ninja partner network, including ProfileGorilla, CORE Group, 911 Restoration, Daylit, and Morgan & Morgan. Trusted resources for contractors, restoration companies, and insurance claim professionals.",
   description:
@@ -565,7 +540,6 @@ export const MARKETING_PAGES_BY_PATH: Record<string, MarketingPageConfig> = {
   [blogPage.path]: blogPage,
   [caseStudiesPage.path]: caseStudiesPage,
   [guidesPage.path]: guidesPage,
-  [videosPage.path]: videosPage,
   [faqPage.path]: faqPage,
   [aboutPage.path]: aboutPage,
   [partnerNetworkPage.path]: partnerNetworkPage,
