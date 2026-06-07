@@ -9,6 +9,7 @@ import { BLOG_POSTS } from "@/lib/blog-posts";
 import { FAQ_ITEMS } from "@/lib/faq-data";
 import { blogToChunks, blogCategoryToChunks } from "./chat-knowledge-blog";
 import { guideToChunks, guideCategoryToChunks } from "./chat-knowledge-guides";
+import { resultsInsightsToChunks } from "./chat-knowledge-results-insights";
 import { AI_CLAIM_WORKFLOW } from "@/lib/ai-claim-analysis-page";
 import { CLAIM_GUIDES } from "@/lib/guides";
 import {
@@ -24,6 +25,7 @@ import {
   aboutPage,
   aiClaimAnalysisPage,
   billingPaymentsPage,
+  caseStudiesPage,
   claimTrackingPage,
   clientPortalPage,
   communicationHubPage,
@@ -70,6 +72,7 @@ const TOPIC_ALIASES: Record<string, readonly string[]> = {
   documentation: ["documentation", "photos"],
   platform_security: ["platform", "security", "portal"],
   ai_claim_analysis: ["ai", "analysis"],
+  results_insights: ["results and insights", "recovery results", "portfolio review"],
 };
 
 function questionPhrases(question: string): string[] {
@@ -402,6 +405,19 @@ function platformAiChunks(): ChatKnowledgeChunk[] {
 
 export const CHAT_KNOWLEDGE_CHUNKS: readonly ChatKnowledgeChunk[] = [
   ...faqToChunks(FAQ_ITEMS),
+  ...resultsInsightsToChunks(),
+  ...pageToChunks(
+    caseStudiesPage,
+    ["results_insights"],
+    [
+      "results and insights",
+      "case studies",
+      "recovery patterns",
+      "portfolio review",
+      "trade recovery",
+    ],
+    ["results and insights", "case studies", "/case-studies"],
+  ),
   ...blogToChunks(BLOG_POSTS),
   ...blogCategoryToChunks(),
   ...guideToChunks(CLAIM_GUIDES),

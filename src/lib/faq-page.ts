@@ -26,7 +26,8 @@ export type FaqCategoryId =
   | "carrier_negotiations"
   | "documentation"
   | "platform_security"
-  | "ai_claim_analysis";
+  | "ai_claim_analysis"
+  | "results_insights";
 
 export const FAQ_CATEGORIES = [
   {
@@ -100,6 +101,12 @@ export const FAQ_CATEGORIES = [
     title: "AI Claim Analysis",
     description:
       "How AI-assisted review supports scope accuracy and supplement identification.",
+  },
+  {
+    id: "results_insights" as const,
+    title: "Results & Insights",
+    description:
+      "Trade recovery patterns, portfolio reviews, and representative outcomes from Claims Ninja claim intelligence.",
   },
 ] as const;
 

@@ -159,6 +159,19 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "how do i",
   ],
   mitigation: ["mitigation", "water mitigation", "drying", "restoration"],
+  results_insights: [
+    "results and insights",
+    "portfolio recovery",
+    "book of business",
+    "claim portfolio",
+    "revenue leakage",
+    "recovery opportunities",
+    "scope omissions",
+    "code compliance",
+    "pricing discrepancies",
+    "o&p",
+    "trade recovery",
+  ],
 };
 
 function matchesWordBoundary(input: string, token: string): boolean {
@@ -631,6 +644,70 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
           /mold claims|solutions\/mold|remediation protocol/i.test(
             `${s.text} ${s.source}`,
           ),
+      ),
+  },
+  {
+    label: "portfolio recovery review",
+    message: "What is a portfolio recovery review?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /portfolio recovery|results-insights:portfolio/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "book of business",
+    message: "Can Claims Ninja review my entire book of business?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /book of business|portfolio review/i.test(`${s.text} ${s.source}`),
+      ),
+  },
+  {
+    label: "roofing recovery opportunities",
+    message: "What recovery opportunities do roofing contractors miss?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /roofing.*25%|missing accessories|results-insights:trade/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "common issues",
+    message: "What issues does Claims Ninja commonly find?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /scope omissions|commonly find|results-insights:common/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial portfolios",
+    message: "Do you review commercial claim portfolios?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial.*portfolio|results-insights/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "supplement recovery increase",
+    message: "How much can supplementing improve recovery?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /40%|recovery increase|results-insights-recovery/i.test(
+          `${s.text} ${s.source}`,
+        ),
       ),
   },
 ];

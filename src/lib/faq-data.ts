@@ -724,90 +724,69 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     relatedLinks: [{ label: "Platform overview", href: "/platform" }],
   },
 
-  // Case Studies & Recovery Results
+  // Results & Insights
   {
-    id: "case-studies-actual-outcomes",
-    category: "getting_started",
-    question: "Are these actual claim outcomes?",
+    id: "results-insights-what-is-page",
+    category: "results_insights",
+    question: "What is the Results & Insights page?",
     answer:
-      "The recovery results on our Results & Insights page represent aggregate performance metrics and representative portfolio scenarios — not fabricated customer stories. Outcomes vary by claim type, documentation quality, carrier environment, and scope. We present portfolio-level patterns and industry recovery ranges to illustrate what expert supplement review can uncover, without inventing client identities or specific claim details.",
+      "Results & Insights at /case-studies is Claims Ninja's industry intelligence hub — insights gathered from thousands of insurance claims across roofing, restoration, mitigation, reconstruction, and commercial projects. It covers recovery results by trade, common scope and pricing gaps we find, portfolio recovery reviews, and representative recovery benchmarks — not fabricated customer stories.",
     relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
   },
   {
-    id: "case-studies-contractor-types",
-    category: "getting_started",
-    question: "What types of contractors does Claims Ninja support?",
+    id: "results-insights-real-examples",
+    category: "results_insights",
+    question: "Are the recovery examples based on real claims?",
     answer:
-      "Claims Ninja supports roofing contractors, water mitigation and restoration companies, fire and smoke restoration firms, mold remediation specialists, reconstruction contractors, and contents restoration operations. We work with teams managing individual losses, high-volume storm books, and entire portfolios of active insurance claims.",
-    relatedLinks: [{ label: "Platform overview", href: "/platform" }],
-  },
-  {
-    id: "case-studies-recovery-increase",
-    category: "insurance_supplements",
-    question: "How much can supplementing increase claim recovery?",
-    answer:
-      "Recovery increases vary by trade, scope, and carrier environment. Across thousands of reviewed claims, contractors partnering with Claims Ninja have seen average recovery increases of approximately 40%. Individual claims may see higher or lower results depending on documentation, initial carrier scope, and claim complexity.",
+      "The recovery examples on Results & Insights are representative benchmarks drawn from aggregate claim review patterns — not fabricated customer stories with invented names or addresses. They illustrate typical recovery ranges and findings we see across reviewed files. Outcomes vary by claim type, documentation quality, carrier environment, and scope.",
     relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
   },
   {
-    id: "case-studies-commercial-claims",
-    category: "getting_started",
-    question: "Do you work on commercial claims?",
+    id: "results-insights-recovery-increase",
+    category: "results_insights",
+    question: "How much can supplementing improve claim recovery?",
     answer:
-      "Yes. Claims Ninja supports commercial roofing, water, fire, mold, reconstruction, and contents losses. Commercial claims often involve larger scopes, multi-trade coordination, and heavier documentation requirements. We organize complex estimates and trade coordination so carrier review stays manageable at scale.",
-    relatedLinks: [{ label: "Roofing claims", href: "/solutions/roofing" }],
-  },
-  {
-    id: "case-studies-denied-items",
-    category: "insurance_supplements",
-    question: "Can Claims Ninja review denied items?",
-    answer:
-      "Yes. We review denied or partially approved line items, document the carrier's position, identify gaps in their reasoning, and advise on next steps — revised documentation, re-inspection requests, or escalation when appropriate. Outcomes depend on file strength and carrier guidelines.",
-    relatedLinks: [
-      {
-        label: "Supplement denial recovery guide",
-        href: "/resources/blog/supplement-denial-recovery-guide",
-      },
-    ],
-  },
-  {
-    id: "case-studies-carrier-negotiation",
-    category: "carrier_negotiations",
-    question: "Do you negotiate directly with carriers?",
-    answer:
-      "Yes. Claims Ninja supplement and negotiation specialists engage adjusters directly with organized documentation, clear change summaries, and scope support — within your partnership authorization. Your team stays informed through the platform without managing every adjuster call.",
-    relatedLinks: [{ label: "Communication hub", href: "/platform/communication-hub" }],
-  },
-  {
-    id: "case-studies-claims-reviewed",
-    category: "getting_started",
-    question: "How many claims has Claims Ninja reviewed?",
-    answer:
-      "Claims Ninja has reviewed more than 5,000 insurance claims across roofing, mitigation, restoration, reconstruction, and contents operations — generating over $100M in documented recovery for contractor partners nationwide.",
+      "Recovery increases vary by trade, scope, and carrier environment. Across thousands of reviewed claims, contractors partnering with Claims Ninja have seen average recovery increases of approximately 40%. Trade-specific typical improvement ranges on Results & Insights include roofing at 25%–50%, water mitigation at 20%–45%, fire restoration at 20%–40%, mold remediation at 15%–35%, reconstruction at 20%–45%, and contents restoration at 15%–35%.",
     relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
   },
   {
-    id: "case-studies-catastrophe-claims",
-    category: "getting_started",
-    question: "Do you support catastrophe claims?",
+    id: "results-insights-trade-opportunities",
+    category: "results_insights",
+    question: "Which trades see the largest recovery opportunities?",
     answer:
-      "Yes. Claims Ninja supports contractors managing catastrophe and storm-event volume — including high-volume intake, documentation consistency across multiple losses, and supplement capacity when internal teams are stretched. We adapt workflows to storm books, regional events, and sustained cat operations.",
-    relatedLinks: [{ label: "Roofing claims", href: "/solutions/roofing" }],
-  },
-  {
-    id: "case-studies-portfolio-review",
-    category: "insurance_supplements",
-    question: "Can Claims Ninja review an entire portfolio of claims?",
-    answer:
-      "Yes. Claims Ninja conducts portfolio-level reviews of active claim books to identify recurring recovery opportunities, documentation gaps, and workflow inconsistencies. Portfolio reviews help leadership understand aggregate recovery potential and operational impact across dozens or hundreds of active files.",
+      "Roofing often shows the widest typical recovery improvement range at 25%–50%, driven by missing accessories, waste factors, code compliance gaps, and material pricing discrepancies. Water mitigation, fire restoration, and reconstruction commonly fall in the 20%–45% range. Mold remediation and contents restoration typically range from 15%–35%. The largest opportunity on any file depends on documentation quality, carrier scope gaps, and trade complexity — not trade alone.",
     relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
   },
   {
-    id: "case-studies-nationwide",
-    category: "getting_started",
-    question: "Do you work nationwide?",
+    id: "results-insights-portfolio-review",
+    category: "results_insights",
+    question: "What is a portfolio recovery review?",
     answer:
-      "Yes. Claims Ninja partners with contractors nationwide across roofing, mitigation, restoration, reconstruction, and contents operations. Supplement strategy and documentation support adapt to regional pricing, code requirements, and carrier environments.",
-    relatedLinks: [{ label: "Contact us", href: "/contact" }],
+      "A portfolio recovery review is a book-of-business analysis where Claims Ninja reviews active, closed, and underpaid claims across a contractor's operation. We evaluate estimate quality, supplement frequency, recovery percentages, carrier trends, trade-specific deficiencies, and revenue leakage opportunities. Contractors often discover systematic revenue left behind across dozens or hundreds of claims — not just one file.",
+    relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
+  },
+  {
+    id: "results-insights-common-issues",
+    category: "results_insights",
+    question: "What issues does Claims Ninja commonly uncover?",
+    answer:
+      "Across thousands of reviewed claims, recurring deficiency categories include scope omissions (missing line items, accessory gaps, debris removal), code compliance gaps (ice and water barrier, ventilation, upgrades), pricing discrepancies (material and labor rates below market), documentation opportunities (incomplete photos, dry logs, weak narratives), O&P eligibility on multi-trade losses, and coordination costs (equipment reimbursement, supervision, general conditions).",
+    relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
+  },
+  {
+    id: "results-insights-commercial-portfolios",
+    category: "results_insights",
+    question: "Do you review commercial claims portfolios?",
+    answer:
+      "Yes. Claims Ninja reviews commercial roofing, water, fire, mold, reconstruction, and contents portfolios — including multi-trade books with larger scopes and heavier documentation requirements. Portfolio-level review helps identify recurring estimate deficiencies, carrier-specific trends, and recovery opportunities that compound across a commercial book of business.",
+    relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
+  },
+  {
+    id: "results-insights-book-of-business",
+    category: "results_insights",
+    question: "Can Claims Ninja review an entire book of business?",
+    answer:
+      "Yes. Claims Ninja conducts portfolio-level reviews of entire books of business — active, closed, and underpaid claims — to identify recurring scope gaps, supplement workflow issues, and aggregate recovery potential. Leadership gains visibility into patterns invisible when claims are evaluated one at a time, including revenue leakage across dozens or hundreds of files.",
+    relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
   },
 ] as const;
