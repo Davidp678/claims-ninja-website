@@ -2,175 +2,45 @@ export const CASE_STUDIES_CARD_CLASS =
   "rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/45";
 
 export const CASE_STUDIES_HERO = {
-  eyebrow: "PROVEN RESULTS ACROSS THOUSANDS OF CLAIMS",
-  title: "Recovery Results That Scale With Your Business",
+  title: "Results & Insights",
   description:
-    "Claims Ninja helps roofing, mitigation, restoration, and reconstruction contractors recover more from insurance claims through expert supplement development, estimate review, documentation support, and claims operations guidance. From individual losses to entire books of business, we help contractors maximize recoverable revenue without building an internal claims department.",
+    "Insights gathered from thousands of insurance claims across roofing, restoration, mitigation, reconstruction, and commercial projects nationwide. Explore common recovery opportunities, trade-specific trends, and the claim patterns we see every day.",
 } as const;
 
-export const CASE_STUDIES_HERO_METRICS = [
-  { value: "$100M+", label: "Recovery Generated" },
-  { value: "5,000+", label: "Claims Reviewed" },
-  { value: "40%", label: "Average Recovery Increase" },
-  { value: "Nationwide", label: "Contractor Partnerships" },
-] as const;
-
-export const CASE_STUDIES_RECOVERY_PROCESS = {
-  eyebrow: "How recovery happens",
-  title: "From estimate review to recovered revenue",
-  steps: [
-    {
-      step: "01",
-      title: "Review",
-      description:
-        "Every estimate, scope, and supporting document is evaluated for missing revenue opportunities.",
-    },
-    {
-      step: "02",
-      title: "Identify",
-      description:
-        "Code requirements, pricing gaps, scope omissions, documentation deficiencies, and recoverability opportunities are uncovered.",
-    },
-    {
-      step: "03",
-      title: "Supplement",
-      description:
-        "Claims Ninja develops carrier-ready supplements supported by estimate analysis, documentation, and industry expertise.",
-    },
-    {
-      step: "04",
-      title: "Recover",
-      description:
-        "Contractors achieve stronger claim outcomes while reducing internal administrative burden.",
-    },
-  ],
-} as const;
-
-export const CASE_STUDIES_PORTFOLIO = {
-  title: "Portfolio Recovery Review",
-  situation:
-    "A growing restoration contractor was managing dozens of active insurance claims across multiple trades. While claims were being approved and projects were moving forward, leadership suspected significant recovery opportunities were being overlooked due to workload, supplement capacity limitations, and inconsistent documentation practices.",
-  commonChallenges: [
-    "Limited internal supplementing resources",
-    "Inconsistent estimate review processes",
-    "Pricing discrepancies across claims",
-    "Missed code-related opportunities",
-    "Delayed supplement submissions",
-    "Administrative strain on project teams",
-  ],
-  reviewFindings: [
-    "Building code compliance",
-    "O&P eligibility",
-    "Material pricing discrepancies",
-    "Labor under-scoping",
-    "Equipment reimbursement",
-    "Documentation deficiencies",
-    "Scope omissions",
-  ],
-  outcomes: [
-    { value: "43", label: "Claims Reviewed" },
-    { value: "$2.8M", label: "Additional Recovery Identified" },
-    { value: "38%", label: "Average Recovery Increase" },
-    { value: "Hundreds", label: "Administrative Hours Saved" },
-  ],
-  operationalImpact: [
-    "Improved claim visibility",
-    "More consistent supplement workflows",
-    "Faster turnaround times",
-    "Reduced burden on project managers",
-    "Increased profitability across the claim portfolio",
-  ],
-} as const;
-
-export const CASE_STUDIES_OPPORTUNITY_LIBRARY = {
-  title: "What We Commonly Find",
+export const CASE_STUDIES_TRADE_RESULTS = {
+  eyebrow: "Industry intelligence",
+  title: "Recovery Results by Trade",
   description:
-    "Representative recovery categories identified across roofing, mitigation, restoration, and reconstruction claims.",
-  categories: [
-    {
-      title: "Scope Opportunities",
-      items: [
-        "Missing line items",
-        "Accessory omissions",
-        "Temporary repairs",
-        "Detach and reset operations",
-        "Debris removal",
-        "Interior scope gaps",
-      ],
-    },
-    {
-      title: "Pricing Opportunities",
-      items: [
-        "Material pricing discrepancies",
-        "Labor burden issues",
-        "Market condition adjustments",
-        "Regional pricing variations",
-        "Equipment rate deficiencies",
-      ],
-    },
-    {
-      title: "Code Opportunities",
-      items: [
-        "Building code upgrades",
-        "Ice and water barrier requirements",
-        "Ventilation requirements",
-        "Safety regulations",
-        "Permit-related costs",
-      ],
-    },
-    {
-      title: "Operational Opportunities",
-      items: [
-        "O&P eligibility",
-        "General conditions",
-        "Equipment reimbursement",
-        "Project supervision",
-        "Administrative scope",
-      ],
-    },
-    {
-      title: "Restoration Opportunities",
-      items: [
-        "Drying equipment",
-        "Monitoring",
-        "Containment",
-        "HEPA filtration",
-        "Cleaning scope",
-        "Pack-out services",
-        "Contents handling",
-        "Specialty restoration procedures",
-      ],
-    },
-  ],
+    "Patterns consistently observed across the trades we review most — what carriers miss, where estimates fall short, and where recovery opportunity typically exists.",
 } as const;
 
-export type IndustryResultCard = {
+export type TradeResultCard = {
   id: string;
   title: string;
   recoveryRange: string;
-  commonChallenges: readonly string[];
-  reviews: readonly string[];
-  typicalOutcomes: readonly string[];
+  commonFindings: readonly string[];
+  areasReviewed: readonly string[];
+  opportunities: readonly string[];
 };
 
-export const CASE_STUDIES_INDUSTRY_RESULTS: readonly IndustryResultCard[] = [
+export const CASE_STUDIES_TRADE_CARDS: readonly TradeResultCard[] = [
   {
     id: "roofing",
-    title: "ROOFING",
+    title: "Roofing",
     recoveryRange: "25%–50%",
-    commonChallenges: [
+    commonFindings: [
       "Missing accessories",
       "Underestimated waste",
       "Code compliance gaps",
       "Material pricing discrepancies",
     ],
-    reviews: [
+    areasReviewed: [
       "Roofing estimates",
       "Code requirements",
       "Accessory scope",
       "Labor and material pricing",
     ],
-    typicalOutcomes: [
+    opportunities: [
       "Expanded approved scope",
       "Increased recovery values",
       "Stronger documentation packages",
@@ -178,21 +48,21 @@ export const CASE_STUDIES_INDUSTRY_RESULTS: readonly IndustryResultCard[] = [
   },
   {
     id: "water-mitigation",
-    title: "WATER MITIGATION",
+    title: "Water Mitigation",
     recoveryRange: "20%–45%",
-    commonChallenges: [
+    commonFindings: [
       "Incomplete moisture documentation",
       "Under-scoped drying equipment",
       "Mitigation-to-rebuild disconnects",
       "Missing monitoring and containment",
     ],
-    reviews: [
+    areasReviewed: [
       "Moisture mapping and dry logs",
       "Mitigation scope and equipment days",
       "Category and class considerations",
       "Rebuild scope alignment",
     ],
-    typicalOutcomes: [
+    opportunities: [
       "Stronger mitigation documentation",
       "Expanded drying and demo scope",
       "Clearer phase separation for carrier review",
@@ -200,21 +70,21 @@ export const CASE_STUDIES_INDUSTRY_RESULTS: readonly IndustryResultCard[] = [
   },
   {
     id: "fire-restoration",
-    title: "FIRE RESTORATION",
+    title: "Fire Restoration",
     recoveryRange: "20%–40%",
-    commonChallenges: [
+    commonFindings: [
       "Under-scoped smoke and odor treatment",
       "Missing structural and trade coordination",
       "Incomplete demolition and debris scope",
       "Contents and structure scope gaps",
     ],
-    reviews: [
+    areasReviewed: [
       "Structural and multi-trade scopes",
       "Smoke sealing and deodorization",
       "Code and ordinance items",
       "Demolition, debris, and protection",
     ],
-    typicalOutcomes: [
+    opportunities: [
       "More complete rebuild scopes",
       "Better trade coordination documentation",
       "Stronger carrier-ready file organization",
@@ -222,21 +92,21 @@ export const CASE_STUDIES_INDUSTRY_RESULTS: readonly IndustryResultCard[] = [
   },
   {
     id: "mold-remediation",
-    title: "MOLD REMEDIATION",
+    title: "Mold Remediation",
     recoveryRange: "15%–35%",
-    commonChallenges: [
+    commonFindings: [
       "Insufficient containment documentation",
       "Missing HEPA and antimicrobial scope",
       "Testing and clearance gaps",
       "Rebuild disconnect after remediation",
     ],
-    reviews: [
+    areasReviewed: [
       "Containment and remediation protocols",
       "HEPA vacuuming and detail cleaning",
       "Moisture source documentation",
       "Clearance and rebuild alignment",
     ],
-    typicalOutcomes: [
+    opportunities: [
       "Dispute-ready remediation files",
       "Expanded protocol-driven scope",
       "Cleaner rebuild continuity",
@@ -244,21 +114,21 @@ export const CASE_STUDIES_INDUSTRY_RESULTS: readonly IndustryResultCard[] = [
   },
   {
     id: "reconstruction",
-    title: "RECONSTRUCTION",
+    title: "Reconstruction",
     recoveryRange: "20%–45%",
-    commonChallenges: [
+    commonFindings: [
       "Interior finish scope gaps",
       "Multi-trade labor under-scoping",
       "Code upgrade omissions",
       "Matching and transition inconsistencies",
     ],
-    reviews: [
+    areasReviewed: [
       "Drywall, flooring, and finish scopes",
       "Cabinet, trim, and paint transitions",
       "Electrical and mechanical rebuild items",
       "Code-required upgrades and permits",
     ],
-    typicalOutcomes: [
+    opportunities: [
       "More accurate rebuild estimates",
       "Expanded interior and finish scope",
       "Stronger documentation for carrier review",
@@ -266,21 +136,21 @@ export const CASE_STUDIES_INDUSTRY_RESULTS: readonly IndustryResultCard[] = [
   },
   {
     id: "contents-restoration",
-    title: "CONTENTS RESTORATION",
+    title: "Contents Restoration",
     recoveryRange: "15%–35%",
-    commonChallenges: [
+    commonFindings: [
       "Inventory and chain-of-custody gaps",
       "Under-documented specialty items",
       "Storage and handling omissions",
       "Cleaning method documentation deficiencies",
     ],
-    reviews: [
+    areasReviewed: [
       "Inventory and pack-out operations",
       "Cleaning and restoration protocols",
       "Storage duration and warehouse logs",
       "Electronics and high-value item files",
     ],
-    typicalOutcomes: [
+    opportunities: [
       "More complete contents documentation",
       "Stronger pricing support for specialty items",
       "Organized carrier-ready submissions",
@@ -288,111 +158,157 @@ export const CASE_STUDIES_INDUSTRY_RESULTS: readonly IndustryResultCard[] = [
   },
 ] as const;
 
-export type ProofMetric = {
+export const CASE_STUDIES_COMMON_FINDINGS = {
+  eyebrow: "Pattern recognition",
+  title: "What We Commonly Find",
+  description:
+    "Recurring deficiency categories identified across thousands of reviewed claims — the issues carriers overlook and contractors leave uncaptured without systematic estimate review.",
+  categories: [
+    {
+      title: "Scope Omissions",
+      description:
+        "Line items and assemblies frequently absent from carrier estimates — often because field conditions, access requirements, or trade sequencing were not reflected in the initial scope.",
+      items: [
+        "Missing accessory and trim line items",
+        "Temporary repairs and protection",
+        "Detach and reset operations",
+        "Debris removal and disposal",
+        "Interior scope gaps after mitigation",
+      ],
+    },
+    {
+      title: "Code Compliance Gaps",
+      description:
+        "Jurisdiction-specific upgrades and code-driven work that carriers omit when estimates are based on pre-loss conditions rather than current code requirements.",
+      items: [
+        "Building code upgrades",
+        "Ice and water barrier requirements",
+        "Ventilation and exhaust requirements",
+        "Safety and access regulations",
+        "Permit-related costs",
+      ],
+    },
+    {
+      title: "Pricing Discrepancies",
+      description:
+        "Material, labor, and equipment rates that do not reflect market conditions, regional pricing, or the actual cost basis required to perform documented work.",
+      items: [
+        "Material pricing below market",
+        "Labor burden and productivity factors",
+        "Market condition adjustments",
+        "Regional pricing variations",
+        "Equipment rate deficiencies",
+      ],
+    },
+    {
+      title: "Documentation Opportunities",
+      description:
+        "Files that lack the organized photos, logs, and supporting records needed to defend scope — creating recoverability gaps even when the work was performed correctly.",
+      items: [
+        "Incomplete photo documentation",
+        "Missing moisture or drying logs",
+        "Weak cause-and-origin narratives",
+        "Inconsistent estimate-to-field alignment",
+        "Gaps in carrier correspondence records",
+      ],
+    },
+    {
+      title: "O&P Eligibility",
+      description:
+        "Overhead and profit considerations on multi-trade losses where contractor coordination, supervision, and general conditions justify review under carrier estimate standards.",
+      items: [
+        "Multi-trade coordination scope",
+        "Project supervision requirements",
+        "General conditions on complex losses",
+        "Phased billing and trade sequencing",
+        "Contractor role documentation gaps",
+      ],
+    },
+    {
+      title: "Coordination Costs",
+      description:
+        "Labor, equipment, and administrative scope tied to project management, trade coordination, and the operational overhead of running complex insurance restoration work.",
+      items: [
+        "Equipment reimbursement gaps",
+        "Project supervision and GC scope",
+        "Administrative and scheduling labor",
+        "Protection and site management",
+        "Trade mobilization and sequencing",
+      ],
+    },
+  ],
+} as const;
+
+export const CASE_STUDIES_PORTFOLIO = {
+  title: "Portfolio Recovery Review",
+  description:
+    "Claims Ninja reviews active, closed, and underpaid claims across a contractor's operation to identify recurring estimate deficiencies, workflow issues, supplementing gaps, and recovery opportunities.",
+  whatWeAnalyze: [
+    "Estimate quality",
+    "Supplement frequency",
+    "Recovery percentages",
+    "Carrier trends",
+    "Trade-specific deficiencies",
+    "Revenue leakage opportunities",
+  ],
+  typicalOutcome:
+    "Contractors discover systematic revenue left behind across dozens or hundreds of claims — not just one file. Portfolio review surfaces patterns invisible when claims are evaluated individually: recurring scope gaps, inconsistent supplement workflows, and carrier-specific trends that compound across a book of business.",
+} as const;
+
+export type RecoveryExample = {
   id: string;
-  value: string;
-  label: string;
-};
-
-export const CASE_STUDIES_PROOF_METRICS: readonly ProofMetric[] = [
-  { id: "recovery_generated", value: "$100M+", label: "Recovery Generated" },
-  { id: "claims_reviewed", value: "5,000+", label: "Claims Reviewed" },
-  { id: "avg_increase", value: "40%", label: "Average Recovery Increase" },
-  {
-    id: "supplemental_revenue",
-    value: "Millions",
-    label: "In Supplemental Revenue Identified",
-  },
-  {
-    id: "hours_saved",
-    value: "Thousands",
-    label: "Of Contractor Hours Saved",
-  },
-  {
-    id: "nationwide",
-    value: "Nationwide",
-    label: "Contractor Partnerships",
-  },
-] as const;
-
-export const CASE_STUDIES_OPERATIONAL_IMPACT = [
-  {
-    title: "Revenue Recovery",
-    description:
-      "Contractors capture more recoverable revenue across individual claims and entire portfolios without expanding internal claims staff.",
-  },
-  {
-    title: "Workflow Efficiency",
-    description:
-      "Supplement development, estimate review, and documentation organization move through a consistent process instead of ad hoc project-manager effort.",
-  },
-  {
-    title: "Documentation Quality",
-    description:
-      "Claim files become more organized, defensible, and carrier-ready — reducing rework and strengthening supplement outcomes.",
-  },
-  {
-    title: "Carrier Communication",
-    description:
-      "Adjusters receive clearer change summaries and supporting evidence, improving response quality and reducing back-and-forth.",
-  },
-  {
-    title: "Faster Turnaround",
-    description:
-      "Dedicated supplement capacity helps contractors submit sooner, follow up consistently, and keep production schedules aligned with claim progress.",
-  },
-  {
-    title: "Claim Visibility",
-    description:
-      "Leadership gains portfolio-level insight into recovery opportunities, supplement status, and claim performance across active jobs.",
-  },
-] as const;
-
-export type CaseStudyLibraryCard = {
-  slug: string;
   title: string;
-  description: string;
-  href?: string;
+  carrierEstimate: string;
+  additionalRecovery: string;
+  recoveryIncrease: string;
+  keyFindings: readonly string[];
 };
 
-export const CASE_STUDIES_LIBRARY: readonly CaseStudyLibraryCard[] = [
+export const CASE_STUDIES_RECOVERY_EXAMPLES: readonly RecoveryExample[] = [
   {
-    slug: "roofing",
-    title: "Roofing Recovery Outcomes",
-    description:
-      "Representative recovery patterns across storm, retail, and commercial roofing claims — accessories, code items, waste, and pricing gaps.",
+    id: "commercial-roofing",
+    title: "Commercial Roofing Portfolio",
+    carrierEstimate: "$840,000",
+    additionalRecovery: "$312,000",
+    recoveryIncrease: "37%",
+    keyFindings: [
+      "Accessory and code item omissions across multiple roofs",
+      "Material pricing below regional market rates",
+      "Waste and steep charges under-scoped on complex geometry",
+    ],
   },
   {
-    slug: "water-mitigation",
-    title: "Water Mitigation Recovery Outcomes",
-    description:
-      "Portfolio-level patterns in drying documentation, equipment scope, mitigation-to-rebuild alignment, and carrier scrutiny on water losses.",
+    id: "multi-family-water",
+    title: "Multi-Family Water Loss",
+    carrierEstimate: "$485,000",
+    additionalRecovery: "$178,000",
+    recoveryIncrease: "37%",
+    keyFindings: [
+      "Mitigation equipment days and monitoring under-scoped",
+      "Rebuild scope disconnected from drying documentation",
+      "O&P eligibility on multi-unit coordination scope",
+    ],
   },
   {
-    slug: "fire-restoration",
-    title: "Fire Restoration Recovery Outcomes",
-    description:
-      "Multi-trade fire and smoke loss recovery themes — structural scope, odor treatment, demolition, and contents coordination.",
-  },
-  {
-    slug: "mold-remediation",
-    title: "Mold Remediation Recovery Outcomes",
-    description:
-      "Protocol-driven remediation scope, containment, clearance documentation, and rebuild continuity across disputed mold files.",
-  },
-  {
-    slug: "reconstruction",
-    title: "Reconstruction Recovery Outcomes",
-    description:
-      "Interior rebuild, finish scope, code upgrades, and multi-trade coordination patterns across complex reconstruction claims.",
-  },
-  {
-    slug: "contents-restoration",
-    title: "Contents Restoration Recovery Outcomes",
-    description:
-      "Inventory-heavy contents losses — pack-out, specialty restoration, storage, and documentation patterns that drive recovery.",
+    id: "fire-restoration",
+    title: "Fire Restoration Project",
+    carrierEstimate: "$620,000",
+    additionalRecovery: "$198,000",
+    recoveryIncrease: "32%",
+    keyFindings: [
+      "Smoke sealing and HVAC scope gaps",
+      "Multi-trade labor under-scoped on structural rebuild",
+      "Code upgrade items omitted from carrier estimate",
+    ],
   },
 ] as const;
+
+export const CASE_STUDIES_RECOVERY_EXAMPLES_SECTION = {
+  eyebrow: "Proof points",
+  title: "Representative Recovery Examples",
+  description:
+    "Concise benchmarks from reviewed claims — illustrative of recovery patterns, not the focus of this page.",
+} as const;
 
 export const CASE_STUDIES_REVIEWS_BRIDGE = {
   title: "Trusted By Contractors Nationwide",

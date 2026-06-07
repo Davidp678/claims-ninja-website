@@ -730,8 +730,8 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "getting_started",
     question: "Are these actual claim outcomes?",
     answer:
-      "The recovery results on our Case Studies page represent aggregate performance metrics and representative portfolio scenarios — not fabricated customer stories. Outcomes vary by claim type, documentation quality, carrier environment, and scope. We present portfolio-level patterns and industry recovery ranges to illustrate what expert supplement review can uncover, without inventing client identities or specific claim details.",
-    relatedLinks: [{ label: "Case studies", href: "/case-studies" }],
+      "The recovery results on our Results & Insights page represent aggregate performance metrics and representative portfolio scenarios — not fabricated customer stories. Outcomes vary by claim type, documentation quality, carrier environment, and scope. We present portfolio-level patterns and industry recovery ranges to illustrate what expert supplement review can uncover, without inventing client identities or specific claim details.",
+    relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
   },
   {
     id: "case-studies-contractor-types",
@@ -747,7 +747,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "How much can supplementing increase claim recovery?",
     answer:
       "Recovery increases vary by trade, scope, and carrier environment. Across thousands of reviewed claims, contractors partnering with Claims Ninja have seen average recovery increases of approximately 40%. Individual claims may see higher or lower results depending on documentation, initial carrier scope, and claim complexity.",
-    relatedLinks: [{ label: "Case studies", href: "/case-studies" }],
+    relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
   },
   {
     id: "case-studies-commercial-claims",
@@ -784,7 +784,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "How many claims has Claims Ninja reviewed?",
     answer:
       "Claims Ninja has reviewed more than 5,000 insurance claims across roofing, mitigation, restoration, reconstruction, and contents operations — generating over $100M in documented recovery for contractor partners nationwide.",
-    relatedLinks: [{ label: "Case studies", href: "/case-studies" }],
+    relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
   },
   {
     id: "case-studies-catastrophe-claims",
@@ -800,7 +800,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "Can Claims Ninja review an entire portfolio of claims?",
     answer:
       "Yes. Claims Ninja conducts portfolio-level reviews of active claim books to identify recurring recovery opportunities, documentation gaps, and workflow inconsistencies. Portfolio reviews help leadership understand aggregate recovery potential and operational impact across dozens or hundreds of active files.",
-    relatedLinks: [{ label: "Case studies", href: "/case-studies" }],
+    relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
   },
   {
     id: "case-studies-nationwide",

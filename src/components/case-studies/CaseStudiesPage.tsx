@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
 import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
@@ -9,22 +7,19 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import {
   CASE_STUDIES_CARD_CLASS,
+  CASE_STUDIES_COMMON_FINDINGS,
   CASE_STUDIES_HERO,
-  CASE_STUDIES_HERO_METRICS,
-  CASE_STUDIES_INDUSTRY_RESULTS,
-  CASE_STUDIES_LIBRARY,
-  CASE_STUDIES_OPPORTUNITY_LIBRARY,
-  CASE_STUDIES_OPERATIONAL_IMPACT,
   CASE_STUDIES_PORTFOLIO,
-  CASE_STUDIES_RECOVERY_PROCESS,
+  CASE_STUDIES_RECOVERY_EXAMPLES,
+  CASE_STUDIES_RECOVERY_EXAMPLES_SECTION,
   CASE_STUDIES_REVIEWS_BRIDGE,
+  CASE_STUDIES_TRADE_CARDS,
+  CASE_STUDIES_TRADE_RESULTS,
 } from "@/lib/case-studies-page";
 import { CTA_LINKS } from "@/lib/constants";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
 import { CLIENT_REVIEWS } from "@/lib/testimonials";
 import { cn } from "@/lib/cn";
-
-import { CaseStudiesProofMetricsSection } from "./CaseStudiesProofMetricsSection";
 
 function BulletList({ items }: { items: readonly string[] }) {
   return (
@@ -42,14 +37,11 @@ function BulletList({ items }: { items: readonly string[] }) {
 export function CaseStudiesPage() {
   return (
     <>
-      {/* 1. Hero + 2. Hero Metrics Strip */}
+      {/* Hero */}
       <section className="relative overflow-hidden bg-brand-black">
         <HeroBackdrop />
-        <Container className="relative z-10 pb-10 pt-24 sm:pb-12 sm:pt-28 lg:pb-14 lg:pt-24">
+        <Container className="relative z-10 pb-14 pt-24 sm:pb-16 sm:pt-28 lg:pb-20 lg:pt-24">
           <div className="max-w-3xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
-              {CASE_STUDIES_HERO.eyebrow}
-            </p>
             <h1 className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
               {CASE_STUDIES_HERO.title}
             </h1>
@@ -60,185 +52,57 @@ export function CaseStudiesPage() {
               <Button href={CTA_LINKS.schedule} size="md" external>
                 Schedule Strategy Call
               </Button>
-              <Button href="#recovery-results" variant="secondary" size="md">
-                Explore Recovery Results
+              <Button href="/contact" variant="secondary" size="md">
+                Talk With Our Team
               </Button>
             </div>
           </div>
-
-          <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
-            {CASE_STUDIES_HERO_METRICS.map((metric) => (
-              <li
-                key={metric.label}
-                className={cn(
-                  CASE_STUDIES_CARD_CLASS,
-                  "p-5 text-center sm:p-6 sm:text-left",
-                )}
-              >
-                <p className="font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                  {metric.value}
-                </p>
-                <p className="mt-1.5 text-xs font-semibold uppercase tracking-wider text-brand-red-light">
-                  {metric.label}
-                </p>
-              </li>
-            ))}
-          </ul>
         </Container>
       </section>
 
-      {/* 3. How Recovery Happens */}
+      {/* Section 1: Recovery Results by Trade */}
       <Section bordered className="py-16 sm:py-20">
         <SectionHeading
-          eyebrow={CASE_STUDIES_RECOVERY_PROCESS.eyebrow}
-          title={CASE_STUDIES_RECOVERY_PROCESS.title}
-          align="left"
-          className="max-w-3xl"
-        />
-        <ol className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {CASE_STUDIES_RECOVERY_PROCESS.steps.map((item) => (
-            <li key={item.step} className={`group relative ${CASE_STUDIES_CARD_CLASS}`}>
-              <span className="font-display text-4xl font-semibold text-brand-red/75 transition-colors group-hover:text-brand-red-light">
-                {item.step}
-              </span>
-              <h3 className="mt-4 font-display text-xl font-semibold text-white">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                {item.description}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </Section>
-
-      {/* 4. Featured Portfolio Recovery Story */}
-      <Section
-        id="recovery-results"
-        bordered
-        className="scroll-mt-24 bg-brand-elevated py-16 sm:py-20"
-      >
-        <SectionHeading
-          title={CASE_STUDIES_PORTFOLIO.title}
-          description={CASE_STUDIES_PORTFOLIO.situation}
-          align="left"
-          className="max-w-3xl"
-        />
-        <div className="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14">
-          <div className="space-y-10">
-            <div>
-              <h3 className="font-display text-lg font-semibold text-white">
-                Common Challenges
-              </h3>
-              <BulletList items={CASE_STUDIES_PORTFOLIO.commonChallenges} />
-            </div>
-            <div>
-              <h3 className="font-display text-lg font-semibold text-white">
-                Claims Ninja Review
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                Claims Ninja conducted a portfolio-level review of active claims and
-                identified recurring opportunities involving:
-              </p>
-              <BulletList items={CASE_STUDIES_PORTFOLIO.reviewFindings} />
-            </div>
-            <div>
-              <h3 className="font-display text-lg font-semibold text-white">
-                Operational Impact
-              </h3>
-              <BulletList items={CASE_STUDIES_PORTFOLIO.operationalImpact} />
-            </div>
-          </div>
-
-          <aside
-            className={cn(
-              CASE_STUDIES_CARD_CLASS,
-              "border-brand-red/25 bg-brand-black/60 p-8 lg:p-10",
-              "shadow-[0_0_64px_-24px_rgba(220,38,38,0.35)]",
-            )}
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
-              Representative Outcome
-            </p>
-            <ul className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-1">
-              {CASE_STUDIES_PORTFOLIO.outcomes.map((outcome) => (
-                <li key={outcome.label}>
-                  <p className="font-display text-3xl font-semibold tracking-tight text-brand-red-light sm:text-4xl">
-                    {outcome.value}
-                  </p>
-                  <p className="mt-1.5 text-sm font-medium text-zinc-300">
-                    {outcome.label}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </aside>
-        </div>
-      </Section>
-
-      {/* 5. Recovery Opportunity Library */}
-      <Section bordered className="py-16 sm:py-20">
-        <SectionHeading
-          title={CASE_STUDIES_OPPORTUNITY_LIBRARY.title}
-          description={CASE_STUDIES_OPPORTUNITY_LIBRARY.description}
-          align="left"
-          className="max-w-3xl"
-        />
-        <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {CASE_STUDIES_OPPORTUNITY_LIBRARY.categories.map((category) => (
-            <li key={category.title} className={CASE_STUDIES_CARD_CLASS}>
-              <h3 className="font-display text-lg font-semibold text-white">
-                {category.title}
-              </h3>
-              <BulletList items={category.items} />
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      {/* 6. Industry Results Grid */}
-      <Section bordered className="bg-brand-elevated py-16 sm:py-20">
-        <SectionHeading
-          eyebrow="Industry expertise"
-          title="Recovery results by trade"
-          description="Representative recovery ranges and review focus areas across the trades Claims Ninja supports most."
+          eyebrow={CASE_STUDIES_TRADE_RESULTS.eyebrow}
+          title={CASE_STUDIES_TRADE_RESULTS.title}
+          description={CASE_STUDIES_TRADE_RESULTS.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {CASE_STUDIES_INDUSTRY_RESULTS.map((industry) => (
-            <li key={industry.id} className={cn(CASE_STUDIES_CARD_CLASS, "flex flex-col")}>
+          {CASE_STUDIES_TRADE_CARDS.map((trade) => (
+            <li key={trade.id} className={cn(CASE_STUDIES_CARD_CLASS, "flex flex-col")}>
               <div className="flex items-start justify-between gap-4">
-                <h3 className="font-display text-lg font-semibold tracking-wide text-white">
-                  {industry.title}
+                <h3 className="font-display text-lg font-semibold text-white">
+                  {trade.title}
                 </h3>
                 <p className="shrink-0 text-right">
                   <span className="block text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                    Recovery Range
+                    Typical Recovery Improvement Range
                   </span>
                   <span className="font-display text-lg font-semibold text-brand-red-light">
-                    {industry.recoveryRange}
+                    {trade.recoveryRange}
                   </span>
                 </p>
               </div>
               <div className="mt-6 flex-1 space-y-5">
                 <div>
                   <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                    Common Challenges
+                    Most Common Findings
                   </h4>
-                  <BulletList items={industry.commonChallenges} />
+                  <BulletList items={trade.commonFindings} />
                 </div>
                 <div>
                   <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                    What Claims Ninja Reviews
+                    Areas Reviewed by Claims Ninja
                   </h4>
-                  <BulletList items={industry.reviews} />
+                  <BulletList items={trade.areasReviewed} />
                 </div>
                 <div>
                   <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                    Typical Outcomes
+                    Representative Opportunities
                   </h4>
-                  <BulletList items={industry.typicalOutcomes} />
+                  <BulletList items={trade.opportunities} />
                 </div>
               </div>
             </li>
@@ -246,78 +110,114 @@ export function CaseStudiesPage() {
         </ul>
       </Section>
 
-      {/* 7. Claims Ninja By The Numbers */}
-      <CaseStudiesProofMetricsSection />
-
-      {/* 8. Operational Impact */}
-      <Section bordered className="py-16 sm:py-20">
+      {/* Section 2: What We Commonly Find */}
+      <Section bordered className="bg-brand-elevated py-16 sm:py-20">
         <SectionHeading
-          eyebrow="Operational impact"
-          title="Business outcomes beyond supplements"
-          description="How portfolio-level claims support changes day-to-day operations for contractor partners."
+          eyebrow={CASE_STUDIES_COMMON_FINDINGS.eyebrow}
+          title={CASE_STUDIES_COMMON_FINDINGS.title}
+          description={CASE_STUDIES_COMMON_FINDINGS.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {CASE_STUDIES_OPERATIONAL_IMPACT.map((impact) => (
-            <li key={impact.title} className={CASE_STUDIES_CARD_CLASS}>
+          {CASE_STUDIES_COMMON_FINDINGS.categories.map((category) => (
+            <li key={category.title} className={CASE_STUDIES_CARD_CLASS}>
               <h3 className="font-display text-lg font-semibold text-white">
-                {impact.title}
+                {category.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                {impact.description}
+                {category.description}
               </p>
+              <BulletList items={category.items} />
             </li>
           ))}
         </ul>
       </Section>
 
-      {/* 9. Case Study Library */}
+      {/* Section 3: Portfolio Recovery Review */}
+      <Section bordered className="py-16 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14">
+          <div>
+            <SectionHeading
+              title={CASE_STUDIES_PORTFOLIO.title}
+              description={CASE_STUDIES_PORTFOLIO.description}
+              align="left"
+              className="max-w-none"
+            />
+            <div className="mt-10">
+              <h3 className="font-display text-lg font-semibold text-white">
+                What We Analyze
+              </h3>
+              <BulletList items={CASE_STUDIES_PORTFOLIO.whatWeAnalyze} />
+            </div>
+          </div>
+
+          <aside
+            className={cn(
+              CASE_STUDIES_CARD_CLASS,
+              "border-brand-red/25 bg-brand-black/60 p-8 lg:self-center lg:p-10",
+              "shadow-[0_0_64px_-24px_rgba(220,38,38,0.35)]",
+            )}
+          >
+            <h3 className="font-display text-lg font-semibold text-white">
+              Typical Outcome
+            </h3>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-300 sm:text-base">
+              {CASE_STUDIES_PORTFOLIO.typicalOutcome}
+            </p>
+          </aside>
+        </div>
+      </Section>
+
+      {/* Section 4: Representative Recovery Examples */}
       <Section bordered className="bg-brand-elevated py-16 sm:py-20">
         <SectionHeading
-          eyebrow="Case study library"
-          title="Recovery outcomes by industry"
-          description="Explore representative recovery patterns by trade. Detailed case study pages coming soon."
+          eyebrow={CASE_STUDIES_RECOVERY_EXAMPLES_SECTION.eyebrow}
+          title={CASE_STUDIES_RECOVERY_EXAMPLES_SECTION.title}
+          description={CASE_STUDIES_RECOVERY_EXAMPLES_SECTION.description}
           align="left"
           className="max-w-3xl"
         />
-        <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {CASE_STUDIES_LIBRARY.map((card) => {
-            const content = (
-              <>
-                <h3 className="font-display text-lg font-semibold text-white transition-colors group-hover:text-brand-red-light">
-                  {card.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                  {card.description}
-                </p>
-              </>
-            );
-
-            return (
-              <li key={card.slug}>
-                {card.href ? (
-                  <Link
-                    href={card.href}
-                    className={cn(
-                      CASE_STUDIES_CARD_CLASS,
-                      "group block h-full transition-colors",
-                    )}
-                  >
-                    {content}
-                  </Link>
-                ) : (
-                  <article className={cn(CASE_STUDIES_CARD_CLASS, "h-full")}>
-                    {content}
-                  </article>
-                )}
-              </li>
-            );
-          })}
+        <ul className="mt-14 grid gap-6 lg:grid-cols-3">
+          {CASE_STUDIES_RECOVERY_EXAMPLES.map((example) => (
+            <li
+              key={example.id}
+              className={cn(
+                CASE_STUDIES_CARD_CLASS,
+                "border-white/10 p-5 shadow-[0_0_32px_-28px_rgba(220,38,38,0.15)]",
+              )}
+            >
+              <h3 className="font-display text-base font-semibold text-white">
+                {example.title}
+              </h3>
+              <dl className="mt-4 space-y-3 border-b border-white/10 pb-4">
+                <div className="flex justify-between gap-4 text-sm">
+                  <dt className="text-zinc-400">Carrier estimate</dt>
+                  <dd className="font-medium text-white">{example.carrierEstimate}</dd>
+                </div>
+                <div className="flex justify-between gap-4 text-sm">
+                  <dt className="text-zinc-400">Additional recovery</dt>
+                  <dd className="font-medium text-brand-red-light">
+                    {example.additionalRecovery}
+                  </dd>
+                </div>
+                <div className="flex justify-between gap-4 text-sm">
+                  <dt className="text-zinc-400">Recovery increase</dt>
+                  <dd className="font-medium text-white">{example.recoveryIncrease}</dd>
+                </div>
+              </dl>
+              <div className="mt-4">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                  Key Findings
+                </h4>
+                <BulletList items={example.keyFindings} />
+              </div>
+            </li>
+          ))}
         </ul>
       </Section>
 
-      {/* 10. Reviews Bridge */}
+      {/* Section 5: Reviews Bridge */}
       <Section bordered className="py-16 sm:py-20">
         <SectionHeading
           title={CASE_STUDIES_REVIEWS_BRIDGE.title}
@@ -357,10 +257,10 @@ export function CaseStudiesPage() {
         </div>
       </Section>
 
-      {/* 11. FAQ */}
+      {/* Section 6: FAQ */}
       <SiteFaqSection {...SITE_FAQ.caseStudies} />
 
-      {/* 12. CTA */}
+      {/* Section 7: CTA */}
       <MarketingCtaPanel />
     </>
   );

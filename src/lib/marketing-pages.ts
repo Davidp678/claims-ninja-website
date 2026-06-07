@@ -376,12 +376,12 @@ export const blogPage = page({
 export const caseStudiesPage = page({
   path: "/case-studies",
   eyebrow: "Resources",
-  title: "Case Studies & Recovery Results",
-  metaTitle: "Case Studies & Recovery Results",
+  title: "Results & Insights",
+  metaTitle: "Results & Insights",
   metaDescription:
-    "Explore representative recovery outcomes, contractor success stories, and portfolio-level insurance claim results from Claims Ninja. See how contractors recover more without building an internal claims department.",
+    "Industry intelligence from thousands of reviewed insurance claims — trade-specific recovery patterns, common scope gaps, and portfolio-level insights for roofing and restoration contractors.",
   description:
-    "Representative recovery outcomes, portfolio-level results, and industry expertise from Claims Ninja — proof that contractors can recover more without building an internal claims department.",
+    "Insights gathered from thousands of insurance claims — common recovery opportunities, trade-specific trends, and the claim patterns we see every day.",
   features: [],
 });
 

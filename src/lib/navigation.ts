@@ -86,9 +86,9 @@ export const RESOURCES_NAV: readonly NavDropdownItem[] = [
     description: "Insights on claims operations and recovery.",
   },
   {
-    label: "Case Studies",
+    label: "Results & Insights",
     href: "/case-studies",
-    description: "Portfolio recovery outcomes and representative claim results.",
+    description: "Industry intelligence from thousands of reviewed claims.",
   },
   {
     label: "Claim Guides",
