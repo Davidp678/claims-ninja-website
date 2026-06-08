@@ -13,7 +13,8 @@
     "test:chat-lead-flow": "npx tsx --test src/components/chatbot/chat-lead-flow.test.ts",
     "test:chat:unit": "npm run test:chat-knowledge && npm run test:chat-lead-flow",
     "audit:seo": "npx tsx scripts/seo-migration-audit.ts",
-    "test:seo-redirects": "npx tsx scripts/seo-redirect-smoke.ts"
+    "test:seo-redirects": "npx tsx scripts/seo-redirect-smoke.ts",
+    "smoke:production": "playwright test --config=playwright.smoke.config.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.3",
@@ -26,6 +27,7 @@
     "server-only": "^0.0.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
