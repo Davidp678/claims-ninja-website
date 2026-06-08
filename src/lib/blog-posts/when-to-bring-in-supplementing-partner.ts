@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/lib/blog-types";
+import { CTA_LINKS } from "@/lib/constants";
 
 export const whenToBringInSupplementingPartner: BlogPost = {
   slug: "when-to-bring-in-supplementing-partner",
@@ -45,9 +46,9 @@ export const whenToBringInSupplementingPartner: BlogPost = {
         },
         {
           label: "Schedule a strategy call",
-          href: "https://meetings.hubspot.com/taylor-handsel/team",
+          href: CTA_LINKS.schedule,
         },
-        { label: "Begin claim intake", href: "https://form.jotform.com/260536051303041" },
+        { label: "Begin claim intake", href: CTA_LINKS.onboarding },
       ],
     },
     {

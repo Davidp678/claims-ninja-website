@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/lib/blog-types";
+import { CTA_LINKS } from "@/lib/constants";
 
 export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
   slug: "insurance-supplementing-guide-contractors",
@@ -460,7 +461,7 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
         "When you are ready to pressure-test a file or scale supplement volume without adding salaried overhead, Claims Ninja is built to help contractors recover more on insurance claims with documentation-first supplementing — not unnecessary conflict.",
       ],
       links: [
-        { label: "Begin claim intake", href: "https://form.jotform.com/260536051303041" },
+        { label: "Begin claim intake", href: CTA_LINKS.onboarding },
         { label: "Full FAQ library", href: "/faq" },
       ],
     },

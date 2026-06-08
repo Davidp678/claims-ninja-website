@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
+import { isExternalHref } from "@/lib/urls";
 
 const variants = {
   primary:
@@ -15,10 +16,6 @@ const sizes = {
   md: "h-11 px-6 text-sm",
   lg: "h-[3.25rem] px-9 text-base font-semibold",
 } as const;
-
-function isExternalHref(href: string): boolean {
-  return href.startsWith("http://") || href.startsWith("https://") || href.startsWith("mailto:") || href.startsWith("tel:");
-}
 
 type ButtonProps = {
   children: React.ReactNode;

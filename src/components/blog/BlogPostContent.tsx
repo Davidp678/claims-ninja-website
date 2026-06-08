@@ -3,6 +3,10 @@ import Link from "next/link";
 import type { BlogSection } from "@/lib/blog-data";
 import { BLOG_ANCHOR_SCROLL_CLASS } from "@/lib/blog-page";
 import { cn } from "@/lib/cn";
+import { isExternalHref } from "@/lib/urls";
+
+const sectionLinkClass =
+  "text-sm font-medium text-brand-red-light transition-colors hover:text-white";
 
 type BlogPostContentProps = {
   sections: readonly BlogSection[];
@@ -73,12 +77,20 @@ export function BlogPostContent({ sections }: BlogPostContentProps) {
               <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2">
                 {section.links.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm font-medium text-brand-red-light transition-colors hover:text-white"
-                    >
-                      {link.label} →
-                    </Link>
+                    {isExternalHref(link.href) ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={sectionLinkClass}
+                      >
+                        {link.label} →
+                      </a>
+                    ) : (
+                      <Link href={link.href} className={sectionLinkClass}>
+                        {link.label} →
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
