@@ -9,13 +9,11 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/cn";
 import { getPartnerLogo } from "@/lib/partners";
+import type { Locale } from "@/lib/i18n/config";
+import { getCommonContent } from "@/lib/i18n/content/common";
+import { getCompanyContent } from "@/lib/i18n/content/company";
 import {
-  PARTNER_NETWORK_BECOME,
-  PARTNER_NETWORK_BENEFITS,
   PARTNER_NETWORK_CARD_CLASS,
-  PARTNER_NETWORK_ECOSYSTEM,
-  PARTNER_NETWORK_HERO,
-  PARTNER_NETWORK_PARTNERS,
   type PartnerCardConfig,
 } from "@/lib/partner-network-page";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
@@ -101,7 +99,10 @@ function PartnerCard({ partner }: { partner: PartnerCardConfig }) {
   );
 }
 
-export function PartnerNetworkPage() {
+export function PartnerNetworkPage({ locale = "en" }: { locale?: Locale }) {
+  const content = getCompanyContent(locale).partnerNetwork;
+  const cta = getCommonContent(locale);
+
   return (
     <>
       <section className="relative overflow-hidden bg-brand-black">
@@ -109,21 +110,21 @@ export function PartnerNetworkPage() {
         <Container className="relative z-10 pb-14 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
           <div className="max-w-3xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
-              {PARTNER_NETWORK_HERO.eyebrow}
+              {content.hero.eyebrow}
             </p>
             <h1 className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              {PARTNER_NETWORK_HERO.title}
+              {content.hero.title}
             </h1>
             <div className="mt-5 space-y-5 text-lg leading-relaxed text-zinc-300 sm:text-xl">
-              {PARTNER_NETWORK_HERO.paragraphs.map((paragraph) => (
+              {content.hero.paragraphs.map((paragraph) => (
                 <p key={paragraph.slice(0, 32)}>{paragraph}</p>
               ))}
             </div>
             <ConversionCtaGroup
               className="mt-10"
               size="md"
-              primaryLabel="Begin Claim Intake"
-              secondaryLabel="Schedule Strategy Call"
+              primaryLabel={cta.beginClaimIntake}
+              secondaryLabel={cta.scheduleStrategyCallCta}
             />
           </div>
         </Container>
@@ -133,13 +134,13 @@ export function PartnerNetworkPage() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14">
           <div>
             <SectionHeading
-              eyebrow={PARTNER_NETWORK_ECOSYSTEM.eyebrow}
-              title={PARTNER_NETWORK_ECOSYSTEM.title}
+              eyebrow={content.ecosystem.eyebrow}
+              title={content.ecosystem.title}
               align="left"
               className="max-w-none"
             />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-zinc-300">
-              {PARTNER_NETWORK_ECOSYSTEM.paragraphs.map((paragraph) => (
+              {content.ecosystem.paragraphs.map((paragraph) => (
                 <p key={paragraph.slice(0, 32)}>{paragraph}</p>
               ))}
             </div>
@@ -153,10 +154,10 @@ export function PartnerNetworkPage() {
             )}
           >
             <h3 className="font-display text-lg font-semibold text-white">
-              {PARTNER_NETWORK_ECOSYSTEM.supportAreasTitle}
+              {content.ecosystem.supportAreasTitle}
             </h3>
             <div className="mt-4">
-              <BulletList items={PARTNER_NETWORK_ECOSYSTEM.supportAreas} />
+              <BulletList items={content.ecosystem.supportAreas} />
             </div>
           </aside>
         </div>
@@ -169,7 +170,7 @@ export function PartnerNetworkPage() {
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2">
-          {PARTNER_NETWORK_PARTNERS.map((partner) => (
+          {content.partners.map((partner) => (
             <li key={partner.id}>
               <PartnerCard partner={partner} />
             </li>
@@ -179,12 +180,12 @@ export function PartnerNetworkPage() {
 
       <Section bordered compact>
         <SectionHeading
-          title={PARTNER_NETWORK_BENEFITS.title}
+          title={content.benefits.title}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {PARTNER_NETWORK_BENEFITS.items.map((item) => (
+          {content.benefits.items.map((item) => (
             <li key={item.title} className={cn(PARTNER_NETWORK_CARD_CLASS, "group")}>
               <h3 className="font-display text-lg font-semibold text-white transition-colors group-hover:text-brand-red-light">
                 {item.title}
@@ -200,26 +201,26 @@ export function PartnerNetworkPage() {
       <Section bordered compact className="bg-brand-elevated">
         <div className="max-w-3xl">
           <SectionHeading
-            title={PARTNER_NETWORK_BECOME.title}
+            title={content.become.title}
             align="left"
             className="max-w-none"
           />
           <div className="mt-6 space-y-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
-            {PARTNER_NETWORK_BECOME.paragraphs.map((paragraph) => (
+            {content.become.paragraphs.map((paragraph) => (
               <p key={paragraph.slice(0, 32)}>{paragraph}</p>
             ))}
           </div>
           <Link
-            href={PARTNER_NETWORK_BECOME.ctaHref}
+            href={content.become.ctaHref}
             className="mt-8 inline-block text-sm font-medium text-brand-red-light transition-colors hover:text-white"
           >
-            {PARTNER_NETWORK_BECOME.ctaLabel} →
+            {content.become.ctaLabel} →
           </Link>
         </div>
       </Section>
 
-      <SiteFaqSection {...SITE_FAQ.partnerNetwork} />
-      <MarketingCtaPanel />
+      <SiteFaqSection {...SITE_FAQ.partnerNetwork} locale={locale} />
+      <MarketingCtaPanel locale={locale} />
     </>
   );
 }

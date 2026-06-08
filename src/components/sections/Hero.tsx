@@ -73,7 +73,7 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
       <HeroBackdrop />
 
       <Container className="relative z-10 grid grid-cols-1 gap-10 pb-14 pt-28 sm:gap-12 sm:pb-16 sm:pt-32 lg:grid-cols-[minmax(0,0.9fr)_minmax(620px,1.15fr)] lg:grid-rows-[auto_auto] lg:items-start lg:gap-x-16 lg:gap-y-10 lg:pb-20 lg:pt-28">
-        <div className="max-w-2xl lg:col-start-1 lg:row-start-1 lg:max-w-none">
+        <div className="min-w-0 max-w-2xl lg:col-start-1 lg:row-start-1 lg:max-w-none">
           <h1
             id="hero-heading"
             className="font-display text-4xl font-semibold leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl"
@@ -85,9 +85,13 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             {content.subhead}
           </p>
           <ConversionCtaGroup
-            className="mt-8"
+            className={locale === "es" ? "mt-8 max-w-xl" : "mt-8"}
+            rowBreakpoint={locale === "es" ? "xl" : "sm"}
+            allowWrap={locale === "es"}
             primaryLabel={content.primaryCta}
             secondaryLabel={content.secondaryCta}
+            primaryClassName={locale === "es" ? "w-full xl:w-auto" : undefined}
+            secondaryClassName={locale === "es" ? "w-full xl:w-auto" : undefined}
           />
         </div>
 

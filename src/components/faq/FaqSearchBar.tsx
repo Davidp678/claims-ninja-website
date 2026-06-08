@@ -2,13 +2,16 @@
 
 import { useCallback, useRef } from "react";
 
-import { FAQ_SEARCH } from "@/lib/faq-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getFaqPageContent } from "@/lib/i18n/content/faq";
 import { cn } from "@/lib/cn";
 
 import { useFaqSearch, useFilteredFaqs } from "./FaqSearchProvider";
 
-export function FaqSearchBar() {
-  const { query, setQuery, clearQuery } = useFaqSearch();
+export function FaqSearchBar({ locale: localeProp }: { locale?: Locale }) {
+  const { query, setQuery, clearQuery, locale: contextLocale } = useFaqSearch();
+  const locale = localeProp ?? contextLocale;
+  const search = getFaqPageContent(locale).search;
   const filteredFaqs = useFilteredFaqs();
   const inputRef = useRef<HTMLInputElement>(null);
   const trimmedQuery = query.trim();
@@ -49,7 +52,7 @@ export function FaqSearchBar() {
             }
           }}
           aria-label="Search claims questions"
-          placeholder={FAQ_SEARCH.placeholder}
+          placeholder={search.placeholder}
           className={cn(
             "w-full rounded-xl border border-white/15 bg-brand-surface py-3.5 pl-12 text-sm text-white placeholder:text-zinc-500 shadow-[0_0_48px_-28px_rgba(220,38,38,0.15)] transition-colors focus:border-brand-red/45 focus:outline-none focus:ring-2 focus:ring-brand-red/20",
             trimmedQuery ? "pr-12" : "pr-4",
@@ -82,7 +85,7 @@ export function FaqSearchBar() {
       >
         {trimmedQuery
           ? `Showing ${resultCount} result${resultCount === 1 ? "" : "s"} for “${trimmedQuery}”`
-          : FAQ_SEARCH.helperText}
+          : search.helperText}
       </p>
     </div>
   );

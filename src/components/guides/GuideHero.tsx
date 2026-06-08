@@ -1,8 +1,11 @@
 import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
 import { Container } from "@/components/ui/Container";
-import { GUIDE_HERO, getGuideCount } from "@/lib/guide-page";
+import { getGuideCount } from "@/lib/guide-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getResourcesContent } from "@/lib/i18n/content/resources";
 
-export function GuideHero() {
+export function GuideHero({ locale = "en" }: { locale?: Locale }) {
+  const hero = getResourcesContent(locale).guides.hero;
   const guideCount = getGuideCount();
 
   return (
@@ -22,19 +25,19 @@ export function GuideHero() {
       />
       <Container className="relative z-10 max-w-3xl pb-14 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
-          {GUIDE_HERO.eyebrow}
+          {hero.eyebrow}
         </p>
         <h1
           id="guide-hero-heading"
           className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl"
         >
-          {GUIDE_HERO.title}
+          {hero.title}
         </h1>
         <p className="mt-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
-          {GUIDE_HERO.description}
+          {hero.description}
         </p>
         <p className="mt-6 text-sm font-medium text-zinc-500">
-          {guideCount} guides · 5 disciplines
+          {getResourcesContent(locale).guides.hubUi.heroCountLine(guideCount)}
         </p>
       </Container>
     </section>

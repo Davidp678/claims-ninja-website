@@ -5,44 +5,54 @@ import { Container } from "@/components/ui/Container";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import {
-  CONTENTS_RESTORATION_FEATURES,
-  CONTENTS_RESTORATION_FEATURE_CARD_CLASS,
-  CONTENTS_RESTORATION_HERO,
-  CONTENTS_RESTORATION_HERO_IMAGE,
-  CONTENTS_RESTORATION_MISSED_ITEMS,
-  CONTENTS_RESTORATION_SEGMENTS,
-  CONTENTS_RESTORATION_WORKFLOW,
-} from "@/lib/contents-restoration-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getCommonContent } from "@/lib/i18n/content/common";
+import { getSolutionsContent } from "@/lib/i18n/content/solutions";
+import { CONTENTS_RESTORATION_FEATURE_CARD_CLASS } from "@/lib/contents-restoration-page";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
 
 import { RoofingHeroImageCard } from "./RoofingHeroImageCard";
 
-export function ContentsRestorationClaimsPage() {
+export function ContentsRestorationClaimsPage({
+  locale = "en",
+}: {
+  locale?: Locale;
+}) {
+  const content = getSolutionsContent(locale).contents;
+  const common = getCommonContent(locale);
+
   return (
     <>
       <section className="relative overflow-hidden bg-brand-black">
         <HeroBackdrop />
         <Container className="relative z-10 grid grid-cols-1 gap-8 pb-10 pt-24 sm:gap-10 sm:pb-12 sm:pt-28 lg:grid-cols-[minmax(0,0.9fr)_minmax(620px,1.15fr)] lg:items-center lg:gap-x-16 lg:pb-14 lg:pt-24">
-          <div className="max-w-2xl lg:col-start-1 lg:max-w-none">
+          <div
+            className={
+              locale === "es"
+                ? "min-w-0 max-w-2xl lg:col-start-1 lg:max-w-none"
+                : "max-w-2xl lg:col-start-1 lg:max-w-none"
+            }
+          >
             <SectionHeading
-              eyebrow={CONTENTS_RESTORATION_HERO.eyebrow}
-              title={CONTENTS_RESTORATION_HERO.title}
-              description={CONTENTS_RESTORATION_HERO.description}
+              eyebrow={content.hero.eyebrow}
+              title={content.hero.title}
+              description={content.hero.description}
               align="left"
               className="max-w-none"
             />
             <ConversionCtaGroup
               className="mt-10 lg:mt-12"
               size="md"
-              primaryLabel="Begin Claim Intake"
-              secondaryLabel="Schedule Strategy Call"
+              primaryLabel={common.beginClaimIntake}
+              secondaryLabel={common.scheduleStrategyCallCta}
+              rowBreakpoint={locale === "es" ? "xl" : "sm"}
+              allowWrap={locale === "es"}
             />
           </div>
           <div className="w-full lg:col-start-2 lg:mt-2">
             <RoofingHeroImageCard
-              src={CONTENTS_RESTORATION_HERO_IMAGE.src}
-              alt={CONTENTS_RESTORATION_HERO_IMAGE.alt}
+              src={content.heroImage.src}
+              alt={content.heroImage.alt}
             />
           </div>
         </Container>
@@ -50,14 +60,14 @@ export function ContentsRestorationClaimsPage() {
 
       <Section bordered>
         <SectionHeading
-          eyebrow={CONTENTS_RESTORATION_SEGMENTS.eyebrow}
-          title={CONTENTS_RESTORATION_SEGMENTS.title}
-          description={CONTENTS_RESTORATION_SEGMENTS.description}
+          eyebrow={content.segments.eyebrow}
+          title={content.segments.title}
+          description={content.segments.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {CONTENTS_RESTORATION_SEGMENTS.items.map((segment) => (
+          {content.segments.items.map((segment) => (
             <li key={segment.title} className={CONTENTS_RESTORATION_FEATURE_CARD_CLASS}>
               <h3 className="font-display text-lg font-semibold text-white">
                 {segment.title}
@@ -72,13 +82,13 @@ export function ContentsRestorationClaimsPage() {
 
       <Section bordered className="py-16 sm:py-20">
         <SectionHeading
-          eyebrow={CONTENTS_RESTORATION_WORKFLOW.eyebrow}
-          title={CONTENTS_RESTORATION_WORKFLOW.title}
+          eyebrow={content.workflow.eyebrow}
+          title={content.workflow.title}
           align="left"
           className="max-w-3xl"
         />
         <ol className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {CONTENTS_RESTORATION_WORKFLOW.steps.map((item) => (
+          {content.workflow.steps.map((item) => (
             <li
               key={item.step}
               className={`group relative ${CONTENTS_RESTORATION_FEATURE_CARD_CLASS}`}
@@ -99,13 +109,13 @@ export function ContentsRestorationClaimsPage() {
 
       <Section bordered className="bg-brand-elevated py-16 sm:py-20">
         <SectionHeading
-          eyebrow={CONTENTS_RESTORATION_FEATURES.eyebrow}
-          title={CONTENTS_RESTORATION_FEATURES.title}
+          eyebrow={content.features.eyebrow}
+          title={content.features.title}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {CONTENTS_RESTORATION_FEATURES.items.map((feature) => (
+          {content.features.items.map((feature) => (
             <li key={feature.title} className={CONTENTS_RESTORATION_FEATURE_CARD_CLASS}>
               <h3 className="font-display text-lg font-semibold text-white">
                 {feature.title}
@@ -120,13 +130,13 @@ export function ContentsRestorationClaimsPage() {
 
       <Section bordered className="bg-brand-elevated py-16 sm:py-20">
         <SectionHeading
-          title={CONTENTS_RESTORATION_MISSED_ITEMS.title}
-          description={CONTENTS_RESTORATION_MISSED_ITEMS.description}
+          title={content.missedItems.title}
+          description={content.missedItems.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-10 grid gap-4 lg:grid-cols-2">
-          {CONTENTS_RESTORATION_MISSED_ITEMS.items.map((item) => (
+          {content.missedItems.items.map((item) => (
             <li
               key={item}
               className="flex gap-3 rounded-xl border border-white/12 bg-brand-surface/60 px-5 py-4 text-sm leading-relaxed text-zinc-300"
@@ -141,8 +151,8 @@ export function ContentsRestorationClaimsPage() {
         </ul>
       </Section>
 
-      <SiteFaqSection {...SITE_FAQ.contents} />
-      <MarketingCtaPanel />
+      <SiteFaqSection {...SITE_FAQ.contents} locale={locale} />
+      <MarketingCtaPanel locale={locale} />
     </>
   );
 }

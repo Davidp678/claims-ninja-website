@@ -1,16 +1,19 @@
-import { FAQ_LIBRARY_SECTION } from "@/lib/faq-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getFaqPageContent } from "@/lib/i18n/content/faq";
 
 import { FaqLibraryContent } from "./FaqLibraryContent";
 import { FaqPageSection } from "./FaqPageSection";
 
-export function FaqLibrary() {
+export function FaqLibrary({ locale = "en" }: { locale?: Locale }) {
+  const librarySection = getFaqPageContent(locale).librarySection;
+
   return (
     <FaqPageSection
-      eyebrow={FAQ_LIBRARY_SECTION.eyebrow}
-      title={FAQ_LIBRARY_SECTION.title}
-      description={FAQ_LIBRARY_SECTION.description}
+      eyebrow={librarySection.eyebrow}
+      title={librarySection.title}
+      description={librarySection.description}
     >
-      <FaqLibraryContent />
+      <FaqLibraryContent locale={locale} />
     </FaqPageSection>
   );
 }

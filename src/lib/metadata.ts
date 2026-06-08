@@ -11,9 +11,9 @@ import { GUIDE_META, getGuidePathForGuide } from "@/lib/guide-page";
 import { ES_INDEXING_ENABLED, type Locale } from "@/lib/i18n/config";
 import {
   ES_PATH_BY_EN_PATH,
-  isWave1EnPath,
+  isEsMarketingEnPath,
   stripLocalePrefix,
-  type Wave1EnPath,
+  type EsMarketingEnPath,
 } from "@/lib/i18n/paths";
 import { DEFAULT_OG_IMAGE_PATH, getAbsoluteUrl } from "@/lib/site-seo";
 
@@ -26,8 +26,8 @@ export function buildLanguageAlternates(path: string): Record<string, string> {
 
   const normalized = path.startsWith("/") ? path : `/${path}`;
   const enPath = stripLocalePrefix(normalized);
-  const esPath = isWave1EnPath(enPath)
-    ? ES_PATH_BY_EN_PATH[enPath as Wave1EnPath]
+  const esPath = isEsMarketingEnPath(enPath)
+    ? ES_PATH_BY_EN_PATH[enPath as EsMarketingEnPath]
     : undefined;
 
   if (!esPath) {

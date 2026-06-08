@@ -7,13 +7,9 @@ import { useSearchParams } from "next/navigation";
 import type { GuideCategorySlug } from "@/lib/guide-categories";
 import { GUIDE_CATEGORY_REGISTRY, getGuideCategoryPath } from "@/lib/guide-categories";
 import type { GuideRole, GuideType } from "@/lib/guide-types";
-import {
-  GUIDE_CATEGORY_SECTION,
-  GUIDE_TYPES,
-  GUIDE_TYPE_LABELS,
-  GUIDE_ROLE_LABELS,
-  getAllGuides,
-} from "@/lib/guide-page";
+import { GUIDE_TYPES, getAllGuides } from "@/lib/guide-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getResourcesContent } from "@/lib/i18n/content/resources";
 import { filterGuides } from "@/lib/guide-search";
 
 import { Section } from "@/components/ui/Section";
@@ -23,7 +19,8 @@ import { cn } from "@/lib/cn";
 import { GuideGrid } from "./GuideGrid";
 import { GuideActiveRoleChip } from "./GuideRoleCards";
 
-export function GuideHubContent() {
+export function GuideHubContent({ locale = "en" }: { locale?: Locale }) {
+  const guides = getResourcesContent(locale).guides;
   const searchParams = useSearchParams();
   const roleParam = searchParams.get("role") as GuideRole | null;
 
@@ -44,16 +41,18 @@ export function GuideHubContent() {
     <>
       <Section bordered compact id="guide-search">
         <SectionHeading
-          eyebrow={GUIDE_CATEGORY_SECTION.eyebrow}
-          title={isFiltering ? "Search results" : GUIDE_CATEGORY_SECTION.title}
+          eyebrow={guides.categorySection.eyebrow}
+          title={
+            isFiltering ? guides.hubUi.searchResultsTitle : guides.categorySection.title
+          }
           description={
             roleParam
-              ? `Showing guides for ${GUIDE_ROLE_LABELS[roleParam as GuideRole] ?? roleParam.replace(/-/g, " ")}.`
-              : GUIDE_CATEGORY_SECTION.description
+              ? `Showing guides for ${guides.roleLabels[roleParam as GuideRole] ?? roleParam.replace(/-/g, " ")}.`
+              : guides.categorySection.description
           }
           align="left"
         />
-        <GuideActiveRoleChip />
+        <GuideActiveRoleChip locale={locale} />
         <div className="mt-6 flex flex-col gap-4 lg:flex-row lg:items-center">
           <label className="sr-only" htmlFor="guide-search-input">
             Search guides
@@ -93,7 +92,7 @@ export function GuideHubContent() {
               key={type}
               active={guideType === type}
               onClick={() => setGuideType(type)}
-              label={GUIDE_TYPE_LABELS[type]}
+              label={guides.typeLabels[type]}
             />
           ))}
         </div>

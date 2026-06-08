@@ -5,44 +5,50 @@ import { Container } from "@/components/ui/Container";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import {
-  WATER_DAMAGE_FEATURES,
-  WATER_DAMAGE_FEATURE_CARD_CLASS,
-  WATER_DAMAGE_HERO,
-  WATER_DAMAGE_HERO_IMAGE,
-  WATER_DAMAGE_MISSED_ITEMS,
-  WATER_DAMAGE_SEGMENTS,
-  WATER_DAMAGE_WORKFLOW,
-} from "@/lib/water-damage-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getCommonContent } from "@/lib/i18n/content/common";
+import { getSolutionsContent } from "@/lib/i18n/content/solutions";
+import { WATER_DAMAGE_FEATURE_CARD_CLASS } from "@/lib/water-damage-page";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
 
 import { RoofingHeroImageCard } from "./RoofingHeroImageCard";
 
-export function WaterDamageClaimsPage() {
+export function WaterDamageClaimsPage({ locale = "en" }: { locale?: Locale }) {
+  const content = getSolutionsContent(locale).waterDamage;
+  const common = getCommonContent(locale);
+
   return (
     <>
       <section className="relative overflow-hidden bg-brand-black">
         <HeroBackdrop />
         <Container className="relative z-10 grid grid-cols-1 gap-8 pb-10 pt-24 sm:gap-10 sm:pb-12 sm:pt-28 lg:grid-cols-[minmax(0,0.9fr)_minmax(620px,1.15fr)] lg:items-center lg:gap-x-16 lg:pb-14 lg:pt-24">
-          <div className="max-w-2xl lg:col-start-1 lg:max-w-none">
+          <div
+            className={
+              locale === "es"
+                ? "min-w-0 max-w-2xl lg:col-start-1 lg:max-w-none"
+                : "max-w-2xl lg:col-start-1 lg:max-w-none"
+            }
+          >
             <SectionHeading
-              eyebrow={WATER_DAMAGE_HERO.eyebrow}
-              title={WATER_DAMAGE_HERO.title}
-              description={WATER_DAMAGE_HERO.description}
+              eyebrow={content.hero.eyebrow}
+              title={content.hero.title}
+              description={content.hero.description}
               align="left"
               className="max-w-none"
             />
             <ConversionCtaGroup
               className="mt-10 lg:mt-12"
               size="md"
-              primaryLabel="Begin Claim Intake"
-              secondaryLabel="Schedule Strategy Call"
+              primaryLabel={common.beginClaimIntake}
+              secondaryLabel={common.scheduleStrategyCallCta}
+              rowBreakpoint={locale === "es" ? "xl" : "sm"}
+              allowWrap={locale === "es"}
             />
           </div>
           <div className="w-full lg:col-start-2 lg:mt-2">
             <RoofingHeroImageCard
-              src={WATER_DAMAGE_HERO_IMAGE.src}
-              alt={WATER_DAMAGE_HERO_IMAGE.alt}
+              src={content.heroImage.src}
+              alt={content.heroImage.alt}
               objectPosition="22% center"
             />
           </div>
@@ -51,14 +57,14 @@ export function WaterDamageClaimsPage() {
 
       <Section bordered>
         <SectionHeading
-          eyebrow={WATER_DAMAGE_SEGMENTS.eyebrow}
-          title={WATER_DAMAGE_SEGMENTS.title}
-          description={WATER_DAMAGE_SEGMENTS.description}
+          eyebrow={content.segments.eyebrow}
+          title={content.segments.title}
+          description={content.segments.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {WATER_DAMAGE_SEGMENTS.items.map((segment) => (
+          {content.segments.items.map((segment) => (
             <li key={segment.title} className={WATER_DAMAGE_FEATURE_CARD_CLASS}>
               <h3 className="font-display text-lg font-semibold text-white">
                 {segment.title}
@@ -73,13 +79,13 @@ export function WaterDamageClaimsPage() {
 
       <Section bordered className="py-16 sm:py-20">
         <SectionHeading
-          eyebrow={WATER_DAMAGE_WORKFLOW.eyebrow}
-          title={WATER_DAMAGE_WORKFLOW.title}
+          eyebrow={content.workflow.eyebrow}
+          title={content.workflow.title}
           align="left"
           className="max-w-3xl"
         />
         <ol className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {WATER_DAMAGE_WORKFLOW.steps.map((item) => (
+          {content.workflow.steps.map((item) => (
             <li key={item.step} className={`group relative ${WATER_DAMAGE_FEATURE_CARD_CLASS}`}>
               <span className="font-display text-4xl font-semibold text-brand-red/75 transition-colors group-hover:text-brand-red-light">
                 {item.step}
@@ -97,13 +103,13 @@ export function WaterDamageClaimsPage() {
 
       <Section bordered className="bg-brand-elevated py-16 sm:py-20">
         <SectionHeading
-          eyebrow={WATER_DAMAGE_FEATURES.eyebrow}
-          title={WATER_DAMAGE_FEATURES.title}
+          eyebrow={content.features.eyebrow}
+          title={content.features.title}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {WATER_DAMAGE_FEATURES.items.map((feature) => (
+          {content.features.items.map((feature) => (
             <li key={feature.title} className={WATER_DAMAGE_FEATURE_CARD_CLASS}>
               <h3 className="font-display text-lg font-semibold text-white">
                 {feature.title}
@@ -118,13 +124,13 @@ export function WaterDamageClaimsPage() {
 
       <Section bordered className="bg-brand-elevated py-16 sm:py-20">
         <SectionHeading
-          title={WATER_DAMAGE_MISSED_ITEMS.title}
-          description={WATER_DAMAGE_MISSED_ITEMS.description}
+          title={content.missedItems.title}
+          description={content.missedItems.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-10 grid gap-4 lg:grid-cols-2">
-          {WATER_DAMAGE_MISSED_ITEMS.items.map((item) => (
+          {content.missedItems.items.map((item) => (
             <li
               key={item}
               className="flex gap-3 rounded-xl border border-white/12 bg-brand-surface/60 px-5 py-4 text-sm leading-relaxed text-zinc-300"
@@ -139,8 +145,8 @@ export function WaterDamageClaimsPage() {
         </ul>
       </Section>
 
-      <SiteFaqSection {...SITE_FAQ.waterDamage} />
-      <MarketingCtaPanel />
+      <SiteFaqSection {...SITE_FAQ.waterDamage} locale={locale} />
+      <MarketingCtaPanel locale={locale} />
     </>
   );
 }

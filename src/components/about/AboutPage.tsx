@@ -6,16 +6,10 @@ import { Container } from "@/components/ui/Container";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import {
-  ABOUT_AUDIENCE,
-  ABOUT_BELIEFS,
-  ABOUT_CARD_CLASS,
-  ABOUT_HERO,
-  ABOUT_JOURNEY,
-  ABOUT_PARTNERSHIP,
-  ABOUT_VALUES,
-  ABOUT_WHY_WE_EXIST,
-} from "@/lib/about-page";
+import { ABOUT_CARD_CLASS } from "@/lib/about-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getCommonContent } from "@/lib/i18n/content/common";
+import { getCompanyContent } from "@/lib/i18n/content/company";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
 import { cn } from "@/lib/cn";
 
@@ -89,7 +83,10 @@ function JourneyStepLabel({ label }: { label: string }) {
   );
 }
 
-export function AboutPage() {
+export function AboutPage({ locale = "en" }: { locale?: Locale }) {
+  const about = getCompanyContent(locale).about;
+  const cta = getCommonContent(locale);
+
   return (
     <>
       <section className="relative overflow-hidden bg-brand-black">
@@ -97,21 +94,21 @@ export function AboutPage() {
         <Container className="relative z-10 pb-14 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
           <div className="max-w-3xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
-              {ABOUT_HERO.eyebrow}
+              {about.hero.eyebrow}
             </p>
             <h1 className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              {ABOUT_HERO.title}
+              {about.hero.title}
             </h1>
             <div className="mt-5 space-y-5 text-lg leading-relaxed text-zinc-300 sm:text-xl">
-              {ABOUT_HERO.paragraphs.map((paragraph) => (
+              {about.hero.paragraphs.map((paragraph) => (
                 <p key={paragraph.slice(0, 32)}>{paragraph}</p>
               ))}
             </div>
             <ConversionCtaGroup
               className="mt-10"
               size="md"
-              primaryLabel="Begin Claim Intake"
-              secondaryLabel="Schedule Strategy Call"
+              primaryLabel={cta.beginClaimIntake}
+              secondaryLabel={cta.scheduleStrategyCallCta}
             />
           </div>
         </Container>
@@ -121,16 +118,16 @@ export function AboutPage() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14">
           <div>
             <SectionHeading
-              eyebrow={ABOUT_WHY_WE_EXIST.eyebrow}
-              title={ABOUT_WHY_WE_EXIST.title}
+              eyebrow={about.whyWeExist.eyebrow}
+              title={about.whyWeExist.title}
               align="left"
               className="max-w-none"
             />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-zinc-300">
-              {ABOUT_WHY_WE_EXIST.paragraphs.map((paragraph) => (
+              {about.whyWeExist.paragraphs.map((paragraph) => (
                 <p key={paragraph.slice(0, 32)}>{paragraph}</p>
               ))}
-              <p>{ABOUT_WHY_WE_EXIST.closing}</p>
+              <p>{about.whyWeExist.closing}</p>
             </div>
           </div>
 
@@ -145,7 +142,7 @@ export function AboutPage() {
               What growing claim volume demands
             </h3>
             <div className="mt-4">
-              <BulletList items={ABOUT_WHY_WE_EXIST.complexityItems} />
+              <BulletList items={about.whyWeExist.complexityItems} />
             </div>
           </aside>
         </div>
@@ -153,13 +150,13 @@ export function AboutPage() {
 
       <Section bordered compact className="bg-brand-elevated">
         <SectionHeading
-          eyebrow={ABOUT_BELIEFS.eyebrow}
-          title={ABOUT_BELIEFS.title}
+          eyebrow={about.beliefs.eyebrow}
+          title={about.beliefs.title}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {ABOUT_BELIEFS.items.map((belief) => (
+          {about.beliefs.items.map((belief) => (
             <li key={belief.title} className={cn(ABOUT_CARD_CLASS, "group")}>
               <h3 className="font-display text-xl font-semibold text-white transition-colors group-hover:text-brand-red-light">
                 {belief.title}
@@ -174,14 +171,14 @@ export function AboutPage() {
 
       <Section bordered compact>
         <SectionHeading
-          eyebrow={ABOUT_AUDIENCE.eyebrow}
-          title={ABOUT_AUDIENCE.title}
-          description={ABOUT_AUDIENCE.description}
+          eyebrow={about.audience.eyebrow}
+          title={about.audience.title}
+          description={about.audience.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {ABOUT_AUDIENCE.items.map((item) => (
+          {about.audience.items.map((item) => (
             <li key={item.title}>
               <AudienceCard
                 title={item.title}
@@ -195,13 +192,13 @@ export function AboutPage() {
 
       <Section bordered compact className="bg-brand-elevated py-16 sm:py-20">
         <SectionHeading
-          eyebrow={ABOUT_JOURNEY.eyebrow}
-          title={ABOUT_JOURNEY.title}
+          eyebrow={about.journey.eyebrow}
+          title={about.journey.title}
           align="left"
           className="max-w-3xl"
         />
         <ol className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {ABOUT_JOURNEY.steps.map((step) => (
+          {about.journey.steps.map((step) => (
             <li key={step.label} className={cn("group relative", ABOUT_CARD_CLASS)}>
               <JourneyStepLabel label={step.label} />
               <h3 className="mt-4 font-display text-xl font-semibold text-white">
@@ -217,12 +214,12 @@ export function AboutPage() {
 
       <Section bordered compact>
         <SectionHeading
-          title={ABOUT_VALUES.title}
+          title={about.values.title}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {ABOUT_VALUES.items.map((value) => (
+          {about.values.items.map((value) => (
             <li key={value.title} className={ABOUT_CARD_CLASS}>
               <h3 className="font-display text-lg font-semibold text-white">
                 {value.title}
@@ -238,20 +235,20 @@ export function AboutPage() {
       <Section bordered compact className="bg-brand-elevated">
         <div className="max-w-3xl">
           <SectionHeading
-            title={ABOUT_PARTNERSHIP.title}
+            title={about.partnership.title}
             align="left"
             className="max-w-none"
           />
           <div className="mt-6 space-y-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
-            {ABOUT_PARTNERSHIP.paragraphs.map((paragraph) => (
+            {about.partnership.paragraphs.map((paragraph) => (
               <p key={paragraph.slice(0, 32)}>{paragraph}</p>
             ))}
           </div>
         </div>
       </Section>
 
-      <SiteFaqSection {...SITE_FAQ.about} />
-      <MarketingCtaPanel />
+      <SiteFaqSection {...SITE_FAQ.about} locale={locale} />
+      <MarketingCtaPanel locale={locale} />
     </>
   );
 }

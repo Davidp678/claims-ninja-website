@@ -6,39 +6,39 @@ import { Container } from "@/components/ui/Container";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import {
-  CLIENT_PORTAL_CAPABILITIES,
-  CLIENT_PORTAL_CTA,
-  CLIENT_PORTAL_FIELD,
-  CLIENT_PORTAL_HERO,
-  CLIENT_PORTAL_TRUST,
-  CLIENT_PORTAL_WORKFLOW,
-} from "@/lib/client-portal-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getCommonContent } from "@/lib/i18n/content/common";
+import { getPlatformModulesContent } from "@/lib/i18n/content/platform-modules";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
 import { CLIENT_PORTAL_HERO_VIDEO } from "@/lib/constants";
 
 const FEATURE_CARD_CLASS =
   "rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/45";
 
-export function ClientPortalPage() {
+export function ClientPortalPage({ locale = "en" }: { locale?: Locale }) {
+  const content = getPlatformModulesContent(locale).clientPortal;
+  const common = getCommonContent(locale);
+
   return (
     <>
       <section className="relative overflow-hidden bg-brand-black">
         <HeroBackdrop />
         <Container className="relative z-10 grid grid-cols-1 gap-8 pb-10 pt-24 sm:gap-10 sm:pb-12 sm:pt-28 lg:grid-cols-[minmax(0,0.9fr)_minmax(620px,1.15fr)] lg:items-center lg:gap-x-16 lg:pb-14 lg:pt-24">
-          <div className="max-w-2xl lg:col-start-1 lg:max-w-none">
+          <div className="min-w-0 max-w-2xl lg:col-start-1 lg:max-w-none">
             <SectionHeading
-              eyebrow={CLIENT_PORTAL_HERO.eyebrow}
-              title={CLIENT_PORTAL_HERO.title}
-              description={CLIENT_PORTAL_HERO.description}
+              eyebrow={content.hero.eyebrow}
+              title={content.hero.title}
+              description={content.hero.description}
               align="left"
               className="max-w-none"
             />
             <ConversionCtaGroup
               className="mt-10 lg:mt-12"
               size="md"
-              primaryLabel="Begin Claim Intake"
-              secondaryLabel="Schedule Strategy Call"
+              rowBreakpoint={locale === "es" ? "xl" : "sm"}
+              allowWrap={locale === "es"}
+              primaryLabel={common.beginClaimIntake}
+              secondaryLabel={common.scheduleStrategyCallCta}
             />
           </div>
           <div className="w-full lg:col-start-2 lg:mt-2">
@@ -54,14 +54,14 @@ export function ClientPortalPage() {
 
       <Section bordered>
         <SectionHeading
-          eyebrow={CLIENT_PORTAL_CAPABILITIES.eyebrow}
-          title={CLIENT_PORTAL_CAPABILITIES.title}
-          description={CLIENT_PORTAL_CAPABILITIES.description}
+          eyebrow={content.capabilities.eyebrow}
+          title={content.capabilities.title}
+          description={content.capabilities.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {CLIENT_PORTAL_CAPABILITIES.items.map((capability) => (
+          {content.capabilities.items.map((capability) => (
             <li key={capability.title} className={FEATURE_CARD_CLASS}>
               <h3 className="font-display text-lg font-semibold text-white">
                 {capability.title}
@@ -76,14 +76,14 @@ export function ClientPortalPage() {
 
       <Section bordered className="bg-brand-elevated py-16 sm:py-20">
         <SectionHeading
-          eyebrow={CLIENT_PORTAL_WORKFLOW.eyebrow}
-          title={CLIENT_PORTAL_WORKFLOW.title}
-          description={CLIENT_PORTAL_WORKFLOW.description}
+          eyebrow={content.workflow.eyebrow}
+          title={content.workflow.title}
+          description={content.workflow.description}
           align="left"
           className="max-w-3xl"
         />
         <ol className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {CLIENT_PORTAL_WORKFLOW.steps.map((item) => (
+          {content.workflow.steps.map((item) => (
             <li key={item.step} className={`group relative ${FEATURE_CARD_CLASS}`}>
               <span className="font-display text-4xl font-semibold text-brand-red/75 transition-colors group-hover:text-brand-red-light">
                 {item.step}
@@ -101,17 +101,17 @@ export function ClientPortalPage() {
 
       <Section bordered className="py-16 sm:py-20">
         <SectionHeading
-          eyebrow={CLIENT_PORTAL_FIELD.eyebrow}
-          title={CLIENT_PORTAL_FIELD.title}
-          description={CLIENT_PORTAL_FIELD.description}
+          eyebrow={content.field.eyebrow}
+          title={content.field.title}
+          description={content.field.description}
           align="left"
           className="max-w-3xl"
         />
         <p className="mt-8 max-w-3xl text-base leading-relaxed text-zinc-300">
-          {CLIENT_PORTAL_FIELD.body}
+          {content.field.body}
         </p>
         <ul className="mt-10 space-y-4">
-          {CLIENT_PORTAL_FIELD.points.map((point) => (
+          {content.field.points.map((point) => (
             <li
               key={point}
               className="flex gap-3 rounded-xl border border-white/12 bg-brand-surface/60 px-5 py-4 text-sm leading-relaxed text-zinc-300"
@@ -128,14 +128,14 @@ export function ClientPortalPage() {
 
       <Section bordered className="bg-brand-elevated py-16 sm:py-20">
         <SectionHeading
-          eyebrow={CLIENT_PORTAL_TRUST.eyebrow}
-          title={CLIENT_PORTAL_TRUST.title}
-          description={CLIENT_PORTAL_TRUST.description}
+          eyebrow={content.trust.eyebrow}
+          title={content.trust.title}
+          description={content.trust.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-10 space-y-4">
-          {CLIENT_PORTAL_TRUST.roles.map((role) => (
+          {content.trust.roles.map((role) => (
             <li
               key={role}
               className="flex gap-3 rounded-xl border border-white/12 bg-brand-surface/60 px-5 py-4 text-sm leading-relaxed text-zinc-300"
@@ -149,15 +149,16 @@ export function ClientPortalPage() {
           ))}
         </ul>
         <p className="mt-8 max-w-3xl text-sm leading-relaxed text-zinc-400">
-          {CLIENT_PORTAL_TRUST.closing}
+          {content.trust.closing}
         </p>
       </Section>
 
-      <SiteFaqSection {...SITE_FAQ.clientPortal} />
+      <SiteFaqSection {...SITE_FAQ.clientPortal} locale={locale} />
       <MarketingCtaPanel
-        eyebrow={CLIENT_PORTAL_CTA.eyebrow}
-        title={CLIENT_PORTAL_CTA.title}
-        description={CLIENT_PORTAL_CTA.description}
+        eyebrow={content.cta.eyebrow}
+        title={content.cta.title}
+        description={content.cta.description}
+        locale={locale}
       />
     </>
   );

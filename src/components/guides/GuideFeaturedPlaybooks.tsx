@@ -1,11 +1,9 @@
 import Link from "next/link";
 
 import type { Guide } from "@/lib/guide-data";
-import {
-  GUIDE_FEATURED_SECTION,
-  GUIDE_CARD_CLASS,
-  getGuidePathForGuide,
-} from "@/lib/guide-page";
+import { GUIDE_CARD_CLASS, getGuidePathForGuide } from "@/lib/guide-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getResourcesContent } from "@/lib/i18n/content/resources";
 import { cn } from "@/lib/cn";
 
 import { Section } from "@/components/ui/Section";
@@ -15,9 +13,14 @@ import { GuideTypeBadge } from "./GuideTypeBadge";
 
 type GuideFeaturedPlaybooksProps = {
   guides: readonly Guide[];
+  locale?: Locale;
 };
 
-export function GuideFeaturedPlaybooks({ guides }: GuideFeaturedPlaybooksProps) {
+export function GuideFeaturedPlaybooks({
+  guides,
+  locale = "en",
+}: GuideFeaturedPlaybooksProps) {
+  const section = getResourcesContent(locale).guides.featuredSection;
   if (guides.length === 0) return null;
 
   const [primary, ...secondary] = guides;
@@ -28,9 +31,9 @@ export function GuideFeaturedPlaybooks({ guides }: GuideFeaturedPlaybooksProps) 
       {secondary.length > 0 ? (
         <Section bordered compact className="pt-0">
           <SectionHeading
-            eyebrow={GUIDE_FEATURED_SECTION.eyebrow}
-            title="More essential playbooks"
-            description="Pinned guides every contractor team should run on active claim files."
+            eyebrow={section.eyebrow}
+            title={section.title}
+            description={section.description}
             align="left"
           />
           <ul className="mt-6 grid gap-4 sm:grid-cols-2">

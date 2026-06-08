@@ -1,12 +1,9 @@
 import Link from "next/link";
 
 import type { Guide } from "@/lib/guide-data";
-import {
-  CLAIM_PHASE_LABELS,
-  CLAIM_PHASES,
-  GUIDE_PHASE_SECTION,
-  getGuidePathForGuide,
-} from "@/lib/guide-page";
+import { CLAIM_PHASES, getGuidePathForGuide } from "@/lib/guide-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getResourcesContent } from "@/lib/i18n/content/resources";
 import { getGuidesByPhaseGrouped } from "@/lib/guide-search";
 import { getAllGuides } from "@/lib/guide-registry";
 
@@ -20,8 +17,12 @@ type GuidePhaseSectionProps = {
   guides?: readonly Guide[];
 };
 
-export function GuidePhaseSection({ guides }: GuidePhaseSectionProps) {
-  const source = guides ?? getAllGuides();
+export function GuidePhaseSection({
+  guides: guidesProp,
+  locale = "en",
+}: GuidePhaseSectionProps & { locale?: Locale }) {
+  const guidesContent = getResourcesContent(locale).guides;
+  const source = guidesProp ?? getAllGuides();
   const grouped = getGuidesByPhaseGrouped(source, 3);
 
   if (CLAIM_PHASES.every((phase) => !grouped[phase]?.length)) {
@@ -31,9 +32,9 @@ export function GuidePhaseSection({ guides }: GuidePhaseSectionProps) {
   return (
     <Section bordered compact>
       <SectionHeading
-        eyebrow={GUIDE_PHASE_SECTION.eyebrow}
-        title={GUIDE_PHASE_SECTION.title}
-        description={GUIDE_PHASE_SECTION.description}
+        eyebrow={guidesContent.phaseSection.eyebrow}
+        title={guidesContent.phaseSection.title}
+        description={guidesContent.phaseSection.description}
         align="left"
       />
       <div className="mt-8 flex gap-4 overflow-x-auto pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible xl:grid-cols-6">
@@ -50,7 +51,7 @@ export function GuidePhaseSection({ guides }: GuidePhaseSectionProps) {
               )}
             >
               <span className="inline-block rounded-full border border-white/10 bg-brand-black/50 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
-                {CLAIM_PHASE_LABELS[phase]}
+                {guidesContent.phaseLabels[phase]}
               </span>
               <ul className="mt-4 space-y-3">
                 {phaseGuides.map((guide) => (

@@ -1,18 +1,21 @@
-import { FAQ_CATEGORIES, FAQ_CATEGORY_SECTION } from "@/lib/faq-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getFaqPageContent } from "@/lib/i18n/content/faq";
 
 import { FaqCategoryCard } from "./FaqCategoryCard";
 import { FaqPageSection } from "./FaqPageSection";
 
-export function FaqCategoryGrid() {
+export function FaqCategoryGrid({ locale = "en" }: { locale?: Locale }) {
+  const { categorySection, categories } = getFaqPageContent(locale);
+
   return (
     <FaqPageSection
-      eyebrow={FAQ_CATEGORY_SECTION.eyebrow}
-      title={FAQ_CATEGORY_SECTION.title}
-      description={FAQ_CATEGORY_SECTION.description}
+      eyebrow={categorySection.eyebrow}
+      title={categorySection.title}
+      description={categorySection.description}
       tight
     >
       <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {FAQ_CATEGORIES.map((category) => (
+        {categories.map((category) => (
           <li key={category.id}>
             <FaqCategoryCard
               id={category.id}

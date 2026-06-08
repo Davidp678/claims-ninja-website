@@ -3,12 +3,30 @@ import { cn } from "@/lib/cn";
 
 import { Button } from "./Button";
 
+type RowBreakpoint = "sm" | "lg" | "xl";
+
+const ROW_BREAKPOINT_CLASSES: Record<RowBreakpoint, string> = {
+  sm: "sm:flex-row sm:items-center",
+  lg: "lg:flex-row lg:items-center",
+  xl: "xl:flex-row xl:items-center",
+};
+
+const ROW_WRAP_CLASSES: Record<RowBreakpoint, string> = {
+  sm: "sm:flex-wrap",
+  lg: "lg:flex-wrap",
+  xl: "xl:flex-wrap",
+};
+
 type ConversionCtaGroupProps = {
   primaryLabel: string;
   secondaryLabel: string;
   size?: "sm" | "md" | "lg";
   className?: string;
   stackOnMobile?: boolean;
+  /** Breakpoint at which stacked CTAs become a horizontal row (default sm). */
+  rowBreakpoint?: RowBreakpoint;
+  /** Allow buttons to wrap at the row breakpoint instead of forcing nowrap. */
+  allowWrap?: boolean;
   /** Navbar-style secondary as text link only */
   secondaryAsTextLink?: boolean;
   /** Muted consultative line below buttons (calculator) */
@@ -25,26 +43,31 @@ export function ConversionCtaGroup({
   size = "lg",
   className,
   stackOnMobile = true,
+  rowBreakpoint = "sm",
+  allowWrap = false,
   secondaryAsTextLink = false,
   scheduleHint,
   hideSecondaryButton = false,
   primaryClassName,
   secondaryClassName,
 }: ConversionCtaGroupProps) {
+  const nowrapClass = allowWrap ? undefined : "whitespace-nowrap";
+
   return (
     <div className={cn(className)}>
       <div
         className={cn(
           "flex gap-4",
           stackOnMobile
-            ? "flex-col sm:flex-row sm:items-center"
+            ? cn("flex-col", ROW_BREAKPOINT_CLASSES[rowBreakpoint], allowWrap && ROW_WRAP_CLASSES[rowBreakpoint])
             : "flex-row items-center",
+          !stackOnMobile && allowWrap && "flex-wrap",
         )}
       >
         <Button
           href={CTA_LINKS.onboarding}
           size={size}
-          className={cn("whitespace-nowrap", primaryClassName)}
+          className={cn(nowrapClass, primaryClassName)}
         >
           {primaryLabel}
         </Button>
@@ -66,7 +89,7 @@ export function ConversionCtaGroup({
               href={CTA_LINKS.schedule}
               variant="secondary"
               size={size}
-              className={cn("whitespace-nowrap", secondaryClassName)}
+              className={cn(nowrapClass, secondaryClassName)}
             >
               {secondaryLabel}
             </Button>

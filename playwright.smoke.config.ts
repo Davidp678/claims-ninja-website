@@ -7,7 +7,8 @@ import { defineConfig, devices } from "@playwright/test";
  */
 export default defineConfig({
   testDir: "./e2e",
-  fullyParallel: true,
+  fullyParallel: process.env.SMOKE_BASE_URL?.includes("localhost") ? false : true,
+  workers: process.env.SMOKE_BASE_URL?.includes("localhost") ? 1 : undefined,
   forbidOnly: !!process.env.CI,
   retries: 1,
   reporter: [["list"]],

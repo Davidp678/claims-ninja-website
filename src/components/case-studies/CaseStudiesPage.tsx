@@ -5,16 +5,10 @@ import { Container } from "@/components/ui/Container";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import {
-  CASE_STUDIES_CARD_CLASS,
-  CASE_STUDIES_COMMON_FINDINGS,
-  CASE_STUDIES_HERO,
-  CASE_STUDIES_PORTFOLIO,
-  CASE_STUDIES_RECOVERY_EXAMPLES,
-  CASE_STUDIES_RECOVERY_EXAMPLES_SECTION,
-  CASE_STUDIES_TRADE_CARDS,
-  CASE_STUDIES_TRADE_RESULTS,
-} from "@/lib/case-studies-page";
+import { CASE_STUDIES_CARD_CLASS } from "@/lib/case-studies-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getCommonContent } from "@/lib/i18n/content/common";
+import { getCompanyContent } from "@/lib/i18n/content/company";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
 import { cn } from "@/lib/cn";
 
@@ -33,7 +27,10 @@ function BulletList({ items }: { items: readonly string[] }) {
   );
 }
 
-export function CaseStudiesPage() {
+export function CaseStudiesPage({ locale = "en" }: { locale?: Locale }) {
+  const cs = getCompanyContent(locale).caseStudies;
+  const cta = getCommonContent(locale);
+
   return (
     <>
       {/* Hero */}
@@ -42,16 +39,16 @@ export function CaseStudiesPage() {
         <Container className="relative z-10 pb-14 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
           <div className="max-w-3xl">
             <h1 className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              {CASE_STUDIES_HERO.title}
+              {cs.hero.title}
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-zinc-300 sm:text-xl">
-              {CASE_STUDIES_HERO.description}
+              {cs.hero.description}
             </p>
             <ConversionCtaGroup
               className="mt-10"
               size="md"
-              primaryLabel="Begin Claim Intake"
-              secondaryLabel="Schedule Strategy Call"
+              primaryLabel={cta.beginClaimIntake}
+              secondaryLabel={cta.scheduleStrategyCallCta}
             />
           </div>
         </Container>
@@ -60,14 +57,14 @@ export function CaseStudiesPage() {
       {/* Section 1: Recovery Results by Trade */}
       <Section bordered compact>
         <SectionHeading
-          eyebrow={CASE_STUDIES_TRADE_RESULTS.eyebrow}
-          title={CASE_STUDIES_TRADE_RESULTS.title}
-          description={CASE_STUDIES_TRADE_RESULTS.description}
+          eyebrow={cs.tradeResults.eyebrow}
+          title={cs.tradeResults.title}
+          description={cs.tradeResults.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {CASE_STUDIES_TRADE_CARDS.map((trade) => (
+          {cs.tradeCards.map((trade) => (
             <li key={trade.id} className={cn(CASE_STUDIES_CARD_CLASS, "flex flex-col")}>
               <h3 className="font-display text-lg font-semibold text-white">
                 {trade.title}
@@ -100,14 +97,14 @@ export function CaseStudiesPage() {
       {/* Section 2: What We Commonly Find */}
       <Section bordered compact className="bg-brand-elevated">
         <SectionHeading
-          eyebrow={CASE_STUDIES_COMMON_FINDINGS.eyebrow}
-          title={CASE_STUDIES_COMMON_FINDINGS.title}
-          description={CASE_STUDIES_COMMON_FINDINGS.description}
+          eyebrow={cs.commonFindings.eyebrow}
+          title={cs.commonFindings.title}
+          description={cs.commonFindings.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {CASE_STUDIES_COMMON_FINDINGS.categories.map((category) => (
+          {cs.commonFindings.categories.map((category) => (
             <li key={category.title} className={CASE_STUDIES_CARD_CLASS}>
               <h3 className="font-display text-lg font-semibold text-white">
                 {category.title}
@@ -126,8 +123,8 @@ export function CaseStudiesPage() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14">
           <div>
             <SectionHeading
-              title={CASE_STUDIES_PORTFOLIO.title}
-              description={CASE_STUDIES_PORTFOLIO.description}
+              title={cs.portfolio.title}
+              description={cs.portfolio.description}
               align="left"
               className="max-w-none"
             />
@@ -135,7 +132,7 @@ export function CaseStudiesPage() {
               <h3 className="font-display text-lg font-semibold text-white">
                 What we analyze
               </h3>
-              <BulletList items={CASE_STUDIES_PORTFOLIO.whatWeAnalyze} />
+              <BulletList items={cs.portfolio.whatWeAnalyze} />
             </div>
           </div>
 
@@ -150,7 +147,7 @@ export function CaseStudiesPage() {
               Typical outcome
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-zinc-300 sm:text-base">
-              {CASE_STUDIES_PORTFOLIO.typicalOutcome}
+              {cs.portfolio.typicalOutcome}
             </p>
           </aside>
         </div>
@@ -159,14 +156,14 @@ export function CaseStudiesPage() {
       {/* Section 4: Representative Recovery Examples */}
       <Section bordered compact className="bg-brand-elevated">
         <SectionHeading
-          eyebrow={CASE_STUDIES_RECOVERY_EXAMPLES_SECTION.eyebrow}
-          title={CASE_STUDIES_RECOVERY_EXAMPLES_SECTION.title}
-          description={CASE_STUDIES_RECOVERY_EXAMPLES_SECTION.description}
+          eyebrow={cs.recoveryExamplesSection.eyebrow}
+          title={cs.recoveryExamplesSection.title}
+          description={cs.recoveryExamplesSection.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 lg:grid-cols-3">
-          {CASE_STUDIES_RECOVERY_EXAMPLES.map((example) => (
+          {cs.recoveryExamples.map((example) => (
             <li
               key={example.id}
               className={cn(
@@ -203,10 +200,10 @@ export function CaseStudiesPage() {
       </Section>
 
       {/* Section 5: FAQ */}
-      <SiteFaqSection {...SITE_FAQ.caseStudies} />
+      <SiteFaqSection {...SITE_FAQ.caseStudies} locale={locale} />
 
       {/* Section 6: CTA */}
-      <MarketingCtaPanel />
+      <MarketingCtaPanel locale={locale} />
     </>
   );
 }

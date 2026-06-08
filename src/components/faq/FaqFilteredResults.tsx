@@ -1,7 +1,11 @@
 "use client";
 
-import { FAQ_ITEMS } from "@/lib/faq-data";
-import { FAQ_SEARCH, getCategoryTitle, getFaqsByCategory } from "@/lib/faq-page";
+import type { Locale } from "@/lib/i18n/config";
+import {
+  getAllFaqItems,
+  getCategoryTitleLocalized,
+  getFaqPageContent,
+} from "@/lib/i18n/content/faq";
 import { filterFaqItems } from "@/lib/faq-search";
 import { cn } from "@/lib/cn";
 
@@ -12,18 +16,31 @@ type FaqFilteredResultsProps = {
   expandMatches?: boolean;
   showEmptyState?: boolean;
   className?: string;
+  locale?: Locale;
 };
 
 export function FaqFilteredResults({
   expandMatches = false,
   showEmptyState = false,
   className,
+  locale: localeProp,
 }: FaqFilteredResultsProps) {
-  const { query, clearQuery } = useFaqSearch();
+  const { query, clearQuery, locale: contextLocale } = useFaqSearch();
+  const locale = localeProp ?? contextLocale;
+  const search = getFaqPageContent(locale).search;
   const trimmedQuery = query.trim();
   const isFiltering = trimmedQuery.length > 0;
-  const filtered = filterFaqItems(FAQ_ITEMS, query, getCategoryTitle);
-  const groups = getFaqsByCategory(filtered);
+  const items = getAllFaqItems(locale);
+  const filtered = filterFaqItems(items, query, (categoryId) =>
+    getCategoryTitleLocalized(categoryId, locale),
+  );
+  const categories = getFaqPageContent(locale).categories;
+  const groups = categories
+    .map((category) => ({
+      category,
+      items: filtered.filter((item) => item.category === category.id),
+    }))
+    .filter((group) => group.items.length > 0);
 
   if (showEmptyState && isFiltering && filtered.length === 0) {
     return (
@@ -51,7 +68,7 @@ export function FaqFilteredResults({
           No FAQ results found for &ldquo;{trimmedQuery}&rdquo;
         </p>
         <p className="mt-2 text-sm leading-relaxed text-zinc-400">
-          Try {FAQ_SEARCH.emptyStateSuggestions}.
+          Try {search.emptyStateSuggestions}.
         </p>
         <button
           type="button"
@@ -66,13 +83,13 @@ export function FaqFilteredResults({
 
   return (
     <div className={className}>
-      {groups.map(({ category, items }) => (
+      {groups.map(({ category, items: groupItems }) => (
         <FaqAccordionSection
           key={category.id}
           categoryId={category.id}
           title={category.title}
           description={category.description}
-          items={items}
+          items={groupItems}
           defaultOpen={expandMatches && isFiltering}
         />
       ))}

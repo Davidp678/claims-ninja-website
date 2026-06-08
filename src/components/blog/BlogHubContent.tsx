@@ -6,12 +6,9 @@ import { useMemo, useState } from "react";
 import type { BlogCategorySlug } from "@/lib/blog-categories";
 import { getCategoryName, getCategoryPath } from "@/lib/blog-categories";
 import type { BlogPost } from "@/lib/blog-types";
-import {
-  BLOG_CATEGORY_SECTION,
-  BLOG_LATEST_SECTION,
-  BLOG_RECOMMENDED_SECTION,
-  getAllBlogPosts,
-} from "@/lib/blog-page";
+import { getAllBlogPosts } from "@/lib/blog-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getResourcesContent } from "@/lib/i18n/content/resources";
 
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -22,9 +19,15 @@ import { BlogCategoryRail } from "./BlogCategoryRail";
 type BlogHubContentProps = {
   latestPosts: readonly BlogPost[];
   recommendedPosts: readonly BlogPost[];
+  locale?: Locale;
 };
 
-export function BlogHubContent({ latestPosts, recommendedPosts }: BlogHubContentProps) {
+export function BlogHubContent({
+  latestPosts,
+  recommendedPosts,
+  locale = "en",
+}: BlogHubContentProps) {
+  const blog = getResourcesContent(locale).blog;
   const [activeCategory, setActiveCategory] = useState<BlogCategorySlug | "all">("all");
   const allPosts = getAllBlogPosts();
 
@@ -39,9 +42,9 @@ export function BlogHubContent({ latestPosts, recommendedPosts }: BlogHubContent
     <>
       <Section bordered compact>
         <SectionHeading
-          eyebrow={BLOG_CATEGORY_SECTION.eyebrow}
-          title={BLOG_CATEGORY_SECTION.title}
-          description={BLOG_CATEGORY_SECTION.description}
+          eyebrow={blog.categorySection.eyebrow}
+          title={blog.categorySection.title}
+          description={blog.categorySection.description}
           align="left"
         />
         <BlogCategoryRail
@@ -67,9 +70,9 @@ export function BlogHubContent({ latestPosts, recommendedPosts }: BlogHubContent
         <>
           <Section bordered compact>
             <SectionHeading
-              eyebrow={BLOG_LATEST_SECTION.eyebrow}
-              title={BLOG_LATEST_SECTION.title}
-              description={BLOG_LATEST_SECTION.description}
+              eyebrow={blog.latestSection.eyebrow}
+              title={blog.latestSection.title}
+              description={blog.latestSection.description}
               align="left"
             />
             <BlogArticleGrid posts={latestPosts} />
@@ -77,9 +80,9 @@ export function BlogHubContent({ latestPosts, recommendedPosts }: BlogHubContent
 
           <Section bordered compact>
             <SectionHeading
-              eyebrow={BLOG_RECOMMENDED_SECTION.eyebrow}
-              title={BLOG_RECOMMENDED_SECTION.title}
-              description={BLOG_RECOMMENDED_SECTION.description}
+              eyebrow={blog.recommendedSection.eyebrow}
+              title={blog.recommendedSection.title}
+              description={blog.recommendedSection.description}
               align="left"
             />
             <BlogArticleGrid posts={recommendedPosts} compact />

@@ -4,7 +4,9 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 import type { GuideRole } from "@/lib/guide-types";
-import { GUIDE_ROLE_LABELS, GUIDE_ROLE_SECTION, GUIDE_ROLES } from "@/lib/guide-page";
+import { GUIDE_ROLES } from "@/lib/guide-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getResourcesContent } from "@/lib/i18n/content/resources";
 import { cn } from "@/lib/cn";
 
 import { Section } from "@/components/ui/Section";
@@ -17,7 +19,8 @@ const ROLE_DESCRIPTIONS: Record<GuideRole, string> = {
   "project-manager": "Intake oversight, estimate review, and reinspection coordination.",
 };
 
-export function GuideRoleCards() {
+export function GuideRoleCards({ locale = "en" }: { locale?: Locale }) {
+  const guides = getResourcesContent(locale).guides;
   const searchParams = useSearchParams();
   const activeRole = searchParams.get("role") as GuideRole | null;
   const isValidRole = activeRole && GUIDE_ROLES.includes(activeRole);
@@ -25,9 +28,9 @@ export function GuideRoleCards() {
   return (
     <Section bordered compact>
       <SectionHeading
-        eyebrow={GUIDE_ROLE_SECTION.eyebrow}
-        title={GUIDE_ROLE_SECTION.title}
-        description={GUIDE_ROLE_SECTION.description}
+        eyebrow={guides.roleSection.eyebrow}
+        title={guides.roleSection.title}
+        description={guides.roleSection.description}
         align="left"
       />
       <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -43,7 +46,7 @@ export function GuideRoleCards() {
               )}
             >
               <h3 className="font-display text-base font-semibold text-white">
-                {GUIDE_ROLE_LABELS[role]}
+                {guides.roleLabels[role]}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-zinc-400">
                 {ROLE_DESCRIPTIONS[role]}
@@ -56,7 +59,8 @@ export function GuideRoleCards() {
   );
 }
 
-export function GuideActiveRoleChip() {
+export function GuideActiveRoleChip({ locale = "en" }: { locale?: Locale }) {
+  const guides = getResourcesContent(locale).guides;
   const searchParams = useSearchParams();
   const activeRole = searchParams.get("role") as GuideRole | null;
 
@@ -67,13 +71,13 @@ export function GuideActiveRoleChip() {
   return (
     <div className="mb-4 flex flex-wrap items-center gap-3">
       <span className="rounded-full border border-brand-red/35 bg-brand-red/10 px-3 py-1 text-xs font-medium text-brand-red-light">
-        Role: {GUIDE_ROLE_LABELS[activeRole]}
+        {guides.hubUi.roleFilterLabel} {guides.roleLabels[activeRole]}
       </span>
       <Link
         href="/resources/guides#guide-search"
         className="text-xs font-medium text-zinc-400 transition-colors hover:text-white"
       >
-        Clear filter
+        {guides.hubUi.clearFilterLabel}
       </Link>
     </div>
   );

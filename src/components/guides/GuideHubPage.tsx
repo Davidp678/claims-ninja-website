@@ -3,11 +3,10 @@ import { Suspense } from "react";
 import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
 import Link from "next/link";
-import {
-  GUIDE_HUB_CTA,
-  getFeaturedGuides,
-  getRecommendedGuides,
-} from "@/lib/guide-page";
+import { getFeaturedGuides, getRecommendedGuides } from "@/lib/guide-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getResourcesContent } from "@/lib/i18n/content/resources";
+import { localizePath } from "@/lib/i18n/paths";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
 
 import { GuideFeaturedPlaybooks } from "./GuideFeaturedPlaybooks";
@@ -20,28 +19,29 @@ import { GuideGrid } from "./GuideGrid";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-export function GuideHubPage() {
+export function GuideHubPage({ locale = "en" }: { locale?: Locale }) {
+  const guides = getResourcesContent(locale).guides;
   const featured = getFeaturedGuides(3);
   const recommended = getRecommendedGuides(4);
 
   return (
     <>
       <GuideHubJsonLd />
-      <GuideHero />
-      <GuideFeaturedPlaybooks guides={featured} />
+      <GuideHero locale={locale} />
+      <GuideFeaturedPlaybooks guides={featured} locale={locale} />
       <Suspense fallback={null}>
-        <GuideRoleCards />
+        <GuideRoleCards locale={locale} />
       </Suspense>
       <Suspense fallback={null}>
-        <GuideHubContent />
+        <GuideHubContent locale={locale} />
       </Suspense>
-      <GuidePhaseSection />
+      <GuidePhaseSection locale={locale} />
       {recommended.length > 0 ? (
         <Section bordered compact>
           <SectionHeading
-            eyebrow="Recommended"
-            title="Popular playbooks"
-            description="Guides teams return to when scaling supplement volume or tightening documentation."
+            eyebrow={guides.recommendedSection.eyebrow}
+            title={guides.recommendedSection.title}
+            description={guides.recommendedSection.description}
             align="left"
           />
           <GuideGrid guides={recommended} compact showCategory />
@@ -50,18 +50,18 @@ export function GuideHubPage() {
       <Section compact>
         <div className="text-center">
           <p className="text-sm text-zinc-500">
-            Looking for strategy and industry context?{" "}
+            {guides.hubFooter.text}{" "}
             <Link
-              href="/resources/blog"
+              href={localizePath(locale, "/resources/blog")}
               className="font-medium text-brand-red-light transition-colors hover:text-white"
             >
-              Browse the blog
+              {guides.hubFooter.linkLabel}
             </Link>
           </p>
         </div>
       </Section>
-      <SiteFaqSection {...SITE_FAQ.guides} />
-      <MarketingCtaPanel {...GUIDE_HUB_CTA} />
+      <SiteFaqSection {...SITE_FAQ.guides} locale={locale} />
+      <MarketingCtaPanel {...guides.hubCta} locale={locale} />
     </>
   );
 }

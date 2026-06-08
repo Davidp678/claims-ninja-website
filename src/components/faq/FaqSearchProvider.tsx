@@ -10,14 +10,18 @@ import {
   type ReactNode,
 } from "react";
 
-import { FAQ_ITEMS } from "@/lib/faq-data";
-import { getCategoryTitle } from "@/lib/faq-page";
+import type { Locale } from "@/lib/i18n/config";
+import {
+  getAllFaqItems,
+  getCategoryTitleLocalized,
+} from "@/lib/i18n/content/faq";
 import { filterFaqItems } from "@/lib/faq-search";
 
 type FaqSearchContextValue = {
   query: string;
   setQuery: (query: string) => void;
   clearQuery: () => void;
+  locale: Locale;
 };
 
 const FaqSearchContext = createContext<FaqSearchContextValue | null>(null);
@@ -26,7 +30,13 @@ function isFaqItemHash(hash: string) {
   return hash.startsWith("#faq-") && !hash.startsWith("#faq-category-");
 }
 
-export function FaqSearchProvider({ children }: { children: ReactNode }) {
+export function FaqSearchProvider({
+  locale = "en",
+  children,
+}: {
+  locale?: Locale;
+  children: ReactNode;
+}) {
   const [query, setQuery] = useState("");
 
   const clearQuery = useCallback(() => {
@@ -50,8 +60,9 @@ export function FaqSearchProvider({ children }: { children: ReactNode }) {
       query,
       setQuery,
       clearQuery,
+      locale,
     }),
-    [query, clearQuery],
+    [query, clearQuery, locale],
   );
 
   return (
@@ -68,9 +79,13 @@ export function useFaqSearch() {
 }
 
 export function useFilteredFaqs() {
-  const { query } = useFaqSearch();
+  const { query, locale } = useFaqSearch();
+  const items = getAllFaqItems(locale);
   return useMemo(
-    () => filterFaqItems(FAQ_ITEMS, query, getCategoryTitle),
-    [query],
+    () =>
+      filterFaqItems(items, query, (categoryId) =>
+        getCategoryTitleLocalized(categoryId, locale),
+      ),
+    [items, query, locale],
   );
 }

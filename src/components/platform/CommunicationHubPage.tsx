@@ -7,34 +7,41 @@ import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { COMMUNICATION_HUB_HERO_VIDEO } from "@/lib/constants";
-import { communicationHubPage } from "@/lib/marketing-pages";
+import type { Locale } from "@/lib/i18n/config";
+import { getCommonContent } from "@/lib/i18n/content/common";
+import { getPlatformModulesContent } from "@/lib/i18n/content/platform-modules";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
 
-export function CommunicationHubPage() {
+export function CommunicationHubPage({ locale = "en" }: { locale?: Locale }) {
+  const content = getPlatformModulesContent(locale).communicationHub;
+  const common = getCommonContent(locale);
+
   return (
     <>
       <section className="relative overflow-hidden bg-brand-black">
         <HeroBackdrop />
         <Container className="relative z-10 grid grid-cols-1 gap-8 pb-10 pt-24 sm:gap-10 sm:pb-12 sm:pt-28 lg:grid-cols-[minmax(0,0.9fr)_minmax(620px,1.15fr)] lg:items-center lg:gap-x-16 lg:pb-14 lg:pt-24">
-          <div className="max-w-2xl lg:col-start-1 lg:max-w-none">
+          <div className="min-w-0 max-w-2xl lg:col-start-1 lg:max-w-none">
             <SectionHeading
-              eyebrow={communicationHubPage.eyebrow}
-              title={communicationHubPage.title}
-              description={communicationHubPage.description}
+              eyebrow={content.hero.eyebrow}
+              title={content.hero.title}
+              description={content.hero.description}
               align="left"
               className="max-w-none"
             />
             <ConversionCtaGroup
               className="mt-10 lg:mt-12"
               size="md"
-              primaryLabel="Begin Claim Intake"
-              secondaryLabel="Schedule Strategy Call"
+              rowBreakpoint={locale === "es" ? "xl" : "sm"}
+              allowWrap={locale === "es"}
+              primaryLabel={common.beginClaimIntake}
+              secondaryLabel={common.scheduleStrategyCallCta}
             />
           </div>
           <div className="w-full lg:col-start-2 lg:mt-2">
             <HeroVideoCard
               embedSrc={COMMUNICATION_HUB_HERO_VIDEO.embedUrl}
-              title="Communication hub demo"
+              title={content.videoTitle}
               embedFit={COMMUNICATION_HUB_HERO_VIDEO.embedFit}
               sourceAspect={COMMUNICATION_HUB_HERO_VIDEO.sourceAspect}
             />
@@ -44,7 +51,7 @@ export function CommunicationHubPage() {
 
       <Section bordered className="py-16 sm:py-20">
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {communicationHubPage.features.map((feature) => (
+          {content.features.map((feature) => (
             <li
               key={feature.title}
               className="rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/45"
@@ -60,8 +67,8 @@ export function CommunicationHubPage() {
         </ul>
       </Section>
 
-      <SiteFaqSection {...SITE_FAQ.communicationHub} />
-      <MarketingCtaPanel />
+      <SiteFaqSection {...SITE_FAQ.communicationHub} locale={locale} />
+      <MarketingCtaPanel locale={locale} />
     </>
   );
 }

@@ -1,22 +1,24 @@
-import { FAQ_ITEMS } from "@/lib/faq-data";
 import {
-  FAQ_POPULAR_SECTION,
-  getCategoryTitle,
-  getFeaturedFaqs,
-  getFaqPreview,
-} from "@/lib/faq-page";
+  getAllFaqItems,
+  getCategoryTitleLocalized,
+  getFaqPageContent,
+} from "@/lib/i18n/content/faq";
+import type { Locale } from "@/lib/i18n/config";
+import { getFeaturedFaqs, getFaqPreview } from "@/lib/faq-page";
 
 import { FaqPageSection } from "./FaqPageSection";
 import { PopularQuestionCard } from "./PopularQuestionCard";
 
-export function FaqPopularQuestions() {
-  const featured = getFeaturedFaqs(FAQ_ITEMS, 8);
+export function FaqPopularQuestions({ locale = "en" }: { locale?: Locale }) {
+  const popularSection = getFaqPageContent(locale).popularSection;
+  const items = getAllFaqItems(locale);
+  const featured = getFeaturedFaqs(items, 8);
 
   return (
     <FaqPageSection
-      eyebrow={FAQ_POPULAR_SECTION.eyebrow}
-      title={FAQ_POPULAR_SECTION.title}
-      description={FAQ_POPULAR_SECTION.description}
+      eyebrow={popularSection.eyebrow}
+      title={popularSection.title}
+      description={popularSection.description}
       tight
     >
       <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:gap-6">
@@ -25,7 +27,7 @@ export function FaqPopularQuestions() {
             <PopularQuestionCard
               question={item.question}
               preview={getFaqPreview(item)}
-              category={getCategoryTitle(item.category)}
+              category={getCategoryTitleLocalized(item.category, locale)}
               href={`#faq-${item.id}`}
             />
           </li>

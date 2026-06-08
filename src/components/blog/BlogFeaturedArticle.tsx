@@ -2,12 +2,9 @@ import Link from "next/link";
 
 import { cn } from "@/lib/cn";
 import type { BlogPost } from "@/lib/blog-data";
-import {
-  BLOG_FEATURED_SECTION,
-  formatBlogDate,
-  getBlogPostPath,
-  getCategoryTitle,
-} from "@/lib/blog-page";
+import { formatBlogDate, getBlogPostPath, getCategoryTitle } from "@/lib/blog-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getResourcesContent } from "@/lib/i18n/content/resources";
 
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -16,17 +13,22 @@ import { getBlogVisualClass } from "./blog-visual";
 
 type BlogFeaturedArticleProps = {
   post: BlogPost;
+  locale?: Locale;
 };
 
-export function BlogFeaturedArticle({ post }: BlogFeaturedArticleProps) {
+export function BlogFeaturedArticle({
+  post,
+  locale = "en",
+}: BlogFeaturedArticleProps) {
+  const section = getResourcesContent(locale).blog.featuredSection;
   const href = getBlogPostPath(post.slug);
 
   return (
     <Section bordered compact>
       <SectionHeading
-        eyebrow={BLOG_FEATURED_SECTION.eyebrow}
-        title={BLOG_FEATURED_SECTION.title}
-        description={BLOG_FEATURED_SECTION.description}
+        eyebrow={section.eyebrow}
+        title={section.title}
+        description={section.description}
         align="left"
       />
       <Link
