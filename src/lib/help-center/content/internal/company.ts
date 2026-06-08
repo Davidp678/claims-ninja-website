@@ -1,0 +1,126 @@
+import { callout, defineArticle, h, link, p, ul, video } from "@/lib/help-center/builder";
+import { EXTERNAL_LINKS, INTERNAL_LOOM_VIDEOS } from "@/lib/help-center/videos";
+
+const UPDATED = "2026-06-08";
+
+export const companyArticles = [
+  defineArticle({
+    slug: "mission",
+    sectionSlug: "company-overview",
+    title: "How To Do Your Job The Claims Ninja Way",
+    excerpt: "This is not HR script — this is operational doctrine.",
+    portal: "internal",
+    roles: ["all"],
+    updatedAt: UPDATED,
+    blocks: [
+      callout(
+        "critical",
+        "THIS IS NOT SOME HR SCRIPT, THIS IS HOW TO DO YOUR JOB THE CLAIMS NINJA WAY!",
+      ),
+      p("Claims Managers, Public Adjusters, and Appraisers use this help center as the authoritative operations reference."),
+    ],
+  }),
+  defineArticle({
+    slug: "company-history",
+    sectionSlug: "company-overview",
+    title: "Company History & Trajectory",
+    excerpt: "Where we were, where we are, and where we are going.",
+    portal: "internal",
+    roles: ["all"],
+    updatedAt: UPDATED,
+    blocks: [
+      h(2, "Where We Were"),
+      p("From just Alex and James to a team of 15+."),
+      h(2, "Where We Are"),
+      p("Just hitting the compounding scale-up phase."),
+      h(2, "Where We Are Going"),
+      p("National take over."),
+    ],
+  }),
+  defineArticle({
+    slug: "systems-and-stack",
+    sectionSlug: "company-overview",
+    title: "Systems, Structures & SaaS Stack",
+    excerpt: "Hardware, software, and the systems that power operations.",
+    portal: "internal",
+    roles: ["all"],
+    updatedAt: UPDATED,
+    blocks: [
+      p("Operations = execution of Systems. You must know:"),
+      ul([
+        "Insurance estimating and insurance's games",
+        "Construction know-how",
+        "Customer service and sales",
+        "Creative problem solving",
+      ]),
+      h(3, "Hierarchy"),
+      p("Hierarchy of structures and dynamics — see Whimsical org graph in Monday SOPs."),
+      h(3, "Hardware"),
+      p("Computer, phone, printer, internet, workspace."),
+      h(3, "Software & SaaS"),
+      ul([
+        "Wispr, Xactimate, Symbility, Monday, RingCentral",
+        "Microsoft Suite, ChatGPT, Brelly, Code Book Access",
+        "Jotform (required for PA contracts/appraisal authorization)",
+      ]),
+      h(3, "SOPs"),
+      p("The majority of your training comprises learning SOPs within our systems. These are living documents — if you find a better way, speak up. Questions? Ask leadership immediately. Don't guess."),
+    ],
+  }),
+  defineArticle({
+    slug: "why-we-win",
+    sectionSlug: "company-overview",
+    title: "Why We Are the Best",
+    excerpt: "Competitive advantages and operating philosophy.",
+    portal: "internal",
+    roles: ["all"],
+    updatedAt: UPDATED,
+    blocks: [
+      ul([
+        "Easier, faster, higher-quality, less-costly — just BETTER",
+        "Experienced team with track record of success",
+        "High gross and net profit margins",
+        "Recession proof and scalable",
+        "Highly automatable, yet human responsiveness",
+        "Minimal turnover of all parties involved",
+        "Ethical on all fronts",
+        "Minimal overhead since primarily digital",
+        "Minimal liability due to maximum delegations via structures and contracts",
+        "Quality services in a market with immense demand",
+        "Market-proven systems that continue to be enhanced",
+      ]),
+    ],
+  }),
+  defineArticle({
+    slug: "client-expectations-reference",
+    sectionSlug: "company-overview",
+    title: "Client Expectations Reference",
+    excerpt: "Study the client help center to understand what clients expect from us.",
+    portal: "internal",
+    roles: ["cm", "pa", "appraiser", "tl"],
+    updatedAt: UPDATED,
+    blocks: [
+      p("What clients expect from us and what we expect from them is documented in the Client Help Center. CMs must study it to understand client expectations."),
+      link(EXTERNAL_LINKS.clientHelpCenter, "Client Help Center (/help)"),
+      p("Also found at the bottom left of the Monday sidebar."),
+    ],
+  }),
+  defineArticle({
+    slug: "monday-dash-tour",
+    sectionSlug: "company-overview",
+    title: "Monday Estimating Dash Tour",
+    excerpt: "Loom tour of Estimator Board, columns, and client view.",
+    portal: "internal",
+    roles: ["cm", "tl"],
+    updatedAt: UPDATED,
+    blocks: [
+      video(INTERNAL_LOOM_VIDEOS.mondayDash.url, INTERNAL_LOOM_VIDEOS.mondayDash.title),
+      h(3, "Edits Since the Video"),
+      ul([
+        "PA handoff sheet: gray button next to \"Escalated to PA\" column — activates and auto-uploads info with manual fields",
+        "Sidebar of boards, Estimating Dash views, columns left to right",
+        "Supplement subtask, project views, Client Dash column review",
+      ]),
+    ],
+  }),
+];

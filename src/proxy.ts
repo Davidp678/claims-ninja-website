@@ -11,6 +11,8 @@ function shouldSkipLocale(pathname: string): boolean {
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/login") ||
     pathname.startsWith("/claim-report") ||
+    pathname.startsWith("/help") ||
+    pathname.startsWith("/tcnhc") ||
     pathname.startsWith("/_next")
   );
 }
