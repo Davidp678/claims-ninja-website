@@ -1,0 +1,74 @@
+legacy_path,new_path,redirect_type,configured_in
+/blog,/resources/blog,301,next.config.ts
+/guides,/resources/guides,301,next.config.ts
+/guides/:category,/resources/guides/:category,301,next.config.ts
+/guides/:category/:slug,/resources/guides/:category/:slug,301,next.config.ts
+/videos,/platform,301,next.config.ts
+/blog/category/:slug,/resources/blog/category/:slug,301,next.config.ts
+/blog/:slug,/resources/blog/:slug,301,next.config.ts
+/feed,/resources/blog,301,next.config.ts
+/feed/rss,/resources/blog,301,next.config.ts
+/comments/feed,/resources/blog,301,next.config.ts
+/blog/insurance-supplementing-guide-contractors,/resources/blog/insurance-supplementing-guide-contractors,301,wildcard /blog/:slug
+/blog/why-carrier-estimates-miss-line-items,/resources/blog/why-carrier-estimates-miss-line-items,301,wildcard /blog/:slug
+/blog/recover-revenue-without-in-house-claims,/resources/blog/recover-revenue-without-in-house-claims,301,wildcard /blog/:slug
+/blog/what-is-a-roof-supplement,/resources/blog/what-is-a-roof-supplement,301,wildcard /blog/:slug
+/blog/roofing-supplement-playbook,/resources/blog/roofing-supplement-playbook,301,wildcard /blog/:slug
+/blog/water-damage-mitigation-supplement-playbook,/resources/blog/water-damage-mitigation-supplement-playbook,301,wildcard /blog/:slug
+/blog/dry-log-documentation-guide-insurance-claims,/resources/blog/dry-log-documentation-guide-insurance-claims,301,wildcard /blog/:slug
+/blog/moisture-mapping-best-practices-insurance-claims,/resources/blog/moisture-mapping-best-practices-insurance-claims,301,wildcard /blog/:slug
+/blog/why-water-mitigation-claims-get-underpaid,/resources/blog/why-water-mitigation-claims-get-underpaid,301,wildcard /blog/:slug
+/blog/water-damage-supplement-denial-recovery,/resources/blog/water-damage-supplement-denial-recovery,301,wildcard /blog/:slug
+/blog/equipment-charges-water-damage-claims,/resources/blog/equipment-charges-water-damage-claims,301,wildcard /blog/:slug
+/blog/daily-monitoring-documentation-best-practices,/resources/blog/daily-monitoring-documentation-best-practices,301,wildcard /blog/:slug
+/blog/fire-damage-claim-documentation-guide,/resources/blog/fire-damage-claim-documentation-guide,301,wildcard /blog/:slug
+/blog/fire-damage-supplement-playbook-for-contractors,/resources/blog/fire-damage-supplement-playbook-for-contractors,301,wildcard /blog/:slug
+/blog/smoke-and-soot-damage-documentation-guide,/resources/blog/smoke-and-soot-damage-documentation-guide,301,wildcard /blog/:slug
+/blog/hvac-contamination-in-fire-damage-claims,/resources/blog/hvac-contamination-in-fire-damage-claims,301,wildcard /blog/:slug
+/blog/fire-damage-supplement-denial-recovery,/resources/blog/fire-damage-supplement-denial-recovery,301,wildcard /blog/:slug
+/blog/odor-mitigation-in-fire-damage-claims,/resources/blog/odor-mitigation-in-fire-damage-claims,301,wildcard /blog/:slug
+/blog/op-on-insurance-claims,/resources/blog/op-on-insurance-claims,301,wildcard /blog/:slug
+/blog/supplement-denial-recovery-guide,/resources/blog/supplement-denial-recovery-guide,301,wildcard /blog/:slug
+/blog/first-48-hours-after-carrier-estimate,/resources/blog/first-48-hours-after-carrier-estimate,301,wildcard /blog/:slug
+/blog/xactimate-estimate-review-checklist-contractors,/resources/blog/xactimate-estimate-review-checklist-contractors,301,wildcard /blog/:slug
+/blog/xactimate-vs-market-pricing,/resources/blog/xactimate-vs-market-pricing,301,wildcard /blog/:slug
+/blog/when-to-bring-in-supplementing-partner,/resources/blog/when-to-bring-in-supplementing-partner,301,wildcard /blog/:slug
+/blog/claim-documentation-approval-rates,/resources/blog/claim-documentation-approval-rates,301,wildcard /blog/:slug
+/blog/category/insurance-supplementing,/resources/blog/category/insurance-supplementing,301,wildcard /blog/category/:slug
+/blog/category/roofing-claims,/resources/blog/category/roofing-claims,301,wildcard /blog/category/:slug
+/blog/category/water-damage-claims,/resources/blog/category/water-damage-claims,301,wildcard /blog/category/:slug
+/blog/category/fire-damage-claims,/resources/blog/category/fire-damage-claims,301,wildcard /blog/category/:slug
+/blog/category/xactimate,/resources/blog/category/xactimate,301,wildcard /blog/category/:slug
+/blog/category/claim-documentation,/resources/blog/category/claim-documentation,301,wildcard /blog/category/:slug
+/blog/category/contractor-operations,/resources/blog/category/contractor-operations,301,wildcard /blog/category/:slug
+/blog/category/public-adjusters,/resources/blog/category/public-adjusters,301,wildcard /blog/category/:slug
+/blog/category/insurance-estimating,/resources/blog/category/insurance-estimating,301,wildcard /blog/category/:slug
+/blog/category/claim-recovery,/resources/blog/category/claim-recovery,301,wildcard /blog/category/:slug
+/guides/general-claims/first-48-hours-checklist,/resources/guides/general-claims/first-48-hours-checklist,301,wildcard /guides/:category/:slug
+/guides/general-claims/claim-file-audit-guide,/resources/guides/general-claims/claim-file-audit-guide,301,wildcard /guides/:category/:slug
+/guides/general-claims/supplement-submission-guide,/resources/guides/general-claims/supplement-submission-guide,301,wildcard /guides/:category/:slug
+/guides/general-claims/carrier-estimate-review-guide,/resources/guides/general-claims/carrier-estimate-review-guide,301,wildcard /guides/:category/:slug
+/guides/general-claims/op-qualification-guide,/resources/guides/general-claims/op-qualification-guide,301,wildcard /guides/:category/:slug
+/guides/general-claims/documentation-standards-guide,/resources/guides/general-claims/documentation-standards-guide,301,wildcard /guides/:category/:slug
+/guides/general-claims/photo-documentation-standards-guide,/resources/guides/general-claims/photo-documentation-standards-guide,301,wildcard /guides/:category/:slug
+/guides/roofing-claims/roofing-supplement-checklist,/resources/guides/roofing-claims/roofing-supplement-checklist,301,wildcard /guides/:category/:slug
+/guides/roofing-claims/roofing-documentation-guide,/resources/guides/roofing-claims/roofing-documentation-guide,301,wildcard /guides/:category/:slug
+/guides/roofing-claims/reinspection-preparation-guide,/resources/guides/roofing-claims/reinspection-preparation-guide,301,wildcard /guides/:category/:slug
+/guides/roofing-claims/code-upgrade-documentation-guide,/resources/guides/roofing-claims/code-upgrade-documentation-guide,301,wildcard /guides/:category/:slug
+/guides/roofing-claims/steep-high-documentation-guide,/resources/guides/roofing-claims/steep-high-documentation-guide,301,wildcard /guides/:category/:slug
+/guides/roofing-claims/roof-measurement-documentation-guide,/resources/guides/roofing-claims/roof-measurement-documentation-guide,301,wildcard /guides/:category/:slug
+/guides/water-damage/mitigation-intake-checklist,/resources/guides/water-damage/mitigation-intake-checklist,301,wildcard /guides/:category/:slug
+/guides/water-damage/dry-log-collection-guide,/resources/guides/water-damage/dry-log-collection-guide,301,wildcard /guides/:category/:slug
+/guides/water-damage/moisture-mapping-guide,/resources/guides/water-damage/moisture-mapping-guide,301,wildcard /guides/:category/:slug
+/guides/water-damage/equipment-documentation-guide,/resources/guides/water-damage/equipment-documentation-guide,301,wildcard /guides/:category/:slug
+/guides/water-damage/daily-monitoring-guide,/resources/guides/water-damage/daily-monitoring-guide,301,wildcard /guides/:category/:slug
+/guides/water-damage/category-class-documentation-guide,/resources/guides/water-damage/category-class-documentation-guide,301,wildcard /guides/:category/:slug
+/guides/water-damage/contents-manipulation-documentation-guide,/resources/guides/water-damage/contents-manipulation-documentation-guide,301,wildcard /guides/:category/:slug
+/guides/fire-damage/fire-claim-intake-guide,/resources/guides/fire-damage/fire-claim-intake-guide,301,wildcard /guides/:category/:slug
+/guides/fire-damage/smoke-documentation-guide,/resources/guides/fire-damage/smoke-documentation-guide,301,wildcard /guides/:category/:slug
+/guides/fire-damage/hvac-contamination-guide,/resources/guides/fire-damage/hvac-contamination-guide,301,wildcard /guides/:category/:slug
+/guides/fire-damage/odor-documentation-guide,/resources/guides/fire-damage/odor-documentation-guide,301,wildcard /guides/:category/:slug
+/guides/fire-damage/contents-documentation-guide,/resources/guides/fire-damage/contents-documentation-guide,301,wildcard /guides/:category/:slug
+/guides/fire-damage/structural-stabilization-documentation-guide,/resources/guides/fire-damage/structural-stabilization-documentation-guide,301,wildcard /guides/:category/:slug
+/guides/exterior-restoration/siding-envelope-documentation-guide,/resources/guides/exterior-restoration/siding-envelope-documentation-guide,301,wildcard /guides/:category/:slug
+/guides/exterior-restoration/window-door-documentation-guide,/resources/guides/exterior-restoration/window-door-documentation-guide,301,wildcard /guides/:category/:slug

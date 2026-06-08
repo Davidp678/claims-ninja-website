@@ -2,6 +2,7 @@ import { BlogExploreTopics } from "@/components/blog/BlogExploreTopics";
 import { BlogFeaturedArticle } from "@/components/blog/BlogFeaturedArticle";
 import { BlogHero } from "@/components/blog/BlogHero";
 import { BlogHubContent } from "@/components/blog/BlogHubContent";
+import { BlogHubJsonLd } from "@/components/blog/BlogHubJsonLd";
 import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
 import {
@@ -22,6 +23,7 @@ export default function ResourcesBlogPage() {
 
   return (
     <>
+      <BlogHubJsonLd />
       <BlogHero />
       {featured ? <BlogFeaturedArticle post={featured} /> : null}
       <BlogHubContent latestPosts={latestPosts} recommendedPosts={recommendedPosts} />

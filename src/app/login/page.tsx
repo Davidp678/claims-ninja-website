@@ -1,11 +1,14 @@
 import { Suspense } from "react";
+import type { Metadata } from "next";
 
 import { LoginForm } from "./LoginForm";
 
 export const dynamic = "force-dynamic";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Sign in",
+  description: "Sign in to the Claims Ninja contractor portal.",
+  robots: { index: false, follow: false },
 };
 
 function getLoginPublicEnvStatus() {
