@@ -4,14 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CTA_LINKS, SITE } from "@/lib/constants";
+import { ES_CTA_LABELS, getLocalizedMainNav } from "@/lib/i18n/es-navigation";
+import { localizePath } from "@/lib/i18n/paths";
+import { useMarketingLocale } from "@/lib/i18n/use-marketing-locale";
 import { MAIN_NAV } from "@/lib/navigation";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 
+import { LanguageToggle } from "./LanguageToggle";
 import { MobileNavMenu } from "./MobileNavMenu";
 import { NavDropdown } from "./NavDropdown";
 
 export function Navbar() {
+  const locale = useMarketingLocale();
+  const nav = locale === "es" ? getLocalizedMainNav() : MAIN_NAV;
+  const homeHref = localizePath(locale, "/");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -42,7 +49,7 @@ export function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8"
         aria-label="Main"
       >
-        <Link href="/" className="flex shrink-0 items-center" aria-label={SITE.name}>
+        <Link href={homeHref} className="flex shrink-0 items-center" aria-label={SITE.name}>
           <Image
             src="/logo.png"
             alt={SITE.name}
@@ -54,7 +61,7 @@ export function Navbar() {
         </Link>
 
         <ul className="hidden items-center gap-4 md:flex md:gap-5 lg:gap-6 xl:gap-8">
-          {MAIN_NAV.map((entry) =>
+          {nav.map((entry) =>
             entry.type === "dropdown" ? (
               <NavDropdown
                 key={entry.label}
@@ -76,8 +83,11 @@ export function Navbar() {
         </ul>
 
         <div className="hidden shrink-0 items-center gap-3 md:flex md:gap-4 lg:gap-5">
+          <LanguageToggle />
           <Button href={CTA_LINKS.onboarding} size="sm">
-            Start Claim Review
+            {locale === "es"
+              ? ES_CTA_LABELS.startClaimReview
+              : "Start Claim Review"}
           </Button>
           <a
             href={CTA_LINKS.schedule}
@@ -85,34 +95,37 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="text-sm font-medium text-zinc-300 transition-colors hover:text-white"
           >
-            Schedule Call
+            {locale === "es" ? ES_CTA_LABELS.scheduleCall : "Schedule Call"}
           </a>
         </div>
 
-        <button
-          type="button"
-          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/18 text-white md:hidden"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          <span className="sr-only">{menuOpen ? "Close" : "Menu"}</span>
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            className="h-5 w-5"
-            aria-hidden
+        <div className="flex shrink-0 items-center gap-2 md:hidden">
+          <LanguageToggle compact />
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/18 text-white"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? (
-              <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
-            ) : (
-              <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h16" />
-            )}
-          </svg>
-        </button>
+            <span className="sr-only">{menuOpen ? "Close" : "Menu"}</span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="h-5 w-5"
+              aria-hidden
+            >
+              {menuOpen ? (
+                <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
+              ) : (
+                <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </nav>
 
       <div
@@ -122,7 +135,11 @@ export function Navbar() {
           menuOpen ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       >
-        <MobileNavMenu nav={MAIN_NAV} onNavigate={() => setMenuOpen(false)} />
+        <MobileNavMenu
+          nav={nav}
+          locale={locale}
+          onNavigate={() => setMenuOpen(false)}
+        />
       </div>
     </header>
   );

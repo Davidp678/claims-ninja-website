@@ -1,5 +1,5 @@
 import { ChatWidget } from "@/components/chatbot/ChatWidget";
-import { Footer } from "@/components/layout/Footer";
+import { LocalizedFooter } from "@/components/layout/LocalizedFooter";
 import { Navbar } from "@/components/layout/Navbar";
 
 export default function MarketingLayout({
@@ -11,7 +11,7 @@ export default function MarketingLayout({
     <>
       <Navbar />
       <main className="flex-1">{children}</main>
-      <Footer />
+      <LocalizedFooter />
       <ChatWidget />
     </>
   );

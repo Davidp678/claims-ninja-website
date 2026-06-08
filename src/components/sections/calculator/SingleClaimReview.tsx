@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import type { ClaimAnalysisResult } from "@/lib/claim-analysis";
 import { CTA_LINKS } from "@/lib/constants";
@@ -11,6 +11,10 @@ import {
 } from "@/lib/claim-files";
 import { cn } from "@/lib/cn";
 import type { LeadContactFields } from "@/lib/calculator-lead";
+import {
+  ClaimAnalysisProgress,
+  type AnalysisProgressPhase,
+} from "./ClaimAnalysisProgress";
 import { LeadCaptureForm } from "./LeadCaptureForm";
 
 const CLAIM_TYPES = [
@@ -22,6 +26,8 @@ const CLAIM_TYPES = [
   "Other",
 ] as const;
 type ClaimType = (typeof CLAIM_TYPES)[number];
+
+type UploadStatus = "idle" | "uploading" | "ready" | "error";
 
 const inputClass =
   "mt-2 block w-full rounded-lg border border-white/22 bg-brand-black/60 px-4 h-12 text-base text-white placeholder-zinc-400 focus:border-brand-red/60 focus:outline-none focus:ring-2 focus:ring-brand-red/40";
@@ -89,6 +95,26 @@ async function uploadSingleClaimFile(
   return prepareData.file;
 }
 
+async function uploadClaimFilesParallel(
+  sessionId: string,
+  fileList: File[],
+  onProgress: (completed: number, total: number) => void,
+): Promise<ClaimFileRecord[]> {
+  const total = fileList.length;
+  let completed = 0;
+
+  const results = await Promise.all(
+    fileList.map(async (file) => {
+      const record = await uploadSingleClaimFile(sessionId, file);
+      completed += 1;
+      onProgress(completed, total);
+      return record;
+    }),
+  );
+
+  return results;
+}
+
 type AnalyzeClaimResponse = {
   analysis: ClaimAnalysisResult;
   error?: string;
@@ -132,18 +158,63 @@ export function SingleClaimReview() {
   );
   const [files, setFiles] = useState<File[]>([]);
   const [persistedFiles, setPersistedFiles] = useState<ClaimFileRecord[]>([]);
+  const [uploadStatus, setUploadStatus] = useState<UploadStatus>("idle");
+  const [uploadCompleted, setUploadCompleted] = useState(0);
+  const [uploadTotal, setUploadTotal] = useState(0);
   const [claimType, setClaimType] = useState<ClaimType>("Water");
   const [carrierEstimate, setCarrierEstimate] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [analyzed, setAnalyzed] = useState(false);
   const [analysis, setAnalysis] = useState<ClaimAnalysisResult | null>(null);
-  const [isUploading, setIsUploading] = useState(false);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [analysisPhase, setAnalysisPhase] =
+    useState<AnalysisProgressPhase>("reading");
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [analysisError, setAnalysisError] = useState<string | null>(null);
   const [filePickError, setFilePickError] = useState<string | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const uploadGenerationRef = useRef(0);
+
+  const isUploading = uploadStatus === "uploading";
+  const isBusy = isUploading || isAnalyzing;
+
+  useEffect(() => {
+    if (files.length === 0) return;
+
+    const generation = ++uploadGenerationRef.current;
+    const sessionId = claimSessionId;
+
+    void uploadClaimFilesParallel(sessionId, files, (completed, total) => {
+      if (uploadGenerationRef.current !== generation) return;
+      setUploadCompleted(completed);
+      setUploadTotal(total);
+    })
+      .then((uploaded) => {
+        if (uploadGenerationRef.current !== generation) return;
+        setPersistedFiles(uploaded);
+        setUploadStatus("ready");
+      })
+      .catch(() => {
+        if (uploadGenerationRef.current !== generation) return;
+        setUploadStatus("error");
+        setUploadError("We couldn't upload your files. Please try again.");
+        setPersistedFiles([]);
+      });
+  }, [files, claimSessionId]);
+
+  useEffect(() => {
+    if (!isAnalyzing) return;
+
+    const timers = [
+      window.setTimeout(() => setAnalysisPhase("scoring"), 4000),
+      window.setTimeout(() => setAnalysisPhase("finalizing"), 9000),
+    ];
+
+    return () => {
+      timers.forEach((timer) => window.clearTimeout(timer));
+    };
+  }, [isAnalyzing]);
 
   const handleFilesSelected = (list: File[]) => {
     setFilePickError(null);
@@ -151,52 +222,50 @@ export function SingleClaimReview() {
     setAnalysisError(null);
     setAnalyzed(false);
     setAnalysis(null);
-    setPersistedFiles([]);
     setClaimSessionId(crypto.randomUUID());
 
     const check = validateClaimFileSelection(list);
     if (!check.ok) {
       setFilePickError(check.reason);
       setFiles([]);
+      setUploadStatus("idle");
+      setPersistedFiles([]);
+      setUploadCompleted(0);
+      setUploadTotal(0);
       if (fileInputRef.current) fileInputRef.current.value = "";
       return;
     }
 
+    setUploadError(null);
+    setUploadTotal(list.length);
+    setUploadCompleted(0);
+    setUploadStatus("uploading");
     setFiles(list);
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setUploadError(null);
     setAnalysisError(null);
     setAnalyzed(false);
     setAnalysis(null);
 
-    let uploadedMeta: ClaimFileRecord[] = [];
-
     if (files.length > 0) {
-      setIsUploading(true);
-      try {
-        const uploaded: ClaimFileRecord[] = [];
-        for (const file of files) {
-          const record = await uploadSingleClaimFile(claimSessionId, file);
-          uploaded.push(record);
-        }
-        uploadedMeta = uploaded;
-        setPersistedFiles(uploaded);
-      } catch {
+      if (uploadStatus === "uploading") {
+        setUploadError("Please wait for file uploads to finish.");
+        return;
+      }
+      if (uploadStatus === "error") {
         setUploadError("We couldn't upload your files. Please try again.");
         return;
-      } finally {
-        setIsUploading(false);
       }
     }
 
+    setAnalysisPhase("reading");
     setIsAnalyzing(true);
     try {
       const result = await requestClaimAnalysis({
         claimSessionId,
-        uploadedFilesMeta: uploadedMeta,
+        uploadedFilesMeta: persistedFiles,
         claimType,
         carrierEstimate,
         description,
@@ -212,6 +281,12 @@ export function SingleClaimReview() {
       setIsAnalyzing(false);
     }
   };
+
+  const progressPhase: AnalysisProgressPhase | null = isUploading
+    ? "uploading"
+    : isAnalyzing
+      ? analysisPhase
+      : null;
 
   const submitLabel = isUploading
     ? "Uploading files…"
@@ -251,13 +326,18 @@ export function SingleClaimReview() {
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
                   className="rounded-full border border-white/25 bg-brand-elevated/80 px-4 py-2 text-sm font-medium text-white hover:bg-brand-elevated"
-                  disabled={isUploading || isAnalyzing}
+                  disabled={isBusy}
                 >
                   Choose files
                 </button>
                 <p className="text-xs text-zinc-400">
                   PDF or image files, up to 20MB each.
                 </p>
+                {uploadStatus === "ready" && files.length > 0 ? (
+                  <p className="text-xs text-emerald-300/90">
+                    Files ready for analysis.
+                  </p>
+                ) : null}
                 {filePickError && (
                   <p
                     className="mt-2 w-full rounded-lg border border-brand-red/40 bg-brand-red/10 px-3 py-2 text-left text-xs text-red-200"
@@ -353,6 +433,13 @@ export function SingleClaimReview() {
               This is a preliminary review only — not a final estimate, legal
               opinion, or coverage determination.
             </p>
+            {progressPhase ? (
+              <ClaimAnalysisProgress
+                phase={progressPhase}
+                uploadCompleted={uploadCompleted}
+                uploadTotal={uploadTotal}
+              />
+            ) : null}
             {uploadError && (
               <p
                 className="rounded-lg border border-brand-red/40 bg-brand-red/10 px-3 py-2 text-xs text-red-200"
@@ -374,7 +461,7 @@ export function SingleClaimReview() {
             type="submit"
             size="lg"
             className="w-full sm:w-auto"
-            disabled={isUploading || isAnalyzing}
+            disabled={isBusy}
           >
             {submitLabel}
           </Button>
@@ -395,6 +482,9 @@ export function SingleClaimReview() {
               missed revenue:{" "}
               {currencyFmt.format(analysis.estimatedMissedRevenueRange.low)}–
               {currencyFmt.format(analysis.estimatedMissedRevenueRange.high)}
+            </p>
+            <p className="mt-2 text-xs text-zinc-500">
+              Full intelligence report continues generating in the background.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Button href={CTA_LINKS.onboarding} size="lg" className="w-full sm:w-auto">

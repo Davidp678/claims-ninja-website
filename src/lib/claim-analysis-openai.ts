@@ -32,6 +32,21 @@ export class OpenAIAnalysisError extends Error {
   }
 }
 
+export type ClaimAnalysisUsage = {
+  promptTokens: number;
+  completionTokens: number;
+  totalTokens: number;
+};
+
+export type ClaimAnalysisRunResult = {
+  analysis: ClaimAnalysisResult;
+  usage: ClaimAnalysisUsage | null;
+};
+
+const MAX_OUTPUT_TOKENS = 2048;
+const MAX_VISION_IMAGES = 4;
+const MAX_INLINE_FINDINGS = 6;
+
 function createOpenAIClient(): OpenAI {
   const key = process.env.OPENAI_API_KEY?.trim();
   if (!key) {
@@ -42,6 +57,22 @@ function createOpenAIClient(): OpenAI {
 
 export function getClaimAnalysisModel(): string {
   return process.env.OPENAI_MODEL?.trim() || "gpt-4o";
+}
+
+export function getClaimTriageModel(): string {
+  return (
+    process.env.OPENAI_CLAIM_TRIAGE_MODEL?.trim() ||
+    process.env.OPENAI_MODEL?.trim() ||
+    "gpt-4o-mini"
+  );
+}
+
+export function getClaimDeepModel(): string {
+  return (
+    process.env.OPENAI_CLAIM_DEEP_MODEL?.trim() ||
+    process.env.OPENAI_MODEL?.trim() ||
+    "gpt-4o"
+  );
 }
 
 function isImageMime(mime: string): boolean {
@@ -77,6 +108,52 @@ async function uploadPdfToOpenAI(
   }
 }
 
+type FilePartResult =
+  | { type: "parts"; parts: ChatCompletionContentPart[] }
+  | { type: "pdf_failure"; name: string };
+
+async function buildFileParts(
+  client: OpenAI,
+  meta: SignedClaimFileInput["meta"],
+  signedUrl: string,
+  imageIndex: number,
+): Promise<FilePartResult> {
+  const mime = meta.contentType.toLowerCase().split(";")[0]?.trim() ?? "";
+
+  if (isImageMime(mime)) {
+    if (imageIndex >= MAX_VISION_IMAGES) {
+      return { type: "parts", parts: [] };
+    }
+    return {
+      type: "parts",
+      parts: [
+        {
+          type: "image_url",
+          image_url: { url: signedUrl, detail: "low" },
+        },
+      ],
+    };
+  }
+
+  if (isPdfMime(mime)) {
+    const fileId = await uploadPdfToOpenAI(client, signedUrl, meta.originalName);
+    if (fileId) {
+      return {
+        type: "parts",
+        parts: [
+          {
+            type: "file",
+            file: { file_id: fileId },
+          } as ChatCompletionContentPart,
+        ],
+      };
+    }
+    return { type: "pdf_failure", name: meta.originalName };
+  }
+
+  return { type: "parts", parts: [] };
+}
+
 async function buildUserContentParts(
   client: OpenAI,
   request: AnalyzeClaimRequest,
@@ -94,6 +171,10 @@ async function buildUserContentParts(
           )
           .join("\n");
 
+  const imageCount = signedFiles.filter((f) =>
+    isImageMime(f.meta.contentType),
+  ).length;
+
   parts.push({
     type: "text",
     text: [
@@ -105,33 +186,31 @@ async function buildUserContentParts(
       "",
       "Uploaded files:",
       fileList,
-    ].join("\n"),
+      imageCount > MAX_VISION_IMAGES
+        ? `Note: ${imageCount - MAX_VISION_IMAGES} additional image(s) are listed but not attached — prioritize the attached images and filenames.`
+        : "",
+    ]
+      .filter(Boolean)
+      .join("\n"),
   });
 
   const pdfFailures: string[] = [];
+  let imageIndex = 0;
 
-  for (const { meta, signedUrl } of signedFiles) {
-    const mime = meta.contentType.toLowerCase().split(";")[0]?.trim() ?? "";
+  const fileResults = await Promise.all(
+    signedFiles.map(async (file) => {
+      const mime = file.meta.contentType.toLowerCase().split(";")[0]?.trim() ?? "";
+      const index = isImageMime(mime) ? imageIndex++ : imageIndex;
+      return buildFileParts(client, file.meta, file.signedUrl, index);
+    }),
+  );
 
-    if (isImageMime(mime)) {
-      parts.push({
-        type: "image_url",
-        image_url: { url: signedUrl, detail: "auto" },
-      });
+  for (const result of fileResults) {
+    if (result.type === "pdf_failure") {
+      pdfFailures.push(result.name);
       continue;
     }
-
-    if (isPdfMime(mime)) {
-      const fileId = await uploadPdfToOpenAI(client, signedUrl, meta.originalName);
-      if (fileId) {
-        parts.push({
-          type: "file",
-          file: { file_id: fileId },
-        } as ChatCompletionContentPart);
-      } else {
-        pdfFailures.push(meta.originalName);
-      }
-    }
+    parts.push(...result.parts);
   }
 
   if (pdfFailures.length > 0) {
@@ -149,33 +228,35 @@ Perform a preliminary triage of the claim based on the provided description, car
 Identify realistic supplement opportunities, documentation gaps, pricing issues, code-related items, coverage considerations, and overhead/profit concerns when relevant.
 Be specific and actionable. Express uncertainty where evidence is limited.
 Do not guarantee outcomes, coverage, or legal conclusions.
+Return at most ${MAX_INLINE_FINDINGS} findings — prioritize the highest-impact opportunities for the inline triage view.
 Output must follow the provided JSON schema exactly.`;
 
-export async function runClaimAnalysis(params: {
-  request: AnalyzeClaimRequest;
-  signedFiles: SignedClaimFileInput[];
-}): Promise<ClaimAnalysisResult> {
-  const client = createOpenAIClient();
-  const model = getClaimAnalysisModel();
+function parseUsage(usage?: {
+  prompt_tokens?: number;
+  completion_tokens?: number;
+  total_tokens?: number;
+}): ClaimAnalysisUsage | null {
+  if (!usage) return null;
+  return {
+    promptTokens: usage.prompt_tokens ?? 0,
+    completionTokens: usage.completion_tokens ?? 0,
+    totalTokens: usage.total_tokens ?? 0,
+  };
+}
 
-  const userParts = await buildUserContentParts(
-    client,
-    params.request,
-    params.signedFiles,
-  );
-
-  const messages: ChatCompletionMessageParam[] = [
-    { role: "system", content: SYSTEM_PROMPT },
-    { role: "user", content: userParts },
-  ];
-
+async function runCompletion(params: {
+  client: OpenAI;
+  model: string;
+  messages: ChatCompletionMessageParam[];
+  maxTokens: number;
+}): Promise<{ content: string; usage: ClaimAnalysisUsage | null }> {
   let completion;
   try {
-    completion = await client.chat.completions.create({
-      model,
-      messages,
+    completion = await params.client.chat.completions.create({
+      model: params.model,
+      messages: params.messages,
       temperature: 0.2,
-      max_tokens: 4096,
+      max_tokens: params.maxTokens,
       response_format: {
         type: "json_schema",
         json_schema: {
@@ -195,6 +276,10 @@ export async function runClaimAnalysis(params: {
     throw new OpenAIAnalysisError("OpenAI returned empty content.");
   }
 
+  return { content, usage: parseUsage(completion.usage) };
+}
+
+function parseAnalysisContent(content: string): ClaimAnalysisResult {
   let parsed: unknown;
   try {
     parsed = JSON.parse(content) as unknown;
@@ -208,4 +293,59 @@ export async function runClaimAnalysis(params: {
     const msg = err instanceof Error ? err.message : String(err);
     throw new OpenAIAnalysisError(`Invalid analysis structure: ${msg}`, { cause: err });
   }
+}
+
+export async function runClaimAnalysis(params: {
+  request: AnalyzeClaimRequest;
+  signedFiles: SignedClaimFileInput[];
+  model?: string;
+  maxTokens?: number;
+}): Promise<ClaimAnalysisRunResult> {
+  const client = createOpenAIClient();
+  const model = params.model ?? getClaimAnalysisModel();
+
+  const userParts = await buildUserContentParts(
+    client,
+    params.request,
+    params.signedFiles,
+  );
+
+  const messages: ChatCompletionMessageParam[] = [
+    { role: "system", content: SYSTEM_PROMPT },
+    { role: "user", content: userParts },
+  ];
+
+  const { content, usage } = await runCompletion({
+    client,
+    model,
+    messages,
+    maxTokens: params.maxTokens ?? MAX_OUTPUT_TOKENS,
+  });
+
+  return {
+    analysis: parseAnalysisContent(content),
+    usage,
+  };
+}
+
+export async function runClaimTriageAnalysis(params: {
+  request: AnalyzeClaimRequest;
+  signedFiles: SignedClaimFileInput[];
+}): Promise<ClaimAnalysisRunResult> {
+  return runClaimAnalysis({
+    ...params,
+    model: getClaimTriageModel(),
+    maxTokens: 1200,
+  });
+}
+
+export async function runClaimDeepAnalysis(params: {
+  request: AnalyzeClaimRequest;
+  signedFiles: SignedClaimFileInput[];
+}): Promise<ClaimAnalysisRunResult> {
+  return runClaimAnalysis({
+    ...params,
+    model: getClaimDeepModel(),
+    maxTokens: 4096,
+  });
 }

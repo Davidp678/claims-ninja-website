@@ -6,6 +6,8 @@ import { BLOG_BASE_PATH, getBlogPostPath } from "@/lib/blog-page";
 import { getAllGuideCategorySlugs, getGuideCategoryPath } from "@/lib/guide-categories";
 import { CLAIM_GUIDES } from "@/lib/guide-data";
 import { GUIDE_BASE_PATH, getGuidePathForGuide } from "@/lib/guide-page";
+import { ES_INDEXING_ENABLED } from "@/lib/i18n/config";
+import { getWave1EsSitemapPaths } from "@/lib/i18n/paths";
 import { MARKETING_PAGES_BY_PATH } from "@/lib/marketing-pages";
 
 export const SITE_URL = "https://theclaimsninja.com" as const;
@@ -93,9 +95,27 @@ export function getGuideCategorySitemapEntries(): MetadataRoute.Sitemap {
   }));
 }
 
+export function getSpanishSitemapEntries(): MetadataRoute.Sitemap {
+  if (!ES_INDEXING_ENABLED) {
+    return [];
+  }
+
+  return getWave1EsSitemapPaths().map((path) => {
+    const changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] =
+      path === "/es" ? "weekly" : "monthly";
+    return {
+      url: path,
+      lastModified: undefined,
+      changeFrequency,
+      priority: path === "/es" ? 0.95 : 0.85,
+    };
+  });
+}
+
 export function getFullSitemap(): MetadataRoute.Sitemap {
   return [
     ...getMarketingSitemapEntries(),
+    ...getSpanishSitemapEntries(),
     ...getBlogCategorySitemapEntries(),
     ...getBlogSitemapEntries(),
     ...getGuideCategorySitemapEntries(),

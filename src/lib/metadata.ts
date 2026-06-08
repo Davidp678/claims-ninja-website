@@ -8,9 +8,67 @@ import type { GuideCategorySlug } from "@/lib/guide-categories";
 import { getGuideCategoryMeta } from "@/lib/guide-categories";
 import type { Guide } from "@/lib/guide-data";
 import { GUIDE_META, getGuidePathForGuide } from "@/lib/guide-page";
-import { DEFAULT_OG_IMAGE_PATH } from "@/lib/site-seo";
+import { ES_INDEXING_ENABLED, type Locale } from "@/lib/i18n/config";
+import {
+  ES_PATH_BY_EN_PATH,
+  isWave1EnPath,
+  stripLocalePrefix,
+  type Wave1EnPath,
+} from "@/lib/i18n/paths";
+import { DEFAULT_OG_IMAGE_PATH, getAbsoluteUrl } from "@/lib/site-seo";
 
 const DEFAULT_OG_IMAGE = [{ url: DEFAULT_OG_IMAGE_PATH }];
+
+export function buildLanguageAlternates(path: string): Record<string, string> {
+  if (!ES_INDEXING_ENABLED) {
+    return {};
+  }
+
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  const enPath = stripLocalePrefix(normalized);
+  const esPath = isWave1EnPath(enPath)
+    ? ES_PATH_BY_EN_PATH[enPath as Wave1EnPath]
+    : undefined;
+
+  if (!esPath) {
+    return {};
+  }
+
+  return {
+    en: getAbsoluteUrl(enPath),
+    es: getAbsoluteUrl(esPath),
+    "x-default": getAbsoluteUrl("/"),
+  };
+}
+
+export function pageMetadataWithLocale({
+  title,
+  description,
+  path,
+  locale = "en",
+}: {
+  title: string;
+  description: string;
+  path: string;
+  locale?: Locale;
+}): Metadata {
+  const base = pageMetadata({ title, description, path });
+  const languages = buildLanguageAlternates(path);
+  const noindex = locale === "es" && !ES_INDEXING_ENABLED;
+
+  return {
+    ...base,
+    alternates: {
+      canonical: path,
+      ...(Object.keys(languages).length > 0 ? { languages } : {}),
+    },
+    openGraph: {
+      ...base.openGraph,
+      locale: locale === "es" ? "es_US" : "en_US",
+    },
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
+  };
+}
 
 const TWITTER_CARD = "summary_large_image" as const;
 
@@ -23,11 +81,14 @@ export function pageMetadata({
   description: string;
   path: string;
 }): Metadata {
+  const languages = buildLanguageAlternates(path);
+
   return {
     title,
     description,
     alternates: {
       canonical: path,
+      ...(Object.keys(languages).length > 0 ? { languages } : {}),
     },
     openGraph: {
       type: "website",

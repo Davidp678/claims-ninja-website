@@ -20,29 +20,30 @@ export class SignedUrlError extends Error {
   }
 }
 
+async function createSingleSignedUrl(
+  supabase: SupabaseClient,
+  meta: UploadedFileMeta,
+): Promise<SignedClaimFileInput> {
+  const { data, error } = await supabase.storage
+    .from(meta.bucket)
+    .createSignedUrl(meta.storagePath, SIGNED_URL_TTL_SECONDS);
+
+  if (error || !data?.signedUrl) {
+    console.error("[claim-storage-signed-urls] createSignedUrl failed:", {
+      storagePath: meta.storagePath,
+      message: error?.message,
+    });
+    throw new SignedUrlError(
+      `Failed to create signed URL for ${meta.originalName}.`,
+    );
+  }
+
+  return { meta, signedUrl: data.signedUrl };
+}
+
 export async function createClaimFileSignedUrls(
   supabase: SupabaseClient,
   files: UploadedFileMeta[],
 ): Promise<SignedClaimFileInput[]> {
-  const results: SignedClaimFileInput[] = [];
-
-  for (const meta of files) {
-    const { data, error } = await supabase.storage
-      .from(meta.bucket)
-      .createSignedUrl(meta.storagePath, SIGNED_URL_TTL_SECONDS);
-
-    if (error || !data?.signedUrl) {
-      console.error("[claim-storage-signed-urls] createSignedUrl failed:", {
-        storagePath: meta.storagePath,
-        message: error?.message,
-      });
-      throw new SignedUrlError(
-        `Failed to create signed URL for ${meta.originalName}.`,
-      );
-    }
-
-    results.push({ meta, signedUrl: data.signedUrl });
-  }
-
-  return results;
+  return Promise.all(files.map((meta) => createSingleSignedUrl(supabase, meta)));
 }

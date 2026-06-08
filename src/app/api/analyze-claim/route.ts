@@ -2,10 +2,12 @@ import { NextResponse } from "next/server";
 
 import { saveClaimAnalysis } from "@/lib/claim-analysis-persistence";
 import {
-  getClaimAnalysisModel,
+  getClaimDeepModel,
+  getClaimTriageModel,
   OpenAIAnalysisError,
   OpenAIConfigError,
-  runClaimAnalysis,
+  runClaimDeepAnalysis,
+  runClaimTriageAnalysis,
 } from "@/lib/claim-analysis-openai";
 import { validateAnalyzeClaimRequest } from "@/lib/claim-files";
 import {
@@ -19,6 +21,21 @@ import {
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
+
+function logUsage(
+  phase: "triage" | "deep",
+  model: string,
+  sessionId: string,
+  usage: { promptTokens: number; completionTokens: number; totalTokens: number } | null,
+) {
+  if (!usage) return;
+  console.info("[api/analyze-claim] token usage:", {
+    phase,
+    model,
+    claimSessionId: sessionId,
+    ...usage,
+  });
+}
 
 export async function POST(request: Request) {
   try {
@@ -74,25 +91,60 @@ export async function POST(request: Request) {
       }
     }
 
-    const analysis = await runClaimAnalysis({
-      request: claimRequest,
-      signedFiles,
-    });
+    const triageModel = getClaimTriageModel();
+    const { analysis: triageAnalysis, usage: triageUsage } =
+      await runClaimTriageAnalysis({
+        request: claimRequest,
+        signedFiles,
+      });
 
-    const saveResult = await saveClaimAnalysis(
+    logUsage("triage", triageModel, claimRequest.claimSessionId, triageUsage);
+
+    // Persist triage synchronously so a fast lead submit can reliably find the
+    // analysis by claimSessionId. Deep analysis still overwrites it async below.
+    const triageSave = await saveClaimAnalysis(
       supabase,
       claimRequest.claimSessionId,
-      analysis,
-      getClaimAnalysisModel(),
+      triageAnalysis,
+      triageModel,
     );
-    if (!saveResult.ok) {
+    if (!triageSave.ok) {
       console.error(
-        "[api/analyze-claim] Failed to persist analysis (response still returned):",
-        saveResult.error,
+        "[api/analyze-claim] Failed to persist triage analysis (response still returned):",
+        triageSave.error,
       );
     }
 
-    return NextResponse.json({ analysis });
+    const deepModel = getClaimDeepModel();
+    void runClaimDeepAnalysis({
+      request: claimRequest,
+      signedFiles,
+    })
+      .then(({ analysis: deepAnalysis, usage: deepUsage }) => {
+        logUsage("deep", deepModel, claimRequest.claimSessionId, deepUsage);
+        return saveClaimAnalysis(
+          supabase,
+          claimRequest.claimSessionId,
+          deepAnalysis,
+          deepModel,
+        );
+      })
+      .then((saveResult) => {
+        if (!saveResult.ok) {
+          console.error(
+            "[api/analyze-claim] Failed to persist deep analysis:",
+            saveResult.error,
+          );
+        }
+      })
+      .catch((err) => {
+        console.error("[api/analyze-claim] Deep analysis background error:", err);
+      });
+
+    return NextResponse.json({
+      analysis: triageAnalysis,
+      phase: "triage",
+    });
   } catch (err) {
     if (err instanceof OpenAIConfigError) {
       console.error("[api/analyze-claim] OpenAI config:", err.message);

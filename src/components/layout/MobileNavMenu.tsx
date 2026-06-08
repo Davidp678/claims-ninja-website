@@ -3,16 +3,23 @@
 import Link from "next/link";
 import { useState } from "react";
 import { CTA_LINKS } from "@/lib/constants";
+import type { Locale } from "@/lib/i18n/config";
+import { ES_CTA_LABELS } from "@/lib/i18n/es-navigation";
 import type { NavEntry } from "@/lib/navigation";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 
 type MobileNavMenuProps = {
   nav: readonly NavEntry[];
+  locale?: Locale;
   onNavigate?: () => void;
 };
 
-export function MobileNavMenu({ nav, onNavigate }: MobileNavMenuProps) {
+export function MobileNavMenu({
+  nav,
+  locale = "en",
+  onNavigate,
+}: MobileNavMenuProps) {
   const [expanded, setExpanded] = useState<string | null>(null);
 
   const toggle = (label: string) => {
@@ -84,7 +91,9 @@ export function MobileNavMenu({ nav, onNavigate }: MobileNavMenuProps) {
 
       <li className="mt-4 space-y-3 px-4 md:hidden">
         <Button href={CTA_LINKS.onboarding} className="w-full" onClick={onNavigate}>
-          Start Claim Review
+          {locale === "es"
+            ? ES_CTA_LABELS.startClaimReview
+            : "Start Claim Review"}
         </Button>
         <a
           href={CTA_LINKS.schedule}
@@ -93,7 +102,7 @@ export function MobileNavMenu({ nav, onNavigate }: MobileNavMenuProps) {
           className="block text-center text-sm font-medium text-zinc-300 transition-colors hover:text-white"
           onClick={onNavigate}
         >
-          Schedule Call
+          {locale === "es" ? ES_CTA_LABELS.scheduleCall : "Schedule Call"}
         </a>
       </li>
     </ul>
