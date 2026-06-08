@@ -7,17 +7,9 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ABOUT_CARD_CLASS } from "@/lib/about-page";
 import { CTA_LINKS } from "@/lib/constants";
+import type { Locale } from "@/lib/i18n/config";
+import { getPricingContent } from "@/lib/i18n/content/pricing";
 import type { PricingRateRow } from "@/lib/pricing-page";
-import {
-  PRICING_ADDITIONAL_SERVICES,
-  PRICING_BILLING,
-  PRICING_ESTIMATE_WRITING,
-  PRICING_HERO,
-  PRICING_NEGOTIATION,
-  PRICING_NEGOTIATION_SUPPLEMENT_SECTION,
-  PRICING_OVERVIEW,
-  PRICING_SUPPLEMENT,
-} from "@/lib/pricing-page";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
 import { cn } from "@/lib/cn";
 
@@ -82,7 +74,9 @@ function BillingStepLabel({ label }: { label: string }) {
   );
 }
 
-export function PricingPage() {
+export function PricingPage({ locale = "en" }: { locale?: Locale }) {
+  const content = getPricingContent(locale);
+
   return (
     <>
       <section className="relative overflow-hidden bg-brand-black">
@@ -90,13 +84,13 @@ export function PricingPage() {
         <Container className="relative z-10 pb-14 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
           <div className="max-w-3xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
-              {PRICING_HERO.eyebrow}
+              {content.hero.eyebrow}
             </p>
             <h1 className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              {PRICING_HERO.title}
+              {content.hero.title}
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-zinc-300 sm:text-xl">
-              {PRICING_HERO.description}
+              {content.hero.description}
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Button
@@ -105,7 +99,7 @@ export function PricingPage() {
                 className="whitespace-nowrap"
                 external
               >
-                {PRICING_HERO.primaryCtaLabel}
+                {content.hero.primaryCtaLabel}
               </Button>
               <Button
                 href={CTA_LINKS.schedule}
@@ -114,7 +108,7 @@ export function PricingPage() {
                 className="whitespace-nowrap"
                 external
               >
-                {PRICING_HERO.secondaryCtaLabel}
+                {content.hero.secondaryCtaLabel}
               </Button>
             </div>
           </div>
@@ -123,14 +117,14 @@ export function PricingPage() {
 
       <Section bordered compact>
         <SectionHeading
-          eyebrow={PRICING_OVERVIEW.eyebrow}
-          title={PRICING_OVERVIEW.title}
-          description={PRICING_OVERVIEW.description}
+          eyebrow={content.overview.eyebrow}
+          title={content.overview.title}
+          description={content.overview.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2">
-          {PRICING_OVERVIEW.cards.map((card) => (
+          {content.overview.cards.map((card) => (
             <li key={card.title} className={cn(ABOUT_CARD_CLASS, "group h-full")}>
               <h3 className="font-display text-xl font-semibold text-white transition-colors group-hover:text-brand-red-light">
                 {card.title}
@@ -145,56 +139,56 @@ export function PricingPage() {
 
       <Section bordered compact className="bg-brand-elevated">
         <SectionHeading
-          eyebrow={PRICING_ESTIMATE_WRITING.eyebrow}
-          title={PRICING_ESTIMATE_WRITING.title}
-          description={PRICING_ESTIMATE_WRITING.intro}
+          eyebrow={content.estimateWriting.eyebrow}
+          title={content.estimateWriting.title}
+          description={content.estimateWriting.intro}
           align="left"
           className="max-w-3xl"
         />
         <div className="mt-10 max-w-3xl">
           <PricingRateCard
-            title={PRICING_ESTIMATE_WRITING.title}
-            rows={PRICING_ESTIMATE_WRITING.rows}
-            invoiceNote={PRICING_ESTIMATE_WRITING.invoiceNote}
+            title={content.estimateWriting.title}
+            rows={content.estimateWriting.rows}
+            invoiceNote={content.estimateWriting.invoiceNote}
           />
         </div>
       </Section>
 
       <Section bordered compact>
         <SectionHeading
-          eyebrow={PRICING_NEGOTIATION_SUPPLEMENT_SECTION.eyebrow}
-          title={PRICING_NEGOTIATION_SUPPLEMENT_SECTION.title}
-          description={PRICING_NEGOTIATION_SUPPLEMENT_SECTION.description}
+          eyebrow={content.negotiationSupplementSection.eyebrow}
+          title={content.negotiationSupplementSection.title}
+          description={content.negotiationSupplementSection.description}
           align="left"
           className="max-w-3xl"
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           <PricingRateCard
-            title={PRICING_NEGOTIATION.title}
-            rows={PRICING_NEGOTIATION.rows}
-            invoiceNote={PRICING_NEGOTIATION.invoiceNote}
+            title={content.negotiation.title}
+            rows={content.negotiation.rows}
+            invoiceNote={content.negotiation.invoiceNote}
           />
           <PricingRateCard
-            title={PRICING_SUPPLEMENT.title}
-            rows={PRICING_SUPPLEMENT.rows}
-            invoiceNote={PRICING_SUPPLEMENT.invoiceNote}
+            title={content.supplement.title}
+            rows={content.supplement.rows}
+            invoiceNote={content.supplement.invoiceNote}
           />
         </div>
         <p className="mt-6 max-w-3xl text-sm leading-relaxed text-zinc-400">
-          {PRICING_NEGOTIATION_SUPPLEMENT_SECTION.sharedInvoiceNote}
+          {content.negotiationSupplementSection.sharedInvoiceNote}
         </p>
       </Section>
 
       <Section bordered compact className="bg-brand-elevated">
         <SectionHeading
-          eyebrow={PRICING_ADDITIONAL_SERVICES.eyebrow}
-          title={PRICING_ADDITIONAL_SERVICES.title}
-          description={PRICING_ADDITIONAL_SERVICES.description}
+          eyebrow={content.additionalServices.eyebrow}
+          title={content.additionalServices.title}
+          description={content.additionalServices.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PRICING_ADDITIONAL_SERVICES.services.map((service) => (
+          {content.additionalServices.services.map((service) => (
             <li
               key={service.title}
               className={cn(
@@ -219,14 +213,14 @@ export function PricingPage() {
 
       <Section bordered compact>
         <SectionHeading
-          eyebrow={PRICING_BILLING.eyebrow}
-          title={PRICING_BILLING.title}
-          description={PRICING_BILLING.description}
+          eyebrow={content.billing.eyebrow}
+          title={content.billing.title}
+          description={content.billing.description}
           align="left"
           className="max-w-3xl"
         />
         <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
-          {PRICING_BILLING.steps.map((step) => (
+          {content.billing.steps.map((step) => (
             <li key={step.label} className={cn("group h-full", ABOUT_CARD_CLASS)}>
               <BillingStepLabel label={step.label} />
               <h3 className="mt-4 font-display text-lg font-semibold text-white">
@@ -240,9 +234,9 @@ export function PricingPage() {
         </ol>
       </Section>
 
-      <SiteFaqSection {...SITE_FAQ.pricing} />
+      <SiteFaqSection {...SITE_FAQ.pricing} locale={locale} />
 
-      <MarketingCtaPanel />
+      <MarketingCtaPanel locale={locale} />
     </>
   );
 }

@@ -7,18 +7,20 @@ import { Container } from "@/components/ui/Container";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import {
-  PLATFORM_AI,
-  PLATFORM_HERO,
-  PLATFORM_PILLARS,
-  PLATFORM_VISION,
-} from "@/lib/platform-overview";
+import type { Locale } from "@/lib/i18n/config";
+import { getPlatformContent } from "@/lib/i18n/content/platform";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
 import { PLATFORM_HERO_VIDEO } from "@/lib/constants";
 
 import { PlatformModulesSection } from "./PlatformModulesSection";
 
-export function PlatformOverviewPage() {
+export function PlatformOverviewPage({
+  locale = "en",
+}: {
+  locale?: Locale;
+}) {
+  const content = getPlatformContent(locale);
+
   return (
     <>
       <section className="relative overflow-hidden bg-brand-black">
@@ -26,17 +28,17 @@ export function PlatformOverviewPage() {
         <Container className="relative z-10 grid grid-cols-1 gap-8 pb-10 pt-24 sm:gap-10 sm:pb-12 sm:pt-28 lg:grid-cols-[minmax(0,0.9fr)_minmax(620px,1.15fr)] lg:items-center lg:gap-x-16 lg:pb-14 lg:pt-24">
           <div className="max-w-2xl lg:col-start-1 lg:max-w-none">
             <SectionHeading
-              eyebrow={PLATFORM_HERO.eyebrow}
-              title={PLATFORM_HERO.title}
-              description={PLATFORM_HERO.description}
+              eyebrow={content.hero.eyebrow}
+              title={content.hero.title}
+              description={content.hero.description}
               align="left"
               className="max-w-none"
             />
             <ConversionCtaGroup
               className="mt-10 lg:mt-12"
               size="md"
-              primaryLabel="Start Claim Review"
-              secondaryLabel="Schedule Strategy Call"
+              primaryLabel={content.hero.primaryCta}
+              secondaryLabel={content.hero.secondaryCta}
             />
           </div>
           <div className="w-full lg:col-start-2 lg:mt-2">
@@ -52,14 +54,14 @@ export function PlatformOverviewPage() {
 
       <Section bordered>
         <SectionHeading
-          eyebrow="How it works"
-          title="Human expertise plus platform power"
-          description="Claims Ninja is not a tool waiting for adoption—it is the operational backbone contractors use today, backed by people who know carrier negotiation and supplement strategy."
+          eyebrow={content.howItWorks.eyebrow}
+          title={content.howItWorks.title}
+          description={content.howItWorks.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PLATFORM_PILLARS.map((pillar) => (
+          {content.howItWorks.pillars.map((pillar) => (
             <li
               key={pillar.title}
               className="group rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/45"
@@ -75,18 +77,18 @@ export function PlatformOverviewPage() {
         </ul>
       </Section>
 
-      <PlatformModulesSection />
+      <PlatformModulesSection locale={locale} />
 
       <Section bordered className="py-16 sm:py-20">
         <SectionHeading
-          eyebrow={PLATFORM_AI.eyebrow}
-          title={PLATFORM_AI.title}
-          description={PLATFORM_AI.description}
+          eyebrow={content.ai.eyebrow}
+          title={content.ai.title}
+          description={content.ai.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 sm:grid-cols-3">
-          {PLATFORM_AI.capabilities.map((capability) => (
+          {content.ai.capabilities.map((capability) => (
             <li
               key={capability.title}
               className="group rounded-2xl border border-white/15 bg-brand-surface p-6 shadow-[0_0_48px_-28px_rgba(220,38,38,0.2)] shadow-lg shadow-black/25"
@@ -105,21 +107,21 @@ export function PlatformOverviewPage() {
             href="/platform/ai-claim-analysis"
             className="text-sm font-medium text-brand-red-light transition-colors hover:text-white"
           >
-            Explore AI Claim Analysis →
+            {content.ai.exploreLink}
           </Link>
         </p>
       </Section>
 
       <Section bordered className="bg-brand-elevated py-16 sm:py-20">
         <SectionHeading
-          eyebrow={PLATFORM_VISION.eyebrow}
-          title={PLATFORM_VISION.title}
-          description={PLATFORM_VISION.description}
+          eyebrow={content.vision.eyebrow}
+          title={content.vision.title}
+          description={content.vision.description}
           align="left"
           className="max-w-3xl"
         />
         <ul className="mt-10 space-y-4">
-          {PLATFORM_VISION.items.map((item) => (
+          {content.vision.items.map((item) => (
             <li
               key={item}
               className="flex gap-3 rounded-xl border border-white/12 bg-brand-surface/60 px-5 py-4 text-sm leading-relaxed text-zinc-300"
@@ -134,8 +136,8 @@ export function PlatformOverviewPage() {
         </ul>
       </Section>
 
-      <SiteFaqSection {...SITE_FAQ.platform} />
-      <MarketingCtaPanel />
+      <SiteFaqSection {...SITE_FAQ.platform} locale={locale} />
+      <MarketingCtaPanel locale={locale} />
     </>
   );
 }

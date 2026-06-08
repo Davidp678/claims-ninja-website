@@ -4,6 +4,8 @@ import { useId, useMemo, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import type { LeadContactFields } from "@/lib/calculator-lead";
+import type { Locale } from "@/lib/i18n/config";
+import { getCalculatorContent } from "@/lib/i18n/content/calculator";
 import { LeadCaptureForm } from "./LeadCaptureForm";
 
 const inputClass =
@@ -24,7 +26,8 @@ function parseNumber(value: string): number {
   return Number.isFinite(n) && n > 0 ? n : 0;
 }
 
-export function OrganizationRoi() {
+export function OrganizationRoi({ locale = "en" }: { locale?: Locale }) {
+  const t = getCalculatorContent(locale).roi;
   const carrierEstId = useId();
   const jobsId = useId();
   const upliftId = useId();
@@ -86,7 +89,7 @@ export function OrganizationRoi() {
         <div className="space-y-6">
           <div>
             <label htmlFor={carrierEstId} className={labelClass}>
-              Avg carrier estimate per job
+              {t.avgCarrierEstimate}
             </label>
             <div className="relative">
               <span
@@ -107,13 +110,13 @@ export function OrganizationRoi() {
               />
             </div>
             <p className="mt-1 text-xs text-zinc-400">
-              Leave blank or 0 to model the 4%-of-RCV fallback.
+              {t.avgCarrierEstimateHelper}
             </p>
           </div>
 
           <div>
             <label htmlFor={jobsId} className={labelClass}>
-              Jobs per month
+              {t.jobsPerMonth}
             </label>
             <input
               id={jobsId}
@@ -129,7 +132,7 @@ export function OrganizationRoi() {
 
           <div>
             <label htmlFor={upliftId} className={labelClass}>
-              Assumed uplift vs carrier estimate (%)
+              {t.assumedUplift}
             </label>
             <input
               id={upliftId}
@@ -145,7 +148,7 @@ export function OrganizationRoi() {
 
           <div>
             <label htmlFor={inHouseId} className={labelClass}>
-              In-house claims team cost (per month)
+              {t.inHouseCost}
             </label>
             <div className="relative">
               <span
@@ -171,33 +174,31 @@ export function OrganizationRoi() {
         <div className="space-y-4">
           <div className="rounded-xl border border-brand-red/35 bg-brand-red/10 p-6 ring-1 ring-brand-red/20">
             <p className="text-xs font-semibold uppercase tracking-wider text-brand-red-light">
-              Net annual uplift with Claims Ninja
+              {t.netAnnualUplift}
             </p>
             <p className="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">
               {currency.format(Math.max(0, numbers.annualNet))}
             </p>
             <p className="mt-1 text-xs text-zinc-400">
-              After negotiation fee, across all jobs annualized.
+              {t.netAnnualUpliftHelper}
             </p>
           </div>
 
           <div className="rounded-xl border border-white/12 bg-brand-black/55 p-5 ring-1 ring-white/5">
             <p className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
-              Claims Ninja fee (annual)
+              {t.ninjaFeeAnnual}
             </p>
             <p className="mt-1 font-display text-2xl font-semibold text-white">
               {currency.format(Math.max(0, numbers.annualFee))}
             </p>
             <p className="mt-1 text-xs text-zinc-400">
-              {numbers.hasCarrier
-                ? "15% of documented settlement increase."
-                : "4% of final RCV fallback (no carrier estimate)."}
+              {numbers.hasCarrier ? t.ninjaFeeWithCarrier : t.ninjaFeeFallback}
             </p>
           </div>
 
           <div className="rounded-xl border border-white/12 bg-brand-black/55 p-5 ring-1 ring-white/5">
             <p className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
-              Vs. in-house claims team
+              {t.vsInHouse}
             </p>
             <p
               className={cn(
@@ -206,11 +207,11 @@ export function OrganizationRoi() {
               )}
             >
               {numbers.vsInHouse >= 0
-                ? `${currency.format(numbers.vsInHouse)} saved`
-                : `${currency.format(Math.abs(numbers.vsInHouse))} short`}
+                ? `${currency.format(numbers.vsInHouse)} ${t.saved}`
+                : `${currency.format(Math.abs(numbers.vsInHouse))} ${t.short}`}
             </p>
             <p className="mt-1 text-xs text-zinc-400">
-              In-house baseline: {currency.format(numbers.inHouseAnnual)} per year.
+              {t.inHouseBaseline(currency.format(numbers.inHouseAnnual))}
             </p>
           </div>
 
@@ -221,15 +222,16 @@ export function OrganizationRoi() {
             className="w-full"
             onClick={() => setShowLeadForm(true)}
           >
-            Send my ROI report
+            {t.sendRoiReport}
           </Button>
 
           {showLeadForm && (
             <LeadCaptureForm
               variant="roi-report"
               defaultMonthlyVolume={jobsPerMonth}
-              submitLabel="Send my ROI report"
-              successMessage="Your ROI report request has been received. We’ll follow up with next steps."
+              submitLabel={t.sendRoiReport}
+              successMessage={t.roiSuccessMessage}
+              locale={locale}
               className="mt-2"
               mergePayload={(lead: LeadContactFields) => ({
                 calculatorType: "roi-report",
@@ -261,28 +263,12 @@ export function OrganizationRoi() {
 
       <details className="mt-8 rounded-xl border border-white/12 bg-brand-black/40 p-5 text-sm text-zinc-300">
         <summary className="cursor-pointer select-none text-xs font-semibold uppercase tracking-[0.18em] text-zinc-300 hover:text-white">
-          Assumptions
+          {t.assumptions}
         </summary>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-zinc-300">
-          <li>
-            Negotiation fee is modeled as 15% of the documented settlement
-            increase above the carrier&apos;s original estimate.
-          </li>
-          <li>
-            Fallback: when there is no carrier estimate, the fee is modeled at
-            4% of final RCV.
-          </li>
-          <li>
-            Assumed uplift defaults to 25% — adjust above to model your own
-            scenarios.
-          </li>
-          <li>
-            In-house claims team cost defaults to $7,500/month — adjust above to
-            match your loaded cost.
-          </li>
-          <li>
-            Estimates are directional only and not a guarantee of outcome.
-          </li>
+          {t.assumptionsItems.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
       </details>
     </div>

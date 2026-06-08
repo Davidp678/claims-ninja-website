@@ -1,3 +1,5 @@
+import type { Locale } from "@/lib/i18n/config";
+import { getHomeContent } from "@/lib/i18n/content/home";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Container } from "@/components/ui/Container";
 import { HeroBackdrop } from "./HeroBackdrop";
@@ -5,11 +7,7 @@ import { HeroVideoCard } from "./HeroVideoCard";
 
 type StatIconName = "bars" | "shield" | "star";
 
-const stats: { label: string; value: string; icon: StatIconName }[] = [
-  { label: "Avg. claim uplift", value: "40%+", icon: "bars" },
-  { label: "Claims handled", value: "2,400+", icon: "shield" },
-  { label: "Client satisfaction", value: "4.9★", icon: "star" },
-];
+const STAT_ICONS: StatIconName[] = ["bars", "shield", "star"];
 
 function StatIcon({ name, className }: { name: StatIconName; className?: string }) {
   switch (name) {
@@ -60,7 +58,13 @@ function StatIcon({ name, className }: { name: StatIconName; className?: string 
   }
 }
 
-export function Hero() {
+export function Hero({ locale = "en" }: { locale?: Locale }) {
+  const content = getHomeContent(locale).hero;
+  const stats = content.stats.map((stat, index) => ({
+    ...stat,
+    icon: STAT_ICONS[index] ?? "bars",
+  }));
+
   return (
     <section
       aria-labelledby="hero-heading"
@@ -74,18 +78,16 @@ export function Hero() {
             id="hero-heading"
             className="font-display text-4xl font-semibold leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl"
           >
-            Maximize your claims.
-            <span className="block text-brand-red-light">Minimize the stress.</span>
+            {content.titleLine1}
+            <span className="block text-brand-red-light">{content.titleLine2}</span>
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-zinc-300 sm:text-xl">
-            The Claims Ninja writes, negotiates, and manages your insurance
-            supplements so you get paid more, faster, without hiring an in-house
-            claims team.
+            {content.subhead}
           </p>
           <ConversionCtaGroup
             className="mt-8"
-            primaryLabel="Get Your Free Review"
-            secondaryLabel="Schedule Strategy Call"
+            primaryLabel={content.primaryCta}
+            secondaryLabel={content.secondaryCta}
           />
         </div>
 

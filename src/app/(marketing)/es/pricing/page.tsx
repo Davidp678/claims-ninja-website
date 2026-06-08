@@ -10,5 +10,5 @@ export const metadata = pageMetadataWithLocale({
 });
 
 export default function SpanishPricingPage() {
-  return <PricingPage />;
+  return <PricingPage locale="es" />;
 }

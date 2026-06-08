@@ -2,23 +2,25 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ABOUT_CARD_CLASS } from "@/lib/about-page";
 import { SITE } from "@/lib/constants";
-import { CONTACT_INFO, CONTACT_INFO_METHODS } from "@/lib/contact-page";
+import type { Locale } from "@/lib/i18n/config";
+import {
+  getContactContent,
+  type ContactInfoMethodContent,
+} from "@/lib/i18n/content/contact";
 import { cn } from "@/lib/cn";
 
 function phoneHref(phone: string): string {
   return `tel:${phone.replace(/\D/g, "")}`;
 }
 
-function getMethodHref(
-  hrefKind: (typeof CONTACT_INFO_METHODS)[number]["hrefKind"],
-): string {
+function getMethodHref(hrefKind: ContactInfoMethodContent["hrefKind"]): string {
   if (hrefKind === "tel") {
     return phoneHref(SITE.phone);
   }
   return `mailto:${SITE.email}`;
 }
 
-function getMethodValue(id: (typeof CONTACT_INFO_METHODS)[number]["id"]): string {
+function getMethodValue(id: ContactInfoMethodContent["id"]): string {
   return id === "phone" ? SITE.phone : SITE.email;
 }
 
@@ -59,20 +61,22 @@ function ContactMethodCard({
   );
 }
 
-export function ContactInfoSection() {
+export function ContactInfoSection({ locale = "en" }: { locale?: Locale }) {
+  const content = getContactContent(locale).info;
+
   return (
     <Section bordered compact>
       <div className="grid gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start lg:gap-14">
         <SectionHeading
-          eyebrow={CONTACT_INFO.eyebrow}
-          title={CONTACT_INFO.title}
-          description={CONTACT_INFO.description}
+          eyebrow={content.eyebrow}
+          title={content.title}
+          description={content.description}
           align="left"
           className="max-w-none lg:max-w-md"
         />
 
         <div className="flex flex-col gap-4">
-          {CONTACT_INFO_METHODS.map((method) => (
+          {content.methods.map((method) => (
             <ContactMethodCard
               key={method.id}
               label={method.label}

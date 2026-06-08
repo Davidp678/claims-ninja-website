@@ -10,6 +10,8 @@ import type {
   LeadSubmissionPayloadWithoutTimestamp,
   PreferredContactMethod,
 } from "@/lib/calculator-lead";
+import type { Locale } from "@/lib/i18n/config";
+import { getCalculatorContent } from "@/lib/i18n/content/calculator";
 import { isValidEmail } from "@/lib/validation/email";
 
 const inputClass =
@@ -29,6 +31,7 @@ export type LeadCaptureFormProps = {
   ) => LeadSubmissionPayloadWithoutTimestamp;
   onSubmit?: (payload: LeadSubmissionPayload) => void;
   className?: string;
+  locale?: Locale;
 };
 
 export function LeadCaptureForm({
@@ -39,7 +42,9 @@ export function LeadCaptureForm({
   mergePayload,
   onSubmit,
   className,
+  locale = "en",
 }: LeadCaptureFormProps) {
+  const t = getCalculatorContent(locale).lead;
   const baseId = useId();
   const fullNameId = `${baseId}-fullName`;
   const companyId = `${baseId}-company`;
@@ -77,18 +82,17 @@ export function LeadCaptureForm({
     const nextErrors: string[] = [];
     setSubmitError(null);
 
-    if (!fullName.trim()) nextErrors.push("Full name is required.");
-    if (!company.trim()) nextErrors.push("Company is required.");
-    if (!email.trim()) nextErrors.push("Email is required.");
-    else if (!isValidEmail(email))
-      nextErrors.push("Enter a valid email address.");
-    if (!phone.trim()) nextErrors.push("Phone is required.");
+    if (!fullName.trim()) nextErrors.push(t.errorFullName);
+    if (!company.trim()) nextErrors.push(t.errorCompany);
+    if (!email.trim()) nextErrors.push(t.errorEmail);
+    else if (!isValidEmail(email)) nextErrors.push(t.errorEmailInvalid);
+    if (!phone.trim()) nextErrors.push(t.errorPhone);
 
     if (variant === "roi-report") {
       const vol = monthlyClaimVolume.trim();
-      if (!vol) nextErrors.push("Monthly claim volume is required.");
+      if (!vol) nextErrors.push(t.errorMonthlyVolumeRequired);
       else if (!Number.isFinite(Number(vol)) || Number(vol) < 0) {
-        nextErrors.push("Monthly claim volume must be a valid number.");
+        nextErrors.push(t.errorMonthlyVolumeInvalid);
       }
     }
 
@@ -127,7 +131,7 @@ export function LeadCaptureForm({
       }
 
       if (!res.ok || !data.success) {
-        setSubmitError("Something went wrong. Please try again.");
+        setSubmitError(t.genericError);
         return;
       }
 
@@ -135,7 +139,7 @@ export function LeadCaptureForm({
       onSubmit?.(merged);
       setSubmitted(true);
     } catch {
-      setSubmitError("Something went wrong. Please try again.");
+      setSubmitError(t.genericError);
     } finally {
       setIsSubmitting(false);
     }
@@ -170,12 +174,10 @@ export function LeadCaptureForm({
         <p className="mt-5 text-base font-medium leading-relaxed text-white">
           {successMessage}
         </p>
-        <p className="mt-2 text-sm text-zinc-300">
-          A specialist will reach out using the details you provided.
-        </p>
+        <p className="mt-2 text-sm text-zinc-300">{t.specialistNote}</p>
         <div className="mt-6">
           <Button href={CTA_LINKS.onboarding} size="lg" className="w-full sm:w-auto">
-            Start Claim Review
+            {t.startClaimReview}
           </Button>
         </div>
       </div>
@@ -192,14 +194,12 @@ export function LeadCaptureForm({
       noValidate
     >
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
-        {variant === "claim-review"
-          ? "Full supplement review"
-          : "Request your ROI report"}
+        {variant === "claim-review" ? t.claimReviewEyebrow : t.roiEyebrow}
       </p>
       <p className="mt-2 text-sm text-zinc-300">
         {variant === "claim-review"
-          ? "Preliminary opportunities identified. Submit your information for a deeper line-item and carrier review from the Claims Ninja team."
-          : "We’ll validate your numbers and send a concise readout your leadership team can use."}
+          ? t.claimReviewDescription
+          : t.roiDescription}
       </p>
 
       {errors.length > 0 && (
@@ -229,7 +229,7 @@ export function LeadCaptureForm({
       <div className="mt-6 grid gap-5 sm:grid-cols-2">
         <div className="sm:col-span-2">
           <label htmlFor={fullNameId} className={labelClass}>
-            Full name
+            {t.fullName}
           </label>
           <input
             id={fullNameId}
@@ -243,7 +243,7 @@ export function LeadCaptureForm({
 
         <div className="sm:col-span-2">
           <label htmlFor={companyId} className={labelClass}>
-            Company
+            {t.company}
           </label>
           <input
             id={companyId}
@@ -257,7 +257,7 @@ export function LeadCaptureForm({
 
         <div>
           <label htmlFor={emailId} className={labelClass}>
-            Email
+            {t.email}
           </label>
           <input
             id={emailId}
@@ -272,7 +272,7 @@ export function LeadCaptureForm({
 
         <div>
           <label htmlFor={phoneId} className={labelClass}>
-            Phone
+            {t.phone}
           </label>
           <input
             id={phoneId}
@@ -288,7 +288,7 @@ export function LeadCaptureForm({
         {variant === "claim-review" ? (
           <div className="sm:col-span-2">
             <label htmlFor={contactMethodId} className={labelClass}>
-              Preferred contact method
+              {t.preferredContactMethod}
             </label>
             <select
               id={contactMethodId}
@@ -301,15 +301,15 @@ export function LeadCaptureForm({
               }
               className={inputClass}
             >
-              <option value="email">Email</option>
-              <option value="phone">Phone</option>
-              <option value="either">Either</option>
+              <option value="email">{t.optionEmail}</option>
+              <option value="phone">{t.optionPhone}</option>
+              <option value="either">{t.optionEither}</option>
             </select>
           </div>
         ) : (
           <div className="sm:col-span-2">
             <label htmlFor={monthlyVolumeId} className={labelClass}>
-              Monthly claim volume
+              {t.monthlyClaimVolume}
             </label>
             <input
               id={monthlyVolumeId}
@@ -321,11 +321,10 @@ export function LeadCaptureForm({
               value={monthlyClaimVolume}
               onChange={(e) => setMonthlyClaimVolume(e.target.value)}
               className={inputClass}
-              placeholder="e.g. number of jobs or claims per month"
+              placeholder={t.monthlyClaimVolumePlaceholder}
             />
             <p className="mt-1 text-xs text-zinc-400">
-              Pre-filled from your calculator where possible — adjust to match
-              your organization.
+              {t.monthlyClaimVolumeHelper}
             </p>
           </div>
         )}
@@ -334,7 +333,7 @@ export function LeadCaptureForm({
       <div className="mt-8">
         {variant === "claim-review" && (
           <p className="mb-3 text-xs font-medium uppercase tracking-wider text-zinc-400">
-            Potential missed revenue detected.
+            {t.missedRevenueDetected}
           </p>
         )}
         <Button
@@ -343,17 +342,17 @@ export function LeadCaptureForm({
           className="w-full sm:w-auto"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Sending…" : submitLabel}
+          {isSubmitting ? t.sending : submitLabel}
         </Button>
         <p className="mt-4 text-sm text-zinc-400">
-          Prefer to talk first?{" "}
+          {t.preferToTalk}{" "}
           <a
             href={CTA_LINKS.schedule}
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-zinc-300 underline-offset-2 transition-colors hover:text-brand-red-light hover:underline"
           >
-            Schedule a strategy call
+            {t.scheduleStrategyCall}
           </a>
         </p>
       </div>

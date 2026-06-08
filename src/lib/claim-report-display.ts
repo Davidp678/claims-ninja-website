@@ -1,4 +1,5 @@
 import type { ClaimFinding, FindingCategory, FindingSeverity } from "@/lib/claim-analysis";
+import type { Locale } from "@/lib/i18n/config";
 
 export const currencyFmt = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -21,29 +22,105 @@ export type OpportunityTier = {
   description: string;
 };
 
-export function getOpportunityTier(score: number): OpportunityTier {
-  if (score >= 71) {
-    return {
+type OpportunityTierKey =
+  | "high"
+  | "strong"
+  | "meaningful"
+  | "light"
+  | "minimal";
+
+function getOpportunityTierKey(score: number): OpportunityTierKey {
+  if (score >= 81) return "high";
+  if (score >= 61) return "strong";
+  if (score >= 41) return "meaningful";
+  if (score >= 21) return "light";
+  return "minimal";
+}
+
+const OPPORTUNITY_TIERS: Record<
+  Locale,
+  Record<OpportunityTierKey, OpportunityTier>
+> = {
+  en: {
+    high: {
+      label: "High-value opportunity",
+      strength: "High confidence",
+      description:
+        "Substantial recoverable value is likely. Prioritize a full supplement and carrier review.",
+    },
+    strong: {
       label: "Strong opportunity",
       strength: "High confidence",
       description:
         "Multiple recoverable gaps likely exist. Prioritize a structured supplement review.",
-    };
-  }
-  if (score >= 41) {
-    return {
-      label: "Moderate opportunity",
+    },
+    meaningful: {
+      label: "Meaningful opportunity",
       strength: "Solid potential",
       description:
         "Meaningful upside is likely. Targeted line-item and scope validation recommended.",
-    };
-  }
-  return {
-    label: "Emerging opportunity",
-    strength: "Worth validating",
-    description:
-      "Some gaps may exist. A focused review can confirm whether additional recovery is realistic.",
-  };
+    },
+    light: {
+      label: "Light opportunity",
+      strength: "Worth validating",
+      description:
+        "Some gaps may exist. A focused review can confirm whether additional recovery is realistic.",
+    },
+    minimal: {
+      label: "Minimal opportunity",
+      strength: "Baseline",
+      description:
+        "Limited additional recovery indicated. Continue with documented scope validation.",
+    },
+  },
+  es: {
+    high: {
+      label: "Oportunidad de alto valor",
+      strength: "Alta confianza",
+      description:
+        "Es probable que haya un valor recuperable considerable. Priorice una revisión completa de suplementos y con la aseguradora.",
+    },
+    strong: {
+      label: "Oportunidad sólida",
+      strength: "Alta confianza",
+      description:
+        "Es probable que existan varias brechas recuperables. Priorice una revisión estructurada de suplementos.",
+    },
+    meaningful: {
+      label: "Oportunidad significativa",
+      strength: "Potencial sólido",
+      description:
+        "Es probable que haya un margen significativo. Se recomienda validar el alcance y las partidas específicas.",
+    },
+    light: {
+      label: "Oportunidad ligera",
+      strength: "Vale la pena validar",
+      description:
+        "Pueden existir algunas brechas. Una revisión enfocada puede confirmar si es realista recuperar más.",
+    },
+    minimal: {
+      label: "Oportunidad mínima",
+      strength: "Base",
+      description:
+        "Se indica una recuperación adicional limitada. Continúe con la validación del alcance documentado.",
+    },
+  },
+};
+
+export function getOpportunityTier(
+  score: number,
+  locale: Locale = "en",
+): OpportunityTier {
+  const tiers = OPPORTUNITY_TIERS[locale] ?? OPPORTUNITY_TIERS.en;
+  return tiers[getOpportunityTierKey(score)];
+}
+
+/** Tailwind text color band for a calibrated opportunity score. */
+export function getOpportunityScoreColor(score: number): string {
+  const key = getOpportunityTierKey(score);
+  if (key === "high" || key === "strong") return "text-brand-red-light";
+  if (key === "meaningful") return "text-amber-300";
+  return "text-zinc-300";
 }
 
 export function formatConfidencePercent(confidence: number): number {

@@ -2,7 +2,12 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
-import { NETWORK_MODULES, OPERATIONAL_METRICS, type OperationalMetric } from "@/lib/homepage-proof-intelligence";
+import {
+  NETWORK_MODULES,
+  OPERATIONAL_METRICS,
+  type NetworkModule,
+  type OperationalMetric,
+} from "@/lib/homepage-proof-intelligence";
 import {
   VIEWPORT_ONCE,
   metricCardOuter,
@@ -59,7 +64,31 @@ function PerformanceMetricCard({ metric }: { metric: OperationalMetric }) {
   );
 }
 
-export function ProofIntelligenceOperationsPanel() {
+type ProofIntelligenceOperationsPanelProps = {
+  performanceHeading?: string;
+  networkHeading?: string;
+  metrics?: readonly OperationalMetric[];
+  modules?: readonly { id: string; label: string; subline: string }[];
+};
+
+export function ProofIntelligenceOperationsPanel({
+  performanceHeading = "Operational performance",
+  networkHeading = "Operations intelligence network",
+  metrics = OPERATIONAL_METRICS,
+  modules,
+}: ProofIntelligenceOperationsPanelProps) {
+  const localizedById = new Map(
+    (modules ?? []).map((module) => [module.id, module]),
+  );
+  const resolvedModules: readonly NetworkModule[] = NETWORK_MODULES.map(
+    (module) => {
+      const override = localizedById.get(module.id);
+      return override
+        ? { ...module, label: override.label, subline: override.subline }
+        : module;
+    },
+  );
+
   return (
     <div className="relative mt-10 overflow-x-hidden lg:mt-12">
       <OperationsAmbientLayer />
@@ -67,7 +96,7 @@ export function ProofIntelligenceOperationsPanel() {
       <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,0.36fr)_minmax(0,0.64fr)] lg:items-stretch lg:gap-10 xl:gap-14">
         <div className="flex min-h-0 flex-col">
           <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400">
-            Operational performance
+            {performanceHeading}
           </h3>
           <div className="relative mt-4 flex min-h-0 flex-1 flex-col lg:min-h-[560px]">
             <MetricsTelemetryRailBackdrop />
@@ -78,7 +107,7 @@ export function ProofIntelligenceOperationsPanel() {
               viewport={VIEWPORT_ONCE}
               variants={staggerContainer}
             >
-              {OPERATIONAL_METRICS.map((metric, index) => (
+              {metrics.map((metric, index) => (
                 <motion.li
                   key={metric.id}
                   variants={metricCardOuter}
@@ -94,10 +123,10 @@ export function ProofIntelligenceOperationsPanel() {
 
         <div className="flex min-h-0 flex-col">
           <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400">
-            Operations intelligence network
+            {networkHeading}
           </h3>
           <div className="mt-4 flex min-h-0 flex-1 flex-col">
-            <OperationsIntelligenceNetwork modules={NETWORK_MODULES} />
+            <OperationsIntelligenceNetwork modules={resolvedModules} />
           </div>
         </div>
       </div>

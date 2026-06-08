@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import type { Locale } from "@/lib/i18n/config";
+import { getHomeContent } from "@/lib/i18n/content/home";
 import { PARTNER_LOGOS } from "@/lib/partners";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -9,12 +11,14 @@ function getTextOverlay(partner: (typeof PARTNER_LOGOS)[number]): string | null 
   return partner.textOverlay ?? null;
 }
 
-export function PartnersSection() {
+export function PartnersSection({ locale = "en" }: { locale?: Locale }) {
+  const content = getHomeContent(locale).partners;
+
   return (
     <Section id="partners" bordered className="bg-brand-elevated">
       <SectionHeading
-        eyebrow="Trusted network"
-        title="Partners who stand behind every claim"
+        eyebrow={content.eyebrow}
+        title={content.title}
       />
       <ul className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {PARTNER_LOGOS.map((partner) => (
@@ -44,7 +48,7 @@ export function PartnersSection() {
           href="/partner-network"
           className="inline-block text-sm font-medium text-zinc-400 transition-colors hover:text-brand-red-light"
         >
-          View our full partner network →
+          {content.link}
         </Link>
       </div>
     </Section>

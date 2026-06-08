@@ -4,34 +4,41 @@ import { useState } from "react";
 import type { ContactInquiryType } from "@/lib/calculator-lead";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { CONTACT_FORM, CONTACT_ROUTING } from "@/lib/contact-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getContactContent } from "@/lib/i18n/content/contact";
 import { ContactRoutingCards } from "./ContactRoutingCards";
 import { ContactInquiryFormSection } from "./ContactInquiryForm";
 
-export function ContactInquirySection() {
+export function ContactInquirySection({
+  locale = "en",
+}: {
+  locale?: Locale;
+}) {
   const [inquiryType, setInquiryType] =
     useState<ContactInquiryType>("general-question");
+  const content = getContactContent(locale);
 
   return (
     <>
       <Section bordered compact>
         <SectionHeading
-          eyebrow={CONTACT_ROUTING.eyebrow}
-          title={CONTACT_ROUTING.title}
-          description={CONTACT_ROUTING.description}
+          eyebrow={content.routing.eyebrow}
+          title={content.routing.title}
+          description={content.routing.description}
           align="left"
           className="max-w-3xl"
         />
         <ContactRoutingCards
           selectedInquiryType={inquiryType}
           onSelect={setInquiryType}
+          locale={locale}
         />
       </Section>
 
       <Section bordered compact className="bg-brand-elevated">
         <SectionHeading
-          eyebrow={CONTACT_FORM.eyebrow}
-          title={CONTACT_FORM.title}
+          eyebrow={content.form.eyebrow}
+          title={content.form.title}
           align="left"
           className="max-w-3xl"
         />
@@ -39,6 +46,7 @@ export function ContactInquirySection() {
           <ContactInquiryFormSection
             inquiryType={inquiryType}
             onInquiryTypeChange={setInquiryType}
+            locale={locale}
           />
         </div>
       </Section>

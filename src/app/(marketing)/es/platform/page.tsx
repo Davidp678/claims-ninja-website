@@ -10,5 +10,5 @@ export const metadata = pageMetadataWithLocale({
 });
 
 export default function SpanishPlatformPage() {
-  return <PlatformOverviewPage />;
+  return <PlatformOverviewPage locale="es" />;
 }

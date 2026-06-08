@@ -1,19 +1,24 @@
 "use client";
 
 import type { ContactInquiryType } from "@/lib/calculator-lead";
-import { CONTACT_ROUTING } from "@/lib/contact-page";
 import { ABOUT_CARD_CLASS } from "@/lib/about-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getContactContent } from "@/lib/i18n/content/contact";
 import { cn } from "@/lib/cn";
 
 type ContactRoutingCardsProps = {
   selectedInquiryType: ContactInquiryType;
   onSelect: (inquiryType: ContactInquiryType) => void;
+  locale?: Locale;
 };
 
 export function ContactRoutingCards({
   selectedInquiryType,
   onSelect,
+  locale = "en",
 }: ContactRoutingCardsProps) {
+  const routing = getContactContent(locale).routing;
+
   const scrollToForm = () => {
     const formSection = document.getElementById("contact-form");
     formSection?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -31,7 +36,7 @@ export function ContactRoutingCards({
 
   return (
     <ul className="mt-14 grid gap-6 sm:grid-cols-2">
-      {CONTACT_ROUTING.cards.map((card) => {
+      {routing.cards.map((card) => {
         const isSelected = selectedInquiryType === card.inquiryType;
 
         return (
@@ -55,7 +60,7 @@ export function ContactRoutingCards({
                 {card.description}
               </p>
               <span className="mt-4 text-sm font-medium text-brand-red-light">
-                {isSelected ? "Selected — continue below →" : "Select & continue →"}
+                {isSelected ? routing.selectedLabel : routing.selectLabel}
               </span>
             </button>
           </li>

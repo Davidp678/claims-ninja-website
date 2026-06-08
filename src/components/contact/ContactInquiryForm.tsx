@@ -9,10 +9,8 @@ import type {
   LeadContactFields,
 } from "@/lib/calculator-lead";
 import { CONTACT_INQUIRY_TYPES } from "@/lib/calculator-lead";
-import {
-  CONTACT_FORM,
-  CONTACT_INQUIRY_TYPE_LABELS,
-} from "@/lib/contact-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getContactContent } from "@/lib/i18n/content/contact";
 import { FAQ_ANCHOR_SCROLL_CLASS } from "@/lib/faq-page";
 import { cn } from "@/lib/cn";
 import { isValidEmail } from "@/lib/validation/email";
@@ -29,12 +27,15 @@ const labelClass =
 type ContactInquiryFormProps = {
   inquiryType: ContactInquiryType;
   onInquiryTypeChange: (inquiryType: ContactInquiryType) => void;
+  locale?: Locale;
 };
 
 export function ContactInquiryForm({
   inquiryType,
   onInquiryTypeChange,
+  locale = "en",
 }: ContactInquiryFormProps) {
+  const form = getContactContent(locale).form;
   const baseId = useId();
   const fullNameId = `${baseId}-fullName`;
   const companyId = `${baseId}-company`;
@@ -62,20 +63,19 @@ export function ContactInquiryForm({
     const nextErrors: string[] = [];
     setSubmitError(null);
 
-    if (!fullName.trim()) nextErrors.push("Full name is required.");
-    if (!company.trim()) nextErrors.push("Company is required.");
-    if (!email.trim()) nextErrors.push("Email is required.");
-    else if (!isValidEmail(email))
-      nextErrors.push("Enter a valid email address.");
-    if (!phone.trim()) nextErrors.push("Phone is required.");
-    if (!message.trim()) nextErrors.push("Message is required.");
+    if (!fullName.trim()) nextErrors.push(form.errors.fullName);
+    if (!company.trim()) nextErrors.push(form.errors.company);
+    if (!email.trim()) nextErrors.push(form.errors.email);
+    else if (!isValidEmail(email)) nextErrors.push(form.errors.emailInvalid);
+    if (!phone.trim()) nextErrors.push(form.errors.phone);
+    if (!message.trim()) nextErrors.push(form.errors.message);
 
     const vol = monthlyClaimVolume.trim();
     if (
       vol &&
       (!Number.isFinite(Number(vol)) || Number(vol) < 0)
     ) {
-      nextErrors.push("Monthly claim volume must be a valid number.");
+      nextErrors.push(form.errors.monthlyVolume);
     }
 
     setErrors(nextErrors);
@@ -118,13 +118,13 @@ export function ContactInquiryForm({
       }
 
       if (!res.ok || !data.success) {
-        setSubmitError("Something went wrong. Please try again.");
+        setSubmitError(form.errors.generic);
         return;
       }
 
       setSubmitted(true);
     } catch {
-      setSubmitError("Something went wrong. Please try again.");
+      setSubmitError(form.errors.generic);
     } finally {
       setIsSubmitting(false);
     }
@@ -154,20 +154,20 @@ export function ContactInquiryForm({
           </svg>
         </div>
         <p className="mt-5 text-base font-medium leading-relaxed text-white">
-          {CONTACT_FORM.successMessage}
+          {form.successMessage}
         </p>
         <p className="mt-2 text-sm text-zinc-300">
-          Most inquiries receive a response within one business day.
+          {form.successResponseNote}
         </p>
         <p className="mt-6 text-sm text-zinc-400">
-          Prefer to talk first?{" "}
+          {form.preferToTalk}{" "}
           <a
             href={CTA_LINKS.schedule}
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-zinc-300 underline-offset-2 transition-colors hover:text-brand-red-light hover:underline"
           >
-            Schedule a strategy call
+            {form.scheduleStrategyCall}
           </a>
         </p>
       </div>
@@ -181,9 +181,9 @@ export function ContactInquiryForm({
       noValidate
     >
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
-        {CONTACT_FORM.eyebrow}
+        {form.eyebrow}
       </p>
-      <p className="mt-2 text-sm text-zinc-300">{CONTACT_FORM.description}</p>
+      <p className="mt-2 text-sm text-zinc-300">{form.description}</p>
 
       {errors.length > 0 && (
         <div
@@ -212,7 +212,7 @@ export function ContactInquiryForm({
       <div className="mt-6 grid gap-5 sm:grid-cols-2">
         <div className="sm:col-span-2">
           <label htmlFor={fullNameId} className={labelClass}>
-            Full name
+            {form.labels.fullName}
           </label>
           <input
             id={fullNameId}
@@ -226,7 +226,7 @@ export function ContactInquiryForm({
 
         <div className="sm:col-span-2">
           <label htmlFor={companyId} className={labelClass}>
-            Company
+            {form.labels.company}
           </label>
           <input
             id={companyId}
@@ -240,7 +240,7 @@ export function ContactInquiryForm({
 
         <div>
           <label htmlFor={emailId} className={labelClass}>
-            Email
+            {form.labels.email}
           </label>
           <input
             id={emailId}
@@ -255,7 +255,7 @@ export function ContactInquiryForm({
 
         <div>
           <label htmlFor={phoneId} className={labelClass}>
-            Phone
+            {form.labels.phone}
           </label>
           <input
             id={phoneId}
@@ -270,8 +270,10 @@ export function ContactInquiryForm({
 
         <div>
           <label htmlFor={websiteId} className={labelClass}>
-            Website{" "}
-            <span className="normal-case tracking-normal text-zinc-500">(optional)</span>
+            {form.labels.website}{" "}
+            <span className="normal-case tracking-normal text-zinc-500">
+              {form.labels.optional}
+            </span>
           </label>
           <input
             id={websiteId}
@@ -281,14 +283,16 @@ export function ContactInquiryForm({
             value={website}
             onChange={(e) => setWebsite(e.target.value)}
             className={inputClass}
-            placeholder="https://"
+            placeholder={form.labels.websitePlaceholder}
           />
         </div>
 
         <div>
           <label htmlFor={monthlyVolumeId} className={labelClass}>
-            Monthly claim volume{" "}
-            <span className="normal-case tracking-normal text-zinc-500">(optional)</span>
+            {form.labels.monthlyClaimVolume}{" "}
+            <span className="normal-case tracking-normal text-zinc-500">
+              {form.labels.optional}
+            </span>
           </label>
           <input
             id={monthlyVolumeId}
@@ -300,13 +304,13 @@ export function ContactInquiryForm({
             value={monthlyClaimVolume}
             onChange={(e) => setMonthlyClaimVolume(e.target.value)}
             className={inputClass}
-            placeholder="e.g. jobs or claims per month"
+            placeholder={form.labels.monthlyClaimVolumePlaceholder}
           />
         </div>
 
         <div className="sm:col-span-2">
           <label htmlFor={inquiryTypeId} className={labelClass}>
-            Inquiry type
+            {form.labels.inquiryType}
           </label>
           <select
             id={inquiryTypeId}
@@ -319,7 +323,7 @@ export function ContactInquiryForm({
           >
             {CONTACT_INQUIRY_TYPES.map((type) => (
               <option key={type} value={type}>
-                {CONTACT_INQUIRY_TYPE_LABELS[type]}
+                {form.inquiryTypeLabels[type]}
               </option>
             ))}
           </select>
@@ -327,7 +331,7 @@ export function ContactInquiryForm({
 
         <div className="sm:col-span-2">
           <label htmlFor={messageId} className={labelClass}>
-            Message
+            {form.labels.message}
           </label>
           <textarea
             id={messageId}
@@ -335,7 +339,7 @@ export function ContactInquiryForm({
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             className={textareaClass}
-            placeholder="Tell us about your operation, active claims, or questions."
+            placeholder={form.labels.messagePlaceholder}
           />
         </div>
       </div>
@@ -347,17 +351,17 @@ export function ContactInquiryForm({
           className="w-full sm:w-auto"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Sending…" : CONTACT_FORM.submitLabel}
+          {isSubmitting ? form.sendingLabel : form.submitLabel}
         </Button>
         <p className="mt-4 text-sm text-zinc-400">
-          Prefer to talk first?{" "}
+          {form.preferToTalk}{" "}
           <a
             href={CTA_LINKS.schedule}
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-zinc-300 underline-offset-2 transition-colors hover:text-brand-red-light hover:underline"
           >
-            Schedule a strategy call
+            {form.scheduleStrategyCall}
           </a>
         </p>
       </div>
@@ -368,7 +372,10 @@ export function ContactInquiryForm({
 export function ContactInquiryFormSection({
   inquiryType,
   onInquiryTypeChange,
+  locale = "en",
 }: ContactInquiryFormProps) {
+  const form = getContactContent(locale).form;
+
   return (
     <section
       id="contact-form"
@@ -376,11 +383,12 @@ export function ContactInquiryFormSection({
       aria-labelledby="contact-form-heading"
     >
       <h2 id="contact-form-heading" className="sr-only">
-        {CONTACT_FORM.title}
+        {form.title}
       </h2>
       <ContactInquiryForm
         inquiryType={inquiryType}
         onInquiryTypeChange={onInquiryTypeChange}
+        locale={locale}
       />
     </section>
   );

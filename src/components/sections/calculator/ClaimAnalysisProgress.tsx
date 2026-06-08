@@ -1,6 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/cn";
+import type { Locale } from "@/lib/i18n/config";
+import { getCalculatorContent } from "@/lib/i18n/content/calculator";
 
 export type AnalysisProgressPhase =
   | "uploading"
@@ -13,13 +15,7 @@ type ClaimAnalysisProgressProps = {
   uploadCompleted?: number;
   uploadTotal?: number;
   className?: string;
-};
-
-const PHASE_LABELS: Record<AnalysisProgressPhase, string> = {
-  uploading: "Uploading files",
-  reading: "Reading documents",
-  scoring: "Scoring opportunity",
-  finalizing: "Finalizing report",
+  locale?: Locale;
 };
 
 function phasePercent(
@@ -41,12 +37,14 @@ export function ClaimAnalysisProgress({
   uploadCompleted = 0,
   uploadTotal = 0,
   className,
+  locale = "en",
 }: ClaimAnalysisProgressProps) {
+  const phaseLabels = getCalculatorContent(locale).progress;
   const percent = phasePercent(phase, uploadCompleted, uploadTotal);
   const label =
     phase === "uploading" && uploadTotal > 0
-      ? `${PHASE_LABELS.uploading} (${uploadCompleted}/${uploadTotal})`
-      : PHASE_LABELS[phase];
+      ? `${phaseLabels.uploading} (${uploadCompleted}/${uploadTotal})`
+      : phaseLabels[phase];
 
   return (
     <div className={cn("space-y-2", className)} aria-live="polite">

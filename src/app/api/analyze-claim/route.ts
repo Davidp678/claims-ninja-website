@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
 
+import type { ClaimAnalysisResult } from "@/lib/claim-analysis";
+import {
+  calibrateOpportunityScore,
+  parseCarrierEstimate,
+} from "@/lib/claim-scoring";
 import { saveClaimAnalysis } from "@/lib/claim-analysis-persistence";
 import {
   getClaimDeepModel,
@@ -21,6 +26,25 @@ import {
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
+
+/**
+ * Apply the shared deterministic calibration so the homepage card (returned
+ * triage) and the report page (persisted deep) use identical score logic.
+ */
+function withCalibratedScore(
+  analysis: ClaimAnalysisResult,
+  carrierEstimate: number,
+): ClaimAnalysisResult {
+  return {
+    ...analysis,
+    opportunityScore: calibrateOpportunityScore({
+      revenueRange: analysis.estimatedMissedRevenueRange,
+      findings: analysis.findings,
+      carrierEstimate,
+      fallbackScore: analysis.opportunityScore,
+    }),
+  };
+}
 
 function logUsage(
   phase: "triage" | "deep",
@@ -91,12 +115,15 @@ export async function POST(request: Request) {
       }
     }
 
+    const carrierEstimate = parseCarrierEstimate(claimRequest.carrierEstimate);
+
     const triageModel = getClaimTriageModel();
-    const { analysis: triageAnalysis, usage: triageUsage } =
+    const { analysis: rawTriageAnalysis, usage: triageUsage } =
       await runClaimTriageAnalysis({
         request: claimRequest,
         signedFiles,
       });
+    const triageAnalysis = withCalibratedScore(rawTriageAnalysis, carrierEstimate);
 
     logUsage("triage", triageModel, claimRequest.claimSessionId, triageUsage);
 
@@ -125,7 +152,7 @@ export async function POST(request: Request) {
         return saveClaimAnalysis(
           supabase,
           claimRequest.claimSessionId,
-          deepAnalysis,
+          withCalibratedScore(deepAnalysis, carrierEstimate),
           deepModel,
         );
       })

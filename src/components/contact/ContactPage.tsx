@@ -6,10 +6,13 @@ import { ContactInquirySection } from "@/components/contact/ContactInquirySectio
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { CTA_LINKS } from "@/lib/constants";
-import { CONTACT_HERO } from "@/lib/contact-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getContactContent } from "@/lib/i18n/content/contact";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
 
-export function ContactPage() {
+export function ContactPage({ locale = "en" }: { locale?: Locale }) {
+  const content = getContactContent(locale);
+
   return (
     <>
       <section className="relative overflow-hidden bg-brand-black">
@@ -17,17 +20,17 @@ export function ContactPage() {
         <Container className="relative z-10 pb-14 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
           <div className="max-w-3xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
-              {CONTACT_HERO.eyebrow}
+              {content.hero.eyebrow}
             </p>
             <h1 className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              {CONTACT_HERO.title}
+              {content.hero.title}
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-zinc-300 sm:text-xl">
-              {CONTACT_HERO.description}
+              {content.hero.description}
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Button href="#contact-form" size="md" className="whitespace-nowrap">
-                {CONTACT_HERO.primaryCtaLabel}
+                {content.hero.primaryCtaLabel}
               </Button>
               <Button
                 href={CTA_LINKS.schedule}
@@ -36,20 +39,20 @@ export function ContactPage() {
                 className="whitespace-nowrap"
                 external
               >
-                {CONTACT_HERO.secondaryCtaLabel}
+                {content.hero.secondaryCtaLabel}
               </Button>
             </div>
           </div>
         </Container>
       </section>
 
-      <ContactInquirySection />
+      <ContactInquirySection locale={locale} />
 
-      <ContactInfoSection />
+      <ContactInfoSection locale={locale} />
 
-      <SiteFaqSection {...SITE_FAQ.contact} />
+      <SiteFaqSection {...SITE_FAQ.contact} locale={locale} />
 
-      <MarketingCtaPanel />
+      <MarketingCtaPanel locale={locale} />
     </>
   );
 }

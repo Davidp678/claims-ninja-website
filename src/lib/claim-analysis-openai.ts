@@ -229,6 +229,17 @@ Identify realistic supplement opportunities, documentation gaps, pricing issues,
 Be specific and actionable. Express uncertainty where evidence is limited.
 Do not guarantee outcomes, coverage, or legal conclusions.
 Return at most ${MAX_INLINE_FINDINGS} findings — prioritize the highest-impact opportunities for the inline triage view.
+
+Estimate "estimatedMissedRevenueRange" carefully — it is the single most important number you produce. It represents the realistic additional recovery (in USD) a supplement review could unlock, as a low/high range. Ground it in the carrier estimate and the findings; avoid both lowballing legitimate recovery and inflating weak claims.
+
+Set "opportunityScore" (0–100) to reflect the practical value of pursuing a supplement review, using this rubric:
+- 81–100 High-value opportunity: substantial recovery likely (large absolute dollars and/or a high percentage of the carrier estimate) with strong, confident findings.
+- 61–80 Strong opportunity: clear recoverable gaps with solid evidence.
+- 41–60 Meaningful opportunity: real upside worth a targeted review.
+- 21–40 Light opportunity: some gaps; validation recommended.
+- 0–20 Minimal opportunity: little additional recovery indicated.
+A claim with several thousand dollars or more of documented missed revenue should not score in the lowest bands. Note: the server independently recalibrates this score from your revenue range and findings, so keep the score consistent with those values rather than fighting them.
+
 Output must follow the provided JSON schema exactly.`;
 
 function parseUsage(usage?: {

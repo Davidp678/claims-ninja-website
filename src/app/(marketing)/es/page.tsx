@@ -20,14 +20,14 @@ export const metadata = pageMetadataWithLocale({
 export default function SpanishHome() {
   return (
     <>
-      <Hero />
-      <ProcessSection />
-      <CalculatorSection />
-      <ProofIntelligenceSection />
-      <PartnersSection />
-      <TestimonialsSection />
-      <SiteFaqSection {...SITE_FAQ.home} />
-      <CtaSection />
+      <Hero locale="es" />
+      <ProcessSection locale="es" />
+      <CalculatorSection locale="es" />
+      <ProofIntelligenceSection locale="es" />
+      <PartnersSection locale="es" />
+      <TestimonialsSection locale="es" />
+      <SiteFaqSection {...SITE_FAQ.home} locale="es" />
+      <CtaSection locale="es" />
     </>
   );
 }

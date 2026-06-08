@@ -10,5 +10,5 @@ export const metadata = pageMetadataWithLocale({
 });
 
 export default function SpanishContactPage() {
-  return <ContactPage />;
+  return <ContactPage locale="es" />;
 }

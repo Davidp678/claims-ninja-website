@@ -1,22 +1,27 @@
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PLATFORM_NAV } from "@/lib/navigation";
+import type { Locale } from "@/lib/i18n/config";
+import { getPlatformContent } from "@/lib/i18n/content/platform";
 
-const MODULES = PLATFORM_NAV.filter((item) => item.href !== "/platform");
+export function PlatformModulesSection({
+  locale = "en",
+}: {
+  locale?: Locale;
+}) {
+  const content = getPlatformContent(locale).modulesSection;
 
-export function PlatformModulesSection() {
   return (
     <Section bordered className="bg-brand-elevated py-16 sm:py-20">
       <SectionHeading
-        eyebrow="Platform modules"
-        title="Every capability, one connected ecosystem"
-        description="Each module is live today and shares the same claim context—so your team, documents, and recovery workflows stay aligned from intake through payment."
+        eyebrow={content.eyebrow}
+        title={content.title}
+        description={content.description}
         align="left"
         className="max-w-3xl"
       />
       <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {MODULES.map((module) => (
+        {content.modules.map((module) => (
           <li key={module.href}>
             <Link
               href={module.href}
@@ -29,7 +34,7 @@ export function PlatformModulesSection() {
                 {module.description}
               </p>
               <span className="mt-4 text-sm font-medium text-brand-red-light">
-                Explore module →
+                {content.exploreLabel}
               </span>
             </Link>
           </li>

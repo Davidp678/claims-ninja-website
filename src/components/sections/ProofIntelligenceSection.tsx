@@ -1,16 +1,24 @@
+import type { Locale } from "@/lib/i18n/config";
+import { getHomeContent } from "@/lib/i18n/content/home";
 import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 import { ProofIntelligenceOperationsPanel } from "./proof-intelligence/ProofIntelligenceOperationsPanel";
 
-export function ProofIntelligenceSection() {
+export function ProofIntelligenceSection({
+  locale = "en",
+}: {
+  locale?: Locale;
+}) {
+  const content = getHomeContent(locale).proof;
+
   return (
     <Section bordered className="py-14 sm:py-16 lg:py-20" containerClassName="max-w-[90rem]">
       <SectionHeading
-        eyebrow="High-speed claims operations"
-        title="AI-Assisted Claims Operations For Restoration Contractors"
-        description="Claims Ninja combines AI-assisted review, experienced supplement professionals, public adjuster support, and a centralized contractor platform to accelerate estimate delivery and supplement resolution — without an in-house estimator."
+        eyebrow={content.eyebrow}
+        title={content.title}
+        description={content.description}
         align="left"
         className="max-w-2xl"
       />
@@ -18,11 +26,16 @@ export function ProofIntelligenceSection() {
       <ConversionCtaGroup
         className="mt-8 lg:mt-10"
         size="md"
-        primaryLabel="Start Claim Review"
-        secondaryLabel="Talk With Our Team"
+        primaryLabel={content.primaryCta}
+        secondaryLabel={content.secondaryCta}
       />
 
-      <ProofIntelligenceOperationsPanel />
+      <ProofIntelligenceOperationsPanel
+        performanceHeading={content.performanceHeading}
+        networkHeading={content.networkHeading}
+        metrics={content.metrics}
+        modules={content.modules}
+      />
     </Section>
   );
 }

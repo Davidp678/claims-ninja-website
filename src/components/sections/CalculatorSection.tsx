@@ -3,35 +3,38 @@
 import { useState } from "react";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import type { Locale } from "@/lib/i18n/config";
+import { getHomeContent } from "@/lib/i18n/content/home";
 import { cn } from "@/lib/cn";
 import { SingleClaimReview } from "./calculator/SingleClaimReview";
 import { OrganizationRoi } from "./calculator/OrganizationRoi";
 
 type Tab = "single" | "org";
 
-const TABS = [
-  { id: "single", label: "Single Claim Review" },
-  { id: "org", label: "Organization ROI" },
-] as const;
-
-export function CalculatorSection() {
+export function CalculatorSection({ locale = "en" }: { locale?: Locale }) {
   const [tab, setTab] = useState<Tab>("single");
+  const content = getHomeContent(locale).calculator;
+
+  const tabs = [
+    { id: "single" as const, label: content.tabSingle },
+    { id: "org" as const, label: content.tabOrg },
+  ];
 
   return (
     <Section id="calculator" bordered>
       <SectionHeading
-        eyebrow="Calculators"
-        title="Evaluate one claim or your entire pipeline"
-        description="Run a quick AI-assisted single-claim triage, or model how Claims Ninja stacks up against an in-house team across all your jobs."
+        eyebrow={content.eyebrow}
+        title={content.title}
+        description={content.description}
       />
 
       <div
         className="mt-12 flex justify-center lg:mt-14"
         role="tablist"
-        aria-label="Calculator selector"
+        aria-label={content.tablistLabel}
       >
         <div className="inline-flex max-w-full overflow-hidden rounded-full border border-white/15 bg-brand-elevated/70 p-1 shadow-[0_8px_24px_-18px_rgba(0,0,0,0.85)]">
-          {TABS.map((opt) => {
+          {tabs.map((opt) => {
             const active = tab === opt.id;
             return (
               <button
@@ -56,7 +59,11 @@ export function CalculatorSection() {
       </div>
 
       <div className="mt-10">
-        {tab === "single" ? <SingleClaimReview /> : <OrganizationRoi />}
+        {tab === "single" ? (
+          <SingleClaimReview locale={locale} />
+        ) : (
+          <OrganizationRoi locale={locale} />
+        )}
       </div>
     </Section>
   );
