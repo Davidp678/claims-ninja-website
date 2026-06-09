@@ -1,10 +1,9 @@
 import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
+import { HeroVideoCard } from "@/components/sections/HeroVideoCard";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { CTA_LINKS } from "@/lib/constants";
-import { START_HERE_HERO } from "@/lib/start-here/content";
-
-import { WelcomeVideoPlaceholder } from "./WelcomeVideoPlaceholder";
+import { START_HERE_HERO, START_HERE_WELCOME_VIDEO } from "@/lib/start-here/content";
 
 export function StartHereHero() {
   return (
@@ -74,7 +73,11 @@ export function StartHereHero() {
           </p>
         </div>
         <div className="w-full lg:justify-self-end">
-          <WelcomeVideoPlaceholder className="mx-auto lg:ml-auto lg:mr-0" />
+          <HeroVideoCard
+            embedSrc={START_HERE_WELCOME_VIDEO.embedUrl}
+            title={START_HERE_WELCOME_VIDEO.title}
+            className="mx-auto lg:ml-auto lg:mr-0"
+          />
         </div>
       </Container>
     </section>

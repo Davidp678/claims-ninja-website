@@ -31,6 +31,12 @@ export const START_HERE_HERO = {
     "Complete the agreement to begin setup, or schedule a strategy call if you'd prefer to speak with our team first.",
 } as const;
 
+export const START_HERE_WELCOME_VIDEO = {
+  embedUrl:
+    "https://customer-qmgpb08arenbn1zo.cloudflarestream.com/8d71bb8ce5f40e0d48386bb366a5cda0/iframe?poster=https%3A%2F%2Fcustomer-qmgpb08arenbn1zo.cloudflarestream.com%2F8d71bb8ce5f40e0d48386bb366a5cda0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&letterboxColor=transparent",
+  title: "Claims Ninja onboarding welcome video",
+} as const;
+
 export const LAUNCH_ROADMAP = {
   eyebrow: "Partnership Launch Roadmap",
   title: "Your path from agreement to first claim",
