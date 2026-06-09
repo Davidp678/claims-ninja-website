@@ -4,6 +4,7 @@ import { useCallback } from "react";
 
 import { cn } from "@/lib/cn";
 import type { HelpBlock } from "@/lib/help-center/types";
+import { getVideoEmbedUrl } from "@/lib/help-center/video-embed";
 
 const calloutStyles = {
   info: "border-sky-500/30 bg-sky-500/10 text-sky-100",
@@ -12,15 +13,18 @@ const calloutStyles = {
   warning: "border-amber-500/40 bg-amber-500/10 text-amber-100",
 } as const;
 
-function LoomEmbed({ url, title }: { url: string; title: string }) {
-  const embedUrl = url.replace("/share/", "/embed/");
+function VideoEmbed({ url, title }: { url: string; title: string }) {
+  const embedUrl = getVideoEmbedUrl(url);
+
   return (
     <div className="overflow-hidden rounded-xl border border-white/10 bg-black/40">
       <div className="relative aspect-video w-full">
         <iframe
           src={embedUrl}
           title={title}
+          allow="autoplay; fullscreen; encrypted-media"
           allowFullScreen
+          scrolling="no"
           className="absolute inset-0 h-full w-full"
         />
       </div>
@@ -104,7 +108,7 @@ export function HelpArticleBody({ blocks }: { blocks: readonly HelpBlock[] }) {
                   {block.title}
                   {block.duration ? ` · ${block.duration}` : ""}
                 </p>
-                <LoomEmbed url={block.url} title={block.title} />
+                <VideoEmbed url={block.url} title={block.title} />
               </div>
             );
           case "link":

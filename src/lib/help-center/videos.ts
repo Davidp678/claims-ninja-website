@@ -1,6 +1,6 @@
 export const CLIENT_LOOM_VIDEOS = {
   fullWalkthrough: {
-    url: "https://www.loom.com/share/86f6efa27ce2434c9b8af99c2de1f8ae",
+    url: "https://theclaimsninja-my.sharepoint.com/:v:/p/katelyn/IQB4beTbkt2-S72olGFeurmGATg88O8BUeCb1yA6qHpiKWs?e=x7BzVf",
     title: "Client Help Center Walkthrough",
   },
   howWeOperate: {
