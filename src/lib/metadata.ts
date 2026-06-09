@@ -55,11 +55,12 @@ export function pageMetadataWithLocale({
   const base = pageMetadata({ title, description, path });
   const languages = buildLanguageAlternates(path);
   const noindex = locale === "es" && !ES_INDEXING_ENABLED;
+  const absoluteUrl = getAbsoluteUrl(path);
 
   return {
     ...base,
     alternates: {
-      canonical: path,
+      canonical: absoluteUrl,
       ...(Object.keys(languages).length > 0 ? { languages } : {}),
     },
     openGraph: {
@@ -82,19 +83,20 @@ export function pageMetadata({
   path: string;
 }): Metadata {
   const languages = buildLanguageAlternates(path);
+  const absoluteUrl = getAbsoluteUrl(path);
 
   return {
     title,
     description,
     alternates: {
-      canonical: path,
+      canonical: absoluteUrl,
       ...(Object.keys(languages).length > 0 ? { languages } : {}),
     },
     openGraph: {
       type: "website",
       title,
       description,
-      url: path,
+      url: absoluteUrl,
       images: DEFAULT_OG_IMAGE,
     },
     twitter: {
@@ -108,18 +110,19 @@ export function pageMetadata({
 
 export function blogHubMetadata(): Metadata {
   const { metaTitle, metaDescription, path } = BLOG_META;
+  const absoluteUrl = getAbsoluteUrl(path);
 
   return {
     title: metaTitle,
     description: metaDescription,
     alternates: {
-      canonical: path,
+      canonical: absoluteUrl,
     },
     openGraph: {
       type: "website",
       title: metaTitle,
       description: metaDescription,
-      url: path,
+      url: absoluteUrl,
       images: DEFAULT_OG_IMAGE,
     },
     twitter: {
@@ -133,18 +136,19 @@ export function blogHubMetadata(): Metadata {
 
 export function blogCategoryMetadata(slug: BlogCategorySlug): Metadata {
   const { metaTitle, metaDescription, path } = getCategoryMeta(slug);
+  const absoluteUrl = getAbsoluteUrl(path);
 
   return {
     title: metaTitle,
     description: metaDescription,
     alternates: {
-      canonical: path,
+      canonical: absoluteUrl,
     },
     openGraph: {
       type: "website",
       title: metaTitle,
       description: metaDescription,
-      url: path,
+      url: absoluteUrl,
       images: DEFAULT_OG_IMAGE,
     },
     twitter: {
@@ -158,18 +162,19 @@ export function blogCategoryMetadata(slug: BlogCategorySlug): Metadata {
 
 export function guideHubMetadata(): Metadata {
   const { metaTitle, metaDescription, path } = GUIDE_META;
+  const absoluteUrl = getAbsoluteUrl(path);
 
   return {
     title: metaTitle,
     description: metaDescription,
     alternates: {
-      canonical: path,
+      canonical: absoluteUrl,
     },
     openGraph: {
       type: "website",
       title: metaTitle,
       description: metaDescription,
-      url: path,
+      url: absoluteUrl,
       images: DEFAULT_OG_IMAGE,
     },
     twitter: {
@@ -183,18 +188,19 @@ export function guideHubMetadata(): Metadata {
 
 export function guideCategoryMetadata(slug: GuideCategorySlug): Metadata {
   const { metaTitle, metaDescription, path } = getGuideCategoryMeta(slug);
+  const absoluteUrl = getAbsoluteUrl(path);
 
   return {
     title: metaTitle,
     description: metaDescription,
     alternates: {
-      canonical: path,
+      canonical: absoluteUrl,
     },
     openGraph: {
       type: "website",
       title: metaTitle,
       description: metaDescription,
-      url: path,
+      url: absoluteUrl,
       images: DEFAULT_OG_IMAGE,
     },
     twitter: {
@@ -208,6 +214,7 @@ export function guideCategoryMetadata(slug: GuideCategorySlug): Metadata {
 
 export function guideDetailMetadata(guide: Guide): Metadata {
   const path = getGuidePathForGuide(guide);
+  const absoluteUrl = getAbsoluteUrl(path);
   const modifiedTime = guide.updatedAt ?? guide.publishedAt;
 
   return {
@@ -215,13 +222,13 @@ export function guideDetailMetadata(guide: Guide): Metadata {
     description: guide.seoDescription,
     keywords: [...guide.tags],
     alternates: {
-      canonical: path,
+      canonical: absoluteUrl,
     },
     openGraph: {
       type: "article",
       title: guide.seoTitle,
       description: guide.seoDescription,
-      url: path,
+      url: absoluteUrl,
       publishedTime: guide.publishedAt,
       modifiedTime,
       tags: [...guide.tags],
@@ -238,6 +245,7 @@ export function guideDetailMetadata(guide: Guide): Metadata {
 
 export function blogArticleMetadata(post: BlogPost): Metadata {
   const path = getBlogPostPath(post.slug);
+  const absoluteUrl = getAbsoluteUrl(path);
   const modifiedTime = post.updatedAt ?? post.publishedAt;
 
   return {
@@ -245,13 +253,13 @@ export function blogArticleMetadata(post: BlogPost): Metadata {
     description: post.seoDescription,
     keywords: post.tags,
     alternates: {
-      canonical: path,
+      canonical: absoluteUrl,
     },
     openGraph: {
       type: "article",
       title: post.seoTitle,
       description: post.seoDescription,
-      url: path,
+      url: absoluteUrl,
       publishedTime: post.publishedAt,
       modifiedTime,
       tags: post.tags,

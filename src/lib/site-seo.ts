@@ -10,11 +10,13 @@ import { ES_INDEXING_ENABLED } from "@/lib/i18n/config";
 import { getEsMarketingSitemapPaths } from "@/lib/i18n/paths";
 import { MARKETING_PAGES_BY_PATH } from "@/lib/marketing-pages";
 
-export const SITE_URL = "https://theclaimsninja.com" as const;
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.theclaimsninja.com"
+).replace(/\/$/, "");
 
 export const DEFAULT_OG_IMAGE_PATH = "/logo.png" as const;
 
-export const SITEMAP_URL = `${SITE_URL}/sitemap.xml` as const;
+export const SITEMAP_URL = `${SITE_URL}/sitemap.xml`;
 
 /** Public marketing paths for sitemap (excludes redirect-only /blog). */
 export const INDEXABLE_MARKETING_PATHS: readonly string[] = [
@@ -44,14 +46,22 @@ function getMarketingSitemapConfig(path: string): SitemapEntryConfig {
 
 export function getAbsoluteUrl(path: string): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
-  return `${SITE_URL}${normalized}`;
+  return normalized === "/" ? `${SITE_URL}/` : `${SITE_URL}${normalized}`;
+}
+
+function getSitemapLastModified(raw?: string): Date | undefined {
+  if (!raw) return undefined;
+  const date = new Date(raw);
+  if (Number.isNaN(date.getTime())) return undefined;
+  if (date.getTime() > Date.now()) return undefined;
+  return date;
 }
 
 export function getMarketingSitemapEntries(): MetadataRoute.Sitemap {
   return INDEXABLE_MARKETING_PATHS.map((path) => {
     const { priority, changeFrequency } = getMarketingSitemapConfig(path);
     return {
-      url: path,
+      url: getAbsoluteUrl(path),
       lastModified: undefined,
       changeFrequency,
       priority,
@@ -61,8 +71,8 @@ export function getMarketingSitemapEntries(): MetadataRoute.Sitemap {
 
 export function getBlogSitemapEntries(): MetadataRoute.Sitemap {
   return BLOG_POSTS.map((post) => ({
-    url: getBlogPostPath(post.slug),
-    lastModified: new Date(post.updatedAt ?? post.publishedAt),
+    url: getAbsoluteUrl(getBlogPostPath(post.slug)),
+    lastModified: getSitemapLastModified(post.updatedAt ?? post.publishedAt),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -70,7 +80,7 @@ export function getBlogSitemapEntries(): MetadataRoute.Sitemap {
 
 export function getBlogCategorySitemapEntries(): MetadataRoute.Sitemap {
   return getAllCategorySlugs().map((slug) => ({
-    url: getCategoryPath(slug),
+    url: getAbsoluteUrl(getCategoryPath(slug)),
     lastModified: undefined,
     changeFrequency: "weekly" as const,
     priority: 0.75,
@@ -79,8 +89,8 @@ export function getBlogCategorySitemapEntries(): MetadataRoute.Sitemap {
 
 export function getGuideSitemapEntries(): MetadataRoute.Sitemap {
   return CLAIM_GUIDES.map((guide) => ({
-    url: getGuidePathForGuide(guide),
-    lastModified: new Date(guide.updatedAt ?? guide.publishedAt),
+    url: getAbsoluteUrl(getGuidePathForGuide(guide)),
+    lastModified: getSitemapLastModified(guide.updatedAt ?? guide.publishedAt),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -88,7 +98,7 @@ export function getGuideSitemapEntries(): MetadataRoute.Sitemap {
 
 export function getGuideCategorySitemapEntries(): MetadataRoute.Sitemap {
   return getAllGuideCategorySlugs().map((slug) => ({
-    url: getGuideCategoryPath(slug),
+    url: getAbsoluteUrl(getGuideCategoryPath(slug)),
     lastModified: undefined,
     changeFrequency: "weekly" as const,
     priority: 0.75,
@@ -104,7 +114,7 @@ export function getSpanishSitemapEntries(): MetadataRoute.Sitemap {
     const changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] =
       path === "/es" ? "weekly" : "monthly";
     return {
-      url: path,
+      url: getAbsoluteUrl(path),
       lastModified: undefined,
       changeFrequency,
       priority: path === "/es" ? 0.95 : 0.85,

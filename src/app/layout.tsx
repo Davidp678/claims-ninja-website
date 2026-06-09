@@ -3,7 +3,7 @@ import { DM_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
 import { SITE } from "@/lib/constants";
-import { DEFAULT_OG_IMAGE_PATH } from "@/lib/site-seo";
+import { DEFAULT_OG_IMAGE_PATH, SITE_URL } from "@/lib/site-seo";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
-  metadataBase: new URL("https://theclaimsninja.com"),
+  metadataBase: new URL(SITE_URL),
   icons: {
     icon: DEFAULT_OG_IMAGE_PATH,
     apple: DEFAULT_OG_IMAGE_PATH,
