@@ -21,6 +21,8 @@ import {
   isValidPhoneOptional,
 } from "@/lib/validation/email";
 
+export const runtime = "nodejs";
+
 function stripClientAiFields(
   payload: ClaimReviewLeadSubmission,
 ): ClaimReviewLeadSubmission {
@@ -321,11 +323,19 @@ export async function POST(request: Request) {
       );
     }
 
+    console.info("[api/leads] Lead insert succeeded", {
+      calculatorType: payloadToInsert.calculatorType,
+      email: payloadToInsert.lead.email,
+    });
+    console.info("[api/leads] Invoking sendLeadNotificationEmail");
+
     try {
       await sendLeadNotificationEmail(payloadToInsert);
     } catch (emailErr) {
       console.error("[api/leads] Lead notification email failed (lead saved):", {
         calculatorType: payloadToInsert.calculatorType,
+        errorName:
+          emailErr instanceof Error ? emailErr.name : typeof emailErr,
         error:
           emailErr instanceof Error ? emailErr.message : String(emailErr),
       });

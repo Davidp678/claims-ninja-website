@@ -42,7 +42,7 @@ function getMessageOrDescription(payload: LeadSubmissionPayload): string | undef
   }
 
   if (payload.calculatorType === "claim-review") {
-    return payload.claimCalculatorInputs.description;
+    return payload.claimCalculatorInputs?.description;
   }
 
   if (payload.calculatorType === "chatbot") {
@@ -54,7 +54,7 @@ function getMessageOrDescription(payload: LeadSubmissionPayload): string | undef
 
 function getCarrierEstimate(payload: LeadSubmissionPayload): string | undefined {
   if (payload.calculatorType === "claim-review") {
-    return payload.claimCalculatorInputs.carrierEstimate;
+    return payload.claimCalculatorInputs?.carrierEstimate;
   }
 
   if (payload.calculatorType === "chatbot") {
@@ -95,7 +95,7 @@ function buildLeadEmailFields(payload: LeadSubmissionPayload): LeadEmailField[] 
   if (payload.calculatorType === "claim-review") {
     fields.push({
       label: "Claim type",
-      value: payload.claimCalculatorInputs.claimType,
+      value: payload.claimCalculatorInputs?.claimType,
     });
   }
 
@@ -163,10 +163,24 @@ function buildHtmlBody(
 </html>`;
 }
 
+function extractFromDomain(from: string): string {
+  const match = from.match(/@([^>\s]+)/);
+  return match?.[1] ?? from;
+}
+
 export async function sendLeadNotificationEmail(
   payload: LeadSubmissionPayload,
 ): Promise<void> {
+  console.info("[email/leads] sendLeadNotificationEmail entered", {
+    calculatorType: payload.calculatorType,
+  });
+
   const apiKey = readEnv("RESEND_API_KEY");
+  console.info("[email/leads] RESEND_API_KEY detected", {
+    detected: Boolean(apiKey),
+    keyLength: apiKey?.length ?? 0,
+  });
+
   if (!apiKey) {
     console.info(
       "[email/leads] RESEND_API_KEY not set — skipping notification",
@@ -179,9 +193,18 @@ export async function sendLeadNotificationEmail(
   const from = readEnv("LEAD_NOTIFICATION_FROM") ?? DEFAULT_FROM;
   const subjectLabel = getSubjectLabel(payload);
   const subject = `New Claims Ninja Lead: ${subjectLabel}`;
+
+  console.info("[email/leads] Prepared notification", {
+    to,
+    fromDomain: extractFromDomain(from),
+    subject,
+  });
+
   const fields = buildLeadEmailFields(payload);
   const text = buildPlainTextBody(payload, fields);
   const html = buildHtmlBody(payload, fields);
+
+  console.info("[email/leads] Initializing Resend client");
 
   const resend = new Resend(apiKey);
   const { data, error } = await resend.emails.send({
@@ -190,6 +213,13 @@ export async function sendLeadNotificationEmail(
     subject,
     text,
     html,
+  });
+
+  console.info("[email/leads] Resend API response", {
+    success: !error,
+    messageId: data?.id ?? null,
+    errorName: error?.name ?? null,
+    errorMessage: error?.message ?? null,
   });
 
   if (error) {

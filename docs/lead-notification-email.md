@@ -41,3 +41,16 @@ All successful submissions to `POST /api/leads`:
 2. Confirm the row appears in Supabase `public.leads`.
 3. Confirm the notification arrives at `LEAD_NOTIFICATION_TO` (or `info@theclaimsninja.com`).
 4. With `RESEND_API_KEY` unset, confirm the API still returns `{ "success": true }` and server logs show the skip message.
+
+## Troubleshooting (Vercel logs)
+
+After submitting a lead, filter Vercel function logs for `/api/leads` and search `[api/leads]` / `[email/leads]`. Include **Info** level logs.
+
+| Log pattern | Meaning | Action |
+|-------------|---------|--------|
+| `RESEND_API_KEY detected { detected: false }` | Key not visible at runtime | Confirm vars are scoped to **Production**, redeploy after adding vars |
+| `Prepared notification` then `Resend API error` | Resend rejected the send | Check `LEAD_NOTIFICATION_FROM` format and verified domain |
+| `Resend API response { success: true }` | Email sent | Check recipient inbox/spam |
+| `Lead notification email failed` before `Initializing Resend client` | Body build threw | Check payload shape; claim-review needs `claimCalculatorInputs` |
+
+Confirm the production deployment includes the email feature commit (`Send lead notification emails`).
