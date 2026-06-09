@@ -90,7 +90,7 @@ export function MobileNavMenu({
       })}
 
       <li className="mt-4 space-y-3 px-4 md:hidden">
-        <Button href={CTA_LINKS.onboarding} className="w-full" onClick={onNavigate}>
+        <Button href={CTA_LINKS.startHere} className="w-full" onClick={onNavigate}>
           {locale === "es"
             ? ES_CTA_LABELS.startClaimReview
             : "Start Claim Review"}

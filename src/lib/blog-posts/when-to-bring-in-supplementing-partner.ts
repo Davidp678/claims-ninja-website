@@ -48,7 +48,7 @@ export const whenToBringInSupplementingPartner: BlogPost = {
           label: "Schedule a strategy call",
           href: CTA_LINKS.schedule,
         },
-        { label: "Begin claim intake", href: CTA_LINKS.onboarding },
+        { label: "Begin claim intake", href: CTA_LINKS.startHere },
       ],
     },
     {

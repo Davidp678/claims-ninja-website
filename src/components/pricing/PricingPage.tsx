@@ -94,10 +94,9 @@ export function PricingPage({ locale = "en" }: { locale?: Locale }) {
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Button
-                href={CTA_LINKS.onboarding}
+                href={CTA_LINKS.startHere}
                 size="md"
                 className="whitespace-nowrap"
-                external
               >
                 {content.hero.primaryCtaLabel}
               </Button>

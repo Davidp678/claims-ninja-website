@@ -574,7 +574,7 @@ export function SingleClaimReview({ locale = "en" }: { locale?: Locale }) {
             </p>
             <p className="mt-2 text-xs text-zinc-500">{tSingle.backgroundNote}</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-              <Button href={CTA_LINKS.onboarding} size="lg" className="w-full sm:w-auto">
+              <Button href={CTA_LINKS.startHere} size="lg" className="w-full sm:w-auto">
                 {tSingle.startReview}
               </Button>
               <Button

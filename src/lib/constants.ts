@@ -56,9 +56,10 @@ export const SOCIAL_LINKS = [
   { label: "YouTube", href: "https://www.youtube.com/@TheClaimsNinja" },
 ] as const;
 
-/** Live conversion destinations — primary onboarding vs strategy consultation. */
+/** Live conversion destinations — onboarding launch center vs agreement form vs strategy call. */
 export const CTA_LINKS = {
-  onboarding: "https://form.jotform.com/260536051303041",
+  startHere: "/starthere",
+  onboardingForm: "https://form.jotform.com/260536051303041",
   schedule: "https://meetings.hubspot.com/taylor-handsel/team",
 } as const;
 
@@ -70,7 +71,7 @@ export const FOOTER_LINKS = {
     { label: "Contact", href: "/contact" },
   ],
   resources: [
-    { label: "Claim intake", href: CTA_LINKS.onboarding, external: true },
+    { label: "Claim intake", href: CTA_LINKS.startHere },
     { label: "Schedule consultation", href: CTA_LINKS.schedule, external: true },
     { label: "Results & Insights", href: "/case-studies" },
     { label: "Pricing", href: "/pricing" },

@@ -461,7 +461,7 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
         "When you are ready to pressure-test a file or scale supplement volume without adding salaried overhead, Claims Ninja is built to help contractors recover more on insurance claims with documentation-first supplementing — not unnecessary conflict.",
       ],
       links: [
-        { label: "Begin claim intake", href: CTA_LINKS.onboarding },
+        { label: "Begin claim intake", href: CTA_LINKS.startHere },
         { label: "Full FAQ library", href: "/faq" },
       ],
     },

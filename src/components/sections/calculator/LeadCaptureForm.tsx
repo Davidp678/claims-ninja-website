@@ -176,7 +176,7 @@ export function LeadCaptureForm({
         </p>
         <p className="mt-2 text-sm text-zinc-300">{t.specialistNote}</p>
         <div className="mt-6">
-          <Button href={CTA_LINKS.onboarding} size="lg" className="w-full sm:w-auto">
+          <Button href={CTA_LINKS.startHere} size="lg" className="w-full sm:w-auto">
             {t.startClaimReview}
           </Button>
         </div>

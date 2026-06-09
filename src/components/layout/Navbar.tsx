@@ -84,7 +84,7 @@ export function Navbar() {
 
         <div className="hidden shrink-0 items-center gap-3 md:flex md:gap-4 lg:gap-5">
           <LanguageToggle />
-          <Button href={CTA_LINKS.onboarding} size="sm">
+          <Button href={CTA_LINKS.startHere} size="sm">
             {locale === "es"
               ? ES_CTA_LABELS.startClaimReview
               : "Start Claim Review"}

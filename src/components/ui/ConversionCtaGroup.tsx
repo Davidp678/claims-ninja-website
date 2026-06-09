@@ -65,7 +65,7 @@ export function ConversionCtaGroup({
         )}
       >
         <Button
-          href={CTA_LINKS.onboarding}
+          href={CTA_LINKS.startHere}
           size={size}
           className={cn(nowrapClass, primaryClassName)}
         >

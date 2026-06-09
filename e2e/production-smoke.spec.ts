@@ -1,5 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
+const START_HERE_CTA = "/starthere";
 const JOTFORM_CTA = "https://form.jotform.com/260536051303041";
 const HUBSPOT_CTA = "https://meetings.hubspot.com/taylor-handsel/team";
 
@@ -92,6 +93,21 @@ test.describe("SEO safety", () => {
     // Segment-precise: avoids false positives on case-studies/guides/resources.
     expect(sitemap).not.toMatch(/theclaimsninja\.com\/es(\/|<)/);
   });
+
+  test("/starthere is noindex,nofollow and absent from sitemap", async ({
+    request,
+  }) => {
+    const res = await request.get("/starthere");
+    expect(res.ok()).toBeTruthy();
+    const html = await res.text();
+    expect(html).toContain("noindex");
+    expect(html).toContain("nofollow");
+
+    const sitemapRes = await request.get("/sitemap.xml");
+    expect(sitemapRes.ok()).toBeTruthy();
+    const sitemap = await sitemapRes.text();
+    expect(sitemap).not.toMatch(/\/starthere(\/|<)/);
+  });
 });
 
 test.describe("CTA integrity", () => {
@@ -100,10 +116,15 @@ test.describe("CTA integrity", () => {
   }) => {
     await page.goto("/");
     await expect(
-      page.locator(`a[href="${JOTFORM_CTA}"]`).first(),
+      page.locator(`a[href="${START_HERE_CTA}"]`).first(),
     ).toHaveCount(1);
     await expect(
       page.locator(`a[href="${HUBSPOT_CTA}"]`).first(),
     ).toHaveCount(1);
+  });
+
+  test("/starthere onboarding CTAs point to Jotform", async ({ page }) => {
+    await page.goto("/starthere");
+    await expect(page.locator(`a[href="${JOTFORM_CTA}"]`)).toHaveCount(2);
   });
 });
