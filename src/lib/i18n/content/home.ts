@@ -84,7 +84,7 @@ const EN: HomeContent = {
     secondaryCta: "Schedule Strategy Call",
     stats: [
       { label: "Avg. claim uplift", value: "40%+" },
-      { label: "Claims handled", value: "2,400+" },
+      { label: "Claims handled", value: "5,000+" },
       { label: "Client satisfaction", value: "4.9★" },
     ],
   },
@@ -228,7 +228,7 @@ const ES: HomeContent = {
     secondaryCta: "Agendar llamada estratégica",
     stats: [
       { label: "Aumento promedio de la reclamación", value: "40%+" },
-      { label: "Reclamaciones gestionadas", value: "2,400+" },
+      { label: "Reclamaciones gestionadas", value: "5,000+" },
       { label: "Satisfacción del cliente", value: "4.9★" },
     ],
   },
