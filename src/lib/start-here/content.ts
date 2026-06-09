@@ -35,6 +35,9 @@ export const START_HERE_WELCOME_VIDEO = {
   embedUrl:
     "https://customer-qmgpb08arenbn1zo.cloudflarestream.com/8d71bb8ce5f40e0d48386bb366a5cda0/iframe?poster=https%3A%2F%2Fcustomer-qmgpb08arenbn1zo.cloudflarestream.com%2F8d71bb8ce5f40e0d48386bb366a5cda0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&letterboxColor=transparent",
   title: "Claims Ninja onboarding welcome video",
+  sourceAspect: 360 / 640,
+  embedFit: "contain" as const,
+  mediaAspect: "aspect-[9/16]" as const,
 } as const;
 
 export const LAUNCH_ROADMAP = {
