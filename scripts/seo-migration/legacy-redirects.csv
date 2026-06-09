@@ -9,6 +9,18 @@ legacy_path,new_path,redirect_type,configured_in
 /feed,/resources/blog,301,next.config.ts
 /feed/rss,/resources/blog,301,next.config.ts
 /comments/feed,/resources/blog,301,next.config.ts
+/about-us,/about,301,src/proxy.ts
+/about-us/,/about,301,src/proxy.ts
+/client-portal,/platform/client-portal,301,src/proxy.ts
+/client-portal/,/platform/client-portal,301,src/proxy.ts
+/roofing-claim,/solutions/roofing,301,src/proxy.ts
+/roofing-claim/,/solutions/roofing,301,src/proxy.ts
+/water-damage-claim,/solutions/water-damage,301,src/proxy.ts
+/water-damage-claim/,/solutions/water-damage,301,src/proxy.ts
+/fire-claim,/solutions/fire-damage,301,src/proxy.ts
+/fire-claim/,/solutions/fire-damage,301,src/proxy.ts
+/case-study,/case-studies,301,src/proxy.ts
+/case-study/,/case-studies,301,src/proxy.ts
 /blog/insurance-supplementing-guide-contractors,/resources/blog/insurance-supplementing-guide-contractors,301,wildcard /blog/:slug
 /blog/why-carrier-estimates-miss-line-items,/resources/blog/why-carrier-estimates-miss-line-items,301,wildcard /blog/:slug
 /blog/recover-revenue-without-in-house-claims,/resources/blog/recover-revenue-without-in-house-claims,301,wildcard /blog/:slug

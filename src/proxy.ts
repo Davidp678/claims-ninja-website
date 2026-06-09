@@ -4,6 +4,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { isLocale, LOCALE_COOKIE_NAME } from "@/lib/i18n/config";
 import { getLocaleCookieOptions } from "@/lib/i18n/locale-cookie";
 import { localeFromPathname } from "@/lib/i18n/paths";
+import { resolveLegacyPageRedirect } from "@/lib/legacy-page-redirects";
 
 function shouldSkipLocale(pathname: string): boolean {
   return (
@@ -34,6 +35,14 @@ function applyLocaleCookieFromPath(
 
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  const legacyDestination = resolveLegacyPageRedirect(pathname);
+  if (legacyDestination && pathname !== legacyDestination) {
+    return NextResponse.redirect(
+      new URL(legacyDestination, request.nextUrl.origin),
+      308,
+    );
+  }
 
   let response = NextResponse.next({ request });
 

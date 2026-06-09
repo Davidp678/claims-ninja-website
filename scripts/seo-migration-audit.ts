@@ -16,6 +16,7 @@ import { getAllGuidePathParams } from "../src/lib/guide-registry";
 import { getGuideCategoryPath } from "../src/lib/guide-categories";
 import { getGuidePathForGuide } from "../src/lib/guide-page";
 import { INDEXABLE_MARKETING_PATHS } from "../src/lib/site-seo";
+import { LEGACY_PAGE_REDIRECTS } from "../src/lib/legacy-page-redirects";
 
 const OUT_DIR = join(import.meta.dirname, "seo-migration");
 
@@ -142,6 +143,17 @@ function buildLegacyRedirects(): CsvRow[] {
       configured_in: "next.config.ts",
     },
   ];
+
+  for (const { from, to } of LEGACY_PAGE_REDIRECTS) {
+    for (const legacyPath of [from, `${from}/`]) {
+      rows.push({
+        legacy_path: legacyPath,
+        new_path: to,
+        redirect_type: "301",
+        configured_in: "src/proxy.ts",
+      });
+    }
+  }
 
   for (const slug of getAllBlogSlugs()) {
     rows.push({
