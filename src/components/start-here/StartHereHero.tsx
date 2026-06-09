@@ -76,7 +76,6 @@ export function StartHereHero() {
           <HeroVideoCard
             embedSrc={START_HERE_WELCOME_VIDEO.embedUrl}
             title={START_HERE_WELCOME_VIDEO.title}
-            mediaAspect={START_HERE_WELCOME_VIDEO.mediaAspect}
             embedFit={START_HERE_WELCOME_VIDEO.embedFit}
             sourceAspect={START_HERE_WELCOME_VIDEO.sourceAspect}
             className="mx-auto lg:ml-auto lg:mr-0"
