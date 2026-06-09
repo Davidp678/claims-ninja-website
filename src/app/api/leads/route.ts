@@ -14,6 +14,7 @@ import {
   getSupabaseEnvDiagnostics,
   SupabaseServerConfigError,
 } from "@/lib/supabase";
+import { sendLeadNotificationEmail } from "@/lib/email/send-lead-notification";
 import {
   countPhoneDigits,
   isValidEmail,
@@ -318,6 +319,16 @@ export async function POST(request: Request) {
         { error: "Failed to save lead", code: "SUPABASE_INSERT_ERROR" },
         { status: 500 },
       );
+    }
+
+    try {
+      await sendLeadNotificationEmail(payloadToInsert);
+    } catch (emailErr) {
+      console.error("[api/leads] Lead notification email failed (lead saved):", {
+        calculatorType: payloadToInsert.calculatorType,
+        error:
+          emailErr instanceof Error ? emailErr.message : String(emailErr),
+      });
     }
 
     return NextResponse.json({ success: true });
