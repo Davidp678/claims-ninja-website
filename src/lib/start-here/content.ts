@@ -27,12 +27,8 @@ export const START_HERE_HERO = {
   audioBadge: "Audio Recommended",
   primaryCta: "Begin Onboarding Agreement",
   secondaryCta: "Schedule Strategy Call",
-  ctaSupport: {
-    readyLead: "Ready to get started?",
-    readyBody: "Complete your onboarding agreement to begin setup.",
-    preferLead: "Prefer to speak with our team first?",
-    scheduleLinkLabel: "Schedule a strategy call",
-  },
+  ctaHelper:
+    "Complete the agreement to begin setup, or schedule a strategy call if you'd prefer to speak with our team first.",
 } as const;
 
 export const LAUNCH_ROADMAP = {

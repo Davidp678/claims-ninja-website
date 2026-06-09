@@ -7,8 +7,6 @@ import { START_HERE_HERO } from "@/lib/start-here/content";
 import { WelcomeVideoPlaceholder } from "./WelcomeVideoPlaceholder";
 
 export function StartHereHero() {
-  const support = START_HERE_HERO.ctaSupport;
-
   return (
     <section className="relative overflow-hidden bg-brand-black">
       <HeroBackdrop />
@@ -71,21 +69,9 @@ export function StartHereHero() {
               {START_HERE_HERO.secondaryCta}
             </Button>
           </div>
-          <div className="mt-4 max-w-lg text-sm leading-relaxed text-zinc-400">
-            <p className="font-medium text-zinc-300">{support.readyLead}</p>
-            <p className="mt-1">{support.readyBody}</p>
-            <p className="mt-4 font-medium text-zinc-300">{support.preferLead}</p>
-            <p className="mt-1">
-              <a
-                href={CTA_LINKS.schedule}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-zinc-300 underline-offset-2 transition-colors hover:text-brand-red-light hover:underline"
-              >
-                {support.scheduleLinkLabel}
-              </a>
-            </p>
-          </div>
+          <p className="mt-6 max-w-lg text-sm leading-relaxed text-zinc-500">
+            {START_HERE_HERO.ctaHelper}
+          </p>
         </div>
         <div className="w-full lg:justify-self-end">
           <WelcomeVideoPlaceholder className="mx-auto lg:ml-auto lg:mr-0" />
