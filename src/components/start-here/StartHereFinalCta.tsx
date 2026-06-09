@@ -4,6 +4,8 @@ import { CTA_LINKS } from "@/lib/constants";
 import { FINAL_CTA_SECTION } from "@/lib/start-here/content";
 
 export function StartHereFinalCta() {
+  const note = FINAL_CTA_SECTION.footerNote;
+
   return (
     <Section bordered className="pb-24 sm:pb-28">
       <div className="relative overflow-hidden rounded-3xl border border-brand-red/45 bg-gradient-to-br from-brand-red/25 via-brand-surface to-brand-black p-8 shadow-[0_0_60px_-15px_rgba(220,38,38,0.4)] sm:p-12 lg:p-16">
@@ -21,18 +23,22 @@ export function StartHereFinalCta() {
           <p className="mt-4 text-lg leading-relaxed text-zinc-300">
             {FINAL_CTA_SECTION.description}
           </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="mt-8">
             <Button href={CTA_LINKS.onboardingForm} size="lg" external className="whitespace-nowrap">
               {FINAL_CTA_SECTION.primaryCta}
             </Button>
-            <a
-              href={FINAL_CTA_SECTION.secondaryHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-[3.25rem] items-center justify-center rounded-full border border-white/30 bg-brand-elevated/92 px-9 text-base font-semibold tracking-wide text-white shadow-[0_10px_26px_-16px_rgba(0,0,0,0.95)] backdrop-blur-sm transition-all duration-200 hover:border-white/50 hover:bg-brand-elevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black whitespace-nowrap"
-            >
-              {FINAL_CTA_SECTION.secondaryCta}
-            </a>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-400">
+              {note.lead}{" "}
+              <a
+                href={CTA_LINKS.schedule}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-zinc-300 underline-offset-2 transition-colors hover:text-brand-red-light hover:underline"
+              >
+                {note.linkLabel}
+              </a>{" "}
+              with our team.
+            </p>
           </div>
         </div>
       </div>

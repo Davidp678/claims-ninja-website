@@ -7,10 +7,12 @@ import { START_HERE_HERO } from "@/lib/start-here/content";
 import { WelcomeVideoPlaceholder } from "./WelcomeVideoPlaceholder";
 
 export function StartHereHero() {
+  const support = START_HERE_HERO.ctaSupport;
+
   return (
     <section className="relative overflow-hidden bg-brand-black">
       <HeroBackdrop />
-      <Container className="relative z-10 grid grid-cols-1 gap-10 pb-14 pt-10 sm:gap-12 sm:pb-16 sm:pt-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center lg:gap-x-14 lg:pb-20 lg:pt-14">
+      <Container className="relative z-10 grid grid-cols-1 gap-10 pb-14 pt-[4.5rem] sm:gap-12 sm:pb-16 sm:pt-20 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center lg:gap-x-14 lg:pb-20 lg:pt-24">
         <div className="min-w-0 max-w-2xl lg:max-w-none">
           <span className="inline-flex items-center rounded-full border border-brand-red/40 bg-brand-red/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
             {START_HERE_HERO.badge}
@@ -60,13 +62,29 @@ export function StartHereHero() {
               {START_HERE_HERO.primaryCta}
             </Button>
             <Button
-              href={START_HERE_HERO.secondaryAnchor}
+              href={CTA_LINKS.schedule}
               variant="secondary"
               size="lg"
+              external
               className="whitespace-nowrap"
             >
               {START_HERE_HERO.secondaryCta}
             </Button>
+          </div>
+          <div className="mt-4 max-w-lg text-sm leading-relaxed text-zinc-400">
+            <p className="font-medium text-zinc-300">{support.readyLead}</p>
+            <p className="mt-1">{support.readyBody}</p>
+            <p className="mt-4 font-medium text-zinc-300">{support.preferLead}</p>
+            <p className="mt-1">
+              <a
+                href={CTA_LINKS.schedule}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-zinc-300 underline-offset-2 transition-colors hover:text-brand-red-light hover:underline"
+              >
+                {support.scheduleLinkLabel}
+              </a>
+            </p>
           </div>
         </div>
         <div className="w-full lg:justify-self-end">

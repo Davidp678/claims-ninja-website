@@ -11,13 +11,6 @@ export type ResourceLink = {
   action?: "contact";
 };
 
-export type ProgressStep = {
-  step: number;
-  label: string;
-  shortLabel: string;
-  emphasized?: boolean;
-};
-
 export const START_HERE_META = {
   path: "/starthere",
   title: "Start Here | The Claims Ninja",
@@ -33,38 +26,14 @@ export const START_HERE_HERO = {
   timeEstimate: "10–15 minutes",
   audioBadge: "Audio Recommended",
   primaryCta: "Begin Onboarding Agreement",
-  secondaryCta: "See what happens next",
-  secondaryAnchor: "#launch-roadmap",
+  secondaryCta: "Schedule Strategy Call",
+  ctaSupport: {
+    readyLead: "Ready to get started?",
+    readyBody: "Complete your onboarding agreement to begin setup.",
+    preferLead: "Prefer to speak with our team first?",
+    scheduleLinkLabel: "Schedule a strategy call",
+  },
 } as const;
-
-export const PROGRESS_STEPS = [
-  {
-    step: 1,
-    label: "Watch Welcome Video",
-    shortLabel: "Welcome Video",
-  },
-  {
-    step: 2,
-    label: "Review Launch Roadmap",
-    shortLabel: "Roadmap",
-  },
-  {
-    step: 3,
-    label: "Complete Onboarding Agreement",
-    shortLabel: "Agreement",
-    emphasized: true,
-  },
-  {
-    step: 4,
-    label: "Workspace Setup",
-    shortLabel: "Workspace",
-  },
-  {
-    step: 5,
-    label: "Submit First Claim",
-    shortLabel: "First Claim",
-  },
-] satisfies readonly ProgressStep[];
 
 export const LAUNCH_ROADMAP = {
   eyebrow: "Partnership Launch Roadmap",
@@ -176,6 +145,9 @@ export const FINAL_CTA_SECTION = {
   description:
     "The onboarding agreement includes your service agreement, company setup, billing authorization, team configuration, and workspace enrollment.",
   primaryCta: "Complete Onboarding Agreement",
-  secondaryCta: "Visit Help Center",
-  secondaryHref: "/help",
+  footerNote: {
+    lead: "Not quite ready to begin?",
+    body: "Schedule a strategy call with our team.",
+    linkLabel: "Schedule a strategy call",
+  },
 } as const;
