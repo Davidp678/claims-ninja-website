@@ -6,8 +6,16 @@ export type RoadmapStep = {
 
 export type ResourceLink = {
   label: string;
-  href: string;
+  href?: string;
   description: string;
+  action?: "contact";
+};
+
+export type ProgressStep = {
+  step: number;
+  label: string;
+  shortLabel: string;
+  emphasized?: boolean;
 };
 
 export const START_HERE_META = {
@@ -23,10 +31,40 @@ export const START_HERE_HERO = {
   subheadline:
     "Your launch center for getting set up, understanding the process, and preparing your team to submit claims with confidence.",
   timeEstimate: "10–15 minutes",
+  audioBadge: "Audio Recommended",
   primaryCta: "Begin Onboarding Agreement",
   secondaryCta: "See what happens next",
   secondaryAnchor: "#launch-roadmap",
 } as const;
+
+export const PROGRESS_STEPS = [
+  {
+    step: 1,
+    label: "Watch Welcome Video",
+    shortLabel: "Welcome Video",
+  },
+  {
+    step: 2,
+    label: "Review Launch Roadmap",
+    shortLabel: "Roadmap",
+  },
+  {
+    step: 3,
+    label: "Complete Onboarding Agreement",
+    shortLabel: "Agreement",
+    emphasized: true,
+  },
+  {
+    step: 4,
+    label: "Workspace Setup",
+    shortLabel: "Workspace",
+  },
+  {
+    step: 5,
+    label: "Submit First Claim",
+    shortLabel: "First Claim",
+  },
+] satisfies readonly ProgressStep[];
 
 export const LAUNCH_ROADMAP = {
   eyebrow: "Partnership Launch Roadmap",
@@ -126,8 +164,8 @@ export const RESOURCES_SECTION = {
     },
     {
       label: "Contact Support",
-      href: "/contact",
       description: "Reach our team before or during onboarding.",
+      action: "contact",
     },
   ] satisfies readonly ResourceLink[],
 } as const;

@@ -333,7 +333,7 @@ export function ChatWidget() {
         leadSuccessMessage &&
         !leadFlow.isActive
       ) {
-        window.location.href = CTA_LINKS.startHere;
+        window.open(CTA_LINKS.startHere, "_blank", "noopener,noreferrer");
         return;
       }
 

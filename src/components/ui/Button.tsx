@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
-import { isExternalHref } from "@/lib/urls";
+import { isExternalHref, opensStartHereInNewTab } from "@/lib/urls";
 
 const variants = {
   primary:
@@ -50,10 +50,25 @@ export function Button({
 
   if (href) {
     const openExternal = external ?? isExternalHref(href);
+    const openNewTab = openExternal || opensStartHereInNewTab(href);
 
-    if (openExternal) {
+    if (openNewTab) {
+      if (openExternal) {
+        return (
+          <a
+            href={href}
+            className={classes}
+            onClick={onClick}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {children}
+          </a>
+        );
+      }
+
       return (
-        <a
+        <Link
           href={href}
           className={classes}
           onClick={onClick}
@@ -61,7 +76,7 @@ export function Button({
           rel="noopener noreferrer"
         >
           {children}
-        </a>
+        </Link>
       );
     }
 

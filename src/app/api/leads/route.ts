@@ -121,8 +121,15 @@ function validateContactInquiryLead(
     return "Invalid email address.";
   }
 
+  const details = body.contactDetails as Record<string, unknown>;
+  const sourcePage =
+    typeof details.sourcePage === "string" ? details.sourcePage : "";
   const phone = typeof lead.phone === "string" ? lead.phone : "";
-  if (!phone.trim() || countPhoneDigits(phone) < 7) {
+  if (sourcePage === "/starthere") {
+    if (!isValidPhoneOptional(phone)) {
+      return "Invalid phone number.";
+    }
+  } else if (!phone.trim() || countPhoneDigits(phone) < 7) {
     return "Invalid phone number.";
   }
 
@@ -131,7 +138,6 @@ function validateContactInquiryLead(
     return "Company is required.";
   }
 
-  const details = body.contactDetails as Record<string, unknown>;
   const message =
     typeof details.message === "string" ? details.message.trim() : "";
   if (!message) {

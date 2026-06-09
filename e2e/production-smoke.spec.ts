@@ -115,9 +115,9 @@ test.describe("CTA integrity", () => {
     page,
   }) => {
     await page.goto("/");
-    await expect(
-      page.locator(`a[href="${START_HERE_CTA}"]`).first(),
-    ).toHaveCount(1);
+    const startHereLink = page.locator(`a[href="${START_HERE_CTA}"]`).first();
+    await expect(startHereLink).toHaveCount(1);
+    await expect(startHereLink).toHaveAttribute("target", "_blank");
     await expect(
       page.locator(`a[href="${HUBSPOT_CTA}"]`).first(),
     ).toHaveCount(1);
@@ -126,5 +126,18 @@ test.describe("CTA integrity", () => {
   test("/starthere onboarding CTAs point to Jotform", async ({ page }) => {
     await page.goto("/starthere");
     await expect(page.locator(`a[href="${JOTFORM_CTA}"]`)).toHaveCount(2);
+  });
+
+  test("/starthere uses portal chrome without marketing nav", async ({ page }) => {
+    await page.goto("/starthere");
+    await expect(page.getByRole("button", { name: "Contact Support" }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: "Platform" })).toHaveCount(0);
+    await expect(page.getByRole("link", { name: "Schedule Call" })).toHaveCount(0);
+  });
+
+  test("/starthere help links open in a new tab", async ({ page }) => {
+    await page.goto("/starthere");
+    const helpLink = page.getByRole("link", { name: /Help Center/i }).first();
+    await expect(helpLink).toHaveAttribute("target", "_blank");
   });
 });

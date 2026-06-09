@@ -128,7 +128,7 @@ export type ContactInquiryDetails = {
   message: string;
   website?: string;
   monthlyClaimVolume?: string;
-  sourcePage: "/contact";
+  sourcePage: "/contact" | "/starthere";
   submittedAt: string;
 };
 

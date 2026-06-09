@@ -1,3 +1,5 @@
+import { CTA_LINKS } from "@/lib/constants";
+
 export function isExternalHref(href: string): boolean {
   return (
     href.startsWith("http://") ||
@@ -5,4 +7,8 @@ export function isExternalHref(href: string): boolean {
     href.startsWith("mailto:") ||
     href.startsWith("tel:")
   );
+}
+
+export function opensStartHereInNewTab(href: string): boolean {
+  return href === CTA_LINKS.startHere;
 }

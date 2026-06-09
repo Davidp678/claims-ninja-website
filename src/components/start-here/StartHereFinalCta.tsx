@@ -25,14 +25,14 @@ export function StartHereFinalCta() {
             <Button href={CTA_LINKS.onboardingForm} size="lg" external className="whitespace-nowrap">
               {FINAL_CTA_SECTION.primaryCta}
             </Button>
-            <Button
+            <a
               href={FINAL_CTA_SECTION.secondaryHref}
-              variant="secondary"
-              size="lg"
-              className="whitespace-nowrap"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-[3.25rem] items-center justify-center rounded-full border border-white/30 bg-brand-elevated/92 px-9 text-base font-semibold tracking-wide text-white shadow-[0_10px_26px_-16px_rgba(0,0,0,0.95)] backdrop-blur-sm transition-all duration-200 hover:border-white/50 hover:bg-brand-elevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black whitespace-nowrap"
             >
               {FINAL_CTA_SECTION.secondaryCta}
-            </Button>
+            </a>
           </div>
         </div>
       </div>
