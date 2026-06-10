@@ -14,6 +14,7 @@ export function ReviewsPage({ locale = "en" }: { locale?: Locale }) {
     <>
       <Section className="pt-28 sm:pt-32 lg:pt-36">
         <SectionHeading
+          as="h1"
           eyebrow={reviews.eyebrow}
           title={reviews.title}
           description={reviews.description}

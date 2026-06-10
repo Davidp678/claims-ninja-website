@@ -19,6 +19,7 @@ export function AiClaimAnalysisPage({ locale = "en" }: { locale?: Locale }) {
     <>
       <Section className="pt-28 sm:pt-32 lg:pt-36">
         <SectionHeading
+          as="h1"
           eyebrow={content.hero.eyebrow}
           title={content.hero.title}
           description={content.hero.description}

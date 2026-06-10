@@ -26,6 +26,7 @@ export function ClientPortalPage({ locale = "en" }: { locale?: Locale }) {
         <Container className="relative z-10 grid grid-cols-1 gap-8 pb-10 pt-24 sm:gap-10 sm:pb-12 sm:pt-28 lg:grid-cols-[minmax(0,0.9fr)_minmax(620px,1.15fr)] lg:items-center lg:gap-x-16 lg:pb-14 lg:pt-24">
           <div className="min-w-0 max-w-2xl lg:col-start-1 lg:max-w-none">
             <SectionHeading
+              as="h1"
               eyebrow={content.hero.eyebrow}
               title={content.hero.title}
               description={content.hero.description}

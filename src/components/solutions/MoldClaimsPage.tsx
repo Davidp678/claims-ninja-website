@@ -30,6 +30,7 @@ export function MoldClaimsPage({ locale = "en" }: { locale?: Locale }) {
             }
           >
             <SectionHeading
+              as="h1"
               eyebrow={content.hero.eyebrow}
               title={content.hero.title}
               description={content.hero.description}

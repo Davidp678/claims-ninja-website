@@ -34,6 +34,7 @@ export function ContentsRestorationClaimsPage({
             }
           >
             <SectionHeading
+              as="h1"
               eyebrow={content.hero.eyebrow}
               title={content.hero.title}
               description={content.hero.description}
