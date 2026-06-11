@@ -122,7 +122,7 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
                   {stat.label}
                 </dt>
               </div>
-              <dd className="font-display text-3xl font-semibold tracking-tight text-white sm:text-[2rem]">
+              <dd className="font-display text-3xl font-semibold tracking-tight text-white sm:text-[2rem] whitespace-nowrap">
                 {stat.value}
               </dd>
             </div>
