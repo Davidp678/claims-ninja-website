@@ -101,7 +101,14 @@ export function GuideDetailPage({ guide }: GuideDetailPageProps) {
             ) : null}
 
             {!isChecklist && guide.qualityGates && guide.qualityGates.length > 0 ? (
-              <GuideChecklist title="Quality gates" items={guide.qualityGates} />
+              <GuideChecklist
+                title={
+                  guide.guideType === "documentation-standard"
+                    ? "Documentation quality control checklist"
+                    : "Quality gates"
+                }
+                items={guide.qualityGates}
+              />
             ) : null}
 
             <section>

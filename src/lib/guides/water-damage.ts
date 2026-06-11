@@ -35,7 +35,7 @@ export const WATER_DAMAGE_GUIDES = [
       "equipment-documentation-guide",
     ],
     relatedBlogSlugs: ["water-damage-mitigation-supplement-playbook"],
-    relatedFaqIds: [
+    faqIds: [
       "water-mitigation-scope",
       "water-category-class",
       "resources-water-mitigation-documentation",
@@ -290,7 +290,7 @@ export const WATER_DAMAGE_GUIDES = [
       "equipment-documentation-guide",
     ],
     relatedBlogSlugs: ["dry-log-documentation-guide-insurance-claims"],
-    relatedFaqIds: ["water-drying-documentation", "help-equipment-drying-documentation"],
+    faqIds: ["water-drying-documentation", "help-equipment-drying-documentation"],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
     purpose:
@@ -502,7 +502,7 @@ export const WATER_DAMAGE_GUIDES = [
       "daily-monitoring-guide",
     ],
     relatedBlogSlugs: ["moisture-mapping-best-practices-insurance-claims"],
-    relatedFaqIds: ["water-drying-documentation", "water-category-class"],
+    faqIds: ["water-drying-documentation", "water-category-class"],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
     purpose:
@@ -708,7 +708,7 @@ export const WATER_DAMAGE_GUIDES = [
       "mitigation-intake-checklist",
     ],
     relatedBlogSlugs: ["equipment-charges-water-damage-claims"],
-    relatedFaqIds: ["help-equipment-drying-documentation", "water-drying-documentation"],
+    faqIds: ["help-equipment-drying-documentation", "water-drying-documentation"],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
     purpose:
@@ -915,7 +915,7 @@ export const WATER_DAMAGE_GUIDES = [
       "moisture-mapping-guide",
     ],
     relatedBlogSlugs: ["daily-monitoring-documentation-best-practices"],
-    relatedFaqIds: ["help-equipment-drying-documentation", "water-drying-documentation"],
+    faqIds: ["help-equipment-drying-documentation", "water-drying-documentation"],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
     purpose:
@@ -1110,7 +1110,7 @@ export const WATER_DAMAGE_GUIDES = [
       "contents-manipulation-documentation-guide",
     ],
     relatedBlogSlugs: ["why-water-mitigation-claims-get-underpaid"],
-    relatedFaqIds: ["water-category-class", "water-mitigation-scope"],
+    faqIds: ["water-category-class", "water-mitigation-scope"],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
     purpose:
@@ -1328,7 +1328,7 @@ export const WATER_DAMAGE_GUIDES = [
       "equipment-documentation-guide",
     ],
     relatedBlogSlugs: ["water-damage-mitigation-supplement-playbook"],
-    relatedFaqIds: ["water-mitigation-scope", "water-emergency-vs-rebuild"],
+    faqIds: ["water-mitigation-scope", "water-emergency-vs-rebuild"],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
     purpose:
@@ -1512,6 +1512,519 @@ export const WATER_DAMAGE_GUIDES = [
         label: "Water mitigation supplement playbook",
         href: "/resources/blog/water-damage-mitigation-supplement-playbook",
       },
+    ],
+  }),
+
+  defineGuide({
+    slug: "category-3-water-damage-documentation-guide",
+    title: "Category 3 Water Damage Documentation Guide",
+    excerpt:
+      "Learn how restoration contractors should document Category 3 water losses, including moisture maps, dry logs, equipment usage, demolition scope, photos, daily monitoring, and claim support.",
+    category: CATEGORY,
+    guideType: "documentation-standard",
+    recommended: true,
+    roles: ["field", "office", "project-manager"],
+    claimPhase: "documentation",
+    tags: [
+      "Category 3 water damage",
+      "water mitigation documentation",
+      "water damage claims",
+      "dry logs",
+      "moisture mapping",
+      "mitigation invoice defense",
+      "restoration contractors",
+    ],
+    publishedAt: "2026-06-08",
+    updatedAt: "2026-06-11",
+    estimatedMinutes: 18,
+    seoTitle: "Category 3 Water Damage Documentation Guide",
+    seoDescription:
+      "Learn the documentation required to support Category 3 water damage claims, justify mitigation invoices, defend drying charges, and improve claim recovery.",
+    relatedGuideSlugs: [
+      "category-class-documentation-guide",
+      "mitigation-intake-checklist",
+      "moisture-mapping-guide",
+      "dry-log-collection-guide",
+      "equipment-documentation-guide",
+      "daily-monitoring-guide",
+    ],
+    relatedBlogSlugs: [
+      "why-water-mitigation-claims-get-underpaid",
+      "water-damage-mitigation-supplement-playbook",
+      "dry-log-documentation-guide-insurance-claims",
+      "moisture-mapping-best-practices-insurance-claims",
+      "daily-monitoring-documentation-best-practices",
+    ],
+    faqIds: [
+      "water-category-class",
+      "water-mitigation-scope",
+      "water-drying-documentation",
+      "resources-water-mitigation-documentation",
+      "help-equipment-drying-documentation",
+    ],
+    relatedSolutionPath: SOLUTION_PATH,
+    claimTypes: ["water-damage", "mitigation"],
+    purpose:
+      "This guide is built for restoration and mitigation contractors, project managers, and supplement coordinators who document Category 3 (black water) losses for carrier desk review. Strong field and office documentation defends mitigation invoices, drying charges, and supplement scope when carriers scrutinize PPE, disposal, and extended drying lines. Claims Ninja supports contractors with documentation standards, supplement packaging, and claim recovery workflows — we are not a public adjuster, carrier representative, or legal counsel.",
+    whenToUse: [
+      {
+        condition: "Loss is classified or suspected as Category 3 at intake",
+        signal: "Sewage, flooding, or grossly contaminated water source documented on arrival",
+      },
+      {
+        condition: "Demolition, PPE, disposal, or biocide scope is billed on the file",
+        signal: "Category-sensitive line items appear on estimate or invoice",
+      },
+      {
+        condition: "Drying and daily monitoring continue on a contaminated loss",
+        signal: "Equipment days, visit logs, or monitoring charges are in scope",
+      },
+      {
+        condition: "Carrier or desk reviewer requests mitigation documentation package",
+        signal: "Documentation request, underpayment notice, or supplement denial on mitigation lines",
+      },
+    ],
+    prerequisites: [
+      "IICRC category and class reference available to field and office teams",
+      "Intake photo workflow with timestamps and room labels",
+      "Dry log and moisture map templates ready before mobilization",
+    ],
+    requiredDocumentation: [
+      {
+        id: "initial-inspection",
+        label: "Initial inspection documentation",
+        required: true,
+        detail:
+          "Document arrival conditions, site access, standing water extent, safety hazards, and PPE worn at intake. Record emergency scope performed on day one — extraction, source control, and initial stabilization. Contemporaneous inspection notes establish the file baseline carriers compare to later scope challenges.",
+      },
+      {
+        id: "category-source-documentation",
+        label: "Category and source documentation",
+        required: true,
+        detail:
+          "Assign Category 3 with written source identification: sewage backup, toilet overflow, river or exterior flood intrusion, or other grossly contaminated source. Include dwell time, discovery date, and field observations supporting classification. Category-sensitive lines — PPE, disposal, antimicrobial — depend on this documentation at desk review.",
+      },
+      {
+        id: "affected-area-documentation",
+        label: "Affected area documentation",
+        required: true,
+        detail:
+          "Inventory every affected room, floor level, and assembly type: carpet, pad, drywall, baseboard, cabinet toe-kicks, subfloor, and structural cavities. Note migration into adjacent rooms, HVAC pathways, or wall cavities. Carriers match billed scope to room count and assembly list — undocumented areas are commonly excluded from payment.",
+      },
+      {
+        id: "photo-documentation",
+        label: "Photo documentation",
+        required: true,
+        detail:
+          "Capture a timestamped, labeled photo sequence: water source, contamination indicators, wide room elevations, damage detail, and demolition boundaries before and after removal. Photos are the evidence desk reviewers forward when scope is disputed — unlabeled or post-cleanup images weaken Category 3 arguments.",
+      },
+      {
+        id: "moisture-mapping",
+        label: "Moisture mapping",
+        required: true,
+        detail:
+          "Produce a sketch or software map with reading point IDs, baseline moisture values, meter type, and material tested at each point. Tie reading locations to room names matching the carrier sketch. Strong intake maps support room count, hidden moisture scope, and equipment placement — not template drying macros.",
+      },
+      {
+        id: "dry-logs-daily-monitoring",
+        label: "Dry logs and daily monitoring",
+        required: true,
+        detail:
+          "Record daily atmospheric readings, material moisture values, visit purpose, technician name, and drying goal status on every monitoring trip. Note plateaus, regressions, or equipment changes that extend drying duration. Dry logs are the primary evidence carriers use to evaluate monitoring visits and equipment days — gaps between entries are a common reason charges are reduced.",
+      },
+      {
+        id: "equipment-documentation",
+        label: "Equipment documentation",
+        required: true,
+        detail:
+          "Photograph equipment placement in each affected room. Log unit types, counts per room, runtime, and any moves or additions during the drying project. Equipment documentation supports dehumidifier and air mover line items when carriers question utilization or billed days.",
+      },
+      {
+        id: "demolition-removal-documentation",
+        label: "Demolition and removal documentation",
+        required: true,
+        detail:
+          "Document remove-and-dispose activities with before-and-after photos, bag-out quantities, and PPE usage on contaminated materials. Record linear or square footage of demolition and hazardous disposal where applicable. Use labeled bag-and-seal procedures — bags marked by room, quantities logged, and removal routed through a clean path without dragging contaminated materials through unaffected zones. Attach hauler receipt or waste manifest when billing hazardous or bio waste disposal lines. Category 3 demo and disposal lines require field proof — narrative without quantities is frequently challenged at invoice review.",
+      },
+      {
+        id: "cleaning-contamination-control",
+        label: "Cleaning and contamination-control documentation",
+        required: true,
+        detail:
+          "Record antimicrobial or biocide application with product name, dwell time, and application method on affected surfaces. Document PPE worn during cleaning — gloves, eye protection, and respirator appropriate to contamination level. Photograph containment barrier type, zipper doors, negative air exhaust routing, and HEPA air scrubber placement. Log HEPA vacuuming areas and air scrubber runtime on the dry log. Contamination-control scope must align with field notes and estimate lines — undocumented cleaning is often stripped on Category 3 files.",
+      },
+      {
+        id: "final-dry-standard-verification",
+        label: "Final dry-standard verification",
+        required: true,
+        detail:
+          "Capture terminal moisture readings against the established dry standard for each reading point. Record equipment pull date, clearance notes, and final condition photos. Terminal documentation closes drying duration arguments and supports final mitigation invoice submission when carriers audit project closeout.",
+      },
+    ],
+    steps: [
+      {
+        id: "what-is-category-3-water-damage",
+        title: "What Is Category 3 Water Damage?",
+        actions: [
+          "Category 3 water is grossly contaminated — common sources include sewage backups, toilet overflows, river or exterior flood intrusion, and standing water with unknown contaminant load.",
+          "Category 3 losses drive contractor scope beyond standard drying: enhanced PPE, remove-and-dispose of porous materials, antimicrobial or biocide application, bag-out procedures, and hazardous disposal lines.",
+          "Category 3 is not a retroactive label. Assign classification at intake with source notes and photos before demolition, cleaning, or drying alter conditions carriers need to review.",
+          "Field classification should be based on source type, visible contamination, odor indicators, and affected material porosity — not homeowner descriptions alone.",
+        ],
+      },
+      {
+        id: "why-documentation-determines-claim-recovery",
+        title: "Why Documentation Determines Claim Recovery",
+        actions: [
+          "Carriers approve scope they can forward internally. Contemporaneous photos, dry logs, moisture maps, and classification notes outperform narrative assembled after equipment pull.",
+          "Category 3 line items — PPE, disposal, demolition, antimicrobial treatment, and extended drying — are frequent desk-review targets. Weak evidence leads to reduced equipment days, cut monitoring visits, and disputed mitigation charges.",
+          "Documentation connects production to estimate line items. The organized claim file your office submits is the recovery mechanism — not the invoice total by itself.",
+          "Structured claim packets support supplements and resubmission when carriers underpay, partially approve, or request additional evidence on contaminated losses.",
+        ],
+      },
+      {
+        id: "industry-standards-iicrc-considerations",
+        title: "Industry Standards and IICRC Considerations",
+        actions: [
+          "ANSI/IICRC S500 is the recognized industry reference for water damage restoration categories, classes of water, and mitigation procedures used across the restoration trade.",
+          "Use S500 terminology in field notes, dry logs, and estimate narratives so office staff and carrier reviewers reference the same classification language.",
+          "Category and class assignments should align with documented water source, dwell time, material porosity, and the equipment and drying assumptions on the file.",
+          "Coverage decisions and policy interpretation remain between the policyholder and carrier. The contractor's operational role is defensible documentation of field scope and production performed.",
+        ],
+        notes:
+          "ANSI/IICRC S500 is an industry reference for restoration practice — not legal advice, coverage authority, or a guarantee of carrier approval.",
+      },
+      {
+        id: "core-documentation-category-3-claims",
+        title: "Core Documentation Required for Category 3 Water Claims",
+        owner: "office",
+        actions: [
+          "Build a claim file index that ties intake inspection, Category 3 classification, moisture maps, dry logs, photos, demolition records, and closeout readings into one organized packet.",
+          "Cross-reference every billed line item to supporting field evidence — PPE, disposal, antimicrobial, equipment days, and monitoring visits should each trace to a document in the file.",
+          "Submit documentation while drying is active when carriers request evidence — waiting until rebuild weakens mitigation-only arguments on contaminated losses.",
+          "A complete file supports invoice review, supplement filing, and resubmission when scope is challenged — organized documentation strengthens recovery arguments but does not guarantee carrier payment.",
+        ],
+        notes:
+          "Sample claim file index: 01_Intake — source photos, classification memo, emergency scope; 02_Affected_Areas — room inventory and migration notes; 03_Moisture_Map — baseline map and dated revisions; 04_Daily_Logs — chronological entries through closeout; 05_Equipment — placement photos indexed by visit date; 06_Demo_Disposal — before/after demo, bag-out log, hauler ticket; 07_Contamination_Control — containment setup, biocide records, HEPA vac notes; 08_Closeout — terminal readings, equipment pull date, clearance photos. Use as a folder pattern your office can replicate — not a guarantee of carrier approval.",
+      },
+      {
+        id: "photo-documentation-standards",
+        title: "Photo Documentation Standards",
+        owner: "field",
+        actions: [
+          "Label every photo with room name, date, and sequence position matching the carrier sketch and internal job file naming.",
+          "Capture the required sequence at intake and during production: water source, contamination indicators, wide room elevations, damage detail, demolition boundaries, equipment placement, and closeout condition.",
+          "Photograph daily during active mitigation — single end-of-job photo dumps are difficult for desk reviewers to reconcile with multi-day scope.",
+          "Photos are the primary evidence carriers and third-party reviewers forward when Category 3 scope is disputed — unlabeled or post-cleanup images weaken invoice support.",
+        ],
+        notes:
+          "Sample photo label convention: YYYY-MM-DD | ROOM | View/Detail | Phase — e.g. 2026-06-08 | Kitchen | Elevation-N | Pre-demo; 2026-06-10 | MBR | Equipment-layout | Day-3. Match room names to the carrier sketch and job-management export folders.",
+      },
+      {
+        id: "moisture-mapping-requirements",
+        title: "Moisture Mapping Requirements",
+        owner: "field",
+        actions: [
+          "Assign reading point IDs at intake and use the same IDs on every subsequent visit through project closeout.",
+          "Record baseline moisture values at each point before equipment is set — post-drying baselines cannot support initial scope arguments.",
+          "Document hidden and cavity moisture: wall cavities, subfloor assemblies, cabinet voids, and HVAC pathways that expand room count beyond visible standing water.",
+          "Reconcile the moisture map to the carrier sketch and estimate room list — maps help desk reviewers evaluate scope beyond template drying macros.",
+        ],
+      },
+      {
+        id: "dry-log-documentation-standards",
+        title: "Dry Log Documentation Standards",
+        owner: "field",
+        actions: [
+          "Complete a dry log entry on every active drying day while equipment is running — no gaps between monitoring visits.",
+          "Record atmospheric readings, material moisture values at all active map points, and equipment type/count rows on each log entry.",
+          "Add a progress narrative when readings plateau, regress, or require equipment changes — explain why drying duration extends beyond initial estimates.",
+          "Dry logs are the primary evidence carriers use to evaluate equipment days and monitoring charges — incomplete logs are a common reason mitigation invoices are reduced at review.",
+        ],
+        notes:
+          "Sample dry-log narrative: Visit 4 — MBR-1 drywall 18.2% MC (prior 19.1%), plateau noted at baseboard cavity. Added 1 air mover; containment and negative air maintained. Chamber active — continue drying.",
+      },
+      {
+        id: "equipment-documentation-standards",
+        title: "Equipment Documentation Standards",
+        owner: "field",
+        actions: [
+          "Photograph equipment placement in each affected room on initial set and after every move, addition, or removal.",
+          "Log unit types and counts per room on the dry log — air movers, dehumidifiers, air scrubbers, and specialty units should match billed quantities.",
+          "Align runtime and on-site days to billed equipment lines — desiccant and commercial drying projects require additional environmental readings per carrier program.",
+          "Equipment documentation defends dehumidifier and air mover charges when carriers or reviewers question utilization on Category 3 files.",
+        ],
+      },
+      {
+        id: "daily-monitoring-best-practices",
+        title: "Daily Monitoring Best Practices",
+        owner: "field",
+        actions: [
+          "Document visit purpose on every monitoring trip — routine reading, equipment adjustment, partial release, or closeout evaluation.",
+          "Record technician name, date, and drying goal status for each active chamber before leaving the property.",
+          "Note decisions to extend drying, add equipment, or release chambers with readings that support the change — contemporaneous notes beat retroactive explanations.",
+          "Daily monitoring documentation supports billed visit lines and supplement scope when drying duration exceeds the carrier's initial template.",
+        ],
+      },
+      {
+        id: "documentation-category-3-demolition",
+        title: "Documentation for Category 3 Demolition",
+        owner: "field",
+        actions: [
+          "Photograph affected materials before and after remove-and-dispose — carpet, pad, drywall, baseboard, and cabinetry at Category 3 contamination boundaries.",
+          "Record bag-out quantities, hazardous disposal volume, and PPE worn during removal — link quantities to estimate demo and disposal lines.",
+          "Document which porous materials were deemed unsalvageable and removed per Category 3 protocol — narrative should reference intake classification evidence.",
+          "Cross-reference bag-out log entries to hazardous disposal and detach-and-bag line items on the estimate — quantities in the file should match billed disposal lines.",
+          "Demolition documentation supports hazardous disposal, detach-and-bag, and remove-and-dispose line items when carriers challenge Category 3 demo scope.",
+        ],
+      },
+      {
+        id: "category-3-contamination-ppe-hepa-disposal",
+        title: "Category 3 Contamination, PPE, HEPA, and Disposal Documentation",
+        owner: "field",
+        actions: [
+          "Photograph PPE worn during removal versus monitoring visits — gloves, eye protection, and respirator appropriate to contamination level at demo and cleaning phases.",
+          "Document containment setup with dated photos: poly barriers, zipper doors, negative air exhaust routing, and isolation of affected chambers from clean zones.",
+          "Log HEPA air scrubber placement, unit count, and runtime on the dry log — photograph scrubbers in frame with chamber boundaries visible.",
+          "Record bag-and-seal procedures: labeled bags per room, quantity per bag-out, and removal path that avoids dragging contaminated materials through unaffected areas.",
+          "Attach hauler receipt or waste manifest when billing hazardous or bio waste disposal — link ticket quantities to bag-out log and estimate disposal lines.",
+          "On mixed losses, document Category 3 zone boundaries when adjacent rooms remain Category 1 or 2 — boundary readings and containment perimeters support protocol scope.",
+        ],
+      },
+      {
+        id: "defending-category-3-protocols",
+        title: "Defending Category 3 Protocols",
+        owner: "office",
+        actions: [
+          "When carriers or third-party reviewers challenge PPE, biocide, demolition, or drying protocols, resubmit the intake classification packet with photos, logs, and line-item cross-reference.",
+          "Tie field procedures to S500-aligned terminology in the estimate narrative — reviewers evaluate whether production matches the documented category assignment.",
+          "Package supplements when intake evidence proves scope gaps between field conditions and the carrier estimate — submit before production absorbs under-scoped work.",
+          "Claims Ninja supports contractors with documentation review, supplement preparation, estimate comparison, and claim recovery workflows — not carrier representation, public adjusting, or legal counsel.",
+        ],
+        notes:
+          "Strong documentation supports Category 3 protocol arguments at desk review — outcomes depend on carrier program, file specifics, and evidence quality.",
+      },
+    ],
+    qualityGates: [
+      {
+        id: "intake-classification-locked",
+        label: "Category 3 assigned with source photos before category-sensitive billing",
+        required: true,
+        detail:
+          "Classification memo and source photos timestamped at or before first PPE, disposal, antimicrobial, or biocide line is billed.",
+      },
+      {
+        id: "map-sketch-room-parity",
+        label: "Moisture map room names and point IDs match sketch, logs, and estimate",
+        required: true,
+        detail:
+          "Every wet room on the map appears on the carrier sketch and estimate room list; point IDs are identical across map and dry log entries.",
+      },
+      {
+        id: "dry-log-day-parity",
+        label: "One dry log entry per billed equipment or monitoring day",
+        required: true,
+        detail:
+          "Each billed air mover, dehumidifier, or monitoring day has a same-calendar-date log entry with readings — no gaps across weekends or holidays.",
+      },
+      {
+        id: "photo-label-sequence",
+        label: "Timestamped, room-labeled photo sequence through production",
+        required: true,
+        detail:
+          "Intake through closeout photos carry room name, date, and phase labels matching the carrier sketch naming convention.",
+      },
+      {
+        id: "equipment-log-reconciled",
+        label: "Peak photo count and log rows match billed units before invoice",
+        required: true,
+        detail:
+          "Office reconciliation confirms peak equipment count in photos and dry log matches billed units and days before carrier submission.",
+      },
+      {
+        id: "containment-ppe-filtration",
+        label: "Containment, PPE, and HEPA or negative air setup documented with photos",
+        required: true,
+        detail:
+          "Containment barriers, PPE during removal, and air scrubber or negative air placement appear in dated photos with procedural notes on the log or job file.",
+      },
+      {
+        id: "disposal-records-complete",
+        label: "Bag-out quantities, demo before/after, and hauler ticket when applicable",
+        required: true,
+        detail:
+          "Bag-out log, demolition before/after photos, and hauler receipt or waste manifest attached when hazardous or bio waste disposal lines are billed.",
+      },
+      {
+        id: "terminal-readings-before-pull",
+        label: "Release readings and equipment pull date logged before final billing",
+        required: true,
+        detail:
+          "Terminal moisture readings at all active map points, equipment pull date, and clearance photos captured before final mitigation invoice submission.",
+      },
+    ],
+    commonMistakes: [
+      {
+        mistake: "Missing or inconsistent dry logs",
+        impact:
+          "Gaps between monitoring visits give desk reviewers reason to reduce equipment days and cut billed monitoring charges on Category 3 files.",
+        correction:
+          "Complete a dry log entry on every active drying day with atmospheric readings, material moisture values, and equipment rows using consistent point IDs from intake.",
+      },
+      {
+        mistake: "Moisture maps that do not match the invoice",
+        impact:
+          "When map room names or reading points do not align with the carrier sketch and estimate, affected rooms and hidden moisture scope are commonly excluded from payment.",
+        correction:
+          "Reconcile the moisture map to the estimate room list at intake and update the map when new wet areas are discovered during demolition or drying.",
+      },
+      {
+        mistake: "Photos that do not prove affected materials or equipment usage",
+        impact:
+          "Unlabeled, undated, or post-cleanup photos fail to support material removal scope and equipment utilization — both are frequent reduction targets on contaminated losses.",
+        correction:
+          "Capture a labeled, timestamped photo sequence at intake and daily during production: source, contamination, materials, equipment placement, and closeout condition.",
+      },
+      {
+        mistake: "Unsupported drying days",
+        impact:
+          "When plateau or regression readings are not documented, carriers reduce drying duration and remove extended equipment charges without contemporaneous evidence to defend.",
+        correction:
+          "Add a progress narrative to the dry log whenever drying extends beyond initial estimates — explain readings, equipment changes, and why additional days are necessary.",
+      },
+      {
+        mistake: "Equipment charges without placement, dates, or room justification",
+        impact:
+          "Dehumidifier and air mover lines billed without per-room placement proof are commonly removed proportionally at invoice review.",
+        correction:
+          "Photograph equipment placement on initial set and after every move. Log unit types, counts, and room assignments on the dry log for each billed day.",
+      },
+      {
+        mistake: "Demolition scope without contamination or removal support",
+        impact:
+          "Remove-and-dispose and hazardous disposal lines on Category 3 files are denied when demo narrative lacks before/after photos and intake classification evidence.",
+        correction:
+          "Photograph materials before and after removal. Tie demo quantities to Category 3 classification notes and bag-out records from intake through closeout.",
+      },
+      {
+        mistake: "Category 3 procedures without containment, PPE, or filtration documentation",
+        impact:
+          "PPE, containment barrier, HEPA filtration, and negative air lines are stripped when field procedures are billed without setup photos and procedural notes.",
+        correction:
+          "Document containment installation, PPE worn during removal, and air scrubber placement with dated photos and narrative on the dry log or job notes.",
+      },
+      {
+        mistake: "Final dry-standard verification missing or incomplete",
+        impact:
+          "Terminal moisture readings and equipment pull dates omitted from the file invite closeout disputes and weaken final mitigation invoice submission.",
+        correction:
+          "Record terminal readings at all active map points against the dry standard, document equipment pull date, and capture clearance photos before final billing.",
+      },
+    ],
+    supplementOpportunities: [
+      {
+        trigger: "Carrier estimate or initial approval under-scopes drying duration on a Category 3 loss",
+        documentation:
+          "Dry logs showing moisture plateau or regression, extended monitoring visit records, and progress narrative explaining why additional drying days beyond the carrier template are necessary.",
+        lineItemHint: "Additional drying days, daily monitoring visits, extended equipment rental",
+      },
+      {
+        trigger: "Field conditions require equipment additions mid-job not reflected on carrier estimate",
+        documentation:
+          "Updated moisture map, placement photos showing added units, and dry log equipment rows documenting the date and reason for each addition.",
+        lineItemHint: "Additional air movers, dehumidifiers, air scrubbers, desiccant equipment",
+      },
+      {
+        trigger: "Carrier estimate omits Category 3 demolition and porous material removal scope",
+        documentation:
+          "Intake Category 3 classification photos, before-and-after demolition images, bag-out quantities, and hazardous disposal records tied to remove-and-dispose line items.",
+        lineItemHint: "Remove and dispose, hazardous material disposal, detach and bag contaminated materials",
+      },
+      {
+        trigger: "Carrier estimate omits HEPA filtration, containment, or negative air on contaminated loss",
+        documentation:
+          "Containment barrier photos, air scrubber placement images, negative air setup notes, and drying log entries showing filtration equipment runtime.",
+        lineItemHint: "HEPA air scrubber, containment barriers, negative air exhaust, equipment setup",
+      },
+      {
+        trigger: "Carrier estimate omits cleaning and contamination-control labor on Category 3 scope",
+        documentation:
+          "Antimicrobial or biocide application records, HEPA vacuuming notes, detailed cleaning procedure narrative, and photos of treated surfaces before rebuild.",
+        lineItemHint: "Antimicrobial treatment, HEPA vacuum, detailed cleaning, apply biocide",
+      },
+      {
+        trigger: "Documentation is complete but carrier underpaid or partially approved mitigation scope",
+        documentation:
+          "Organized claim index cross-referencing photos, maps, logs, and demo records to each disputed line item — packaged for supplement submission and desk review resubmission.",
+        lineItemHint:
+          "Supplement submission with line-item justification narrative; Claims Ninja supports estimate review, documentation review, supplement preparation, and claim recovery workflows",
+      },
+    ],
+    faq: [
+      {
+        question: "What qualifies as Category 3 water damage?",
+        answer:
+          "Category 3 water is grossly contaminated per IICRC definitions — common sources include sewage backup, toilet overflow, river or exterior flood intrusion, and standing water with unknown contaminant load. Assign classification at intake with source type, visible contamination, odor indicators, dwell time, and affected material porosity documented in contemporaneous notes and photos. Category 3 is not a label applied retroactively at invoice without intake evidence — desk reviewers downgrade unsupported upgrades.",
+      },
+      {
+        question: "What documentation is needed for a Category 3 water claim?",
+        answer:
+          "Build a file that ties production to billed scope: intake inspection notes, Category 3 source classification, affected-area inventory, labeled timestamped photos, baseline moisture map, daily dry logs, equipment placement proof, demolition and disposal records, contamination-control notes, and terminal dry-standard readings. Cross-reference each category-sensitive line item — PPE, disposal, antimicrobial, equipment days, and monitoring visits — to a document in the packet. An indexed claim file helps desk reviewers evaluate scope without requesting piecemeal follow-ups.",
+      },
+      {
+        question: "Are moisture maps required for Category 3 water losses?",
+        answer:
+          "Carriers expect a baseline moisture map on Category 3 files — it establishes affected room count, hidden cavity moisture, and chamber design before desk review sets a template scope. Produce a sketch or software map with reading point IDs, baseline values, meter type, and room labels matching the carrier sketch and estimate. Maps drawn only at job completion or with room names inconsistent with dry logs weaken room-count and hidden-moisture arguments at supplement review.",
+      },
+      {
+        question: "How often should dry logs be updated?",
+        answer:
+          "Complete a dry log entry on every active drying day while equipment is running — one entry per billed equipment day, entered on the same calendar date as the on-site visit. Gaps between monitoring trips are a common reason carriers reduce equipment days and cut monitoring charges on contaminated losses. If equipment runs on weekends or holidays, log it — silent gaps justify proportional cuts across the billing period.",
+      },
+      {
+        question: "What photos should contractors take during Category 3 mitigation?",
+        answer:
+          "Capture a timestamped, room-labeled sequence at intake and daily during active production: water source, contamination indicators, wide room elevations, damage detail, demolition boundaries before and after removal, equipment placement, and closeout condition. Label every photo with room name and date matching the carrier sketch and internal job file naming. Single end-of-job photo dumps are difficult for desk reviewers to reconcile with multi-day Category 3 scope — daily labeled sequences outperform post-cleanup galleries.",
+      },
+      {
+        question: "What documentation supports drying days?",
+        answer:
+          "Daily dry logs with moisture readings at all active map points, environmental conditions, equipment rows, and a progress narrative when readings plateau or regress. Document release readings at every active point before equipment pull — last-day cuts are common when terminal values are missing. The log chronology should show materials trending toward dry standard or explain why additional days remain necessary with contemporaneous stall notes.",
+      },
+      {
+        question: "What documentation supports equipment charges?",
+        answer:
+          "Placement photos at initial set and after every count change, dry log equipment rows with type, count, and room or chamber assignment, and start and end dates tied to release readings. Photograph peak deployment when unit count increases — desk reviewers reduce billed units to the highest photo-verified count. Office reconciliation before invoice submission catches gaps where billed days exceed logged days.",
+      },
+      {
+        question: "Why do carriers reduce water mitigation invoices?",
+        answer:
+          "Desk reviewers commonly cut charges when dry logs have gaps, moisture maps do not match the carrier sketch, photos are unlabeled or post-cleanup, equipment days lack placement proof, Category 3 lines lack intake classification evidence, or demolition scope lacks before-and-after photos. Reductions are often proportional — unsupported days or rooms get trimmed rather than fully denied. Weak documentation forces defensive supplements instead of proactive recovery on contaminated losses.",
+      },
+      {
+        question: "What documentation supports demolition scope?",
+        answer:
+          "Before-and-after photos at Category 3 contamination boundaries, bag-out quantities, PPE worn during removal, and linear or square footage of demolished assemblies. Tie porous material removal to intake classification notes — carpet, pad, drywall, baseboard, and cabinetry deemed unsalvageable per Category 3 protocol. Narrative without quantities or photos is frequently challenged on remove-and-dispose and hazardous disposal lines at invoice review.",
+      },
+      {
+        question: "How do contractors justify Category 3 safety procedures?",
+        answer:
+          "Document containment installation, PPE worn during removal, HEPA filtration, and negative air setup with dated photos and procedural notes on the dry log or job file. Tie field procedures to intake Category 3 classification and S500-aligned terminology in the estimate narrative so reviewers can evaluate whether production matches the documented category assignment. When carriers challenge protocols, resubmit the intake classification packet with photos, logs, and line-item cross-reference rather than adding narrative only at invoice.",
+      },
+      {
+        question: "What should be included in a final Category 3 documentation package?",
+        answer:
+          "Submit an indexed packet: intake inspection and classification, moisture maps with dated revisions, complete dry logs, labeled photo narrative, equipment placement proof, demolition and disposal records, contamination-control notes, terminal moisture readings against the dry standard, equipment pull date, and clearance photos. Cross-reference each disputed or billed line item to supporting evidence in the file. Terminal documentation closes drying duration arguments and supports final mitigation invoice submission at project closeout.",
+      },
+      {
+        question: "Can better documentation help support supplement recovery?",
+        answer:
+          "Organized documentation strengthens supplement and resubmission arguments when field scope exceeds the carrier estimate — photos, maps, logs, and classification notes cross-referenced to disputed line items help desk reviewers evaluate gaps without treating scope as narrative inflation. File supplements when intake evidence proves under-scoped work before production absorbs unpaid labor. Claims Ninja supports contractors with documentation review, supplement preparation, and claim recovery workflows — outcomes still depend on carrier program, file specifics, and evidence quality.",
+      },
+    ],
+    relatedResources: [
+      { label: "Claims Ninja platform", href: "/platform" },
+      { label: "Pricing", href: "/pricing" },
     ],
   }),
 ] as const satisfies readonly Guide[];

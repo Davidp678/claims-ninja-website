@@ -93,7 +93,6 @@ export type Guide = {
   seoDescription: string;
   relatedGuideSlugs: readonly string[];
   relatedBlogSlugs: readonly string[];
-  relatedFaqIds?: readonly string[];
   relatedSolutionPath?: string;
   claimTypes?: readonly string[];
   purpose: string;
