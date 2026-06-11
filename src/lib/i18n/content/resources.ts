@@ -25,6 +25,7 @@ import {
   GUIDE_ROLE_SECTION,
   GUIDE_TYPE_LABELS,
 } from "@/lib/guide-page";
+import type { GuideCategorySlug } from "@/lib/guide-categories";
 import type { ClaimPhase, GuideRole, GuideType } from "@/lib/guide-types";
 
 type PageMeta = {
@@ -58,6 +59,12 @@ export type BlogHubContent = {
   hubCta: CtaContent;
 };
 
+export type GuideCategoryLabel = {
+  name: string;
+  description: string;
+  guidesSectionTitle: string;
+};
+
 export type GuideHubContent = {
   meta: PageMeta;
   hero: SectionContent;
@@ -73,9 +80,24 @@ export type GuideHubContent = {
   hubUi: {
     heroCountLine: (count: number) => string;
     searchResultsTitle: string;
+    searchLabel: string;
+    searchPlaceholder: string;
     roleFilterLabel: string;
+    roleFilterDescription: (roleLabel: string) => string;
     clearFilterLabel: string;
+    allCategories: string;
+    allTypes: string;
+    categoryGuidesTitle: (name: string) => string;
+    viewAllGuides: (count: number) => string;
+    openGuide: string;
+    updatedPrefix: string;
+    minutesShort: string;
+    minutesExecution: string;
+    essentialPlaybook: string;
+    noResults: string;
   };
+  categoryLabels: Record<GuideCategorySlug, GuideCategoryLabel>;
+  roleDescriptions: Record<GuideRole, string>;
   typeLabels: Record<GuideType, string>;
   roleLabels: Record<GuideRole, string>;
   phaseLabels: Record<ClaimPhase, string>;
@@ -122,8 +144,60 @@ const EN: ResourcesContent = {
     hubUi: {
       heroCountLine: (count) => `${count} guides · 5 disciplines`,
       searchResultsTitle: "Search results",
+      searchLabel: "Search guides",
+      searchPlaceholder: "Search guides by title, tag, or checklist item...",
       roleFilterLabel: "Role:",
+      roleFilterDescription: (roleLabel) => `Showing guides for ${roleLabel}.`,
       clearFilterLabel: "Clear filter",
+      allCategories: "All categories",
+      allTypes: "All types",
+      categoryGuidesTitle: (name) => `${name} guides`,
+      viewAllGuides: (count) => `View all ${count} guides →`,
+      openGuide: "Open guide →",
+      updatedPrefix: "Updated",
+      minutesShort: "min",
+      minutesExecution: "min execution",
+      essentialPlaybook: "Essential playbook",
+      noResults: "No guides match your filters. Try adjusting your search.",
+    },
+    categoryLabels: {
+      "general-claims": {
+        name: "General Claims",
+        description:
+          "Cross-loss operational workflows: intake, file audit, supplement submission, carrier review, O&P, and documentation standards.",
+        guidesSectionTitle: "General Claims guides",
+      },
+      "roofing-claims": {
+        name: "Roofing Claims",
+        description:
+          "Roof-specific field and office procedures: supplements, documentation, reinspection, code upgrades, and steep/high work.",
+        guidesSectionTitle: "Roofing Claims guides",
+      },
+      "water-damage": {
+        name: "Water Damage",
+        description:
+          "Mitigation and drying operations: dry logs, moisture mapping, equipment, monitoring, and IICRC category/class documentation.",
+        guidesSectionTitle: "Water Damage guides",
+      },
+      "fire-damage": {
+        name: "Fire Damage",
+        description:
+          "Fire and smoke restoration procedures: intake, smoke/HVAC/odor/contents documentation, and structural stabilization.",
+        guidesSectionTitle: "Fire Damage guides",
+      },
+      "exterior-restoration": {
+        name: "Exterior Restoration",
+        description:
+          "Non-roof exterior scope: siding, envelope, and window and door replacement documentation.",
+        guidesSectionTitle: "Exterior Restoration guides",
+      },
+    },
+    roleDescriptions: {
+      field: "Intake, documentation, and field execution checklists.",
+      office: "File management, audit, and carrier-ready documentation.",
+      "supplement-coordinator":
+        "Estimate review, supplement submission, and O&P qualification.",
+      "project-manager": "Intake oversight, estimate review, and reinspection coordination.",
     },
     typeLabels: GUIDE_TYPE_LABELS,
     roleLabels: GUIDE_ROLE_LABELS,
@@ -262,8 +336,61 @@ const ES: ResourcesContent = {
     hubUi: {
       heroCountLine: (count) => `${count} guías · 5 disciplinas`,
       searchResultsTitle: "Resultados de búsqueda",
+      searchLabel: "Buscar guías",
+      searchPlaceholder: "Busque guías por título, etiqueta o elemento de lista...",
       roleFilterLabel: "Rol:",
+      roleFilterDescription: (roleLabel) => `Mostrando guías para ${roleLabel}.`,
       clearFilterLabel: "Limpiar filtro",
+      allCategories: "Todas las categorías",
+      allTypes: "Todos los tipos",
+      categoryGuidesTitle: (name) => `Guías de ${name}`,
+      viewAllGuides: (count) => `Ver las ${count} guías →`,
+      openGuide: "Abrir guía →",
+      updatedPrefix: "Actualizado",
+      minutesShort: "min",
+      minutesExecution: "min de ejecución",
+      essentialPlaybook: "Manual esencial",
+      noResults: "Ninguna guía coincide con sus filtros. Intente ajustar la búsqueda.",
+    },
+    categoryLabels: {
+      "general-claims": {
+        name: "Reclamaciones generales",
+        description:
+          "Flujos operativos transversales: admisión, auditoría de expediente, envío de suplementos, revisión de aseguradora, O&P y estándares de documentación.",
+        guidesSectionTitle: "Guías de reclamaciones generales",
+      },
+      "roofing-claims": {
+        name: "Reclamaciones de techado",
+        description:
+          "Procedimientos de campo y oficina para techos: suplementos, documentación, reinspección, mejoras por código y trabajo en pendiente/altura.",
+        guidesSectionTitle: "Guías de reclamaciones de techado",
+      },
+      "water-damage": {
+        name: "Daños por agua",
+        description:
+          "Operaciones de mitigación y secado: registros de secado, mapeo de humedad, equipos, monitoreo y documentación de categoría/clase IICRC.",
+        guidesSectionTitle: "Guías de daños por agua",
+      },
+      "fire-damage": {
+        name: "Daños por incendio",
+        description:
+          "Procedimientos de restauración por incendio y humo: admisión, documentación de humo/HVAC/olor/contenidos y estabilización estructural.",
+        guidesSectionTitle: "Guías de daños por incendio",
+      },
+      "exterior-restoration": {
+        name: "Restauración exterior",
+        description:
+          "Alcance exterior no relacionado con techos: documentación de revestimiento, envolvente y reemplazo de ventanas y puertas.",
+        guidesSectionTitle: "Guías de restauración exterior",
+      },
+    },
+    roleDescriptions: {
+      field: "Listas de admisión, documentación y ejecución de campo.",
+      office: "Gestión de expedientes, auditoría y documentación lista para la aseguradora.",
+      "supplement-coordinator":
+        "Revisión de estimados, envío de suplementos y calificación de O&P.",
+      "project-manager":
+        "Supervisión de admisión, revisión de estimados y coordinación de reinspección.",
     },
     typeLabels: {
       checklist: "Lista de verificación",

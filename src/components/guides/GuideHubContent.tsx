@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 
 import type { GuideCategorySlug } from "@/lib/guide-categories";
 import { GUIDE_CATEGORY_REGISTRY, getGuideCategoryPath } from "@/lib/guide-categories";
+import { getLocalizedGuideCategory } from "@/lib/guide-display";
 import type { GuideRole, GuideType } from "@/lib/guide-types";
 import { GUIDE_TYPES, getAllGuides } from "@/lib/guide-page";
 import type { Locale } from "@/lib/i18n/config";
@@ -47,7 +48,9 @@ export function GuideHubContent({ locale = "en" }: { locale?: Locale }) {
           }
           description={
             roleParam
-              ? `Showing guides for ${guides.roleLabels[roleParam as GuideRole] ?? roleParam.replace(/-/g, " ")}.`
+              ? guides.hubUi.roleFilterDescription(
+                  guides.roleLabels[roleParam as GuideRole] ?? roleParam.replace(/-/g, " "),
+                )
               : guides.categorySection.description
           }
           align="left"
@@ -55,14 +58,14 @@ export function GuideHubContent({ locale = "en" }: { locale?: Locale }) {
         <GuideActiveRoleChip locale={locale} />
         <div className="mt-6 flex flex-col gap-4 lg:flex-row lg:items-center">
           <label className="sr-only" htmlFor="guide-search-input">
-            Search guides
+            {guides.hubUi.searchLabel}
           </label>
           <input
             id="guide-search-input"
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search guides by title, tag, or checklist item..."
+            placeholder={guides.hubUi.searchPlaceholder}
             className="w-full rounded-xl border border-white/15 bg-brand-black/60 px-4 py-3 text-sm text-white placeholder:text-zinc-500 focus:border-brand-red/45 focus:outline-none lg:max-w-md"
           />
         </div>
@@ -70,14 +73,14 @@ export function GuideHubContent({ locale = "en" }: { locale?: Locale }) {
           <FilterPill
             active={category === "all"}
             onClick={() => setCategory("all")}
-            label="All categories"
+            label={guides.hubUi.allCategories}
           />
           {GUIDE_CATEGORY_REGISTRY.map((cat) => (
             <FilterPill
               key={cat.slug}
               active={category === cat.slug}
               onClick={() => setCategory(cat.slug)}
-              label={cat.name}
+              label={getLocalizedGuideCategory(cat.slug, locale).name}
             />
           ))}
         </div>
@@ -85,7 +88,7 @@ export function GuideHubContent({ locale = "en" }: { locale?: Locale }) {
           <FilterPill
             active={guideType === "all"}
             onClick={() => setGuideType("all")}
-            label="All types"
+            label={guides.hubUi.allTypes}
           />
           {GUIDE_TYPES.map((type) => (
             <FilterPill
@@ -97,33 +100,35 @@ export function GuideHubContent({ locale = "en" }: { locale?: Locale }) {
           ))}
         </div>
         {isFiltering ? (
-          <GuideGrid guides={filteredGuides} showCategory />
+          <GuideGrid guides={filteredGuides} showCategory locale={locale} />
         ) : null}
       </Section>
 
       {!isFiltering
         ? GUIDE_CATEGORY_REGISTRY.map((cat) => {
-            const guides = allGuides.filter((g) => g.category === cat.slug).slice(0, 4);
+            const categoryGuides = allGuides.filter((g) => g.category === cat.slug).slice(0, 4);
             const count = allGuides.filter((g) => g.category === cat.slug).length;
-            if (guides.length === 0) return null;
+            if (categoryGuides.length === 0) return null;
+
+            const localizedCategory = getLocalizedGuideCategory(cat.slug, locale);
 
             return (
               <Section key={cat.slug} bordered compact>
                 <div className="flex flex-wrap items-end justify-between gap-4">
                   <SectionHeading
-                    eyebrow={cat.name}
-                    title={`${cat.name} guides`}
-                    description={cat.description}
+                    eyebrow={localizedCategory.name}
+                    title={localizedCategory.guidesSectionTitle}
+                    description={localizedCategory.description}
                     align="left"
                   />
                   <Link
                     href={getGuideCategoryPath(cat.slug)}
                     className="shrink-0 text-sm font-medium text-brand-red-light transition-colors hover:text-white"
                   >
-                    View all {count} guides →
+                    {guides.hubUi.viewAllGuides(count)}
                   </Link>
                 </div>
-                <GuideGrid guides={guides} />
+                <GuideGrid guides={categoryGuides} locale={locale} />
               </Section>
             );
           })

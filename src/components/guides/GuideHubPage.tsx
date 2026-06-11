@@ -44,7 +44,7 @@ export function GuideHubPage({ locale = "en" }: { locale?: Locale }) {
             description={guides.recommendedSection.description}
             align="left"
           />
-          <GuideGrid guides={recommended} compact showCategory />
+          <GuideGrid guides={recommended} compact showCategory locale={locale} />
         </Section>
       ) : null}
       <Section compact>

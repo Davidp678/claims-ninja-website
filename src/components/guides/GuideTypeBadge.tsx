@@ -8,18 +8,21 @@ const TYPE_STYLES: Record<GuideType, string> = {
   "field-procedure": "border-amber-500/30 bg-amber-500/10 text-amber-300",
 };
 
+const DEFAULT_LABELS: Record<GuideType, string> = {
+  checklist: "Checklist",
+  workflow: "Workflow",
+  "documentation-standard": "Documentation Standard",
+  "field-procedure": "Field Procedure",
+};
+
 type GuideTypeBadgeProps = {
   type: GuideType;
   className?: string;
+  labels?: Record<GuideType, string>;
 };
 
-export function GuideTypeBadge({ type, className }: GuideTypeBadgeProps) {
-  const labels: Record<GuideType, string> = {
-    checklist: "Checklist",
-    workflow: "Workflow",
-    "documentation-standard": "Documentation Standard",
-    "field-procedure": "Field Procedure",
-  };
+export function GuideTypeBadge({ type, className, labels }: GuideTypeBadgeProps) {
+  const resolvedLabels = labels ?? DEFAULT_LABELS;
 
   return (
     <span
@@ -29,7 +32,7 @@ export function GuideTypeBadge({ type, className }: GuideTypeBadgeProps) {
         className,
       )}
     >
-      {labels[type]}
+      {resolvedLabels[type]}
     </span>
   );
 }

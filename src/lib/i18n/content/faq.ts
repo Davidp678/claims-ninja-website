@@ -19,6 +19,7 @@ const ES_TOPIC_BY_EN: Record<string, string> = {
   "the Claims Ninja platform": "la plataforma de Claims Ninja",
   "Claims Ninja pricing and billing": "los precios y la facturación de Claims Ninja",
   "contacting Claims Ninja": "cómo contactar a Claims Ninja",
+  "claims documentation and supplements": "documentación de reclamaciones y suplementos",
 };
 
 export function translateFaqTopic(topic: string, locale: Locale): string {

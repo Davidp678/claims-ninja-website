@@ -7,17 +7,11 @@ import type { GuideRole } from "@/lib/guide-types";
 import { GUIDE_ROLES } from "@/lib/guide-page";
 import type { Locale } from "@/lib/i18n/config";
 import { getResourcesContent } from "@/lib/i18n/content/resources";
+import { localizePath } from "@/lib/i18n/paths";
 import { cn } from "@/lib/cn";
 
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-
-const ROLE_DESCRIPTIONS: Record<GuideRole, string> = {
-  field: "Intake, documentation, and field execution checklists.",
-  office: "File management, audit, and carrier-ready documentation.",
-  "supplement-coordinator": "Estimate review, supplement submission, and O&P qualification.",
-  "project-manager": "Intake oversight, estimate review, and reinspection coordination.",
-};
 
 export function GuideRoleCards({ locale = "en" }: { locale?: Locale }) {
   const guides = getResourcesContent(locale).guides;
@@ -49,7 +43,7 @@ export function GuideRoleCards({ locale = "en" }: { locale?: Locale }) {
                 {guides.roleLabels[role]}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-zinc-400">
-                {ROLE_DESCRIPTIONS[role]}
+                {guides.roleDescriptions[role]}
               </p>
             </Link>
           </li>
@@ -74,7 +68,7 @@ export function GuideActiveRoleChip({ locale = "en" }: { locale?: Locale }) {
         {guides.hubUi.roleFilterLabel} {guides.roleLabels[activeRole]}
       </span>
       <Link
-        href="/resources/guides#guide-search"
+        href={`${localizePath(locale, "/resources/guides")}#guide-search`}
         className="text-xs font-medium text-zinc-400 transition-colors hover:text-white"
       >
         {guides.hubUi.clearFilterLabel}

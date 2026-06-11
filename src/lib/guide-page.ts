@@ -25,6 +25,7 @@ import {
   resolveRelatedBlogs,
   resolveRelatedGuides,
 } from "@/lib/guide-related";
+import type { Locale } from "@/lib/i18n/config";
 
 export { GUIDE_CATEGORY_REGISTRY as GUIDE_CATEGORIES };
 export type { GuideCategorySlug };
@@ -172,8 +173,9 @@ export const CLAIM_PHASES = [
   "closeout",
 ] as const satisfies readonly import("@/lib/guide-types").ClaimPhase[];
 
-export function formatGuideDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-US", {
+export function formatGuideDate(iso: string, locale: Locale = "en"): string {
+  const dateLocale = locale === "es" ? "es-ES" : "en-US";
+  return new Date(iso).toLocaleDateString(dateLocale, {
     month: "long",
     day: "numeric",
     year: "numeric",

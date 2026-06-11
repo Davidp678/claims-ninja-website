@@ -53,6 +53,10 @@ export const ES_PATH_BY_EN_PATH: Record<EsMarketingEnPath, string> = {
 
 const ES_PREFIX = "/es";
 
+function isGuideSubpath(enPath: string): boolean {
+  return enPath.startsWith("/resources/guides/") && enPath !== "/resources/guides";
+}
+
 export function isEsPathname(pathname: string): boolean {
   return pathname === ES_PREFIX || pathname.startsWith(`${ES_PREFIX}/`);
 }
@@ -77,6 +81,9 @@ export function localizePath(locale: Locale, enPath: string): string {
   const normalized = enPath.startsWith("/") ? enPath : `/${enPath}`;
   if (locale === "en") {
     return normalized;
+  }
+  if (locale === "es" && isGuideSubpath(normalized)) {
+    return ES_PATH_BY_EN_PATH["/resources/guides"];
   }
   if (isEsMarketingEnPath(normalized)) {
     return ES_PATH_BY_EN_PATH[normalized];

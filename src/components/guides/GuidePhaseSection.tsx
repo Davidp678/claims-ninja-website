@@ -1,6 +1,11 @@
 import Link from "next/link";
 
 import type { Guide } from "@/lib/guide-data";
+import {
+  getGuideHubUi,
+  getGuideTypeLabels,
+  getLocalizedGuideSummary,
+} from "@/lib/guide-display";
 import { CLAIM_PHASES, getGuidePathForGuide } from "@/lib/guide-page";
 import type { Locale } from "@/lib/i18n/config";
 import { getResourcesContent } from "@/lib/i18n/content/resources";
@@ -22,6 +27,8 @@ export function GuidePhaseSection({
   locale = "en",
 }: GuidePhaseSectionProps & { locale?: Locale }) {
   const guidesContent = getResourcesContent(locale).guides;
+  const hubUi = getGuideHubUi(locale);
+  const typeLabels = getGuideTypeLabels(locale);
   const source = guidesProp ?? getAllGuides();
   const grouped = getGuidesByPhaseGrouped(source, 3);
 
@@ -54,20 +61,26 @@ export function GuidePhaseSection({
                 {guidesContent.phaseLabels[phase]}
               </span>
               <ul className="mt-4 space-y-3">
-                {phaseGuides.map((guide) => (
-                  <li key={`${guide.category}-${guide.slug}`}>
-                    <Link
-                      href={getGuidePathForGuide(guide)}
-                      className="group block rounded-xl border border-transparent p-2 transition-colors hover:border-white/10 hover:bg-brand-black/40"
-                    >
-                      <GuideTypeBadge type={guide.guideType} className="mb-2" />
-                      <p className="text-sm font-medium text-white transition-colors group-hover:text-brand-red-light">
-                        {guide.title}
-                      </p>
-                      <p className="mt-1 text-xs text-zinc-500">{guide.estimatedMinutes} min</p>
-                    </Link>
-                  </li>
-                ))}
+                {phaseGuides.map((guide) => {
+                  const summary = getLocalizedGuideSummary(guide, locale);
+
+                  return (
+                    <li key={`${guide.category}-${guide.slug}`}>
+                      <Link
+                        href={getGuidePathForGuide(guide)}
+                        className="group block rounded-xl border border-transparent p-2 transition-colors hover:border-white/10 hover:bg-brand-black/40"
+                      >
+                        <GuideTypeBadge type={guide.guideType} labels={typeLabels} className="mb-2" />
+                        <p className="text-sm font-medium text-white transition-colors group-hover:text-brand-red-light">
+                          {summary.title}
+                        </p>
+                        <p className="mt-1 text-xs text-zinc-500">
+                          {guide.estimatedMinutes} {hubUi.minutesShort}
+                        </p>
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           );
