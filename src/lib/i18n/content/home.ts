@@ -80,7 +80,7 @@ const EN: HomeContent = {
     titleLine2: "Minimize the stress.",
     subhead:
       "The Claims Ninja writes, negotiates, and manages your insurance supplements so you get paid more, faster, without hiring an in-house claims team.",
-    primaryCta: "Get Your Free Review",
+    primaryCta: "Start Claim Review",
     secondaryCta: "Schedule Strategy Call",
     stats: [
       { label: "Estimate\nturnaround", value: "24 HRS" },
@@ -224,7 +224,7 @@ const ES: HomeContent = {
     titleLine2: "Minimice el estrés.",
     subhead:
       "The Claims Ninja redacta, negocia y gestiona sus suplementos de seguro para que cobre más, más rápido y sin contratar un equipo de reclamaciones interno.",
-    primaryCta: "Obtenga su revisión gratis",
+    primaryCta: "Iniciar revisión de reclamación",
     secondaryCta: "Agendar llamada estratégica",
     stats: [
       { label: "Plazo de\nestimado", value: "24 HRS" },

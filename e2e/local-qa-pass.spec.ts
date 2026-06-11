@@ -35,7 +35,7 @@ test.describe("Local QA pass", () => {
 
       const hero = page.locator('section[aria-labelledby="hero-heading"]');
       const ctaButtons = hero.getByRole("link", {
-        name: /Obtenga su revisión gratis|Agendar llamada estratégica/i,
+        name: /Iniciar revisión de reclamación|Agendar llamada estratégica/i,
       });
       const videoCard = hero.locator("video, iframe").first();
 
@@ -67,7 +67,7 @@ test.describe("Local QA pass", () => {
       await page.goto("/", { waitUntil: "domcontentloaded" });
 
       const hero = page.locator('section[aria-labelledby="hero-heading"]');
-      const primary = hero.getByRole("link", { name: "Get Your Free Review" });
+      const primary = hero.getByRole("link", { name: "Start Claim Review" });
       const secondary = hero.getByRole("link", { name: "Schedule Strategy Call" });
 
       await expect(primary).toBeVisible();
