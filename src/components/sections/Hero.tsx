@@ -5,12 +5,44 @@ import { Container } from "@/components/ui/Container";
 import { HeroBackdrop } from "./HeroBackdrop";
 import { HeroVideoCard } from "./HeroVideoCard";
 
-type StatIconName = "bars" | "shield" | "star";
+type StatIconName = "clock" | "calendar" | "bars";
 
-const STAT_ICONS: StatIconName[] = ["bars", "shield", "star"];
+const STAT_ICONS: StatIconName[] = ["clock", "calendar", "bars"];
 
 function StatIcon({ name, className }: { name: StatIconName; className?: string }) {
   switch (name) {
+    case "clock":
+      return (
+        <svg
+          aria-hidden
+          viewBox="0 0 24 24"
+          className={className}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3 2" />
+        </svg>
+      );
+    case "calendar":
+      return (
+        <svg
+          aria-hidden
+          viewBox="0 0 24 24"
+          className={className}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect x="4" y="5" width="16" height="15" rx="2" />
+          <path d="M8 3v4M16 3v4M4 10h16" />
+        </svg>
+      );
     case "bars":
       return (
         <svg
@@ -27,32 +59,6 @@ function StatIcon({ name, className }: { name: StatIconName; className?: string 
           <path d="M10 20V4" />
           <path d="M16 20v-7" />
           <path d="M3 20h18" />
-        </svg>
-      );
-    case "shield":
-      return (
-        <svg
-          aria-hidden
-          viewBox="0 0 24 24"
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 3 4 6v6c0 4.5 3.2 8.6 8 9 4.8-.4 8-4.5 8-9V6l-8-3Z" />
-        </svg>
-      );
-    case "star":
-      return (
-        <svg
-          aria-hidden
-          viewBox="0 0 24 24"
-          className={className}
-          fill="currentColor"
-        >
-          <path d="m12 2.5 2.95 6.4 7.05.74-5.27 4.78L18.3 21.5 12 17.9l-6.3 3.6 1.57-7.08L2 9.64l7.05-.74L12 2.5Z" />
         </svg>
       );
   }
