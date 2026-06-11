@@ -59,3 +59,7 @@ export function getGuideHubUi(locale: Locale) {
 export function getGuideTypeLabels(locale: Locale) {
   return getResourcesContent(locale).guides.typeLabels;
 }
+
+export function getGuideDetailUi(locale: Locale) {
+  return getResourcesContent(locale).guides.detailUi;
+}

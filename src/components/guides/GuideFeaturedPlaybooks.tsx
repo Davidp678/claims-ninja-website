@@ -6,7 +6,8 @@ import {
   getGuideTypeLabels,
   getLocalizedGuideSummary,
 } from "@/lib/guide-display";
-import { GUIDE_CARD_CLASS, getGuidePathForGuide } from "@/lib/guide-page";
+import { getLocalizedGuidePath } from "@/lib/guide-localization";
+import { GUIDE_CARD_CLASS } from "@/lib/guide-page";
 import type { Locale } from "@/lib/i18n/config";
 import { getResourcesContent } from "@/lib/i18n/content/resources";
 import { cn } from "@/lib/cn";
@@ -61,7 +62,7 @@ export function GuideFeaturedPlaybookBanner({
   guide: Guide;
   locale?: Locale;
 }) {
-  const href = getGuidePathForGuide(guide);
+  const href = getLocalizedGuidePath(guide, locale);
   const summary = getLocalizedGuideSummary(guide, locale);
   const hubUi = getGuideHubUi(locale);
   const typeLabels = getGuideTypeLabels(locale);
@@ -113,7 +114,7 @@ function GuideFeaturedCompactCard({
   guide: Guide;
   locale?: Locale;
 }) {
-  const href = getGuidePathForGuide(guide);
+  const href = getLocalizedGuidePath(guide, locale);
   const summary = getLocalizedGuideSummary(guide, locale);
   const hubUi = getGuideHubUi(locale);
   const typeLabels = getGuideTypeLabels(locale);

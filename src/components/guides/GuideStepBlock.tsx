@@ -1,11 +1,15 @@
 import type { GuideStep } from "@/lib/guide-types";
-import { GUIDE_ROLE_LABELS } from "@/lib/guide-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getResourcesContent } from "@/lib/i18n/content/resources";
 
 type GuideStepBlockProps = {
   steps: readonly GuideStep[];
+  locale?: Locale;
 };
 
-export function GuideStepBlock({ steps }: GuideStepBlockProps) {
+export function GuideStepBlock({ steps, locale = "en" }: GuideStepBlockProps) {
+  const roleLabels = getResourcesContent(locale).guides.roleLabels;
+
   return (
     <ol className="space-y-8">
       {steps.map((step, index) => (
@@ -19,7 +23,7 @@ export function GuideStepBlock({ steps }: GuideStepBlockProps) {
                 <h3 className="font-display text-lg font-semibold text-white">{step.title}</h3>
                 {step.owner ? (
                   <span className="rounded-full border border-white/10 bg-brand-black/50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-zinc-500">
-                    {GUIDE_ROLE_LABELS[step.owner]}
+                    {roleLabels[step.owner]}
                   </span>
                 ) : null}
               </div>

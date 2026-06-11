@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/i18n/config";
+import { hasSpanishGuideDetail, parseGuideSubpath } from "@/lib/guide-localization";
 
 /** EN paths with published Spanish equivalents (all static marketing pages). */
 export const ES_MARKETING_EN_PATHS = [
@@ -51,7 +52,7 @@ export const ES_PATH_BY_EN_PATH: Record<EsMarketingEnPath, string> = {
   "/reviews": "/es/reviews",
 };
 
-const ES_PREFIX = "/es";
+export const ES_PREFIX = "/es";
 
 function isGuideSubpath(enPath: string): boolean {
   return enPath.startsWith("/resources/guides/") && enPath !== "/resources/guides";
@@ -83,6 +84,10 @@ export function localizePath(locale: Locale, enPath: string): string {
     return normalized;
   }
   if (locale === "es" && isGuideSubpath(normalized)) {
+    const parsed = parseGuideSubpath(normalized);
+    if (parsed && hasSpanishGuideDetail(parsed.category, parsed.slug)) {
+      return `${ES_PREFIX}${normalized}`;
+    }
     return ES_PATH_BY_EN_PATH["/resources/guides"];
   }
   if (isEsMarketingEnPath(normalized)) {

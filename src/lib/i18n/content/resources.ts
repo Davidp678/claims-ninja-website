@@ -65,6 +65,36 @@ export type GuideCategoryLabel = {
   guidesSectionTitle: string;
 };
 
+export type GuideDetailUi = {
+  breadcrumbsGuides: string;
+  purpose: string;
+  whenToUse: string;
+  signalPrefix: string;
+  prerequisites: string;
+  requiredDocumentation: string;
+  qualityGates: string;
+  documentationQcChecklist: string;
+  processHeading: string;
+  executionChecklist: string;
+  commonMistakes: string;
+  mistake: string;
+  impact: string;
+  correction: string;
+  supplementOpportunities: string;
+  lineItemHint: string;
+  relatedResources: string;
+  otherGuides: string;
+  learnStrategy: string;
+  faqSection: string;
+  commonQuestions: string;
+  faqDescription: string;
+  phaseSuffix: string;
+  operationsLabel: string;
+  solutionPage: string;
+  solutions: string;
+  moreResources: string;
+};
+
 export type GuideHubContent = {
   meta: PageMeta;
   hero: SectionContent;
@@ -101,6 +131,7 @@ export type GuideHubContent = {
   typeLabels: Record<GuideType, string>;
   roleLabels: Record<GuideRole, string>;
   phaseLabels: Record<ClaimPhase, string>;
+  detailUi: GuideDetailUi;
 };
 
 export type ResourcesContent = {
@@ -202,6 +233,35 @@ const EN: ResourcesContent = {
     typeLabels: GUIDE_TYPE_LABELS,
     roleLabels: GUIDE_ROLE_LABELS,
     phaseLabels: CLAIM_PHASE_LABELS,
+    detailUi: {
+      breadcrumbsGuides: "Guides",
+      purpose: "Purpose",
+      whenToUse: "When to use",
+      signalPrefix: "Signal:",
+      prerequisites: "Prerequisites",
+      requiredDocumentation: "Required documentation",
+      qualityGates: "Quality gates",
+      documentationQcChecklist: "Documentation quality control checklist",
+      processHeading: "Step-by-step process",
+      executionChecklist: "Execution checklist",
+      commonMistakes: "Common mistakes",
+      mistake: "Mistake",
+      impact: "Impact",
+      correction: "Correction",
+      supplementOpportunities: "Supplement opportunities",
+      lineItemHint: "Line item hint:",
+      relatedResources: "Related resources",
+      otherGuides: "Other guides",
+      learnStrategy: "Learn the strategy",
+      faqSection: "FAQ",
+      commonQuestions: "Common questions",
+      faqDescription: "Quick answers related to this procedure.",
+      phaseSuffix: "phase",
+      operationsLabel: "Claims Ninja Operations",
+      solutionPage: "Claims Ninja solution page",
+      solutions: "Solutions",
+      moreResources: "More resources",
+    },
   },
 };
 
@@ -411,6 +471,35 @@ const ES: ResourcesContent = {
       supplement: "Suplemento",
       negotiation: "Negociación",
       closeout: "Cierre",
+    },
+    detailUi: {
+      breadcrumbsGuides: "Guías",
+      purpose: "Propósito",
+      whenToUse: "Cuándo usar",
+      signalPrefix: "Señal:",
+      prerequisites: "Requisitos previos",
+      requiredDocumentation: "Documentación requerida",
+      qualityGates: "Controles de calidad",
+      documentationQcChecklist: "Lista de control de calidad de documentación",
+      processHeading: "Proceso paso a paso",
+      executionChecklist: "Lista de ejecución",
+      commonMistakes: "Errores comunes",
+      mistake: "Error",
+      impact: "Impacto",
+      correction: "Corrección",
+      supplementOpportunities: "Oportunidades de suplemento",
+      lineItemHint: "Pista de partida:",
+      relatedResources: "Recursos relacionados",
+      otherGuides: "Otras guías",
+      learnStrategy: "Aprenda la estrategia",
+      faqSection: "Preguntas frecuentes",
+      commonQuestions: "Preguntas comunes",
+      faqDescription: "Respuestas rápidas relacionadas con este procedimiento.",
+      phaseSuffix: "fase",
+      operationsLabel: "Operaciones Claims Ninja",
+      solutionPage: "Página de solución Claims Ninja",
+      solutions: "Soluciones",
+      moreResources: "Más recursos",
     },
   },
 };

@@ -1,16 +1,24 @@
 import type { GuideSupplementOpportunity } from "@/lib/guide-types";
+import type { Locale } from "@/lib/i18n/config";
+import { getGuideDetailUi } from "@/lib/guide-display";
 
 type GuideSupplementCalloutProps = {
   opportunities: readonly GuideSupplementOpportunity[];
+  locale?: Locale;
 };
 
-export function GuideSupplementCallout({ opportunities }: GuideSupplementCalloutProps) {
+export function GuideSupplementCallout({
+  opportunities,
+  locale = "en",
+}: GuideSupplementCalloutProps) {
+  const detailUi = getGuideDetailUi(locale);
+
   if (opportunities.length === 0) return null;
 
   return (
     <div className="rounded-2xl border border-brand-red/25 bg-gradient-to-br from-brand-red/10 via-brand-surface/50 to-brand-black p-6 sm:p-8">
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
-        Supplement opportunities
+        {detailUi.supplementOpportunities}
       </p>
       <ul className="mt-4 space-y-4">
         {opportunities.map((item) => (
@@ -18,7 +26,9 @@ export function GuideSupplementCallout({ opportunities }: GuideSupplementCallout
             <p className="font-medium text-white">{item.trigger}</p>
             <p className="mt-1 text-sm leading-relaxed text-zinc-400">{item.documentation}</p>
             {item.lineItemHint ? (
-              <p className="mt-2 text-xs text-zinc-500">Line item hint: {item.lineItemHint}</p>
+              <p className="mt-2 text-xs text-zinc-500">
+                {detailUi.lineItemHint} {item.lineItemHint}
+              </p>
             ) : null}
           </li>
         ))}

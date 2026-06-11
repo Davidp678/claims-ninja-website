@@ -212,27 +212,37 @@ export function guideCategoryMetadata(slug: GuideCategorySlug): Metadata {
   };
 }
 
-export function guideDetailMetadata(guide: Guide): Metadata {
-  const path = getGuidePathForGuide(guide);
-  const absoluteUrl = getAbsoluteUrl(path);
+export function guideDetailMetadataWithLocale(
+  guide: Guide,
+  {
+    path,
+    locale = "en",
+  }: {
+    path: string;
+    locale?: Locale;
+  },
+): Metadata {
+  const base = pageMetadataWithLocale({
+    title: guide.seoTitle,
+    description: guide.seoDescription,
+    path,
+    locale,
+  });
   const modifiedTime = guide.updatedAt ?? guide.publishedAt;
 
   return {
-    title: guide.seoTitle,
-    description: guide.seoDescription,
+    ...base,
     keywords: [...guide.tags],
-    alternates: {
-      canonical: absoluteUrl,
-    },
     openGraph: {
       type: "article",
       title: guide.seoTitle,
       description: guide.seoDescription,
-      url: absoluteUrl,
+      url: getAbsoluteUrl(path),
       publishedTime: guide.publishedAt,
       modifiedTime,
       tags: [...guide.tags],
       images: DEFAULT_OG_IMAGE,
+      locale: locale === "es" ? "es_US" : "en_US",
     },
     twitter: {
       card: TWITTER_CARD,
@@ -241,6 +251,13 @@ export function guideDetailMetadata(guide: Guide): Metadata {
       images: [DEFAULT_OG_IMAGE_PATH],
     },
   };
+}
+
+export function guideDetailMetadata(guide: Guide): Metadata {
+  return guideDetailMetadataWithLocale(guide, {
+    path: getGuidePathForGuide(guide),
+    locale: "en",
+  });
 }
 
 export function blogArticleMetadata(post: BlogPost): Metadata {

@@ -1,31 +1,40 @@
 import Link from "next/link";
 
-import { GUIDE_BASE_PATH } from "@/lib/guide-page";
+import type { Locale } from "@/lib/i18n/config";
+import { getGuideDetailUi } from "@/lib/guide-display";
+import { localizePath } from "@/lib/i18n/paths";
 import { cn } from "@/lib/cn";
 
 type GuideBreadcrumbsProps = {
   categoryLabel?: string;
   categoryPath?: string;
   currentLabel?: string;
+  locale?: Locale;
 };
 
 export function GuideBreadcrumbs({
   categoryLabel,
   categoryPath,
   currentLabel,
+  locale = "en",
 }: GuideBreadcrumbsProps) {
+  const detailUi = getGuideDetailUi(locale);
+  const guidesHubPath = localizePath(locale, "/resources/guides");
+  const resolvedCategoryPath =
+    locale === "es" ? guidesHubPath : (categoryPath ?? guidesHubPath);
+
   return (
     <nav aria-label="Breadcrumb" className="text-sm text-zinc-500">
       <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
         <li>
           <Link
-            href={GUIDE_BASE_PATH}
+            href={guidesHubPath}
             className="transition-colors hover:text-brand-red-light"
           >
-            Guides
+            {detailUi.breadcrumbsGuides}
           </Link>
         </li>
-        {categoryLabel && categoryPath ? (
+        {categoryLabel ? (
           <>
             <li aria-hidden className="text-zinc-600">
               /
@@ -33,7 +42,7 @@ export function GuideBreadcrumbs({
             <li>
               {currentLabel ? (
                 <Link
-                  href={categoryPath}
+                  href={resolvedCategoryPath}
                   className="transition-colors hover:text-brand-red-light"
                 >
                   {categoryLabel}

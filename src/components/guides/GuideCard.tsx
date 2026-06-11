@@ -7,10 +7,10 @@ import {
   getGuideHubUi,
   getGuideTypeLabels,
 } from "@/lib/guide-display";
+import { getLocalizedGuidePath } from "@/lib/guide-localization";
 import {
   GUIDE_CARD_CLASS,
   formatGuideDate,
-  getGuidePathForGuide,
 } from "@/lib/guide-page";
 import type { Locale } from "@/lib/i18n/config";
 import { cn } from "@/lib/cn";
@@ -30,7 +30,7 @@ export function GuideCard({
   showCategory = false,
   locale = "en",
 }: GuideCardProps) {
-  const href = getGuidePathForGuide(guide);
+  const href = getLocalizedGuidePath(guide, locale);
   const summary = getLocalizedGuideSummary(guide, locale);
   const hubUi = getGuideHubUi(locale);
   const typeLabels = getGuideTypeLabels(locale);

@@ -6,7 +6,8 @@ import {
   getGuideTypeLabels,
   getLocalizedGuideSummary,
 } from "@/lib/guide-display";
-import { CLAIM_PHASES, getGuidePathForGuide } from "@/lib/guide-page";
+import { getLocalizedGuidePath } from "@/lib/guide-localization";
+import { CLAIM_PHASES } from "@/lib/guide-page";
 import type { Locale } from "@/lib/i18n/config";
 import { getResourcesContent } from "@/lib/i18n/content/resources";
 import { getGuidesByPhaseGrouped } from "@/lib/guide-search";
@@ -67,7 +68,7 @@ export function GuidePhaseSection({
                   return (
                     <li key={`${guide.category}-${guide.slug}`}>
                       <Link
-                        href={getGuidePathForGuide(guide)}
+                        href={getLocalizedGuidePath(guide, locale)}
                         className="group block rounded-xl border border-transparent p-2 transition-colors hover:border-white/10 hover:bg-brand-black/40"
                       >
                         <GuideTypeBadge type={guide.guideType} labels={typeLabels} className="mb-2" />
