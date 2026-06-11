@@ -118,7 +118,7 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
                   name={stat.icon}
                   className="h-4 w-4 text-brand-red-light"
                 />
-                <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-zinc-300">
+                <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-zinc-300 whitespace-pre-line">
                   {stat.label}
                 </dt>
               </div>

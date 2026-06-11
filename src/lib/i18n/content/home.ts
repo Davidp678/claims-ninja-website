@@ -83,9 +83,9 @@ const EN: HomeContent = {
     primaryCta: "Get Your Free Review",
     secondaryCta: "Schedule Strategy Call",
     stats: [
-      { label: "Estimate turnaround", value: "24 HRS" },
-      { label: "Avg. settlement time", value: "3–5 WEEKS" },
-      { label: "Avg. claim uplift", value: "40%+" },
+      { label: "Estimate\nturnaround", value: "24 HRS" },
+      { label: "Avg.\nsettlement", value: "3–5 WKS" },
+      { label: "Avg. claim\nuplift", value: "40%+" },
     ],
   },
   process: {
@@ -227,9 +227,9 @@ const ES: HomeContent = {
     primaryCta: "Obtenga su revisión gratis",
     secondaryCta: "Agendar llamada estratégica",
     stats: [
-      { label: "Plazo de estimado", value: "24 HRS" },
-      { label: "Tiempo de acuerdo", value: "3–5 SEMANAS" },
-      { label: "Aumento promedio", value: "40%+" },
+      { label: "Plazo de\nestimado", value: "24 HRS" },
+      { label: "Tiempo de\nacuerdo", value: "3–5 SEM." },
+      { label: "Aumento\npromedio", value: "40%+" },
     ],
   },
   process: {
