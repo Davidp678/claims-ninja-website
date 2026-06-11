@@ -450,7 +450,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "O&P depends on carrier guidelines, number of trades, and how the claim is structured. We evaluate whether O&P applies to your file and document the basis when pursuing it — outcomes vary by carrier and claim circumstances.",
   },
 
-  // Water Damage Claims (6)
+  // Water Damage Claims (23)
   {
     id: "water-mitigation-scope",
     category: "water_damage_claims",
@@ -488,6 +488,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Dry log documentation guide",
         href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
       },
+      {
+        label: "Category 3 water damage documentation guide",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
       { label: "Contractor resources", href: "/resources/blog" },
     ],
   },
@@ -518,7 +522,17 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "Do you help with category and class of water documentation?",
     answer:
       "Yes. We ensure field notes, photos, and line items align with how the loss was classified. Misalignment between mitigation narrative and billed scope is a common reason carriers reduce payment.",
-    relatedLinks: [{ label: "Water damage solutions", href: "/solutions/water-damage" }],
+    relatedLinks: [
+      {
+        label: "Category and class documentation guide",
+        href: "/resources/guides/water-damage/category-class-documentation-guide",
+      },
+      {
+        label: "Category 3 water damage documentation guide",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      { label: "Water damage solutions", href: "/solutions/water-damage" },
+    ],
   },
   {
     id: "water-rebuild-supplements",
@@ -540,6 +554,261 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "Do you support commercial water losses?",
     answer:
       "Yes. Commercial water claims often involve larger drying footprints, business interruption considerations, and multi-trade rebuild scopes. Documentation organization becomes critical at that scale.",
+  },
+  {
+    id: "water-category-3-qualifies",
+    category: "water_damage_claims",
+    question: "What qualifies as Category 3 water?",
+    answer:
+      "Category 3 water is grossly contaminated per IICRC definitions — common sources include sewage backup, toilet overflow, river or exterior flood intrusion, and standing water with unknown contaminant load. Assign classification at intake with source type, visible contamination, odor indicators, dwell time, and affected material porosity documented in contemporaneous notes and photos. Category 3 is not a label applied retroactively at invoice without intake evidence — desk reviewers downgrade unsupported upgrades.",
+    relatedLinks: [
+      {
+        label: "Category 3 water damage documentation guide",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Category and class documentation guide",
+        href: "/resources/guides/water-damage/category-class-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "water-category-3-documentation-required",
+    category: "water_damage_claims",
+    question: "What documentation is required for a Category 3 water claim?",
+    answer:
+      "Build a file that ties production to billed scope: intake inspection notes, Category 3 source classification, affected-area inventory, labeled timestamped photos, baseline moisture map, daily dry logs, equipment placement proof, demolition and disposal records, contamination-control notes, and terminal dry-standard readings. Cross-reference each category-sensitive line item — PPE, disposal, antimicrobial, equipment days, and monitoring visits — to a document in the packet. An indexed claim file helps desk reviewers evaluate scope without requesting piecemeal follow-ups.",
+    relatedLinks: [
+      {
+        label: "Category 3 water damage documentation guide",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Mitigation intake checklist",
+        href: "/resources/guides/water-damage/mitigation-intake-checklist",
+      },
+    ],
+  },
+  {
+    id: "water-category-3-invoice-reductions",
+    category: "water_damage_claims",
+    question: "Why are Category 3 mitigation invoices reduced by carriers?",
+    answer:
+      "Desk reviewers commonly cut Category 3 charges when dry logs have gaps, moisture maps do not match the carrier sketch, photos are unlabeled or post-cleanup, equipment days lack placement proof, category-sensitive lines lack intake classification evidence, or demolition scope lacks before-and-after photos. Reductions are often proportional — unsupported days or rooms get trimmed rather than fully denied. Weak documentation forces defensive supplements instead of proactive recovery on contaminated losses.",
+    relatedLinks: [
+      {
+        label: "Category 3 water damage documentation guide",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Why water mitigation claims get underpaid",
+        href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
+      },
+    ],
+  },
+  {
+    id: "water-moisture-maps-required",
+    category: "water_damage_claims",
+    question: "Are moisture maps required for water damage claims?",
+    answer:
+      "Carriers expect a baseline moisture map on water mitigation files — it establishes affected room count, hidden cavity moisture, and chamber design before desk review sets a template scope. Produce a sketch or software map with reading point IDs, baseline values, meter type, and room labels matching the carrier sketch and estimate. Maps drawn only at job completion or with room names inconsistent with dry logs weaken room-count and hidden-moisture arguments at supplement review.",
+    relatedLinks: [
+      {
+        label: "Moisture mapping field procedure",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "Moisture mapping best practices",
+        href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+      },
+    ],
+  },
+  {
+    id: "water-moisture-map-contents",
+    category: "water_damage_claims",
+    question: "What should a moisture map include?",
+    answer:
+      "Include a floor plan or site diagram with room labels matching the estimate sketch, numbered reading points with initial moisture values and meter type at each location, wet/dry boundaries and migration paths, affected material types per zone, and planned drying chambers with containment perimeters. Assign reading point IDs at intake and use the same IDs on every subsequent visit through closeout. Maps that omit hidden cavity moisture or chamber design leave dehumidifier count and extended drying arguments unsupported at desk review.",
+    relatedLinks: [
+      {
+        label: "Moisture mapping field procedure",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "Moisture mapping best practices",
+        href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+      },
+    ],
+  },
+  {
+    id: "water-moisture-reading-frequency",
+    category: "water_damage_claims",
+    question: "How often should moisture readings be documented?",
+    answer:
+      "Capture moisture readings on every monitoring visit while equipment is running — typically once per active drying day at all active map points. Baseline readings belong on the intake map before equipment is set; subsequent visits should use the same point IDs through terminal release readings. Skipping readings on billed monitoring days or changing point IDs mid-job gives desk reviewers reason to reduce equipment days and cut monitoring charges.",
+    relatedLinks: [
+      {
+        label: "Moisture mapping field procedure",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "Daily monitoring field procedure",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+    ],
+  },
+  {
+    id: "water-dry-log-update-frequency",
+    category: "water_damage_claims",
+    question: "How often should dry logs be updated?",
+    answer:
+      "Complete a dry log entry on every active drying day while equipment is running — one entry per billed equipment day, entered on the same calendar date as the on-site visit. Gaps between monitoring trips are a common reason carriers reduce equipment days and cut monitoring charges on contaminated losses. If equipment runs on weekends or holidays, log it — silent gaps justify proportional cuts across the billing period.",
+    relatedLinks: [
+      {
+        label: "Dry log collection field procedure",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "Dry log documentation guide",
+        href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+      },
+    ],
+  },
+  {
+    id: "water-dry-log-contents",
+    category: "water_damage_claims",
+    question: "What information belongs in a drying log?",
+    answer:
+      "Each dry log entry should include the visit date, technician name, atmospheric readings, material moisture values at all active map points, equipment type and count rows per room or chamber, drying goal status, and a progress narrative when readings plateau or regress. Document release readings at every active point before equipment pull — last-day cuts are common when terminal values are missing. Consistent point IDs from intake through closeout tie log entries to the moisture map and carrier sketch.",
+    relatedLinks: [
+      {
+        label: "Dry log collection field procedure",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "Dry log documentation guide",
+        href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+      },
+    ],
+  },
+  {
+    id: "water-dry-log-additional-drying-days",
+    category: "water_damage_claims",
+    question: "How do dry logs support additional drying days?",
+    answer:
+      "Dry logs defend extended drying when the chronology shows materials trending toward dry standard with contemporaneous stall notes — plateau or regression readings, equipment changes, and a narrative explaining why additional days remain necessary. Document release readings at every active point before equipment pull. Carriers reduce drying duration when plateau readings are absent or gaps exist between billed days and log entries.",
+    relatedLinks: [
+      {
+        label: "Dry log collection field procedure",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "Category 3 water damage documentation guide",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "water-air-mover-documentation",
+    category: "water_damage_claims",
+    question: "What documentation supports air mover charges?",
+    answer:
+      "Photograph air mover placement at initial set and after every count change or relocation — wide shots showing count per room with room labels matching the carrier sketch. Log unit counts and room assignments on the dry log for each billed day. Photograph peak deployment when unit count increases — desk reviewers reduce billed units to the highest photo-verified count. Start and end dates should tie to release readings before equipment pull.",
+    relatedLinks: [
+      {
+        label: "Mitigation equipment documentation procedure",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+      {
+        label: "Equipment charges in water damage claims",
+        href: "/resources/blog/equipment-charges-water-damage-claims",
+      },
+    ],
+  },
+  {
+    id: "water-dehumidifier-documentation",
+    category: "water_damage_claims",
+    question: "What documentation supports dehumidifier charges?",
+    answer:
+      "Document dehumidifier placement with wide photos showing unit count per chamber, dry log equipment rows with type and room or chamber assignment, and chamber design from the moisture map that justifies unit count. Log runtime and environmental readings on each monitoring visit — grain depression and relative humidity trends support utilization arguments. Reconcile peak photo-verified counts and logged days to billed quantities before invoice submission.",
+    relatedLinks: [
+      {
+        label: "Mitigation equipment documentation procedure",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+      {
+        label: "Moisture mapping field procedure",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+    ],
+  },
+  {
+    id: "water-equipment-charge-reductions",
+    category: "water_damage_claims",
+    question: "Why do carriers reduce equipment charges?",
+    answer:
+      "Desk reviewers cut equipment lines when placement photos are missing or undated, dry log rows do not match billed unit counts, peak deployment is not photographed, or billed days exceed logged days. Reductions are often proportional — unsupported units or days get trimmed rather than fully denied. Office reconciliation before invoice submission catches gaps where field documentation does not support air mover, dehumidifier, or air scrubber lines.",
+    relatedLinks: [
+      {
+        label: "Mitigation equipment documentation procedure",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+      {
+        label: "Equipment charges in water damage claims",
+        href: "/resources/blog/equipment-charges-water-damage-claims",
+      },
+    ],
+  },
+  {
+    id: "water-containment-documentation",
+    category: "water_damage_claims",
+    question: "What documentation supports containment charges?",
+    answer:
+      "Photograph containment installation with dated images showing poly barriers, zipper doors, and chamber perimeters isolating affected zones from clean areas. Log containment setup on the dry log or job notes with chamber boundaries matching the moisture map. On Category 3 losses, tie containment scope to intake classification evidence — undocumented barriers are commonly stripped when contamination-control lines are billed without field proof.",
+    relatedLinks: [
+      {
+        label: "Category 3 water damage documentation guide",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Daily monitoring documentation",
+        href: "/resources/blog/daily-monitoring-documentation-best-practices",
+      },
+    ],
+  },
+  {
+    id: "water-hepa-filtration-documentation",
+    category: "water_damage_claims",
+    question: "What documentation supports HEPA filtration charges?",
+    answer:
+      "Photograph HEPA air scrubber placement with chamber boundaries visible in frame — unit count, exhaust routing, and negative air setup should appear in dated photos. Log scrubber runtime on the dry log for each billed day and note HEPA vacuuming areas when applicable. On Category 3 files, link filtration scope to intake classification and contamination-control notes — HEPA lines billed without setup photos and runtime logs are frequent reduction targets at desk review.",
+    relatedLinks: [
+      {
+        label: "Category 3 water damage documentation guide",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Daily monitoring documentation",
+        href: "/resources/blog/daily-monitoring-documentation-best-practices",
+      },
+    ],
+  },
+  {
+    id: "water-final-mitigation-package",
+    category: "water_damage_claims",
+    question: "What should be included in a final mitigation documentation package?",
+    answer:
+      "Submit an indexed packet: intake inspection and classification, moisture maps with dated revisions, complete dry logs, labeled photo narrative, equipment placement proof, demolition and disposal records, contamination-control notes, terminal moisture readings against the dry standard, equipment pull date, and clearance photos. Cross-reference each disputed or billed line item to supporting evidence in the file. Terminal documentation closes drying duration arguments and supports final mitigation invoice submission at project closeout.",
+    relatedLinks: [
+      {
+        label: "Category 3 water damage documentation guide",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Dry log collection field procedure",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+    ],
   },
 
   // Fire Damage Claims (5)
@@ -758,6 +1027,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Moisture logs are standard on water mitigation jobs and often expected on mold-related work. Daily readings, equipment notes, and dry-standard documentation support equipment day charges and rebuild timing.",
     relatedLinks: [
       { label: "Water damage solutions", href: "/solutions/water-damage" },
+      {
+        label: "Moisture mapping field procedure",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
       {
         label: "Dry log documentation guide",
         href: "/resources/blog/dry-log-documentation-guide-insurance-claims",

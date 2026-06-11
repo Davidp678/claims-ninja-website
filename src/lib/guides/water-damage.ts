@@ -290,7 +290,13 @@ export const WATER_DAMAGE_GUIDES = [
       "equipment-documentation-guide",
     ],
     relatedBlogSlugs: ["dry-log-documentation-guide-insurance-claims"],
-    faqIds: ["water-drying-documentation", "help-equipment-drying-documentation"],
+    faqIds: [
+      "water-drying-documentation",
+      "help-equipment-drying-documentation",
+      "water-dry-log-update-frequency",
+      "water-dry-log-contents",
+      "water-dry-log-additional-drying-days",
+    ],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
     purpose:
@@ -502,7 +508,13 @@ export const WATER_DAMAGE_GUIDES = [
       "daily-monitoring-guide",
     ],
     relatedBlogSlugs: ["moisture-mapping-best-practices-insurance-claims"],
-    faqIds: ["water-drying-documentation", "water-category-class"],
+    faqIds: [
+      "water-drying-documentation",
+      "water-category-class",
+      "water-moisture-maps-required",
+      "water-moisture-map-contents",
+      "water-moisture-reading-frequency",
+    ],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
     purpose:
@@ -708,7 +720,13 @@ export const WATER_DAMAGE_GUIDES = [
       "mitigation-intake-checklist",
     ],
     relatedBlogSlugs: ["equipment-charges-water-damage-claims"],
-    faqIds: ["help-equipment-drying-documentation", "water-drying-documentation"],
+    faqIds: [
+      "help-equipment-drying-documentation",
+      "water-drying-documentation",
+      "water-air-mover-documentation",
+      "water-dehumidifier-documentation",
+      "water-equipment-charge-reductions",
+    ],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
     purpose:
@@ -915,7 +933,12 @@ export const WATER_DAMAGE_GUIDES = [
       "moisture-mapping-guide",
     ],
     relatedBlogSlugs: ["daily-monitoring-documentation-best-practices"],
-    faqIds: ["help-equipment-drying-documentation", "water-drying-documentation"],
+    faqIds: [
+      "help-equipment-drying-documentation",
+      "water-drying-documentation",
+      "water-moisture-reading-frequency",
+      "water-dry-log-update-frequency",
+    ],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
     purpose:
@@ -1110,7 +1133,7 @@ export const WATER_DAMAGE_GUIDES = [
       "contents-manipulation-documentation-guide",
     ],
     relatedBlogSlugs: ["why-water-mitigation-claims-get-underpaid"],
-    faqIds: ["water-category-class", "water-mitigation-scope"],
+    faqIds: ["water-category-class", "water-mitigation-scope", "water-category-3-qualifies"],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
     purpose:
@@ -1556,11 +1579,23 @@ export const WATER_DAMAGE_GUIDES = [
       "daily-monitoring-documentation-best-practices",
     ],
     faqIds: [
-      "water-category-class",
-      "water-mitigation-scope",
-      "water-drying-documentation",
-      "resources-water-mitigation-documentation",
+      "water-category-3-qualifies",
+      "water-category-3-documentation-required",
+      "water-category-3-invoice-reductions",
+      "water-moisture-maps-required",
+      "water-moisture-map-contents",
+      "water-moisture-reading-frequency",
+      "water-dry-log-update-frequency",
+      "water-dry-log-contents",
+      "water-dry-log-additional-drying-days",
+      "water-air-mover-documentation",
+      "water-dehumidifier-documentation",
+      "water-equipment-charge-reductions",
+      "water-containment-documentation",
+      "water-hepa-filtration-documentation",
+      "water-final-mitigation-package",
       "help-equipment-drying-documentation",
+      "resources-water-mitigation-documentation",
     ],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
@@ -1962,44 +1997,9 @@ export const WATER_DAMAGE_GUIDES = [
     ],
     faq: [
       {
-        question: "What qualifies as Category 3 water damage?",
-        answer:
-          "Category 3 water is grossly contaminated per IICRC definitions — common sources include sewage backup, toilet overflow, river or exterior flood intrusion, and standing water with unknown contaminant load. Assign classification at intake with source type, visible contamination, odor indicators, dwell time, and affected material porosity documented in contemporaneous notes and photos. Category 3 is not a label applied retroactively at invoice without intake evidence — desk reviewers downgrade unsupported upgrades.",
-      },
-      {
-        question: "What documentation is needed for a Category 3 water claim?",
-        answer:
-          "Build a file that ties production to billed scope: intake inspection notes, Category 3 source classification, affected-area inventory, labeled timestamped photos, baseline moisture map, daily dry logs, equipment placement proof, demolition and disposal records, contamination-control notes, and terminal dry-standard readings. Cross-reference each category-sensitive line item — PPE, disposal, antimicrobial, equipment days, and monitoring visits — to a document in the packet. An indexed claim file helps desk reviewers evaluate scope without requesting piecemeal follow-ups.",
-      },
-      {
-        question: "Are moisture maps required for Category 3 water losses?",
-        answer:
-          "Carriers expect a baseline moisture map on Category 3 files — it establishes affected room count, hidden cavity moisture, and chamber design before desk review sets a template scope. Produce a sketch or software map with reading point IDs, baseline values, meter type, and room labels matching the carrier sketch and estimate. Maps drawn only at job completion or with room names inconsistent with dry logs weaken room-count and hidden-moisture arguments at supplement review.",
-      },
-      {
-        question: "How often should dry logs be updated?",
-        answer:
-          "Complete a dry log entry on every active drying day while equipment is running — one entry per billed equipment day, entered on the same calendar date as the on-site visit. Gaps between monitoring trips are a common reason carriers reduce equipment days and cut monitoring charges on contaminated losses. If equipment runs on weekends or holidays, log it — silent gaps justify proportional cuts across the billing period.",
-      },
-      {
         question: "What photos should contractors take during Category 3 mitigation?",
         answer:
           "Capture a timestamped, room-labeled sequence at intake and daily during active production: water source, contamination indicators, wide room elevations, damage detail, demolition boundaries before and after removal, equipment placement, and closeout condition. Label every photo with room name and date matching the carrier sketch and internal job file naming. Single end-of-job photo dumps are difficult for desk reviewers to reconcile with multi-day Category 3 scope — daily labeled sequences outperform post-cleanup galleries.",
-      },
-      {
-        question: "What documentation supports drying days?",
-        answer:
-          "Daily dry logs with moisture readings at all active map points, environmental conditions, equipment rows, and a progress narrative when readings plateau or regress. Document release readings at every active point before equipment pull — last-day cuts are common when terminal values are missing. The log chronology should show materials trending toward dry standard or explain why additional days remain necessary with contemporaneous stall notes.",
-      },
-      {
-        question: "What documentation supports equipment charges?",
-        answer:
-          "Placement photos at initial set and after every count change, dry log equipment rows with type, count, and room or chamber assignment, and start and end dates tied to release readings. Photograph peak deployment when unit count increases — desk reviewers reduce billed units to the highest photo-verified count. Office reconciliation before invoice submission catches gaps where billed days exceed logged days.",
-      },
-      {
-        question: "Why do carriers reduce water mitigation invoices?",
-        answer:
-          "Desk reviewers commonly cut charges when dry logs have gaps, moisture maps do not match the carrier sketch, photos are unlabeled or post-cleanup, equipment days lack placement proof, Category 3 lines lack intake classification evidence, or demolition scope lacks before-and-after photos. Reductions are often proportional — unsupported days or rooms get trimmed rather than fully denied. Weak documentation forces defensive supplements instead of proactive recovery on contaminated losses.",
       },
       {
         question: "What documentation supports demolition scope?",
@@ -2010,11 +2010,6 @@ export const WATER_DAMAGE_GUIDES = [
         question: "How do contractors justify Category 3 safety procedures?",
         answer:
           "Document containment installation, PPE worn during removal, HEPA filtration, and negative air setup with dated photos and procedural notes on the dry log or job file. Tie field procedures to intake Category 3 classification and S500-aligned terminology in the estimate narrative so reviewers can evaluate whether production matches the documented category assignment. When carriers challenge protocols, resubmit the intake classification packet with photos, logs, and line-item cross-reference rather than adding narrative only at invoice.",
-      },
-      {
-        question: "What should be included in a final Category 3 documentation package?",
-        answer:
-          "Submit an indexed packet: intake inspection and classification, moisture maps with dated revisions, complete dry logs, labeled photo narrative, equipment placement proof, demolition and disposal records, contamination-control notes, terminal moisture readings against the dry standard, equipment pull date, and clearance photos. Cross-reference each disputed or billed line item to supporting evidence in the file. Terminal documentation closes drying duration arguments and supports final mitigation invoice submission at project closeout.",
       },
       {
         question: "Can better documentation help support supplement recovery?",

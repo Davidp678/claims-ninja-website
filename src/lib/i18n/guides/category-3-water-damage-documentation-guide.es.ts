@@ -41,11 +41,23 @@ export const CATEGORY_3_WATER_DAMAGE_DOCUMENTATION_GUIDE_ES = defineGuide({
     "daily-monitoring-documentation-best-practices",
   ],
   faqIds: [
-    "water-category-class",
-    "water-mitigation-scope",
-    "water-drying-documentation",
-    "resources-water-mitigation-documentation",
+    "water-category-3-qualifies",
+    "water-category-3-documentation-required",
+    "water-category-3-invoice-reductions",
+    "water-moisture-maps-required",
+    "water-moisture-map-contents",
+    "water-moisture-reading-frequency",
+    "water-dry-log-update-frequency",
+    "water-dry-log-contents",
+    "water-dry-log-additional-drying-days",
+    "water-air-mover-documentation",
+    "water-dehumidifier-documentation",
+    "water-equipment-charge-reductions",
+    "water-containment-documentation",
+    "water-hepa-filtration-documentation",
+    "water-final-mitigation-package",
     "help-equipment-drying-documentation",
+    "resources-water-mitigation-documentation",
   ],
   relatedSolutionPath: "/solutions/water-damage",
   claimTypes: ["water-damage", "mitigation"],
@@ -460,44 +472,9 @@ export const CATEGORY_3_WATER_DAMAGE_DOCUMENTATION_GUIDE_ES = defineGuide({
   ],
   faq: [
     {
-      question: "¿Qué califica como daños por agua categoría 3?",
-      answer:
-        "El agua categoría 3 está gravemente contaminada según las definiciones IICRC — las fuentes comunes incluyen respaldo de aguas residuales, desbordamiento de inodoro, intrusión de río o inundación exterior, y agua estancada con carga de contaminantes desconocida. Asigne la clasificación en la admisión con tipo de fuente, contaminación visible, indicadores de olor, tiempo de permanencia y porosidad del material afectado documentados en notas y fotos contemporáneas. La categoría 3 no es una etiqueta aplicada retroactivamente en la factura sin evidencia de admisión — los revisores de escritorio degradan actualizaciones no respaldadas.",
-    },
-    {
-      question: "¿Qué documentación se necesita para una reclamación de agua categoría 3?",
-      answer:
-        "Construya un expediente que vincule la producción con el alcance facturado: notas de inspección de admisión, clasificación de fuente categoría 3, inventario de áreas afectadas, fotos etiquetadas con marca de tiempo, mapa de humedad de referencia, registros de secado diarios, prueba de colocación de equipos, registros de demolición y eliminación, notas de control de contaminación y lecturas terminales del estándar de secado. Referencie cruzadamente cada línea sensible a la categoría — PPE, eliminación, antimicrobiano, días de equipos y visitas de monitoreo — con un documento en el paquete. Un expediente de reclamación indexado ayuda a los revisores de escritorio a evaluar el alcance sin solicitar seguimientos fragmentados.",
-    },
-    {
-      question: "¿Se requieren mapas de humedad para pérdidas de agua categoría 3?",
-      answer:
-        "Las aseguradoras esperan un mapa de humedad de referencia en expedientes de categoría 3 — establece el conteo de habitaciones afectadas, humedad oculta en cavidades y diseño de cámara antes de que la revisión de escritorio defina un alcance de plantilla. Produzca un croquis o mapa de software con IDs de puntos de lectura, valores de referencia, tipo de medidor y etiquetas de habitación que coincidan con el croquis de la aseguradora y el presupuesto. Los mapas dibujados solo al final del trabajo o con nombres de habitación inconsistentes con los registros de secado debilitan argumentos de conteo de habitaciones y humedad oculta en la revisión de suplemento.",
-    },
-    {
-      question: "¿Con qué frecuencia deben actualizarse los registros de secado?",
-      answer:
-        "Complete una entrada de registro de secado en cada día activo de secado mientras los equipos estén funcionando — una entrada por día de equipos facturado, ingresada en la misma fecha calendaria que la visita en sitio. Los vacíos entre visitas de monitoreo son una razón común por la que las aseguradoras reducen días de equipos y recortan cargos de monitoreo en pérdidas contaminadas. Si los equipos funcionan en fines de semana o días festivos, regístrelo — los vacíos silenciosos justifican recortes proporcionales en todo el período de facturación.",
-    },
-    {
       question: "¿Qué fotos deben tomar los contratistas durante la mitigación categoría 3?",
       answer:
         "Capture una secuencia con marca de tiempo y etiqueta de habitación en la admisión y diariamente durante la producción activa: fuente de agua, indicadores de contaminación, elevaciones amplias de habitación, detalle de daños, límites de demolición antes y después de la remoción, colocación de equipos y condición de cierre. Etiquete cada foto con nombre de habitación y fecha que coincida con el croquis de la aseguradora y la nomenclatura interna del expediente del trabajo. Los volcados de fotos al final del trabajo son difíciles de conciliar para los revisores de escritorio con alcance de categoría 3 de varios días — las secuencias diarias etiquetadas superan las galerías posteriores a la limpieza.",
-    },
-    {
-      question: "¿Qué documentación respalda los días de secado?",
-      answer:
-        "Registros de secado diarios con lecturas de humedad en todos los puntos activos del mapa, condiciones ambientales, filas de equipos y una narrativa de progreso cuando las lecturas se estancan o regresan. Documente lecturas de liberación en cada punto activo antes del retiro de equipos — los recortes del último día son comunes cuando faltan valores terminales. La cronología del registro debe mostrar materiales tendiendo hacia el estándar de secado o explicar por qué permanecen días adicionales necesarios con notas contemporáneas de estancamiento.",
-    },
-    {
-      question: "¿Qué documentación respalda los cargos de equipos?",
-      answer:
-        "Fotos de colocación en la instalación inicial y después de cada cambio de conteo, filas de equipos del registro de secado con tipo, conteo y asignación de habitación o cámara, y fechas de inicio y fin vinculadas a lecturas de liberación. Fotografíe el despliegue máximo cuando aumente el conteo de unidades — los revisores de escritorio reducen las unidades facturadas al conteo máximo verificado en fotos. La conciliación de oficina antes del envío de la factura detecta brechas donde los días facturados exceden los días registrados.",
-    },
-    {
-      question: "¿Por qué las aseguradoras reducen las facturas de mitigación de agua?",
-      answer:
-        "Los revisores de escritorio recortan comúnmente cargos cuando los registros de secado tienen vacíos, los mapas de humedad no coinciden con el croquis de la aseguradora, las fotos están sin etiquetar o son posteriores a la limpieza, los días de equipos carecen de prueba de colocación, las líneas de categoría 3 carecen de evidencia de clasificación de admisión, o el alcance de demolición carece de fotos de antes y después. Las reducciones suelen ser proporcionales — los días o habitaciones no respaldados se recortan en lugar de denegarse por completo. La documentación débil obliga a suplementos defensivos en lugar de recuperación proactiva en pérdidas contaminadas.",
     },
     {
       question: "¿Qué documentación respalda el alcance de demolición?",
@@ -508,11 +485,6 @@ export const CATEGORY_3_WATER_DAMAGE_DOCUMENTATION_GUIDE_ES = defineGuide({
       question: "¿Cómo justifican los contratistas los procedimientos de seguridad categoría 3?",
       answer:
         "Documente la instalación de contención, PPE utilizado durante la remoción, filtración HEPA y configuración de aire negativo con fotos fechadas y notas procedimentales en el registro de secado o expediente del trabajo. Vincule procedimientos de campo con clasificación categoría 3 de admisión y terminología alineada a S500 en la narrativa del presupuesto para que los revisores puedan evaluar si la producción coincide con la asignación de categoría documentada. Cuando las aseguradoras impugnen protocolos, reenvíe el paquete de clasificación de admisión con fotos, registros y referencia cruzada de líneas en lugar de agregar solo narrativa en la factura.",
-    },
-    {
-      question: "¿Qué debe incluir un paquete final de documentación categoría 3?",
-      answer:
-        "Envíe un paquete indexado: inspección y clasificación de admisión, mapas de humedad con revisiones fechadas, registros de secado completos, narrativa fotográfica etiquetada, prueba de colocación de equipos, registros de demolición y eliminación, notas de control de contaminación, lecturas terminales de humedad contra el estándar de secado, fecha de retiro de equipos y fotos de liberación. Referencie cruzadamente cada línea disputada o facturada con evidencia de respaldo en el expediente. La documentación terminal cierra argumentos de duración de secado y respalda el envío de la factura final de mitigación en el cierre del proyecto.",
     },
     {
       question: "¿Puede una mejor documentación ayudar a respaldar la recuperación de suplementos?",

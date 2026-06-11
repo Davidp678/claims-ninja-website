@@ -450,7 +450,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "El O&P depende de las pautas de la aseguradora, el número de oficios y cómo se estructura la reclamación. Evaluamos si el O&P aplica a su expediente y documentamos la base al perseguirlo; los resultados varían según la aseguradora y las circunstancias de la reclamación.",
   },
 
-  // Water Damage Claims (8)
+  // Water Damage Claims (23)
   {
     id: "water-mitigation-scope",
     category: "water_damage_claims",
@@ -488,6 +488,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Guía de documentación de registros de secado",
         href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
       },
+      {
+        label: "Guía de documentación de agua categoría 3",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
       { label: "Recursos para contratistas", href: "/resources/blog" },
     ],
   },
@@ -518,7 +522,17 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     question: "¿Ayudan con la documentación de categoría y clase de agua?",
     answer:
       "Sí. Nos aseguramos de que las notas de campo, las fotos y las partidas estén alineadas con cómo se clasificó la pérdida. La falta de alineación entre la narrativa de mitigación y el alcance facturado es una razón común por la que las aseguradoras reducen el pago.",
-    relatedLinks: [{ label: "Soluciones para daños por agua", href: "/solutions/water-damage" }],
+    relatedLinks: [
+      {
+        label: "Guía de documentación de categoría y clase",
+        href: "/resources/guides/water-damage/category-class-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de agua categoría 3",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      { label: "Soluciones para daños por agua", href: "/solutions/water-damage" },
+    ],
   },
   {
     id: "water-rebuild-supplements",
@@ -540,6 +554,261 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     question: "¿Apoyan pérdidas comerciales por agua?",
     answer:
       "Sí. Las reclamaciones comerciales por agua a menudo involucran áreas de secado mayores, consideraciones de interrupción del negocio y alcances de reconstrucción de múltiples oficios. La organización de la documentación se vuelve crítica a esa escala.",
+  },
+  {
+    id: "water-category-3-qualifies",
+    category: "water_damage_claims",
+    question: "¿Qué califica como agua categoría 3?",
+    answer:
+      "El agua categoría 3 está gravemente contaminada según las definiciones IICRC — las fuentes comunes incluyen respaldo de aguas residuales, desbordamiento de inodoro, intrusión de río o inundación exterior, y agua estancada con carga de contaminantes desconocida. Asigne la clasificación en la admisión con tipo de fuente, contaminación visible, indicadores de olor, tiempo de permanencia y porosidad del material afectado documentados en notas y fotos contemporáneas. La categoría 3 no es una etiqueta aplicada retroactivamente en la factura sin evidencia de admisión — los revisores de escritorio degradan actualizaciones no respaldadas.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de agua categoría 3",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de categoría y clase",
+        href: "/resources/guides/water-damage/category-class-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "water-category-3-documentation-required",
+    category: "water_damage_claims",
+    question: "¿Qué documentación se requiere para una reclamación de agua categoría 3?",
+    answer:
+      "Construya un expediente que vincule la producción con el alcance facturado: notas de inspección de admisión, clasificación de fuente categoría 3, inventario de áreas afectadas, fotos etiquetadas con marca de tiempo, mapa de humedad de referencia, registros de secado diarios, prueba de colocación de equipos, registros de demolición y eliminación, notas de control de contaminación y lecturas terminales del estándar de secado. Referencie cruzadamente cada línea sensible a la categoría — PPE, eliminación, antimicrobiano, días de equipos y visitas de monitoreo — con un documento en el paquete. Un expediente de reclamación indexado ayuda a los revisores de escritorio a evaluar el alcance sin solicitar seguimientos fragmentados.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de agua categoría 3",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Lista de verificación de admisión de mitigación",
+        href: "/resources/guides/water-damage/mitigation-intake-checklist",
+      },
+    ],
+  },
+  {
+    id: "water-category-3-invoice-reductions",
+    category: "water_damage_claims",
+    question: "¿Por qué las aseguradoras reducen las facturas de mitigación categoría 3?",
+    answer:
+      "Los revisores de escritorio recortan comúnmente cargos de categoría 3 cuando los registros de secado tienen vacíos, los mapas de humedad no coinciden con el croquis de la aseguradora, las fotos están sin etiquetar o son posteriores a la limpieza, los días de equipos carecen de prueba de colocación, las líneas sensibles a la categoría carecen de evidencia de clasificación de admisión, o el alcance de demolición carece de fotos de antes y después. Las reducciones suelen ser proporcionales — los días o habitaciones no respaldados se recortan en lugar de denegarse por completo. La documentación débil obliga a suplementos defensivos en lugar de recuperación proactiva en pérdidas contaminadas.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de agua categoría 3",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Por qué las reclamaciones de mitigación de agua quedan subpagadas",
+        href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
+      },
+    ],
+  },
+  {
+    id: "water-moisture-maps-required",
+    category: "water_damage_claims",
+    question: "¿Se requieren mapas de humedad para reclamaciones por daños por agua?",
+    answer:
+      "Las aseguradoras esperan un mapa de humedad de referencia en expedientes de mitigación de agua — establece el conteo de habitaciones afectadas, humedad oculta en cavidades y diseño de cámara antes de que la revisión de escritorio defina un alcance de plantilla. Produzca un croquis o mapa de software con IDs de puntos de lectura, valores de referencia, tipo de medidor y etiquetas de habitación que coincidan con el croquis de la aseguradora y el presupuesto. Los mapas dibujados solo al final del trabajo o con nombres de habitación inconsistentes con los registros de secado debilitan argumentos de conteo de habitaciones y humedad oculta en la revisión de suplemento.",
+    relatedLinks: [
+      {
+        label: "Procedimiento de campo de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "Mejores prácticas de mapeo de humedad",
+        href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+      },
+    ],
+  },
+  {
+    id: "water-moisture-map-contents",
+    category: "water_damage_claims",
+    question: "¿Qué debe incluir un mapa de humedad?",
+    answer:
+      "Incluya un plano de planta o diagrama del sitio con etiquetas de habitación que coincidan con el croquis del presupuesto, puntos de lectura numerados con valores iniciales de humedad y tipo de medidor en cada ubicación, límites húmedo/seco y rutas de migración, tipos de materiales afectados por zona, y cámaras de secado planificadas con perímetros de contención. Asigne IDs de puntos de lectura en la admisión y use los mismos IDs en cada visita posterior hasta el cierre. Los mapas que omiten humedad oculta en cavidades o diseño de cámara dejan argumentos de conteo de deshumidificadores y secado extendido sin respaldo en la revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Procedimiento de campo de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "Mejores prácticas de mapeo de humedad",
+        href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+      },
+    ],
+  },
+  {
+    id: "water-moisture-reading-frequency",
+    category: "water_damage_claims",
+    question: "¿Con qué frecuencia deben documentarse las lecturas de humedad?",
+    answer:
+      "Capture lecturas de humedad en cada visita de monitoreo mientras los equipos estén funcionando — típicamente una vez por día activo de secado en todos los puntos activos del mapa. Las lecturas de referencia pertenecen al mapa de admisión antes de instalar equipos; las visitas posteriores deben usar los mismos IDs de puntos hasta las lecturas terminales de liberación. Omitir lecturas en días de monitoreo facturados o cambiar IDs de puntos a mitad del trabajo da a los revisores de escritorio motivo para reducir días de equipos y recortar cargos de monitoreo.",
+    relatedLinks: [
+      {
+        label: "Procedimiento de campo de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "Procedimiento de monitoreo diario",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+    ],
+  },
+  {
+    id: "water-dry-log-update-frequency",
+    category: "water_damage_claims",
+    question: "¿Con qué frecuencia deben actualizarse los registros de secado?",
+    answer:
+      "Complete una entrada de registro de secado en cada día activo de secado mientras los equipos estén funcionando — una entrada por día de equipos facturado, ingresada en la misma fecha calendaria que la visita en sitio. Los vacíos entre visitas de monitoreo son una razón común por la que las aseguradoras reducen días de equipos y recortan cargos de monitoreo en pérdidas contaminadas. Si los equipos funcionan en fines de semana o días festivos, regístrelo — los vacíos silenciosos justifican recortes proporcionales en todo el período de facturación.",
+    relatedLinks: [
+      {
+        label: "Procedimiento de recolección de registros de secado",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "Guía de documentación de registros de secado",
+        href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+      },
+    ],
+  },
+  {
+    id: "water-dry-log-contents",
+    category: "water_damage_claims",
+    question: "¿Qué información pertenece a un registro de secado?",
+    answer:
+      "Cada entrada del registro de secado debe incluir la fecha de visita, nombre del técnico, lecturas atmosféricas, valores de humedad del material en todos los puntos activos del mapa, filas de tipo y conteo de equipos por habitación o cámara, estado del objetivo de secado, y una narrativa de progreso cuando las lecturas se estancan o regresan. Documente lecturas de liberación en cada punto activo antes del retiro de equipos — los recortes del último día son comunes cuando faltan valores terminales. IDs de puntos consistentes desde la admisión hasta el cierre vinculan las entradas del registro con el mapa de humedad y el croquis de la aseguradora.",
+    relatedLinks: [
+      {
+        label: "Procedimiento de recolección de registros de secado",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "Guía de documentación de registros de secado",
+        href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+      },
+    ],
+  },
+  {
+    id: "water-dry-log-additional-drying-days",
+    category: "water_damage_claims",
+    question: "¿Cómo respaldan los registros de secado días adicionales de secado?",
+    answer:
+      "Los registros de secado defienden el secado extendido cuando la cronología muestra materiales tendiendo hacia el estándar de secado con notas contemporáneas de estancamiento — lecturas de estancamiento o regresión, cambios de equipos, y una narrativa que explique por qué permanecen días adicionales necesarios. Documente lecturas de liberación en cada punto activo antes del retiro de equipos. Las aseguradoras reducen la duración del secado cuando faltan lecturas de estancamiento o existen vacíos entre días facturados y entradas del registro.",
+    relatedLinks: [
+      {
+        label: "Procedimiento de recolección de registros de secado",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "Guía de documentación de agua categoría 3",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "water-air-mover-documentation",
+    category: "water_damage_claims",
+    question: "¿Qué documentación respalda los cargos de ventiladores?",
+    answer:
+      "Fotografíe la colocación de ventiladores en la instalación inicial y después de cada cambio de conteo o reubicación — tomas amplias que muestren el conteo por habitación con etiquetas de habitación que coincidan con el croquis de la aseguradora. Registre conteos de unidades y asignaciones de habitación en el registro de secado para cada día facturado. Fotografíe el despliegue máximo cuando aumente el conteo de unidades — los revisores de escritorio reducen las unidades facturadas al conteo máximo verificado en fotos. Las fechas de inicio y fin deben vincularse a lecturas de liberación antes del retiro de equipos.",
+    relatedLinks: [
+      {
+        label: "Procedimiento de documentación de equipos de mitigación",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+      {
+        label: "Cargos por equipos en reclamaciones por daños por agua",
+        href: "/resources/blog/equipment-charges-water-damage-claims",
+      },
+    ],
+  },
+  {
+    id: "water-dehumidifier-documentation",
+    category: "water_damage_claims",
+    question: "¿Qué documentación respalda los cargos de deshumidificadores?",
+    answer:
+      "Documente la colocación de deshumidificadores con fotos amplias que muestren el conteo de unidades por cámara, filas de equipos del registro de secado con tipo y asignación de habitación o cámara, y diseño de cámara del mapa de humedad que justifique el conteo de unidades. Registre tiempo de funcionamiento y lecturas ambientales en cada visita de monitoreo — las tendencias de depresión de granos y humedad relativa respaldan argumentos de utilización. Concilie conteos máximos verificados en fotos y días registrados con cantidades facturadas antes del envío de la factura.",
+    relatedLinks: [
+      {
+        label: "Procedimiento de documentación de equipos de mitigación",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+      {
+        label: "Procedimiento de campo de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+    ],
+  },
+  {
+    id: "water-equipment-charge-reductions",
+    category: "water_damage_claims",
+    question: "¿Por qué las aseguradoras reducen los cargos de equipos?",
+    answer:
+      "Los revisores de escritorio recortan líneas de equipos cuando faltan fotos de colocación o no están fechadas, las filas del registro de secado no coinciden con conteos de unidades facturados, el despliegue máximo no está fotografiado, o los días facturados exceden los días registrados. Las reducciones suelen ser proporcionales — las unidades o días no respaldados se recortan en lugar de denegarse por completo. La conciliación de oficina antes del envío de la factura detecta brechas donde la documentación de campo no respalda líneas de ventiladores, deshumidificadores o purificadores de aire.",
+    relatedLinks: [
+      {
+        label: "Procedimiento de documentación de equipos de mitigación",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+      {
+        label: "Cargos por equipos en reclamaciones por daños por agua",
+        href: "/resources/blog/equipment-charges-water-damage-claims",
+      },
+    ],
+  },
+  {
+    id: "water-containment-documentation",
+    category: "water_damage_claims",
+    question: "¿Qué documentación respalda los cargos de contención?",
+    answer:
+      "Fotografíe la instalación de contención con imágenes fechadas que muestren barreras de polietileno, puertas con cremallera y perímetros de cámara que aíslen zonas afectadas de áreas limpias. Registre la configuración de contención en el registro de secado o notas del trabajo con límites de cámara que coincidan con el mapa de humedad. En pérdidas categoría 3, vincule el alcance de contención con evidencia de clasificación de admisión — las barreras no documentadas se eliminan comúnmente cuando se facturan líneas de control de contaminación sin prueba de campo.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de agua categoría 3",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Documentación de monitoreo diario",
+        href: "/resources/blog/daily-monitoring-documentation-best-practices",
+      },
+    ],
+  },
+  {
+    id: "water-hepa-filtration-documentation",
+    category: "water_damage_claims",
+    question: "¿Qué documentación respalda los cargos de filtración HEPA?",
+    answer:
+      "Fotografíe la colocación de purificadores de aire HEPA con los límites de la cámara visibles en el encuadre — el conteo de unidades, enrutamiento de escape y configuración de aire negativo deben aparecer en fotos fechadas. Registre el tiempo de funcionamiento del purificador en el registro de secado para cada día facturado y anote áreas de aspirado HEPA cuando corresponda. En expedientes categoría 3, vincule el alcance de filtración con clasificación de admisión y notas de control de contaminación — las líneas HEPA facturadas sin fotos de configuración y registros de tiempo de funcionamiento son objetivos frecuentes de reducción en la revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de agua categoría 3",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Documentación de monitoreo diario",
+        href: "/resources/blog/daily-monitoring-documentation-best-practices",
+      },
+    ],
+  },
+  {
+    id: "water-final-mitigation-package",
+    category: "water_damage_claims",
+    question: "¿Qué debe incluir un paquete final de documentación de mitigación?",
+    answer:
+      "Envíe un paquete indexado: inspección y clasificación de admisión, mapas de humedad con revisiones fechadas, registros de secado completos, narrativa fotográfica etiquetada, prueba de colocación de equipos, registros de demolición y eliminación, notas de control de contaminación, lecturas terminales de humedad contra el estándar de secado, fecha de retiro de equipos y fotos de liberación. Referencie cruzadamente cada línea disputada o facturada con evidencia de respaldo en el expediente. La documentación terminal cierra argumentos de duración de secado y respalda el envío de la factura final de mitigación en el cierre del proyecto.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de agua categoría 3",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Procedimiento de recolección de registros de secado",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+    ],
   },
 
   // Fire Damage Claims (6)
@@ -758,6 +1027,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "Los registros de humedad son estándar en trabajos de mitigación de agua y a menudo se esperan en trabajo relacionado con moho. Las lecturas diarias, las notas de equipo y la documentación del estándar de secado respaldan los cargos por días de equipo y los tiempos de reconstrucción.",
     relatedLinks: [
       { label: "Soluciones para daños por agua", href: "/solutions/water-damage" },
+      {
+        label: "Procedimiento de campo de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
       {
         label: "Guía de documentación de registros de secado",
         href: "/resources/blog/dry-log-documentation-guide-insurance-claims",

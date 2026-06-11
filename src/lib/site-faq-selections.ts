@@ -139,6 +139,12 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "water-category-class",
       "water-rebuild-supplements",
       "water-emergency-vs-rebuild",
+      "water-category-3-qualifies",
+      "water-category-3-documentation-required",
+      "water-moisture-maps-required",
+      "water-dry-log-update-frequency",
+      "water-equipment-charge-reductions",
+      "water-final-mitigation-package",
     ],
   },
   fireDamage: {
@@ -236,6 +242,8 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "getting-started-onboarding",
       "supplements-documentation",
       "help-denied-supplements",
+      "water-dry-log-contents",
+      "water-moisture-map-contents",
     ],
   },
   caseStudies: {
