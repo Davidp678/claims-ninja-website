@@ -2,7 +2,14 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
-import { useCallback, useEffect, useId, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import { CTA_LINKS } from "@/lib/constants";
 import { ChatPanel } from "./ChatPanel";
 import {
@@ -27,6 +34,27 @@ const ALL_QUICK_ACTIONS: QuickActionId[] = [
   "public-adjuster",
   "talk-to-team",
 ];
+
+const TEASER_MIN_WIDTH_QUERY = "(min-width: 768px)";
+
+function subscribeTeaserViewport(onStoreChange: () => void) {
+  const mq = window.matchMedia(TEASER_MIN_WIDTH_QUERY);
+  mq.addEventListener("change", onStoreChange);
+  return () => mq.removeEventListener("change", onStoreChange);
+}
+
+/**
+ * Teaser, prompt previews, and the launcher pulse are md+ only. On phones the
+ * floating launcher button is the sole chat affordance so it never covers
+ * homepage content. SSR snapshot is false to match the launcher-only default.
+ */
+function useTeaserViewportAllowed(): boolean {
+  return useSyncExternalStore(
+    subscribeTeaserViewport,
+    () => window.matchMedia(TEASER_MIN_WIDTH_QUERY).matches,
+    () => false,
+  );
+}
 
 function createId(): string {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
@@ -103,6 +131,7 @@ export function ChatWidget() {
   const messagesRef = useRef(messages);
   const launcherRef = useRef<HTMLButtonElement>(null);
   const prefersReducedMotion = useReducedMotion();
+  const teaserViewportAllowed = useTeaserViewportAllowed();
   const titleId = useId();
 
   useEffect(() => {
@@ -146,11 +175,12 @@ export function ChatWidget() {
 
   const showTeaser =
     !isOpen &&
+    teaserViewportAllowed &&
     teaserEligible &&
     activeTeaserPath === (pathname ?? "");
 
   useEffect(() => {
-    if (!teaserEligible || isOpen) {
+    if (!teaserViewportAllowed || !teaserEligible || isOpen) {
       return;
     }
 
@@ -164,7 +194,7 @@ export function ChatWidget() {
     return () => {
       window.clearTimeout(timer);
     };
-  }, [pathname, teaserEligible, isOpen]);
+  }, [pathname, teaserEligible, isOpen, teaserViewportAllowed]);
 
   useEffect(() => {
     if (!showTeaser || prefersReducedMotion) {

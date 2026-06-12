@@ -25,6 +25,7 @@ import {
 import { cn } from "@/lib/cn";
 
 import { NetworkModuleIcon } from "./NetworkModuleIcon";
+import { OperationsNetworkMobile } from "./OperationsNetworkMobile";
 
 type OperationsIntelligenceNetworkProps = {
   modules: readonly NetworkModule[];
@@ -263,6 +264,10 @@ export function OperationsIntelligenceNetwork({
     },
     [],
   );
+
+  if (!isDesktopLayout) {
+    return <OperationsNetworkMobile modules={modules} />;
+  }
 
   return (
     <div className="flex min-h-0 flex-1 flex-col">
