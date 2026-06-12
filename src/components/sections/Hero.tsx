@@ -109,7 +109,7 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
           <HeroVideoCard />
         </div>
 
-        <dl className="grid max-w-2xl grid-cols-2 gap-y-6 border-t border-white/15 pt-8 sm:grid-cols-3 sm:gap-y-0 sm:divide-x sm:divide-white/10 lg:col-start-1 lg:row-start-2 lg:max-w-none">
+        <dl className="grid max-w-2xl grid-cols-2 gap-y-6 border-t border-white/15 pt-8 sm:grid-cols-[calc((100%/3)_-_8px)_calc((100%/3)_+_16px)_calc((100%/3)_-_8px)] sm:gap-y-0 sm:divide-x sm:divide-white/10 lg:col-start-1 lg:row-start-2 lg:max-w-none">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
