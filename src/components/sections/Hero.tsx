@@ -109,7 +109,26 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
           <HeroVideoCard />
         </div>
 
-        <dl className="grid max-w-2xl grid-cols-2 gap-y-6 border-t border-white/15 pt-8 sm:grid-cols-[calc((100%/3)_-_8px)_calc((100%/3)_+_16px)_calc((100%/3)_-_8px)] sm:gap-y-0 sm:divide-x sm:divide-white/10 lg:col-start-1 lg:row-start-2 lg:max-w-none">
+        <dl className="flex flex-col gap-2.5 border-t border-white/15 pt-8 sm:hidden lg:col-start-1 lg:row-start-2">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="flex items-center gap-3 rounded-xl border border-white/12 bg-brand-surface/70 px-3.5 py-3 ring-1 ring-brand-red/15 shadow-[0_0_24px_-18px_rgba(220,38,38,0.4)]"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-brand-red/30 bg-brand-black/50">
+                <StatIcon name={stat.icon} className="h-4 w-4 text-brand-red-light" />
+              </span>
+              <dt className="min-w-0 flex-1 text-[11px] font-medium uppercase leading-tight tracking-[0.16em] text-zinc-400">
+                {stat.label.replace(/\n/g, " ")}
+              </dt>
+              <dd className="font-display text-2xl font-semibold tracking-tight text-white whitespace-nowrap">
+                {stat.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+
+        <dl className="hidden max-w-2xl grid-cols-2 gap-y-6 border-t border-white/15 pt-8 sm:grid sm:grid-cols-[calc((100%/3)_-_8px)_calc((100%/3)_+_16px)_calc((100%/3)_-_8px)] sm:gap-y-0 sm:divide-x sm:divide-white/10 lg:col-start-1 lg:row-start-2 lg:max-w-none">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
