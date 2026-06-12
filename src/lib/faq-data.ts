@@ -621,6 +621,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Moisture mapping best practices",
         href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
       },
+      {
+        label: "Moisture mapping mistakes that cost contractors money",
+        href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
+      },
     ],
   },
   {
@@ -638,6 +642,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Moisture mapping best practices",
         href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
       },
+      {
+        label: "Moisture mapping mistakes that cost contractors money",
+        href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
+      },
     ],
   },
   {
@@ -654,6 +662,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Daily monitoring field procedure",
         href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+      {
+        label: "Moisture mapping mistakes that cost contractors money",
+        href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
       },
     ],
   },
@@ -1034,6 +1046,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Dry log documentation guide",
         href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+      },
+      {
+        label: "Moisture mapping mistakes that cost contractors money",
+        href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
       },
     ],
   },

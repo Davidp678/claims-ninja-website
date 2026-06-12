@@ -51,14 +51,14 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     ],
     relatedFaqIds: ["documentation-moisture-logs", "water-moisture-map-contents"],
     internalLinkNotes:
-      "Link from moisture-mapping blog and dry-log guide prerequisites.",
+      "Link from moisture-mapping blog, dry-log guide prerequisites, and moisture-mapping-mistakes blog.",
   },
   "water-moisture-map-contents": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: ["water-damage/moisture-mapping-guide"],
     relatedFaqIds: ["water-moisture-maps-required", "water-moisture-reading-frequency"],
     internalLinkNotes:
-      "Future moisture-mapping field checklist blog should link here.",
+      "Link from moisture-mapping-mistakes-that-cost-contractors-money blog and moisture-mapping best practices blog.",
   },
   "water-moisture-reading-frequency": {
     searchIntent: "documentation-standard",

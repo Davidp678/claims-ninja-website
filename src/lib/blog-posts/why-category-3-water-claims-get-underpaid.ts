@@ -176,12 +176,16 @@ export const whyCategory3WaterClaimsGetUnderpaid: BlogPost = {
         "On Category 3 losses, maps also support containment perimeters and isolation scope. Chamber boundaries drawn on the map should match poly setup photos and HEPA placement. Billing three chambers without map evidence invites dehumidifier and air scrubber count cuts.",
         "Maps drawn only at job completion cannot defend intake extent or justify equipment layout decisions made on day one. Software exports and hand sketches both work when reading point IDs stay consistent through terminal release readings.",
         "Mapping line items on the invoice deny when no diagram existed at equipment set. Capture baseline values, meter type, material types per zone, and wet boundaries before full equipment layout.",
-        "See moisture mapping best practices for reading-point discipline and carrier sketch alignment; the moisture mapping field procedure executes intake capture on Category 3 files.",
+        "See moisture mapping best practices for reading-point discipline and carrier sketch alignment; the moisture mapping field procedure executes intake capture on Category 3 files. For how mapping mistakes drive invoice reductions across all water losses, see moisture mapping mistakes that cost contractors money.",
       ],
       links: [
         {
           label: "Moisture mapping best practices",
           href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+        },
+        {
+          label: "Moisture mapping mistakes that cost contractors money",
+          href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
         },
         {
           label: "Moisture mapping field procedure",

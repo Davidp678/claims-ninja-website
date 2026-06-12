@@ -171,6 +171,11 @@ const SLUG_BOOSTS: Record<
     keywords: ["moisture map", "mapping"],
     topics: ["moisture_mapping"],
   },
+  "moisture-mapping-mistakes-that-cost-contractors-money": {
+    phrases: ["moisture mapping mistakes", "mapping mistakes cost", "moisture map errors"],
+    keywords: ["mapping mistake", "moisture map error", "weak moisture map"],
+    topics: ["moisture_mapping", "water_damage_claims"],
+  },
   "why-water-mitigation-claims-get-underpaid": {
     phrases: ["water mitigation underpaid", "underpayment"],
     keywords: ["underpaid", "underpayment"],

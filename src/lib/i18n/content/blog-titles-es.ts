@@ -10,6 +10,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Guía de documentación de registros de secado para reclamaciones de seguros",
   "moisture-mapping-best-practices-insurance-claims":
     "Mejores prácticas de mapeo de humedad para reclamaciones de seguros",
+  "moisture-mapping-mistakes-that-cost-contractors-money":
+    "Errores de mapeo de humedad que cuestan dinero a los contratistas",
   "daily-monitoring-documentation-best-practices":
     "Mejores prácticas de documentación de monitoreo diario",
 };

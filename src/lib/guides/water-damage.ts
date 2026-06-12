@@ -507,7 +507,10 @@ export const WATER_DAMAGE_GUIDES = [
       "category-class-documentation-guide",
       "daily-monitoring-guide",
     ],
-    relatedBlogSlugs: ["moisture-mapping-best-practices-insurance-claims"],
+    relatedBlogSlugs: [
+      "moisture-mapping-best-practices-insurance-claims",
+      "moisture-mapping-mistakes-that-cost-contractors-money",
+    ],
     faqIds: [
       "water-drying-documentation",
       "water-category-class",
@@ -694,6 +697,10 @@ export const WATER_DAMAGE_GUIDES = [
       {
         label: "Moisture mapping best practices",
         href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+      },
+      {
+        label: "Moisture mapping mistakes that cost contractors money",
+        href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
       },
     ],
   }),
@@ -1577,6 +1584,7 @@ export const WATER_DAMAGE_GUIDES = [
       "water-damage-mitigation-supplement-playbook",
       "dry-log-documentation-guide-insurance-claims",
       "moisture-mapping-best-practices-insurance-claims",
+      "moisture-mapping-mistakes-that-cost-contractors-money",
       "daily-monitoring-documentation-best-practices",
     ],
     faqIds: [

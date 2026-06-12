@@ -621,6 +621,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Mejores prácticas de mapeo de humedad",
         href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
       },
+      {
+        label: "Errores de mapeo de humedad que cuestan dinero a los contratistas",
+        href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
+      },
     ],
   },
   {
@@ -638,6 +642,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Mejores prácticas de mapeo de humedad",
         href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
       },
+      {
+        label: "Errores de mapeo de humedad que cuestan dinero a los contratistas",
+        href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
+      },
     ],
   },
   {
@@ -654,6 +662,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Procedimiento de monitoreo diario",
         href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+      {
+        label: "Errores de mapeo de humedad que cuestan dinero a los contratistas",
+        href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
       },
     ],
   },
@@ -1034,6 +1046,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de documentación de registros de secado",
         href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+      },
+      {
+        label: "Errores de mapeo de humedad que cuestan dinero a los contratistas",
+        href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
       },
     ],
   },

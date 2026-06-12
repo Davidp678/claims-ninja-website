@@ -23,9 +23,9 @@ export const moistureMappingBestPracticesInsuranceClaims: BlogPost = {
   seoDescription:
     "Moisture mapping for insurance claims: documentation standards, adjuster review, dry log integration, common mistakes, and how maps support supplements and claim recovery.",
   relatedPostSlugs: [
+    "moisture-mapping-mistakes-that-cost-contractors-money",
     "water-damage-mitigation-supplement-playbook",
     "dry-log-documentation-guide-insurance-claims",
-    "supplement-denial-recovery-guide",
   ],
   faq: [
     {
@@ -302,11 +302,18 @@ export const moistureMappingBestPracticesInsuranceClaims: BlogPost = {
       heading: "Common moisture mapping mistakes",
       paragraphs: [
         "These mistakes appear on denied supplements and audit findings more often than exotic technical errors. Fix process on the next intake, not only on the disputed file.",
+        "For the revenue and carrier-review impact of mapping errors — invoice reductions, drying-day cuts, and denied supplements — see moisture mapping mistakes that cost contractors money.",
       ],
       callout: {
         title: "Common mistakes",
         body: "The most expensive mistake is no intake map at all — then claiming four wet rooms on day six without dated proof. Map at mobilization, even on small losses.",
       },
+      links: [
+        {
+          label: "Moisture mapping mistakes that cost contractors money",
+          href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
+        },
+      ],
     },
     {
       id: "missing-readings",

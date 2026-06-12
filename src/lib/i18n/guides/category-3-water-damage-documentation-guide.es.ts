@@ -39,6 +39,7 @@ export const CATEGORY_3_WATER_DAMAGE_DOCUMENTATION_GUIDE_ES = defineGuide({
     "water-damage-mitigation-supplement-playbook",
     "dry-log-documentation-guide-insurance-claims",
     "moisture-mapping-best-practices-insurance-claims",
+    "moisture-mapping-mistakes-that-cost-contractors-money",
     "daily-monitoring-documentation-best-practices",
   ],
   faqIds: [

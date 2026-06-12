@@ -183,12 +183,16 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
       level: 3,
       paragraphs: [
         "Weak or absent intake maps make extra rooms and hidden moisture appear invented when discovered mid-job. Mapping line items deny when no diagram exists at mobilization.",
-        "See moisture mapping best practices for intake boundaries and reading-point discipline.",
+        "See moisture mapping best practices for intake boundaries and reading-point discipline. For how weak maps translate to invoice reductions and lost revenue, see moisture mapping mistakes that cost contractors money.",
       ],
       links: [
         {
           label: "Moisture mapping best practices",
           href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+        },
+        {
+          label: "Moisture mapping mistakes that cost contractors money",
+          href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
         },
       ],
     },

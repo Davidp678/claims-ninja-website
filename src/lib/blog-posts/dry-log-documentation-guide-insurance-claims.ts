@@ -402,6 +402,10 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
           label: "Moisture mapping best practices",
           href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
         },
+        {
+          label: "Moisture mapping mistakes that cost contractors money",
+          href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
+        },
       ],
     },
     {

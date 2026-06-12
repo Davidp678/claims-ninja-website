@@ -72,6 +72,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "You've learned moisture mapping best practices. Now execute the field procedure that ties reading points to rooms, photos, and carrier sketches.",
     guideSlugs: ["moisture-mapping-guide"],
   },
+  "moisture-mapping-mistakes-that-cost-contractors-money": {
+    intro:
+      "You've learned which moisture mapping mistakes cost money on insurance files. Now run the field procedures that prevent invoice reductions and defend drying scope from intake through closeout.",
+    guideSlugs: [
+      "moisture-mapping-guide",
+      "dry-log-collection-guide",
+      "daily-monitoring-guide",
+      "category-class-documentation-guide",
+    ],
+  },
   "equipment-charges-water-damage-claims": {
     intro:
       "You've learned how carriers review equipment charges. Now document placement, counts, and utilization the way desk reviewers approve.",
