@@ -77,11 +77,8 @@ export function OperationsNetworkMobile({ modules }: OperationsNetworkMobileProp
             />
           </span>
           <span className="min-w-0 flex-1">
-            <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-red-light">
+            <span className="block text-sm font-semibold uppercase leading-tight tracking-[0.16em] text-brand-red-light">
               Claim Intelligence Core
-            </span>
-            <span className="mt-0.5 block text-sm leading-snug text-zinc-300">
-              The intelligence layer connecting every supporting function
             </span>
           </span>
         </motion.div>
