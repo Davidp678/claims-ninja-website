@@ -92,6 +92,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "equipment-documentation-guide",
     ],
   },
+  "why-category-3-water-claims-get-underpaid": {
+    intro:
+      "You've learned why Category 3 invoices get reduced. Now run the documentation procedures that defend contaminated-loss scope from intake through closeout.",
+    guideSlugs: [
+      "category-3-water-damage-documentation-guide",
+      "category-class-documentation-guide",
+      "dry-log-collection-guide",
+      "moisture-mapping-guide",
+    ],
+  },
   "fire-damage-claim-documentation-guide": {
     intro:
       "You've learned fire claim documentation fundamentals. Now execute the intake and specialty procedures that defend migration, HVAC, and contents scope.",

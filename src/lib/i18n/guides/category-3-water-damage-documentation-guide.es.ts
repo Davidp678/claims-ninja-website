@@ -34,6 +34,7 @@ export const CATEGORY_3_WATER_DAMAGE_DOCUMENTATION_GUIDE_ES = defineGuide({
     "daily-monitoring-guide",
   ],
   relatedBlogSlugs: [
+    "why-category-3-water-claims-get-underpaid",
     "why-water-mitigation-claims-get-underpaid",
     "water-damage-mitigation-supplement-playbook",
     "dry-log-documentation-guide-insurance-claims",

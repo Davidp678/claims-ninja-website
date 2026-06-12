@@ -2,6 +2,8 @@
 export const BLOG_TITLES_ES: Record<string, string> = {
   "why-water-mitigation-claims-get-underpaid":
     "Por qué las reclamaciones de mitigación de agua reciben pagos insuficientes",
+  "why-category-3-water-claims-get-underpaid":
+    "Por qué las reclamaciones de agua categoría 3 reciben pagos insuficientes",
   "water-damage-mitigation-supplement-playbook":
     "Manual de suplementos de mitigación de daños por agua",
   "dry-log-documentation-guide-insurance-claims":

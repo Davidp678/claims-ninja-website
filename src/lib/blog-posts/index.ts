@@ -12,6 +12,7 @@ import { odorMitigationInFireDamageClaims } from "./odor-mitigation-in-fire-dama
 import { dailyMonitoringDocumentationBestPractices } from "./daily-monitoring-documentation-best-practices";
 import { equipmentChargesWaterDamageClaims } from "./equipment-charges-water-damage-claims";
 import { waterDamageSupplementDenialRecovery } from "./water-damage-supplement-denial-recovery";
+import { whyCategory3WaterClaimsGetUnderpaid } from "./why-category-3-water-claims-get-underpaid";
 import { whyWaterMitigationClaimsGetUnderpaid } from "./why-water-mitigation-claims-get-underpaid";
 import { first48HoursAfterCarrierEstimate } from "./first-48-hours-after-carrier-estimate";
 import { INSURANCE_SUPPLEMENTING_PILLAR } from "./insurance-supplementing-guide-contractors";
@@ -39,6 +40,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   waterDamageSupplementDenialRecovery,
   equipmentChargesWaterDamageClaims,
   dailyMonitoringDocumentationBestPractices,
+  whyCategory3WaterClaimsGetUnderpaid,
   fireDamageClaimDocumentationGuide,
   fireDamageSupplementPlaybookForContractors,
   smokeAndSootDamageDocumentationGuide,

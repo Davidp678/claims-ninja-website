@@ -41,7 +41,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     relatedGuideSlugs: ["water-damage/category-3-water-damage-documentation-guide"],
     relatedFaqIds: ["water-equipment-charge-reductions", "water-dry-log-update-frequency"],
     internalLinkNotes:
-      "Pair with why-water-mitigation-claims-get-underpaid blog and supplement playbook.",
+      "Pair with why-category-3-water-claims-get-underpaid blog and Category 3 documentation guide.",
   },
   "water-moisture-maps-required": {
     searchIntent: "carrier-review",

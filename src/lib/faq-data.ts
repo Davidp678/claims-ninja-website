@@ -601,8 +601,8 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
       },
       {
-        label: "Why water mitigation claims get underpaid",
-        href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
+        label: "Why Category 3 water claims get underpaid",
+        href: "/resources/blog/why-category-3-water-claims-get-underpaid",
       },
     ],
   },

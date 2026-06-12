@@ -175,6 +175,11 @@ const SLUG_BOOSTS: Record<
     phrases: ["water mitigation underpaid", "underpayment"],
     keywords: ["underpaid", "underpayment"],
   },
+  "why-category-3-water-claims-get-underpaid": {
+    phrases: ["category 3 underpaid", "category 3 water claim", "black water underpayment"],
+    keywords: ["category 3", "black water", "category 3 underpaid"],
+    topics: ["water_damage_claims", "mitigation"],
+  },
   "water-damage-supplement-denial-recovery": {
     phrases: ["water supplement denial", "denied water supplement"],
     keywords: ["water denial recovery", "denial recovery"],

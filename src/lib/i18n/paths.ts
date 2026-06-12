@@ -58,6 +58,10 @@ function isGuideSubpath(enPath: string): boolean {
   return enPath.startsWith("/resources/guides/") && enPath !== "/resources/guides";
 }
 
+function isBlogSubpath(enPath: string): boolean {
+  return enPath.startsWith("/resources/blog/") && enPath !== "/resources/blog";
+}
+
 export function isEsPathname(pathname: string): boolean {
   return pathname === ES_PREFIX || pathname.startsWith(`${ES_PREFIX}/`);
 }
@@ -89,6 +93,9 @@ export function localizePath(locale: Locale, enPath: string): string {
       return `${ES_PREFIX}${normalized}`;
     }
     return ES_PATH_BY_EN_PATH["/resources/guides"];
+  }
+  if (locale === "es" && isBlogSubpath(normalized)) {
+    return ES_PATH_BY_EN_PATH["/resources/blog"];
   }
   if (isEsMarketingEnPath(normalized)) {
     return ES_PATH_BY_EN_PATH[normalized];

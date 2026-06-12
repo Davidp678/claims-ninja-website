@@ -601,8 +601,8 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
       },
       {
-        label: "Por qué las reclamaciones de mitigación de agua quedan subpagadas",
-        href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
+        label: "Por qué las reclamaciones de agua categoría 3 reciben pagos insuficientes",
+        href: "/resources/blog/why-category-3-water-claims-get-underpaid",
       },
     ],
   },
