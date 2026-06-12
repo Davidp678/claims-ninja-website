@@ -112,6 +112,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "moisture-mapping-guide",
     ],
   },
+  "how-carriers-reduce-drying-days": {
+    intro:
+      "You've learned how carriers reduce drying days when documentation fails. Now run the field procedures that defend equipment duration, monitoring visits, and log chronology from intake through closeout.",
+    guideSlugs: [
+      "dry-log-collection-guide",
+      "daily-monitoring-guide",
+      "equipment-documentation-guide",
+      "moisture-mapping-guide",
+    ],
+  },
   "fire-damage-claim-documentation-guide": {
     intro:
       "You've learned fire claim documentation fundamentals. Now execute the intake and specialty procedures that defend migration, HVAC, and contents scope.",

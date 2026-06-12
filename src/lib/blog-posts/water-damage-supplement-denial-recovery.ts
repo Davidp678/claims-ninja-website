@@ -308,7 +308,14 @@ export const waterDamageSupplementDenialRecovery: BlogPost = {
       paragraphs: [
         "Build a gap list: denied line, required evidence type, owner, due date. Prioritize drying days and monitoring before low-dollar consumables without photos.",
         "Cross-check sketch room count to map and log room names — label mismatches alone cause delays.",
+        "How carriers reduce drying days explains carrier reduction logic on equipment duration — use it to prioritize evidence types before resubmission.",
         "If denial cites duplicate line items or prior partial payment, reconcile against remittance and revised estimates before building new arguments — resubmitting paid lines trains adjusters to deny faster on your next file.",
+      ],
+      links: [
+        {
+          label: "How carriers reduce drying days",
+          href: "/resources/blog/how-carriers-reduce-drying-days",
+        },
       ],
     },
     {

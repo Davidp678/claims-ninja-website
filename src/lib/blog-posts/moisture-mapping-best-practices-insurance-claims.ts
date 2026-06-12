@@ -193,6 +193,10 @@ export const moistureMappingBestPracticesInsuranceClaims: BlogPost = {
           label: "Dry log documentation guide",
           href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
         },
+        {
+          label: "How carriers reduce drying days",
+          href: "/resources/blog/how-carriers-reduce-drying-days",
+        },
       ],
     },
     {

@@ -297,6 +297,7 @@ export const equipmentChargesWaterDamageClaims: BlogPost = {
       paragraphs: [
         "Utilization means equipment was on site, running, and supporting necessary drying on each billed day. Track utilization in dry log equipment rows — not only on rental invoice.",
         "When utilization drops — zone released, count reduced — document date and reason so last billed day is defensible.",
+        "How carriers reduce drying days covers the full desk-review sequence carriers use to trim billed duration when logs, photos, and readings fail to align.",
       ],
     },
     {

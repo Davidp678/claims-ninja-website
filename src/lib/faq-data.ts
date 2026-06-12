@@ -514,6 +514,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Daily monitoring documentation",
         href: "/resources/blog/daily-monitoring-documentation-best-practices",
       },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   },
   {
@@ -625,6 +629,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Moisture mapping mistakes that cost contractors money",
         href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
       },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   },
   {
@@ -667,6 +675,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Moisture mapping mistakes that cost contractors money",
         href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
       },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   },
   {
@@ -683,6 +695,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Dry log documentation guide",
         href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+      },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
       },
     ],
   },
@@ -701,6 +717,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Dry log documentation guide",
         href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
       },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   },
   {
@@ -717,6 +737,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Category 3 water damage documentation guide",
         href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
       },
     ],
   },
@@ -752,6 +776,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Moisture mapping field procedure",
         href: "/resources/guides/water-damage/moisture-mapping-guide",
       },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   },
   {
@@ -768,6 +796,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Equipment charges in water damage claims",
         href: "/resources/blog/equipment-charges-water-damage-claims",
+      },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
       },
     ],
   },
@@ -819,6 +851,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Dry log collection field procedure",
         href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
       },
     ],
   },

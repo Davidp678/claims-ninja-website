@@ -77,7 +77,8 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "water-damage/daily-monitoring-guide",
     ],
     relatedFaqIds: ["water-moisture-reading-frequency", "water-drying-documentation"],
-    internalLinkNotes: "Primary dry-log blog companion FAQ.",
+    internalLinkNotes:
+      "Primary dry-log blog companion FAQ; how-carriers-reduce-drying-days is the primary drying-day authority companion.",
   },
   "water-dry-log-contents": {
     searchIntent: "documentation-standard",
@@ -94,7 +95,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     ],
     relatedFaqIds: ["water-dry-log-contents", "help-equipment-drying-documentation"],
     internalLinkNotes:
-      "Supplement recovery angle — pair with mitigation supplement playbook.",
+      "Supplement recovery angle — pair with mitigation supplement playbook and how-carriers-reduce-drying-days as primary drying-day authority.",
   },
   "water-air-mover-documentation": {
     searchIntent: "documentation-standard",

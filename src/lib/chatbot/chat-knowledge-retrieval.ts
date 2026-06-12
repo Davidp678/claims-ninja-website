@@ -688,6 +688,18 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "drying day reduction question retrieves blog context",
+    message: "how do carriers reduce drying days",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /how-carriers-reduce-drying-days|drying day|reduce drying/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
     label: "client portal question retrieves portal context",
     message: "What can I do in the client portal?",
     assert: (result) =>

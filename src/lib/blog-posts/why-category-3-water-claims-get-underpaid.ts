@@ -221,6 +221,10 @@ export const whyCategory3WaterClaimsGetUnderpaid: BlogPost = {
           label: "How often should dry logs be updated?",
           href: "/faq#faq-water-dry-log-update-frequency",
         },
+        {
+          label: "How carriers reduce drying days",
+          href: "/resources/blog/how-carriers-reduce-drying-days",
+        },
       ],
     },
     {

@@ -289,7 +289,10 @@ export const WATER_DAMAGE_GUIDES = [
       "daily-monitoring-guide",
       "equipment-documentation-guide",
     ],
-    relatedBlogSlugs: ["dry-log-documentation-guide-insurance-claims"],
+    relatedBlogSlugs: [
+      "dry-log-documentation-guide-insurance-claims",
+      "how-carriers-reduce-drying-days",
+    ],
     faqIds: [
       "water-drying-documentation",
       "help-equipment-drying-documentation",
@@ -483,6 +486,10 @@ export const WATER_DAMAGE_GUIDES = [
         label: "Dry log documentation guide",
         href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
       },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   }),
 
@@ -510,6 +517,7 @@ export const WATER_DAMAGE_GUIDES = [
     relatedBlogSlugs: [
       "moisture-mapping-best-practices-insurance-claims",
       "moisture-mapping-mistakes-that-cost-contractors-money",
+      "how-carriers-reduce-drying-days",
     ],
     faqIds: [
       "water-drying-documentation",
@@ -702,6 +710,10 @@ export const WATER_DAMAGE_GUIDES = [
         label: "Moisture mapping mistakes that cost contractors money",
         href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
       },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   }),
 
@@ -726,7 +738,10 @@ export const WATER_DAMAGE_GUIDES = [
       "moisture-mapping-guide",
       "mitigation-intake-checklist",
     ],
-    relatedBlogSlugs: ["equipment-charges-water-damage-claims"],
+    relatedBlogSlugs: [
+      "equipment-charges-water-damage-claims",
+      "how-carriers-reduce-drying-days",
+    ],
     faqIds: [
       "help-equipment-drying-documentation",
       "water-drying-documentation",
@@ -939,7 +954,10 @@ export const WATER_DAMAGE_GUIDES = [
       "equipment-documentation-guide",
       "moisture-mapping-guide",
     ],
-    relatedBlogSlugs: ["daily-monitoring-documentation-best-practices"],
+    relatedBlogSlugs: [
+      "daily-monitoring-documentation-best-practices",
+      "how-carriers-reduce-drying-days",
+    ],
     faqIds: [
       "help-equipment-drying-documentation",
       "water-drying-documentation",
@@ -1115,6 +1133,10 @@ export const WATER_DAMAGE_GUIDES = [
         label: "Daily monitoring documentation best practices",
         href: "/resources/blog/daily-monitoring-documentation-best-practices",
       },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   }),
 
@@ -1139,7 +1161,10 @@ export const WATER_DAMAGE_GUIDES = [
       "dry-log-collection-guide",
       "contents-manipulation-documentation-guide",
     ],
-    relatedBlogSlugs: ["why-water-mitigation-claims-get-underpaid"],
+    relatedBlogSlugs: [
+      "why-water-mitigation-claims-get-underpaid",
+      "how-carriers-reduce-drying-days",
+    ],
     faqIds: ["water-category-class", "water-mitigation-scope", "water-category-3-qualifies"],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
@@ -1586,6 +1611,7 @@ export const WATER_DAMAGE_GUIDES = [
       "moisture-mapping-best-practices-insurance-claims",
       "moisture-mapping-mistakes-that-cost-contractors-money",
       "daily-monitoring-documentation-best-practices",
+      "how-carriers-reduce-drying-days",
     ],
     faqIds: [
       "water-category-3-qualifies",

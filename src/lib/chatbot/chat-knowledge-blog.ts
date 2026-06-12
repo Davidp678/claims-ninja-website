@@ -185,6 +185,11 @@ const SLUG_BOOSTS: Record<
     keywords: ["category 3", "black water", "category 3 underpaid"],
     topics: ["water_damage_claims", "mitigation"],
   },
+  "how-carriers-reduce-drying-days": {
+    phrases: ["carriers reduce drying days", "drying day reductions", "drying days cut"],
+    keywords: ["drying day", "drying days", "reduce drying", "equipment days"],
+    topics: ["dry_logs", "water_damage_claims", "equipment_charges", "monitoring"],
+  },
   "water-damage-supplement-denial-recovery": {
     phrases: ["water supplement denial", "denied water supplement"],
     keywords: ["water denial recovery", "denial recovery"],

@@ -514,6 +514,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Documentación de monitoreo diario",
         href: "/resources/blog/daily-monitoring-documentation-best-practices",
       },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   },
   {
@@ -625,6 +629,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Errores de mapeo de humedad que cuestan dinero a los contratistas",
         href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
       },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   },
   {
@@ -667,6 +675,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Errores de mapeo de humedad que cuestan dinero a los contratistas",
         href: "/resources/blog/moisture-mapping-mistakes-that-cost-contractors-money",
       },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   },
   {
@@ -683,6 +695,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de documentación de registros de secado",
         href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
+      },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
       },
     ],
   },
@@ -701,6 +717,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Guía de documentación de registros de secado",
         href: "/resources/blog/dry-log-documentation-guide-insurance-claims",
       },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   },
   {
@@ -717,6 +737,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de documentación de agua categoría 3",
         href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
       },
     ],
   },
@@ -752,6 +776,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Procedimiento de campo de mapeo de humedad",
         href: "/resources/guides/water-damage/moisture-mapping-guide",
       },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
     ],
   },
   {
@@ -768,6 +796,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Cargos por equipos en reclamaciones por daños por agua",
         href: "/resources/blog/equipment-charges-water-damage-claims",
+      },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
       },
     ],
   },
@@ -819,6 +851,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Procedimiento de recolección de registros de secado",
         href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
       },
     ],
   },

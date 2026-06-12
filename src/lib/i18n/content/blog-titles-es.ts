@@ -14,6 +14,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Errores de mapeo de humedad que cuestan dinero a los contratistas",
   "daily-monitoring-documentation-best-practices":
     "Mejores prácticas de documentación de monitoreo diario",
+  "how-carriers-reduce-drying-days":
+    "Cómo las aseguradoras reducen los días de secado",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

@@ -25,7 +25,7 @@ export const moistureMappingMistakesThatCostContractorsMoney: BlogPost = {
     "Moisture mapping mistakes that cost contractors money: missing readings, incomplete room docs, weak progression tracking, carrier review cuts, drying-day reductions, equipment disputes, and supplement recovery.",
   relatedPostSlugs: [
     "moisture-mapping-best-practices-insurance-claims",
-    "why-water-mitigation-claims-get-underpaid",
+    "how-carriers-reduce-drying-days",
     "why-category-3-water-claims-get-underpaid",
   ],
   faq: [
@@ -378,6 +378,10 @@ export const moistureMappingMistakesThatCostContractorsMoney: BlogPost = {
         {
           label: "Water damage supplement denial recovery",
           href: "/resources/blog/water-damage-supplement-denial-recovery",
+        },
+        {
+          label: "How carriers reduce drying days",
+          href: "/resources/blog/how-carriers-reduce-drying-days",
         },
         { label: "Pricing and fees", href: "/pricing" },
       ],

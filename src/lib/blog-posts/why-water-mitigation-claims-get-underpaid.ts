@@ -110,6 +110,7 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
       paragraphs: [
         "Water mitigation is time-phased, documentation-heavy, and often priced from desk templates written before your equipment is on site. Carriers optimize for consistent outcomes across thousands of losses; contractors optimize for one loss with unique assemblies, categories, and migration. That structural mismatch produces underpayment as often as bad faith.",
         "Margin pressure makes underpayment feel personal. A few unpaid drying days on every file compounds into annual labor and rental loss. Teams that treat the carrier estimate as final absorb that loss; teams that review, document, and supplement recover part of it consistently.",
+        "How carriers reduce drying days explains the desk-review patterns behind equipment and monitoring duration cuts — the most common partial underpayment line on mitigation files.",
         "Underpayment is also often partial, not total denial. Extraction pays while monitoring is cut; three dehumidifiers approve as two. Contractors who do not track partial approvals leave valid scope unpaid because they assumed the check was final.",
         "You are not alone if this pattern sounds familiar. The sections below name causes so you can assign fixes to process, not luck.",
         "Franchise and independent operators both see the same desk-review patterns: template three-day dry-outs on Category 2 losses, missing adjoining rooms, and monitoring collapsed into equipment rental. Scale does not eliminate underpayment — documentation discipline does.",
@@ -118,6 +119,10 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
         {
           label: "Complete insurance supplementing guide",
           href: "/resources/blog/insurance-supplementing-guide-contractors",
+        },
+        {
+          label: "How carriers reduce drying days",
+          href: "/resources/blog/how-carriers-reduce-drying-days",
         },
       ],
     },

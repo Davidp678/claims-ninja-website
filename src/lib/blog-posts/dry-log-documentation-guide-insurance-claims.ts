@@ -24,7 +24,7 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
     "Dry logs for insurance claims: what to record, carrier review habits, common mistakes, supplement support, and mitigation documentation best practices for contractors.",
   relatedPostSlugs: [
     "water-damage-mitigation-supplement-playbook",
-    "moisture-mapping-best-practices-insurance-claims",
+    "how-carriers-reduce-drying-days",
     "supplement-denial-recovery-guide",
   ],
   faq: [
@@ -107,6 +107,10 @@ export const dryLogDocumentationGuideInsuranceClaims: BlogPost = {
         {
           label: "Why water mitigation claims get underpaid",
           href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
+        },
+        {
+          label: "How carriers reduce drying days",
+          href: "/resources/blog/how-carriers-reduce-drying-days",
         },
         { label: "Claims FAQ", href: "/faq" },
       ],

@@ -3,6 +3,7 @@ import type { BlogPost } from "@/lib/blog-types";
 import { claimDocumentationApprovalRates } from "./claim-documentation-approval-rates";
 import { dryLogDocumentationGuideInsuranceClaims } from "./dry-log-documentation-guide-insurance-claims";
 import { moistureMappingBestPracticesInsuranceClaims } from "./moisture-mapping-best-practices-insurance-claims";
+import { howCarriersReduceDryingDays } from "./how-carriers-reduce-drying-days";
 import { moistureMappingMistakesThatCostContractorsMoney } from "./moisture-mapping-mistakes-that-cost-contractors-money";
 import { fireDamageClaimDocumentationGuide } from "./fire-damage-claim-documentation-guide";
 import { fireDamageSupplementPlaybookForContractors } from "./fire-damage-supplement-playbook-for-contractors";
@@ -43,6 +44,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   dailyMonitoringDocumentationBestPractices,
   whyCategory3WaterClaimsGetUnderpaid,
   moistureMappingMistakesThatCostContractorsMoney,
+  howCarriersReduceDryingDays,
   fireDamageClaimDocumentationGuide,
   fireDamageSupplementPlaybookForContractors,
   smokeAndSootDamageDocumentationGuide,
