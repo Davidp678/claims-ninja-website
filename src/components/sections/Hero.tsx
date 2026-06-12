@@ -70,6 +70,10 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
     ...stat,
     icon: STAT_ICONS[index] ?? "bars",
   }));
+  const heroCtaButtonClass =
+    locale === "es"
+      ? "w-full xl:w-[20.5rem]"
+      : "w-full px-6! sm:flex-1";
 
   return (
     <section
@@ -96,8 +100,8 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             allowWrap={locale === "es"}
             primaryLabel={content.primaryCta}
             secondaryLabel={content.secondaryCta}
-            primaryClassName={locale === "es" ? "w-full xl:w-auto" : undefined}
-            secondaryClassName={locale === "es" ? "w-full xl:w-auto" : undefined}
+            primaryClassName={heroCtaButtonClass}
+            secondaryClassName={heroCtaButtonClass}
           />
         </div>
 
