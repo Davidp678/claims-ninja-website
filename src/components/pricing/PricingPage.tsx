@@ -66,6 +66,23 @@ function PricingRateCard({
   );
 }
 
+function TrustCheckIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}
+
 function BillingStepLabel({ label }: { label: string }) {
   return (
     <span className="font-display text-2xl font-semibold text-brand-red/75 transition-colors group-hover:text-brand-red-light sm:text-3xl">
@@ -82,7 +99,7 @@ export function PricingPage({ locale = "en" }: { locale?: Locale }) {
       <section className="relative overflow-hidden bg-brand-black">
         <HeroBackdrop />
         <Container className="relative z-10 pb-14 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-red-light">
               {content.hero.eyebrow}
             </p>
@@ -109,6 +126,21 @@ export function PricingPage({ locale = "en" }: { locale?: Locale }) {
               >
                 {content.hero.secondaryCtaLabel}
               </Button>
+            </div>
+            <div className="mt-8 rounded-xl border border-white/10 bg-brand-surface/30 px-4 py-4 ring-1 ring-white/5 shadow-[0_0_32px_-24px_rgba(220,38,38,0.35)] sm:mt-10 sm:px-5">
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4 sm:gap-x-5 lg:gap-x-6">
+                {content.hero.trustItems.map((item) => (
+                  <li key={item} className="flex min-w-0 items-start gap-2.5">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-brand-red/20 bg-brand-red/5"
+                      aria-hidden
+                    >
+                      <TrustCheckIcon className="h-3 w-3 text-brand-red-light" />
+                    </span>
+                    <span className="text-sm leading-snug text-zinc-400">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </Container>

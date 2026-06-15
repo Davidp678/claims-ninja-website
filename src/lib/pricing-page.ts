@@ -28,11 +28,17 @@ export const PRICING_META = {
 
 export const PRICING_HERO = {
   eyebrow: "Pricing",
-  title: "Transparent pricing for claim operations",
+  title: "Start With a Free Review. Pay Only for Results.",
   description:
-    "Pricing is structured around the work required, the claim stage, and the value recovered. Whether you need estimate writing, supplement support, negotiation, or advanced claim services, Claims Ninja keeps pricing clear before work begins.",
+    "Before you spend a dollar, we'll review your estimate and identify potential opportunities. There are no contracts, no retainers, and no obligation to continue. If you choose to move forward, pricing is clearly defined and tied to the work performed and the value recovered.",
   primaryCtaLabel: "Start Claim Review",
   secondaryCtaLabel: "Schedule Strategy Call",
+  trustItems: [
+    "Free Estimate Reviews",
+    "No Contracts",
+    "No Monthly Fees",
+    "Pay Only for Completed Work",
+  ],
 } as const;
 
 export const PRICING_OVERVIEW = {

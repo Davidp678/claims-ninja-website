@@ -20,6 +20,7 @@ export type PricingContent = {
     description: string;
     primaryCtaLabel: string;
     secondaryCtaLabel: string;
+    trustItems: readonly string[];
   };
   overview: {
     eyebrow: string;
@@ -80,11 +81,17 @@ const EN: PricingContent = {
 const ES: PricingContent = {
   hero: {
     eyebrow: "Precios",
-    title: "Precios transparentes para las operaciones de reclamaciones",
+    title: "Empiece con una revisión gratuita. Pague solo por resultados.",
     description:
-      "Los precios se estructuran en torno al trabajo requerido, la etapa de la reclamación y el valor recuperado. Ya sea que necesite redacción de estimados, apoyo de suplementos, negociación o servicios avanzados de reclamaciones, Claims Ninja mantiene los precios claros antes de comenzar el trabajo.",
+      "Antes de gastar un dólar, revisaremos su estimado e identificaremos oportunidades potenciales. No hay contratos, ni retenciones, ni obligación de continuar. Si decide avanzar, los precios están claramente definidos y vinculados al trabajo realizado y al valor recuperado.",
     primaryCtaLabel: "Iniciar revisión de reclamación",
     secondaryCtaLabel: "Agendar llamada estratégica",
+    trustItems: [
+      "Revisiones gratuitas de estimados",
+      "Sin contratos",
+      "Sin cuotas mensuales",
+      "Pague solo por trabajo completado",
+    ],
   },
   overview: {
     eyebrow: "Servicios",
