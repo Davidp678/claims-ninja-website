@@ -144,9 +144,87 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "water-damage/category-3-water-damage-documentation-guide",
       "water-damage/dry-log-collection-guide",
     ],
-    relatedFaqIds: ["water-category-3-documentation-required", "water-dry-log-contents"],
+    relatedFaqIds: [
+      "water-category-3-documentation-required",
+      "water-dry-log-contents",
+      "water-final-drying-verification",
+      "water-mitigation-file-documentation",
+    ],
     internalLinkNotes:
-      "Closeout checklist; link from equipment-charges-that-get-cut-from-water-claims blog and claim documentation approval blog.",
+      "Closeout checklist; link from documentation-gaps-that-trigger-water-claim-denials blog, equipment-charges-that-get-cut-from-water-claims blog, and claim documentation approval blog.",
+  },
+  "water-claim-denied-documentation": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "water-damage/dry-log-collection-guide",
+      "water-damage/moisture-mapping-guide",
+      "water-damage/category-class-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "water-mitigation-file-documentation",
+      "water-missing-daily-monitoring",
+      "water-final-mitigation-package",
+    ],
+    internalLinkNotes:
+      "Primary denial FAQ for documentation-gaps-that-trigger-water-claim-denials blog.",
+  },
+  "water-mitigation-file-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/category-class-documentation-guide",
+      "water-damage/moisture-mapping-guide",
+      "water-damage/dry-log-collection-guide",
+      "water-damage/equipment-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "water-final-mitigation-package",
+      "water-moisture-readings-importance",
+      "resources-water-mitigation-documentation",
+    ],
+    internalLinkNotes:
+      "Mitigation file checklist FAQ; link from documentation-gaps blog building-a-defensible-documentation-package section.",
+  },
+  "water-moisture-readings-importance": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/moisture-mapping-guide",
+      "water-damage/daily-monitoring-guide",
+    ],
+    relatedFaqIds: [
+      "water-moisture-reading-frequency",
+      "water-moisture-maps-required",
+      "water-missing-daily-monitoring",
+    ],
+    internalLinkNotes:
+      "Why readings matter FAQ; distinct from frequency FAQ; link from documentation-gaps missing-initial-moisture-readings section.",
+  },
+  "water-missing-daily-monitoring": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: [
+      "water-damage/daily-monitoring-guide",
+      "water-damage/dry-log-collection-guide",
+    ],
+    relatedFaqIds: [
+      "water-daily-monitoring-records-importance",
+      "water-dry-log-update-frequency",
+      "water-equipment-charge-reductions",
+    ],
+    internalLinkNotes:
+      "Consequence FAQ for gapped monitoring; link from documentation-gaps weak-daily-monitoring-documentation section.",
+  },
+  "water-final-drying-verification": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "water-damage/dry-log-collection-guide",
+      "water-damage/moisture-mapping-guide",
+    ],
+    relatedFaqIds: [
+      "water-final-mitigation-package",
+      "water-dry-log-additional-drying-days",
+      "water-moisture-readings-importance",
+    ],
+    internalLinkNotes:
+      "Closeout verification FAQ; link from documentation-gaps missing-final-drying-verification section.",
   },
   "water-daily-monitoring-records-importance": {
     searchIntent: "documentation-standard",

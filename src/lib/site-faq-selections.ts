@@ -146,6 +146,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "water-equipment-charge-reductions",
       "water-final-mitigation-package",
       "water-daily-monitoring-records-importance",
+      "water-claim-denied-documentation",
+      "water-mitigation-file-documentation",
+      "water-moisture-readings-importance",
+      "water-missing-daily-monitoring",
+      "water-final-drying-verification",
     ],
   },
   fireDamage: {

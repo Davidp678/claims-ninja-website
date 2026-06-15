@@ -18,6 +18,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Cómo las aseguradoras reducen los días de secado",
   "equipment-charges-that-get-cut-from-water-claims":
     "Cargos de equipos que recortan en reclamaciones de agua (y cómo los contratistas los recuperan)",
+  "documentation-gaps-that-trigger-water-claim-denials":
+    "Brechas de documentación que provocan denegaciones de reclamaciones por agua",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

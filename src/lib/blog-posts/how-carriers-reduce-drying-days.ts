@@ -27,6 +27,7 @@ export const howCarriersReduceDryingDays: BlogPost = {
     "dry-log-documentation-guide-insurance-claims",
     "equipment-charges-that-get-cut-from-water-claims",
     "why-water-mitigation-claims-get-underpaid",
+    "documentation-gaps-that-trigger-water-claim-denials",
   ],
   faq: [
     {
@@ -100,6 +101,10 @@ export const howCarriersReduceDryingDays: BlogPost = {
         {
           label: "Dry log collection field procedure",
           href: "/resources/guides/water-damage/dry-log-collection-guide",
+        },
+        {
+          label: "Documentation gaps that trigger water claim denials",
+          href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
         },
         {
           label: "Dry log documentation guide",

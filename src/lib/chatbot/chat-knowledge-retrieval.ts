@@ -715,6 +715,66 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "water claim documentation denial question retrieves blog context",
+    message: "why are water damage claims denied for documentation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /documentation-gaps-that-trigger-water-claim-denials|denied for documentation issues|denied or reduced for documentation/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "documentation gaps water claim question retrieves blog context",
+    message: "documentation gaps water claim",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /documentation-gaps-that-trigger-water-claim-denials|documentation gap/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "missing dry logs insurance claim question retrieves blog context",
+    message: "missing dry logs insurance claim",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /documentation-gaps-that-trigger-water-claim-denials|missing dry log|dry log/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "final drying verification question retrieves blog context",
+    message: "final drying verification water damage",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /documentation-gaps-that-trigger-water-claim-denials|water-final-drying-verification|final drying verification/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "water mitigation file documentation question retrieves FAQ context",
+    message: "what documentation should be in a water mitigation file",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /water-mitigation-file-documentation|documentation should be included in a water mitigation file/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
     label: "client portal question retrieves portal context",
     message: "What can I do in the client portal?",
     assert: (result) =>

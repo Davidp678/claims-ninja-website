@@ -492,6 +492,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Category 3 water damage documentation guide",
         href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
       },
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
       { label: "Contractor resources", href: "/resources/blog" },
     ],
   },
@@ -869,12 +873,121 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/water-damage/dry-log-collection-guide",
       },
       {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
         label: "How carriers reduce drying days",
         href: "/resources/blog/how-carriers-reduce-drying-days",
       },
       {
         label: "Equipment charges that get cut from water claims",
         href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+    ],
+  },
+  {
+    id: "water-claim-denied-documentation",
+    category: "water_damage_claims",
+    question: "Why are water damage claims denied for documentation issues?",
+    answer:
+      "Water damage claims are denied or reduced for documentation issues when files cannot prove that covered mitigation occurred, that scope matched field conditions, or that billed lines connect to contemporaneous evidence. Missing moisture readings, incomplete maps, gapped dry logs, absent equipment photos, weak monitoring entries, unsupported Category classification, and closeout without terminal verification give desk reviewers reason to deny supplements, downgrade scope, or reject resubmission — even when field work was legitimate.",
+    relatedLinks: [
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Dry log collection field procedure",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "Water damage supplement denial recovery",
+        href: "/resources/blog/water-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
+    id: "water-mitigation-file-documentation",
+    category: "water_damage_claims",
+    question: "What documentation should be included in a water mitigation file?",
+    answer:
+      "A complete water mitigation file includes intake inspection and Category/Class classification, baseline and ongoing moisture readings at map point IDs, dated moisture maps, daily dry logs with equipment rows and atmospheric data, labeled equipment placement photos, monitoring visit entries, containment and HEPA documentation on contaminated losses, demolition and disposal records, terminal moisture readings against dry standard, equipment pull date, and clearance photos — indexed so each billed line cross-references supporting evidence.",
+    relatedLinks: [
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Category/Class documentation procedure",
+        href: "/resources/guides/water-damage/category-class-documentation-guide",
+      },
+      {
+        label: "Moisture mapping field procedure",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+    ],
+  },
+  {
+    id: "water-moisture-readings-importance",
+    category: "water_damage_claims",
+    question: "Why are moisture readings important for insurance claims?",
+    answer:
+      "Moisture readings prove wet extent at intake, track drying progress at map point IDs, and establish dry standard at closeout — without them, carriers apply template assumptions for scope, equipment duration, and room count. Baseline readings before equipment set defend affected area; ongoing readings on each monitoring visit defend equipment days; terminal release readings close duration arguments at pull. Skipping readings on billed days invites proportional cuts to drying duration and equipment utilization.",
+    relatedLinks: [
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Moisture mapping field procedure",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "How often should moisture readings be documented?",
+        href: "/faq#faq-water-moisture-reading-frequency",
+      },
+    ],
+  },
+  {
+    id: "water-missing-daily-monitoring",
+    category: "water_damage_claims",
+    question: "What happens if daily monitoring records are missing?",
+    answer:
+      "Missing daily monitoring records produce visit-day cuts, equipment duration reductions, and supplement denials when billed monitoring lines cannot tie to technician analysis. Carriers cut equipment days when logs cannot prove continued drying need on each billed day — monitoring is labor plus interpretation, not implied in rental. Gapped chronology between visits invites proportional trimming to logged days or template dry-out duration, and resubmission with backfilled visit notes weakens supplement credibility.",
+    relatedLinks: [
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Daily monitoring field procedure",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
+    ],
+  },
+  {
+    id: "water-final-drying-verification",
+    category: "water_damage_claims",
+    question: "Why do carriers request final drying verification?",
+    answer:
+      "Carriers request final drying verification because terminal moisture readings at active map point IDs — compared to dry standard for each assembly — prove the structure was dry before equipment pull and close duration arguments at closeout. Without release readings, reviewers assume dry standard was met earlier than billed, producing last-day equipment cuts. Final verification paired with pull date, clearance photos, and indexed log cross-references supports final mitigation invoice submission and defends against early dry-out disputes.",
+    relatedLinks: [
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Dry log collection field procedure",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "What should be included in a final mitigation documentation package?",
+        href: "/faq#faq-water-final-mitigation-package",
       },
     ],
   },

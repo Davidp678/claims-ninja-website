@@ -132,6 +132,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "moisture-mapping-guide",
     ],
   },
+  "documentation-gaps-that-trigger-water-claim-denials": {
+    intro:
+      "You've learned which documentation gaps trigger denials and reductions. Now run the field procedures that close those gaps from intake through closeout.",
+    guideSlugs: [
+      "dry-log-collection-guide",
+      "moisture-mapping-guide",
+      "daily-monitoring-guide",
+      "equipment-documentation-guide",
+    ],
+  },
   "fire-damage-claim-documentation-guide": {
     intro:
       "You've learned fire claim documentation fundamentals. Now execute the intake and specialty procedures that defend migration, HVAC, and contents scope.",

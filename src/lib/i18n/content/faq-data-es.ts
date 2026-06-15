@@ -492,6 +492,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Guía de documentación de agua categoría 3",
         href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
       },
+      {
+        label: "Brechas de documentación que provocan denegaciones de reclamaciones por agua",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
       { label: "Recursos para contratistas", href: "/resources/blog" },
     ],
   },
@@ -869,12 +873,121 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/guides/water-damage/dry-log-collection-guide",
       },
       {
+        label: "Brechas de documentación que provocan denegaciones de reclamaciones por agua",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
         label: "Cómo las aseguradoras reducen los días de secado",
         href: "/resources/blog/how-carriers-reduce-drying-days",
       },
       {
         label: "Cargos de equipos que recortan en reclamaciones de agua",
         href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+    ],
+  },
+  {
+    id: "water-claim-denied-documentation",
+    category: "water_damage_claims",
+    question: "¿Por qué se deniegan las reclamaciones por daños de agua por problemas de documentación?",
+    answer:
+      "Las reclamaciones por daños de agua se deniegan o reducen por problemas de documentación cuando el expediente no puede demostrar que ocurrió mitigación cubierta, que el alcance coincidió con las condiciones de campo o que las líneas facturadas se conectan con evidencia contemporánea. Lecturas de humedad faltantes, mapas incompletos, registros de secado con brechas, fotos de equipos ausentes, entradas de monitoreo débiles, clasificación de categoría no respaldada y cierre sin verificación terminal dan a los revisores motivos para denegar suplementos, degradar alcance o rechazar reenvíos — incluso cuando el trabajo de campo fue legítimo.",
+    relatedLinks: [
+      {
+        label: "Brechas de documentación que provocan denegaciones de reclamaciones por agua",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Procedimiento de recolección de registros de secado",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "Recuperación de denegación de suplemento por daños de agua",
+        href: "/resources/blog/water-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
+    id: "water-mitigation-file-documentation",
+    category: "water_damage_claims",
+    question: "¿Qué documentación debe incluirse en un expediente de mitigación de agua?",
+    answer:
+      "Un expediente completo de mitigación de agua incluye inspección de admisión y clasificación de categoría/clase, lecturas de humedad iniciales y continuas en IDs de puntos del mapa, mapas de humedad fechados, registros de secado diarios con filas de equipos y datos atmosféricos, fotos etiquetadas de colocación de equipos, entradas de visitas de monitoreo, documentación de contención y HEPA en pérdidas contaminadas, registros de demolición y eliminación, lecturas terminales de humedad contra el estándar de secado, fecha de retiro de equipos y fotos de liberación — indexados para que cada línea facturada referencie evidencia de respaldo.",
+    relatedLinks: [
+      {
+        label: "Brechas de documentación que provocan denegaciones de reclamaciones por agua",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Procedimiento de documentación de categoría/clase",
+        href: "/resources/guides/water-damage/category-class-documentation-guide",
+      },
+      {
+        label: "Procedimiento de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+    ],
+  },
+  {
+    id: "water-moisture-readings-importance",
+    category: "water_damage_claims",
+    question: "¿Por qué son importantes las lecturas de humedad para las reclamaciones de seguros?",
+    answer:
+      "Las lecturas de humedad demuestran la extensión de humedad en la admisión, rastrean el progreso de secado en IDs de puntos del mapa y establecen el estándar de secado en el cierre — sin ellas, las aseguradoras aplican suposiciones de plantilla para alcance, duración de equipos y conteo de habitaciones. Las lecturas iniciales antes de instalar equipos defienden el área afectada; las lecturas continuas en cada visita de monitoreo defienden los días de equipos; las lecturas terminales de liberación cierran argumentos de duración al retirar equipos. Omitir lecturas en días facturados invita recortes proporcionales a la duración de secado y utilización de equipos.",
+    relatedLinks: [
+      {
+        label: "Brechas de documentación que provocan denegaciones de reclamaciones por agua",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Procedimiento de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "¿Con qué frecuencia deben documentarse las lecturas de humedad?",
+        href: "/faq#faq-water-moisture-reading-frequency",
+      },
+    ],
+  },
+  {
+    id: "water-missing-daily-monitoring",
+    category: "water_damage_claims",
+    question: "¿Qué sucede si faltan los registros de monitoreo diario?",
+    answer:
+      "Los registros de monitoreo diario faltantes producen recortes en días de visita, reducciones en duración de equipos y denegaciones de suplementos cuando las líneas de monitoreo facturadas no pueden vincularse al análisis del técnico. Las aseguradoras recortan días de equipos cuando los registros no pueden demostrar necesidad continua de secado en cada día facturado — el monitoreo es mano de obra más interpretación, no implícito en el alquiler. La cronología con brechas entre visitas invita recortes proporcionales a días registrados o duración de plantilla, y el reenvío con notas de visita rellenadas retroactivamente debilita la credibilidad del suplemento.",
+    relatedLinks: [
+      {
+        label: "Brechas de documentación que provocan denegaciones de reclamaciones por agua",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Procedimiento de monitoreo diario",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
+    ],
+  },
+  {
+    id: "water-final-drying-verification",
+    category: "water_damage_claims",
+    question: "¿Por qué las aseguradoras solicitan verificación final de secado?",
+    answer:
+      "Las aseguradoras solicitan verificación final de secado porque las lecturas terminales de humedad en IDs de puntos activos del mapa — comparadas con el estándar de secado de cada ensamblaje — demuestran que la estructura estaba seca antes de retirar equipos y cierran argumentos de duración en el cierre. Sin lecturas de liberación, los revisores asumen que se alcanzó el estándar de secado antes de lo facturado, produciendo recortes en el último día de equipos. La verificación final junto con la fecha de retiro, fotos de liberación y referencias cruzadas indexadas en registros respalda el envío de la factura final de mitigación y defiende contra disputas de secado anticipado.",
+    relatedLinks: [
+      {
+        label: "Brechas de documentación que provocan denegaciones de reclamaciones por agua",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Procedimiento de recolección de registros de secado",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "¿Qué debe incluir un paquete final de documentación de mitigación?",
+        href: "/faq#faq-water-final-mitigation-package",
       },
     ],
   },

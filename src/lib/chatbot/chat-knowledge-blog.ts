@@ -223,6 +223,27 @@ const SLUG_BOOSTS: Record<
     ],
     topics: ["equipment_charges", "water_damage_claims", "monitoring", "dry_logs"],
   },
+  "documentation-gaps-that-trigger-water-claim-denials": {
+    phrases: [
+      "documentation gaps",
+      "water claim denial",
+      "water claim denied",
+      "missing moisture readings",
+      "missing dry logs",
+      "missing daily monitoring",
+      "final drying verification",
+      "mitigation documentation standards",
+      "documentation package requirements",
+    ],
+    keywords: [
+      "documentation gap",
+      "claim denial",
+      "missing dry log",
+      "documentation package",
+      "mitigation documentation",
+    ],
+    topics: ["water_damage_claims", "documentation", "denial_recovery", "dry_logs", "monitoring"],
+  },
   "daily-monitoring-documentation-best-practices": {
     phrases: ["daily monitoring", "monitoring documentation"],
     keywords: ["monitoring visit", "monitoring log"],

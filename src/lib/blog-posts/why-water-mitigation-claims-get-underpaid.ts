@@ -26,6 +26,7 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
     "water-damage-mitigation-supplement-playbook",
     "equipment-charges-that-get-cut-from-water-claims",
     "dry-log-documentation-guide-insurance-claims",
+    "documentation-gaps-that-trigger-water-claim-denials",
   ],
   faq: [
     {
@@ -100,6 +101,10 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
         {
           label: "Water mitigation supplement playbook",
           href: "/resources/blog/water-damage-mitigation-supplement-playbook",
+        },
+        {
+          label: "Documentation gaps that trigger water claim denials",
+          href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
         },
         { label: "Claims FAQ", href: "/faq" },
       ],

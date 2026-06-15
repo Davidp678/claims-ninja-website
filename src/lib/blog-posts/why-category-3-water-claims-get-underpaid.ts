@@ -26,6 +26,7 @@ export const whyCategory3WaterClaimsGetUnderpaid: BlogPost = {
     "why-water-mitigation-claims-get-underpaid",
     "water-damage-mitigation-supplement-playbook",
     "equipment-charges-water-damage-claims",
+    "documentation-gaps-that-trigger-water-claim-denials",
   ],
   faq: [
     {
@@ -104,6 +105,10 @@ export const whyCategory3WaterClaimsGetUnderpaid: BlogPost = {
         {
           label: "Category 3 water damage documentation guide",
           href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+        },
+        {
+          label: "Documentation gaps that trigger water claim denials",
+          href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
         },
         {
           label: "Why water mitigation claims get underpaid",

@@ -31,6 +31,7 @@ export const equipmentChargesThatGetCutFromWaterClaims: BlogPost = {
     "equipment-charges-water-damage-claims",
     "how-carriers-reduce-drying-days",
     "why-water-mitigation-claims-get-underpaid",
+    "documentation-gaps-that-trigger-water-claim-denials",
   ],
   faq: [
     {
@@ -99,6 +100,10 @@ export const equipmentChargesThatGetCutFromWaterClaims: BlogPost = {
         {
           label: "Equipment charges in water damage claims",
           href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
+        {
+          label: "Documentation gaps that trigger water claim denials",
+          href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
         },
         {
           label: "Mitigation equipment documentation procedure",

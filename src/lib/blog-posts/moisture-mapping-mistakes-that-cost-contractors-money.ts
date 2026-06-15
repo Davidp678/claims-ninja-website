@@ -27,6 +27,7 @@ export const moistureMappingMistakesThatCostContractorsMoney: BlogPost = {
     "moisture-mapping-best-practices-insurance-claims",
     "how-carriers-reduce-drying-days",
     "equipment-charges-that-get-cut-from-water-claims",
+    "documentation-gaps-that-trigger-water-claim-denials",
   ],
   faq: [
     {
@@ -100,6 +101,10 @@ export const moistureMappingMistakesThatCostContractorsMoney: BlogPost = {
         {
           label: "Moisture mapping field procedure",
           href: "/resources/guides/water-damage/moisture-mapping-guide",
+        },
+        {
+          label: "Documentation gaps that trigger water claim denials",
+          href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
         },
         {
           label: "Moisture mapping best practices",

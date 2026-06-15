@@ -41,6 +41,7 @@ export const CATEGORY_3_WATER_DAMAGE_DOCUMENTATION_GUIDE_ES = defineGuide({
     "moisture-mapping-best-practices-insurance-claims",
     "moisture-mapping-mistakes-that-cost-contractors-money",
     "daily-monitoring-documentation-best-practices",
+    "documentation-gaps-that-trigger-water-claim-denials",
   ],
   faqIds: [
     "water-category-3-qualifies",
@@ -60,6 +61,8 @@ export const CATEGORY_3_WATER_DAMAGE_DOCUMENTATION_GUIDE_ES = defineGuide({
     "water-final-mitigation-package",
     "help-equipment-drying-documentation",
     "resources-water-mitigation-documentation",
+    "water-claim-denied-documentation",
+    "water-final-drying-verification",
   ],
   relatedSolutionPath: "/solutions/water-damage",
   claimTypes: ["water-damage", "mitigation"],
