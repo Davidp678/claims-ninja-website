@@ -24,8 +24,8 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
     "Why water mitigation claims get underpaid: documentation gaps, scope and pricing disputes, timing, and practical recovery strategies for mitigation contractors.",
   relatedPostSlugs: [
     "water-damage-mitigation-supplement-playbook",
+    "equipment-charges-that-get-cut-from-water-claims",
     "dry-log-documentation-guide-insurance-claims",
-    "moisture-mapping-best-practices-insurance-claims",
   ],
   faq: [
     {
@@ -223,6 +223,10 @@ export const whyWaterMitigationClaimsGetUnderpaid: BlogPost = {
         {
           label: "Equipment charges in water damage claims",
           href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
+        {
+          label: "Equipment charges that get cut from water claims",
+          href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
         },
       ],
     },

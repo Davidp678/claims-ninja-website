@@ -122,6 +122,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "moisture-mapping-guide",
     ],
   },
+  "equipment-charges-that-get-cut-from-water-claims": {
+    intro:
+      "You've learned why equipment charges get cut and how to recover them. Now run the field procedures that defend air movers, dehumidifiers, and specialty drying equipment from desk review.",
+    guideSlugs: [
+      "equipment-documentation-guide",
+      "dry-log-collection-guide",
+      "daily-monitoring-guide",
+      "moisture-mapping-guide",
+    ],
+  },
   "fire-damage-claim-documentation-guide": {
     intro:
       "You've learned fire claim documentation fundamentals. Now execute the intake and specialty procedures that defend migration, HVAC, and contents scope.",

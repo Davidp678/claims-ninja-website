@@ -145,6 +145,7 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "water-dry-log-update-frequency",
       "water-equipment-charge-reductions",
       "water-final-mitigation-package",
+      "water-daily-monitoring-records-importance",
     ],
   },
   fireDamage: {

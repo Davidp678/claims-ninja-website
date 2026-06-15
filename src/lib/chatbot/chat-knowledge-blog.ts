@@ -200,6 +200,27 @@ const SLUG_BOOSTS: Record<
     keywords: ["equipment charge", "dehumidifier", "air mover"],
     topics: ["equipment_charges"],
   },
+  "equipment-charges-that-get-cut-from-water-claims": {
+    phrases: [
+      "equipment charge reductions",
+      "air mover reductions",
+      "dehumidifier reductions",
+      "HEPA reductions",
+      "air scrubber reductions",
+      "specialty drying equipment disputes",
+      "mitigation equipment documentation",
+      "equipment deployment documentation",
+    ],
+    keywords: [
+      "equipment cut",
+      "equipment reduction",
+      "air mover",
+      "dehumidifier",
+      "HEPA",
+      "air scrubber",
+    ],
+    topics: ["equipment_charges", "water_damage_claims", "monitoring", "dry_logs"],
+  },
   "daily-monitoring-documentation-best-practices": {
     phrases: ["daily monitoring", "monitoring documentation"],
     keywords: ["monitoring visit", "monitoring log"],

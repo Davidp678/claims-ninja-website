@@ -12,6 +12,7 @@ import { hvacContaminationInFireDamageClaims } from "./hvac-contamination-in-fir
 import { fireDamageSupplementDenialRecovery } from "./fire-damage-supplement-denial-recovery";
 import { odorMitigationInFireDamageClaims } from "./odor-mitigation-in-fire-damage-claims";
 import { dailyMonitoringDocumentationBestPractices } from "./daily-monitoring-documentation-best-practices";
+import { equipmentChargesThatGetCutFromWaterClaims } from "./equipment-charges-that-get-cut-from-water-claims";
 import { equipmentChargesWaterDamageClaims } from "./equipment-charges-water-damage-claims";
 import { waterDamageSupplementDenialRecovery } from "./water-damage-supplement-denial-recovery";
 import { whyCategory3WaterClaimsGetUnderpaid } from "./why-category-3-water-claims-get-underpaid";
@@ -41,6 +42,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   whyWaterMitigationClaimsGetUnderpaid,
   waterDamageSupplementDenialRecovery,
   equipmentChargesWaterDamageClaims,
+  equipmentChargesThatGetCutFromWaterClaims,
   dailyMonitoringDocumentationBestPractices,
   whyCategory3WaterClaimsGetUnderpaid,
   moistureMappingMistakesThatCostContractorsMoney,

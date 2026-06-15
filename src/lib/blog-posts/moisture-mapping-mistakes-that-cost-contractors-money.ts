@@ -26,7 +26,7 @@ export const moistureMappingMistakesThatCostContractorsMoney: BlogPost = {
   relatedPostSlugs: [
     "moisture-mapping-best-practices-insurance-claims",
     "how-carriers-reduce-drying-days",
-    "why-category-3-water-claims-get-underpaid",
+    "equipment-charges-that-get-cut-from-water-claims",
   ],
   faq: [
     {
@@ -374,6 +374,10 @@ export const moistureMappingMistakesThatCostContractorsMoney: BlogPost = {
         {
           label: "Equipment charges in water damage claims",
           href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
+        {
+          label: "Equipment charges that get cut from water claims",
+          href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
         },
         {
           label: "Water damage supplement denial recovery",

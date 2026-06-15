@@ -102,7 +102,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     relatedGuideSlugs: ["water-damage/equipment-documentation-guide"],
     relatedFaqIds: ["help-equipment-drying-documentation", "water-dry-log-contents"],
     internalLinkNotes:
-      "Equipment charges blog should link to air mover and dehumidifier FAQs separately.",
+      "Equipment charges blog and equipment-charges-that-get-cut-from-water-claims blog should link to air mover FAQ.",
   },
   "water-dehumidifier-documentation": {
     searchIntent: "documentation-standard",
@@ -112,14 +112,14 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     ],
     relatedFaqIds: ["water-air-mover-documentation", "water-moisture-map-contents"],
     internalLinkNotes:
-      "Chamber design from moisture map supports dehumidifier count arguments.",
+      "Chamber design from moisture map supports dehumidifier count arguments; link equipment-charges-that-get-cut-from-water-claims blog.",
   },
   "water-equipment-charge-reductions": {
     searchIntent: "billing-dispute",
     relatedGuideSlugs: ["water-damage/equipment-documentation-guide"],
     relatedFaqIds: ["water-air-mover-documentation", "water-dehumidifier-documentation"],
     internalLinkNotes:
-      "Pair with equipment-charges-water-damage-claims blog and underpayment blog.",
+      "Pair with equipment-charges-water-damage-claims blog, equipment-charges-that-get-cut-from-water-claims blog, and underpayment blog.",
   },
   "water-containment-documentation": {
     searchIntent: "documentation-standard",
@@ -136,7 +136,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     relatedGuideSlugs: ["water-damage/category-3-water-damage-documentation-guide"],
     relatedFaqIds: ["water-containment-documentation", "mold-containment-equipment"],
     internalLinkNotes:
-      "Distinguish from negative air FAQ opportunity; link Category 3 guide HEPA section.",
+      "Distinguish from negative air FAQ opportunity; link Category 3 guide HEPA section and equipment-charges-that-get-cut-from-water-claims blog.",
   },
   "water-final-mitigation-package": {
     searchIntent: "carrier-review",
@@ -146,7 +146,21 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     ],
     relatedFaqIds: ["water-category-3-documentation-required", "water-dry-log-contents"],
     internalLinkNotes:
-      "Closeout checklist blog opportunity; link from claim documentation approval blog.",
+      "Closeout checklist; link from equipment-charges-that-get-cut-from-water-claims blog and claim documentation approval blog.",
+  },
+  "water-daily-monitoring-records-importance": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/daily-monitoring-guide",
+      "water-damage/dry-log-collection-guide",
+    ],
+    relatedFaqIds: [
+      "water-dry-log-update-frequency",
+      "water-moisture-reading-frequency",
+      "water-equipment-charge-reductions",
+    ],
+    internalLinkNotes:
+      "Link from equipment-charges-that-get-cut-from-water-claims blog weak monitoring section and daily monitoring guide.",
   },
   "water-mitigation-scope": {
     searchIntent: "informational",

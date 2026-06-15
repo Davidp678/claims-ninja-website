@@ -292,6 +292,7 @@ export const WATER_DAMAGE_GUIDES = [
     relatedBlogSlugs: [
       "dry-log-documentation-guide-insurance-claims",
       "how-carriers-reduce-drying-days",
+      "equipment-charges-that-get-cut-from-water-claims",
     ],
     faqIds: [
       "water-drying-documentation",
@@ -518,6 +519,7 @@ export const WATER_DAMAGE_GUIDES = [
       "moisture-mapping-best-practices-insurance-claims",
       "moisture-mapping-mistakes-that-cost-contractors-money",
       "how-carriers-reduce-drying-days",
+      "equipment-charges-that-get-cut-from-water-claims",
     ],
     faqIds: [
       "water-drying-documentation",
@@ -741,6 +743,7 @@ export const WATER_DAMAGE_GUIDES = [
     relatedBlogSlugs: [
       "equipment-charges-water-damage-claims",
       "how-carriers-reduce-drying-days",
+      "equipment-charges-that-get-cut-from-water-claims",
     ],
     faqIds: [
       "help-equipment-drying-documentation",
@@ -957,12 +960,14 @@ export const WATER_DAMAGE_GUIDES = [
     relatedBlogSlugs: [
       "daily-monitoring-documentation-best-practices",
       "how-carriers-reduce-drying-days",
+      "equipment-charges-that-get-cut-from-water-claims",
     ],
     faqIds: [
       "help-equipment-drying-documentation",
       "water-drying-documentation",
       "water-moisture-reading-frequency",
       "water-dry-log-update-frequency",
+      "water-daily-monitoring-records-importance",
     ],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
@@ -1164,6 +1169,7 @@ export const WATER_DAMAGE_GUIDES = [
     relatedBlogSlugs: [
       "why-water-mitigation-claims-get-underpaid",
       "how-carriers-reduce-drying-days",
+      "equipment-charges-that-get-cut-from-water-claims",
     ],
     faqIds: ["water-category-class", "water-mitigation-scope", "water-category-3-qualifies"],
     relatedSolutionPath: SOLUTION_PATH,
@@ -1612,6 +1618,7 @@ export const WATER_DAMAGE_GUIDES = [
       "moisture-mapping-mistakes-that-cost-contractors-money",
       "daily-monitoring-documentation-best-practices",
       "how-carriers-reduce-drying-days",
+      "equipment-charges-that-get-cut-from-water-claims",
     ],
     faqIds: [
       "water-category-3-qualifies",

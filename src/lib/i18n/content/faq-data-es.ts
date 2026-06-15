@@ -747,7 +747,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
   {
     id: "water-air-mover-documentation",
     category: "water_damage_claims",
-    question: "¿Qué documentación respalda los cargos de ventiladores?",
+    question: "¿Cómo deben documentarse los ventiladores?",
     answer:
       "Fotografíe la colocación de ventiladores en la instalación inicial y después de cada cambio de conteo o reubicación — tomas amplias que muestren el conteo por habitación con etiquetas de habitación que coincidan con el croquis de la aseguradora. Registre conteos de unidades y asignaciones de habitación en el registro de secado para cada día facturado. Fotografíe el despliegue máximo cuando aumente el conteo de unidades — los revisores de escritorio reducen las unidades facturadas al conteo máximo verificado en fotos. Las fechas de inicio y fin deben vincularse a lecturas de liberación antes del retiro de equipos.",
     relatedLinks: [
@@ -759,12 +759,16 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Cargos por equipos en reclamaciones por daños por agua",
         href: "/resources/blog/equipment-charges-water-damage-claims",
       },
+      {
+        label: "Cargos de equipos que recortan en reclamaciones de agua",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
     ],
   },
   {
     id: "water-dehumidifier-documentation",
     category: "water_damage_claims",
-    question: "¿Qué documentación respalda los cargos de deshumidificadores?",
+    question: "¿Qué respalda los cargos de deshumidificadores?",
     answer:
       "Documente la colocación de deshumidificadores con fotos amplias que muestren el conteo de unidades por cámara, filas de equipos del registro de secado con tipo y asignación de habitación o cámara, y diseño de cámara del mapa de humedad que justifique el conteo de unidades. Registre tiempo de funcionamiento y lecturas ambientales en cada visita de monitoreo — las tendencias de depresión de granos y humedad relativa respaldan argumentos de utilización. Concilie conteos máximos verificados en fotos y días registrados con cantidades facturadas antes del envío de la factura.",
     relatedLinks: [
@@ -780,12 +784,16 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Cómo las aseguradoras reducen los días de secado",
         href: "/resources/blog/how-carriers-reduce-drying-days",
       },
+      {
+        label: "Cargos de equipos que recortan en reclamaciones de agua",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
     ],
   },
   {
     id: "water-equipment-charge-reductions",
     category: "water_damage_claims",
-    question: "¿Por qué las aseguradoras reducen los cargos de equipos?",
+    question: "¿Por qué las aseguradoras de seguros reducen los cargos de equipos?",
     answer:
       "Los revisores de escritorio recortan líneas de equipos cuando faltan fotos de colocación o no están fechadas, las filas del registro de secado no coinciden con conteos de unidades facturados, el despliegue máximo no está fotografiado, o los días facturados exceden los días registrados. Las reducciones suelen ser proporcionales — las unidades o días no respaldados se recortan en lugar de denegarse por completo. La conciliación de oficina antes del envío de la factura detecta brechas donde la documentación de campo no respalda líneas de ventiladores, deshumidificadores o purificadores de aire.",
     relatedLinks: [
@@ -796,6 +804,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Cargos por equipos en reclamaciones por daños por agua",
         href: "/resources/blog/equipment-charges-water-damage-claims",
+      },
+      {
+        label: "Cargos de equipos que recortan en reclamaciones de agua",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
       },
       {
         label: "Cómo las aseguradoras reducen los días de secado",
@@ -823,7 +835,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
   {
     id: "water-hepa-filtration-documentation",
     category: "water_damage_claims",
-    question: "¿Qué documentación respalda los cargos de filtración HEPA?",
+    question: "¿Qué documentación respalda el equipo de filtración HEPA?",
     answer:
       "Fotografíe la colocación de purificadores de aire HEPA con los límites de la cámara visibles en el encuadre — el conteo de unidades, enrutamiento de escape y configuración de aire negativo deben aparecer en fotos fechadas. Registre el tiempo de funcionamiento del purificador en el registro de secado para cada día facturado y anote áreas de aspirado HEPA cuando corresponda. En expedientes categoría 3, vincule el alcance de filtración con clasificación de admisión y notas de control de contaminación — las líneas HEPA facturadas sin fotos de configuración y registros de tiempo de funcionamiento son objetivos frecuentes de reducción en la revisión de escritorio.",
     relatedLinks: [
@@ -834,6 +846,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Documentación de monitoreo diario",
         href: "/resources/blog/daily-monitoring-documentation-best-practices",
+      },
+      {
+        label: "Cargos de equipos que recortan en reclamaciones de agua",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
       },
     ],
   },
@@ -851,6 +867,35 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Procedimiento de recolección de registros de secado",
         href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
+      {
+        label: "Cargos de equipos que recortan en reclamaciones de agua",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+    ],
+  },
+  {
+    id: "water-daily-monitoring-records-importance",
+    category: "water_damage_claims",
+    question: "¿Por qué son importantes los registros de monitoreo diario?",
+    answer:
+      "Los registros de monitoreo diario demuestran que un técnico realizó análisis en cada visita facturada — lecturas de humedad en IDs de puntos del mapa, datos atmosféricos, verificación de equipos y narrativa de progreso o estancamiento cuando los materiales se estabilizan. El monitoreo es mano de obra más interpretación, no implícito en el alquiler de equipos. Los registros de monitoreo débiles o con brechas debilitan tanto las líneas de visita como los argumentos de duración de equipos — las aseguradoras recortan días de equipos cuando los registros no pueden demostrar necesidad continua de secado en cada día facturado.",
+    relatedLinks: [
+      {
+        label: "Procedimiento de monitoreo diario",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+      {
+        label: "Procedimiento de recolección de registros de secado",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "Cargos de equipos que recortan en reclamaciones de agua",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
       },
       {
         label: "Cómo las aseguradoras reducen los días de secado",

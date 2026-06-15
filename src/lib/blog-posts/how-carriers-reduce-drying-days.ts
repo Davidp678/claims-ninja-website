@@ -25,7 +25,7 @@ export const howCarriersReduceDryingDays: BlogPost = {
     "How carriers reduce drying days: documentation gaps on dry logs, moisture readings, psychrometrics, equipment, monitoring, category disputes, revenue impact, and supplement recovery for mitigation contractors.",
   relatedPostSlugs: [
     "dry-log-documentation-guide-insurance-claims",
-    "moisture-mapping-mistakes-that-cost-contractors-money",
+    "equipment-charges-that-get-cut-from-water-claims",
     "why-water-mitigation-claims-get-underpaid",
   ],
   faq: [
@@ -274,6 +274,10 @@ export const howCarriersReduceDryingDays: BlogPost = {
           href: "/resources/blog/equipment-charges-water-damage-claims",
         },
         {
+          label: "Equipment charges that get cut from water claims",
+          href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+        },
+        {
           label: "Mitigation equipment documentation procedure",
           href: "/resources/guides/water-damage/equipment-documentation-guide",
         },
@@ -414,6 +418,10 @@ export const howCarriersReduceDryingDays: BlogPost = {
         {
           label: "Equipment charges in water damage claims",
           href: "/resources/blog/equipment-charges-water-damage-claims",
+        },
+        {
+          label: "Equipment charges that get cut from water claims",
+          href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
         },
         {
           label: "Why water mitigation claims get underpaid",

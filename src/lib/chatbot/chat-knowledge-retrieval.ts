@@ -188,6 +188,9 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "dehumidifier",
     "equipment day",
     "air mover",
+    "HEPA",
+    "air scrubber",
+    "specialty drying",
   ],
   monitoring: ["monitoring visit", "daily monitoring", "monitoring log"],
   op_claims: ["o&p", "overhead", "profit", "overhead and profit"],
@@ -695,6 +698,18 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.some(
         (s) =>
           /how-carriers-reduce-drying-days|drying day|reduce drying/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "equipment charge reduction question retrieves new blog context",
+    message: "why do carriers reduce equipment charges on water claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /equipment-charges-that-get-cut-from-water-claims|equipment charge reduction/i.test(
             `${s.text} ${s.source}`,
           ),
       ),

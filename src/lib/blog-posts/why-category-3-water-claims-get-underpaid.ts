@@ -244,6 +244,10 @@ export const whyCategory3WaterClaimsGetUnderpaid: BlogPost = {
           href: "/resources/blog/equipment-charges-water-damage-claims",
         },
         {
+          label: "Equipment charges that get cut from water claims",
+          href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+        },
+        {
           label: "Mitigation equipment documentation procedure",
           href: "/resources/guides/water-damage/equipment-documentation-guide",
         },

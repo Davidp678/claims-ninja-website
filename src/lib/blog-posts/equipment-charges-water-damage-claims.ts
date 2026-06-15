@@ -23,9 +23,9 @@ export const equipmentChargesWaterDamageClaims: BlogPost = {
   seoDescription:
     "Mitigation equipment charges on water claims: documentation, utilization proof, carrier disputes, dry logs and moisture maps, tracking best practices, and supplement recovery for contractors.",
   relatedPostSlugs: [
+    "equipment-charges-that-get-cut-from-water-claims",
     "water-damage-mitigation-supplement-playbook",
     "dry-log-documentation-guide-insurance-claims",
-    "moisture-mapping-best-practices-insurance-claims",
   ],
   faq: [
     {
@@ -111,6 +111,10 @@ export const equipmentChargesWaterDamageClaims: BlogPost = {
         {
           label: "Moisture mapping best practices",
           href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+        },
+        {
+          label: "Equipment charges that get cut from water claims",
+          href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
         },
         { label: "Claims FAQ", href: "/faq" },
       ],

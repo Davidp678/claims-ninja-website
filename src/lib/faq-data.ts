@@ -747,7 +747,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
   {
     id: "water-air-mover-documentation",
     category: "water_damage_claims",
-    question: "What documentation supports air mover charges?",
+    question: "How should air movers be documented?",
     answer:
       "Photograph air mover placement at initial set and after every count change or relocation — wide shots showing count per room with room labels matching the carrier sketch. Log unit counts and room assignments on the dry log for each billed day. Photograph peak deployment when unit count increases — desk reviewers reduce billed units to the highest photo-verified count. Start and end dates should tie to release readings before equipment pull.",
     relatedLinks: [
@@ -759,12 +759,16 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Equipment charges in water damage claims",
         href: "/resources/blog/equipment-charges-water-damage-claims",
       },
+      {
+        label: "Equipment charges that get cut from water claims",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
     ],
   },
   {
     id: "water-dehumidifier-documentation",
     category: "water_damage_claims",
-    question: "What documentation supports dehumidifier charges?",
+    question: "What supports dehumidifier charges?",
     answer:
       "Document dehumidifier placement with wide photos showing unit count per chamber, dry log equipment rows with type and room or chamber assignment, and chamber design from the moisture map that justifies unit count. Log runtime and environmental readings on each monitoring visit — grain depression and relative humidity trends support utilization arguments. Reconcile peak photo-verified counts and logged days to billed quantities before invoice submission.",
     relatedLinks: [
@@ -780,12 +784,16 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "How carriers reduce drying days",
         href: "/resources/blog/how-carriers-reduce-drying-days",
       },
+      {
+        label: "Equipment charges that get cut from water claims",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
     ],
   },
   {
     id: "water-equipment-charge-reductions",
     category: "water_damage_claims",
-    question: "Why do carriers reduce equipment charges?",
+    question: "Why do insurance carriers reduce equipment charges?",
     answer:
       "Desk reviewers cut equipment lines when placement photos are missing or undated, dry log rows do not match billed unit counts, peak deployment is not photographed, or billed days exceed logged days. Reductions are often proportional — unsupported units or days get trimmed rather than fully denied. Office reconciliation before invoice submission catches gaps where field documentation does not support air mover, dehumidifier, or air scrubber lines.",
     relatedLinks: [
@@ -796,6 +804,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Equipment charges in water damage claims",
         href: "/resources/blog/equipment-charges-water-damage-claims",
+      },
+      {
+        label: "Equipment charges that get cut from water claims",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
       },
       {
         label: "How carriers reduce drying days",
@@ -823,7 +835,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
   {
     id: "water-hepa-filtration-documentation",
     category: "water_damage_claims",
-    question: "What documentation supports HEPA filtration charges?",
+    question: "What documentation supports HEPA filtration equipment?",
     answer:
       "Photograph HEPA air scrubber placement with chamber boundaries visible in frame — unit count, exhaust routing, and negative air setup should appear in dated photos. Log scrubber runtime on the dry log for each billed day and note HEPA vacuuming areas when applicable. On Category 3 files, link filtration scope to intake classification and contamination-control notes — HEPA lines billed without setup photos and runtime logs are frequent reduction targets at desk review.",
     relatedLinks: [
@@ -834,6 +846,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Daily monitoring documentation",
         href: "/resources/blog/daily-monitoring-documentation-best-practices",
+      },
+      {
+        label: "Equipment charges that get cut from water claims",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
       },
     ],
   },
@@ -851,6 +867,35 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Dry log collection field procedure",
         href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
+      {
+        label: "Equipment charges that get cut from water claims",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+    ],
+  },
+  {
+    id: "water-daily-monitoring-records-importance",
+    category: "water_damage_claims",
+    question: "Why are daily monitoring records important?",
+    answer:
+      "Daily monitoring records prove a technician performed analysis on each billed visit — moisture readings at map point IDs, atmospheric data, equipment verification, and progress or stall narrative when materials plateau. Monitoring is labor plus interpretation, not implied inside equipment rental. Weak or gapped monitoring records weaken both visit labor lines and equipment duration arguments — carriers cut equipment days when logs cannot prove continued drying need on each billed day.",
+    relatedLinks: [
+      {
+        label: "Daily monitoring field procedure",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+      {
+        label: "Dry log collection field procedure",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+      {
+        label: "Equipment charges that get cut from water claims",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
       },
       {
         label: "How carriers reduce drying days",

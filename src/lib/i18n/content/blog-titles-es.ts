@@ -16,6 +16,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Mejores prácticas de documentación de monitoreo diario",
   "how-carriers-reduce-drying-days":
     "Cómo las aseguradoras reducen los días de secado",
+  "equipment-charges-that-get-cut-from-water-claims":
+    "Cargos de equipos que recortan en reclamaciones de agua (y cómo los contratistas los recuperan)",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {
