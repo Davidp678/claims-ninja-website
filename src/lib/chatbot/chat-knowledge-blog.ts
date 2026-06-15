@@ -203,6 +203,8 @@ const SLUG_BOOSTS: Record<
   "equipment-charges-that-get-cut-from-water-claims": {
     phrases: [
       "equipment charge reductions",
+      "carriers reduce equipment charges",
+      "why do carriers reduce equipment charges",
       "air mover reductions",
       "dehumidifier reductions",
       "HEPA reductions",
