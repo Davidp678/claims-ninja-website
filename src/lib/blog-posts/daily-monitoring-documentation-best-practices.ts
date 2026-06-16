@@ -15,7 +15,7 @@ export const dailyMonitoringDocumentationBestPractices: BlogPost = {
     "Claim Recovery",
     "Supplements",
   ],
-  publishedAt: "2026-06-20",
+  publishedAt: "2026-05-10",
   readingTimeMinutes: 21,
   visualVariant: "darkGrid",
   authorId: "claims-ninja-editorial",

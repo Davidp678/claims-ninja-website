@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { getAllCategorySlugs, getCategoryPath } from "@/lib/blog-categories";
-import { BLOG_POSTS } from "@/lib/blog-data";
-import { BLOG_BASE_PATH, getBlogPostPath } from "@/lib/blog-page";
+import { BLOG_BASE_PATH, getAllBlogPosts, getBlogPostPath } from "@/lib/blog-page";
 import { getAllGuideCategorySlugs, getGuideCategoryPath } from "@/lib/guide-categories";
 import { CLAIM_GUIDES } from "@/lib/guide-data";
 import { GUIDE_BASE_PATH, getGuidePathForGuide } from "@/lib/guide-page";
@@ -70,7 +69,7 @@ export function getMarketingSitemapEntries(): MetadataRoute.Sitemap {
 }
 
 export function getBlogSitemapEntries(): MetadataRoute.Sitemap {
-  return BLOG_POSTS.map((post) => ({
+  return getAllBlogPosts().map((post) => ({
     url: getAbsoluteUrl(getBlogPostPath(post.slug)),
     lastModified: getSitemapLastModified(post.updatedAt ?? post.publishedAt),
     changeFrequency: "monthly" as const,

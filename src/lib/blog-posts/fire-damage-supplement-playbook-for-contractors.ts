@@ -15,7 +15,7 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
     "Claim Recovery",
     "Xactimate",
   ],
-  publishedAt: "2026-06-29",
+  publishedAt: "2026-05-19",
   readingTimeMinutes: 25,
   visualVariant: "redGlow",
   recommended: true,

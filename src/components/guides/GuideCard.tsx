@@ -68,7 +68,7 @@ export function GuideCard({
         </span>
         <span aria-hidden>·</span>
         <time dateTime={guide.updatedAt ?? guide.publishedAt}>
-          {hubUi.updatedPrefix}{" "}
+          {guide.updatedAt ? hubUi.updatedPrefix : hubUi.publishedPrefix}{" "}
           {formatGuideDate(guide.updatedAt ?? guide.publishedAt, locale)}
         </time>
       </div>

@@ -15,7 +15,7 @@ export const odorMitigationInFireDamageClaims: BlogPost = {
     "Supplements",
     "Claim Recovery",
   ],
-  publishedAt: "2026-07-27",
+  publishedAt: "2026-06-16",
   readingTimeMinutes: 22,
   visualVariant: "darkGrid",
   recommended: true,

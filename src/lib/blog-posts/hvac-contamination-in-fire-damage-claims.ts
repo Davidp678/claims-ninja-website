@@ -16,7 +16,7 @@ export const hvacContaminationInFireDamageClaims: BlogPost = {
     "Restoration",
     "Claim Recovery",
   ],
-  publishedAt: "2026-07-13",
+  publishedAt: "2026-06-02",
   readingTimeMinutes: 22,
   visualVariant: "darkGrid",
   recommended: true,

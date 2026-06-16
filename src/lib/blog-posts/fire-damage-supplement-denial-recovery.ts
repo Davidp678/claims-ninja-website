@@ -16,7 +16,7 @@ export const fireDamageSupplementDenialRecovery: BlogPost = {
     "HVAC",
     "Soot",
   ],
-  publishedAt: "2026-07-20",
+  publishedAt: "2026-06-09",
   readingTimeMinutes: 22,
   visualVariant: "darkGrid",
   recommended: true,

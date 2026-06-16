@@ -16,7 +16,7 @@ export const moistureMappingMistakesThatCostContractorsMoney: BlogPost = {
     "Supplements",
     "Contractor Revenue",
   ],
-  publishedAt: "2026-06-26",
+  publishedAt: "2026-05-16",
   readingTimeMinutes: 20,
   visualVariant: "darkGrid",
   authorId: "claims-ninja-editorial",

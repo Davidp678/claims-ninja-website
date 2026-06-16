@@ -48,7 +48,7 @@ export function GuideDetailHero({ guide, locale = "en" }: GuideDetailHeroProps) 
           </span>
           <span aria-hidden>·</span>
           <time dateTime={guide.updatedAt ?? guide.publishedAt}>
-            {hubUi.updatedPrefix}{" "}
+            {guide.updatedAt ? hubUi.updatedPrefix : hubUi.publishedPrefix}{" "}
             {formatGuideDate(guide.updatedAt ?? guide.publishedAt, locale)}
           </time>
         </div>

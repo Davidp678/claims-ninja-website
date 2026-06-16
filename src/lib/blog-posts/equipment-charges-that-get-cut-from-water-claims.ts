@@ -19,7 +19,7 @@ export const equipmentChargesThatGetCutFromWaterClaims: BlogPost = {
     "Air Movers",
     "Dehumidifiers",
   ],
-  publishedAt: "2026-07-01",
+  publishedAt: "2026-05-21",
   readingTimeMinutes: 17,
   visualVariant: "darkGrid",
   authorId: "claims-ninja-editorial",

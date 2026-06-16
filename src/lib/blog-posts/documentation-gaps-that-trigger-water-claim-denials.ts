@@ -18,7 +18,7 @@ export const documentationGapsThatTriggerWaterClaimDenials: BlogPost = {
     "Supplements",
     "Monitoring",
   ],
-  publishedAt: "2026-07-02",
+  publishedAt: "2026-05-22",
   readingTimeMinutes: 18,
   visualVariant: "darkGrid",
   authorId: "claims-ninja-editorial",

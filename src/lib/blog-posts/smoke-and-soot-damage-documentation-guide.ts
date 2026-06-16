@@ -15,7 +15,7 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
     "Supplements",
     "Claim Recovery",
   ],
-  publishedAt: "2026-07-06",
+  publishedAt: "2026-05-26",
   readingTimeMinutes: 22,
   visualVariant: "darkGrid",
   recommended: true,

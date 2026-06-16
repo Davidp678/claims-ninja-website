@@ -16,7 +16,7 @@ export const howCarriersReduceDryingDays: BlogPost = {
     "Underpayment",
     "Supplements",
   ],
-  publishedAt: "2026-06-30",
+  publishedAt: "2026-05-20",
   readingTimeMinutes: 17,
   visualVariant: "darkGrid",
   authorId: "claims-ninja-editorial",

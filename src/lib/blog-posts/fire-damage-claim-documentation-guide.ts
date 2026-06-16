@@ -15,7 +15,7 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
     "Claim Recovery",
     "Restoration",
   ],
-  publishedAt: "2026-06-22",
+  publishedAt: "2026-05-12",
   readingTimeMinutes: 25,
   visualVariant: "darkGrid",
   recommended: true,

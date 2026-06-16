@@ -120,6 +120,7 @@ export type GuideHubContent = {
     categoryGuidesTitle: (name: string) => string;
     viewAllGuides: (count: number) => string;
     openGuide: string;
+    publishedPrefix: string;
     updatedPrefix: string;
     minutesShort: string;
     minutesExecution: string;
@@ -185,6 +186,7 @@ const EN: ResourcesContent = {
       categoryGuidesTitle: (name) => `${name} guides`,
       viewAllGuides: (count) => `View all ${count} guides →`,
       openGuide: "Open guide →",
+      publishedPrefix: "Published",
       updatedPrefix: "Updated",
       minutesShort: "min",
       minutesExecution: "min execution",
@@ -406,6 +408,7 @@ const ES: ResourcesContent = {
       categoryGuidesTitle: (name) => `Guías de ${name}`,
       viewAllGuides: (count) => `Ver las ${count} guías →`,
       openGuide: "Abrir guía →",
+      publishedPrefix: "Publicado",
       updatedPrefix: "Actualizado",
       minutesShort: "min",
       minutesExecution: "min de ejecución",

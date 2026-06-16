@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { BlogPostPage } from "@/components/blog/BlogPostPage";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
-import { BLOG_POST_CTA, getAllBlogSlugs, getBlogPostBySlug } from "@/lib/blog-page";
+import { BLOG_POST_CTA, getAllBlogSlugs, getPublishedPostBySlug } from "@/lib/blog-page";
 import { blogArticleMetadata } from "@/lib/metadata";
 
 type PageProps = {
@@ -16,7 +16,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = getPublishedPostBySlug(slug);
 
   if (!post) {
     return { title: "Article not found" };
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function BlogArticlePage({ params }: PageProps) {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = getPublishedPostBySlug(slug);
 
   if (!post) {
     notFound();
