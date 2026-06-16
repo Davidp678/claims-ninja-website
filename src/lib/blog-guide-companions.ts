@@ -74,12 +74,12 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "moisture-mapping-mistakes-that-cost-contractors-money": {
     intro:
-      "You've learned which moisture mapping mistakes cost money on insurance files. Now run the field procedures that prevent invoice reductions and defend drying scope from intake through closeout.",
+      "You've learned which moisture mapping mistakes cost money on insurance files — including multi-unit and large-footprint losses. Now run the field procedures that prevent invoice reductions and defend drying scope from intake through closeout.",
     guideSlugs: [
+      "commercial-water-loss-documentation-guide",
       "moisture-mapping-guide",
       "dry-log-collection-guide",
       "daily-monitoring-guide",
-      "category-class-documentation-guide",
     ],
   },
   "equipment-charges-water-damage-claims": {
@@ -114,32 +114,32 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "how-carriers-reduce-drying-days": {
     intro:
-      "You've learned how carriers reduce drying days when documentation fails. Now run the field procedures that defend equipment duration, monitoring visits, and log chronology from intake through closeout.",
+      "You've learned how carriers reduce drying days when documentation fails — on residential and commercial losses. Now run the field procedures that defend equipment duration, monitoring visits, and log chronology from intake through closeout.",
     guideSlugs: [
+      "commercial-water-loss-documentation-guide",
       "dry-log-collection-guide",
       "daily-monitoring-guide",
       "equipment-documentation-guide",
-      "moisture-mapping-guide",
     ],
   },
   "equipment-charges-that-get-cut-from-water-claims": {
     intro:
-      "You've learned why equipment charges get cut and how to recover them. Now run the field procedures that defend air movers, dehumidifiers, and specialty drying equipment from desk review.",
+      "You've learned why equipment charges get cut and how to recover them — including large-loss deployments. Now run the field procedures that defend air movers, dehumidifiers, and specialty drying equipment from desk review.",
     guideSlugs: [
+      "commercial-water-loss-documentation-guide",
       "equipment-documentation-guide",
       "dry-log-collection-guide",
       "daily-monitoring-guide",
-      "moisture-mapping-guide",
     ],
   },
   "documentation-gaps-that-trigger-water-claim-denials": {
     intro:
-      "You've learned which documentation gaps trigger denials and reductions. Now run the field procedures that close those gaps from intake through closeout.",
+      "You've learned which documentation gaps trigger denials and reductions — gaps that multiply on commercial and multifamily losses. Now run the field procedures that close those gaps from intake through closeout.",
     guideSlugs: [
+      "commercial-water-loss-documentation-guide",
       "dry-log-collection-guide",
       "moisture-mapping-guide",
       "daily-monitoring-guide",
-      "equipment-documentation-guide",
     ],
   },
   "fire-damage-claim-documentation-guide": {

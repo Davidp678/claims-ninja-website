@@ -1,3 +1,4 @@
+import { COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE } from "@/lib/guides/commercial-water-loss-documentation-guide";
 import { defineGuide, GUIDE_PUBLISHED_AT } from "@/lib/guides/guide-builder";
 import type { Guide } from "@/lib/guide-types";
 
@@ -288,6 +289,7 @@ export const WATER_DAMAGE_GUIDES = [
       "moisture-mapping-guide",
       "daily-monitoring-guide",
       "equipment-documentation-guide",
+      "commercial-water-loss-documentation-guide",
     ],
     relatedBlogSlugs: [
       "dry-log-documentation-guide-insurance-claims",
@@ -517,6 +519,7 @@ export const WATER_DAMAGE_GUIDES = [
       "dry-log-collection-guide",
       "category-class-documentation-guide",
       "daily-monitoring-guide",
+      "commercial-water-loss-documentation-guide",
     ],
     relatedBlogSlugs: [
       "moisture-mapping-best-practices-insurance-claims",
@@ -744,6 +747,7 @@ export const WATER_DAMAGE_GUIDES = [
       "daily-monitoring-guide",
       "moisture-mapping-guide",
       "mitigation-intake-checklist",
+      "commercial-water-loss-documentation-guide",
     ],
     relatedBlogSlugs: [
       "equipment-charges-water-damage-claims",
@@ -963,6 +967,7 @@ export const WATER_DAMAGE_GUIDES = [
       "dry-log-collection-guide",
       "equipment-documentation-guide",
       "moisture-mapping-guide",
+      "commercial-water-loss-documentation-guide",
     ],
     relatedBlogSlugs: [
       "daily-monitoring-documentation-best-practices",
@@ -1174,6 +1179,7 @@ export const WATER_DAMAGE_GUIDES = [
       "moisture-mapping-guide",
       "dry-log-collection-guide",
       "contents-manipulation-documentation-guide",
+      "commercial-water-loss-documentation-guide",
     ],
     relatedBlogSlugs: [
       "why-water-mitigation-claims-get-underpaid",
@@ -1623,6 +1629,7 @@ export const WATER_DAMAGE_GUIDES = [
       "dry-log-collection-guide",
       "equipment-documentation-guide",
       "daily-monitoring-guide",
+      "commercial-water-loss-documentation-guide",
     ],
     relatedBlogSlugs: [
       "why-category-3-water-claims-get-underpaid",
@@ -2082,4 +2089,6 @@ export const WATER_DAMAGE_GUIDES = [
       { label: "Pricing", href: "/pricing" },
     ],
   }),
+
+  COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE,
 ] as const satisfies readonly Guide[];

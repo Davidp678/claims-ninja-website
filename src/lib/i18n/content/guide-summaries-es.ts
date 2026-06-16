@@ -110,6 +110,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Aprenda cómo los contratistas de restauración deben documentar pérdidas de agua categoría 3, incluyendo mapas de humedad, registros de secado, uso de equipos, alcance de demolición, fotos, monitoreo diario y respaldo de reclamación.",
   },
+  "water-damage/commercial-water-loss-documentation-guide": {
+    title: "Guía de documentación de pérdidas comerciales por agua",
+    excerpt:
+      "Aprenda cómo documentar pérdidas comerciales por agua, proyectos multifamiliar, pérdidas en apartamentos, propiedades comerciales y trabajos de mitigación de grandes pérdidas para respaldar la recuperación de seguros y el éxito de la reclamación.",
+  },
   "fire-damage/fire-claim-intake-guide": {
     title: "Lista de verificación de admisión de reclamaciones por incendio",
     excerpt:

@@ -562,6 +562,152 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     question: "¿Apoyan pérdidas comerciales por agua?",
     answer:
       "Sí. Las reclamaciones comerciales por agua a menudo involucran áreas de secado mayores, consideraciones de interrupción del negocio y alcances de reconstrucción de múltiples oficios. La organización de la documentación se vuelve crítica a esa escala.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Soluciones de daños por agua",
+        href: "/solutions/water-damage",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-claims-documentation",
+    category: "water_damage_claims",
+    question: "¿Cómo se documentan las reclamaciones comerciales por agua?",
+    answer:
+      "Las reclamaciones comerciales por agua requieren documentación por zonas acorde a la huella de la propiedad: admisión y plan de documentación, mapas de humedad por cámara, registros de equipos con etiquetas de activos, registros diarios de secado, registros de impacto a inquilinos en propiedades ocupadas, prueba de contención y HEPA, y paquetes de cierre indexados. Trate pérdidas retail, oficina y multifamiliar con indexación separada por suite o unidad — no patrones de archivo residencial único.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Guía de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+    ],
+  },
+  {
+    id: "water-apartment-loss-documentation",
+    category: "water_damage_claims",
+    question: "¿Qué documentación se requiere para pérdidas por agua en apartamentos?",
+    answer:
+      "Documente cada unidad afectada con número de unidad, piso y posición en el stack en fotos, mapas de humedad y registros de secado. Separe el alcance dentro de la unidad de las áreas comunes. Mantenga registros de acceso e impacto a inquilinos alineados con visitas de monitoreo. Capture lecturas base por unidad antes de instalar equipos y lecturas terminales al cierre — la evidencia por unidad evita reducciones proporcionales cuando las aseguradoras no pueden verificar el alcance por unidad facturada.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Guía de monitoreo diario",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+    ],
+  },
+  {
+    id: "water-multifamily-loss-documentation",
+    category: "water_damage_claims",
+    question: "¿Cómo debe documentarse el daño por agua multifamiliar?",
+    answer:
+      "Trate cada unidad afectada como una cámara de secado separada con nomenclatura consistente en mapas, registros y fotos. Documente migración vertical en límites del stack y alcance de áreas comunes separado de las unidades. Coordine acceso con administración de la propiedad y registre cada evento de entrada. Suplementos por fases con revisiones de mapas fechadas cuando el alcance se expande entre pisos o unidades — los archivos multifamiliares fusionados fallan en revisión cuando la evidencia por unidad no está diferenciada.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Guía de recolección de registros de secado",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-claims-scrutiny",
+    category: "water_damage_claims",
+    question: "¿Por qué las reclamaciones comerciales por agua reciben mayor escrutinio?",
+    answer:
+      "Totales de factura más altos activan revisión especializada de escritorio y auditoría de terceros. Las aseguradoras reconcilian utilización de equipos, visitas de monitoreo y alcance de secado multicomercio contra fotos con etiquetas de activos y registros diarios — no macros de estimación. Coordinación con inquilinos, superposición con interrupción del negocio y suplementos por fases añaden capas de revisión que los archivos residenciales rara vez enfrentan. Evidencia débil por zona invita reducciones proporcionales en todo el archivo comercial.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Cargos de equipos que recortan de reclamaciones por agua",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-mitigation-package",
+    category: "water_damage_claims",
+    question: "¿Qué debe incluir un paquete de mitigación comercial?",
+    answer:
+      "Un paquete de cierre comercial indexado: plan de documentación, registros de admisión, mapas de humedad por zona, registros de secado cronológicos por cámara, prueba de equipos con etiquetas de activos, registros de contención y HEPA, registro de impacto a inquilinos, notas de contenidos cuando aplique, lecturas terminales y documentación de retiro de equipos. Referencie cruzadamente cada partida facturada con evidencia fechada por zona — no un volcado de fotos estilo residencial único.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "FAQ de paquete final de mitigación",
+        href: "/faq#faq-water-final-mitigation-package",
+      },
+    ],
+  },
+  {
+    id: "water-tenant-impact-documentation",
+    category: "water_damage_claims",
+    question: "¿Cómo deben documentarse los impactos a inquilinos?",
+    answer:
+      "Mantenga un registro de impacto a inquilinos desde la movilización: avisos de reubicación o habitabilidad, restricciones de acceso, coordinación con administración de la propiedad, interrupción de contenidos y marcas de tiempo de comunicación. Fotografíe áreas afectadas a inquilinos con identificadores de unidad y documente autorización de acceso. Alinee entradas del registro con registros de mitigación por unidad — la producción en edificios ocupados debe coincidir con documentación de acceso y coordinación en revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "water-business-interruption-documentation",
+    category: "water_damage_claims",
+    question: "¿Qué documentación respalda reclamaciones de interrupción del negocio?",
+    answer:
+      "Los contratistas de mitigación documentan impacto operacional contemporáneo: áreas cerradas al negocio, tiempo de inactividad de producción, requisitos fuera de horario y liberación por zonas con fotos fechadas y registros de acceso. Esto apoya narrativas de BI del asegurado pero no reemplaza el análisis de cobertura entre asegurado y aseguradora. Separe evidencia de mitigación de registros financieros del asegurado — documentación de campo sólida ayuda a alinear cronologías de secado con continuidad del negocio sin confundir tipos de reclamación.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Soluciones de daños por agua",
+        href: "/solutions/water-damage",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-claims-underpaid",
+    category: "water_damage_claims",
+    question: "¿Qué causa que las reclamaciones comerciales por agua se paguen menos?",
+    answer:
+      "Factores comunes: estructura de archivo residencial en huellas multizona, equipos facturados sin prueba de ubicación con etiquetas de activos, brechas de monitoreo entre cámaras, unidades multifamiliares fusionadas en registros únicos, registros de acceso a inquilinos ausentes y paquetes de cierre sin referencia cruzada indexada por partida. Las aseguradoras aplican reducciones proporcionales cuando cualquier zona carece de evidencia contemporánea — documentación organizada por zona fortalece argumentos de recuperación y suplementos.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Brechas de documentación que provocan denegaciones",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Recuperación de denegación de suplemento por agua",
+        href: "/resources/blog/water-damage-supplement-denial-recovery",
+      },
+    ],
   },
   {
     id: "water-category-3-qualifies",

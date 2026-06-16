@@ -273,6 +273,89 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     relatedGuideSlugs: ["water-damage/moisture-mapping-guide"],
     relatedFaqIds: ["water-moisture-maps-required", "water-dry-log-contents"],
   },
+  "water-commercial-claims-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-commercial-mitigation-package",
+      "water-mitigation-file-documentation",
+      "water-multifamily-loss-documentation",
+    ],
+    internalLinkNotes:
+      "Primary commercial documentation FAQ; anchor for commercial water loss documentation guide.",
+  },
+  "water-apartment-loss-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-multifamily-loss-documentation",
+      "water-tenant-impact-documentation",
+    ],
+    internalLinkNotes: "Apartment unit-level documentation; link multifamily and tenant impact FAQs.",
+  },
+  "water-multifamily-loss-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/commercial-water-loss-documentation-guide",
+      "water-damage/dry-log-collection-guide",
+    ],
+    relatedFaqIds: [
+      "water-apartment-loss-documentation",
+      "water-tenant-impact-documentation",
+    ],
+    internalLinkNotes:
+      "Multifamily stack migration and unit-level indexing; moisture-mapping-mistakes blog companion.",
+  },
+  "water-commercial-claims-scrutiny": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-commercial-claims-underpaid",
+      "water-equipment-charge-reductions",
+    ],
+    internalLinkNotes:
+      "Commercial desk review scrutiny; pair with equipment-charges-that-get-cut-from-water-claims blog.",
+  },
+  "water-commercial-mitigation-package": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "water-damage/commercial-water-loss-documentation-guide",
+      "water-damage/dry-log-collection-guide",
+    ],
+    relatedFaqIds: [
+      "water-final-mitigation-package",
+      "water-commercial-claims-documentation",
+    ],
+    internalLinkNotes:
+      "Commercial closeout index; cross-link general final mitigation package FAQ.",
+  },
+  "water-tenant-impact-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-apartment-loss-documentation",
+      "water-multifamily-loss-documentation",
+    ],
+    internalLinkNotes: "Tenant log and access records on occupied commercial and multifamily losses.",
+  },
+  "water-business-interruption-documentation": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: ["water-commercial-claims-documentation"],
+    internalLinkNotes:
+      "BI support documentation; separate mitigation evidence from insured financial records.",
+  },
+  "water-commercial-claims-underpaid": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-commercial-claims-scrutiny",
+      "water-claim-denied-documentation",
+      "water-equipment-charge-reductions",
+    ],
+    internalLinkNotes:
+      "Commercial underpayment bridge; link documentation-gaps and supplement denial recovery blogs.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

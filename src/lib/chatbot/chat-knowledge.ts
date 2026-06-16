@@ -99,21 +99,86 @@ function questionPhrases(question: string): string[] {
   return phrases;
 }
 
+const FAQ_ID_BOOSTS: Record<
+  string,
+  { phrases?: readonly string[]; keywords?: readonly string[]; topics?: readonly string[] }
+> = {
+  "water-commercial-claims-documentation": {
+    phrases: [
+      "commercial water loss documentation",
+      "commercial mitigation documentation",
+      "how are commercial water claims documented",
+    ],
+    keywords: ["commercial water", "commercial mitigation"],
+    topics: ["commercial_water"],
+  },
+  "water-apartment-loss-documentation": {
+    phrases: [
+      "apartment water damage documentation",
+      "apartment water losses",
+      "apartment water loss documentation",
+    ],
+    keywords: ["apartment water", "apartment documentation"],
+    topics: ["commercial_water"],
+  },
+  "water-multifamily-loss-documentation": {
+    phrases: ["multifamily water claims documentation", "multifamily water damage"],
+    keywords: ["multifamily", "multifamily water"],
+    topics: ["commercial_water"],
+  },
+  "water-commercial-claims-scrutiny": {
+    phrases: ["commercial water claims scrutinized", "commercial water claims scrutiny"],
+    keywords: ["commercial scrutiny", "commercial water claims"],
+    topics: ["commercial_water"],
+  },
+  "water-commercial-mitigation-package": {
+    phrases: [
+      "commercial mitigation package",
+      "what should be in a commercial mitigation package",
+    ],
+    keywords: ["commercial mitigation package", "commercial closeout"],
+    topics: ["commercial_water"],
+  },
+  "water-tenant-impact-documentation": {
+    phrases: ["tenant impact documentation water damage", "tenant impact documentation"],
+    keywords: ["tenant impact", "tenant documentation"],
+    topics: ["commercial_water"],
+  },
+  "water-business-interruption-documentation": {
+    phrases: [
+      "business interruption documentation water damage",
+      "business interruption documentation",
+    ],
+    keywords: ["business interruption"],
+    topics: ["commercial_water"],
+  },
+  "water-commercial-claims-underpaid": {
+    phrases: [
+      "commercial water claims underpaid",
+      "commercial water claims underpayment",
+    ],
+    keywords: ["commercial underpaid", "commercial underpayment"],
+    topics: ["commercial_water"],
+  },
+};
+
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {
   return items.map((item) => {
     const categoryTitle = getCategoryTitle(item.category);
     const aliases = TOPIC_ALIASES[item.category] ?? [];
+    const boosts = FAQ_ID_BOOSTS[item.id];
     return {
       id: `faq:${item.id}`,
       source: `faq — ${categoryTitle}`,
-      topics: [item.category, ...aliases],
-      phrases: questionPhrases(item.question),
+      topics: [item.category, ...aliases, ...(boosts?.topics ?? [])],
+      phrases: [...questionPhrases(item.question), ...(boosts?.phrases ?? [])],
       keywords: [
         ...aliases,
         ...item.question
           .toLowerCase()
           .split(/\s+/)
           .filter((w) => w.length >= 4),
+        ...(boosts?.keywords ?? []),
       ],
       text: `Q: ${item.question}\nA: ${item.answer}`,
     };

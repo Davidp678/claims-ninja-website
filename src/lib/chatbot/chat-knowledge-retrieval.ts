@@ -215,6 +215,19 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "how do i",
   ],
   mitigation: ["mitigation", "water mitigation", "drying", "restoration"],
+  commercial_water: [
+    "commercial water",
+    "commercial water loss",
+    "commercial mitigation",
+    "multifamily",
+    "apartment water",
+    "tenant impact",
+    "business interruption",
+    "large loss",
+    "commercial moisture mapping",
+    "commercial mitigation package",
+    "commercial claim recovery",
+  ],
   results_insights: [
     "results and insights",
     "portfolio recovery",
@@ -760,6 +773,94 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
           /documentation-gaps-that-trigger-water-claim-denials|water-final-drying-verification|final drying verification/i.test(
             `${s.text} ${s.source}`,
           ),
+      ),
+  },
+  {
+    label: "commercial water loss documentation retrieves guide",
+    message: "how do i document commercial water loss mitigation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-water-loss-documentation-guide|commercial water loss documentation guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial mitigation documentation retrieves guide",
+    message: "commercial mitigation documentation requirements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-water-loss-documentation-guide|water-commercial-claims-documentation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "apartment water damage documentation retrieves guide or FAQ",
+    message: "apartment water damage documentation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-water-loss-documentation-guide|water-apartment-loss-documentation|apartment water/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multifamily water claims documentation retrieves guide",
+    message: "multifamily water claims documentation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-water-loss-documentation-guide|water-multifamily-loss-documentation|multifamily/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "tenant impact documentation retrieves guide or FAQ",
+    message: "tenant impact documentation water damage",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-water-loss-documentation-guide|water-tenant-impact-documentation|tenant impact/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "business interruption documentation water retrieves guide",
+    message: "business interruption documentation water damage",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-water-loss-documentation-guide|water-business-interruption-documentation|business interruption/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial mitigation package question retrieves guide or FAQ",
+    message: "what should be in a commercial mitigation package",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-water-loss-documentation-guide|water-commercial-mitigation-package|commercial mitigation package/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "large loss documentation retrieves guide",
+    message: "large loss water damage documentation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-water-loss-documentation-guide|large loss documentation|large-loss/i.test(
+          `${s.text} ${s.source}`,
+        ),
       ),
   },
   {

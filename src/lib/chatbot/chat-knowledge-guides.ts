@@ -205,6 +205,30 @@ const GUIDE_SLUG_BOOSTS: Record<
     phrases: ["window door documentation", "window and door documentation"],
     keywords: ["window documentation", "door documentation"],
   },
+  "commercial-water-loss-documentation-guide": {
+    phrases: [
+      "commercial water loss documentation",
+      "commercial mitigation documentation",
+      "apartment water damage documentation",
+      "multifamily water claims",
+      "large loss documentation",
+      "tenant impact documentation water damage",
+      "business interruption documentation water damage",
+      "how do i document commercial water loss mitigation",
+    ],
+    keywords: [
+      "commercial water",
+      "tenant impact",
+      "business interruption",
+      "commercial moisture mapping",
+      "commercial mitigation package",
+      "commercial claim recovery",
+      "apartment water",
+      "multifamily",
+      "large loss",
+    ],
+    topics: ["water_damage_claims", "commercial_water", "mitigation"],
+  },
 };
 
 function truncate(text: string, max: number): string {

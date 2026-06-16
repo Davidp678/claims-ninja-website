@@ -562,6 +562,152 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "Do you support commercial water losses?",
     answer:
       "Yes. Commercial water claims often involve larger drying footprints, business interruption considerations, and multi-trade rebuild scopes. Documentation organization becomes critical at that scale.",
+    relatedLinks: [
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Water damage solutions",
+        href: "/solutions/water-damage",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-claims-documentation",
+    category: "water_damage_claims",
+    question: "How are commercial water claims documented?",
+    answer:
+      "Commercial water claims require zone-level documentation scaled to property footprint: intake and documentation plan, moisture maps per chamber, asset-tagged equipment records, daily dry logs, tenant impact logs on occupied properties, containment and HEPA proof, and indexed closeout packets. Treat retail, office, and multifamily losses with separate indexing per suite or unit — not residential single-file patterns.",
+    relatedLinks: [
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Moisture mapping guide",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+    ],
+  },
+  {
+    id: "water-apartment-loss-documentation",
+    category: "water_damage_claims",
+    question: "What documentation is required for apartment water losses?",
+    answer:
+      "Document each affected unit with unit number, floor, and stack position on photos, moisture maps, and dry logs. Separate in-unit scope from common areas. Maintain tenant access and impact logs aligned to monitoring visits. Capture baseline readings per unit before equipment set and terminal readings at closeout — unit-level evidence prevents proportional reductions when carriers cannot verify scope per billed unit.",
+    relatedLinks: [
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Daily monitoring guide",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+    ],
+  },
+  {
+    id: "water-multifamily-loss-documentation",
+    category: "water_damage_claims",
+    question: "How should multifamily water damage be documented?",
+    answer:
+      "Treat each affected unit as a separate drying chamber with consistent naming through maps, logs, and photos. Document vertical migration at stack boundaries and common-area scope separately from units. Coordinate access with property management and log every entry event. Phased supplements with dated map revisions when scope expands across floors or units — merged multifamily files fail desk review when unit evidence is undifferentiated.",
+    relatedLinks: [
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Dry log collection guide",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-claims-scrutiny",
+    category: "water_damage_claims",
+    question: "Why are commercial water claims more heavily scrutinized?",
+    answer:
+      "Higher invoice totals trigger specialist desk review and third-party audit. Carriers reconcile equipment utilization, monitoring visits, and multi-chamber drying scope against asset-tag photos and daily logs — not estimate macros. Tenant coordination, business interruption overlap, and phased supplements add review layers residential files rarely face. Weak zone-level evidence invites proportional reductions across the entire commercial file.",
+    relatedLinks: [
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Equipment charges that get cut from water claims",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-mitigation-package",
+    category: "water_damage_claims",
+    question: "What should be included in a commercial mitigation package?",
+    answer:
+      "An indexed commercial closeout packet: documentation plan, intake records, zone-level moisture maps, chronological dry logs per chamber, asset-tagged equipment proof, containment and HEPA records, tenant impact log, contents notes where applicable, terminal readings, and equipment pull documentation. Cross-reference each billed line to dated evidence by zone — not a single residential-style photo dump.",
+    relatedLinks: [
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Final mitigation package FAQ",
+        href: "/faq#faq-water-final-mitigation-package",
+      },
+    ],
+  },
+  {
+    id: "water-tenant-impact-documentation",
+    category: "water_damage_claims",
+    question: "How should tenant impacts be documented?",
+    answer:
+      "Maintain a tenant impact log from mobilization: relocation or habitability notices, access restrictions, property management coordination, contents disruption, and communication timestamps. Photograph tenant-affected areas with unit identifiers and document authorization for access. Align log entries to unit-level mitigation records — production in occupied buildings must match access and coordination documentation at desk review.",
+    relatedLinks: [
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "water-business-interruption-documentation",
+    category: "water_damage_claims",
+    question: "What documentation supports business interruption claims?",
+    answer:
+      "Mitigation contractors document contemporaneous operational impact: areas closed to business, production downtime, after-hours requirements, and phased zone release with dated photos and access logs. This supports insured BI narratives but does not replace coverage analysis between insured and carrier. Separate mitigation evidence from insured financial records — strong field documentation helps align drying timelines with business continuity without conflating claim types.",
+    relatedLinks: [
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Water damage solutions",
+        href: "/solutions/water-damage",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-claims-underpaid",
+    category: "water_damage_claims",
+    question: "What causes commercial water claims to be underpaid?",
+    answer:
+      "Common drivers: residential file structure on multi-zone footprints, equipment billed without asset-tag placement proof, monitoring gaps between chambers, multifamily units merged into single logs, missing tenant access records, and unsorted closeout packages without indexed line-item cross-reference. Carriers apply proportional reductions when any zone lacks contemporaneous evidence — organized zone-level documentation strengthens recovery and supplement arguments.",
+    relatedLinks: [
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Water damage supplement denial recovery",
+        href: "/resources/blog/water-damage-supplement-denial-recovery",
+      },
+    ],
   },
   {
     id: "water-category-3-qualifies",
