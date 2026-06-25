@@ -185,6 +185,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "water-large-loss-scrutiny",
       "water-large-loss-drying-zones",
       "water-large-loss-invoice-documentation",
+      "water-class-4-drying-definition",
+      "water-class-4-documentation-required",
+      "water-class-4-specialty-equipment-documentation",
+      "water-class-4-drying-duration",
+      "water-class-4-carrier-disputes",
     ],
   },
   fireDamage: {

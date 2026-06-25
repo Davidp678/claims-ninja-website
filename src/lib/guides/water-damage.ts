@@ -1,3 +1,4 @@
+import { CLASS_4_DRYING_DOCUMENTATION_GUIDE } from "@/lib/guides/class-4-drying-documentation-guide";
 import { COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE } from "@/lib/guides/commercial-water-loss-documentation-guide";
 import { WATER_MITIGATION_INVOICE_DEFENSE_GUIDE } from "@/lib/guides/water-mitigation-invoice-defense-guide";
 import { defineGuide, GUIDE_PUBLISHED_AT } from "@/lib/guides/guide-builder";
@@ -1185,6 +1186,7 @@ export const WATER_DAMAGE_GUIDES = [
       "dry-log-collection-guide",
       "contents-manipulation-documentation-guide",
       "commercial-water-loss-documentation-guide",
+      "class-4-drying-documentation-guide",
     ],
     relatedBlogSlugs: [
       "why-water-mitigation-claims-get-underpaid",
@@ -2102,4 +2104,5 @@ export const WATER_DAMAGE_GUIDES = [
 
   COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE,
   WATER_MITIGATION_INVOICE_DEFENSE_GUIDE,
+  CLASS_4_DRYING_DOCUMENTATION_GUIDE,
 ] as const satisfies readonly Guide[];

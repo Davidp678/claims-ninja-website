@@ -277,6 +277,10 @@ export const equipmentChargesThatGetCutFromWaterClaims: BlogPost = {
       ],
       links: [
         {
+          label: "Class 4 drying documentation guide",
+          href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
+        },
+        {
           label: "Mitigation equipment documentation procedure",
           href: "/resources/guides/water-damage/equipment-documentation-guide",
         },

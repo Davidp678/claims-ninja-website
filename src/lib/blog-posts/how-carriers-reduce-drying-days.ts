@@ -360,6 +360,10 @@ export const howCarriersReduceDryingDays: BlogPost = {
           href: "/resources/guides/water-damage/category-class-documentation-guide",
         },
         {
+          label: "Class 4 drying documentation guide",
+          href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
+        },
+        {
           label: "Category 3 water damage documentation guide",
           href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
         },

@@ -1705,6 +1705,113 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Class 4 Drying (5)
+  {
+    id: "water-class-4-drying-definition",
+    category: "water_damage_claims",
+    question: "¿Qué es el secado de daños por agua clase 4?",
+    answer:
+      "El secado de daños por agua clase 4 aborda materiales de baja permeabilidad donde la humedad está profundamente retenida y la evaporación superficial es limitada — incluyendo pisos de madera dura, yeso, concreto, ladrillo, estructura densa y subpisos saturados. El agua ligada en estos ensamblajes requiere tiempo de secado extendido, equipos especializados como sistemas Injectidry, alfombras de piso, deshumidificadores desecantes y secado por calor, además de monitoreo diario consistente. La documentación adecuada de clase 4 comienza en la admisión con identificación de materiales, lecturas de humedad iniciales y fotos que respalden la clasificación.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de secado clase 4",
+        href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de categoría y clase",
+        href: "/resources/guides/water-damage/category-class-documentation-guide",
+      },
+      {
+        label: "¿Qué es la documentación de categoría y clase de agua?",
+        href: "/faq#faq-water-category-class",
+      },
+    ],
+  },
+  {
+    id: "water-class-4-documentation-required",
+    category: "water_damage_claims",
+    question: "¿Por qué el secado clase 4 requiere documentación adicional?",
+    answer:
+      "El secado clase 4 implica mayor duración, equipos especializados y ensamblajes con agua ligada que las aseguradoras escrutan más que los secados residenciales estándar. Los revisores de escritorio reducen días de secado, líneas de equipos especializados y mano de obra cuando la documentación carece de lecturas iniciales en materiales de baja permeabilidad, mapas de humedad específicos por material, registros de monitoreo diario, prueba de colocación de sistemas especializados y narrativas de progreso contemporáneas. La documentación adicional demuestra condiciones de materiales, progresión de secado y necesidad de equipos desde la admisión hasta la verificación final.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de secado clase 4",
+        href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
+      },
+      {
+        label: "Guía de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "Guía de monitoreo diario",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+    ],
+  },
+  {
+    id: "water-class-4-specialty-equipment-documentation",
+    category: "water_damage_claims",
+    question: "¿Cómo debe documentarse el equipo de secado especializado?",
+    answer:
+      "Documente el equipo de secado especializado con fotos de colocación al instalarse y cuando cambie la configuración, filas de registro de secado que coincidan con los días de equipo facturados y registros de equipo referenciados a cámaras del mapa de humedad. Los sistemas Injectidry requieren fotos de colocación de paneles, enrutamiento de mangueras y puntos de inyección. Los sistemas de alfombras de piso necesitan fotos de distribución en ensamblajes de madera dura y subpiso. Los deshumidificadores desecantes y sistemas de secado por calor requieren colocación, ductos y registros de depresión de grano o temperatura. Las fotos de aislamiento de contención vinculan la configuración de aire negativo al diseño de cámara especializada.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de secado clase 4",
+        href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de equipos",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+      {
+        label: "Cargos de equipos que recortan de reclamaciones de agua",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+    ],
+  },
+  {
+    id: "water-class-4-drying-duration",
+    category: "water_damage_claims",
+    question: "¿Por qué los proyectos de secado clase 4 tardan más?",
+    answer:
+      "Los proyectos de secado clase 4 tardan más porque los materiales de baja permeabilidad retienen agua ligada que se libera lentamente a través de evaporación superficial limitada. La madera dura, yeso, concreto, ladrillo, estructura densa y subpisos saturados pueden mostrar lecturas estancadas incluso cuando las condiciones ambientales parecen favorables. La complejidad del ensamblaje, las condiciones ambientales y la densidad del material extienden los plazos más allá de las plantillas residenciales de las aseguradoras. Los registros diarios con lecturas específicas por material y narrativas de progreso respaldan la duración extendida cuando el estándar de seco aún no se alcanza en todos los puntos activos del mapa.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de secado clase 4",
+        href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
+      },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
+      {
+        label: "¿Cómo defiendo los cargos por días de secado?",
+        href: "/faq#faq-water-defend-drying-day-charges",
+      },
+    ],
+  },
+  {
+    id: "water-class-4-carrier-disputes",
+    category: "water_damage_claims",
+    question: "¿Por qué las aseguradoras disputan los cargos de secado clase 4?",
+    answer:
+      "Las aseguradoras disputan los cargos de secado clase 4 cuando la documentación no respalda la duración extendida, la necesidad de equipos especializados o la clasificación clase 4 en sí. Los desafíos comunes incluyen días de secado reducidos a plantillas de clase más cortas, líneas de equipos especializados eliminadas sin prueba de colocación, clase 4 degradada cuando la evidencia de materiales en admisión es débil, mano de obra recortada sin referencia cruzada de fotos y registros, y visitas de monitoreo cortadas cuando las lecturas están incompletas. La documentación indexada — mapas de humedad, registros de secado, fotos de equipos y narrativas diarias — aborda cada tipo de disputa en la revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de secado clase 4",
+        href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
+      },
+      {
+        label: "Guía de defensa de facturas de mitigación de agua",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Brechas de documentación que provocan denegaciones de reclamaciones de agua",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+    ],
+  },
+
   // Fire Damage Claims (6)
   {
     id: "fire-smoke-soot",

@@ -52,12 +52,16 @@ export const largeLossWaterMitigationDocumentationBestPractices: BlogPost = {
         "Large-loss water mitigation projects create documentation challenges that do not exist on standard residential or small commercial claims. Hospitals, schools, hotels, warehouses, manufacturing facilities, office buildings, large apartment complexes, and catastrophic water events each multiply stakeholders, documentation volume, invoice scrutiny, and recovery complexity.",
         "As project size increases, desk reviewers cannot approve scope they cannot trace to dated evidence indexed by zone. Without structured documentation systems, large-loss claims frequently experience payment delays, invoice reductions, and scope disputes — even when field work was performed correctly.",
         "This article explains how mitigation contractors build documentation systems capable of supporting enterprise-scale water losses from mobilization through closeout: command structure, multi-zone segmentation, moisture mapping at scale, daily reporting, equipment tracking, occupant impact records, vendor coordination, and executive-level reporting.",
-        "Field procedures live in the commercial water loss documentation guide, water mitigation invoice defense guide, moisture mapping guide, daily monitoring guide, dry log collection guide, and equipment documentation guide. Use sibling articles for depth on multifamily underpayment patterns, apartment complex documentation, commercial documentation mistakes, drying-day reductions, equipment charge cuts, and documentation gaps. Educational guidance for contractors only — not legal advice.",
+        "Field procedures live in the commercial water loss documentation guide, water mitigation invoice defense guide, class 4 drying documentation guide, moisture mapping guide, daily monitoring guide, dry log collection guide, and equipment documentation guide. Use sibling articles for depth on multifamily underpayment patterns, apartment complex documentation, commercial documentation mistakes, drying-day reductions, equipment charge cuts, and documentation gaps. Educational guidance for contractors only — not legal advice.",
       ],
       links: [
         {
           label: "Commercial water loss documentation guide",
           href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+        },
+        {
+          label: "Class 4 drying documentation guide",
+          href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
         },
         {
           label: "What qualifies as a large-loss water mitigation project?",

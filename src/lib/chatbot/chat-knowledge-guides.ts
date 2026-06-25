@@ -262,6 +262,38 @@ const GUIDE_SLUG_BOOSTS: Record<
     ],
     topics: ["water_damage_claims", "equipment_charges", "dry_logs", "mitigation"],
   },
+  "class-4-drying-documentation-guide": {
+    phrases: [
+      "class 4 drying",
+      "class 4 water damage",
+      "class 4 drying documentation",
+      "how do i document class 4 drying",
+      "bound water drying",
+      "low-permeance materials drying",
+      "specialty drying equipment documentation",
+      "extended drying time class 4",
+      "hardwood drying documentation",
+      "concrete drying documentation",
+      "plaster drying documentation",
+      "class 4 documentation",
+      "drying charge disputes class 4",
+    ],
+    keywords: [
+      "class 4",
+      "bound water",
+      "low-permeance",
+      "specialty drying",
+      "extended drying",
+      "hardwood drying",
+      "concrete drying",
+      "plaster drying",
+      "injectidry",
+      "floor mat",
+      "desiccant",
+      "class 4 documentation",
+    ],
+    topics: ["water_damage_claims", "dry_logs", "equipment_charges", "mitigation", "moisture_mapping"],
+  },
 };
 
 function truncate(text: string, max: number): string {

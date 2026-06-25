@@ -1179,6 +1179,42 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "class 4 drying documentation retrieves class 4 guide",
+    message: "How do I document Class 4 drying?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /class-4-drying-documentation-guide|Class 4 Drying Documentation|class 4 drying documentation/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "class 4 drying duration retrieves duration FAQ or guide",
+    message: "Why does Class 4 drying take longer?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /water-class-4-drying-duration|class-4-drying-documentation-guide|class 4 drying projects take longer|bound water/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "class 4 carrier disputes retrieves dispute FAQ or guide",
+    message: "Why do carriers dispute Class 4 drying charges?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /water-class-4-carrier-disputes|class-4-drying-documentation-guide|carriers dispute Class 4 drying/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
     label: "client portal question retrieves portal context",
     message: "What can I do in the client portal?",
     assert: (result) =>

@@ -1705,6 +1705,113 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
+  // Class 4 Drying (5)
+  {
+    id: "water-class-4-drying-definition",
+    category: "water_damage_claims",
+    question: "What is Class 4 water damage drying?",
+    answer:
+      "Class 4 water damage drying addresses low-permeance materials where moisture is deeply held and surface evaporation is limited — including hardwood flooring, plaster, concrete, brick, dense framing, and saturated subfloors. Bound water in these assemblies requires extended drying time, specialty equipment such as injectidry systems, floor mats, desiccant dehumidifiers, and heat drying, plus consistent daily monitoring. Proper Class 4 documentation starts at intake with material identification, baseline moisture readings, and photos supporting the classification.",
+    relatedLinks: [
+      {
+        label: "Class 4 drying documentation guide",
+        href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
+      },
+      {
+        label: "Category and class documentation guide",
+        href: "/resources/guides/water-damage/category-class-documentation-guide",
+      },
+      {
+        label: "What is category and class of water documentation?",
+        href: "/faq#faq-water-category-class",
+      },
+    ],
+  },
+  {
+    id: "water-class-4-documentation-required",
+    category: "water_damage_claims",
+    question: "Why does Class 4 drying require additional documentation?",
+    answer:
+      "Class 4 drying involves longer duration, specialty equipment, and bound-water assemblies that carriers scrutinize more heavily than standard residential dry-outs. Desk reviewers reduce drying days, specialty equipment lines, and labor when documentation lacks baseline readings on low-permeance materials, material-specific moisture maps, daily monitoring records, specialty system placement proof, and contemporaneous progress narratives. Additional documentation demonstrates material conditions, drying progression, and equipment necessity from intake through final verification.",
+    relatedLinks: [
+      {
+        label: "Class 4 drying documentation guide",
+        href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
+      },
+      {
+        label: "Moisture mapping guide",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "Daily monitoring guide",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+    ],
+  },
+  {
+    id: "water-class-4-specialty-equipment-documentation",
+    category: "water_damage_claims",
+    question: "How should specialty drying equipment be documented?",
+    answer:
+      "Document specialty drying equipment with placement photos at setup and when configuration changes, dry log rows matching billed equipment days, and equipment logs cross-referenced to moisture map chambers. Injectidry systems require panel placement, hose routing, and injection point photos. Floor mat systems need layout photos on hardwood and subfloor assemblies. Desiccant dehumidifiers and heat drying systems require placement, ducting, and grain depression or temperature records. Containment isolation photos tie negative air setup to specialty chamber design.",
+    relatedLinks: [
+      {
+        label: "Class 4 drying documentation guide",
+        href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
+      },
+      {
+        label: "Equipment documentation guide",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+      {
+        label: "Equipment charges that get cut from water claims",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+    ],
+  },
+  {
+    id: "water-class-4-drying-duration",
+    category: "water_damage_claims",
+    question: "Why do Class 4 drying projects take longer?",
+    answer:
+      "Class 4 drying projects take longer because low-permeance materials hold bound water that releases slowly through limited surface evaporation. Hardwood, plaster, concrete, brick, dense framing, and saturated subfloors may show plateauing readings even when ambient conditions appear favorable. Assembly complexity, environmental conditions, and material density extend timelines beyond carrier residential templates. Daily logs with material-specific readings and progress narratives support extended duration when dry standard is not yet met at all active map points.",
+    relatedLinks: [
+      {
+        label: "Class 4 drying documentation guide",
+        href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
+      },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
+      {
+        label: "How do I defend drying day charges?",
+        href: "/faq#faq-water-defend-drying-day-charges",
+      },
+    ],
+  },
+  {
+    id: "water-class-4-carrier-disputes",
+    category: "water_damage_claims",
+    question: "Why do carriers dispute Class 4 drying charges?",
+    answer:
+      "Carriers dispute Class 4 drying charges when documentation does not support extended duration, specialty equipment necessity, or the Class 4 classification itself. Common challenges include drying days reduced to shorter class templates, specialty equipment lines removed without placement proof, Class 4 downgraded when intake material evidence is weak, labor trimmed without photo and log cross-reference, and monitoring visits cut when readings are incomplete. Indexed documentation — moisture maps, dry logs, equipment photos, and daily narratives — addresses each dispute type at desk review.",
+    relatedLinks: [
+      {
+        label: "Class 4 drying documentation guide",
+        href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
+      },
+      {
+        label: "Water mitigation invoice defense guide",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+    ],
+  },
+
   // Fire Damage Claims (5)
   {
     id: "fire-smoke-soot",

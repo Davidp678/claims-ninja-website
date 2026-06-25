@@ -167,13 +167,17 @@ export const documentationGapsThatTriggerWaterClaimDenials: BlogPost = {
       paragraphs: [
         "Poor Category and Class documentation triggers downgrades that cascade into equipment, PPE, containment, and duration disputes. Category 3 assignments without intake contamination evidence — source type, visible contamination, odor indicators, dwell time, affected material porosity — get reclassified to Category 1 or 2 at desk review. That downgrade removes HEPA lines, antimicrobial scope, and extended dry-out templates in one motion.",
         "Class of water documentation must match affected material types and assembly complexity. Class 4 losses on hardwood, plaster, and multi-layer assemblies require longer duration and specialty equipment justification — but only when intake notes and photos support low evaporation potential, not when classification is applied retroactively at invoice.",
-        "Category and Class disputes change template dry-out days before logs are read. Unsupported upgrades get downgraded; unsupported downgrades on contaminated losses still happen when intake evidence was never captured. Category/Class documentation procedure and Category 3 water damage documentation guide define contemporaneous intake evidence.",
+        "Category and Class disputes change template dry-out days before logs are read. Unsupported upgrades get downgraded; unsupported downgrades on contaminated losses still happen when intake evidence was never captured. Category/Class documentation procedure, Class 4 drying documentation guide, and Category 3 water damage documentation guide define contemporaneous intake evidence.",
         "Why Category 3 water claims get underpaid explains how classification failures produce layered invoice reductions on contaminated losses — HEPA stripped, containment denied, and demolition scope questioned on the same file.",
       ],
       links: [
         {
           label: "Category/Class documentation procedure",
           href: "/resources/guides/water-damage/category-class-documentation-guide",
+        },
+        {
+          label: "Class 4 drying documentation guide",
+          href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
         },
         {
           label: "Category 3 water damage documentation guide",

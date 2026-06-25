@@ -674,6 +674,69 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Large-loss invoice documentation FAQ; anchor for executive reporting and checklist sections.",
   },
+  "water-class-4-drying-definition": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "water-damage/class-4-drying-documentation-guide",
+      "water-damage/category-class-documentation-guide",
+    ],
+    relatedFaqIds: ["water-category-class", "water-class-4-drying-duration"],
+    internalLinkNotes:
+      "Anchor FAQ for Class 4 drying guide introduction and category-class cross-link.",
+  },
+  "water-class-4-documentation-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/class-4-drying-documentation-guide",
+      "water-damage/moisture-mapping-guide",
+      "water-damage/daily-monitoring-guide",
+    ],
+    relatedFaqIds: [
+      "water-class-4-drying-definition",
+      "water-moisture-maps-required",
+      "water-daily-monitoring-records-importance",
+    ],
+    internalLinkNotes:
+      "Class 4 documentation requirements FAQ; cross-link moisture mapping and monitoring guides.",
+  },
+  "water-class-4-specialty-equipment-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/class-4-drying-documentation-guide",
+      "water-damage/equipment-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "water-equipment-invoice-documentation",
+      "water-equipment-charge-reductions",
+    ],
+    internalLinkNotes:
+      "Specialty equipment FAQ; pair with equipment-charges-that-get-cut blog.",
+  },
+  "water-class-4-drying-duration": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: ["water-damage/class-4-drying-documentation-guide"],
+    relatedFaqIds: [
+      "water-defend-drying-day-charges",
+      "water-dry-log-additional-drying-days",
+      "water-class-4-carrier-disputes",
+    ],
+    internalLinkNotes:
+      "Extended drying duration FAQ; cross-link how-carriers-reduce-drying-days blog.",
+  },
+  "water-class-4-carrier-disputes": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: [
+      "water-damage/class-4-drying-documentation-guide",
+      "water-damage/water-mitigation-invoice-defense-guide",
+    ],
+    relatedFaqIds: [
+      "water-class-4-drying-duration",
+      "water-mitigation-invoice-reductions",
+      "water-equipment-charge-reductions",
+    ],
+    internalLinkNotes:
+      "Class 4 carrier dispute FAQ; anchor for carrier challenges section and invoice defense guide.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

@@ -391,6 +391,54 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["large loss invoice", "commercial mitigation invoice", "executive summary", "vendor documentation"],
     topics: ["commercial_water", "water_damage_claims", "mitigation"],
   },
+  "water-class-4-drying-definition": {
+    phrases: [
+      "what is class 4 water damage drying",
+      "class 4 water damage drying",
+      "class 4 drying definition",
+      "bound water class 4",
+    ],
+    keywords: ["class 4", "bound water", "low-permeance", "class 4 drying"],
+    topics: ["water_damage_claims", "mitigation"],
+  },
+  "water-class-4-documentation-required": {
+    phrases: [
+      "why does class 4 drying require additional documentation",
+      "class 4 documentation requirements",
+      "class 4 drying documentation",
+    ],
+    keywords: ["class 4 documentation", "additional documentation", "specialty drying"],
+    topics: ["water_damage_claims", "dry_logs", "mitigation"],
+  },
+  "water-class-4-specialty-equipment-documentation": {
+    phrases: [
+      "how should specialty drying equipment be documented",
+      "specialty drying equipment documentation",
+      "document injectidry floor mats desiccant",
+    ],
+    keywords: ["specialty drying", "injectidry", "floor mat", "desiccant", "heat drying"],
+    topics: ["water_damage_claims", "equipment_charges", "mitigation"],
+  },
+  "water-class-4-drying-duration": {
+    phrases: [
+      "why do class 4 drying projects take longer",
+      "class 4 drying duration",
+      "extended drying class 4",
+      "bound water takes longer to dry",
+    ],
+    keywords: ["class 4 duration", "extended drying", "bound water", "low-permeance"],
+    topics: ["water_damage_claims", "dry_logs", "mitigation"],
+  },
+  "water-class-4-carrier-disputes": {
+    phrases: [
+      "why do carriers dispute class 4 drying charges",
+      "class 4 drying charge disputes",
+      "carrier disputes class 4",
+      "class 4 drying disputes",
+    ],
+    keywords: ["class 4 dispute", "drying charge dispute", "carrier dispute", "class 4 charges"],
+    topics: ["water_damage_claims", "equipment_charges", "mitigation"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

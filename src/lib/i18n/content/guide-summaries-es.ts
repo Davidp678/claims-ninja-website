@@ -120,6 +120,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Aprenda a defender facturas de mitigación de agua con documentación, mapas de humedad, registros de secado, registros de monitoreo, seguimiento de equipos y estrategias de validación de alcance que respaldan la recuperación completa de la reclamación.",
   },
+  "water-damage/class-4-drying-documentation-guide": {
+    title: "Guía de documentación de secado clase 4 para contratistas",
+    excerpt:
+      "Aprenda a documentar el secado de daños por agua clase 4 usando mapeo de humedad, monitoreo diario, registros de equipos de secado especializados y estrategias de documentación que respaldan la recuperación completa de la reclamación.",
+  },
   "fire-damage/fire-claim-intake-guide": {
     title: "Lista de verificación de admisión de reclamaciones por incendio",
     excerpt:

@@ -47,13 +47,17 @@ export const multifamilyWaterClaimsThatGetUnderpaid: BlogPost = {
       paragraphs: [
         "Multifamily water claims are often larger, more complex, and more heavily scrutinized than standard residential water losses. A single loss may involve multiple units, common areas, shared walls, tenant access issues, property management communication, and extended drying operations across apartment complexes, HOA properties, condo associations, townhome communities, student housing, and senior living facilities.",
         "Even when mitigation work is properly performed, these claims are frequently underpaid because the documentation package does not clearly support the full scope of work. Desk reviewers cannot approve multifamily scope they cannot attribute to a specific unit, floor, common area, or drying chamber — proportional reductions follow when files lack unit-by-unit indexing from intake through closeout.",
-        "This article explains why multifamily water claims get underpaid, identifies the eight most common underpayment causes on apartment and multifamily files, and shows how contractors can build documentation packages that defend full payment. Field procedures live in the commercial water loss documentation guide, water mitigation invoice defense guide, moisture mapping guide, equipment documentation guide, daily monitoring guide, and dry log collection guide.",
+        "This article explains why multifamily water claims get underpaid, identifies the eight most common underpayment causes on apartment and multifamily files, and shows how contractors can build documentation packages that defend full payment. Field procedures live in the commercial water loss documentation guide, water mitigation invoice defense guide, class 4 drying documentation guide, moisture mapping guide, equipment documentation guide, daily monitoring guide, and dry log collection guide.",
         "Use sibling articles for depth on apartment documentation standards, commercial documentation mistakes, drying-day reductions, equipment charge cuts, and large-loss organization. Educational guidance for contractors only — not legal advice. Carrier programs, HOA requirements, and state rules vary by file and program.",
       ],
       links: [
         {
           label: "Commercial water loss documentation guide",
           href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+        },
+        {
+          label: "Class 4 drying documentation guide",
+          href: "/resources/guides/water-damage/class-4-drying-documentation-guide",
         },
         {
           label: "Water damage documentation for apartment complexes",
