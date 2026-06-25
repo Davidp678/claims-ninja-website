@@ -737,6 +737,67 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Class 4 carrier dispute FAQ; anchor for carrier challenges section and invoice defense guide.",
   },
+  "water-reinspection-when-request": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["water-damage/water-damage-reinspection-guide"],
+    relatedFaqIds: [
+      "water-reinspection-documentation-prep",
+      "water-reinspection-denial-reasons",
+      "carrier-reinspection",
+    ],
+    internalLinkNotes:
+      "Anchor FAQ for reinspection guide; cross-link supplement denial recovery blog.",
+  },
+  "water-reinspection-documentation-prep": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/water-damage-reinspection-guide",
+      "water-damage/moisture-mapping-guide",
+      "water-damage/dry-log-collection-guide",
+    ],
+    relatedFaqIds: [
+      "water-reinspection-when-request",
+      "water-reinspection-organize-documentation",
+      "water-mitigation-file-documentation",
+    ],
+    internalLinkNotes:
+      "Documentation prep FAQ; cross-link moisture mapping and dry log guides.",
+  },
+  "water-reinspection-additional-damage-documented": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["water-damage/water-damage-reinspection-guide"],
+    relatedFaqIds: [
+      "water-reinspection-when-request",
+      "water-moisture-maps-required",
+      "water-daily-monitoring-records-importance",
+    ],
+    internalLinkNotes:
+      "Post-inspection damage documentation FAQ; cross-link daily monitoring guide.",
+  },
+  "water-reinspection-denial-reasons": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: ["water-damage/water-damage-reinspection-guide"],
+    relatedFaqIds: [
+      "water-reinspection-when-request",
+      "water-claim-denied-documentation",
+      "carrier-reinspection",
+    ],
+    internalLinkNotes:
+      "Reinspection denial FAQ; cross-link documentation gaps blog.",
+  },
+  "water-reinspection-organize-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/water-damage-reinspection-guide",
+      "water-damage/water-mitigation-invoice-defense-guide",
+    ],
+    relatedFaqIds: [
+      "water-reinspection-documentation-prep",
+      "water-mitigation-invoice-documentation",
+    ],
+    internalLinkNotes:
+      "Organization FAQ; anchor for reinspection checklist section.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

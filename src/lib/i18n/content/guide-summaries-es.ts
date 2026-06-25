@@ -125,6 +125,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Aprenda a documentar el secado de daños por agua clase 4 usando mapeo de humedad, monitoreo diario, registros de equipos de secado especializados y estrategias de documentación que respaldan la recuperación completa de la reclamación.",
   },
+  "water-damage/water-damage-reinspection-guide": {
+    title: "Guía de reinspección de daños por agua para contratistas",
+    excerpt:
+      "Aprenda cuándo solicitar una reinspección de daños por agua, qué documentación preparar, cómo presentar daños adicionales y cómo los contratistas pueden respaldar una revisión precisa de la reclamación.",
+  },
   "fire-damage/fire-claim-intake-guide": {
     title: "Lista de verificación de admisión de reclamaciones por incendio",
     excerpt:

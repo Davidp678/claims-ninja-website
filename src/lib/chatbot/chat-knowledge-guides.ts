@@ -294,6 +294,29 @@ const GUIDE_SLUG_BOOSTS: Record<
     ],
     topics: ["water_damage_claims", "dry_logs", "equipment_charges", "mitigation", "moisture_mapping"],
   },
+  "water-damage-reinspection-guide": {
+    phrases: [
+      "water damage reinspection",
+      "request reinspection water loss",
+      "prepare for water reinspection",
+      "when to request water damage reinspection",
+      "water mitigation reinspection",
+      "reinspection documentation water damage",
+      "organize documentation for reinspection",
+      "present additional damage reinspection",
+    ],
+    keywords: [
+      "reinspection",
+      "re-inspection",
+      "additional damage",
+      "scope discrepancy",
+      "scope comparison",
+      "adjuster visit",
+      "hidden moisture",
+      "reinspection checklist",
+    ],
+    topics: ["water_damage_claims", "mitigation", "dry_logs", "moisture_mapping"],
+  },
 };
 
 function truncate(text: string, max: number): string {

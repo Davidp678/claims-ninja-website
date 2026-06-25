@@ -378,12 +378,18 @@ export const waterDamageSupplementDenialRecovery: BlogPost = {
       paragraphs: [
         "Request re-inspection when cavity moisture, multi-room migration, or equipment layout cannot be conveyed in photos and logs — or when the adjuster offers a visit. Prepare the property: access, labeled damage, comparison to prior inspection.",
         "Re-inspection supports facts; payment follows written estimate and documentation. Update Xactimate the same week as the visit.",
-        "Do not request re-inspection to avoid building logs — desk review still needs dry chronology after the visit.",
+        "Do not request re-inspection to avoid building logs — desk review still needs dry chronology after the visit. The water damage reinspection guide is the operational playbook for building the indexed packet, scope comparison, and on-site presentation before requesting a carrier revisit.",
       ],
       callout: {
         title: "Re-inspection guidance",
         body: "On water losses, re-inspection works best when you hand the adjuster a one-page map, current dry log summary, and list of denied lines you need verified — not an open-ended walk without narrative.",
       },
+      links: [
+        {
+          label: "Water damage reinspection guide",
+          href: "/resources/guides/water-damage/water-damage-reinspection-guide",
+        },
+      ],
     },
     {
       id: "documentation-strategies",

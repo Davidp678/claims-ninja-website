@@ -1,5 +1,6 @@
 import { CLASS_4_DRYING_DOCUMENTATION_GUIDE } from "@/lib/guides/class-4-drying-documentation-guide";
 import { COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE } from "@/lib/guides/commercial-water-loss-documentation-guide";
+import { WATER_DAMAGE_REINSPECTION_GUIDE } from "@/lib/guides/water-damage-reinspection-guide";
 import { WATER_MITIGATION_INVOICE_DEFENSE_GUIDE } from "@/lib/guides/water-mitigation-invoice-defense-guide";
 import { defineGuide, GUIDE_PUBLISHED_AT } from "@/lib/guides/guide-builder";
 import type { Guide } from "@/lib/guide-types";
@@ -2105,4 +2106,5 @@ export const WATER_DAMAGE_GUIDES = [
   COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE,
   WATER_MITIGATION_INVOICE_DEFENSE_GUIDE,
   CLASS_4_DRYING_DOCUMENTATION_GUIDE,
+  WATER_DAMAGE_REINSPECTION_GUIDE,
 ] as const satisfies readonly Guide[];

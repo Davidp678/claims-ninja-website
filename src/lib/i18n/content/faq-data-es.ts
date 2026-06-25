@@ -1812,6 +1812,97 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Water Damage Reinspection (5)
+  {
+    id: "water-reinspection-when-request",
+    category: "water_damage_claims",
+    question: "¿Cuándo deben los contratistas solicitar una reinspección de daños por agua?",
+    answer:
+      "Solicite una reinspección de daños por agua cuando la humedad recién descubierta, daños ocultos o alcance expandido no puedan transmitirse completamente mediante fotos, mapas de humedad y registros de secado — o cuando el ajustador ofrezca o acepte una visita al sitio en lugar de revisión de escritorio. Los desencadenantes comunes incluyen habitaciones o unidades adicionales afectadas, humedad en cavidades encontrada después de la demolición, discrepancias de alcance entre la estimación de la aseguradora y la documentación de campo, e inspecciones iniciales incompletas por limitaciones de acceso. Prepare el paquete de documentación antes de solicitar la visita — la reinspección respalda hechos; no reemplaza evidencia indexada.",
+    relatedLinks: [
+      {
+        label: "Guía de reinspección de daños por agua",
+        href: "/resources/guides/water-damage/water-damage-reinspection-guide",
+      },
+      {
+        label: "Recuperación de negación de suplemento de daños por agua",
+        href: "/resources/blog/water-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
+    id: "water-reinspection-documentation-prep",
+    category: "water_damage_claims",
+    question: "¿Qué documentación debe prepararse antes de una reinspección?",
+    answer:
+      "Prepare fotos etiquetadas, mapas de humedad iniciales y revisados con IDs de puntos consistentes, registros de secado y monitoreo completos, una tabla de comparación de alcance que vincule brechas de la estimación de la aseguradora con evidencia de campo, un resumen narrativo de una página de daños adicionales descubiertos y un paquete indexado de respaldo de factura. La documentación debe estar organizada y actualizada hasta la fecha de solicitud de reinspección — no ensamblada después de que el ajustador programe la visita.",
+    relatedLinks: [
+      {
+        label: "Guía de reinspección de daños por agua",
+        href: "/resources/guides/water-damage/water-damage-reinspection-guide",
+      },
+      {
+        label: "Guía de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "Guía de recolección de registros de secado",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+    ],
+  },
+  {
+    id: "water-reinspection-additional-damage-documented",
+    category: "water_damage_claims",
+    question: "¿Se puede documentar daño adicional después de la inspección inicial?",
+    answer:
+      "Sí — cuando se descubre humedad adicional, daños ocultos o expansión de alcance después de la inspección inicial de la aseguradora, la documentación contemporánea respalda solicitudes de reinspección y suplemento. Capture fotos de descubrimiento con marcas de tiempo, revise mapas de humedad con adiciones de puntos fechadas, actualice entradas de registro de secado desde la fecha de descubrimiento y registre cuándo y cómo se encontró el alcance adicional. Las aseguradoras evalúan si la evidencia se capturó contemporáneamente — la narrativa retroactiva sin fotos fechadas y revisiones de mapas se descuenta en la revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Guía de reinspección de daños por agua",
+        href: "/resources/guides/water-damage/water-damage-reinspection-guide",
+      },
+      {
+        label: "Guía de monitoreo diario",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+    ],
+  },
+  {
+    id: "water-reinspection-denial-reasons",
+    category: "water_damage_claims",
+    question: "¿Por qué las aseguradoras niegan solicitudes de reinspección?",
+    answer:
+      "Las aseguradoras pueden rechazar solicitudes de reinspección cuando la documentación no justifica una visita al sitio — mapas de humedad débiles, registros de secado incompletos o reclamos de alcance no respaldados sugieren que la revisión de escritorio es suficiente. Otras razones incluyen antigüedad del archivo, reinspección previa sin envío de estimación actualizada, solicitudes repetidas sin nueva evidencia y disputas de alcance que las aseguradoras consideran revisiones de estimación en lugar de problemas de verificación de campo. Fortalezca la solicitud con un paquete de documentación indexado y tabla de comparación de alcance antes de pedir una nueva visita.",
+    relatedLinks: [
+      {
+        label: "Guía de reinspección de daños por agua",
+        href: "/resources/guides/water-damage/water-damage-reinspection-guide",
+      },
+      {
+        label: "Brechas de documentación que provocan denegaciones de reclamaciones de agua",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+    ],
+  },
+  {
+    id: "water-reinspection-organize-documentation",
+    category: "water_damage_claims",
+    question: "¿Cómo deben los contratistas organizar la documentación para una reinspección?",
+    answer:
+      "Organice la documentación en capas: resumen narrativo de una página, tabla de comparación de alcance con referencias de líneas de estimación, mapa de humedad actual, resumen de registro de secado, adjuntos de fotos indexados por habitación o cámara y prueba de colocación de equipos. Use nombres de habitaciones consistentes en mapas, registros, fotos y estimaciones. Entregue al ajustador un paquete enfocado vinculado a líneas disputadas — no un volcado de archivos no estructurado. Actualice la estimación escrita la misma semana de la visita para que las líneas discutidas en el sitio aparezcan en el alcance enviado.",
+    relatedLinks: [
+      {
+        label: "Guía de reinspección de daños por agua",
+        href: "/resources/guides/water-damage/water-damage-reinspection-guide",
+      },
+      {
+        label: "Guía de defensa de facturas de mitigación de agua",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+    ],
+  },
+
   // Fire Damage Claims (6)
   {
     id: "fire-smoke-soot",

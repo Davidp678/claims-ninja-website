@@ -40,6 +40,7 @@ export const WATER_MITIGATION_INVOICE_DEFENSE_GUIDE = defineGuide({
     "daily-monitoring-guide",
     "dry-log-collection-guide",
     "category-3-water-damage-documentation-guide",
+    "water-damage-reinspection-guide",
   ],
   relatedBlogSlugs: [
     "equipment-charges-that-get-cut-from-water-claims",

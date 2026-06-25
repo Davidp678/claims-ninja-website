@@ -439,6 +439,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["class 4 dispute", "drying charge dispute", "carrier dispute", "class 4 charges"],
     topics: ["water_damage_claims", "equipment_charges", "mitigation"],
   },
+  "water-reinspection-when-request": {
+    phrases: [
+      "when should contractors request a water damage reinspection",
+      "when to request water damage reinspection",
+      "request water damage reinspection",
+    ],
+    keywords: ["reinspection", "water damage reinspection", "when to request"],
+    topics: ["water_damage_claims", "mitigation"],
+  },
+  "water-reinspection-documentation-prep": {
+    phrases: [
+      "what documentation should be prepared before a reinspection",
+      "documentation before reinspection",
+      "prepare for water reinspection",
+    ],
+    keywords: ["reinspection documentation", "documentation prep", "before reinspection"],
+    topics: ["water_damage_claims", "dry_logs", "moisture_mapping"],
+  },
+  "water-reinspection-additional-damage-documented": {
+    phrases: [
+      "can additional damage be documented after the initial inspection",
+      "document additional damage after inspection",
+      "additional damage after initial inspection",
+    ],
+    keywords: ["additional damage", "after inspection", "discovered damage"],
+    topics: ["water_damage_claims", "mitigation"],
+  },
+  "water-reinspection-denial-reasons": {
+    phrases: [
+      "why do carriers deny reinspection requests",
+      "carriers deny reinspection",
+      "reinspection request denied",
+    ],
+    keywords: ["reinspection denied", "deny reinspection", "reinspection refusal"],
+    topics: ["water_damage_claims", "mitigation"],
+  },
+  "water-reinspection-organize-documentation": {
+    phrases: [
+      "how should contractors organize documentation for a reinspection",
+      "organize documentation for reinspection",
+      "reinspection documentation organization",
+    ],
+    keywords: ["organize documentation", "reinspection packet", "indexed documentation"],
+    topics: ["water_damage_claims", "mitigation", "dry_logs"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

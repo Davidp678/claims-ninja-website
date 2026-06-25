@@ -190,6 +190,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "water-class-4-specialty-equipment-documentation",
       "water-class-4-drying-duration",
       "water-class-4-carrier-disputes",
+      "water-reinspection-when-request",
+      "water-reinspection-documentation-prep",
+      "water-reinspection-additional-damage-documented",
+      "water-reinspection-denial-reasons",
+      "water-reinspection-organize-documentation",
     ],
   },
   fireDamage: {

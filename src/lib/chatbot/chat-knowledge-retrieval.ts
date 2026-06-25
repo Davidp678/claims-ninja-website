@@ -1215,6 +1215,42 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "water reinspection when retrieves guide or FAQ",
+    message: "When should I request a water damage reinspection?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /water-reinspection-when-request|water-damage-reinspection-guide|request a water damage reinspection/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "water reinspection documentation prep retrieves guide or FAQ",
+    message: "What documentation do I need before a reinspection?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /water-reinspection-documentation-prep|water-damage-reinspection-guide|prepared before a reinspection/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "water reinspection denial reasons retrieves FAQ or guide",
+    message: "Why do carriers deny reinspection requests?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /water-reinspection-denial-reasons|water-damage-reinspection-guide|deny reinspection requests/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
     label: "client portal question retrieves portal context",
     message: "What can I do in the client portal?",
     assert: (result) =>

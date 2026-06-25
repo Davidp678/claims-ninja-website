@@ -1812,6 +1812,97 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
+  // Water Damage Reinspection (5)
+  {
+    id: "water-reinspection-when-request",
+    category: "water_damage_claims",
+    question: "When should contractors request a water damage reinspection?",
+    answer:
+      "Request a water damage reinspection when newly discovered moisture, hidden damage, or expanded scope cannot be fully conveyed through photos, moisture maps, and dry logs alone — or when the adjuster offers or agrees to a site visit instead of desk review. Common triggers include additional affected rooms or units, cavity moisture found after demolition, scope discrepancies between the carrier estimate and field documentation, and incomplete initial inspections due to access limitations. Build the documentation package before requesting the visit — reinspection supports facts; it does not replace indexed evidence.",
+    relatedLinks: [
+      {
+        label: "Water damage reinspection guide",
+        href: "/resources/guides/water-damage/water-damage-reinspection-guide",
+      },
+      {
+        label: "Water damage supplement denial recovery",
+        href: "/resources/blog/water-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
+    id: "water-reinspection-documentation-prep",
+    category: "water_damage_claims",
+    question: "What documentation should be prepared before a reinspection?",
+    answer:
+      "Prepare labeled photos, baseline and revised moisture maps with consistent point IDs, complete dry logs and monitoring records, a scope comparison table linking carrier estimate gaps to field evidence, a one-page narrative summary of additional damage discovered, and an indexed invoice support packet. Documentation should be organized and current through the reinspection request date — not assembled after the adjuster schedules the visit.",
+    relatedLinks: [
+      {
+        label: "Water damage reinspection guide",
+        href: "/resources/guides/water-damage/water-damage-reinspection-guide",
+      },
+      {
+        label: "Moisture mapping guide",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "Dry log collection guide",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+    ],
+  },
+  {
+    id: "water-reinspection-additional-damage-documented",
+    category: "water_damage_claims",
+    question: "Can additional damage be documented after the initial inspection?",
+    answer:
+      "Yes — when additional moisture, hidden damage, or scope expansion is discovered after the initial carrier inspection, contemporaneous documentation supports reinspection and supplement requests. Capture discovery photos with timestamps, revise moisture maps with dated point additions, update dry log entries from the discovery date forward, and record when and how the additional scope was found. Carriers evaluate whether evidence was captured contemporaneously — retroactive narrative without dated photos and map revisions is discounted at desk review.",
+    relatedLinks: [
+      {
+        label: "Water damage reinspection guide",
+        href: "/resources/guides/water-damage/water-damage-reinspection-guide",
+      },
+      {
+        label: "Daily monitoring guide",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+    ],
+  },
+  {
+    id: "water-reinspection-denial-reasons",
+    category: "water_damage_claims",
+    question: "Why do carriers deny reinspection requests?",
+    answer:
+      "Carriers may decline reinspection requests when documentation does not justify a site visit — weak moisture maps, incomplete dry logs, or unsupported scope claims suggest desk review is sufficient. Other reasons include file age, prior reinspection without updated estimate submission, repeated requests without new evidence, and scope disputes that carriers believe are estimate revisions rather than field verification issues. Strengthen the request with an indexed documentation package and scope comparison table before asking for a revisit.",
+    relatedLinks: [
+      {
+        label: "Water damage reinspection guide",
+        href: "/resources/guides/water-damage/water-damage-reinspection-guide",
+      },
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+    ],
+  },
+  {
+    id: "water-reinspection-organize-documentation",
+    category: "water_damage_claims",
+    question: "How should contractors organize documentation for a reinspection?",
+    answer:
+      "Organize documentation in layers: one-page narrative summary, scope comparison table with estimate line references, current moisture map, dry log summary, indexed photo attachments by room or chamber, and equipment placement proof. Use consistent room names across maps, logs, photos, and estimates. Hand the adjuster a focused packet tied to disputed lines — not an unstructured file dump. Update the written estimate the same week as the visit so lines discussed on site appear in submitted scope.",
+    relatedLinks: [
+      {
+        label: "Water damage reinspection guide",
+        href: "/resources/guides/water-damage/water-damage-reinspection-guide",
+      },
+      {
+        label: "Water mitigation invoice defense guide",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+    ],
+  },
+
   // Fire Damage Claims (5)
   {
     id: "fire-smoke-soot",
