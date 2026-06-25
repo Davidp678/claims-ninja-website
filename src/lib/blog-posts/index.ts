@@ -1,11 +1,14 @@
 import type { BlogPost } from "@/lib/blog-types";
 
+import { commonDocumentationMistakesOnCommercialWaterLosses } from "./common-documentation-mistakes-on-commercial-water-losses";
 import { claimDocumentationApprovalRates } from "./claim-documentation-approval-rates";
 import { dryLogDocumentationGuideInsuranceClaims } from "./dry-log-documentation-guide-insurance-claims";
 import { moistureMappingBestPracticesInsuranceClaims } from "./moisture-mapping-best-practices-insurance-claims";
 import { documentationGapsThatTriggerWaterClaimDenials } from "./documentation-gaps-that-trigger-water-claim-denials";
 import { howCarriersReduceDryingDays } from "./how-carriers-reduce-drying-days";
+import { largeLossWaterMitigationDocumentationBestPractices } from "./large-loss-water-mitigation-documentation-best-practices";
 import { moistureMappingMistakesThatCostContractorsMoney } from "./moisture-mapping-mistakes-that-cost-contractors-money";
+import { multifamilyWaterClaimsThatGetUnderpaid } from "./multifamily-water-claims-that-get-underpaid";
 import { fireDamageClaimDocumentationGuide } from "./fire-damage-claim-documentation-guide";
 import { fireDamageSupplementPlaybookForContractors } from "./fire-damage-supplement-playbook-for-contractors";
 import { smokeAndSootDamageDocumentationGuide } from "./smoke-and-soot-damage-documentation-guide";
@@ -15,6 +18,7 @@ import { odorMitigationInFireDamageClaims } from "./odor-mitigation-in-fire-dama
 import { dailyMonitoringDocumentationBestPractices } from "./daily-monitoring-documentation-best-practices";
 import { equipmentChargesThatGetCutFromWaterClaims } from "./equipment-charges-that-get-cut-from-water-claims";
 import { equipmentChargesWaterDamageClaims } from "./equipment-charges-water-damage-claims";
+import { waterDamageDocumentationForApartmentComplexes } from "./water-damage-documentation-for-apartment-complexes";
 import { waterDamageSupplementDenialRecovery } from "./water-damage-supplement-denial-recovery";
 import { whyCategory3WaterClaimsGetUnderpaid } from "./why-category-3-water-claims-get-underpaid";
 import { whyWaterMitigationClaimsGetUnderpaid } from "./why-water-mitigation-claims-get-underpaid";
@@ -42,6 +46,10 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   moistureMappingBestPracticesInsuranceClaims,
   whyWaterMitigationClaimsGetUnderpaid,
   waterDamageSupplementDenialRecovery,
+  waterDamageDocumentationForApartmentComplexes,
+  commonDocumentationMistakesOnCommercialWaterLosses,
+  largeLossWaterMitigationDocumentationBestPractices,
+  multifamilyWaterClaimsThatGetUnderpaid,
   equipmentChargesWaterDamageClaims,
   equipmentChargesThatGetCutFromWaterClaims,
   dailyMonitoringDocumentationBestPractices,

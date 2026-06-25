@@ -115,6 +115,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Aprenda cómo documentar pérdidas comerciales por agua, proyectos multifamiliar, pérdidas en apartamentos, propiedades comerciales y trabajos de mitigación de grandes pérdidas para respaldar la recuperación de seguros y el éxito de la reclamación.",
   },
+  "water-damage/water-mitigation-invoice-defense-guide": {
+    title: "Guía de defensa de facturas de mitigación de agua para contratistas",
+    excerpt:
+      "Aprenda a defender facturas de mitigación de agua con documentación, mapas de humedad, registros de secado, registros de monitoreo, seguimiento de equipos y estrategias de validación de alcance que respaldan la recuperación completa de la reclamación.",
+  },
   "fire-damage/fire-claim-intake-guide": {
     title: "Lista de verificación de admisión de reclamaciones por incendio",
     excerpt:

@@ -29,7 +29,11 @@ export function getAllGuidePathParams(): GuidePathParams[] {
 }
 
 export function getFeaturedGuides(limit = 3): Guide[] {
-  return CLAIM_GUIDES.filter((guide) => guide.featured).slice(0, limit);
+  return CLAIM_GUIDES.filter((guide) => guide.featured)
+    .sort(
+      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    )
+    .slice(0, limit);
 }
 
 export function getRecommendedGuides(limit = 4): Guide[] {

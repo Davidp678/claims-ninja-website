@@ -24,9 +24,10 @@ export const howCarriersReduceDryingDays: BlogPost = {
   seoDescription:
     "How carriers reduce drying days: documentation gaps on dry logs, moisture readings, psychrometrics, equipment, monitoring, category disputes, revenue impact, and supplement recovery for mitigation contractors.",
   relatedPostSlugs: [
+    "multifamily-water-claims-that-get-underpaid",
     "dry-log-documentation-guide-insurance-claims",
     "equipment-charges-that-get-cut-from-water-claims",
-    "why-water-mitigation-claims-get-underpaid",
+    "large-loss-water-mitigation-documentation-best-practices",
     "documentation-gaps-that-trigger-water-claim-denials",
   ],
   faq: [
@@ -94,7 +95,7 @@ export const howCarriersReduceDryingDays: BlogPost = {
         "Drying days are not time on site — they are documented proof that moisture remained, equipment was necessary, and monitoring continued until dry standard. Contractors run dehumidifiers and air movers for the duration the structure requires; carriers pay for the duration the file proves. When documentation cannot connect billed days to readings, logs, photos, and psychrometric data, desk reviewers reduce drying duration — often without denying the entire mitigation scope.",
         "Drying-day reductions hit water mitigation contractors, restoration contractors, reconstruction contractors, and emergency services teams on nearly every book: template dry-outs applied to extended jobs, billed days trimmed to logged days, equipment duration cut when photos and logs diverge, and monitoring visits denied when visit notes are absent. The pattern is operational and predictable — not random adjuster discretion.",
         "This article explains how carriers evaluate drying duration, which documentation failures trigger reductions, how revenue impact shows up on remittance detail, and when supplementing becomes necessary because valid drying days were removed from the carrier estimate. It is claim-recovery guidance for contractors who perform the work correctly but lose margin when files fail desk review.",
-        "Field standards live in the dry log collection procedure, daily monitoring procedure, moisture mapping field procedure, and equipment documentation procedure. Broader underpayment patterns live in why water mitigation claims get underpaid, why Category 3 water claims get underpaid, and moisture mapping mistakes that cost contractors money. Use this piece as the authority on drying-day reductions and recovery.",
+        "Field standards live in the dry log collection procedure, daily monitoring procedure, moisture mapping field procedure, and equipment documentation procedure. Broader underpayment patterns live in why water mitigation claims get underpaid, multifamily water claims that get underpaid, why Category 3 water claims get underpaid, and moisture mapping mistakes that cost contractors money. Use this piece as the authority on drying-day reductions and recovery.",
         "Educational guidance for contractors only — not legal advice. Carrier formats, software exports, and retention rules vary; confirm requirements per file and per program.",
       ],
       links: [
@@ -115,6 +116,14 @@ export const howCarriersReduceDryingDays: BlogPost = {
           href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
         },
         {
+          label: "Large-loss water mitigation documentation best practices",
+          href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+        },
+        {
+          label: "Multifamily water claims that get underpaid",
+          href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+        },
+        {
           label: "Water damage solutions",
           href: "/solutions/water-damage",
         },
@@ -131,7 +140,7 @@ export const howCarriersReduceDryingDays: BlogPost = {
         "Drying days become a major claim dispute because equipment rental and monitoring represent the largest variable cost on most mitigation files — and the largest variable line item carriers scrutinize at desk review. Extraction and initial setup often pay quickly; extended dehumidifier days, air mover runtime, and daily monitoring visits get compared line by line against logs, photos, and template assumptions.",
         "Contractors experience drying disputes as partial underpayment: the carrier paid mitigation, but cut two dehumidifier days and one monitoring visit. That feels like scope denial when the structure was still wet — but desk reviewers frame it as documentation failure, not workmanship dispute.",
         "Template dry-out days baked into carrier estimates set the baseline before your invoice arrives. When your field duration exceeds the template and logs do not prove why, reduction is the default outcome — not supplement approval on first pass.",
-        "Multi-chamber and Category 3 losses amplify the dispute: longer expected duration, higher unit counts, and more points where a single gapped log day justifies proportional cuts across the billing period.",
+        "Multi-chamber and Category 3 losses amplify the dispute: longer expected duration, higher unit counts, and more points where a single gapped log day justifies proportional cuts across the billing period. Apartment and multifamily losses multiply chambers per unit — gapped monitoring on one unit can trigger duration cuts across the entire complex when files lack unit-level indexing.",
         "Drying-day disputes rarely appear as formal denials on the entire mitigation invoice. They appear as trimmed equipment lines, reduced monitoring counts, and revised estimates that owners accept because rebuild pressure starts — then margin is gone.",
         "Understanding carrier reduction logic is the first step toward recovery. The sections below map each documentation layer reviewers use to justify shorter approved duration.",
       ],
@@ -139,6 +148,18 @@ export const howCarriersReduceDryingDays: BlogPost = {
         {
           label: "Why water mitigation claims get underpaid",
           href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
+        },
+        {
+          label: "Water damage documentation for apartment complexes",
+          href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+        },
+        {
+          label: "Common documentation mistakes on commercial water losses",
+          href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
+        },
+        {
+          label: "Multifamily water claims that get underpaid",
+          href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
         },
         {
           label: "How do dry logs support additional drying days?",

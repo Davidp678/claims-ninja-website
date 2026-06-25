@@ -1,4 +1,5 @@
 import { COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE } from "@/lib/guides/commercial-water-loss-documentation-guide";
+import { WATER_MITIGATION_INVOICE_DEFENSE_GUIDE } from "@/lib/guides/water-mitigation-invoice-defense-guide";
 import { defineGuide, GUIDE_PUBLISHED_AT } from "@/lib/guides/guide-builder";
 import type { Guide } from "@/lib/guide-types";
 
@@ -285,6 +286,7 @@ export const WATER_DAMAGE_GUIDES = [
     seoDescription:
       "Dry log field procedure for water mitigation: daily moisture readings, equipment documentation, environmental conditions, and carrier-ready log standards.",
     relatedGuideSlugs: [
+      "water-mitigation-invoice-defense-guide",
       "mitigation-intake-checklist",
       "moisture-mapping-guide",
       "daily-monitoring-guide",
@@ -515,6 +517,7 @@ export const WATER_DAMAGE_GUIDES = [
     seoDescription:
       "Moisture mapping field procedure: reading points, wet boundaries, map updates, dry log integration, and carrier sketch alignment for water mitigation claims.",
     relatedGuideSlugs: [
+      "water-mitigation-invoice-defense-guide",
       "mitigation-intake-checklist",
       "dry-log-collection-guide",
       "category-class-documentation-guide",
@@ -743,6 +746,7 @@ export const WATER_DAMAGE_GUIDES = [
     seoDescription:
       "Water mitigation equipment documentation: placement photos, utilization proof, change tracking, dry log alignment, and carrier billing reconciliation.",
     relatedGuideSlugs: [
+      "water-mitigation-invoice-defense-guide",
       "dry-log-collection-guide",
       "daily-monitoring-guide",
       "moisture-mapping-guide",
@@ -964,6 +968,7 @@ export const WATER_DAMAGE_GUIDES = [
     seoDescription:
       "Daily monitoring checklist for water mitigation: visit documentation, moisture readings, equipment checks, dry log alignment, and carrier billing support.",
     relatedGuideSlugs: [
+      "water-mitigation-invoice-defense-guide",
       "dry-log-collection-guide",
       "equipment-documentation-guide",
       "moisture-mapping-guide",
@@ -1623,6 +1628,7 @@ export const WATER_DAMAGE_GUIDES = [
     seoDescription:
       "Learn the documentation required to support Category 3 water damage claims, justify mitigation invoices, defend drying charges, and improve claim recovery.",
     relatedGuideSlugs: [
+      "water-mitigation-invoice-defense-guide",
       "category-class-documentation-guide",
       "mitigation-intake-checklist",
       "moisture-mapping-guide",
@@ -1663,6 +1669,10 @@ export const WATER_DAMAGE_GUIDES = [
       "resources-water-mitigation-documentation",
       "water-claim-denied-documentation",
       "water-final-drying-verification",
+      "water-mitigation-invoice-reductions",
+      "water-mitigation-invoice-documentation",
+      "water-defend-drying-day-charges",
+      "water-mitigation-invoice-review-failures",
     ],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["water-damage", "mitigation"],
@@ -2091,4 +2101,5 @@ export const WATER_DAMAGE_GUIDES = [
   }),
 
   COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE,
+  WATER_MITIGATION_INVOICE_DEFENSE_GUIDE,
 ] as const satisfies readonly Guide[];

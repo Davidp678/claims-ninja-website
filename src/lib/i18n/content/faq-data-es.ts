@@ -602,6 +602,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
       },
       {
+        label: "Documentación de daños por agua en complejos de apartamentos",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
         label: "Guía de monitoreo diario",
         href: "/resources/guides/water-damage/daily-monitoring-guide",
       },
@@ -617,6 +621,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de documentación de pérdidas comerciales por agua",
         href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Documentación de daños por agua en complejos de apartamentos",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
       },
       {
         label: "Guía de recolección de registros de secado",
@@ -696,6 +704,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "Factores comunes: estructura de archivo residencial en huellas multizona, equipos facturados sin prueba de ubicación con etiquetas de activos, brechas de monitoreo entre cámaras, unidades multifamiliares fusionadas en registros únicos, registros de acceso a inquilinos ausentes y paquetes de cierre sin referencia cruzada indexada por partida. Las aseguradoras aplican reducciones proporcionales cuando cualquier zona carece de evidencia contemporánea — documentación organizada por zona fortalece argumentos de recuperación y suplementos.",
     relatedLinks: [
       {
+        label: "Reclamaciones de agua multifamiliar que se pagan por debajo del valor",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
         label: "Guía de documentación de pérdidas comerciales por agua",
         href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
       },
@@ -706,6 +718,430 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Recuperación de denegación de suplemento por agua",
         href: "/resources/blog/water-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
+    id: "water-apartment-complex-documentation",
+    category: "water_damage_claims",
+    question: "¿Cómo debe documentarse el daño por agua en complejos de apartamentos?",
+    answer:
+      "Documente pérdidas por agua en complejos de apartamentos con indexación unidad por unidad desde la admisión hasta el cierre: fotos con número de unidad, mapas de humedad por unidad afectada y área común, registros de secado cronológicos por cámara, registros de equipos con etiquetas de activos por unidad, registros de impacto a inquilinos alineados con eventos de acceso y lecturas terminales en IDs de puntos de mapa persistentes. Separe el alcance dentro de la unidad de pasillos, cuartos de servicio y amenidades compartidas — los archivos estilo residencial fusionados fallan en revisión de escritorio en huellas multifamiliares.",
+    relatedLinks: [
+      {
+        label: "Documentación de daños por agua en complejos de apartamentos",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Guía de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+    ],
+  },
+  {
+    id: "water-apartment-unit-separate-tracking",
+    category: "water_damage_claims",
+    question: "¿Deben los contratistas rastrear cada unidad de apartamento afectada por separado?",
+    answer:
+      "Sí. Trate cada unidad de apartamento afectada como una cámara de secado separada con números de unidad consistentes en mapas, registros de secado, fotos y registros de equipos. Los revisores de escritorio comparan el alcance facturado con evidencia por unidad — los archivos multifamiliares indiferenciados invitan reducciones proporcionales en todo el complejo cuando cualquier unidad carece de documentación contemporánea.",
+    relatedLinks: [
+      {
+        label: "Documentación de daños por agua en complejos de apartamentos",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "¿Qué documentación se requiere para pérdidas por agua en apartamentos?",
+        href: "/faq#faq-water-apartment-loss-documentation",
+      },
+    ],
+  },
+  {
+    id: "water-apartment-equipment-usage-documentation",
+    category: "water_damage_claims",
+    question: "¿Qué documentación respalda el uso de equipos en pérdidas por agua en apartamentos?",
+    answer:
+      "Fotos con etiquetas de activos al instalar y retirar por unidad, filas de equipos en registros de secado que coincidan con conteos desplegados, fotos de ubicación en ángulo amplio con etiquetas de unidad y habitación visibles, y referencia cruzada con límites de cámara en el mapa de humedad. Equipos facturados sin prueba de ubicación por unidad invitan reducciones proporcionales — las fotos a nivel de edificio no defienden partidas de ventiladores, deshumidificadores o purificadores por unidad en archivos multifamiliares.",
+    relatedLinks: [
+      {
+        label: "Documentación de daños por agua en complejos de apartamentos",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "Guía de documentación de equipos",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+      {
+        label: "Cargos de equipos que recortan de reclamaciones por agua",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+    ],
+  },
+  {
+    id: "water-apartment-mitigation-claims-disputed",
+    category: "water_damage_claims",
+    question: "¿Por qué las reclamaciones de mitigación por agua en apartamentos se disputan con frecuencia?",
+    answer:
+      "Totales de factura más altos activan revisión especializada de escritorio. Las aseguradoras disputan archivos de apartamentos cuando se aplica estructura de documentación residencial a huellas multifamiliares — registros fusionados, mapas indiferenciados, registros de acceso a inquilinos ausentes y equipos facturados sin prueba de ubicación por unidad. La migración vertical entre límites del stack y el alcance de áreas comunes fusionado en archivos de unidades añade capas de revisión que producen reducciones proporcionales en lugar de recortes aislados por unidad.",
+    relatedLinks: [
+      {
+        label: "Reclamaciones de agua multifamiliar que se pagan por debajo del valor",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
+        label: "Documentación de daños por agua en complejos de apartamentos",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "Brechas de documentación que provocan denegaciones",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "water-apartment-tenant-impact-required",
+    category: "water_damage_claims",
+    question: "¿Deben documentarse los impactos a inquilinos durante pérdidas por agua en apartamentos?",
+    answer:
+      "Sí. Mantenga un registro de impacto a inquilinos desde la movilización: autorización de administración de la propiedad, restricciones de acceso, avisos de habitabilidad, coordinación de reubicación e interrupción de contenidos con identificadores de unidad y marcas de tiempo. La producción en edificios ocupados debe coincidir con documentación de acceso y coordinación en revisión de escritorio — partidas de monitoreo en unidades restringidas sin registros de acceso invitan recortes de días de visita.",
+    relatedLinks: [
+      {
+        label: "Documentación de daños por agua en complejos de apartamentos",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "¿Cómo deben documentarse los impactos a inquilinos?",
+        href: "/faq#faq-water-tenant-impact-documentation",
+      },
+    ],
+  },
+  {
+    id: "water-multifamily-claims-underpaid",
+    category: "water_damage_claims",
+    question: "¿Por qué las reclamaciones de agua multifamiliar se pagan por debajo del valor?",
+    answer:
+      "Las reclamaciones de agua multifamiliar se pagan por debajo del valor cuando la documentación no respalda el alcance facturado por unidad y área común: archivos estilo residencial fusionados, falta de indexación unidad por unidad, evidencia omitida de áreas comunes, equipos facturados sin prueba de colocación, registros de monitoreo con vacíos, impacto a inquilinos no documentado y partidas de factura sin referencia cruzada a registros de campo fechados. Totales de factura más altos activan revisión especializada de escritorio — siguen reducciones proporcionales cuando cualquier cámara carece de evidencia contemporánea.",
+    relatedLinks: [
+      {
+        label: "Reclamaciones de agua multifamiliar que se pagan por debajo del valor",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "¿Qué causa que las reclamaciones comerciales por agua se paguen por debajo del valor?",
+        href: "/faq#faq-water-commercial-claims-underpaid",
+      },
+    ],
+  },
+  {
+    id: "water-multifamily-units-documentation",
+    category: "water_damage_claims",
+    question: "¿Cómo deben los contratistas documentar las unidades afectadas en reclamaciones de agua multifamiliar?",
+    answer:
+      "Trate cada unidad afectada como una cámara de secado separada con números de unidad consistentes en mapas de humedad, registros de secado, fotos y registros de equipos. Capture condiciones a nivel de habitación con fotos específicas por unidad, lecturas de humedad base y terminales en IDs de puntos de mapa persistentes, y separe el alcance interior del de áreas comunes. La indexación unidad por unidad desde la recepción hasta el cierre evita reducciones proporcionales cuando los revisores de escritorio no pueden vincular partidas facturadas a evidencia por unidad.",
+    relatedLinks: [
+      {
+        label: "Reclamaciones de agua multifamiliar que se pagan por debajo del valor",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
+        label: "Documentación de daños por agua en complejos de apartamentos",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "¿Deben los contratistas rastrear cada unidad de apartamento afectada por separado?",
+        href: "/faq#faq-water-apartment-unit-separate-tracking",
+      },
+    ],
+  },
+  {
+    id: "water-multifamily-equipment-reductions",
+    category: "water_damage_claims",
+    question: "¿Por qué las aseguradoras reducen cargos de equipos en pérdidas de agua multifamiliar?",
+    answer:
+      "Las aseguradoras reducen cargos de equipos en pérdidas multifamiliar cuando ventiladores, deshumidificadores y equipos especializados se facturan sin prueba de colocación por unidad o zona. Fotos de etiquetas de activos faltantes, mapas de equipos ausentes vinculados a límites de cámara, conteos de unidades no respaldados que exceden el despliegue máximo verificado por foto y verificación diaria incompleta en registros de secado provocan recortes proporcionales — las fotos a nivel de edificio no defienden partidas de equipos por unidad en archivos de apartamentos, HOAs o condominios.",
+    relatedLinks: [
+      {
+        label: "Reclamaciones de agua multifamiliar que se pagan por debajo del valor",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
+        label: "Cargos de equipos que se recortan de reclamaciones por agua",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+      {
+        label: "Guía de documentación de equipos",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "water-multifamily-tenant-impact-documentation",
+    category: "water_damage_claims",
+    question: "¿Debe documentarse el impacto a inquilinos en reclamaciones de agua multifamiliar?",
+    answer:
+      "Sí. Mantenga registros de impacto a inquilinos desde la movilización en propiedades multifamiliar ocupadas: autorización de administración de la propiedad, restricciones de acceso, avisos de habitabilidad, coordinación de reubicación temporal, manipulación de contenidos y limitaciones de programación con identificadores de unidad y marcas de tiempo. La producción y el monitoreo en unidades ocupadas sin registros de acceso invitan recortes de días de visita y mano de obra en revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Reclamaciones de agua multifamiliar que se pagan por debajo del valor",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
+        label: "Documentación de daños por agua en complejos de apartamentos",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "¿Deben documentarse los impactos a inquilinos durante pérdidas por agua en apartamentos?",
+        href: "/faq#faq-water-apartment-tenant-impact-required",
+      },
+    ],
+  },
+  {
+    id: "water-multifamily-full-payment-support",
+    category: "water_damage_claims",
+    question: "¿Cómo pueden los contratistas respaldar el pago completo en reclamaciones de agua multifamiliar?",
+    answer:
+      "Elabore paquetes de cierre indexados con mapas, registros y fotos unidad por unidad; documentación de áreas comunes separada; registros de equipos con etiquetas de activos por cámara; monitoreo diario con lecturas de liberación terminal; registros de impacto a inquilinos alineados a eventos de acceso; y referencia cruzada de partidas que vincule cargos de factura a evidencia fechada. Presente mientras la narrativa de secado esté activa o inmediatamente después de la liberación — la documentación organizada por zona fortalece la aprobación inicial y la recuperación por suplemento en pérdidas de apartamentos, HOAs y condominios.",
+    relatedLinks: [
+      {
+        label: "Reclamaciones de agua multifamiliar que se pagan por debajo del valor",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
+        label: "Guía de defensa de facturas de mitigación de agua",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-documentation-missing",
+    category: "water_damage_claims",
+    question: "¿Qué documentación suele faltar en reclamaciones comerciales por agua?",
+    answer:
+      "Los elementos que más faltan en archivos comerciales son mapas de humedad por zona con planos y rutas de migración, registros de secado cronológicos para cada día activo de secado, fotos de colocación de equipos con etiquetas de activos por cámara, registros de impacto a inquilinos en propiedades ocupadas, alcance de áreas comunes indexado por separado de suites, registros de monitoreo diario con datos psicrométricos y verificación terminal del estándar de secado antes de retirar equipos. La estructura de archivo residencial en huellas multizona produce reducciones proporcionales en toda la factura.",
+    relatedLinks: [
+      {
+        label: "Errores comunes de documentación en pérdidas comerciales por agua",
+        href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Brechas de documentación que provocan denegaciones de reclamaciones por agua",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-invoice-reduced-why",
+    category: "water_damage_claims",
+    question: "¿Por qué se reducen las facturas de mitigación comercial por agua?",
+    answer:
+      "Las facturas de mitigación comercial se reducen cuando la documentación no respalda el alcance facturado a nivel de zona: los conteos de equipos superan el despliegue verificado en fotos por cámara, los registros de secado tienen vacíos entre días de secado facturados, las visitas de monitoreo carecen de lecturas en puntos activos del mapa, el acceso a inquilinos no está documentado en propiedades ocupadas, el alcance de áreas comunes se factura sin evidencia indexada, o las horas de mano de obra carecen de prueba contemporánea del alcance. Los totales más altos activan revisión especializada y recortes proporcionales en lugar de denegaciones totales.",
+    relatedLinks: [
+      {
+        label: "Errores comunes de documentación en pérdidas comerciales por agua",
+        href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
+      },
+      {
+        label: "Guía de defensa de facturas de mitigación de agua",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "¿Por qué las aseguradoras reducen las facturas de mitigación de agua?",
+        href: "/faq#faq-water-mitigation-invoice-reductions",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-tenant-impact-required",
+    category: "water_damage_claims",
+    question: "¿Deben documentarse los impactos a inquilinos en pérdidas comerciales por agua?",
+    answer:
+      "Sí. Mantenga un registro de impacto a inquilinos desde la movilización en propiedades comerciales ocupadas: autorización de administración de la propiedad, restricciones de acceso, avisos de habitabilidad, coordinación de reubicación, limitaciones de programación e interrupción de contenidos con identificadores de zona y marcas de tiempo. La producción en edificios ocupados debe coincidir con documentación de acceso y coordinación en revisión de escritorio — partidas de monitoreo y mano de obra en zonas restringidas sin registros de acceso invitan recortes proporcionales.",
+    relatedLinks: [
+      {
+        label: "Errores comunes de documentación en pérdidas comerciales por agua",
+        href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "¿Cómo deben documentarse los impactos a inquilinos?",
+        href: "/faq#faq-water-tenant-impact-documentation",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-common-area-documentation",
+    category: "water_damage_claims",
+    question: "¿Cómo deben documentarse las áreas comunes durante la mitigación comercial por agua?",
+    answer:
+      "Documente áreas comunes — pasillos, cuartos de servicio, espacios mecánicos, amenidades compartidas y oficinas de arrendamiento — como zonas nombradas con mapas de humedad, registros de secado y narrativa fotográfica independientes indexados por separado del alcance de suites o unidades. Mapee la humedad de corredores con IDs de punto independientes de cámaras adyacentes. La documentación de origen de sistemas compartidos pertenece a armarios de risers y espacios mecánicos. Fusionar alcance de áreas comunes en archivos de suites produce recortes proporcionales cuando los revisores no pueden conciliar partidas facturadas.",
+    relatedLinks: [
+      {
+        label: "Errores comunes de documentación en pérdidas comerciales por agua",
+        href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Documentación de daños por agua en complejos de apartamentos",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-documentation-invoice-match",
+    category: "water_damage_claims",
+    question: "¿Por qué debe coincidir la documentación comercial con la factura de mitigación?",
+    answer:
+      "Los revisores de escritorio aprueban facturas comerciales línea por línea contra evidencia fechada. Cuando la documentación no coincide con la factura — horas de mano de obra sin prueba contemporánea, conteos de equipos que superan el despliegue verificado en fotos, días de secado que superan lecturas terminales de liberación, o alcance facturado sin revisiones contemporáneas del mapa — las aseguradoras aplican reducciones proporcionales en todo el archivo. Paquetes de cierre indexados donde cada partida facturada referencia mapas de humedad, registros de secado, prueba de equipos y registros de monitoreo previenen recortes predecibles al enviar.",
+    relatedLinks: [
+      {
+        label: "Guía de defensa de facturas de mitigación de agua",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Errores comunes de documentación en pérdidas comerciales por agua",
+        href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
+      },
+      {
+        label: "¿Qué documentación respalda las facturas de mitigación de agua?",
+        href: "/faq#faq-water-mitigation-invoice-documentation",
+      },
+    ],
+  },
+  {
+    id: "water-mitigation-invoice-reductions",
+    category: "water_damage_claims",
+    question: "¿Por qué las aseguradoras reducen las facturas de mitigación de agua?",
+    answer:
+      "Las aseguradoras reducen las facturas de mitigación cuando la documentación no respalda el alcance facturado: los conteos de equipos superan el despliegue verificado en fotos, los registros de secado tienen vacíos entre los días de secado facturados, las visitas de monitoreo carecen de lecturas en los puntos activos del mapa, las horas de mano de obra carecen de prueba contemporánea del alcance, o las partidas de categoría 2 y 3 carecen de evidencia de clasificación en la admisión. Las reducciones suelen ser proporcionales en lugar de denegaciones totales: se recortan días, unidades o habitaciones no respaldados mientras el alcance parcialmente respaldado permanece aprobado.",
+    relatedLinks: [
+      {
+        label: "Guía de defensa de facturas de mitigación de agua",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Vacíos de documentación que provocan denegaciones de reclamaciones por agua",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "¿Por qué las aseguradoras reducen las facturas de mitigación categoría 3?",
+        href: "/faq#faq-water-category-3-invoice-reductions",
+      },
+    ],
+  },
+  {
+    id: "water-mitigation-invoice-documentation",
+    category: "water_damage_claims",
+    question: "¿Qué documentación respalda las facturas de mitigación de agua?",
+    answer:
+      "Prepare un paquete indexado que cruce cada partida facturada con evidencia fechada: fotos etiquetadas desde la admisión hasta el cierre, mapas de humedad base con IDs de puntos de lectura consistentes, registros de secado cronológicos para cada día activo de secado, prueba de ubicación de equipos alineada con las filas del registro de secado, registros de monitoreo para cada día de visita facturado, notas de clasificación de categoría en pérdidas contaminadas y verificación terminal del estándar de secado antes de retirar el equipo. La reconciliación previa a la factura detecta vacíos antes del envío.",
+    relatedLinks: [
+      {
+        label: "Guía de defensa de facturas de mitigación de agua",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "¿Qué documentación debe incluirse en un expediente de mitigación de agua?",
+        href: "/faq#faq-water-mitigation-file-documentation",
+      },
+      {
+        label: "Guía de recolección de registros de secado",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+    ],
+  },
+  {
+    id: "water-defend-drying-day-charges",
+    category: "water_damage_claims",
+    question: "¿Cómo pueden los contratistas defender los cargos por días de secado?",
+    answer:
+      "Defienda los días de secado con lecturas de humedad base antes de instalar el equipo, lecturas diarias en los mismos IDs de puntos del mapa en cada visita de monitoreo, narrativas de progreso cuando las lecturas se estancan o retroceden, y lecturas terminales de liberación comparadas con el estándar de secado antes de retirar el equipo. Alinee la fecha de retiro del equipo, la última entrada del registro de secado y las fotos de liberación: los vacíos entre las lecturas terminales y el último día facturado provocan recortes del último día de equipo en la revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Guía de defensa de facturas de mitigación de agua",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Cómo las aseguradoras reducen los días de secado",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
+      {
+        label: "¿Cómo respaldan los registros de secado los días adicionales de secado?",
+        href: "/faq#faq-water-dry-log-additional-drying-days",
+      },
+    ],
+  },
+  {
+    id: "water-equipment-invoice-documentation",
+    category: "water_damage_claims",
+    question: "¿Cómo debe documentarse el uso de equipos para la revisión de facturas?",
+    answer:
+      "Documente el equipo con fotos amplias de ubicación que muestren el conteo de unidades por cámara, filas de equipos en el registro de secado con tipo y asignación de habitación en cada día activo de secado, fotos del despliegue máximo que coincidan con los conteos máximos facturados, y registros fechados de movimientos o liberaciones parciales del equipo. Reconcilie los conteos verificados en fotos y los días registrados con los ventiladores, deshumidificadores y equipos especializados facturados antes del envío de la factura: las discrepancias de conteo son el principal desencadenante de recortes proporcionales de equipo.",
+    relatedLinks: [
+      {
+        label: "Guía de defensa de facturas de mitigación de agua",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Guía de documentación de equipos",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+      {
+        label: "Cargos de equipo que recortan de reclamaciones por agua",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+    ],
+  },
+  {
+    id: "water-mitigation-invoice-review-failures",
+    category: "water_damage_claims",
+    question: "¿Qué hace que las facturas de mitigación de agua fallen en la revisión?",
+    answer:
+      "Las facturas fallan en la revisión de escritorio cuando los registros de secado tienen vacíos entre los días de equipo facturados, faltan informes de monitoreo para los días de visita facturados, la documentación de equipos carece de fotos de ubicación o muestra menos unidades que las facturadas, los mapas de humedad no tienen lecturas base o IDs de puntos inconsistentes, las fotos no están etiquetadas o son solo posteriores a la limpieza, o las narrativas de factura carecen de evidencia cruzada. Los expedientes débiles producen reducciones proporcionales en múltiples partidas en lugar de una denegación formal: los contratistas lo experimentan como que la aseguradora pagó, pero no lo facturado.",
+    relatedLinks: [
+      {
+        label: "Guía de defensa de facturas de mitigación de agua",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Vacíos de documentación que provocan denegaciones de reclamaciones por agua",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "¿Por qué las aseguradoras reducen los cargos de equipo?",
+        href: "/faq#faq-water-equipment-charge-reductions",
       },
     ],
   },
@@ -1159,6 +1595,112 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Cómo las aseguradoras reducen los días de secado",
         href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
+    ],
+  },
+
+  {
+    id: "water-large-loss-qualifies",
+    category: "water_damage_claims",
+    question: "¿Qué califica como un proyecto de mitigación de agua de gran magnitud?",
+    answer:
+      "La mitigación de agua de gran magnitud normalmente involucra huellas a escala empresarial donde el valor de la reclamación, la cantidad de partes interesadas y el volumen de documentación superan las plantillas comerciales estándar — hospitales, escuelas, hoteles, almacenes, instalaciones de manufactura, edificios de oficinas, grandes complejos de apartamentos y eventos catastróficos de agua que afectan múltiples pisos, alas o edificios. La calificación es operacional: programas de secado multizona, duración extendida, participación de consultores, despliegues de equipos especializados y valores de factura que activan revisión especializada y auditoría de terceros.",
+    relatedLinks: [
+      {
+        label: "Mejores prácticas de documentación de mitigación de agua en pérdidas de gran magnitud",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "¿Apoyan pérdidas comerciales por agua?",
+        href: "/faq#faq-water-commercial-losses",
+      },
+    ],
+  },
+  {
+    id: "water-large-loss-documentation",
+    category: "water_damage_claims",
+    question: "¿Cómo debe documentarse el daño por agua de gran magnitud?",
+    answer:
+      "Documente el daño por agua de gran magnitud con una estructura de comando de documentación desde la movilización: segmentación por zona (piso, ala, edificio o unidad), mapas de humedad base y de progreso con IDs de puntos de lectura persistentes, registros de secado diarios y reportes de monitoreo sin brechas por zona, registros de equipos con etiquetas de activos, registros de impacto en ocupantes y operaciones, recepción de paquetes de proveedores alineada al indexado por zona, resúmenes ejecutivos de estado y paquetes de cierre indexados que referencien cada línea facturada a evidencia fechada.",
+    relatedLinks: [
+      {
+        label: "Mejores prácticas de documentación de mitigación de agua en pérdidas de gran magnitud",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "¿Cómo se documentan las reclamaciones comerciales por agua?",
+        href: "/faq#faq-water-commercial-claims-documentation",
+      },
+    ],
+  },
+  {
+    id: "water-large-loss-scrutiny",
+    category: "water_damage_claims",
+    question: "¿Por qué las reclamaciones de agua de gran magnitud reciben tanto escrutinio?",
+    answer:
+      "Las reclamaciones de agua de gran magnitud reciben escrutinio intenso porque los valores de factura más altos activan revisión especializada, auditoría de terceros y participación de consultores antes del pago. Los despliegues de equipos multizona, la duración extendida de secado, el alcance de subcontratistas y la documentación de impacto en ocupantes deben alinearse en un paquete indexado — los revisores no pueden aprobar alcance empresarial que no puedan rastrear a evidencia fechada por zona. Las reducciones proporcionales en múltiples partidas son comunes cuando los expedientes de gran magnitud carecen de estructura de comando y segmentación.",
+    relatedLinks: [
+      {
+        label: "Mejores prácticas de documentación de mitigación de agua en pérdidas de gran magnitud",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+      {
+        label: "¿Por qué las reclamaciones comerciales por agua reciben más escrutinio?",
+        href: "/faq#faq-water-commercial-claims-scrutiny",
+      },
+      {
+        label: "Guía de defensa de facturas de mitigación de agua",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+    ],
+  },
+  {
+    id: "water-large-loss-drying-zones",
+    category: "water_damage_claims",
+    question: "¿Cómo deben documentarse múltiples zonas de secado?",
+    answer:
+      "Documente cada zona de secado por separado con su propio mapa de humedad, cronología de registro de secado, registros de equipos y narrativa fotográfica — indexada por identificador de piso, ala, edificio o unidad que coincida con el croquis de la aseguradora. Use IDs de puntos de lectura persistentes desde la recepción hasta las lecturas de liberación terminal por zona. Las fotos de colocación de equipos, las filas de equipos en el registro de secado y las entradas de monitoreo deben referenciar las mismas etiquetas de zona en todo el expediente. La documentación de zonas fusionadas produce reducciones proporcionales cuando los revisores no pueden conciliar el alcance facturado con prueba indexada.",
+    relatedLinks: [
+      {
+        label: "Mejores prácticas de documentación de mitigación de agua en pérdidas de gran magnitud",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+      {
+        label: "Procedimiento de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "¿Cómo deben rastrearse las unidades por separado en pérdidas de agua en apartamentos?",
+        href: "/faq#faq-water-apartment-unit-separate-tracking",
+      },
+    ],
+  },
+  {
+    id: "water-large-loss-invoice-documentation",
+    category: "water_damage_claims",
+    question: "¿Qué documentación respalda las facturas comerciales de mitigación de agua de gran magnitud?",
+    answer:
+      "Las facturas comerciales de mitigación de agua de gran magnitud requieren paquetes indexados donde cada línea facturada referencia evidencia fechada por zona: recepción y clasificación, mapas de humedad por zona con lecturas base y terminales, registros de secado y reportes de monitoreo completos, prueba de colocación de equipos con etiquetas de activos, registros de impacto en ocupantes y operaciones, documentación de subcontratistas, resúmenes ejecutivos con estado de áreas afectadas e hitos, y verificación final de secado antes de retirar equipos. La reconciliación previa a la factura detecta discrepancias de conteo y cronología antes de la revisión especializada.",
+    relatedLinks: [
+      {
+        label: "Mejores prácticas de documentación de mitigación de agua en pérdidas de gran magnitud",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+      {
+        label: "Guía de defensa de facturas de mitigación de agua",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "¿Por qué debe coincidir la documentación comercial con la factura de mitigación?",
+        href: "/faq#faq-water-commercial-documentation-invoice-match",
       },
     ],
   },

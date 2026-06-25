@@ -160,6 +160,237 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["commercial underpaid", "commercial underpayment"],
     topics: ["commercial_water"],
   },
+  "water-apartment-complex-documentation": {
+    phrases: [
+      "apartment complex water damage documentation",
+      "how should water damage be documented in apartment complexes",
+      "apartment water loss documentation",
+    ],
+    keywords: ["apartment complex", "apartment documentation", "HOA documentation"],
+    topics: ["commercial_water"],
+  },
+  "water-apartment-unit-separate-tracking": {
+    phrases: [
+      "track each apartment unit separately",
+      "unit-by-unit documentation water damage",
+      "apartment unit tracking water loss",
+    ],
+    keywords: ["unit-by-unit", "unit tracking", "separate unit"],
+    topics: ["commercial_water"],
+  },
+  "water-apartment-equipment-usage-documentation": {
+    phrases: [
+      "equipment usage apartment water losses",
+      "apartment equipment documentation",
+      "equipment per unit apartment water",
+    ],
+    keywords: ["apartment equipment", "equipment per unit"],
+    topics: ["commercial_water", "equipment_charges"],
+  },
+  "water-apartment-mitigation-claims-disputed": {
+    phrases: [
+      "apartment water mitigation claims disputed",
+      "why apartment water claims disputed",
+      "multifamily water claims disputed",
+    ],
+    keywords: ["apartment disputed", "multifamily disputed"],
+    topics: ["commercial_water"],
+  },
+  "water-apartment-tenant-impact-required": {
+    phrases: [
+      "tenant impacts apartment water losses",
+      "document tenant impact apartment",
+      "tenant impact documentation apartment complex",
+    ],
+    keywords: ["tenant impact apartment", "apartment tenant"],
+    topics: ["commercial_water"],
+  },
+  "water-multifamily-claims-underpaid": {
+    phrases: [
+      "multifamily water claims underpaid",
+      "apartment water claim underpayment",
+      "multifamily claim reductions",
+      "why multifamily water claims underpaid",
+    ],
+    keywords: ["multifamily underpaid", "apartment underpayment", "multifamily reductions"],
+    topics: ["commercial_water", "water_damage_claims"],
+  },
+  "water-multifamily-units-documentation": {
+    phrases: [
+      "unit-by-unit documentation multifamily",
+      "document affected units multifamily water",
+      "multifamily unit documentation water damage",
+    ],
+    keywords: ["unit-by-unit", "multifamily units", "unit documentation"],
+    topics: ["commercial_water"],
+  },
+  "water-multifamily-equipment-reductions": {
+    phrases: [
+      "multifamily equipment reductions",
+      "carriers reduce equipment multifamily water",
+      "apartment equipment charge reductions",
+    ],
+    keywords: ["multifamily equipment", "equipment reductions", "apartment equipment"],
+    topics: ["commercial_water", "equipment_charges"],
+  },
+  "water-multifamily-tenant-impact-documentation": {
+    phrases: [
+      "tenant impact documentation multifamily",
+      "document tenant impact multifamily water claims",
+      "multifamily tenant impact records",
+    ],
+    keywords: ["tenant impact multifamily", "multifamily tenant"],
+    topics: ["commercial_water"],
+  },
+  "water-multifamily-full-payment-support": {
+    phrases: [
+      "support full payment multifamily water claims",
+      "multifamily water claim recovery documentation",
+      "documentation to invoice mismatch multifamily",
+    ],
+    keywords: ["full payment", "multifamily recovery", "invoice mismatch"],
+    topics: ["commercial_water", "mitigation"],
+  },
+  "water-commercial-documentation-missing": {
+    phrases: [
+      "documentation missing commercial water claims",
+      "what documentation is missing commercial water",
+      "commercial water documentation gaps",
+    ],
+    keywords: ["commercial documentation", "missing documentation", "documentation mistakes"],
+    topics: ["commercial_water", "water_damage_claims"],
+  },
+  "water-commercial-invoice-reduced-why": {
+    phrases: [
+      "why are commercial water mitigation invoices reduced",
+      "commercial invoice reductions water damage",
+      "commercial mitigation invoice reduced",
+    ],
+    keywords: ["commercial invoice", "invoice reduction", "commercial mitigation"],
+    topics: ["commercial_water", "mitigation"],
+  },
+  "water-commercial-tenant-impact-required": {
+    phrases: [
+      "tenant impacts commercial water losses",
+      "should tenant impacts be documented commercial water",
+      "commercial tenant impact documentation",
+    ],
+    keywords: ["tenant impact", "commercial tenant", "occupied commercial"],
+    topics: ["commercial_water"],
+  },
+  "water-commercial-common-area-documentation": {
+    phrases: [
+      "common area documentation commercial water mitigation",
+      "how to document common areas commercial water",
+      "commercial common area water damage documentation",
+    ],
+    keywords: ["common area", "common area documentation", "hallway documentation"],
+    topics: ["commercial_water"],
+  },
+  "water-commercial-documentation-invoice-match": {
+    phrases: [
+      "documentation match mitigation invoice commercial",
+      "why must documentation match invoice commercial water",
+      "documentation to invoice alignment commercial",
+    ],
+    keywords: ["invoice alignment", "documentation match", "invoice defense"],
+    topics: ["commercial_water", "mitigation"],
+  },
+  "water-mitigation-invoice-reductions": {
+    phrases: [
+      "why do carriers reduce water mitigation invoices",
+      "carrier invoice reductions mitigation",
+      "mitigation invoice reduced",
+    ],
+    keywords: ["invoice reduction", "carrier invoice reduction", "mitigation invoice"],
+    topics: ["water_damage_claims", "mitigation"],
+  },
+  "water-mitigation-invoice-documentation": {
+    phrases: [
+      "documentation supports water mitigation invoices",
+      "mitigation documentation requirements",
+      "what documentation supports mitigation invoice",
+    ],
+    keywords: ["mitigation documentation", "invoice documentation", "indexed packet"],
+    topics: ["water_damage_claims", "dry_logs"],
+  },
+  "water-defend-drying-day-charges": {
+    phrases: [
+      "defend drying day charges",
+      "drying day disputes",
+      "how to defend drying days",
+    ],
+    keywords: ["drying day dispute", "drying days", "defend drying"],
+    topics: ["water_damage_claims", "dry_logs"],
+  },
+  "water-equipment-invoice-documentation": {
+    phrases: [
+      "equipment usage documented for invoice review",
+      "equipment invoice documentation",
+      "document equipment for invoice review",
+    ],
+    keywords: ["equipment invoice", "equipment documentation", "equipment dispute"],
+    topics: ["water_damage_claims", "equipment_charges"],
+  },
+  "water-mitigation-invoice-review-failures": {
+    phrases: [
+      "mitigation invoices fail review",
+      "water mitigation invoice review failures",
+      "why mitigation invoice fails review",
+    ],
+    keywords: ["invoice review", "invoice fail", "desk review"],
+    topics: ["water_damage_claims", "mitigation"],
+  },
+  "water-large-loss-qualifies": {
+    phrases: [
+      "what qualifies as a large-loss water mitigation project",
+      "large loss water mitigation project",
+      "enterprise water loss qualification",
+      "hospital water loss documentation",
+      "catastrophic water event mitigation",
+    ],
+    keywords: ["large loss", "enterprise water", "large-loss", "catastrophic water"],
+    topics: ["commercial_water", "water_damage_claims"],
+  },
+  "water-large-loss-documentation": {
+    phrases: [
+      "how should large-loss water damage be documented",
+      "large loss water damage documentation",
+      "large-loss documentation systems",
+      "enterprise water mitigation documentation",
+    ],
+    keywords: ["large loss documentation", "enterprise documentation", "documentation command structure"],
+    topics: ["commercial_water", "water_damage_claims", "mitigation"],
+  },
+  "water-large-loss-scrutiny": {
+    phrases: [
+      "why are large-loss water claims heavily scrutinized",
+      "large loss water claim scrutiny",
+      "enterprise water claim review",
+    ],
+    keywords: ["large loss scrutiny", "specialist desk review", "consultant involvement"],
+    topics: ["commercial_water", "water_damage_claims", "mitigation"],
+  },
+  "water-large-loss-drying-zones": {
+    phrases: [
+      "how should multiple drying zones be documented",
+      "drying zones documentation large loss",
+      "multi-zone drying documentation",
+      "zone-by-zone water mitigation documentation",
+    ],
+    keywords: ["drying zones", "multi-zone", "zone documentation", "work area segmentation"],
+    topics: ["commercial_water", "water_damage_claims", "moisture_mapping", "dry_logs"],
+  },
+  "water-large-loss-invoice-documentation": {
+    phrases: [
+      "documentation supports large commercial water mitigation invoices",
+      "large loss mitigation invoice documentation",
+      "enterprise water mitigation invoice support",
+      "executive reporting water mitigation invoice",
+    ],
+    keywords: ["large loss invoice", "commercial mitigation invoice", "executive summary", "vendor documentation"],
+    topics: ["commercial_water", "water_damage_claims", "mitigation"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

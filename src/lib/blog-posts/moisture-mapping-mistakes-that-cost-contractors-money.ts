@@ -26,7 +26,7 @@ export const moistureMappingMistakesThatCostContractorsMoney: BlogPost = {
   relatedPostSlugs: [
     "moisture-mapping-best-practices-insurance-claims",
     "how-carriers-reduce-drying-days",
-    "equipment-charges-that-get-cut-from-water-claims",
+    "common-documentation-mistakes-on-commercial-water-losses",
     "documentation-gaps-that-trigger-water-claim-denials",
   ],
   faq: [
@@ -234,6 +234,14 @@ export const moistureMappingMistakesThatCostContractorsMoney: BlogPost = {
         {
           label: "Moisture mapping best practices",
           href: "/resources/blog/moisture-mapping-best-practices-insurance-claims",
+        },
+        {
+          label: "Water damage documentation for apartment complexes",
+          href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+        },
+        {
+          label: "Common documentation mistakes on commercial water losses",
+          href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
         },
       ],
     },

@@ -74,9 +74,9 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "moisture-mapping-mistakes-that-cost-contractors-money": {
     intro:
-      "You've learned which moisture mapping mistakes cost money on insurance files — including multi-unit and large-footprint losses. Now run the field procedures that prevent invoice reductions and defend drying scope from intake through closeout.",
+      "You've learned which moisture mapping mistakes cost money on insurance files — including multi-unit and large-footprint losses. Now run the invoice defense and field procedures that prevent invoice reductions and defend drying scope from intake through closeout.",
     guideSlugs: [
-      "commercial-water-loss-documentation-guide",
+      "water-mitigation-invoice-defense-guide",
       "moisture-mapping-guide",
       "dry-log-collection-guide",
       "daily-monitoring-guide",
@@ -114,9 +114,9 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "how-carriers-reduce-drying-days": {
     intro:
-      "You've learned how carriers reduce drying days when documentation fails — on residential and commercial losses. Now run the field procedures that defend equipment duration, monitoring visits, and log chronology from intake through closeout.",
+      "You've learned how carriers reduce drying days when documentation fails — on residential and commercial losses. Now run the invoice defense and field procedures that defend equipment duration, monitoring visits, and log chronology from intake through closeout.",
     guideSlugs: [
-      "commercial-water-loss-documentation-guide",
+      "water-mitigation-invoice-defense-guide",
       "dry-log-collection-guide",
       "daily-monitoring-guide",
       "equipment-documentation-guide",
@@ -124,9 +124,9 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "equipment-charges-that-get-cut-from-water-claims": {
     intro:
-      "You've learned why equipment charges get cut and how to recover them — including large-loss deployments. Now run the field procedures that defend air movers, dehumidifiers, and specialty drying equipment from desk review.",
+      "You've learned why equipment charges get cut and how to recover them — including large-loss deployments. Now run the invoice defense procedures that defend air movers, dehumidifiers, and specialty drying equipment from desk review.",
     guideSlugs: [
-      "commercial-water-loss-documentation-guide",
+      "water-mitigation-invoice-defense-guide",
       "equipment-documentation-guide",
       "dry-log-collection-guide",
       "daily-monitoring-guide",
@@ -134,10 +134,50 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "documentation-gaps-that-trigger-water-claim-denials": {
     intro:
-      "You've learned which documentation gaps trigger denials and reductions — gaps that multiply on commercial and multifamily losses. Now run the field procedures that close those gaps from intake through closeout.",
+      "You've learned which documentation gaps trigger denials and reductions — gaps that multiply on commercial and multifamily losses. Now run the invoice defense procedures that close those gaps from intake through closeout.",
+    guideSlugs: [
+      "water-mitigation-invoice-defense-guide",
+      "dry-log-collection-guide",
+      "moisture-mapping-guide",
+      "daily-monitoring-guide",
+    ],
+  },
+  "water-damage-documentation-for-apartment-complexes": {
+    intro:
+      "You've learned how to document apartment and multifamily water losses. Now run the invoice defense and field procedures that defend unit-level scope, stack migration, and tenant coordination from intake through closeout.",
+    guideSlugs: [
+      "water-mitigation-invoice-defense-guide",
+      "commercial-water-loss-documentation-guide",
+      "moisture-mapping-guide",
+      "daily-monitoring-guide",
+    ],
+  },
+  "common-documentation-mistakes-on-commercial-water-losses": {
+    intro:
+      "You've learned which documentation mistakes trigger reductions on commercial water losses. Now run the field procedures and invoice defense workflows that build indexed packets from intake through closeout.",
     guideSlugs: [
       "commercial-water-loss-documentation-guide",
-      "dry-log-collection-guide",
+      "water-mitigation-invoice-defense-guide",
+      "moisture-mapping-guide",
+      "daily-monitoring-guide",
+    ],
+  },
+  "large-loss-water-mitigation-documentation-best-practices": {
+    intro:
+      "You've learned how to document large-loss water mitigation at enterprise scale. Now run the commercial field procedures and invoice defense workflows that support multi-zone scope, executive reporting, and indexed closeout packets.",
+    guideSlugs: [
+      "commercial-water-loss-documentation-guide",
+      "water-mitigation-invoice-defense-guide",
+      "moisture-mapping-guide",
+      "daily-monitoring-guide",
+    ],
+  },
+  "multifamily-water-claims-that-get-underpaid": {
+    intro:
+      "You've learned why multifamily water claims get underpaid and which documentation gaps trigger reductions. Now run the commercial field procedures and invoice defense workflows that defend unit-level scope, common areas, equipment, and drying duration from intake through closeout.",
+    guideSlugs: [
+      "commercial-water-loss-documentation-guide",
+      "water-mitigation-invoice-defense-guide",
       "moisture-mapping-guide",
       "daily-monitoring-guide",
     ],

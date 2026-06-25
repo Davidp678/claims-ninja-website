@@ -290,8 +290,11 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     relatedFaqIds: [
       "water-multifamily-loss-documentation",
       "water-tenant-impact-documentation",
+      "water-apartment-complex-documentation",
+      "water-apartment-unit-separate-tracking",
     ],
-    internalLinkNotes: "Apartment unit-level documentation; link multifamily and tenant impact FAQs.",
+    internalLinkNotes:
+      "Apartment unit-level documentation; link water-damage-documentation-for-apartment-complexes blog and multifamily FAQs.",
   },
   "water-multifamily-loss-documentation": {
     searchIntent: "documentation-standard",
@@ -302,9 +305,11 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     relatedFaqIds: [
       "water-apartment-loss-documentation",
       "water-tenant-impact-documentation",
+      "water-apartment-complex-documentation",
+      "water-apartment-unit-separate-tracking",
     ],
     internalLinkNotes:
-      "Multifamily stack migration and unit-level indexing; moisture-mapping-mistakes blog companion.",
+      "Multifamily stack migration and unit-level indexing; water-damage-documentation-for-apartment-complexes blog companion.",
   },
   "water-commercial-claims-scrutiny": {
     searchIntent: "carrier-review",
@@ -352,9 +357,322 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "water-commercial-claims-scrutiny",
       "water-claim-denied-documentation",
       "water-equipment-charge-reductions",
+      "water-apartment-mitigation-claims-disputed",
     ],
     internalLinkNotes:
       "Commercial underpayment bridge; link documentation-gaps and supplement denial recovery blogs.",
+  },
+  "water-apartment-complex-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/commercial-water-loss-documentation-guide",
+      "water-damage/moisture-mapping-guide",
+      "water-damage/dry-log-collection-guide",
+    ],
+    relatedFaqIds: [
+      "water-apartment-loss-documentation",
+      "water-multifamily-loss-documentation",
+      "water-apartment-unit-separate-tracking",
+      "water-apartment-tenant-impact-required",
+    ],
+    internalLinkNotes:
+      "Primary apartment complex documentation FAQ; anchor for water-damage-documentation-for-apartment-complexes blog.",
+  },
+  "water-apartment-unit-separate-tracking": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-apartment-complex-documentation",
+      "water-apartment-loss-documentation",
+      "water-multifamily-loss-documentation",
+    ],
+    internalLinkNotes: "Unit-by-unit tracking standard; link apartment complex blog section 2.",
+  },
+  "water-apartment-equipment-usage-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/commercial-water-loss-documentation-guide",
+      "water-damage/equipment-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "water-apartment-complex-documentation",
+      "water-equipment-charge-reductions",
+      "water-apartment-mitigation-claims-disputed",
+    ],
+    internalLinkNotes:
+      "Per-unit equipment proof; link equipment-charges-that-get-cut-from-water-claims blog.",
+  },
+  "water-apartment-mitigation-claims-disputed": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-apartment-complex-documentation",
+      "water-commercial-claims-underpaid",
+      "water-commercial-claims-scrutiny",
+    ],
+    internalLinkNotes:
+      "Apartment dispute drivers; link documentation-gaps blog and apartment complex blog section 9.",
+  },
+  "water-apartment-tenant-impact-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-tenant-impact-documentation",
+      "water-apartment-complex-documentation",
+      "water-apartment-unit-separate-tracking",
+    ],
+    internalLinkNotes:
+      "Tenant impact requirement on apartment losses; link apartment complex blog section 6.",
+  },
+  "water-multifamily-claims-underpaid": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: [
+      "water-damage/commercial-water-loss-documentation-guide",
+      "water-damage/water-mitigation-invoice-defense-guide",
+    ],
+    relatedFaqIds: [
+      "water-commercial-claims-underpaid",
+      "water-apartment-mitigation-claims-disputed",
+      "water-multifamily-units-documentation",
+      "water-multifamily-full-payment-support",
+    ],
+    internalLinkNotes:
+      "Primary multifamily underpayment FAQ; anchor for multifamily-water-claims-that-get-underpaid blog.",
+  },
+  "water-multifamily-units-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-apartment-unit-separate-tracking",
+      "water-apartment-complex-documentation",
+      "water-multifamily-loss-documentation",
+    ],
+    internalLinkNotes:
+      "Unit-by-unit documentation on multifamily losses; link multifamily underpayment blog cause #1.",
+  },
+  "water-multifamily-equipment-reductions": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: [
+      "water-damage/equipment-documentation-guide",
+      "water-damage/water-mitigation-invoice-defense-guide",
+    ],
+    relatedFaqIds: [
+      "water-apartment-equipment-usage-documentation",
+      "water-equipment-charge-reductions",
+      "water-multifamily-claims-underpaid",
+    ],
+    internalLinkNotes:
+      "Multifamily equipment reductions; link equipment-charges-that-get-cut-from-water-claims blog.",
+  },
+  "water-multifamily-tenant-impact-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-apartment-tenant-impact-required",
+      "water-tenant-impact-documentation",
+      "water-multifamily-claims-underpaid",
+    ],
+    internalLinkNotes:
+      "Tenant impact on multifamily underpayment; link multifamily underpayment blog cause #5.",
+  },
+  "water-multifamily-full-payment-support": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/commercial-water-loss-documentation-guide",
+      "water-damage/water-mitigation-invoice-defense-guide",
+    ],
+    relatedFaqIds: [
+      "water-multifamily-claims-underpaid",
+      "water-commercial-documentation-invoice-match",
+      "water-apartment-complex-documentation",
+    ],
+    internalLinkNotes:
+      "Full payment support on multifamily losses; link invoice defense guide and underpayment blog.",
+  },
+  "water-commercial-documentation-missing": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-commercial-claims-documentation",
+      "water-mitigation-file-documentation",
+      "water-claim-denied-documentation",
+    ],
+    internalLinkNotes:
+      "Primary missing-documentation FAQ for commercial losses; anchor for common-documentation-mistakes blog.",
+  },
+  "water-commercial-invoice-reduced-why": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: ["water-damage/water-mitigation-invoice-defense-guide"],
+    relatedFaqIds: [
+      "water-mitigation-invoice-reductions",
+      "water-commercial-claims-underpaid",
+      "water-commercial-documentation-invoice-match",
+    ],
+    internalLinkNotes:
+      "Commercial-specific invoice reduction FAQ; cross-link invoice defense guide and mistakes blog.",
+  },
+  "water-commercial-tenant-impact-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-tenant-impact-documentation",
+      "water-apartment-tenant-impact-required",
+      "water-commercial-documentation-missing",
+    ],
+    internalLinkNotes:
+      "Tenant impact requirement on commercial losses; link mistakes blog section 4.",
+  },
+  "water-commercial-common-area-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-apartment-complex-documentation",
+      "water-multifamily-loss-documentation",
+      "water-commercial-documentation-missing",
+    ],
+    internalLinkNotes:
+      "Common area documentation standard for commercial losses; link mistakes blog section 5.",
+  },
+  "water-commercial-documentation-invoice-match": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: ["water-damage/water-mitigation-invoice-defense-guide"],
+    relatedFaqIds: [
+      "water-mitigation-invoice-documentation",
+      "water-mitigation-invoice-review-failures",
+      "water-commercial-invoice-reduced-why",
+    ],
+    internalLinkNotes:
+      "Documentation-to-invoice alignment FAQ; anchor for mistakes blog section 8 and invoice defense guide.",
+  },
+  "water-mitigation-invoice-reductions": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: ["water-damage/water-mitigation-invoice-defense-guide"],
+    relatedFaqIds: [
+      "water-mitigation-invoice-documentation",
+      "water-mitigation-invoice-review-failures",
+      "water-equipment-charge-reductions",
+      "water-category-3-invoice-reductions",
+    ],
+    internalLinkNotes:
+      "Primary invoice reduction FAQ; anchor for invoice defense guide and documentation-gaps blog.",
+  },
+  "water-mitigation-invoice-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/water-mitigation-invoice-defense-guide",
+      "water-damage/dry-log-collection-guide",
+      "water-damage/equipment-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "water-mitigation-file-documentation",
+      "water-final-mitigation-package",
+      "water-mitigation-invoice-reductions",
+    ],
+    internalLinkNotes:
+      "Indexed packet standard for mitigation invoice defense; cross-link dry logs and equipment guides.",
+  },
+  "water-defend-drying-day-charges": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: [
+      "water-damage/water-mitigation-invoice-defense-guide",
+      "water-damage/daily-monitoring-guide",
+      "water-damage/dry-log-collection-guide",
+    ],
+    relatedFaqIds: [
+      "water-dry-log-additional-drying-days",
+      "water-final-drying-verification",
+      "water-missing-daily-monitoring",
+    ],
+    internalLinkNotes:
+      "Drying day defense FAQ; link how-carriers-reduce-drying-days blog.",
+  },
+  "water-equipment-invoice-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/water-mitigation-invoice-defense-guide",
+      "water-damage/equipment-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "water-equipment-charge-reductions",
+      "water-air-mover-documentation",
+      "water-dehumidifier-documentation",
+    ],
+    internalLinkNotes:
+      "Equipment invoice documentation FAQ; link equipment-charges-that-get-cut blog.",
+  },
+  "water-mitigation-invoice-review-failures": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: ["water-damage/water-mitigation-invoice-defense-guide"],
+    relatedFaqIds: [
+      "water-mitigation-invoice-reductions",
+      "water-claim-denied-documentation",
+      "water-missing-daily-monitoring",
+    ],
+    internalLinkNotes:
+      "Invoice review failure patterns; bridge to documentation-gaps blog.",
+  },
+  "water-large-loss-qualifies": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-large-loss-documentation",
+      "water-large-loss-scrutiny",
+      "water-commercial-losses",
+    ],
+    internalLinkNotes:
+      "Large-loss qualification FAQ; anchor for large-loss blog intro and enterprise examples.",
+  },
+  "water-large-loss-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/commercial-water-loss-documentation-guide",
+      "water-damage/water-mitigation-invoice-defense-guide",
+      "water-damage/moisture-mapping-guide",
+      "water-damage/daily-monitoring-guide",
+    ],
+    relatedFaqIds: [
+      "water-large-loss-drying-zones",
+      "water-large-loss-invoice-documentation",
+      "water-commercial-claims-documentation",
+    ],
+    internalLinkNotes:
+      "Primary large-loss documentation FAQ; anchor for blog command structure and checklist sections.",
+  },
+  "water-large-loss-scrutiny": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: ["water-damage/commercial-water-loss-documentation-guide"],
+    relatedFaqIds: [
+      "water-commercial-claims-scrutiny",
+      "water-large-loss-invoice-documentation",
+      "water-commercial-invoice-reduced-why",
+    ],
+    internalLinkNotes:
+      "Large-loss scrutiny FAQ; bridge to section 1 and commercial scrutiny cluster.",
+  },
+  "water-large-loss-drying-zones": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "water-damage/moisture-mapping-guide",
+      "water-damage/dry-log-collection-guide",
+      "water-damage/equipment-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "water-apartment-unit-separate-tracking",
+      "water-large-loss-documentation",
+    ],
+    internalLinkNotes:
+      "Multi-zone documentation FAQ; anchor for blog section 4 and apartment parallel.",
+  },
+  "water-large-loss-invoice-documentation": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: ["water-damage/water-mitigation-invoice-defense-guide"],
+    relatedFaqIds: [
+      "water-commercial-documentation-invoice-match",
+      "water-mitigation-invoice-documentation",
+      "water-large-loss-scrutiny",
+    ],
+    internalLinkNotes:
+      "Large-loss invoice documentation FAQ; anchor for executive reporting and checklist sections.",
   },
 };
 

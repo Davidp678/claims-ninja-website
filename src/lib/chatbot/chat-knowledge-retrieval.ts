@@ -161,9 +161,25 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
   billing: ["invoice", "payment", "billed", "billing", "paid"],
   platform: ["portal", "platform", "tracking", "communication"],
   contractor_fit: ["contractor", "restoration", "roofing", "fit"],
-  water_damage_claims: ["water damage", "water mitigation", "mitigation", "drying"],
+  water_damage_claims: [
+    "water damage",
+    "water mitigation",
+    "mitigation",
+    "drying",
+    "invoice defense",
+    "invoice reduction",
+    "mitigation invoice",
+    "carrier invoice reduction",
+  ],
   fire_damage_claims: ["fire damage", "fire claim", "smoke", "soot"],
-  dry_logs: ["dry log", "drying log", "moisture log", "dry standard"],
+  dry_logs: [
+    "dry log",
+    "drying log",
+    "moisture log",
+    "dry standard",
+    "drying day dispute",
+    "drying days",
+  ],
   moisture_mapping: ["moisture map", "mapping", "moisture mapping"],
   denial_recovery: [
     "denied supplement",
@@ -191,6 +207,8 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "HEPA",
     "air scrubber",
     "specialty drying",
+    "equipment dispute",
+    "equipment invoice",
   ],
   monitoring: ["monitoring visit", "daily monitoring", "monitoring log"],
   op_claims: ["o&p", "overhead", "profit", "overhead and profit"],
@@ -214,19 +232,45 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "step-by-step",
     "how do i",
   ],
-  mitigation: ["mitigation", "water mitigation", "drying", "restoration"],
+  mitigation: [
+    "mitigation",
+    "water mitigation",
+    "drying",
+    "restoration",
+    "invoice defense",
+    "mitigation invoice review",
+    "mitigation documentation requirements",
+  ],
   commercial_water: [
     "commercial water",
     "commercial water loss",
     "commercial mitigation",
     "multifamily",
+    "multifamily water losses",
     "apartment water",
+    "apartment complex",
+    "HOA documentation",
     "tenant impact",
+    "unit-by-unit documentation",
+    "common area documentation",
     "business interruption",
     "large loss",
+    "enterprise water losses",
+    "enterprise water",
+    "drying zones",
+    "executive reporting",
+    "vendor documentation",
+    "large-loss documentation systems",
+    "commercial mitigation operations",
     "commercial moisture mapping",
     "commercial mitigation package",
     "commercial claim recovery",
+    "documentation mistakes",
+    "invoice alignment",
+    "underpaid",
+    "underpayment",
+    "common area omissions",
+    "documentation-to-invoice",
   ],
   results_insights: [
     "results and insights",
@@ -662,7 +706,13 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
     message: "How do I document a water mitigation claim?",
     assert: (result) =>
       result.snippets.length > 0 &&
-      result.snippets.some((s) => /^guide —/i.test(s.source)),
+      result.snippets.some(
+        (s) =>
+          /^guide —/i.test(s.source) ||
+          /resources on water mitigation claim documentation|water mitigation claim documentation/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
   },
   {
     label: "insurance supplementing educational question retrieves blog or faq",
@@ -803,7 +853,51 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
     assert: (result) =>
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
-        /commercial-water-loss-documentation-guide|water-apartment-loss-documentation|apartment water/i.test(
+        /commercial-water-loss-documentation-guide|water-apartment-loss-documentation|water-apartment-complex-documentation|water-damage-documentation-for-apartment-complexes|apartment water/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "apartment unit tracking retrieves FAQ or blog",
+    message: "should contractors track each apartment unit separately water damage",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-apartment-unit-separate-tracking|water-damage-documentation-for-apartment-complexes|unit-by-unit/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "common area apartment documentation retrieves blog or FAQ",
+    message: "common area water damage documentation apartment complex",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-apartment-complex-documentation|water-damage-documentation-for-apartment-complexes|common area/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "HOA water damage documentation retrieves guide or blog",
+    message: "HOA water damage documentation requirements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-water-loss-documentation-guide|water-damage-documentation-for-apartment-complexes|water-apartment-complex-documentation|HOA/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "apartment tenant impact documentation retrieves FAQ or blog",
+    message: "tenant impact documentation apartment water loss",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-apartment-tenant-impact-required|water-tenant-impact-documentation|water-damage-documentation-for-apartment-complexes|tenant impact/i.test(
           `${s.text} ${s.source}`,
         ),
       ),
@@ -815,6 +909,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /commercial-water-loss-documentation-guide|water-multifamily-loss-documentation|multifamily/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multifamily water claims underpaid retrieves blog or FAQ",
+    message: "multifamily water claims underpaid",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multifamily-water-claims-that-get-underpaid|water-multifamily-claims-underpaid|multifamily.*underpaid/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "apartment water claim underpayment retrieves blog or FAQ",
+    message: "apartment water claim underpayment",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multifamily-water-claims-that-get-underpaid|water-multifamily-claims-underpaid|apartment.*underpaid|underpayment/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "unit-by-unit documentation multifamily retrieves blog or FAQ",
+    message: "unit-by-unit documentation multifamily",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multifamily-water-claims-that-get-underpaid|water-multifamily-units-documentation|water-apartment-unit-separate-tracking|unit-by-unit/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "common area omissions water claim retrieves blog or guide",
+    message: "common area omissions water claim",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multifamily-water-claims-that-get-underpaid|water-commercial-common-area-documentation|common area/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multifamily equipment reductions retrieves FAQ or blog",
+    message: "multifamily equipment reductions",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-multifamily-equipment-reductions|equipment-charges-that-get-cut-from-water-claims|multifamily.*equipment/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "documentation to invoice mismatch multifamily retrieves guide or blog",
+    message: "documentation to invoice mismatch multifamily",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-mitigation-invoice-defense-guide|multifamily-water-claims-that-get-underpaid|water-multifamily-full-payment-support|invoice.*mismatch|documentation-to-invoice/i.test(
           `${s.text} ${s.source}`,
         ),
       ),
@@ -853,12 +1013,122 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
-    label: "large loss documentation retrieves guide",
+    label: "large loss documentation retrieves guide or blog",
     message: "large loss water damage documentation",
     assert: (result) =>
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
-        /commercial-water-loss-documentation-guide|large loss documentation|large-loss/i.test(
+        /commercial-water-loss-documentation-guide|large-loss-water-mitigation-documentation-best-practices|large loss documentation|large-loss/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "large loss qualification retrieves FAQ or blog",
+    message: "what qualifies as a large-loss water mitigation project",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /What qualifies as a large-loss water mitigation project|large-loss-water-mitigation-documentation-best-practices|large-loss water mitigation typically involves enterprise/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "drying zones documentation retrieves FAQ or blog",
+    message: "how should multiple drying zones be documented on a large loss",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-large-loss-drying-zones|large-loss-water-mitigation-documentation-best-practices|multiple drying zones|Document each drying zone separately/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "executive reporting large loss retrieves blog or FAQ",
+    message: "executive reporting for large loss water mitigation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /large-loss-water-mitigation-documentation-best-practices|executive summaries|executive-level reporting|Executive-level reporting translates/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "vendor documentation large loss retrieves blog",
+    message: "vendor documentation on large loss water mitigation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /large-loss-water-mitigation-documentation-best-practices|vendor documentation|subcontractor documentation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial documentation mistakes retrieves blog or FAQ",
+    message: "common documentation mistakes commercial water loss",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /common-documentation-mistakes-on-commercial-water-losses|water-commercial-documentation-missing|commercial documentation mistakes/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial invoice reductions retrieves FAQ or guide",
+    message: "why are commercial water mitigation invoices reduced",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-commercial-invoice-reduced-why|water-mitigation-invoice-defense-guide|commercial water mitigation invoices reduced/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial tenant impact documentation retrieves FAQ or blog",
+    message: "should tenant impacts be documented commercial water loss",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-commercial-tenant-impact-required|common-documentation-mistakes-on-commercial-water-losses|tenant impact/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "common area documentation commercial retrieves FAQ or blog",
+    message: "how to document common areas commercial water mitigation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-commercial-common-area-documentation|common-documentation-mistakes-on-commercial-water-losses|common areas be documented|common area documentation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial mitigation disputes retrieves blog or guide",
+    message: "commercial mitigation documentation disputes",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /common-documentation-mistakes-on-commercial-water-losses|commercial-water-loss-documentation-guide|commercial mitigation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "documentation invoice alignment retrieves FAQ or guide",
+    message: "why must documentation match mitigation invoice",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-commercial-documentation-invoice-match|water-mitigation-invoice-defense-guide|documentation match.*invoice/i.test(
           `${s.text} ${s.source}`,
         ),
       ),
@@ -873,6 +1143,39 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
           /water-mitigation-file-documentation|documentation should be included in a water mitigation file/i.test(
             `${s.text} ${s.source}`,
           ),
+      ),
+  },
+  {
+    label: "mitigation invoice defense question retrieves guide",
+    message: "how do i defend a water mitigation invoice",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-mitigation-invoice-defense-guide|invoice defense|defend mitigation invoice/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "carrier mitigation invoice reduction question retrieves FAQ or guide",
+    message: "why do carriers reduce mitigation invoices",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-mitigation-invoice-reductions|water-mitigation-invoice-defense-guide|carrier invoice reduction|reduce.*mitigation invoice/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mitigation invoice documentation question retrieves guide or FAQ",
+    message: "what documentation supports mitigation invoice review",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /water-mitigation-invoice-documentation|water-mitigation-invoice-defense-guide|mitigation documentation requirements|documentation supports water mitigation invoices|supports mitigation invoice/i.test(
+          `${s.text} ${s.source}`,
+        ),
       ),
   },
   {

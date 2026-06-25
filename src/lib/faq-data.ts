@@ -602,6 +602,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
       },
       {
+        label: "Water damage documentation for apartment complexes",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
         label: "Daily monitoring guide",
         href: "/resources/guides/water-damage/daily-monitoring-guide",
       },
@@ -617,6 +621,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Commercial water loss documentation guide",
         href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Water damage documentation for apartment complexes",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
       },
       {
         label: "Dry log collection guide",
@@ -696,6 +704,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Common drivers: residential file structure on multi-zone footprints, equipment billed without asset-tag placement proof, monitoring gaps between chambers, multifamily units merged into single logs, missing tenant access records, and unsorted closeout packages without indexed line-item cross-reference. Carriers apply proportional reductions when any zone lacks contemporaneous evidence — organized zone-level documentation strengthens recovery and supplement arguments.",
     relatedLinks: [
       {
+        label: "Multifamily water claims that get underpaid",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
         label: "Commercial water loss documentation guide",
         href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
       },
@@ -706,6 +718,430 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Water damage supplement denial recovery",
         href: "/resources/blog/water-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
+    id: "water-apartment-complex-documentation",
+    category: "water_damage_claims",
+    question: "How should water damage be documented in apartment complexes?",
+    answer:
+      "Document apartment complex water losses with unit-by-unit indexing from intake through closeout: unit-numbered photos, moisture maps per affected unit and common area, chronological dry logs per chamber, asset-tagged equipment records by unit, tenant impact logs aligned to access events, and terminal readings at persistent map point IDs. Separate in-unit scope from hallways, utility rooms, and shared amenities — merged residential-style files fail desk review on multifamily footprints.",
+    relatedLinks: [
+      {
+        label: "Water damage documentation for apartment complexes",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Moisture mapping guide",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+    ],
+  },
+  {
+    id: "water-apartment-unit-separate-tracking",
+    category: "water_damage_claims",
+    question: "Should contractors track each affected apartment unit separately?",
+    answer:
+      "Yes. Treat each affected apartment unit as a separate drying chamber with consistent unit numbers on maps, dry logs, photos, and equipment records. Desk reviewers match billed scope to unit-level evidence — undifferentiated multifamily files invite proportional reductions across the entire complex when any unit lacks contemporaneous documentation.",
+    relatedLinks: [
+      {
+        label: "Water damage documentation for apartment complexes",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "What documentation is required for apartment water losses?",
+        href: "/faq#faq-water-apartment-loss-documentation",
+      },
+    ],
+  },
+  {
+    id: "water-apartment-equipment-usage-documentation",
+    category: "water_damage_claims",
+    question: "What documentation supports equipment usage in apartment water losses?",
+    answer:
+      "Asset-tag photos at set and pull per unit, dry log equipment rows matching deployed counts, wide-angle placement photos with unit and room labels visible, and cross-reference to moisture map chamber boundaries. Equipment billed without unit-level placement proof invites proportional reductions — building-level photos do not defend per-unit air mover, dehumidifier, or air scrubber lines on multifamily files.",
+    relatedLinks: [
+      {
+        label: "Water damage documentation for apartment complexes",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "Equipment documentation guide",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+      {
+        label: "Equipment charges that get cut from water claims",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+    ],
+  },
+  {
+    id: "water-apartment-mitigation-claims-disputed",
+    category: "water_damage_claims",
+    question: "Why are apartment water mitigation claims frequently disputed?",
+    answer:
+      "Higher invoice totals trigger specialist desk review. Carriers dispute apartment files when residential documentation structure is applied to multifamily footprints — merged logs, undifferentiated maps, missing tenant access records, and equipment billed without per-unit placement proof. Vertical migration across stack boundaries and common-area scope merged into unit files add review layers that produce proportional reductions rather than isolated unit cuts.",
+    relatedLinks: [
+      {
+        label: "Multifamily water claims that get underpaid",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
+        label: "Water damage documentation for apartment complexes",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "water-apartment-tenant-impact-required",
+    category: "water_damage_claims",
+    question: "Should tenant impacts be documented during apartment water losses?",
+    answer:
+      "Yes. Maintain a tenant impact log from mobilization: property management authorization, access restrictions, habitability notices, relocation coordination, and contents disruption with unit identifiers and timestamps. Production in occupied buildings must match access and coordination documentation at desk review — monitoring lines on restricted units without access logs invite visit-day cuts.",
+    relatedLinks: [
+      {
+        label: "Water damage documentation for apartment complexes",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "How should tenant impacts be documented?",
+        href: "/faq#faq-water-tenant-impact-documentation",
+      },
+    ],
+  },
+  {
+    id: "water-multifamily-claims-underpaid",
+    category: "water_damage_claims",
+    question: "Why do multifamily water claims get underpaid?",
+    answer:
+      "Multifamily water claims get underpaid when documentation cannot support billed scope per unit and common area: merged residential-style files, missing unit-by-unit indexing, omitted common-area evidence, equipment billed without placement proof, gapped monitoring records, undocumented tenant impact, and invoice lines not cross-referenced to dated field records. Higher invoice totals trigger specialist desk review — proportional reductions follow when any chamber lacks contemporaneous evidence.",
+    relatedLinks: [
+      {
+        label: "Multifamily water claims that get underpaid",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "What causes commercial water claims to be underpaid?",
+        href: "/faq#faq-water-commercial-claims-underpaid",
+      },
+    ],
+  },
+  {
+    id: "water-multifamily-units-documentation",
+    category: "water_damage_claims",
+    question: "How should contractors document affected units in multifamily water claims?",
+    answer:
+      "Treat each affected unit as a separate drying chamber with consistent unit numbers on moisture maps, dry logs, photos, and equipment records. Capture room-level conditions with unit-specific photos, baseline and terminal moisture readings at persistent map point IDs, and separate in-unit scope from common areas. Unit-by-unit indexing from intake through closeout prevents proportional reductions when desk reviewers cannot match billed lines to unit-level evidence.",
+    relatedLinks: [
+      {
+        label: "Multifamily water claims that get underpaid",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
+        label: "Water damage documentation for apartment complexes",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "Should contractors track each affected apartment unit separately?",
+        href: "/faq#faq-water-apartment-unit-separate-tracking",
+      },
+    ],
+  },
+  {
+    id: "water-multifamily-equipment-reductions",
+    category: "water_damage_claims",
+    question: "Why do carriers reduce equipment charges on multifamily water losses?",
+    answer:
+      "Carriers reduce equipment charges on multifamily losses when air movers, dehumidifiers, and specialty equipment are billed without unit-level or zone-level placement proof. Missing asset-tag photos, absent equipment maps tied to chamber boundaries, unsupported unit counts exceeding photo-verified peak deployment, and incomplete daily verification on dry logs trigger proportional cuts — building-level photos do not defend per-unit equipment lines on apartment, HOA, or condo files.",
+    relatedLinks: [
+      {
+        label: "Multifamily water claims that get underpaid",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
+        label: "Equipment charges that get cut from water claims",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+      {
+        label: "Equipment documentation guide",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "water-multifamily-tenant-impact-documentation",
+    category: "water_damage_claims",
+    question: "Should tenant impact be documented on multifamily water claims?",
+    answer:
+      "Yes. Maintain tenant impact logs from mobilization on occupied multifamily properties: property management authorization, access restrictions, habitability notices, temporary relocation coordination, contents manipulation, and scheduling limitations with unit identifiers and timestamps. Production and monitoring in occupied units without access records invite visit-day and labor cuts at desk review.",
+    relatedLinks: [
+      {
+        label: "Multifamily water claims that get underpaid",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
+        label: "Water damage documentation for apartment complexes",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+      {
+        label: "Should tenant impacts be documented during apartment water losses?",
+        href: "/faq#faq-water-apartment-tenant-impact-required",
+      },
+    ],
+  },
+  {
+    id: "water-multifamily-full-payment-support",
+    category: "water_damage_claims",
+    question: "How can contractors support full payment on multifamily water claims?",
+    answer:
+      "Build indexed closeout packets with unit-by-unit maps, logs, and photos; separate common-area documentation; asset-tag equipment records per chamber; daily monitoring with terminal release readings; tenant impact logs aligned to access events; and line-item cross-reference tying invoice charges to dated evidence. Submit while drying narrative is active or immediately after release — organized zone-level documentation strengthens initial approval and supplement recovery on apartment, HOA, and condo losses.",
+    relatedLinks: [
+      {
+        label: "Multifamily water claims that get underpaid",
+        href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
+      },
+      {
+        label: "Water mitigation invoice defense guide",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-documentation-missing",
+    category: "water_damage_claims",
+    question: "What documentation is commonly missing from commercial water claims?",
+    answer:
+      "The most commonly missing items on commercial water files are zone-level moisture maps with floor plans and migration paths, chronological dry logs for every active drying day, equipment placement photos with asset tags per chamber, tenant impact logs on occupied properties, common-area scope indexed separately from suites, daily monitoring records with psychrometric data, and terminal dry-standard verification before equipment pull. Residential file structure on multi-zone footprints produces proportional reductions across the entire invoice.",
+    relatedLinks: [
+      {
+        label: "Common documentation mistakes on commercial water losses",
+        href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-invoice-reduced-why",
+    category: "water_damage_claims",
+    question: "Why are commercial water mitigation invoices reduced?",
+    answer:
+      "Commercial mitigation invoices are reduced when documentation cannot support billed scope at zone level — equipment counts exceed photo-verified deployment per chamber, dry logs have gaps between billed drying days, monitoring visits lack readings at active map point IDs, tenant access is undocumented on occupied properties, common-area scope is billed without indexed evidence, or labor hours lack contemporaneous scope proof. Higher invoice totals trigger specialist desk review and proportional trims rather than full denials on large commercial files.",
+    relatedLinks: [
+      {
+        label: "Common documentation mistakes on commercial water losses",
+        href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
+      },
+      {
+        label: "Water mitigation invoice defense guide",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Why do carriers reduce water mitigation invoices?",
+        href: "/faq#faq-water-mitigation-invoice-reductions",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-tenant-impact-required",
+    category: "water_damage_claims",
+    question: "Should tenant impacts be documented on commercial water losses?",
+    answer:
+      "Yes. Maintain a tenant impact log from mobilization on occupied commercial properties: property management authorization, access restrictions, habitability notices, relocation coordination, scheduling limitations, and contents disruption with zone identifiers and timestamps. Production in occupied buildings must match access and coordination documentation at desk review — monitoring and labor lines on restricted zones without access logs invite proportional cuts.",
+    relatedLinks: [
+      {
+        label: "Common documentation mistakes on commercial water losses",
+        href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "How should tenant impacts be documented?",
+        href: "/faq#faq-water-tenant-impact-documentation",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-common-area-documentation",
+    category: "water_damage_claims",
+    question: "How should common areas be documented during commercial water mitigation?",
+    answer:
+      "Document common areas — hallways, utility rooms, mechanical spaces, shared amenities, and leasing offices — as named zones with independent moisture maps, dry logs, and photo narrative indexed separately from suite or unit scope. Map corridor moisture with point IDs independent of adjacent chambers. Source documentation for shared-system origin losses belongs in riser closets and mechanical spaces. Merged common-area scope into suite files produces proportional cuts when desk reviewers cannot reconcile billed lines.",
+    relatedLinks: [
+      {
+        label: "Common documentation mistakes on commercial water losses",
+        href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Water damage documentation for apartment complexes",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+    ],
+  },
+  {
+    id: "water-commercial-documentation-invoice-match",
+    category: "water_damage_claims",
+    question: "Why must commercial documentation match the mitigation invoice?",
+    answer:
+      "Desk reviewers approve commercial invoices line by line against dated evidence. When documentation does not match the invoice — unsupported labor hours, equipment counts exceeding photo-verified deployment, drying days exceeding terminal release readings, or scope billed without contemporaneous map revisions — carriers apply proportional reductions across the entire file. Indexed closeout packets where every billed line cross-references moisture maps, dry logs, equipment proof, and monitoring records prevent predictable trims at submission.",
+    relatedLinks: [
+      {
+        label: "Water mitigation invoice defense guide",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Common documentation mistakes on commercial water losses",
+        href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
+      },
+      {
+        label: "What documentation supports water mitigation invoices?",
+        href: "/faq#faq-water-mitigation-invoice-documentation",
+      },
+    ],
+  },
+  {
+    id: "water-mitigation-invoice-reductions",
+    category: "water_damage_claims",
+    question: "Why do carriers reduce water mitigation invoices?",
+    answer:
+      "Carriers reduce mitigation invoices when documentation cannot support billed scope — equipment counts exceed photo-verified deployment, dry logs have gaps between billed drying days, monitoring visits lack readings at active map points, labor hours lack contemporaneous scope proof, or Category 2 and 3 lines lack intake classification evidence. Reductions are often proportional rather than full denials — unsupported days, units, or rooms get trimmed while partially supported scope remains approved.",
+    relatedLinks: [
+      {
+        label: "Water mitigation invoice defense guide",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Why are water mitigation invoices reduced by carriers?",
+        href: "/faq#faq-water-category-3-invoice-reductions",
+      },
+    ],
+  },
+  {
+    id: "water-mitigation-invoice-documentation",
+    category: "water_damage_claims",
+    question: "What documentation supports water mitigation invoices?",
+    answer:
+      "Build an indexed packet that cross-references each billed line to dated evidence: labeled photos from intake through closeout, baseline moisture maps with consistent reading point IDs, chronological dry logs for every active drying day, equipment placement proof aligned to dry log rows, monitoring records for each billed visit day, category classification notes on contaminated losses, and terminal dry-standard verification before equipment pull. Office pre-invoice reconciliation catches gaps before submission.",
+    relatedLinks: [
+      {
+        label: "Water mitigation invoice defense guide",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "What documentation should be included in a water mitigation file?",
+        href: "/faq#faq-water-mitigation-file-documentation",
+      },
+      {
+        label: "Dry log collection guide",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+    ],
+  },
+  {
+    id: "water-defend-drying-day-charges",
+    category: "water_damage_claims",
+    question: "How can contractors defend drying day charges?",
+    answer:
+      "Defend drying days with baseline moisture readings before equipment set, daily readings at the same map point IDs on every monitoring visit, progress narratives when readings plateau or regress, and terminal release readings compared to dry standard before equipment pull. Align equipment pull date, last dry log entry, and clearance photos — gaps between terminal readings and the last billed day invite last-day equipment cuts at desk review.",
+    relatedLinks: [
+      {
+        label: "Water mitigation invoice defense guide",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "How carriers reduce drying days",
+        href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
+      {
+        label: "How do dry logs support additional drying days?",
+        href: "/faq#faq-water-dry-log-additional-drying-days",
+      },
+    ],
+  },
+  {
+    id: "water-equipment-invoice-documentation",
+    category: "water_damage_claims",
+    question: "How should equipment usage be documented for invoice review?",
+    answer:
+      "Document equipment with wide placement photos showing unit count per chamber, dry log equipment rows with type and room assignment on every active drying day, peak deployment photos matching billed maximum counts, and dated records of equipment moves or partial releases. Reconcile photo-verified counts and logged days to billed air movers, dehumidifiers, and specialty units before invoice submission — count mismatches are the primary trigger for proportional equipment cuts.",
+    relatedLinks: [
+      {
+        label: "Water mitigation invoice defense guide",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Equipment documentation guide",
+        href: "/resources/guides/water-damage/equipment-documentation-guide",
+      },
+      {
+        label: "Equipment charges that get cut from water claims",
+        href: "/resources/blog/equipment-charges-that-get-cut-from-water-claims",
+      },
+    ],
+  },
+  {
+    id: "water-mitigation-invoice-review-failures",
+    category: "water_damage_claims",
+    question: "What causes water mitigation invoices to fail review?",
+    answer:
+      "Invoices fail desk review when dry logs have gaps between billed equipment days, monitoring reports are missing for billed visit days, equipment documentation lacks placement photos or shows fewer units than billed, moisture maps have no baseline readings or inconsistent point IDs, photos are unlabeled or post-cleanup only, or invoice narratives lack cross-referenced evidence. Weak files produce proportional reductions across multiple line items rather than one formal denial — contractors experience it as the carrier paid, but not what was billed.",
+    relatedLinks: [
+      {
+        label: "Water mitigation invoice defense guide",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Documentation gaps that trigger water claim denials",
+        href: "/resources/blog/documentation-gaps-that-trigger-water-claim-denials",
+      },
+      {
+        label: "Why do carriers reduce equipment charges?",
+        href: "/faq#faq-water-equipment-charge-reductions",
       },
     ],
   },
@@ -1159,6 +1595,112 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "How carriers reduce drying days",
         href: "/resources/blog/how-carriers-reduce-drying-days",
+      },
+    ],
+  },
+
+  {
+    id: "water-large-loss-qualifies",
+    category: "water_damage_claims",
+    question: "What qualifies as a large-loss water mitigation project?",
+    answer:
+      "Large-loss water mitigation typically involves enterprise-scale footprints where claim value, stakeholder count, and documentation volume exceed standard commercial templates — hospitals, schools, hotels, warehouses, manufacturing facilities, office buildings, large apartment complexes, and catastrophic water events affecting multiple floors, wings, or buildings. Qualification is operational: multi-zone drying programs, extended duration, consultant involvement, specialty equipment deployments, and invoice values that trigger specialist desk review and third-party audit.",
+    relatedLinks: [
+      {
+        label: "Large-loss water mitigation documentation best practices",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Do you support commercial water losses?",
+        href: "/faq#faq-water-commercial-losses",
+      },
+    ],
+  },
+  {
+    id: "water-large-loss-documentation",
+    category: "water_damage_claims",
+    question: "How should large-loss water damage be documented?",
+    answer:
+      "Document large-loss water damage with a documentation command structure from mobilization: zone-level segmentation (floor, wing, building, or unit), baseline and progress moisture maps at persistent map point IDs, gap-free daily dry logs and monitoring reports per zone, asset-tagged equipment records, occupant and operational impact logs, vendor packet intake aligned to zone indexing, executive-level status summaries, and indexed closeout packets cross-referencing every billed line to dated evidence.",
+    relatedLinks: [
+      {
+        label: "Large-loss water mitigation documentation best practices",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "How are commercial water claims documented?",
+        href: "/faq#faq-water-commercial-claims-documentation",
+      },
+    ],
+  },
+  {
+    id: "water-large-loss-scrutiny",
+    category: "water_damage_claims",
+    question: "Why are large-loss water claims heavily scrutinized?",
+    answer:
+      "Large-loss water claims receive heavy scrutiny because higher invoice values trigger specialist desk review, third-party audit, and consultant involvement before remittance. Multi-zone equipment deployments, extended drying duration, vendor subcontractor scope, and occupant impact documentation must align across an indexed packet — reviewers cannot approve enterprise scope they cannot trace to dated zone-level evidence. Proportional reductions across multiple line items are common when large-loss files lack command structure and segmentation.",
+    relatedLinks: [
+      {
+        label: "Large-loss water mitigation documentation best practices",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+      {
+        label: "Why do commercial water claims receive more scrutiny?",
+        href: "/faq#faq-water-commercial-claims-scrutiny",
+      },
+      {
+        label: "Water mitigation invoice defense guide",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+    ],
+  },
+  {
+    id: "water-large-loss-drying-zones",
+    category: "water_damage_claims",
+    question: "How should multiple drying zones be documented?",
+    answer:
+      "Document each drying zone separately with its own moisture map, dry log chronology, equipment records, and photo narrative — indexed by floor, wing, building, or unit identifier matching the carrier sketch. Use persistent map point IDs from intake through terminal release readings per zone. Equipment placement photos, dry log equipment rows, and monitoring entries must reference the same zone labels across the file. Merged zone documentation produces proportional reductions when desk reviewers cannot reconcile billed scope to indexed proof.",
+    relatedLinks: [
+      {
+        label: "Large-loss water mitigation documentation best practices",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+      {
+        label: "Moisture mapping field procedure",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+      {
+        label: "How should units be tracked separately in apartment water losses?",
+        href: "/faq#faq-water-apartment-unit-separate-tracking",
+      },
+    ],
+  },
+  {
+    id: "water-large-loss-invoice-documentation",
+    category: "water_damage_claims",
+    question: "What documentation supports large commercial water mitigation invoices?",
+    answer:
+      "Large commercial water mitigation invoices require indexed packets where every billed line cross-references dated zone-level evidence: intake and classification, moisture maps per zone with baseline and terminal readings, complete dry logs and monitoring reports, asset-tagged equipment placement proof, occupant and operational impact records, vendor subcontractor documentation, executive summaries with affected area status and milestones, and final dry verification before equipment pull. Office pre-invoice reconciliation catches count and chronology mismatches before specialist desk review.",
+    relatedLinks: [
+      {
+        label: "Large-loss water mitigation documentation best practices",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+      {
+        label: "Water mitigation invoice defense guide",
+        href: "/resources/guides/water-damage/water-mitigation-invoice-defense-guide",
+      },
+      {
+        label: "Why must commercial documentation match the mitigation invoice?",
+        href: "/faq#faq-water-commercial-documentation-invoice-match",
       },
     ],
   },

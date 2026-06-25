@@ -29,7 +29,7 @@ export const documentationGapsThatTriggerWaterClaimDenials: BlogPost = {
   relatedPostSlugs: [
     "why-water-mitigation-claims-get-underpaid",
     "how-carriers-reduce-drying-days",
-    "equipment-charges-that-get-cut-from-water-claims",
+    "large-loss-water-mitigation-documentation-best-practices",
   ],
   faqIds: [
     "water-claim-denied-documentation",
@@ -46,7 +46,7 @@ export const documentationGapsThatTriggerWaterClaimDenials: BlogPost = {
       paragraphs: [
         "Water mitigation invoices fail desk review for predictable reasons — not because adjusters reject legitimate drying work as a class. Files get denied, reduced, or sent back for documentation when moisture readings, maps, logs, photos, and classification evidence cannot support what the field performed. The gap between work done and payment approved is almost always a documentation gap first and a scope argument second.",
         "Documentation gaps trigger water claim denials, payment reductions, drying-day cuts, equipment reductions, and supplement disputes across water mitigation contractors, restoration contractors, reconstruction contractors, and commercial restoration teams. The failures repeat on every book: missing intake readings, incomplete maps, weak Category and Class notes, absent equipment rows, gapped monitoring visits, and closeout without terminal verification.",
-        "This article is the authority piece for the water damage documentation cluster. It explains why documentation determines claim outcomes, which gaps produce which reductions, how carriers evaluate files at desk review, and how to build a defensible package from mobilization through equipment pull. Use sibling articles for depth on specific dispute types — drying days, equipment cuts, Category 3 underpayment, and supplement denial recovery.",
+        "This article is the authority piece for the water damage documentation cluster. It explains why documentation determines claim outcomes, which gaps produce which reductions, how carriers evaluate files at desk review, and how to build a defensible package from mobilization through equipment pull. Use sibling articles for depth on specific dispute types — drying days, equipment cuts, Category 3 underpayment, apartment complex documentation, and supplement denial recovery.",
         "Field procedures live in the Category 3 water damage documentation guide, moisture mapping guide, dry log collection guide, daily monitoring guide, equipment documentation guide, and Category/Class documentation guide. Broader payment patterns live in why water mitigation claims get underpaid, how carriers reduce drying days, and equipment charges that get cut from water claims.",
         "Educational guidance for contractors only — not legal advice. Carrier programs, retention rules, and state requirements vary by file and program.",
       ],
@@ -70,6 +70,18 @@ export const documentationGapsThatTriggerWaterClaimDenials: BlogPost = {
         {
           label: "Why are water damage claims denied for documentation issues?",
           href: "/faq#faq-water-claim-denied-documentation",
+        },
+        {
+          label: "Water damage documentation for apartment complexes",
+          href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+        },
+        {
+          label: "Common documentation mistakes on commercial water losses",
+          href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
+        },
+        {
+          label: "Large-loss water mitigation documentation best practices",
+          href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
         },
       ],
     },

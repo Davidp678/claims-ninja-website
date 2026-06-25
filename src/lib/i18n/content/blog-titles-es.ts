@@ -20,6 +20,14 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Cargos de equipos que recortan en reclamaciones de agua (y cómo los contratistas los recuperan)",
   "documentation-gaps-that-trigger-water-claim-denials":
     "Brechas de documentación que provocan denegaciones de reclamaciones por agua",
+  "water-damage-documentation-for-apartment-complexes":
+    "Documentación de daños por agua en complejos de apartamentos: guía para contratistas",
+  "common-documentation-mistakes-on-commercial-water-losses":
+    "Errores comunes de documentación en pérdidas comerciales por agua",
+  "large-loss-water-mitigation-documentation-best-practices":
+    "Mejores prácticas de documentación de mitigación de agua en pérdidas de gran magnitud",
+  "multifamily-water-claims-that-get-underpaid":
+    "Reclamaciones de agua multifamiliar que se pagan por debajo del valor",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

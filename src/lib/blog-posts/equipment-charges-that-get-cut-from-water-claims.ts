@@ -28,9 +28,10 @@ export const equipmentChargesThatGetCutFromWaterClaims: BlogPost = {
   seoDescription:
     "Learn why air movers, dehumidifiers, HEPA filtration devices, and specialty drying equipment are frequently reduced by insurance carriers—and how proper documentation helps contractors recover lost revenue.",
   relatedPostSlugs: [
+    "multifamily-water-claims-that-get-underpaid",
     "equipment-charges-water-damage-claims",
     "how-carriers-reduce-drying-days",
-    "why-water-mitigation-claims-get-underpaid",
+    "large-loss-water-mitigation-documentation-best-practices",
     "documentation-gaps-that-trigger-water-claim-denials",
   ],
   faq: [
@@ -93,7 +94,7 @@ export const equipmentChargesThatGetCutFromWaterClaims: BlogPost = {
         "Equipment charges — air movers, dehumidifiers, HEPA filtration devices, air scrubbers, desiccant systems, and specialty drying tools — concentrate mitigation margin and concentrate carrier scrutiny. Contractors deploy what the structure requires; carriers pay what photos, dry logs, moisture maps, and monitoring records prove was reasonable each billed day. When documentation fails desk review, equipment lines get cut before demolition, contents, or rebuild scope is formally denied.",
         "Equipment charge reductions hit water mitigation contractors, restoration contractors, reconstruction contractors, and commercial restoration teams on nearly every book: unit counts trimmed to photo-verified peak, billed days reduced to logged days, HEPA lines stripped without Category proof, specialty equipment denied without placement justification, and monitoring visits cut when visit notes are absent. The pattern is operational and predictable — not random adjuster discretion.",
         "This article explains why equipment charges are frequently reduced, how carriers evaluate usage, which documentation failures trigger cuts by equipment type, how revenue impact shows up on remittance detail, and when supplementing becomes necessary because valid equipment scope was removed. It is claim-recovery guidance for contractors who perform drying correctly but lose margin when files fail forward review.",
-        "General equipment billing standards live in equipment charges in water damage claims. Drying-day duration disputes live in how carriers reduce drying days. Broader underpayment patterns live in why water mitigation claims get underpaid and why Category 3 water claims get underpaid. Field procedures live in the equipment documentation procedure, dry log collection procedure, daily monitoring procedure, and moisture mapping field procedure.",
+        "General equipment billing standards live in equipment charges in water damage claims. Drying-day duration disputes live in how carriers reduce drying days. Broader underpayment patterns live in why water mitigation claims get underpaid, multifamily water claims that get underpaid, and why Category 3 water claims get underpaid. Field procedures live in the equipment documentation procedure, dry log collection procedure, daily monitoring procedure, and moisture mapping field procedure.",
         "Educational guidance for contractors only — not legal advice. Carrier programs, price lists, and retention rules vary by file and program.",
       ],
       links: [
@@ -112,6 +113,14 @@ export const equipmentChargesThatGetCutFromWaterClaims: BlogPost = {
         {
           label: "Why water mitigation claims get underpaid",
           href: "/resources/blog/why-water-mitigation-claims-get-underpaid",
+        },
+        {
+          label: "Large-loss water mitigation documentation best practices",
+          href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+        },
+        {
+          label: "Multifamily water claims that get underpaid",
+          href: "/resources/blog/multifamily-water-claims-that-get-underpaid",
         },
         {
           label: "Water damage solutions",
@@ -264,12 +273,20 @@ export const equipmentChargesThatGetCutFromWaterClaims: BlogPost = {
         "Desiccant dehumidification serves large commercial losses, low-temperature drying, and assemblies where LGR alone stalls. Desk reviewers may not understand desiccant timelines without narrative — log environmental conditions, progress notes, and why standard dehumidification was insufficient before billing specialty runtime.",
         "Specialty equipment supplements fail when the estimate adds lines but photos show only standard air movers and LGR units. Submit manufacturer or procedure references only when your company actually used them on site — fabricated specialty scope fails ethical review and damages adjuster relationships.",
         "Injectidry and cavity drying require photos of injection points, material types, and moisture readings at those assemblies. Hardwood systems need species identification and reading trends at plank or subfloor points — generic specialty lines without material proof get cut first.",
-        "Commercial restoration contractors should tie specialty equipment to chamber diagrams, asset tags, and vendor invoices in the indexed packet. Residential jobs still need the same placement-and-log alignment — scale does not replace documentation.",
+        "Commercial restoration contractors should tie specialty equipment to chamber diagrams, asset tags, and vendor invoices in the indexed packet. Residential jobs still need the same placement-and-log alignment — scale does not replace documentation. Apartment complex losses require unit-level equipment placement proof per chamber — building-level photos fail desk review on multifamily files.",
       ],
       links: [
         {
           label: "Mitigation equipment documentation procedure",
           href: "/resources/guides/water-damage/equipment-documentation-guide",
+        },
+        {
+          label: "Water damage documentation for apartment complexes",
+          href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+        },
+        {
+          label: "Common documentation mistakes on commercial water losses",
+          href: "/resources/blog/common-documentation-mistakes-on-commercial-water-losses",
         },
         {
           label: "Equipment charges in water damage claims",
