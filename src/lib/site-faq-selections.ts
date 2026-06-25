@@ -128,6 +128,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "roofing-measurements",
       "roofing-op",
       "supplements-whats-included",
+      "roof-matching-insurance-claim",
+      "roof-matching-contractor-documentation",
+      "roof-matching-dispute-photos",
+      "roof-matching-supplement-denials",
+      "roof-matching-discontinued-shingles",
     ],
   },
   waterDamage: {

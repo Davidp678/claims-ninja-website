@@ -172,6 +172,19 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "carrier invoice reduction",
   ],
   fire_damage_claims: ["fire damage", "fire claim", "smoke", "soot"],
+  roofing_claims: [
+    "roofing",
+    "roof supplement",
+    "storm claim",
+    "shingle",
+    "roof matching",
+    "material matching",
+    "shingle matching",
+    "discontinued shingle",
+    "partial roof",
+    "color mismatch",
+    "repairability",
+  ],
   dry_logs: [
     "dry log",
     "drying log",
@@ -1246,6 +1259,52 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.some(
         (s) =>
           /water-reinspection-denial-reasons|water-damage-reinspection-guide|deny reinspection requests/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "roof matching documentation retrieves guide",
+    message: "How do I document roof matching for a partial replacement?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /roof-matching-documentation-guide|roof matching documentation guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "discontinued shingle matching retrieves guide or FAQ",
+    message: "Can discontinued shingles support a roof matching supplement?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /roof-matching-discontinued-shingles|roof-matching-documentation-guide|discontinued shingles/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "shingle color mismatch retrieves guide",
+    message: "How do I document shingle color mismatch on a roofing claim?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /roof-matching-documentation-guide|roof-matching-dispute-photos|shingle color mismatch/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "roof matching supplement denials retrieves FAQ",
+    message: "Why do carriers deny roof matching supplements?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /roof-matching-supplement-denials|roof-matching-documentation-guide|deny roof matching/i.test(
             `${s.text} ${s.source}`,
           ),
       ),

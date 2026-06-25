@@ -798,6 +798,65 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Organization FAQ; anchor for reinspection checklist section.",
   },
+  "roof-matching-insurance-claim": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["roofing-claims/roof-matching-documentation-guide"],
+    relatedFaqIds: [
+      "roof-matching-contractor-documentation",
+      "roof-matching-discontinued-shingles",
+      "roofing-carrier-documentation",
+    ],
+    internalLinkNotes:
+      "Anchor FAQ for roof matching guide; cross-link roofing supplement checklist.",
+  },
+  "roof-matching-contractor-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/roof-matching-documentation-guide",
+      "roofing-claims/roofing-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-matching-insurance-claim",
+      "roof-matching-dispute-photos",
+      "roof-matching-supplement-denials",
+    ],
+    internalLinkNotes:
+      "Documentation prep FAQ; cross-link roofing documentation standard.",
+  },
+  "roof-matching-dispute-photos": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/roof-matching-documentation-guide",
+      "roofing-claims/roof-measurement-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-matching-contractor-documentation",
+      "roof-matching-supplement-denials",
+    ],
+    internalLinkNotes:
+      "Photo evidence FAQ; cross-link measurement documentation guide.",
+  },
+  "roof-matching-supplement-denials": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: ["roofing-claims/roof-matching-documentation-guide"],
+    relatedFaqIds: [
+      "roof-matching-insurance-claim",
+      "roof-matching-discontinued-shingles",
+      "supplements-whats-included",
+    ],
+    internalLinkNotes:
+      "Matching denial FAQ; cross-link roofing supplement playbook blog.",
+  },
+  "roof-matching-discontinued-shingles": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["roofing-claims/roof-matching-documentation-guide"],
+    relatedFaqIds: [
+      "roof-matching-insurance-claim",
+      "roof-matching-supplement-denials",
+    ],
+    internalLinkNotes:
+      "Discontinued product FAQ; anchor for availability research section.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

@@ -484,6 +484,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["organize documentation", "reinspection packet", "indexed documentation"],
     topics: ["water_damage_claims", "mitigation", "dry_logs"],
   },
+  "roof-matching-insurance-claim": {
+    phrases: [
+      "what is roof matching in an insurance claim",
+      "roof matching insurance claim",
+      "what is roof matching",
+    ],
+    keywords: ["roof matching", "material matching", "matching claim"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-matching-contractor-documentation": {
+    phrases: [
+      "how should contractors document roof matching issues",
+      "document roof matching issues",
+      "roof matching documentation for contractors",
+    ],
+    keywords: ["roof matching documentation", "document matching", "matching issues"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-matching-dispute-photos": {
+    phrases: [
+      "what photos help support a roof matching dispute",
+      "roof matching dispute photos",
+      "photos for roof matching",
+    ],
+    keywords: ["matching photos", "roof matching photos", "elevation photos"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-matching-supplement-denials": {
+    phrases: [
+      "why do carriers deny roof matching supplements",
+      "roof matching supplement denied",
+      "carriers deny roof matching",
+    ],
+    keywords: ["matching denied", "matching supplement denial", "deny matching"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-matching-discontinued-shingles": {
+    phrases: [
+      "can discontinued shingles support a roof matching supplement",
+      "discontinued shingles roof matching",
+      "discontinued shingle supplement",
+    ],
+    keywords: ["discontinued shingle", "discontinued shingles", "unavailable shingle"],
+    topics: ["roofing_claims", "supplements"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

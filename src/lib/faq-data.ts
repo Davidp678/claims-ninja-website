@@ -450,6 +450,93 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "O&P depends on carrier guidelines, number of trades, and how the claim is structured. We evaluate whether O&P applies to your file and document the basis when pursuing it — outcomes vary by carrier and claim circumstances.",
   },
 
+  // Roof Matching (5)
+  {
+    id: "roof-matching-insurance-claim",
+    category: "roofing_claims",
+    question: "What is roof matching in an insurance claim?",
+    answer:
+      "Roof matching refers to whether replacement materials reasonably align with existing roofing in color, profile, texture, and visible appearance when a carrier approves partial repair. Disputes arise when discontinued shingles, weathered materials, or partial slope replacement leave visible differences across roof planes. Matching concerns are evaluated against field documentation, material availability, and policy language — outcomes vary by carrier and claim circumstances.",
+    relatedLinks: [
+      {
+        label: "Roof matching documentation guide",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Roofing supplement checklist",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+    ],
+  },
+  {
+    id: "roof-matching-contractor-documentation",
+    category: "roofing_claims",
+    question: "How should contractors document roof matching issues?",
+    answer:
+      "Identify the existing shingle type, manufacturer, color, style, and age; capture wide elevation and slope-by-slope photos; research material availability with dated supplier or manufacturer confirmation; document repairability concerns on brittle or fragile existing material; and build a scope comparison table tying carrier repair boundaries to field conditions. A one-page contractor narrative should link each requested scope line to specific evidence — not legal arguments or guaranteed outcomes.",
+    relatedLinks: [
+      {
+        label: "Roof matching documentation guide",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Roofing claim documentation standard",
+        href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-matching-dispute-photos",
+    category: "roofing_claims",
+    question: "What photos help support a roof matching dispute?",
+    answer:
+      "Wide roof elevations from primary viewing angles, slope-by-slope photos with consistent labeling, close-up material photos for identification, side-by-side comparisons of sample shingles against existing courses in consistent lighting, and photos of transitions between the approved repair area and adjacent slopes. Damage-only close-ups without elevation context rarely support matching scope arguments at desk review.",
+    relatedLinks: [
+      {
+        label: "Roof matching documentation guide",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Roof measurement documentation",
+        href: "/resources/guides/roofing-claims/roof-measurement-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-matching-supplement-denials",
+    category: "roofing_claims",
+    question: "Why do carriers deny roof matching supplements?",
+    answer:
+      "Common denial reasons include insufficient material identification, no availability research confirming discontinued or unavailable products, weak photo evidence without elevation context, cosmetic-only damage arguments, policy language limiting matching scope, and scope requests not tied to documented field conditions. Carriers also deny when repairability concerns are asserted without photos or when partial repair is deemed sufficient based on the evidence provided — outcomes vary by carrier program and file specifics.",
+    relatedLinks: [
+      {
+        label: "Roof matching documentation guide",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Roofing supplement playbook",
+        href: "/resources/blog/roofing-supplement-playbook",
+      },
+    ],
+  },
+  {
+    id: "roof-matching-discontinued-shingles",
+    category: "roofing_claims",
+    question: "Can discontinued shingles support a roof matching supplement?",
+    answer:
+      "Discontinued or unavailable shingles can support a matching supplement when documentation confirms the exact product is no longer available and comparable replacements differ in color, profile, or dimensions. Save dated manufacturer discontinuation notices, distributor availability checks, and photos showing visible differences between existing material and available alternatives. Documentation should tie availability research to specific scope lines — approval is not guaranteed and depends on carrier policy and evidence quality.",
+    relatedLinks: [
+      {
+        label: "Roof matching documentation guide",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "What is a roof supplement",
+        href: "/resources/blog/what-is-a-roof-supplement",
+      },
+    ],
+  },
+
   // Water Damage Claims (23)
   {
     id: "water-mitigation-scope",

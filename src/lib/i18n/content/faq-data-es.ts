@@ -450,6 +450,93 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "El O&P depende de las pautas de la aseguradora, el número de oficios y cómo se estructura la reclamación. Evaluamos si el O&P aplica a su expediente y documentamos la base al perseguirlo; los resultados varían según la aseguradora y las circunstancias de la reclamación.",
   },
 
+  // Roof Matching (5)
+  {
+    id: "roof-matching-insurance-claim",
+    category: "roofing_claims",
+    question: "¿Qué es la coincidencia de techo (roof matching) en una reclamación de seguros?",
+    answer:
+      "La coincidencia de techo se refiere a si los materiales de reemplazo se alinean razonablemente con el techado existente en color, perfil, textura y apariencia visible cuando la aseguradora aprueba una reparación parcial. Surgen disputas cuando las tejas están descontinuadas, los materiales están desgastados o el reemplazo parcial de pendiente deja diferencias visibles entre planos del techo. Las preocupaciones de coincidencia se evalúan con documentación de campo, disponibilidad de material y lenguaje de póliza; los resultados varían según la aseguradora y las circunstancias de la reclamación.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de coincidencia de techo",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Lista de verificación de suplementos de techado",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+    ],
+  },
+  {
+    id: "roof-matching-contractor-documentation",
+    category: "roofing_claims",
+    question: "¿Cómo deben documentar los contratistas los problemas de coincidencia de techo?",
+    answer:
+      "Identifique el tipo, fabricante, color, estilo y edad de la teja existente; capture fotos amplias de elevación y por pendiente; investigue la disponibilidad del material con confirmación fechada del proveedor o fabricante; documente preocupaciones de reparabilidad en material existente frágil o quebradizo; y elabore una tabla de comparación de alcance que vincule los límites de reparación de la aseguradora con las condiciones de campo. Un resumen narrativo de una página debe vincular cada partida solicitada con evidencia específica, sin argumentos legales ni garantías de resultados.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de coincidencia de techo",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Estándar de documentación de reclamaciones de techado",
+        href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-matching-dispute-photos",
+    category: "roofing_claims",
+    question: "¿Qué fotos ayudan a respaldar una disputa de coincidencia de techo?",
+    answer:
+      "Elevaciones amplias del techo desde los ángulos de vista principales, fotos pendiente por pendiente con etiquetado consistente, fotos de detalle del material para identificación, comparaciones lado a lado de muestras de teja contra cursos existentes con iluminación consistente, y fotos de transiciones entre el área de reparación aprobada y pendientes adyacentes. Los primeros planos solo de daño sin contexto de elevación rara vez respaldan argumentos de alcance por coincidencia en revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de coincidencia de techo",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Documentación de mediciones de techo",
+        href: "/resources/guides/roofing-claims/roof-measurement-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-matching-supplement-denials",
+    category: "roofing_claims",
+    question: "¿Por qué las aseguradoras deniegan suplementos de coincidencia de techo?",
+    answer:
+      "Las razones comunes de denegación incluyen identificación insuficiente del material, falta de investigación de disponibilidad que confirme productos descontinuados o no disponibles, evidencia fotográfica débil sin contexto de elevación, argumentos de daño solo cosmético, lenguaje de póliza que limita el alcance de coincidencia y solicitudes de alcance no vinculadas a condiciones de campo documentadas. Las aseguradoras también deniegan cuando las preocupaciones de reparabilidad se afirman sin fotos o cuando la reparación parcial se considera suficiente según la evidencia proporcionada; los resultados varían según el programa de la aseguradora y las particularidades del expediente.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de coincidencia de techo",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Manual de suplementos de techado",
+        href: "/resources/blog/roofing-supplement-playbook",
+      },
+    ],
+  },
+  {
+    id: "roof-matching-discontinued-shingles",
+    category: "roofing_claims",
+    question: "¿Pueden las tejas descontinuadas respaldar un suplemento de coincidencia de techo?",
+    answer:
+      "Las tejas descontinuadas o no disponibles pueden respaldar un suplemento de coincidencia cuando la documentación confirma que el producto exacto ya no está disponible y los reemplazos comparables difieren en color, perfil o dimensiones. Guarde avisos de descontinuación del fabricante con fecha, verificaciones de disponibilidad del distribuidor y fotos que muestren diferencias visibles entre el material existente y las alternativas disponibles. La documentación debe vincular la investigación de disponibilidad con partidas de alcance específicas; la aprobación no está garantizada y depende de la póliza de la aseguradora y la calidad de la evidencia.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de coincidencia de techo",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Qué es un suplemento de techo",
+        href: "/resources/blog/what-is-a-roof-supplement",
+      },
+    ],
+  },
+
   // Water Damage Claims (23)
   {
     id: "water-mitigation-scope",

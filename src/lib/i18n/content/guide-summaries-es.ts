@@ -70,6 +70,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Procedimiento de campo para solicitar, verificar y archivar informes de medición de techo, y conciliarlos con croquis de aseguradora para argumentos de cantidad listos para suplemento.",
   },
+  "roofing-claims/roof-matching-documentation-guide": {
+    title: "Guía de documentación de coincidencia de techo para contratistas",
+    excerpt:
+      "Aprenda cómo documentar problemas de coincidencia de techo con fotos, identificación de material, investigación de disponibilidad, notas de reparabilidad y respaldo de alcance para reclamaciones de techado.",
+  },
   "water-damage/mitigation-intake-checklist": {
     title: "Lista de verificación de admisión de mitigación de agua",
     excerpt:

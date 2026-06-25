@@ -50,8 +50,8 @@ const GUIDE_CATEGORY_PHRASE_BOOSTS: Record<
     keywords: ["claim guide", "operational guide", "checklist"],
   },
   "roofing-claims": {
-    phrases: ["roofing claim guides", "roofing supplement checklist", "roofing guides"],
-    keywords: ["roofing guide", "roof supplement checklist"],
+    phrases: ["roofing claim guides", "roofing supplement checklist", "roofing guides", "roof matching documentation"],
+    keywords: ["roofing guide", "roof supplement checklist", "roof matching"],
   },
   "water-damage": {
     phrases: [
@@ -155,6 +155,35 @@ const GUIDE_SLUG_BOOSTS: Record<
   "roof-measurement-documentation-guide": {
     phrases: ["roof measurement documentation", "measurement report"],
     keywords: ["roof measurement"],
+  },
+  "roof-matching-documentation-guide": {
+    phrases: [
+      "roof matching documentation",
+      "roofing matching dispute",
+      "how do i document roof matching",
+      "discontinued shingles",
+      "shingle color mismatch",
+      "roof material mismatch",
+      "partial roof replacement matching",
+      "roof slope matching",
+      "roof repairability documentation",
+      "roofing supplement matching",
+      "material matching roof claim",
+      "cosmetic matching roof supplement",
+    ],
+    keywords: [
+      "roof matching",
+      "material matching",
+      "shingle match",
+      "color match",
+      "profile mismatch",
+      "discontinued shingle",
+      "partial replacement",
+      "repairability",
+      "matching policy",
+      "slope matching",
+    ],
+    topics: ["roofing_claims", "claim_guides", "supplements"],
   },
   "moisture-mapping-guide": {
     phrases: ["moisture mapping", "moisture map procedure", "how do i moisture map"],
