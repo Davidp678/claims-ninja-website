@@ -621,6 +621,91 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       },
     ],
   },
+  {
+    id: "roof-reinspection-when-request",
+    category: "roofing_claims",
+    question: "When should contractors request a roof reinspection?",
+    answer:
+      "Request a roof reinspection when the carrier estimate does not reflect documented field conditions — missed storm damage, additional affected slopes, matching or repairability concerns, code upgrade omissions, or scope gaps identified after the initial inspection. Build the complete documentation package before requesting the visit, not after scheduling. Reinspection is most effective when photos, scope comparison, and narrative are indexed and ready for adjuster review — outcomes vary by carrier and evidence quality.",
+    relatedLinks: [
+      {
+        label: "Roof reinspection guide",
+        href: "/resources/guides/roofing-claims/roof-reinspection-guide",
+      },
+      {
+        label: "Roofing supplement checklist",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+    ],
+  },
+  {
+    id: "roof-reinspection-documentation-prep",
+    category: "roofing_claims",
+    question: "What documentation should be prepared for a roof reinspection?",
+    answer:
+      "Assemble roof overview and slope-by-slope photos, close-up damage shots, soft metal documentation, material identification, matching and repairability records when applicable, a carrier estimate comparison table, a contractor narrative summary, and supplement support notes indexed to estimate lines. Complete the packet before requesting reinspection so the adjuster arrives with context — not legal arguments or guaranteed outcomes.",
+    relatedLinks: [
+      {
+        label: "Roof reinspection guide",
+        href: "/resources/guides/roofing-claims/roof-reinspection-guide",
+      },
+      {
+        label: "Roof matching documentation guide",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-reinspection-missed-damage",
+    category: "roofing_claims",
+    question: "Can missed roof damage be documented after the initial inspection?",
+    answer:
+      "Yes — contractors can document additional hail, wind, or impact damage discovered after the carrier's initial visit using dated slope-labeled photos, close-up damage shots, measurement data, and a scope comparison showing what was omitted from the carrier estimate. Documentation should be captured as soon as damage is identified and organized before requesting reinspection. Carriers evaluate post-inspection documentation against evidence quality and timing — approval is not guaranteed.",
+    relatedLinks: [
+      {
+        label: "Roof reinspection guide",
+        href: "/resources/guides/roofing-claims/roof-reinspection-guide",
+      },
+      {
+        label: "Roof repairability documentation guide",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-reinspection-denial-reasons",
+    category: "roofing_claims",
+    question: "Why do carriers deny roof reinspection requests?",
+    answer:
+      "Common denial reasons include incomplete documentation packages, unlabeled or disorganized photos, scope requests not tied to field evidence, unsupported matching or repairability claims, reinspection requested before building the indexed packet, or carrier determination that desk review is sufficient from existing photos. Carriers may also deny when damage appears cosmetic-only or when policy language limits the requested scope — outcomes vary by carrier program and file specifics.",
+    relatedLinks: [
+      {
+        label: "Roof reinspection guide",
+        href: "/resources/guides/roofing-claims/roof-reinspection-guide",
+      },
+      {
+        label: "Roofing supplement playbook",
+        href: "/resources/blog/roofing-supplement-playbook",
+      },
+    ],
+  },
+  {
+    id: "roof-reinspection-organize-photos",
+    category: "roofing_claims",
+    question: "How should contractors organize photos for a roof reinspection?",
+    answer:
+      "Label every photo with slope name, elevation, and date in file metadata. Capture wide overview shots of each plane before close-up damage detail. Pair every close-up with a context photo showing location on the slope. Group photos by slope and damage type in the claim file index. Tie each photo reference to a specific line in the scope comparison table and contractor narrative — organized, objective documentation supports accurate claim review.",
+    relatedLinks: [
+      {
+        label: "Roof reinspection guide",
+        href: "/resources/guides/roofing-claims/roof-reinspection-guide",
+      },
+      {
+        label: "Roofing claim documentation standard",
+        href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+    ],
+  },
 
   // Water Damage Claims (23)
   {

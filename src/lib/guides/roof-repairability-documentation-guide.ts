@@ -34,8 +34,8 @@ export const ROOF_REPAIRABILITY_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Learn how to document roof repairability using brittle test results, material condition, collateral damage observations, manufacturer guidance, and field documentation that supports accurate claim review.",
   relatedGuideSlugs: [
+    "roof-reinspection-guide",
     "roof-matching-documentation-guide",
-    "reinspection-preparation-guide",
     "code-upgrade-documentation-guide",
     "roofing-documentation-guide",
     "roof-measurement-documentation-guide",
@@ -376,6 +376,10 @@ export const ROOF_REPAIRABILITY_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Roof Reinspection Guide",
+      href: "/resources/guides/roofing-claims/roof-reinspection-guide",
+    },
     {
       label: "Roof Matching Documentation Guide",
       href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",

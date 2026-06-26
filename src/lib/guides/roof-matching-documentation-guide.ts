@@ -33,6 +33,7 @@ export const ROOF_MATCHING_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Learn how contractors can document roof matching issues with photos, material identification, availability research, repairability notes, and scope support for roofing claims.",
   relatedGuideSlugs: [
+    "roof-reinspection-guide",
     "roof-repairability-documentation-guide",
     "roofing-supplement-checklist",
     "roofing-documentation-guide",
@@ -371,6 +372,10 @@ export const ROOF_MATCHING_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Roof Reinspection Guide",
+      href: "/resources/guides/roofing-claims/roof-reinspection-guide",
+    },
     {
       label: "Roof Repairability Documentation Guide",
       href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",

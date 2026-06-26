@@ -190,6 +190,10 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "seal strip adhesion",
     "repair limitations",
     "repair versus replacement",
+    "roof reinspection",
+    "missed roof damage",
+    "roof scope omissions",
+    "reinspection documentation",
   ],
   dry_logs: [
     "dry log",
@@ -1358,6 +1362,66 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.some(
         (s) =>
           /roof-repairability-carrier-disputes|roof-repairability-documentation-guide|dispute roof repairability/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "roof reinspection when to request retrieves guide or FAQ",
+    message: "When should contractors request a roof reinspection?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /roof-reinspection-when-request|roof-reinspection-guide|request a roof reinspection/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "roof reinspection documentation prep retrieves guide or FAQ",
+    message: "What documentation should be prepared for a roof reinspection?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /roof-reinspection-documentation-prep|roof-reinspection-guide|prepared for a roof reinspection/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "missed roof damage after inspection retrieves FAQ or guide",
+    message: "Can missed roof damage be documented after the initial inspection?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /roof-reinspection-missed-damage|roof-reinspection-guide|missed roof damage/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "roof reinspection denial reasons retrieves FAQ",
+    message: "Why do carriers deny roof reinspection requests?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /roof-reinspection-denial-reasons|roof-reinspection-guide|deny roof reinspection/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "roof reinspection photo organization retrieves FAQ or guide",
+    message: "How should contractors organize photos for a roof reinspection?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /roof-reinspection-organize-photos|roof-reinspection-guide|organize photos for a roof reinspection/i.test(
             `${s.text} ${s.source}`,
           ),
       ),

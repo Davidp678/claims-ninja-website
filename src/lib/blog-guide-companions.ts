@@ -44,7 +44,7 @@ export const BLOG_GUIDE_COMPANIONS = {
     guideSlugs: [
       "roofing-supplement-checklist",
       "roofing-documentation-guide",
-      "reinspection-preparation-guide",
+      "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
     ],
   },
@@ -54,6 +54,7 @@ export const BLOG_GUIDE_COMPANIONS = {
     guideSlugs: [
       "roofing-documentation-guide",
       "roof-measurement-documentation-guide",
+      "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
     ],
   },

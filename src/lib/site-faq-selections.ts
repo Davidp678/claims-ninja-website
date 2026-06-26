@@ -138,6 +138,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "roof-brittle-test-roofing",
       "roof-repairability-documentation-evidence",
       "roof-repairability-carrier-disputes",
+      "roof-reinspection-when-request",
+      "roof-reinspection-documentation-prep",
+      "roof-reinspection-missed-damage",
+      "roof-reinspection-denial-reasons",
+      "roof-reinspection-organize-photos",
     ],
   },
   waterDamage: {

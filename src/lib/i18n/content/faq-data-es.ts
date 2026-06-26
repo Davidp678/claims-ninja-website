@@ -621,6 +621,91 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       },
     ],
   },
+  {
+    id: "roof-reinspection-when-request",
+    category: "roofing_claims",
+    question: "¿Cuándo deben los contratistas solicitar una reinspección de techo?",
+    answer:
+      "Solicite una reinspección de techo cuando el presupuesto de la aseguradora no refleje las condiciones de campo documentadas: daños por tormenta omitidos, pendientes adicionales afectadas, preocupaciones de coincidencia o reparabilidad, omisiones de actualización de código o brechas de alcance identificadas después de la inspección inicial. Prepare el paquete de documentación completo antes de solicitar la visita, no después de programarla. La reinspección es más efectiva cuando las fotos, la comparación de alcance y el resumen están indexados y listos para la revisión del ajustador; los resultados varían según la aseguradora y la calidad de la evidencia.",
+    relatedLinks: [
+      {
+        label: "Guía de reinspección de techo",
+        href: "/resources/guides/roofing-claims/roof-reinspection-guide",
+      },
+      {
+        label: "Lista de verificación de suplementos de techado",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+    ],
+  },
+  {
+    id: "roof-reinspection-documentation-prep",
+    category: "roofing_claims",
+    question: "¿Qué documentación debe prepararse para una reinspección de techo?",
+    answer:
+      "Prepare fotos generales del techo y por pendiente, tomas de primer plano de daños, documentación de metales blandos, identificación de material, registros de coincidencia y reparabilidad cuando corresponda, una tabla de comparación del presupuesto de la aseguradora, un resumen del contratista y notas de respaldo del suplemento indexadas a las partidas del presupuesto. Complete el paquete antes de solicitar la reinspección para que el ajustador llegue con contexto, no argumentos legales ni resultados garantizados.",
+    relatedLinks: [
+      {
+        label: "Guía de reinspección de techo",
+        href: "/resources/guides/roofing-claims/roof-reinspection-guide",
+      },
+      {
+        label: "Guía de documentación de coincidencia de techo",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-reinspection-missed-damage",
+    category: "roofing_claims",
+    question: "¿Se puede documentar daño de techo omitido después de la inspección inicial?",
+    answer:
+      "Sí: los contratistas pueden documentar daños adicionales por granizo, viento o impacto descubiertos después de la visita inicial de la aseguradora usando fotos fechadas con etiqueta de pendiente, tomas de primer plano de daños, datos de medición y una comparación de alcance que muestre lo omitido del presupuesto de la aseguradora. La documentación debe capturarse tan pronto como se identifique el daño y organizarse antes de solicitar la reinspección. Las aseguradoras evalúan la documentación posterior a la inspección según la calidad de la evidencia y el momento; la aprobación no está garantizada.",
+    relatedLinks: [
+      {
+        label: "Guía de reinspección de techo",
+        href: "/resources/guides/roofing-claims/roof-reinspection-guide",
+      },
+      {
+        label: "Guía de documentación de reparabilidad de techo",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-reinspection-denial-reasons",
+    category: "roofing_claims",
+    question: "¿Por qué las aseguradoras niegan solicitudes de reinspección de techo?",
+    answer:
+      "Las razones comunes de denegación incluyen paquetes de documentación incompletos, fotos sin etiquetar o desorganizadas, solicitudes de alcance no vinculadas a evidencia de campo, reclamos de coincidencia o reparabilidad sin respaldo, reinspección solicitada antes de construir el paquete indexado, o determinación de la aseguradora de que la revisión de escritorio es suficiente con las fotos existentes. Las aseguradoras también pueden negar cuando el daño parece solo cosmético o cuando el lenguaje de la póliza limita el alcance solicitado; los resultados varían según el programa de la aseguradora y las particularidades del expediente.",
+    relatedLinks: [
+      {
+        label: "Guía de reinspección de techo",
+        href: "/resources/guides/roofing-claims/roof-reinspection-guide",
+      },
+      {
+        label: "Manual de suplementos de techado",
+        href: "/resources/blog/roofing-supplement-playbook",
+      },
+    ],
+  },
+  {
+    id: "roof-reinspection-organize-photos",
+    category: "roofing_claims",
+    question: "¿Cómo deben los contratistas organizar las fotos para una reinspección de techo?",
+    answer:
+      "Etiquete cada foto con el nombre de la pendiente, la elevación y la fecha en los metadatos del archivo. Capture tomas generales amplias de cada plano antes del detalle de primer plano del daño. Combine cada primer plano con una foto de contexto que muestre la ubicación en la pendiente. Agrupe las fotos por pendiente y tipo de daño en el índice del expediente de reclamación. Vincule cada referencia fotográfica a una línea específica en la tabla de comparación de alcance y el resumen del contratista; la documentación organizada y objetiva respalda una revisión precisa de la reclamación.",
+    relatedLinks: [
+      {
+        label: "Guía de reinspección de techo",
+        href: "/resources/guides/roofing-claims/roof-reinspection-guide",
+      },
+      {
+        label: "Estándar de documentación de reclamaciones de techado",
+        href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+    ],
+  },
 
   // Water Damage Claims (23)
   {

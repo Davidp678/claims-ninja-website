@@ -80,6 +80,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Aprenda cómo documentar la reparabilidad del techo con resultados de pruebas de fragilidad, condición del material, observaciones de daños colaterales, orientación del fabricante y documentación de campo que respalde la revisión de reclamaciones.",
   },
+  "roofing-claims/roof-reinspection-guide": {
+    title: "Guía de reinspección de techo para contratistas",
+    excerpt:
+      "Aprenda cuándo solicitar una reinspección de techo, qué documentación preparar, cómo presentar daños adicionales y cómo los contratistas pueden respaldar una revisión precisa de reclamaciones de techado.",
+  },
   "water-damage/mitigation-intake-checklist": {
     title: "Lista de verificación de admisión de mitigación de agua",
     excerpt:

@@ -2,11 +2,13 @@ import type { Guide } from "@/lib/guide-types";
 import { defineGuide, GUIDE_PUBLISHED_AT } from "@/lib/guides/guide-builder";
 import { ROOF_MATCHING_DOCUMENTATION_GUIDE } from "@/lib/guides/roof-matching-documentation-guide";
 import { ROOF_REPAIRABILITY_DOCUMENTATION_GUIDE } from "@/lib/guides/roof-repairability-documentation-guide";
+import { ROOF_REINSPECTION_GUIDE } from "@/lib/guides/roof-reinspection-guide";
 
 const CATEGORY = "roofing-claims" as const;
 const SOLUTION_PATH = "/solutions/roofing" as const;
 
 export const ROOFING_CLAIMS_GUIDES = [
+  ROOF_REINSPECTION_GUIDE,
   ROOF_REPAIRABILITY_DOCUMENTATION_GUIDE,
   ROOF_MATCHING_DOCUMENTATION_GUIDE,
   defineGuide({
@@ -32,6 +34,7 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Pre-submission roofing supplement checklist: measurement reconciliation, missed line items, documentation gates, and carrier-ready package standards for storm and replacement claims.",
     relatedGuideSlugs: [
+      "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
       "roofing-documentation-guide",
@@ -281,6 +284,7 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Roofing claim documentation standard for contractors: elevation photos, tear-off sequences, pitch labels, measurement files, and narrative practices that improve supplement approvals.",
     relatedGuideSlugs: [
+      "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
       "roofing-supplement-checklist",
@@ -498,6 +502,7 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Prepare for roofing claim re-inspections: scope walk-through, evidence staging, crew roles, adjuster communication, and post-visit documentation for supplement approval.",
     relatedGuideSlugs: [
+      "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
       "roofing-supplement-checklist",
@@ -718,6 +723,7 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Document roofing code upgrades for insurance supplements: ice barrier, ventilation, underlayment, and fastening requirements with local citations and tear-off proof.",
     relatedGuideSlugs: [
+      "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
       "roofing-documentation-guide",
@@ -932,6 +938,7 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Document steep and high roofing charges for insurance supplements: pitch measurement, elevation photos, staging evidence, and Xactimate modifier alignment.",
     relatedGuideSlugs: [
+      "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
       "roofing-documentation-guide",
@@ -1123,6 +1130,7 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Document roof measurements for insurance claims: order reports, verify accuracy, reconcile to carrier sketches, and support supplement quantity revisions.",
     relatedGuideSlugs: [
+      "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
       "roofing-documentation-guide",

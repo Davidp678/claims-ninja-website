@@ -921,6 +921,69 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Repairability denial FAQ; cross-link roofing supplement playbook blog.",
   },
+  "roof-reinspection-when-request": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["roofing-claims/roof-reinspection-guide"],
+    relatedFaqIds: [
+      "roof-reinspection-documentation-prep",
+      "roof-reinspection-missed-damage",
+      "roofing-carrier-documentation",
+    ],
+    internalLinkNotes:
+      "Anchor FAQ for roof reinspection guide; cross-link supplement checklist.",
+  },
+  "roof-reinspection-documentation-prep": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/roof-reinspection-guide",
+      "roofing-claims/roof-matching-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-reinspection-when-request",
+      "roof-reinspection-organize-photos",
+      "roof-reinspection-missed-damage",
+    ],
+    internalLinkNotes:
+      "Documentation prep FAQ; cross-link matching guide.",
+  },
+  "roof-reinspection-missed-damage": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/roof-reinspection-guide",
+      "roofing-claims/roof-repairability-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-reinspection-when-request",
+      "roof-reinspection-documentation-prep",
+      "roof-reinspection-denial-reasons",
+    ],
+    internalLinkNotes:
+      "Missed damage FAQ; cross-link repairability guide.",
+  },
+  "roof-reinspection-denial-reasons": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: ["roofing-claims/roof-reinspection-guide"],
+    relatedFaqIds: [
+      "roof-reinspection-when-request",
+      "roof-reinspection-missed-damage",
+      "supplements-whats-included",
+    ],
+    internalLinkNotes:
+      "Reinspection denial FAQ; cross-link roofing supplement playbook blog.",
+  },
+  "roof-reinspection-organize-photos": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/roof-reinspection-guide",
+      "roofing-claims/roofing-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-reinspection-documentation-prep",
+      "roof-reinspection-denial-reasons",
+    ],
+    internalLinkNotes:
+      "Photo organization FAQ; cross-link roofing documentation standard.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

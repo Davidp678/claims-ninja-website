@@ -574,6 +574,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["repairability dispute", "repairability denied", "dispute repairability"],
     topics: ["roofing_claims", "supplements"],
   },
+  "roof-reinspection-when-request": {
+    phrases: [
+      "when should contractors request a roof reinspection",
+      "roof reinspection when to request",
+      "when to request roof reinspection",
+    ],
+    keywords: ["roof reinspection", "request reinspection", "when reinspection"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-reinspection-documentation-prep": {
+    phrases: [
+      "what documentation should be prepared for a roof reinspection",
+      "roof reinspection documentation prep",
+      "prepare documentation for roof reinspection",
+    ],
+    keywords: ["reinspection documentation", "reinspection prep", "documentation package"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-reinspection-missed-damage": {
+    phrases: [
+      "can missed roof damage be documented after the initial inspection",
+      "missed roof damage after inspection",
+      "document missed roof damage",
+    ],
+    keywords: ["missed roof damage", "missed damage", "additional roof damage"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-reinspection-denial-reasons": {
+    phrases: [
+      "why do carriers deny roof reinspection requests",
+      "roof reinspection denied",
+      "carriers deny roof reinspection",
+    ],
+    keywords: ["reinspection denied", "deny reinspection", "reinspection denial"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-reinspection-organize-photos": {
+    phrases: [
+      "how should contractors organize photos for a roof reinspection",
+      "organize photos for roof reinspection",
+      "roof reinspection photo organization",
+    ],
+    keywords: ["organize photos", "reinspection photos", "slope labeling"],
+    topics: ["roofing_claims", "supplements"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {
