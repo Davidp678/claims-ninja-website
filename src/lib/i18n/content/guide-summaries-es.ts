@@ -75,6 +75,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Aprenda cómo documentar problemas de coincidencia de techo con fotos, identificación de material, investigación de disponibilidad, notas de reparabilidad y respaldo de alcance para reclamaciones de techado.",
   },
+  "roofing-claims/roof-repairability-documentation-guide": {
+    title: "Guía de documentación de reparabilidad de techo para contratistas",
+    excerpt:
+      "Aprenda cómo documentar la reparabilidad del techo con resultados de pruebas de fragilidad, condición del material, observaciones de daños colaterales, orientación del fabricante y documentación de campo que respalde la revisión de reclamaciones.",
+  },
   "water-damage/mitigation-intake-checklist": {
     title: "Lista de verificación de admisión de mitigación de agua",
     excerpt:

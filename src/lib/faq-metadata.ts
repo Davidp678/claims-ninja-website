@@ -857,6 +857,70 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Discontinued product FAQ; anchor for availability research section.",
   },
+  "roof-repairability-insurance-claim": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["roofing-claims/roof-repairability-documentation-guide"],
+    relatedFaqIds: [
+      "roof-repairability-contractor-documentation",
+      "roof-brittle-test-roofing",
+      "roofing-carrier-documentation",
+    ],
+    internalLinkNotes:
+      "Anchor FAQ for roof repairability guide; cross-link matching guide where relevant.",
+  },
+  "roof-repairability-contractor-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/roof-repairability-documentation-guide",
+      "roofing-claims/roofing-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-repairability-insurance-claim",
+      "roof-brittle-test-roofing",
+      "roof-repairability-documentation-evidence",
+    ],
+    internalLinkNotes:
+      "Documentation prep FAQ; cross-link roofing documentation standard.",
+  },
+  "roof-brittle-test-roofing": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/roof-repairability-documentation-guide",
+      "roofing-claims/roofing-supplement-checklist",
+    ],
+    relatedFaqIds: [
+      "roof-repairability-insurance-claim",
+      "roof-repairability-contractor-documentation",
+      "roof-repairability-documentation-evidence",
+    ],
+    internalLinkNotes:
+      "Brittle test FAQ; anchor for repairability testing section.",
+  },
+  "roof-repairability-documentation-evidence": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/roof-repairability-documentation-guide",
+      "roofing-claims/roof-measurement-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-repairability-contractor-documentation",
+      "roof-brittle-test-roofing",
+      "roof-repairability-carrier-disputes",
+    ],
+    internalLinkNotes:
+      "Evidence package FAQ; cross-link measurement documentation guide.",
+  },
+  "roof-repairability-carrier-disputes": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: ["roofing-claims/roof-repairability-documentation-guide"],
+    relatedFaqIds: [
+      "roof-repairability-insurance-claim",
+      "roof-repairability-documentation-evidence",
+      "supplements-whats-included",
+    ],
+    internalLinkNotes:
+      "Repairability denial FAQ; cross-link roofing supplement playbook blog.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

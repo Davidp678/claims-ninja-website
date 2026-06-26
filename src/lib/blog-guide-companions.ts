@@ -45,12 +45,17 @@ export const BLOG_GUIDE_COMPANIONS = {
       "roofing-supplement-checklist",
       "roofing-documentation-guide",
       "reinspection-preparation-guide",
+      "roof-repairability-documentation-guide",
     ],
   },
   "what-is-a-roof-supplement": {
     intro:
       "You've learned what a roof supplement is and when it applies. Now follow the field documentation procedures that support supplement approvals.",
-    guideSlugs: ["roofing-documentation-guide", "roof-measurement-documentation-guide"],
+    guideSlugs: [
+      "roofing-documentation-guide",
+      "roof-measurement-documentation-guide",
+      "roof-repairability-documentation-guide",
+    ],
   },
   "water-damage-mitigation-supplement-playbook": {
     intro:

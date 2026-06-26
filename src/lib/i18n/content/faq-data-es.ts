@@ -536,6 +536,91 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       },
     ],
   },
+  {
+    id: "roof-repairability-insurance-claim",
+    category: "roofing_claims",
+    question: "¿Qué es la reparabilidad del techo?",
+    answer:
+      "La reparabilidad del techo describe si el material de techado existente puede retirarse, levantarse o reemplazarse parcialmente sin causar daños adicionales a las filas adyacentes o comprometer el sistema del techo. Depende de condiciones de campo documentadas como la edad del material, fragilidad, adhesión de la banda de sellado, orientación del fabricante y riesgo de daños colaterales durante la reparación. La reparabilidad es distinta de la coincidencia — aborda la viabilidad física, no si los materiales de reemplazo se alinean con la apariencia existente. Los resultados varían según la aseguradora, la póliza y la calidad de la evidencia.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reparabilidad de techo",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de coincidencia de techo",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-repairability-contractor-documentation",
+    category: "roofing_claims",
+    question: "¿Cómo deben los contratistas documentar la reparabilidad del techo?",
+    answer:
+      "Capture fotos generales del techo y de primer plano del material; realice y documente pruebas de reparabilidad con notas de campo sobre observaciones de fragilidad, adhesión de la banda de sellado y comportamiento durante la remoción; fotografíe daños colaterales como pestañas rotas, tejas desgarradas y desprendimiento de clavos; revise las recomendaciones de reparación del fabricante; y elabore una tabla de comparación de alcance que vincule las áreas de reparación aprobadas por la aseguradora con las condiciones de campo. Un resumen del contratista de una página debe vincular cada limitación de reparación con evidencia específica — no argumentos legales ni resultados garantizados.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reparabilidad de techo",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+      {
+        label: "Estándar de documentación de reclamaciones de techado",
+        href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-brittle-test-roofing",
+    category: "roofing_claims",
+    question: "¿Qué es una prueba de fragilidad en un techo?",
+    answer:
+      "Una prueba de fragilidad evalúa cómo responden las tejas existentes cuando se levantan o perturban durante una reparación propuesta. Los contratistas suelen seleccionar un área de prueba representativa dentro o adyacente al límite de reparación aprobado y observan si las pestañas se agrietan, se rompen, no vuelven a sellarse o causan daños colaterales a las filas adyacentes. Los resultados deben documentarse con notas de campo fechadas y fotografías de observaciones antes, durante y después. Los enfoques de prueba varían según el contratista y el programa de la aseguradora — el objetivo es documentación objetiva del comportamiento del material, no adherirse a un método obligatorio único.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reparabilidad de techo",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+      {
+        label: "Lista de verificación de suplementos de techado",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+    ],
+  },
+  {
+    id: "roof-repairability-documentation-evidence",
+    category: "roofing_claims",
+    question: "¿Qué documentación respalda las preocupaciones de reparabilidad del techo?",
+    answer:
+      "Un paquete completo de reparabilidad incluye fotos generales del techo, tomas de primer plano de la condición del material, documentación del cuadrado de prueba con observaciones de fragilidad, fotos de daños colaterales, identificación del fabricante y orientación de reparación, notas de campo fechadas, un resumen del contratista y una comparación de alcance que vincule la evidencia con las partidas del presupuesto. Cada limitación de reparación debe referenciar fotos o resultados de prueba específicos — las conclusiones sin respaldo rara vez sobreviven la revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reparabilidad de techo",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+      {
+        label: "Documentación de medición de techo",
+        href: "/resources/guides/roofing-claims/roof-measurement-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-repairability-carrier-disputes",
+    category: "roofing_claims",
+    question: "¿Por qué las aseguradoras disputan la reparabilidad del techo?",
+    answer:
+      "Las aseguradoras disputan comúnmente la reparabilidad cuando la documentación carece de observaciones de prueba, las fotos no muestran daños colaterales, falta identificación del material, los resúmenes afirman fragilidad sin evidencia de campo, o las solicitudes de alcance no están vinculadas a limitaciones de reparación documentadas en el límite aprobado. Los ajustadores también pueden argumentar que la reparación parcial es suficiente según su propia evaluación de campo o el lenguaje de la póliza. Una documentación sólida con resultados de prueba fechados, fotos indexadas y tablas de comparación de alcance mejora la comunicación durante la revisión — la aprobación no está garantizada.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reparabilidad de techo",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+      {
+        label: "Manual de suplementos de techado",
+        href: "/resources/blog/roofing-supplement-playbook",
+      },
+    ],
+  },
 
   // Water Damage Claims (23)
   {

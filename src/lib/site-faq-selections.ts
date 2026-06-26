@@ -133,6 +133,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "roof-matching-dispute-photos",
       "roof-matching-supplement-denials",
       "roof-matching-discontinued-shingles",
+      "roof-repairability-insurance-claim",
+      "roof-repairability-contractor-documentation",
+      "roof-brittle-test-roofing",
+      "roof-repairability-documentation-evidence",
+      "roof-repairability-carrier-disputes",
     ],
   },
   waterDamage: {

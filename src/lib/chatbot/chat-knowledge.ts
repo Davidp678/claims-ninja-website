@@ -529,6 +529,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["discontinued shingle", "discontinued shingles", "unavailable shingle"],
     topics: ["roofing_claims", "supplements"],
   },
+  "roof-repairability-insurance-claim": {
+    phrases: [
+      "what is roof repairability",
+      "roof repairability insurance claim",
+      "roof repairability definition",
+    ],
+    keywords: ["roof repairability", "repairability", "repair versus replacement"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-repairability-contractor-documentation": {
+    phrases: [
+      "how should contractors document roof repairability",
+      "document roof repairability",
+      "roof repairability documentation for contractors",
+    ],
+    keywords: ["repairability documentation", "document repairability", "repairability testing"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-brittle-test-roofing": {
+    phrases: [
+      "what is a brittle test on a roof",
+      "brittle test roof",
+      "how do i perform a brittle test on shingles",
+    ],
+    keywords: ["brittle test", "brittle shingles", "test square", "lift test"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-repairability-documentation-evidence": {
+    phrases: [
+      "what documentation supports roof repairability concerns",
+      "roof repairability documentation evidence",
+      "repairability documentation package",
+    ],
+    keywords: ["repairability evidence", "repairability documentation", "collateral damage photos"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-repairability-carrier-disputes": {
+    phrases: [
+      "why do carriers dispute roof repairability",
+      "carriers dispute roof repairability",
+      "roof repairability denied",
+    ],
+    keywords: ["repairability dispute", "repairability denied", "dispute repairability"],
+    topics: ["roofing_claims", "supplements"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

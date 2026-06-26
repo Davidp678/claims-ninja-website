@@ -33,6 +33,7 @@ export const ROOF_MATCHING_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Learn how contractors can document roof matching issues with photos, material identification, availability research, repairability notes, and scope support for roofing claims.",
   relatedGuideSlugs: [
+    "roof-repairability-documentation-guide",
     "roofing-supplement-checklist",
     "roofing-documentation-guide",
     "roof-measurement-documentation-guide",
@@ -197,7 +198,7 @@ export const ROOF_MATCHING_DOCUMENTATION_GUIDE = defineGuide({
         "Risk of collateral damage during repair — document adjacent courses, valleys, and flashings that may be damaged when isolating repair area.",
       ],
       notes:
-        "See the Roofing Claim Documentation Standard for general photo and narrative practices that support repairability documentation on roofing files.",
+        "See the Roof Repairability Documentation Guide for the full repairability testing and collateral damage playbook. See the Roofing Claim Documentation Standard for general photo and narrative practices.",
     },
     {
       id: "compare-carrier-scope",
@@ -370,6 +371,10 @@ export const ROOF_MATCHING_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Roof Repairability Documentation Guide",
+      href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+    },
     {
       label: "Roofing Claim Documentation Standard",
       href: "/resources/guides/roofing-claims/roofing-documentation-guide",

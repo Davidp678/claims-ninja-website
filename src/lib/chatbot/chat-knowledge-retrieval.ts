@@ -184,6 +184,12 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "partial roof",
     "color mismatch",
     "repairability",
+    "brittle test",
+    "test square",
+    "collateral damage",
+    "seal strip adhesion",
+    "repair limitations",
+    "repair versus replacement",
   ],
   dry_logs: [
     "dry log",
@@ -1305,6 +1311,53 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.some(
         (s) =>
           /roof-matching-supplement-denials|roof-matching-documentation-guide|deny roof matching/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "roof repairability documentation retrieves guide",
+    message: "How do I document roof repairability on brittle shingles?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /roof-repairability-documentation-guide|roof repairability documentation guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "brittle test on roof retrieves guide or FAQ",
+    message: "What is a brittle test on a roof?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /roof-brittle-test-roofing|roof-repairability-documentation-guide|brittle test/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "repairability documentation evidence retrieves FAQ or guide",
+    message: "What documentation supports roof repairability concerns?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /roof-repairability-documentation-evidence|roof-repairability-documentation-guide|repairability concerns/i.test(
+            `${s.text} ${s.source}`,
+          ),
+      ),
+  },
+  {
+    label: "roof repairability carrier disputes retrieves FAQ",
+    message: "Why do carriers dispute roof repairability?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /roof-repairability-carrier-disputes|roof-repairability-documentation-guide|dispute roof repairability/i.test(
             `${s.text} ${s.source}`,
           ),
       ),

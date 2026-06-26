@@ -536,6 +536,91 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       },
     ],
   },
+  {
+    id: "roof-repairability-insurance-claim",
+    category: "roofing_claims",
+    question: "What is roof repairability?",
+    answer:
+      "Roof repairability describes whether existing roofing material can be partially removed, lifted, or replaced without causing additional damage to adjacent courses or compromising the roof system. It depends on documented field conditions such as material age, brittleness, seal strip adhesion, manufacturer guidance, and collateral damage risk during repair. Repairability is separate from matching — it addresses physical feasibility, not whether replacement materials align with existing appearance. Outcomes vary by carrier, policy, and evidence quality.",
+    relatedLinks: [
+      {
+        label: "Roof repairability documentation guide",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+      {
+        label: "Roof matching documentation guide",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-repairability-contractor-documentation",
+    category: "roofing_claims",
+    question: "How should contractors document roof repairability?",
+    answer:
+      "Capture roof overview and close-up material photos; perform and document repairability testing with field notes on brittle observations, seal strip adhesion, and removal behavior; photograph collateral damage such as broken tabs, torn shingles, and nail pull-through; review manufacturer repair recommendations; and build a scope comparison table tying carrier-approved repair areas to field conditions. A one-page contractor narrative should link each repair limitation to specific evidence — not legal arguments or guaranteed outcomes.",
+    relatedLinks: [
+      {
+        label: "Roof repairability documentation guide",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+      {
+        label: "Roofing claim documentation standard",
+        href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-brittle-test-roofing",
+    category: "roofing_claims",
+    question: "What is a brittle test on a roof?",
+    answer:
+      "A brittle test evaluates how existing shingles respond when lifted or disturbed during a proposed repair. Contractors typically select a representative test area within or adjacent to the approved repair boundary and observe whether tabs crack, break, fail to reseal, or cause collateral damage to adjacent courses. Results should be documented with dated field notes and photographs of before, during, and after observations. Testing approaches vary by contractor and carrier program — the goal is objective documentation of material behavior, not adherence to one mandatory method.",
+    relatedLinks: [
+      {
+        label: "Roof repairability documentation guide",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+      {
+        label: "Roofing supplement checklist",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+    ],
+  },
+  {
+    id: "roof-repairability-documentation-evidence",
+    category: "roofing_claims",
+    question: "What documentation supports roof repairability concerns?",
+    answer:
+      "A complete repairability package includes roof overview photos, close-up material condition shots, test square documentation with brittle observations, collateral damage photos, manufacturer identification and repair guidance, dated field notes, a contractor narrative, and a scope comparison linking evidence to estimate lines. Each repair limitation should reference specific photos or test results — unsupported conclusions rarely survive desk review.",
+    relatedLinks: [
+      {
+        label: "Roof repairability documentation guide",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+      {
+        label: "Roof measurement documentation",
+        href: "/resources/guides/roofing-claims/roof-measurement-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-repairability-carrier-disputes",
+    category: "roofing_claims",
+    question: "Why do carriers dispute roof repairability?",
+    answer:
+      "Carriers commonly dispute repairability when documentation lacks test observations, photos do not show collateral damage, material identification is missing, narratives assert brittleness without field evidence, or scope requests are not tied to documented repair limitations at the approved boundary. Adjusters may also argue partial repair is sufficient based on their own field assessment or policy language. Strong documentation with dated test results, indexed photos, and scope comparison tables improves communication during review — approval is not guaranteed.",
+    relatedLinks: [
+      {
+        label: "Roof repairability documentation guide",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+      {
+        label: "Roofing supplement playbook",
+        href: "/resources/blog/roofing-supplement-playbook",
+      },
+    ],
+  },
 
   // Water Damage Claims (23)
   {
