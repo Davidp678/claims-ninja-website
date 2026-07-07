@@ -1,16 +1,22 @@
 import type { Guide } from "@/lib/guide-types";
 import { defineGuide, GUIDE_PUBLISHED_AT } from "@/lib/guides/guide-builder";
+import { COMMERCIAL_ROOFING_DOCUMENTATION_GUIDE } from "@/lib/guides/commercial-roofing-documentation-guide";
+import { ROOF_HAIL_DAMAGE_DOCUMENTATION_GUIDE } from "@/lib/guides/roof-hail-damage-documentation-guide";
 import { ROOF_MATCHING_DOCUMENTATION_GUIDE } from "@/lib/guides/roof-matching-documentation-guide";
 import { ROOF_REPAIRABILITY_DOCUMENTATION_GUIDE } from "@/lib/guides/roof-repairability-documentation-guide";
 import { ROOF_REINSPECTION_GUIDE } from "@/lib/guides/roof-reinspection-guide";
+import { ROOF_WIND_DAMAGE_DOCUMENTATION_GUIDE } from "@/lib/guides/roof-wind-damage-documentation-guide";
 
 const CATEGORY = "roofing-claims" as const;
 const SOLUTION_PATH = "/solutions/roofing" as const;
 
 export const ROOFING_CLAIMS_GUIDES = [
+  ROOF_HAIL_DAMAGE_DOCUMENTATION_GUIDE,
+  ROOF_WIND_DAMAGE_DOCUMENTATION_GUIDE,
   ROOF_REINSPECTION_GUIDE,
   ROOF_REPAIRABILITY_DOCUMENTATION_GUIDE,
   ROOF_MATCHING_DOCUMENTATION_GUIDE,
+  COMMERCIAL_ROOFING_DOCUMENTATION_GUIDE,
   defineGuide({
     slug: "roofing-supplement-checklist",
     title: "Roofing Supplement Checklist",
@@ -34,6 +40,7 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Pre-submission roofing supplement checklist: measurement reconciliation, missed line items, documentation gates, and carrier-ready package standards for storm and replacement claims.",
     relatedGuideSlugs: [
+      "commercial-roofing-documentation-guide",
       "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
@@ -44,6 +51,11 @@ export const ROOFING_CLAIMS_GUIDES = [
       "roof-measurement-documentation-guide",
     ],
     relatedBlogSlugs: ["roofing-supplement-playbook"],
+    faqIds: [
+      "supplements-whats-included",
+      "roofing-measurements",
+      "roofing-carrier-documentation",
+    ],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["hail", "wind", "replacement"],
     purpose:
@@ -284,6 +296,7 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Roofing claim documentation standard for contractors: elevation photos, tear-off sequences, pitch labels, measurement files, and narrative practices that improve supplement approvals.",
     relatedGuideSlugs: [
+      "commercial-roofing-documentation-guide",
       "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
@@ -292,7 +305,8 @@ export const ROOFING_CLAIMS_GUIDES = [
       "steep-high-documentation-guide",
       "code-upgrade-documentation-guide",
     ],
-    relatedBlogSlugs: ["what-is-a-roof-supplement"],
+    relatedBlogSlugs: ["what-is-a-roof-supplement", "roofing-supplement-playbook"],
+    faqIds: ["roofing-carrier-documentation", "roofing-storm-vs-retail"],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["hail", "wind", "replacement"],
     purpose:
@@ -482,11 +496,11 @@ export const ROOFING_CLAIMS_GUIDES = [
 
   defineGuide({
     slug: "reinspection-preparation-guide",
-    title: "Roof Reinspection Preparation",
+    title: "Roof Reinspection Day-Of Checklist",
     excerpt:
-      "Workflow to prepare for carrier re-inspections: confirm scope on roof, stage evidence, assign roles, and convert the visit into supplement-ready documentation.",
+      "On-site checklist for carrier re-inspection day: confirm visit logistics, stage evidence, assign crew roles, walk the roof with the adjuster, and close out with supplement-ready documentation within 24 hours.",
     category: CATEGORY,
-    guideType: "workflow",
+    guideType: "checklist",
     roles: ["field", "project-manager"],
     claimPhase: "supplement",
     tags: [
@@ -495,13 +509,15 @@ export const ROOFING_CLAIMS_GUIDES = [
       "supplement",
       "storm claims",
       "roof inspection",
+      "day-of checklist",
     ],
     publishedAt: GUIDE_PUBLISHED_AT,
     estimatedMinutes: 8,
-    seoTitle: "Roof Reinspection Preparation Guide",
+    seoTitle: "Roof Reinspection Day-Of Checklist for Contractors",
     seoDescription:
-      "Prepare for roofing claim re-inspections: scope walk-through, evidence staging, crew roles, adjuster communication, and post-visit documentation for supplement approval.",
+      "On-site checklist for roofing claim re-inspections: visit confirmation, evidence staging, crew roles, adjuster walk-through, and 24-hour closeout for supplement approval.",
     relatedGuideSlugs: [
+      "commercial-roofing-documentation-guide",
       "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
@@ -511,10 +527,15 @@ export const ROOFING_CLAIMS_GUIDES = [
       "steep-high-documentation-guide",
     ],
     relatedBlogSlugs: ["roofing-supplement-playbook"],
+    faqIds: [
+      "roof-reinspection-documentation-prep",
+      "roof-reinspection-organize-photos",
+      "roof-reinspection-when-request",
+    ],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["hail", "wind", "replacement"],
     purpose:
-      "Convert carrier re-inspections from unstructured site visits into controlled workflows that produce new observations, photo evidence, and clear next steps for supplement approval.",
+      "Execute carrier re-inspection day with a controlled on-site checklist — visit confirmation, evidence staging, role assignment, roof walk-through, and 24-hour closeout. For when to request a reinspection and how to prepare documentation before scheduling, see the Roof Reinspection Guide for Contractors.",
     whenToUse: [
       {
         condition: "Carrier schedules re-inspection after supplement submission",
@@ -723,6 +744,7 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Document roofing code upgrades for insurance supplements: ice barrier, ventilation, underlayment, and fastening requirements with local citations and tear-off proof.",
     relatedGuideSlugs: [
+      "commercial-roofing-documentation-guide",
       "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
@@ -731,6 +753,7 @@ export const ROOFING_CLAIMS_GUIDES = [
       "roof-measurement-documentation-guide",
     ],
     relatedBlogSlugs: ["roofing-supplement-playbook"],
+    faqIds: ["roofing-code-items", "roofing-carrier-documentation"],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["hail", "wind", "replacement"],
     purpose:
@@ -938,6 +961,7 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Document steep and high roofing charges for insurance supplements: pitch measurement, elevation photos, staging evidence, and Xactimate modifier alignment.",
     relatedGuideSlugs: [
+      "commercial-roofing-documentation-guide",
       "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
@@ -947,6 +971,7 @@ export const ROOFING_CLAIMS_GUIDES = [
       "reinspection-preparation-guide",
     ],
     relatedBlogSlugs: ["roofing-supplement-playbook"],
+    faqIds: ["roofing-carrier-documentation", "roofing-measurements"],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["hail", "wind", "replacement"],
     purpose:
@@ -1130,6 +1155,7 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Document roof measurements for insurance claims: order reports, verify accuracy, reconcile to carrier sketches, and support supplement quantity revisions.",
     relatedGuideSlugs: [
+      "commercial-roofing-documentation-guide",
       "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
@@ -1138,7 +1164,8 @@ export const ROOFING_CLAIMS_GUIDES = [
       "steep-high-documentation-guide",
       "code-upgrade-documentation-guide",
     ],
-    relatedBlogSlugs: ["what-is-a-roof-supplement"],
+    relatedBlogSlugs: ["what-is-a-roof-supplement", "roofing-supplement-playbook"],
+    faqIds: ["roofing-measurements", "roofing-carrier-documentation"],
     relatedSolutionPath: SOLUTION_PATH,
     claimTypes: ["hail", "wind", "replacement"],
     purpose:

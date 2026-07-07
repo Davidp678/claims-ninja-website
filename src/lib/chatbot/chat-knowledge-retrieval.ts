@@ -1274,6 +1274,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "commercial roof damage documentation retrieves guide",
+    message: "how do i document commercial roof damage for insurance",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-roofing-documentation-guide|roof-commercial-damage-documentation|commercial roofing documentation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial roofing supplement documentation retrieves guide or FAQ",
+    message: "what documentation is required for commercial roofing supplements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-roofing-documentation-guide|roof-commercial-supplement-documentation|commercial roofing supplement/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial roof moisture survey payment retrieves FAQ or guide",
+    message: "do insurance companies pay for moisture surveys on commercial roofs",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /roof-commercial-moisture-survey-payment|commercial-roofing-documentation-guide|moisture survey/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial roof inspection photos retrieves FAQ or guide",
+    message: "what should be photographed during a commercial roof inspection",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /roof-commercial-inspection-photos|commercial-roofing-documentation-guide|commercial roof inspection/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial roofing system replacement documentation retrieves guide",
+    message: "what documentation supports replacing a commercial roofing system",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /roof-commercial-system-replacement-documentation|commercial-roofing-documentation-guide|replacing a commercial roofing system|commercial roofing system/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "roof matching documentation retrieves guide",
     message: "How do I document roof matching for a partial replacement?",
     assert: (result) =>

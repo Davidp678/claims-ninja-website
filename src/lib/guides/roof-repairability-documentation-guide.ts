@@ -34,13 +34,20 @@ export const ROOF_REPAIRABILITY_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Learn how to document roof repairability using brittle test results, material condition, collateral damage observations, manufacturer guidance, and field documentation that supports accurate claim review.",
   relatedGuideSlugs: [
+    "commercial-roofing-documentation-guide",
+    "roof-hail-damage-documentation-guide",
+    "roof-wind-damage-documentation-guide",
     "roof-reinspection-guide",
     "roof-matching-documentation-guide",
     "code-upgrade-documentation-guide",
     "roofing-documentation-guide",
     "roof-measurement-documentation-guide",
   ],
-  relatedBlogSlugs: ["roofing-supplement-playbook", "what-is-a-roof-supplement"],
+  relatedBlogSlugs: [
+    "roof-matching-vs-repairability-when-to-supplement",
+    "roofing-supplement-playbook",
+    "what-is-a-roof-supplement",
+  ],
   faqIds: [
     "roof-repairability-insurance-claim",
     "roof-repairability-contractor-documentation",
@@ -377,6 +384,10 @@ export const ROOF_REPAIRABILITY_DOCUMENTATION_GUIDE = defineGuide({
   ],
   relatedResources: [
     {
+      label: "Commercial Roofing Documentation Guide",
+      href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+    },
+    {
       label: "Roof Reinspection Guide",
       href: "/resources/guides/roofing-claims/roof-reinspection-guide",
     },
@@ -397,12 +408,16 @@ export const ROOF_REPAIRABILITY_DOCUMENTATION_GUIDE = defineGuide({
       href: "/resources/guides/roofing-claims/roof-measurement-documentation-guide",
     },
     {
-      label: "Roof Reinspection Preparation",
+      label: "Roof Reinspection Day-Of Checklist",
       href: "/resources/guides/roofing-claims/reinspection-preparation-guide",
     },
     {
       label: "Code Upgrade Documentation",
       href: "/resources/guides/roofing-claims/code-upgrade-documentation-guide",
+    },
+    {
+      label: "Roof matching vs repairability",
+      href: "/resources/blog/roof-matching-vs-repairability-when-to-supplement",
     },
     {
       label: "Roofing supplement playbook",

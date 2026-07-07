@@ -392,6 +392,21 @@ const SLUG_BOOSTS: Record<
     phrases: ["roofing supplement playbook"],
     keywords: ["roof supplement"],
   },
+  "hail-damage-roof-claims-documentation-supplement": {
+    phrases: ["hail damage roof claims", "hail roof supplement documentation"],
+    keywords: ["hail damage", "hail roof claim"],
+    topics: ["roofing_claims"],
+  },
+  "wind-damage-roof-claims-what-carriers-miss": {
+    phrases: ["wind damage roof claims", "wind roof supplement"],
+    keywords: ["wind damage", "wind roof claim"],
+    topics: ["roofing_claims"],
+  },
+  "roof-matching-vs-repairability-when-to-supplement": {
+    phrases: ["roof matching vs repairability", "matching vs repairability roof"],
+    keywords: ["roof matching", "repairability", "partial replacement"],
+    topics: ["roofing_claims"],
+  },
   "claim-documentation-approval-rates": {
     phrases: ["documentation approval rates", "approval rates"],
     keywords: ["approval rate", "documentation"],

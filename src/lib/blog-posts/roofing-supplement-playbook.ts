@@ -23,6 +23,7 @@ export const roofingSupplementPlaybook: BlogPost = {
   seoDescription:
     "Roofing supplement playbook for contractors: identify missed roof line items, document storm and replacement claims, submit supplements, and improve carrier approval rates.",
   relatedPostSlugs: [
+    "what-is-a-roof-supplement",
     "insurance-supplementing-guide-contractors",
     "xactimate-estimate-review-checklist-contractors",
     "claim-documentation-approval-rates",
@@ -292,9 +293,13 @@ export const roofingSupplementPlaybook: BlogPost = {
       heading: "Measurements and reports",
       paragraphs: [
         "Third-party roof reports strengthen supplements when carrier sketches are simplified or dated. Attach the report summary table and highlight variances in squares, ridges, hips, and valleys.",
-        "Field measurements for commercial or unusual geometry should note access, parapets, and crickets omitted from aerial models. Reconciliation tables in your cover letter save adjuster time.",
+        "Field measurements for commercial or unusual geometry should note access, parapets, and crickets omitted from aerial models. Reconciliation tables in your cover letter save adjuster time. For low-slope membrane assemblies, moisture surveys, and equipment detach-reset scope, follow the Commercial Roofing Documentation Guide.",
       ],
       links: [
+        {
+          label: "Commercial roofing documentation guide",
+          href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+        },
         {
           label: "Claim documentation and approval rates",
           href: "/resources/blog/claim-documentation-approval-rates",
@@ -319,9 +324,13 @@ export const roofingSupplementPlaybook: BlogPost = {
         "Package: revised estimate aligned to photos; cover letter mapping each requested line to evidence; invoices for unit price challenges.",
         "Submit: carrier portal or adjuster email per preference; confirm receipt.",
         "Follow up: track partial approvals; resubmit remaining lines with added evidence; schedule re-inspection only when access or discovery requires it.",
-        "On multi-building commercial roofs, phase supplements by section so partial approvals fund progress without stopping the entire job. Keep a living deficiency list shared between PM and supplement lead so field discovery during tear-off routes to the estimate the same day.",
+        "On multi-building commercial roofs, phase supplements by section so partial approvals fund progress without stopping the entire job. Keep a living deficiency list shared between PM and supplement lead so field discovery during tear-off routes to the estimate the same day. Index commercial files with annotated roof plans, core sample results, and HVAC inventory per the Commercial Roofing Documentation Guide.",
       ],
       links: [
+        {
+          label: "Commercial roofing documentation guide",
+          href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+        },
         {
           label: "Insurance supplementing guide",
           href: "/resources/blog/insurance-supplementing-guide-contractors",

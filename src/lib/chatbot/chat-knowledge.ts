@@ -619,6 +619,102 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["organize photos", "reinspection photos", "slope labeling"],
     topics: ["roofing_claims", "supplements"],
   },
+  "roof-hail-vs-wind-documentation": {
+    phrases: [
+      "hail vs wind roof documentation",
+      "how does hail damage documentation differ from wind",
+      "document hail and wind roof damage",
+    ],
+    keywords: ["hail documentation", "wind documentation", "hail vs wind"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-layered-tear-off-discovery": {
+    phrases: [
+      "document layered roofing during tear-off",
+      "layered roofing tear-off discovery",
+      "additional layer roof supplement",
+    ],
+    keywords: ["layered roofing", "tear-off discovery", "roof layers"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-flashing-supplement-qualification": {
+    phrases: [
+      "when does flashing qualify for roof supplement",
+      "flashing supplement vs patch",
+      "document flashing roof supplement",
+    ],
+    keywords: ["flashing supplement", "flashing patch", "roof flashing"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-commercial-damage-documentation": {
+    phrases: [
+      "how do you document commercial roof damage for insurance",
+      "document commercial roof damage",
+      "commercial roof damage documentation",
+    ],
+    keywords: [
+      "commercial roof damage",
+      "commercial roofing documentation",
+      "membrane damage",
+      "roof plan",
+    ],
+    topics: ["roofing_claims", "commercial", "supplements"],
+  },
+  "roof-commercial-supplement-documentation": {
+    phrases: [
+      "commercial roofing supplement documentation",
+      "documentation required for commercial roofing supplements",
+      "commercial roof supplement requirements",
+    ],
+    keywords: [
+      "commercial roofing supplement",
+      "commercial supplement documentation",
+      "low slope supplement",
+    ],
+    topics: ["roofing_claims", "commercial", "supplements"],
+  },
+  "roof-commercial-moisture-survey-payment": {
+    phrases: [
+      "do insurance companies pay for moisture surveys",
+      "moisture survey commercial roof insurance",
+      "commercial roof moisture survey payment",
+    ],
+    keywords: [
+      "moisture survey",
+      "core sampling",
+      "wet insulation",
+      "commercial roof moisture",
+    ],
+    topics: ["roofing_claims", "commercial"],
+  },
+  "roof-commercial-inspection-photos": {
+    phrases: [
+      "what should be photographed during a commercial roof inspection",
+      "commercial roof inspection photos",
+      "photograph commercial roof inspection",
+    ],
+    keywords: [
+      "commercial roof inspection",
+      "commercial roof photos",
+      "membrane photos",
+      "roof inspection documentation",
+    ],
+    topics: ["roofing_claims", "commercial"],
+  },
+  "roof-commercial-system-replacement-documentation": {
+    phrases: [
+      "documentation supports replacing commercial roofing system",
+      "commercial roofing system replacement documentation",
+      "replace commercial roof insurance documentation",
+    ],
+    keywords: [
+      "commercial roof replacement",
+      "system replacement",
+      "membrane replacement",
+      "wet insulation replacement",
+    ],
+    topics: ["roofing_claims", "commercial", "supplements"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

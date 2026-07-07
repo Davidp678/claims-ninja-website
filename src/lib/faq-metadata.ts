@@ -984,6 +984,93 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Photo organization FAQ; cross-link roofing documentation standard.",
   },
+  "roof-hail-vs-wind-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/roof-hail-damage-documentation-guide",
+      "roofing-claims/roof-wind-damage-documentation-guide",
+    ],
+    relatedFaqIds: ["roof-flashing-supplement-qualification", "roof-layered-tear-off-discovery"],
+    internalLinkNotes:
+      "Peril documentation FAQ; cross-link hail and wind blogs and guides.",
+  },
+  "roof-layered-tear-off-discovery": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["roofing-claims/roof-hail-damage-documentation-guide"],
+    relatedFaqIds: ["roof-hail-vs-wind-documentation", "roof-flashing-supplement-qualification"],
+    internalLinkNotes:
+      "Layer discovery FAQ; cross-link roofing supplement checklist and hail blog.",
+  },
+  "roof-flashing-supplement-qualification": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "roofing-claims/roof-hail-damage-documentation-guide",
+      "roofing-claims/roof-wind-damage-documentation-guide",
+    ],
+    relatedFaqIds: ["roof-hail-vs-wind-documentation", "roof-layered-tear-off-discovery"],
+    internalLinkNotes:
+      "Flashing supplement FAQ; cross-link hail and wind guides and xactimate checklist blog.",
+  },
+  "roof-commercial-damage-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["roofing-claims/commercial-roofing-documentation-guide"],
+    relatedFaqIds: [
+      "roof-commercial-inspection-photos",
+      "roof-commercial-supplement-documentation",
+      "roofing-commercial",
+    ],
+    internalLinkNotes:
+      "Primary commercial roof documentation FAQ; anchor for commercial roofing documentation guide.",
+  },
+  "roof-commercial-supplement-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/commercial-roofing-documentation-guide",
+      "roofing-claims/roofing-supplement-checklist",
+    ],
+    relatedFaqIds: [
+      "roof-commercial-damage-documentation",
+      "roof-commercial-system-replacement-documentation",
+      "supplements-whats-included",
+    ],
+    internalLinkNotes:
+      "Commercial supplement documentation FAQ; cross-link roofing supplement playbook blog.",
+  },
+  "roof-commercial-moisture-survey-payment": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["roofing-claims/commercial-roofing-documentation-guide"],
+    relatedFaqIds: [
+      "roof-commercial-system-replacement-documentation",
+      "roof-commercial-damage-documentation",
+    ],
+    internalLinkNotes:
+      "Moisture survey payment FAQ; cross-link wet insulation and system replacement FAQs.",
+  },
+  "roof-commercial-inspection-photos": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/commercial-roofing-documentation-guide",
+      "roofing-claims/roofing-documentation-guide",
+    ],
+    relatedFaqIds: ["roof-commercial-damage-documentation", "roofing-carrier-documentation"],
+    internalLinkNotes:
+      "Commercial inspection photo FAQ; cross-link roofing documentation standard.",
+  },
+  "roof-commercial-system-replacement-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/commercial-roofing-documentation-guide",
+      "roofing-claims/roof-repairability-documentation-guide",
+      "roofing-claims/roof-matching-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-commercial-moisture-survey-payment",
+      "roof-commercial-supplement-documentation",
+      "roof-repairability-insurance-claim",
+    ],
+    internalLinkNotes:
+      "Commercial system replacement FAQ; cross-link repairability and matching guides.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

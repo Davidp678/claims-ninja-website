@@ -35,6 +35,9 @@ export const ROOF_REINSPECTION_GUIDE = defineGuide({
   seoDescription:
     "Learn when to request a roof reinspection, what documentation to prepare, how to present additional damage, and how contractors can support accurate roofing claim review.",
   relatedGuideSlugs: [
+    "commercial-roofing-documentation-guide",
+    "roof-hail-damage-documentation-guide",
+    "roof-wind-damage-documentation-guide",
     "roof-matching-documentation-guide",
     "roof-repairability-documentation-guide",
     "roofing-supplement-checklist",
@@ -44,6 +47,8 @@ export const ROOF_REINSPECTION_GUIDE = defineGuide({
     "reinspection-preparation-guide",
   ],
   relatedBlogSlugs: [
+    "hail-damage-roof-claims-documentation-supplement",
+    "wind-damage-roof-claims-what-carriers-miss",
     "roofing-supplement-playbook",
     "what-is-a-roof-supplement",
   ],
@@ -59,7 +64,7 @@ export const ROOF_REINSPECTION_GUIDE = defineGuide({
   relatedSolutionPath: SOLUTION_PATH,
   claimTypes: ["hail", "wind", "replacement"],
   purpose:
-    "Roof reinspections are often needed when the original inspection or estimate does not fully reflect documented roof conditions. Common reasons include missed storm damage, additional affected slopes, matching disputes, repairability concerns, code upgrade issues, scope omissions, and material identification problems. This guide is the roofing contractor playbook for reinspections after a carrier inspection or estimate does not reflect documented field conditions — not legal advice and not a guarantee of claim outcomes. Claims Ninja supports contractors with documentation standards, supplement packaging, and claim recovery workflows — we are not a public adjuster, carrier representative, or legal counsel.",
+    "Roof reinspections are often needed when the original inspection or estimate does not fully reflect documented roof conditions. Common reasons include missed storm damage, additional affected slopes, matching disputes, repairability concerns, code upgrade issues, scope omissions, and material identification problems. This guide is the strategic roofing contractor playbook for when to request reinspections and how to prepare documentation before scheduling — not on-site day-of execution. For visit-day logistics and crew roles, see the Roof Reinspection Day-Of Checklist. This guide is not legal advice and not a guarantee of claim outcomes. Claims Ninja supports contractors with documentation standards, supplement packaging, and claim recovery workflows — we are not a public adjuster, carrier representative, or legal counsel.",
   whenToUse: [
     {
       condition: "Carrier estimate omits documented storm damage on one or more slopes",
@@ -404,6 +409,10 @@ export const ROOF_REINSPECTION_GUIDE = defineGuide({
   ],
   relatedResources: [
     {
+      label: "Commercial Roofing Documentation Guide",
+      href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+    },
+    {
       label: "Roof Matching Documentation Guide",
       href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
     },
@@ -428,7 +437,7 @@ export const ROOF_REINSPECTION_GUIDE = defineGuide({
       href: "/resources/guides/roofing-claims/roof-measurement-documentation-guide",
     },
     {
-      label: "Roof Reinspection Preparation",
+      label: "Roof Reinspection Day-Of Checklist",
       href: "/resources/guides/roofing-claims/reinspection-preparation-guide",
     },
     {

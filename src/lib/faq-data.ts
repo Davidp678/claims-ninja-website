@@ -433,7 +433,13 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "Can you support commercial roofing claims?",
     answer:
       "Yes. Commercial roofing often involves membranes, coatings, metal systems, and larger scopes with heavier documentation requirements. We organize complex estimates and trade coordination so carrier review stays manageable.",
-    relatedLinks: [{ label: "Roofing solutions", href: "/solutions/roofing" }],
+    relatedLinks: [
+      { label: "Roofing solutions", href: "/solutions/roofing" },
+      {
+        label: "Commercial roofing documentation guide",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+    ],
   },
   {
     id: "roofing-measurements",
@@ -703,6 +709,154 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Roofing claim documentation standard",
         href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+    ],
+  },
+
+  // Hail, wind, and flashing (3)
+  {
+    id: "roof-hail-vs-wind-documentation",
+    category: "roofing_claims",
+    question: "How does hail damage documentation differ from wind damage documentation?",
+    answer:
+      "Hail documentation focuses on circular impacts, mat fracture, test square or impact survey results, and soft metal collateral dents on vents and flashings. Wind documentation focuses on creased tabs, lifted shingles, broken seal strips, ridge and starter displacement, and directional damage patterns on windward slopes. When both perils apply on the same file, document each mechanism in separate photo groups indexed to the same scope comparison — blending evidence weakens attribution at desk review.",
+    relatedLinks: [
+      {
+        label: "Hail damage roof documentation guide",
+        href: "/resources/guides/roofing-claims/roof-hail-damage-documentation-guide",
+      },
+      {
+        label: "Wind damage roof documentation guide",
+        href: "/resources/guides/roofing-claims/roof-wind-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-layered-tear-off-discovery",
+    category: "roofing_claims",
+    question: "How should contractors document layered roofing during tear-off?",
+    answer:
+      "Photograph each layer progressively as tear-off proceeds — not in a single post-removal summary shot. Label each photo with slope name, date, layer count, and material type of the exposed course. Tie additional tear-off layer charges to the progressive photo sequence and field notes in the supplement narrative. Carriers deny layer discovery reported after tear-off when pre-removal and mid-removal evidence is missing.",
+    relatedLinks: [
+      {
+        label: "Hail damage roof documentation guide",
+        href: "/resources/guides/roofing-claims/roof-hail-damage-documentation-guide",
+      },
+      {
+        label: "Roofing supplement checklist",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+    ],
+  },
+  {
+    id: "roof-flashing-supplement-qualification",
+    category: "roofing_claims",
+    question: "When does flashing qualify for a roof supplement vs patch?",
+    answer:
+      "Flashing qualifies for replacement when storm damage bends, creases, or displaces metal beyond patch repair — step flashing pulled from walls, cracked pipe boots, bent drip edge, or valley metal with impact or wind deformation documented in close-up and context photos. Patch-only scope is harder to defend when photos show structural deformation, failed seal, or multiple damaged segments on the same elevation. Index each flashing photo to a specific supplement line item and slope label.",
+    relatedLinks: [
+      {
+        label: "Hail damage roof documentation guide",
+        href: "/resources/guides/roofing-claims/roof-hail-damage-documentation-guide",
+      },
+      {
+        label: "Wind damage roof documentation guide",
+        href: "/resources/guides/roofing-claims/roof-wind-damage-documentation-guide",
+      },
+    ],
+  },
+
+  // Commercial Roofing Documentation (5)
+  {
+    id: "roof-commercial-damage-documentation",
+    category: "roofing_claims",
+    question: "How do you document commercial roof damage for insurance?",
+    answer:
+      "Commercial roof damage documentation starts with a labeled roof plan and zone-indexed photos — overview and close-up pairs for membrane field damage, seams, flashings, coping, edge metal, drains, scuppers, and penetrations. Document the assembly type (TPO, EPDM, PVC, mod bit, BUR, metal, SPF, or coating), perform moisture surveys and core sampling when wet insulation is suspected, and correlate interior ceiling maps to roof zones. Reconcile measurements to the carrier sketch, attach manufacturer specs, and index every photo to estimate lines before supplement submission.",
+    relatedLinks: [
+      {
+        label: "Commercial roofing documentation guide",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+      {
+        label: "Roof measurement documentation guide",
+        href: "/resources/guides/roofing-claims/roof-measurement-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-commercial-supplement-documentation",
+    category: "roofing_claims",
+    question: "What documentation is required for commercial roofing supplements?",
+    answer:
+      "Commercial roofing supplements require a scope comparison table linking carrier estimate lines to zone-indexed field evidence: roof plan, progressive tear-off photos, moisture survey maps, core sample results, equipment detach-reset inventory, and interior water migration maps. Include manufacturer guidance when disputing patch-only scope, code citations for upgrades, crane and staging photos for access constraints, and a contractor narrative indexed to each disputed line. Run the Roofing Supplement Checklist before submission — incomplete moisture proof and missing equipment documentation are the most common commercial supplement denials.",
+    relatedLinks: [
+      {
+        label: "Commercial roofing documentation guide",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+      {
+        label: "Roofing supplement checklist",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+      {
+        label: "Roofing supplement playbook",
+        href: "/resources/blog/roofing-supplement-playbook",
+      },
+    ],
+  },
+  {
+    id: "roof-commercial-moisture-survey-payment",
+    category: "roofing_claims",
+    question: "Do insurance companies pay for moisture surveys?",
+    answer:
+      "Many carriers approve moisture survey and core sampling costs on commercial roofing claims when results justify wet insulation replacement — but payment depends on contemporaneous documentation linking scan results to specific roof zones and estimate lines. Perform surveys before tear-off when interior leaks, ponding, or storm openings suggest wet substrate. Document authorization requests, technician reports, and mapped readings indexed to the roof plan. Unsupported wet insulation claims without moisture proof are commonly excluded even when insulation replacement scope is otherwise defensible.",
+    relatedLinks: [
+      {
+        label: "Commercial roofing documentation guide",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+      {
+        label: "What documentation supports replacing a commercial roofing system?",
+        href: "/faq#faq-roof-commercial-system-replacement-documentation",
+      },
+    ],
+  },
+  {
+    id: "roof-commercial-inspection-photos",
+    category: "roofing_claims",
+    question: "What should be photographed during a commercial roof inspection?",
+    answer:
+      "Photograph roof overview from each corner and zone, then close-ups of membrane field damage, seams, flashings, coping, edge metal, expansion joints, drains, scuppers, HVAC curbs, skylights, and roof-mounted equipment. Capture drone and ground context when permitted. Document test squares or impact areas, moisture survey grids, core sample locations, interior ceiling conditions, and temporary emergency repairs. Every close-up needs an overview pair with zone label, date, and direction — desk reviewers cannot approve scope they cannot locate on the roof plan.",
+    relatedLinks: [
+      {
+        label: "Commercial roofing documentation guide",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+      {
+        label: "Roofing claim documentation standard",
+        href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-commercial-system-replacement-documentation",
+    category: "roofing_claims",
+    question: "What documentation supports replacing a commercial roofing system?",
+    answer:
+      "Full commercial system replacement requires evidence beyond surface membrane damage: moisture survey and core sample proof of wet insulation, manufacturer specs showing damage exceeds patch limits, repairability analysis when aged membrane cannot be resealed, matching documentation when product is discontinued, code upgrade citations, and photos of multiple impact areas or failed seams across sections. Document tear-off layer count, deck condition, cover board requirements, and equipment detach-reset scope. Cross-reference the Roof Repairability and Roof Matching Documentation Guides when carriers approve partial scope on low-slope assemblies.",
+    relatedLinks: [
+      {
+        label: "Commercial roofing documentation guide",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+      {
+        label: "Roof repairability documentation guide",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+      {
+        label: "Roof matching documentation guide",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
       },
     ],
   },

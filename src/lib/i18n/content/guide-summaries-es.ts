@@ -51,9 +51,9 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
       "Estándares mínimos de fotos, mediciones y narrativa para expedientes de techado: desde antes del desmontaje hasta la instalación de la capa seca y la instalación final, diseñados para la aprobación de suplementos.",
   },
   "roofing-claims/reinspection-preparation-guide": {
-    title: "Preparación para reinspección de techo",
+    title: "Lista de verificación del día de reinspección de techo",
     excerpt:
-      "Flujo para preparar reinspecciones de aseguradora: confirmar el alcance en el techo, preparar evidencia, asignar roles y convertir la visita en documentación lista para suplemento.",
+      "Lista de verificación en sitio para el día de reinspección de aseguradora: confirmar la visita, preparar evidencia, asignar roles, recorrer el techo con el ajustador y cerrar con documentación lista para suplemento en 24 horas.",
   },
   "roofing-claims/code-upgrade-documentation-guide": {
     title: "Documentación de mejoras por código en techado",
@@ -84,6 +84,21 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     title: "Guía de reinspección de techo para contratistas",
     excerpt:
       "Aprenda cuándo solicitar una reinspección de techo, qué documentación preparar, cómo presentar daños adicionales y cómo los contratistas pueden respaldar una revisión precisa de reclamaciones de techado.",
+  },
+  "roofing-claims/roof-hail-damage-documentation-guide": {
+    title: "Guía de documentación de daños por granizo en techo para contratistas",
+    excerpt:
+      "Aprenda cómo documentar daños por granizo en reclamaciones de techado: patrones de impacto, cuadrados de prueba, metales blandos, etiquetado de pendientes y evidencia de campo para revisión de reclamaciones por tormenta.",
+  },
+  "roofing-claims/roof-wind-damage-documentation-guide": {
+    title: "Guía de documentación de daños por viento en techo para contratistas",
+    excerpt:
+      "Aprenda cómo documentar daños por viento en reclamaciones de techado: tejas hendidas, sellos levantados, patrones direccionales, evidencia colateral y documentación de campo para suplementos por tormenta.",
+  },
+  "roofing-claims/commercial-roofing-documentation-guide": {
+    title: "Guía de documentación de techado comercial para contratistas",
+    excerpt:
+      "Aprenda cómo documentar reclamaciones de techado comercial: sistemas de membrana, estudios de humedad, muestreo por núcleo, desconexión de equipos, migración de agua interior y evidencia de campo para suplementos.",
   },
   "water-damage/mitigation-intake-checklist": {
     title: "Lista de verificación de admisión de mitigación de agua",

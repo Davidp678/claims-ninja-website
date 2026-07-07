@@ -18,11 +18,13 @@ import { odorMitigationInFireDamageClaims } from "./odor-mitigation-in-fire-dama
 import { dailyMonitoringDocumentationBestPractices } from "./daily-monitoring-documentation-best-practices";
 import { equipmentChargesThatGetCutFromWaterClaims } from "./equipment-charges-that-get-cut-from-water-claims";
 import { equipmentChargesWaterDamageClaims } from "./equipment-charges-water-damage-claims";
+import { first48HoursAfterCarrierEstimate } from "./first-48-hours-after-carrier-estimate";
 import { waterDamageDocumentationForApartmentComplexes } from "./water-damage-documentation-for-apartment-complexes";
 import { waterDamageSupplementDenialRecovery } from "./water-damage-supplement-denial-recovery";
 import { whyCategory3WaterClaimsGetUnderpaid } from "./why-category-3-water-claims-get-underpaid";
 import { whyWaterMitigationClaimsGetUnderpaid } from "./why-water-mitigation-claims-get-underpaid";
-import { first48HoursAfterCarrierEstimate } from "./first-48-hours-after-carrier-estimate";
+import { hailDamageRoofClaimsDocumentationSupplement } from "./hail-damage-roof-claims-documentation-supplement";
+import { roofMatchingVsRepairabilityWhenToSupplement } from "./roof-matching-vs-repairability-when-to-supplement";
 import { INSURANCE_SUPPLEMENTING_PILLAR } from "./insurance-supplementing-guide-contractors";
 import { opOnInsuranceClaims } from "./op-on-insurance-claims";
 import { recoverRevenueWithoutInHouseClaims } from "./recover-revenue-without-in-house-claims";
@@ -30,6 +32,7 @@ import { roofingSupplementPlaybook } from "./roofing-supplement-playbook";
 import { supplementDenialRecoveryGuide } from "./supplement-denial-recovery-guide";
 import { whatIsARoofSupplement } from "./what-is-a-roof-supplement";
 import { waterDamageMitigationSupplementPlaybook } from "./water-damage-mitigation-supplement-playbook";
+import { windDamageRoofClaimsWhatCarriersMiss } from "./wind-damage-roof-claims-what-carriers-miss";
 import { whenToBringInSupplementingPartner } from "./when-to-bring-in-supplementing-partner";
 import { whyCarrierEstimatesMissLineItems } from "./why-carrier-estimates-miss-line-items";
 import { xactimateEstimateReviewChecklistContractors } from "./xactimate-estimate-review-checklist-contractors";
@@ -40,6 +43,9 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   whyCarrierEstimatesMissLineItems,
   recoverRevenueWithoutInHouseClaims,
   whatIsARoofSupplement,
+  hailDamageRoofClaimsDocumentationSupplement,
+  windDamageRoofClaimsWhatCarriersMiss,
+  roofMatchingVsRepairabilityWhenToSupplement,
   roofingSupplementPlaybook,
   waterDamageMitigationSupplementPlaybook,
   dryLogDocumentationGuideInsuranceClaims,

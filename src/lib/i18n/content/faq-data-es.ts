@@ -433,7 +433,13 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     question: "¿Pueden apoyar reclamaciones de techado comercial?",
     answer:
       "Sí. El techado comercial a menudo involucra membranas, recubrimientos, sistemas metálicos y alcances mayores con requisitos de documentación más exigentes. Organizamos estimados complejos y la coordinación de oficios para que la revisión de la aseguradora sea manejable.",
-    relatedLinks: [{ label: "Soluciones de techado", href: "/solutions/roofing" }],
+    relatedLinks: [
+      { label: "Soluciones de techado", href: "/solutions/roofing" },
+      {
+        label: "Guía de documentación de techado comercial",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+    ],
   },
   {
     id: "roofing-measurements",
@@ -703,6 +709,154 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Estándar de documentación de reclamaciones de techado",
         href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+    ],
+  },
+
+  // Granizo, viento y flashing (3)
+  {
+    id: "roof-hail-vs-wind-documentation",
+    category: "roofing_claims",
+    question: "¿En qué se diferencia la documentación de daños por granizo de la de daños por viento?",
+    answer:
+      "La documentación de granizo se centra en impactos circulares, fractura de la matriz, resultados de cuadrados de prueba o encuestas de impacto y abolladuras colaterales en metales blandos de ventilaciones y flashing. La documentación de viento se centra en tejas hendidas, tejas levantadas, sellos rotos, desplazamiento de cumbrera y arranque, y patrones direccionales de daño en pendientes barloventas. Cuando ambos riesgos aplican en el mismo expediente, documente cada mecanismo en grupos de fotos separados indexados a la misma comparación de alcance; mezclar evidencia debilita la atribución en revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por granizo en techo",
+        href: "/resources/guides/roofing-claims/roof-hail-damage-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por viento en techo",
+        href: "/resources/guides/roofing-claims/roof-wind-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-layered-tear-off-discovery",
+    category: "roofing_claims",
+    question: "¿Cómo deben los contratistas documentar techado en capas durante el desmontaje?",
+    answer:
+      "Fotografíe cada capa progresivamente a medida que avanza el desmontaje, no en una sola toma resumen posterior. Etiquete cada foto con el nombre de la pendiente, la fecha, el número de capas y el tipo de material de la capa expuesta. Vincule los cargos adicionales por capas de desmontaje a la secuencia fotográfica progresiva y a las notas de campo en la narrativa del suplemento. Las aseguradoras niegan el descubrimiento de capas reportado después del desmontaje cuando falta evidencia previa y durante la remoción.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por granizo en techo",
+        href: "/resources/guides/roofing-claims/roof-hail-damage-documentation-guide",
+      },
+      {
+        label: "Lista de verificación de suplementos de techado",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+    ],
+  },
+  {
+    id: "roof-flashing-supplement-qualification",
+    category: "roofing_claims",
+    question: "¿Cuándo califica el flashing para un suplemento de techo frente a un parche?",
+    answer:
+      "El flashing califica para reemplazo cuando el daño por tormenta dobla, hendía o desplaza el metal más allá de una reparación con parche: flashing escalonado retirado de muros, botas de tubería agrietadas, drip edge doblado o metal de valle con deformación por impacto o viento documentada en fotos de primer plano y contexto. El alcance de solo parche es más difícil de defender cuando las fotos muestran deformación estructural, falla de sellado o múltiples segmentos dañados en la misma elevación. Indexe cada foto de flashing a una partida específica del suplemento y etiqueta de pendiente.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por granizo en techo",
+        href: "/resources/guides/roofing-claims/roof-hail-damage-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por viento en techo",
+        href: "/resources/guides/roofing-claims/roof-wind-damage-documentation-guide",
+      },
+    ],
+  },
+
+  // Commercial Roofing Documentation (5)
+  {
+    id: "roof-commercial-damage-documentation",
+    category: "roofing_claims",
+    question: "¿Cómo se documenta el daño en un techo comercial para seguros?",
+    answer:
+      "La documentación de daños en techado comercial comienza con un plano de techo etiquetado y fotos indexadas por zona: pares de vista general y primer plano para daño en campo de membrana, costuras, flashings, coping, metal de borde, drenajes, scuppers y penetraciones. Documente el tipo de ensamblaje (TPO, EPDM, PVC, mod bit, BUR, metal, SPF o recubrimiento), realice estudios de humedad y muestreo por núcleo cuando se sospeche aislamiento húmedo, y correlacione mapas interiores de cielo con zonas del techo. Reconcilie mediciones con el croquis de la aseguradora, adjunte especificaciones del fabricante e indexe cada foto a las partidas del estimado antes de enviar el suplemento.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de techado comercial",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de mediciones de techo",
+        href: "/resources/guides/roofing-claims/roof-measurement-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-commercial-supplement-documentation",
+    category: "roofing_claims",
+    question: "¿Qué documentación se requiere para suplementos de techado comercial?",
+    answer:
+      "Los suplementos de techado comercial requieren una tabla de comparación de alcance que vincule las partidas del estimado de la aseguradora con evidencia de campo indexada por zona: plano de techo, fotos progresivas de desmontaje, mapas de estudio de humedad, resultados de muestreo por núcleo, inventario de desconexión y reconexión de equipos, y mapas de migración de agua interior. Incluya orientación del fabricante al disputar alcance de solo parche, citas de código para mejoras, fotos de grúa y acopio por limitaciones de acceso, y una narrativa del contratista indexada a cada partida disputada. Ejecute la lista de verificación de suplementos de techado antes del envío: la prueba de humedad incompleta y la documentación de equipos faltante son las denegaciones más comunes en suplementos comerciales.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de techado comercial",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+      {
+        label: "Lista de verificación de suplementos de techado",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+      {
+        label: "Manual de suplementos de techado",
+        href: "/resources/blog/roofing-supplement-playbook",
+      },
+    ],
+  },
+  {
+    id: "roof-commercial-moisture-survey-payment",
+    category: "roofing_claims",
+    question: "¿Las compañías de seguros pagan los estudios de humedad?",
+    answer:
+      "Muchas aseguradoras aprueban los costos de estudios de humedad y muestreo por núcleo en reclamaciones de techado comercial cuando los resultados justifican el reemplazo de aislamiento húmedo, pero el pago depende de documentación contemporánea que vincule los resultados del escaneo a zonas específicas del techo y partidas del estimado. Realice estudios antes del desmontaje cuando fugas interiores, encharcamiento o aperturas por tormenta sugieran sustrato húmedo. Documente solicitudes de autorización, informes del técnico y lecturas mapeadas indexadas al plano del techo. Las reclamaciones de aislamiento húmedo sin prueba de humedad se excluyen comúnmente aunque el alcance de reemplazo sea defendible.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de techado comercial",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+      {
+        label: "¿Qué documentación respalda reemplazar un sistema de techado comercial?",
+        href: "/faq#faq-roof-commercial-system-replacement-documentation",
+      },
+    ],
+  },
+  {
+    id: "roof-commercial-inspection-photos",
+    category: "roofing_claims",
+    question: "¿Qué se debe fotografiar durante una inspección de techo comercial?",
+    answer:
+      "Fotografíe la vista general del techo desde cada esquina y zona, luego primeros planos de daño en campo de membrana, costuras, flashings, coping, metal de borde, juntas de expansión, drenajes, scuppers, curbs de HVAC, tragaluces y equipos montados en techo. Capture contexto con dron y desde el suelo cuando esté permitido. Documente cuadrados de prueba o áreas de impacto, cuadrículas de estudio de humedad, ubicaciones de muestreo por núcleo, condiciones interiores de cielo y reparaciones temporales de emergencia. Cada primer plano necesita un par de vista general con etiqueta de zona, fecha y dirección: los revisores de escritorio no pueden aprobar alcance que no puedan ubicar en el plano del techo.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de techado comercial",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+      {
+        label: "Estándar de documentación de reclamaciones de techado",
+        href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-commercial-system-replacement-documentation",
+    category: "roofing_claims",
+    question: "¿Qué documentación respalda reemplazar un sistema de techado comercial?",
+    answer:
+      "El reemplazo completo de un sistema comercial requiere evidencia más allá del daño superficial de membrana: prueba de aislamiento húmedo por estudio de humedad y muestreo por núcleo, especificaciones del fabricante que muestren daño más allá de límites de parche, análisis de reparabilidad cuando la membrana envejecida no puede resellarse, documentación de coincidencia cuando el producto está descontinuado, citas de código de mejora, y fotos de múltiples áreas de impacto o costuras fallidas en secciones. Documente el conteo de capas en desmontaje, condición de la cubierta, requisitos de cover board y alcance de desconexión y reconexión de equipos. Consulte las guías de documentación de reparabilidad y coincidencia de techo cuando las aseguradoras aprueban alcance parcial en ensamblajes de baja pendiente.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de techado comercial",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de reparabilidad de techo",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de coincidencia de techo",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
       },
     ],
   },
