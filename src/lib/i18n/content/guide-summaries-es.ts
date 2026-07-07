@@ -100,6 +100,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Aprenda cómo documentar reclamaciones de techado comercial: sistemas de membrana, estudios de humedad, muestreo por núcleo, desconexión de equipos, migración de agua interior y evidencia de campo para suplementos.",
   },
+  "roofing-claims/hoa-roofing-claims-guide": {
+    title: "Guía de reclamaciones de techado en HOAs para contratistas",
+    excerpt:
+      "Manual operativo para reclamaciones de seguro de techado en HOAs y condominios: propiedad compartida, documentación multi-edificio, comunicación con la junta, estimación y recuperación por suplementos.",
+  },
   "water-damage/mitigation-intake-checklist": {
     title: "Lista de verificación de admisión de mitigación de agua",
     excerpt:

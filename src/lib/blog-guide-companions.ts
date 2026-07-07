@@ -40,11 +40,11 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "roofing-supplement-playbook": {
     intro:
-      "You've learned the roofing supplement strategy. Now execute the checklists and documentation standards that turn scope gaps into paid line items.",
+      "You've learned the roofing supplement strategy. Now execute the checklists and documentation standards that turn scope gaps into paid line items — including multi-building HOA and community association files.",
     guideSlugs: [
+      "hoa-roofing-claims-guide",
       "roofing-supplement-checklist",
       "roofing-documentation-guide",
-      "roof-matching-documentation-guide",
       "commercial-roofing-documentation-guide",
     ],
   },
@@ -55,7 +55,7 @@ export const BLOG_GUIDE_COMPANIONS = {
       "roofing-documentation-guide",
       "roof-measurement-documentation-guide",
       "roof-matching-documentation-guide",
-      "roof-repairability-documentation-guide",
+      "hoa-roofing-claims-guide",
     ],
   },
   "hail-damage-roof-claims-documentation-supplement": {
@@ -65,7 +65,7 @@ export const BLOG_GUIDE_COMPANIONS = {
       "roof-hail-damage-documentation-guide",
       "roofing-supplement-checklist",
       "roof-reinspection-guide",
-      "roof-wind-damage-documentation-guide",
+      "hoa-roofing-claims-guide",
     ],
   },
   "wind-damage-roof-claims-what-carriers-miss": {
@@ -73,19 +73,19 @@ export const BLOG_GUIDE_COMPANIONS = {
       "You've learned what carriers miss on wind damage roof claims. Now follow the documentation procedures that capture creases, seal failures, and accessory scope.",
     guideSlugs: [
       "roof-wind-damage-documentation-guide",
-      "roof-hail-damage-documentation-guide",
+      "hoa-roofing-claims-guide",
       "roofing-supplement-checklist",
       "roof-reinspection-guide",
     ],
   },
   "roof-matching-vs-repairability-when-to-supplement": {
     intro:
-      "You've learned when matching and repairability disputes apply. Now execute the documentation standards that support partial-replacement supplement arguments.",
+      "You've learned when matching and repairability disputes apply. Now execute the documentation standards that support partial-replacement supplement arguments — including HOA communities with multiple buildings.",
     guideSlugs: [
       "roof-matching-documentation-guide",
       "roof-repairability-documentation-guide",
       "roof-reinspection-guide",
-      "roofing-supplement-checklist",
+      "hoa-roofing-claims-guide",
     ],
   },
   "water-damage-mitigation-supplement-playbook": {

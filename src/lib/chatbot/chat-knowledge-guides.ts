@@ -302,6 +302,28 @@ const GUIDE_SLUG_BOOSTS: Record<
     ],
     topics: ["roofing_claims", "commercial", "supplements"],
   },
+  "hoa-roofing-claims-guide": {
+    phrases: [
+      "HOA roofing claims",
+      "condominium roof insurance claim",
+      "HOA roof damage documentation",
+      "community association roofing claim",
+      "who is responsible for roof damage in an HOA",
+      "HOA roofing supplement documentation",
+      "multi-building roof claim documentation",
+    ],
+    keywords: [
+      "HOA roofing",
+      "condo roof claim",
+      "HOA board",
+      "common elements",
+      "master policy",
+      "multi-building roof",
+      "community association",
+      "condominium roofing",
+    ],
+    topics: ["roofing_claims", "supplements", "documentation"],
+  },
   "moisture-mapping-guide": {
     phrases: ["moisture mapping", "moisture map procedure", "how do i moisture map"],
     keywords: ["moisture mapping", "moisture map"],

@@ -779,6 +779,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
       },
       {
+        label: "Guía de reclamaciones de techado en HOAs",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+      {
         label: "Guía de documentación de mediciones de techo",
         href: "/resources/guides/roofing-claims/roof-measurement-documentation-guide",
       },
@@ -857,6 +861,105 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de documentación de coincidencia de techo",
         href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+    ],
+  },
+
+  // HOA and condominium roofing (5)
+  {
+    id: "roof-hoa-responsible-damage",
+    category: "roofing_claims",
+    question: "¿Quién es responsable de los daños en el techo en una HOA?",
+    answer:
+      "La responsabilidad por daños en el techo en una HOA depende de los documentos de gobierno — los CC&R y estatutos definen qué techos, fachadas y accesorios son elementos comunes mantenidos por la asociación frente a responsabilidades del propietario de la unidad. Los contratistas deben documentar el resumen de responsabilidad proporcionado por la administración, fotografiar las áreas de propiedad de la asociación por separado de los límites del propietario e indexar las partidas de alcance a la parte asegurada correcta. Cuando los límites se disputan, las comunicaciones contemporáneas con la junta y la administración de la propiedad fortalecen la atribución en la revisión de la aseguradora — no la interpretación legal por parte del contratista.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de techado en HOAs",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+      {
+        label: "Guía de documentación de techado comercial",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-hoa-insurance-covers-replacement",
+    category: "roofing_claims",
+    question: "¿El seguro de la HOA cubre el reemplazo del techo?",
+    answer:
+      "Las pólizas maestras de seguro de HOA generalmente cubren los techos de elementos comunes declarados en la cobertura de la asociación, pero el pago depende de los términos de la póliza, deducibles, causa del daño y asignación según documentos de gobierno — no del reemplazo automático de toda la comunidad. Los contratistas deben documentar el número de reclamación de la póliza maestra, el manejo del deducible según orientación de la administración y el daño específico por edificio que respalde el alcance de reemplazo en estructuras afectadas. Los registros de autorización de la junta y la evidencia fotográfica por edificio fortalecen la aprobación cuando las aseguradoras cuestionan la extensión del alcance en pérdidas parciales por edificio.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de techado en HOAs",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+      {
+        label: "Guía de documentación de coincidencia de techo",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-hoa-damage-documentation",
+    category: "roofing_claims",
+    question: "¿Cómo se debe documentar el daño en el techo de una HOA?",
+    answer:
+      "La documentación de daños en techos de HOA comienza con un inventario de edificios y un plano del sitio de la comunidad — cada estructura numerada de forma consistente en fotos, mediciones y estimaciones. Fotografíe cada fachada de cada edificio con pares de panorámica y primer plano; indexe los componentes compartidos (canaletas, cocheras, clubes) por separado. Adjunte resúmenes de responsabilidad de documentos de gobierno, registros de coordinación de acceso y registros de comunicación con la junta junto con la evidencia de campo. Las tablas de comparación de alcance por edificio vinculadas a índices fotográficos son esenciales antes de presentar suplementos en archivos de asociaciones comunitarias.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de techado en HOAs",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+      {
+        label: "Estándar de documentación de reclamaciones de techado",
+        href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+      {
+        label: "Lista de verificación de suplementos de techado",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+    ],
+  },
+  {
+    id: "roof-hoa-partial-building-replacement",
+    category: "roofing_claims",
+    question: "¿Se puede reemplazar cada edificio si solo algunos están dañados?",
+    answer:
+      "El reemplazo de toda la comunidad cuando solo algunos edificios están dañados depende de los requisitos de coincidencia, estándares de documentos de gobierno, límites de reparación del fabricante y atribución de daño funcional — no de la aprobación automática. Documente comparaciones de fachadas que muestren discrepancia de color y perfil entre edificios dañados y no dañados, análisis de reparabilidad por estructura y requisitos de uniformidad de documentos de gobierno citados por la administración. Las aseguradoras a menudo aprueban el reemplazo completo en edificios afectados mientras niegan estructuras no dañadas — la evidencia fotográfica por edificio y la documentación de coincidencia respaldan argumentos de alcance parcial en la comunidad.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de techado en HOAs",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+      {
+        label: "Guía de documentación de coincidencia de techo",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de reparabilidad de techo",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-hoa-supplement-documentation",
+    category: "roofing_claims",
+    question: "¿Qué documentación ayuda en los suplementos de techado de HOAs?",
+    answer:
+      "Los suplementos de techado de HOA requieren tablas de comparación de alcance indexadas por edificio que vinculen las partidas del estimado de la aseguradora con evidencia fotográfica, mediciones y contexto de documentos de gobierno por edificio. Incluya registros de movilización para despliegues multi-edificio, registros de retrasos de acceso, documentación de autorización de la junta y fotos progresivas de desmontaje para descubrimientos de daños ocultos. Ejecute la Lista de verificación de suplementos de techado antes de la presentación — la indexación faltante por edificio y los retrasos de acceso no documentados son las denegaciones de suplemento de HOA más comunes.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de techado en HOAs",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+      {
+        label: "Lista de verificación de suplementos de techado",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+      {
+        label: "Manual de suplementos de techado",
+        href: "/resources/blog/roofing-supplement-playbook",
       },
     ],
   },

@@ -34,6 +34,7 @@ export const ROOF_REPAIRABILITY_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Learn how to document roof repairability using brittle test results, material condition, collateral damage observations, manufacturer guidance, and field documentation that supports accurate claim review.",
   relatedGuideSlugs: [
+    "hoa-roofing-claims-guide",
     "commercial-roofing-documentation-guide",
     "roof-hail-damage-documentation-guide",
     "roof-wind-damage-documentation-guide",
@@ -383,6 +384,10 @@ export const ROOF_REPAIRABILITY_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "HOA Roofing Claims Guide",
+      href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+    },
     {
       label: "Commercial Roofing Documentation Guide",
       href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",

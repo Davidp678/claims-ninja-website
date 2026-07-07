@@ -779,6 +779,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
       },
       {
+        label: "HOA roofing claims guide",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+      {
         label: "Roof measurement documentation guide",
         href: "/resources/guides/roofing-claims/roof-measurement-documentation-guide",
       },
@@ -857,6 +861,105 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Roof matching documentation guide",
         href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+    ],
+  },
+
+  // HOA and condominium roofing (5)
+  {
+    id: "roof-hoa-responsible-damage",
+    category: "roofing_claims",
+    question: "Who is responsible for roof damage in an HOA?",
+    answer:
+      "Roof damage responsibility in an HOA depends on governing documents — CC&Rs and bylaws define which roofs, elevations, and accessories are common elements maintained by the association versus unit-owner responsibilities. Contractors should document the management-provided responsibility summary, photograph association-owned areas separately from unit-owner boundaries, and index scope lines to the correct insured party. When boundaries are disputed, contemporaneous board and property management communications strengthen attribution at carrier review — not legal interpretation by the contractor.",
+    relatedLinks: [
+      {
+        label: "HOA roofing claims guide",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+      {
+        label: "Commercial roofing documentation guide",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-hoa-insurance-covers-replacement",
+    category: "roofing_claims",
+    question: "Does HOA insurance cover roof replacement?",
+    answer:
+      "HOA master insurance policies typically cover common-element roofs declared in the association's coverage, but payment depends on policy terms, deductibles, damage cause, and governing document allocation — not automatic full-community replacement. Contractors should document the master policy claim number, deductible handling per management guidance, and building-specific damage that supports replacement scope on affected structures. Board authorization records and building-level photo evidence strengthen approval when carriers question scope extent on partial-building losses.",
+    relatedLinks: [
+      {
+        label: "HOA roofing claims guide",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+      {
+        label: "Roof matching documentation guide",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-hoa-damage-documentation",
+    category: "roofing_claims",
+    question: "How should HOA roof damage be documented?",
+    answer:
+      "HOA roof damage documentation starts with a building inventory and community site plan — every structure numbered consistently across photos, measurements, and estimates. Photograph every elevation on every building with overview and close-up pairs; index shared components (gutters, carports, clubhouses) separately. Attach governing document responsibility summaries, access coordination logs, and board communication records alongside field evidence. Per-building scope comparison tables tied to photo indexes are essential before supplement submission on community association files.",
+    relatedLinks: [
+      {
+        label: "HOA roofing claims guide",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+      {
+        label: "Roofing claim documentation standard",
+        href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+      {
+        label: "Roofing supplement checklist",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+    ],
+  },
+  {
+    id: "roof-hoa-partial-building-replacement",
+    category: "roofing_claims",
+    question: "Can every building be replaced if only some are damaged?",
+    answer:
+      "Full-community replacement when only some buildings are damaged depends on matching requirements, governing document standards, manufacturer repair limits, and functional damage attribution — not automatic approval. Document elevation comparisons showing color and profile mismatch between damaged and undamaged buildings, repairability analysis per structure, and governing document uniformity requirements cited by management. Carriers often approve full replacement on affected buildings while denying undamaged structures — building-level photo evidence and matching documentation support partial-community scope arguments.",
+    relatedLinks: [
+      {
+        label: "HOA roofing claims guide",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+      {
+        label: "Roof matching documentation guide",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Roof repairability documentation guide",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-hoa-supplement-documentation",
+    category: "roofing_claims",
+    question: "What documentation helps HOA roofing supplements?",
+    answer:
+      "HOA roofing supplements require building-indexed scope comparison tables linking carrier estimate lines to per-building photo evidence, measurements, and governing doc context. Include mobilization logs for multi-building deployments, access delay records, board authorization documentation, and progressive tear-off photos for hidden damage discoveries. Run the Roofing Supplement Checklist before submission — missing building-level indexing and undocumented access delays are the most common HOA supplement denials.",
+    relatedLinks: [
+      {
+        label: "HOA roofing claims guide",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+      {
+        label: "Roofing supplement checklist",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+      {
+        label: "Roofing supplement playbook",
+        href: "/resources/blog/roofing-supplement-playbook",
       },
     ],
   },

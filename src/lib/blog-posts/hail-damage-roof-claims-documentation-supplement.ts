@@ -62,11 +62,16 @@ export const hailDamageRoofClaimsDocumentationSupplement: BlogPost = {
       paragraphs: [
         "Start every hail file with overview photos on every slope, then work to impacts, test areas, and soft metals. Label slopes consistently before close-ups. Record storm date and document shingle age so reviewers can separate hail impacts from pre-existing wear.",
         "Wind damage shows creases, lifted tabs, and directional patterns — hail shows circular impacts, mat fracture, and collateral dents on soft metals. When both perils apply, document each pattern separately rather than blending evidence.",
+        "On HOA and condominium communities with multiple buildings, index hail evidence per building and elevation — not in a single community-wide folder.",
       ],
       links: [
         {
           label: "Hail Damage Roof Documentation Guide",
           href: "/resources/guides/roofing-claims/roof-hail-damage-documentation-guide",
+        },
+        {
+          label: "HOA roofing claims guide",
+          href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
         },
         {
           label: "Wind damage roof claims guide",

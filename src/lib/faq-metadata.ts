@@ -1071,6 +1071,74 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Commercial system replacement FAQ; cross-link repairability and matching guides.",
   },
+  "roof-hoa-responsible-damage": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["roofing-claims/hoa-roofing-claims-guide"],
+    relatedFaqIds: [
+      "roof-hoa-damage-documentation",
+      "roof-hoa-insurance-covers-replacement",
+      "roof-hoa-partial-building-replacement",
+    ],
+    internalLinkNotes:
+      "Anchor FAQ for HOA responsibility; cross-link governing doc documentation FAQ.",
+  },
+  "roof-hoa-insurance-covers-replacement": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "roofing-claims/hoa-roofing-claims-guide",
+      "roofing-claims/roof-matching-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-hoa-responsible-damage",
+      "roof-hoa-partial-building-replacement",
+      "roof-hoa-supplement-documentation",
+    ],
+    internalLinkNotes:
+      "HOA insurance coverage FAQ; cross-link matching and partial replacement FAQs.",
+  },
+  "roof-hoa-damage-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/hoa-roofing-claims-guide",
+      "roofing-claims/roofing-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-hoa-responsible-damage",
+      "roof-hoa-supplement-documentation",
+      "roof-commercial-damage-documentation",
+    ],
+    internalLinkNotes:
+      "Anchor FAQ for HOA roofing guide; cross-link commercial multi-building documentation.",
+  },
+  "roof-hoa-partial-building-replacement": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "roofing-claims/hoa-roofing-claims-guide",
+      "roofing-claims/roof-matching-documentation-guide",
+      "roofing-claims/roof-repairability-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-hoa-insurance-covers-replacement",
+      "roof-matching-insurance-claim",
+      "roof-repairability-insurance-claim",
+    ],
+    internalLinkNotes:
+      "Partial building replacement FAQ; cross-link matching and repairability guides.",
+  },
+  "roof-hoa-supplement-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/hoa-roofing-claims-guide",
+      "roofing-claims/roofing-supplement-checklist",
+    ],
+    relatedFaqIds: [
+      "roof-hoa-damage-documentation",
+      "roof-commercial-supplement-documentation",
+      "supplements-whats-included",
+    ],
+    internalLinkNotes:
+      "HOA supplement documentation FAQ; cross-link roofing supplement checklist and playbook.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

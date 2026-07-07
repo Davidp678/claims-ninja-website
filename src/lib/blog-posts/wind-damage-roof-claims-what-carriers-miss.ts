@@ -71,6 +71,10 @@ export const windDamageRoofClaimsWhatCarriersMiss: BlogPost = {
           label: "Wind Damage Roof Documentation Guide",
           href: "/resources/guides/roofing-claims/roof-wind-damage-documentation-guide",
         },
+        {
+          label: "HOA roofing claims guide",
+          href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+        },
       ],
     },
     {

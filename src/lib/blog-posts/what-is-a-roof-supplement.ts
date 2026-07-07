@@ -62,6 +62,10 @@ export const whatIsARoofSupplement: BlogPost = {
           label: "Read the full roofing supplement playbook",
           href: "/resources/blog/roofing-supplement-playbook",
         },
+        {
+          label: "HOA roofing claims guide",
+          href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+        },
       ],
     },
   ],

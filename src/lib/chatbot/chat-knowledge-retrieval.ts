@@ -194,6 +194,15 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "missed roof damage",
     "roof scope omissions",
     "reinspection documentation",
+    "HOA roofing",
+    "condominium roofing",
+    "HOA",
+    "condo roof",
+    "common elements",
+    "master policy",
+    "board approval",
+    "multi-building roof",
+    "community association",
   ],
   dry_logs: [
     "dry log",
@@ -1324,6 +1333,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /roof-commercial-system-replacement-documentation|commercial-roofing-documentation-guide|replacing a commercial roofing system|commercial roofing system/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "HOA roof damage responsibility retrieves guide or FAQ",
+    message: "Who is responsible for roof damage in an HOA?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /hoa-roofing-claims-guide|roof-hoa-responsible-damage|responsible for roof damage in an HOA/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "HOA roof damage documentation retrieves guide or FAQ",
+    message: "How should HOA roof damage be documented?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /hoa-roofing-claims-guide|roof-hoa-damage-documentation|HOA roof damage be documented/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "HOA roofing supplement documentation retrieves guide or FAQ",
+    message: "What documentation helps HOA roofing supplements?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /hoa-roofing-claims-guide|roof-hoa-supplement-documentation|HOA roofing supplement/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "HOA partial building replacement retrieves guide or FAQ",
+    message: "Can every building be replaced if only some are damaged in an HOA?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /hoa-roofing-claims-guide|roof-hoa-partial-building-replacement|only some are damaged/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "HOA insurance roof replacement retrieves guide or FAQ",
+    message: "Does HOA insurance cover roof replacement?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /hoa-roofing-claims-guide|roof-hoa-insurance-covers-replacement|HOA insurance cover roof replacement/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

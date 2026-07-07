@@ -715,6 +715,62 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["roofing_claims", "commercial", "supplements"],
   },
+  "roof-hoa-responsible-damage": {
+    phrases: [
+      "who is responsible for roof damage in an HOA",
+      "HOA roof damage responsibility",
+      "condominium roof responsibility",
+    ],
+    keywords: ["HOA responsibility", "roof damage HOA", "common elements", "CC&R"],
+    topics: ["roofing_claims"],
+  },
+  "roof-hoa-insurance-covers-replacement": {
+    phrases: [
+      "does HOA insurance cover roof replacement",
+      "HOA master policy roof replacement",
+      "condo insurance roof replacement",
+    ],
+    keywords: ["HOA insurance", "master policy", "roof replacement HOA"],
+    topics: ["roofing_claims"],
+  },
+  "roof-hoa-damage-documentation": {
+    phrases: [
+      "how should HOA roof damage be documented",
+      "HOA roof damage documentation",
+      "document HOA roofing claim",
+      "condominium roof documentation",
+    ],
+    keywords: [
+      "HOA documentation",
+      "multi-building roof",
+      "building inventory",
+      "community association documentation",
+    ],
+    topics: ["roofing_claims", "documentation", "supplements"],
+  },
+  "roof-hoa-partial-building-replacement": {
+    phrases: [
+      "can every building be replaced if only some are damaged",
+      "HOA partial building replacement",
+      "replace all buildings HOA roof claim",
+    ],
+    keywords: ["partial building replacement", "HOA matching", "multi-building replacement"],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-hoa-supplement-documentation": {
+    phrases: [
+      "what documentation helps HOA roofing supplements",
+      "HOA roofing supplement documentation",
+      "HOA roof supplement requirements",
+    ],
+    keywords: [
+      "HOA supplement",
+      "HOA roofing supplement",
+      "multi-building mobilization",
+      "board authorization",
+    ],
+    topics: ["roofing_claims", "supplements"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

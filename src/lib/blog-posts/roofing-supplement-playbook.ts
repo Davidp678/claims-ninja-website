@@ -293,12 +293,16 @@ export const roofingSupplementPlaybook: BlogPost = {
       heading: "Measurements and reports",
       paragraphs: [
         "Third-party roof reports strengthen supplements when carrier sketches are simplified or dated. Attach the report summary table and highlight variances in squares, ridges, hips, and valleys.",
-        "Field measurements for commercial or unusual geometry should note access, parapets, and crickets omitted from aerial models. Reconciliation tables in your cover letter save adjuster time. For low-slope membrane assemblies, moisture surveys, and equipment detach-reset scope, follow the Commercial Roofing Documentation Guide.",
+        "Field measurements for commercial or unusual geometry should note access, parapets, and crickets omitted from aerial models. Reconciliation tables in your cover letter save adjuster time. For low-slope membrane assemblies, moisture surveys, and equipment detach-reset scope, follow the Commercial Roofing Documentation Guide. For multi-building HOA and condominium communities, follow the HOA Roofing Claims Guide.",
       ],
       links: [
         {
           label: "Commercial roofing documentation guide",
           href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+        },
+        {
+          label: "HOA roofing claims guide",
+          href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
         },
         {
           label: "Claim documentation and approval rates",

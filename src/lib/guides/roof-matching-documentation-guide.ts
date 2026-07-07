@@ -33,6 +33,7 @@ export const ROOF_MATCHING_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Learn how contractors can document roof matching issues with photos, material identification, availability research, repairability notes, and scope support for roofing claims.",
   relatedGuideSlugs: [
+    "hoa-roofing-claims-guide",
     "commercial-roofing-documentation-guide",
     "roof-hail-damage-documentation-guide",
     "roof-wind-damage-documentation-guide",
@@ -379,6 +380,10 @@ export const ROOF_MATCHING_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "HOA Roofing Claims Guide",
+      href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+    },
     {
       label: "Commercial Roofing Documentation Guide",
       href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
