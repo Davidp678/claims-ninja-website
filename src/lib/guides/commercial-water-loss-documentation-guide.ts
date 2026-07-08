@@ -41,6 +41,7 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
     "daily-monitoring-guide",
     "equipment-documentation-guide",
     "category-class-documentation-guide",
+    "fire-damage-documentation-guide",
   ],
   relatedBlogSlugs: [
     "why-category-3-water-claims-get-underpaid",
@@ -607,6 +608,10 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Category 3 Water Damage Documentation Guide",
       href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+    },
+    {
+      label: "Fire Damage Documentation Guide",
+      href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
     },
     {
       label: "Moisture Mapping Guide",

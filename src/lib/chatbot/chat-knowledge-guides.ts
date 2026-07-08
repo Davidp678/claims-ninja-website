@@ -114,6 +114,24 @@ const GUIDE_SLUG_BOOSTS: Record<
     phrases: ["fire claim intake", "fire intake checklist"],
     keywords: ["fire intake"],
   },
+  "fire-damage-documentation-guide": {
+    phrases: [
+      "fire damage documentation guide",
+      "document fire damage for insurance",
+      "fire damage claim documentation",
+      "fire damage photos required",
+      "fire damage supplement documentation",
+    ],
+    keywords: [
+      "fire documentation",
+      "fire damage documentation",
+      "smoke migration",
+      "soot documentation",
+      "fire supplement",
+      "structural fire damage",
+    ],
+    topics: ["fire_damage_claims", "documentation"],
+  },
   "claim-file-audit-guide": {
     phrases: ["claim file audit", "audit claim file"],
     keywords: ["claim audit", "file audit"],

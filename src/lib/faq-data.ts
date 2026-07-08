@@ -2512,7 +2512,97 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
-  // Fire Damage Claims (5)
+  // Fire Damage Claims (11)
+  {
+    id: "fire-damage-documentation-insurance",
+    category: "fire_damage_claims",
+    question: "How should fire damage be documented for insurance?",
+    answer:
+      "Document site safety clearance, exterior and origin-room photos, smoke migration by room, structural components, HVAC status, suppression water damage, contents inventory, and demolition discovery — with room labels consistent across photos, sketch, and estimate. Indexed evidence supports supplements when scope exceeds the carrier estimate.",
+    relatedLinks: [
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Fire Claim Intake Checklist",
+        href: "/resources/guides/fire-damage/fire-claim-intake-guide",
+      },
+      { label: "Fire damage solutions", href: "/solutions/fire-damage" },
+    ],
+  },
+  {
+    id: "fire-damage-photos-required",
+    category: "fire_damage_claims",
+    question: "What photos are required after a fire?",
+    answer:
+      "Carriers expect exterior elevations, origin room before mitigation, migration path through halls and upper floors, structural char and heat damage, HVAC registers and filters, water saturation from suppression, contents in place before pack-out, and demolition discovery during tear-out — all with room labels and dates in filenames.",
+    relatedLinks: [
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Photo Documentation Field Procedure",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-smoke-damage-insurance-coverage",
+    category: "fire_damage_claims",
+    question: "Does insurance pay for smoke damage?",
+    answer:
+      "Most property policies cover smoke and soot damage when documentation proves contamination beyond the fire origin — migration photos, test-clean results, and room-by-room scope. Carriers dispute localized versus systemic smoke; strong migration evidence and cleaning method notes support approval of smoke wipe, seal, and deodorization lines.",
+    relatedLinks: [
+      {
+        label: "Smoke and Soot Documentation Procedure",
+        href: "/resources/guides/fire-damage/smoke-documentation-guide",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-hidden-damage-documentation",
+    category: "fire_damage_claims",
+    question: "How should hidden fire damage be documented?",
+    answer:
+      "Photograph hidden damage contemporaneously during demolition — char in wall cavities, compromised trusses, soot in attics and crawlspaces — before repairs close access. Maintain a demolition discovery log with date-stamped photos and measurements. Engineering reports strengthen structural scope when carriers approve patch-only repairs.",
+    relatedLinks: [
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Structural Stabilization Documentation Procedure",
+        href: "/resources/guides/fire-damage/structural-stabilization-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-documentation-support",
+    category: "fire_damage_claims",
+    question: "What documentation supports fire damage supplements?",
+    answer:
+      "Supplements need indexed photos by room, migration path narrative, demolition discovery logs, HVAC and contents evidence, engineering or testing reports where used, and a cover letter mapping attachments to line items. Phased supplements with contemporaneous evidence outperform end-of-job narrative assembled after production closes access.",
+    relatedLinks: [
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Fire Damage Supplement Denial Recovery",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
   {
     id: "fire-smoke-soot",
     category: "fire_damage_claims",
@@ -2534,6 +2624,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     answer:
       "Yes. Our contractor resources library covers fire documentation, supplements, smoke and soot evidence, HVAC contamination, odor mitigation, and supplement denial recovery — organized for restoration and supplement teams.",
     relatedLinks: [
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
       {
         label: "Fire damage claim documentation guide",
         href: "/resources/blog/fire-damage-claim-documentation-guide",

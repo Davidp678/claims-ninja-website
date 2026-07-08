@@ -839,6 +839,51 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["roofing_claims", "supplements", "commercial"],
   },
+  "fire-damage-documentation-insurance": {
+    phrases: [
+      "how should fire damage be documented for insurance",
+      "document fire damage for insurance",
+      "fire damage documentation for insurance claims",
+    ],
+    keywords: ["fire documentation", "fire damage documentation"],
+    topics: ["fire_damage_claims"],
+  },
+  "fire-damage-photos-required": {
+    phrases: [
+      "what photos are required after a fire",
+      "fire damage photos required",
+      "photos after a fire insurance claim",
+    ],
+    keywords: ["fire photos", "fire damage photos"],
+    topics: ["fire_damage_claims"],
+  },
+  "fire-smoke-damage-insurance-coverage": {
+    phrases: [
+      "does insurance pay for smoke damage",
+      "smoke damage insurance coverage",
+      "insurance cover smoke damage fire",
+    ],
+    keywords: ["smoke damage insurance", "smoke coverage"],
+    topics: ["fire_damage_claims"],
+  },
+  "fire-hidden-damage-documentation": {
+    phrases: [
+      "how should hidden fire damage be documented",
+      "hidden fire damage documentation",
+      "document hidden fire damage during demolition",
+    ],
+    keywords: ["hidden fire damage", "demolition discovery"],
+    topics: ["fire_damage_claims"],
+  },
+  "fire-supplement-documentation-support": {
+    phrases: [
+      "what documentation supports fire damage supplements",
+      "fire damage supplement documentation",
+      "fire supplement documentation support",
+    ],
+    keywords: ["fire supplement documentation", "fire supplement evidence"],
+    topics: ["fire_damage_claims", "supplements"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

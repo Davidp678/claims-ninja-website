@@ -171,7 +171,16 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "mitigation invoice",
     "carrier invoice reduction",
   ],
-  fire_damage_claims: ["fire damage", "fire claim", "smoke", "soot"],
+  fire_damage_claims: [
+    "fire damage",
+    "fire claim",
+    "smoke",
+    "soot",
+    "fire documentation",
+    "pack-out",
+    "board-up",
+    "soot contamination",
+  ],
   roofing_claims: [
     "roofing",
     "roof supplement",
@@ -662,9 +671,64 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some(
         (s) =>
-          /fire-damage|guide category — fire damage|blog category — fire damage claims/i.test(
+          /fire-damage-documentation-guide|fire-damage|guide category — fire damage|blog category — fire damage claims/i.test(
             `${s.text} ${s.source}`,
           ),
+      ),
+  },
+  {
+    label: "fire damage documentation insurance retrieves guide or FAQ",
+    message: "how should fire damage be documented for insurance",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-damage-documentation|fire-damage-documentation-insurance|documented for insurance|document fire damage/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire photos required retrieves guide or FAQ",
+    message: "what photos are required after a fire",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-damage-photos-required|photos are required after a fire|photos.*after.*fire/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "smoke damage insurance coverage retrieves FAQ or guide",
+    message: "does insurance pay for smoke damage",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-smoke-damage-insurance|insurance pay for smoke|smoke damage insurance/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "hidden fire damage documentation retrieves guide or FAQ",
+    message: "how should hidden fire damage be documented",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-hidden-damage-documentation|hidden fire damage be documented|hidden fire damage/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire supplement documentation retrieves guide or FAQ",
+    message: "what documentation supports fire damage supplements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-supplement-documentation-support|documentation supports fire damage supplements|fire damage supplements/i.test(
+          `${s.text} ${s.source}`,
+        ),
       ),
   },
   {

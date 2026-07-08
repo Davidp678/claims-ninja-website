@@ -2512,7 +2512,97 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
-  // Fire Damage Claims (6)
+  // Fire Damage Claims (11)
+  {
+    id: "fire-damage-documentation-insurance",
+    category: "fire_damage_claims",
+    question: "¿Cómo se debe documentar el daño por fuego para el seguro?",
+    answer:
+      "Documente la autorización de seguridad del sitio, fotos exteriores y de la habitación de origen, migración de humo por habitación, componentes estructurales, estado del HVAC, daño por agua de supresión, inventario de contenidos y hallazgos durante la demolición, con etiquetas de habitación consistentes en fotos, croquis y estimado. La evidencia indexada respalda suplementos cuando el alcance excede el estimado de la aseguradora.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Lista de verificación de ingreso de reclamaciones por fuego",
+        href: "/resources/guides/fire-damage/fire-claim-intake-guide",
+      },
+      { label: "Soluciones para daños por fuego", href: "/solutions/fire-damage" },
+    ],
+  },
+  {
+    id: "fire-damage-photos-required",
+    category: "fire_damage_claims",
+    question: "¿Qué fotos se requieren después de un incendio?",
+    answer:
+      "Las aseguradoras esperan elevaciones exteriores, habitación de origen antes de la mitigación, ruta de migración por pasillos y pisos superiores, daño estructural por calor y carbonización, registros y filtros de HVAC, saturación por agua de supresión, contenidos en su lugar antes del pack-out y hallazgos durante la demolición, todo con etiquetas de habitación y fechas en los nombres de archivo.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Procedimiento de documentación fotográfica",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-smoke-damage-insurance-coverage",
+    category: "fire_damage_claims",
+    question: "¿El seguro paga por daños de humo?",
+    answer:
+      "La mayoría de las pólizas de propiedad cubren daños por humo y hollín cuando la documentación demuestra contaminación más allá del origen del fuego: fotos de migración, resultados de limpieza de prueba y alcance habitación por habitación. Las aseguradoras disputan humo localizado versus sistémico; evidencia sólida de migración y notas del método de limpieza respaldan la aprobación de partidas de limpieza, sellado y desodorización.",
+    relatedLinks: [
+      {
+        label: "Procedimiento de documentación de humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-hidden-damage-documentation",
+    category: "fire_damage_claims",
+    question: "¿Cómo se documenta el daño oculto por fuego?",
+    answer:
+      "Fotografíe el daño oculto de forma contemporánea durante la demolición — carbonización en cavidades, cerchas comprometidas, hollín en áticos y espacios de acceso — antes de que las reparaciones cierren el acceso. Mantenga un registro de hallazgos de demolición con fotos fechadas y mediciones. Los informes de ingeniería fortalecen el alcance estructural cuando las aseguradoras aprueban solo reparaciones parciales.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Procedimiento de documentación de estabilización estructural",
+        href: "/resources/guides/fire-damage/structural-stabilization-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-documentation-support",
+    category: "fire_damage_claims",
+    question: "¿Qué documentación respalda los suplementos por daños de fuego?",
+    answer:
+      "Los suplementos necesitan fotos indexadas por habitación, narrativa de la ruta de migración, registros de hallazgos de demolición, evidencia de HVAC y contenidos, informes de ingeniería o pruebas cuando se usen, y una carta de presentación que mapee los adjuntos a las partidas. Los suplementos por fases con evidencia contemporánea superan la narrativa al final del trabajo armada después de que la producción cierra el acceso.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Recuperación ante denegación de suplementos por fuego",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
   {
     id: "fire-smoke-soot",
     category: "fire_damage_claims",
@@ -2534,6 +2624,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     answer:
       "Sí. Nuestra biblioteca de recursos para contratistas cubre documentación de incendios, suplementos, evidencia de humo y hollín, contaminación de HVAC, mitigación de olores y recuperación ante denegación de suplementos, organizados para equipos de restauración y suplementos.",
     relatedLinks: [
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
       {
         label: "Guía de documentación de reclamaciones por daños de fuego",
         href: "/resources/blog/fire-damage-claim-documentation-guide",

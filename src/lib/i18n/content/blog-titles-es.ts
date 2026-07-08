@@ -37,6 +37,14 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Reclamaciones de techo por viento: lo que las aseguradoras pasan por alto",
   "roof-matching-vs-repairability-when-to-supplement":
     "Coincidencia de techo vs reparabilidad: cuándo suplementar",
+  "fire-damage-claim-documentation-guide":
+    "Guía de documentación de reclamaciones por daños de fuego",
+  "fire-damage-supplement-playbook-for-contractors":
+    "Manual de suplementos por daños de fuego para contratistas",
+  "smoke-and-soot-damage-documentation-guide":
+    "Guía de documentación de daños por humo y hollín",
+  "fire-damage-supplement-denial-recovery":
+    "Recuperación ante denegación de suplementos por daños de fuego",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

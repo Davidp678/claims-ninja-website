@@ -41,6 +41,7 @@ export const COMMERCIAL_ROOFING_DOCUMENTATION_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "hoa-roofing-claims-guide",
     "multi-building-roofing-claims-guide",
+    "fire-damage-documentation-guide",
     "roof-matching-documentation-guide",
     "roof-repairability-documentation-guide",
     "roof-hail-damage-documentation-guide",
@@ -470,6 +471,10 @@ export const COMMERCIAL_ROOFING_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Fire Damage Documentation Guide",
+      href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+    },
     {
       label: "HOA Roofing Claims Guide",
       href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",

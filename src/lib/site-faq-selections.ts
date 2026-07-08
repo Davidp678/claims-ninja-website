@@ -234,6 +234,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
   fireDamage: {
     topic: "fire damage claims",
     faqIds: [
+      "fire-damage-documentation-insurance",
+      "fire-damage-photos-required",
+      "fire-smoke-damage-insurance-coverage",
+      "fire-hidden-damage-documentation",
+      "fire-supplement-documentation-support",
       "fire-smoke-soot",
       "resources-fire-damage-documentation",
       "fire-structural-vs-contents",
@@ -311,6 +316,7 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
     topic: "contractor claims operations",
     faqIds: [
       "resources-water-mitigation-documentation",
+      "fire-damage-documentation-insurance",
       "resources-fire-damage-documentation",
       "help-denied-supplements",
       "supplements-whats-included",
@@ -321,6 +327,8 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
     topic: "claims documentation and supplements",
     faqIds: [
       "documentation-essentials",
+      "fire-damage-documentation-insurance",
+      "fire-supplement-documentation-support",
       "supplements-process",
       "documentation-photos",
       "getting-started-onboarding",

@@ -170,6 +170,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Aprenda cuándo solicitar una reinspección de daños por agua, qué documentación preparar, cómo presentar daños adicionales y cómo los contratistas pueden respaldar una revisión precisa de la reclamación.",
   },
+  "fire-damage/fire-damage-documentation-guide": {
+    title: "Guía de documentación de daños por fuego",
+    excerpt:
+      "Aprenda cómo documentar reclamaciones de seguro por daños de fuego residenciales y comerciales: inspecciones, evidencia estructural, migración de humo y hollín, contenidos, respaldo de estimación, suplementos y recuperación de reclamaciones.",
+  },
   "fire-damage/fire-claim-intake-guide": {
     title: "Lista de verificación de admisión de reclamaciones por incendio",
     excerpt:

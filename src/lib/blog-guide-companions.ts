@@ -220,20 +220,41 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "fire-damage-claim-documentation-guide": {
     intro:
-      "You've learned fire claim documentation fundamentals. Now execute the intake and specialty procedures that defend migration, HVAC, and contents scope.",
+      "You've learned fire claim documentation fundamentals. Now execute the cornerstone documentation standard and specialty procedures that defend migration, HVAC, and contents scope.",
     guideSlugs: [
+      "fire-damage-documentation-guide",
       "fire-claim-intake-guide",
       "smoke-documentation-guide",
       "hvac-contamination-guide",
-      "contents-documentation-guide",
     ],
   },
   "smoke-and-soot-damage-documentation-guide": {
     intro:
-      "You've learned smoke and soot documentation strategy. Now follow the field procedures for contamination evidence, odor scope, and HVAC review.",
+      "You've learned smoke and soot documentation strategy. Now follow the cornerstone fire guide and field procedures for contamination evidence, odor scope, and HVAC review.",
     guideSlugs: [
+      "fire-damage-documentation-guide",
       "smoke-documentation-guide",
       "odor-documentation-guide",
+      "hvac-contamination-guide",
+    ],
+  },
+  "fire-damage-supplement-playbook-for-contractors": {
+    intro:
+      "You've learned fire supplement strategy. Now apply the documentation standard and field procedures that support supplement submission and scope recovery.",
+    guideSlugs: [
+      "fire-damage-documentation-guide",
+      "fire-claim-intake-guide",
+      "structural-stabilization-documentation-guide",
+      "contents-documentation-guide",
+    ],
+  },
+  "fire-damage-supplement-denial-recovery": {
+    intro:
+      "You've learned denial recovery workflow. Now rebuild your file with the documentation standard and specialty procedures adjusters expect on resubmission.",
+    guideSlugs: [
+      "fire-damage-documentation-guide",
+      "fire-claim-intake-guide",
+      "smoke-documentation-guide",
       "hvac-contamination-guide",
     ],
   },

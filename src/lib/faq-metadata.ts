@@ -1208,6 +1208,62 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Multi-building supplement documentation FAQ; cross-link commercial and HOA supplement FAQs.",
   },
+
+  // Fire Damage Claims
+  "fire-damage-documentation-insurance": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["fire-damage/fire-damage-documentation-guide"],
+    relatedFaqIds: [
+      "fire-damage-photos-required",
+      "fire-smoke-soot",
+      "fire-hidden-damage-documentation",
+      "fire-supplement-documentation-support",
+    ],
+    internalLinkNotes:
+      "Primary cornerstone FAQ; anchor for fire damage documentation guide.",
+  },
+  "fire-damage-photos-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-documentation-guide",
+      "general-claims/photo-documentation-standards-guide",
+    ],
+    relatedFaqIds: ["fire-damage-documentation-insurance", "fire-smoke-soot"],
+    internalLinkNotes:
+      "Photo requirements FAQ; cross-link photo documentation field procedure.",
+  },
+  "fire-smoke-damage-insurance-coverage": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-documentation-guide",
+      "fire-damage/smoke-documentation-guide",
+    ],
+    relatedFaqIds: ["fire-smoke-soot", "fire-odor-deodorization"],
+    internalLinkNotes:
+      "Smoke coverage FAQ; cross-link smoke documentation procedure and odor FAQ.",
+  },
+  "fire-hidden-damage-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-documentation-guide",
+      "fire-damage/structural-stabilization-documentation-guide",
+    ],
+    relatedFaqIds: ["fire-demo-rebuild", "fire-supplement-documentation-support"],
+    internalLinkNotes:
+      "Hidden damage FAQ; cross-link demo/rebuild and supplement documentation FAQs.",
+  },
+  "fire-supplement-documentation-support": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["fire-damage/fire-damage-documentation-guide"],
+    relatedFaqIds: [
+      "fire-damage-documentation-insurance",
+      "fire-hidden-damage-documentation",
+      "fire-demo-rebuild",
+      "help-denied-supplements",
+    ],
+    internalLinkNotes:
+      "Supplement documentation FAQ; anchor for fire supplement playbook and denial recovery content.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

@@ -18,8 +18,8 @@ describe("blog-guide-companions", () => {
     assert.equal(ok, true, errors.join("; "));
   });
 
-  it("maps exactly 29 blog articles", () => {
-    assert.equal(getAllBlogGuideCompanionBlogSlugs().length, 29);
+  it("maps exactly 31 blog articles", () => {
+    assert.equal(getAllBlogGuideCompanionBlogSlugs().length, 31);
   });
 
   it("resolves every blog slug to an existing post", () => {
