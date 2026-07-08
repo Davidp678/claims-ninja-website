@@ -36,6 +36,7 @@ export const ROOF_REINSPECTION_GUIDE = defineGuide({
     "Learn when to request a roof reinspection, what documentation to prepare, how to present additional damage, and how contractors can support accurate roofing claim review.",
   relatedGuideSlugs: [
     "hoa-roofing-claims-guide",
+    "multi-building-roofing-claims-guide",
     "commercial-roofing-documentation-guide",
     "roof-hail-damage-documentation-guide",
     "roof-wind-damage-documentation-guide",
@@ -412,6 +413,10 @@ export const ROOF_REINSPECTION_GUIDE = defineGuide({
     {
       label: "HOA Roofing Claims Guide",
       href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+    },
+    {
+      label: "Multi-Building Roofing Claims Guide",
+      href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
     },
     {
       label: "Commercial Roofing Documentation Guide",

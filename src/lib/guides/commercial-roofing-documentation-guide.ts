@@ -40,6 +40,7 @@ export const COMMERCIAL_ROOFING_DOCUMENTATION_GUIDE = defineGuide({
     "Document commercial roofing insurance claims: membrane systems, moisture surveys, core samples, equipment detach-reset, interior water migration, and field evidence for supplement recovery.",
   relatedGuideSlugs: [
     "hoa-roofing-claims-guide",
+    "multi-building-roofing-claims-guide",
     "roof-matching-documentation-guide",
     "roof-repairability-documentation-guide",
     "roof-hail-damage-documentation-guide",
@@ -472,6 +473,10 @@ export const COMMERCIAL_ROOFING_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "HOA Roofing Claims Guide",
       href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+    },
+    {
+      label: "Multi-Building Roofing Claims Guide",
+      href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
     },
     {
       label: "Roof Matching Documentation Guide",

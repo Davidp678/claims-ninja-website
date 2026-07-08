@@ -105,6 +105,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Manual operativo para reclamaciones de seguro de techado en HOAs y condominios: propiedad compartida, documentación multi-edificio, comunicación con la junta, estimación y recuperación por suplementos.",
   },
+  "roofing-claims/multi-building-roofing-claims-guide": {
+    title: "Guía de reclamaciones de techado multi-edificio para contratistas",
+    excerpt:
+      "Manual operativo para documentar, estimar y gestionar reclamaciones de seguro de techado en complejos de apartamentos, campus comerciales y propiedades con múltiples estructuras.",
+  },
   "water-damage/mitigation-intake-checklist": {
     title: "Lista de verificación de admisión de mitigación de agua",
     excerpt:

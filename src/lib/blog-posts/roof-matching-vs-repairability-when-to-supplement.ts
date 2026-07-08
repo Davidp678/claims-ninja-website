@@ -74,12 +74,16 @@ export const roofMatchingVsRepairabilityWhenToSupplement: BlogPost = {
       heading: "When matching limits partial scope",
       paragraphs: [
         "Matching documentation captures material identification, color and profile comparison, discontinued product research, and slope-by-slope appearance differences when partial replacement leaves visible lines. Carriers evaluate matching against field photos and availability records — not contractor opinion alone.",
-        "On HOA communities with multiple buildings, matching disputes intensify when damaged and undamaged structures show different weathering — document elevation comparisons per building.",
+        "On multi-building properties and HOA communities, matching disputes intensify when damaged and undamaged structures show different weathering — document elevation comparisons per building.",
       ],
       links: [
         {
           label: "Roof Matching Documentation Guide",
           href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+        },
+        {
+          label: "Multi-building roofing claims guide",
+          href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
         },
         {
           label: "HOA roofing claims guide",

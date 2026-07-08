@@ -964,6 +964,101 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Multi-Building Roofing Claims (5)
+  {
+    id: "roof-multi-building-carrier-handling",
+    category: "roofing_claims",
+    question: "¿Cómo manejan las aseguradoras las reclamaciones de techado multi-edificio?",
+    answer:
+      "Las aseguradoras tratan las reclamaciones de techado multi-edificio con mayor escrutinio: ajustadores especialistas, revisión de ingeniería, muestreo representativo en subconjuntos de edificios y tablas de alcance agregadas que pueden omitir detalle por estructura. Los revisores de escritorio esperan mapas del sitio, inventarios de edificios, índices fotográficos por estructura y reconciliación de mediciones — no documentación residencial en una sola carpeta. Documente cada edificio con estándares idénticos para que las disputas de muestreo no excluyan estructuras aparentemente intactas con condiciones de campo idénticas.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de techado multi-edificio",
+        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+      },
+      {
+        label: "Guía de documentación de techado comercial",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-multi-building-partial-replacement",
+    category: "roofing_claims",
+    question: "¿Puede el seguro reemplazar todos los techos si solo algunos edificios están dañados?",
+    answer:
+      "Las aseguradoras suelen aprobar reemplazo solo en edificios con daño documentado por tormenta, pero los contratistas pueden respaldar un alcance más amplio cuando aplican argumentos de coincidencia, reparabilidad, límites de parche del fabricante o apariencia uniforme en líneas de vista del campus. Documente comparaciones de elevación, avisos de materiales descontinuados y resultados de pruebas de reparabilidad por edificio — no solo en muestras seleccionadas por la aseguradora. Las disputas de reemplazo parcial en complejos de apartamentos, parques de oficinas y campus hoteleros siguen los mismos estándares de evidencia indexada por edificio que las reclamaciones de coincidencia en estructuras individuales.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de techado multi-edificio",
+        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+      },
+      {
+        label: "Guía de documentación de coincidencia de techo",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de reparabilidad de techo",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-multi-building-apartment-documentation",
+    category: "roofing_claims",
+    question: "¿Cómo deben los contratistas documentar daños de techo en complejos de apartamentos?",
+    answer:
+      "La documentación de techado en complejos de apartamentos comienza con un inventario de edificios y mapa del sitio etiquetado — cada estructura numerada consistentemente con los registros de administración de la propiedad. Fotografíe pares de panorámica y primer plano para cada elevación de cada edificio en carpetas indexadas separadas. Realice cuadrados de prueba por edificio en pérdidas por granizo, correlacione manchas interiores de pisos superiores con zonas de techo y registre la coordinación de acceso de inquilinos contemporáneamente. Reconcilie mediciones por edificio con el croquis de la aseguradora y vincule cada línea del estimado con evidencia fotográfica específica del edificio antes de enviar el suplemento.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de techado multi-edificio",
+        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+      },
+      {
+        label: "Estándar de documentación de reclamaciones de techado",
+        href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-multi-building-matching",
+    category: "roofing_claims",
+    question: "¿Qué respalda la coincidencia entre múltiples edificios?",
+    answer:
+      "La coincidencia entre múltiples edificios requiere fotos de elevación que muestren diferencias de color, perfil y desgaste entre estructuras reemplazadas y no reemplazadas; cartas de proveedores confirmando materiales descontinuados; y comparaciones de línea de vista del campus mostrando desajuste visible desde áreas comunes. Documente sistemas de techo y edades idénticas entre edificios para respaldar argumentos de apariencia uniforme. Cuando solo se reemplazan edificios dañados, fotografíe el contraste desde nivel del suelo y edificios adyacentes — no solo primeros planos en la estructura reparada.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de techado multi-edificio",
+        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+      },
+      {
+        label: "Guía de documentación de coincidencia de techo",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-multi-building-supplement-documentation",
+    category: "roofing_claims",
+    question: "¿Qué documentación ayuda en suplementos grandes de techado comercial?",
+    answer:
+      "Los suplementos grandes de techado multi-edificio requieren tablas de comparación de alcance indexadas por edificio que vinculen líneas del estimado de la aseguradora con evidencia fotográfica, mediciones y registros de movilización por estructura. Incluya fotos de configuración de grúa, restricciones de almacenamiento de materiales, cronogramas de producción por fases, fotos progresivas de desmontaje para daños ocultos y registros de retrasos de acceso en campus ocupados. Ejecute la lista de verificación de suplementos de techado antes del envío — la falta de indexación por edificio y movilizaciones no documentadas son las denegaciones más comunes en suplementos multi-edificio.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de techado multi-edificio",
+        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+      },
+      {
+        label: "Lista de verificación de suplementos de techado",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+      {
+        label: "Manual de suplementos de techado",
+        href: "/resources/blog/roofing-supplement-playbook",
+      },
+    ],
+  },
+
   // Water Damage Claims (23)
   {
     id: "water-mitigation-scope",

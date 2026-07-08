@@ -324,6 +324,28 @@ const GUIDE_SLUG_BOOSTS: Record<
     ],
     topics: ["roofing_claims", "supplements", "documentation"],
   },
+  "multi-building-roofing-claims-guide": {
+    phrases: [
+      "multi-building roofing claims",
+      "apartment complex roof claim",
+      "multi-building roof documentation",
+      "campus roofing claim",
+      "office park roof insurance",
+      "how do insurance companies handle multi-building roof claims",
+      "document apartment complex roof damage",
+    ],
+    keywords: [
+      "multi-building roofing",
+      "apartment complex",
+      "portfolio roofing",
+      "sampling dispute",
+      "phased claim",
+      "campus roofing",
+      "multi-structure property",
+      "building inventory",
+    ],
+    topics: ["roofing_claims", "supplements", "documentation", "commercial"],
+  },
   "moisture-mapping-guide": {
     phrases: ["moisture mapping", "moisture map procedure", "how do i moisture map"],
     keywords: ["moisture mapping", "moisture map"],

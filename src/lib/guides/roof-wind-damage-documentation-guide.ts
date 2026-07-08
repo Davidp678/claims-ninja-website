@@ -33,6 +33,7 @@ export const ROOF_WIND_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     "Document wind damage on roofing insurance claims: creased tabs, lifted seals, directional patterns, slope photos, and field evidence for storm supplement review.",
   relatedGuideSlugs: [
     "hoa-roofing-claims-guide",
+    "multi-building-roofing-claims-guide",
     "commercial-roofing-documentation-guide",
     "roof-hail-damage-documentation-guide",
     "roof-reinspection-guide",
@@ -279,6 +280,10 @@ export const ROOF_WIND_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "HOA Roofing Claims Guide",
       href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+    },
+    {
+      label: "Multi-Building Roofing Claims Guide",
+      href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
     },
     {
       label: "Commercial Roofing Documentation Guide",

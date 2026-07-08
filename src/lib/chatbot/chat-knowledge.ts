@@ -771,6 +771,74 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["roofing_claims", "supplements"],
   },
+  "roof-multi-building-carrier-handling": {
+    phrases: [
+      "how do insurance companies handle multi-building roof claims",
+      "multi-building roof claim carrier review",
+      "insurance multi-building roofing claim",
+    ],
+    keywords: [
+      "multi-building carrier",
+      "sampling dispute",
+      "portfolio roofing claim",
+      "campus roof claim",
+    ],
+    topics: ["roofing_claims", "documentation"],
+  },
+  "roof-multi-building-partial-replacement": {
+    phrases: [
+      "can insurance replace every roof if only some buildings are damaged",
+      "multi-building partial roof replacement",
+      "replace all buildings roof claim",
+    ],
+    keywords: [
+      "partial building replacement",
+      "multi-building matching",
+      "campus roof replacement",
+    ],
+    topics: ["roofing_claims", "supplements"],
+  },
+  "roof-multi-building-apartment-documentation": {
+    phrases: [
+      "how should contractors document apartment complex roof damage",
+      "apartment complex roof documentation",
+      "document apartment roof damage insurance",
+    ],
+    keywords: [
+      "apartment complex roofing",
+      "multi-building documentation",
+      "building inventory",
+      "per-building photos",
+    ],
+    topics: ["roofing_claims", "documentation", "supplements"],
+  },
+  "roof-multi-building-matching": {
+    phrases: [
+      "what supports matching across multiple buildings",
+      "multi-building roof matching",
+      "matching roofs across campus",
+    ],
+    keywords: [
+      "multi-building matching",
+      "uniform appearance",
+      "campus roof matching",
+    ],
+    topics: ["roofing_claims", "documentation", "supplements"],
+  },
+  "roof-multi-building-supplement-documentation": {
+    phrases: [
+      "what documentation helps large commercial roofing supplements",
+      "multi-building roofing supplement documentation",
+      "large commercial roof supplement documentation",
+    ],
+    keywords: [
+      "multi-building supplement",
+      "campus roofing supplement",
+      "building-indexed scope",
+      "multi-building mobilization",
+    ],
+    topics: ["roofing_claims", "supplements", "commercial"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

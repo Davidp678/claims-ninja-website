@@ -40,9 +40,9 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "roofing-supplement-playbook": {
     intro:
-      "You've learned the roofing supplement strategy. Now execute the checklists and documentation standards that turn scope gaps into paid line items — including multi-building HOA and community association files.",
+      "You've learned the roofing supplement strategy. Now execute the checklists and documentation standards that turn scope gaps into paid line items — including multi-building campuses, apartment complexes, and community association files.",
     guideSlugs: [
-      "hoa-roofing-claims-guide",
+      "multi-building-roofing-claims-guide",
       "roofing-supplement-checklist",
       "roofing-documentation-guide",
       "commercial-roofing-documentation-guide",
@@ -50,42 +50,42 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "what-is-a-roof-supplement": {
     intro:
-      "You've learned what a roof supplement is and when it applies. Now follow the field documentation procedures that support supplement approvals.",
+      "You've learned what a roof supplement is and when it applies. Now follow the field documentation procedures that support supplement approvals — including multi-building and campus roofing files.",
     guideSlugs: [
       "roofing-documentation-guide",
       "roof-measurement-documentation-guide",
       "roof-matching-documentation-guide",
-      "hoa-roofing-claims-guide",
+      "multi-building-roofing-claims-guide",
     ],
   },
   "hail-damage-roof-claims-documentation-supplement": {
     intro:
-      "You've learned how to document hail damage on roofing claims. Now execute the field documentation standard that turns impact evidence into supplement-ready files.",
+      "You've learned how to document hail damage on roofing claims. Now execute the field documentation standard that turns impact evidence into supplement-ready files — including multi-building properties.",
     guideSlugs: [
       "roof-hail-damage-documentation-guide",
       "roofing-supplement-checklist",
       "roof-reinspection-guide",
-      "hoa-roofing-claims-guide",
+      "multi-building-roofing-claims-guide",
     ],
   },
   "wind-damage-roof-claims-what-carriers-miss": {
     intro:
-      "You've learned what carriers miss on wind damage roof claims. Now follow the documentation procedures that capture creases, seal failures, and accessory scope.",
+      "You've learned what carriers miss on wind damage roof claims. Now follow the documentation procedures that capture creases, seal failures, and accessory scope — including multi-building campuses.",
     guideSlugs: [
       "roof-wind-damage-documentation-guide",
-      "hoa-roofing-claims-guide",
+      "multi-building-roofing-claims-guide",
       "roofing-supplement-checklist",
       "roof-reinspection-guide",
     ],
   },
   "roof-matching-vs-repairability-when-to-supplement": {
     intro:
-      "You've learned when matching and repairability disputes apply. Now execute the documentation standards that support partial-replacement supplement arguments — including HOA communities with multiple buildings.",
+      "You've learned when matching and repairability disputes apply. Now execute the documentation standards that support partial-replacement supplement arguments — including multi-building properties and HOA communities.",
     guideSlugs: [
       "roof-matching-documentation-guide",
       "roof-repairability-documentation-guide",
       "roof-reinspection-guide",
-      "hoa-roofing-claims-guide",
+      "multi-building-roofing-claims-guide",
     ],
   },
   "water-damage-mitigation-supplement-playbook": {

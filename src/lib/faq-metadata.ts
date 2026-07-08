@@ -1139,6 +1139,75 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "HOA supplement documentation FAQ; cross-link roofing supplement checklist and playbook.",
   },
+  "roof-multi-building-carrier-handling": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["roofing-claims/multi-building-roofing-claims-guide"],
+    relatedFaqIds: [
+      "roof-multi-building-apartment-documentation",
+      "roof-multi-building-partial-replacement",
+      "roof-commercial-damage-documentation",
+    ],
+    internalLinkNotes:
+      "Anchor FAQ for multi-building carrier handling; cross-link commercial and apartment documentation.",
+  },
+  "roof-multi-building-partial-replacement": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "roofing-claims/multi-building-roofing-claims-guide",
+      "roofing-claims/roof-matching-documentation-guide",
+      "roofing-claims/roof-repairability-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-multi-building-matching",
+      "roof-hoa-partial-building-replacement",
+      "roof-matching-insurance-claim",
+    ],
+    internalLinkNotes:
+      "Partial replacement across campus; cross-link HOA partial replacement and matching FAQs.",
+  },
+  "roof-multi-building-apartment-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/multi-building-roofing-claims-guide",
+      "roofing-claims/roofing-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-multi-building-carrier-handling",
+      "roof-multi-building-supplement-documentation",
+      "roof-hoa-damage-documentation",
+    ],
+    internalLinkNotes:
+      "Apartment complex documentation FAQ; cross-link HOA and supplement documentation.",
+  },
+  "roof-multi-building-matching": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/multi-building-roofing-claims-guide",
+      "roofing-claims/roof-matching-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "roof-multi-building-partial-replacement",
+      "roof-matching-insurance-claim",
+      "roof-hoa-partial-building-replacement",
+    ],
+    internalLinkNotes:
+      "Multi-building matching FAQ; cross-link matching guide and partial replacement FAQs.",
+  },
+  "roof-multi-building-supplement-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "roofing-claims/multi-building-roofing-claims-guide",
+      "roofing-claims/roofing-supplement-checklist",
+    ],
+    relatedFaqIds: [
+      "roof-multi-building-apartment-documentation",
+      "roof-commercial-supplement-documentation",
+      "roof-hoa-supplement-documentation",
+      "supplements-whats-included",
+    ],
+    internalLinkNotes:
+      "Multi-building supplement documentation FAQ; cross-link commercial and HOA supplement FAQs.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

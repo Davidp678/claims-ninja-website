@@ -2,6 +2,7 @@ import type { Guide } from "@/lib/guide-types";
 import { defineGuide, GUIDE_PUBLISHED_AT } from "@/lib/guides/guide-builder";
 import { COMMERCIAL_ROOFING_DOCUMENTATION_GUIDE } from "@/lib/guides/commercial-roofing-documentation-guide";
 import { HOA_ROOFING_CLAIMS_GUIDE } from "@/lib/guides/hoa-roofing-claims-guide";
+import { MULTI_BUILDING_ROOFING_CLAIMS_GUIDE } from "@/lib/guides/multi-building-roofing-claims-guide";
 import { ROOF_HAIL_DAMAGE_DOCUMENTATION_GUIDE } from "@/lib/guides/roof-hail-damage-documentation-guide";
 import { ROOF_MATCHING_DOCUMENTATION_GUIDE } from "@/lib/guides/roof-matching-documentation-guide";
 import { ROOF_REPAIRABILITY_DOCUMENTATION_GUIDE } from "@/lib/guides/roof-repairability-documentation-guide";
@@ -19,6 +20,7 @@ export const ROOFING_CLAIMS_GUIDES = [
   ROOF_MATCHING_DOCUMENTATION_GUIDE,
   COMMERCIAL_ROOFING_DOCUMENTATION_GUIDE,
   HOA_ROOFING_CLAIMS_GUIDE,
+  MULTI_BUILDING_ROOFING_CLAIMS_GUIDE,
   defineGuide({
     slug: "roofing-supplement-checklist",
     title: "Roofing Supplement Checklist",
@@ -42,8 +44,9 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Pre-submission roofing supplement checklist: measurement reconciliation, missed line items, documentation gates, and carrier-ready package standards for storm and replacement claims.",
     relatedGuideSlugs: [
-      "hoa-roofing-claims-guide",
-      "commercial-roofing-documentation-guide",
+    "hoa-roofing-claims-guide",
+    "multi-building-roofing-claims-guide",
+    "commercial-roofing-documentation-guide",
       "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
@@ -299,8 +302,9 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Roofing claim documentation standard for contractors: elevation photos, tear-off sequences, pitch labels, measurement files, and narrative practices that improve supplement approvals.",
     relatedGuideSlugs: [
-      "hoa-roofing-claims-guide",
-      "commercial-roofing-documentation-guide",
+    "hoa-roofing-claims-guide",
+    "multi-building-roofing-claims-guide",
+    "commercial-roofing-documentation-guide",
       "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
@@ -521,8 +525,9 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "On-site checklist for roofing claim re-inspections: visit confirmation, evidence staging, crew roles, adjuster walk-through, and 24-hour closeout for supplement approval.",
     relatedGuideSlugs: [
-      "hoa-roofing-claims-guide",
-      "commercial-roofing-documentation-guide",
+    "hoa-roofing-claims-guide",
+    "multi-building-roofing-claims-guide",
+    "commercial-roofing-documentation-guide",
       "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
@@ -749,8 +754,9 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Document roofing code upgrades for insurance supplements: ice barrier, ventilation, underlayment, and fastening requirements with local citations and tear-off proof.",
     relatedGuideSlugs: [
-      "hoa-roofing-claims-guide",
-      "commercial-roofing-documentation-guide",
+    "hoa-roofing-claims-guide",
+    "multi-building-roofing-claims-guide",
+    "commercial-roofing-documentation-guide",
       "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
@@ -967,8 +973,9 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Document steep and high roofing charges for insurance supplements: pitch measurement, elevation photos, staging evidence, and Xactimate modifier alignment.",
     relatedGuideSlugs: [
-      "hoa-roofing-claims-guide",
-      "commercial-roofing-documentation-guide",
+    "hoa-roofing-claims-guide",
+    "multi-building-roofing-claims-guide",
+    "commercial-roofing-documentation-guide",
       "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",
@@ -1162,8 +1169,9 @@ export const ROOFING_CLAIMS_GUIDES = [
     seoDescription:
       "Document roof measurements for insurance claims: order reports, verify accuracy, reconcile to carrier sketches, and support supplement quantity revisions.",
     relatedGuideSlugs: [
-      "hoa-roofing-claims-guide",
-      "commercial-roofing-documentation-guide",
+    "hoa-roofing-claims-guide",
+    "multi-building-roofing-claims-guide",
+    "commercial-roofing-documentation-guide",
       "roof-reinspection-guide",
       "roof-repairability-documentation-guide",
       "roof-matching-documentation-guide",

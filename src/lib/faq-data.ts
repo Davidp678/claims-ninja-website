@@ -964,6 +964,101 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
+  // Multi-Building Roofing Claims (5)
+  {
+    id: "roof-multi-building-carrier-handling",
+    category: "roofing_claims",
+    question: "How do insurance companies handle multi-building roof claims?",
+    answer:
+      "Carriers treat multi-building roof claims with higher scrutiny: specialist adjusters, engineer review, representative sampling on subsets of buildings, and aggregated scope tables that may omit building-level detail. Desk reviewers expect site maps, building inventories, per-structure photo indexes, and measurement reconciliation — not single-folder residential documentation. Document every building with identical standards so sampling disputes cannot exclude undamaged-looking structures with identical field conditions.",
+    relatedLinks: [
+      {
+        label: "Multi-building roofing claims guide",
+        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+      },
+      {
+        label: "Commercial roofing documentation guide",
+        href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-multi-building-partial-replacement",
+    category: "roofing_claims",
+    question: "Can insurance replace every roof if only some buildings are damaged?",
+    answer:
+      "Carriers often approve replacement only on buildings with documented storm damage, but contractors may support broader scope when matching, repairability, manufacturer patch limits, or uniform appearance arguments apply across campus sightlines. Document elevation comparisons, supplier discontinued notices, and repairability test results per building — not only on carrier-selected samples. Partial replacement disputes on apartment complexes, office parks, and hotel campuses follow the same building-indexed evidence standards as single-structure matching claims.",
+    relatedLinks: [
+      {
+        label: "Multi-building roofing claims guide",
+        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+      },
+      {
+        label: "Roof matching documentation guide",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+      {
+        label: "Roof repairability documentation guide",
+        href: "/resources/guides/roofing-claims/roof-repairability-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-multi-building-apartment-documentation",
+    category: "roofing_claims",
+    question: "How should contractors document apartment complex roof damage?",
+    answer:
+      "Apartment complex roof documentation starts with a building inventory and labeled site map — every structure numbered consistently with property management records. Photograph overview and close-up pairs for every elevation on every building in separate indexed folders. Perform test squares per building on hail losses, correlate interior top-floor stains to roof zones, and log tenant access coordination contemporaneously. Reconcile measurements per building to the carrier sketch and tie every estimate line to building-specific photo evidence before supplement submission.",
+    relatedLinks: [
+      {
+        label: "Multi-building roofing claims guide",
+        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+      },
+      {
+        label: "Roofing claim documentation standard",
+        href: "/resources/guides/roofing-claims/roofing-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-multi-building-matching",
+    category: "roofing_claims",
+    question: "What supports matching across multiple buildings?",
+    answer:
+      "Matching across multiple buildings requires elevation photos showing color, profile, and weathering differences between replaced and unreplaced structures; supplier letters confirming discontinued materials; and campus sightline comparisons showing visible mismatch from common areas. Document identical roof systems and ages across buildings to support uniform appearance arguments. When only damaged buildings are replaced, photograph the contrast from ground level and adjacent buildings — not only close-ups on the repaired structure.",
+    relatedLinks: [
+      {
+        label: "Multi-building roofing claims guide",
+        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+      },
+      {
+        label: "Roof matching documentation guide",
+        href: "/resources/guides/roofing-claims/roof-matching-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "roof-multi-building-supplement-documentation",
+    category: "roofing_claims",
+    question: "What documentation helps large commercial roofing supplements?",
+    answer:
+      "Large multi-building roofing supplements require building-indexed scope comparison tables linking carrier estimate lines to per-building photo evidence, measurements, and mobilization logs. Include crane setup photos, material staging constraints, phased production schedules, progressive tear-off photos for hidden damage, and access delay records across occupied campuses. Run the Roofing Supplement Checklist before submission — missing building-level indexing and undocumented mobilizations are the most common multi-building supplement denials.",
+    relatedLinks: [
+      {
+        label: "Multi-building roofing claims guide",
+        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+      },
+      {
+        label: "Roofing supplement checklist",
+        href: "/resources/guides/roofing-claims/roofing-supplement-checklist",
+      },
+      {
+        label: "Roofing supplement playbook",
+        href: "/resources/blog/roofing-supplement-playbook",
+      },
+    ],
+  },
+
   // Water Damage Claims (23)
   {
     id: "water-mitigation-scope",

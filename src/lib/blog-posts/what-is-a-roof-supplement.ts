@@ -63,6 +63,10 @@ export const whatIsARoofSupplement: BlogPost = {
           href: "/resources/blog/roofing-supplement-playbook",
         },
         {
+          label: "Multi-building roofing claims guide",
+          href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+        },
+        {
           label: "HOA roofing claims guide",
           href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
         },

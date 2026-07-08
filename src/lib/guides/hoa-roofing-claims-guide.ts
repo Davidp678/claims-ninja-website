@@ -35,6 +35,7 @@ export const HOA_ROOFING_CLAIMS_GUIDE = defineGuide({
     "Contractor-focused playbook for HOA and condominium roofing insurance claims: shared ownership, multi-building documentation, board communication, estimating, and supplement recovery.",
   relatedGuideSlugs: [
     "commercial-roofing-documentation-guide",
+    "multi-building-roofing-claims-guide",
     "roof-matching-documentation-guide",
     "roof-repairability-documentation-guide",
     "roof-hail-damage-documentation-guide",
@@ -438,6 +439,10 @@ export const HOA_ROOFING_CLAIMS_GUIDE = defineGuide({
     {
       label: "Commercial Roofing Documentation Guide",
       href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+    },
+    {
+      label: "Multi-Building Roofing Claims Guide",
+      href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
     },
     {
       label: "Roof Matching Documentation Guide",

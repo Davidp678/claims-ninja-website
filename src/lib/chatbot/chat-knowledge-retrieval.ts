@@ -203,6 +203,12 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "board approval",
     "multi-building roof",
     "community association",
+    "apartment complex roof",
+    "office park roof",
+    "industrial campus roof",
+    "multi-building portfolio",
+    "representative sampling",
+    "campus roofing",
   ],
   dry_logs: [
     "dry log",
@@ -1388,6 +1394,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /hoa-roofing-claims-guide|roof-hoa-insurance-covers-replacement|HOA insurance cover roof replacement/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multi-building carrier handling retrieves guide or FAQ",
+    message: "How do insurance companies handle multi-building roof claims?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multi-building-roofing-claims-guide|roof-multi-building-carrier-handling|multi-building roof claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multi-building partial replacement retrieves guide or FAQ",
+    message: "Can insurance replace every roof if only some buildings are damaged?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multi-building-roofing-claims-guide|roof-multi-building-partial-replacement|only some buildings are damaged/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "apartment complex roof documentation retrieves guide or FAQ",
+    message: "How should contractors document apartment complex roof damage?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multi-building-roofing-claims-guide|roof-multi-building-apartment-documentation|apartment complex roof damage/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multi-building matching retrieves guide or FAQ",
+    message: "What supports matching across multiple buildings?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multi-building-roofing-claims-guide|roof-multi-building-matching|matching across multiple buildings/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multi-building supplement documentation retrieves guide or FAQ",
+    message: "What documentation helps large commercial roofing supplements?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multi-building-roofing-claims-guide|roof-multi-building-supplement-documentation|large commercial roofing supplements/i.test(
           `${s.text} ${s.source}`,
         ),
       ),
