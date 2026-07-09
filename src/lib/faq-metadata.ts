@@ -1260,9 +1260,76 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "fire-hidden-damage-documentation",
       "fire-demo-rebuild",
       "help-denied-supplements",
+      "smoke-damage-supplement-documentation",
     ],
     internalLinkNotes:
       "Supplement documentation FAQ; anchor for fire supplement playbook and denial recovery content.",
+  },
+  "smoke-damage-documentation-insurance": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["fire-damage/smoke-soot-damage-documentation-guide"],
+    relatedFaqIds: [
+      "smoke-damage-photos-required",
+      "soot-damage-insurance-coverage",
+      "smoke-damage-clean-vs-replace",
+      "fire-smoke-soot",
+    ],
+    internalLinkNotes:
+      "Primary cornerstone FAQ; anchor for smoke and soot damage documentation guide.",
+  },
+  "soot-damage-insurance-coverage": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "fire-damage/smoke-soot-damage-documentation-guide",
+      "fire-damage/smoke-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "smoke-damage-documentation-insurance",
+      "fire-smoke-damage-insurance-coverage",
+      "fire-smoke-soot",
+    ],
+    internalLinkNotes:
+      "Soot coverage FAQ; cross-link smoke cornerstone guide and general smoke coverage FAQ.",
+  },
+  "smoke-damage-photos-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/smoke-soot-damage-documentation-guide",
+      "general-claims/photo-documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "smoke-damage-documentation-insurance",
+      "fire-damage-photos-required",
+      "fire-smoke-soot",
+    ],
+    internalLinkNotes:
+      "Smoke photo requirements FAQ; cross-link photo documentation field procedure.",
+  },
+  "smoke-damage-clean-vs-replace": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/smoke-soot-damage-documentation-guide",
+      "fire-damage/smoke-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "smoke-damage-documentation-insurance",
+      "soot-damage-insurance-coverage",
+      "fire-smoke-soot",
+    ],
+    internalLinkNotes:
+      "Clean versus replace FAQ; cross-link smoke field procedure and cornerstone guide.",
+  },
+  "smoke-damage-supplement-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["fire-damage/smoke-soot-damage-documentation-guide"],
+    relatedFaqIds: [
+      "smoke-damage-documentation-insurance",
+      "fire-supplement-documentation-support",
+      "fire-smoke-soot",
+      "help-denied-supplements",
+    ],
+    internalLinkNotes:
+      "Smoke supplement documentation FAQ; anchor for fire supplement playbook and denial recovery content.",
   },
 };
 

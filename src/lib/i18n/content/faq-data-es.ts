@@ -2604,17 +2604,111 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
   {
+    id: "smoke-damage-documentation-insurance",
+    category: "fire_damage_claims",
+    question: "¿Cómo se debe documentar el daño por humo para el seguro?",
+    answer:
+      "Documente la contaminación por habitación con fotos generales y de primer plano del sustrato, narrativa de la ruta de migración desde el origen por pasillos y pisos superiores, notas del tipo de hollín, condición de rejillas y filtros HVAC, registros de olor y resultados de limpieza de prueba cuando se dispute limpiar frente a reemplazar, con etiquetas de habitación consistentes en fotos, croquis y estimado. La evidencia indexada respalda suplementos cuando el alcance de humo excede el estimado de la aseguradora.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Procedimiento de documentación de humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-documentation-guide",
+      },
+      { label: "Soluciones para daños por fuego", href: "/solutions/fire-damage" },
+    ],
+  },
+  {
+    id: "soot-damage-insurance-coverage",
+    category: "fire_damage_claims",
+    question: "¿El seguro cubre el daño por hollín?",
+    answer:
+      "La mayoría de las pólizas de propiedad cubren el daño por hollín cuando la documentación demuestra contaminación más allá del origen del fuego: fotos de migración, primeros planos de sustrato, resultados de limpieza de prueba y alcance habitación por habitación. Las aseguradoras disputan hollín localizado frente a sistémico; evidencia sólida de migración, notas del tipo de hollín y documentación del método de limpieza respaldan la aprobación de partidas de limpieza, sellado y limpieza especializada.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-photos-required",
+    category: "fire_damage_claims",
+    question: "¿Qué fotografías se deben tomar después de daños por humo?",
+    answer:
+      "Las aseguradoras esperan contexto general de habitación más primeros planos del sustrato mostrando color, textura y extensión del hollín en techos, paredes, molduras y accesorios; ruta de migración por pasillos, closets y pisos superiores; rejillas y filtros HVAC; interiores de gabinetes y cavidades; series de limpieza de prueba antes y después en sustratos disputados; y acceso a ático o crawlspace cuando se reclame migración, todo con etiquetas de habitación y fechas en los nombres de archivo.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Procedimiento de documentación fotográfica de campo",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-clean-vs-replace",
+    category: "fire_damage_claims",
+    question: "¿Cuándo deben reemplazarse los materiales dañados por humo en lugar de limpiarse?",
+    answer:
+      "Reemplace cuando la limpieza de prueba falle en el sustrato, el tipo de hollín impida la restauración (residuo proteico en materiales porosos, hollín de combustible en madera sin acabado), la guía del fabricante prohíba la limpieza o el daño por calor y carbonización comprometa el ensamblaje. Documente fotos de limpieza de prueba antes y después, condición del sustrato y boletines del fabricante que respalden el reemplazo frente a macros de solo limpieza de la aseguradora.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Procedimiento de documentación de humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-supplement-documentation",
+    category: "fire_damage_claims",
+    question: "¿Qué documentación respalda los suplementos por daño de humo?",
+    answer:
+      "Los suplementos por humo necesitan fotos indexadas por habitación, narrativa de la ruta de migración, resultados de limpieza de prueba, evidencia de HVAC y olor, fotos de cavidades y ático del descubrimiento en demolición, y una carta de presentación que mapee los adjuntos a las partidas. Los suplementos por fases con evidencia de migración contemporánea superan la narrativa de fin de trabajo ensamblada después de que la limpieza oculte las condiciones.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Recuperación ante denegación de suplementos por fuego",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
     id: "fire-smoke-soot",
     category: "fire_damage_claims",
     question: "¿Cómo se documenta el daño por humo y hollín para las aseguradoras?",
     answer:
       "Los expedientes efectivos combinan evidencia visual, detalle del alcance por habitación, notas del método de limpieza y separación de oficios. Las aseguradoras examinan si el daño por humo es localizado o sistémico; la documentación debe coincidir con lo que su cuadrilla observó en el sitio.",
     relatedLinks: [
-      { label: "Soluciones para daños por fuego", href: "/solutions/fire-damage" },
       {
-        label: "Guía de documentación de reclamaciones por daños de fuego",
-        href: "/resources/blog/fire-damage-claim-documentation-guide",
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
       },
+      {
+        label: "Guía de documentación de daños por humo y hollín (blog)",
+        href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
+      },
+      { label: "Soluciones para daños por fuego", href: "/solutions/fire-damage" },
     ],
   },
   {

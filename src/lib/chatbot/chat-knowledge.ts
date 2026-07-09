@@ -884,6 +884,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["fire supplement documentation", "fire supplement evidence"],
     topics: ["fire_damage_claims", "supplements"],
   },
+  "smoke-damage-documentation-insurance": {
+    phrases: [
+      "how should smoke damage be documented for insurance",
+      "document smoke damage for insurance",
+      "smoke damage documentation for insurance claims",
+    ],
+    keywords: ["smoke documentation", "smoke damage documentation"],
+    topics: ["fire_damage_claims"],
+  },
+  "soot-damage-insurance-coverage": {
+    phrases: [
+      "does insurance cover soot damage",
+      "soot damage insurance coverage",
+      "insurance cover soot damage fire",
+    ],
+    keywords: ["soot damage insurance", "soot coverage"],
+    topics: ["fire_damage_claims"],
+  },
+  "smoke-damage-photos-required": {
+    phrases: [
+      "what photographs should be taken after smoke damage",
+      "smoke damage photos required",
+      "photos after smoke damage insurance claim",
+    ],
+    keywords: ["smoke photos", "smoke damage photos"],
+    topics: ["fire_damage_claims"],
+  },
+  "smoke-damage-clean-vs-replace": {
+    phrases: [
+      "when should smoke-damaged materials be replaced instead of cleaned",
+      "smoke damaged materials replaced instead of cleaned",
+      "clean vs replace smoke damage",
+    ],
+    keywords: ["smoke clean vs replace", "smoke replacement"],
+    topics: ["fire_damage_claims"],
+  },
+  "smoke-damage-supplement-documentation": {
+    phrases: [
+      "what documentation supports smoke damage supplements",
+      "smoke damage supplement documentation",
+      "smoke supplement documentation support",
+    ],
+    keywords: ["smoke supplement documentation", "smoke supplement evidence"],
+    topics: ["fire_damage_claims", "supplements"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

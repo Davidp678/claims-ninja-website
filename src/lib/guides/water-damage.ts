@@ -1640,6 +1640,7 @@ export const WATER_DAMAGE_GUIDES = [
       "daily-monitoring-guide",
       "commercial-water-loss-documentation-guide",
       "fire-damage-documentation-guide",
+      "smoke-soot-damage-documentation-guide",
     ],
     relatedBlogSlugs: [
       "why-category-3-water-claims-get-underpaid",

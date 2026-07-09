@@ -2604,17 +2604,111 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
   {
+    id: "smoke-damage-documentation-insurance",
+    category: "fire_damage_claims",
+    question: "How should smoke damage be documented for insurance?",
+    answer:
+      "Document contamination by room with wide and close substrate photos, migration path narrative from origin through halls and upper floors, soot type notes, HVAC register and filter condition, odor logs, and test-clean results where clean-versus-replace is disputed — with room labels consistent across photos, sketch, and estimate. Indexed evidence supports supplements when smoke scope exceeds the carrier estimate.",
+    relatedLinks: [
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Smoke and Soot Documentation Procedure",
+        href: "/resources/guides/fire-damage/smoke-documentation-guide",
+      },
+      { label: "Fire damage solutions", href: "/solutions/fire-damage" },
+    ],
+  },
+  {
+    id: "soot-damage-insurance-coverage",
+    category: "fire_damage_claims",
+    question: "Does insurance cover soot damage?",
+    answer:
+      "Most property policies cover soot damage when documentation proves contamination beyond the fire origin — migration photos, substrate close-ups, test-clean results, and room-by-room scope. Carriers dispute localized versus systemic soot; strong migration evidence, soot type notes, and cleaning method documentation support approval of wipe, seal, and specialty cleaning lines.",
+    relatedLinks: [
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-photos-required",
+    category: "fire_damage_claims",
+    question: "What photographs should be taken after smoke damage?",
+    answer:
+      "Carriers expect wide room context plus close substrate photos showing soot color, texture, and extent on ceilings, walls, trim, and fixtures; migration path through halls, closets, and upper floors; HVAC registers and filters; cabinet interiors and cavities; test-clean before-and-after sets on disputed substrates; and attic or crawlspace access when migration is claimed — all with room labels and dates in filenames.",
+    relatedLinks: [
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Photo Documentation Field Procedure",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-clean-vs-replace",
+    category: "fire_damage_claims",
+    question: "When should smoke-damaged materials be replaced instead of cleaned?",
+    answer:
+      "Replace when test-clean fails on the substrate, soot type prevents restoration (protein residue on porous materials, fuel-oil soot on unfinished wood), manufacturer guidance prohibits cleaning, or char and heat damage compromise the assembly. Document test-clean before-and-after photos, substrate condition, and manufacturer bulletins supporting replacement over clean-only carrier macros.",
+    relatedLinks: [
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Smoke and Soot Documentation Procedure",
+        href: "/resources/guides/fire-damage/smoke-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-supplement-documentation",
+    category: "fire_damage_claims",
+    question: "What documentation supports smoke damage supplements?",
+    answer:
+      "Smoke supplements need indexed photos by room, migration path narrative, test-clean results, HVAC and odor evidence, cavity and attic photos from demo discovery, and a cover letter mapping attachments to line items. Phased supplements with contemporaneous migration evidence outperform end-of-job narrative assembled after cleaning obscures conditions.",
+    relatedLinks: [
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Fire Damage Supplement Denial Recovery",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
     id: "fire-smoke-soot",
     category: "fire_damage_claims",
     question: "How are smoke and soot damage documented for carriers?",
     answer:
       "Effective files combine visual evidence, scope detail by room, cleaning method notes, and trade separation. Carriers scrutinize whether smoke damage is localized or systemic — documentation should match what your crew observed on site.",
     relatedLinks: [
-      { label: "Fire damage solutions", href: "/solutions/fire-damage" },
       {
-        label: "Fire damage claim documentation guide",
-        href: "/resources/blog/fire-damage-claim-documentation-guide",
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
       },
+      {
+        label: "Smoke and Soot Damage Documentation Guide (blog)",
+        href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
+      },
+      { label: "Fire damage solutions", href: "/solutions/fire-damage" },
     ],
   },
   {

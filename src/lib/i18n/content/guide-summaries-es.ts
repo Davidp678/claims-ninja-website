@@ -175,6 +175,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Aprenda cómo documentar reclamaciones de seguro por daños de fuego residenciales y comerciales: inspecciones, evidencia estructural, migración de humo y hollín, contenidos, respaldo de estimación, suplementos y recuperación de reclamaciones.",
   },
+  "fire-damage/smoke-soot-damage-documentation-guide": {
+    title: "Guía de documentación de daños por humo y hollín",
+    excerpt:
+      "Estándar operativo para contratistas sobre documentación de contaminación por humo y hollín en reclamaciones por incendio: tipos de contaminación, flujos de inspección, evidencia de migración, alcance HVAC, respaldo de estimación, suplementos y recuperación de reclamaciones.",
+  },
   "fire-damage/fire-claim-intake-guide": {
     title: "Lista de verificación de admisión de reclamaciones por incendio",
     excerpt:

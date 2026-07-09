@@ -36,6 +36,7 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     "Document residential and commercial fire damage insurance claims: structural inspections, smoke migration, soot contamination, contents, estimating support, supplements, and claim recovery.",
   relatedGuideSlugs: [
     "fire-claim-intake-guide",
+    "smoke-soot-damage-documentation-guide",
     "smoke-documentation-guide",
     "hvac-contamination-guide",
     "odor-documentation-guide",
@@ -252,7 +253,7 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
         "Hidden damage — photograph soot in cavities, attic insulation, crawlspace, and interstitial spaces during demo when access exists.",
       ],
       notes:
-        "See Smoke and Soot Documentation Procedure, HVAC Contamination Documentation Procedure, Odor Mitigation Documentation Procedure, and Contents Documentation Procedure for field capture detail on each specialty scope.",
+        "See Smoke & Soot Damage Documentation Guide for the smoke and soot specialty standard. See Smoke and Soot Documentation Procedure, HVAC Contamination Documentation Procedure, Odor Mitigation Documentation Procedure, and Contents Documentation Procedure for field capture detail on each specialty scope.",
     },
     {
       id: "estimating-documentation",
@@ -467,6 +468,10 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Fire Claim Intake Checklist",
       href: "/resources/guides/fire-damage/fire-claim-intake-guide",
+    },
+    {
+      label: "Smoke & Soot Damage Documentation Guide",
+      href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
     },
     {
       label: "Smoke and Soot Documentation Procedure",

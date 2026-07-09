@@ -177,9 +177,13 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "smoke",
     "soot",
     "fire documentation",
+    "smoke documentation",
+    "soot documentation",
     "pack-out",
     "board-up",
     "soot contamination",
+    "smoke migration",
+    "clean vs replace",
   ],
   roofing_claims: [
     "roofing",
@@ -727,6 +731,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /fire-supplement-documentation-support|documentation supports fire damage supplements|fire damage supplements/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "smoke damage documentation insurance retrieves guide or FAQ",
+    message: "how should smoke damage be documented for insurance",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /smoke-damage-documentation-insurance|smoke-soot-damage-documentation|document smoke damage for insurance|smoke damage be documented/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "soot damage insurance coverage retrieves FAQ or guide",
+    message: "does insurance cover soot damage",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /soot-damage-insurance-coverage|insurance cover soot|soot damage insurance/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "smoke damage photos required retrieves guide or FAQ",
+    message: "what photographs should be taken after smoke damage",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /smoke-damage-photos-required|photographs should be taken after smoke|photos after smoke damage/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "smoke clean vs replace retrieves guide or FAQ",
+    message: "when should smoke-damaged materials be replaced instead of cleaned",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /smoke-damage-clean-vs-replace|replaced instead of cleaned|clean vs replace smoke/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "smoke supplement documentation retrieves guide or FAQ",
+    message: "what documentation supports smoke damage supplements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /smoke-damage-supplement-documentation|documentation supports smoke damage supplements|smoke damage supplements/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

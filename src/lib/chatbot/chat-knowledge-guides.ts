@@ -132,6 +132,24 @@ const GUIDE_SLUG_BOOSTS: Record<
     ],
     topics: ["fire_damage_claims", "documentation"],
   },
+  "smoke-soot-damage-documentation-guide": {
+    phrases: [
+      "smoke soot damage documentation guide",
+      "smoke and soot documentation guide",
+      "document smoke damage for insurance",
+      "smoke damage documentation standard",
+      "soot damage documentation",
+    ],
+    keywords: [
+      "smoke documentation",
+      "soot documentation",
+      "smoke migration",
+      "soot contamination",
+      "clean vs replace smoke",
+      "smoke supplement documentation",
+    ],
+    topics: ["fire_damage_claims", "documentation"],
+  },
   "claim-file-audit-guide": {
     phrases: ["claim file audit", "audit claim file"],
     keywords: ["claim audit", "file audit"],

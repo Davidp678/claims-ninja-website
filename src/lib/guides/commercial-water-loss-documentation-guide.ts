@@ -42,6 +42,7 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
     "equipment-documentation-guide",
     "category-class-documentation-guide",
     "fire-damage-documentation-guide",
+    "smoke-soot-damage-documentation-guide",
   ],
   relatedBlogSlugs: [
     "why-category-3-water-claims-get-underpaid",

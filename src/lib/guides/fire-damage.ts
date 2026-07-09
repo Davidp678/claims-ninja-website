@@ -1,11 +1,13 @@
 import { defineGuide, GUIDE_PUBLISHED_AT } from "@/lib/guides/guide-builder";
 import { FIRE_DAMAGE_DOCUMENTATION_GUIDE } from "@/lib/guides/fire-damage-documentation-guide";
+import { SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE } from "@/lib/guides/smoke-soot-damage-documentation-guide";
 import type { Guide } from "@/lib/guide-types";
 
 const SOLUTION_PATH = "/solutions/fire-damage" as const;
 
 export const FIRE_DAMAGE_GUIDES = [
   FIRE_DAMAGE_DOCUMENTATION_GUIDE,
+  SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE,
 
   defineGuide({
     slug: "fire-claim-intake-guide",
@@ -32,6 +34,7 @@ export const FIRE_DAMAGE_GUIDES = [
       "Fire claim intake checklist for restoration contractors: site security, origin and migration photos, HVAC inspection flags, contents inventory start, and file setup before production.",
     relatedGuideSlugs: [
       "fire-damage-documentation-guide",
+      "smoke-soot-damage-documentation-guide",
       "smoke-documentation-guide",
       "hvac-contamination-guide",
       "contents-documentation-guide",
@@ -279,6 +282,7 @@ export const FIRE_DAMAGE_GUIDES = [
     seoDescription:
       "Field procedure for smoke and soot documentation on fire claims: contamination types, migration paths, substrate photos, test cleaning, and carrier-ready room indexes.",
     relatedGuideSlugs: [
+      "smoke-soot-damage-documentation-guide",
       "fire-damage-documentation-guide",
       "fire-claim-intake-guide",
       "hvac-contamination-guide",
@@ -489,6 +493,7 @@ export const FIRE_DAMAGE_GUIDES = [
     seoDescription:
       "HVAC contamination documentation procedure for fire claims: inspection workflow, duct and component photos, partial-system scope, and supplement-ready HVAC files.",
     relatedGuideSlugs: [
+      "smoke-soot-damage-documentation-guide",
       "fire-damage-documentation-guide",
       "smoke-documentation-guide",
       "odor-documentation-guide",
@@ -698,6 +703,7 @@ export const FIRE_DAMAGE_GUIDES = [
     seoDescription:
       "Odor mitigation documentation for fire claims: pre-treatment assessment, equipment logs, sealing evidence, HVAC correlation, and post-treatment verification carriers approve.",
     relatedGuideSlugs: [
+      "smoke-soot-damage-documentation-guide",
       "fire-damage-documentation-guide",
       "smoke-documentation-guide",
       "hvac-contamination-guide",
@@ -905,6 +911,7 @@ export const FIRE_DAMAGE_GUIDES = [
       "Contents documentation procedure for fire claims: room-located inventories, pack-out proof, salvageability photos, and carrier-ready contents files.",
     relatedGuideSlugs: [
       "fire-damage-documentation-guide",
+      "smoke-soot-damage-documentation-guide",
       "fire-claim-intake-guide",
       "odor-documentation-guide",
       "structural-stabilization-documentation-guide",
@@ -1118,6 +1125,7 @@ export const FIRE_DAMAGE_GUIDES = [
       "Structural stabilization documentation for fire claims: shoring, bracing, board-up, pre-demolition photos, and discovery evidence during tear-out.",
     relatedGuideSlugs: [
       "fire-damage-documentation-guide",
+      "smoke-soot-damage-documentation-guide",
       "fire-claim-intake-guide",
       "contents-documentation-guide",
       "smoke-documentation-guide",

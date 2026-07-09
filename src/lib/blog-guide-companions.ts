@@ -223,19 +223,19 @@ export const BLOG_GUIDE_COMPANIONS = {
       "You've learned fire claim documentation fundamentals. Now execute the cornerstone documentation standard and specialty procedures that defend migration, HVAC, and contents scope.",
     guideSlugs: [
       "fire-damage-documentation-guide",
+      "smoke-soot-damage-documentation-guide",
       "fire-claim-intake-guide",
-      "smoke-documentation-guide",
       "hvac-contamination-guide",
     ],
   },
   "smoke-and-soot-damage-documentation-guide": {
     intro:
-      "You've learned smoke and soot documentation strategy. Now follow the cornerstone fire guide and field procedures for contamination evidence, odor scope, and HVAC review.",
+      "You've learned smoke and soot documentation strategy. Now follow the smoke and soot documentation standard and field procedures for contamination evidence, odor scope, and HVAC review.",
     guideSlugs: [
-      "fire-damage-documentation-guide",
+      "smoke-soot-damage-documentation-guide",
       "smoke-documentation-guide",
-      "odor-documentation-guide",
       "hvac-contamination-guide",
+      "odor-documentation-guide",
     ],
   },
   "fire-damage-supplement-playbook-for-contractors": {
@@ -253,8 +253,8 @@ export const BLOG_GUIDE_COMPANIONS = {
       "You've learned denial recovery workflow. Now rebuild your file with the documentation standard and specialty procedures adjusters expect on resubmission.",
     guideSlugs: [
       "fire-damage-documentation-guide",
+      "smoke-soot-damage-documentation-guide",
       "fire-claim-intake-guide",
-      "smoke-documentation-guide",
       "hvac-contamination-guide",
     ],
   },
