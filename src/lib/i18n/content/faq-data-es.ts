@@ -2694,6 +2694,99 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
   {
+    id: "contents-inventory-documentation-insurance",
+    category: "fire_damage_claims",
+    question: "¿Cómo se deben documentar los contenidos después de un incendio?",
+    answer:
+      "Documente inventarios habitación por habitación con descripción, cantidad, condición previa a la pérdida y tipo de daño antes del pack-out. Fotografíe artículos de alto valor y cuestionables in situ, capture números de serie y modelo en electrodomésticos y electrónicos, y mantenga registros de cadena de custodia para almacenamiento fuera del sitio. Las etiquetas de habitación deben coincidir en fotos, inventario, croquis y estimación.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Procedimiento de documentación de contenidos",
+        href: "/resources/guides/fire-damage/contents-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "contents-inventory-insurance-required",
+    category: "fire_damage_claims",
+    question: "¿Qué inventario se requiere para reclamaciones de seguro?",
+    answer:
+      "Las aseguradoras esperan inventarios ubicados por habitación con descripciones de artículos, cantidades, notas de condición, disposición de recuperabilidad y fotos para artículos de alto valor. Los números de serie, documentación de propiedad y notas de evaluación de daños respaldan líneas de reemplazo. Los cargos de pack-out y almacenamiento requieren referencias de lote de inventario y registros de cadena de custodia.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de reclamaciones por incendio (blog)",
+        href: "/resources/blog/fire-damage-claim-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "contents-smoke-damage-documentation",
+    category: "fire_damage_claims",
+    question: "¿Cómo documentan los contratistas la propiedad personal dañada por humo?",
+    answer:
+      "Fotografíe recubrimiento de hollín, penetración de olores y contaminación en textiles, muebles y electrónicos antes de manipularlos. Anote daños por humo versus calor por separado, documente pruebas de limpieza fallidas cuando se reclama reemplazo, y separe carpetas de evidencia de contenidos de la documentación estructural de humo. Las evaluaciones especializadas respaldan líneas de electrónicos, arte y textiles.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "contents-clean-vs-replace",
+    category: "fire_damage_claims",
+    question: "¿Cuándo deben reemplazarse los contenidos en lugar de limpiarse?",
+    answer:
+      "Reemplace cuando el daño por calor, resultados fallidos de limpieza de prueba, orientación del fabricante que prohíbe la restauración, o exposición combinada a humo y agua hace que la limpieza sea irrazonable. Documente fotos de carbonización, fusión o deformación, informes de evaluación especializada y justificación de eliminación antes de líneas de reemplazo. Las aseguradoras aplican macros de solo limpieza cuando la disposición carece de evidencia de respaldo.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Procedimiento de documentación de contenidos",
+        href: "/resources/guides/fire-damage/contents-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "contents-supplement-documentation",
+    category: "fire_damage_claims",
+    question: "¿Qué documentación respalda los suplementos de contenidos?",
+    answer:
+      "Los suplementos de contenidos necesitan inventarios ubicados por habitación con fotos in situ, registros de cadena de custodia, informes de limpieza especializada, registros de duración de almacenamiento y una carta de presentación que mapee filas de inventario a líneas no pagadas. Artículos adicionales descubiertos, almacenamiento extendido, pruebas de electrónicos y reemplazo de alto valor requieren documentación contemporánea — no adiciones globales al final del trabajo.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Recuperación de negación de suplementos por daños de fuego",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
     id: "fire-smoke-soot",
     category: "fire_damage_claims",
     question: "¿Cómo se documenta el daño por humo y hollín para las aseguradoras?",
@@ -2716,11 +2809,15 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     category: "fire_damage_claims",
     question: "¿Tienen recursos sobre documentación de reclamaciones por daños de fuego?",
     answer:
-      "Sí. Nuestra biblioteca de recursos para contratistas cubre documentación de incendios, suplementos, evidencia de humo y hollín, contaminación de HVAC, mitigación de olores y recuperación ante denegación de suplementos, organizados para equipos de restauración y suplementos.",
+      "Sí. Nuestra biblioteca de recursos para contratistas cubre documentación de incendios, estándares de inventario de contenidos, suplementos, evidencia de humo y hollín, contaminación de HVAC, mitigación de olores y recuperación ante denegación de suplementos, organizados para equipos de restauración y suplementos.",
     relatedLinks: [
       {
         label: "Guía de documentación de daños por fuego",
         href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
       },
       {
         label: "Guía de documentación de reclamaciones por daños de fuego",
@@ -2735,7 +2832,13 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     question: "¿Manejan daño estructural por fuego y contenidos en el mismo expediente?",
     answer:
       "Sí. Las pérdidas por fuego a menudo abarcan estructura, retiro de contenidos (pack-out) y desodorización. Organizamos los alcances para que las aseguradoras puedan revisar edificio y contenidos por separado mientras mantenemos coherente la narrativa general de la reclamación.",
-    relatedLinks: [{ label: "Restauración de contenidos", href: "/solutions/contents" }],
+    relatedLinks: [
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      { label: "Restauración de contenidos", href: "/solutions/contents" },
+    ],
   },
   {
     id: "fire-demo-rebuild",

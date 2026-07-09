@@ -2694,6 +2694,99 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
   {
+    id: "contents-inventory-documentation-insurance",
+    category: "fire_damage_claims",
+    question: "How should contents be documented after a fire?",
+    answer:
+      "Document room-by-room inventories with description, quantity, pre-loss condition, and damage type before pack-out. Photograph high-value and questionable items in place, capture serial and model numbers on appliances and electronics, and maintain chain-of-custody logs for off-site storage. Room labels must match across photos, inventory, sketch, and estimate.",
+    relatedLinks: [
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Contents Documentation Procedure",
+        href: "/resources/guides/fire-damage/contents-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "contents-inventory-insurance-required",
+    category: "fire_damage_claims",
+    question: "What inventory is required for insurance claims?",
+    answer:
+      "Carriers expect room-located inventories with item descriptions, quantities, condition notes, salvageability disposition, and photos for high-value items. Serial numbers, ownership documentation, and damage assessment notes support replacement lines. Pack-out and storage charges require inventory batch references and chain-of-custody logs.",
+    relatedLinks: [
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Fire Damage Claim Documentation Guide (blog)",
+        href: "/resources/blog/fire-damage-claim-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "contents-smoke-damage-documentation",
+    category: "fire_damage_claims",
+    question: "How do contractors document smoke-damaged personal property?",
+    answer:
+      "Photograph soot coating, odor penetration, and contamination on textiles, furniture, and electronics before handling. Note smoke versus heat damage separately, document failed cleaning tests when replacement is claimed, and separate contents evidence folders from structural smoke documentation. Specialty evaluations support electronics, art, and textile lines.",
+    relatedLinks: [
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "contents-clean-vs-replace",
+    category: "fire_damage_claims",
+    question: "When should contents be replaced instead of cleaned?",
+    answer:
+      "Replace when heat damage, failed test-clean results, manufacturer guidance prohibiting restoration, or combined smoke-and-water exposure makes cleaning unreasonable. Document char, melt, or warping photos, specialty evaluation reports, and disposal justification before replacement lines. Carriers apply clean-only macros when disposition lacks supporting evidence.",
+    relatedLinks: [
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Contents Documentation Procedure",
+        href: "/resources/guides/fire-damage/contents-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "contents-supplement-documentation",
+    category: "fire_damage_claims",
+    question: "What documentation supports contents supplements?",
+    answer:
+      "Contents supplements need room-located inventories with in-place photos, chain-of-custody logs, specialty cleaning reports, storage duration records, and a cover letter mapping inventory rows to unpaid lines. Additional discovered items, extended storage, electronics testing, and high-value replacement require contemporaneous documentation — not end-of-job lump additions.",
+    relatedLinks: [
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Fire Damage Supplement Denial Recovery",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
     id: "fire-smoke-soot",
     category: "fire_damage_claims",
     question: "How are smoke and soot damage documented for carriers?",
@@ -2716,11 +2809,15 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "fire_damage_claims",
     question: "Do you have resources on fire damage claim documentation?",
     answer:
-      "Yes. Our contractor resources library covers fire documentation, supplements, smoke and soot evidence, HVAC contamination, odor mitigation, and supplement denial recovery — organized for restoration and supplement teams.",
+      "Yes. Our contractor resources library covers fire documentation, contents inventory standards, supplements, smoke and soot evidence, HVAC contamination, odor mitigation, and supplement denial recovery — organized for restoration and supplement teams.",
     relatedLinks: [
       {
         label: "Fire Damage Documentation Guide",
         href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
       },
       {
         label: "Fire damage claim documentation guide",
@@ -2735,7 +2832,13 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "Do you handle structural fire damage and contents on the same file?",
     answer:
       "Yes. Fire losses often span structure, contents pack-out, and deodorization. We organize scopes so carriers can review building and contents separately while keeping the overall claim narrative coherent.",
-    relatedLinks: [{ label: "Contents restoration", href: "/solutions/contents" }],
+    relatedLinks: [
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      { label: "Contents restoration", href: "/solutions/contents" },
+    ],
   },
   {
     id: "fire-demo-rebuild",

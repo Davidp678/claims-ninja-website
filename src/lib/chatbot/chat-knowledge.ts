@@ -929,6 +929,52 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["smoke supplement documentation", "smoke supplement evidence"],
     topics: ["fire_damage_claims", "supplements"],
   },
+  "contents-inventory-documentation-insurance": {
+    phrases: [
+      "how should contents be documented after a fire",
+      "document contents after fire for insurance",
+      "contents documentation after fire",
+      "contents inventory documentation for insurance",
+    ],
+    keywords: ["contents documentation", "contents inventory fire"],
+    topics: ["fire_damage_claims"],
+  },
+  "contents-inventory-insurance-required": {
+    phrases: [
+      "what inventory is required for insurance claims",
+      "inventory required for insurance claims",
+      "contents inventory required insurance",
+    ],
+    keywords: ["contents inventory required", "insurance inventory"],
+    topics: ["fire_damage_claims"],
+  },
+  "contents-smoke-damage-documentation": {
+    phrases: [
+      "how do contractors document smoke-damaged personal property",
+      "document smoke damaged personal property",
+      "smoke damaged contents documentation",
+    ],
+    keywords: ["smoke damaged contents", "personal property smoke"],
+    topics: ["fire_damage_claims"],
+  },
+  "contents-clean-vs-replace": {
+    phrases: [
+      "when should contents be replaced instead of cleaned",
+      "contents replaced instead of cleaned",
+      "clean vs replace contents fire",
+    ],
+    keywords: ["contents clean vs replace", "contents replacement"],
+    topics: ["fire_damage_claims"],
+  },
+  "contents-supplement-documentation": {
+    phrases: [
+      "what documentation supports contents supplements",
+      "contents supplement documentation",
+      "contents supplement documentation support",
+    ],
+    keywords: ["contents supplement documentation", "contents supplement evidence"],
+    topics: ["fire_damage_claims", "supplements"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

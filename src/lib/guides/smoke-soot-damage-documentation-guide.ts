@@ -35,6 +35,7 @@ export const SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     "Document smoke and soot damage for insurance claims: contamination types, room-by-room inspection, migration evidence, HVAC scope, clean-versus-replace support, supplements, and claim recovery.",
   relatedGuideSlugs: [
     "fire-damage-documentation-guide",
+    "contents-inventory-documentation-guide",
     "fire-claim-intake-guide",
     "smoke-documentation-guide",
     "hvac-contamination-guide",
@@ -449,7 +450,7 @@ export const SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
       impact:
         "Contents cleaning and manipulation lines reduce when inventory does not precede move-out.",
       correction:
-        "Start room-located inventory and photograph high-value items in place before pack-out.",
+        "Start room-located inventory and photograph high-value items in place before pack-out — see Contents Inventory Documentation Guide.",
     },
     {
       mistake: "Missing testing reports when contamination severity disputed",
@@ -563,6 +564,10 @@ export const SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Odor Mitigation Documentation Procedure",
       href: "/resources/guides/fire-damage/odor-documentation-guide",
+    },
+    {
+      label: "Contents Inventory Documentation Guide",
+      href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
     },
     {
       label: "Contents Documentation Procedure",

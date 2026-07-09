@@ -184,6 +184,11 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "soot contamination",
     "smoke migration",
     "clean vs replace",
+    "contents inventory",
+    "contents documentation",
+    "personal property",
+    "pack-out inventory",
+    "contents supplement",
   ],
   roofing_claims: [
     "roofing",
@@ -786,6 +791,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /smoke-damage-supplement-documentation|documentation supports smoke damage supplements|smoke damage supplements/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "contents inventory documentation insurance retrieves guide or FAQ",
+    message: "how should contents be documented after a fire",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /contents-inventory-documentation-insurance|contents-inventory-documentation-guide|document contents after fire|contents be documented/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "contents inventory insurance required retrieves guide or FAQ",
+    message: "what inventory is required for insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /contents-inventory-insurance-required|inventory is required for insurance|contents inventory/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "contents smoke damage documentation retrieves guide or FAQ",
+    message: "how do contractors document smoke-damaged personal property",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /contents-smoke-damage-documentation|smoke-damaged personal property|smoke damaged personal property/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "contents clean vs replace retrieves guide or FAQ",
+    message: "when should contents be replaced instead of cleaned",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /contents-clean-vs-replace|contents be replaced instead of cleaned|clean vs replace contents/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "contents supplement documentation retrieves guide or FAQ",
+    message: "what documentation supports contents supplements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /contents-supplement-documentation|documentation supports contents supplements|contents supplements/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

@@ -150,6 +150,26 @@ const GUIDE_SLUG_BOOSTS: Record<
     ],
     topics: ["fire_damage_claims", "documentation"],
   },
+  "contents-inventory-documentation-guide": {
+    phrases: [
+      "contents inventory documentation guide",
+      "document contents after fire",
+      "contents inventory insurance",
+      "personal property fire claim documentation",
+      "contents inventory documentation standard",
+      "how should contents be documented after a fire",
+    ],
+    keywords: [
+      "contents inventory",
+      "contents documentation",
+      "personal property",
+      "pack-out inventory",
+      "contents supplement",
+      "contents clean vs replace",
+      "business contents",
+    ],
+    topics: ["fire_damage_claims", "documentation"],
+  },
   "claim-file-audit-guide": {
     phrases: ["claim file audit", "audit claim file"],
     keywords: ["claim audit", "file audit"],

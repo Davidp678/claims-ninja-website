@@ -1261,6 +1261,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "fire-demo-rebuild",
       "help-denied-supplements",
       "smoke-damage-supplement-documentation",
+      "contents-supplement-documentation",
     ],
     internalLinkNotes:
       "Supplement documentation FAQ; anchor for fire supplement playbook and denial recovery content.",
@@ -1325,11 +1326,75 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     relatedFaqIds: [
       "smoke-damage-documentation-insurance",
       "fire-supplement-documentation-support",
+      "contents-supplement-documentation",
       "fire-smoke-soot",
       "help-denied-supplements",
     ],
     internalLinkNotes:
       "Smoke supplement documentation FAQ; anchor for fire supplement playbook and denial recovery content.",
+  },
+  "contents-inventory-documentation-insurance": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["fire-damage/contents-inventory-documentation-guide"],
+    relatedFaqIds: [
+      "contents-inventory-insurance-required",
+      "contents-smoke-damage-documentation",
+      "contents-clean-vs-replace",
+      "contents-supplement-documentation",
+    ],
+    internalLinkNotes:
+      "Primary cornerstone FAQ; anchor for contents inventory documentation guide.",
+  },
+  "contents-inventory-insurance-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["fire-damage/contents-inventory-documentation-guide"],
+    relatedFaqIds: [
+      "contents-inventory-documentation-insurance",
+      "contents-smoke-damage-documentation",
+      "contents-clean-vs-replace",
+    ],
+    internalLinkNotes:
+      "Inventory requirements FAQ; cross-link contents cornerstone guide and field procedure.",
+  },
+  "contents-smoke-damage-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/contents-inventory-documentation-guide",
+      "fire-damage/smoke-soot-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "contents-inventory-documentation-insurance",
+      "smoke-damage-documentation-insurance",
+      "contents-clean-vs-replace",
+    ],
+    internalLinkNotes:
+      "Smoke-damaged personal property FAQ; cross-link contents and smoke cornerstone guides.",
+  },
+  "contents-clean-vs-replace": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/contents-inventory-documentation-guide",
+      "fire-damage/contents-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "contents-inventory-documentation-insurance",
+      "contents-smoke-damage-documentation",
+      "smoke-damage-clean-vs-replace",
+    ],
+    internalLinkNotes:
+      "Contents clean versus replace FAQ; cross-link contents cornerstone and field procedure.",
+  },
+  "contents-supplement-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["fire-damage/contents-inventory-documentation-guide"],
+    relatedFaqIds: [
+      "contents-inventory-documentation-insurance",
+      "fire-supplement-documentation-support",
+      "smoke-damage-supplement-documentation",
+      "help-denied-supplements",
+    ],
+    internalLinkNotes:
+      "Contents supplement documentation FAQ; anchor for fire supplement playbook and denial recovery content.",
   },
 };
 

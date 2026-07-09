@@ -180,6 +180,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Estándar operativo para contratistas sobre documentación de contaminación por humo y hollín en reclamaciones por incendio: tipos de contaminación, flujos de inspección, evidencia de migración, alcance HVAC, respaldo de estimación, suplementos y recuperación de reclamaciones.",
   },
+  "fire-damage/contents-inventory-documentation-guide": {
+    title: "Guía de documentación de inventario de contenidos",
+    excerpt:
+      "Estándar operativo para contratistas sobre documentación de propiedad personal y contenidos comerciales en reclamaciones por incendio: inventario habitación por habitación, fotografía, respaldo de valoración, evidencia de limpieza versus reemplazo, documentación de estimación, suplementos y recuperación de reclamaciones.",
+  },
   "fire-damage/fire-claim-intake-guide": {
     title: "Lista de verificación de admisión de reclamaciones por incendio",
     excerpt:

@@ -37,6 +37,7 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "fire-claim-intake-guide",
     "smoke-soot-damage-documentation-guide",
+    "contents-inventory-documentation-guide",
     "smoke-documentation-guide",
     "hvac-contamination-guide",
     "odor-documentation-guide",
@@ -253,7 +254,7 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
         "Hidden damage — photograph soot in cavities, attic insulation, crawlspace, and interstitial spaces during demo when access exists.",
       ],
       notes:
-        "See Smoke & Soot Damage Documentation Guide for the smoke and soot specialty standard. See Smoke and Soot Documentation Procedure, HVAC Contamination Documentation Procedure, Odor Mitigation Documentation Procedure, and Contents Documentation Procedure for field capture detail on each specialty scope.",
+        "See Smoke & Soot Damage Documentation Guide for the smoke and soot specialty standard. See Contents Inventory Documentation Guide for personal property and business contents inventory standards. See Smoke and Soot Documentation Procedure, HVAC Contamination Documentation Procedure, Odor Mitigation Documentation Procedure, and Contents Documentation Procedure for field capture detail on each specialty scope.",
     },
     {
       id: "estimating-documentation",
@@ -380,7 +381,7 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
       impact:
         "Contents cleaning, manipulation, and replacement lines reduce when inventory and photos do not precede move-out.",
       correction:
-        "Start room-located inventory and photograph high-value items in place before pack-out — see Contents Documentation Procedure.",
+        "Start room-located inventory and photograph high-value items in place before pack-out — see Contents Inventory Documentation Guide and Contents Documentation Procedure.",
     },
   ],
   supplementOpportunities: [
@@ -484,6 +485,10 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Odor Mitigation Documentation Procedure",
       href: "/resources/guides/fire-damage/odor-documentation-guide",
+    },
+    {
+      label: "Contents Inventory Documentation Guide",
+      href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
     },
     {
       label: "Contents Documentation Procedure",

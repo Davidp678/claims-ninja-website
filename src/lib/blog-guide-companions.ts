@@ -224,8 +224,8 @@ export const BLOG_GUIDE_COMPANIONS = {
     guideSlugs: [
       "fire-damage-documentation-guide",
       "smoke-soot-damage-documentation-guide",
+      "contents-inventory-documentation-guide",
       "fire-claim-intake-guide",
-      "hvac-contamination-guide",
     ],
   },
   "smoke-and-soot-damage-documentation-guide": {
@@ -245,7 +245,7 @@ export const BLOG_GUIDE_COMPANIONS = {
       "fire-damage-documentation-guide",
       "fire-claim-intake-guide",
       "structural-stabilization-documentation-guide",
-      "contents-documentation-guide",
+      "contents-inventory-documentation-guide",
     ],
   },
   "fire-damage-supplement-denial-recovery": {
