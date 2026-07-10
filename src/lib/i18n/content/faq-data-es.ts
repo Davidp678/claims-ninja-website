@@ -3088,6 +3088,99 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "Sí. Desde incendios localizados en cocina hasta reconstrucciones estructurales mayores, la estrategia de suplementos se adapta a la gravedad de la pérdida. Los expedientes más grandes se benefician de desgloses organizados por oficio y documentación por fases a medida que avanza el trabajo.",
     relatedLinks: [{ label: "Soluciones para daños por fuego", href: "/solutions/fire-damage" }],
   },
+  {
+    id: "fire-commercial-claims-documentation",
+    category: "fire_damage_claims",
+    question: "¿Cómo se documentan las reclamaciones comerciales por incendio?",
+    answer:
+      "Las reclamaciones comerciales por incendio requieren indexación a nivel de edificio o suite escalada al tamaño de la propiedad: plan de documentación con índice de carpetas, inventario de edificios, registros de coordinación con inquilinos, carpetas separadas de estructura y contenidos, informes de ingeniería referenciados a las partidas del estimado y envíos de suplementos por fases. Trate pérdidas en oficinas, comercios, industria y multiinquilino con evidencia indexada por suite o zona — no patrones de expediente residencial de un solo archivo.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones comerciales por incendio",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-commercial-tenant-owner-responsibility",
+    category: "fire_damage_claims",
+    question: "¿Cómo se separan las responsabilidades del propietario y del inquilino en reclamaciones comerciales por incendio?",
+    answer:
+      "Revise el tipo de arrendamiento antes de atribuir el alcance. Los propietarios del edificio normalmente cubren la estructura, las áreas comunes y los sistemas base del edificio; los inquilinos cubren el acabado interior, los accesorios comerciales y la propiedad personal del negocio bajo arrendamientos triple neto o comerciales estándar. Etiquete cada entrada de inventario, carpeta de fotos y partida del estimado como estructura, mejora del inquilino o contenidos para evitar disputas de cobertura en ambas pólizas.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones comerciales por incendio",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-commercial-large-loss-scrutiny",
+    category: "fire_damage_claims",
+    question: "¿Por qué las reclamaciones comerciales por incendio reciben mayor escrutinio?",
+    answer:
+      "Los valores asegurados más altos activan ajustadores especialistas, revisión de ingeniería y auditoría de terceros. Las aseguradoras reconcilian el alcance estructural, de humo, HVAC, contenidos y condiciones generales contra fotos indexadas por edificio e informes de ingeniería — no macros de estimado residencial. La coordinación con inquilinos, la superposición de interrupción del negocio y los suplementos por fases añaden capas de revisión que los expedientes de una sola vivienda rara vez enfrentan. La evidencia débil a nivel de edificio invita reducciones proporcionales en todo el expediente comercial.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones comerciales por incendio",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+      {
+        label: "Por qué las reclamaciones por daños de fuego quedan infrapagadas",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+    ],
+  },
+  {
+    id: "fire-commercial-business-interruption-role",
+    category: "fire_damage_claims",
+    question: "¿Qué papel de documentación desempeñan los contratistas en la interrupción del negocio por incendio?",
+    answer:
+      "Los contratistas de mitigación documentan hechos operativos contemporáneos: fechas de inicio y finalización de la mitigación, calendarios de liberación de zonas, restricciones de acceso, coordinación de desplazamiento de inquilinos y cronogramas de producción por fases. Esto respalda las narrativas de BI del asegurado pero no reemplaza el análisis de cobertura ni la preparación de reclamaciones financieras. Comparta exportaciones de cronogramas indexados con el preparador de BI del asegurado sin elaborar proyecciones de ingresos ni valoraciones de pérdidas y ganancias.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones comerciales por incendio",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-commercial-supplement-opportunities",
+    category: "fire_damage_claims",
+    question: "¿Cuáles son las oportunidades comunes de suplemento en reclamaciones comerciales por incendio?",
+    answer:
+      "Brechas frecuentes: daño estructural oculto descubierto durante la demolición, migración de humo más allá de las zonas de origen, contaminación HVAC tras la inspección del sistema, actualizaciones de código en reconstrucción comercial, instalaciones temporales durante mitigación extendida, pack-out y almacenamiento de contenidos comerciales, mitigación ambiental, condiciones generales con alcance insuficiente en expedientes de gran pérdida y revisiones de ingeniería que amplían el alcance MEP. Envíe suplementos por fases con fotos contemporáneas e informes indexados antes de cubrir nuevos ensamblajes.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones comerciales por incendio",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "FAQ de respaldo de documentación para suplementos por incendio",
+        href: "/faq#faq-fire-supplement-documentation-support",
+      },
+    ],
+  },
 
   // Mold Claims (5)
   {

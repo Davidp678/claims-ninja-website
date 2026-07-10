@@ -1022,6 +1022,7 @@ export const GENERAL_CLAIMS_GUIDES = [
     relatedGuideSlugs: [
       "photo-documentation-standards-guide",
       "claim-file-audit-guide",
+      "commercial-fire-claims-guide",
       "fire-damage-documentation-guide",
       "smoke-soot-damage-documentation-guide",
       "contents-inventory-documentation-guide",

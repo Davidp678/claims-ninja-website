@@ -34,6 +34,7 @@ export const PACK_OUT_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document pack-out operations for fire insurance claims: chain of custody, inventory tracking, transportation logs, storage documentation, cleaning coordination, return delivery, estimating support, and supplement recovery.",
   relatedGuideSlugs: [
+    "commercial-fire-claims-guide",
     "fire-damage-documentation-guide",
     "smoke-soot-damage-documentation-guide",
     "contents-inventory-documentation-guide",
@@ -60,7 +61,7 @@ export const PACK_OUT_DOCUMENTATION_GUIDE = defineGuide({
   relatedSolutionPath: SOLUTION_PATH,
   claimTypes: ["fire-damage", "smoke", "commercial"],
   purpose:
-    "Pack-out operations move the largest volume of claim evidence off-site — and carriers deny manipulation, storage, transport, and cleaning lines when chain of custody breaks, inventory batches do not tie to estimate lines, transport logs are missing, or returned contents lack reset documentation. This guide is the contractor operational standard for documenting pack-out removal, tracking, transportation, storage, cleaning coordination, and return of contents during fire insurance claims — not pack-out restoration procedures. For full-file fire standards including structural and smoke scope, see the Fire Damage Documentation Guide. For room-by-room inventory, valuation, and clean-versus-replace evidence, see the Contents Inventory Documentation Guide. For field pack-out execution detail, see the Contents Documentation Procedure. Future Commercial Fire Claims Guide will extend commercial pack-out and multi-unit indexing standards. Claims Ninja supports contractors with documentation standards, supplement packaging, and claim recovery workflows — we are not a public adjuster, carrier representative, or legal counsel.",
+    "Pack-out operations move the largest volume of claim evidence off-site — and carriers deny manipulation, storage, transport, and cleaning lines when chain of custody breaks, inventory batches do not tie to estimate lines, transport logs are missing, or returned contents lack reset documentation. This guide is the contractor operational standard for documenting pack-out removal, tracking, transportation, storage, cleaning coordination, and return of contents during fire insurance claims — not pack-out restoration procedures. For full-file fire standards including structural and smoke scope, see the Fire Damage Documentation Guide. For room-by-room inventory, valuation, and clean-versus-replace evidence, see the Contents Inventory Documentation Guide. For field pack-out execution detail, see the Contents Documentation Procedure. For commercial pack-out, multi-unit indexing, and tenant suite chain of custody standards, see the Commercial Fire Claims Guide. Claims Ninja supports contractors with documentation standards, supplement packaging, and claim recovery workflows — we are not a public adjuster, carrier representative, or legal counsel.",
   whenToUse: [
     {
       condition: "Pack-out or contents move-out scheduled on a fire loss",
@@ -522,6 +523,10 @@ export const PACK_OUT_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Commercial Fire Claims Guide",
+      href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+    },
     {
       label: "Fire Damage Documentation Guide",
       href: "/resources/guides/fire-damage/fire-damage-documentation-guide",

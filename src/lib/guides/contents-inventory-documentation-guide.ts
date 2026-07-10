@@ -34,6 +34,7 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document personal property and business contents for fire insurance claims: room-by-room inventory, photography, serial numbers, clean-versus-replace evidence, pack-out support, supplements, and claim recovery.",
   relatedGuideSlugs: [
+    "commercial-fire-claims-guide",
     "fire-damage-documentation-guide",
     "smoke-soot-damage-documentation-guide",
     "pack-out-documentation-guide",
@@ -62,7 +63,7 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
   relatedSolutionPath: SOLUTION_PATH,
   claimTypes: ["fire-damage", "smoke", "commercial"],
   purpose:
-    "Contents losses represent the largest undocumented financial exposure on many fire claims — carriers approve structure and smoke cleaning while reducing or denying personal property lines when inventories are incomplete, photos are missing, serial numbers are absent, or pack-out precedes in-place documentation. This guide is the contractor operational standard for documenting, organizing, valuing, photographing, inventorying, and supporting insurance recovery for contents losses during fire claims — not contents restoration procedures. For full-file fire standards including structural and smoke scope, see the Fire Damage Documentation Guide. For smoke and soot contamination evidence on contents-adjacent assemblies, see the Smoke & Soot Damage Documentation Guide. For pack-out chain of custody, transport, storage, and return documentation, see the Pack-Out Documentation Guide. For field pack-out execution detail, see the Contents Documentation Procedure. Future Commercial Fire Claims Guide will extend commercial contents indexing standards. Claims Ninja supports contractors with documentation standards, supplement packaging, and claim recovery workflows — we are not a public adjuster, carrier representative, or legal counsel.",
+    "Contents losses represent the largest undocumented financial exposure on many fire claims — carriers approve structure and smoke cleaning while reducing or denying personal property lines when inventories are incomplete, photos are missing, serial numbers are absent, or pack-out precedes in-place documentation. This guide is the contractor operational standard for documenting, organizing, valuing, photographing, inventorying, and supporting insurance recovery for contents losses during fire claims — not contents restoration procedures. For full-file fire standards including structural and smoke scope, see the Fire Damage Documentation Guide. For smoke and soot contamination evidence on contents-adjacent assemblies, see the Smoke & Soot Damage Documentation Guide. For pack-out chain of custody, transport, storage, and return documentation, see the Pack-Out Documentation Guide. For field pack-out execution detail, see the Contents Documentation Procedure. For commercial contents indexing, tenant improvement separation, and multi-suite inventory standards, see the Commercial Fire Claims Guide. Claims Ninja supports contractors with documentation standards, supplement packaging, and claim recovery workflows — we are not a public adjuster, carrier representative, or legal counsel.",
   whenToUse: [
     {
       condition: "Pack-out or on-site contents manipulation scheduled on a fire loss",
@@ -528,6 +529,10 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Commercial Fire Claims Guide",
+      href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+    },
     {
       label: "Fire Damage Documentation Guide",
       href: "/resources/guides/fire-damage/fire-damage-documentation-guide",

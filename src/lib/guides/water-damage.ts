@@ -1639,6 +1639,7 @@ export const WATER_DAMAGE_GUIDES = [
       "equipment-documentation-guide",
       "daily-monitoring-guide",
       "commercial-water-loss-documentation-guide",
+      "commercial-fire-claims-guide",
       "fire-damage-documentation-guide",
       "smoke-soot-damage-documentation-guide",
       "contents-inventory-documentation-guide",

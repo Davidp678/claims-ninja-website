@@ -336,6 +336,33 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "common area omissions",
     "documentation-to-invoice",
   ],
+  commercial_fire: [
+    "commercial fire",
+    "commercial fire claims",
+    "commercial fire loss",
+    "large loss fire",
+    "multi-tenant",
+    "multi-tenant fire",
+    "tenant coordination",
+    "tenant owner",
+    "shell tenant",
+    "triple net",
+    "tenant improvement",
+    "business interruption",
+    "industrial fire",
+    "hospitality fire",
+    "healthcare fire",
+    "office fire",
+    "retail fire",
+    "engineering reports",
+    "phased reconstruction",
+    "general conditions",
+    "commercial supplement",
+    "large-loss fire",
+    "commercial fire documentation",
+    "commercial fire scrutiny",
+    "commercial fire supplement",
+  ],
   results_insights: [
     "results and insights",
     "portfolio recovery",
@@ -964,6 +991,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /fire-claim-documentation-improve|fire-damage-documentation-guide|improve fire claim documentation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial fire claims documentation retrieves guide or FAQ",
+    message: "how do i document commercial fire damage",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-fire-claims-guide|fire-commercial-claims-documentation|commercial fire claims documentation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial fire tenant responsibility retrieves guide or FAQ",
+    message: "commercial fire claim tenant owner responsibility",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /owner and tenant responsibilities separated on commercial fire|fire-commercial-tenant-owner-responsibility|commercial-fire-claims-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial fire large loss scrutiny retrieves guide or FAQ",
+    message: "why are commercial fire claims more heavily scrutinized",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-fire-claims-guide|fire-commercial-large-loss-scrutiny|commercial fire claims.*scrutin/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial fire business interruption contractor role retrieves guide or FAQ",
+    message: "contractor role business interruption fire claim",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /documentation role do contractors play in business interruption on fire|fire-commercial-business-interruption-role|commercial-fire-claims-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial fire supplement opportunities retrieves guide or FAQ",
+    message: "commercial fire supplement opportunities",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-fire-claims-guide|fire-commercial-supplement-opportunities|commercial fire supplement/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "large loss fire documentation retrieves commercial fire guide",
+    message: "large loss fire documentation for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-fire-claims-guide|fire-commercial-large-loss-scrutiny|large loss fire documentation/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

@@ -34,6 +34,7 @@ export const SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document smoke and soot damage for insurance claims: contamination types, room-by-room inspection, migration evidence, HVAC scope, clean-versus-replace support, supplements, and claim recovery.",
   relatedGuideSlugs: [
+    "commercial-fire-claims-guide",
     "fire-damage-documentation-guide",
     "contents-inventory-documentation-guide",
     "pack-out-documentation-guide",
@@ -65,7 +66,7 @@ export const SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
   relatedSolutionPath: SOLUTION_PATH,
   claimTypes: ["fire-damage", "smoke"],
   purpose:
-    "Smoke and soot contamination is the highest-value documentation gap on most fire claims — carriers approve origin-room cleaning while denying migration, HVAC spread, odor, and replacement scope when evidence is unlabeled, incomplete, or captured after production changes the scene. This guide is the contractor operational standard for documenting smoke and soot damage during insurance claims: contamination types, inspection workflows, evidence collection, estimating support, supplements, and claim recovery — not restoration procedures. For full-file fire standards including structural and contents scope, see the Fire Damage Documentation Guide. For field capture execution, see the Smoke and Soot Documentation Procedure and linked specialty guides. Claims Ninja supports contractors with documentation standards, supplement packaging, and claim recovery workflows — we are not a public adjuster, carrier representative, or legal counsel.",
+    "Smoke and soot contamination is the highest-value documentation gap on most fire claims — carriers approve origin-room cleaning while denying migration, HVAC spread, odor, and replacement scope when evidence is unlabeled, incomplete, or captured after production changes the scene. This guide is the contractor operational standard for documenting smoke and soot damage during insurance claims: contamination types, inspection workflows, evidence collection, estimating support, supplements, and claim recovery — not restoration procedures. For full-file fire standards including structural and contents scope, see the Fire Damage Documentation Guide. For commercial large-loss smoke migration and HVAC zone documentation, see the Commercial Fire Claims Guide. For field capture execution, see the Smoke and Soot Documentation Procedure and linked specialty guides. Claims Ninja supports contractors with documentation standards, supplement packaging, and claim recovery workflows — we are not a public adjuster, carrier representative, or legal counsel.",
   whenToUse: [
     {
       condition: "Soot or smoke visible in rooms beyond the fire origin",
@@ -551,6 +552,10 @@ export const SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Commercial Fire Claims Guide",
+      href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+    },
     {
       label: "Fire Damage Documentation Guide",
       href: "/resources/guides/fire-damage/fire-damage-documentation-guide",

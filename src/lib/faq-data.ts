@@ -3088,6 +3088,99 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Yes. From localized kitchen fires to major structural rebuilds, supplement strategy adapts to loss severity. Larger files benefit from organized trade breakdowns and phased documentation as work progresses.",
     relatedLinks: [{ label: "Fire damage solutions", href: "/solutions/fire-damage" }],
   },
+  {
+    id: "fire-commercial-claims-documentation",
+    category: "fire_damage_claims",
+    question: "How are commercial fire claims documented?",
+    answer:
+      "Commercial fire claims require building- or suite-level indexing scaled to property footprint: documentation plan with folder index, building inventory, tenant coordination logs, separate structure and contents folders, engineering reports cross-referenced to estimate lines, and phased supplement submissions. Treat office, retail, industrial, and multi-tenant losses with indexed evidence per suite or zone — not residential single-file patterns.",
+    relatedLinks: [
+      {
+        label: "Commercial Fire Claims Guide",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-commercial-tenant-owner-responsibility",
+    category: "fire_damage_claims",
+    question: "How are owner and tenant responsibilities separated on commercial fire claims?",
+    answer:
+      "Review lease type before attributing scope. Building owners typically cover shell, common areas, and base building systems; tenants cover interior build-out, trade fixtures, and business personal property under triple-net or standard commercial leases. Label every inventory entry, photo folder, and estimate line as shell, tenant improvement, or contents to prevent coverage disputes on both policies.",
+    relatedLinks: [
+      {
+        label: "Commercial Fire Claims Guide",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-commercial-large-loss-scrutiny",
+    category: "fire_damage_claims",
+    question: "Why are commercial fire claims more heavily scrutinized?",
+    answer:
+      "Higher insured values trigger specialist adjusters, engineering review, and third-party audit. Carriers reconcile structural, smoke, HVAC, contents, and general conditions scope against building-indexed photos and engineering reports — not residential estimate macros. Tenant coordination, business interruption overlap, and phased supplements add review layers single-dwelling files rarely face. Weak building-level evidence invites proportional reductions across the entire commercial file.",
+    relatedLinks: [
+      {
+        label: "Commercial Fire Claims Guide",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+      {
+        label: "Why fire damage claims get underpaid",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+    ],
+  },
+  {
+    id: "fire-commercial-business-interruption-role",
+    category: "fire_damage_claims",
+    question: "What documentation role do contractors play in business interruption on fire claims?",
+    answer:
+      "Mitigation contractors document contemporaneous operational facts: mitigation start and completion dates, zone release schedules, access restrictions, tenant displacement coordination, and phased production timelines. This supports insured BI narratives but does not replace coverage analysis or financial claim preparation. Share indexed timeline exports with the insured's BI preparer without preparing income projections or profit-and-loss valuations.",
+    relatedLinks: [
+      {
+        label: "Commercial Fire Claims Guide",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+      {
+        label: "Commercial water loss documentation guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-commercial-supplement-opportunities",
+    category: "fire_damage_claims",
+    question: "What are common supplement opportunities on commercial fire claims?",
+    answer:
+      "Frequent gaps: hidden structural damage discovered during demolition, smoke migration beyond origin zones, HVAC contamination after system inspection, code upgrades on commercial rebuild, temporary facilities during extended mitigation, commercial contents pack-out and storage, environmental abatement, general conditions under-scoped on large-loss files, and engineering revisions expanding MEP scope. Submit phased supplements with contemporaneous photos and indexed reports before covering new assemblies.",
+    relatedLinks: [
+      {
+        label: "Commercial Fire Claims Guide",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+      {
+        label: "Fire damage supplement playbook",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Fire supplement documentation support FAQ",
+        href: "/faq#faq-fire-supplement-documentation-support",
+      },
+    ],
+  },
 
   // Mold Claims (5)
   {

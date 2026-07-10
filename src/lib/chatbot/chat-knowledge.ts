@@ -1065,6 +1065,53 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["fire documentation improve", "fire claim documentation"],
     topics: ["fire_damage_claims"],
   },
+  "fire-commercial-claims-documentation": {
+    phrases: [
+      "commercial fire claims documentation",
+      "how are commercial fire claims documented",
+      "document commercial fire damage",
+      "commercial fire loss documentation",
+    ],
+    keywords: ["commercial fire", "commercial fire documentation", "large loss fire"],
+    topics: ["fire_damage_claims", "commercial_fire"],
+  },
+  "fire-commercial-tenant-owner-responsibility": {
+    phrases: [
+      "commercial fire tenant owner responsibility",
+      "owner tenant responsibility commercial fire",
+      "shell versus tenant fire claim",
+      "triple net lease fire claim",
+    ],
+    keywords: ["tenant owner", "shell tenant", "triple net", "tenant improvement"],
+    topics: ["fire_damage_claims", "commercial_fire"],
+  },
+  "fire-commercial-large-loss-scrutiny": {
+    phrases: [
+      "commercial fire claims scrutinized",
+      "commercial fire claims scrutiny",
+      "large loss fire claim scrutiny",
+    ],
+    keywords: ["commercial fire scrutiny", "large loss scrutiny", "commercial fire audit"],
+    topics: ["fire_damage_claims", "commercial_fire"],
+  },
+  "fire-commercial-business-interruption-role": {
+    phrases: [
+      "contractor role business interruption fire",
+      "business interruption documentation contractor fire",
+      "fire claim business interruption contractor",
+    ],
+    keywords: ["business interruption", "BI documentation", "contractor BI role"],
+    topics: ["fire_damage_claims", "commercial_fire"],
+  },
+  "fire-commercial-supplement-opportunities": {
+    phrases: [
+      "commercial fire supplement opportunities",
+      "commercial fire supplement triggers",
+      "supplement opportunities commercial fire",
+    ],
+    keywords: ["commercial fire supplement", "commercial supplement opportunities"],
+    topics: ["fire_damage_claims", "commercial_fire", "supplements"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

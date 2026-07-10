@@ -35,6 +35,7 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document residential and commercial fire damage insurance claims: structural inspections, smoke migration, soot contamination, contents, estimating support, supplements, and claim recovery.",
   relatedGuideSlugs: [
+    "commercial-fire-claims-guide",
     "fire-claim-intake-guide",
     "smoke-soot-damage-documentation-guide",
     "contents-inventory-documentation-guide",
@@ -464,10 +465,14 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     {
       question: "Should commercial fire losses use different documentation standards?",
       answer:
-        "Commercial and multi-unit fire losses require scaled indexing — building or unit identifiers, tenant coordination logs, and separate structure versus contents folders — similar to commercial water loss documentation patterns. Apply the same evidence standards with property-level organization from intake.",
+        "Commercial and multi-unit fire losses require scaled indexing — building or unit identifiers, tenant coordination logs, and separate structure versus contents folders — similar to commercial water loss documentation patterns. Apply the same evidence standards with property-level organization from intake. See the Commercial Fire Claims Guide for the full commercial playbook.",
     },
   ],
   relatedResources: [
+    {
+      label: "Commercial Fire Claims Guide",
+      href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+    },
     {
       label: "Fire Claim Intake Checklist",
       href: "/resources/guides/fire-damage/fire-claim-intake-guide",

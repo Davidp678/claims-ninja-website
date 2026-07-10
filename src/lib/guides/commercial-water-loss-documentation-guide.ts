@@ -36,6 +36,7 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "water-mitigation-invoice-defense-guide",
     "category-3-water-damage-documentation-guide",
+    "commercial-fire-claims-guide",
     "moisture-mapping-guide",
     "dry-log-collection-guide",
     "daily-monitoring-guide",
@@ -608,6 +609,10 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Commercial Fire Claims Guide",
+      href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+    },
     {
       label: "Category 3 Water Damage Documentation Guide",
       href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",

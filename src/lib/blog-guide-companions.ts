@@ -270,11 +270,11 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "why-fire-damage-claims-get-underpaid": {
     intro:
-      "You've learned why fire claims get underpaid. Now run the documentation standards that defend structural, smoke, contents, and pack-out scope from intake through supplement.",
+      "You've learned why fire claims get underpaid. Now run the documentation standards and commercial playbook that defend structural, smoke, tenant, and large-loss scope from intake through supplement.",
     guideSlugs: [
+      "commercial-fire-claims-guide",
       "fire-damage-documentation-guide",
       "smoke-soot-damage-documentation-guide",
-      "contents-inventory-documentation-guide",
       "pack-out-documentation-guide",
     ],
   },

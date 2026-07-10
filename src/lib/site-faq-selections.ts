@@ -265,6 +265,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "fire-demo-rebuild",
       "fire-odor-deodorization",
       "fire-total-loss-partial",
+      "fire-commercial-claims-documentation",
+      "fire-commercial-tenant-owner-responsibility",
+      "fire-commercial-large-loss-scrutiny",
+      "fire-commercial-business-interruption-role",
+      "fire-commercial-supplement-opportunities",
     ],
   },
   mold: {
@@ -352,6 +357,8 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
     faqIds: [
       "documentation-essentials",
       "fire-damage-documentation-insurance",
+      "fire-commercial-claims-documentation",
+      "fire-commercial-large-loss-scrutiny",
       "fire-supplement-documentation-support",
       "supplements-process",
       "documentation-photos",

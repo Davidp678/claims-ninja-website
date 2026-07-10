@@ -1551,6 +1551,63 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Improvement FAQ; link documentation standards guide and underpayment blog.",
   },
+  "fire-commercial-claims-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["fire-damage/commercial-fire-claims-guide"],
+    relatedFaqIds: [
+      "fire-commercial-tenant-owner-responsibility",
+      "fire-commercial-large-loss-scrutiny",
+      "fire-damage-documentation-insurance",
+      "water-commercial-claims-documentation",
+    ],
+    internalLinkNotes:
+      "Commercial fire documentation FAQ; link commercial fire guide and commercial water indexing analogue.",
+  },
+  "fire-commercial-tenant-owner-responsibility": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "fire-damage/commercial-fire-claims-guide",
+      "fire-damage/contents-inventory-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "fire-commercial-claims-documentation",
+      "contents-inventory-documentation-insurance",
+    ],
+    internalLinkNotes:
+      "Tenant versus owner scope FAQ; link contents inventory guide for commercial labeling.",
+  },
+  "fire-commercial-large-loss-scrutiny": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["fire-damage/commercial-fire-claims-guide"],
+    relatedFaqIds: [
+      "fire-commercial-claims-documentation",
+      "fire-claims-underpaid-why",
+      "water-commercial-claims-scrutiny",
+    ],
+    internalLinkNotes:
+      "Commercial fire scrutiny FAQ; cross-link underpayment blog and commercial water scrutiny analogue.",
+  },
+  "fire-commercial-business-interruption-role": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["fire-damage/commercial-fire-claims-guide"],
+    relatedFaqIds: [
+      "fire-commercial-claims-documentation",
+      "water-business-interruption-documentation",
+    ],
+    internalLinkNotes:
+      "Contractor BI documentation role FAQ; link commercial water BI documentation analogue.",
+  },
+  "fire-commercial-supplement-opportunities": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["fire-damage/commercial-fire-claims-guide"],
+    relatedFaqIds: [
+      "fire-commercial-claims-documentation",
+      "fire-supplement-documentation-support",
+      "fire-hidden-damage-documentation",
+    ],
+    internalLinkNotes:
+      "Commercial fire supplement FAQ; link fire supplement playbook blog and general supplement FAQ.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {
