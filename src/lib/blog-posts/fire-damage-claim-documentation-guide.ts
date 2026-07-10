@@ -24,6 +24,7 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
   seoDescription:
     "Fire damage claim documentation for contractors: photos, soot and smoke evidence, contents inventories, structural scope, supplements, denial recovery, and restoration workflows.",
   relatedPostSlugs: [
+    "why-fire-damage-claims-get-underpaid",
     "fire-damage-supplement-playbook-for-contractors",
     "smoke-and-soot-damage-documentation-guide",
     "hvac-contamination-in-fire-damage-claims",

@@ -51,6 +51,7 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     "commercial-roofing-documentation-guide",
   ],
   relatedBlogSlugs: [
+    "why-fire-damage-claims-get-underpaid",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-playbook-for-contractors",
     "smoke-and-soot-damage-documentation-guide",
@@ -518,6 +519,10 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Commercial Roofing Documentation Guide",
       href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+    },
+    {
+      label: "Why Fire Damage Claims Get Underpaid",
+      href: "/resources/blog/why-fire-damage-claims-get-underpaid",
     },
     {
       label: "Fire Damage Claim Documentation Guide (blog)",

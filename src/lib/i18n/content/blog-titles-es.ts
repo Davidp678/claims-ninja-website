@@ -45,6 +45,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Guía de documentación de daños por humo y hollín",
   "fire-damage-supplement-denial-recovery":
     "Recuperación ante denegación de suplementos por daños de fuego",
+  "why-fire-damage-claims-get-underpaid":
+    "Por qué las reclamaciones por daños de fuego reciben pagos insuficientes: errores de documentación de los contratistas",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

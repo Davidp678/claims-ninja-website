@@ -24,6 +24,7 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
   seoDescription:
     "Fire damage supplements for contractors: missed line items, smoke and soot scope, documentation, carrier submissions, approval rates, and fire claim recovery.",
   relatedPostSlugs: [
+    "why-fire-damage-claims-get-underpaid",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-denial-recovery",
     "insurance-supplementing-guide-contractors",

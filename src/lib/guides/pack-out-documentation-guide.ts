@@ -45,6 +45,7 @@ export const PACK_OUT_DOCUMENTATION_GUIDE = defineGuide({
     "commercial-water-loss-documentation-guide",
   ],
   relatedBlogSlugs: [
+    "why-fire-damage-claims-get-underpaid",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-playbook-for-contractors",
     "claim-documentation-approval-rates",
@@ -556,6 +557,10 @@ export const PACK_OUT_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Commercial Water Loss Documentation Guide",
       href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+    },
+    {
+      label: "Why Fire Damage Claims Get Underpaid",
+      href: "/resources/blog/why-fire-damage-claims-get-underpaid",
     },
     {
       label: "Fire Damage Claim Documentation Guide (blog)",

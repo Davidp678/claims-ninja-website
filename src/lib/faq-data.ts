@@ -2908,6 +2908,111 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
   {
+    id: "fire-claims-underpaid-why",
+    category: "fire_damage_claims",
+    question: "Why are fire damage claims underpaid?",
+    answer:
+      "Fire damage claims get underpaid when documentation cannot support billed scope: incomplete structural evidence, weak smoke migration proof, missing contents photos and serial numbers, pack-out chain-of-custody gaps, and supplement packages assembled after production closes access. Desk reviewers reduce lines they cannot forward internally — proportional underpayment follows when photos, inventories, and logs lack room labels and contemporaneous timestamps.",
+    relatedLinks: [
+      {
+        label: "Why fire damage claims get underpaid",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "What documentation do insurance companies require after a fire?",
+        href: "/faq#faq-fire-claim-documentation-required",
+      },
+    ],
+  },
+  {
+    id: "fire-claim-documentation-required",
+    category: "fire_damage_claims",
+    question: "What documentation do insurance companies require after a fire?",
+    answer:
+      "Carriers expect site safety clearance, exterior and origin-room photos, structural and demolition discovery evidence, smoke migration by room, HVAC status, suppression water damage, contents inventory with photos, pack-out chain of custody, and estimate narratives with room labels consistent across photos, sketch, and line items. Indexed evidence supports supplements when scope exceeds the carrier estimate.",
+    relatedLinks: [
+      {
+        label: "Why fire damage claims get underpaid",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "How should fire damage be documented for insurance?",
+        href: "/faq#faq-fire-damage-documentation-insurance",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-contractor-documentation",
+    category: "fire_damage_claims",
+    question: "How do contractors support fire damage supplements?",
+    answer:
+      "Contractors support fire supplements by capturing contemporaneous evidence during demolition, migration review, and pack-out — then submitting phased packages with cover letters mapping attachments to line items. Assign a supplement owner, maintain a gap log from intake, compare carrier estimates within 48 hours, and resubmit hidden damage, smoke, HVAC, and contents scope with indexed photos before rebuild closes access.",
+    relatedLinks: [
+      {
+        label: "Why fire damage claims get underpaid",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "What documentation supports fire damage supplements?",
+        href: "/faq#faq-fire-supplement-documentation-support",
+      },
+    ],
+  },
+  {
+    id: "fire-claim-documentation-delays",
+    category: "fire_damage_claims",
+    question: "What documentation mistakes delay fire claims?",
+    answer:
+      "Common delay triggers include unlabeled photos, inconsistent room names across sketch and inventory, missing pack-out chain of custody, HVAC scope without register photos, contents lists without in-place images, and supplement submissions without cover indexes. Carriers request additional information iteratively when files are not reviewer-ready — each round adds days before payment or partial approval.",
+    relatedLinks: [
+      {
+        label: "Why fire damage claims get underpaid",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "How can contractors improve fire claim documentation?",
+        href: "/faq#faq-fire-claim-documentation-improve",
+      },
+    ],
+  },
+  {
+    id: "fire-claim-documentation-improve",
+    category: "fire_damage_claims",
+    question: "How can contractors improve fire claim documentation?",
+    answer:
+      "Improve fire claim documentation by indexing files by room and phase from intake, using consistent labels on every photo and log, capturing migration paths and demolition discovery contemporaneously, maintaining pack-out chain of custody, and submitting supplements with attachment-to-line-item cover indexes. Compare carrier estimates early, train field leads on smoke and contents capture standards, and hold rebuild until high-risk documentation gaps close.",
+    relatedLinks: [
+      {
+        label: "Why fire damage claims get underpaid",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Documentation Standards Guide",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+    ],
+  },
+  {
     id: "fire-smoke-soot",
     category: "fire_damage_claims",
     question: "How are smoke and soot damage documented for carriers?",

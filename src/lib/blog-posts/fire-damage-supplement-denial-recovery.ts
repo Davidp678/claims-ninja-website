@@ -25,6 +25,7 @@ export const fireDamageSupplementDenialRecovery: BlogPost = {
   seoDescription:
     "Denied fire damage supplements: common denial reasons, smoke and soot documentation, HVAC resubmission, partial approvals, and fire restoration claim recovery for contractors.",
   relatedPostSlugs: [
+    "why-fire-damage-claims-get-underpaid",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-playbook-for-contractors",
     "hvac-contamination-in-fire-damage-claims",

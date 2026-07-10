@@ -185,6 +185,21 @@ const SLUG_BOOSTS: Record<
     keywords: ["category 3", "black water", "category 3 underpaid"],
     topics: ["water_damage_claims", "mitigation"],
   },
+  "why-fire-damage-claims-get-underpaid": {
+    phrases: [
+      "fire damage underpaid",
+      "fire claim underpayment",
+      "fire claim documentation mistakes",
+      "why fire damage claims get underpaid",
+    ],
+    keywords: [
+      "fire damage supplements",
+      "fire restoration documentation",
+      "fire claim underpaid",
+      "fire damage estimating",
+    ],
+    topics: ["fire_damage_claims"],
+  },
   "how-carriers-reduce-drying-days": {
     phrases: ["carriers reduce drying days", "drying day reductions", "drying days cut"],
     keywords: ["drying day", "drying days", "reduce drying", "equipment days"],

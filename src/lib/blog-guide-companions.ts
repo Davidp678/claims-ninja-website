@@ -268,6 +268,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "You've learned odor mitigation documentation requirements. Now capture treatment scope and results with the procedure that supports deodorization line items.",
     guideSlugs: ["odor-documentation-guide"],
   },
+  "why-fire-damage-claims-get-underpaid": {
+    intro:
+      "You've learned why fire claims get underpaid. Now run the documentation standards that defend structural, smoke, contents, and pack-out scope from intake through supplement.",
+    guideSlugs: [
+      "fire-damage-documentation-guide",
+      "smoke-soot-damage-documentation-guide",
+      "contents-inventory-documentation-guide",
+      "pack-out-documentation-guide",
+    ],
+  },
 } as const satisfies Record<string, BlogGuideCompanionEntry>;
 
 export type BlogGuideCompanionSlug = keyof typeof BLOG_GUIDE_COMPANIONS;

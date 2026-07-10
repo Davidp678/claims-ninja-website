@@ -1645,6 +1645,7 @@ export const WATER_DAMAGE_GUIDES = [
       "pack-out-documentation-guide",
     ],
     relatedBlogSlugs: [
+      "why-fire-damage-claims-get-underpaid",
       "why-category-3-water-claims-get-underpaid",
       "why-water-mitigation-claims-get-underpaid",
       "water-damage-mitigation-supplement-playbook",

@@ -18,6 +18,7 @@ export const claimDocumentationApprovalRates: BlogPost = {
     "insurance-supplementing-guide-contractors",
     "dry-log-documentation-guide-insurance-claims",
     "why-carrier-estimates-miss-line-items",
+    "why-fire-damage-claims-get-underpaid",
   ],
   sections: [
     {

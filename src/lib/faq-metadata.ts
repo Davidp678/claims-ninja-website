@@ -1475,6 +1475,82 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Return delivery FAQ; cross-link pack-out cornerstone and contents field procedure.",
   },
+  "fire-claims-underpaid-why": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-documentation-guide",
+      "fire-damage/smoke-soot-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "fire-damage-documentation-insurance",
+      "fire-claim-documentation-required",
+      "fire-supplement-contractor-documentation",
+      "fire-claim-documentation-improve",
+    ],
+    internalLinkNotes:
+      "Anchor FAQ for fire underpayment blog; cross-link cornerstone and supplement FAQs.",
+  },
+  "fire-claim-documentation-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "fire-damage-documentation-insurance",
+      "fire-damage-photos-required",
+      "fire-claims-underpaid-why",
+      "fire-claim-documentation-delays",
+    ],
+    internalLinkNotes:
+      "Carrier documentation requirements FAQ; link fire underpayment blog and cornerstone guide.",
+  },
+  "fire-supplement-contractor-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-documentation-guide",
+      "fire-damage/pack-out-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "fire-supplement-documentation-support",
+      "fire-hidden-damage-documentation",
+      "fire-claims-underpaid-why",
+      "fire-claim-documentation-improve",
+    ],
+    internalLinkNotes:
+      "Contractor supplement workflow FAQ; distinguish from fire-supplement-documentation-support evidence list.",
+  },
+  "fire-claim-documentation-delays": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-documentation-guide",
+      "fire-damage/contents-inventory-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "fire-claim-documentation-required",
+      "fire-claim-documentation-improve",
+      "pack-out-chain-of-custody-documentation",
+      "fire-claims-underpaid-why",
+    ],
+    internalLinkNotes:
+      "Documentation delay FAQ; link pack-out and contents gaps from underpayment blog.",
+  },
+  "fire-claim-documentation-improve": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-documentation-guide",
+      "general-claims/documentation-standards-guide",
+      "fire-damage/smoke-soot-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "fire-damage-documentation-insurance",
+      "fire-claims-underpaid-why",
+      "fire-claim-documentation-delays",
+      "fire-supplement-contractor-documentation",
+    ],
+    internalLinkNotes:
+      "Improvement FAQ; link documentation standards guide and underpayment blog.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

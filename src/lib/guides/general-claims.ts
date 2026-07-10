@@ -1018,7 +1018,7 @@ export const GENERAL_CLAIMS_GUIDES = [
     seoTitle: "Insurance Claim Documentation Standards for Contractors",
     seoDescription:
       "Claim documentation standards for contractors: photo requirements, labeling conventions, file organization, and daily capture habits that improve supplement approval rates.",
-    relatedBlogSlugs: ["claim-documentation-approval-rates"],
+    relatedBlogSlugs: ["claim-documentation-approval-rates", "why-fire-damage-claims-get-underpaid"],
     relatedGuideSlugs: [
       "photo-documentation-standards-guide",
       "claim-file-audit-guide",

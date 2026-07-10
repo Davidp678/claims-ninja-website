@@ -194,6 +194,9 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "storage tracking",
     "return delivery",
     "loading manifest",
+    "fire underpaid",
+    "fire underpayment",
+    "fire claim documentation",
   ],
   roofing_claims: [
     "roofing",
@@ -906,6 +909,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /pack-out-return-documentation|returned contents be documented|return delivery/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire damage claims underpaid retrieves blog or FAQ",
+    message: "why are fire damage claims underpaid",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /why-fire-damage-claims-get-underpaid|fire-claims-underpaid-why|fire.*underpaid/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire claim documentation required retrieves guide or FAQ",
+    message: "what documentation do insurance companies require after a fire",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-claim-documentation-required|fire-damage-documentation-insurance|documentation do insurance companies require after a fire|document fire damage for insurance/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire supplement contractor documentation retrieves blog or FAQ",
+    message: "how do contractors support fire damage supplements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-supplement-contractor-documentation|fire-supplement-documentation-support|fire damage supplements/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire claim documentation delays retrieves blog or FAQ",
+    message: "what documentation mistakes delay fire claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-claim-documentation-delays|why-fire-damage-claims-get-underpaid|documentation mistakes delay fire/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire claim documentation improve retrieves blog or FAQ",
+    message: "how can contractors improve fire claim documentation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-claim-documentation-improve|fire-damage-documentation-guide|improve fire claim documentation/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

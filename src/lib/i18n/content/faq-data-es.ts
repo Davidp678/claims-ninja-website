@@ -2908,6 +2908,111 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
   {
+    id: "fire-claims-underpaid-why",
+    category: "fire_damage_claims",
+    question: "¿Por qué las reclamaciones por daños de fuego reciben pagos insuficientes?",
+    answer:
+      "Las reclamaciones por daños de fuego reciben pagos insuficientes cuando la documentación no puede respaldar el alcance facturado: evidencia estructural incompleta, prueba débil de migración de humo, fotos de contenidos y números de serie faltantes, brechas en la cadena de custodia del pack-out, y paquetes de suplemento ensamblados después de que la producción cierra el acceso. Los revisores de escritorio reducen líneas que no pueden reenviar internamente — el pago insuficiente proporcional sigue cuando fotos, inventarios y registros carecen de etiquetas de habitación y marcas de tiempo contemporáneas.",
+    relatedLinks: [
+      {
+        label: "Por qué las reclamaciones por daños de fuego reciben pagos insuficientes",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "¿Qué documentación requieren las aseguradoras después de un incendio?",
+        href: "/faq#faq-fire-claim-documentation-required",
+      },
+    ],
+  },
+  {
+    id: "fire-claim-documentation-required",
+    category: "fire_damage_claims",
+    question: "¿Qué documentación requieren las aseguradoras después de un incendio?",
+    answer:
+      "Las aseguradoras esperan autorización de seguridad del sitio, fotos exteriores y de la habitación de origen, evidencia estructural y de descubrimiento en demolición, migración de humo por habitación, estado del HVAC, daños por agua de supresión, inventario de contenidos con fotos, cadena de custodia del pack-out, y narrativas de estimación con etiquetas de habitación consistentes en fotos, croquis y partidas. La evidencia indexada respalda suplementos cuando el alcance excede la estimación de la aseguradora.",
+    relatedLinks: [
+      {
+        label: "Por qué las reclamaciones por daños de fuego reciben pagos insuficientes",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "¿Cómo se debe documentar el daño por fuego para el seguro?",
+        href: "/faq#faq-fire-damage-documentation-insurance",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-contractor-documentation",
+    category: "fire_damage_claims",
+    question: "¿Cómo respaldan los contratistas los suplementos por daños de fuego?",
+    answer:
+      "Los contratistas respaldan suplementos de fuego capturando evidencia contemporánea durante demolición, revisión de migración y pack-out — luego enviando paquetes por fases con cartas de presentación que mapean adjuntos a partidas. Asigne un responsable de suplemento, mantenga un registro de brechas desde la admisión, compare estimaciones de la aseguradora en 48 horas, y reenvíe daño oculto, humo, HVAC y alcance de contenidos con fotos indexadas antes de que la reconstrucción cierre el acceso.",
+    relatedLinks: [
+      {
+        label: "Por qué las reclamaciones por daños de fuego reciben pagos insuficientes",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "¿Qué documentación respalda los suplementos por daños de fuego?",
+        href: "/faq#faq-fire-supplement-documentation-support",
+      },
+    ],
+  },
+  {
+    id: "fire-claim-documentation-delays",
+    category: "fire_damage_claims",
+    question: "¿Qué errores de documentación retrasan las reclamaciones por incendio?",
+    answer:
+      "Los desencadenantes comunes de retraso incluyen fotos sin etiquetar, nombres de habitación inconsistentes entre croquis e inventario, cadena de custodia de pack-out faltante, alcance de HVAC sin fotos de rejillas, listas de contenidos sin imágenes in situ, y envíos de suplemento sin índices de portada. Las aseguradoras solicitan información adicional de forma iterativa cuando los archivos no están listos para revisión — cada ronda añade días antes del pago o aprobación parcial.",
+    relatedLinks: [
+      {
+        label: "Por qué las reclamaciones por daños de fuego reciben pagos insuficientes",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "¿Cómo pueden los contratistas mejorar la documentación de reclamaciones por incendio?",
+        href: "/faq#faq-fire-claim-documentation-improve",
+      },
+    ],
+  },
+  {
+    id: "fire-claim-documentation-improve",
+    category: "fire_damage_claims",
+    question: "¿Cómo pueden los contratistas mejorar la documentación de reclamaciones por incendio?",
+    answer:
+      "Mejore la documentación de reclamaciones por incendio indexando archivos por habitación y fase desde la admisión, usando etiquetas consistentes en cada foto y registro, capturando rutas de migración y descubrimiento en demolición de forma contemporánea, manteniendo la cadena de custodia del pack-out, y enviando suplementos con índices de portada de adjunto a partida. Compare estimaciones de la aseguradora temprano, capacite a líderes de campo en estándares de captura de humo y contenidos, y retenga la reconstrucción hasta cerrar brechas de documentación de alto riesgo.",
+    relatedLinks: [
+      {
+        label: "Por qué las reclamaciones por daños de fuego reciben pagos insuficientes",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Guía de estándares de documentación",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+    ],
+  },
+  {
     id: "fire-smoke-soot",
     category: "fire_damage_claims",
     question: "¿Cómo se documenta el daño por humo y hollín para las aseguradoras?",

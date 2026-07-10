@@ -1020,6 +1020,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["return delivery", "returned contents"],
     topics: ["fire_damage_claims"],
   },
+  "fire-claims-underpaid-why": {
+    phrases: [
+      "why are fire damage claims underpaid",
+      "fire damage claims underpaid",
+      "fire claim underpayment",
+    ],
+    keywords: ["fire underpaid", "fire underpayment", "fire claim underpaid"],
+    topics: ["fire_damage_claims"],
+  },
+  "fire-claim-documentation-required": {
+    phrases: [
+      "what documentation do insurance companies require after a fire",
+      "fire claim documentation required",
+      "documentation required after fire",
+    ],
+    keywords: ["fire documentation required", "fire claim documentation"],
+    topics: ["fire_damage_claims"],
+  },
+  "fire-supplement-contractor-documentation": {
+    phrases: [
+      "how do contractors support fire damage supplements",
+      "fire supplement contractor documentation",
+      "contractor fire supplement support",
+    ],
+    keywords: ["fire supplement", "fire damage supplement"],
+    topics: ["fire_damage_claims"],
+  },
+  "fire-claim-documentation-delays": {
+    phrases: [
+      "what documentation mistakes delay fire claims",
+      "fire claim documentation delays",
+      "fire claim delay documentation",
+    ],
+    keywords: ["fire claim delay", "fire documentation mistake"],
+    topics: ["fire_damage_claims"],
+  },
+  "fire-claim-documentation-improve": {
+    phrases: [
+      "how can contractors improve fire claim documentation",
+      "improve fire claim documentation",
+      "fire documentation improve",
+    ],
+    keywords: ["fire documentation improve", "fire claim documentation"],
+    topics: ["fire_damage_claims"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {
