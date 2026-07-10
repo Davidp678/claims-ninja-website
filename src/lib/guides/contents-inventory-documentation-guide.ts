@@ -36,6 +36,7 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "fire-damage-documentation-guide",
     "smoke-soot-damage-documentation-guide",
+    "pack-out-documentation-guide",
     "contents-documentation-guide",
     "fire-claim-intake-guide",
     "smoke-documentation-guide",
@@ -60,7 +61,7 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
   relatedSolutionPath: SOLUTION_PATH,
   claimTypes: ["fire-damage", "smoke", "commercial"],
   purpose:
-    "Contents losses represent the largest undocumented financial exposure on many fire claims — carriers approve structure and smoke cleaning while reducing or denying personal property lines when inventories are incomplete, photos are missing, serial numbers are absent, or pack-out precedes in-place documentation. This guide is the contractor operational standard for documenting, organizing, valuing, photographing, inventorying, and supporting insurance recovery for contents losses during fire claims — not contents restoration procedures. For full-file fire standards including structural and smoke scope, see the Fire Damage Documentation Guide. For smoke and soot contamination evidence on contents-adjacent assemblies, see the Smoke & Soot Damage Documentation Guide. For field pack-out execution and chain of custody, see the Contents Documentation Procedure. Future Pack-Out Documentation Guide and Commercial Fire Claims Guide will extend pack-out and commercial contents indexing standards. Claims Ninja supports contractors with documentation standards, supplement packaging, and claim recovery workflows — we are not a public adjuster, carrier representative, or legal counsel.",
+    "Contents losses represent the largest undocumented financial exposure on many fire claims — carriers approve structure and smoke cleaning while reducing or denying personal property lines when inventories are incomplete, photos are missing, serial numbers are absent, or pack-out precedes in-place documentation. This guide is the contractor operational standard for documenting, organizing, valuing, photographing, inventorying, and supporting insurance recovery for contents losses during fire claims — not contents restoration procedures. For full-file fire standards including structural and smoke scope, see the Fire Damage Documentation Guide. For smoke and soot contamination evidence on contents-adjacent assemblies, see the Smoke & Soot Damage Documentation Guide. For pack-out chain of custody, transport, storage, and return documentation, see the Pack-Out Documentation Guide. For field pack-out execution detail, see the Contents Documentation Procedure. Future Commercial Fire Claims Guide will extend commercial contents indexing standards. Claims Ninja supports contractors with documentation standards, supplement packaging, and claim recovery workflows — we are not a public adjuster, carrier representative, or legal counsel.",
   whenToUse: [
     {
       condition: "Pack-out or on-site contents manipulation scheduled on a fire loss",
@@ -522,7 +523,7 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
     {
       question: "When should contents be inventoried relative to pack-out?",
       answer:
-        "Always before pack-out. Room-located inventory and in-place photos must precede any movement. Inventories built after pack-out without item photos are the leading contents denial trigger. See the Contents Documentation Procedure for pack-out execution after inventory is complete.",
+        "Always before pack-out. Room-located inventory and in-place photos must precede any movement. Inventories built after pack-out without item photos are the leading contents denial trigger. See the Pack-Out Documentation Guide for chain-of-custody and transport documentation; see the Contents Documentation Procedure for pack-out execution after inventory is complete.",
     },
   ],
   relatedResources: [
@@ -533,6 +534,10 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Smoke & Soot Damage Documentation Guide",
       href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+    },
+    {
+      label: "Pack-Out Documentation Guide",
+      href: "/resources/guides/fire-damage/pack-out-documentation-guide",
     },
     {
       label: "Contents Documentation Procedure",

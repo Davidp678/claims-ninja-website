@@ -975,6 +975,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["contents supplement documentation", "contents supplement evidence"],
     topics: ["fire_damage_claims", "supplements"],
   },
+  "pack-out-documentation-insurance": {
+    phrases: [
+      "how should a pack-out be documented for insurance",
+      "document pack-out for insurance",
+      "pack-out documented for insurance",
+    ],
+    keywords: ["pack-out documentation", "pack-out insurance"],
+    topics: ["fire_damage_claims"],
+  },
+  "pack-out-chain-of-custody-documentation": {
+    phrases: [
+      "what chain of custody documentation is required",
+      "chain of custody documentation pack-out",
+      "pack-out chain of custody",
+    ],
+    keywords: ["chain of custody", "custody documentation"],
+    topics: ["fire_damage_claims"],
+  },
+  "pack-out-storage-tracking": {
+    phrases: [
+      "how should contents be tracked during storage",
+      "contents tracked during storage",
+      "pack-out storage tracking",
+    ],
+    keywords: ["storage tracking", "contents storage"],
+    topics: ["fire_damage_claims"],
+  },
+  "pack-out-charges-documentation": {
+    phrases: [
+      "what documentation supports pack-out charges",
+      "pack-out charges documentation",
+      "documentation supports pack-out charges",
+    ],
+    keywords: ["pack-out charges", "pack-out billing"],
+    topics: ["fire_damage_claims", "supplements"],
+  },
+  "pack-out-return-documentation": {
+    phrases: [
+      "how should returned contents be documented",
+      "returned contents documented",
+      "pack-out return documentation",
+    ],
+    keywords: ["return delivery", "returned contents"],
+    topics: ["fire_damage_claims"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

@@ -189,6 +189,11 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "personal property",
     "pack-out inventory",
     "contents supplement",
+    "pack-out documentation",
+    "chain of custody",
+    "storage tracking",
+    "return delivery",
+    "loading manifest",
   ],
   roofing_claims: [
     "roofing",
@@ -846,6 +851,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /contents-supplement-documentation|documentation supports contents supplements|contents supplements/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "pack-out documentation insurance retrieves guide or FAQ",
+    message: "how should a pack-out be documented for insurance",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /pack-out-documentation-insurance|pack-out-documentation-guide|pack-out be documented for insurance/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "pack-out chain of custody retrieves guide or FAQ",
+    message: "what chain of custody documentation is required",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /pack-out-chain-of-custody-documentation|chain of custody documentation|pack-out documentation guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "pack-out storage tracking retrieves guide or FAQ",
+    message: "how should contents be tracked during storage",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /pack-out-storage-tracking|contents be tracked during storage|storage tracking/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "pack-out charges documentation retrieves guide or FAQ",
+    message: "what documentation supports pack-out charges",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /pack-out-charges-documentation|documentation supports pack-out charges|pack-out charges/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "pack-out return documentation retrieves guide or FAQ",
+    message: "how should returned contents be documented",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /pack-out-return-documentation|returned contents be documented|return delivery/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

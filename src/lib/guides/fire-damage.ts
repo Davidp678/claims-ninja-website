@@ -1,6 +1,7 @@
 import { defineGuide, GUIDE_PUBLISHED_AT } from "@/lib/guides/guide-builder";
 import { CONTENTS_INVENTORY_DOCUMENTATION_GUIDE } from "@/lib/guides/contents-inventory-documentation-guide";
 import { FIRE_DAMAGE_DOCUMENTATION_GUIDE } from "@/lib/guides/fire-damage-documentation-guide";
+import { PACK_OUT_DOCUMENTATION_GUIDE } from "@/lib/guides/pack-out-documentation-guide";
 import { SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE } from "@/lib/guides/smoke-soot-damage-documentation-guide";
 import type { Guide } from "@/lib/guide-types";
 
@@ -10,6 +11,7 @@ export const FIRE_DAMAGE_GUIDES = [
   FIRE_DAMAGE_DOCUMENTATION_GUIDE,
   SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE,
   CONTENTS_INVENTORY_DOCUMENTATION_GUIDE,
+  PACK_OUT_DOCUMENTATION_GUIDE,
 
   defineGuide({
     slug: "fire-claim-intake-guide",
@@ -916,6 +918,7 @@ export const FIRE_DAMAGE_GUIDES = [
       "fire-damage-documentation-guide",
       "smoke-soot-damage-documentation-guide",
       "contents-inventory-documentation-guide",
+      "pack-out-documentation-guide",
       "fire-claim-intake-guide",
       "odor-documentation-guide",
       "structural-stabilization-documentation-guide",
@@ -923,7 +926,7 @@ export const FIRE_DAMAGE_GUIDES = [
     relatedBlogSlugs: ["fire-damage-claim-documentation-guide"],
     relatedSolutionPath: SOLUTION_PATH,
     purpose:
-      "Build room-located contents inventories with photo proof and pack-out chain of custody — so manipulation, cleaning, storage, and replacement lines survive contents desk review. For full contents inventory documentation standards including valuation, clean-versus-replace evidence, estimating support, and supplements, see the Contents Inventory Documentation Guide.",
+      "Build room-located contents inventories with photo proof and pack-out chain of custody — so manipulation, cleaning, storage, and replacement lines survive contents desk review. For full contents inventory documentation standards including valuation, clean-versus-replace evidence, estimating support, and supplements, see the Contents Inventory Documentation Guide. For pack-out chain of custody, transport, storage, and return documentation standards, see the Pack-Out Documentation Guide.",
     whenToUse: [
       {
         condition: "Pack-out or on-site contents manipulation scheduled",

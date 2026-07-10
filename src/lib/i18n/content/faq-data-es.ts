@@ -2712,6 +2712,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Procedimiento de documentación de contenidos",
         href: "/resources/guides/fire-damage/contents-documentation-guide",
       },
+      {
+        label: "Guía de documentación de pack-out",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
     ],
   },
   {
@@ -2728,6 +2732,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de documentación de reclamaciones por incendio (blog)",
         href: "/resources/blog/fire-damage-claim-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de pack-out",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
       },
     ],
   },
@@ -2783,6 +2791,119 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Recuperación de negación de suplementos por daños de fuego",
         href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+      {
+        label: "Guía de documentación de pack-out",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "pack-out-documentation-insurance",
+    category: "fire_damage_claims",
+    question: "¿Cómo se debe documentar un pack-out para el seguro?",
+    answer:
+      "Documente fotos de habitaciones y verificación de inventario antes del primer movimiento de artículos. Mantenga registros continuos de cadena de custodia desde el sitio hasta transporte, almacenamiento y procesamiento. Asigne números de caja y contenedor vinculados a lotes de inventario, complete manifiestos de carga y registros de conductor para cada movimiento de vehículo, y cruce cada línea de pack-out con documentación de custodia antes de enviar la estimación.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pack-out",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Procedimiento de documentación de contenidos",
+        href: "/resources/guides/fire-damage/contents-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "pack-out-chain-of-custody-documentation",
+    category: "fire_damage_claims",
+    question: "¿Qué documentación de cadena de custodia se requiere?",
+    answer:
+      "Las aseguradoras esperan identificadores únicos de artículos, sistemas de códigos de barras o etiquetas cruzados con inventario, numeración de cajas y contenedores en manifiestos de carga, registros de vehículo y conductor para cada transferencia, y firmas de cliente o instalación en puntos de entrega. La cadena de custodia debe ser continua desde el primer movimiento hasta ingreso a almacenamiento, procesamiento y entrega de regreso — sin vacíos sin documentar.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pack-out",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+      {
+        label: "Procedimiento de documentación de contenidos",
+        href: "/resources/guides/fire-damage/contents-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "pack-out-storage-tracking",
+    category: "fire_damage_claims",
+    question: "¿Cómo se deben rastrear los contenidos durante el almacenamiento?",
+    answer:
+      "Registre instalación de almacenamiento, asignación de bóveda o estante, fecha de ingreso y referencia de lote de inventario al ingreso. Documente condiciones ambientales para artículos sensibles al clima, registros de inspección periódica cuando el almacenamiento se extiende más allá de la estimación inicial, y medidas de seguridad cuando las aseguradoras cuestionan la necesidad del almacenamiento. Vincule cada línea de almacenamiento a referencias de lote y registros de custodia.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pack-out",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "pack-out-charges-documentation",
+    category: "fire_damage_claims",
+    question: "¿Qué documentación respalda los cargos de pack-out?",
+    answer:
+      "Los cargos de pack-out requieren inventarios ubicados por habitación con referencias de lote, manifiestos de carga que vinculen cajas a filas de inventario, registros de conductor y transporte, documentación de ingreso a almacenamiento, y referencias cruzadas de estimación que mapeen cada línea de manipulación, transporte y almacenamiento a registros de custodia. La facturación sin sustancia de inventario y prueba de manifiesto falla en la revisión de escritorio de contenidos.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pack-out",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "pack-out-return-documentation",
+    category: "fire_damage_claims",
+    question: "¿Cómo se deben documentar los contenidos devueltos?",
+    answer:
+      "Documente fecha de entrega de regreso, cuadrilla, manifiesto de vehículo y habitaciones de colocación con referencia cruzada de lote de inventario. Fotografíe la colocación de artículos de alto valor, obtenga reconocimiento del cliente de la entrega completada, y registre cualquier cambio de condición notado en la entrega. Las líneas de entrega de regreso y reempaque requieren registros de entrega contemporáneos — no reconstrucción al final del trabajo.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pack-out",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+      {
+        label: "Procedimiento de documentación de contenidos",
+        href: "/resources/guides/fire-damage/contents-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de inventario de contenidos",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
       },
     ],
   },
@@ -2909,7 +3030,13 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     question: "¿Cómo apoyan las reclamaciones de pack-out y limpieza de contenidos?",
     answer:
       "Revisamos inventarios, mano de obra de pack-out, almacenamiento, códigos de método de limpieza y manejo de artículos especiales. Los expedientes de contenidos fallan cuando los inventarios están incompletos o las partidas de limpieza no coinciden con los tipos de artículos; ayudamos a fortalecer esa documentación.",
-    relatedLinks: [{ label: "Soluciones para contenidos", href: "/solutions/contents" }],
+    relatedLinks: [
+      { label: "Soluciones para contenidos", href: "/solutions/contents" },
+      {
+        label: "Guía de documentación de pack-out",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+    ],
   },
   {
     id: "contents-inventory",
@@ -2924,6 +3051,13 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     question: "¿Los cargos de almacenamiento y manejo se disputan con frecuencia?",
     answer:
       "Sí. Las aseguradoras cuestionan la duración, el conteo de unidades y si el almacenamiento fue necesario. Documentar los tiempos de pack-out, el uso de bóvedas o contenedores y la logística de regreso al sitio ayuda a defender esos cargos.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de pack-out",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+      { label: "Soluciones para contenidos", href: "/solutions/contents" },
+    ],
   },
   {
     id: "contents-specialty-items",

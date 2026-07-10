@@ -1642,6 +1642,7 @@ export const WATER_DAMAGE_GUIDES = [
       "fire-damage-documentation-guide",
       "smoke-soot-damage-documentation-guide",
       "contents-inventory-documentation-guide",
+      "pack-out-documentation-guide",
     ],
     relatedBlogSlugs: [
       "why-category-3-water-claims-get-underpaid",

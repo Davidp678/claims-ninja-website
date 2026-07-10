@@ -170,6 +170,27 @@ const GUIDE_SLUG_BOOSTS: Record<
     ],
     topics: ["fire_damage_claims", "documentation"],
   },
+  "pack-out-documentation-guide": {
+    phrases: [
+      "pack-out documentation guide",
+      "document pack-out for insurance",
+      "pack-out documentation standard",
+      "how should a pack-out be documented for insurance",
+      "pack-out chain of custody documentation",
+      "pack-out insurance documentation",
+    ],
+    keywords: [
+      "pack-out",
+      "pack-out documentation",
+      "chain of custody",
+      "storage tracking",
+      "loading manifest",
+      "return delivery",
+      "pack-out charges",
+      "transport log",
+    ],
+    topics: ["fire_damage_claims", "documentation"],
+  },
   "claim-file-audit-guide": {
     phrases: ["claim file audit", "audit claim file"],
     keywords: ["claim audit", "file audit"],

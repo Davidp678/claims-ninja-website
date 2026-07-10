@@ -185,6 +185,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Estándar operativo para contratistas sobre documentación de propiedad personal y contenidos comerciales en reclamaciones por incendio: inventario habitación por habitación, fotografía, respaldo de valoración, evidencia de limpieza versus reemplazo, documentación de estimación, suplementos y recuperación de reclamaciones.",
   },
+  "fire-damage/pack-out-documentation-guide": {
+    title: "Guía de documentación de pack-out",
+    excerpt:
+      "Estándar operativo para contratistas sobre documentación de operaciones de pack-out en reclamaciones por incendio: cadena de custodia, precisión de inventario, transporte, almacenamiento, coordinación de limpieza, entrega de regreso, respaldo de estimación, suplementos y expedientes de reclamación defendibles.",
+  },
   "fire-damage/fire-claim-intake-guide": {
     title: "Lista de verificación de admisión de reclamaciones por incendio",
     excerpt:

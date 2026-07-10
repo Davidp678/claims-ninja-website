@@ -2712,6 +2712,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Contents Documentation Procedure",
         href: "/resources/guides/fire-damage/contents-documentation-guide",
       },
+      {
+        label: "Pack-Out Documentation Guide",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
     ],
   },
   {
@@ -2728,6 +2732,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Fire Damage Claim Documentation Guide (blog)",
         href: "/resources/blog/fire-damage-claim-documentation-guide",
+      },
+      {
+        label: "Pack-Out Documentation Guide",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
       },
     ],
   },
@@ -2783,6 +2791,119 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Fire Damage Supplement Denial Recovery",
         href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+      {
+        label: "Pack-Out Documentation Guide",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "pack-out-documentation-insurance",
+    category: "fire_damage_claims",
+    question: "How should a pack-out be documented for insurance?",
+    answer:
+      "Document pre-pack-out room photos and inventory verification before first item movement. Maintain continuous chain-of-custody logs from site through transport, storage, and processing. Assign box and tote numbers tied to inventory batches, complete loading manifests and driver logs for each vehicle movement, and cross-reference every pack-out line to custody documentation before estimate submission.",
+    relatedLinks: [
+      {
+        label: "Pack-Out Documentation Guide",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Contents Documentation Procedure",
+        href: "/resources/guides/fire-damage/contents-documentation-guide",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "pack-out-chain-of-custody-documentation",
+    category: "fire_damage_claims",
+    question: "What chain of custody documentation is required?",
+    answer:
+      "Carriers expect unique item identifiers, barcode or label systems cross-referenced to inventory, box and tote numbering on loading manifests, vehicle and driver logs for each transfer, and customer or facility signatures at handoff points. Chain of custody must be continuous from first item movement through storage intake, processing, and return delivery — no undocumented gaps.",
+    relatedLinks: [
+      {
+        label: "Pack-Out Documentation Guide",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+      {
+        label: "Contents Documentation Procedure",
+        href: "/resources/guides/fire-damage/contents-documentation-guide",
+      },
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "pack-out-storage-tracking",
+    category: "fire_damage_claims",
+    question: "How should contents be tracked during storage?",
+    answer:
+      "Log storage facility, vault or shelf assignment, intake date, and inventory batch reference at storage intake. Document environmental conditions for climate-sensitive items, periodic inspection logs when storage extends beyond initial estimate, and security measures when carriers question storage necessity. Tie every storage line to batch references and custody logs.",
+    relatedLinks: [
+      {
+        label: "Pack-Out Documentation Guide",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "pack-out-charges-documentation",
+    category: "fire_damage_claims",
+    question: "What documentation supports pack-out charges?",
+    answer:
+      "Pack-out charges require room-located inventories with batch references, loading manifests tying boxes to inventory rows, driver and transport logs, storage intake documentation, and estimate cross-references mapping each manipulation, transport, and storage line to custody logs. Billing without inventory substance and manifest proof fails contents desk review.",
+    relatedLinks: [
+      {
+        label: "Pack-Out Documentation Guide",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+      },
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "pack-out-return-documentation",
+    category: "fire_damage_claims",
+    question: "How should returned contents be documented?",
+    answer:
+      "Document return delivery date, crew, vehicle manifest, and placement rooms with inventory batch cross-reference. Photograph reset placement for high-value items, obtain customer acknowledgement of return completion, and log any condition changes noted at delivery. Return delivery and repackaging lines require contemporaneous delivery logs — not end-of-job reconstruction.",
+    relatedLinks: [
+      {
+        label: "Pack-Out Documentation Guide",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+      {
+        label: "Contents Documentation Procedure",
+        href: "/resources/guides/fire-damage/contents-documentation-guide",
+      },
+      {
+        label: "Contents Inventory Documentation Guide",
+        href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
       },
     ],
   },
@@ -2909,7 +3030,13 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "How do you support contents pack-out and cleaning claims?",
     answer:
       "We review inventories, pack-out labor, storage, cleaning method codes, and specialty item handling. Contents files fail when inventories are incomplete or cleaning lines do not match item types — we help tighten that documentation.",
-    relatedLinks: [{ label: "Contents solutions", href: "/solutions/contents" }],
+    relatedLinks: [
+      { label: "Contents solutions", href: "/solutions/contents" },
+      {
+        label: "Pack-Out Documentation Guide",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+    ],
   },
   {
     id: "contents-inventory",
@@ -2924,6 +3051,13 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "Are storage and handling charges commonly disputed?",
     answer:
       "Yes. Carriers question duration, unit counts, and whether storage was necessary. Documenting pack-out timing, vault or pod usage, and return-to-site logistics helps defend those charges.",
+    relatedLinks: [
+      {
+        label: "Pack-Out Documentation Guide",
+        href: "/resources/guides/fire-damage/pack-out-documentation-guide",
+      },
+      { label: "Contents solutions", href: "/solutions/contents" },
+    ],
   },
   {
     id: "contents-specialty-items",

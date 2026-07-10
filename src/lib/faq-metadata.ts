@@ -1335,9 +1335,14 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   },
   "contents-inventory-documentation-insurance": {
     searchIntent: "documentation-standard",
-    relatedGuideSlugs: ["fire-damage/contents-inventory-documentation-guide"],
+    relatedGuideSlugs: [
+      "fire-damage/contents-inventory-documentation-guide",
+      "fire-damage/pack-out-documentation-guide",
+    ],
     relatedFaqIds: [
       "contents-inventory-insurance-required",
+      "pack-out-documentation-insurance",
+      "pack-out-chain-of-custody-documentation",
       "contents-smoke-damage-documentation",
       "contents-clean-vs-replace",
       "contents-supplement-documentation",
@@ -1386,15 +1391,89 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   },
   "contents-supplement-documentation": {
     searchIntent: "documentation-standard",
-    relatedGuideSlugs: ["fire-damage/contents-inventory-documentation-guide"],
+    relatedGuideSlugs: [
+      "fire-damage/contents-inventory-documentation-guide",
+      "fire-damage/pack-out-documentation-guide",
+    ],
     relatedFaqIds: [
       "contents-inventory-documentation-insurance",
+      "pack-out-documentation-insurance",
+      "pack-out-charges-documentation",
       "fire-supplement-documentation-support",
       "smoke-damage-supplement-documentation",
       "help-denied-supplements",
     ],
     internalLinkNotes:
       "Contents supplement documentation FAQ; anchor for fire supplement playbook and denial recovery content.",
+  },
+  "pack-out-documentation-insurance": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["fire-damage/pack-out-documentation-guide"],
+    relatedFaqIds: [
+      "pack-out-chain-of-custody-documentation",
+      "pack-out-storage-tracking",
+      "pack-out-charges-documentation",
+      "pack-out-return-documentation",
+      "contents-inventory-documentation-insurance",
+    ],
+    internalLinkNotes:
+      "Primary cornerstone FAQ; anchor for pack-out documentation guide.",
+  },
+  "pack-out-chain-of-custody-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/pack-out-documentation-guide",
+      "fire-damage/contents-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "pack-out-documentation-insurance",
+      "pack-out-storage-tracking",
+      "pack-out-charges-documentation",
+      "contents-inventory-documentation-insurance",
+    ],
+    internalLinkNotes:
+      "Chain of custody FAQ; cross-link pack-out cornerstone and contents field procedure.",
+  },
+  "pack-out-storage-tracking": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["fire-damage/pack-out-documentation-guide"],
+    relatedFaqIds: [
+      "pack-out-documentation-insurance",
+      "pack-out-chain-of-custody-documentation",
+      "pack-out-charges-documentation",
+      "contents-inventory-insurance-required",
+    ],
+    internalLinkNotes:
+      "Storage tracking FAQ; cross-link pack-out guide and supplement playbook content.",
+  },
+  "pack-out-charges-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/pack-out-documentation-guide",
+      "fire-damage/contents-inventory-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "pack-out-documentation-insurance",
+      "pack-out-chain-of-custody-documentation",
+      "pack-out-storage-tracking",
+      "contents-supplement-documentation",
+    ],
+    internalLinkNotes:
+      "Pack-out charges FAQ; cross-link pack-out and contents inventory guides.",
+  },
+  "pack-out-return-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/pack-out-documentation-guide",
+      "fire-damage/contents-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "pack-out-documentation-insurance",
+      "pack-out-chain-of-custody-documentation",
+      "pack-out-charges-documentation",
+    ],
+    internalLinkNotes:
+      "Return delivery FAQ; cross-link pack-out cornerstone and contents field procedure.",
   },
 };
 

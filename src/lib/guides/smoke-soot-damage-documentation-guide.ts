@@ -36,6 +36,7 @@ export const SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "fire-damage-documentation-guide",
     "contents-inventory-documentation-guide",
+    "pack-out-documentation-guide",
     "fire-claim-intake-guide",
     "smoke-documentation-guide",
     "hvac-contamination-guide",
@@ -568,6 +569,10 @@ export const SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Contents Inventory Documentation Guide",
       href: "/resources/guides/fire-damage/contents-inventory-documentation-guide",
+    },
+    {
+      label: "Pack-Out Documentation Guide",
+      href: "/resources/guides/fire-damage/pack-out-documentation-guide",
     },
     {
       label: "Contents Documentation Procedure",

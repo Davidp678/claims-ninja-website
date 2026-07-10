@@ -220,7 +220,7 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "fire-damage-claim-documentation-guide": {
     intro:
-      "You've learned fire claim documentation fundamentals. Now execute the cornerstone documentation standard and specialty procedures that defend migration, HVAC, and contents scope.",
+      "You've learned fire claim documentation fundamentals. Now execute the cornerstone documentation standards and specialty procedures that defend migration, HVAC, contents, and pack-out scope.",
     guideSlugs: [
       "fire-damage-documentation-guide",
       "smoke-soot-damage-documentation-guide",
@@ -245,7 +245,7 @@ export const BLOG_GUIDE_COMPANIONS = {
       "fire-damage-documentation-guide",
       "fire-claim-intake-guide",
       "structural-stabilization-documentation-guide",
-      "contents-inventory-documentation-guide",
+      "pack-out-documentation-guide",
     ],
   },
   "fire-damage-supplement-denial-recovery": {
