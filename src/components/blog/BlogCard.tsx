@@ -9,7 +9,7 @@ import {
 } from "@/lib/blog-page";
 import { cn } from "@/lib/cn";
 
-import { getBlogVisualClass } from "./blog-visual";
+import { BlogCardVisual } from "./BlogCardVisual";
 
 type BlogCardProps = {
   post: BlogPost;
@@ -21,15 +21,11 @@ export function BlogCard({ post, compact = false }: BlogCardProps) {
 
   return (
     <Link href={href} className={cn("group flex h-full flex-col", BLOG_CARD_CLASS)}>
-      <div
-        className={cn(
-          getBlogVisualClass(post.visualVariant),
-          compact ? "mb-4 h-20 rounded-lg" : "mb-5 h-28 rounded-xl",
-        )}
-        aria-hidden
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-surface/90 to-transparent" />
-      </div>
+      <BlogCardVisual
+        category={post.category}
+        visualVariant={post.visualVariant}
+        size={compact ? "sm" : "md"}
+      />
       <span className="inline-block w-fit rounded-full border border-white/10 bg-brand-elevated/80 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-zinc-400">
         {getCategoryTitle(post.category)}
       </span>

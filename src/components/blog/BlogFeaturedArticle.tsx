@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { cn } from "@/lib/cn";
 import type { BlogPost } from "@/lib/blog-data";
 import { formatBlogDate, getBlogPostPath, getCategoryTitle } from "@/lib/blog-page";
 import type { Locale } from "@/lib/i18n/config";
@@ -9,7 +8,7 @@ import { getResourcesContent } from "@/lib/i18n/content/resources";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-import { getBlogVisualClass } from "./blog-visual";
+import { BlogCardVisual } from "./BlogCardVisual";
 
 type BlogFeaturedArticleProps = {
   post: BlogPost;
@@ -35,12 +34,11 @@ export function BlogFeaturedArticle({
         href={href}
         className="group mt-10 grid overflow-hidden rounded-2xl border border-white/15 bg-brand-surface shadow-[0_0_48px_-28px_rgba(220,38,38,0.25)] shadow-lg shadow-black/25 transition-colors hover:border-brand-red/45 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]"
       >
-        <div
-          className={cn(
-            getBlogVisualClass(post.visualVariant),
-            "min-h-[200px] lg:min-h-[280px]",
-          )}
-          aria-hidden
+        <BlogCardVisual
+          category={post.category}
+          visualVariant={post.visualVariant}
+          size="lg"
+          showBottomFade={false}
         />
         <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
           <span className="inline-block w-fit rounded-full border border-brand-red/30 bg-brand-red/10 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-brand-red-light">
