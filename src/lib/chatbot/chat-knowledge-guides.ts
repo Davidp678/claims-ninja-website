@@ -134,6 +134,28 @@ const GUIDE_SLUG_BOOSTS: Record<
     ],
     topics: ["fire_damage_claims", "documentation", "commercial_fire"],
   },
+  "fire-code-upgrade-documentation-guide": {
+    phrases: [
+      "fire code upgrade documentation",
+      "fire code upgrade documentation guide",
+      "document fire code upgrades",
+      "fire rebuild code upgrades",
+      "ordinance and law fire claim",
+      "AHJ permit fire rebuild",
+      "code required repairs fire",
+    ],
+    keywords: [
+      "fire code upgrade",
+      "code upgrade",
+      "ordinance and law",
+      "AHJ",
+      "building code",
+      "permit",
+      "inspection",
+      "code required",
+    ],
+    topics: ["fire_damage_claims", "documentation", "supplements"],
+  },
   "commercial-fire-claims-guide": {
     phrases: [
       "commercial fire claims guide",

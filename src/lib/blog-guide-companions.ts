@@ -245,7 +245,7 @@ export const BLOG_GUIDE_COMPANIONS = {
       "fire-damage-documentation-guide",
       "fire-claim-intake-guide",
       "structural-stabilization-documentation-guide",
-      "pack-out-documentation-guide",
+      "fire-code-upgrade-documentation-guide",
     ],
   },
   "fire-damage-supplement-denial-recovery": {

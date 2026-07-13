@@ -3182,6 +3182,93 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
+  // Fire Code Upgrades (5)
+  {
+    id: "fire-code-upgrade-insurance-coverage",
+    category: "fire_damage_claims",
+    question: "Does insurance pay for fire code upgrades?",
+    answer:
+      "Fire code upgrades may be covered when ordinance and law endorsements apply and documentation proves the upgrade is required by the authority having jurisdiction — not contractor preference. Coverage depends on the individual policy, endorsement limits, and whether the carrier accepts permit records, inspection reports, and code citations tied to specific line items. Contractors document AHJ requirements and separate code scope from like-kind repair; carriers apply policy language. Outcomes vary by carrier and evidence quality.",
+    relatedLinks: [
+      {
+        label: "Fire Code Upgrade Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-ordinance-law-coverage",
+    category: "fire_damage_claims",
+    question: "What is Ordinance & Law coverage?",
+    answer:
+      "Ordinance and law coverage is a policy endorsement that may pay for costs associated with building code compliance during repair or rebuild — commonly structured as Coverage A (undamaged portion demolition), Coverage B (increased cost of construction), and Coverage C (contingent liability) where listed. Availability, limits, and sublimits vary by carrier and policy. Contractors document code triggers and AHJ evidence; they do not interpret policy language or guarantee coverage outcomes.",
+    relatedLinks: [
+      {
+        label: "Fire Code Upgrade Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Does insurance pay for fire code upgrades?",
+        href: "/faq#faq-fire-code-upgrade-insurance-coverage",
+      },
+    ],
+  },
+  {
+    id: "fire-code-upgrade-contractor-documentation",
+    category: "fire_damage_claims",
+    question: "How do contractors document required code upgrades?",
+    answer:
+      "Identify jurisdiction and adopted code edition early; obtain permit application and inspection records; assign one specific code citation or AHJ written requirement per upgrade line; capture tear-out photos showing prior non-compliant condition and install photos before close-in; separate code scope from like-kind repair in Xactimate; and write supplement narratives linking trigger, citation, photo reference, and quantity. Documentation wins code supplements — generic code lists trigger denials.",
+    relatedLinks: [
+      {
+        label: "Fire Code Upgrade Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Claim Documentation Standards",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-code-upgrade-who-determines-required",
+    category: "fire_damage_claims",
+    question: "Who determines whether a code upgrade is required?",
+    answer:
+      "The authority having jurisdiction (AHJ) — typically the local building department, plan reviewer, or inspector — determines whether current code applies to repair or rebuild scope. Carriers evaluate whether documented requirements are tied to the loss and supported by permit and inspection evidence. Contractors research adopted code editions, submit permits, and log inspector communication; they do not unilaterally declare code requirements without AHJ or written code citation support.",
+    relatedLinks: [
+      {
+        label: "Fire Code Upgrade Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Fire damage supplement playbook",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "fire-code-upgrade-supplement-denials",
+    category: "fire_damage_claims",
+    question: "Why are fire code upgrade supplements denied?",
+    answer:
+      "Common denial reasons: generic code lists without job-specific application, no permit or inspection documentation, missing tear-out photos of prior non-compliant condition, code lines buried in undifferentiated repair macros, owner preference upgrades argued as code requirements, no ordinance and law coverage on policy, and late supplements assembled after production closes access. Resubmit with indexed permit records, AHJ correction notices, and one citation per line — outcomes vary by carrier and file specifics.",
+    relatedLinks: [
+      {
+        label: "Fire Code Upgrade Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Fire Damage Supplement Denial Recovery",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+
   // Mold Claims (5)
   {
     id: "mold-remediation-docs",

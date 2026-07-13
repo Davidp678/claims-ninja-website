@@ -1,6 +1,7 @@
 import { defineGuide, GUIDE_PUBLISHED_AT } from "@/lib/guides/guide-builder";
 import { COMMERCIAL_FIRE_CLAIMS_GUIDE } from "@/lib/guides/commercial-fire-claims-guide";
 import { CONTENTS_INVENTORY_DOCUMENTATION_GUIDE } from "@/lib/guides/contents-inventory-documentation-guide";
+import { FIRE_CODE_UPGRADE_DOCUMENTATION_GUIDE } from "@/lib/guides/fire-code-upgrade-documentation-guide";
 import { FIRE_DAMAGE_DOCUMENTATION_GUIDE } from "@/lib/guides/fire-damage-documentation-guide";
 import { PACK_OUT_DOCUMENTATION_GUIDE } from "@/lib/guides/pack-out-documentation-guide";
 import { SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE } from "@/lib/guides/smoke-soot-damage-documentation-guide";
@@ -11,6 +12,7 @@ const SOLUTION_PATH = "/solutions/fire-damage" as const;
 export const FIRE_DAMAGE_GUIDES = [
   COMMERCIAL_FIRE_CLAIMS_GUIDE,
   FIRE_DAMAGE_DOCUMENTATION_GUIDE,
+  FIRE_CODE_UPGRADE_DOCUMENTATION_GUIDE,
   SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE,
   CONTENTS_INVENTORY_DOCUMENTATION_GUIDE,
   PACK_OUT_DOCUMENTATION_GUIDE,

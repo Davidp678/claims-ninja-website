@@ -1118,6 +1118,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["commercial fire supplement", "commercial supplement opportunities"],
     topics: ["fire_damage_claims", "commercial_fire", "supplements"],
   },
+  "fire-code-upgrade-insurance-coverage": {
+    phrases: [
+      "does insurance pay for fire code upgrades",
+      "fire code upgrade insurance coverage",
+      "insurance pay code upgrades fire",
+    ],
+    keywords: ["fire code upgrade", "insurance pay", "code upgrade coverage"],
+    topics: ["fire_damage_claims", "supplements"],
+  },
+  "fire-ordinance-law-coverage": {
+    phrases: [
+      "what is ordinance and law coverage",
+      "ordinance and law coverage fire",
+      "ordinance law insurance fire claim",
+    ],
+    keywords: ["ordinance and law", "ordinance law", "coverage A", "coverage B"],
+    topics: ["fire_damage_claims", "insurance_supplements"],
+  },
+  "fire-code-upgrade-contractor-documentation": {
+    phrases: [
+      "how do contractors document code upgrades",
+      "document required code upgrades fire",
+      "fire code upgrade documentation contractor",
+    ],
+    keywords: ["code upgrade documentation", "document code upgrades", "AHJ documentation"],
+    topics: ["fire_damage_claims", "documentation"],
+  },
+  "fire-code-upgrade-who-determines-required": {
+    phrases: [
+      "who determines code upgrade required",
+      "who decides code upgrade fire rebuild",
+      "AHJ determines code upgrade",
+    ],
+    keywords: ["who determines", "AHJ", "authority having jurisdiction", "code required"],
+    topics: ["fire_damage_claims"],
+  },
+  "fire-code-upgrade-supplement-denials": {
+    phrases: [
+      "why are fire code upgrade supplements denied",
+      "fire code upgrade supplement denied",
+      "code upgrade supplement denial fire",
+    ],
+    keywords: ["code upgrade denied", "supplement denial", "fire code denial"],
+    topics: ["fire_damage_claims", "supplements", "carrier_negotiations"],
+  },
   "commercial-claims-handled": {
     phrases: [
       "does claims ninja handle commercial insurance claims",

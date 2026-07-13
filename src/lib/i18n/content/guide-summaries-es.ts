@@ -180,6 +180,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Aprenda cómo documentar reclamaciones de seguro por daños de fuego residenciales y comerciales: inspecciones, evidencia estructural, migración de humo y hollín, contenidos, respaldo de estimación, suplementos y recuperación de reclamaciones.",
   },
+  "fire-damage/fire-code-upgrade-documentation-guide": {
+    title: "Guía de documentación de mejoras por código en incendios",
+    excerpt:
+      "Manual operativo para identificar, documentar, justificar y recuperar mejoras exigidas por código durante reclamaciones por incendio — ordenanza y ley, coordinación con AHJ, evidencia de permisos, organización en Xactimate y respaldo de suplementos.",
+  },
   "fire-damage/smoke-soot-damage-documentation-guide": {
     title: "Guía de documentación de daños por humo y hollín",
     excerpt:

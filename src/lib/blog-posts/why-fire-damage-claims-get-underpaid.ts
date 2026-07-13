@@ -227,6 +227,10 @@ export const whyFireDamageClaimsGetUnderpaid: BlogPost = {
       ],
       links: [
         {
+          label: "Fire Code Upgrade Documentation Guide",
+          href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+        },
+        {
           label: "Fire Damage Supplement Playbook",
           href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
         },

@@ -3182,6 +3182,93 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Fire Code Upgrades (5)
+  {
+    id: "fire-code-upgrade-insurance-coverage",
+    category: "fire_damage_claims",
+    question: "¿El seguro paga las actualizaciones de código por incendio?",
+    answer:
+      "Las actualizaciones de código por incendio pueden estar cubiertas cuando aplican endosos de ordenanza y ley y la documentación demuestra que la mejora es exigida por la autoridad competente — no preferencia del contratista. La cobertura depende de la póliza individual, los límites del endoso y si la aseguradora acepta registros de permisos, informes de inspección y citas de código vinculadas a partidas específicas. Los contratistas documentan requisitos del AHJ y separan el alcance de código del reparo similar; las aseguradoras aplican el lenguaje de la póliza. Los resultados varían según la aseguradora y la calidad de la evidencia.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de mejoras por código en incendios",
+        href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-ordinance-law-coverage",
+    category: "fire_damage_claims",
+    question: "¿Qué es la cobertura de Ordenanza y Ley?",
+    answer:
+      "La cobertura de ordenanza y ley es un endoso de póliza que puede pagar costos asociados con el cumplimiento del código de construcción durante reparación o reconstrucción — comúnmente estructurada como Cobertura A (demolición de porción no dañada), Cobertura B (costo incrementado de construcción) y Cobertura C (responsabilidad contingente) cuando aparecen listadas. La disponibilidad, límites y sublímites varían según la aseguradora y la póliza. Los contratistas documentan activadores de código y evidencia del AHJ; no interpretan el lenguaje de la póliza ni garantizan resultados de cobertura.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de mejoras por código en incendios",
+        href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "¿El seguro paga las actualizaciones de código por incendio?",
+        href: "/faq#faq-fire-code-upgrade-insurance-coverage",
+      },
+    ],
+  },
+  {
+    id: "fire-code-upgrade-contractor-documentation",
+    category: "fire_damage_claims",
+    question: "¿Cómo documentan los contratistas las actualizaciones de código requeridas?",
+    answer:
+      "Identifique la jurisdicción y la edición de código adoptada temprano; obtenga solicitud de permiso e informes de inspección; asigne una cita de código específica o requisito escrito del AHJ por partida de mejora; capture fotos de demolición que muestren condición previa no conforme y fotos de instalación antes del cierre; separe el alcance de código del reparo similar en Xactimate; y redacte narrativas de suplemento vinculando activador, cita, referencia fotográfica y cantidad. La documentación gana suplementos de código — las listas genéricas de código provocan denegaciones.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de mejoras por código en incendios",
+        href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Estándares de documentación de reclamaciones",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-code-upgrade-who-determines-required",
+    category: "fire_damage_claims",
+    question: "¿Quién determina si una actualización de código es requerida?",
+    answer:
+      "La autoridad competente (AHJ) — típicamente el departamento de construcción local, revisor de planos o inspector — determina si el código vigente aplica al alcance de reparación o reconstrucción. Las aseguradoras evalúan si los requisitos documentados están vinculados a la pérdida y respaldados por evidencia de permisos e inspección. Los contratistas investigan ediciones de código adoptadas, presentan permisos y registran comunicación con inspectores; no declaran unilateralmente requisitos de código sin respaldo del AHJ o cita escrita de código.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de mejoras por código en incendios",
+        href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "fire-code-upgrade-supplement-denials",
+    category: "fire_damage_claims",
+    question: "¿Por qué se deniegan los suplementos de actualización de código por incendio?",
+    answer:
+      "Razones comunes de denegación: listas genéricas de código sin aplicación específica al trabajo, sin documentación de permisos o inspección, fotos de demolición faltantes de condición previa no conforme, partidas de código enterradas en macros de reparo indiferenciadas, mejoras de preferencia del propietario argumentadas como requisitos de código, sin cobertura de ordenanza y ley en la póliza, y suplementos tardíos armados después de que la producción cierra el acceso. Reenvíe con registros de permisos indexados, avisos de corrección del AHJ y una cita por partida — los resultados varían según la aseguradora y las particularidades del expediente.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de mejoras por código en incendios",
+        href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Recuperación de denegación de suplemento por daños de fuego",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+
   // Mold Claims (5)
   {
     id: "mold-remediation-docs",

@@ -2368,6 +2368,70 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
         ),
       ),
   },
+  {
+    label: "fire code upgrade guide retrieves for code upgrade documentation query",
+    message: "how do I document fire code upgrades for insurance",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-code-upgrade-documentation-guide|fire code upgrade documentation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire code upgrade insurance FAQ retrieves",
+    message: "does insurance pay for fire code upgrades",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-code-upgrade-insurance-coverage|fire code upgrade/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "ordinance and law FAQ retrieves",
+    message: "what is ordinance and law coverage on a fire claim",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-ordinance-law-coverage|ordinance and law/i.test(`${s.text} ${s.source}`),
+      ),
+  },
+  {
+    label: "fire code upgrade contractor documentation FAQ retrieves",
+    message: "how should contractors document required code upgrades after a fire",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-code-upgrade-contractor-documentation|document required code upgrades/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "AHJ code upgrade authority FAQ retrieves",
+    message: "who determines whether a code upgrade is required on a fire rebuild",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-code-upgrade-who-determines-required|authority having jurisdiction|AHJ/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire code upgrade supplement denial FAQ retrieves",
+    message: "why are fire code upgrade supplements denied",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-code-upgrade-supplement-denials|code upgrade supplements denied/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
 ];
 
 export function runKnowledgeRetrievalChecks(): {

@@ -1604,9 +1604,67 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "fire-commercial-claims-documentation",
       "fire-supplement-documentation-support",
       "fire-hidden-damage-documentation",
+      "fire-code-upgrade-insurance-coverage",
     ],
     internalLinkNotes:
       "Commercial fire supplement FAQ; link fire supplement playbook blog and general supplement FAQ.",
+  },
+  "fire-code-upgrade-insurance-coverage": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["fire-damage/fire-code-upgrade-documentation-guide"],
+    relatedFaqIds: [
+      "fire-ordinance-law-coverage",
+      "fire-code-upgrade-contractor-documentation",
+      "fire-code-upgrade-who-determines-required",
+    ],
+    internalLinkNotes:
+      "Primary fire code upgrade FAQ; anchor for ordinance and law cluster.",
+  },
+  "fire-ordinance-law-coverage": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["fire-damage/fire-code-upgrade-documentation-guide"],
+    relatedFaqIds: [
+      "fire-code-upgrade-insurance-coverage",
+      "fire-code-upgrade-contractor-documentation",
+      "fire-code-upgrade-supplement-denials",
+    ],
+    internalLinkNotes:
+      "Ordinance and law explainer; policy-dependent disclaimer required.",
+  },
+  "fire-code-upgrade-contractor-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-code-upgrade-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "fire-code-upgrade-insurance-coverage",
+      "fire-code-upgrade-who-determines-required",
+      "fire-code-upgrade-supplement-denials",
+    ],
+    internalLinkNotes:
+      "Documentation-standard FAQ for fire code upgrade evidence.",
+  },
+  "fire-code-upgrade-who-determines-required": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["fire-damage/fire-code-upgrade-documentation-guide"],
+    relatedFaqIds: [
+      "fire-code-upgrade-insurance-coverage",
+      "fire-code-upgrade-contractor-documentation",
+    ],
+    internalLinkNotes:
+      "AHJ authority FAQ; link supplement playbook for code strategy.",
+  },
+  "fire-code-upgrade-supplement-denials": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: ["fire-damage/fire-code-upgrade-documentation-guide"],
+    relatedFaqIds: [
+      "fire-code-upgrade-contractor-documentation",
+      "fire-code-upgrade-insurance-coverage",
+      "fire-supplement-documentation-support",
+    ],
+    internalLinkNotes:
+      "Denial recovery FAQ; link supplement denial recovery blog.",
   },
   "commercial-claims-handled": {
     searchIntent: "informational",

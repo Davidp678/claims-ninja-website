@@ -36,6 +36,7 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "commercial-fire-claims-guide",
     "fire-damage-documentation-guide",
+    "fire-code-upgrade-documentation-guide",
     "smoke-soot-damage-documentation-guide",
     "pack-out-documentation-guide",
     "contents-documentation-guide",
@@ -536,6 +537,10 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Fire Damage Documentation Guide",
       href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+    },
+    {
+      label: "Fire Code Upgrade Documentation Guide",
+      href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
     },
     {
       label: "Smoke & Soot Damage Documentation Guide",

@@ -1641,6 +1641,7 @@ export const WATER_DAMAGE_GUIDES = [
       "commercial-water-loss-documentation-guide",
       "commercial-fire-claims-guide",
       "fire-damage-documentation-guide",
+      "fire-code-upgrade-documentation-guide",
       "smoke-soot-damage-documentation-guide",
       "contents-inventory-documentation-guide",
       "pack-out-documentation-guide",
