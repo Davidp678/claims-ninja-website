@@ -22,6 +22,7 @@ import { first48HoursAfterCarrierEstimate } from "./first-48-hours-after-carrier
 import { waterDamageDocumentationForApartmentComplexes } from "./water-damage-documentation-for-apartment-complexes";
 import { waterDamageSupplementDenialRecovery } from "./water-damage-supplement-denial-recovery";
 import { whyCategory3WaterClaimsGetUnderpaid } from "./why-category-3-water-claims-get-underpaid";
+import { smokeDamageDocumentationMistakes } from "./smoke-damage-documentation-mistakes";
 import { whyFireDamageClaimsGetUnderpaid } from "./why-fire-damage-claims-get-underpaid";
 import { whyWaterMitigationClaimsGetUnderpaid } from "./why-water-mitigation-claims-get-underpaid";
 import { hailDamageRoofClaimsDocumentationSupplement } from "./hail-damage-roof-claims-documentation-supplement";
@@ -71,6 +72,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   fireDamageSupplementDenialRecovery,
   odorMitigationInFireDamageClaims,
   whyFireDamageClaimsGetUnderpaid,
+  smokeDamageDocumentationMistakes,
   opOnInsuranceClaims,
   supplementDenialRecoveryGuide,
   first48HoursAfterCarrierEstimate,

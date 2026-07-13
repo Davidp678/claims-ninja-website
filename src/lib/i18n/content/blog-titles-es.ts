@@ -47,6 +47,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Recuperación ante denegación de suplementos por daños de fuego",
   "why-fire-damage-claims-get-underpaid":
     "Por qué las reclamaciones por daños de fuego reciben pagos insuficientes: errores de documentación de los contratistas",
+  "smoke-damage-documentation-mistakes":
+    "Errores de documentación de daños por humo: 10 fallos costosos que provocan pagos insuficientes en reclamaciones por incendio",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

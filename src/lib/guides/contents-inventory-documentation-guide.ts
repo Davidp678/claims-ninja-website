@@ -49,6 +49,7 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
   ],
   relatedBlogSlugs: [
     "why-fire-damage-claims-get-underpaid",
+    "smoke-damage-documentation-mistakes",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-playbook-for-contractors",
     "smoke-and-soot-damage-documentation-guide",

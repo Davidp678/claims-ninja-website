@@ -2618,6 +2618,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Smoke and Soot Documentation Procedure",
         href: "/resources/guides/fire-damage/smoke-documentation-guide",
       },
+      {
+        label: "Smoke Damage Documentation Mistakes",
+        href: "/resources/blog/smoke-damage-documentation-mistakes",
+      },
       { label: "Fire damage solutions", href: "/solutions/fire-damage" },
     ],
   },
@@ -2690,6 +2694,111 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Fire Damage Supplement Denial Recovery",
         href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-contractor-documentation-insurance",
+    category: "fire_damage_claims",
+    question: "How do contractors document smoke damage for insurance claims?",
+    answer:
+      "Contractors document smoke damage with room-by-room contamination photos, migration path narrative from origin through halls and upper floors, odor intensity logs, HVAC register and filter inspection, test-clean results for clean-versus-replace decisions, and concealed-area photos from attics and cavities — all with room labels matching sketch and estimate. Indexed folders by room and phase support supplements when smoke scope exceeds the carrier estimate.",
+    relatedLinks: [
+      {
+        label: "Smoke Damage Documentation Mistakes",
+        href: "/resources/blog/smoke-damage-documentation-mistakes",
+      },
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-claim-photos-required",
+    category: "fire_damage_claims",
+    question: "What photos should be taken for smoke damage claims?",
+    answer:
+      "Smoke damage claims need wide room context, mid-range vertical spread shots, and close substrate photos on ceilings, walls, trim, cabinets, and flooring in every affected room; migration path through halls and chases; HVAC registers, filters, and accessible duct runs; attic and crawlspace inspection when migration is claimed; test-clean before-and-after sets; and contents in-place photos — all labeled consistently with sketch room names and dated at intake.",
+    relatedLinks: [
+      {
+        label: "Smoke Damage Documentation Mistakes",
+        href: "/resources/blog/smoke-damage-documentation-mistakes",
+      },
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Photo Documentation Standards Procedure",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-hvac-documentation-required",
+    category: "fire_damage_claims",
+    question: "Does smoke damage require HVAC documentation?",
+    answer:
+      "Yes — when HVAC ran after the fire or when migration claims include duct pathways, carriers expect register and grille photos, filter condition at intake, accessible duct and plenum inspection, air handler interior photos when unit cleaning is billed, system type notes, and post-clean verification. HVAC scope without field evidence is among the first smoke lines reduced on desk review.",
+    relatedLinks: [
+      {
+        label: "HVAC contamination in fire damage claims",
+        href: "/resources/blog/hvac-contamination-in-fire-damage-claims",
+      },
+      {
+        label: "HVAC Contamination Documentation Procedure",
+        href: "/resources/guides/fire-damage/hvac-contamination-guide",
+      },
+      {
+        label: "Smoke Damage Documentation Mistakes",
+        href: "/resources/blog/smoke-damage-documentation-mistakes",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-claims-underpaid-why",
+    category: "fire_damage_claims",
+    question: "Why do smoke damage insurance claims get underpaid?",
+    answer:
+      "Smoke claims get underpaid when documentation treats contamination as cosmetic, omits odor mapping and HVAC evidence, skips concealed areas, delivers unlabeled photo rolls, fails to separate cleaning from replacement, and lacks written migration narrative. Carriers approve scope they can match to sketch rooms — incomplete smoke files produce proportional reductions rather than full denial.",
+    relatedLinks: [
+      {
+        label: "Smoke Damage Documentation Mistakes",
+        href: "/resources/blog/smoke-damage-documentation-mistakes",
+      },
+      {
+        label: "Why fire damage claims get underpaid",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-invisible-without-soot",
+    category: "fire_damage_claims",
+    question: "Can smoke damage exist without visible soot?",
+    answer:
+      "Yes. Smoke damage includes vapor-phase deposition, odor absorption in porous materials, particulate in wall cavities, and microscopic soot in HVAC media — often without obvious surface staining. Protein fires and slow-burn losses frequently produce persistent odor with minimal visible residue. Document odor logs, cavity inspection, test-clean results, and HVAC filter condition to prove impact carriers cannot see in wide photos alone.",
+    relatedLinks: [
+      {
+        label: "Smoke Damage Documentation Mistakes",
+        href: "/resources/blog/smoke-damage-documentation-mistakes",
+      },
+      {
+        label: "Odor mitigation in fire damage claims",
+        href: "/resources/blog/odor-mitigation-in-fire-damage-claims",
+      },
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
       },
     ],
   },

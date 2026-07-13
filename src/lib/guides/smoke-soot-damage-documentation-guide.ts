@@ -51,6 +51,7 @@ export const SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
   ],
   relatedBlogSlugs: [
     "why-fire-damage-claims-get-underpaid",
+    "smoke-damage-documentation-mistakes",
     "smoke-and-soot-damage-documentation-guide",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-playbook-for-contractors",

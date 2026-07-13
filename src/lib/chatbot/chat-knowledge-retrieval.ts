@@ -2432,6 +2432,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
         ),
       ),
   },
+  {
+    label: "contractor smoke damage documentation FAQ retrieves",
+    message: "how do contractors document smoke damage for insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /smoke-damage-contractor-documentation-insurance|smoke-damage-documentation-mistakes|document smoke damage/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "smoke damage claim photos FAQ retrieves",
+    message: "what photos should be taken for smoke damage claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /What photos should be taken for smoke damage claims|What photographs should be taken after smoke damage|smoke-damage-documentation-mistakes/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "smoke damage hvac documentation FAQ retrieves",
+    message: "does smoke damage require hvac documentation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /smoke-damage-hvac-documentation-required|hvac-contamination|hvac documentation smoke/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "smoke damage claims underpaid FAQ retrieves",
+    message: "why do smoke damage insurance claims get underpaid",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /Why do smoke damage insurance claims get underpaid|smoke-damage-documentation-mistakes|Smoke Damage Documentation Mistakes/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "invisible smoke damage without soot FAQ retrieves",
+    message: "can smoke damage exist without visible soot",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /smoke-damage-invisible-without-soot|invisible smoke|without visible soot/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
 ];
 
 export function runKnowledgeRetrievalChecks(): {

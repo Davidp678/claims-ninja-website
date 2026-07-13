@@ -2618,6 +2618,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Procedimiento de documentación de humo y hollín",
         href: "/resources/guides/fire-damage/smoke-documentation-guide",
       },
+      {
+        label: "Errores de documentación de daños por humo",
+        href: "/resources/blog/smoke-damage-documentation-mistakes",
+      },
       { label: "Soluciones para daños por fuego", href: "/solutions/fire-damage" },
     ],
   },
@@ -2690,6 +2694,111 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Recuperación ante denegación de suplementos por fuego",
         href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-contractor-documentation-insurance",
+    category: "fire_damage_claims",
+    question: "¿Cómo documentan los contratistas el daño por humo para reclamaciones de seguro?",
+    answer:
+      "Los contratistas documentan el daño por humo con fotos de contaminación habitación por habitación, narrativa de la ruta de migración desde el origen por pasillos y pisos superiores, registros de intensidad de olor, inspección de rejillas y filtros HVAC, resultados de limpieza de prueba para decisiones de limpiar frente a reemplazar, y fotos de áreas ocultas en áticos y cavidades, todo con etiquetas de habitación que coincidan con croquis y estimación. Las carpetas indexadas por habitación y fase respaldan suplementos cuando el alcance de humo excede el estimado de la aseguradora.",
+    relatedLinks: [
+      {
+        label: "Errores de documentación de daños por humo",
+        href: "/resources/blog/smoke-damage-documentation-mistakes",
+      },
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-claim-photos-required",
+    category: "fire_damage_claims",
+    question: "¿Qué fotos se deben tomar para reclamaciones por daño de humo?",
+    answer:
+      "Las reclamaciones por daño de humo necesitan contexto general de habitación, tomas de propagación vertical a media distancia y fotos de primer plano del sustrato en techos, paredes, molduras, gabinetes y pisos en cada habitación afectada; ruta de migración por pasillos y conductos; rejillas, filtros y ductos accesibles HVAC; inspección de ático y crawlspace cuando se reclame migración; series de limpieza de prueba antes y después; y fotos de contenidos in situ, todo etiquetado consistentemente con nombres de habitación del croquis y fechado en la admisión.",
+    relatedLinks: [
+      {
+        label: "Errores de documentación de daños por humo",
+        href: "/resources/blog/smoke-damage-documentation-mistakes",
+      },
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "Procedimiento de estándares de documentación fotográfica",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-hvac-documentation-required",
+    category: "fire_damage_claims",
+    question: "¿El daño por humo requiere documentación HVAC?",
+    answer:
+      "Sí — cuando el HVAC funcionó después del incendio o cuando las reclamaciones de migración incluyen rutas de ductos, las aseguradoras esperan fotos de rejillas y difusores, condición de filtros en la admisión, inspección de ductos y plenum accesibles, fotos del interior del manejador de aire cuando se factura limpieza de unidad, notas del tipo de sistema y verificación post-limpieza. El alcance HVAC sin evidencia de campo está entre las primeras partidas de humo reducidas en revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Contaminación HVAC en reclamaciones por daños de fuego",
+        href: "/resources/blog/hvac-contamination-in-fire-damage-claims",
+      },
+      {
+        label: "Procedimiento de documentación de contaminación HVAC",
+        href: "/resources/guides/fire-damage/hvac-contamination-guide",
+      },
+      {
+        label: "Errores de documentación de daños por humo",
+        href: "/resources/blog/smoke-damage-documentation-mistakes",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-claims-underpaid-why",
+    category: "fire_damage_claims",
+    question: "¿Por qué las reclamaciones de seguro por daño de humo reciben pagos insuficientes?",
+    answer:
+      "Las reclamaciones por humo reciben pagos insuficientes cuando la documentación trata la contaminación como cosmética, omite mapeo de olor y evidencia HVAC, salta áreas ocultas, entrega rollos de fotos sin etiquetar, no separa limpieza de reemplazo y carece de narrativa escrita de migración. Las aseguradoras aprueban alcance que pueden emparejar con habitaciones del croquis — los expedientes de humo incompletos producen reducciones proporcionales en lugar de denegación total.",
+    relatedLinks: [
+      {
+        label: "Errores de documentación de daños por humo",
+        href: "/resources/blog/smoke-damage-documentation-mistakes",
+      },
+      {
+        label: "Por qué las reclamaciones por daños de fuego reciben pagos insuficientes",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "smoke-damage-invisible-without-soot",
+    category: "fire_damage_claims",
+    question: "¿Puede existir daño por humo sin hollín visible?",
+    answer:
+      "Sí. El daño por humo incluye deposición en fase de vapor, absorción de olor en materiales porosos, partículas en cavidades de pared y hollín microscópico en medios HVAC, a menudo sin manchas superficiales obvias. Los incendios de proteína y pérdidas de combustión lenta producen frecuentemente olor persistente con residuo visible mínimo. Documente registros de olor, inspección de cavidades, resultados de limpieza de prueba y condición de filtros HVAC para probar impacto que las aseguradoras no pueden ver solo en fotos generales.",
+    relatedLinks: [
+      {
+        label: "Errores de documentación de daños por humo",
+        href: "/resources/blog/smoke-damage-documentation-mistakes",
+      },
+      {
+        label: "Mitigación de olores en reclamaciones por daños de fuego",
+        href: "/resources/blog/odor-mitigation-in-fire-damage-claims",
+      },
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
       },
     ],
   },

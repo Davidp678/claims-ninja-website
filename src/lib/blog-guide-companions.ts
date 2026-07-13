@@ -278,6 +278,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "pack-out-documentation-guide",
     ],
   },
+  "smoke-damage-documentation-mistakes": {
+    intro:
+      "You've learned which smoke documentation mistakes trigger underpayment. Now run the field procedures that defend contamination scope, HVAC review, contents inventory, and code-required repairs.",
+    guideSlugs: [
+      "smoke-soot-damage-documentation-guide",
+      "fire-damage-documentation-guide",
+      "hvac-contamination-guide",
+      "fire-code-upgrade-documentation-guide",
+    ],
+  },
 } as const satisfies Record<string, BlogGuideCompanionEntry>;
 
 export type BlogGuideCompanionSlug = keyof typeof BLOG_GUIDE_COMPANIONS;

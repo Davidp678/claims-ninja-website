@@ -32,6 +32,7 @@ export const whyFireDamageClaimsGetUnderpaid: BlogPost = {
     "fire-damage-supplement-playbook-for-contractors",
     "fire-damage-supplement-denial-recovery",
     "smoke-and-soot-damage-documentation-guide",
+    "smoke-damage-documentation-mistakes",
   ],
   faqIds: [
     "fire-claims-underpaid-why",

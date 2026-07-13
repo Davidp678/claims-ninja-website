@@ -1333,6 +1333,72 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Smoke supplement documentation FAQ; anchor for fire supplement playbook and denial recovery content.",
   },
+  "smoke-damage-contractor-documentation-insurance": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/smoke-soot-damage-documentation-guide",
+      "fire-damage/fire-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "smoke-damage-documentation-insurance",
+      "smoke-damage-claim-photos-required",
+      "smoke-damage-claims-underpaid-why",
+    ],
+    internalLinkNotes:
+      "Contractor smoke documentation FAQ; anchor for smoke documentation mistakes blog.",
+  },
+  "smoke-damage-claim-photos-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/smoke-soot-damage-documentation-guide",
+      "general-claims/photo-documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "smoke-damage-photos-required",
+      "smoke-damage-contractor-documentation-insurance",
+      "fire-smoke-soot",
+    ],
+    internalLinkNotes:
+      "Smoke claim photo requirements FAQ; cross-link photo standards and mistakes blog.",
+  },
+  "smoke-damage-hvac-documentation-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/hvac-contamination-guide",
+      "fire-damage/smoke-soot-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "smoke-damage-documentation-insurance",
+      "fire-smoke-soot",
+    ],
+    internalLinkNotes:
+      "HVAC documentation requirement FAQ for smoke claims; cross-link HVAC blog and guide.",
+  },
+  "smoke-damage-claims-underpaid-why": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["fire-damage/smoke-soot-damage-documentation-guide"],
+    relatedFaqIds: [
+      "fire-claims-underpaid-why",
+      "smoke-damage-contractor-documentation-insurance",
+      "smoke-damage-invisible-without-soot",
+    ],
+    internalLinkNotes:
+      "Smoke underpayment FAQ; anchor for smoke documentation mistakes blog.",
+  },
+  "smoke-damage-invisible-without-soot": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "fire-damage/smoke-soot-damage-documentation-guide",
+      "fire-damage/odor-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "smoke-damage-documentation-insurance",
+      "smoke-damage-clean-vs-replace",
+      "fire-odor-deodorization",
+    ],
+    internalLinkNotes:
+      "Invisible smoke damage FAQ; cross-link odor documentation and mistakes blog.",
+  },
   "contents-inventory-documentation-insurance": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [

@@ -3,6 +3,7 @@ import { resolveBlogAuthor } from "@/lib/blog-authors";
 import { getCategoryName } from "@/lib/blog-categories";
 import { BLOG_META, getBlogPostPath } from "@/lib/blog-page";
 import { SITE } from "@/lib/constants";
+import { getFaqItemsByIds } from "@/lib/faq-page";
 import {
   DEFAULT_OG_IMAGE_PATH,
   getAbsoluteUrl,
@@ -37,6 +38,41 @@ export function buildBlogPostingSchema(post: BlogPost) {
     image: getAbsoluteUrl(DEFAULT_OG_IMAGE_PATH),
     articleSection: getCategoryName(post.category),
     keywords: post.tags.join(", "),
+  };
+}
+
+function resolveBlogFaqItems(
+  post: BlogPost,
+): readonly { question: string; answer: string }[] {
+  if (post.faqIds && post.faqIds.length > 0) {
+    return getFaqItemsByIds(post.faqIds).map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    }));
+  }
+
+  if (post.faq && post.faq.length > 0) {
+    return post.faq;
+  }
+
+  return [];
+}
+
+export function buildBlogFaqSchema(post: BlogPost) {
+  const faq = resolveBlogFaqItems(post);
+  if (faq.length === 0) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
   };
 }
 

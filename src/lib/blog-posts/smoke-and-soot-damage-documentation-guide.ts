@@ -25,6 +25,7 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
     "Smoke and soot damage documentation for contractors: contamination types, inspection workflows, HVAC and migration evidence, supplement support, and fire claim recovery.",
   relatedPostSlugs: [
     "why-fire-damage-claims-get-underpaid",
+    "smoke-damage-documentation-mistakes",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-playbook-for-contractors",
     "claim-documentation-approval-rates",

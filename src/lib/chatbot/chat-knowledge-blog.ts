@@ -200,6 +200,21 @@ const SLUG_BOOSTS: Record<
     ],
     topics: ["fire_damage_claims"],
   },
+  "smoke-damage-documentation-mistakes": {
+    phrases: [
+      "smoke damage documentation mistakes",
+      "smoke documentation errors",
+      "smoke claim underpaid documentation",
+      "costly smoke documentation mistakes",
+    ],
+    keywords: [
+      "smoke damage documentation",
+      "smoke claim underpaid",
+      "smoke documentation mistakes",
+      "invisible smoke damage",
+    ],
+    topics: ["fire_damage_claims"],
+  },
   "how-carriers-reduce-drying-days": {
     phrases: ["carriers reduce drying days", "drying day reductions", "drying days cut"],
     keywords: ["drying day", "drying days", "reduce drying", "equipment days"],

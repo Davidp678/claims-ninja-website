@@ -935,6 +935,55 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["smoke supplement documentation", "smoke supplement evidence"],
     topics: ["fire_damage_claims", "supplements"],
   },
+  "smoke-damage-contractor-documentation-insurance": {
+    phrases: [
+      "how do contractors document smoke damage for insurance claims",
+      "contractor smoke damage documentation insurance",
+      "document smoke damage for insurance claims contractors",
+    ],
+    keywords: [
+      "contractor smoke documentation",
+      "smoke damage insurance claims",
+      "smoke damage documentation contractors",
+    ],
+    topics: ["fire_damage_claims"],
+  },
+  "smoke-damage-claim-photos-required": {
+    phrases: [
+      "what photos should be taken for smoke damage claims",
+      "smoke damage claim photos required",
+      "photos for smoke damage insurance claim",
+    ],
+    keywords: ["smoke damage claim photos", "smoke claim photography"],
+    topics: ["fire_damage_claims"],
+  },
+  "smoke-damage-hvac-documentation-required": {
+    phrases: [
+      "does smoke damage require hvac documentation",
+      "smoke damage hvac documentation required",
+      "hvac documentation smoke damage claims",
+    ],
+    keywords: ["smoke hvac documentation", "hvac smoke damage"],
+    topics: ["fire_damage_claims", "hvac_fire"],
+  },
+  "smoke-damage-claims-underpaid-why": {
+    phrases: [
+      "why do smoke damage insurance claims get underpaid",
+      "smoke damage claims underpaid",
+      "smoke claim underpayment why",
+    ],
+    keywords: ["smoke damage underpaid", "smoke claim underpayment"],
+    topics: ["fire_damage_claims"],
+  },
+  "smoke-damage-invisible-without-soot": {
+    phrases: [
+      "can smoke damage exist without visible soot",
+      "invisible smoke damage without soot",
+      "smoke damage no visible soot",
+    ],
+    keywords: ["invisible smoke damage", "smoke without visible soot"],
+    topics: ["fire_damage_claims"],
+  },
   "contents-inventory-documentation-insurance": {
     phrases: [
       "how should contents be documented after a fire",
