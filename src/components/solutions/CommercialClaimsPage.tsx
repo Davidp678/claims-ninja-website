@@ -89,7 +89,7 @@ export function CommercialClaimsPage({ locale = "en" }: { locale?: Locale }) {
             <RoofingHeroImageCard
               src={COMMERCIAL_HERO_IMAGE.src}
               alt={COMMERCIAL_HERO_IMAGE.alt}
-              objectPosition="center"
+              objectPosition="62% center"
             />
           </div>
         </Container>

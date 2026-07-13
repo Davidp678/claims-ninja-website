@@ -12,13 +12,9 @@ export const COMMERCIAL_HERO = {
     "Commercial insurance claims demand more than larger estimates. They require disciplined documentation, strategic supplementing, organized communication, and experienced claim management. Claims Ninja helps restoration contractors recover legitimate revenue on complex commercial property losses nationwide.",
 } as const;
 
-/**
- * Placeholder hero asset reusing an existing solution photo for design
- * consistency. Swap for a dedicated commercial/large-loss image when available.
- */
 export const COMMERCIAL_HERO_IMAGE = {
-  src: "/images/solutions/fire-damage-hero.webp",
-  alt: "Restoration team managing a large-loss commercial property claim during reconstruction",
+  src: "/images/solutions/commercial-claims-hero.webp",
+  alt: "Commercial restoration team managing a large-loss property reconstruction project",
 } as const;
 
 /** Section 1 — property types we regularly support. */

@@ -45,7 +45,7 @@ export const PRICING_OVERVIEW = {
   eyebrow: "Services",
   title: "Pricing by claim service",
   description:
-    "Each service has a defined fee structure so your team knows what to expect before work starts.",
+    "Each service has a defined fee structure so your team knows what to expect before work starts. The same pricing model applies to both residential and commercial insurance claims, including large-loss files, with project-specific terms confirmed before work begins where needed.",
   cards: [
     {
       title: "Estimate writing",

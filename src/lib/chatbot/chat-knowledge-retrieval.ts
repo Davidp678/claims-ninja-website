@@ -357,6 +357,21 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "apartment complex",
     "national restoration",
     "property management portfolio",
+    "property manager",
+    "property managers",
+    "hotel",
+    "hotels",
+    "hospitality",
+    "retail center",
+    "retail centers",
+    "shopping center",
+    "office building",
+    "industrial facility",
+    "mixed-use",
+    "multi-building",
+    "multi-building loss",
+    "multi-building losses",
+    "multiple buildings",
   ],
   large_loss: [
     "large loss",
@@ -2305,6 +2320,50 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /commercial-national-restoration-programs|national restoration|page:\/solutions\/commercial/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "hotel commercial claim retrieves commercial page or property-types FAQ",
+    message: "do you handle hotels or hospitality property claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-property-types-supported|hotel|hospitality|page:\/solutions\/commercial/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "retail center commercial claim retrieves commercial page or property-types FAQ",
+    message: "can you help with a retail center or shopping center loss",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-property-types-supported|retail center|page:\/solutions\/commercial/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "property manager support retrieves commercial context",
+    message: "can you work with property managers",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /property manager|commercial property|page:\/solutions\/commercial/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multi-building loss retrieves commercial context",
+    message: "can you support multi-building losses",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-property-types-supported|multi-building|page:\/solutions\/commercial|commercial/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

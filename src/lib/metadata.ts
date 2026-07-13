@@ -46,13 +46,15 @@ export function pageMetadataWithLocale({
   description,
   path,
   locale = "en",
+  image,
 }: {
   title: string;
   description: string;
   path: string;
   locale?: Locale;
+  image?: string;
 }): Metadata {
-  const base = pageMetadata({ title, description, path });
+  const base = pageMetadata({ title, description, path, image });
   const languages = buildLanguageAlternates(path);
   const noindex = locale === "es" && !ES_INDEXING_ENABLED;
   const absoluteUrl = getAbsoluteUrl(path);
@@ -77,13 +79,17 @@ export function pageMetadata({
   title,
   description,
   path,
+  image,
 }: {
   title: string;
   description: string;
   path: string;
+  image?: string;
 }): Metadata {
   const languages = buildLanguageAlternates(path);
   const absoluteUrl = getAbsoluteUrl(path);
+  const ogImages = image ? [{ url: image }] : DEFAULT_OG_IMAGE;
+  const twitterImages = image ? [image] : [DEFAULT_OG_IMAGE_PATH];
 
   return {
     title,
@@ -97,13 +103,13 @@ export function pageMetadata({
       title,
       description,
       url: absoluteUrl,
-      images: DEFAULT_OG_IMAGE,
+      images: ogImages,
     },
     twitter: {
       card: TWITTER_CARD,
       title,
       description,
-      images: [DEFAULT_OG_IMAGE_PATH],
+      images: twitterImages,
     },
   };
 }

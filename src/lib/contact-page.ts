@@ -11,7 +11,7 @@ export const CONTACT_HERO = {
   eyebrow: "Company",
   title: "Let's talk about your operation",
   description:
-    "Tell us about your business, claim workflow, or current challenges. We'll review your situation, identify opportunities, and recommend next steps.",
+    "Tell us about your business, claim workflow, or current challenges. We work with residential and commercial restoration contractors, general contractors, property managers, and large-loss and multi-location restoration firms. We'll review your situation, identify opportunities, and recommend next steps.",
   primaryCtaLabel: "Scroll to form",
   secondaryCtaLabel: "Schedule Strategy Call",
 } as const;

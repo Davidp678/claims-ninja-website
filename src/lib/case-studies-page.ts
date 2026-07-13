@@ -11,7 +11,7 @@ export const CASE_STUDIES_TRADE_RESULTS = {
   eyebrow: "Industry intelligence",
   title: "Recovery Results by Trade",
   description:
-    "Patterns consistently observed across the trades we review most — what carriers miss, where estimates fall short, and where recovery opportunity typically exists.",
+    "Patterns consistently observed across the trades we review most — what carriers miss, where estimates fall short, and where recovery opportunity typically exists. Our review work spans residential claims, commercial property losses, and complex multi-trade portfolios.",
 } as const;
 
 export type TradeResultCard = {

@@ -13,7 +13,7 @@ export const ABOUT_HERO = {
   title: "Claim recovery expertise. Enterprise-level execution.",
   paragraphs: [
     "Founded in 2024, Claims Ninja was created to help contractors manage insurance claims with the structure, expertise, and visibility of a professional claims department—without having to build one in-house.",
-    "We support roofing, restoration, mitigation, reconstruction, and contents contractors with the workflows, technology, and claim expertise needed to recover more, move faster, and stay focused on growth.",
+    "We support roofing, restoration, mitigation, reconstruction, and contents contractors on everything from residential property losses to complex commercial, multi-building, and large-loss insurance claims nationwide—with the workflows, technology, and claim expertise needed to recover more, move faster, and stay focused on growth.",
   ],
 } as const;
 
@@ -104,6 +104,12 @@ export const ABOUT_AUDIENCE = {
       description:
         "Pack-out, inventory, cleaning, and storage scope support for contents claims that require detailed documentation and valuation.",
       href: "/solutions/contents",
+    },
+    {
+      title: "Commercial & large-loss contractors",
+      description:
+        "Large-loss estimating, suite- and building-level documentation, and supplement strategy for complex commercial property losses and multi-building claims.",
+      href: "/solutions/commercial",
     },
     {
       title: "Multi-location operators",

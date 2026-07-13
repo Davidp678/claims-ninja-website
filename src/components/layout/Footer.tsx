@@ -73,7 +73,8 @@ export function Footer() {
               documentation, and expert negotiation with insurance companies. When
               additional advocacy is required, our Public Adjuster team provides
               policyholder representation and strategic claim support to help achieve
-              the best possible outcome.
+              the best possible outcome. We support residential, commercial, and
+              large-loss insurance claims nationwide.
             </p>
           </div>
 

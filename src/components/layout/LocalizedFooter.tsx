@@ -88,8 +88,8 @@ export function LocalizedFooter() {
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-300">
               {locale === "es"
-                ? "The Claims Ninja le ayuda a obtener la máxima compensación. Como empresa de suplementos de seguros, gestionamos evaluaciones, documentación y negociación experta con las aseguradoras."
-                : "The Claims Ninja ensures you get maximum compensation. As an insurance supplementing company, we handle everything: thorough claim assessments, contractor settlement agreements, detailed documentation, and expert negotiation with insurance companies. When additional advocacy is required, our Public Adjuster team provides policyholder representation and strategic claim support to help achieve the best possible outcome."}
+                ? "The Claims Ninja le ayuda a obtener la máxima compensación. Como empresa de suplementos de seguros, gestionamos evaluaciones, documentación y negociación experta con las aseguradoras. Apoyamos reclamaciones de seguros residenciales, comerciales y de grandes pérdidas en todo el país."
+                : "The Claims Ninja ensures you get maximum compensation. As an insurance supplementing company, we handle everything: thorough claim assessments, contractor settlement agreements, detailed documentation, and expert negotiation with insurance companies. When additional advocacy is required, our Public Adjuster team provides policyholder representation and strategic claim support to help achieve the best possible outcome. We support residential, commercial, and large-loss insurance claims nationwide."}
             </p>
           </div>
 

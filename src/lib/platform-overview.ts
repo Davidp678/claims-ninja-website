@@ -2,7 +2,7 @@ export const PLATFORM_HERO = {
   eyebrow: "Platform",
   title: "The contractor claims operations platform",
   description:
-    "Claims Ninja combines seasoned supplement professionals, a live management platform, and an expanding AI intelligence layer—so restoration and roofing teams run claims with the rigor of a dedicated operations department.",
+    "Claims Ninja combines seasoned supplement professionals, a live management platform, and an expanding AI intelligence layer—so restoration and roofing teams run residential, commercial, and large-loss claims with the rigor of a dedicated operations department.",
 } as const;
 
 export const PLATFORM_PILLARS = [
