@@ -1212,6 +1212,71 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["code upgrade denied", "supplement denial", "fire code denial"],
     topics: ["fire_damage_claims", "supplements", "carrier_negotiations"],
   },
+  "fire-supplement-included-items": {
+    phrases: [
+      "what should be included in a fire damage supplement",
+      "fire damage supplement package contents",
+      "what goes in a fire supplement",
+    ],
+    keywords: [
+      "fire supplement included",
+      "fire supplement package",
+      "fire supplement contents",
+    ],
+    topics: ["fire_damage_claims", "supplements", "documentation"],
+  },
+  "fire-supplement-when-to-submit": {
+    phrases: [
+      "when should contractors submit a fire supplement",
+      "when to submit fire damage supplement",
+      "fire supplement timing",
+    ],
+    keywords: [
+      "fire supplement when",
+      "submit fire supplement",
+      "fire supplement timing",
+    ],
+    topics: ["fire_damage_claims", "supplements"],
+  },
+  "fire-supplement-documentation-evidence": {
+    phrases: [
+      "what documentation supports a fire damage supplement",
+      "fire damage supplement documentation evidence",
+      "fire supplement documentation required",
+    ],
+    keywords: [
+      "fire supplement documentation",
+      "fire supplement evidence",
+      "fire supplement proof",
+    ],
+    topics: ["fire_damage_claims", "supplements", "documentation"],
+  },
+  "fire-supplement-multiple-submissions": {
+    phrases: [
+      "can multiple supplements be submitted during a fire claim",
+      "multiple fire supplements same claim",
+      "phased fire supplements",
+    ],
+    keywords: [
+      "multiple fire supplements",
+      "phased fire supplement",
+      "fire supplement phases",
+    ],
+    topics: ["fire_damage_claims", "supplements"],
+  },
+  "fire-supplement-commonly-missed-items": {
+    phrases: [
+      "most commonly missed fire supplement items",
+      "commonly missed fire claim line items",
+      "fire supplement missed items",
+    ],
+    keywords: [
+      "missed fire supplement",
+      "fire supplement line items",
+      "fire claim missed scope",
+    ],
+    topics: ["fire_damage_claims", "supplements"],
+  },
   "commercial-claims-handled": {
     phrases: [
       "does claims ninja handle commercial insurance claims",

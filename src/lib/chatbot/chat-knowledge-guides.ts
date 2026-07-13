@@ -114,6 +114,30 @@ const GUIDE_SLUG_BOOSTS: Record<
     phrases: ["fire claim intake", "fire intake checklist"],
     keywords: ["fire intake"],
   },
+  "fire-damage-supplement-playbook-for-contractors": {
+    phrases: [
+      "fire damage supplement playbook",
+      "fire damage supplement playbook for contractors",
+      "fire supplement workflow for contractors",
+      "fire damage supplement process",
+      "how to submit a fire damage supplement",
+      "fire supplement playbook guide",
+      "fire claim supplement workflow",
+      "fire damage supplement guide",
+    ],
+    keywords: [
+      "fire supplement playbook",
+      "fire damage supplement",
+      "fire supplement workflow",
+      "fire supplement submission",
+      "fire supplement package",
+      "fire reinspection",
+      "fire supplement objections",
+      "fire supplement missed items",
+      "phased fire supplement",
+    ],
+    topics: ["fire_damage_claims", "supplements", "documentation"],
+  },
   "fire-damage-documentation-guide": {
     phrases: [
       "fire damage documentation guide",

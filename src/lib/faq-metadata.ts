@@ -1254,7 +1254,10 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   },
   "fire-supplement-documentation-support": {
     searchIntent: "documentation-standard",
-    relatedGuideSlugs: ["fire-damage/fire-damage-documentation-guide"],
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-supplement-playbook-for-contractors",
+      "fire-damage/fire-damage-documentation-guide",
+    ],
     relatedFaqIds: [
       "fire-damage-documentation-insurance",
       "fire-hidden-damage-documentation",
@@ -1731,6 +1734,76 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     ],
     internalLinkNotes:
       "Denial recovery FAQ; link supplement denial recovery blog.",
+  },
+  "fire-supplement-included-items": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-supplement-playbook-for-contractors",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "fire-supplement-when-to-submit",
+      "fire-supplement-documentation-evidence",
+      "fire-supplement-documentation-support",
+    ],
+    internalLinkNotes:
+      "Primary playbook FAQ; anchor for fire damage supplement playbook guide package contents.",
+  },
+  "fire-supplement-when-to-submit": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-supplement-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "fire-supplement-included-items",
+      "fire-supplement-multiple-submissions",
+      "fire-supplement-contractor-documentation",
+    ],
+    internalLinkNotes:
+      "Timing FAQ; link first 48 hours blog and phased submission guidance.",
+  },
+  "fire-supplement-documentation-evidence": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-supplement-playbook-for-contractors",
+      "fire-damage/fire-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "fire-supplement-documentation-support",
+      "fire-supplement-included-items",
+      "fire-hidden-damage-documentation",
+    ],
+    internalLinkNotes:
+      "Playbook documentation FAQ; complement fire-supplement-documentation-support evidence list.",
+  },
+  "fire-supplement-multiple-submissions": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-supplement-playbook-for-contractors",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "fire-supplement-when-to-submit",
+      "fire-supplement-included-items",
+      "supplements-process",
+    ],
+    internalLinkNotes:
+      "Phased supplement FAQ; anchor for multiple submission workflow on fire files.",
+  },
+  "fire-supplement-commonly-missed-items": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-supplement-playbook-for-contractors",
+      "fire-damage/smoke-soot-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "fire-claims-underpaid-why",
+      "fire-supplement-included-items",
+      "smoke-damage-supplement-documentation",
+      "contents-supplement-documentation",
+    ],
+    internalLinkNotes:
+      "Missed line items FAQ; link underpayment blog and specialty fire guides.",
   },
   "commercial-claims-handled": {
     searchIntent: "informational",

@@ -240,12 +240,12 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "fire-damage-supplement-playbook-for-contractors": {
     intro:
-      "You've learned fire supplement strategy. Now apply the documentation standard and field procedures that support supplement submission and scope recovery.",
+      "You've learned fire supplement strategy. Now apply the operational playbook and documentation standards that support supplement submission and scope recovery.",
     guideSlugs: [
+      "fire-damage-supplement-playbook-for-contractors",
       "fire-damage-documentation-guide",
       "fire-claim-intake-guide",
       "structural-stabilization-documentation-guide",
-      "fire-code-upgrade-documentation-guide",
     ],
   },
   "fire-damage-supplement-denial-recovery": {

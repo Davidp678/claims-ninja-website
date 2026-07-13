@@ -175,6 +175,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Manual operativo para contratistas sobre documentación, estimación, suplementación y recuperación de reclamaciones comerciales por incendio — oficinas, comercios, industria, hospitalidad, salud y propiedades multiinquilino con documentación de gran pérdida, coordinación con inquilinos y flujos de reconstrucción por fases.",
   },
+  "fire-damage/fire-damage-supplement-playbook-for-contractors": {
+    title: "Manual de suplementos por daños de fuego para contratistas",
+    excerpt:
+      "Manual operativo definitivo para suplementos por daños de fuego: revisión del estimado de la aseguradora, inspección del sitio, paquete de documentación, envío de suplementos, reinspección, respuesta a objeciones, coordinación comercial y liquidación final en reclamaciones por incendio.",
+  },
   "fire-damage/fire-damage-documentation-guide": {
     title: "Guía de documentación de daños por fuego",
     excerpt:

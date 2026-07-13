@@ -2595,7 +2595,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       },
       {
         label: "Fire Damage Supplement Playbook",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
       {
         label: "Fire Damage Supplement Denial Recovery",
@@ -2689,7 +2689,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       },
       {
         label: "Fire Damage Supplement Playbook",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
       {
         label: "Fire Damage Supplement Denial Recovery",
@@ -2895,7 +2895,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       },
       {
         label: "Fire Damage Supplement Playbook",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
       {
         label: "Fire Damage Supplement Denial Recovery",
@@ -2970,7 +2970,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       },
       {
         label: "Fire Damage Supplement Playbook",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
     ],
   },
@@ -2991,7 +2991,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       },
       {
         label: "Fire Damage Supplement Playbook",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
     ],
   },
@@ -3071,7 +3071,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       },
       {
         label: "Fire Damage Supplement Playbook",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
       {
         label: "What documentation supports fire damage supplements?",
@@ -3374,6 +3374,102 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Fire Damage Supplement Denial Recovery",
         href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+
+  // Fire Damage Supplement Playbook FAQs (5)
+  {
+    id: "fire-supplement-included-items",
+    category: "fire_damage_claims",
+    question: "What should be included in a fire damage supplement?",
+    answer:
+      "A complete fire damage supplement includes a cover letter with summary table, revised Xactimate estimate, indexed photo exhibits by room, migration path narrative, contents inventory pages, HVAC inspection evidence, demolition discovery photos, specialist report excerpts when used, and a correspondence log. Each requested line must map to at least one named exhibit.",
+    relatedLinks: [
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Supplement Submission Workflow",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      { label: "Fire damage solutions", href: "/solutions/fire-damage" },
+    ],
+  },
+  {
+    id: "fire-supplement-when-to-submit",
+    category: "fire_damage_claims",
+    question: "When should contractors submit a fire supplement?",
+    answer:
+      "Submit when documented scope exceeds the carrier estimate and contemporaneous evidence exists — within 48 hours on visible estimate gaps, after demolition discovery, when HVAC inspection returns, or when pack-out inventory is complete. Phased submission beats waiting for final invoice: migration, HVAC, and contents supplements approve more readily when evidence is captured before rebuild obscures conditions.",
+    relatedLinks: [
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "First 48 hours after a carrier estimate",
+        href: "/resources/blog/first-48-hours-after-carrier-estimate",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-documentation-evidence",
+    category: "fire_damage_claims",
+    question: "What documentation supports a fire damage supplement?",
+    answer:
+      "Fire supplement documentation includes indexed photos by room, migration path narrative, demolition discovery logs during tear-out, HVAC register and component photos, room-located contents inventories with pack-out chain of custody, engineering or IH report excerpts when used, and a cover letter mapping each attachment to estimate line numbers. Contemporaneous phased evidence outperforms end-of-job narrative assembled after production closes access.",
+    relatedLinks: [
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "What documentation supports fire damage supplements?",
+        href: "/faq#faq-fire-supplement-documentation-support",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-multiple-submissions",
+    category: "fire_damage_claims",
+    question: "Can multiple supplements be submitted during a fire claim?",
+    answer:
+      "Yes. Fire claims commonly require phased supplements — migration and emergency scope first, then HVAC and contents after inspection, then demolition discovery and code upgrades during rebuild. Label each supplement version in CRM with phase and date so carrier reviewers track discovery without treating later submissions as duplicate billing.",
+    relatedLinks: [
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Supplement Submission Workflow",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-commonly-missed-items",
+    category: "fire_damage_claims",
+    question: "What are the most commonly missed fire supplement items?",
+    answer:
+      "Commonly missed fire supplement items include smoke and soot cleaning in migration rooms, HVAC duct cleaning and component replacement, contents manipulation and pack-out, specialty soot cleaning procedures, odor mitigation equipment, selective demolition with pre-demo photos, temporary protection extensions, code-driven rebuild assemblies, and suppression water mitigation overlap documented separately from fire residue scope.",
+    relatedLinks: [
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Why fire damage claims get underpaid",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
       },
     ],
   },

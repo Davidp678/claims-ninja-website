@@ -1051,6 +1051,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "fire damage supplement playbook retrieves guide",
+    message: "fire damage supplement playbook for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-damage-supplement-playbook-for-contractors|fire damage supplement playbook|fire-supplement-included-items/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire supplement included items FAQ",
+    message: "what should be included in a fire damage supplement",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-supplement-included-items|cover letter with summary table|fire-damage-supplement-playbook/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire supplement when to submit FAQ",
+    message: "when should contractors submit a fire supplement",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-supplement-when-to-submit|within 48 hours on visible estimate gaps|phased submission/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire supplement multiple submissions FAQ",
+    message: "can multiple supplements be submitted during a fire claim",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-supplement-multiple-submissions|phased supplements|multiple supplements/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire supplement commonly missed items FAQ",
+    message: "what are the most commonly missed fire supplement items",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-supplement-commonly-missed-items|migration rooms|HVAC duct cleaning/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "commercial fire tenant responsibility retrieves guide or FAQ",
     message: "commercial fire claim tenant owner responsibility",
     assert: (result) =>

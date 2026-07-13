@@ -62,10 +62,10 @@ export const GUIDE_CATEGORY_REGISTRY: readonly GuideCategory[] = [
     slug: "fire-damage",
     name: "Fire Damage",
     description:
-      "Fire damage documentation standards and restoration procedures: cornerstone documentation guide, fire code upgrade documentation, smoke and soot documentation standard, contents inventory documentation standard, intake, smoke/HVAC/odor/contents documentation, and structural stabilization.",
+      "Fire damage supplement playbook and documentation standards: operational supplement workflow, cornerstone documentation guide, fire code upgrade documentation, smoke and soot documentation standard, contents inventory documentation standard, commercial fire claims, intake, smoke/HVAC/odor/contents documentation, and structural stabilization.",
     metaTitle: "Fire Damage Guides",
     metaDescription:
-      "Fire damage claim guides: documentation standards, fire code upgrade documentation, smoke and soot documentation, contents inventory documentation, claim intake, HVAC contamination, odor documentation, contents handling, and structural stabilization.",
+      "Fire damage claim guides: supplement playbook, documentation standards, fire code upgrade documentation, smoke and soot documentation, contents inventory documentation, commercial fire claims, claim intake, HVAC contamination, odor documentation, and structural stabilization.",
     relatedBlogCategories: ["fire-damage-claims", "claim-documentation"],
     relatedSolutionPath: "/solutions/fire-damage",
   },

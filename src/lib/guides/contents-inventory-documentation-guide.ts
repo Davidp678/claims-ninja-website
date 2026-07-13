@@ -34,6 +34,7 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document personal property and business contents for fire insurance claims: room-by-room inventory, photography, serial numbers, clean-versus-replace evidence, pack-out support, supplements, and claim recovery.",
   relatedGuideSlugs: [
+    "fire-damage-supplement-playbook-for-contractors",
     "commercial-fire-claims-guide",
     "fire-damage-documentation-guide",
     "fire-code-upgrade-documentation-guide",
@@ -585,6 +586,10 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
     },
     {
       label: "Fire Damage Supplement Playbook",
+      href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+    },
+    {
+      label: "Fire Damage Supplement Playbook (blog)",
       href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
     },
     { label: "Fire damage solutions", href: SOLUTION_PATH },

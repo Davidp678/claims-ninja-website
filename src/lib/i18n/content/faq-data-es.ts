@@ -3378,6 +3378,102 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Fire Damage Supplement Playbook FAQs (5)
+  {
+    id: "fire-supplement-included-items",
+    category: "fire_damage_claims",
+    question: "¿Qué debe incluirse en un suplemento por daños de fuego?",
+    answer:
+      "Un suplemento completo por daños de fuego incluye carta de presentación con tabla resumen, estimado Xactimate revisado, exhibiciones fotográficas indexadas por habitación, narrativa de ruta de migración, páginas de inventario de contenidos, evidencia de inspección HVAC, fotos de descubrimiento en demolición, extractos de informes de especialistas cuando se usen, y registro de correspondencia. Cada partida solicitada debe corresponder a al menos una exhibición nombrada.",
+    relatedLinks: [
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Flujo de envío de suplementos",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      { label: "Soluciones para daños de fuego", href: "/solutions/fire-damage" },
+    ],
+  },
+  {
+    id: "fire-supplement-when-to-submit",
+    category: "fire_damage_claims",
+    question: "¿Cuándo deben los contratistas enviar un suplemento por incendio?",
+    answer:
+      "Envíe cuando el alcance documentado supere el estimado de la aseguradora y exista evidencia contemporánea — dentro de las 48 horas en brechas visibles del estimado, después del descubrimiento en demolición, cuando regrese la inspección HVAC, o cuando el inventario de pack-out esté completo. El envío por fases supera esperar la factura final: los suplementos de migración, HVAC y contenidos se aprueban mejor cuando la evidencia se captura antes de que la reconstrucción oculte las condiciones.",
+    relatedLinks: [
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Primeras 48 horas después del estimado de la aseguradora",
+        href: "/resources/blog/first-48-hours-after-carrier-estimate",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-documentation-evidence",
+    category: "fire_damage_claims",
+    question: "¿Qué documentación respalda un suplemento por daños de fuego?",
+    answer:
+      "La documentación de suplemento por incendio incluye fotos indexadas por habitación, narrativa de ruta de migración, registros de descubrimiento en demolición durante el desmontaje, fotos de registros y componentes HVAC, inventarios de contenidos ubicados por habitación con cadena de custodia de pack-out, extractos de informes de ingeniería o higiene industrial cuando se usen, y una carta de presentación que mapee cada adjunto a números de partida del estimado. La evidencia contemporánea por fases supera la narrativa de fin de trabajo armada después de que la producción cierra el acceso.",
+    relatedLinks: [
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "¿Qué documentación respalda los suplementos por daños de fuego?",
+        href: "/faq#faq-fire-supplement-documentation-support",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-multiple-submissions",
+    category: "fire_damage_claims",
+    question: "¿Se pueden enviar múltiples suplementos durante una reclamación por incendio?",
+    answer:
+      "Sí. Las reclamaciones por incendio comúnmente requieren suplementos por fases — migración y alcance de emergencia primero, luego HVAC y contenidos después de la inspección, luego descubrimiento en demolición y mejoras de código durante la reconstrucción. Etiquete cada versión de suplemento en CRM con fase y fecha para que los revisores de la aseguradora sigan el descubrimiento sin tratar envíos posteriores como facturación duplicada.",
+    relatedLinks: [
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Flujo de envío de suplementos",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-commonly-missed-items",
+    category: "fire_damage_claims",
+    question: "¿Cuáles son las partidas de suplemento por incendio más comúnmente omitidas?",
+    answer:
+      "Las partidas de suplemento por incendio más comúnmente omitidas incluyen limpieza de humo y hollín en habitaciones de migración, limpieza de ductos HVAC y reemplazo de componentes, manipulación de contenidos y pack-out, procedimientos especializados de limpieza de hollín, equipos de mitigación de olores, demolición selectiva con fotos pre-demolición, extensiones de protección temporal, ensamblajes de reconstrucción impulsados por código, y superposición de mitigación de agua de supresión documentada por separado del alcance de residuos de incendio.",
+    relatedLinks: [
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Por qué las reclamaciones por daños de fuego se pagan menos",
+        href: "/resources/blog/why-fire-damage-claims-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+    ],
+  },
+
   // Mold Claims (5)
   {
     id: "mold-remediation-docs",

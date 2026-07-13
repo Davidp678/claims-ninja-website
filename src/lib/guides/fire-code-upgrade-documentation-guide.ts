@@ -36,6 +36,7 @@ export const FIRE_CODE_UPGRADE_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document and recover fire code upgrades on insurance claims: ordinance and law coverage, AHJ permits, code citations, inspection evidence, Xactimate line items, carrier objections, and commercial rebuild considerations.",
   relatedGuideSlugs: [
+    "fire-damage-supplement-playbook-for-contractors",
     "fire-damage-documentation-guide",
     "commercial-fire-claims-guide",
     "documentation-standards-guide",
@@ -516,6 +517,10 @@ export const FIRE_CODE_UPGRADE_DOCUMENTATION_GUIDE = defineGuide({
     },
     {
       label: "Fire Damage Supplement Playbook",
+      href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+    },
+    {
+      label: "Fire Damage Supplement Playbook (blog)",
       href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
     },
     {

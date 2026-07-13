@@ -34,6 +34,7 @@ export const PACK_OUT_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document pack-out operations for fire insurance claims: chain of custody, inventory tracking, transportation logs, storage documentation, cleaning coordination, return delivery, estimating support, and supplement recovery.",
   relatedGuideSlugs: [
+    "fire-damage-supplement-playbook-for-contractors",
     "commercial-fire-claims-guide",
     "fire-damage-documentation-guide",
     "fire-code-upgrade-documentation-guide",
@@ -579,6 +580,10 @@ export const PACK_OUT_DOCUMENTATION_GUIDE = defineGuide({
     },
     {
       label: "Fire Damage Supplement Playbook",
+      href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+    },
+    {
+      label: "Fire Damage Supplement Playbook (blog)",
       href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
     },
     { label: "Fire damage solutions", href: SOLUTION_PATH },

@@ -34,6 +34,7 @@ export const SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document smoke and soot damage for insurance claims: contamination types, room-by-room inspection, migration evidence, HVAC scope, clean-versus-replace support, supplements, and claim recovery.",
   relatedGuideSlugs: [
+    "fire-damage-supplement-playbook-for-contractors",
     "commercial-fire-claims-guide",
     "fire-damage-documentation-guide",
     "fire-code-upgrade-documentation-guide",
@@ -616,6 +617,10 @@ export const SMOKE_SOOT_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     },
     {
       label: "Fire Damage Supplement Playbook",
+      href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+    },
+    {
+      label: "Fire Damage Supplement Playbook (blog)",
       href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
     },
     { label: "Fire damage solutions", href: SOLUTION_PATH },

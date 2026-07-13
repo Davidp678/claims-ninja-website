@@ -35,6 +35,7 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document residential and commercial fire damage insurance claims: structural inspections, smoke migration, soot contamination, contents, estimating support, supplements, and claim recovery.",
   relatedGuideSlugs: [
+    "fire-damage-supplement-playbook-for-contractors",
     "commercial-fire-claims-guide",
     "smoke-soot-damage-documentation-guide",
     "fire-code-upgrade-documentation-guide",
@@ -540,6 +541,10 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     },
     {
       label: "Fire Damage Supplement Playbook",
+      href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+    },
+    {
+      label: "Fire Damage Supplement Playbook (blog)",
       href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
     },
     {
