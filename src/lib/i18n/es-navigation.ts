@@ -19,6 +19,7 @@ const ES_NAV_LABELS: Record<string, string> = {
   "Fire Damage": "Daños por incendio",
   Mold: "Moho",
   Contents: "Contenidos",
+  "Commercial Insurance Claims": "Reclamaciones de seguros comerciales",
   Blog: "Blog",
   "Case Studies": "Casos de estudio",
   "Claim Guides": "Guías de reclamaciones",

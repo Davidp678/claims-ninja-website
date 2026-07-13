@@ -3530,4 +3530,66 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Yes. Claims Ninja conducts portfolio-level reviews of entire books of business — active, closed, and underpaid claims — to identify recurring scope gaps, supplement workflow issues, and aggregate recovery potential. Leadership gains visibility into patterns invisible when claims are evaluated one at a time, including revenue leakage across dozens or hundreds of files.",
     relatedLinks: [{ label: "Results & Insights", href: "/case-studies" }],
   },
+  {
+    id: "commercial-claims-handled",
+    category: "insurance_supplements",
+    question: "Does Claims Ninja handle commercial insurance claims?",
+    answer:
+      "Yes — commercial insurance claims are one of our specialties, not an occasional service. Claims Ninja supports restoration contractors on complex commercial and large-loss property claims nationwide with disciplined documentation, large-loss estimating, strategic supplementing, and carrier negotiation across roofing, water, fire, mold, contents, and reconstruction losses.",
+    relatedLinks: [
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+      {
+        label: "Commercial Fire Claims Guide",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-apartment-complex-claims",
+    category: "insurance_supplements",
+    question: "Can Claims Ninja help with apartment complex insurance claims?",
+    answer:
+      "Yes. Claims Ninja supports apartment complex and multifamily claims with unit-by-unit documentation, common-area scope, tenant-impact tracking, and equipment records scaled to the property footprint. We help contractors organize multi-unit losses into indexed, defensible files that carriers review unit by unit — the standard commercial carriers expect on multifamily losses.",
+    relatedLinks: [
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+      {
+        label: "Water damage documentation for apartment complexes",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+    ],
+  },
+  {
+    id: "commercial-national-restoration-programs",
+    category: "insurance_supplements",
+    question: "Do you support national restoration companies?",
+    answer:
+      "Yes. Claims Ninja supports national restoration companies and multi-market programs with standardized documentation and estimating support across the portfolio. Nationwide coverage, consistent claim workflows, and experienced commercial claims professionals help large operators keep documentation quality and supplement discipline consistent from market to market.",
+    relatedLinks: [
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-large-loss-support",
+    category: "insurance_supplements",
+    question: "Can Claims Ninja assist with large-loss commercial claims?",
+    answer:
+      "Yes. Large-loss commercial claims are a core focus. Claims Ninja supports phased reconstruction scopes, general conditions, multiple mobilizations, engineering coordination, and code-driven upgrades — with the estimating discipline and evidence quality these higher-scrutiny claims require. We help contractors document and negotiate legitimate large-loss recovery without building an internal claims department.",
+    relatedLinks: [
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+      {
+        label: "Large-loss water mitigation documentation best practices",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+    ],
+  },
+  {
+    id: "commercial-property-types-supported",
+    category: "insurance_supplements",
+    question: "What commercial property types does Claims Ninja support?",
+    answer:
+      "Claims Ninja supports the full range of commercial property losses — apartment communities, HOAs and condominiums, hotels and hospitality, office buildings, retail centers, industrial facilities, healthcare facilities, schools and municipal buildings, churches, and mixed-use developments. Each property type carries its own stakeholder, documentation, and estimating complexity, and our workflows are built for it.",
+    relatedLinks: [
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
 ] as const;

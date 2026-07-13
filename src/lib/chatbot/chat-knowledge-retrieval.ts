@@ -336,6 +336,35 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "common area omissions",
     "documentation-to-invoice",
   ],
+  commercial_claims: [
+    "commercial",
+    "commercial insurance",
+    "commercial insurance claims",
+    "commercial property",
+    "commercial property insurance claims",
+    "commercial property loss",
+    "commercial claim",
+    "commercial claims",
+    "commercial claim support",
+    "commercial restoration",
+    "commercial restoration claims",
+    "commercial supplement",
+    "commercial insurance supplementing",
+    "commercial insurance negotiation",
+    "large loss",
+    "large-loss",
+    "large-loss insurance claims",
+    "apartment complex",
+    "national restoration",
+    "property management portfolio",
+  ],
+  large_loss: [
+    "large loss",
+    "large-loss",
+    "large-loss claim",
+    "large-loss reconstruction",
+    "large loss commercial",
+  ],
   commercial_fire: [
     "commercial fire",
     "commercial fire claims",
@@ -2243,6 +2272,39 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /optional|not required|partner services/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial insurance claims handled retrieves commercial page or FAQ",
+    message: "does claims ninja handle commercial insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /page:\/solutions\/commercial|commercial-claims-handled|commercial insurance claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "large loss commercial claims retrieves commercial content",
+    message: "can you help with large loss commercial claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /page:\/solutions\/commercial|commercial-large-loss-support|large-loss|large loss/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "national restoration company support retrieves commercial FAQ",
+    message: "do you support national restoration companies",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-national-restoration-programs|national restoration|page:\/solutions\/commercial/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

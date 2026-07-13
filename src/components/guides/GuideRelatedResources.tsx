@@ -103,7 +103,7 @@ export function GuideRelatedResources({ guide, locale = "en" }: GuideRelatedReso
   );
 }
 
-function ResourceGroup({
+export function ResourceGroup({
   title,
   children,
 }: {
@@ -118,7 +118,7 @@ function ResourceGroup({
   );
 }
 
-function ResourceLink({ href, label }: { href: string; label: string }) {
+export function ResourceLink({ href, label }: { href: string; label: string }) {
   return (
     <li>
       <Link

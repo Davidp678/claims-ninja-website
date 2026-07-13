@@ -77,6 +77,11 @@ export const SOLUTIONS_NAV: readonly NavDropdownItem[] = [
     href: "/solutions/contents",
     description: "Pack-out, inventory, and specialty contents restoration claim support.",
   },
+  {
+    label: "Commercial Insurance Claims",
+    href: "/solutions/commercial",
+    description: "Large-loss estimating, documentation, and supplementing for commercial property losses.",
+  },
 ] as const;
 
 export const RESOURCES_NAV: readonly NavDropdownItem[] = [

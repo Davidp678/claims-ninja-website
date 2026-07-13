@@ -8,6 +8,7 @@ export type SiteFaqPageKey =
   | "claimTracking"
   | "communicationHub"
   | "roofing"
+  | "commercial"
   | "waterDamage"
   | "fireDamage"
   | "mold"
@@ -162,6 +163,21 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "roof-multi-building-apartment-documentation",
       "roof-multi-building-matching",
       "roof-multi-building-supplement-documentation",
+    ],
+  },
+  commercial: {
+    topic: "commercial insurance claims",
+    faqIds: [
+      "commercial-claims-handled",
+      "commercial-large-loss-support",
+      "commercial-property-types-supported",
+      "commercial-apartment-complex-claims",
+      "commercial-national-restoration-programs",
+      "fire-commercial-claims-documentation",
+      "water-commercial-claims-documentation",
+      "roof-commercial-damage-documentation",
+      "water-large-loss-qualifies",
+      "results-insights-commercial-portfolios",
     ],
   },
   waterDamage: {

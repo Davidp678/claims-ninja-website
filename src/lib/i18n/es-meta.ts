@@ -56,6 +56,11 @@ export const ES_PAGE_META: Record<EsMarketingEnPath, EsPageMeta> = {
     metaDescription:
       "Maximice la recuperación en pérdidas de techado residencial y comercial con documentación, suplementos y apoyo de negociación.",
   },
+  "/solutions/commercial": {
+    metaTitle: "Reclamaciones de seguros comerciales",
+    metaDescription:
+      "Apoyo en reclamaciones de seguros comerciales de Claims Ninja: estimación de grandes pérdidas, documentación disciplinada, suplementos y negociación con aseguradoras para contratistas de restauración en propiedades comerciales complejas.",
+  },
   "/solutions/water-damage": {
     metaTitle: "Reclamaciones por daños de agua",
     metaDescription:

@@ -3530,4 +3530,66 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "Sí. Claims Ninja realiza revisiones a nivel de portafolio de libros de negocios completos — reclamaciones activas, cerradas y con pago inferior — para identificar brechas recurrentes de alcance, problemas de flujo de trabajo de suplementos y potencial de recuperación agregado. El liderazgo obtiene visibilidad de patrones invisibles cuando las reclamaciones se evalúan una por una, incluida la fuga de ingresos en docenas o cientos de expedientes.",
     relatedLinks: [{ label: "Resultados e información", href: "/case-studies" }],
   },
+  {
+    id: "commercial-claims-handled",
+    category: "insurance_supplements",
+    question: "¿Claims Ninja gestiona reclamaciones de seguros comerciales?",
+    answer:
+      "Sí — las reclamaciones de seguros comerciales son una de nuestras especialidades, no un servicio ocasional. Claims Ninja apoya a los contratistas de restauración en reclamaciones comerciales complejas y de grandes pérdidas en todo el país con documentación disciplinada, estimación de grandes pérdidas, suplementos estratégicos y negociación con aseguradoras en pérdidas de techado, agua, fuego, moho, contenidos y reconstrucción.",
+    relatedLinks: [
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+      {
+        label: "Guía de reclamaciones comerciales por incendio",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-apartment-complex-claims",
+    category: "insurance_supplements",
+    question: "¿Puede Claims Ninja ayudar con reclamaciones de seguros de complejos de apartamentos?",
+    answer:
+      "Sí. Claims Ninja apoya reclamaciones de complejos de apartamentos y multifamiliares con documentación unidad por unidad, alcance de áreas comunes, seguimiento del impacto en inquilinos y registros de equipo escalados al tamaño de la propiedad. Ayudamos a los contratistas a organizar pérdidas de múltiples unidades en expedientes indexados y defendibles que las aseguradoras revisan unidad por unidad, el estándar que esperan en pérdidas multifamiliares.",
+    relatedLinks: [
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+      {
+        label: "Documentación de daños por agua para complejos de apartamentos",
+        href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
+      },
+    ],
+  },
+  {
+    id: "commercial-national-restoration-programs",
+    category: "insurance_supplements",
+    question: "¿Apoyan a empresas nacionales de restauración?",
+    answer:
+      "Sí. Claims Ninja apoya a empresas nacionales de restauración y programas multi-mercado con documentación y estimación estandarizadas en todo el portafolio. La cobertura a nivel nacional, los flujos de reclamaciones consistentes y los profesionales experimentados en reclamaciones comerciales ayudan a los grandes operadores a mantener la calidad documental y la disciplina de suplementos consistentes de mercado a mercado.",
+    relatedLinks: [
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-large-loss-support",
+    category: "insurance_supplements",
+    question: "¿Puede Claims Ninja asistir con reclamaciones comerciales de grandes pérdidas?",
+    answer:
+      "Sí. Las reclamaciones comerciales de grandes pérdidas son un enfoque central. Claims Ninja apoya alcances de reconstrucción por fases, condiciones generales, múltiples movilizaciones, coordinación de ingeniería y mejoras requeridas por código, con la disciplina de estimación y la calidad de evidencia que exigen estas reclamaciones de mayor escrutinio. Ayudamos a los contratistas a documentar y negociar una recuperación legítima de grandes pérdidas sin crear un departamento interno de reclamaciones.",
+    relatedLinks: [
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+      {
+        label: "Mejores prácticas de documentación de mitigación de agua en grandes pérdidas",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+    ],
+  },
+  {
+    id: "commercial-property-types-supported",
+    category: "insurance_supplements",
+    question: "¿Qué tipos de propiedades comerciales apoya Claims Ninja?",
+    answer:
+      "Claims Ninja apoya toda la gama de pérdidas de propiedades comerciales: comunidades de apartamentos, HOAs y condominios, hoteles y hospitalidad, edificios de oficinas, centros comerciales, instalaciones industriales, instalaciones de salud, escuelas y edificios municipales, iglesias y desarrollos de uso mixto. Cada tipo de propiedad conlleva su propia complejidad de partes interesadas, documentación y estimación, y nuestros flujos de trabajo están diseñados para ello.",
+    relatedLinks: [
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
 ] as const;

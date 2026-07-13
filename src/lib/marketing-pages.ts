@@ -232,6 +232,35 @@ export const roofingPage = page({
   ],
 });
 
+export const commercialPage = page({
+  path: "/solutions/commercial",
+  eyebrow: "Solutions",
+  title: "Commercial Insurance Claims",
+  metaTitle: "Commercial Insurance Claims",
+  metaDescription:
+    "Commercial insurance claim support from Claims Ninja—large-loss estimating, disciplined documentation, supplementing, and carrier negotiation for restoration contractors on complex commercial property losses nationwide.",
+  description:
+    "Commercial insurance claims are a Claims Ninja specialty—large-loss estimating, disciplined documentation, strategic supplementing, and carrier negotiation for restoration contractors on complex commercial property losses nationwide.",
+  features: [
+    {
+      title: "Commercial documentation",
+      description: "Indexed, suite- and building-level evidence scaled to the property footprint.",
+    },
+    {
+      title: "Large-loss estimating",
+      description: "Defensible estimates covering general conditions, phasing, and multiple mobilizations.",
+    },
+    {
+      title: "Insurance supplementing",
+      description: "Strategic supplements that identify and document legitimate commercial scope gaps.",
+    },
+    {
+      title: "Carrier negotiation",
+      description: "Organized, evidence-backed advocacy through longer, higher-scrutiny commercial cycles.",
+    },
+  ],
+});
+
 export const waterDamagePage = page({
   path: "/solutions/water-damage",
   eyebrow: "Solutions",
@@ -533,6 +562,7 @@ export const MARKETING_PAGES_BY_PATH: Record<string, MarketingPageConfig> = {
   [billingPaymentsPage.path]: billingPaymentsPage,
   [aiClaimAnalysisPage.path]: aiClaimAnalysisPage,
   [roofingPage.path]: roofingPage,
+  [commercialPage.path]: commercialPage,
   [waterDamagePage.path]: waterDamagePage,
   [fireDamagePage.path]: fireDamagePage,
   [moldPage.path]: moldPage,

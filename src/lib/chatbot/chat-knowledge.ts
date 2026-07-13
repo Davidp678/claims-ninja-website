@@ -36,6 +36,7 @@ import {
   caseStudiesPage,
   claimTrackingPage,
   clientPortalPage,
+  commercialPage,
   communicationHubPage,
   contentsPage,
   fireDamagePage,
@@ -47,6 +48,11 @@ import {
   roofingPage,
   waterDamagePage,
 } from "@/lib/marketing-pages";
+import {
+  COMMERCIAL_HELP,
+  COMMERCIAL_HERO,
+  COMMERCIAL_PROPERTY_TYPES,
+} from "@/lib/commercial-page";
 import { ROOFING_HERO, ROOFING_SEGMENTS, ROOFING_WORKFLOW } from "@/lib/roofing-page";
 import { SITE } from "@/lib/constants";
 import {
@@ -1112,6 +1118,58 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["commercial fire supplement", "commercial supplement opportunities"],
     topics: ["fire_damage_claims", "commercial_fire", "supplements"],
   },
+  "commercial-claims-handled": {
+    phrases: [
+      "does claims ninja handle commercial insurance claims",
+      "do you handle commercial claims",
+      "commercial insurance claims",
+      "commercial property insurance claims",
+      "commercial claim support",
+    ],
+    keywords: [
+      "commercial",
+      "commercial insurance",
+      "commercial claims",
+      "commercial property",
+    ],
+    topics: ["commercial_claims", "insurance_supplements"],
+  },
+  "commercial-apartment-complex-claims": {
+    phrases: [
+      "apartment complex insurance claims",
+      "help with apartment complex claims",
+      "multifamily commercial claims",
+    ],
+    keywords: ["apartment complex", "multifamily", "commercial"],
+    topics: ["commercial_claims", "commercial_water"],
+  },
+  "commercial-national-restoration-programs": {
+    phrases: [
+      "support national restoration companies",
+      "national restoration programs",
+      "multi-market restoration program",
+    ],
+    keywords: ["national restoration", "national program", "commercial"],
+    topics: ["commercial_claims"],
+  },
+  "commercial-large-loss-support": {
+    phrases: [
+      "large loss commercial claims",
+      "assist with large loss commercial claims",
+      "large-loss insurance claims",
+    ],
+    keywords: ["large loss", "large-loss", "commercial", "reconstruction"],
+    topics: ["commercial_claims", "large_loss"],
+  },
+  "commercial-property-types-supported": {
+    phrases: [
+      "what commercial property types does claims ninja support",
+      "commercial property types",
+      "commercial buildings supported",
+    ],
+    keywords: ["commercial property types", "commercial", "property types"],
+    topics: ["commercial_claims"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {
@@ -1508,6 +1566,23 @@ export const CHAT_KNOWLEDGE_CHUNKS: readonly ChatKnowledgeChunk[] = [
     },
     ["roofing_claims", "contractor_fit"],
     ["roofing", "storm", "roof supplement"],
+  ),
+  ...solutionPageChunks(
+    commercialPage,
+    {
+      hero: COMMERCIAL_HERO,
+      segments: COMMERCIAL_PROPERTY_TYPES,
+      workflow: { title: COMMERCIAL_HELP.title, steps: COMMERCIAL_HELP.items },
+    },
+    ["commercial_claims", "contractor_fit", "large_loss"],
+    [
+      "commercial",
+      "commercial insurance",
+      "commercial property",
+      "large loss",
+      "commercial restoration",
+      "commercial supplement",
+    ],
   ),
   ...solutionPageChunks(
     waterDamagePage,

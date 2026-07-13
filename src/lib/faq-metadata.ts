@@ -1608,6 +1608,58 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Commercial fire supplement FAQ; link fire supplement playbook blog and general supplement FAQ.",
   },
+  "commercial-claims-handled": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "fire-damage/commercial-fire-claims-guide",
+      "water-damage/commercial-water-loss-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-large-loss-support",
+      "commercial-property-types-supported",
+    ],
+    internalLinkNotes:
+      "Primary commercial capability FAQ; anchor for the /solutions/commercial hub page.",
+  },
+  "commercial-apartment-complex-claims": {
+    searchIntent: "informational",
+    relatedFaqIds: [
+      "water-apartment-complex-documentation",
+      "water-multifamily-loss-documentation",
+    ],
+    internalLinkNotes:
+      "Apartment complex commercial FAQ; cross-link multifamily water documentation FAQs and apartment blog.",
+  },
+  "commercial-national-restoration-programs": {
+    searchIntent: "informational",
+    relatedFaqIds: [
+      "commercial-claims-handled",
+      "commercial-large-loss-support",
+    ],
+    internalLinkNotes:
+      "National restoration program FAQ; reinforce nationwide commercial support on /solutions/commercial.",
+  },
+  "commercial-large-loss-support": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "water-damage/commercial-water-loss-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "water-large-loss-qualifies",
+      "commercial-claims-handled",
+    ],
+    internalLinkNotes:
+      "Large-loss commercial FAQ; link large-loss water documentation guide and blog.",
+  },
+  "commercial-property-types-supported": {
+    searchIntent: "informational",
+    relatedFaqIds: [
+      "commercial-claims-handled",
+      "commercial-apartment-complex-claims",
+    ],
+    internalLinkNotes:
+      "Commercial property types FAQ; enumerates supported property segments for the commercial hub.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {
