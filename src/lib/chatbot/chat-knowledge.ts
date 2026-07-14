@@ -1038,6 +1038,71 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["fire_damage_claims", "documentation", "carrier_review"],
   },
+  "fire-supplement-denied-why": {
+    phrases: [
+      "why are fire damage supplements denied",
+      "why fire supplements denied",
+      "fire supplement denial reasons",
+      "why do fire supplements get denied",
+    ],
+    keywords: [
+      "fire supplement denied",
+      "fire supplement denial",
+      "fire damage supplement denied",
+    ],
+    topics: ["fire_damage_claims", "denial_recovery", "supplements"],
+  },
+  "fire-supplement-denial-missing-documentation": {
+    phrases: [
+      "can missing documentation cause a supplement denial",
+      "missing documentation fire supplement denial",
+      "documentation cause fire supplement denial",
+    ],
+    keywords: [
+      "missing documentation supplement",
+      "documentation denial fire",
+    ],
+    topics: ["fire_damage_claims", "documentation", "denial_recovery"],
+  },
+  "fire-supplement-denial-response": {
+    phrases: [
+      "how should contractors respond to a denied fire supplement",
+      "respond to denied fire supplement",
+      "denied fire supplement response",
+    ],
+    keywords: [
+      "denied fire supplement",
+      "fire supplement response",
+      "fire denial response",
+    ],
+    topics: ["fire_damage_claims", "denial_recovery"],
+  },
+  "fire-supplement-denial-additional-docs": {
+    phrases: [
+      "can contractors submit additional documentation after a denial",
+      "additional documentation after fire supplement denial",
+      "submit more documentation fire supplement denied",
+    ],
+    keywords: [
+      "additional documentation denial",
+      "resubmit fire supplement",
+      "fire supplement resubmission",
+    ],
+    topics: ["fire_damage_claims", "denial_recovery", "documentation"],
+  },
+  "fire-supplement-denial-common-reason": {
+    phrases: [
+      "most common reason fire supplements fail",
+      "common reason fire supplement denied",
+      "why fire supplements fail most often",
+    ],
+    keywords: [
+      "fire supplement fail",
+      "common fire supplement denial",
+      "fire supplement mistakes",
+    ],
+    topics: ["fire_damage_claims", "documentation", "denial_recovery"],
+  },
   "contents-inventory-documentation-insurance": {
     phrases: [
       "how should contents be documented after a fire",

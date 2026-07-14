@@ -53,8 +53,8 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     "commercial-roofing-documentation-guide",
   ],
   relatedBlogSlugs: [
+    "why-fire-damage-supplements-get-denied",
     "why-fire-damage-claims-get-underpaid",
-    "smoke-damage-documentation-mistakes",
     "fire-claim-documentation-checklist",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-playbook-for-contractors",
@@ -554,6 +554,10 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Smoke and Soot Damage Documentation Guide (blog)",
       href: "/resources/blog/smoke-and-soot-damage-documentation-guide",
+    },
+    {
+      label: "Why Fire Damage Supplements Get Denied",
+      href: "/resources/blog/why-fire-damage-supplements-get-denied",
     },
     {
       label: "Fire Damage Supplement Denial Recovery",

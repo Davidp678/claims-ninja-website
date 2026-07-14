@@ -26,9 +26,9 @@ export const fireClaimDocumentationChecklist: BlogPost = {
   seoDescription:
     "Contractor checklist for fire insurance supplement documentation: property photos, smoke and soot evidence, structural discovery, contents, pack-out, code upgrades, and Xactimate support before submission.",
   relatedPostSlugs: [
+    "why-fire-damage-supplements-get-denied",
     "fire-damage-supplement-playbook-for-contractors",
     "fire-damage-claim-documentation-guide",
-    "smoke-and-soot-damage-documentation-guide",
     "why-fire-damage-claims-get-underpaid",
   ],
   faqIds: [
@@ -56,6 +56,10 @@ export const fireClaimDocumentationChecklist: BlogPost = {
         {
           label: "Fire Damage Documentation Guide",
           href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+        },
+        {
+          label: "Why fire damage supplements get denied",
+          href: "/resources/blog/why-fire-damage-supplements-get-denied",
         },
         {
           label: "Why fire damage claims get underpaid",

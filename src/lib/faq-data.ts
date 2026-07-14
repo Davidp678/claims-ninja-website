@@ -361,6 +361,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "We document the carrier's position, identify gaps in their reasoning, and advise on next steps — revised documentation, re-inspection requests, or escalation when appropriate. Outcomes vary by carrier and file; we focus on building the strongest record possible.",
     relatedLinks: [
       {
+        label: "Why Fire Damage Supplements Get Denied",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
         label: "Supplement denial recovery guide",
         href: "/resources/blog/supplement-denial-recovery-guide",
       },
@@ -373,6 +377,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     answer:
       "Yes. We review denial language, identify documentation gaps, organize resubmission packages, and advise on re-inspection when site conditions require it. Recovery varies by carrier and file — we focus on building the strongest record possible.",
     relatedLinks: [
+      {
+        label: "Why Fire Damage Supplements Get Denied",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
       {
         label: "Supplement denial recovery guide",
         href: "/resources/blog/supplement-denial-recovery-guide",
@@ -2602,6 +2610,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
       {
+        label: "Why Fire Damage Supplements Get Denied",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
         label: "Fire Damage Supplement Denial Recovery",
         href: "/resources/blog/fire-damage-supplement-denial-recovery",
       },
@@ -2694,6 +2706,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Fire Damage Supplement Playbook",
         href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Why Fire Damage Supplements Get Denied",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
       },
       {
         label: "Fire Damage Supplement Denial Recovery",
@@ -2910,6 +2926,112 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "How can contractors improve fire claim documentation?",
         href: "/faq#faq-fire-claim-documentation-improve",
+      },
+    ],
+  },
+  // Fire Supplement Denial FAQs (5)
+  {
+    id: "fire-supplement-denied-why",
+    category: "fire_damage_claims",
+    question: "Why are fire damage supplements denied?",
+    answer:
+      "Fire damage supplements are denied when documentation does not support billed scope — incomplete room photos, weak smoke and soot evidence, undocumented hidden damage, missing contents inventories, pack-out chain-of-custody gaps, unsupported code upgrades, disorganized estimates, or absent narratives. Desk reviewers approve scope they can verify; unverifiable lines get denied or reduced proportionally even when field work was legitimate.",
+    relatedLinks: [
+      {
+        label: "Why Fire Damage Supplements Get Denied",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Fire damage supplement denial recovery",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-denial-missing-documentation",
+    category: "fire_damage_claims",
+    question: "Can missing documentation cause a supplement denial?",
+    answer:
+      "Yes. Missing documentation is the leading cause of fire supplement denials and proportional reductions. Unlabeled photos, rooms without ceiling shots, absent migration narratives, incomplete HVAC evidence, contents lists without in-place images, and supplement packages without attachment-to-line-item indexes each give desk reviewers reason to deny unsupported scope — even when coverage exists for the damage type.",
+    relatedLinks: [
+      {
+        label: "Why Fire Damage Supplements Get Denied",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
+        label: "Fire Claim Documentation Checklist",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "What documents should contractors include with a fire insurance supplement?",
+        href: "/faq#faq-fire-supplement-checklist-documents",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-denial-response",
+    category: "fire_damage_claims",
+    question: "How should contractors respond to a denied fire supplement?",
+    answer:
+      "Review the stated denial reasons line by line, identify the documentation gap for each denied item, and resubmit with targeted evidence — revised estimate, room-labeled photo index, smoke and soot support, HVAC attachments, contents inventories, and cover letter mapping exhibits to line numbers. Address every carrier question with named exhibits rather than resubmitting the same package. The fire damage supplement denial recovery guide covers resubmission workflow.",
+    relatedLinks: [
+      {
+        label: "Fire damage supplement denial recovery",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+      {
+        label: "Why Fire Damage Supplements Get Denied",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
+        label: "Supplement denial recovery guide",
+        href: "/resources/blog/supplement-denial-recovery-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-denial-additional-docs",
+    category: "fire_damage_claims",
+    question: "Can contractors submit additional documentation after a denial?",
+    answer:
+      "Yes. Resubmission amends the same loss — it is not a new claim. Submit additional photos, discovery logs, HVAC reports, contents inventories, code citations, and revised estimate narratives addressing each stated denial reason. New evidence captured after repairs close access carries less weight than contemporaneous documentation; phased supplements submitted during investigation recover more scope than backfilled resubmissions.",
+    relatedLinks: [
+      {
+        label: "Fire damage supplement denial recovery",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+      {
+        label: "Why Fire Damage Supplements Get Denied",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
+        label: "Can contractors submit multiple fire supplements?",
+        href: "/faq#faq-fire-supplement-multiple-submissions",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-denial-common-reason",
+    category: "fire_damage_claims",
+    question: "What is the most common reason fire supplements fail?",
+    answer:
+      "Incomplete photo documentation is the most common preventable failure — missing rooms, absent ceiling and migration shots, unlabeled image dumps, and photo sets that do not match sketch and estimate room names. Weak smoke documentation and undocumented hidden damage during demolition are close second and third causes. Most failures are documentation problems, not coverage disputes — preventable with pre-submission checklists and repeatable workflow.",
+    relatedLinks: [
+      {
+        label: "Why Fire Damage Supplements Get Denied",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
+        label: "Fire Claim Documentation Checklist",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "How many photos should be taken during a fire claim?",
+        href: "/faq#faq-fire-claim-photo-volume",
       },
     ],
   },
@@ -3481,6 +3603,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Fire Code Upgrade Documentation Guide",
         href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Why Fire Damage Supplements Get Denied",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
       },
       {
         label: "Fire Damage Supplement Denial Recovery",

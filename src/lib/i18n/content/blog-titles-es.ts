@@ -51,6 +51,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Errores de documentación de daños por humo: 10 fallos costosos que provocan pagos insuficientes en reclamaciones por incendio",
   "fire-claim-documentation-checklist":
     "Lista de verificación de documentación de reclamaciones por incendio: todo lo que los contratistas deben incluir antes de enviar un suplemento",
+  "why-fire-damage-supplements-get-denied":
+    "Por qué se rechazan los suplementos por daños de fuego: 12 errores de documentación y alcance que los contratistas pueden prevenir",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

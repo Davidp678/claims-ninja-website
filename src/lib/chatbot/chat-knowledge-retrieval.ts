@@ -2608,6 +2608,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
         ),
       ),
   },
+  {
+    label: "why fire supplements denied blog retrieves",
+    message: "why fire damage supplements get denied",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /why-fire-damage-supplements-get-denied|Why Fire Damage Supplements Get Denied/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire supplement denied why FAQ retrieves",
+    message: "why are fire damage supplements denied",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-supplement-denied-why|Why are fire damage supplements denied/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire supplement denial missing documentation FAQ retrieves",
+    message: "can missing documentation cause a fire supplement denial",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-supplement-denial-missing-documentation|Can missing documentation cause a supplement denial/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire supplement denial response FAQ retrieves",
+    message: "how should contractors respond to a denied fire supplement",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-supplement-denial-response|How should contractors respond to a denied fire supplement/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire supplement denial additional docs FAQ retrieves",
+    message: "can contractors submit additional documentation after a fire supplement denial",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-supplement-denial-additional-docs|Can contractors submit additional documentation after a denial/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire supplement denial common reason FAQ retrieves",
+    message: "what is the most common reason fire supplements fail",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-supplement-denial-common-reason|What is the most common reason fire supplements fail/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
 ];
 
 export function runKnowledgeRetrievalChecks(): {

@@ -28,10 +28,10 @@ export const whyFireDamageClaimsGetUnderpaid: BlogPost = {
   seoDescription:
     "Why fire damage claims get underpaid: documentation gaps on structural, smoke, contents, and pack-out scope; weak supplement evidence; and practical recovery strategies for restoration contractors.",
   relatedPostSlugs: [
+    "why-fire-damage-supplements-get-denied",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-playbook-for-contractors",
     "fire-damage-supplement-denial-recovery",
-    "smoke-and-soot-damage-documentation-guide",
     "smoke-damage-documentation-mistakes",
   ],
   faqIds: [
@@ -234,6 +234,10 @@ export const whyFireDamageClaimsGetUnderpaid: BlogPost = {
         {
           label: "Fire Damage Supplement Playbook",
           href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        },
+        {
+          label: "Why fire damage supplements get denied",
+          href: "/resources/blog/why-fire-damage-supplements-get-denied",
         },
         {
           label: "Fire Damage Supplement Denial Recovery",

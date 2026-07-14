@@ -361,6 +361,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "Documentamos la posición de la aseguradora, identificamos brechas en su razonamiento y asesoramos sobre los próximos pasos: documentación revisada, solicitudes de reinspección o escalación cuando sea apropiado. Los resultados varían según la aseguradora y el expediente; nos enfocamos en construir el registro más sólido posible.",
     relatedLinks: [
       {
+        label: "Por qué se rechazan los suplementos por daños de fuego",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
         label: "Guía de recuperación ante denegación de suplementos",
         href: "/resources/blog/supplement-denial-recovery-guide",
       },
@@ -373,6 +377,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     answer:
       "Sí. Revisamos el lenguaje de denegación, identificamos brechas de documentación, organizamos paquetes de reenvío y asesoramos sobre reinspección cuando las condiciones del sitio lo requieren. La recuperación varía según la aseguradora y el expediente; nos enfocamos en construir el registro más sólido posible.",
     relatedLinks: [
+      {
+        label: "Por qué se rechazan los suplementos por daños de fuego",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
       {
         label: "Guía de recuperación ante denegación de suplementos",
         href: "/resources/blog/supplement-denial-recovery-guide",
@@ -2598,6 +2606,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
       },
       {
+        label: "Por qué se rechazan los suplementos por daños de fuego",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
         label: "Recuperación ante denegación de suplementos por fuego",
         href: "/resources/blog/fire-damage-supplement-denial-recovery",
       },
@@ -2690,6 +2702,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Manual de suplementos por daños de fuego",
         href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Por qué se rechazan los suplementos por daños de fuego",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
       },
       {
         label: "Recuperación ante denegación de suplementos por fuego",
@@ -2906,6 +2922,112 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "¿Cómo pueden los contratistas mejorar la documentación de reclamaciones por incendio?",
         href: "/faq#faq-fire-claim-documentation-improve",
+      },
+    ],
+  },
+  // Fire Supplement Denial FAQs (5)
+  {
+    id: "fire-supplement-denied-why",
+    category: "fire_damage_claims",
+    question: "¿Por qué se rechazan los suplementos por daños de fuego?",
+    answer:
+      "Los suplementos por daños de fuego se rechazan cuando la documentación no respalda el alcance facturado: fotos de habitaciones incompletas, evidencia débil de humo y hollín, daños ocultos sin documentar, inventarios de contenidos faltantes, vacíos en cadena de custodia de pack-out, mejoras de código sin respaldo, estimaciones desorganizadas o narrativas ausentes. Los revisores de escritorio aprueban el alcance que pueden verificar; las líneas no verificables se rechazan o reducen proporcionalmente aunque el trabajo de campo fuera legítimo.",
+    relatedLinks: [
+      {
+        label: "Por qué se rechazan los suplementos por daños de fuego",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
+        label: "Guía del playbook de suplementos por daños de fuego",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Recuperación de suplementos por incendio rechazados",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-denial-missing-documentation",
+    category: "fire_damage_claims",
+    question: "¿Puede la documentación faltante causar un rechazo de suplemento?",
+    answer:
+      "Sí. La documentación faltante es la causa principal de rechazos de suplementos por incendio y reducciones proporcionales. Fotos sin etiquetar, habitaciones sin tomas de techo, narrativas de migración ausentes, evidencia HVAC incompleta, listas de contenidos sin imágenes in situ, y paquetes de suplemento sin índices de anexo a línea dan a los revisores motivo para rechazar alcance sin respaldo — aunque exista cobertura para el tipo de daño.",
+    relatedLinks: [
+      {
+        label: "Por qué se rechazan los suplementos por daños de fuego",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
+        label: "Lista de verificación de documentación de reclamaciones por incendio",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "¿Qué documentos deben incluir los contratistas con un suplemento por incendio?",
+        href: "/faq#faq-fire-supplement-checklist-documents",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-denial-response",
+    category: "fire_damage_claims",
+    question: "¿Cómo deben responder los contratistas a un suplemento por incendio rechazado?",
+    answer:
+      "Revise las razones de rechazo indicadas línea por línea, identifique la brecha de documentación para cada ítem rechazado, y reenvíe con evidencia dirigida: estimación revisada, índice de fotos etiquetadas por habitación, respaldo de humo y hollín, anexos HVAC, inventarios de contenidos, y carta de presentación que mapee anexos a números de línea. Responda cada pregunta de la aseguradora con anexos nombrados en lugar de reenviar el mismo paquete. La guía de recuperación de suplementos por incendio rechazados cubre el flujo de reenvío.",
+    relatedLinks: [
+      {
+        label: "Recuperación de suplementos por incendio rechazados",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+      {
+        label: "Por qué se rechazan los suplementos por daños de fuego",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
+        label: "Guía de recuperación de suplementos rechazados",
+        href: "/resources/blog/supplement-denial-recovery-guide",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-denial-additional-docs",
+    category: "fire_damage_claims",
+    question: "¿Pueden los contratistas enviar documentación adicional después de un rechazo?",
+    answer:
+      "Sí. El reenvío modifica la misma pérdida — no es una reclamación nueva. Envíe fotos adicionales, registros de descubrimiento, informes HVAC, inventarios de contenidos, citas de código, y narrativas de estimación revisadas que aborden cada razón de rechazo indicada. La evidencia nueva capturada después de que las reparaciones cierran el acceso tiene menos peso que la documentación contemporánea; los suplementos por fases enviados durante la investigación recuperan más alcance que los reenvíos rellenados retroactivamente.",
+    relatedLinks: [
+      {
+        label: "Recuperación de suplementos por incendio rechazados",
+        href: "/resources/blog/fire-damage-supplement-denial-recovery",
+      },
+      {
+        label: "Por qué se rechazan los suplementos por daños de fuego",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
+        label: "¿Pueden los contratistas enviar múltiples suplementos por incendio?",
+        href: "/faq#faq-fire-supplement-multiple-submissions",
+      },
+    ],
+  },
+  {
+    id: "fire-supplement-denial-common-reason",
+    category: "fire_damage_claims",
+    question: "¿Cuál es la razón más común por la que fallan los suplementos por incendio?",
+    answer:
+      "La documentación fotográfica incompleta es el fallo evitable más común: habitaciones faltantes, tomas de techo y migración ausentes, volúmenes de imágenes sin etiquetar, y conjuntos de fotos que no coinciden con los nombres de habitación del croquis y la estimación. La documentación débil de humo y los daños ocultos sin documentar durante la demolición son la segunda y tercera causa. La mayoría de los fallos son problemas de documentación, no disputas de cobertura — evitables con listas de verificación previas al envío y flujo de trabajo repetible.",
+    relatedLinks: [
+      {
+        label: "Por qué se rechazan los suplementos por daños de fuego",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
+        label: "Lista de verificación de documentación de reclamaciones por incendio",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "¿Cuántas fotos se deben tomar durante una reclamación por incendio?",
+        href: "/faq#faq-fire-claim-photo-volume",
       },
     ],
   },
@@ -3477,6 +3599,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de documentación de mejoras por código en incendios",
         href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Por qué se rechazan los suplementos por daños de fuego",
+        href: "/resources/blog/why-fire-damage-supplements-get-denied",
       },
       {
         label: "Recuperación de denegación de suplemento por daños de fuego",

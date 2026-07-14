@@ -17,6 +17,12 @@ export const BLOG_SUMMARIES_ES: Record<string, BlogSummary> = {
     excerpt:
       "Lista de verificación de documentación de reclamaciones por incendio para envío de suplementos: fotos de propiedad, evidencia de humo y hollín, descubrimientos estructurales, inventario de contenidos, cadena de custodia de pack-out, respaldo de actualizaciones de código, narrativas Xactimate y revisión previa al envío de 20 puntos para equipos de restauración.",
   },
+  "why-fire-damage-supplements-get-denied": {
+    title:
+      "Por qué se rechazan los suplementos por daños de fuego: 12 errores de documentación y alcance que los contratistas pueden prevenir",
+    excerpt:
+      "Por qué se rechazan los suplementos por daños de fuego: 12 errores evitables de documentación, estimación y flujo de trabajo en fotos, humo, daños ocultos, contenidos, pack-out, actualizaciones de código y organización Xactimate — y cómo los contratistas construyen paquetes de suplemento listos para revisión.",
+  },
 };
 
 export function getBlogSummaryEs(

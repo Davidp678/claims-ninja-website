@@ -54,9 +54,9 @@ export const FIRE_DAMAGE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     "carrier-estimate-review-guide",
   ],
   relatedBlogSlugs: [
+    "why-fire-damage-supplements-get-denied",
     "why-fire-damage-claims-get-underpaid",
     "fire-claim-documentation-checklist",
-    "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-denial-recovery",
     "insurance-supplementing-guide-contractors",
     "first-48-hours-after-carrier-estimate",
@@ -627,6 +627,10 @@ export const FIRE_DAMAGE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     {
       label: "Insurance supplementing guide (pillar)",
       href: "/resources/blog/insurance-supplementing-guide-contractors",
+    },
+    {
+      label: "Why fire damage supplements get denied",
+      href: "/resources/blog/why-fire-damage-supplements-get-denied",
     },
     {
       label: "Fire damage supplement denial recovery",

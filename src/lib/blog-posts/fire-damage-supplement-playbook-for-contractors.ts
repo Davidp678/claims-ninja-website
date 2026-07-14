@@ -24,10 +24,10 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
   seoDescription:
     "Fire damage supplements for contractors: missed line items, smoke and soot scope, documentation, carrier submissions, approval rates, and fire claim recovery.",
   relatedPostSlugs: [
+    "why-fire-damage-supplements-get-denied",
     "why-fire-damage-claims-get-underpaid",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-denial-recovery",
-    "insurance-supplementing-guide-contractors",
   ],
   faq: [
     {
@@ -532,6 +532,10 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
         "Treat denials as feedback on evidence gaps. Revise the package with targeted room folders — do not resubmit the same PDF with a louder email. The fire damage supplement denial recovery guide walks fire-specific resubmission habits; the supplement denial recovery guide covers cross-trade sequencing and partial approvals.",
       ],
       links: [
+        {
+          label: "Why fire damage supplements get denied",
+          href: "/resources/blog/why-fire-damage-supplements-get-denied",
+        },
         {
           label: "Fire damage supplement denial recovery",
           href: "/resources/blog/fire-damage-supplement-denial-recovery",

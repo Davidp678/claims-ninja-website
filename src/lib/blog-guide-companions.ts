@@ -298,6 +298,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "contents-inventory-documentation-guide",
     ],
   },
+  "why-fire-damage-supplements-get-denied": {
+    intro:
+      "You've learned why fire supplements fail. Now run the operational playbook and field standards that prevent documentation gaps before submission.",
+    guideSlugs: [
+      "fire-damage-supplement-playbook-for-contractors",
+      "fire-damage-documentation-guide",
+      "smoke-soot-damage-documentation-guide",
+      "fire-code-upgrade-documentation-guide",
+    ],
+  },
 } as const satisfies Record<string, BlogGuideCompanionEntry>;
 
 export type BlogGuideCompanionSlug = keyof typeof BLOG_GUIDE_COMPANIONS;

@@ -231,6 +231,22 @@ const SLUG_BOOSTS: Record<
     ],
     topics: ["fire_damage_claims", "documentation", "supplements"],
   },
+  "why-fire-damage-supplements-get-denied": {
+    phrases: [
+      "why fire supplements denied",
+      "fire supplement denial reasons",
+      "fire supplement documentation mistakes",
+      "why fire damage supplements get denied",
+      "fire supplement denied documentation",
+    ],
+    keywords: [
+      "fire supplement denied",
+      "fire supplement denial",
+      "fire supplement mistakes",
+      "fire supplement prevent",
+    ],
+    topics: ["fire_damage_claims", "denial_recovery", "documentation", "supplements"],
+  },
   "how-carriers-reduce-drying-days": {
     phrases: ["carriers reduce drying days", "drying day reductions", "drying days cut"],
     keywords: ["drying day", "drying days", "reduce drying", "equipment days"],

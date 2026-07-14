@@ -48,8 +48,8 @@ export const FIRE_CODE_UPGRADE_DOCUMENTATION_GUIDE = defineGuide({
     "category-3-water-damage-documentation-guide",
   ],
   relatedBlogSlugs: [
+    "why-fire-damage-supplements-get-denied",
     "why-fire-damage-claims-get-underpaid",
-    "smoke-damage-documentation-mistakes",
     "fire-claim-documentation-checklist",
     "fire-damage-supplement-playbook-for-contractors",
     "fire-damage-claim-documentation-guide",
@@ -523,6 +523,10 @@ export const FIRE_CODE_UPGRADE_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Fire Damage Supplement Playbook (blog)",
       href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+    },
+    {
+      label: "Why Fire Damage Supplements Get Denied",
+      href: "/resources/blog/why-fire-damage-supplements-get-denied",
     },
     {
       label: "Fire Damage Supplement Denial Recovery",

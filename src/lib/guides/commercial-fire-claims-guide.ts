@@ -53,8 +53,8 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
     "fire-claim-intake-guide",
   ],
   relatedBlogSlugs: [
+    "why-fire-damage-supplements-get-denied",
     "why-fire-damage-claims-get-underpaid",
-    "smoke-damage-documentation-mistakes",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-playbook-for-contractors",
   ],
@@ -675,6 +675,10 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
     {
       label: "Fire Damage Supplement Playbook",
       href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+    },
+    {
+      label: "Why Fire Damage Supplements Get Denied",
+      href: "/resources/blog/why-fire-damage-supplements-get-denied",
     },
     {
       label: "Fire Damage Supplement Playbook (blog)",

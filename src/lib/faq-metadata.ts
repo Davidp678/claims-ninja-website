@@ -1873,6 +1873,75 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Carrier RFI triggers FAQ; bridge to final submission checklist and delay prevention.",
   },
+  "fire-supplement-denied-why": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-supplement-playbook-for-contractors",
+      "fire-damage/fire-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "fire-supplement-denial-common-reason",
+      "fire-supplement-denial-missing-documentation",
+      "fire-code-upgrade-supplement-denials",
+    ],
+    internalLinkNotes:
+      "Primary denial causes FAQ; anchor for why-fire-damage-supplements-get-denied blog.",
+  },
+  "fire-supplement-denial-missing-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-documentation-guide",
+      "fire-damage/fire-damage-supplement-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "fire-supplement-checklist-documents",
+      "fire-supplement-denied-why",
+      "fire-supplement-denial-common-reason",
+    ],
+    internalLinkNotes:
+      "Missing documentation denial FAQ; bridge to checklist blog.",
+  },
+  "fire-supplement-denial-response": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-supplement-playbook-for-contractors",
+      "general-claims/supplement-denial-recovery-guide",
+    ],
+    relatedFaqIds: [
+      "fire-supplement-denied-why",
+      "fire-supplement-denial-additional-docs",
+      "help-denied-supplements",
+    ],
+    internalLinkNotes:
+      "Denial response workflow FAQ; link denial recovery blog.",
+  },
+  "fire-supplement-denial-additional-docs": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-supplement-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "fire-supplement-denial-response",
+      "fire-supplement-multiple-submissions",
+      "fire-supplement-denied-why",
+    ],
+    internalLinkNotes:
+      "Post-denial resubmission FAQ; complements multiple submissions FAQ.",
+  },
+  "fire-supplement-denial-common-reason": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-documentation-guide",
+      "fire-damage/smoke-soot-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "fire-claim-photo-volume",
+      "fire-supplement-denied-why",
+      "fire-supplement-denial-missing-documentation",
+    ],
+    internalLinkNotes:
+      "Most common failure FAQ; photo documentation focus.",
+  },
   "commercial-claims-handled": {
     searchIntent: "informational",
     relatedGuideSlugs: [
