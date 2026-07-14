@@ -1267,7 +1267,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "contents-supplement-documentation",
     ],
     internalLinkNotes:
-      "Supplement documentation FAQ; anchor for fire supplement playbook and denial recovery content.",
+      "Evidence inventory FAQ — what files and exhibits support supplements. Pair with fire-supplement-contractor-documentation for workflow execution.",
   },
   "smoke-damage-documentation-insurance": {
     searchIntent: "documentation-standard",

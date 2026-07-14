@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-import { getPostsByCategory, getBlogPostPath } from "@/lib/blog-page";
+import {
+  getBlogPostBySlug,
+  getBlogPostPath,
+  getPostsByCategory,
+} from "@/lib/blog-page";
 import type { GuideCategory } from "@/lib/guide-categories";
 import type { Guide } from "@/lib/guide-data";
 import {
@@ -26,9 +30,14 @@ type GuideCategoryPageProps = {
 };
 
 export function GuideCategoryPage({ category, guides }: GuideCategoryPageProps) {
-  const relatedBlogPosts = category.relatedBlogCategories
-    .flatMap((blogCategory) => getPostsByCategory(blogCategory).slice(0, 2))
-    .slice(0, 4);
+  const relatedBlogPosts =
+    category.relatedBlogPostSlugs && category.relatedBlogPostSlugs.length > 0
+      ? category.relatedBlogPostSlugs
+          .map((slug) => getBlogPostBySlug(slug))
+          .filter((post): post is NonNullable<typeof post> => post !== undefined)
+      : category.relatedBlogCategories
+          .flatMap((blogCategory) => getPostsByCategory(blogCategory).slice(0, 2))
+          .slice(0, 4);
 
   return (
     <>

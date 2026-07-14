@@ -250,11 +250,11 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "fire-damage-supplement-denial-recovery": {
     intro:
-      "You've learned denial recovery workflow. Now rebuild your file with the documentation standard and specialty procedures adjusters expect on resubmission.",
+      "You've learned denial recovery workflow. Now run the operational supplement playbook and rebuild field evidence adjusters expect on resubmission.",
     guideSlugs: [
+      "fire-damage-supplement-playbook-for-contractors",
       "fire-damage-documentation-guide",
       "smoke-soot-damage-documentation-guide",
-      "fire-claim-intake-guide",
       "hvac-contamination-guide",
     ],
   },
@@ -270,12 +270,12 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "why-fire-damage-claims-get-underpaid": {
     intro:
-      "You've learned why fire claims get underpaid. Now run the documentation standards and commercial playbook that defend structural, smoke, tenant, and large-loss scope from intake through supplement.",
+      "You've learned why fire claims get underpaid. Now run the supplement playbook and documentation standards that defend structural, smoke, tenant, and large-loss scope from intake through supplement.",
     guideSlugs: [
-      "commercial-fire-claims-guide",
+      "fire-damage-supplement-playbook-for-contractors",
       "fire-damage-documentation-guide",
       "smoke-soot-damage-documentation-guide",
-      "pack-out-documentation-guide",
+      "commercial-fire-claims-guide",
     ],
   },
   "smoke-damage-documentation-mistakes": {

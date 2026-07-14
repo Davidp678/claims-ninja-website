@@ -19,6 +19,7 @@ export const fireClaimDocumentationChecklist: BlogPost = {
     "Claim Recovery",
   ],
   publishedAt: "2026-07-14",
+  updatedAt: "2026-07-14",
   readingTimeMinutes: 11,
   visualVariant: "redGlow",
   authorId: "claims-ninja-editorial",
@@ -289,7 +290,7 @@ export const fireClaimDocumentationChecklist: BlogPost = {
         },
         {
           label: "Fire Damage Supplement Playbook (blog)",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "What documents should contractors include with a fire insurance supplement?",
@@ -360,7 +361,7 @@ export const fireClaimDocumentationChecklist: BlogPost = {
         },
         {
           label: "Fire Damage Supplement Playbook (blog)",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Fire damage claim documentation guide",

@@ -54,7 +54,7 @@ export const BLOG_CATEGORY_REGISTRY: readonly BlogCategory[] = [
     slug: "fire-damage-claims",
     name: "Fire Damage Claims",
     description:
-      "Fire and smoke loss documentation, structural scope, and complex reconstruction claims.",
+      "Fire and smoke loss documentation from underpayment patterns through supplement checklists and denial prevention — operational articles for restoration contractors.",
     metaTitle: "Fire Damage Claims Articles",
     metaDescription:
       "Insurance claim guidance for fire damage restoration contractors: scope, documentation, and supplements.",

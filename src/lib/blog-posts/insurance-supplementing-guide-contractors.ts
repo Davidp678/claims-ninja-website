@@ -220,7 +220,7 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
         },
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Why water mitigation claims get underpaid",
@@ -352,7 +352,7 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
         },
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Smoke and soot damage documentation guide",

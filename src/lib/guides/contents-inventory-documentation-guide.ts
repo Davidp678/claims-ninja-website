@@ -27,7 +27,7 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
     "Smoke Damage",
   ],
   publishedAt: "2026-07-09",
-  updatedAt: "2026-07-09",
+  updatedAt: "2026-07-14",
   estimatedMinutes: 24,
   seoTitle:
     "Contents Inventory Documentation Guide | Contractor Standards for Fire Claims",
@@ -35,11 +35,10 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
     "Document personal property and business contents for fire insurance claims: room-by-room inventory, photography, serial numbers, clean-versus-replace evidence, pack-out support, supplements, and claim recovery.",
   relatedGuideSlugs: [
     "fire-damage-supplement-playbook-for-contractors",
-    "commercial-fire-claims-guide",
+    "pack-out-documentation-guide",
     "fire-damage-documentation-guide",
     "fire-code-upgrade-documentation-guide",
     "smoke-soot-damage-documentation-guide",
-    "pack-out-documentation-guide",
     "contents-documentation-guide",
     "fire-claim-intake-guide",
     "smoke-documentation-guide",
@@ -47,6 +46,7 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
     "photo-documentation-standards-guide",
     "category-3-water-damage-documentation-guide",
     "commercial-water-loss-documentation-guide",
+    "commercial-fire-claims-guide",
   ],
   relatedBlogSlugs: [
     "why-fire-damage-supplements-get-denied",
@@ -594,8 +594,8 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
       href: "/resources/blog/why-fire-damage-supplements-get-denied",
     },
     {
-      label: "Fire Damage Supplement Playbook (blog)",
-      href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      label: "Fire Claim Documentation Checklist",
+      href: "/resources/blog/fire-claim-documentation-checklist",
     },
     { label: "Fire damage solutions", href: SOLUTION_PATH },
     { label: "Contents restoration solutions", href: "/solutions/contents" },

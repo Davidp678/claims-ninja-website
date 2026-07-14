@@ -28,7 +28,7 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     "Restoration contractors",
   ],
   publishedAt: "2026-07-08",
-  updatedAt: "2026-07-08",
+  updatedAt: "2026-07-14",
   estimatedMinutes: 26,
   seoTitle:
     "Fire Damage Documentation Guide | Contractor Documentation Standards for Fire Claims",
@@ -548,8 +548,8 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
       href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
     },
     {
-      label: "Fire Damage Supplement Playbook (blog)",
-      href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      label: "Fire Claim Documentation Checklist",
+      href: "/resources/blog/fire-claim-documentation-checklist",
     },
     {
       label: "Smoke and Soot Damage Documentation Guide (blog)",

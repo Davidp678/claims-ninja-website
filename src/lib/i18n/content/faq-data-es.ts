@@ -2595,7 +2595,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     category: "fire_damage_claims",
     question: "¿Qué documentación respalda los suplementos por daños de fuego?",
     answer:
-      "Los suplementos necesitan fotos indexadas por habitación, narrativa de la ruta de migración, registros de hallazgos de demolición, evidencia de HVAC y contenidos, informes de ingeniería o pruebas cuando se usen, y una carta de presentación que mapee los adjuntos a las partidas. Los suplementos por fases con evidencia contemporánea superan la narrativa al final del trabajo armada después de que la producción cierra el acceso.",
+      "Los paquetes de suplemento por fuego necesitan fotos indexadas por habitación, narrativa de la ruta de migración, registros de hallazgos de demolición, evidencia de HVAC y contenidos, informes de ingeniería o pruebas cuando se usen, y una carta de presentación que mapee cada adjunto a las partidas del estimado. Este es el inventario de evidencia que los revisores de escritorio verifican — los suplementos por fases con captura contemporánea superan la narrativa al final del trabajo armada después de que la producción cierra el acceso.",
     relatedLinks: [
       {
         label: "Guía de documentación de daños por fuego",
@@ -2603,7 +2603,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       },
       {
         label: "Manual de suplementos por daños de fuego",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
       {
         label: "Por qué se rechazan los suplementos por daños de fuego",
@@ -2701,7 +2701,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       },
       {
         label: "Manual de suplementos por daños de fuego",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
       {
         label: "Por qué se rechazan los suplementos por daños de fuego",
@@ -3124,7 +3124,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       },
       {
         label: "Manual de suplementos por daños de fuego",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
       {
         label: "Recuperación de negación de suplementos por daños de fuego",
@@ -3199,7 +3199,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       },
       {
         label: "Manual de suplementos por daños de fuego",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
     ],
   },
@@ -3220,7 +3220,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       },
       {
         label: "Manual de suplementos por daños de fuego",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
     ],
   },
@@ -3292,7 +3292,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     category: "fire_damage_claims",
     question: "¿Cómo respaldan los contratistas los suplementos por daños de fuego?",
     answer:
-      "Los contratistas respaldan suplementos de fuego capturando evidencia contemporánea durante demolición, revisión de migración y pack-out — luego enviando paquetes por fases con cartas de presentación que mapean adjuntos a partidas. Asigne un responsable de suplemento, mantenga un registro de brechas desde la admisión, compare estimaciones de la aseguradora en 48 horas, y reenvíe daño oculto, humo, HVAC y alcance de contenidos con fotos indexadas antes de que la reconstrucción cierre el acceso.",
+      "Los contratistas respaldan suplementos de fuego asignando un responsable de suplemento, manteniendo un registro de brechas desde la admisión, comparando estimaciones de la aseguradora en 48 horas, y enviando paquetes por fases con cartas de presentación que mapean evidencia contemporánea a partidas. Los equipos de campo capturan prueba de demolición, migración, HVAC y pack-out durante la producción — no después de que la reconstrucción cierra el acceso — para que los reenvíos y reinspecciones tengan exhibiciones indexadas listas.",
     relatedLinks: [
       {
         label: "Por qué las reclamaciones por daños de fuego reciben pagos insuficientes",
@@ -3300,7 +3300,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       },
       {
         label: "Manual de suplementos por daños de fuego",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
       {
         label: "¿Qué documentación respalda los suplementos por daños de fuego?",
@@ -3511,7 +3511,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       },
       {
         label: "Manual de suplementos por daños de fuego",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
       {
         label: "FAQ de respaldo de documentación para suplementos por incendio",
@@ -3585,7 +3585,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       },
       {
         label: "Manual de suplementos por daños de fuego",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
     ],
   },

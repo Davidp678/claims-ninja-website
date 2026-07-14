@@ -19,6 +19,7 @@ export const smokeDamageDocumentationMistakes: BlogPost = {
     "Insurance Claims",
   ],
   publishedAt: "2026-07-13",
+  updatedAt: "2026-07-14",
   readingTimeMinutes: 11,
   visualVariant: "darkGrid",
   authorId: "claims-ninja-editorial",
@@ -27,6 +28,8 @@ export const smokeDamageDocumentationMistakes: BlogPost = {
   seoDescription:
     "Smoke damage documentation mistakes that lead to underpaid fire claims: cosmetic-only scope, weak odor and HVAC evidence, incomplete photos, concealed areas, contents gaps, and supplement narratives for restoration contractors.",
   relatedPostSlugs: [
+    "fire-claim-documentation-checklist",
+    "why-fire-damage-supplements-get-denied",
     "why-fire-damage-claims-get-underpaid",
     "smoke-and-soot-damage-documentation-guide",
     "hvac-contamination-in-fire-damage-claims",
@@ -283,7 +286,7 @@ export const smokeDamageDocumentationMistakes: BlogPost = {
         },
         {
           label: "Fire Damage Supplement Playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
       ],
     },
@@ -368,7 +371,7 @@ export const smokeDamageDocumentationMistakes: BlogPost = {
       links: [
         {
           label: "Fire Damage Supplement Playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "How do contractors support fire damage supplements?",

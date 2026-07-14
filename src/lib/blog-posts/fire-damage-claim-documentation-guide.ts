@@ -111,7 +111,7 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
         },
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Smoke and soot damage documentation guide",
@@ -561,7 +561,7 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
         },
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Complete insurance supplementing guide",

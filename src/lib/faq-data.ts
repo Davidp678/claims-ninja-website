@@ -2599,7 +2599,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "fire_damage_claims",
     question: "What documentation supports fire damage supplements?",
     answer:
-      "Supplements need indexed photos by room, migration path narrative, demolition discovery logs, HVAC and contents evidence, engineering or testing reports where used, and a cover letter mapping attachments to line items. Phased supplements with contemporaneous evidence outperform end-of-job narrative assembled after production closes access.",
+      "Fire supplement packages need indexed photos by room, migration path narrative, demolition discovery logs, HVAC and contents evidence, engineering or testing reports where used, and a cover letter mapping each attachment to estimate line items. This is the evidence inventory desk reviewers verify — phased supplements with contemporaneous capture outperform end-of-job narrative assembled after production closes access.",
     relatedLinks: [
       {
         label: "Fire Damage Documentation Guide",
@@ -2940,6 +2940,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Why Fire Damage Supplements Get Denied",
         href: "/resources/blog/why-fire-damage-supplements-get-denied",
+      },
+      {
+        label: "Fire Claim Documentation Checklist",
+        href: "/resources/blog/fire-claim-documentation-checklist",
       },
       {
         label: "Fire Damage Supplement Playbook",
@@ -3296,7 +3300,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "fire_damage_claims",
     question: "How do contractors support fire damage supplements?",
     answer:
-      "Contractors support fire supplements by capturing contemporaneous evidence during demolition, migration review, and pack-out — then submitting phased packages with cover letters mapping attachments to line items. Assign a supplement owner, maintain a gap log from intake, compare carrier estimates within 48 hours, and resubmit hidden damage, smoke, HVAC, and contents scope with indexed photos before rebuild closes access.",
+      "Contractors support fire supplements by assigning a supplement owner, maintaining a gap log from intake, comparing carrier estimates within 48 hours, and submitting phased packages with cover letters that map contemporaneous evidence to line items. Field teams capture demolition, migration, HVAC, and pack-out proof during production — not after rebuild closes access — so resubmissions and reinspections have indexed exhibits ready.",
     relatedLinks: [
       {
         label: "Why fire damage claims get underpaid",
@@ -3515,7 +3519,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       },
       {
         label: "Fire damage supplement playbook",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
       {
         label: "Fire supplement documentation support FAQ",
@@ -3589,7 +3593,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       },
       {
         label: "Fire damage supplement playbook",
-        href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
       },
     ],
   },

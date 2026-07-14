@@ -32,7 +32,7 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
     "Engineering",
   ],
   publishedAt: "2026-07-10",
-  updatedAt: "2026-07-10",
+  updatedAt: "2026-07-14",
   estimatedMinutes: 20,
   seoTitle:
     "Commercial Fire Claims Guide | Contractor Playbook for Large-Loss Fire Claims",
@@ -681,8 +681,8 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
       href: "/resources/blog/why-fire-damage-supplements-get-denied",
     },
     {
-      label: "Fire Damage Supplement Playbook (blog)",
-      href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+      label: "Fire Claim Documentation Checklist",
+      href: "/resources/blog/fire-claim-documentation-checklist",
     },
     {
       label: "Commercial fire claims documentation FAQ",

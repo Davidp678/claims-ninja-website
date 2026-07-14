@@ -31,7 +31,7 @@ export const FIRE_DAMAGE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     "Carrier estimate review",
   ],
   publishedAt: "2026-07-13",
-  updatedAt: "2026-07-13",
+  updatedAt: "2026-07-14",
   estimatedMinutes: 22,
   seoTitle:
     "Fire Damage Supplement Playbook for Contractors | Complete Fire Claim Recovery Workflow",
@@ -360,7 +360,7 @@ export const FIRE_DAMAGE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
         "Update revised estimate within one week of visit so lines discussed on site appear in submitted scope.",
       ],
       notes:
-        "Reinspections fail when adjusters cannot locate evidence quickly. Pre-stage stations at each disputed area with printed or tablet-indexed exhibits tied to line numbers.",
+        "Reinspections fail when adjusters cannot locate evidence quickly. Pre-stage stations at each disputed area with printed or tablet-indexed exhibits tied to line numbers. Run the Fire Claim Documentation Checklist before staging so RFI gaps are closed before the adjuster arrives.",
     },
     {
       id: "phase-8-objections",
@@ -627,6 +627,10 @@ export const FIRE_DAMAGE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     {
       label: "Insurance supplementing guide (pillar)",
       href: "/resources/blog/insurance-supplementing-guide-contractors",
+    },
+    {
+      label: "Fire Claim Documentation Checklist",
+      href: "/resources/blog/fire-claim-documentation-checklist",
     },
     {
       label: "Why fire damage supplements get denied",

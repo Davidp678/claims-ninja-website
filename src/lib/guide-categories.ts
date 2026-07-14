@@ -15,8 +15,26 @@ export type GuideCategory = {
   metaTitle: string;
   metaDescription: string;
   relatedBlogCategories: readonly BlogCategorySlug[];
+  relatedBlogPostSlugs?: readonly string[];
   relatedSolutionPath?: string;
 };
+
+/** Editorial hub order for /resources/guides/fire-damage (matches FIRE_DAMAGE_GUIDES bundle). */
+export const FIRE_DAMAGE_HUB_ORDER = [
+  "fire-damage-supplement-playbook-for-contractors",
+  "commercial-fire-claims-guide",
+  "fire-damage-documentation-guide",
+  "fire-code-upgrade-documentation-guide",
+  "smoke-soot-damage-documentation-guide",
+  "contents-inventory-documentation-guide",
+  "pack-out-documentation-guide",
+  "fire-claim-intake-guide",
+  "smoke-documentation-guide",
+  "hvac-contamination-guide",
+  "odor-documentation-guide",
+  "contents-documentation-guide",
+  "structural-stabilization-documentation-guide",
+] as const;
 
 export const GUIDE_CATEGORY_BASE_PATH = "/resources/guides" as const;
 
@@ -62,11 +80,17 @@ export const GUIDE_CATEGORY_REGISTRY: readonly GuideCategory[] = [
     slug: "fire-damage",
     name: "Fire Damage",
     description:
-      "Fire damage supplement playbook and documentation standards: operational supplement workflow, cornerstone documentation guide, fire code upgrade documentation, smoke and soot documentation standard, contents inventory documentation standard, commercial fire claims, intake, smoke/HVAC/odor/contents documentation, and structural stabilization.",
+      "Start with the supplement playbook, then documentation standards for smoke, contents, pack-out, and code upgrades. Field procedures cover intake through structural stabilization on residential and commercial fire losses.",
     metaTitle: "Fire Damage Guides",
     metaDescription:
-      "Fire damage claim guides: supplement playbook, documentation standards, fire code upgrade documentation, smoke and soot documentation, contents inventory documentation, commercial fire claims, claim intake, HVAC contamination, odor documentation, and structural stabilization.",
+      "Fire damage claim guides: supplement playbook, documentation standards, code upgrades, smoke and soot, contents inventory, pack-out, commercial fire claims, intake, HVAC, odor, and structural stabilization.",
     relatedBlogCategories: ["fire-damage-claims", "claim-documentation"],
+    relatedBlogPostSlugs: [
+      "why-fire-damage-claims-get-underpaid",
+      "smoke-damage-documentation-mistakes",
+      "fire-claim-documentation-checklist",
+      "why-fire-damage-supplements-get-denied",
+    ],
     relatedSolutionPath: "/solutions/fire-damage",
   },
   {

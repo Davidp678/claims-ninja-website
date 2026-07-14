@@ -109,7 +109,7 @@ export const fireDamageSupplementDenialRecovery: BlogPost = {
         },
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Supplement denial recovery guide",
@@ -262,7 +262,7 @@ export const fireDamageSupplementDenialRecovery: BlogPost = {
       links: [
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
       ],
     },
@@ -307,7 +307,7 @@ export const fireDamageSupplementDenialRecovery: BlogPost = {
       links: [
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
       ],
     },
@@ -641,7 +641,7 @@ export const fireDamageSupplementDenialRecovery: BlogPost = {
       links: [
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Fire damage claim documentation guide",

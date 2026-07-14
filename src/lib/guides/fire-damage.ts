@@ -37,6 +37,7 @@ export const FIRE_DAMAGE_GUIDES = [
       "Documentation",
     ],
     publishedAt: GUIDE_PUBLISHED_AT,
+    updatedAt: "2026-07-14",
     estimatedMinutes: 12,
     recommended: true,
     seoTitle: "Fire Claim Intake Checklist for Contractors",
@@ -289,7 +290,9 @@ export const FIRE_DAMAGE_GUIDES = [
       "Fire Damage",
     ],
     publishedAt: GUIDE_PUBLISHED_AT,
+    updatedAt: "2026-07-14",
     estimatedMinutes: 14,
+    recommended: true,
     seoTitle: "Smoke and Soot Documentation Procedure for Fire Claims",
     seoDescription:
       "Field procedure for smoke and soot documentation on fire claims: contamination types, migration paths, substrate photos, test cleaning, and carrier-ready room indexes.",
@@ -501,7 +504,9 @@ export const FIRE_DAMAGE_GUIDES = [
     claimPhase: "documentation",
     tags: ["HVAC", "Fire Damage", "Smoke Damage", "Documentation", "Duct Cleaning"],
     publishedAt: GUIDE_PUBLISHED_AT,
+    updatedAt: "2026-07-14",
     estimatedMinutes: 12,
+    recommended: true,
     seoTitle: "HVAC Contamination Documentation for Fire Damage Claims",
     seoDescription:
       "HVAC contamination documentation procedure for fire claims: inspection workflow, duct and component photos, partial-system scope, and supplement-ready HVAC files.",
@@ -712,7 +717,9 @@ export const FIRE_DAMAGE_GUIDES = [
     claimPhase: "documentation",
     tags: ["Odor Mitigation", "Fire Damage", "Smoke Damage", "Documentation"],
     publishedAt: GUIDE_PUBLISHED_AT,
+    updatedAt: "2026-07-14",
     estimatedMinutes: 11,
+    recommended: true,
     seoTitle: "Odor Mitigation Documentation Procedure for Fire Claims",
     seoDescription:
       "Odor mitigation documentation for fire claims: pre-treatment assessment, equipment logs, sealing evidence, HVAC correlation, and post-treatment verification carriers approve.",
@@ -920,7 +927,9 @@ export const FIRE_DAMAGE_GUIDES = [
     claimPhase: "documentation",
     tags: ["Contents", "Fire Damage", "Pack-Out", "Inventory", "Documentation"],
     publishedAt: GUIDE_PUBLISHED_AT,
+    updatedAt: "2026-07-14",
     estimatedMinutes: 13,
+    recommended: true,
     seoTitle: "Fire Contents Documentation Procedure for Insurance Claims",
     seoDescription:
       "Contents documentation procedure for fire claims: room-located inventories, pack-out proof, salvageability photos, and carrier-ready contents files.",
@@ -1141,7 +1150,9 @@ export const FIRE_DAMAGE_GUIDES = [
       "Documentation",
     ],
     publishedAt: GUIDE_PUBLISHED_AT,
+    updatedAt: "2026-07-14",
     estimatedMinutes: 12,
+    recommended: true,
     seoTitle: "Structural Stabilization Documentation for Fire Claims",
     seoDescription:
       "Structural stabilization documentation for fire claims: shoring, bracing, board-up, pre-demolition photos, and discovery evidence during tear-out.",

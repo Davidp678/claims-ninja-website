@@ -1,6 +1,23 @@
 import { CLAIM_GUIDES } from "@/lib/guides";
-import type { GuideCategorySlug } from "@/lib/guide-categories";
+import {
+  FIRE_DAMAGE_HUB_ORDER,
+  type GuideCategorySlug,
+} from "@/lib/guide-categories";
 import type { ClaimPhase, Guide, GuideRole, GuideType } from "@/lib/guide-types";
+
+function sortGuidesByHubOrder(guides: Guide[], hubOrder: readonly string[]): Guide[] {
+  const orderIndex = new Map(hubOrder.map((slug, index) => [slug, index]));
+  return [...guides].sort((a, b) => {
+    const aIndex = orderIndex.get(a.slug);
+    const bIndex = orderIndex.get(b.slug);
+    if (aIndex === undefined && bIndex === undefined) {
+      return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+    }
+    if (aIndex === undefined) return 1;
+    if (bIndex === undefined) return -1;
+    return aIndex - bIndex;
+  });
+}
 
 export function getAllGuides(): readonly Guide[] {
   return [...CLAIM_GUIDES].sort(
@@ -45,7 +62,11 @@ export function getRecommendedGuides(limit = 4): Guide[] {
 }
 
 export function getGuidesByCategory(category: GuideCategorySlug): Guide[] {
-  return getAllGuides().filter((guide) => guide.category === category);
+  const guides = getAllGuides().filter((guide) => guide.category === category);
+  if (category === "fire-damage") {
+    return sortGuidesByHubOrder(guides, FIRE_DAMAGE_HUB_ORDER);
+  }
+  return guides;
 }
 
 export function getGuidesByRole(role: GuideRole): Guide[] {

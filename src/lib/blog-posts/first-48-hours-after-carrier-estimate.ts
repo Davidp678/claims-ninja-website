@@ -186,7 +186,7 @@ export const first48HoursAfterCarrierEstimate: BlogPost = {
       links: [
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Fire damage claim documentation guide",

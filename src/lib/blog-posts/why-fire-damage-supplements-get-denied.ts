@@ -20,6 +20,7 @@ export const whyFireDamageSupplementsGetDenied: BlogPost = {
     "Code Upgrades",
   ],
   publishedAt: "2026-07-14",
+  updatedAt: "2026-07-14",
   readingTimeMinutes: 12,
   visualVariant: "redGlow",
   authorId: "claims-ninja-editorial",
@@ -267,7 +268,7 @@ export const whyFireDamageSupplementsGetDenied: BlogPost = {
         },
         {
           label: "Fire Damage Supplement Playbook (blog)",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "What should be included in a fire damage supplement?",

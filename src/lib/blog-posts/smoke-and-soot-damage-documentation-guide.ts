@@ -104,7 +104,7 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
         },
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Complete insurance supplementing guide",
@@ -236,7 +236,7 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
         },
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
       ],
     },
@@ -387,7 +387,7 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
       links: [
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Complete insurance supplementing guide",
@@ -505,7 +505,7 @@ export const smokeAndSootDamageDocumentationGuide: BlogPost = {
         },
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Odor mitigation in fire damage claims",

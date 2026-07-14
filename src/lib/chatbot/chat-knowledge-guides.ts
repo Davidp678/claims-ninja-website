@@ -122,6 +122,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "fire damage supplement process",
       "how to submit a fire damage supplement",
       "fire supplement playbook guide",
+      "prepare for a fire reinspection",
       "fire claim supplement workflow",
       "fire damage supplement guide",
     ],

@@ -1062,6 +1062,17 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "fire reinspection prep retrieves playbook guide",
+    message: "how do I prepare for a fire reinspection",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-damage-supplement-playbook-for-contractors|Phase 7 — Prepare for Reinspection|reinspection-packet|prepare for Reinspection/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "fire supplement included items FAQ",
     message: "what should be included in a fire damage supplement",
     assert: (result) =>

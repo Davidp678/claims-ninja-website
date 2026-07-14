@@ -103,7 +103,7 @@ export const hvacContaminationInFireDamageClaims: BlogPost = {
         },
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Smoke and soot damage documentation guide",
@@ -471,7 +471,7 @@ export const hvacContaminationInFireDamageClaims: BlogPost = {
       links: [
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
       ],
     },
@@ -514,7 +514,7 @@ export const hvacContaminationInFireDamageClaims: BlogPost = {
         },
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
       ],
     },
@@ -627,7 +627,7 @@ export const hvacContaminationInFireDamageClaims: BlogPost = {
         },
         {
           label: "Fire damage supplement playbook",
-          href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
+          href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
         },
         {
           label: "Smoke and soot damage documentation guide",
