@@ -2539,6 +2539,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Carriers expect exterior elevations, origin room before mitigation, migration path through halls and upper floors, structural char and heat damage, HVAC registers and filters, water saturation from suppression, contents in place before pack-out, and demolition discovery during tear-out — all with room labels and dates in filenames.",
     relatedLinks: [
       {
+        label: "Fire Claim Documentation Checklist",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
         label: "Fire Damage Documentation Guide",
         href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
       },
@@ -2799,6 +2803,113 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Smoke & Soot Damage Documentation Guide",
         href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+    ],
+  },
+
+  // Fire Claim Documentation Checklist FAQs (5)
+  {
+    id: "fire-supplement-checklist-documents",
+    category: "fire_damage_claims",
+    question: "What documents should contractors include with a fire insurance supplement?",
+    answer:
+      "Include a cover letter with attachment index, revised Xactimate estimate, room-labeled photo exhibits, smoke migration narrative, demolition discovery log, HVAC inspection evidence, contents inventory pages, pack-out chain-of-custody records, code citations with permit support, specialty report excerpts when used, and a correspondence log. Each requested line must map to at least one named exhibit before submission.",
+    relatedLinks: [
+      {
+        label: "Fire Claim Documentation Checklist",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "Fire Damage Supplement Playbook",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "What should be included in a fire damage supplement?",
+        href: "/faq#faq-fire-supplement-included-items",
+      },
+    ],
+  },
+  {
+    id: "fire-claim-photo-volume",
+    category: "fire_damage_claims",
+    question: "How many photos should be taken during a fire claim?",
+    answer:
+      "Plan a minimum structured set per affected room: at least one wide shot, one mid-range ceiling-and-wall shot, and substrate close-ups for each billed surface — plus migration progression, exterior elevations, HVAC registers, demolition discovery, and contents in-place images. Complex fire files often exceed 200–400 labeled photos; volume matters less than complete room coverage and consistent labels across photos, sketch, and estimate.",
+    relatedLinks: [
+      {
+        label: "Fire Claim Documentation Checklist",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "What photos are required after a fire?",
+        href: "/faq#faq-fire-damage-photos-required",
+      },
+    ],
+  },
+  {
+    id: "fire-smoke-documentation-support",
+    category: "fire_damage_claims",
+    question: "What documentation supports smoke damage on fire claims?",
+    answer:
+      "Smoke damage documentation includes migration path photos from origin through connected spaces, room-by-room odor intake logs, substrate close-ups with soot type notes, test-clean results where clean-versus-replace is disputed, HVAC register and filter condition, and cleaning method rationale tied to contamination type. Indexed evidence supports supplement lines when smoke scope exceeds the carrier estimate.",
+    relatedLinks: [
+      {
+        label: "Fire Claim Documentation Checklist",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "Smoke & Soot Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "How should smoke damage be documented for insurance?",
+        href: "/faq#faq-smoke-damage-documentation-insurance",
+      },
+    ],
+  },
+  {
+    id: "fire-hidden-damage-required",
+    category: "fire_damage_claims",
+    question: "Should contractors document hidden fire damage?",
+    answer:
+      "Yes — hidden fire damage must be documented contemporaneously during demolition before repairs close access. Char in wall cavities, compromised trusses, soot in attics, and wet insulation from suppression are common supplement scope carriers cannot verify from initial walks. Failing to photograph discovery during tear-out removes the evidence desk reviewers need to approve structural and smoke lines discovered after the first estimate.",
+    relatedLinks: [
+      {
+        label: "Fire Claim Documentation Checklist",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "Fire Damage Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "How should hidden fire damage be documented?",
+        href: "/faq#faq-fire-hidden-damage-documentation",
+      },
+    ],
+  },
+  {
+    id: "fire-carrier-additional-documentation-why",
+    category: "fire_damage_claims",
+    question: "Why do carriers request additional documentation during fire claims?",
+    answer:
+      "Carriers request additional documentation when files are not reviewer-ready — unlabeled photos, inconsistent room names across sketch and inventory, missing pack-out chain of custody, HVAC scope without register evidence, contents lists without in-place images, or supplement packages without attachment-to-line-item indexes. Each request for information adds days before payment; complete pre-submission documentation prevents iterative RFIs and proportional reductions on unsupported lines.",
+    relatedLinks: [
+      {
+        label: "Fire Claim Documentation Checklist",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "What documentation mistakes delay fire claims?",
+        href: "/faq#faq-fire-claim-documentation-delays",
+      },
+      {
+        label: "How can contractors improve fire claim documentation?",
+        href: "/faq#faq-fire-claim-documentation-improve",
       },
     ],
   },
@@ -3386,6 +3497,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     answer:
       "A complete fire damage supplement includes a cover letter with summary table, revised Xactimate estimate, indexed photo exhibits by room, migration path narrative, contents inventory pages, HVAC inspection evidence, demolition discovery photos, specialist report excerpts when used, and a correspondence log. Each requested line must map to at least one named exhibit.",
     relatedLinks: [
+      {
+        label: "Fire Claim Documentation Checklist",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
       {
         label: "Fire Damage Supplement Playbook",
         href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",

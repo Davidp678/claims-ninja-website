@@ -106,6 +106,10 @@ export const fireDamageClaimDocumentationGuide: BlogPost = {
           href: "/resources/blog/claim-documentation-approval-rates",
         },
         {
+          label: "Fire claim documentation checklist",
+          href: "/resources/blog/fire-claim-documentation-checklist",
+        },
+        {
           label: "Fire damage supplement playbook",
           href: "/resources/blog/fire-damage-supplement-playbook-for-contractors",
         },

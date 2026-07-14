@@ -55,6 +55,7 @@ export const FIRE_DAMAGE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
   ],
   relatedBlogSlugs: [
     "why-fire-damage-claims-get-underpaid",
+    "fire-claim-documentation-checklist",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-denial-recovery",
     "insurance-supplementing-guide-contractors",
@@ -72,6 +73,8 @@ export const FIRE_DAMAGE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     "fire-claims-underpaid-why",
     "fire-hidden-damage-documentation",
     "fire-commercial-supplement-opportunities",
+    "fire-supplement-checklist-documents",
+    "fire-carrier-additional-documentation-why",
   ],
   relatedSolutionPath: SOLUTION_PATH,
   claimTypes: ["fire-damage", "smoke", "commercial", "large-loss"],

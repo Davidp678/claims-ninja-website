@@ -55,6 +55,7 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
   relatedBlogSlugs: [
     "why-fire-damage-claims-get-underpaid",
     "smoke-damage-documentation-mistakes",
+    "fire-claim-documentation-checklist",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-playbook-for-contractors",
     "smoke-and-soot-damage-documentation-guide",
@@ -66,6 +67,9 @@ export const FIRE_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     "fire-smoke-damage-insurance-coverage",
     "fire-hidden-damage-documentation",
     "fire-supplement-documentation-support",
+    "fire-claim-photo-volume",
+    "fire-hidden-damage-required",
+    "fire-smoke-documentation-support",
   ],
   relatedSolutionPath: SOLUTION_PATH,
   claimTypes: ["fire-damage", "smoke", "commercial"],

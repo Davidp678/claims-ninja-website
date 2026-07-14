@@ -99,6 +99,10 @@ export const fireDamageSupplementPlaybookForContractors: BlogPost = {
       ],
       links: [
         {
+          label: "Fire claim documentation checklist",
+          href: "/resources/blog/fire-claim-documentation-checklist",
+        },
+        {
           label: "Fire damage claim documentation guide",
           href: "/resources/blog/fire-damage-claim-documentation-guide",
         },

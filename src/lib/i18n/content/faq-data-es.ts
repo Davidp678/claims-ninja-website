@@ -2802,6 +2802,113 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       },
     ],
   },
+
+  // Fire Claim Documentation Checklist FAQs (5)
+  {
+    id: "fire-supplement-checklist-documents",
+    category: "fire_damage_claims",
+    question: "¿Qué documentos deben incluir los contratistas con un suplemento de seguro por incendio?",
+    answer:
+      "Incluya carta de presentación con índice de anexos, estimación Xactimate revisada, exhibiciones fotográficas etiquetadas por habitación, narrativa de migración de humo, registro de descubrimientos en demolición, evidencia de inspección HVAC, páginas de inventario de contenidos, registros de cadena de custodia de pack-out, citas de código con respaldo de permisos, extractos de informes especializados cuando se usen, y registro de correspondencia. Cada línea solicitada debe corresponder a al menos un anexo nombrado antes del envío.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones por incendio",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "Manual de suplementos por daños de fuego",
+        href: "/resources/guides/fire-damage/fire-damage-supplement-playbook-for-contractors",
+      },
+      {
+        label: "¿Qué debe incluirse en un suplemento por daños de fuego?",
+        href: "/faq#faq-fire-supplement-included-items",
+      },
+    ],
+  },
+  {
+    id: "fire-claim-photo-volume",
+    category: "fire_damage_claims",
+    question: "¿Cuántas fotos se deben tomar durante una reclamación por incendio?",
+    answer:
+      "Planifique un conjunto estructurado mínimo por habitación afectada: al menos una foto general, una de techo y paredes a media distancia, y primeros planos de sustrato por cada superficie facturada, más progresión de migración, elevaciones exteriores, registros HVAC, descubrimientos en demolición e imágenes de contenidos in situ. Las reclamaciones complejas por incendio suelen superar 200–400 fotos etiquetadas; el volumen importa menos que la cobertura completa por habitación y etiquetas consistentes entre fotos, croquis y estimación.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones por incendio",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "¿Qué fotos se requieren después de un incendio?",
+        href: "/faq#faq-fire-damage-photos-required",
+      },
+    ],
+  },
+  {
+    id: "fire-smoke-documentation-support",
+    category: "fire_damage_claims",
+    question: "¿Qué documentación respalda el daño por humo en reclamaciones por incendio?",
+    answer:
+      "La documentación de daño por humo incluye fotos de ruta de migración desde el origen por espacios conectados, registros de olor por habitación antes del tratamiento, primeros planos de sustrato con notas de tipo de hollín, resultados de limpieza de prueba cuando se disputa limpiar vs reemplazar, condición de registros y filtros HVAC, y justificación del método de limpieza según el tipo de contaminación. La evidencia indexada respalda líneas de suplemento cuando el alcance de humo supera la estimación de la aseguradora.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones por incendio",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "Guía de documentación de daños por humo y hollín",
+        href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
+      },
+      {
+        label: "¿Cómo se debe documentar el daño por humo para el seguro?",
+        href: "/faq#faq-smoke-damage-documentation-insurance",
+      },
+    ],
+  },
+  {
+    id: "fire-hidden-damage-required",
+    category: "fire_damage_claims",
+    question: "¿Deben los contratistas documentar daños ocultos por incendio?",
+    answer:
+      "Sí: el daño oculto por incendio debe documentarse de forma contemporánea durante la demolición antes de que las reparaciones cierren el acceso. Carbón en cavidades de pared, cerchas comprometidas, hollín en áticos y aislamiento húmedo por supresión son alcances de suplemento comunes que las aseguradoras no pueden verificar en inspecciones iniciales. No fotografiar descubrimientos durante el desmontaje elimina la evidencia que los revisores de escritorio necesitan para aprobar líneas estructurales y de humo descubiertas después de la primera estimación.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones por incendio",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "Guía de documentación de daños por fuego",
+        href: "/resources/guides/fire-damage/fire-damage-documentation-guide",
+      },
+      {
+        label: "¿Cómo se debe documentar el daño oculto por incendio?",
+        href: "/faq#faq-fire-hidden-damage-documentation",
+      },
+    ],
+  },
+  {
+    id: "fire-carrier-additional-documentation-why",
+    category: "fire_damage_claims",
+    question: "¿Por qué las aseguradoras solicitan documentación adicional durante reclamaciones por incendio?",
+    answer:
+      "Las aseguradoras solicitan documentación adicional cuando los expedientes no están listos para revisión: fotos sin etiquetar, nombres de habitación inconsistentes entre croquis e inventario, cadena de custodia de pack-out faltante, alcance HVAC sin evidencia de registros, listas de contenidos sin imágenes in situ, o paquetes de suplemento sin índices de anexo a línea. Cada solicitud de información añade días antes del pago; la documentación completa previa al envío evita RFIs iterativos y reducciones proporcionales en líneas sin respaldo.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones por incendio",
+        href: "/resources/blog/fire-claim-documentation-checklist",
+      },
+      {
+        label: "¿Qué errores de documentación retrasan las reclamaciones por incendio?",
+        href: "/faq#faq-fire-claim-documentation-delays",
+      },
+      {
+        label: "¿Cómo pueden los contratistas mejorar la documentación de reclamaciones por incendio?",
+        href: "/faq#faq-fire-claim-documentation-improve",
+      },
+    ],
+  },
   {
     id: "contents-inventory-documentation-insurance",
     category: "fire_damage_claims",

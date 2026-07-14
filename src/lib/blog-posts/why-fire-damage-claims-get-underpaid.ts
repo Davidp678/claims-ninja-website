@@ -268,6 +268,10 @@ export const whyFireDamageClaimsGetUnderpaid: BlogPost = {
       ],
       links: [
         {
+          label: "Fire claim documentation checklist",
+          href: "/resources/blog/fire-claim-documentation-checklist",
+        },
+        {
           label: "Documentation Standards Guide",
           href: "/resources/guides/general-claims/documentation-standards-guide",
         },

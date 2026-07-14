@@ -288,6 +288,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "fire-code-upgrade-documentation-guide",
     ],
   },
+  "fire-claim-documentation-checklist": {
+    intro:
+      "You've reviewed what to document before a fire supplement. Now run the operational playbook and field standards that turn checklist items into reviewer-ready evidence.",
+    guideSlugs: [
+      "fire-damage-supplement-playbook-for-contractors",
+      "fire-damage-documentation-guide",
+      "smoke-soot-damage-documentation-guide",
+      "contents-inventory-documentation-guide",
+    ],
+  },
 } as const satisfies Record<string, BlogGuideCompanionEntry>;
 
 export type BlogGuideCompanionSlug = keyof typeof BLOG_GUIDE_COMPANIONS;

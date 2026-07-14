@@ -2542,6 +2542,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
         ),
       ),
   },
+  {
+    label: "fire supplement checklist documents FAQ retrieves",
+    message: "what documents should contractors include with a fire insurance supplement",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-supplement-checklist-documents|fire-claim-documentation-checklist|documents should contractors include with a fire insurance supplement/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire claim photo volume FAQ retrieves",
+    message: "how many photos should be taken during a fire claim",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-claim-photo-volume|How many photos should be taken during a fire claim|fire-claim-documentation-checklist/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire smoke documentation support FAQ retrieves",
+    message: "what documentation supports smoke damage on fire claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-smoke-documentation-support|What documentation supports smoke damage on fire claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire hidden damage required FAQ retrieves",
+    message: "should contractors document hidden fire damage",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-hidden-damage-required|Should contractors document hidden fire damage/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire carrier additional documentation why FAQ retrieves",
+    message: "why do carriers request additional documentation during fire claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-carrier-additional-documentation-why|Why do carriers request additional documentation during fire claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "fire claim documentation checklist blog retrieves",
+    message: "fire claim documentation checklist before supplement",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /fire-claim-documentation-checklist|Fire Claim Documentation Checklist/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
 ];
 
 export function runKnowledgeRetrievalChecks(): {

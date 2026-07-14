@@ -60,6 +60,10 @@ export const smokeDamageDocumentationMistakes: BlogPost = {
           href: "/resources/guides/fire-damage/smoke-soot-damage-documentation-guide",
         },
         {
+          label: "Fire Claim Documentation Checklist",
+          href: "/resources/blog/fire-claim-documentation-checklist",
+        },
+        {
           label: "Why fire damage claims get underpaid",
           href: "/resources/blog/why-fire-damage-claims-get-underpaid",
         },

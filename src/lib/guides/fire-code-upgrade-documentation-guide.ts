@@ -50,6 +50,7 @@ export const FIRE_CODE_UPGRADE_DOCUMENTATION_GUIDE = defineGuide({
   relatedBlogSlugs: [
     "why-fire-damage-claims-get-underpaid",
     "smoke-damage-documentation-mistakes",
+    "fire-claim-documentation-checklist",
     "fire-damage-supplement-playbook-for-contractors",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-denial-recovery",

@@ -1805,6 +1805,74 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Missed line items FAQ; link underpayment blog and specialty fire guides.",
   },
+  "fire-supplement-checklist-documents": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-supplement-playbook-for-contractors",
+      "fire-damage/fire-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "fire-supplement-included-items",
+      "fire-supplement-documentation-evidence",
+      "fire-supplement-documentation-support",
+    ],
+    internalLinkNotes:
+      "Pre-submission document package FAQ; anchor for fire claim documentation checklist blog.",
+  },
+  "fire-claim-photo-volume": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-documentation-guide",
+      "general-claims/photo-documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "fire-damage-photos-required",
+      "fire-damage-documentation-insurance",
+    ],
+    internalLinkNotes:
+      "Photo volume FAQ; complements fire-damage-photos-required with per-room minimum guidance.",
+  },
+  "fire-smoke-documentation-support": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/smoke-soot-damage-documentation-guide",
+      "fire-damage/smoke-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "smoke-damage-documentation-insurance",
+      "fire-smoke-soot",
+      "smoke-damage-supplement-documentation",
+    ],
+    internalLinkNotes:
+      "Smoke evidence categories FAQ for fire supplements; bridge to checklist blog section 2.",
+  },
+  "fire-hidden-damage-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-documentation-guide",
+      "fire-damage/structural-stabilization-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "fire-hidden-damage-documentation",
+      "fire-supplement-documentation-support",
+    ],
+    internalLinkNotes:
+      "Yes/no hidden damage rationale FAQ; complements how-to hidden damage FAQ.",
+  },
+  "fire-carrier-additional-documentation-why": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "fire-damage/fire-damage-supplement-playbook-for-contractors",
+      "fire-damage/fire-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "fire-claim-documentation-delays",
+      "fire-claim-documentation-improve",
+      "fire-supplement-checklist-documents",
+    ],
+    internalLinkNotes:
+      "Carrier RFI triggers FAQ; bridge to final submission checklist and delay prevention.",
+  },
   "commercial-claims-handled": {
     searchIntent: "informational",
     relatedGuideSlugs: [

@@ -11,6 +11,12 @@ export const BLOG_SUMMARIES_ES: Record<string, BlogSummary> = {
     excerpt:
       "Errores de documentación de daños por humo que provocan pagos insuficientes: tratar la contaminación como cosmética, evidencia débil de olor y HVAC, fotografía incompleta, áreas ocultas omitidas, registros deficientes de contenidos y narrativas de suplemento débiles para contratistas de restauración.",
   },
+  "fire-claim-documentation-checklist": {
+    title:
+      "Lista de verificación de documentación de reclamaciones por incendio: todo lo que los contratistas deben incluir antes de enviar un suplemento",
+    excerpt:
+      "Lista de verificación de documentación de reclamaciones por incendio para envío de suplementos: fotos de propiedad, evidencia de humo y hollín, descubrimientos estructurales, inventario de contenidos, cadena de custodia de pack-out, respaldo de actualizaciones de código, narrativas Xactimate y revisión previa al envío de 20 puntos para equipos de restauración.",
+  },
 };
 
 export function getBlogSummaryEs(

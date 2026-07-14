@@ -984,6 +984,60 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["invisible smoke damage", "smoke without visible soot"],
     topics: ["fire_damage_claims"],
   },
+  "fire-supplement-checklist-documents": {
+    phrases: [
+      "what documents should contractors include with a fire insurance supplement",
+      "fire supplement documents checklist",
+      "documents to include with fire supplement",
+      "fire insurance supplement documentation package",
+    ],
+    keywords: [
+      "fire supplement documents",
+      "fire supplement checklist",
+      "fire claim documentation checklist",
+    ],
+    topics: ["fire_damage_claims", "documentation", "supplements"],
+  },
+  "fire-claim-photo-volume": {
+    phrases: [
+      "how many photos should be taken during a fire claim",
+      "how many fire claim photos",
+      "fire claim photo volume",
+      "number of photos for fire damage claim",
+    ],
+    keywords: ["fire claim photos", "fire damage photos", "how many photos fire"],
+    topics: ["fire_damage_claims", "documentation"],
+  },
+  "fire-smoke-documentation-support": {
+    phrases: [
+      "what documentation supports smoke damage on fire claims",
+      "smoke damage documentation support fire claim",
+      "documentation for smoke damage supplement",
+    ],
+    keywords: ["smoke documentation support", "smoke damage documentation fire"],
+    topics: ["fire_damage_claims", "documentation"],
+  },
+  "fire-hidden-damage-required": {
+    phrases: [
+      "should contractors document hidden fire damage",
+      "document hidden fire damage required",
+      "hidden fire damage documentation required",
+    ],
+    keywords: ["hidden fire damage", "document hidden fire damage"],
+    topics: ["fire_damage_claims", "documentation"],
+  },
+  "fire-carrier-additional-documentation-why": {
+    phrases: [
+      "why do carriers request additional documentation during fire claims",
+      "carrier request additional fire documentation",
+      "fire claim additional documentation request",
+    ],
+    keywords: [
+      "additional documentation fire claim",
+      "carrier documentation request fire",
+    ],
+    topics: ["fire_damage_claims", "documentation", "carrier_review"],
+  },
   "contents-inventory-documentation-insurance": {
     phrases: [
       "how should contents be documented after a fire",

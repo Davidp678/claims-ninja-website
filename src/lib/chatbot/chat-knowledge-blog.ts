@@ -215,6 +215,22 @@ const SLUG_BOOSTS: Record<
     ],
     topics: ["fire_damage_claims"],
   },
+  "fire-claim-documentation-checklist": {
+    phrases: [
+      "fire claim documentation checklist",
+      "fire supplement documentation checklist",
+      "documents before fire supplement",
+      "fire insurance supplement documentation",
+      "what to document before fire supplement",
+    ],
+    keywords: [
+      "fire claim documentation",
+      "fire supplement checklist",
+      "fire documentation checklist",
+      "fire supplement documents",
+    ],
+    topics: ["fire_damage_claims", "documentation", "supplements"],
+  },
   "how-carriers-reduce-drying-days": {
     phrases: ["carriers reduce drying days", "drying day reductions", "drying days cut"],
     keywords: ["drying day", "drying days", "reduce drying", "equipment days"],

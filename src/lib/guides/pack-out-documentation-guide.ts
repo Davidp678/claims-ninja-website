@@ -50,6 +50,7 @@ export const PACK_OUT_DOCUMENTATION_GUIDE = defineGuide({
   relatedBlogSlugs: [
     "why-fire-damage-claims-get-underpaid",
     "smoke-damage-documentation-mistakes",
+    "fire-claim-documentation-checklist",
     "fire-damage-claim-documentation-guide",
     "fire-damage-supplement-playbook-for-contractors",
     "claim-documentation-approval-rates",
