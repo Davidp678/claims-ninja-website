@@ -26,6 +26,7 @@ import { smokeDamageDocumentationMistakes } from "./smoke-damage-documentation-m
 import { fireClaimDocumentationChecklist } from "./fire-claim-documentation-checklist";
 import { whyFireDamageClaimsGetUnderpaid } from "./why-fire-damage-claims-get-underpaid";
 import { whyFireDamageSupplementsGetDenied } from "./why-fire-damage-supplements-get-denied";
+import { whyMoldInsuranceClaimsGetUnderpaid } from "./why-mold-insurance-claims-get-underpaid";
 import { whyWaterMitigationClaimsGetUnderpaid } from "./why-water-mitigation-claims-get-underpaid";
 import { hailDamageRoofClaimsDocumentationSupplement } from "./hail-damage-roof-claims-documentation-supplement";
 import { roofMatchingVsRepairabilityWhenToSupplement } from "./roof-matching-vs-repairability-when-to-supplement";
@@ -77,6 +78,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   smokeDamageDocumentationMistakes,
   fireClaimDocumentationChecklist,
   whyFireDamageSupplementsGetDenied,
+  whyMoldInsuranceClaimsGetUnderpaid,
   opOnInsuranceClaims,
   supplementDenialRecoveryGuide,
   first48HoursAfterCarrierEstimate,

@@ -2360,6 +2360,39 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "why mold insurance claims underpaid blog retrieves",
+    message: "mold documentation mistakes contractors avoid underpaid",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /why-mold-insurance-claims-get-underpaid|Why Mold Insurance Claims Get Underpaid/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold claims blog category hub retrieves",
+    message: "mold claim articles documentation guides",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /blog-category-mold|mold claim documentation|Why Mold Insurance Claims Get Underpaid/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold claims underpaid why FAQ retrieves",
+    message: "why are mold insurance claims underpaid",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-claims-underpaid-why|Why are mold insurance claims underpaid/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "portfolio recovery review",
     message: "What is a portfolio recovery review?",
     assert: (result) =>

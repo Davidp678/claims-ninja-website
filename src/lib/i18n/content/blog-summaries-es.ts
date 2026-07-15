@@ -23,6 +23,12 @@ export const BLOG_SUMMARIES_ES: Record<string, BlogSummary> = {
     excerpt:
       "Por qué se rechazan los suplementos por daños de fuego: 12 errores evitables de documentación, estimación y flujo de trabajo en fotos, humo, daños ocultos, contenidos, pack-out, actualizaciones de código y organización Xactimate — y cómo los contratistas construyen paquetes de suplemento listos para revisión.",
   },
+  "why-mold-insurance-claims-get-underpaid": {
+    title:
+      "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes: 10 errores de documentación que los contratistas pueden evitar",
+    excerpt:
+      "Errores de documentación en reclamaciones de moho que provocan pagos insuficientes: evidencia débil de fuente de humedad, investigación incompleta de moho oculto, conjuntos fotográficos deficientes, lecturas de humedad inadecuadas, registros escasos de remediación, cierre PRV ausente y paquetes de suplemento desorganizados para contratistas de restauración.",
+  },
 };
 
 export function getBlogSummaryEs(

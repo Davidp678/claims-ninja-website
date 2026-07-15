@@ -308,6 +308,15 @@ export const BLOG_GUIDE_COMPANIONS = {
       "fire-code-upgrade-documentation-guide",
     ],
   },
+  "why-mold-insurance-claims-get-underpaid": {
+    intro:
+      "You've learned why mold claims get underpaid. Now run the mold documentation standards for moisture source evidence, remediation production, and post-remediation verification closeout.",
+    guideSlugs: [
+      "mold-damage-documentation-guide",
+      "mold-remediation-documentation-guide",
+      "post-remediation-verification-documentation-guide",
+    ],
+  },
 } as const satisfies Record<string, BlogGuideCompanionEntry>;
 
 export type BlogGuideCompanionSlug = keyof typeof BLOG_GUIDE_COMPANIONS;

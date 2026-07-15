@@ -1025,6 +1025,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["clearance documentation mold", "mold clearance required"],
     topics: ["mold_claims"],
   },
+  "mold-claims-underpaid-why": {
+    phrases: [
+      "why are mold insurance claims underpaid",
+      "why mold claims underpaid",
+      "mold insurance claims underpaid why",
+    ],
+    keywords: ["mold claims underpaid", "mold underpayment"],
+    topics: ["mold_claims"],
+  },
+  "mold-documentation-affects-claim-outcomes": {
+    phrases: [
+      "how does documentation affect mold insurance claims",
+      "documentation affect mold claims",
+      "mold documentation claim outcomes",
+    ],
+    keywords: ["mold documentation", "mold claim documentation"],
+    topics: ["mold_claims", "documentation"],
+  },
+  "mold-moisture-readings-settlement-support": {
+    phrases: [
+      "do moisture readings help support mold claims",
+      "moisture readings mold claim settlement",
+      "mold moisture readings settlement",
+    ],
+    keywords: ["mold moisture readings", "moisture readings mold claims"],
+    topics: ["mold_claims", "mitigation"],
+  },
+  "mold-hidden-damage-affects-payment": {
+    phrases: [
+      "can hidden mold affect claim payments",
+      "hidden mold claim payment",
+      "hidden mold affects payment",
+    ],
+    keywords: ["hidden mold payment", "hidden mold claim"],
+    topics: ["mold_claims"],
+  },
+  "mold-documentation-improves-settlement": {
+    phrases: [
+      "what documentation improves mold insurance settlements",
+      "mold documentation improves settlement",
+      "mold insurance settlement documentation",
+    ],
+    keywords: ["mold settlement documentation", "mold documentation settlement"],
+    topics: ["mold_claims", "documentation"],
+  },
   "smoke-damage-documentation-insurance": {
     phrases: [
       "how should smoke damage be documented for insurance",

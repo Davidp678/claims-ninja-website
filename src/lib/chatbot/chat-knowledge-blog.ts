@@ -51,6 +51,8 @@ const CATEGORY_CLUSTER_SUMMARIES: Record<BlogCategorySlug, string> = {
     "Carrier estimate review, missed line items, scope development, and estimating accuracy.",
   "claim-recovery":
     "Supplement denial recovery, first-48-hour strategy, O&P, and maximizing legitimate claim payment.",
+  mold:
+    "Mold claim documentation: moisture source evidence, hidden growth investigation, remediation production, PRV closeout, and underpayment recovery.",
 };
 
 const CATEGORY_PHRASE_BOOSTS: Record<
@@ -133,6 +135,15 @@ const CATEGORY_PHRASE_BOOSTS: Record<
     ],
     keywords: ["claim recovery", "denial recovery", "denied supplement"],
   },
+  mold: {
+    phrases: [
+      "mold claim guides",
+      "mold damage resources",
+      "mold documentation articles",
+      "mold claim articles",
+    ],
+    keywords: ["mold claims", "mold documentation", "mold remediation"],
+  },
 };
 
 const BLOG_CATEGORY_TOPICS: Record<BlogCategorySlug, readonly string[]> = {
@@ -146,6 +157,7 @@ const BLOG_CATEGORY_TOPICS: Record<BlogCategorySlug, readonly string[]> = {
   "public-adjusters": ["public_adjuster"],
   "insurance-estimating": ["supplements", "documentation"],
   "claim-recovery": ["supplements"],
+  mold: ["mold_claims", "documentation", "mitigation"],
 };
 
 /** Extra keywords/phrases per slug for high-intent topic matching. */
@@ -246,6 +258,22 @@ const SLUG_BOOSTS: Record<
       "fire supplement prevent",
     ],
     topics: ["fire_damage_claims", "denial_recovery", "documentation", "supplements"],
+  },
+  "why-mold-insurance-claims-get-underpaid": {
+    phrases: [
+      "why mold insurance claims get underpaid",
+      "mold claim underpaid",
+      "mold documentation mistakes",
+      "mold claim underpayment",
+      "mold insurance underpaid documentation",
+    ],
+    keywords: [
+      "mold claim underpaid",
+      "mold documentation mistakes",
+      "mold insurance underpayment",
+      "mold remediation documentation",
+    ],
+    topics: ["mold_claims", "documentation", "mitigation"],
   },
   "how-carriers-reduce-drying-days": {
     phrases: ["carriers reduce drying days", "drying day reductions", "drying days cut"],

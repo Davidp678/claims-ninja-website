@@ -50,6 +50,7 @@ export const MOLD_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     "category-class-documentation-guide",
   ],
   relatedBlogSlugs: [
+    "why-mold-insurance-claims-get-underpaid",
     "why-category-3-water-claims-get-underpaid",
     "documentation-gaps-that-trigger-water-claim-denials",
     "moisture-mapping-mistakes-that-cost-contractors-money",

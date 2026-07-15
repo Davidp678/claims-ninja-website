@@ -51,6 +51,7 @@ export const MOLD_REMEDIATION_DOCUMENTATION_GUIDE = defineGuide({
     "commercial-fire-claims-guide",
   ],
   relatedBlogSlugs: [
+    "why-mold-insurance-claims-get-underpaid",
     "why-category-3-water-claims-get-underpaid",
     "documentation-gaps-that-trigger-water-claim-denials",
     "dry-log-documentation-guide-insurance-claims",

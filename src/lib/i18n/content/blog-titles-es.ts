@@ -53,6 +53,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Lista de verificación de documentación de reclamaciones por incendio: todo lo que los contratistas deben incluir antes de enviar un suplemento",
   "why-fire-damage-supplements-get-denied":
     "Por qué se rechazan los suplementos por daños de fuego: 12 errores de documentación y alcance que los contratistas pueden prevenir",
+  "why-mold-insurance-claims-get-underpaid":
+    "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes: 10 errores de documentación que los contratistas pueden evitar",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

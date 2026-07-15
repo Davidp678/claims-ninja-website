@@ -10,7 +10,8 @@ export type BlogCategorySlug =
   | "contractor-operations"
   | "public-adjusters"
   | "insurance-estimating"
-  | "claim-recovery";
+  | "claim-recovery"
+  | "mold";
 
 export type BlogCategory = {
   slug: BlogCategorySlug;
@@ -112,6 +113,15 @@ export const BLOG_CATEGORY_REGISTRY: readonly BlogCategory[] = [
     metaTitle: "Claim Recovery Articles",
     metaDescription:
       "Contractor claim recovery strategies: supplements, documentation, and carrier negotiations.",
+  },
+  {
+    slug: "mold",
+    name: "Mold",
+    description:
+      "Mold claim documentation from moisture source evidence and hidden growth investigation through remediation production, post-remediation verification, and underpayment recovery — operational articles for restoration contractors.",
+    metaTitle: "Mold Claims Articles",
+    metaDescription:
+      "Mold insurance claim guidance for restoration contractors: moisture source documentation, remediation scope, PRV closeout, and supplement recovery.",
   },
 ] as const;
 

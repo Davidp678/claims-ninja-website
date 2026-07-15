@@ -2187,6 +2187,74 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Clearance documentation FAQ; cross-link PRV and remediation guides.",
   },
+  "mold-claims-underpaid-why": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "mold/mold-remediation-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-damage-documentation-insurance",
+      "mold-documentation-affects-claim-outcomes",
+      "mold-documentation-improves-settlement",
+    ],
+    internalLinkNotes:
+      "Blog bridge FAQ; anchor for why mold insurance claims get underpaid article.",
+  },
+  "mold-documentation-affects-claim-outcomes": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "mold-claims-underpaid-why",
+      "mold-insurance-documentation-required",
+      "mold-documentation-improves-settlement",
+    ],
+    internalLinkNotes:
+      "Blog bridge FAQ; documentation quality and mold claim outcomes.",
+  },
+  "mold-moisture-readings-settlement-support": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "water-damage/moisture-mapping-guide",
+    ],
+    relatedFaqIds: [
+      "mold-moisture-readings-support",
+      "mold-claims-underpaid-why",
+      "mold-hidden-damage-affects-payment",
+    ],
+    internalLinkNotes:
+      "Blog bridge FAQ; moisture readings and mold settlement support.",
+  },
+  "mold-hidden-damage-affects-payment": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["mold/mold-damage-documentation-guide"],
+    relatedFaqIds: [
+      "mold-hidden-damage-documentation",
+      "mold-claims-underpaid-why",
+      "mold-moisture-readings-settlement-support",
+    ],
+    internalLinkNotes:
+      "Blog bridge FAQ; hidden mold and claim payment impact.",
+  },
+  "mold-documentation-improves-settlement": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "mold/mold-remediation-documentation-guide",
+      "mold/post-remediation-verification-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-claims-underpaid-why",
+      "mold-documentation-affects-claim-outcomes",
+      "mold-insurance-documentation-required",
+    ],
+    internalLinkNotes:
+      "Blog bridge FAQ; documentation that improves mold insurance settlements.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

@@ -17,6 +17,7 @@ const BLOG_CATEGORY_ILLUSTRATIONS: Record<
   "public-adjusters": "public-adjusters",
   "insurance-estimating": "estimating",
   "claim-recovery": "claim-recovery",
+  mold: "mold",
 };
 
 const GUIDE_CATEGORY_ILLUSTRATIONS: Record<

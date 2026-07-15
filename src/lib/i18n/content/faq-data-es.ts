@@ -3771,6 +3771,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "Documente primero la fuente de humedad, luego el crecimiento visible y oculto con fotos indexadas por habitación, área afectada aproximada, lecturas de humedad y narrativas de inspección. Vincule el alcance de demolición, contención, limpieza y remoción con carpetas de fotos y lecturas antes del envío a la aseguradora. Consulte la Guía de documentación de daños por moho para el estándar completo.",
     relatedLinks: [
       {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
         label: "Guía de documentación de daños por moho",
         href: "/resources/guides/mold/mold-damage-documentation-guide",
       },
@@ -3784,6 +3788,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     answer:
       "Capture fotos de la fuente de humedad, contexto amplio de la habitación y primeros planos del crecimiento en cada superficie afectada. Documente cavidades ocultas, capas de piso, respaldos de gabinetes, espacios de arrastre, áticos y áreas de HVAC durante el acceso. Etiquete cada imagen por habitación y fecha antes de que la limpieza o contención alteren la escena.",
     relatedLinks: [
+      {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
       {
         label: "Guía de documentación de daños por moho",
         href: "/resources/guides/mold/mold-damage-documentation-guide",
@@ -3802,6 +3810,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "Sí. Las lecturas con medidores de contacto y sin contacto en materiales afectados y de referencia respaldan argumentos de humedad activa, alcance de secado y disputas sobre si el crecimiento es histórico o actual. Combine las lecturas con imágenes térmicas cuando los acabados oculten sustratos húmedos.",
     relatedLinks: [
       {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
         label: "Guía de documentación de daños por moho",
         href: "/resources/guides/mold/mold-damage-documentation-guide",
       },
@@ -3819,6 +3831,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "Las aseguradoras normalmente solicitan evidencia de la fuente de humedad, fotos de crecimiento habitación por habitación, lecturas de humedad, documentación de cavidades ocultas, fotos de contención y remoción, registros de pruebas cuando se usan, narrativas de inspección y un estimado indexado a los anexos. La causalidad y el alcance se revisan por separado en expedientes de moho.",
     relatedLinks: [
       {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
         label: "Guía de documentación de daños por moho",
         href: "/resources/guides/mold/mold-damage-documentation-guide",
       },
@@ -3835,6 +3851,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     answer:
       "Fotografíe cavidades de pared, vanos de techo, subpiso, respaldos de gabinetes, espacios de arrastre, áticos e interiores de HVAC durante el acceso con imágenes fechadas. Mantenga un registro de descubrimientos antes de que las reparaciones cierren las aberturas: los suplementos por moho oculto fallan cuando la evidencia de cavidad se captura después de la remediación.",
     relatedLinks: [
+      {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
       {
         label: "Guía de documentación de daños por moho",
         href: "/resources/guides/mold/mold-damage-documentation-guide",
@@ -4022,6 +4042,113 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de documentación de remediación de moho",
         href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+
+  // Mold Blog Bridge (5)
+  {
+    id: "mold-claims-underpaid-why",
+    category: "mold_claims",
+    question: "¿Por qué las reclamaciones de seguro por moho reciben pagos insuficientes?",
+    answer:
+      "Las reclamaciones de moho reciben pagos insuficientes cuando la documentación no puede respaldar el alcance facturado: evidencia faltante de la fuente de humedad, crecimiento oculto sin fotografiar, lecturas de humedad débiles, registros escasos de producción de remediación, cierre PRV ausente y paquetes de suplemento desorganizados enviados antes de completar la investigación. Los revisores de escritorio reducen partidas que no pueden reenviar internamente: el pago insuficiente proporcional sigue cuando la evidencia de causalidad, producción y verificación carece de etiquetas de habitación y marcas de tiempo contemporáneas.",
+    relatedLinks: [
+      {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "¿Cómo deben los contratistas documentar los daños por moho para reclamaciones de seguros?",
+        href: "/faq#faq-mold-damage-documentation-insurance",
+      },
+    ],
+  },
+  {
+    id: "mold-documentation-affects-claim-outcomes",
+    category: "mold_claims",
+    question: "¿Cómo afecta la documentación las reclamaciones de seguro por moho?",
+    answer:
+      "La calidad de la documentación determina los resultados de las reclamaciones de moho porque las aseguradoras evalúan la causalidad de la fuente de humedad, la extensión del crecimiento, la producción de remediación y la verificación post-remediación por separado. Fotos indexadas, registros de humedad, registros diarios de producción y paquetes de cierre PRV permiten a los revisores de escritorio aprobar el alcance sin visitas de campo: los expedientes incompletos producen reducciones proporcionales incluso cuando el trabajo es legítimo.",
+    relatedLinks: [
+      {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Estándares de documentación de reclamaciones",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-moisture-readings-settlement-support",
+    category: "mold_claims",
+    question: "¿Las lecturas de humedad ayudan a respaldar reclamaciones de moho?",
+    answer:
+      "Sí. Las lecturas de humedad respaldan los acuerdos de reclamaciones de moho al distinguir pérdida activa de condiciones históricas, documentar el alcance de secado y correlacionar el crecimiento con sustratos húmedos. Las lecturas con medidores de contacto y sin contacto combinadas con imágenes térmicas y mapas de humedad dan a las aseguradoras evidencia objetiva para partidas de remoción, limpieza y reconstrucción: las lecturas ausentes del expediente están entre los primeros grupos de alcance reducidos en la revisión.",
+    relatedLinks: [
+      {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "¿Las lecturas de humedad ayudan a respaldar reclamaciones de moho?",
+        href: "/faq#faq-mold-moisture-readings-support",
+      },
+    ],
+  },
+  {
+    id: "mold-hidden-damage-affects-payment",
+    category: "mold_claims",
+    question: "¿El moho oculto puede afectar los pagos de reclamaciones?",
+    answer:
+      "El moho oculto afecta directamente los pagos de reclamaciones cuando la contaminación en cavidades, ensamblajes y vanos se documenta durante el acceso, y reduce los pagos cuando la investigación se omite o se reconstruye en el suplemento. Las aseguradoras aprueban el alcance de moho oculto cuando existen fotos contemporáneas de cavidades, lecturas de humedad en el sustrato y registros de descubrimiento antes de retirar materiales; las cavidades cerradas sin evidencia de ingreso rara vez respaldan el pago completo.",
+    relatedLinks: [
+      {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "¿Cómo debe documentarse el moho oculto?",
+        href: "/faq#faq-mold-hidden-damage-documentation",
+      },
+    ],
+  },
+  {
+    id: "mold-documentation-improves-settlement",
+    category: "mold_claims",
+    question: "¿Qué documentación mejora los acuerdos de seguro por moho?",
+    answer:
+      "Los acuerdos mejoran cuando los expedientes incluyen fotos de la fuente de humedad, documentación de crecimiento indexada por habitación, mapas y lecturas de humedad, registros de producción de remediación con evidencia de contención y remoción, cierre PRV con lecturas finales y registros de autorización, y narrativas de estimado indexadas a carpetas de fotos. Los paquetes organizados con etiquetas de habitación consistentes en fotos, croquis y partidas recuperan más alcance legítimo que rollos de fotos sin etiquetar enviados sin narrativa.",
+    relatedLinks: [
+      {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de verificación post-remediación (PRV)",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
       },
     ],
   },

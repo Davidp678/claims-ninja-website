@@ -399,6 +399,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "fire-supplement-denial-common-reason",
       "supplements-whats-included",
       "documentation-essentials",
+      "mold-claims-underpaid-why",
+      "mold-documentation-affects-claim-outcomes",
+      "mold-moisture-readings-settlement-support",
+      "mold-hidden-damage-affects-payment",
+      "mold-documentation-improves-settlement",
     ],
   },
   guides: {
@@ -451,6 +456,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "mold-prv-moisture-readings-required",
       "mold-prv-closeout-package",
       "mold-prv-clearance-documentation-required",
+      "mold-claims-underpaid-why",
+      "mold-documentation-affects-claim-outcomes",
+      "mold-moisture-readings-settlement-support",
+      "mold-hidden-damage-affects-payment",
+      "mold-documentation-improves-settlement",
     ],
   },
   caseStudies: {

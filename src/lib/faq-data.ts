@@ -3787,6 +3787,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Document the moisture source first, then visible and hidden growth with room-indexed photos, approximate affected area, moisture readings, and inspection narratives. Tie demolition, containment, cleaning, and removal scope to photo folders and readings before carrier submission. See the Mold Damage Documentation Guide for the full contractor standard.",
     relatedLinks: [
       {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
         label: "Mold Damage Documentation Guide",
         href: "/resources/guides/mold/mold-damage-documentation-guide",
       },
@@ -3800,6 +3804,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     answer:
       "Capture moisture source photos, wide room context, and close-ups of growth on each affected surface. Document hidden cavities, flooring layers, cabinet backs, crawlspaces, attics, and HVAC areas during access. Label every frame by room and date before cleaning or containment alters the scene.",
     relatedLinks: [
+      {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
       {
         label: "Mold Damage Documentation Guide",
         href: "/resources/guides/mold/mold-damage-documentation-guide",
@@ -3818,6 +3826,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Yes. Pin and pinless meter readings on affected and reference materials support active moisture arguments, drying scope, and disputes over whether growth is historical versus current. Pair readings with thermal images when finishes conceal wet substrates.",
     relatedLinks: [
       {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
         label: "Mold Damage Documentation Guide",
         href: "/resources/guides/mold/mold-damage-documentation-guide",
       },
@@ -3835,6 +3847,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Carriers typically request moisture source evidence, room-by-room growth photos, moisture readings, hidden cavity documentation, containment and removal photos, testing records when used, inspection narratives, and an estimate indexed to exhibits. Causation and scope are reviewed separately on mold files.",
     relatedLinks: [
       {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
         label: "Mold Damage Documentation Guide",
         href: "/resources/guides/mold/mold-damage-documentation-guide",
       },
@@ -3851,6 +3867,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     answer:
       "Photograph wall cavities, ceiling bays, subfloor, cabinet backs, crawlspaces, attics, and HVAC interiors during access with date-stamped images. Maintain a discovery log before repairs close openings — hidden mold supplements fail when cavity evidence is captured after remediation.",
     relatedLinks: [
+      {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
       {
         label: "Mold Damage Documentation Guide",
         href: "/resources/guides/mold/mold-damage-documentation-guide",
@@ -4038,6 +4058,113 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Mold Remediation Documentation Guide",
         href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+
+  // Mold Blog Bridge (5)
+  {
+    id: "mold-claims-underpaid-why",
+    category: "mold_claims",
+    question: "Why are mold insurance claims underpaid?",
+    answer:
+      "Mold claims get underpaid when documentation cannot support billed scope: missing moisture source evidence, unphotographed hidden growth, weak moisture readings, sparse remediation production records, absent PRV closeout, and disorganized supplement packages submitted before investigation completes. Desk reviewers reduce lines they cannot forward internally — proportional underpayment follows when causation, production, and verification evidence lack room labels and contemporaneous timestamps.",
+    relatedLinks: [
+      {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "How should contractors document mold damage for insurance claims?",
+        href: "/faq#faq-mold-damage-documentation-insurance",
+      },
+    ],
+  },
+  {
+    id: "mold-documentation-affects-claim-outcomes",
+    category: "mold_claims",
+    question: "How does documentation affect mold insurance claims?",
+    answer:
+      "Documentation quality drives mold claim outcomes because carriers evaluate moisture source causation, growth extent, remediation production, and post-remediation verification separately. Indexed photos, moisture logs, daily production records, and PRV closeout packages let desk reviewers approve scope without field visits — incomplete files produce proportional reductions even when work is legitimate.",
+    relatedLinks: [
+      {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Claim Documentation Standards",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-moisture-readings-settlement-support",
+    category: "mold_claims",
+    question: "Do moisture readings help support mold claims?",
+    answer:
+      "Yes. Moisture readings support mold claim settlements by distinguishing active loss from historical conditions, documenting drying scope, and correlating growth to wet substrates. Pin and pinless readings paired with thermal imaging and moisture maps give carriers objective evidence for removal, cleaning, and rebuild lines — readings absent from the file are among the first scope groups reduced on review.",
+    relatedLinks: [
+      {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Do moisture readings help support mold claims?",
+        href: "/faq#faq-mold-moisture-readings-support",
+      },
+    ],
+  },
+  {
+    id: "mold-hidden-damage-affects-payment",
+    category: "mold_claims",
+    question: "Can hidden mold affect claim payments?",
+    answer:
+      "Hidden mold directly affects claim payments when cavity, assembly, and void contamination is documented during access — and reduces payments when investigation is skipped or reconstructed at supplement. Carriers approve hidden mold scope when contemporaneous cavity photos, moisture readings at substrate, and discovery logs exist before materials are removed; closed cavities without intake evidence rarely support full payment.",
+    relatedLinks: [
+      {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "How should hidden mold be documented?",
+        href: "/faq#faq-mold-hidden-damage-documentation",
+      },
+    ],
+  },
+  {
+    id: "mold-documentation-improves-settlement",
+    category: "mold_claims",
+    question: "What documentation improves mold insurance settlements?",
+    answer:
+      "Settlements improve when files include moisture source photos, room-indexed growth documentation, moisture maps and readings, remediation production logs with containment and removal evidence, PRV closeout with final readings and clearance records, and estimate narratives indexed to photo folders. Organized packages with consistent room labels across photos, sketch, and line items recover more legitimate scope than unlabeled photo rolls submitted without narrative.",
+    relatedLinks: [
+      {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Post-Remediation Verification (PRV) Documentation Guide",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
       },
     ],
   },
