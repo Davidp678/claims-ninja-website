@@ -935,6 +935,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["hidden mold", "cavity mold documentation"],
     topics: ["mold_claims"],
   },
+  "mold-remediation-work-documentation": {
+    phrases: [
+      "how should contractors document mold remediation work",
+      "document mold remediation for insurance",
+      "mold remediation work documentation",
+    ],
+    keywords: ["mold remediation documentation", "remediation work documentation"],
+    topics: ["mold_claims"],
+  },
+  "mold-remediation-photos-required": {
+    phrases: [
+      "what photos should be taken during mold remediation",
+      "mold remediation photos required",
+      "photos during mold remediation",
+    ],
+    keywords: ["remediation photos", "mold remediation photos"],
+    topics: ["mold_claims"],
+  },
+  "mold-remediation-moisture-readings-support": {
+    phrases: [
+      "should moisture readings be included with mold remediation documentation",
+      "moisture readings mold remediation",
+      "mold remediation moisture readings",
+    ],
+    keywords: ["remediation moisture readings", "mold remediation readings"],
+    topics: ["mold_claims"],
+  },
+  "mold-remediation-insurance-documentation": {
+    phrases: [
+      "what documentation supports mold remediation insurance claims",
+      "mold remediation insurance documentation",
+      "documentation supports mold remediation claims",
+    ],
+    keywords: ["remediation insurance documentation", "mold remediation claims"],
+    topics: ["mold_claims"],
+  },
+  "mold-remediation-containment-documentation": {
+    phrases: [
+      "how should contractors document containment during mold remediation",
+      "containment documentation mold remediation",
+      "document containment mold remediation",
+    ],
+    keywords: ["containment documentation", "mold containment photos"],
+    topics: ["mold_claims"],
+  },
   "smoke-damage-documentation-insurance": {
     phrases: [
       "how should smoke damage be documented for insurance",

@@ -3842,6 +3842,91 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Mold Remediation Documentation Cornerstone (5)
+  {
+    id: "mold-remediation-work-documentation",
+    category: "mold_claims",
+    question: "¿Cómo deben los contratistas documentar el trabajo de remediación de moho?",
+    answer:
+      "Documente fotos de referencia previas a la remediación, instalación de contención, remoción con secuencias antes-durante-después, verificación de limpieza, registros de tiempo de equipos, fotos de progreso diario y lecturas de humedad durante la producción. Vincule cada partida principal con anexos fechados antes del envío a la aseguradora. Consulte la Guía de documentación de remediación de moho para el estándar completo.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      { label: "Soluciones para moho", href: "/solutions/mold" },
+    ],
+  },
+  {
+    id: "mold-remediation-photos-required",
+    category: "mold_claims",
+    question: "¿Qué fotos deben tomarse durante la remediación de moho?",
+    answer:
+      "Capture la referencia previa a la remediación, barreras de contención e instalación de aire negativo, secuencias de remoción antes-durante-después, verificación de limpieza en el armazón, ubicación de equipos, progreso diario y eliminación de residuos. Etiquete cada imagen por habitación, fase y fecha. Las fotos de producción prueban el alcance facturado; las fotos de ingreso por sí solas no respaldan partidas de remediación.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Estándares de documentación fotográfica",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-remediation-moisture-readings-support",
+    category: "mold_claims",
+    question: "¿Deben incluirse lecturas de humedad con la documentación de remediación de moho?",
+    answer:
+      "Sí. Registre lecturas de humedad en sustratos expuestos durante la remoción y antes del cierre o reconstrucción. Las lecturas respaldan la profundidad de limpieza, argumentos de estándar seco y disputas sobre si los materiales estaban listos para reconstruir. Combine con registros de monitoreo diario cuando el secado estructural se superpone con el alcance de remediación.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Procedimiento de monitoreo diario",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-remediation-insurance-documentation",
+    category: "mold_claims",
+    question: "¿Qué documentación respalda las reclamaciones de seguros por remediación de moho?",
+    answer:
+      "Las aseguradoras revisan fotos de contención, evidencia de cantidades de remoción, verificación de limpieza, registros de tiempo de equipos, registros de progreso diario, lecturas de humedad, registros de eliminación, inventario de contenidos cuando aplica, narrativas de remediación y estimados indexados a anexos. La evidencia de producción debe ser contemporánea: la remediación no documentada enfrenta reducción partida por partida en la revisión.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Estándares de documentación de reclamaciones",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-remediation-containment-documentation",
+    category: "mold_claims",
+    question: "¿Cómo deben los contratistas documentar la contención durante la remediación de moho?",
+    answer:
+      "Fotografíe los límites del área de trabajo, barreras críticas, ubicación de máquinas de aire negativo, posiciones de depuradores de aire, diseño de cámara de descontaminación y protección de áreas no afectadas al instalar. Tome fotos diarias del estado de las barreras en proyectos de varios días. Documente lecturas de presión diferencial cuando se midan. Las fotos de contención respaldan partidas de mano de obra y equipos en la revisión de la aseguradora.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      { label: "Soluciones para moho", href: "/solutions/mold" },
+    ],
+  },
+
   // Contents Restoration (5)
   {
     id: "contents-pack-out",

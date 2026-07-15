@@ -37,6 +37,7 @@ export const MOLD_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document mold damage insurance claims: moisture source evidence, growth and hidden mold photos, moisture readings, testing support, scope packaging, and insurance submission for restoration contractors.",
   relatedGuideSlugs: [
+    "mold-remediation-documentation-guide",
     "commercial-water-loss-documentation-guide",
     "category-3-water-damage-documentation-guide",
     "moisture-mapping-guide",
@@ -302,7 +303,7 @@ export const MOLD_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
         "Align every billed line to a photo folder, reading log, report excerpt, or narrative note before estimate submission — scope documentation is the bridge between field evidence and carrier payment.",
       ],
       notes:
-        "See Claim Documentation Standards for estimate-to-evidence indexing. Mold scope without matching documentation reduces line by line on carrier review.",
+        "See Mold Remediation Documentation Guide for production-phase containment, removal, cleaning, and equipment documentation standards. See Claim Documentation Standards for estimate-to-evidence indexing. Mold scope without matching documentation reduces line by line on carrier review.",
     },
     {
       id: "insurance-documentation-package",
@@ -593,6 +594,10 @@ export const MOLD_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Mold Remediation Documentation Guide",
+      href: "/resources/guides/mold/mold-remediation-documentation-guide",
+    },
     {
       label: "Commercial Water Loss Documentation Guide",
       href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",

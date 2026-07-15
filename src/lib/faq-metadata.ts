@@ -2047,9 +2047,73 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "mold-damage-documentation-insurance",
       "mold-claim-photos-required",
       "mold-remediation-docs",
+      "mold-remediation-work-documentation",
     ],
     internalLinkNotes:
       "Hidden mold FAQ; cross-link cornerstone guide and remediation documentation FAQ.",
+  },
+  "mold-remediation-work-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["mold/mold-remediation-documentation-guide"],
+    relatedFaqIds: [
+      "mold-remediation-photos-required",
+      "mold-remediation-moisture-readings-support",
+      "mold-remediation-insurance-documentation",
+      "mold-remediation-containment-documentation",
+    ],
+    internalLinkNotes:
+      "Primary cornerstone FAQ; anchor for mold remediation documentation guide.",
+  },
+  "mold-remediation-photos-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-remediation-documentation-guide",
+      "general-claims/photo-documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "mold-remediation-work-documentation",
+      "mold-remediation-containment-documentation",
+    ],
+    internalLinkNotes:
+      "Remediation photo requirements FAQ; cross-link photo documentation standards guide.",
+  },
+  "mold-remediation-moisture-readings-support": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-remediation-documentation-guide",
+      "water-damage/daily-monitoring-guide",
+    ],
+    relatedFaqIds: [
+      "mold-remediation-work-documentation",
+      "mold-moisture-readings-support",
+    ],
+    internalLinkNotes:
+      "Remediation moisture readings FAQ; cross-link daily monitoring procedure and mold damage moisture FAQ.",
+  },
+  "mold-remediation-insurance-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-remediation-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "mold-remediation-work-documentation",
+      "mold-remediation-photos-required",
+      "mold-remediation-docs",
+    ],
+    internalLinkNotes:
+      "Carrier documentation requirements FAQ for remediation; link cornerstone guide and documentation standards.",
+  },
+  "mold-remediation-containment-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["mold/mold-remediation-documentation-guide"],
+    relatedFaqIds: [
+      "mold-remediation-work-documentation",
+      "mold-remediation-photos-required",
+      "mold-containment-equipment",
+    ],
+    internalLinkNotes:
+      "Containment documentation FAQ; cross-link remediation guide and containment equipment FAQ.",
   },
 };
 

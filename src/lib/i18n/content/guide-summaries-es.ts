@@ -250,4 +250,9 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Estándar operativo para contratistas que documentan reclamaciones de seguros por daños de moho residenciales y comerciales: evidencia de fuente de humedad, mapeo de crecimiento, investigación de moho oculto, lecturas de apoyo y recuperación de reclamaciones.",
   },
+  "mold/mold-remediation-documentation-guide": {
+    title: "Guía de documentación de remediación de moho para contratistas",
+    excerpt:
+      "Estándar operativo para documentar trabajo de remediación de moho en reclamaciones de seguros: condiciones iniciales, contención, remoción, limpieza, registros de equipos, contenidos y paquetes de envío listos para aseguradoras.",
+  },
 };

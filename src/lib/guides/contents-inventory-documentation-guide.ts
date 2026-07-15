@@ -47,6 +47,7 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
     "category-3-water-damage-documentation-guide",
     "commercial-water-loss-documentation-guide",
     "commercial-fire-claims-guide",
+    "mold-remediation-documentation-guide",
   ],
   relatedBlogSlugs: [
     "why-fire-damage-supplements-get-denied",

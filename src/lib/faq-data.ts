@@ -3732,6 +3732,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Mold Damage Documentation Guide",
         href: "/resources/guides/mold/mold-damage-documentation-guide",
       },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
     ],
   },
   {
@@ -3851,6 +3855,91 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Mold Damage Documentation Guide",
         href: "/resources/guides/mold/mold-damage-documentation-guide",
       },
+    ],
+  },
+
+  // Mold Remediation Documentation Cornerstone (5)
+  {
+    id: "mold-remediation-work-documentation",
+    category: "mold_claims",
+    question: "How should contractors document mold remediation work?",
+    answer:
+      "Document pre-remediation baseline photos, containment setup, removal with before-during-after sequences, cleaning verification, equipment runtime logs, daily progress photos, and moisture readings through production. Tie every major line item to dated exhibits before carrier submission. See the Mold Remediation Documentation Guide for the full contractor standard.",
+    relatedLinks: [
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      { label: "Mold solutions", href: "/solutions/mold" },
+    ],
+  },
+  {
+    id: "mold-remediation-photos-required",
+    category: "mold_claims",
+    question: "What photos should be taken during mold remediation?",
+    answer:
+      "Capture pre-remediation baseline, containment barriers and negative air setup, removal before-during-after sequences, cleaning verification on framing, equipment placement, daily progress, and disposal. Label every frame by room, phase, and date. Production photos prove billed scope — intake photos alone do not support remediation lines.",
+    relatedLinks: [
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Photo Documentation Standards",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-remediation-moisture-readings-support",
+    category: "mold_claims",
+    question: "Should moisture readings be included with mold remediation documentation?",
+    answer:
+      "Yes. Log moisture readings on exposed substrates during removal and before close-in or rebuild. Readings support cleaning depth, dry-standard arguments, and disputes over whether materials were ready for rebuild. Pair with daily monitoring records when structural drying overlaps remediation scope.",
+    relatedLinks: [
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Daily Monitoring Field Procedure",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-remediation-insurance-documentation",
+    category: "mold_claims",
+    question: "What documentation supports mold remediation insurance claims?",
+    answer:
+      "Carriers review containment photos, removal quantity evidence, cleaning verification, equipment runtime logs, daily progress records, moisture readings, disposal records, contents inventory when applicable, remediation narratives, and estimates indexed to exhibits. Production evidence must be contemporaneous — undocumented remediation faces line-by-line reduction on review.",
+    relatedLinks: [
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Claim Documentation Standards",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-remediation-containment-documentation",
+    category: "mold_claims",
+    question: "How should contractors document containment during mold remediation?",
+    answer:
+      "Photograph work area boundaries, critical barriers, negative air machine placement, air scrubber positions, decontamination chamber layout, and protection of unaffected areas at install. Take daily barrier condition photos on multi-day projects. Document pressure differential readings where measured. Containment photos support labor and equipment lines on carrier review.",
+    relatedLinks: [
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      { label: "Mold solutions", href: "/solutions/mold" },
     ],
   },
 

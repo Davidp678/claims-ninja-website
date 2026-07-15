@@ -2250,6 +2250,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "mold remediation guide question retrieves remediation documentation guide",
+    message: "How should contractors document mold remediation work for insurance?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-remediation-documentation-guide|mold-remediation-work-documentation|document mold remediation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold remediation photos FAQ retrieves production photo context",
+    message: "What photos should be taken during mold remediation?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-remediation-photos-required|mold-remediation-documentation-guide|photos should be taken during mold remediation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold remediation moisture readings FAQ retrieves remediation evidence context",
+    message: "Should moisture readings be included with mold remediation documentation?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-remediation-moisture-readings-support|moisture readings be included with mold remediation|mold-remediation-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold remediation insurance documentation FAQ retrieves carrier requirements context",
+    message: "What documentation supports mold remediation insurance claims?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-remediation-insurance-documentation|documentation supports mold remediation insurance|mold-remediation-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold remediation containment FAQ retrieves containment documentation context",
+    message: "How should contractors document containment during mold remediation?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-remediation-containment-documentation|document containment during mold remediation|mold-remediation-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "portfolio recovery review",
     message: "What is a portfolio recovery review?",
     assert: (result) =>
