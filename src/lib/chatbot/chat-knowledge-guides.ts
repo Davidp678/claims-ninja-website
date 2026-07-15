@@ -203,6 +203,26 @@ const GUIDE_SLUG_BOOSTS: Record<
     ],
     topics: ["mold_claims", "documentation", "mitigation"],
   },
+  "post-remediation-verification-documentation-guide": {
+    phrases: [
+      "post remediation verification documentation guide",
+      "PRV documentation mold",
+      "document post remediation verification",
+      "mold closeout package documentation",
+      "clearance documentation mold remediation",
+      "mold project closeout documentation",
+      "post remediation verification insurance",
+    ],
+    keywords: [
+      "post remediation verification",
+      "PRV documentation",
+      "mold closeout",
+      "clearance documentation",
+      "mold project closeout",
+      "terminal moisture readings mold",
+    ],
+    topics: ["mold_claims", "documentation", "mitigation"],
+  },
   "fire-code-upgrade-documentation-guide": {
     phrases: [
       "fire code upgrade documentation",

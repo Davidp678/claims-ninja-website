@@ -3943,6 +3943,105 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
+  // Mold PRV Documentation Cornerstone (5)
+  {
+    id: "mold-prv-definition",
+    category: "mold_claims",
+    question: "What is Post-Remediation Verification (PRV)?",
+    answer:
+      "Post-Remediation Verification (PRV) is the documented proof that mold remediation work is complete and the site condition supports rebuild, re-occupancy, or final payment on an insurance claim. PRV includes scope completion records, final moisture readings, closeout photos, clearance documentation when testing was performed, equipment log closeout, and organized closeout packages — not the remediation work itself, but the evidence that closes the remediation chapter. Requirements vary by carrier, policy, and project type.",
+    relatedLinks: [
+      {
+        label: "Post-Remediation Verification (PRV) Documentation Guide",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-prv-documentation-insurance",
+    category: "mold_claims",
+    question: "How should contractors document PRV for insurance claims?",
+    answer:
+      "Document scope completion by room, final moisture readings compared to dry standard, closeout photo sets showing cleaned substrates and demobilized equipment, clearance or visual inspection records when applicable, equipment runtime logs through last active day, contents reconciliation when pack-out scope exists, and a written completion narrative with attachment index mapping exhibits to line items. Organize assessment, production, and closeout exhibits together for carrier desk review.",
+    relatedLinks: [
+      {
+        label: "Post-Remediation Verification (PRV) Documentation Guide",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Claim Documentation Standards",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-prv-moisture-readings-required",
+    category: "mold_claims",
+    question: "Are moisture readings required during PRV?",
+    answer:
+      "Final moisture readings are among the most important PRV exhibits on mold files — carriers often withhold rebuild authorization or final payment when terminal readings against dry standard are missing. Record pin or pinless readings at all active map points on exposed framing, subfloor, and cavities before close-in. Align terminal readings with equipment pull date and last dry log entry. Requirements vary by carrier and whether structural drying overlapped remediation scope.",
+    relatedLinks: [
+      {
+        label: "Post-Remediation Verification (PRV) Documentation Guide",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Daily Monitoring Field Procedure",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+      {
+        label: "Dry Log Collection Procedure",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-prv-closeout-package",
+    category: "mold_claims",
+    question: "What documentation belongs in a mold project closeout package?",
+    answer:
+      "A mold project closeout package typically includes: final estimate and change orders, scope completion narrative, terminal moisture readings and moisture maps, final photo sets, equipment runtime logs through last active day, clearance or visual inspection records, laboratory reports when testing was performed, contents reconciliation when pack-out scope exists, and an attachment index mapping exhibits to line items. Include assessment exhibits from the Mold Damage Documentation Guide and production exhibits from the Mold Remediation Documentation Guide alongside closeout records.",
+    relatedLinks: [
+      {
+        label: "Post-Remediation Verification (PRV) Documentation Guide",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-prv-clearance-documentation-required",
+    category: "mold_claims",
+    question: "Do insurance companies require clearance documentation after mold remediation?",
+    answer:
+      "Clearance documentation requirements vary by carrier, policy, property type, and jurisdiction — there is no universal rule that every mold file requires laboratory clearance. When clearance testing, visual inspection by a third party, or independent verification is performed or required, document sample location photos, chain-of-custody, lab reports, and narrative connecting results to remediation boundaries. When no testing is performed, document visual walk-through completion with dated photos showing clean substrates and removed containment instead.",
+    relatedLinks: [
+      {
+        label: "Post-Remediation Verification (PRV) Documentation Guide",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+
   // Contents Restoration (5)
   {
     id: "contents-pack-out",

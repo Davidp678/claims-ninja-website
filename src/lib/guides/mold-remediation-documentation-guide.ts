@@ -38,6 +38,7 @@ export const MOLD_REMEDIATION_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document mold remediation for insurance claims: containment photos, removal evidence, cleaning verification, equipment runtime logs, contents coordination, daily progress records, and carrier-ready submission packages for restoration contractors.",
   relatedGuideSlugs: [
+    "post-remediation-verification-documentation-guide",
     "mold-damage-documentation-guide",
     "commercial-water-loss-documentation-guide",
     "category-3-water-damage-documentation-guide",
@@ -286,7 +287,7 @@ export const MOLD_REMEDIATION_DOCUMENTATION_GUIDE = defineGuide({
         "HEPA vacuuming — document vacuum passes on exposed framing, subfloor, and cavity surfaces; note equipment used and areas completed per room.",
         "Damp wiping — capture wipe-down sequences on studs, plates, and sealed surfaces with cleaning agent context where policy allows photographic documentation.",
         "Equipment used — photograph HEPA vacuums, air scrubbers, and cleaning tools in work areas to support labor and equipment line items.",
-        "Cleaning verification — after photos showing treated substrates ready for rebuild, clearance sampling locations when testing is performed, and visual clean standard achieved.",
+        "Cleaning verification — after photos showing treated substrates ready for rebuild, clearance sampling locations when testing is performed, and visual clean standard achieved — then apply the Post-Remediation Verification (PRV) Documentation Guide for closeout and clearance documentation.",
         "Document areas where cleaning was performed versus removal-only — carriers distinguish between clean-in-place framing and removed-and-replaced assemblies.",
         "Record cleaning completion by room and date — multi-day cleaning schedules require daily evidence that work progressed as billed.",
         "Emphasize documenting completed work rather than procedural instruction — photos prove cleaning happened, narratives explain why depth was required.",
@@ -585,7 +586,7 @@ export const MOLD_REMEDIATION_DOCUMENTATION_GUIDE = defineGuide({
     {
       trigger: "Clearance testing or post-remediation verification required beyond initial scope",
       documentation:
-        "Sample location photos, lab results, and narrative connecting clearance to completed remediation boundaries.",
+        "Sample location photos, lab results, and narrative connecting clearance to completed remediation boundaries — see Post-Remediation Verification (PRV) Documentation Guide for full closeout standards.",
       lineItemHint: "Post-remediation testing and verification lines",
     },
     {
@@ -614,6 +615,10 @@ export const MOLD_REMEDIATION_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Post-Remediation Verification (PRV) Documentation Guide",
+      href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+    },
     {
       label: "Mold Damage Documentation Guide",
       href: "/resources/guides/mold/mold-damage-documentation-guide",

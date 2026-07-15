@@ -38,6 +38,7 @@ export const MOLD_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     "Document mold damage insurance claims: moisture source evidence, growth and hidden mold photos, moisture readings, testing support, scope packaging, and insurance submission for restoration contractors.",
   relatedGuideSlugs: [
     "mold-remediation-documentation-guide",
+    "post-remediation-verification-documentation-guide",
     "commercial-water-loss-documentation-guide",
     "category-3-water-damage-documentation-guide",
     "moisture-mapping-guide",
@@ -283,7 +284,7 @@ export const MOLD_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
         "Inspection notes — maintain written field notes contemporaneous with visits: odor presence, substrate conditions, investigation findings, and scope recommendations tied to observed evidence.",
         "Occupant reports — document occupant-provided timeline of leaks, odors, and visible growth in writing or signed statement where available. Third-party reports support causation when field evidence is limited.",
         "Use moisture readings and thermal imaging when carriers challenge whether substrates are wet versus merely stained — instrumented evidence outperforms visual opinion on desk review.",
-        "Use testing selectively — pre-remediation sampling supports scope boundaries on large or disputed losses; post-remediation clearance supports completion when policy or carrier requires verification.",
+        "Use testing selectively — pre-remediation sampling supports scope boundaries on large or disputed losses; post-remediation clearance supports completion when policy or carrier requires verification — see the Post-Remediation Verification (PRV) Documentation Guide for closeout standards.",
       ],
       notes:
         "See Moisture Mapping Field Procedure and Dry Log Collection Procedure when mold scope overlaps active or recent drying operations on the same file.",
@@ -585,7 +586,7 @@ export const MOLD_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     {
       question: "When does laboratory testing support a mold insurance claim?",
       answer:
-        "Testing supports claims when sample location photos, chain-of-custody, and narrative connect results to specific remediation boundaries, clearance verification, or disputed growth areas on large commercial losses. Testing without location context rarely justifies scope on desk review. Pre-remediation sampling can define boundaries; post-remediation clearance can support completion when required.",
+        "Testing supports claims when sample location photos, chain-of-custody, and narrative connect results to specific remediation boundaries, clearance verification, or disputed growth areas on large commercial losses. Testing without location context rarely justifies scope on desk review. Pre-remediation sampling can define boundaries; post-remediation clearance can support completion when required — see the Post-Remediation Verification (PRV) Documentation Guide for closeout documentation standards.",
     },
     {
       question: "Should commercial mold losses use different documentation standards?",
@@ -597,6 +598,10 @@ export const MOLD_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Mold Remediation Documentation Guide",
       href: "/resources/guides/mold/mold-remediation-documentation-guide",
+    },
+    {
+      label: "Post-Remediation Verification (PRV) Documentation Guide",
+      href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
     },
     {
       label: "Commercial Water Loss Documentation Guide",

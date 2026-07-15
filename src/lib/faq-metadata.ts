@@ -2115,6 +2115,78 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Containment documentation FAQ; cross-link remediation guide and containment equipment FAQ.",
   },
+  "mold-prv-definition": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/post-remediation-verification-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-prv-documentation-insurance",
+      "mold-prv-closeout-package",
+      "mold-prv-clearance-documentation-required",
+    ],
+    internalLinkNotes:
+      "PRV definition FAQ; anchor for post-remediation verification documentation guide cluster.",
+  },
+  "mold-prv-documentation-insurance": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/post-remediation-verification-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "mold-prv-definition",
+      "mold-prv-closeout-package",
+      "mold-prv-moisture-readings-required",
+      "mold-prv-clearance-documentation-required",
+    ],
+    internalLinkNotes:
+      "Primary cornerstone FAQ; anchor for post-remediation verification documentation guide.",
+  },
+  "mold-prv-moisture-readings-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/post-remediation-verification-documentation-guide",
+      "water-damage/daily-monitoring-guide",
+      "water-damage/dry-log-collection-guide",
+    ],
+    relatedFaqIds: [
+      "mold-prv-documentation-insurance",
+      "mold-prv-closeout-package",
+      "mold-moisture-readings-support",
+    ],
+    internalLinkNotes:
+      "PRV moisture readings FAQ; cross-link daily monitoring and dry log guides.",
+  },
+  "mold-prv-closeout-package": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/post-remediation-verification-documentation-guide",
+      "mold/mold-damage-documentation-guide",
+      "mold/mold-remediation-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-prv-documentation-insurance",
+      "mold-prv-definition",
+      "mold-prv-clearance-documentation-required",
+    ],
+    internalLinkNotes:
+      "Mold closeout package FAQ; cross-link full mold documentation lifecycle guides.",
+  },
+  "mold-prv-clearance-documentation-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/post-remediation-verification-documentation-guide",
+      "mold/mold-remediation-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-prv-documentation-insurance",
+      "mold-prv-definition",
+      "mold-prv-closeout-package",
+    ],
+    internalLinkNotes:
+      "Clearance documentation FAQ; cross-link PRV and remediation guides.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

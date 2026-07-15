@@ -1030,6 +1030,7 @@ export const GENERAL_CLAIMS_GUIDES = [
       "pack-out-documentation-guide",
       "mold-damage-documentation-guide",
       "mold-remediation-documentation-guide",
+      "post-remediation-verification-documentation-guide",
     ],
     purpose:
       "Define the minimum documentation standard for every insurance claim file — from intake through closeout. Carriers approve what they can defend; daily documentation discipline is the highest-leverage activity for claim recovery.",

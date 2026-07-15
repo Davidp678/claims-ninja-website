@@ -255,4 +255,9 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Estándar operativo para documentar trabajo de remediación de moho en reclamaciones de seguros: condiciones iniciales, contención, remoción, limpieza, registros de equipos, contenidos y paquetes de envío listos para aseguradoras.",
   },
+  "mold/post-remediation-verification-documentation-guide": {
+    title: "Guía de documentación de verificación post-remediación (PRV) para contratistas",
+    excerpt:
+      "Estándar operativo para documentar verificación post-remediación y cierre de proyectos de moho en reclamaciones de seguros: registros de finalización del alcance, documentación de autorización, lecturas finales de humedad, fotos de cierre, cierre de registros de equipos, reconciliación de contenidos y paquetes de cierre listos para aseguradoras.",
+  },
 };

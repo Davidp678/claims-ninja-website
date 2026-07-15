@@ -980,6 +980,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["containment documentation", "mold containment photos"],
     topics: ["mold_claims"],
   },
+  "mold-prv-definition": {
+    phrases: [
+      "what is post remediation verification",
+      "what is PRV mold",
+      "post remediation verification definition",
+    ],
+    keywords: ["PRV", "post remediation verification", "mold closeout"],
+    topics: ["mold_claims"],
+  },
+  "mold-prv-documentation-insurance": {
+    phrases: [
+      "how should contractors document PRV for insurance",
+      "document post remediation verification for insurance claims",
+      "PRV documentation mold insurance",
+    ],
+    keywords: ["PRV documentation", "mold closeout documentation"],
+    topics: ["mold_claims"],
+  },
+  "mold-prv-moisture-readings-required": {
+    phrases: [
+      "are moisture readings required during PRV",
+      "moisture readings post remediation verification",
+      "terminal moisture readings mold closeout",
+    ],
+    keywords: ["PRV moisture readings", "terminal moisture mold"],
+    topics: ["mold_claims", "mitigation"],
+  },
+  "mold-prv-closeout-package": {
+    phrases: [
+      "what documentation belongs in a mold project closeout package",
+      "mold closeout package documentation",
+      "mold project closeout documentation",
+    ],
+    keywords: ["mold closeout package", "project closeout mold"],
+    topics: ["mold_claims"],
+  },
+  "mold-prv-clearance-documentation-required": {
+    phrases: [
+      "do insurance companies require clearance documentation after mold remediation",
+      "clearance documentation mold remediation required",
+      "mold clearance documentation insurance",
+    ],
+    keywords: ["clearance documentation mold", "mold clearance required"],
+    topics: ["mold_claims"],
+  },
   "smoke-damage-documentation-insurance": {
     phrases: [
       "how should smoke damage be documented for insurance",

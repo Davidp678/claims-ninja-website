@@ -446,6 +446,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "mold-remediation-moisture-readings-support",
       "mold-remediation-insurance-documentation",
       "mold-remediation-containment-documentation",
+      "mold-prv-definition",
+      "mold-prv-documentation-insurance",
+      "mold-prv-moisture-readings-required",
+      "mold-prv-closeout-package",
+      "mold-prv-clearance-documentation-required",
     ],
   },
   caseStudies: {

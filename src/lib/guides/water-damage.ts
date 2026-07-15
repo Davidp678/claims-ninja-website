@@ -1647,6 +1647,7 @@ export const WATER_DAMAGE_GUIDES = [
       "pack-out-documentation-guide",
       "mold-damage-documentation-guide",
       "mold-remediation-documentation-guide",
+      "post-remediation-verification-documentation-guide",
     ],
     relatedBlogSlugs: [
       "why-fire-damage-claims-get-underpaid",
@@ -1782,7 +1783,7 @@ export const WATER_DAMAGE_GUIDES = [
         label: "Final dry-standard verification",
         required: true,
         detail:
-          "Capture terminal moisture readings against the established dry standard for each reading point. Record equipment pull date, clearance notes, and final condition photos. Terminal documentation closes drying duration arguments and supports final mitigation invoice submission when carriers audit project closeout.",
+          "Capture terminal moisture readings against the established dry standard for each reading point. Record equipment pull date, clearance notes, and final condition photos. Terminal documentation closes drying duration arguments and supports final mitigation invoice submission when carriers audit project closeout. When mold remediation follows on the same file, apply the Post-Remediation Verification (PRV) Documentation Guide for mold closeout standards.",
       },
     ],
     steps: [

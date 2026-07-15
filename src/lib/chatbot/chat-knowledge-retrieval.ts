@@ -2305,6 +2305,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "PRV guide question retrieves post-remediation verification documentation guide",
+    message: "How should contractors document PRV for insurance claims?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /post-remediation-verification-documentation-guide|mold-prv-documentation-insurance|document PRV for insurance/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "PRV definition FAQ retrieves post-remediation verification context",
+    message: "What is Post-Remediation Verification (PRV)?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-prv-definition|post-remediation-verification-documentation-guide|Post-Remediation Verification/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "PRV moisture readings FAQ retrieves terminal moisture context",
+    message: "Are moisture readings required during PRV?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-prv-moisture-readings-required|moisture readings required during PRV|post-remediation-verification-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "PRV closeout package FAQ retrieves mold closeout documentation context",
+    message: "What documentation belongs in a mold project closeout package?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-prv-closeout-package|mold project closeout package|post-remediation-verification-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "PRV clearance documentation FAQ retrieves clearance requirements context",
+    message: "Do insurance companies require clearance documentation after mold remediation?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-prv-clearance-documentation-required|clearance documentation after mold remediation|post-remediation-verification-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "portfolio recovery review",
     message: "What is a portfolio recovery review?",
     assert: (result) =>

@@ -3927,6 +3927,105 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Mold PRV Documentation Cornerstone (5)
+  {
+    id: "mold-prv-definition",
+    category: "mold_claims",
+    question: "¿Qué es la verificación post-remediación (PRV)?",
+    answer:
+      "La verificación post-remediación (PRV) es la prueba documentada de que el trabajo de remediación de moho está completo y la condición del sitio respalda la reconstrucción, la reocupación o el pago final en una reclamación de seguros. La PRV incluye registros de finalización del alcance, lecturas finales de humedad, fotos de cierre, documentación de autorización cuando se realizaron pruebas, cierre de registros de equipos y paquetes de cierre organizados — no el trabajo de remediación en sí, sino la evidencia que cierra el capítulo de remediación. Los requisitos varían según la aseguradora, la póliza y el tipo de proyecto.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de verificación post-remediación (PRV)",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-prv-documentation-insurance",
+    category: "mold_claims",
+    question: "¿Cómo deben los contratistas documentar la PRV para reclamaciones de seguros?",
+    answer:
+      "Documente la finalización del alcance por habitación, lecturas finales de humedad comparadas con el estándar de secado, conjuntos de fotos de cierre que muestren sustratos limpios y equipos desmovilizados, registros de inspección visual o de autorización cuando corresponda, registros de tiempo de equipos hasta el último día activo, reconciliación de contenidos cuando exista alcance de pack-out, y una narrativa de finalización escrita con índice de anexos que vincule evidencia con partidas. Organice evidencia de evaluación, producción y cierre juntos para la revisión de la aseguradora.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de verificación post-remediación (PRV)",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Estándares de documentación de reclamaciones",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-prv-moisture-readings-required",
+    category: "mold_claims",
+    question: "¿Se requieren lecturas de humedad durante la PRV?",
+    answer:
+      "Las lecturas finales de humedad son uno de los anexos de PRV más importantes en expedientes de moho — las aseguradoras a menudo retienen la autorización de reconstrucción o el pago final cuando faltan lecturas terminales contra el estándar de secado. Registre lecturas con pin o sin pin en todos los puntos activos del mapa en armazón expuesto, subpiso y cavidades antes del cierre. Alinee las lecturas terminales con la fecha de retiro de equipos y la última entrada del registro de secado. Los requisitos varían según la aseguradora y si el secado estructural se superpuso con el alcance de remediación.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de verificación post-remediación (PRV)",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Procedimiento de monitoreo diario",
+        href: "/resources/guides/water-damage/daily-monitoring-guide",
+      },
+      {
+        label: "Procedimiento de recopilación de registros de secado",
+        href: "/resources/guides/water-damage/dry-log-collection-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-prv-closeout-package",
+    category: "mold_claims",
+    question: "¿Qué documentación pertenece a un paquete de cierre de un proyecto de moho?",
+    answer:
+      "Un paquete de cierre de proyecto de moho típicamente incluye: estimado final y órdenes de cambio, narrativa de finalización del alcance, lecturas terminales de humedad y mapas de humedad, conjuntos de fotos finales, registros de tiempo de equipos hasta el último día activo, registros de inspección visual o de autorización, informes de laboratorio cuando se realizaron pruebas, reconciliación de contenidos cuando exista alcance de pack-out, e índice de anexos que vincule evidencia con partidas. Incluya evidencia de evaluación de la Guía de documentación de daños por moho y evidencia de producción de la Guía de documentación de remediación de moho junto con registros de cierre.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de verificación post-remediación (PRV)",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-prv-clearance-documentation-required",
+    category: "mold_claims",
+    question: "¿Las compañías de seguros requieren documentación de autorización después de la remediación de moho?",
+    answer:
+      "Los requisitos de documentación de autorización varían según la aseguradora, la póliza, el tipo de propiedad y la jurisdicción — no existe una regla universal de que cada expediente de moho requiera autorización de laboratorio. Cuando se realiza o se requiere prueba de autorización, inspección visual por un tercero o verificación independiente, documente fotos de ubicación de muestras, cadena de custodia, informes de laboratorio y narrativa que conecte resultados con los límites de remediación. Cuando no se realizan pruebas, documente la finalización de la inspección visual con fotos fechadas que muestren sustratos limpios y contención retirada.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de verificación post-remediación (PRV)",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+
   // Contents Restoration (5)
   {
     id: "contents-pack-out",

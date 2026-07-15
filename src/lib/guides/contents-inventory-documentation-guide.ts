@@ -48,6 +48,7 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
     "commercial-water-loss-documentation-guide",
     "commercial-fire-claims-guide",
     "mold-remediation-documentation-guide",
+    "post-remediation-verification-documentation-guide",
   ],
   relatedBlogSlugs: [
     "why-fire-damage-supplements-get-denied",
@@ -577,6 +578,10 @@ export const CONTENTS_INVENTORY_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Commercial Water Loss Documentation Guide",
       href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+    },
+    {
+      label: "Post-Remediation Verification (PRV) Documentation Guide",
+      href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
     },
     {
       label: "Why Fire Damage Claims Get Underpaid",
