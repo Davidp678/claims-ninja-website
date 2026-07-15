@@ -890,6 +890,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["fire supplement documentation", "fire supplement evidence"],
     topics: ["fire_damage_claims", "supplements"],
   },
+  "mold-damage-documentation-insurance": {
+    phrases: [
+      "how should contractors document mold damage for insurance",
+      "document mold damage for insurance",
+      "mold damage documentation for insurance claims",
+    ],
+    keywords: ["mold documentation", "mold damage documentation"],
+    topics: ["mold_claims"],
+  },
+  "mold-claim-photos-required": {
+    phrases: [
+      "what photos should be taken for mold claims",
+      "mold claim photos required",
+      "photos for mold insurance claim",
+    ],
+    keywords: ["mold photos", "mold damage photos"],
+    topics: ["mold_claims"],
+  },
+  "mold-moisture-readings-support": {
+    phrases: [
+      "do moisture readings help support mold claims",
+      "moisture readings mold claims",
+      "mold claim moisture readings",
+    ],
+    keywords: ["mold moisture readings", "moisture meter mold"],
+    topics: ["mold_claims", "mitigation"],
+  },
+  "mold-insurance-documentation-required": {
+    phrases: [
+      "what documentation do insurance companies request for mold damage",
+      "mold insurance documentation required",
+      "insurance documentation mold damage",
+    ],
+    keywords: ["mold insurance documentation", "mold carrier documentation"],
+    topics: ["mold_claims"],
+  },
+  "mold-hidden-damage-documentation": {
+    phrases: [
+      "how should hidden mold be documented",
+      "hidden mold documentation",
+      "document hidden mold in walls",
+    ],
+    keywords: ["hidden mold", "cavity mold documentation"],
+    topics: ["mold_claims"],
+  },
   "smoke-damage-documentation-insurance": {
     phrases: [
       "how should smoke damage be documented for insurance",

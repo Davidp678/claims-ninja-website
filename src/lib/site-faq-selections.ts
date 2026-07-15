@@ -436,6 +436,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "roof-multi-building-supplement-documentation",
       "water-dry-log-contents",
       "water-moisture-map-contents",
+      "mold-damage-documentation-insurance",
+      "mold-claim-photos-required",
+      "mold-moisture-readings-support",
+      "mold-insurance-documentation-required",
+      "mold-hidden-damage-documentation",
     ],
   },
   caseStudies: {

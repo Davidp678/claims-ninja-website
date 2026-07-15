@@ -3714,7 +3714,13 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     question: "¿Qué documentación respalda las reclamaciones de remediación de moho?",
     answer:
       "Las aseguradoras normalmente revisan la documentación de la fuente de humedad, el protocolo de remediación, el detalle de contención, el scrubbing de aire y las pruebas de clearance cuando se requieren. Las fotos, el alcance habitación por habitación y la alineación con prácticas orientadas a IICRC fortalecen el expediente.",
-    relatedLinks: [{ label: "Soluciones para moho", href: "/solutions/mold" }],
+    relatedLinks: [
+      { label: "Soluciones para moho", href: "/solutions/mold" },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+    ],
   },
   {
     id: "mold-testing",
@@ -3743,7 +3749,97 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     question: "¿Pueden los suplementos de moho vincularse a una reclamación por pérdida de agua?",
     answer:
       "Sí. El moho a menudo sigue a un evento de agua subyacente. Vincular la documentación de la fuente de humedad, el historial de secado y el alcance de remediación ayuda a las aseguradoras a seguir la cadena causal en el expediente.",
-    relatedLinks: [{ label: "Soluciones para daños por agua", href: "/solutions/water-damage" }],
+    relatedLinks: [
+      { label: "Soluciones para daños por agua", href: "/solutions/water-damage" },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por agua categoría 3",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+    ],
+  },
+
+  // Mold Documentation Cornerstone (5)
+  {
+    id: "mold-damage-documentation-insurance",
+    category: "mold_claims",
+    question: "¿Cómo deben los contratistas documentar los daños por moho para reclamaciones de seguros?",
+    answer:
+      "Documente primero la fuente de humedad, luego el crecimiento visible y oculto con fotos indexadas por habitación, área afectada aproximada, lecturas de humedad y narrativas de inspección. Vincule el alcance de demolición, contención, limpieza y remoción con carpetas de fotos y lecturas antes del envío a la aseguradora. Consulte la Guía de documentación de daños por moho para el estándar completo.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      { label: "Soluciones para moho", href: "/solutions/mold" },
+    ],
+  },
+  {
+    id: "mold-claim-photos-required",
+    category: "mold_claims",
+    question: "¿Qué fotos deben tomarse para reclamaciones de moho?",
+    answer:
+      "Capture fotos de la fuente de humedad, contexto amplio de la habitación y primeros planos del crecimiento en cada superficie afectada. Documente cavidades ocultas, capas de piso, respaldos de gabinetes, espacios de arrastre, áticos y áreas de HVAC durante el acceso. Etiquete cada imagen por habitación y fecha antes de que la limpieza o contención alteren la escena.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Estándares de documentación fotográfica",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-moisture-readings-support",
+    category: "mold_claims",
+    question: "¿Las lecturas de humedad ayudan a respaldar reclamaciones de moho?",
+    answer:
+      "Sí. Las lecturas con medidores de contacto y sin contacto en materiales afectados y de referencia respaldan argumentos de humedad activa, alcance de secado y disputas sobre si el crecimiento es histórico o actual. Combine las lecturas con imágenes térmicas cuando los acabados oculten sustratos húmedos.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Procedimiento de mapeo de humedad",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-insurance-documentation-required",
+    category: "mold_claims",
+    question: "¿Qué documentación solicitan las compañías de seguros para daños por moho?",
+    answer:
+      "Las aseguradoras normalmente solicitan evidencia de la fuente de humedad, fotos de crecimiento habitación por habitación, lecturas de humedad, documentación de cavidades ocultas, fotos de contención y remoción, registros de pruebas cuando se usan, narrativas de inspección y un estimado indexado a los anexos. La causalidad y el alcance se revisan por separado en expedientes de moho.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Estándares de documentación de reclamaciones",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-hidden-damage-documentation",
+    category: "mold_claims",
+    question: "¿Cómo debe documentarse el moho oculto?",
+    answer:
+      "Fotografíe cavidades de pared, vanos de techo, subpiso, respaldos de gabinetes, espacios de arrastre, áticos e interiores de HVAC durante el acceso con imágenes fechadas. Mantenga un registro de descubrimientos antes de que las reparaciones cierren las aberturas: los suplementos por moho oculto fallan cuando la evidencia de cavidad se captura después de la remediación.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+    ],
   },
 
   // Contents Restoration (5)

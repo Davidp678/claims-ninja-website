@@ -1645,6 +1645,7 @@ export const WATER_DAMAGE_GUIDES = [
       "smoke-soot-damage-documentation-guide",
       "contents-inventory-documentation-guide",
       "pack-out-documentation-guide",
+      "mold-damage-documentation-guide",
     ],
     relatedBlogSlugs: [
       "why-fire-damage-claims-get-underpaid",

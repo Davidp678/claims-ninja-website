@@ -3726,7 +3726,13 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "What documentation supports mold remediation claims?",
     answer:
       "Carriers typically review moisture source documentation, remediation protocol, containment detail, air scrubbing, and clearance testing where required. Photos, room-by-room scope, and alignment with IICRC-oriented practices strengthen the file.",
-    relatedLinks: [{ label: "Mold solutions", href: "/solutions/mold" }],
+    relatedLinks: [
+      { label: "Mold solutions", href: "/solutions/mold" },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+    ],
   },
   {
     id: "mold-testing",
@@ -3755,7 +3761,97 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "Can mold supplements tie back to a water loss claim?",
     answer:
       "Yes. Mold often follows an underlying water event. Linking moisture source documentation, drying history, and remediation scope helps carriers follow the causal chain on the file.",
-    relatedLinks: [{ label: "Water damage solutions", href: "/solutions/water-damage" }],
+    relatedLinks: [
+      { label: "Water damage solutions", href: "/solutions/water-damage" },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Category 3 Water Damage Documentation Guide",
+        href: "/resources/guides/water-damage/category-3-water-damage-documentation-guide",
+      },
+    ],
+  },
+
+  // Mold Documentation Cornerstone (5)
+  {
+    id: "mold-damage-documentation-insurance",
+    category: "mold_claims",
+    question: "How should contractors document mold damage for insurance claims?",
+    answer:
+      "Document the moisture source first, then visible and hidden growth with room-indexed photos, approximate affected area, moisture readings, and inspection narratives. Tie demolition, containment, cleaning, and removal scope to photo folders and readings before carrier submission. See the Mold Damage Documentation Guide for the full contractor standard.",
+    relatedLinks: [
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      { label: "Mold solutions", href: "/solutions/mold" },
+    ],
+  },
+  {
+    id: "mold-claim-photos-required",
+    category: "mold_claims",
+    question: "What photos should be taken for mold claims?",
+    answer:
+      "Capture moisture source photos, wide room context, and close-ups of growth on each affected surface. Document hidden cavities, flooring layers, cabinet backs, crawlspaces, attics, and HVAC areas during access. Label every frame by room and date before cleaning or containment alters the scene.",
+    relatedLinks: [
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Photo Documentation Standards",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-moisture-readings-support",
+    category: "mold_claims",
+    question: "Do moisture readings help support mold claims?",
+    answer:
+      "Yes. Pin and pinless meter readings on affected and reference materials support active moisture arguments, drying scope, and disputes over whether growth is historical versus current. Pair readings with thermal images when finishes conceal wet substrates.",
+    relatedLinks: [
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Moisture Mapping Field Procedure",
+        href: "/resources/guides/water-damage/moisture-mapping-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-insurance-documentation-required",
+    category: "mold_claims",
+    question: "What documentation do insurance companies request for mold damage?",
+    answer:
+      "Carriers typically request moisture source evidence, room-by-room growth photos, moisture readings, hidden cavity documentation, containment and removal photos, testing records when used, inspection narratives, and an estimate indexed to exhibits. Causation and scope are reviewed separately on mold files.",
+    relatedLinks: [
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Claim Documentation Standards",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-hidden-damage-documentation",
+    category: "mold_claims",
+    question: "How should hidden mold be documented?",
+    answer:
+      "Photograph wall cavities, ceiling bays, subfloor, cabinet backs, crawlspaces, attics, and HVAC interiors during access with date-stamped images. Maintain a discovery log before repairs close openings — hidden mold supplements fail when cavity evidence is captured after remediation.",
+    relatedLinks: [
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+    ],
   },
 
   // Contents Restoration (5)

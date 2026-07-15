@@ -1,6 +1,7 @@
 import { CLAIM_GUIDES } from "@/lib/guides";
 import {
   FIRE_DAMAGE_HUB_ORDER,
+  MOLD_HUB_ORDER,
   type GuideCategorySlug,
 } from "@/lib/guide-categories";
 import type { ClaimPhase, Guide, GuideRole, GuideType } from "@/lib/guide-types";
@@ -65,6 +66,9 @@ export function getGuidesByCategory(category: GuideCategorySlug): Guide[] {
   const guides = getAllGuides().filter((guide) => guide.category === category);
   if (category === "fire-damage") {
     return sortGuidesByHubOrder(guides, FIRE_DAMAGE_HUB_ORDER);
+  }
+  if (category === "mold") {
+    return sortGuidesByHubOrder(guides, MOLD_HUB_ORDER);
   }
   return guides;
 }

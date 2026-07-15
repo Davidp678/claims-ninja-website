@@ -1994,6 +1994,63 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Commercial property types FAQ; enumerates supported property segments for the commercial hub.",
   },
+  "mold-damage-documentation-insurance": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["mold/mold-damage-documentation-guide"],
+    relatedFaqIds: [
+      "mold-claim-photos-required",
+      "mold-moisture-readings-support",
+      "mold-hidden-damage-documentation",
+      "mold-insurance-documentation-required",
+    ],
+    internalLinkNotes:
+      "Primary cornerstone FAQ; anchor for mold damage documentation guide.",
+  },
+  "mold-claim-photos-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "general-claims/photo-documentation-standards-guide",
+    ],
+    relatedFaqIds: ["mold-damage-documentation-insurance", "mold-hidden-damage-documentation"],
+    internalLinkNotes:
+      "Photo requirements FAQ; cross-link photo documentation standards guide.",
+  },
+  "mold-moisture-readings-support": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "water-damage/moisture-mapping-guide",
+    ],
+    relatedFaqIds: ["mold-damage-documentation-insurance", "mold-water-relationship"],
+    internalLinkNotes:
+      "Moisture readings FAQ; cross-link moisture mapping procedure and water-mold relationship FAQ.",
+  },
+  "mold-insurance-documentation-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "mold-damage-documentation-insurance",
+      "mold-claim-photos-required",
+      "mold-carrier-pushback",
+    ],
+    internalLinkNotes:
+      "Carrier documentation requirements FAQ; link cornerstone guide and documentation standards.",
+  },
+  "mold-hidden-damage-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["mold/mold-damage-documentation-guide"],
+    relatedFaqIds: [
+      "mold-damage-documentation-insurance",
+      "mold-claim-photos-required",
+      "mold-remediation-docs",
+    ],
+    internalLinkNotes:
+      "Hidden mold FAQ; cross-link cornerstone guide and remediation documentation FAQ.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

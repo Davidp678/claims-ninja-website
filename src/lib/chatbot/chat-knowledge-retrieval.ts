@@ -2195,6 +2195,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "mold documentation guide question retrieves cornerstone guide",
+    message: "How should contractors document mold damage for insurance claims?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-damage-documentation-guide|mold-damage-documentation-insurance|document mold damage/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold photos FAQ retrieves photo documentation context",
+    message: "What photos should be taken for mold claims?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-claim-photos-required|mold-damage-documentation-guide|photos should be taken for mold/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold moisture readings FAQ retrieves supporting evidence context",
+    message: "Do moisture readings help support mold claims?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-moisture-readings-support|moisture readings help support mold|mold-damage-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold insurance documentation FAQ retrieves carrier requirements context",
+    message: "What documentation do insurance companies request for mold damage?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-insurance-documentation-required|documentation do insurance companies request for mold|mold-damage-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "hidden mold documentation FAQ retrieves cavity investigation context",
+    message: "How should hidden mold be documented?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-hidden-damage-documentation|hidden mold be documented|mold-damage-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "portfolio recovery review",
     message: "What is a portfolio recovery review?",
     assert: (result) =>

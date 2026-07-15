@@ -174,7 +174,7 @@ const EN: ResourcesContent = {
       linkLabel: "Browse the blog",
     },
     hubUi: {
-      heroCountLine: (count) => `${count} guides · 5 disciplines`,
+      heroCountLine: (count) => `${count} guides · 6 disciplines`,
       searchResultsTitle: "Search results",
       searchLabel: "Search guides",
       searchPlaceholder: "Search guides by title, tag, or checklist item...",
@@ -223,6 +223,12 @@ const EN: ResourcesContent = {
         description:
           "Non-roof exterior scope: siding, envelope, and window and door replacement documentation.",
         guidesSectionTitle: "Exterior Restoration guides",
+      },
+      mold: {
+        name: "Mold",
+        description:
+          "Mold claim documentation standards: moisture source evidence, growth mapping, hidden mold investigation, supporting readings, scope packaging, and insurance submission.",
+        guidesSectionTitle: "Mold guides",
       },
     },
     roleDescriptions: {
@@ -396,7 +402,7 @@ const ES: ResourcesContent = {
       linkLabel: "Explore el blog",
     },
     hubUi: {
-      heroCountLine: (count) => `${count} guías · 5 disciplinas`,
+      heroCountLine: (count) => `${count} guías · 6 disciplinas`,
       searchResultsTitle: "Resultados de búsqueda",
       searchLabel: "Buscar guías",
       searchPlaceholder: "Busque guías por título, etiqueta o elemento de lista...",
@@ -445,6 +451,12 @@ const ES: ResourcesContent = {
         description:
           "Alcance exterior no relacionado con techos: documentación de revestimiento, envolvente y reemplazo de ventanas y puertas.",
         guidesSectionTitle: "Guías de restauración exterior",
+      },
+      mold: {
+        name: "Moho",
+        description:
+          "Estándares de documentación de reclamaciones por moho: evidencia de fuente de humedad, mapeo de crecimiento, investigación de moho oculto, lecturas de apoyo y envío a la aseguradora.",
+        guidesSectionTitle: "Guías de moho",
       },
     },
     roleDescriptions: {

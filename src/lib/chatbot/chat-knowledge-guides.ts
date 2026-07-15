@@ -34,6 +34,7 @@ const GUIDE_CATEGORY_TOPICS: Record<GuideCategorySlug, readonly string[]> = {
   "water-damage": ["water_damage_claims", "mitigation", "claim_guides"],
   "fire-damage": ["fire_damage_claims", "claim_guides", "contractor_fit"],
   "exterior-restoration": ["roofing_claims", "claim_guides"],
+  mold: ["mold_claims", "mitigation", "claim_guides"],
 };
 
 const GUIDE_CATEGORY_PHRASE_BOOSTS: Record<
@@ -69,6 +70,10 @@ const GUIDE_CATEGORY_PHRASE_BOOSTS: Record<
   "exterior-restoration": {
     phrases: ["exterior restoration guides", "siding documentation guide"],
     keywords: ["exterior guide", "siding documentation"],
+  },
+  mold: {
+    phrases: ["mold guides", "mold documentation guide", "mold claim documentation"],
+    keywords: ["mold guide", "mold documentation", "mold claims"],
   },
 };
 
@@ -158,6 +163,26 @@ const GUIDE_SLUG_BOOSTS: Record<
       "commercial fire",
     ],
     topics: ["fire_damage_claims", "documentation", "commercial_fire"],
+  },
+  "mold-damage-documentation-guide": {
+    phrases: [
+      "mold damage documentation guide",
+      "document mold damage for insurance",
+      "mold claim documentation",
+      "mold damage photos required",
+      "hidden mold documentation",
+      "moisture source documentation mold",
+      "commercial mold documentation",
+    ],
+    keywords: [
+      "mold documentation",
+      "mold damage documentation",
+      "moisture source",
+      "hidden mold",
+      "mold remediation documentation",
+      "commercial mold",
+    ],
+    topics: ["mold_claims", "documentation", "mitigation"],
   },
   "fire-code-upgrade-documentation-guide": {
     phrases: [

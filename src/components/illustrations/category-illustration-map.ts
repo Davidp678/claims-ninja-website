@@ -28,6 +28,7 @@ const GUIDE_CATEGORY_ILLUSTRATIONS: Record<
   "water-damage": "water-damage",
   "fire-damage": "fire-damage",
   "exterior-restoration": "commercial-claims",
+  mold: "mold",
 };
 
 export function resolveCategoryIllustration(

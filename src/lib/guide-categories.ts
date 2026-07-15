@@ -6,7 +6,8 @@ export type GuideCategorySlug =
   | "roofing-claims"
   | "water-damage"
   | "fire-damage"
-  | "exterior-restoration";
+  | "exterior-restoration"
+  | "mold";
 
 export type GuideCategory = {
   slug: GuideCategorySlug;
@@ -34,6 +35,11 @@ export const FIRE_DAMAGE_HUB_ORDER = [
   "odor-documentation-guide",
   "contents-documentation-guide",
   "structural-stabilization-documentation-guide",
+] as const;
+
+/** Editorial hub order for /resources/guides/mold (matches MOLD_GUIDES bundle). */
+export const MOLD_HUB_ORDER = [
+  "mold-damage-documentation-guide",
 ] as const;
 
 export const GUIDE_CATEGORY_BASE_PATH = "/resources/guides" as const;
@@ -102,6 +108,17 @@ export const GUIDE_CATEGORY_REGISTRY: readonly GuideCategory[] = [
     metaDescription:
       "Exterior restoration claim guides: siding and envelope documentation and window and door replacement procedures for supplement-ready files.",
     relatedBlogCategories: ["roofing-claims", "claim-recovery"],
+  },
+  {
+    slug: "mold",
+    name: "Mold",
+    description:
+      "Start with the documentation standard for moisture source evidence, growth mapping, hidden mold investigation, supporting readings, scope packaging, and insurance claim submission on residential and commercial mold losses.",
+    metaTitle: "Mold Claims Guides",
+    metaDescription:
+      "Mold claim documentation guides for restoration contractors: moisture source evidence, growth and hidden mold documentation, supporting readings and testing, scope packaging, and insurance submission standards.",
+    relatedBlogCategories: ["claim-documentation", "water-damage-claims"],
+    relatedSolutionPath: "/solutions/mold",
   },
 ] as const;
 
