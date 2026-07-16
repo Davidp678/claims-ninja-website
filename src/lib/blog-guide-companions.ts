@@ -310,12 +310,12 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "why-mold-insurance-claims-get-underpaid": {
     intro:
-      "You've learned why mold claims get underpaid. Now run the mold documentation standards for moisture source evidence, remediation production, post-remediation verification closeout, and protocol documentation.",
+      "You've learned why mold claims get underpaid. Now run the commercial mold claims playbook and mold documentation standards for moisture source evidence, remediation production, and post-remediation verification closeout.",
     guideSlugs: [
+      "commercial-mold-claims-guide",
       "mold-damage-documentation-guide",
       "mold-remediation-documentation-guide",
       "post-remediation-verification-documentation-guide",
-      "mold-protocol-documentation-guide",
     ],
   },
 } as const satisfies Record<string, BlogGuideCompanionEntry>;

@@ -50,6 +50,7 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
     "mold-damage-documentation-guide",
     "mold-remediation-documentation-guide",
     "post-remediation-verification-documentation-guide",
+    "commercial-mold-claims-guide",
   ],
   relatedBlogSlugs: [
     "why-category-3-water-claims-get-underpaid",
@@ -652,6 +653,10 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Post-Remediation Verification (PRV) Documentation Guide",
       href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+    },
+    {
+      label: "Commercial Mold Claims Guide",
+      href: "/resources/guides/mold/commercial-mold-claims-guide",
     },
     {
       label: "Equipment Documentation Guide",

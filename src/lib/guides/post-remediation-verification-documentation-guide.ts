@@ -36,6 +36,7 @@ export const POST_REMEDIATION_VERIFICATION_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document post-remediation verification for mold insurance claims: scope completion records, clearance documentation, final moisture readings, closeout photos, equipment logs, contents reconciliation, and carrier-ready project closeout packages for restoration contractors.",
   relatedGuideSlugs: [
+    "commercial-mold-claims-guide",
     "mold-remediation-documentation-guide",
     "mold-damage-documentation-guide",
     "mold-protocol-documentation-guide",
@@ -565,6 +566,10 @@ export const POST_REMEDIATION_VERIFICATION_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Commercial Mold Claims Guide",
+      href: "/resources/guides/mold/commercial-mold-claims-guide",
+    },
     {
       label: "Mold Remediation Documentation Guide",
       href: "/resources/guides/mold/mold-remediation-documentation-guide",

@@ -48,6 +48,7 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
     "documentation-standards-guide",
     "commercial-water-loss-documentation-guide",
     "category-3-water-damage-documentation-guide",
+    "commercial-mold-claims-guide",
     "hvac-contamination-guide",
     "structural-stabilization-documentation-guide",
     "fire-claim-intake-guide",
@@ -659,6 +660,10 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
     {
       label: "Commercial Water Loss Documentation Guide",
       href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+    },
+    {
+      label: "Commercial Mold Claims Guide",
+      href: "/resources/guides/mold/commercial-mold-claims-guide",
     },
     {
       label: "Category 3 Water Damage Documentation Guide",

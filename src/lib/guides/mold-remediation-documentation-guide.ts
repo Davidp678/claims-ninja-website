@@ -38,6 +38,7 @@ export const MOLD_REMEDIATION_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document mold remediation for insurance claims: containment photos, removal evidence, cleaning verification, equipment runtime logs, contents coordination, daily progress records, and carrier-ready submission packages for restoration contractors.",
   relatedGuideSlugs: [
+    "commercial-mold-claims-guide",
     "post-remediation-verification-documentation-guide",
     "mold-damage-documentation-guide",
     "mold-protocol-documentation-guide",
@@ -617,6 +618,10 @@ export const MOLD_REMEDIATION_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Commercial Mold Claims Guide",
+      href: "/resources/guides/mold/commercial-mold-claims-guide",
+    },
     {
       label: "Post-Remediation Verification (PRV) Documentation Guide",
       href: "/resources/guides/mold/post-remediation-verification-documentation-guide",

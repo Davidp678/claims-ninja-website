@@ -4166,6 +4166,113 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
+  // Commercial Mold Claims Guide (5)
+  {
+    id: "mold-commercial-claims-vs-residential",
+    category: "mold_claims",
+    question: "How do commercial mold claims differ from residential mold claims?",
+    answer:
+      "Commercial mold claims involve larger footprints, multi-unit indexing, tenant coordination, phased remediation under occupied conditions, protocol revisions by area, and PRV clearance packages that residential single-file patterns cannot organize. Contractors must scale documentation to a Building → Floor → Unit → Room hierarchy and maintain estimate change tracking — not simply take more photos of the same residential workflow.",
+    relatedLinks: [
+      {
+        label: "Commercial Mold Claims Guide",
+        href: "/resources/guides/mold/commercial-mold-claims-guide",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Commercial Water Loss Documentation Guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-commercial-documentation-organization",
+    category: "mold_claims",
+    question: "How should contractors organize documentation for commercial mold claims?",
+    answer:
+      "Publish a commercial documentation plan within 24 hours using Building → Floor → Wing → Unit → Room → Work area naming on photos, moisture maps, equipment logs, protocol pages, PRV reports, and Xactimate sections. Spot-check that random artifacts resolve to the same area ID before any carrier package leaves the office. Separate moisture-source, remediation-production, protocol/PRV, contents, and estimate folders.",
+    relatedLinks: [
+      {
+        label: "Commercial Mold Claims Guide",
+        href: "/resources/guides/mold/commercial-mold-claims-guide",
+      },
+      {
+        label: "Claim Documentation Standards",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "How should multi-unit mold claims be documented?",
+        href: "/faq#faq-mold-commercial-multi-unit-documentation",
+      },
+    ],
+  },
+  {
+    id: "mold-commercial-multi-unit-documentation",
+    category: "mold_claims",
+    question: "How should multi-unit mold claims be documented?",
+    answer:
+      "Adopt property management unit numbers on every photo filename, moisture log row, inventory entry, and estimate section. Map moisture readings and growth by floor and unit, keep common-area scope separate from tenant-unit scope, and maintain tenant coordination logs for occupied buildings. Never mix photos or readings from different units in one unlabeled folder — mixed unit documentation is a top commercial mold denial driver.",
+    relatedLinks: [
+      {
+        label: "Commercial Mold Claims Guide",
+        href: "/resources/guides/mold/commercial-mold-claims-guide",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Commercial water apartment loss documentation",
+        href: "/faq#faq-water-apartment-loss-documentation",
+      },
+    ],
+  },
+  {
+    id: "mold-commercial-insurance-documentation",
+    category: "mold_claims",
+    question: "What documentation supports commercial mold insurance claims?",
+    answer:
+      "Moisture source investigation packs, floor-by-floor moisture and growth maps, containment and daily production records, protocol revisions, area-level PRV, contents and chain-of-custody records, building-indexed estimates with change tracking, commercial equipment logs by zone, and chronological carrier communication logs. Together these form a recoverable commercial mold claim package for desk review and reinspection.",
+    relatedLinks: [
+      {
+        label: "Commercial Mold Claims Guide",
+        href: "/resources/guides/mold/commercial-mold-claims-guide",
+      },
+      {
+        label: "Mold Protocol Documentation Guide",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      {
+        label: "Post-Remediation Verification Documentation Guide",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-commercial-phased-remediation",
+    category: "mold_claims",
+    question: "How should contractors document phased commercial mold remediation?",
+    answer:
+      "Document which floors, wings, or units are in active remediation versus held; photograph containment by work area; maintain daily production logs keyed to area IDs; index protocol revisions when discoveries expand scope; and clear PRV by area before re-occupancy — not as a single end-of-project event. Phased commercial work without area-indexed progress evidence fails large-loss desk review.",
+    relatedLinks: [
+      {
+        label: "Commercial Mold Claims Guide",
+        href: "/resources/guides/mold/commercial-mold-claims-guide",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Post-Remediation Verification Documentation Guide",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+    ],
+  },
+
   // Mold Blog Bridge (5)
   {
     id: "mold-claims-underpaid-why",

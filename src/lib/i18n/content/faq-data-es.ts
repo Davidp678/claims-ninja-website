@@ -4150,6 +4150,113 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Commercial Mold Claims Guide (5)
+  {
+    id: "mold-commercial-claims-vs-residential",
+    category: "mold_claims",
+    question: "¿En qué se diferencian las reclamaciones comerciales por moho de las residenciales?",
+    answer:
+      "Las reclamaciones comerciales por moho involucran huellas más grandes, indexación multiunidad, coordinación con inquilinos, remediación por fases en condiciones ocupadas, revisiones de protocolo por área y paquetes de autorización PRV que los patrones de expediente residencial de un solo archivo no pueden organizar. Los contratistas deben escalar la documentación a una jerarquía Edificio → Piso → Unidad → Habitación y mantener seguimiento de cambios en el estimado — no simplemente tomar más fotos del mismo flujo residencial.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones comerciales por moho",
+        href: "/resources/guides/mold/commercial-mold-claims-guide",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-commercial-documentation-organization",
+    category: "mold_claims",
+    question: "¿Cómo deben organizar los contratistas la documentación de reclamaciones comerciales por moho?",
+    answer:
+      "Publique un plan de documentación comercial en 24 horas usando nomenclatura Edificio → Piso → Ala → Unidad → Habitación → Área de trabajo en fotos, mapas de humedad, registros de equipos, páginas de protocolo, informes PRV y secciones de Xactimate. Verifique que artefactos aleatorios resuelvan al mismo ID de área antes de que cualquier paquete salga de la oficina. Separe carpetas de fuente de humedad, producción de remediación, protocolo/PRV, contenidos y estimado.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones comerciales por moho",
+        href: "/resources/guides/mold/commercial-mold-claims-guide",
+      },
+      {
+        label: "Estándares de documentación de reclamaciones",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "¿Cómo deben documentarse las reclamaciones de moho multiunidad?",
+        href: "/faq#faq-mold-commercial-multi-unit-documentation",
+      },
+    ],
+  },
+  {
+    id: "mold-commercial-multi-unit-documentation",
+    category: "mold_claims",
+    question: "¿Cómo deben documentarse las reclamaciones de moho multiunidad?",
+    answer:
+      "Adopte los números de unidad de la administración de la propiedad en cada nombre de archivo de foto, fila de registro de humedad, entrada de inventario y sección del estimado. Mapee lecturas de humedad y crecimiento por piso y unidad, mantenga el alcance de áreas comunes separado del de unidades de inquilinos, y conserve registros de coordinación con inquilinos en edificios ocupados. Nunca mezcle fotos o lecturas de distintas unidades en una carpeta sin etiquetar — la documentación mezclada entre unidades es una de las principales causas de denegación en moho comercial.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones comerciales por moho",
+        href: "/resources/guides/mold/commercial-mold-claims-guide",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Documentación de pérdidas de agua en apartamentos",
+        href: "/faq#faq-water-apartment-loss-documentation",
+      },
+    ],
+  },
+  {
+    id: "mold-commercial-insurance-documentation",
+    category: "mold_claims",
+    question: "¿Qué documentación respalda las reclamaciones de seguro comerciales por moho?",
+    answer:
+      "Paquetes de investigación de fuente de humedad, mapas de humedad y crecimiento piso por piso, registros de contención y producción diaria, revisiones de protocolo, PRV por área, registros de contenidos y cadena de custodia, estimados indexados por edificio con seguimiento de cambios, registros comerciales de equipos por zona y registros cronológicos de comunicación con la aseguradora. Juntos forman un paquete recuperable de reclamación comercial por moho para revisión de escritorio y reinspección.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones comerciales por moho",
+        href: "/resources/guides/mold/commercial-mold-claims-guide",
+      },
+      {
+        label: "Guía de documentación de protocolos de moho",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de verificación post-remediación",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-commercial-phased-remediation",
+    category: "mold_claims",
+    question: "¿Cómo deben documentar los contratistas la remediación comercial de moho por fases?",
+    answer:
+      "Documente qué pisos, alas o unidades están en remediación activa frente a retenidas; fotografie la contención por área de trabajo; mantenga registros diarios de producción con IDs de área; indexe revisiones de protocolo cuando los descubrimientos expandan el alcance; y autorice PRV por área antes de la reocupación — no como un único evento al final del proyecto. El trabajo comercial por fases sin evidencia de progreso indexada por área falla en la revisión de escritorio de gran pérdida.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones comerciales por moho",
+        href: "/resources/guides/mold/commercial-mold-claims-guide",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de verificación post-remediación",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+    ],
+  },
+
   // Mold Blog Bridge (5)
   {
     id: "mold-claims-underpaid-why",

@@ -466,6 +466,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "mold-moisture-readings-settlement-support",
       "mold-hidden-damage-affects-payment",
       "mold-documentation-improves-settlement",
+      "mold-commercial-claims-vs-residential",
+      "mold-commercial-documentation-organization",
+      "mold-commercial-multi-unit-documentation",
+      "mold-commercial-insurance-documentation",
+      "mold-commercial-phased-remediation",
     ],
   },
   caseStudies: {

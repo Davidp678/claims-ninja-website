@@ -2426,6 +2426,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "commercial mold claims documentation retrieves guide or FAQ",
+    message: "how do i document commercial mold claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-mold-claims-guide|mold-commercial-claims-vs-residential|mold-commercial-insurance-documentation|commercial mold claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial mold vs residential FAQ retrieves",
+    message: "how do commercial mold claims differ from residential",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-commercial-claims-vs-residential|commercial-mold-claims-guide|commercial mold claims differ/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial mold documentation organization FAQ retrieves",
+    message: "how should contractors organize documentation for commercial mold claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-commercial-documentation-organization|commercial-mold-claims-guide|organize documentation for commercial mold/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multi-unit mold documentation FAQ retrieves",
+    message: "how should multi-unit mold claims be documented",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-commercial-multi-unit-documentation|commercial-mold-claims-guide|multi-unit mold/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial mold insurance documentation FAQ retrieves",
+    message: "what documentation supports commercial mold insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-commercial-insurance-documentation|commercial-mold-claims-guide|documentation supports commercial mold insurance claims|What documentation supports commercial mold/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "phased commercial mold remediation FAQ retrieves",
+    message: "how should contractors document phased commercial mold remediation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-commercial-phased-remediation|commercial-mold-claims-guide|phased commercial mold remediation|Document which floors, wings, or units/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "why mold insurance claims underpaid blog retrieves",
     message: "mold documentation mistakes contractors avoid underpaid",
     assert: (result) =>

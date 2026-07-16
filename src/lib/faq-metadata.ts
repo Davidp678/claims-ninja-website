@@ -2256,6 +2256,78 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Field conditions vs protocol FAQ; cross-link hidden mold and change documentation FAQs.",
   },
+  "mold-commercial-claims-vs-residential": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/commercial-mold-claims-guide",
+      "mold/mold-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-commercial-documentation-organization",
+      "mold-commercial-multi-unit-documentation",
+      "water-commercial-claims-documentation",
+    ],
+    internalLinkNotes:
+      "Commercial vs residential mold FAQ; anchor for commercial mold claims guide.",
+  },
+  "mold-commercial-documentation-organization": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/commercial-mold-claims-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "mold-commercial-claims-vs-residential",
+      "mold-commercial-multi-unit-documentation",
+      "mold-commercial-insurance-documentation",
+    ],
+    internalLinkNotes:
+      "Commercial mold documentation organization FAQ; cross-link multi-unit and insurance documentation FAQs.",
+  },
+  "mold-commercial-multi-unit-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/commercial-mold-claims-guide",
+      "mold/mold-remediation-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-commercial-documentation-organization",
+      "mold-commercial-phased-remediation",
+      "water-apartment-loss-documentation",
+    ],
+    internalLinkNotes:
+      "Multi-unit commercial mold documentation FAQ; cross-link apartment water documentation analogue.",
+  },
+  "mold-commercial-insurance-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/commercial-mold-claims-guide",
+      "mold/mold-protocol-documentation-guide",
+      "mold/post-remediation-verification-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-commercial-claims-vs-residential",
+      "mold-commercial-phased-remediation",
+      "mold-insurance-documentation-required",
+    ],
+    internalLinkNotes:
+      "What documentation supports commercial mold insurance claims FAQ.",
+  },
+  "mold-commercial-phased-remediation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/commercial-mold-claims-guide",
+      "mold/mold-remediation-documentation-guide",
+      "mold/post-remediation-verification-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-commercial-multi-unit-documentation",
+      "mold-commercial-insurance-documentation",
+      "mold-remediation-work-documentation",
+    ],
+    internalLinkNotes:
+      "Phased commercial mold remediation documentation FAQ; cross-link remediation and PRV guides.",
+  },
   "mold-claims-underpaid-why": {
     searchIntent: "informational",
     relatedGuideSlugs: [

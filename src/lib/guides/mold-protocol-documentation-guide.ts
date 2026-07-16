@@ -37,6 +37,7 @@ export const MOLD_PROTOCOL_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document mold remediation protocols for insurance claims: interpret scope, align field conditions, record deviations, support estimates, and submit protocol-backed claim packages.",
   relatedGuideSlugs: [
+    "commercial-mold-claims-guide",
     "mold-damage-documentation-guide",
     "mold-remediation-documentation-guide",
     "post-remediation-verification-documentation-guide",
@@ -583,6 +584,10 @@ export const MOLD_PROTOCOL_DOCUMENTATION_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Commercial Mold Claims Guide",
+      href: "/resources/guides/mold/commercial-mold-claims-guide",
+    },
     {
       label: "Mold Damage Documentation Guide",
       href: "/resources/guides/mold/mold-damage-documentation-guide",

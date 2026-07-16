@@ -1058,9 +1058,15 @@ const FAQ_ID_BOOSTS: Record<
       "documentation accompany mold protocol",
       "mold protocol supporting documentation",
       "how should contractors document mold remediation protocols for insurance",
+      "how should contractors document mold remediation protocols for insurance?",
       "document mold remediation protocols for insurance",
+      "document mold remediation protocols",
     ],
-    keywords: ["mold protocol documentation", "protocol supporting documentation"],
+    keywords: [
+      "mold protocol documentation",
+      "protocol supporting documentation",
+      "document mold remediation protocols",
+    ],
     topics: ["mold_claims"],
   },
   "mold-protocol-field-conditions-differ": {
@@ -1071,6 +1077,80 @@ const FAQ_ID_BOOSTS: Record<
     ],
     keywords: ["field conditions mold protocol", "protocol field conditions"],
     topics: ["mold_claims"],
+  },
+  "mold-commercial-claims-vs-residential": {
+    phrases: [
+      "how do commercial mold claims differ from residential",
+      "commercial mold claims vs residential",
+      "difference commercial residential mold claims",
+      "commercial mold claims different from residential",
+    ],
+    keywords: [
+      "commercial mold vs residential",
+      "commercial mold claims differ",
+      "residential vs commercial mold",
+    ],
+    topics: ["mold_claims", "commercial_mold"],
+  },
+  "mold-commercial-documentation-organization": {
+    phrases: [
+      "how should contractors organize documentation for commercial mold claims",
+      "organize documentation commercial mold",
+      "commercial mold documentation organization",
+      "building floor unit mold documentation",
+    ],
+    keywords: [
+      "organize commercial mold documentation",
+      "commercial mold documentation plan",
+      "mold documentation organization",
+    ],
+    topics: ["mold_claims", "commercial_mold"],
+  },
+  "mold-commercial-multi-unit-documentation": {
+    phrases: [
+      "how should multi-unit mold claims be documented",
+      "multi-unit mold claim documentation",
+      "document multi-unit mold claims",
+      "multifamily mold documentation",
+    ],
+    keywords: [
+      "multi-unit mold",
+      "multi unit mold documentation",
+      "multifamily mold claims",
+    ],
+    topics: ["mold_claims", "commercial_mold"],
+  },
+  "mold-commercial-insurance-documentation": {
+    phrases: [
+      "what documentation supports commercial mold insurance claims",
+      "commercial mold insurance documentation",
+      "documentation for commercial mold claims",
+      "commercial mold claim package",
+      "documentation supports commercial mold insurance claims",
+    ],
+    keywords: [
+      "commercial mold insurance documentation",
+      "commercial mold claim support",
+      "commercial mold package",
+      "supports commercial mold insurance",
+    ],
+    topics: ["mold_claims", "commercial_mold"],
+  },
+  "mold-commercial-phased-remediation": {
+    phrases: [
+      "phased commercial mold remediation documentation",
+      "document phased commercial mold remediation",
+      "phased mold remediation commercial",
+      "commercial mold remediation by phase",
+      "area by area commercial mold remediation documentation",
+    ],
+    keywords: [
+      "phased commercial mold",
+      "phased mold remediation",
+      "commercial mold phasing",
+      "area-level mold remediation",
+    ],
+    topics: ["mold_claims", "commercial_mold"],
   },
   "mold-claims-underpaid-why": {
     phrases: [
