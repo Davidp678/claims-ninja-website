@@ -39,6 +39,7 @@ export const MOLD_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "mold-remediation-documentation-guide",
     "post-remediation-verification-documentation-guide",
+    "mold-protocol-documentation-guide",
     "commercial-water-loss-documentation-guide",
     "category-3-water-damage-documentation-guide",
     "moisture-mapping-guide",
@@ -603,6 +604,10 @@ export const MOLD_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Post-Remediation Verification (PRV) Documentation Guide",
       href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+    },
+    {
+      label: "Mold Protocol Documentation Guide",
+      href: "/resources/guides/mold/mold-protocol-documentation-guide",
     },
     {
       label: "Commercial Water Loss Documentation Guide",

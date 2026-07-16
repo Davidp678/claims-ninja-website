@@ -4062,6 +4062,110 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
+  // Mold Protocol Documentation Cornerstone (5)
+  {
+    id: "mold-protocol-definition",
+    category: "mold_claims",
+    question: "What is a mold remediation protocol?",
+    answer:
+      "A mold remediation protocol is a written work plan — often prepared by an industrial hygienist or environmental consultant — that defines affected areas, project objectives, containment expectations, removal and cleaning methods, contents handling, and completion or verification criteria. On insurance claims, the protocol becomes a controlling exhibit that carriers compare to contractor photos, logs, and estimates. See the Mold Protocol Documentation Guide for how contractors document work performed under a protocol.",
+    relatedLinks: [
+      {
+        label: "Mold Protocol Documentation Guide",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      { label: "Mold solutions", href: "/solutions/mold" },
+    ],
+  },
+  {
+    id: "mold-protocol-follow-exactly",
+    category: "mold_claims",
+    question: "Should contractors follow a mold protocol exactly?",
+    answer:
+      "Contractors should implement the written protocol and document compliance room by room. When field conditions differ — hidden mold, expanded contamination, moisture changes, or structural discoveries — document justified deviations with contemporaneous photos, a change log, and estimate updates rather than silently working outside the plan. Undocumented expansion is a common carrier reduction trigger even when the additional work was necessary.",
+    relatedLinks: [
+      {
+        label: "Mold Protocol Documentation Guide",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+    ],
+  },
+  {
+    id: "mold-protocol-change-documentation",
+    category: "mold_claims",
+    question: "How should protocol changes be documented?",
+    answer:
+      "Document every justified deviation the same day it appears: date-stamped discovery photos, a written deviation or change-log entry, moisture updates when relevant, notification records when required, and a change order or revised estimate page that cites the discovery exhibit. Pair change documentation with the original protocol PDF so desk reviewers can see what was written, what changed, and why.",
+    relatedLinks: [
+      {
+        label: "Mold Protocol Documentation Guide",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Claim Documentation Standards",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-protocol-supporting-documentation",
+    category: "mold_claims",
+    question: "What documentation should accompany a mold protocol?",
+    answer:
+      "Include the written protocol with version date and author, protocol interpretation notes, field condition alignment logs, containment and scope photo sequences, moisture readings, daily logs, equipment runtime records, laboratory reports when applicable, estimate narratives cross-referenced to protocol sections, and change documentation for deviations. Link production evidence from the Mold Remediation Documentation Guide and closeout exhibits from the Post-Remediation Verification Documentation Guide when the protocol specifies completion criteria.",
+    relatedLinks: [
+      {
+        label: "Mold Protocol Documentation Guide",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      {
+        label: "Post-Remediation Verification (PRV) Documentation Guide",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Claim Documentation Standards",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-protocol-field-conditions-differ",
+    category: "mold_claims",
+    question: "Can field conditions differ from the remediation protocol?",
+    answer:
+      "Yes. Field conditions often differ from a written protocol when hidden mold, expanded contamination, structural discoveries, or moisture changes appear during production. Document matches and differences in an alignment log with photo references, then issue change documentation for billed work outside the original plan. Differences are expected; undocumented differences are what carriers reduce.",
+    relatedLinks: [
+      {
+        label: "Mold Protocol Documentation Guide",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "How should hidden mold be documented?",
+        href: "/faq#faq-mold-hidden-damage-documentation",
+      },
+    ],
+  },
+
   // Mold Blog Bridge (5)
   {
     id: "mold-claims-underpaid-why",

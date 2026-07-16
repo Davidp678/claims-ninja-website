@@ -2187,6 +2187,75 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Clearance documentation FAQ; cross-link PRV and remediation guides.",
   },
+  "mold-protocol-definition": {
+    searchIntent: "informational",
+    relatedGuideSlugs: ["mold/mold-protocol-documentation-guide"],
+    relatedFaqIds: [
+      "mold-protocol-follow-exactly",
+      "mold-protocol-supporting-documentation",
+      "mold-protocol-field-conditions-differ",
+    ],
+    internalLinkNotes:
+      "Protocol definition FAQ; anchor for mold protocol documentation guide cluster.",
+  },
+  "mold-protocol-follow-exactly": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-protocol-documentation-guide",
+      "mold/mold-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-protocol-definition",
+      "mold-protocol-change-documentation",
+      "mold-protocol-field-conditions-differ",
+    ],
+    internalLinkNotes:
+      "Protocol compliance FAQ; cross-link change documentation and field condition FAQs.",
+  },
+  "mold-protocol-change-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-protocol-documentation-guide",
+      "mold/mold-remediation-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "mold-protocol-definition",
+      "mold-protocol-follow-exactly",
+      "mold-protocol-supporting-documentation",
+    ],
+    internalLinkNotes:
+      "Protocol change documentation FAQ; cross-link remediation and documentation standards.",
+  },
+  "mold-protocol-supporting-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-protocol-documentation-guide",
+      "mold/post-remediation-verification-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "mold-protocol-definition",
+      "mold-protocol-change-documentation",
+      "mold-prv-closeout-package",
+    ],
+    internalLinkNotes:
+      "Primary cornerstone FAQ; supporting documentation package for mold protocols.",
+  },
+  "mold-protocol-field-conditions-differ": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-protocol-documentation-guide",
+      "mold/mold-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-protocol-definition",
+      "mold-protocol-change-documentation",
+      "mold-hidden-damage-documentation",
+    ],
+    internalLinkNotes:
+      "Field conditions vs protocol FAQ; cross-link hidden mold and change documentation FAQs.",
+  },
   "mold-claims-underpaid-why": {
     searchIntent: "informational",
     relatedGuideSlugs: [

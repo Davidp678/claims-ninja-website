@@ -40,6 +40,7 @@ export const MOLD_REMEDIATION_DOCUMENTATION_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "post-remediation-verification-documentation-guide",
     "mold-damage-documentation-guide",
+    "mold-protocol-documentation-guide",
     "commercial-water-loss-documentation-guide",
     "category-3-water-damage-documentation-guide",
     "contents-inventory-documentation-guide",
@@ -623,6 +624,10 @@ export const MOLD_REMEDIATION_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Mold Damage Documentation Guide",
       href: "/resources/guides/mold/mold-damage-documentation-guide",
+    },
+    {
+      label: "Mold Protocol Documentation Guide",
+      href: "/resources/guides/mold/mold-protocol-documentation-guide",
     },
     {
       label: "Commercial Water Loss Documentation Guide",

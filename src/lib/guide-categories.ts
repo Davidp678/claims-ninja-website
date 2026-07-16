@@ -42,6 +42,7 @@ export const MOLD_HUB_ORDER = [
   "mold-damage-documentation-guide",
   "mold-remediation-documentation-guide",
   "post-remediation-verification-documentation-guide",
+  "mold-protocol-documentation-guide",
 ] as const;
 
 export const GUIDE_CATEGORY_BASE_PATH = "/resources/guides" as const;
@@ -115,10 +116,10 @@ export const GUIDE_CATEGORY_REGISTRY: readonly GuideCategory[] = [
     slug: "mold",
     name: "Mold",
     description:
-      "Follow the mold documentation lifecycle: moisture source evidence and growth mapping at assessment, production documentation during remediation, and post-remediation verification closeout packages for insurance claim submission on residential and commercial mold losses.",
+      "Follow the mold documentation lifecycle: moisture source evidence and growth mapping at assessment, production documentation during remediation, post-remediation verification closeout packages, and mold remediation protocol documentation for insurance claim submission on residential and commercial mold losses.",
     metaTitle: "Mold Claims Guides",
     metaDescription:
-      "Mold claim documentation guides for restoration contractors: moisture source evidence, remediation production documentation, post-remediation verification closeout, clearance documentation, and insurance submission standards.",
+      "Mold claim documentation guides for restoration contractors: moisture source evidence, remediation production documentation, post-remediation verification closeout, protocol documentation, clearance documentation, and insurance submission standards.",
     relatedBlogCategories: ["mold", "claim-documentation", "water-damage-claims"],
     relatedBlogPostSlugs: ["why-mold-insurance-claims-get-underpaid"],
     relatedSolutionPath: "/solutions/mold",

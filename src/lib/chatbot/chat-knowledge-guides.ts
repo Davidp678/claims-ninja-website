@@ -223,6 +223,30 @@ const GUIDE_SLUG_BOOSTS: Record<
     ],
     topics: ["mold_claims", "documentation", "mitigation"],
   },
+  "mold-protocol-documentation-guide": {
+    phrases: [
+      "mold protocol documentation guide",
+      "document mold remediation protocol",
+      "document mold remediation protocols",
+      "document a mold remediation protocol for insurance",
+      "how should contractors document mold remediation protocols",
+      "how should contractors document a mold remediation protocol",
+      "mold remediation protocol documentation",
+      "protocol documentation mold insurance",
+      "document work under mold protocol",
+      "mold protocol deviations documentation",
+      "protocol compliance mold claims",
+    ],
+    keywords: [
+      "mold protocol documentation",
+      "mold remediation protocol",
+      "mold remediation protocols",
+      "protocol deviations",
+      "protocol compliance mold",
+      "protocol estimate documentation",
+    ],
+    topics: ["mold_claims", "documentation", "mitigation"],
+  },
   "fire-code-upgrade-documentation-guide": {
     phrases: [
       "fire code upgrade documentation",

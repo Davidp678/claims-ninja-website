@@ -1025,6 +1025,53 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["clearance documentation mold", "mold clearance required"],
     topics: ["mold_claims"],
   },
+  "mold-protocol-definition": {
+    phrases: [
+      "what is a mold remediation protocol",
+      "what is a mold protocol",
+      "mold remediation protocol definition",
+    ],
+    keywords: ["mold remediation protocol", "mold protocol"],
+    topics: ["mold_claims"],
+  },
+  "mold-protocol-follow-exactly": {
+    phrases: [
+      "should contractors follow a mold protocol exactly",
+      "follow mold protocol exactly",
+      "mold protocol compliance contractors",
+    ],
+    keywords: ["follow mold protocol", "mold protocol compliance"],
+    topics: ["mold_claims"],
+  },
+  "mold-protocol-change-documentation": {
+    phrases: [
+      "how should protocol changes be documented",
+      "document mold protocol changes",
+      "protocol change documentation mold",
+    ],
+    keywords: ["protocol changes documentation", "mold protocol deviations"],
+    topics: ["mold_claims"],
+  },
+  "mold-protocol-supporting-documentation": {
+    phrases: [
+      "what documentation should accompany a mold protocol",
+      "documentation accompany mold protocol",
+      "mold protocol supporting documentation",
+      "how should contractors document mold remediation protocols for insurance",
+      "document mold remediation protocols for insurance",
+    ],
+    keywords: ["mold protocol documentation", "protocol supporting documentation"],
+    topics: ["mold_claims"],
+  },
+  "mold-protocol-field-conditions-differ": {
+    phrases: [
+      "can field conditions differ from the remediation protocol",
+      "field conditions differ from mold protocol",
+      "mold protocol field conditions",
+    ],
+    keywords: ["field conditions mold protocol", "protocol field conditions"],
+    topics: ["mold_claims"],
+  },
   "mold-claims-underpaid-why": {
     phrases: [
       "why are mold insurance claims underpaid",

@@ -2360,6 +2360,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "mold protocol guide question retrieves protocol documentation guide",
+    message: "How should contractors document mold remediation protocols for insurance?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-protocol-documentation-guide|mold-protocol-supporting-documentation|document mold remediation protocol/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold protocol definition FAQ retrieves protocol context",
+    message: "What is a mold remediation protocol?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-protocol-definition|mold-protocol-documentation-guide|mold remediation protocol/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold protocol follow exactly FAQ retrieves compliance context",
+    message: "Should contractors follow a mold protocol exactly?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-protocol-follow-exactly|follow a mold protocol exactly|mold-protocol-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold protocol change documentation FAQ retrieves change context",
+    message: "How should protocol changes be documented?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-protocol-change-documentation|protocol changes be documented|mold-protocol-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold protocol supporting documentation FAQ retrieves package context",
+    message: "What documentation should accompany a mold protocol?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-protocol-supporting-documentation|documentation should accompany a mold protocol|mold-protocol-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold protocol field conditions FAQ retrieves difference context",
+    message: "Can field conditions differ from the remediation protocol?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-protocol-field-conditions-differ|field conditions differ from the remediation protocol|mold-protocol-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "why mold insurance claims underpaid blog retrieves",
     message: "mold documentation mistakes contractors avoid underpaid",
     assert: (result) =>

@@ -4046,6 +4046,110 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Mold Protocol Documentation Cornerstone (5)
+  {
+    id: "mold-protocol-definition",
+    category: "mold_claims",
+    question: "¿Qué es un protocolo de remediación de moho?",
+    answer:
+      "Un protocolo de remediación de moho es un plan de trabajo escrito — a menudo preparado por un higienista industrial o consultor ambiental — que define las áreas afectadas, los objetivos del proyecto, las expectativas de contención, los métodos de remoción y limpieza, el manejo de contenidos y los criterios de finalización o verificación. En reclamaciones de seguros, el protocolo se convierte en un exhibición controladora que las aseguradoras comparan con fotos, registros y estimados del contratista. Consulte la Guía de documentación de protocolos de moho para documentar el trabajo realizado bajo un protocolo.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de protocolos de moho",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      { label: "Soluciones de moho", href: "/solutions/mold" },
+    ],
+  },
+  {
+    id: "mold-protocol-follow-exactly",
+    category: "mold_claims",
+    question: "¿Los contratistas deben seguir un protocolo de moho exactamente?",
+    answer:
+      "Los contratistas deben implementar el protocolo escrito y documentar el cumplimiento habitación por habitación. Cuando las condiciones de campo difieren — moho oculto, contaminación expandida, cambios de humedad o descubrimientos estructurales — documente desviaciones justificadas con fotos contemporáneas, un registro de cambios y actualizaciones del estimado en lugar de trabajar en silencio fuera del plan. La expansión no documentada es un desencadenante común de reducción por parte de la aseguradora incluso cuando el trabajo adicional era necesario.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de protocolos de moho",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+    ],
+  },
+  {
+    id: "mold-protocol-change-documentation",
+    category: "mold_claims",
+    question: "¿Cómo deben documentarse los cambios al protocolo?",
+    answer:
+      "Documente cada desviación justificada el mismo día en que aparece: fotos del descubrimiento con marca de tiempo, una entrada escrita en el registro de desviaciones o cambios, actualizaciones de humedad cuando corresponda, registros de notificación cuando se requieran, y una orden de cambio o página revisada del estimado que cite el exhibición del descubrimiento. Combine la documentación de cambios con el PDF original del protocolo para que los revisores de escritorio vean qué estaba escrito, qué cambió y por qué.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de protocolos de moho",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Estándares de documentación de reclamaciones",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-protocol-supporting-documentation",
+    category: "mold_claims",
+    question: "¿Qué documentación debe acompañar un protocolo de moho?",
+    answer:
+      "Incluya el protocolo escrito con fecha de versión y autor, notas de interpretación del protocolo, registros de alineación de condiciones de campo, secuencias de fotos de contención y alcance, lecturas de humedad, registros diarios, registros de tiempo de equipo, informes de laboratorio cuando corresponda, narrativas del estimado referenciadas a secciones del protocolo y documentación de cambios por desviaciones. Vincule la evidencia de producción de la Guía de documentación de remediación de moho y los exhibiciones de cierre de la Guía de documentación de verificación post-remediación cuando el protocolo especifique criterios de finalización.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de protocolos de moho",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de verificación post-remediación (PRV)",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Estándares de documentación de reclamaciones",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-protocol-field-conditions-differ",
+    category: "mold_claims",
+    question: "¿Pueden las condiciones de campo diferir del protocolo de remediación?",
+    answer:
+      "Sí. Las condiciones de campo a menudo difieren de un protocolo escrito cuando aparece moho oculto, contaminación expandida, descubrimientos estructurales o cambios de humedad durante la producción. Documente coincidencias y diferencias en un registro de alineación con referencias fotográficas, luego emita documentación de cambios para el trabajo facturado fuera del plan original. Las diferencias son esperadas; las diferencias no documentadas son las que las aseguradoras reducen.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de protocolos de moho",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "¿Cómo debe documentarse el moho oculto?",
+        href: "/faq#faq-mold-hidden-damage-documentation",
+      },
+    ],
+  },
+
   // Mold Blog Bridge (5)
   {
     id: "mold-claims-underpaid-why",

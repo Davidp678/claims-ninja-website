@@ -260,4 +260,9 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Estándar operativo para documentar verificación post-remediación y cierre de proyectos de moho en reclamaciones de seguros: registros de finalización del alcance, documentación de autorización, lecturas finales de humedad, fotos de cierre, cierre de registros de equipos, reconciliación de contenidos y paquetes de cierre listos para aseguradoras.",
   },
+  "mold/mold-protocol-documentation-guide": {
+    title: "Guía de documentación de protocolos de moho para contratistas",
+    excerpt:
+      "Estándar operativo para documentar protocolos de remediación de moho en reclamaciones de seguros: interpretar el alcance del protocolo, alinear condiciones de campo, documentar cumplimiento de contención y alcance, registrar desviaciones justificadas, traducir requisitos a estimados y empaquetar expedientes respaldados por protocolo.",
+  },
 };
