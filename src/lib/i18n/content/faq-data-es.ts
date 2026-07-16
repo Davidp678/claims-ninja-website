@@ -4364,6 +4364,113 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Mold Documentation Mistakes Blog (5)
+  {
+    id: "mold-common-documentation-mistakes",
+    category: "mold_claims",
+    question: "¿Cuáles son los errores de documentación de moho más comunes?",
+    answer:
+      "Los errores de documentación de moho más comunes son no documentar la fuente de humedad, conjuntos fotográficos deficientes de antes/durante/después, omitir lecturas y mapas de humedad, ignorar moho oculto en cavidades y ensamblajes, registros débiles de producción de remediación, cierre PRV ausente, desviaciones de protocolo sin documentar, índices comerciales desorganizados por edificio/piso/unidad, narrativas de estimado débiles y enviar paquetes incompletos demasiado pronto. Cada brecha es prevenible con evidencia contemporánea indexada por habitación.",
+    relatedLinks: [
+      {
+        label: "10 errores de documentación de moho que cuestan dinero a los contratistas",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "¿Puede la documentación deficiente reducir los pagos de seguro por moho?",
+        href: "/faq#faq-mold-poor-documentation-reduces-payment",
+      },
+    ],
+  },
+  {
+    id: "mold-poor-documentation-reduces-payment",
+    category: "mold_claims",
+    question: "¿Puede la documentación deficiente reducir los pagos de seguro por moho?",
+    answer:
+      "Sí. La documentación deficiente reduce los pagos de seguro por moho cuando las aseguradoras no pueden verificar la causalidad, la extensión del crecimiento, la producción de remediación o la verificación post-remediación. Fotos de fuente faltantes, rollos fotográficos escasos, lecturas de humedad ausentes, moho oculto sin documentar, registros diarios escasos y paquetes PRV incompletos producen revisiones demoradas, partidas disputadas y reducciones proporcionales — incluso cuando el trabajo de campo fue legítimo.",
+    relatedLinks: [
+      {
+        label: "10 errores de documentación de moho que cuestan dinero a los contratistas",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+      {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-moisture-readings-why-important",
+    category: "mold_claims",
+    question: "¿Por qué son importantes las lecturas de humedad en reclamaciones de moho?",
+    answer:
+      "Las lecturas de humedad son importantes en reclamaciones de moho porque separan la pérdida activa de condiciones históricas, respaldan el alcance de secado y remoción, y correlacionan el crecimiento con sustratos húmedos. Registros de medidores de pin y sin pin, lecturas de confirmación con imagen térmica, datos de higrómetro y mapas de humedad fechados dan a los revisores de escritorio evidencia objetiva: los expedientes sin lecturas invitan reducciones y disputas en partidas dependientes de humedad.",
+    relatedLinks: [
+      {
+        label: "10 errores de documentación de moho que cuestan dinero a los contratistas",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "¿Las lecturas de humedad ayudan a respaldar las reclamaciones de moho?",
+        href: "/faq#faq-mold-moisture-readings-settlement-support",
+      },
+    ],
+  },
+  {
+    id: "mold-claim-documentation-organization",
+    category: "mold_claims",
+    question: "¿Cómo deben los contratistas organizar la documentación de reclamaciones de moho?",
+    answer:
+      "Organice la documentación de reclamaciones de moho por habitación (o por edificio, piso y unidad en pérdidas comerciales) con convenciones de nomenclatura que coincidan con el croquis y el estimado. Indexe fotos por fase — antes, durante, después —, mantenga lecturas y mapas de humedad en las mismas carpetas de habitación, archive registros diarios de producción con evidencia de remediación y ensamble el cierre PRV como un solo paquete indexado. Etiquetas consistentes en fotos, registros, protocolo y narrativas de estimado permiten a los revisores de escritorio aprobar el alcance sin reconstruir la pérdida.",
+    relatedLinks: [
+      {
+        label: "10 errores de documentación de moho que cuestan dinero a los contratistas",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+      {
+        label: "Guía de reclamaciones comerciales de moho",
+        href: "/resources/guides/mold/commercial-mold-claims-guide",
+      },
+      {
+        label: "Estándares de documentación de reclamaciones",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-documentation-package-contents",
+    category: "mold_claims",
+    question: "¿Qué debe incluir un paquete de documentación de moho?",
+    answer:
+      "Un paquete completo de documentación de moho incluye evidencia de la fuente de humedad, fotos indexadas por habitación de antes/durante/después, lecturas y mapas de humedad, registros de investigación de moho oculto cuando se accede, documentación de producción de remediación (contención, remoción, limpieza, equipo, registros diarios), notas de protocolo y desviaciones cuando aplique, narrativas de estimado vinculadas a carpetas de evidencia, y cierre PRV con fotos finales, documentación de autorización y verificación de humedad. Envíe paquetes cuando el conjunto de evidencia coincida con la fase que se factura — no antes.",
+    relatedLinks: [
+      {
+        label: "10 errores de documentación de moho que cuestan dinero a los contratistas",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+      {
+        label: "Guía de documentación de verificación post-remediación (PRV)",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+
   // Contents Restoration (5)
   {
     id: "contents-pack-out",

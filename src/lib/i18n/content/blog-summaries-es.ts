@@ -29,6 +29,12 @@ export const BLOG_SUMMARIES_ES: Record<string, BlogSummary> = {
     excerpt:
       "Errores de documentación en reclamaciones de moho que provocan pagos insuficientes: evidencia débil de fuente de humedad, investigación incompleta de moho oculto, conjuntos fotográficos deficientes, lecturas de humedad inadecuadas, registros escasos de remediación, cierre PRV ausente y paquetes de suplemento desorganizados para contratistas de restauración.",
   },
+  "mold-documentation-mistakes": {
+    title:
+      "10 errores de documentación de moho que cuestan dinero a los contratistas en reclamaciones de seguro",
+    excerpt:
+      "10 errores de documentación de moho que cuestan dinero a los contratistas: evidencia ausente de fuente de humedad, conjuntos fotográficos deficientes, lecturas omitidas, moho oculto sin documentar, registros débiles de remediación y PRV, desviaciones de protocolo, archivos comerciales desorganizados, narrativas de estimación débiles y envío prematuro del paquete.",
+  },
 };
 
 export function getBlogSummaryEs(

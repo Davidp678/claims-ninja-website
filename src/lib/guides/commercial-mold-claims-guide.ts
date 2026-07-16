@@ -53,6 +53,7 @@ export const COMMERCIAL_MOLD_CLAIMS_GUIDE = defineGuide({
     "photo-documentation-standards-guide",
   ],
   relatedBlogSlugs: [
+    "mold-documentation-mistakes",
     "why-mold-insurance-claims-get-underpaid",
     "why-category-3-water-claims-get-underpaid",
     "documentation-gaps-that-trigger-water-claim-denials",
@@ -691,6 +692,10 @@ export const COMMERCIAL_MOLD_CLAIMS_GUIDE = defineGuide({
     {
       label: "Moisture Mapping Guide",
       href: "/resources/guides/water-damage/moisture-mapping-guide",
+    },
+    {
+      label: "10 Mold Documentation Mistakes That Cost Contractors Money",
+      href: "/resources/blog/mold-documentation-mistakes",
     },
     {
       label: "Why Mold Insurance Claims Get Underpaid",

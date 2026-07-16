@@ -263,15 +263,29 @@ const SLUG_BOOSTS: Record<
     phrases: [
       "why mold insurance claims get underpaid",
       "mold claim underpaid",
-      "mold documentation mistakes",
       "mold claim underpayment",
       "mold insurance underpaid documentation",
     ],
     keywords: [
       "mold claim underpaid",
-      "mold documentation mistakes",
       "mold insurance underpayment",
       "mold remediation documentation",
+    ],
+    topics: ["mold_claims", "documentation", "mitigation"],
+  },
+  "mold-documentation-mistakes": {
+    phrases: [
+      "mold documentation mistakes",
+      "10 mold documentation mistakes",
+      "mold documentation mistakes that cost contractors",
+      "mold claim documentation errors",
+      "costly mold documentation mistakes",
+    ],
+    keywords: [
+      "mold documentation mistakes",
+      "mold documentation errors",
+      "mold claim documentation mistakes",
+      "mold documentation package",
     ],
     topics: ["mold_claims", "documentation", "mitigation"],
   },

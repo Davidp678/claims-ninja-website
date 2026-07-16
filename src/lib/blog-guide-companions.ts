@@ -318,6 +318,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "post-remediation-verification-documentation-guide",
     ],
   },
+  "mold-documentation-mistakes": {
+    intro:
+      "You've learned which mold documentation mistakes cost contractors money. Now run the mold documentation lifecycle — damage assessment, remediation production, PRV closeout, and protocol alignment — so every file avoids those gaps.",
+    guideSlugs: [
+      "mold-damage-documentation-guide",
+      "mold-remediation-documentation-guide",
+      "post-remediation-verification-documentation-guide",
+      "mold-protocol-documentation-guide",
+    ],
+  },
 } as const satisfies Record<string, BlogGuideCompanionEntry>;
 
 export type BlogGuideCompanionSlug = keyof typeof BLOG_GUIDE_COMPANIONS;

@@ -122,7 +122,10 @@ export const GUIDE_CATEGORY_REGISTRY: readonly GuideCategory[] = [
     metaDescription:
       "Mold claim documentation guides for restoration contractors: commercial mold claim playbooks, moisture source evidence, remediation production documentation, post-remediation verification closeout, protocol documentation, and insurance submission standards.",
     relatedBlogCategories: ["mold", "claim-documentation", "water-damage-claims"],
-    relatedBlogPostSlugs: ["why-mold-insurance-claims-get-underpaid"],
+    relatedBlogPostSlugs: [
+      "mold-documentation-mistakes",
+      "why-mold-insurance-claims-get-underpaid",
+    ],
     relatedSolutionPath: "/solutions/mold",
   },
 ] as const;

@@ -51,6 +51,7 @@ export const MOLD_PROTOCOL_DOCUMENTATION_GUIDE = defineGuide({
     "dry-log-collection-guide",
   ],
   relatedBlogSlugs: [
+    "mold-documentation-mistakes",
     "why-mold-insurance-claims-get-underpaid",
     "documentation-gaps-that-trigger-water-claim-denials",
     "dry-log-documentation-guide-insurance-claims",
@@ -631,6 +632,10 @@ export const MOLD_PROTOCOL_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Dry Log Collection Procedure",
       href: "/resources/guides/water-damage/dry-log-collection-guide",
+    },
+    {
+      label: "10 Mold Documentation Mistakes That Cost Contractors Money",
+      href: "/resources/blog/mold-documentation-mistakes",
     },
     {
       label: "Why Mold Insurance Claims Get Underpaid",

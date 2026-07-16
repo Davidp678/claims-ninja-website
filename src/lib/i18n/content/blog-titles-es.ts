@@ -55,6 +55,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Por qué se rechazan los suplementos por daños de fuego: 12 errores de documentación y alcance que los contratistas pueden prevenir",
   "why-mold-insurance-claims-get-underpaid":
     "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes: 10 errores de documentación que los contratistas pueden evitar",
+  "mold-documentation-mistakes":
+    "10 errores de documentación de moho que cuestan dinero a los contratistas en reclamaciones de seguro",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

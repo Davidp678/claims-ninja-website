@@ -4380,6 +4380,113 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
+  // Mold Documentation Mistakes Blog (5)
+  {
+    id: "mold-common-documentation-mistakes",
+    category: "mold_claims",
+    question: "What are the most common mold documentation mistakes?",
+    answer:
+      "The most common mold documentation mistakes are failing to document the moisture source, poor before/during/after photo sets, skipping moisture readings and mapping, ignoring hidden mold in cavities and assemblies, weak remediation production records, missing PRV closeout, undocumented protocol deviations, disorganized commercial building/floor/unit indexes, weak estimate narratives, and submitting incomplete packages too early. Each gap is preventable with contemporaneous, room-indexed evidence.",
+    relatedLinks: [
+      {
+        label: "10 mold documentation mistakes that cost contractors money",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Can poor documentation reduce mold insurance payments?",
+        href: "/faq#faq-mold-poor-documentation-reduces-payment",
+      },
+    ],
+  },
+  {
+    id: "mold-poor-documentation-reduces-payment",
+    category: "mold_claims",
+    question: "Can poor documentation reduce mold insurance payments?",
+    answer:
+      "Yes. Poor documentation reduces mold insurance payments when carriers cannot verify causation, growth extent, remediation production, or post-remediation verification. Missing source photos, thin photo rolls, absent moisture readings, undocumented hidden mold, sparse daily logs, and incomplete PRV packages produce delayed review, disputed lines, and proportional reductions — even when the field work itself was legitimate.",
+    relatedLinks: [
+      {
+        label: "10 mold documentation mistakes that cost contractors money",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+      {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-moisture-readings-why-important",
+    category: "mold_claims",
+    question: "Why are moisture readings important on mold claims?",
+    answer:
+      "Moisture readings are important on mold claims because they separate active loss from historical conditions, support drying and removal scope, and correlate growth to wet substrates. Pin and pinless meter logs, confirmatory readings with thermal imaging, hygrometer data, and dated moisture maps give desk reviewers objective evidence — files without readings invite reductions and disputes on moisture-dependent line items.",
+    relatedLinks: [
+      {
+        label: "10 mold documentation mistakes that cost contractors money",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Do moisture readings help support mold claims?",
+        href: "/faq#faq-mold-moisture-readings-settlement-support",
+      },
+    ],
+  },
+  {
+    id: "mold-claim-documentation-organization",
+    category: "mold_claims",
+    question: "How should contractors organize mold claim documentation?",
+    answer:
+      "Organize mold claim documentation by room (or by building, floor, and unit on commercial losses) with naming conventions that match the sketch and estimate. Index photos by phase — before, during, after — keep moisture readings and maps in the same room folders, file daily production logs with remediation evidence, and assemble PRV closeout as a single indexed package. Consistent labels across photos, logs, protocol, and estimate narratives let desk reviewers approve scope without reconstructing the loss.",
+    relatedLinks: [
+      {
+        label: "10 mold documentation mistakes that cost contractors money",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+      {
+        label: "Commercial Mold Claims Guide",
+        href: "/resources/guides/mold/commercial-mold-claims-guide",
+      },
+      {
+        label: "Claim Documentation Standards",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-documentation-package-contents",
+    category: "mold_claims",
+    question: "What should be included in a mold documentation package?",
+    answer:
+      "A complete mold documentation package includes moisture source evidence, room-indexed before/during/after photos, moisture readings and maps, hidden mold investigation records when accessed, remediation production documentation (containment, removal, cleaning, equipment, daily logs), protocol and deviation notes when applicable, estimate narratives tied to evidence folders, and PRV closeout with final photos, clearance documentation, and moisture verification. Submit packages when the evidence set matches the phase being billed — not before.",
+    relatedLinks: [
+      {
+        label: "10 mold documentation mistakes that cost contractors money",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+      {
+        label: "Post-Remediation Verification Documentation Guide",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+
   // Contents Restoration (5)
   {
     id: "contents-pack-out",

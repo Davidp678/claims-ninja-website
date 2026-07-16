@@ -1197,6 +1197,66 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["mold settlement documentation", "mold documentation settlement"],
     topics: ["mold_claims", "documentation"],
   },
+  "mold-common-documentation-mistakes": {
+    phrases: [
+      "what are the most common mold documentation mistakes",
+      "most common mold documentation mistakes",
+      "common mold documentation mistakes",
+    ],
+    keywords: [
+      "common mold documentation mistakes",
+      "mold documentation mistakes common",
+    ],
+    topics: ["mold_claims", "documentation"],
+  },
+  "mold-poor-documentation-reduces-payment": {
+    phrases: [
+      "can poor documentation reduce mold insurance payments",
+      "poor documentation reduce mold payments",
+      "poor mold documentation reduces payment",
+    ],
+    keywords: [
+      "poor mold documentation",
+      "mold documentation reduce payment",
+    ],
+    topics: ["mold_claims", "documentation"],
+  },
+  "mold-moisture-readings-why-important": {
+    phrases: [
+      "why are moisture readings important on mold claims",
+      "why moisture readings important mold claims",
+      "moisture readings important on mold claims",
+    ],
+    keywords: [
+      "moisture readings mold claims important",
+      "why moisture readings mold",
+    ],
+    topics: ["mold_claims", "documentation", "mitigation"],
+  },
+  "mold-claim-documentation-organization": {
+    phrases: [
+      "how should contractors organize mold claim documentation",
+      "organize mold claim documentation",
+      "mold claim documentation organization",
+    ],
+    keywords: [
+      "organize mold documentation",
+      "mold claim documentation organization",
+    ],
+    topics: ["mold_claims", "documentation"],
+  },
+  "mold-documentation-package-contents": {
+    phrases: [
+      "what should be included in a mold documentation package",
+      "mold documentation package contents",
+      "what to include in mold documentation package",
+    ],
+    keywords: [
+      "mold documentation package",
+      "mold documentation package contents",
+    ],
+    topics: ["mold_claims", "documentation"],
+  },
   "smoke-damage-documentation-insurance": {
     phrases: [
       "how should smoke damage be documented for insurance",

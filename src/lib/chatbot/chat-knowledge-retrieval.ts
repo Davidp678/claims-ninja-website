@@ -2493,11 +2493,22 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
   },
   {
     label: "why mold insurance claims underpaid blog retrieves",
-    message: "mold documentation mistakes contractors avoid underpaid",
+    message: "why mold insurance claims get underpaid documentation",
     assert: (result) =>
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /why-mold-insurance-claims-get-underpaid|Why Mold Insurance Claims Get Underpaid/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold documentation mistakes blog retrieves",
+    message: "mold documentation mistakes contractors avoid underpaid",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-documentation-mistakes|10 Mold Documentation Mistakes/i.test(
           `${s.text} ${s.source}`,
         ),
       ),
@@ -2508,7 +2519,7 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
     assert: (result) =>
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
-        /blog-category-mold|mold claim documentation|Why Mold Insurance Claims Get Underpaid/i.test(
+        /blog-category-mold|mold claim documentation|Why Mold Insurance Claims Get Underpaid|mold-documentation-mistakes/i.test(
           `${s.text} ${s.source}`,
         ),
       ),
@@ -2520,6 +2531,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /mold-claims-underpaid-why|Why are mold insurance claims underpaid/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold common documentation mistakes FAQ retrieves",
+    message: "what are the most common mold documentation mistakes",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-common-documentation-mistakes|most common mold documentation mistakes|mold-documentation-mistakes/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold poor documentation reduces payment FAQ retrieves",
+    message: "can poor documentation reduce mold insurance payments",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-poor-documentation-reduces-payment|poor documentation reduce mold|mold-documentation-mistakes/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold moisture readings why important FAQ retrieves",
+    message: "why are moisture readings important on mold claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-moisture-readings-why-important|moisture readings important on mold|mold-documentation-mistakes/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold claim documentation organization FAQ retrieves",
+    message: "how should contractors organize mold claim documentation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-claim-documentation-organization|organize mold claim documentation|mold-documentation-mistakes/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold documentation package contents FAQ retrieves",
+    message: "what should be included in a mold documentation package",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-documentation-package-contents|mold documentation package|mold-documentation-mistakes/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

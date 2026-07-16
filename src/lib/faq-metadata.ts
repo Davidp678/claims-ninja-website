@@ -2396,6 +2396,79 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Blog bridge FAQ; documentation that improves mold insurance settlements.",
   },
+  "mold-common-documentation-mistakes": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "mold/mold-remediation-documentation-guide",
+      "mold/post-remediation-verification-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-poor-documentation-reduces-payment",
+      "mold-documentation-package-contents",
+      "mold-claim-documentation-organization",
+    ],
+    internalLinkNotes:
+      "Mold documentation mistakes blog bridge FAQ; common contractor documentation errors.",
+  },
+  "mold-poor-documentation-reduces-payment": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "mold/mold-remediation-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-common-documentation-mistakes",
+      "mold-claims-underpaid-why",
+      "mold-documentation-affects-claim-outcomes",
+    ],
+    internalLinkNotes:
+      "Mold documentation mistakes blog bridge FAQ; payment impact of poor documentation.",
+  },
+  "mold-moisture-readings-why-important": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "water-damage/moisture-mapping-guide",
+    ],
+    relatedFaqIds: [
+      "mold-moisture-readings-settlement-support",
+      "mold-moisture-readings-support",
+      "mold-common-documentation-mistakes",
+    ],
+    internalLinkNotes:
+      "Mold documentation mistakes blog bridge FAQ; why moisture readings matter on mold claims.",
+  },
+  "mold-claim-documentation-organization": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/commercial-mold-claims-guide",
+      "mold/mold-damage-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "mold-documentation-package-contents",
+      "mold-commercial-documentation-organization",
+      "mold-common-documentation-mistakes",
+    ],
+    internalLinkNotes:
+      "Mold documentation mistakes blog bridge FAQ; organizing mold claim documentation.",
+  },
+  "mold-documentation-package-contents": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "mold/mold-remediation-documentation-guide",
+      "mold/post-remediation-verification-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-claim-documentation-organization",
+      "mold-prv-closeout-package",
+      "mold-common-documentation-mistakes",
+    ],
+    internalLinkNotes:
+      "Mold documentation mistakes blog bridge FAQ; what belongs in a mold documentation package.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {
