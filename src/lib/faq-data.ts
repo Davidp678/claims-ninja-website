@@ -4702,6 +4702,118 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
+  // Why Mold Supplements Get Denied FAQs (5)
+  {
+    id: "mold-supplement-denied-why",
+    category: "mold_claims",
+    question: "Why are mold supplements denied?",
+    answer:
+      "Mold supplements are denied when documentation does not support billed scope — missing moisture source evidence, weak or unlabeled photos, absent protocol and containment records, unsupported remediation and equipment charges, incomplete PRV or IAQ closeout, disorganized estimates, or incomplete responses to carrier RFIs. Desk reviewers approve scope they can verify; unverifiable lines get denied or reduced proportionally even when field work was legitimate.",
+    relatedLinks: [
+      {
+        label: "Why Mold Supplements Get Denied",
+        href: "/resources/blog/why-mold-supplements-get-denied",
+      },
+      {
+        label: "Mold Claim Documentation Checklist",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "Mold Supplement Playbook for Contractors",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-denial-documentation-gaps",
+    category: "mold_claims",
+    question: "Can documentation gaps cause a mold supplement denial?",
+    answer:
+      "Yes. Documentation gaps are the leading cause of mold supplement denials and proportional reductions. Missing moisture source packages, unlabeled photos, undocumented containment, equipment days without run logs, reconstructed daily notes, absent protocol excerpts, incomplete PRV or IAQ closeout, and packages without attachment-to-line-item indexes each give desk reviewers reason to deny unsupported scope — even when coverage exists for the damage type.",
+    relatedLinks: [
+      {
+        label: "Why Mold Supplements Get Denied",
+        href: "/resources/blog/why-mold-supplements-get-denied",
+      },
+      {
+        label: "Mold Claim Documentation Checklist",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "What documents should contractors include with a mold insurance supplement?",
+        href: "/faq#faq-mold-supplement-checklist-documents",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-denial-carrier-objections",
+    category: "mold_claims",
+    question:
+      "How should contractors respond to carrier objections on mold supplements?",
+    answer:
+      "Review each stated objection or RFI line by line, identify the documentation gap, and resubmit with targeted evidence — revised estimate, room-labeled photo index, moisture source package, containment and equipment logs, protocol excerpts, PRV or IAQ exhibits, and a cover letter mapping new attachments to denied line numbers. Address every carrier question with named exhibits rather than resubmitting the same package. Professional tone and complete first responses recover more scope than volume of correspondence.",
+    relatedLinks: [
+      {
+        label: "Why Mold Supplements Get Denied",
+        href: "/resources/blog/why-mold-supplements-get-denied",
+      },
+      {
+        label: "Mold Supplement Playbook for Contractors",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Why do carriers request additional documentation during mold claims?",
+        href: "/faq#faq-mold-carrier-additional-documentation-why",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-denial-estimate-support",
+    category: "mold_claims",
+    question: "How should estimate support be organized on mold supplements?",
+    answer:
+      "Organize the Xactimate estimate by phase and room — moisture investigation, containment, removal, cleaning, equipment, and PRV/IAQ closeout — with room-name parity across sketch, photos, moisture maps, and line items. Write narratives for protocol-driven and non-obvious methods, and include a cover letter indexing every attachment to specific estimate line numbers. Disorganized estimates cause reviewers to drop lines rather than reconcile gaps, even when field evidence exists.",
+    relatedLinks: [
+      {
+        label: "Why Mold Supplements Get Denied",
+        href: "/resources/blog/why-mold-supplements-get-denied",
+      },
+      {
+        label: "Mold Supplement Playbook for Contractors",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "What should be included in a mold damage supplement?",
+        href: "/faq#faq-mold-supplement-included-items",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-denial-reinspection",
+    category: "mold_claims",
+    question: "When is reinspection appropriate on mold supplements?",
+    answer:
+      "Use reinspection when site facts still require verification — disputed moisture extent, cavity conditions photos cannot fully convey, containment or equipment placement questions, or clearance conditions the adjuster wants to confirm in person. Fix missing paperwork and index gaps with a documentation resubmission first. Prepare room lists, moisture maps, photo indexes, and open questions before the visit, and capture labeled supplemental photos the same day.",
+    relatedLinks: [
+      {
+        label: "Why Mold Supplements Get Denied",
+        href: "/resources/blog/why-mold-supplements-get-denied",
+      },
+      {
+        label: "Mold Supplement Playbook for Contractors",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Mold Claim Documentation Checklist",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+    ],
+  },
+
   // Mold Supplement Playbook FAQs (5)
   {
     id: "mold-supplement-included-items",

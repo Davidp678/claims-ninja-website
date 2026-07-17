@@ -2612,6 +2612,75 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Carrier RFI FAQ; explains incomplete mold packages that trigger additional documentation requests.",
   },
+  "mold-supplement-denied-why": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: [
+      "mold/mold-supplement-playbook-for-contractors",
+      "mold/mold-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-supplement-denial-documentation-gaps",
+      "mold-supplement-denial-carrier-objections",
+      "mold-supplement-denial-estimate-support",
+    ],
+    internalLinkNotes:
+      "Primary denial causes FAQ; anchor for why-mold-supplements-get-denied blog.",
+  },
+  "mold-supplement-denial-documentation-gaps": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "mold/mold-supplement-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "mold-supplement-checklist-documents",
+      "mold-supplement-denied-why",
+      "mold-common-documentation-mistakes",
+    ],
+    internalLinkNotes:
+      "Documentation gaps denial FAQ; bridge to checklist and denial blog.",
+  },
+  "mold-supplement-denial-carrier-objections": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "mold/mold-supplement-playbook-for-contractors",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "mold-supplement-denied-why",
+      "mold-carrier-additional-documentation-why",
+      "mold-supplement-denial-reinspection",
+    ],
+    internalLinkNotes:
+      "Carrier objection response FAQ; professional RFI and resubmission guidance.",
+  },
+  "mold-supplement-denial-estimate-support": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-supplement-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "mold-supplement-included-items",
+      "mold-supplement-denied-why",
+      "mold-supplement-documentation-evidence",
+    ],
+    internalLinkNotes:
+      "Estimate organization FAQ; phase/room structure and cover-letter indexing.",
+  },
+  "mold-supplement-denial-reinspection": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "mold/mold-supplement-playbook-for-contractors",
+      "mold/mold-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-supplement-denied-why",
+      "mold-supplement-denial-carrier-objections",
+      "mold-supplement-checklist-documents",
+    ],
+    internalLinkNotes:
+      "Reinspection timing FAQ; when site verification helps vs documentation-only resubmission.",
+  },
   "mold-supplement-included-items": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [

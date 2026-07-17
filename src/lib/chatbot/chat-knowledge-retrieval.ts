@@ -2729,6 +2729,73 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "why mold supplements get denied blog retrieves",
+    message: "why mold supplements get denied documentation gaps",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /why-mold-supplements-get-denied|Why Mold Supplements Get Denied/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold supplement denied why FAQ retrieves",
+    message: "why are mold supplements denied",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-denied-why|Why are mold supplements denied|why-mold-supplements-get-denied/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold supplement denial documentation gaps FAQ retrieves",
+    message: "can documentation gaps cause a mold supplement denial",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-denial-documentation-gaps|documentation gaps cause a mold supplement denial|why-mold-supplements-get-denied/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold supplement denial carrier objections FAQ retrieves",
+    message:
+      "how should contractors respond to carrier objections on mold supplements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-denial-carrier-objections|carrier objections on mold supplements|why-mold-supplements-get-denied/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold supplement denial estimate support FAQ retrieves",
+    message: "how should estimate support be organized on mold supplements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-denial-estimate-support|estimate support be organized on mold|why-mold-supplements-get-denied/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold supplement denial reinspection FAQ retrieves",
+    message: "when is reinspection appropriate on mold supplements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-denial-reinspection|reinspection appropriate on mold supplements|why-mold-supplements-get-denied/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "mold supplement playbook retrieves guide",
     message: "mold supplement playbook for contractors",
     assert: (result) =>

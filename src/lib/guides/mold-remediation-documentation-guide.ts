@@ -55,6 +55,7 @@ export const MOLD_REMEDIATION_DOCUMENTATION_GUIDE = defineGuide({
     "commercial-fire-claims-guide",
   ],
   relatedBlogSlugs: [
+    "why-mold-supplements-get-denied",
     "mold-claim-documentation-checklist",
     "mold-documentation-mistakes",
     "why-mold-insurance-claims-get-underpaid",

@@ -53,6 +53,7 @@ export const MOLD_PROTOCOL_DOCUMENTATION_GUIDE = defineGuide({
     "dry-log-collection-guide",
   ],
   relatedBlogSlugs: [
+    "why-mold-supplements-get-denied",
     "mold-claim-documentation-checklist",
     "mold-documentation-mistakes",
     "why-mold-insurance-claims-get-underpaid",

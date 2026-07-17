@@ -54,6 +54,7 @@ export const MOLD_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
     "category-class-documentation-guide",
   ],
   relatedBlogSlugs: [
+    "why-mold-supplements-get-denied",
     "mold-claim-documentation-checklist",
     "mold-documentation-mistakes",
     "why-mold-insurance-claims-get-underpaid",

@@ -305,6 +305,22 @@ const SLUG_BOOSTS: Record<
     ],
     topics: ["mold_claims", "documentation", "supplements"],
   },
+  "why-mold-supplements-get-denied": {
+    phrases: [
+      "why mold supplements denied",
+      "mold supplement denial reasons",
+      "why mold supplements get denied",
+      "mold supplement documentation gaps",
+      "mold supplement denied documentation",
+    ],
+    keywords: [
+      "mold supplement denied",
+      "mold supplement denial",
+      "mold supplement denials",
+      "mold supplement approval",
+    ],
+    topics: ["mold_claims", "denial_recovery", "documentation", "supplements"],
+  },
   "how-carriers-reduce-drying-days": {
     phrases: ["carriers reduce drying days", "drying day reductions", "drying days cut"],
     keywords: ["drying day", "drying days", "reduce drying", "equipment days"],

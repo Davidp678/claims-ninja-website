@@ -57,6 +57,7 @@ export const MOLD_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     "carrier-estimate-review-guide",
   ],
   relatedBlogSlugs: [
+    "why-mold-supplements-get-denied",
     "mold-claim-documentation-checklist",
     "why-mold-insurance-claims-get-underpaid",
     "mold-documentation-mistakes",

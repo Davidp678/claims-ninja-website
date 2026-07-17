@@ -4686,6 +4686,121 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Why Mold Supplements Get Denied FAQs (5)
+  {
+    id: "mold-supplement-denied-why",
+    category: "mold_claims",
+    question: "¿Por qué se deniegan los suplementos por moho?",
+    answer:
+      "Los suplementos por moho se deniegan cuando la documentación no respalda el alcance facturado — evidencia ausente de fuente de humedad, fotos débiles o sin etiquetar, registros de protocolo y contención ausentes, cargos de remediación y equipo sin respaldo, cierre PRV o IAQ incompleto, estimados desorganizados o respuestas incompletas a RFIs de la aseguradora. Los revisores de escritorio aprueban el alcance que pueden verificar; las partidas no verificables se deniegan o se reducen proporcionalmente aunque el trabajo de campo haya sido legítimo.",
+    relatedLinks: [
+      {
+        label: "Por qué se deniegan los suplementos por moho",
+        href: "/resources/blog/why-mold-supplements-get-denied",
+      },
+      {
+        label: "Lista de verificación de documentación de reclamaciones por moho",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "Manual de suplementos por moho para contratistas",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-denial-documentation-gaps",
+    category: "mold_claims",
+    question:
+      "¿Pueden las brechas de documentación causar la denegación de un suplemento por moho?",
+    answer:
+      "Sí. Las brechas de documentación son la causa principal de denegaciones y reducciones proporcionales en suplementos por moho. Paquetes de fuente de humedad ausentes, fotos sin etiquetar, contención sin documentar, días de equipo sin registros de operación, notas diarias reconstruidas, extractos de protocolo ausentes, cierre PRV o IAQ incompleto y paquetes sin índices de anexos a partidas dan a los revisores motivo para denegar alcance sin respaldo — incluso cuando existe cobertura para el tipo de daño.",
+    relatedLinks: [
+      {
+        label: "Por qué se deniegan los suplementos por moho",
+        href: "/resources/blog/why-mold-supplements-get-denied",
+      },
+      {
+        label: "Lista de verificación de documentación de reclamaciones por moho",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "¿Qué documentos deben incluir los contratistas con un suplemento de seguro por moho?",
+        href: "/faq#faq-mold-supplement-checklist-documents",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-denial-carrier-objections",
+    category: "mold_claims",
+    question:
+      "¿Cómo deben responder los contratistas a las objeciones de la aseguradora en suplementos por moho?",
+    answer:
+      "Revise cada objeción o RFI línea por línea, identifique la brecha de documentación y reenvíe con evidencia dirigida — estimado revisado, índice fotográfico etiquetado por habitación, paquete de fuente de humedad, registros de contención y equipo, extractos de protocolo, exhibiciones PRV o IAQ, y una carta de presentación que mapee los nuevos anexos a los números de partida denegados. Responda cada pregunta de la aseguradora con exhibiciones nombradas en lugar de reenviar el mismo paquete. Un tono profesional y respuestas completas a la primera recuperan más alcance que el volumen de correspondencia.",
+    relatedLinks: [
+      {
+        label: "Por qué se deniegan los suplementos por moho",
+        href: "/resources/blog/why-mold-supplements-get-denied",
+      },
+      {
+        label: "Manual de suplementos por moho para contratistas",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "¿Por qué las aseguradoras solicitan documentación adicional durante las reclamaciones por moho?",
+        href: "/faq#faq-mold-carrier-additional-documentation-why",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-denial-estimate-support",
+    category: "mold_claims",
+    question:
+      "¿Cómo debe organizarse el respaldo del estimado en suplementos por moho?",
+    answer:
+      "Organice el estimado Xactimate por fase y habitación — investigación de humedad, contención, remoción, limpieza, equipo y cierre PRV/IAQ — con paridad de nombres de habitación entre croquis, fotos, mapas de humedad y partidas. Redacte narrativas para métodos impulsados por protocolo y no obvios, e incluya una carta de presentación que indexe cada anexo a números de partida específicos. Los estimados desorganizados hacen que los revisores eliminen partidas en lugar de reconciliar brechas, aunque exista evidencia de campo.",
+    relatedLinks: [
+      {
+        label: "Por qué se deniegan los suplementos por moho",
+        href: "/resources/blog/why-mold-supplements-get-denied",
+      },
+      {
+        label: "Manual de suplementos por moho para contratistas",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "¿Qué debe incluirse en un suplemento por daños de moho?",
+        href: "/faq#faq-mold-supplement-included-items",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-denial-reinspection",
+    category: "mold_claims",
+    question:
+      "¿Cuándo es apropiada una reinspección en suplementos por moho?",
+    answer:
+      "Use la reinspección cuando los hechos del sitio aún requieran verificación — extensión de humedad disputada, condiciones de cavidades que las fotos no transmiten por completo, preguntas sobre colocación de contención o equipo, o condiciones de liberación que el ajustador quiere confirmar en persona. Corrija primero la documentación faltante y las brechas de índice con un reenvío documental. Prepare listas de habitaciones, mapas de humedad, índices fotográficos y preguntas abiertas antes de la visita, y capture fotos suplementarias etiquetadas el mismo día.",
+    relatedLinks: [
+      {
+        label: "Por qué se deniegan los suplementos por moho",
+        href: "/resources/blog/why-mold-supplements-get-denied",
+      },
+      {
+        label: "Manual de suplementos por moho para contratistas",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Lista de verificación de documentación de reclamaciones por moho",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+    ],
+  },
+
   // Mold Supplement Playbook FAQs (5)
   {
     id: "mold-supplement-included-items",

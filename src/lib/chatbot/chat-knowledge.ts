@@ -1444,6 +1444,72 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["mold_claims", "documentation", "carrier_review"],
   },
+  "mold-supplement-denied-why": {
+    phrases: [
+      "why are mold supplements denied",
+      "why mold supplements get denied",
+      "mold supplement denial reasons",
+      "why mold damage supplements denied",
+    ],
+    keywords: [
+      "mold supplement denied",
+      "mold supplement denial",
+      "mold supplements denied",
+    ],
+    topics: ["mold_claims", "denial_recovery", "documentation", "supplements"],
+  },
+  "mold-supplement-denial-documentation-gaps": {
+    phrases: [
+      "can documentation gaps cause a mold supplement denial",
+      "documentation gaps mold supplement denial",
+      "missing documentation mold supplement denied",
+    ],
+    keywords: [
+      "mold documentation gaps",
+      "mold supplement documentation gaps",
+      "missing mold documentation denial",
+    ],
+    topics: ["mold_claims", "documentation", "denial_recovery"],
+  },
+  "mold-supplement-denial-carrier-objections": {
+    phrases: [
+      "how should contractors respond to carrier objections on mold supplements",
+      "carrier objections mold supplements",
+      "respond to mold supplement RFI",
+    ],
+    keywords: [
+      "mold carrier objections",
+      "mold supplement RFI",
+      "mold supplement carrier response",
+    ],
+    topics: ["mold_claims", "carrier_review", "denial_recovery"],
+  },
+  "mold-supplement-denial-estimate-support": {
+    phrases: [
+      "how should estimate support be organized on mold supplements",
+      "mold supplement estimate organization",
+      "organize mold estimate for supplement",
+    ],
+    keywords: [
+      "mold estimate support",
+      "mold estimate organization",
+      "mold supplement estimate",
+    ],
+    topics: ["mold_claims", "documentation", "supplements"],
+  },
+  "mold-supplement-denial-reinspection": {
+    phrases: [
+      "when is reinspection appropriate on mold supplements",
+      "mold supplement reinspection",
+      "when to request mold reinspection",
+    ],
+    keywords: [
+      "mold reinspection",
+      "mold supplement reinspection",
+      "mold reinspection appropriate",
+    ],
+    topics: ["mold_claims", "carrier_review", "denial_recovery"],
+  },
   "smoke-damage-documentation-insurance": {
     phrases: [
       "how should smoke damage be documented for insurance",

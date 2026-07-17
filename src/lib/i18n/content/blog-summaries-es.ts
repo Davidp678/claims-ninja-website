@@ -41,6 +41,12 @@ export const BLOG_SUMMARIES_ES: Record<string, BlogSummary> = {
     excerpt:
       "Lista de verificación de documentación de reclamaciones por moho para suplementos de seguro: preparación previa, evidencia de fuente de humedad, fotos iniciales, mapeo de humedad, contención, equipos, registros diarios, progreso de secado y remediación, cierre PRV y paquete final de envío para equipos de restauración.",
   },
+  "why-mold-supplements-get-denied": {
+    title:
+      "Por qué se deniegan los suplementos por moho: brechas de documentación que reducen las tasas de aprobación",
+    excerpt:
+      "Por qué se deniegan los suplementos por moho: evidencia ausente de fuente de humedad, fotos débiles, registros de protocolo y contención ausentes, remediación y cierre PRV/IAQ sin respaldo, cargos de equipo sin registros, estimados desorganizados y errores de comunicación con la aseguradora — y cómo los contratistas mejoran las tasas de aprobación.",
+  },
 };
 
 export function getBlogSummaryEs(

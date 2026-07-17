@@ -55,6 +55,7 @@ export const COMMERCIAL_MOLD_CLAIMS_GUIDE = defineGuide({
     "photo-documentation-standards-guide",
   ],
   relatedBlogSlugs: [
+    "why-mold-supplements-get-denied",
     "mold-claim-documentation-checklist",
     "mold-documentation-mistakes",
     "why-mold-insurance-claims-get-underpaid",

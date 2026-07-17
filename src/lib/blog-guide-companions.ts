@@ -338,6 +338,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "indoor-air-quality-testing-documentation-guide",
     ],
   },
+  "why-mold-supplements-get-denied": {
+    intro:
+      "You've learned why mold supplements get denied. Now run the Mold Supplement Playbook as your operational hub — then apply damage, remediation, and PRV documentation standards so every file closes the gaps that trigger denials.",
+    guideSlugs: [
+      "mold-supplement-playbook-for-contractors",
+      "mold-damage-documentation-guide",
+      "mold-remediation-documentation-guide",
+      "post-remediation-verification-documentation-guide",
+    ],
+  },
 } as const satisfies Record<string, BlogGuideCompanionEntry>;
 
 export type BlogGuideCompanionSlug = keyof typeof BLOG_GUIDE_COMPANIONS;

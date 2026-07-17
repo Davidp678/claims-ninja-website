@@ -28,6 +28,7 @@ export const moldClaimDocumentationChecklist: BlogPost = {
   seoDescription:
     "Contractor checklist for mold insurance claim documentation: moisture source, photos, moisture maps, containment, equipment, daily progress, PRV, and final submission package before supplement.",
   relatedPostSlugs: [
+    "why-mold-supplements-get-denied",
     "mold-documentation-mistakes",
     "why-mold-insurance-claims-get-underpaid",
     "moisture-mapping-mistakes-that-cost-contractors-money",
