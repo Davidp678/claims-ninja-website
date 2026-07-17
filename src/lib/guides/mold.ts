@@ -1,4 +1,5 @@
 import { COMMERCIAL_MOLD_CLAIMS_GUIDE } from "@/lib/guides/commercial-mold-claims-guide";
+import { INDOOR_AIR_QUALITY_TESTING_DOCUMENTATION_GUIDE } from "@/lib/guides/indoor-air-quality-testing-documentation-guide";
 import { MOLD_DAMAGE_DOCUMENTATION_GUIDE } from "@/lib/guides/mold-damage-documentation-guide";
 import { MOLD_PROTOCOL_DOCUMENTATION_GUIDE } from "@/lib/guides/mold-protocol-documentation-guide";
 import { MOLD_REMEDIATION_DOCUMENTATION_GUIDE } from "@/lib/guides/mold-remediation-documentation-guide";
@@ -13,4 +14,5 @@ export const MOLD_GUIDES: readonly Guide[] = [
   MOLD_REMEDIATION_DOCUMENTATION_GUIDE,
   POST_REMEDIATION_VERIFICATION_DOCUMENTATION_GUIDE,
   MOLD_PROTOCOL_DOCUMENTATION_GUIDE,
+  INDOOR_AIR_QUALITY_TESTING_DOCUMENTATION_GUIDE,
 ];

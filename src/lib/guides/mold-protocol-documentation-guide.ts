@@ -42,6 +42,7 @@ export const MOLD_PROTOCOL_DOCUMENTATION_GUIDE = defineGuide({
     "mold-damage-documentation-guide",
     "mold-remediation-documentation-guide",
     "post-remediation-verification-documentation-guide",
+    "indoor-air-quality-testing-documentation-guide",
     "commercial-water-loss-documentation-guide",
     "category-3-water-damage-documentation-guide",
     "contents-inventory-documentation-guide",

@@ -2426,6 +2426,74 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "IAQ guide question retrieves indoor air quality testing documentation guide",
+    message:
+      "how do i document indoor air quality testing for mold insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /indoor-air-quality-testing-documentation-guide|mold-iaq-documentation|Indoor Air Quality \(IAQ\)|indoor air quality testing/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "IAQ documentation FAQ retrieves indoor air quality testing context",
+    message: "What is IAQ testing documentation on a mold insurance claim?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-iaq-documentation|indoor-air-quality-testing-documentation-guide|IAQ testing documentation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "IAQ air sampling FAQ retrieves air sampling documentation context",
+    message: "How should contractors document air sampling on mold claims?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-iaq-air-sampling|document air sampling|indoor-air-quality-testing-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "IAQ clearance testing FAQ retrieves clearance testing documentation context",
+    message: "How should clearance testing be documented after mold remediation?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-iaq-clearance-testing|clearance testing be documented|indoor-air-quality-testing-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "IAQ lab reports FAQ retrieves laboratory report organization context",
+    message: "How should laboratory reports be organized in a mold claim file?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-iaq-lab-reports|laboratory reports be organized|indoor-air-quality-testing-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "IAQ documentation requirements FAQ retrieves testing package context",
+    message:
+      "What documentation is typically required for IAQ and mold testing on insurance claims?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-iaq-documentation-requirements|documentation is typically required for IAQ|indoor-air-quality-testing-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "commercial mold claims documentation retrieves guide or FAQ",
     message: "how do i document commercial mold claims",
     assert: (result) =>

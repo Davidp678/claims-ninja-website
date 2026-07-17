@@ -44,6 +44,7 @@ export const MOLD_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     "mold-remediation-documentation-guide",
     "mold-protocol-documentation-guide",
     "post-remediation-verification-documentation-guide",
+    "indoor-air-quality-testing-documentation-guide",
     "commercial-mold-claims-guide",
     "moisture-mapping-guide",
     "category-3-water-damage-documentation-guide",

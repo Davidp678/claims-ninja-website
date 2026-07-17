@@ -44,6 +44,7 @@ export const COMMERCIAL_MOLD_CLAIMS_GUIDE = defineGuide({
     "mold-remediation-documentation-guide",
     "mold-protocol-documentation-guide",
     "post-remediation-verification-documentation-guide",
+    "indoor-air-quality-testing-documentation-guide",
     "commercial-water-loss-documentation-guide",
     "category-3-water-damage-documentation-guide",
     "contents-inventory-documentation-guide",

@@ -275,4 +275,10 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Estándar operativo para documentar protocolos de remediación de moho en reclamaciones de seguros: interpretar el alcance del protocolo, alinear condiciones de campo, documentar cumplimiento de contención y alcance, registrar desviaciones justificadas, traducir requisitos a estimados y empaquetar expedientes respaldados por protocolo.",
   },
+  "mold/indoor-air-quality-testing-documentation-guide": {
+    title:
+      "Guía de documentación de calidad del aire interior (IAQ) y pruebas para contratistas",
+    excerpt:
+      "Estándar operativo para documentar pruebas de calidad del aire interior, pruebas de autorización y evidencia de laboratorio en reclamaciones de seguros por moho: registros de muestreo pre y post-remediación, cadena de documentación, indexación de informes de laboratorio, alineación con protocolos, coordinación de PRV y paquetes de pruebas listos para aseguradoras.",
+  },
 };

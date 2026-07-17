@@ -4166,6 +4166,110 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
+  // Indoor Air Quality (IAQ) & Testing Documentation Cornerstone (5)
+  {
+    id: "mold-iaq-documentation",
+    category: "mold_claims",
+    question: "What is IAQ testing documentation on a mold insurance claim?",
+    answer:
+      "IAQ testing documentation is the organized evidence package that shows what was sampled, where and when, who collected and analyzed it, and how laboratory results connect to remediation rooms and billed testing lines. It typically includes sample location photos, sample-type logs, chain-of-custody forms, full lab reports, and a claim-facing narrative — not health advice or environmental consulting opinions. See the Indoor Air Quality (IAQ) & Testing Documentation Guide for contractor operational standards.",
+    relatedLinks: [
+      {
+        label: "Indoor Air Quality (IAQ) & Testing Documentation Guide",
+        href: "/resources/guides/mold/indoor-air-quality-testing-documentation-guide",
+      },
+      {
+        label: "Mold Protocol Documentation Guide",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      { label: "Mold solutions", href: "/solutions/mold" },
+    ],
+  },
+  {
+    id: "mold-iaq-air-sampling",
+    category: "mold_claims",
+    question: "How should contractors document air sampling on mold claims?",
+    answer:
+      "Photograph sampler placement with room context, record sample IDs and collection date/time, note indoor versus outdoor or control samples when collected, and file chain-of-custody with the laboratory certificate. Keep air samples clearly separated from surface samples in the sample-type log so estimate lines and narratives do not conflate methods. Documentation proves what was collected for insurance review — it does not select which sampling method should be used.",
+    relatedLinks: [
+      {
+        label: "Indoor Air Quality (IAQ) & Testing Documentation Guide",
+        href: "/resources/guides/mold/indoor-air-quality-testing-documentation-guide",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Photo Documentation Standards",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-iaq-clearance-testing",
+    category: "mold_claims",
+    question: "How should clearance testing be documented after mold remediation?",
+    answer:
+      "When post-remediation clearance sampling is performed or required, photograph each clearance sample location in remediated rooms, complete chain-of-custody, attach full laboratory reports with sample ID crosswalks, and write a narrative connecting results to remediation boundaries. Include clearance exhibits in the PRV closeout package. Requirements vary by carrier, protocol, and project — when laboratory clearance is not performed, document visual verification instead and state that lab sampling was not part of the file.",
+    relatedLinks: [
+      {
+        label: "Indoor Air Quality (IAQ) & Testing Documentation Guide",
+        href: "/resources/guides/mold/indoor-air-quality-testing-documentation-guide",
+      },
+      {
+        label: "Post-Remediation Verification (PRV) Documentation Guide",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-iaq-lab-reports",
+    category: "mold_claims",
+    question: "How should laboratory reports be organized in a mold claim file?",
+    answer:
+      "File complete laboratory PDF certificates — not screenshots alone — with a sample ID crosswalk to location photos and chain-of-custody forms. Separate baseline and clearance reports into clearly labeled folders on multi-phase claims. Write a claim-facing narrative mapping results to rooms and estimate testing lines without health or medical conclusions. Resolve ID mismatches before carrier submission.",
+    relatedLinks: [
+      {
+        label: "Indoor Air Quality (IAQ) & Testing Documentation Guide",
+        href: "/resources/guides/mold/indoor-air-quality-testing-documentation-guide",
+      },
+      {
+        label: "Claim Documentation Standards",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "Mold Claim Documentation Checklist",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+    ],
+  },
+  {
+    id: "mold-iaq-documentation-requirements",
+    category: "mold_claims",
+    question: "What documentation is typically required for IAQ and mold testing on insurance claims?",
+    answer:
+      "A carrier-ready testing package typically includes: sampling scope and request source, sample location photos, sample-type log, chain-of-custody, full laboratory reports with sample ID crosswalk, results narrative mapped to rooms and estimate lines, protocol crosswalk when a protocol applies, and an attachment index. Include the package in PRV closeout when clearance sampling supports project completion. Exact requirements vary by carrier and project — document what was performed on this file.",
+    relatedLinks: [
+      {
+        label: "Indoor Air Quality (IAQ) & Testing Documentation Guide",
+        href: "/resources/guides/mold/indoor-air-quality-testing-documentation-guide",
+      },
+      {
+        label: "Mold Supplement Playbook for Contractors",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+    ],
+  },
+
   // Commercial Mold Claims Guide (5)
   {
     id: "mold-commercial-claims-vs-residential",

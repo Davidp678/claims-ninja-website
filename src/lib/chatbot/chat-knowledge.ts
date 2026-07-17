@@ -1078,6 +1078,62 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["field conditions mold protocol", "protocol field conditions"],
     topics: ["mold_claims"],
   },
+  "mold-iaq-documentation": {
+    phrases: [
+      "what is IAQ testing documentation on a mold insurance claim",
+      "what is IAQ testing documentation",
+      "IAQ testing documentation mold claim",
+      "indoor air quality testing documentation insurance",
+    ],
+    keywords: ["IAQ testing documentation", "indoor air quality documentation"],
+    topics: ["mold_claims"],
+  },
+  "mold-iaq-air-sampling": {
+    phrases: [
+      "how should contractors document air sampling on mold claims",
+      "document air sampling mold claims",
+      "air sampling documentation mold",
+    ],
+    keywords: ["air sampling documentation", "mold air sampling"],
+    topics: ["mold_claims"],
+  },
+  "mold-iaq-clearance-testing": {
+    phrases: [
+      "how should clearance testing be documented after mold remediation",
+      "document clearance testing mold remediation",
+      "clearance testing documentation after mold",
+    ],
+    keywords: ["clearance testing documentation", "mold clearance testing"],
+    topics: ["mold_claims"],
+  },
+  "mold-iaq-lab-reports": {
+    phrases: [
+      "how should laboratory reports be organized in a mold claim file",
+      "organize laboratory reports mold claim",
+      "mold lab reports documentation",
+    ],
+    keywords: ["mold laboratory reports", "lab reports mold claim"],
+    topics: ["mold_claims"],
+  },
+  "mold-iaq-documentation-requirements": {
+    phrases: [
+      "what documentation is typically required for IAQ and mold testing on insurance claims",
+      "documentation required for IAQ mold testing",
+      "IAQ testing documentation requirements insurance",
+      "what documentation is required for mold testing",
+      "how should contractors document indoor air quality testing for insurance",
+      "how should contractors document IAQ testing for insurance",
+      "document indoor air quality testing for insurance",
+      "how do i document indoor air quality testing for mold insurance claims",
+      "how do i document IAQ and clearance testing for insurance",
+    ],
+    keywords: [
+      "IAQ documentation requirements",
+      "mold testing documentation required",
+      "indoor air quality testing documentation",
+    ],
+    topics: ["mold_claims"],
+  },
   "mold-commercial-claims-vs-residential": {
     phrases: [
       "how do commercial mold claims differ from residential",

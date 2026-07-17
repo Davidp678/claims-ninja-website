@@ -2256,6 +2256,77 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Field conditions vs protocol FAQ; cross-link hidden mold and change documentation FAQs.",
   },
+  "mold-iaq-documentation": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/indoor-air-quality-testing-documentation-guide",
+      "mold/mold-protocol-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-iaq-air-sampling",
+      "mold-iaq-clearance-testing",
+      "mold-iaq-documentation-requirements",
+    ],
+    internalLinkNotes:
+      "IAQ documentation definition FAQ; anchor for indoor air quality testing documentation guide cluster.",
+  },
+  "mold-iaq-air-sampling": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/indoor-air-quality-testing-documentation-guide",
+      "mold/mold-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-iaq-documentation",
+      "mold-iaq-lab-reports",
+      "mold-iaq-documentation-requirements",
+    ],
+    internalLinkNotes:
+      "Air sampling documentation FAQ; cross-link IAQ package and lab report FAQs.",
+  },
+  "mold-iaq-clearance-testing": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/indoor-air-quality-testing-documentation-guide",
+      "mold/post-remediation-verification-documentation-guide",
+      "mold/mold-remediation-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-iaq-documentation",
+      "mold-iaq-lab-reports",
+      "mold-prv-clearance-documentation-required",
+    ],
+    internalLinkNotes:
+      "Clearance testing documentation FAQ; cross-link PRV clearance and IAQ lab report FAQs.",
+  },
+  "mold-iaq-lab-reports": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/indoor-air-quality-testing-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "mold-iaq-documentation",
+      "mold-iaq-air-sampling",
+      "mold-iaq-documentation-requirements",
+    ],
+    internalLinkNotes:
+      "Laboratory reports organization FAQ; cross-link IAQ documentation requirements.",
+  },
+  "mold-iaq-documentation-requirements": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/indoor-air-quality-testing-documentation-guide",
+      "mold/mold-supplement-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "mold-iaq-documentation",
+      "mold-iaq-clearance-testing",
+      "mold-iaq-lab-reports",
+    ],
+    internalLinkNotes:
+      "Primary cornerstone FAQ; what documentation is typically required for IAQ and mold testing.",
+  },
   "mold-commercial-claims-vs-residential": {
     searchIntent: "informational",
     relatedGuideSlugs: [

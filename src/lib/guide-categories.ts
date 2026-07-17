@@ -45,6 +45,7 @@ export const MOLD_HUB_ORDER = [
   "mold-remediation-documentation-guide",
   "post-remediation-verification-documentation-guide",
   "mold-protocol-documentation-guide",
+  "indoor-air-quality-testing-documentation-guide",
 ] as const;
 
 export const GUIDE_CATEGORY_BASE_PATH = "/resources/guides" as const;
@@ -118,10 +119,10 @@ export const GUIDE_CATEGORY_REGISTRY: readonly GuideCategory[] = [
     slug: "mold",
     name: "Mold",
     description:
-      "Follow the mold documentation lifecycle and commercial large-loss workflows: moisture source evidence and growth mapping at assessment, production documentation during remediation, post-remediation verification closeout packages, protocol documentation, and multi-unit commercial mold claim organization for insurance submission.",
+      "Follow the mold documentation lifecycle and commercial large-loss workflows: moisture source evidence and growth mapping at assessment, production documentation during remediation, post-remediation verification closeout packages, protocol documentation, indoor air quality and testing documentation, and multi-unit commercial mold claim organization for insurance submission.",
     metaTitle: "Mold Claims Guides",
     metaDescription:
-      "Mold claim documentation guides for restoration contractors: commercial mold claim playbooks, moisture source evidence, remediation production documentation, post-remediation verification closeout, protocol documentation, and insurance submission standards.",
+      "Mold claim documentation guides for restoration contractors: commercial mold claim playbooks, moisture source evidence, remediation production documentation, post-remediation verification closeout, protocol documentation, IAQ and testing documentation, and insurance submission standards.",
     relatedBlogCategories: ["mold", "claim-documentation", "water-damage-claims"],
     relatedBlogPostSlugs: [
       "mold-documentation-mistakes",

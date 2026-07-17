@@ -4150,6 +4150,110 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Indoor Air Quality (IAQ) & Testing Documentation Cornerstone (5)
+  {
+    id: "mold-iaq-documentation",
+    category: "mold_claims",
+    question: "¿Qué es la documentación de pruebas de IAQ en una reclamación de seguro por moho?",
+    answer:
+      "La documentación de pruebas de IAQ es el paquete organizado de evidencia que muestra qué se muestreó, dónde y cuándo, quién lo recolectó y analizó, y cómo los resultados de laboratorio se conectan con las habitaciones remediadas y las líneas de prueba facturadas. Típicamente incluye fotos de ubicación de muestras, registros de tipo de muestra, formularios de cadena de custodia, informes de laboratorio completos y una narrativa orientada a la reclamación — no consejos de salud ni opiniones de consultoría ambiental. Consulte la Guía de documentación de calidad del aire interior (IAQ) y pruebas para estándares operativos de contratistas.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de calidad del aire interior (IAQ) y pruebas",
+        href: "/resources/guides/mold/indoor-air-quality-testing-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de protocolos de moho",
+        href: "/resources/guides/mold/mold-protocol-documentation-guide",
+      },
+      { label: "Soluciones de moho", href: "/solutions/mold" },
+    ],
+  },
+  {
+    id: "mold-iaq-air-sampling",
+    category: "mold_claims",
+    question: "¿Cómo deben documentar los contratistas el muestreo de aire en reclamaciones por moho?",
+    answer:
+      "Fotografie la colocación del muestreador con contexto de la habitación, registre los ID de muestra y la fecha/hora de recolección, anote muestras interiores versus exteriores o de control cuando se recojan, y archive la cadena de custodia con el certificado de laboratorio. Mantenga las muestras de aire claramente separadas de las de superficie en el registro de tipo de muestra para que las líneas del estimado y las narrativas no confundan métodos. La documentación prueba lo que se recolectó para la revisión del seguro — no selecciona qué método de muestreo debe usarse.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de calidad del aire interior (IAQ) y pruebas",
+        href: "/resources/guides/mold/indoor-air-quality-testing-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Estándares de documentación fotográfica",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-iaq-clearance-testing",
+    category: "mold_claims",
+    question: "¿Cómo debe documentarse la prueba de autorización después de la remediación de moho?",
+    answer:
+      "Cuando se realiza o se requiere muestreo de autorización post-remediación, fotografie cada ubicación de muestra de autorización en las habitaciones remediadas, complete la cadena de custodia, adjunte informes de laboratorio completos con cruces de ID de muestra y escriba una narrativa que conecte los resultados con los límites de remediación. Incluya los exhibiciones de autorización en el paquete de cierre PRV. Los requisitos varían según aseguradora, protocolo y proyecto — cuando no se realiza autorización de laboratorio, documente verificación visual en su lugar y declare que el muestreo de laboratorio no formó parte del expediente.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de calidad del aire interior (IAQ) y pruebas",
+        href: "/resources/guides/mold/indoor-air-quality-testing-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de verificación post-remediación (PRV)",
+        href: "/resources/guides/mold/post-remediation-verification-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-iaq-lab-reports",
+    category: "mold_claims",
+    question: "¿Cómo deben organizarse los informes de laboratorio en un expediente de reclamación por moho?",
+    answer:
+      "Archive certificados PDF de laboratorio completos — no solo capturas de pantalla — con un cruce de ID de muestra hacia fotos de ubicación y formularios de cadena de custodia. Separe informes de línea base y de autorización en carpetas claramente etiquetadas en reclamaciones multifase. Escriba una narrativa orientada a la reclamación que mapee resultados a habitaciones y líneas de prueba del estimado sin conclusiones de salud o médicas. Resuelva discrepancias de ID antes del envío a la aseguradora.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de calidad del aire interior (IAQ) y pruebas",
+        href: "/resources/guides/mold/indoor-air-quality-testing-documentation-guide",
+      },
+      {
+        label: "Estándares de documentación de reclamaciones",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "Lista de verificación de documentación de reclamaciones por moho",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+    ],
+  },
+  {
+    id: "mold-iaq-documentation-requirements",
+    category: "mold_claims",
+    question: "¿Qué documentación se requiere típicamente para pruebas de IAQ y moho en reclamaciones de seguros?",
+    answer:
+      "Un paquete de pruebas listo para la aseguradora típicamente incluye: alcance de muestreo y fuente de la solicitud, fotos de ubicación de muestras, registro de tipo de muestra, cadena de custodia, informes de laboratorio completos con cruce de ID de muestra, narrativa de resultados mapeada a habitaciones y líneas del estimado, cruce con el protocolo cuando aplica, e índice de adjuntos. Incluya el paquete en el cierre PRV cuando el muestreo de autorización respalde la finalización del proyecto. Los requisitos exactos varían según aseguradora y proyecto — documente lo que se realizó en este expediente.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de calidad del aire interior (IAQ) y pruebas",
+        href: "/resources/guides/mold/indoor-air-quality-testing-documentation-guide",
+      },
+      {
+        label: "Manual de suplementos por moho para contratistas",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+    ],
+  },
+
   // Commercial Mold Claims Guide (5)
   {
     id: "mold-commercial-claims-vs-residential",
