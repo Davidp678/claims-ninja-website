@@ -57,6 +57,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Por qué las reclamaciones de seguro por moho reciben pagos insuficientes: 10 errores de documentación que los contratistas pueden evitar",
   "mold-documentation-mistakes":
     "10 errores de documentación de moho que cuestan dinero a los contratistas en reclamaciones de seguro",
+  "mold-claim-documentation-checklist":
+    "Lista de verificación de documentación de reclamaciones por moho: todo lo que los contratistas deben capturar antes de enviar",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

@@ -4471,6 +4471,117 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Mold Claim Documentation Checklist FAQs (5)
+  {
+    id: "mold-supplement-checklist-documents",
+    category: "mold_claims",
+    question:
+      "¿Qué documentos deben incluir los contratistas con un suplemento de seguro por moho?",
+    answer:
+      "Incluya una carta de presentación con índice de anexos, estimado Xactimate revisado, paquete de fuente de humedad, exhibiciones fotográficas etiquetadas por habitación, mapas de humedad y registros de lecturas, documentación de contención y equipos, registros diarios de producción y progreso, extractos de protocolo cuando se usen, evidencia de cierre PRV y un registro de correspondencia. Cada partida solicitada debe corresponder a al menos una exhibición nombrada antes del envío.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones por moho",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "Manual de suplementos por moho para contratistas",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "¿Qué debe incluirse en un suplemento por daños de moho?",
+        href: "/faq#faq-mold-supplement-included-items",
+      },
+    ],
+  },
+  {
+    id: "mold-claim-photo-volume",
+    category: "mold_claims",
+    question: "¿Cuántas fotos se deben tomar durante una reclamación por moho?",
+    answer:
+      "Planifique un conjunto estructurado mínimo por habitación afectada: al menos una toma amplia, una toma media de paredes y techo, y primeros planos de crecimiento o sustrato por cada superficie facturada — más imágenes de la fuente de humedad y la ruta de migración, montaje de contención, equipo en su lugar, progreso de remoción y fotos finales de autorización PRV. Los archivos complejos de moho a menudo superan 150–300 fotos etiquetadas; el volumen importa menos que la cobertura completa de habitaciones y etiquetas consistentes entre fotos, mapas de humedad, croquis y estimado.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones por moho",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "¿Qué fotos se deben tomar para reclamaciones por moho?",
+        href: "/faq#faq-mold-claim-photos-required",
+      },
+    ],
+  },
+  {
+    id: "mold-moisture-containment-documentation-support",
+    category: "mold_claims",
+    question:
+      "¿Qué documentación respalda el mapeo de humedad y la contención en reclamaciones por moho?",
+    answer:
+      "El respaldo del mapeo de humedad incluye un plano o cuadrícula de zonas etiquetada, lecturas de medidor fechadas con tipo de material y valores, mapas iniciales y actualizados durante el secado, y lecturas de referencia cuando se disputa la extensión. El respaldo de contención incluye fotos de barreras antes del trabajo, aislamiento de HVAC, ubicación de aire negativo, notas de presión cuando se midan, imágenes de la ruta de salida y alineación con el protocolo o desviaciones documentadas. Mapas y exhibiciones de contención indexados defienden las partidas de secado, remoción y barreras en la revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones por moho",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-daily-progress-documentation-required",
+    category: "mold_claims",
+    question:
+      "¿Deben los contratistas documentar el progreso diario de secado y remediación en reclamaciones por moho?",
+    answer:
+      "Sí — los registros diarios de producción y las fotos de progreso demuestran que el trabajo ocurrió en los días facturados y conectan las condiciones iniciales con el estándar de seco. Registre fecha, técnico, habitaciones, tareas, estado del equipo, actualizaciones de humedad y hallazgos el mismo día en que se realiza el trabajo. Reconstruir una semana de secado o remoción al momento de la factura es cómo desaparecen días legítimos de equipo y mano de obra en la revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones por moho",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Mejores prácticas de documentación de monitoreo diario",
+        href: "/resources/blog/daily-monitoring-documentation-best-practices",
+      },
+    ],
+  },
+  {
+    id: "mold-carrier-additional-documentation-why",
+    category: "mold_claims",
+    question:
+      "¿Por qué las aseguradoras solicitan documentación adicional durante las reclamaciones por moho?",
+    answer:
+      "Las aseguradoras solicitan documentación adicional cuando los archivos no están listos para revisión — fotos sin etiquetar, evidencia ausente de fuente de humedad o mapas, contención sin documentar, días de equipo sin registros de operación, notas diarias reconstruidas, cierre PRV ausente o paquetes de suplemento sin índices de anexos a partidas. Cada solicitud de información añade días antes del pago; la documentación completa antes del envío evita RFIs iterativos y reducciones proporcionales en partidas sin respaldo.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones por moho",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "10 errores de documentación de moho que cuestan dinero a los contratistas",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+      {
+        label: "¿Qué debe incluir un paquete de documentación de moho?",
+        href: "/faq#faq-mold-documentation-package-contents",
+      },
+    ],
+  },
+
   // Mold Supplement Playbook FAQs (5)
   {
     id: "mold-supplement-included-items",

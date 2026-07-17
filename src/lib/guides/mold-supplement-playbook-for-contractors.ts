@@ -56,6 +56,7 @@ export const MOLD_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     "carrier-estimate-review-guide",
   ],
   relatedBlogSlugs: [
+    "mold-claim-documentation-checklist",
     "why-mold-insurance-claims-get-underpaid",
     "mold-documentation-mistakes",
     "why-category-3-water-claims-get-underpaid",

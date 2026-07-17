@@ -2591,6 +2591,76 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "mold claim documentation checklist blog retrieves",
+    message: "mold claim documentation checklist before supplement",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-claim-documentation-checklist|Mold Claim Documentation Checklist/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold supplement checklist documents FAQ retrieves",
+    message:
+      "what documents should contractors include with a mold insurance supplement",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-checklist-documents|mold-claim-documentation-checklist|documents should contractors include with a mold insurance supplement/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold claim photo volume FAQ retrieves",
+    message: "how many photos should be taken during a mold claim",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-claim-photo-volume|How many photos should be taken during a mold claim|mold-claim-documentation-checklist/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold moisture containment documentation support FAQ retrieves",
+    message:
+      "what documentation supports moisture mapping and containment on mold claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-moisture-containment-documentation-support|moisture mapping and containment on mold|mold-claim-documentation-checklist/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold daily progress documentation required FAQ retrieves",
+    message:
+      "should contractors document daily drying and remediation progress on mold claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-daily-progress-documentation-required|daily drying and remediation progress on mold|mold-claim-documentation-checklist/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold carrier additional documentation why FAQ retrieves",
+    message:
+      "why do carriers request additional documentation during mold claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-carrier-additional-documentation-why|additional documentation during mold claims|mold-claim-documentation-checklist/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "mold supplement playbook retrieves guide",
     message: "mold supplement playbook for contractors",
     assert: (result) =>

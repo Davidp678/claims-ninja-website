@@ -328,6 +328,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "mold-protocol-documentation-guide",
     ],
   },
+  "mold-claim-documentation-checklist": {
+    intro:
+      "You've reviewed what to document on a mold claim. Now run the Mold Supplement Playbook as your operational hub — then apply damage, remediation, and PRV documentation standards so every checklist item becomes reviewer-ready evidence.",
+    guideSlugs: [
+      "mold-supplement-playbook-for-contractors",
+      "mold-damage-documentation-guide",
+      "mold-remediation-documentation-guide",
+      "post-remediation-verification-documentation-guide",
+    ],
+  },
 } as const satisfies Record<string, BlogGuideCompanionEntry>;
 
 export type BlogGuideCompanionSlug = keyof typeof BLOG_GUIDE_COMPANIONS;

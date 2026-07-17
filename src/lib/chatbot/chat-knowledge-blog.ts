@@ -289,6 +289,22 @@ const SLUG_BOOSTS: Record<
     ],
     topics: ["mold_claims", "documentation", "mitigation"],
   },
+  "mold-claim-documentation-checklist": {
+    phrases: [
+      "mold claim documentation checklist",
+      "mold supplement documentation checklist",
+      "documents before mold supplement",
+      "mold insurance supplement documentation",
+      "what to document before mold supplement",
+    ],
+    keywords: [
+      "mold claim documentation",
+      "mold supplement checklist",
+      "mold documentation checklist",
+      "mold supplement documents",
+    ],
+    topics: ["mold_claims", "documentation", "supplements"],
+  },
   "how-carriers-reduce-drying-days": {
     phrases: ["carriers reduce drying days", "drying day reductions", "drying days cut"],
     keywords: ["drying day", "drying days", "reduce drying", "equipment days"],

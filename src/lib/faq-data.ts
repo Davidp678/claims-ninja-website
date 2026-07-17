@@ -4487,6 +4487,117 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
+  // Mold Claim Documentation Checklist FAQs (5)
+  {
+    id: "mold-supplement-checklist-documents",
+    category: "mold_claims",
+    question:
+      "What documents should contractors include with a mold insurance supplement?",
+    answer:
+      "Include a cover letter with attachment index, revised Xactimate estimate, moisture source package, room-labeled photo exhibits, moisture maps and reading logs, containment and equipment documentation, daily production and progress logs, protocol excerpts when used, PRV closeout evidence, and a correspondence log. Each requested line must map to at least one named exhibit before submission.",
+    relatedLinks: [
+      {
+        label: "Mold Claim Documentation Checklist",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "Mold Supplement Playbook for Contractors",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "What should be included in a mold damage supplement?",
+        href: "/faq#faq-mold-supplement-included-items",
+      },
+    ],
+  },
+  {
+    id: "mold-claim-photo-volume",
+    category: "mold_claims",
+    question: "How many photos should be taken during a mold claim?",
+    answer:
+      "Plan a minimum structured set per affected room: at least one wide shot, one mid-range wall-and-ceiling shot, and growth or substrate close-ups for each billed surface — plus moisture source and migration path images, containment setup, equipment in place, removal progress, and final PRV clearance photos. Complex mold files often exceed 150–300 labeled photos; volume matters less than complete room coverage and consistent labels across photos, moisture maps, sketch, and estimate.",
+    relatedLinks: [
+      {
+        label: "Mold Claim Documentation Checklist",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "What photos should be taken for mold claims?",
+        href: "/faq#faq-mold-claim-photos-required",
+      },
+    ],
+  },
+  {
+    id: "mold-moisture-containment-documentation-support",
+    category: "mold_claims",
+    question:
+      "What documentation supports moisture mapping and containment on mold claims?",
+    answer:
+      "Moisture mapping support includes a labeled floor plan or zone grid, dated meter readings with material type and values, initial and updated maps through drying, and reference readings when extent is disputed. Containment support includes pre-work barrier photos, HVAC isolation, negative air placement, pressure notes when measured, load-out path images, and protocol alignment or documented deviations. Indexed maps and containment exhibits defend drying, removal, and barrier line items on desk review.",
+    relatedLinks: [
+      {
+        label: "Mold Claim Documentation Checklist",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-daily-progress-documentation-required",
+    category: "mold_claims",
+    question:
+      "Should contractors document daily drying and remediation progress on mold claims?",
+    answer:
+      "Yes — daily production logs and progress photos prove work happened on the days billed and connect initial conditions to dry standard. Record date, technician, rooms, tasks, equipment status, moisture updates, and discoveries the same day work occurs. Reconstructing a week of drying or removal at invoice time is how legitimate equipment and labor days disappear on desk review.",
+    relatedLinks: [
+      {
+        label: "Mold Claim Documentation Checklist",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+      {
+        label: "Daily monitoring documentation best practices",
+        href: "/resources/blog/daily-monitoring-documentation-best-practices",
+      },
+    ],
+  },
+  {
+    id: "mold-carrier-additional-documentation-why",
+    category: "mold_claims",
+    question:
+      "Why do carriers request additional documentation during mold claims?",
+    answer:
+      "Carriers request additional documentation when files are not reviewer-ready — unlabeled photos, missing moisture source or map evidence, undocumented containment, equipment days without run logs, reconstructed daily notes, absent PRV closeout, or supplement packages without attachment-to-line-item indexes. Each request for information adds days before payment; complete pre-submission documentation prevents iterative RFIs and proportional reductions on unsupported lines.",
+    relatedLinks: [
+      {
+        label: "Mold Claim Documentation Checklist",
+        href: "/resources/blog/mold-claim-documentation-checklist",
+      },
+      {
+        label: "10 mold documentation mistakes that cost contractors money",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+      {
+        label: "What should be included in a mold documentation package?",
+        href: "/faq#faq-mold-documentation-package-contents",
+      },
+    ],
+  },
+
   // Mold Supplement Playbook FAQs (5)
   {
     id: "mold-supplement-included-items",

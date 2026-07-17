@@ -2469,6 +2469,78 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Mold documentation mistakes blog bridge FAQ; what belongs in a mold documentation package.",
   },
+  "mold-supplement-checklist-documents": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-supplement-playbook-for-contractors",
+      "mold/mold-damage-documentation-guide",
+      "mold/mold-remediation-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-supplement-included-items",
+      "mold-documentation-package-contents",
+      "mold-claim-photo-volume",
+    ],
+    internalLinkNotes:
+      "Pre-submission document package FAQ; anchor for mold claim documentation checklist blog.",
+  },
+  "mold-claim-photo-volume": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "general-claims/photo-documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "mold-claim-photos-required",
+      "mold-supplement-checklist-documents",
+      "mold-damage-documentation-insurance",
+    ],
+    internalLinkNotes:
+      "Photo volume FAQ; complements mold-claim-photos-required with per-room minimum guidance.",
+  },
+  "mold-moisture-containment-documentation-support": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "mold/mold-remediation-documentation-guide",
+      "mold/mold-protocol-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-moisture-readings-support",
+      "mold-remediation-containment-documentation",
+      "mold-supplement-checklist-documents",
+    ],
+    internalLinkNotes:
+      "Moisture mapping and containment FAQ; checklist bridge for map and barrier exhibits.",
+  },
+  "mold-daily-progress-documentation-required": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-remediation-documentation-guide",
+      "mold/post-remediation-verification-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-remediation-work-documentation",
+      "mold-supplement-checklist-documents",
+      "mold-carrier-additional-documentation-why",
+    ],
+    internalLinkNotes:
+      "Daily drying and remediation progress FAQ; checklist bridge for production logs.",
+  },
+  "mold-carrier-additional-documentation-why": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "mold/mold-supplement-playbook-for-contractors",
+      "mold/mold-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-supplement-checklist-documents",
+      "mold-common-documentation-mistakes",
+      "mold-documentation-package-contents",
+    ],
+    internalLinkNotes:
+      "Carrier RFI FAQ; explains incomplete mold packages that trigger additional documentation requests.",
+  },
   "mold-supplement-included-items": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [

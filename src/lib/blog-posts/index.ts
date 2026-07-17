@@ -26,6 +26,7 @@ import { smokeDamageDocumentationMistakes } from "./smoke-damage-documentation-m
 import { fireClaimDocumentationChecklist } from "./fire-claim-documentation-checklist";
 import { whyFireDamageClaimsGetUnderpaid } from "./why-fire-damage-claims-get-underpaid";
 import { whyFireDamageSupplementsGetDenied } from "./why-fire-damage-supplements-get-denied";
+import { moldClaimDocumentationChecklist } from "./mold-claim-documentation-checklist";
 import { moldDocumentationMistakes } from "./mold-documentation-mistakes";
 import { whyMoldInsuranceClaimsGetUnderpaid } from "./why-mold-insurance-claims-get-underpaid";
 import { whyWaterMitigationClaimsGetUnderpaid } from "./why-water-mitigation-claims-get-underpaid";
@@ -79,6 +80,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   smokeDamageDocumentationMistakes,
   fireClaimDocumentationChecklist,
   whyFireDamageSupplementsGetDenied,
+  moldClaimDocumentationChecklist,
   moldDocumentationMistakes,
   whyMoldInsuranceClaimsGetUnderpaid,
   opOnInsuranceClaims,

@@ -1322,6 +1322,72 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["mold_claims", "documentation"],
   },
+  "mold-supplement-checklist-documents": {
+    phrases: [
+      "what documents should contractors include with a mold insurance supplement",
+      "mold supplement documents checklist",
+      "documents to include with mold supplement",
+      "mold insurance supplement documentation package",
+    ],
+    keywords: [
+      "mold supplement documents",
+      "mold supplement checklist",
+      "mold claim documentation checklist",
+    ],
+    topics: ["mold_claims", "documentation", "supplements"],
+  },
+  "mold-claim-photo-volume": {
+    phrases: [
+      "how many photos should be taken during a mold claim",
+      "how many photos mold claim",
+      "mold claim photo volume",
+    ],
+    keywords: [
+      "mold claim photos",
+      "mold claim photo volume",
+      "how many photos mold",
+    ],
+    topics: ["mold_claims", "documentation"],
+  },
+  "mold-moisture-containment-documentation-support": {
+    phrases: [
+      "what documentation supports moisture mapping and containment on mold claims",
+      "moisture mapping and containment documentation mold",
+      "mold moisture mapping containment support",
+    ],
+    keywords: [
+      "mold moisture mapping documentation",
+      "mold containment documentation",
+      "moisture containment mold claims",
+    ],
+    topics: ["mold_claims", "documentation", "mitigation"],
+  },
+  "mold-daily-progress-documentation-required": {
+    phrases: [
+      "should contractors document daily drying and remediation progress on mold claims",
+      "daily drying and remediation progress mold",
+      "document daily mold remediation progress",
+    ],
+    keywords: [
+      "daily mold documentation",
+      "mold remediation progress documentation",
+      "daily drying mold claims",
+    ],
+    topics: ["mold_claims", "documentation", "mitigation"],
+  },
+  "mold-carrier-additional-documentation-why": {
+    phrases: [
+      "why do carriers request additional documentation during mold claims",
+      "carriers request additional mold documentation",
+      "why carriers ask for more mold documentation",
+    ],
+    keywords: [
+      "additional mold documentation",
+      "carrier mold documentation request",
+      "mold claim RFI",
+    ],
+    topics: ["mold_claims", "documentation", "carrier_review"],
+  },
   "smoke-damage-documentation-insurance": {
     phrases: [
       "how should smoke damage be documented for insurance",

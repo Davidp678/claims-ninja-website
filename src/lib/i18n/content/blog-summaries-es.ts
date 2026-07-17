@@ -35,6 +35,12 @@ export const BLOG_SUMMARIES_ES: Record<string, BlogSummary> = {
     excerpt:
       "10 errores de documentación de moho que cuestan dinero a los contratistas: evidencia ausente de fuente de humedad, conjuntos fotográficos deficientes, lecturas omitidas, moho oculto sin documentar, registros débiles de remediación y PRV, desviaciones de protocolo, archivos comerciales desorganizados, narrativas de estimación débiles y envío prematuro del paquete.",
   },
+  "mold-claim-documentation-checklist": {
+    title:
+      "Lista de verificación de documentación de reclamaciones por moho: todo lo que los contratistas deben capturar antes de enviar",
+    excerpt:
+      "Lista de verificación de documentación de reclamaciones por moho para suplementos de seguro: preparación previa, evidencia de fuente de humedad, fotos iniciales, mapeo de humedad, contención, equipos, registros diarios, progreso de secado y remediación, cierre PRV y paquete final de envío para equipos de restauración.",
+  },
 };
 
 export function getBlogSummaryEs(

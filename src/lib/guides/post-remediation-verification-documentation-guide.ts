@@ -51,6 +51,7 @@ export const POST_REMEDIATION_VERIFICATION_DOCUMENTATION_GUIDE = defineGuide({
     "dry-log-collection-guide",
   ],
   relatedBlogSlugs: [
+    "mold-claim-documentation-checklist",
     "mold-documentation-mistakes",
     "why-mold-insurance-claims-get-underpaid",
     "documentation-gaps-that-trigger-water-claim-denials",

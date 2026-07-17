@@ -29,11 +29,11 @@ export const moldDocumentationMistakes: BlogPost = {
   seoDescription:
     "10 mold documentation mistakes that cost contractors money: moisture source gaps, poor photos, skipped readings, hidden mold, weak remediation and PRV records, protocol and commercial organization failures, and premature submission.",
   relatedPostSlugs: [
+    "mold-claim-documentation-checklist",
     "why-mold-insurance-claims-get-underpaid",
     "moisture-mapping-mistakes-that-cost-contractors-money",
     "documentation-gaps-that-trigger-water-claim-denials",
     "common-documentation-mistakes-on-commercial-water-losses",
-    "why-category-3-water-claims-get-underpaid",
     "dry-log-documentation-guide-insurance-claims",
   ],
   faqIds: [
