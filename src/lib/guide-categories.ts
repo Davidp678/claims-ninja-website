@@ -39,6 +39,7 @@ export const FIRE_DAMAGE_HUB_ORDER = [
 
 /** Editorial hub order for /resources/guides/mold (matches MOLD_GUIDES bundle). */
 export const MOLD_HUB_ORDER = [
+  "mold-supplement-playbook-for-contractors",
   "commercial-mold-claims-guide",
   "mold-damage-documentation-guide",
   "mold-remediation-documentation-guide",

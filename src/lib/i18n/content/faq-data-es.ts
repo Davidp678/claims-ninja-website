@@ -4471,6 +4471,102 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
 
+  // Mold Supplement Playbook FAQs (5)
+  {
+    id: "mold-supplement-included-items",
+    category: "mold_claims",
+    question: "¿Qué debe incluirse en un suplemento por daños de moho?",
+    answer:
+      "Un suplemento completo por daños de moho incluye carta de presentación con tabla resumen, estimado Xactimate revisado, exhibiciones fotográficas indexadas por habitación o zona, paquete de investigación de fuente de humedad (mapa, lecturas, narrativa de causalidad), documentación de contención y equipos, extractos de protocolo cuando se usen, evidencia de cierre PRV, y registro de correspondencia. Cada partida solicitada debe corresponder a al menos una exhibición nombrada.",
+    relatedLinks: [
+      {
+        label: "Manual de suplementos por moho para contratistas",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Flujo de envío de suplementos",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      { label: "Soluciones para moho", href: "/solutions/mold" },
+    ],
+  },
+  {
+    id: "mold-supplement-when-to-submit",
+    category: "mold_claims",
+    question: "¿Cuándo deben los contratistas enviar un suplemento por moho?",
+    answer:
+      "Envíe cuando el alcance documentado supere el estimado de la aseguradora y exista evidencia contemporánea — dentro de las 48 horas en brechas visibles del estimado, después de la investigación de humedad, cuando la contención y el equipo estén documentados, después de revisiones de protocolo, o cuando se complete la autorización PRV. El envío por fases supera esperar la factura final: los suplementos de humedad, contención y PRV se aprueban mejor cuando la evidencia se captura antes de que la reconstrucción oculte las condiciones.",
+    relatedLinks: [
+      {
+        label: "Manual de suplementos por moho para contratistas",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Primeras 48 horas después del estimado de la aseguradora",
+        href: "/resources/blog/first-48-hours-after-carrier-estimate",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-documentation-evidence",
+    category: "mold_claims",
+    question: "¿Qué documentación respalda un suplemento por daños de moho?",
+    answer:
+      "La documentación de suplemento por moho incluye fotos indexadas por habitación o zona, narrativa de fuente de humedad con mapa y lecturas, fotos de construcción de contención y aire negativo, registros de días de equipo, extractos de protocolo y fotos de revisión cuando aplique, fotos de cavidades durante aperturas, registros de autorización PRV, y una carta de presentación que mapee cada adjunto a números de partida del estimado. La evidencia contemporánea por fases supera la narrativa de fin de trabajo armada después de que la producción cierra el acceso.",
+    relatedLinks: [
+      {
+        label: "Manual de suplementos por moho para contratistas",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Guía de documentación de daños por moho",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de remediación de moho",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-multiple-submissions",
+    category: "mold_claims",
+    question: "¿Se pueden enviar múltiples suplementos durante una reclamación por moho?",
+    answer:
+      "Sí. Las reclamaciones por moho comúnmente requieren suplementos por fases — investigación de humedad y alcance de daños primero, luego contención y equipo después de iniciar producción, luego revisión de protocolo y descubrimiento durante aperturas, luego PRV y reconstrucción restante en el cierre. Etiquete cada versión de suplemento en CRM con fase y fecha para que los revisores de la aseguradora sigan el descubrimiento sin tratar envíos posteriores como facturación duplicada.",
+    relatedLinks: [
+      {
+        label: "Manual de suplementos por moho para contratistas",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Flujo de envío de suplementos",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-commonly-missed-items",
+    category: "mold_claims",
+    question: "¿Cuáles son las partidas de suplemento por moho más comúnmente omitidas?",
+    answer:
+      "Las partidas de suplemento por moho más comúnmente omitidas incluyen investigación y mapeo de fuente de humedad, construcción de contención y esclusas de aire, días de equipo de aire negativo y depuradores de aire, aspirado HEPA más allá de cantidades simbólicas, demolición selectiva y limpieza de cavidades por crecimiento oculto, alcance de revisión de protocolo, protección o pack-out de contenidos durante remediación, y documentación de PRV o autorización requerida antes de la reconstrucción.",
+    relatedLinks: [
+      {
+        label: "Manual de suplementos por moho para contratistas",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Por qué las reclamaciones de seguro por moho se pagan de menos",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Errores de documentación de moho",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+    ],
+  },
+
   // Contents Restoration (5)
   {
     id: "contents-pack-out",

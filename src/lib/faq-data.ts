@@ -4487,6 +4487,102 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
 
+  // Mold Supplement Playbook FAQs (5)
+  {
+    id: "mold-supplement-included-items",
+    category: "mold_claims",
+    question: "What should be included in a mold damage supplement?",
+    answer:
+      "A complete mold damage supplement includes a cover letter with summary table, revised Xactimate estimate, indexed photo exhibits by room or zone, moisture source investigation package (map, readings, causation narrative), containment and equipment documentation, protocol excerpts when used, PRV closeout evidence, and a correspondence log. Each requested line must map to at least one named exhibit.",
+    relatedLinks: [
+      {
+        label: "Mold Supplement Playbook for Contractors",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Supplement Submission Workflow",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      { label: "Mold solutions", href: "/solutions/mold" },
+    ],
+  },
+  {
+    id: "mold-supplement-when-to-submit",
+    category: "mold_claims",
+    question: "When should contractors submit a mold supplement?",
+    answer:
+      "Submit when documented scope exceeds the carrier estimate and contemporaneous evidence exists — within 48 hours on visible estimate gaps, after moisture investigation, when containment and equipment are documented, after protocol revisions, or when PRV clearance completes. Phased submission beats waiting for final invoice: moisture, containment, and PRV supplements approve more readily when evidence is captured before rebuild obscures conditions.",
+    relatedLinks: [
+      {
+        label: "Mold Supplement Playbook for Contractors",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "First 48 hours after a carrier estimate",
+        href: "/resources/blog/first-48-hours-after-carrier-estimate",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-documentation-evidence",
+    category: "mold_claims",
+    question: "What documentation supports a mold damage supplement?",
+    answer:
+      "Mold supplement documentation includes indexed photos by room or zone, moisture source narrative with map and readings, containment build and negative-air photos, equipment day logs, protocol excerpts and revision photos when applicable, discovery-era cavity photos during openings, PRV clearance records, and a cover letter mapping each attachment to estimate line numbers. Contemporaneous phased evidence outperforms end-of-job narrative assembled after production closes access.",
+    relatedLinks: [
+      {
+        label: "Mold Supplement Playbook for Contractors",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Mold Damage Documentation Guide",
+        href: "/resources/guides/mold/mold-damage-documentation-guide",
+      },
+      {
+        label: "Mold Remediation Documentation Guide",
+        href: "/resources/guides/mold/mold-remediation-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-multiple-submissions",
+    category: "mold_claims",
+    question: "Can multiple supplements be submitted during a mold claim?",
+    answer:
+      "Yes. Mold claims commonly require phased supplements — moisture investigation and damage scope first, then containment and equipment after production starts, then protocol revision and discovery during openings, then PRV and remaining rebuild at closeout. Label each supplement version in CRM with phase and date so carrier reviewers track discovery without treating later submissions as duplicate billing.",
+    relatedLinks: [
+      {
+        label: "Mold Supplement Playbook for Contractors",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Supplement Submission Workflow",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+    ],
+  },
+  {
+    id: "mold-supplement-commonly-missed-items",
+    category: "mold_claims",
+    question: "What are the most commonly missed mold supplement items?",
+    answer:
+      "Commonly missed mold supplement items include moisture source investigation and mapping, containment build and airlocks, negative air and air scrubber equipment days, HEPA vacuuming beyond token quantities, selective demolition and cavity cleaning for hidden growth, protocol revision scope, contents protection or pack-out during remediation, and PRV or clearance documentation required before rebuild.",
+    relatedLinks: [
+      {
+        label: "Mold Supplement Playbook for Contractors",
+        href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Why mold insurance claims get underpaid",
+        href: "/resources/blog/why-mold-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Mold documentation mistakes",
+        href: "/resources/blog/mold-documentation-mistakes",
+      },
+    ],
+  },
+
   // Contents Restoration (5)
   {
     id: "contents-pack-out",

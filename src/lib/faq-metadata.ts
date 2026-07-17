@@ -2469,6 +2469,75 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Mold documentation mistakes blog bridge FAQ; what belongs in a mold documentation package.",
   },
+  "mold-supplement-included-items": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-supplement-playbook-for-contractors",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "mold-supplement-when-to-submit",
+      "mold-supplement-documentation-evidence",
+      "mold-documentation-package-contents",
+    ],
+    internalLinkNotes:
+      "Primary playbook FAQ; anchor for mold supplement playbook guide package contents.",
+  },
+  "mold-supplement-when-to-submit": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: ["mold/mold-supplement-playbook-for-contractors"],
+    relatedFaqIds: [
+      "mold-supplement-included-items",
+      "mold-supplement-multiple-submissions",
+      "mold-claims-underpaid-why",
+    ],
+    internalLinkNotes:
+      "Timing FAQ; link first 48 hours blog and phased submission guidance.",
+  },
+  "mold-supplement-documentation-evidence": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-supplement-playbook-for-contractors",
+      "mold/mold-damage-documentation-guide",
+      "mold/mold-remediation-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-supplement-included-items",
+      "mold-remediation-containment-documentation",
+      "mold-prv-documentation-insurance",
+    ],
+    internalLinkNotes:
+      "Playbook documentation FAQ; complement mold remediation and PRV evidence lists.",
+  },
+  "mold-supplement-multiple-submissions": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-supplement-playbook-for-contractors",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "mold-supplement-when-to-submit",
+      "mold-supplement-included-items",
+      "mold-commercial-phased-remediation",
+    ],
+    internalLinkNotes:
+      "Phased supplement FAQ; anchor for multiple submission workflow on mold files.",
+  },
+  "mold-supplement-commonly-missed-items": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-supplement-playbook-for-contractors",
+      "mold/mold-remediation-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-claims-underpaid-why",
+      "mold-supplement-included-items",
+      "mold-containment-equipment",
+      "mold-common-documentation-mistakes",
+    ],
+    internalLinkNotes:
+      "Missed line items FAQ; link underpayment blog and mold documentation mistakes.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

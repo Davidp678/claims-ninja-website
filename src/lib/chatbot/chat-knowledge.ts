@@ -1152,6 +1152,71 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["mold_claims", "commercial_mold"],
   },
+  "mold-supplement-included-items": {
+    phrases: [
+      "what should be included in a mold damage supplement",
+      "mold damage supplement package contents",
+      "what goes in a mold supplement",
+    ],
+    keywords: [
+      "mold supplement included",
+      "mold supplement package",
+      "mold supplement contents",
+    ],
+    topics: ["mold_claims", "supplements", "documentation"],
+  },
+  "mold-supplement-when-to-submit": {
+    phrases: [
+      "when should contractors submit a mold supplement",
+      "when to submit mold damage supplement",
+      "mold supplement timing",
+    ],
+    keywords: [
+      "mold supplement when",
+      "submit mold supplement",
+      "mold supplement timing",
+    ],
+    topics: ["mold_claims", "supplements"],
+  },
+  "mold-supplement-documentation-evidence": {
+    phrases: [
+      "what documentation supports a mold damage supplement",
+      "mold damage supplement documentation evidence",
+      "mold supplement documentation required",
+    ],
+    keywords: [
+      "mold supplement documentation",
+      "mold supplement evidence",
+      "mold supplement proof",
+    ],
+    topics: ["mold_claims", "supplements", "documentation"],
+  },
+  "mold-supplement-multiple-submissions": {
+    phrases: [
+      "can multiple supplements be submitted during a mold claim",
+      "multiple mold supplements same claim",
+      "phased mold supplements",
+    ],
+    keywords: [
+      "multiple mold supplements",
+      "phased mold supplement",
+      "mold supplement phases",
+    ],
+    topics: ["mold_claims", "supplements"],
+  },
+  "mold-supplement-commonly-missed-items": {
+    phrases: [
+      "most commonly missed mold supplement items",
+      "commonly missed mold claim line items",
+      "mold supplement missed items",
+    ],
+    keywords: [
+      "missed mold supplement",
+      "mold supplement line items",
+      "mold claim missed scope",
+    ],
+    topics: ["mold_claims", "supplements"],
+  },
   "mold-claims-underpaid-why": {
     phrases: [
       "why are mold insurance claims underpaid",

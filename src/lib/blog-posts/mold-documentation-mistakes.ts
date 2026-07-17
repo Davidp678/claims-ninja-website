@@ -51,10 +51,14 @@ export const moldDocumentationMistakes: BlogPost = {
         "Mold insurance claims are won or lost through documentation. Project managers can perform legitimate assessment, containment, removal, and verification work — and still absorb delayed payments, disputed lines, and settlement shortfalls when the file cannot prove what was found, what was done, and what was verified.",
         "Most mold documentation problems are preventable. They are not exotic carrier tactics; they are operational gaps contractors control: moisture source never photographed, photo sets that stop at visible growth, moisture readings skipped under time pressure, hidden areas left undocumented, remediation production recorded after the fact, PRV closeout assembled at invoice, protocol deviations unexplained, commercial files without unit indexing, estimate narratives that assume the adjuster was on site, and packages submitted before the evidence set is complete.",
         "Small documentation gaps often become large payment gaps. A missing source photo invites causation limits. A thin photo roll caps room counts. Absent meter data weakens drying and removal lines. Sparse production logs invite proportional cuts. Premature submission freezes carrier expectations at an incomplete snapshot — then every legitimate supplement fights uphill.",
-        "This article is the operational bridge into the Mold documentation ecosystem. Each mistake explains why it happens, why it matters on insurance claims, and how to fix it — with links to the mold guides that teach the complete standard. For the underpayment strategy lens on related failure modes, see Why Mold Insurance Claims Get Underpaid.",
+        "This article is the operational bridge into the Mold documentation ecosystem. Each mistake explains why it happens, why it matters on insurance claims, and how to fix it — with links to the mold guides that teach the complete standard. For the underpayment strategy lens on related failure modes, see Why Mold Insurance Claims Get Underpaid. For the end-to-end supplement workflow from estimate review through settlement, use the Mold Supplement Playbook for Contractors.",
         "Educational guidance only — not legal advice. Policy language, carrier programs, causation standards, and local requirements vary by file. The focus is restoration contractors — project managers, field supervisors, and supplement leads — not homeowners.",
       ],
       links: [
+        {
+          label: "Mold Supplement Playbook for Contractors",
+          href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+        },
         {
           label: "Mold Damage Documentation Guide",
           href: "/resources/guides/mold/mold-damage-documentation-guide",
@@ -378,10 +382,14 @@ export const moldDocumentationMistakes: BlogPost = {
       heading: "Conclusion",
       paragraphs: [
         "Great mold documentation creates stronger claims, smoother negotiations, and better claim outcomes. Delayed payments, disputed lines, and settlement shortfalls on mold files often trace to preventable gaps — missing moisture source evidence, thin photo sets, skipped readings, undocumented hidden mold, weak remediation and PRV records, unexplained protocol deviations, disorganized commercial indexes, weak estimate narratives, and packages submitted before the evidence set was ready.",
-        "Use the Mold documentation guides as a complete operational framework: damage documentation for causation, photos, readings, and hidden mold; remediation documentation for containment through daily production; protocol documentation when methods and deviations must stay aligned; PRV documentation for clearance and closeout; and the Commercial Mold Claims Guide when buildings, floors, and units demand indexing residential templates cannot provide.",
+        "Use the Mold Supplement Playbook for Contractors as the operational hub from estimate review through settlement, and the Mold documentation guides as a complete field framework: damage documentation for causation, photos, readings, and hidden mold; remediation documentation for containment through daily production; protocol documentation when methods and deviations must stay aligned; PRV documentation for clearance and closeout; and the Commercial Mold Claims Guide when buildings, floors, and units demand indexing residential templates cannot provide.",
         "Avoiding these ten mistakes means treating mold documentation as controllable field and office work — not an afterthought at invoice. Build the file your supplement lead would want to receive on day one of the loss, and submit only when that phase's package is complete.",
       ],
       links: [
+        {
+          label: "Mold Supplement Playbook for Contractors",
+          href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+        },
         {
           label: "Mold Damage Documentation Guide",
           href: "/resources/guides/mold/mold-damage-documentation-guide",

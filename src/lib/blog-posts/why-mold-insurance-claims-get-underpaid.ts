@@ -52,10 +52,14 @@ export const whyMoldInsuranceClaimsGetUnderpaid: BlogPost = {
         "Mold insurance claims are among the most documentation-intensive property losses restoration contractors handle — and among the most frequently underpaid when files lack organized evidence. Project managers perform legitimate assessment, containment, removal, and verification work across rooms the carrier never priced, then absorb margin when desk reviewers treat visible growth as the full loss.",
         "The visible mold a homeowner or adjuster first notices is often only a small portion of the actual damage. Growth extends into wall cavities, under flooring, behind cabinetry, and through ceiling plenums. Carriers evaluate causation, moisture history, and remediation scope separately — and they approve scope they can verify through indexed documentation, not field intuition.",
         "Strong documentation frequently determines whether legitimate work is approved at full value or reduced line by line. When moisture source evidence is missing, hidden areas go unphotographed, production records are sparse, and PRV closeout is absent, proportional underpayment follows — not always outright denial, but consistent settlement shortfalls that erode job margin.",
-        "This article identifies ten documentation mistakes that lead to underpaid mold insurance claims. The focus is operational education for project managers, field supervisors, and supplement leads — not homeowner guidance. Field procedures live in the mold documentation guides linked throughout.",
+        "This article identifies ten documentation mistakes that lead to underpaid mold insurance claims. The focus is operational education for project managers, field supervisors, and supplement leads — not homeowner guidance. Field procedures live in the mold documentation guides linked throughout. For the end-to-end supplement workflow from estimate review through settlement, use the Mold Supplement Playbook for Contractors.",
         "Educational guidance only — not legal advice. Policy language, carrier programs, causation standards, and local requirements vary by file.",
       ],
       links: [
+        {
+          label: "Mold Supplement Playbook for Contractors",
+          href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+        },
         {
           label: "Mold Damage Documentation Guide",
           href: "/resources/guides/mold/mold-damage-documentation-guide",
@@ -392,9 +396,13 @@ export const whyMoldInsuranceClaimsGetUnderpaid: BlogPost = {
       paragraphs: [
         "Underpaid mold insurance claims are often the result of incomplete documentation rather than unsupported work. Carriers reduce scope when moisture source evidence is absent, hidden growth goes unphotographed, production records are sparse, PRV closeout is missing, and supplement packages lack the narrative and indexing desk reviewers need to forward files internally.",
         "Avoiding these ten mistakes means treating mold documentation as a lifecycle — causation and investigation at assessment, contemporaneous production records during remediation, and indexed closeout at verification — from intake through final payment. The contractors who recover full mold scope submit organized files with consistent labels, dated evidence, and written justification before access closes.",
-        "Continue with the Mold Damage Documentation Guide for moisture source evidence and hidden growth investigation standards, and the Mold Remediation Documentation Guide for production documentation from containment through daily logs. Build the file your supplement lead would want to receive on day one of the loss.",
+        "Continue with the Mold Supplement Playbook for Contractors for the end-to-end supplement workflow from estimate review through settlement, the Mold Damage Documentation Guide for moisture source evidence and hidden growth investigation standards, and the Mold Remediation Documentation Guide for production documentation from containment through daily logs. Build the file your supplement lead would want to receive on day one of the loss.",
       ],
       links: [
+        {
+          label: "Mold Supplement Playbook for Contractors",
+          href: "/resources/guides/mold/mold-supplement-playbook-for-contractors",
+        },
         {
           label: "Mold Damage Documentation Guide",
           href: "/resources/guides/mold/mold-damage-documentation-guide",

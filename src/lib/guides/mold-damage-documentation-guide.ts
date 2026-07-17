@@ -37,6 +37,7 @@ export const MOLD_DAMAGE_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document mold damage insurance claims: moisture source evidence, growth and hidden mold photos, moisture readings, testing support, scope packaging, and insurance submission for restoration contractors.",
   relatedGuideSlugs: [
+    "mold-supplement-playbook-for-contractors",
     "commercial-mold-claims-guide",
     "mold-remediation-documentation-guide",
     "post-remediation-verification-documentation-guide",

@@ -2591,6 +2591,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "mold supplement playbook retrieves guide",
+    message: "mold supplement playbook for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-playbook-for-contractors|mold supplement playbook|mold-supplement-included-items/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold reinspection prep retrieves playbook guide",
+    message: "how do I prepare for a mold reinspection",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-playbook-for-contractors|Phase 9 — Reinspection Preparation|reinspection-packet|prepare for a mold reinspection/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold supplement included items FAQ",
+    message: "what should be included in a mold damage supplement",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-included-items|cover letter with summary table|mold-supplement-playbook/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold supplement when to submit FAQ",
+    message: "when should contractors submit a mold supplement",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-when-to-submit|within 48 hours on visible estimate gaps|phased submission/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold supplement multiple submissions FAQ",
+    message: "can multiple supplements be submitted during a mold claim",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-multiple-submissions|phased supplements|multiple supplements/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold supplement commonly missed items FAQ",
+    message: "what are the most commonly missed mold supplement items",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-commonly-missed-items|containment build|moisture source investigation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "portfolio recovery review",
     message: "What is a portfolio recovery review?",
     assert: (result) =>

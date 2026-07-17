@@ -321,6 +321,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "mold-carrier-pushback",
       "mold-containment-equipment",
       "mold-water-relationship",
+      "mold-supplement-included-items",
+      "mold-supplement-when-to-submit",
+      "mold-supplement-documentation-evidence",
+      "mold-supplement-multiple-submissions",
+      "mold-supplement-commonly-missed-items",
     ],
   },
   contents: {
@@ -481,6 +486,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "mold-commercial-multi-unit-documentation",
       "mold-commercial-insurance-documentation",
       "mold-commercial-phased-remediation",
+      "mold-supplement-included-items",
+      "mold-supplement-when-to-submit",
+      "mold-supplement-documentation-evidence",
+      "mold-supplement-multiple-submissions",
+      "mold-supplement-commonly-missed-items",
     ],
   },
   caseStudies: {

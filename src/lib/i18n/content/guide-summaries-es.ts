@@ -245,6 +245,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Procedimiento de campo para documentación de reemplazo de ventanas y puertas: mediciones de unidades, fotos de daños, integración de flashing y molduras, notas de código y egreso, y alineación de estimado que las aseguradoras aprueban.",
   },
+  "mold/mold-supplement-playbook-for-contractors": {
+    title: "Manual de suplementos por moho para contratistas",
+    excerpt:
+      "El manual operativo definitivo para contratistas sobre suplementos por moho — desde la revisión del estimado de la aseguradora hasta la investigación de la fuente de humedad, documentación de daños y remediación, empaquetado de protocolo y PRV, organización del estimado, comunicación con la aseguradora, reinspección, coordinación comercial y liquidación final en reclamaciones de seguros por moho.",
+  },
   "mold/commercial-mold-claims-guide": {
     title: "Guía de reclamaciones comerciales por moho para contratistas",
     excerpt:

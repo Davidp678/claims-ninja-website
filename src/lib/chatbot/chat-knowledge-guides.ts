@@ -164,6 +164,31 @@ const GUIDE_SLUG_BOOSTS: Record<
     ],
     topics: ["fire_damage_claims", "documentation", "commercial_fire"],
   },
+  "mold-supplement-playbook-for-contractors": {
+    phrases: [
+      "mold supplement playbook",
+      "mold supplement playbook for contractors",
+      "mold supplement workflow for contractors",
+      "mold damage supplement process",
+      "how to submit a mold damage supplement",
+      "mold supplement playbook guide",
+      "prepare for a mold reinspection",
+      "mold claim supplement workflow",
+      "mold damage supplement guide",
+    ],
+    keywords: [
+      "mold supplement playbook",
+      "mold damage supplement",
+      "mold supplement workflow",
+      "mold supplement submission",
+      "mold supplement package",
+      "mold reinspection",
+      "mold supplement objections",
+      "mold supplement missed items",
+      "phased mold supplement",
+    ],
+    topics: ["mold_claims", "supplements", "documentation"],
+  },
   "mold-damage-documentation-guide": {
     phrases: [
       "mold damage documentation guide",

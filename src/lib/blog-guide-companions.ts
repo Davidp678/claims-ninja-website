@@ -310,21 +310,21 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "why-mold-insurance-claims-get-underpaid": {
     intro:
-      "You've learned why mold claims get underpaid. Now run the commercial mold claims playbook and mold documentation standards for moisture source evidence, remediation production, and post-remediation verification closeout.",
+      "You've learned why mold claims get underpaid. Now run the Mold Supplement Playbook — the operational hub from carrier estimate review through moisture investigation, remediation packaging, PRV closeout, and settlement — with the commercial and documentation standards linked below.",
     guideSlugs: [
+      "mold-supplement-playbook-for-contractors",
       "commercial-mold-claims-guide",
       "mold-damage-documentation-guide",
       "mold-remediation-documentation-guide",
-      "post-remediation-verification-documentation-guide",
     ],
   },
   "mold-documentation-mistakes": {
     intro:
-      "You've learned which mold documentation mistakes cost contractors money. Now run the mold documentation lifecycle — damage assessment, remediation production, PRV closeout, and protocol alignment — so every file avoids those gaps.",
+      "You've learned which mold documentation mistakes cost contractors money. Now run the Mold Supplement Playbook as your operational hub — then apply damage, remediation, and protocol documentation standards so every file avoids those gaps.",
     guideSlugs: [
+      "mold-supplement-playbook-for-contractors",
       "mold-damage-documentation-guide",
       "mold-remediation-documentation-guide",
-      "post-remediation-verification-documentation-guide",
       "mold-protocol-documentation-guide",
     ],
   },
