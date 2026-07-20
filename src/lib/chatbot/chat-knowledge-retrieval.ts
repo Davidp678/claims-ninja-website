@@ -372,6 +372,25 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "multi-building loss",
     "multi-building losses",
     "multiple buildings",
+    "HOA",
+    "homeowners association",
+    "condominium association",
+    "community association",
+  ],
+  hoa_claims: [
+    "HOA",
+    "HOA insurance",
+    "HOA insurance claims",
+    "homeowners association",
+    "condominium association",
+    "community association",
+    "townhome community",
+    "master policy",
+    "common elements",
+    "association documentation",
+    "HOA board",
+    "HOA restoration",
+    "HOA property damage",
   ],
   large_loss: [
     "large loss",
@@ -2676,6 +2695,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /multifamily-apartment-insurance-claims-guide|commercial-property-manager-coordination|property managers on apartment/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "HOA insurance claims retrieves HOA guide or FAQ",
+    message: "how do HOA insurance claims work for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /hoa-insurance-claims-guide|commercial-hoa-insurance-claims|HOA insurance claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "association documentation retrieves HOA guide or FAQ",
+    message: "how should contractors document association insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /hoa-insurance-claims-guide|commercial-hoa-association-documentation|association insurance claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "HOA master policies retrieves guide or FAQ",
+    message: "how do association master policies differ from homeowner policies on HOA claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /hoa-insurance-claims-guide|commercial-hoa-master-policies|master policies/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "HOA common elements retrieves guide or FAQ",
+    message: "how should common elements be documented on HOA claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /hoa-insurance-claims-guide|commercial-hoa-common-elements|common elements be documented on HOA/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "HOA claim coordination retrieves guide or FAQ",
+    message: "how should contractors coordinate HOA claims with boards and managers",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /hoa-insurance-claims-guide|commercial-hoa-claim-coordination|coordinate HOA claims/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

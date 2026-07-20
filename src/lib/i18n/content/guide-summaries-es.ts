@@ -17,6 +17,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Manual operativo para contratistas sobre documentación, gestión, estimación y suplementos de reclamaciones de seguros en complejos de apartamentos, vivienda multifamiliar, condominios y propiedades residenciales comerciales similares: indexación unidad por unidad, áreas comunes, coordinación con administradores de propiedad y paquetes indexados de reclamación.",
   },
+  "general-claims/hoa-insurance-claims-guide": {
+    title: "Guía de reclamaciones de seguros en HOAs para contratistas",
+    excerpt:
+      "Manual operativo para contratistas sobre documentación, gestión, estimación y suplementos de reclamaciones de seguros en HOAs, asociaciones de condominios, comunidades de townhomes y asociaciones comunitarias: gobernanza, pólizas maestras frente a pólizas de propietarios, elementos comunes, coordinación con juntas y administradores, y paquetes indexados de reclamación.",
+  },
   "general-claims/first-48-hours-checklist": {
     title: "Lista de verificación: primeras 48 horas tras el estimado de la aseguradora",
     excerpt:

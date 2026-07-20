@@ -5338,6 +5338,102 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
   {
+    id: "commercial-hoa-insurance-claims",
+    category: "insurance_supplements",
+    question: "¿Cómo funcionan las reclamaciones de seguros en HOAs para contratistas?",
+    answer:
+      "Las reclamaciones de HOAs y asociaciones de condominios involucran autorización de la junta y de la administración, límites entre pólizas maestras y de propietarios, y documentación a través de elementos comunes y unidades. Los contratistas indexan la evidencia por comunidad, edificio, elemento común y unidad para que las aseguradoras atribuyan el alcance de la asociación frente al de propiedad individual — los patrones residenciales de una sola carpeta invitan a reducciones en expedientes de asociaciones.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros en HOAs para contratistas",
+        href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas las reclamaciones de asociaciones?",
+        href: "/faq#faq-commercial-hoa-association-documentation",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-hoa-association-documentation",
+    category: "documentation",
+    question: "¿Cómo deben documentar los contratistas las reclamaciones de seguros de asociaciones?",
+    answer:
+      "Publique un índice Comunidad → Edificio → Elemento común / Unidad → Habitación alineado a los registros de la asociación dentro de 24 horas. Separe los paquetes de elementos comunes de los de unidades, mantenga registros de autorización de la junta y el administrador, y envíe estimados que reflejen la misma jerarquía con referencias cruzadas de partida a evidencia.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros en HOAs para contratistas",
+        href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "¿Cómo funcionan las reclamaciones de seguros en HOAs para contratistas?",
+        href: "/faq#faq-commercial-hoa-insurance-claims",
+      },
+    ],
+  },
+  {
+    id: "commercial-hoa-master-policies",
+    category: "documentation",
+    question: "¿En qué se diferencian las pólizas maestras de asociación de las pólizas de propietarios en reclamaciones de HOA?",
+    answer:
+      "Las pólizas maestras de la asociación suelen responder a elementos comunes y propiedad de la asociación, mientras que las pólizas de propietarios de unidad (a menudo formularios HO-6) pueden responder a interiores de propiedad individual. Los contratistas deben indexar por separado la evidencia de elementos comunes y de unidades para que los revisores de escritorio atribuyan el alcance — sin tratar al contratista como asesor de coberturas.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros en HOAs para contratistas",
+        href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo deben documentarse los elementos comunes en reclamaciones de HOA?",
+        href: "/faq#faq-commercial-hoa-common-elements",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-hoa-common-elements",
+    category: "documentation",
+    question: "¿Cómo deben documentarse los elementos comunes en reclamaciones de HOA?",
+    answer:
+      "Indexe techos, exteriores, pasillos, amenidades, terrenos y sistemas compartidos por separado de los interiores de unidad. Etiquete las ubicaciones al mapa del sitio de la asociación y mantenga secciones de estimado distintas para que los revisores atribuyan el alcance de elementos comunes sin revisar galerías de unidades — enterrar elementos comunes dentro de volcados de unidades es un motor principal de subpago en asociaciones.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros en HOAs para contratistas",
+        href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+      },
+      {
+        label: "¿En qué se diferencian las pólizas maestras de las de propietarios?",
+        href: "/faq#faq-commercial-hoa-master-policies",
+      },
+      {
+        label: "Guía de reclamaciones de techado en HOAs",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-hoa-claim-coordination",
+    category: "documentation",
+    question: "¿Cómo deben coordinar los contratistas las reclamaciones de HOA con juntas y administradores?",
+    answer:
+      "Establezca un contacto principal con el administrador de la propiedad y un enlace de la junta cuando sea necesario, alinee la numeración de edificios y unidades a los registros de la asociación desde el primer día, registre cada autorización y entrada a unidad de forma contemporánea y envíe paquetes de estado indexados por área que la asociación pueda reenviar. Las aprobaciones solo verbales fallan en auditorías de asociaciones y aseguradoras.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros en HOAs para contratistas",
+        href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo funcionan las reclamaciones de seguros en HOAs para contratistas?",
+        href: "/faq#faq-commercial-hoa-insurance-claims",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
     id: "commercial-national-restoration-programs",
     category: "insurance_supplements",
     question: "¿Apoyan a empresas nacionales de restauración?",

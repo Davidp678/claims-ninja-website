@@ -5351,6 +5351,102 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
   {
+    id: "commercial-hoa-insurance-claims",
+    category: "insurance_supplements",
+    question: "How do HOA insurance claims work for contractors?",
+    answer:
+      "HOA and condominium association claims involve board and management authorization, master versus unit-owner policy boundaries, and documentation across common elements and units. Contractors index evidence by community, building, common element, and unit so carriers can attribute association versus individually owned scope — residential single-folder patterns invite reductions on association files.",
+    relatedLinks: [
+      {
+        label: "HOA Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+      },
+      {
+        label: "How should contractors document association insurance claims?",
+        href: "/faq#faq-commercial-hoa-association-documentation",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-hoa-association-documentation",
+    category: "documentation",
+    question: "How should contractors document association insurance claims?",
+    answer:
+      "Publish a Community → Building → Common Element / Unit → Room index aligned to association records within 24 hours. Separate common-element packs from unit packs, maintain board and manager authorization logs, and submit estimates that mirror the same hierarchy with line-to-evidence cross-references.",
+    relatedLinks: [
+      {
+        label: "HOA Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "How do HOA insurance claims work for contractors?",
+        href: "/faq#faq-commercial-hoa-insurance-claims",
+      },
+    ],
+  },
+  {
+    id: "commercial-hoa-master-policies",
+    category: "documentation",
+    question: "How do association master policies differ from homeowner policies on HOA claims?",
+    answer:
+      "Association master policies typically respond to common elements and association-owned property, while unit-owner policies (often HO-6 forms) may respond to individually owned interiors. Contractors should index common-element and unit evidence separately so desk reviewers can attribute scope — without treating the contractor as coverage counsel.",
+    relatedLinks: [
+      {
+        label: "HOA Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+      },
+      {
+        label: "How should common elements be documented on HOA claims?",
+        href: "/faq#faq-commercial-hoa-common-elements",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-hoa-common-elements",
+    category: "documentation",
+    question: "How should common elements be documented on HOA claims?",
+    answer:
+      "Index roofs, exteriors, corridors, amenities, grounds, and shared systems separately from unit interiors. Label locations to the association site map and keep estimate sections distinct so desk reviewers can attribute common-element scope without digging through unit galleries — burying common elements inside unit dumps is a primary association underpayment driver.",
+    relatedLinks: [
+      {
+        label: "HOA Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+      },
+      {
+        label: "How do association master policies differ from homeowner policies?",
+        href: "/faq#faq-commercial-hoa-master-policies",
+      },
+      {
+        label: "HOA Roofing Claims Guide",
+        href: "/resources/guides/roofing-claims/hoa-roofing-claims-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-hoa-claim-coordination",
+    category: "documentation",
+    question: "How should contractors coordinate HOA claims with boards and managers?",
+    answer:
+      "Establish a primary property manager contact and board liaison when needed, align building and unit numbering to association records on day one, log every authorization and unit entry event contemporaneously, and send area-indexed status packages the association can forward. Verbal-only approvals fail association and carrier audits.",
+    relatedLinks: [
+      {
+        label: "HOA Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+      },
+      {
+        label: "How do HOA insurance claims work for contractors?",
+        href: "/faq#faq-commercial-hoa-insurance-claims",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
     id: "commercial-national-restoration-programs",
     category: "insurance_supplements",
     question: "Do you support national restoration companies?",

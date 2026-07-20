@@ -2038,6 +2038,75 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Property manager coordination FAQ for apartment and multifamily insurance claims.",
   },
+  "commercial-hoa-insurance-claims": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/hoa-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-hoa-association-documentation",
+      "commercial-hoa-master-policies",
+      "commercial-hoa-claim-coordination",
+    ],
+    internalLinkNotes:
+      "HOA insurance claims overview FAQ for contractors; anchors HOA Insurance Claims Guide.",
+  },
+  "commercial-hoa-association-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/hoa-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-hoa-insurance-claims",
+      "commercial-hoa-common-elements",
+      "commercial-hoa-claim-coordination",
+    ],
+    internalLinkNotes:
+      "Association documentation standards FAQ; Community → Building → Common Element / Unit indexing.",
+  },
+  "commercial-hoa-master-policies": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/hoa-insurance-claims-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-hoa-common-elements",
+      "commercial-hoa-insurance-claims",
+      "commercial-hoa-association-documentation",
+    ],
+    internalLinkNotes:
+      "Master vs homeowner policy FAQ for HOA and condominium association claims.",
+  },
+  "commercial-hoa-common-elements": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/hoa-insurance-claims-guide",
+      "roofing-claims/hoa-roofing-claims-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-hoa-master-policies",
+      "commercial-hoa-association-documentation",
+      "commercial-multifamily-common-areas",
+    ],
+    internalLinkNotes:
+      "Common elements documentation FAQ for HOA claims; cross-link HOA roofing specialty.",
+  },
+  "commercial-hoa-claim-coordination": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/hoa-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-hoa-insurance-claims",
+      "commercial-hoa-association-documentation",
+      "commercial-property-manager-coordination",
+    ],
+    internalLinkNotes:
+      "Board and manager coordination FAQ for HOA and community association claims.",
+  },
   "commercial-national-restoration-programs": {
     searchIntent: "informational",
     relatedFaqIds: [

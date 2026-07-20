@@ -36,6 +36,7 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
     "multifamily-apartment-insurance-claims-guide",
+    "hoa-insurance-claims-guide",
     "water-mitigation-invoice-defense-guide",
     "category-3-water-damage-documentation-guide",
     "commercial-fire-claims-guide",
@@ -619,6 +620,10 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Multifamily & Apartment Insurance Claims Guide",
       href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+    },
+    {
+      label: "HOA Insurance Claims Guide for Contractors",
+      href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
     },
     {
       label: "Commercial Fire Claims Guide",

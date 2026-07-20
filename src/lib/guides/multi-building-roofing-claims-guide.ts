@@ -37,6 +37,7 @@ export const MULTI_BUILDING_ROOFING_CLAIMS_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "commercial-roofing-documentation-guide",
     "multifamily-apartment-insurance-claims-guide",
+    "hoa-insurance-claims-guide",
     "hoa-roofing-claims-guide",
     "roof-matching-documentation-guide",
     "roof-repairability-documentation-guide",
@@ -426,6 +427,10 @@ export const MULTI_BUILDING_ROOFING_CLAIMS_GUIDE = defineGuide({
     {
       label: "Multifamily & Apartment Insurance Claims Guide",
       href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+    },
+    {
+      label: "HOA Insurance Claims Guide for Contractors",
+      href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
     },
     {
       label: "HOA Roofing Claims Guide",

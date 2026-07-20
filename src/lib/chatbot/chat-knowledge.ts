@@ -2227,6 +2227,79 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["commercial_claims", "documentation", "apartment_multifamily"],
   },
+  "commercial-hoa-insurance-claims": {
+    phrases: [
+      "how do HOA insurance claims work for contractors",
+      "HOA insurance claims",
+      "condominium association insurance claims",
+      "community association insurance claims",
+    ],
+    keywords: [
+      "HOA insurance claims",
+      "condominium association",
+      "community association",
+      "HOA claims",
+    ],
+    topics: ["commercial_claims", "hoa_claims"],
+  },
+  "commercial-hoa-association-documentation": {
+    phrases: [
+      "how should contractors document association insurance claims",
+      "association documentation",
+      "HOA property damage documentation",
+      "document HOA insurance claims",
+    ],
+    keywords: [
+      "association documentation",
+      "HOA documentation",
+      "HOA property damage documentation",
+    ],
+    topics: ["commercial_claims", "documentation", "hoa_claims"],
+  },
+  "commercial-hoa-master-policies": {
+    phrases: [
+      "how do association master policies differ from homeowner policies",
+      "association master policies",
+      "master policy vs homeowner policy",
+      "HOA master policy",
+    ],
+    keywords: [
+      "master policy",
+      "association master",
+      "homeowner policy",
+      "HO-6",
+    ],
+    topics: ["commercial_claims", "hoa_claims"],
+  },
+  "commercial-hoa-common-elements": {
+    phrases: [
+      "how should common elements be documented on HOA claims",
+      "common elements HOA",
+      "HOA common element documentation",
+      "document common elements association",
+    ],
+    keywords: [
+      "common elements",
+      "HOA common elements",
+      "association common elements",
+    ],
+    topics: ["commercial_claims", "documentation", "hoa_claims"],
+  },
+  "commercial-hoa-claim-coordination": {
+    phrases: [
+      "how should contractors coordinate HOA claims with boards and managers",
+      "HOA claim coordination",
+      "board and manager coordination HOA",
+      "working with HOA boards",
+    ],
+    keywords: [
+      "HOA claim coordination",
+      "HOA board",
+      "association manager",
+      "board coordination",
+    ],
+    topics: ["commercial_claims", "documentation", "hoa_claims"],
+  },
   "commercial-national-restoration-programs": {
     phrases: [
       "support national restoration companies",

@@ -210,12 +210,12 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "multifamily-water-claims-that-get-underpaid": {
     intro:
-      "You've learned why multifamily water claims get underpaid and which documentation gaps trigger reductions. Now run the multifamily claim workflow and commercial documentation standards that defend unit-level scope, common areas, equipment, and drying duration from intake through closeout.",
+      "You've learned why multifamily water claims get underpaid and which documentation gaps trigger reductions. Now run the multifamily and HOA claim workflows plus commercial documentation standards that defend unit-level scope, common areas, equipment, and drying duration from intake through closeout.",
     guideSlugs: [
       "multifamily-apartment-insurance-claims-guide",
+      "hoa-insurance-claims-guide",
       "commercial-insurance-claims-documentation-guide",
       "commercial-water-loss-documentation-guide",
-      "water-mitigation-invoice-defense-guide",
     ],
   },
   "fire-damage-claim-documentation-guide": {
