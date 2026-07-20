@@ -218,6 +218,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "commercial-water-loss-documentation-guide",
     ],
   },
+  "why-commercial-insurance-claims-get-underpaid": {
+    intro:
+      "You've learned why commercial claims get underpaid. Now run commercial documentation standards that defend building indexes, quantities, code, TI, and multi-area packages.",
+    guideSlugs: [
+      "commercial-insurance-claims-documentation-guide",
+      "multifamily-apartment-insurance-claims-guide",
+      "hoa-insurance-claims-guide",
+      "commercial-water-loss-documentation-guide",
+    ],
+  },
   "fire-damage-claim-documentation-guide": {
     intro:
       "You've learned fire claim documentation fundamentals. Now execute the cornerstone documentation standards and specialty procedures that defend migration, HVAC, contents, and pack-out scope.",

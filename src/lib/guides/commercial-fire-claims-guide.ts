@@ -57,6 +57,7 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
     "fire-claim-intake-guide",
   ],
   relatedBlogSlugs: [
+    "why-commercial-insurance-claims-get-underpaid",
     "why-fire-damage-supplements-get-denied",
     "why-fire-damage-claims-get-underpaid",
     "fire-damage-claim-documentation-guide",

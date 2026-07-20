@@ -57,6 +57,7 @@ export const COMMERCIAL_ROOFING_DOCUMENTATION_GUIDE = defineGuide({
     "reinspection-preparation-guide",
   ],
   relatedBlogSlugs: [
+    "why-commercial-insurance-claims-get-underpaid",
     "roofing-supplement-playbook",
     "what-is-a-roof-supplement",
     "hail-damage-roof-claims-documentation-supplement",

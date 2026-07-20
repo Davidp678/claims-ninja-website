@@ -5566,4 +5566,123 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       },
     ],
   },
+  {
+    id: "commercial-property-claims-underpaid",
+    category: "insurance_supplements",
+    question: "¿Por qué las reclamaciones de seguro de propiedad comercial reciben pagos insuficientes?",
+    answer:
+      "Las reclamaciones de propiedad comercial reciben pagos insuficientes cuando la documentación no puede defender el alcance completo del trabajo: índices de edificio incompletos, validación de cantidades ausente, fotos sin etiquetas, soporte de código y ordenanza omitido, límites poco claros de mejoras de inquilinos, sistemas compartidos sin documentar, registros de mitigación incompletos, estimados desorganizados y brechas de comunicación con la aseguradora. Los revisores de escritorio aprueban lo que pueden reenviar sin llamar al campo; las reducciones proporcionales siguen cuando los archivos comerciales reutilizan patrones de documentación residencial.",
+    relatedLinks: [
+      {
+        label: "Por qué las reclamaciones de seguro comercial reciben pagos insuficientes",
+        href: "/resources/blog/why-commercial-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+      {
+        label: "¿Cómo provocan las brechas de documentación el pago insuficiente de reclamaciones comerciales?",
+        href: "/faq#faq-commercial-documentation-gaps-underpayment",
+      },
+    ],
+  },
+  {
+    id: "commercial-documentation-gaps-underpayment",
+    category: "documentation",
+    question: "¿Cómo provocan las brechas de documentación el pago insuficiente de reclamaciones comerciales?",
+    answer:
+      "Las brechas de documentación provocan pagos insuficientes comerciales cuando el alcance facturado no puede atribuirse a un índice etiquetado Edificio → Piso → Suite/Unidad → Habitación. Etiquetas de área ausentes en fotos, carpetas multibuilding fusionadas, reportes diarios por zona ausentes y cronologías de mitigación reconstruidas en la factura obligan a los revisores a reducir líneas proporcionalmente — incluso cuando el trabajo de campo fue legítimo. Publique el índice comercial dentro de 24 horas y mantenga las mismas etiquetas en fotos, registros, croquis y secciones del estimado.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Por qué las reclamaciones de seguro comercial reciben pagos insuficientes",
+        href: "/resources/blog/why-commercial-insurance-claims-get-underpaid",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas las reclamaciones de seguros comerciales?",
+        href: "/faq#faq-commercial-claim-documentation",
+      },
+      {
+        label: "¿Por qué las reclamaciones de seguro de propiedad comercial reciben pagos insuficientes?",
+        href: "/faq#faq-commercial-property-claims-underpaid",
+      },
+    ],
+  },
+  {
+    id: "commercial-estimate-accuracy",
+    category: "documentation",
+    question: "¿Por qué importa la precisión del estimado en reclamaciones de seguros comerciales?",
+    answer:
+      "La precisión del estimado importa en reclamaciones comerciales porque las aseguradoras concilian dimensiones de habitaciones, squares de techo, cantidades de demolición y días de equipo con croquis etiquetados y mediciones de campo. Las cantidades desalineadas son un vector principal de pago insuficiente: los revisores recortan números blandos antes de debatir el precio unitario. Valide cantidades dentro de las 48 horas de recibir el estimado de la aseguradora, fotografíe referencias de medición para ensambles grandes y concilie equipos y materiales facturados con registros de campo contemporáneos.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Por qué las reclamaciones de seguro comercial reciben pagos insuficientes",
+        href: "/resources/blog/why-commercial-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Lista de verificación de revisión de estimados Xactimate para contratistas",
+        href: "/resources/blog/xactimate-estimate-review-checklist-contractors",
+      },
+      {
+        label: "¿Cómo mejora una mejor documentación los acuerdos de reclamaciones comerciales?",
+        href: "/faq#faq-commercial-settlement-documentation",
+      },
+    ],
+  },
+  {
+    id: "commercial-code-ordinance-upgrades",
+    category: "documentation",
+    question: "¿Cómo deben documentar los contratistas las actualizaciones de código y ordenanza en reclamaciones comerciales?",
+    answer:
+      "Documente las actualizaciones de código y ordenanza por separado de la reparación like-kind: cite el requisito aplicable de AHJ, permiso o inspección por línea, fotografíe la condición no conforme previa a la actualización antes de cubrirla y mapee cada ítem de código al estimado. Listas genéricas de código sin aplicación específica al trabajo invitan a denegaciones. Confirme temprano con el ajustador la aplicabilidad del endoso de ordenanza y ley — la cobertura depende del lenguaje de la póliza y de la calidad de la evidencia.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de actualizaciones de código por incendio",
+        href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de actualizaciones de código",
+        href: "/resources/guides/roofing-claims/code-upgrade-documentation-guide",
+      },
+      {
+        label: "Por qué las reclamaciones de seguro comercial reciben pagos insuficientes",
+        href: "/resources/blog/why-commercial-insurance-claims-get-underpaid",
+      },
+    ],
+  },
+  {
+    id: "commercial-settlement-documentation",
+    category: "documentation",
+    question: "¿Cómo mejora una mejor documentación los acuerdos de reclamaciones comerciales?",
+    answer:
+      "Una mejor documentación mejora los acuerdos comerciales al eliminar la principal excusa de reducción proporcional: alcance no verificable. Etiquetas de área indexadas, cantidades validadas, conjuntos fotográficos completos, separación de código y TI, evidencia de sistemas compartidos y registros de mitigación facilitan que las aseguradoras evalúen y reenvíen archivos sin RFIs. Eso no garantiza el pago completo de cada línea — los límites de póliza siguen aplicando — pero convierte la revisión de escritorio de un ejercicio de reducción en un flujo de aprobación.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Por qué las reclamaciones de seguro comercial reciben pagos insuficientes",
+        href: "/resources/blog/why-commercial-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Tasas de aprobación de documentación de reclamaciones",
+        href: "/resources/blog/claim-documentation-approval-rates",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
 ] as const;

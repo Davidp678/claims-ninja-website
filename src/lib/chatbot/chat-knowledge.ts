@@ -1324,6 +1324,80 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["commercial_claims", "documentation"],
   },
+  "commercial-property-claims-underpaid": {
+    phrases: [
+      "why do commercial property insurance claims get underpaid",
+      "why commercial property insurance claims get underpaid",
+      "commercial property claims underpaid",
+      "commercial insurance claims underpayment",
+      "why commercial insurance claims get underpaid",
+    ],
+    keywords: [
+      "commercial property underpaid",
+      "commercial underpayment",
+      "commercial claims underpaid",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
+  "commercial-documentation-gaps-underpayment": {
+    phrases: [
+      "how do documentation gaps cause commercial claim underpayment",
+      "documentation gaps commercial underpayment",
+      "commercial documentation gaps underpayment",
+      "incomplete building documentation commercial claims",
+    ],
+    keywords: [
+      "documentation gaps",
+      "commercial documentation gaps",
+      "building documentation",
+      "commercial underpayment",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
+  "commercial-estimate-accuracy": {
+    phrases: [
+      "why does estimate accuracy matter on commercial insurance claims",
+      "commercial estimate accuracy",
+      "quantity validation commercial claims",
+      "commercial estimate quantity accuracy",
+    ],
+    keywords: [
+      "estimate accuracy",
+      "quantity validation",
+      "commercial estimate",
+      "mismatched quantities",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
+  "commercial-code-ordinance-upgrades": {
+    phrases: [
+      "how should contractors document code and ordinance upgrades on commercial claims",
+      "commercial code ordinance upgrades",
+      "code upgrades commercial claims",
+      "ordinance and law commercial documentation",
+    ],
+    keywords: [
+      "code ordinance",
+      "code upgrades",
+      "ordinance and law",
+      "commercial code documentation",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
+  "commercial-settlement-documentation": {
+    phrases: [
+      "how does better documentation improve commercial claim settlements",
+      "improve commercial claim settlements",
+      "better documentation commercial settlements",
+      "commercial settlement documentation",
+    ],
+    keywords: [
+      "commercial settlements",
+      "settlement documentation",
+      "improve commercial settlements",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
   "mold-supplement-included-items": {
     phrases: [
       "what should be included in a mold damage supplement",

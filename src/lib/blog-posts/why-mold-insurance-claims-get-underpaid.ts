@@ -30,6 +30,7 @@ export const whyMoldInsuranceClaimsGetUnderpaid: BlogPost = {
   seoDescription:
     "Why mold insurance claims get underpaid: 10 preventable documentation mistakes on moisture source, hidden mold, readings, remediation production, PRV closeout, and supplement packages for restoration contractors.",
   relatedPostSlugs: [
+    "why-commercial-insurance-claims-get-underpaid",
     "why-mold-supplements-get-denied",
     "mold-claim-documentation-checklist",
     "mold-documentation-mistakes",

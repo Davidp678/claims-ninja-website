@@ -376,6 +376,12 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "homeowners association",
     "condominium association",
     "community association",
+    "commercial underpaid",
+    "commercial underpayment",
+    "commercial insurance underpayment",
+    "why commercial insurance claims get underpaid",
+    "commercial claim documentation",
+    "commercial restoration claims",
   ],
   hoa_claims: [
     "HOA",
@@ -2750,6 +2756,39 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /hoa-insurance-claims-guide|commercial-hoa-claim-coordination|coordinate HOA claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "why commercial insurance claims underpaid blog retrieves",
+    message: "why commercial insurance claims get underpaid",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /why-commercial-insurance-claims-get-underpaid|commercial property insurance claims get underpaid|Why Commercial Insurance Claims Get Underpaid|commercial insurance claims get underpaid/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial property claims underpaid FAQ retrieves",
+    message: "why do commercial property insurance claims get underpaid",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-property-claims-underpaid|why-commercial-insurance-claims-get-underpaid|commercial property insurance claims get underpaid/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial settlement documentation FAQ retrieves",
+    message: "how does better documentation improve commercial claim settlements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-settlement-documentation|commercial-insurance-claims-documentation-guide|improve commercial claim settlements|better documentation improve commercial/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

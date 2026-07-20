@@ -5579,4 +5579,123 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       },
     ],
   },
+  {
+    id: "commercial-property-claims-underpaid",
+    category: "insurance_supplements",
+    question: "Why do commercial property insurance claims get underpaid?",
+    answer:
+      "Commercial property claims get underpaid when documentation cannot defend the full footprint of work — incomplete building indexes, missing quantity validation, unlabeled photos, missed code and ordinance support, unclear tenant improvement boundaries, undocumented shared systems, incomplete mitigation logs, weak estimate organization, and communication gaps with carriers. Desk reviewers approve what they can forward without calling the field; proportional reductions follow when commercial files reuse residential documentation patterns.",
+    relatedLinks: [
+      {
+        label: "Why Commercial Insurance Claims Get Underpaid",
+        href: "/resources/blog/why-commercial-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+      {
+        label: "How do documentation gaps cause commercial claim underpayment?",
+        href: "/faq#faq-commercial-documentation-gaps-underpayment",
+      },
+    ],
+  },
+  {
+    id: "commercial-documentation-gaps-underpayment",
+    category: "documentation",
+    question: "How do documentation gaps cause commercial claim underpayment?",
+    answer:
+      "Documentation gaps cause commercial underpayment when billed scope cannot be attributed to a labeled Building → Floor → Suite/Unit → Room index. Missing area labels on photos, merged multi-building folders, absent daily reports by zone, and reconstructed mitigation chronologies at invoice force desk reviewers to reduce lines proportionally — even when the field work was legitimate. Publish the commercial index within 24 hours and keep the same labels across photos, logs, sketches, and estimate sections.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Why Commercial Insurance Claims Get Underpaid",
+        href: "/resources/blog/why-commercial-insurance-claims-get-underpaid",
+      },
+      {
+        label: "How should contractors document commercial insurance claims?",
+        href: "/faq#faq-commercial-claim-documentation",
+      },
+      {
+        label: "Why do commercial property insurance claims get underpaid?",
+        href: "/faq#faq-commercial-property-claims-underpaid",
+      },
+    ],
+  },
+  {
+    id: "commercial-estimate-accuracy",
+    category: "documentation",
+    question: "Why does estimate accuracy matter on commercial insurance claims?",
+    answer:
+      "Estimate accuracy matters on commercial claims because carriers reconcile room dimensions, roof squares, demolition quantities, and equipment days against labeled sketches and field measurements. Mismatched quantities are a primary underpayment vector — desk reviewers cut soft numbers before debating unit price. Validate quantities within 48 hours of carrier estimate receipt, photograph measurement references for large assemblies, and reconcile billed equipment and materials to contemporaneous field logs.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Why Commercial Insurance Claims Get Underpaid",
+        href: "/resources/blog/why-commercial-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Xactimate estimate review checklist for contractors",
+        href: "/resources/blog/xactimate-estimate-review-checklist-contractors",
+      },
+      {
+        label: "How does better documentation improve commercial claim settlements?",
+        href: "/faq#faq-commercial-settlement-documentation",
+      },
+    ],
+  },
+  {
+    id: "commercial-code-ordinance-upgrades",
+    category: "documentation",
+    question: "How should contractors document code and ordinance upgrades on commercial claims?",
+    answer:
+      "Document code and ordinance upgrades separately from like-kind repair: cite the applicable AHJ, permit, or inspection requirement per line, photograph the pre-upgrade non-compliant condition before covering it, and map each code item to the estimate. Generic code lists without job-specific application invite denial. Confirm ordinance and law endorsement applicability with the adjuster early — coverage depends on policy language and evidence quality.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Fire Code Upgrade Documentation Guide",
+        href: "/resources/guides/fire-damage/fire-code-upgrade-documentation-guide",
+      },
+      {
+        label: "Code Upgrade Documentation Guide",
+        href: "/resources/guides/roofing-claims/code-upgrade-documentation-guide",
+      },
+      {
+        label: "Why Commercial Insurance Claims Get Underpaid",
+        href: "/resources/blog/why-commercial-insurance-claims-get-underpaid",
+      },
+    ],
+  },
+  {
+    id: "commercial-settlement-documentation",
+    category: "documentation",
+    question: "How does better documentation improve commercial claim settlements?",
+    answer:
+      "Better documentation improves commercial settlements by removing the primary excuse for proportional reduction: unverifiable scope. Indexed area labels, validated quantities, complete photo sets, code and TI separation, shared-system evidence, and mitigation logs make files easier for carriers to evaluate and forward without RFIs. That does not guarantee full payment on every line — policy limits still apply — but it turns desk review from a reduction exercise into an approval workflow.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Why Commercial Insurance Claims Get Underpaid",
+        href: "/resources/blog/why-commercial-insurance-claims-get-underpaid",
+      },
+      {
+        label: "Claim documentation approval rates",
+        href: "/resources/blog/claim-documentation-approval-rates",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
 ] as const;

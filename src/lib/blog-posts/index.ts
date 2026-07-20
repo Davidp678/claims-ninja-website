@@ -31,6 +31,7 @@ import { moldDocumentationMistakes } from "./mold-documentation-mistakes";
 import { whyMoldInsuranceClaimsGetUnderpaid } from "./why-mold-insurance-claims-get-underpaid";
 import { whyMoldSupplementsGetDenied } from "./why-mold-supplements-get-denied";
 import { whyWaterMitigationClaimsGetUnderpaid } from "./why-water-mitigation-claims-get-underpaid";
+import { whyCommercialInsuranceClaimsGetUnderpaid } from "./why-commercial-insurance-claims-get-underpaid";
 import { hailDamageRoofClaimsDocumentationSupplement } from "./hail-damage-roof-claims-documentation-supplement";
 import { roofMatchingVsRepairabilityWhenToSupplement } from "./roof-matching-vs-repairability-when-to-supplement";
 import { INSURANCE_SUPPLEMENTING_PILLAR } from "./insurance-supplementing-guide-contractors";
@@ -92,4 +93,5 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   xactimateVsMarketPricing,
   whenToBringInSupplementingPartner,
   claimDocumentationApprovalRates,
+  whyCommercialInsuranceClaimsGetUnderpaid,
 ] as const;

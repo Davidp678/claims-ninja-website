@@ -27,6 +27,7 @@ export const multifamilyWaterClaimsThatGetUnderpaid: BlogPost = {
   seoDescription:
     "Learn why multifamily water claims get underpaid, including unit tracking failures, common area omissions, equipment reductions, drying day disputes, tenant impact gaps, and weak documentation packages.",
   relatedPostSlugs: [
+    "why-commercial-insurance-claims-get-underpaid",
     "water-damage-documentation-for-apartment-complexes",
     "common-documentation-mistakes-on-commercial-water-losses",
     "large-loss-water-mitigation-documentation-best-practices",

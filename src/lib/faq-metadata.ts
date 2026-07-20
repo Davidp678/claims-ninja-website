@@ -3031,9 +3031,83 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "commercial-claim-documentation",
       "commercial-tenant-improvements-documentation",
       "commercial-large-loss-project-documentation",
+      "commercial-property-claims-underpaid",
     ],
     internalLinkNotes:
       "Commercial insurance documentation requirements FAQ; links peril commercial guides.",
+  },
+  "commercial-property-claims-underpaid": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/multifamily-apartment-insurance-claims-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-documentation-gaps-underpayment",
+      "commercial-estimate-accuracy",
+      "commercial-code-ordinance-upgrades",
+      "commercial-settlement-documentation",
+    ],
+    internalLinkNotes:
+      "Blog bridge FAQ; anchors Why Commercial Insurance Claims Get Underpaid article.",
+  },
+  "commercial-documentation-gaps-underpayment": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-property-claims-underpaid",
+      "commercial-claim-documentation",
+      "commercial-settlement-documentation",
+    ],
+    internalLinkNotes:
+      "How documentation gaps drive commercial underpayment; pairs with commercial docs guide.",
+  },
+  "commercial-estimate-accuracy": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "roofing-claims/commercial-roofing-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-property-claims-underpaid",
+      "commercial-settlement-documentation",
+      "commercial-claim-documentation",
+    ],
+    internalLinkNotes:
+      "Commercial estimate / quantity accuracy FAQ; supports underpayment article quantity section.",
+  },
+  "commercial-code-ordinance-upgrades": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "fire-damage/fire-code-upgrade-documentation-guide",
+      "roofing-claims/code-upgrade-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-property-claims-underpaid",
+      "commercial-settlement-documentation",
+      "commercial-insurance-documentation-requirements",
+    ],
+    internalLinkNotes:
+      "Commercial code and ordinance documentation FAQ; cross-links fire and roofing code guides.",
+  },
+  "commercial-settlement-documentation": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-property-claims-underpaid",
+      "commercial-documentation-gaps-underpayment",
+      "commercial-estimate-accuracy",
+      "commercial-claim-documentation",
+    ],
+    internalLinkNotes:
+      "How better documentation improves commercial settlements; CTA to commercial docs guide.",
   },
 };
 

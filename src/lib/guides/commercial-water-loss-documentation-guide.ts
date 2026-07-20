@@ -56,6 +56,7 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
     "commercial-mold-claims-guide",
   ],
   relatedBlogSlugs: [
+    "why-commercial-insurance-claims-get-underpaid",
     "why-category-3-water-claims-get-underpaid",
     "moisture-mapping-mistakes-that-cost-contractors-money",
     "how-carriers-reduce-drying-days",

@@ -28,6 +28,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Mejores prácticas de documentación de mitigación de agua en pérdidas de gran magnitud",
   "multifamily-water-claims-that-get-underpaid":
     "Reclamaciones de agua multifamiliar que se pagan por debajo del valor",
+  "why-commercial-insurance-claims-get-underpaid":
+    "Por qué las reclamaciones de seguro comercial reciben pagos insuficientes",
   "roofing-supplement-playbook":
     "Manual de suplementos de techado para contratistas",
   "what-is-a-roof-supplement": "¿Qué es un suplemento de techo?",

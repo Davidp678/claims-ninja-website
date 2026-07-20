@@ -29,6 +29,7 @@ export const whyFireDamageClaimsGetUnderpaid: BlogPost = {
   seoDescription:
     "Why fire damage claims get underpaid: documentation gaps on structural, smoke, contents, and pack-out scope; weak supplement evidence; and practical recovery strategies for restoration contractors.",
   relatedPostSlugs: [
+    "why-commercial-insurance-claims-get-underpaid",
     "why-fire-damage-supplements-get-denied",
     "fire-claim-documentation-checklist",
     "fire-damage-claim-documentation-guide",

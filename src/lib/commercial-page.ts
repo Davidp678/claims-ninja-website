@@ -381,6 +381,7 @@ export const COMMERCIAL_RESOURCES = {
     "multi-building-roofing-claims-guide",
   ],
   blogSlugs: [
+    "why-commercial-insurance-claims-get-underpaid",
     "water-damage-documentation-for-apartment-complexes",
     "large-loss-water-mitigation-documentation-best-practices",
     "multifamily-water-claims-that-get-underpaid",

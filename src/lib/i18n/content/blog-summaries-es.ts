@@ -47,6 +47,12 @@ export const BLOG_SUMMARIES_ES: Record<string, BlogSummary> = {
     excerpt:
       "Por qué se deniegan los suplementos por moho: evidencia ausente de fuente de humedad, fotos débiles, registros de protocolo y contención ausentes, remediación y cierre PRV/IAQ sin respaldo, cargos de equipo sin registros, estimados desorganizados y errores de comunicación con la aseguradora — y cómo los contratistas mejoran las tasas de aprobación.",
   },
+  "why-commercial-insurance-claims-get-underpaid": {
+    title:
+      "Por qué las reclamaciones de seguro comercial reciben pagos insuficientes",
+    excerpt:
+      "Por qué las reclamaciones de seguro de propiedad comercial reciben pagos insuficientes: documentación incompleta del edificio, validación de cantidades ausente, fotos débiles, oportunidades de código y ordenanza omitidas, mejoras de inquilinos, sistemas compartidos y estrategias prácticas de documentación para contratistas de restauración.",
+  },
 };
 
 export function getBlogSummaryEs(

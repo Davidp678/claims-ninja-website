@@ -54,6 +54,7 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     "claim-file-audit-guide",
   ],
   relatedBlogSlugs: [
+    "why-commercial-insurance-claims-get-underpaid",
     "water-damage-documentation-for-apartment-complexes",
     "large-loss-water-mitigation-documentation-best-practices",
     "multifamily-water-claims-that-get-underpaid",
@@ -65,6 +66,11 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     "documentation-gaps-that-trigger-water-claim-denials",
   ],
   faqIds: [
+    "commercial-property-claims-underpaid",
+    "commercial-documentation-gaps-underpayment",
+    "commercial-estimate-accuracy",
+    "commercial-code-ordinance-upgrades",
+    "commercial-settlement-documentation",
     "commercial-claim-documentation",
     "commercial-large-loss-project-documentation",
     "commercial-multi-building-documentation",
