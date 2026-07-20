@@ -2155,7 +2155,77 @@ const FAQ_ID_BOOSTS: Record<
       "multifamily commercial claims",
     ],
     keywords: ["apartment complex", "multifamily", "commercial"],
-    topics: ["commercial_claims", "commercial_water"],
+    topics: ["commercial_claims", "commercial_water", "apartment_multifamily"],
+  },
+  "commercial-apartment-insurance-claims": {
+    phrases: [
+      "how do apartment insurance claims work for contractors",
+      "apartment insurance claims",
+      "how apartment insurance claims work",
+      "commercial apartment claims",
+    ],
+    keywords: [
+      "apartment insurance claims",
+      "apartment claims",
+      "commercial apartment",
+    ],
+    topics: ["commercial_claims", "apartment_multifamily"],
+  },
+  "commercial-multifamily-documentation": {
+    phrases: [
+      "how should contractors document multifamily insurance claims",
+      "multifamily documentation",
+      "document multifamily insurance claims",
+      "multifamily restoration documentation",
+    ],
+    keywords: [
+      "multifamily documentation",
+      "multifamily insurance claims",
+      "apartment damage documentation",
+    ],
+    topics: ["commercial_claims", "documentation", "apartment_multifamily"],
+  },
+  "commercial-unit-inspections": {
+    phrases: [
+      "how should contractors organize unit inspections on apartment claims",
+      "unit inspections apartment",
+      "unit-by-unit documentation",
+      "apartment unit inspections",
+    ],
+    keywords: [
+      "unit inspections",
+      "unit-by-unit",
+      "apartment unit documentation",
+    ],
+    topics: ["commercial_claims", "documentation", "apartment_multifamily"],
+  },
+  "commercial-multifamily-common-areas": {
+    phrases: [
+      "how should common areas be documented on multifamily claims",
+      "common areas multifamily",
+      "multifamily common area documentation",
+      "document common areas apartment",
+    ],
+    keywords: [
+      "common areas",
+      "multifamily common areas",
+      "common area documentation",
+    ],
+    topics: ["commercial_claims", "documentation", "apartment_multifamily"],
+  },
+  "commercial-property-manager-coordination": {
+    phrases: [
+      "how should contractors work with property managers on apartment insurance claims",
+      "property managers apartment claims",
+      "working with property managers",
+      "property manager coordination multifamily",
+    ],
+    keywords: [
+      "property managers",
+      "property manager coordination",
+      "apartment property manager",
+    ],
+    topics: ["commercial_claims", "documentation", "apartment_multifamily"],
   },
   "commercial-national-restoration-programs": {
     phrases: [

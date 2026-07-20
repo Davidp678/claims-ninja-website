@@ -11,6 +11,12 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Estándares fundamentales de documentación para reclamaciones de seguros comerciales: identificación de la propiedad, indexación multiárea, mejoras de inquilinos, consideraciones de código, apoyo a interrupción de negocio y paquetes finales de reclamación en multifamiliares, oficinas, retail, industrial, hospitalidad, educación, salud y uso mixto.",
   },
+  "general-claims/multifamily-apartment-insurance-claims-guide": {
+    title:
+      "Guía de reclamaciones de seguros multifamiliares y de apartamentos para contratistas",
+    excerpt:
+      "Manual operativo para contratistas sobre documentación, gestión, estimación y suplementos de reclamaciones de seguros en complejos de apartamentos, vivienda multifamiliar, condominios y propiedades residenciales comerciales similares: indexación unidad por unidad, áreas comunes, coordinación con administradores de propiedad y paquetes indexados de reclamación.",
+  },
   "general-claims/first-48-hours-checklist": {
     title: "Lista de verificación: primeras 48 horas tras el estimado de la aseguradora",
     excerpt:

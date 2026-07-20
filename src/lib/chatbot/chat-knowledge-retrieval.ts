@@ -2626,6 +2626,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "apartment insurance claims retrieves multifamily guide or FAQ",
+    message: "how do apartment insurance claims work for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multifamily-apartment-insurance-claims-guide|commercial-apartment-insurance-claims|apartment insurance claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multifamily documentation retrieves guide or FAQ",
+    message: "how should contractors document multifamily insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multifamily-apartment-insurance-claims-guide|commercial-multifamily-documentation|multifamily insurance claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "unit inspections apartment claims retrieves guide or FAQ",
+    message: "how should contractors organize unit inspections on apartment claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multifamily-apartment-insurance-claims-guide|commercial-unit-inspections|unit inspections/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multifamily common areas retrieves guide or FAQ",
+    message: "how should common areas be documented on multifamily claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multifamily-apartment-insurance-claims-guide|commercial-multifamily-common-areas|common areas be documented on multifamily/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "property manager apartment claims retrieves guide or FAQ",
+    message: "how should contractors work with property managers on apartment insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /multifamily-apartment-insurance-claims-guide|commercial-property-manager-coordination|property managers on apartment/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "why mold insurance claims underpaid blog retrieves",
     message: "why mold insurance claims get underpaid documentation",
     assert: (result) =>

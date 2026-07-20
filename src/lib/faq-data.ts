@@ -5242,9 +5242,112 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     relatedLinks: [
       { label: "Commercial insurance claims", href: "/solutions/commercial" },
       {
+        label: "Multifamily & Apartment Insurance Claims Guide",
+        href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+      },
+      {
         label: "Water damage documentation for apartment complexes",
         href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
       },
+    ],
+  },
+  {
+    id: "commercial-apartment-insurance-claims",
+    category: "insurance_supplements",
+    question: "How do apartment insurance claims work for contractors?",
+    answer:
+      "Apartment insurance claims involve commercial-scale documentation across multiple units, common areas, and shared building systems under property manager access control. Contractors document damage unit by unit, separate common-element scope, coordinate entry through management, and submit indexed estimates that carriers reconcile by unit — not residential single-folder patterns applied to a complex.",
+    relatedLinks: [
+      {
+        label: "Multifamily & Apartment Insurance Claims Guide",
+        href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+      {
+        label: "Can Claims Ninja help with apartment complex insurance claims?",
+        href: "/faq#faq-commercial-apartment-complex-claims",
+      },
+    ],
+  },
+  {
+    id: "commercial-multifamily-documentation",
+    category: "documentation",
+    question: "How should contractors document multifamily insurance claims?",
+    answer:
+      "Publish a Building → Floor → Unit → Room index aligned to property management numbers within 24 hours. Document each affected unit in its own photo and estimate section, keep common areas and shared systems in separate packs, maintain property manager and tenant access logs, and submit a final package that cross-references billed lines to unit-indexed evidence.",
+    relatedLinks: [
+      {
+        label: "Multifamily & Apartment Insurance Claims Guide",
+        href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "How should contractors document commercial insurance claims?",
+        href: "/faq#faq-commercial-claim-documentation",
+      },
+    ],
+  },
+  {
+    id: "commercial-unit-inspections",
+    category: "documentation",
+    question: "How should contractors organize unit inspections on apartment claims?",
+    answer:
+      "Work building by building and floor by floor using property management unit numbers. Complete overview-to-detail photos before leaving each unit, inspect adjacent units for migration, then document common areas and shared systems with cross-references to affected unit IDs. Same-day labeling prevents attribution failures at desk review.",
+    relatedLinks: [
+      {
+        label: "Multifamily & Apartment Insurance Claims Guide",
+        href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+      },
+      {
+        label: "How should contractors document multifamily insurance claims?",
+        href: "/faq#faq-commercial-multifamily-documentation",
+      },
+      {
+        label: "Photo Documentation Field Procedure",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-multifamily-common-areas",
+    category: "documentation",
+    question: "How should common areas be documented on multifamily claims?",
+    answer:
+      "Index corridors, lobbies, stairwells, laundry rooms, amenities, and exterior shared spaces separately from in-unit folders and estimates. Label locations to the site map so desk reviewers can attribute common-element scope without digging through unit galleries — burying common areas inside unit dumps is a primary multifamily underpayment driver.",
+    relatedLinks: [
+      {
+        label: "Multifamily & Apartment Insurance Claims Guide",
+        href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+      },
+      {
+        label: "How should common areas be documented on commercial water losses?",
+        href: "/faq#faq-water-commercial-common-area-documentation",
+      },
+      {
+        label: "Commercial Water Loss Documentation Guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-property-manager-coordination",
+    category: "documentation",
+    question: "How should contractors work with property managers on apartment insurance claims?",
+    answer:
+      "Establish a single property manager liaison, align unit numbering to management records on day one, log every authorization and unit entry event contemporaneously, and send unit-indexed status packages ownership groups can review. Verbal-only approvals and crew nickname unit lists fail commercial audits on multifamily files.",
+    relatedLinks: [
+      {
+        label: "Multifamily & Apartment Insurance Claims Guide",
+        href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+      },
+      {
+        label: "How do apartment insurance claims work for contractors?",
+        href: "/faq#faq-commercial-apartment-insurance-claims",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
     ],
   },
   {

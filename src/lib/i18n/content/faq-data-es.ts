@@ -5229,9 +5229,112 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     relatedLinks: [
       { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
       {
+        label: "Guía de reclamaciones de seguros multifamiliares y de apartamentos",
+        href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+      },
+      {
         label: "Documentación de daños por agua para complejos de apartamentos",
         href: "/resources/blog/water-damage-documentation-for-apartment-complexes",
       },
+    ],
+  },
+  {
+    id: "commercial-apartment-insurance-claims",
+    category: "insurance_supplements",
+    question: "¿Cómo funcionan las reclamaciones de seguros de apartamentos para contratistas?",
+    answer:
+      "Las reclamaciones de seguros de apartamentos requieren documentación a escala comercial en múltiples unidades, áreas comunes y sistemas compartidos del edificio bajo control de acceso del administrador de la propiedad. Los contratistas documentan el daño unidad por unidad, separan el alcance de elementos comunes, coordinan la entrada con la administración y envían estimados indexados que las aseguradoras concilian por unidad — no patrones residenciales de una sola carpeta aplicados a un complejo.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros multifamiliares y de apartamentos",
+        href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+      {
+        label: "¿Puede Claims Ninja ayudar con reclamaciones de seguros de complejos de apartamentos?",
+        href: "/faq#faq-commercial-apartment-complex-claims",
+      },
+    ],
+  },
+  {
+    id: "commercial-multifamily-documentation",
+    category: "documentation",
+    question: "¿Cómo deben documentar los contratistas las reclamaciones de seguros multifamiliares?",
+    answer:
+      "Publique un índice Edificio → Piso → Unidad → Habitación alineado a los números de la administración de la propiedad en 24 horas. Documente cada unidad afectada en su propia sección de fotos y estimado, mantenga áreas comunes y sistemas compartidos en paquetes separados, conserve registros de acceso del administrador e inquilinos, y envíe un paquete final que cruce partidas facturadas con evidencia indexada por unidad.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros multifamiliares y de apartamentos",
+        href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas las reclamaciones de seguros comerciales?",
+        href: "/faq#faq-commercial-claim-documentation",
+      },
+    ],
+  },
+  {
+    id: "commercial-unit-inspections",
+    category: "documentation",
+    question: "¿Cómo deben organizar los contratistas las inspecciones de unidades en reclamaciones de apartamentos?",
+    answer:
+      "Trabaje edificio por edificio y piso por piso usando los números de unidad de la administración. Complete fotos de panorama a detalle antes de salir de cada unidad, inspeccione unidades adyacentes por migración y luego documente áreas comunes y sistemas compartidos con referencias cruzadas a los IDs de unidades afectadas. El etiquetado el mismo día evita fallas de atribución en la revisión de escritorio.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros multifamiliares y de apartamentos",
+        href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas las reclamaciones de seguros multifamiliares?",
+        href: "/faq#faq-commercial-multifamily-documentation",
+      },
+      {
+        label: "Procedimiento de campo de documentación fotográfica",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-multifamily-common-areas",
+    category: "documentation",
+    question: "¿Cómo deben documentarse las áreas comunes en reclamaciones multifamiliares?",
+    answer:
+      "Indexe pasillos, lobbies, escaleras, lavanderías, amenidades y espacios exteriores compartidos por separado de las carpetas y estimados de unidades. Etiquete ubicaciones según el mapa del sitio para que los revisores atribuyan el alcance de elementos comunes sin revisar galerías de unidades — enterrar áreas comunes dentro de dumps de unidades es un factor principal de pago insuficiente en multifamiliares.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros multifamiliares y de apartamentos",
+        href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo deben documentarse las áreas comunes en pérdidas de agua comerciales?",
+        href: "/faq#faq-water-commercial-common-area-documentation",
+      },
+      {
+        label: "Guía de documentación de pérdidas de agua comerciales",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-property-manager-coordination",
+    category: "documentation",
+    question: "¿Cómo deben trabajar los contratistas con administradores de propiedad en reclamaciones de apartamentos?",
+    answer:
+      "Establezca un solo enlace con el administrador de la propiedad, alinee la numeración de unidades a los registros de la administración desde el primer día, registre cada autorización y entrada a unidad de forma contemporánea y envíe paquetes de estado indexados por unidad que los grupos de propiedad puedan revisar. Las aprobaciones solo verbales y listas de unidades con apodos de cuadrilla fallan en auditorías comerciales de expedientes multifamiliares.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros multifamiliares y de apartamentos",
+        href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo funcionan las reclamaciones de seguros de apartamentos para contratistas?",
+        href: "/faq#faq-commercial-apartment-insurance-claims",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
     ],
   },
   {

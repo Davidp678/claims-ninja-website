@@ -180,12 +180,12 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "water-damage-documentation-for-apartment-complexes": {
     intro:
-      "You've learned how to document apartment and multifamily water losses. Now run the commercial documentation standards and field procedures that defend unit-level scope, stack migration, and tenant coordination from intake through closeout.",
+      "You've learned how to document apartment and multifamily water losses. Now run the multifamily claim workflow and commercial documentation standards that defend unit-level scope, stack migration, and tenant coordination from intake through closeout.",
     guideSlugs: [
+      "multifamily-apartment-insurance-claims-guide",
       "commercial-insurance-claims-documentation-guide",
       "commercial-water-loss-documentation-guide",
       "water-mitigation-invoice-defense-guide",
-      "moisture-mapping-guide",
     ],
   },
   "common-documentation-mistakes-on-commercial-water-losses": {
@@ -210,12 +210,12 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "multifamily-water-claims-that-get-underpaid": {
     intro:
-      "You've learned why multifamily water claims get underpaid and which documentation gaps trigger reductions. Now run the commercial documentation standards and field procedures that defend unit-level scope, common areas, equipment, and drying duration from intake through closeout.",
+      "You've learned why multifamily water claims get underpaid and which documentation gaps trigger reductions. Now run the multifamily claim workflow and commercial documentation standards that defend unit-level scope, common areas, equipment, and drying duration from intake through closeout.",
     guideSlugs: [
+      "multifamily-apartment-insurance-claims-guide",
       "commercial-insurance-claims-documentation-guide",
       "commercial-water-loss-documentation-guide",
       "water-mitigation-invoice-defense-guide",
-      "moisture-mapping-guide",
     ],
   },
   "fire-damage-claim-documentation-guide": {

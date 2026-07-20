@@ -1957,12 +1957,86 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   },
   "commercial-apartment-complex-claims": {
     searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/multifamily-apartment-insurance-claims-guide",
+    ],
     relatedFaqIds: [
+      "commercial-apartment-insurance-claims",
       "water-apartment-complex-documentation",
       "water-multifamily-loss-documentation",
     ],
     internalLinkNotes:
-      "Apartment complex commercial FAQ; cross-link multifamily water documentation FAQs and apartment blog.",
+      "Apartment complex commercial FAQ; cross-link multifamily guide, multifamily water documentation FAQs, and apartment blog.",
+  },
+  "commercial-apartment-insurance-claims": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/multifamily-apartment-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-apartment-complex-claims",
+      "commercial-multifamily-documentation",
+      "commercial-property-manager-coordination",
+    ],
+    internalLinkNotes:
+      "Apartment insurance claims overview FAQ for contractors; anchors multifamily guide.",
+  },
+  "commercial-multifamily-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/multifamily-apartment-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-unit-inspections",
+      "commercial-multifamily-common-areas",
+      "commercial-claim-documentation",
+    ],
+    internalLinkNotes:
+      "Multifamily documentation standards FAQ; Building → Floor → Unit → Room indexing.",
+  },
+  "commercial-unit-inspections": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/multifamily-apartment-insurance-claims-guide",
+      "general-claims/photo-documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-multifamily-documentation",
+      "commercial-multifamily-common-areas",
+      "commercial-property-manager-coordination",
+    ],
+    internalLinkNotes:
+      "Unit inspection workflow FAQ for apartment and multifamily claims.",
+  },
+  "commercial-multifamily-common-areas": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/multifamily-apartment-insurance-claims-guide",
+      "water-damage/commercial-water-loss-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-multifamily-documentation",
+      "water-commercial-common-area-documentation",
+      "commercial-unit-inspections",
+    ],
+    internalLinkNotes:
+      "Common area documentation FAQ for multifamily claims; cross-link commercial water common-area FAQ.",
+  },
+  "commercial-property-manager-coordination": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/multifamily-apartment-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-apartment-insurance-claims",
+      "commercial-multifamily-documentation",
+      "commercial-unit-inspections",
+    ],
+    internalLinkNotes:
+      "Property manager coordination FAQ for apartment and multifamily insurance claims.",
   },
   "commercial-national-restoration-programs": {
     searchIntent: "informational",
@@ -2825,12 +2899,14 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
       "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/multifamily-apartment-insurance-claims-guide",
       "general-claims/documentation-standards-guide",
     ],
     relatedFaqIds: [
       "commercial-large-loss-project-documentation",
       "commercial-multi-building-documentation",
       "commercial-insurance-documentation-requirements",
+      "commercial-multifamily-documentation",
     ],
     internalLinkNotes:
       "Cornerstone commercial claim documentation FAQ; anchor for commercial documentation guide.",
