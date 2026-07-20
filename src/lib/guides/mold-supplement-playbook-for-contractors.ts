@@ -40,12 +40,12 @@ export const MOLD_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
   seoDescription:
     "Contractor mold supplement playbook: carrier estimate review, moisture source investigation, remediation and containment documentation, protocol and PRV packaging, reinspection prep, and settlement on mold insurance claims.",
   relatedGuideSlugs: [
+    "commercial-mold-claims-guide",
     "mold-damage-documentation-guide",
     "mold-remediation-documentation-guide",
-    "mold-protocol-documentation-guide",
     "post-remediation-verification-documentation-guide",
+    "mold-protocol-documentation-guide",
     "indoor-air-quality-testing-documentation-guide",
-    "commercial-mold-claims-guide",
     "moisture-mapping-guide",
     "category-3-water-damage-documentation-guide",
     "commercial-water-loss-documentation-guide",
@@ -59,8 +59,8 @@ export const MOLD_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
   relatedBlogSlugs: [
     "why-mold-supplements-get-denied",
     "mold-claim-documentation-checklist",
-    "why-mold-insurance-claims-get-underpaid",
     "mold-documentation-mistakes",
+    "why-mold-insurance-claims-get-underpaid",
     "why-category-3-water-claims-get-underpaid",
     "documentation-gaps-that-trigger-water-claim-denials",
     "moisture-mapping-mistakes-that-cost-contractors-money",

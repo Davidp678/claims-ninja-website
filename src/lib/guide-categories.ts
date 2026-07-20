@@ -119,10 +119,10 @@ export const GUIDE_CATEGORY_REGISTRY: readonly GuideCategory[] = [
     slug: "mold",
     name: "Mold",
     description:
-      "Follow the mold documentation lifecycle and commercial large-loss workflows: moisture source evidence and growth mapping at assessment, production documentation during remediation, post-remediation verification closeout packages, protocol documentation, indoor air quality and testing documentation, and multi-unit commercial mold claim organization for insurance submission.",
+      "Start with the Mold Supplement Playbook, then follow the mold documentation lifecycle and commercial large-loss workflows: moisture source evidence and growth mapping at assessment, production documentation during remediation, post-remediation verification closeout packages, protocol documentation, indoor air quality and testing documentation, and multi-unit commercial mold claim organization for insurance submission.",
     metaTitle: "Mold Claims Guides",
     metaDescription:
-      "Mold claim documentation guides for restoration contractors: commercial mold claim playbooks, moisture source evidence, remediation production documentation, post-remediation verification closeout, protocol documentation, IAQ and testing documentation, and insurance submission standards.",
+      "Mold claim documentation guides for restoration contractors: start with the Mold Supplement Playbook, then moisture source evidence, remediation production documentation, post-remediation verification closeout, protocol documentation, IAQ and testing documentation, and commercial mold claim organization.",
     relatedBlogCategories: ["mold", "claim-documentation", "water-damage-claims"],
     relatedBlogPostSlugs: [
       "why-mold-supplements-get-denied",

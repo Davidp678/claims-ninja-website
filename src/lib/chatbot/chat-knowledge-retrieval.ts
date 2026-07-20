@@ -2604,6 +2604,50 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "mold documentation affects claim outcomes FAQ retrieves",
+    message: "how does documentation affect mold insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-documentation-affects-claim-outcomes|documentation affect mold|mold-claims-underpaid-why/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold moisture readings settlement support FAQ retrieves",
+    message: "do moisture readings help support mold claim settlements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-moisture-readings-settlement-support|moisture readings help support mold claim settlements|mold moisture readings settlement/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold hidden damage affects payment FAQ retrieves",
+    message: "can hidden mold affect claim payments",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-hidden-damage-affects-payment|hidden mold affect claim payments|hidden mold claim payment/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold documentation improves settlement FAQ retrieves",
+    message: "what documentation improves mold insurance settlements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-documentation-improves-settlement|documentation improves mold insurance settlements/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "mold common documentation mistakes FAQ retrieves",
     message: "what are the most common mold documentation mistakes",
     assert: (result) =>
@@ -2835,6 +2879,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /mold-supplement-when-to-submit|within 48 hours on visible estimate gaps|phased submission/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold supplement documentation evidence FAQ",
+    message: "What documentation supports a mold damage supplement?",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-supplement-documentation-evidence|documentation supports a mold damage supplement|indexed photos by room or zone|mold-supplement-playbook/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold remediation docs base FAQ retrieves",
+    message: "what documentation supports mold remediation claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-remediation-docs|documentation supports mold remediation claims|mold-remediation-documentation-guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold testing base FAQ retrieves",
+    message: "how do testing and clearance reports factor into mold claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-testing|testing and clearance reports factor into mold|mold clearance/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold carrier pushback base FAQ retrieves",
+    message: "why do carriers often push back on mold line items",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-carrier-pushback|carriers often push back on mold|mold line item/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold containment equipment base FAQ retrieves",
+    message: "are containment and air scrubbing commonly underpaid",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-containment-equipment|containment and air scrubbing commonly underpaid|air scrubbing/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "mold water relationship base FAQ retrieves",
+    message: "can mold supplements tie back to a water loss claim",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /mold-water-relationship|mold supplements tie back to a water loss|mold often follows/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

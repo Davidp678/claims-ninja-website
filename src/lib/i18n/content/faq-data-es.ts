@@ -4407,7 +4407,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
   {
     id: "mold-moisture-readings-settlement-support",
     category: "mold_claims",
-    question: "¿Las lecturas de humedad ayudan a respaldar reclamaciones de moho?",
+    question: "¿Las lecturas de humedad ayudan a respaldar los acuerdos de reclamaciones de moho?",
     answer:
       "Sí. Las lecturas de humedad respaldan los acuerdos de reclamaciones de moho al distinguir pérdida activa de condiciones históricas, documentar el alcance de secado y correlacionar el crecimiento con sustratos húmedos. Las lecturas con medidores de contacto y sin contacto combinadas con imágenes térmicas y mapas de humedad dan a las aseguradoras evidencia objetiva para partidas de remoción, limpieza y reconstrucción: las lecturas ausentes del expediente están entre los primeros grupos de alcance reducidos en la revisión.",
     relatedLinks: [
@@ -4527,7 +4527,7 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/guides/mold/mold-damage-documentation-guide",
       },
       {
-        label: "¿Las lecturas de humedad ayudan a respaldar las reclamaciones de moho?",
+        label: "¿Las lecturas de humedad ayudan a respaldar los acuerdos de reclamaciones de moho?",
         href: "/faq#faq-mold-moisture-readings-settlement-support",
       },
     ],

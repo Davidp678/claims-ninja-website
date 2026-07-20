@@ -191,7 +191,7 @@ export const whyMoldInsuranceClaimsGetUnderpaid: BlogPost = {
           href: "/resources/guides/mold/mold-damage-documentation-guide",
         },
         {
-          label: "Do moisture readings help support mold claims?",
+          label: "Do moisture readings help support mold claim settlements?",
           href: "/faq#faq-mold-moisture-readings-settlement-support",
         },
         {

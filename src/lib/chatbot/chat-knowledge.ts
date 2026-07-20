@@ -890,6 +890,51 @@ const FAQ_ID_BOOSTS: Record<
     keywords: ["fire supplement documentation", "fire supplement evidence"],
     topics: ["fire_damage_claims", "supplements"],
   },
+  "mold-remediation-docs": {
+    phrases: [
+      "what documentation supports mold remediation claims",
+      "mold remediation claim documentation",
+      "mold remediation docs",
+    ],
+    keywords: ["mold remediation documentation", "mold remediation claims"],
+    topics: ["mold_claims"],
+  },
+  "mold-testing": {
+    phrases: [
+      "how do testing and clearance reports factor into mold claims",
+      "mold testing clearance reports",
+      "mold clearance testing claims",
+    ],
+    keywords: ["mold testing", "mold clearance", "clearance reports"],
+    topics: ["mold_claims"],
+  },
+  "mold-carrier-pushback": {
+    phrases: [
+      "why do carriers often push back on mold line items",
+      "carrier pushback mold",
+      "mold line item pushback",
+    ],
+    keywords: ["mold carrier pushback", "mold line items"],
+    topics: ["mold_claims", "carrier_review"],
+  },
+  "mold-containment-equipment": {
+    phrases: [
+      "are containment and air scrubbing commonly underpaid",
+      "mold containment underpaid",
+      "air scrubbing underpaid mold",
+    ],
+    keywords: ["mold containment", "air scrubbing", "negative air"],
+    topics: ["mold_claims", "equipment_charges"],
+  },
+  "mold-water-relationship": {
+    phrases: [
+      "can mold supplements tie back to a water loss claim",
+      "mold water loss relationship",
+      "mold follows water event",
+    ],
+    keywords: ["mold water relationship", "mold water loss"],
+    topics: ["mold_claims", "water_damage_claims"],
+  },
   "mold-damage-documentation-insurance": {
     phrases: [
       "how should contractors document mold damage for insurance",
@@ -1293,7 +1338,7 @@ const FAQ_ID_BOOSTS: Record<
   },
   "mold-moisture-readings-settlement-support": {
     phrases: [
-      "do moisture readings help support mold claims",
+      "do moisture readings help support mold claim settlements",
       "moisture readings mold claim settlement",
       "mold moisture readings settlement",
     ],

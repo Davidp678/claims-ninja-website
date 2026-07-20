@@ -4423,7 +4423,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
   {
     id: "mold-moisture-readings-settlement-support",
     category: "mold_claims",
-    question: "Do moisture readings help support mold claims?",
+    question: "Do moisture readings help support mold claim settlements?",
     answer:
       "Yes. Moisture readings support mold claim settlements by distinguishing active loss from historical conditions, documenting drying scope, and correlating growth to wet substrates. Pin and pinless readings paired with thermal imaging and moisture maps give carriers objective evidence for removal, cleaning, and rebuild lines — readings absent from the file are among the first scope groups reduced on review.",
     relatedLinks: [
@@ -4543,7 +4543,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/mold/mold-damage-documentation-guide",
       },
       {
-        label: "Do moisture readings help support mold claims?",
+        label: "Do moisture readings help support mold claim settlements?",
         href: "/faq#faq-mold-moisture-readings-settlement-support",
       },
     ],

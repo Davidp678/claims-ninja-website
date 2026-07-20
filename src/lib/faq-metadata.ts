@@ -1994,6 +1994,77 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Commercial property types FAQ; enumerates supported property segments for the commercial hub.",
   },
+  "mold-remediation-docs": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/mold-remediation-documentation-guide",
+      "mold/mold-damage-documentation-guide",
+      "mold/mold-supplement-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "mold-remediation-insurance-documentation",
+      "mold-containment-equipment",
+      "mold-testing",
+    ],
+    internalLinkNotes:
+      "Base mold FAQ; bridge to remediation documentation guide and solutions page.",
+  },
+  "mold-testing": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "mold/indoor-air-quality-testing-documentation-guide",
+      "mold/post-remediation-verification-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-iaq-documentation",
+      "mold-iaq-clearance-testing",
+      "mold-prv-clearance-documentation-required",
+    ],
+    internalLinkNotes:
+      "Base mold testing FAQ; cross-link IAQ and PRV clearance documentation.",
+  },
+  "mold-carrier-pushback": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "mold/mold-supplement-playbook-for-contractors",
+      "mold/mold-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-water-relationship",
+      "mold-claims-underpaid-why",
+      "mold-insurance-documentation-required",
+    ],
+    internalLinkNotes:
+      "Base mold carrier pushback FAQ; link playbook and causation documentation.",
+  },
+  "mold-containment-equipment": {
+    searchIntent: "billing-dispute",
+    relatedGuideSlugs: [
+      "mold/mold-remediation-documentation-guide",
+      "mold/mold-supplement-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "mold-remediation-containment-documentation",
+      "mold-supplement-commonly-missed-items",
+      "mold-remediation-docs",
+    ],
+    internalLinkNotes:
+      "Base mold containment/equipment FAQ; link remediation production evidence.",
+  },
+  "mold-water-relationship": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "mold/mold-damage-documentation-guide",
+      "water-damage/category-3-water-damage-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "mold-carrier-pushback",
+      "mold-damage-documentation-insurance",
+      "mold-moisture-readings-support",
+    ],
+    internalLinkNotes:
+      "Base mold-water relationship FAQ; cross-link Category 3 and damage documentation.",
+  },
   "mold-damage-documentation-insurance": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: ["mold/mold-damage-documentation-guide"],
