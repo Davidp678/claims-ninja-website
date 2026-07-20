@@ -39,6 +39,7 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
   seoDescription:
     "Document, estimate, and recover commercial fire insurance claims: tenant coordination, large-loss documentation, engineering scope, business interruption support, supplements, and phased reconstruction for contractors.",
   relatedGuideSlugs: [
+    "commercial-insurance-claims-documentation-guide",
     "fire-damage-supplement-playbook-for-contractors",
     "fire-damage-documentation-guide",
     "fire-code-upgrade-documentation-guide",

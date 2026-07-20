@@ -39,6 +39,7 @@ export const COMMERCIAL_ROOFING_DOCUMENTATION_GUIDE = defineGuide({
   seoDescription:
     "Document commercial roofing insurance claims: membrane systems, moisture surveys, core samples, equipment detach-reset, interior water migration, and field evidence for supplement recovery.",
   relatedGuideSlugs: [
+    "commercial-insurance-claims-documentation-guide",
     "hoa-roofing-claims-guide",
     "multi-building-roofing-claims-guide",
     "fire-damage-documentation-guide",

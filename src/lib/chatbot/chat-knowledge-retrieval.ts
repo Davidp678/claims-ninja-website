@@ -2560,6 +2560,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "commercial insurance claim documentation retrieves guide or FAQ",
+    message: "how should contractors document commercial insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-insurance-claims-documentation-guide|commercial-claim-documentation|How should contractors document commercial insurance claims|Scale documentation to the commercial footprint/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial claim documentation FAQ retrieves",
+    message: "commercial claim documentation standards for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-claim-documentation|commercial-insurance-claims-documentation-guide|How should contractors document commercial insurance claims|Scale documentation to the commercial footprint/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "large-loss commercial project documentation FAQ retrieves",
+    message: "how should contractors document large-loss commercial projects",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-large-loss-project-documentation|commercial-insurance-claims-documentation-guide|document large-loss commercial projects|Assign a documentation lead/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multi-building commercial documentation FAQ retrieves",
+    message: "how should contractors document multiple buildings on a commercial claim",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-multi-building-documentation|commercial-insurance-claims-documentation-guide|document multiple buildings on a commercial claim|Treat each building as a top-level index/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "tenant improvements commercial documentation FAQ retrieves",
+    message: "how should contractors document tenant improvements on commercial claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-tenant-improvements-documentation|commercial-insurance-claims-documentation-guide|document tenant improvements on commercial claims|shell versus tenant improvement/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial insurance documentation requirements FAQ retrieves",
+    message: "what documentation do commercial insurance claims require",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-insurance-documentation-requirements|commercial-insurance-claims-documentation-guide|What documentation do commercial insurance claims require|property identification and building information/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "why mold insurance claims underpaid blog retrieves",
     message: "why mold insurance claims get underpaid documentation",
     assert: (result) =>

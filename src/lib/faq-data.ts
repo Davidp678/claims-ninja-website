@@ -5281,4 +5281,103 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       { label: "Commercial insurance claims", href: "/solutions/commercial" },
     ],
   },
+  {
+    id: "commercial-claim-documentation",
+    category: "documentation",
+    question: "How should contractors document commercial insurance claims?",
+    answer:
+      "Scale documentation to the commercial footprint: publish a Building → Floor → Suite/Unit → Room index within 24 hours, capture property identification and occupancy status, sequence damage photos by area, validate quantities against measurements, separate shell from tenant improvements when required, and submit an indexed claim package that cross-references billed lines to dated evidence. Residential single-folder patterns fail on multi-tenant and multi-building losses.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+      {
+        label: "Claim Documentation Standards",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-large-loss-project-documentation",
+    category: "documentation",
+    question: "How should contractors document large-loss commercial projects?",
+    answer:
+      "Assign a documentation lead, publish a written documentation plan within 24 hours, maintain daily reports by area, reconcile equipment and materials to field logs, document change orders with contemporaneous discovery photos, and organize the final package by building or phase. Large-loss files without a plan produce inconsistent evidence that desk reviewers discount proportionally.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Large-loss water mitigation documentation best practices",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+      {
+        label: "How should contractors document commercial insurance claims?",
+        href: "/faq#faq-commercial-claim-documentation",
+      },
+    ],
+  },
+  {
+    id: "commercial-multi-building-documentation",
+    category: "documentation",
+    question: "How should contractors document multiple buildings on a commercial claim?",
+    answer:
+      "Treat each building as a top-level index node with its own photo sequences, daily reports, and estimate sections. Maintain a master campus index, assign documentation owners per major building or phase, and never merge buildings into a single residential-style folder. Spot-check that random artifacts resolve to the same building and area IDs used on the estimate.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Multi-Building Roofing Claims Guide",
+        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+      },
+      {
+        label: "How should contractors document large-loss commercial projects?",
+        href: "/faq#faq-commercial-large-loss-project-documentation",
+      },
+    ],
+  },
+  {
+    id: "commercial-tenant-improvements-documentation",
+    category: "documentation",
+    question: "How should contractors document tenant improvements on commercial claims?",
+    answer:
+      "Identify shell versus tenant improvement (TI) boundaries at intake using lease summaries or property management direction. Photograph TI finishes and fixtures with suite IDs before demolition, separate TI scope and documentation from base-building packages when ownership or policies differ, and avoid mixing leasehold evidence into undifferentiated commercial folders.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+      {
+        label: "What documentation do commercial insurance claims require?",
+        href: "/faq#faq-commercial-insurance-documentation-requirements",
+      },
+    ],
+  },
+  {
+    id: "commercial-insurance-documentation-requirements",
+    category: "documentation",
+    question: "What documentation do commercial insurance claims require?",
+    answer:
+      "At minimum: property identification and building information, occupancy and use records, area-indexed damage photos, emergency mitigation logs, validated scope and quantities, code and ordinance support when upgrades apply, multi-area index, tenant improvement notes on multi-tenant losses, business interruption field support notes, equipment and material reconciliation, daily project reports, change documentation, and an indexed final claim package. Peril-specific commercial guides add water, fire, mold, and roofing procedures under these standards.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Commercial Water Loss Documentation Guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Commercial Fire Claims Guide",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+    ],
+  },
 ] as const;

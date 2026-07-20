@@ -370,6 +370,7 @@ export const COMMERCIAL_RESOURCES = {
   description:
     "Practical guides and articles from the Claims Ninja commercial authority ecosystem.",
   guideSlugs: [
+    "commercial-insurance-claims-documentation-guide",
     "commercial-fire-claims-guide",
     "commercial-water-loss-documentation-guide",
     "commercial-roofing-documentation-guide",

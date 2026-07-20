@@ -5,6 +5,12 @@ export type GuideSummary = {
 
 /** Spanish hub-card summaries keyed by `${category}/${slug}`. */
 export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
+  "general-claims/commercial-insurance-claims-documentation-guide": {
+    title:
+      "Guía de documentación de reclamaciones de seguros comerciales para contratistas",
+    excerpt:
+      "Estándares fundamentales de documentación para reclamaciones de seguros comerciales: identificación de la propiedad, indexación multiárea, mejoras de inquilinos, consideraciones de código, apoyo a interrupción de negocio y paquetes finales de reclamación en multifamiliares, oficinas, retail, industrial, hospitalidad, educación, salud y uso mixto.",
+  },
   "general-claims/first-48-hours-checklist": {
     title: "Lista de verificación: primeras 48 horas tras el estimado de la aseguradora",
     excerpt:

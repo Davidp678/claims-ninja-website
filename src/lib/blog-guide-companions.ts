@@ -180,42 +180,42 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "water-damage-documentation-for-apartment-complexes": {
     intro:
-      "You've learned how to document apartment and multifamily water losses. Now run the invoice defense and field procedures that defend unit-level scope, stack migration, and tenant coordination from intake through closeout.",
+      "You've learned how to document apartment and multifamily water losses. Now run the commercial documentation standards and field procedures that defend unit-level scope, stack migration, and tenant coordination from intake through closeout.",
     guideSlugs: [
-      "water-mitigation-invoice-defense-guide",
+      "commercial-insurance-claims-documentation-guide",
       "commercial-water-loss-documentation-guide",
+      "water-mitigation-invoice-defense-guide",
       "moisture-mapping-guide",
-      "daily-monitoring-guide",
     ],
   },
   "common-documentation-mistakes-on-commercial-water-losses": {
     intro:
-      "You've learned which documentation mistakes trigger reductions on commercial water losses. Now run the field procedures and invoice defense workflows that build indexed packets from intake through closeout.",
+      "You've learned which documentation mistakes trigger reductions on commercial water losses. Now run the commercial documentation standards and field procedures that build indexed packets from intake through closeout.",
     guideSlugs: [
+      "commercial-insurance-claims-documentation-guide",
       "commercial-water-loss-documentation-guide",
       "water-mitigation-invoice-defense-guide",
       "moisture-mapping-guide",
-      "daily-monitoring-guide",
     ],
   },
   "large-loss-water-mitigation-documentation-best-practices": {
     intro:
-      "You've learned how to document large-loss water mitigation at enterprise scale. Now run the commercial field procedures and invoice defense workflows that support multi-zone scope, executive reporting, and indexed closeout packets.",
+      "You've learned how to document large-loss water mitigation at enterprise scale. Now run the commercial documentation standards and field procedures that support multi-zone scope, executive reporting, and indexed closeout packets.",
     guideSlugs: [
+      "commercial-insurance-claims-documentation-guide",
       "commercial-water-loss-documentation-guide",
       "water-mitigation-invoice-defense-guide",
       "moisture-mapping-guide",
-      "daily-monitoring-guide",
     ],
   },
   "multifamily-water-claims-that-get-underpaid": {
     intro:
-      "You've learned why multifamily water claims get underpaid and which documentation gaps trigger reductions. Now run the commercial field procedures and invoice defense workflows that defend unit-level scope, common areas, equipment, and drying duration from intake through closeout.",
+      "You've learned why multifamily water claims get underpaid and which documentation gaps trigger reductions. Now run the commercial documentation standards and field procedures that defend unit-level scope, common areas, equipment, and drying duration from intake through closeout.",
     guideSlugs: [
+      "commercial-insurance-claims-documentation-guide",
       "commercial-water-loss-documentation-guide",
       "water-mitigation-invoice-defense-guide",
       "moisture-mapping-guide",
-      "daily-monitoring-guide",
     ],
   },
   "fire-damage-claim-documentation-guide": {

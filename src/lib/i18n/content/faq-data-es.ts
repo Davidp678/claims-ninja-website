@@ -5268,4 +5268,103 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
     ],
   },
+  {
+    id: "commercial-claim-documentation",
+    category: "documentation",
+    question: "¿Cómo deben documentar los contratistas las reclamaciones de seguros comerciales?",
+    answer:
+      "Escale la documentación a la huella comercial: publique un índice Edificio → Piso → Suite/Unidad → Habitación en 24 horas, capture la identificación de la propiedad y el estado de ocupación, secuencie las fotos de daño por área, valide cantidades frente a mediciones, separe la estructura base de las mejoras de inquilinos cuando corresponda y envíe un paquete de reclamación indexado que cruce las partidas facturadas con evidencia fechada. Los patrones residenciales de una sola carpeta fallan en pérdidas multiinquilino y multibuilding.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+      {
+        label: "Estándares de documentación de reclamaciones",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-large-loss-project-documentation",
+    category: "documentation",
+    question: "¿Cómo deben documentar los contratistas proyectos comerciales de grandes pérdidas?",
+    answer:
+      "Asigne un responsable de documentación, publique un plan escrito en 24 horas, mantenga reportes diarios por área, concilie equipos y materiales con registros de campo, documente órdenes de cambio con fotos contemporáneas del hallazgo y organice el paquete final por edificio o fase. Los expedientes de grandes pérdidas sin plan producen evidencia inconsistente que los revisores descuentan de forma proporcional.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Mejores prácticas de documentación de mitigación de agua en grandes pérdidas",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas las reclamaciones de seguros comerciales?",
+        href: "/faq#faq-commercial-claim-documentation",
+      },
+    ],
+  },
+  {
+    id: "commercial-multi-building-documentation",
+    category: "documentation",
+    question: "¿Cómo deben documentar los contratistas varios edificios en una reclamación comercial?",
+    answer:
+      "Trate cada edificio como un nodo de índice de primer nivel con sus propias secuencias de fotos, reportes diarios y secciones de estimado. Mantenga un índice maestro del campus, asigne responsables de documentación por edificio o fase principal y nunca fusione edificios en una sola carpeta de estilo residencial. Verifique que artefactos aleatorios resuelvan a los mismos IDs de edificio y área usados en el estimado.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Guía de reclamaciones de techado multibuilding",
+        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas proyectos comerciales de grandes pérdidas?",
+        href: "/faq#faq-commercial-large-loss-project-documentation",
+      },
+    ],
+  },
+  {
+    id: "commercial-tenant-improvements-documentation",
+    category: "documentation",
+    question: "¿Cómo deben documentar los contratistas las mejoras de inquilinos en reclamaciones comerciales?",
+    answer:
+      "Identifique los límites entre estructura base y mejoras de inquilinos (TI) en la admisión usando resúmenes de arrendamiento o dirección de la administración de la propiedad. Fotografíe acabados y accesorios de TI con IDs de suite antes de la demolición, separe el alcance y la documentación de TI de los paquetes de edificio base cuando la propiedad o las pólizas difieran, y evite mezclar evidencia de arrendamiento en carpetas comerciales indiferenciadas.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+      {
+        label: "¿Qué documentación requieren las reclamaciones de seguros comerciales?",
+        href: "/faq#faq-commercial-insurance-documentation-requirements",
+      },
+    ],
+  },
+  {
+    id: "commercial-insurance-documentation-requirements",
+    category: "documentation",
+    question: "¿Qué documentación requieren las reclamaciones de seguros comerciales?",
+    answer:
+      "Como mínimo: identificación de la propiedad e información del edificio, registros de ocupación y uso, fotos de daño indexadas por área, registros de mitigación de emergencia, alcance y cantidades validados, soporte de código y ordenanza cuando apliquen mejoras, índice multiárea, notas de mejoras de inquilinos en pérdidas multiinquilino, notas de campo de apoyo a interrupción de negocio, conciliación de equipos y materiales, reportes diarios del proyecto, documentación de cambios y un paquete final de reclamación indexado. Las guías comerciales por peligro añaden procedimientos de agua, fuego, moho y techado bajo estos estándares.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Guía de documentación de pérdidas comerciales por agua",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Guía de reclamaciones comerciales por incendio",
+        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+      },
+    ],
+  },
 ] as const;

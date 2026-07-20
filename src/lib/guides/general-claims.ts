@@ -1,6 +1,8 @@
 import { defineGuide, GUIDE_PUBLISHED_AT } from "@/lib/guides/guide-builder";
+import { COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE } from "@/lib/guides/commercial-insurance-claims-documentation-guide";
 
 export const GENERAL_CLAIMS_GUIDES = [
+  COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE,
   defineGuide({
     slug: "first-48-hours-checklist",
     title: "First 48 Hours After Carrier Estimate Checklist",
@@ -1020,6 +1022,7 @@ export const GENERAL_CLAIMS_GUIDES = [
       "Claim documentation standards for contractors: photo requirements, labeling conventions, file organization, and daily capture habits that improve supplement approval rates.",
     relatedBlogSlugs: ["claim-documentation-approval-rates", "why-fire-damage-claims-get-underpaid"],
     relatedGuideSlugs: [
+      "commercial-insurance-claims-documentation-guide",
       "photo-documentation-standards-guide",
       "claim-file-audit-guide",
       "commercial-fire-claims-guide",

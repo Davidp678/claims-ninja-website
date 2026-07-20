@@ -1253,6 +1253,77 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["mold_claims", "commercial_mold"],
   },
+  "commercial-claim-documentation": {
+    phrases: [
+      "how should contractors document commercial insurance claims",
+      "commercial claim documentation",
+      "document commercial insurance claims",
+      "commercial insurance claim documentation",
+      "commercial claim documentation standards",
+    ],
+    keywords: [
+      "commercial claim documentation",
+      "commercial insurance claim documentation",
+      "document commercial claims",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
+  "commercial-large-loss-project-documentation": {
+    phrases: [
+      "how should contractors document large-loss commercial projects",
+      "documenting large-loss commercial projects",
+      "large-loss commercial project documentation",
+      "large loss commercial documentation",
+    ],
+    keywords: [
+      "large-loss commercial documentation",
+      "large loss project documentation",
+      "document large-loss commercial",
+    ],
+    topics: ["commercial_claims", "documentation", "large_loss"],
+  },
+  "commercial-multi-building-documentation": {
+    phrases: [
+      "how should contractors document multiple buildings on a commercial claim",
+      "documenting multiple buildings commercial claim",
+      "multi-building commercial documentation",
+      "document multiple buildings commercial",
+    ],
+    keywords: [
+      "multi-building documentation",
+      "multiple buildings commercial claim",
+      "campus commercial documentation",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
+  "commercial-tenant-improvements-documentation": {
+    phrases: [
+      "how should contractors document tenant improvements on commercial claims",
+      "tenant improvements commercial claim documentation",
+      "document tenant improvements commercial",
+      "leasehold improvements documentation commercial",
+    ],
+    keywords: [
+      "tenant improvements documentation",
+      "TI documentation commercial",
+      "leasehold documentation",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
+  "commercial-insurance-documentation-requirements": {
+    phrases: [
+      "what documentation do commercial insurance claims require",
+      "commercial insurance documentation requirements",
+      "required documentation commercial insurance claims",
+      "commercial insurance claim documentation requirements",
+    ],
+    keywords: [
+      "commercial insurance documentation requirements",
+      "required commercial documentation",
+      "commercial claim package requirements",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
   "mold-supplement-included-items": {
     phrases: [
       "what should be included in a mold damage supplement",

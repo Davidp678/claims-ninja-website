@@ -2821,6 +2821,75 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Missed line items FAQ; link underpayment blog and mold documentation mistakes.",
   },
+  "commercial-claim-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-large-loss-project-documentation",
+      "commercial-multi-building-documentation",
+      "commercial-insurance-documentation-requirements",
+    ],
+    internalLinkNotes:
+      "Cornerstone commercial claim documentation FAQ; anchor for commercial documentation guide.",
+  },
+  "commercial-large-loss-project-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-claim-documentation",
+      "commercial-multi-building-documentation",
+      "commercial-large-loss-support",
+    ],
+    internalLinkNotes:
+      "Large-loss commercial project documentation FAQ; cross-link multi-building and service FAQs.",
+  },
+  "commercial-multi-building-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "roofing-claims/multi-building-roofing-claims-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-claim-documentation",
+      "commercial-large-loss-project-documentation",
+      "commercial-tenant-improvements-documentation",
+    ],
+    internalLinkNotes:
+      "Multi-building commercial documentation FAQ; cross-link multi-building roofing guide.",
+  },
+  "commercial-tenant-improvements-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-claim-documentation",
+      "commercial-insurance-documentation-requirements",
+      "commercial-multi-building-documentation",
+    ],
+    internalLinkNotes:
+      "Tenant improvements / leasehold documentation FAQ for commercial claims.",
+  },
+  "commercial-insurance-documentation-requirements": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "water-damage/commercial-water-loss-documentation-guide",
+      "fire-damage/commercial-fire-claims-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-claim-documentation",
+      "commercial-tenant-improvements-documentation",
+      "commercial-large-loss-project-documentation",
+    ],
+    internalLinkNotes:
+      "Commercial insurance documentation requirements FAQ; links peril commercial guides.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {
