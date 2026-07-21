@@ -40,6 +40,7 @@ export const COMMERCIAL_MOLD_CLAIMS_GUIDE = defineGuide({
     "Document, organize, estimate, and recover commercial mold insurance claims: multi-unit indexing, moisture source evidence, phased remediation documentation, protocol and PRV coordination, and carrier packages for contractors.",
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
+    "commercial-insurance-supplement-playbook-for-contractors",
     "large-loss-commercial-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "retail-office-insurance-claims-guide",

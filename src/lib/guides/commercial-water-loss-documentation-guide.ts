@@ -35,6 +35,7 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
     "Learn how to document commercial water losses, multifamily projects, apartment losses, retail properties, and large-loss mitigation jobs to support insurance recovery and claim success.",
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
+    "commercial-insurance-supplement-playbook-for-contractors",
     "large-loss-commercial-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "retail-office-insurance-claims-guide",

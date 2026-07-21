@@ -6113,4 +6113,115 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       { label: "Commercial insurance claims", href: "/solutions/commercial" },
     ],
   },
+  // Commercial Insurance Supplement Playbook FAQs (5)
+  {
+    id: "commercial-insurance-supplements",
+    category: "insurance_supplements",
+    question: "What are commercial insurance supplements for contractors?",
+    answer:
+      "Commercial insurance supplements are the contractor packages that document and request payment for legitimate scope beyond the carrier's initial estimate on commercial property losses — missing buildings or suites, quantity corrections, temporary protection, general conditions and supervision, equipment days, labor, materials, code and ordinance support, and multi-building organization. Unlike residential single-dwelling supplements, commercial workflows require Building → Floor → Suite/Unit → Room indexing, phased cycles, and navigable exhibit packages. This is an operational documentation workflow — not policy interpretation, public adjusting, legal advice, or claim negotiation.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Supplement Playbook for Contractors",
+        href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "What belongs in a commercial supplement package?",
+        href: "/faq#faq-commercial-supplement-package",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-supplement-documentation",
+    category: "insurance_supplements",
+    question: "How should contractors document commercial insurance supplements?",
+    answer:
+      "Document commercial supplements with a locked master area index, contemporaneous photos labeled by building and area ID, scope and quantity validation worksheets, equipment/labor/material logs, temporary protection and general conditions exhibits, and code support when upgrades are billed. Every requested line must map to at least one named exhibit before submission. Build evidence during the job — not at invoice — and separate multi-building packages by location ID so desk reviewers can navigate in one session.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Supplement Playbook for Contractors",
+        href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Commercial Claims Documentation Checklist",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "What are commercial insurance supplements for contractors?",
+        href: "/faq#faq-commercial-insurance-supplements",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-supplement-package",
+    category: "insurance_supplements",
+    question: "What belongs in a commercial supplement package?",
+    answer:
+      "A commercial supplement package should include a cover letter with summary table and attachment index, a revised estimate with area-labeled sections, the master Building → Floor → Suite/Unit → Room index, indexed photo exhibits, equipment/labor/material logs, temporary protection and general conditions exhibits, code and ordinance support when upgrades are billed, and a correspondence log with submission and follow-up dates. Dollar totals on the cover letter must match the estimate delta, and every high-dollar line must reference a named exhibit.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Supplement Playbook for Contractors",
+        href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Supplement Submission Workflow",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      {
+        label: "How should contractors document commercial insurance supplements?",
+        href: "/faq#faq-commercial-supplement-documentation",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-reinspection-support",
+    category: "insurance_supplements",
+    question: "How should contractors support commercial reinspections?",
+    answer:
+      "Support commercial reinspections by confirming access with ownership or property management, pre-walking disputed buildings and areas, staging photo stations and quantity worksheets by area ID, preparing a one-page briefing with estimate line references, assigning a field escort with indexed exhibits, answering with evidence rather than opinions, and logging outcomes in CRM the same day. Stage only disputed locations — not an unlabeled campus binder for a single-suite dispute. Update the revised estimate within one week of the visit.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Supplement Playbook for Contractors",
+        href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Large-Loss Commercial Insurance Claims Guide",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+      {
+        label: "How should contractors prepare for large-loss reinspections and supplements?",
+        href: "/faq#faq-commercial-large-loss-reinspection-supplements",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-supplement-timelines",
+    category: "insurance_supplements",
+    question: "What timelines should contractors follow on commercial supplements?",
+    answer:
+      "Review the carrier estimate within 48 hours of receipt, submit when documented scope exceeds the estimate and contemporaneous evidence exists, follow up at 3, 7, and 14 business days, and expect multiple supplement cycles on commercial files — emergency/mitigation, demolition discovery, then rebuild and code. Track every version's status in CRM until settlement reconciliation. Phased submission beats waiting for final invoice, when production often obscures evidence and carriers treat late packages as billing disputes.",
+    relatedLinks: [
+      {
+        label: "Commercial Insurance Supplement Playbook for Contractors",
+        href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      },
+      {
+        label: "First 48 Hours After Carrier Estimate Checklist",
+        href: "/resources/guides/general-claims/first-48-hours-checklist",
+      },
+      {
+        label: "What belongs in a commercial supplement package?",
+        href: "/faq#faq-commercial-supplement-package",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
 ] as const;

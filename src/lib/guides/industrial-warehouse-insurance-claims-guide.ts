@@ -40,6 +40,7 @@ export const INDUSTRIAL_WAREHOUSE_INSURANCE_CLAIMS_GUIDE = defineGuide({
     "Document industrial and warehouse insurance claims for contractors: manufacturing vs warehouse footprints, building systems, equipment and machinery, high-bay racking, inventory zones, loading docks, occupied facilities, mitigation, safety, large-loss strategies, code, supplements, and indexed claim packages.",
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
+    "commercial-insurance-supplement-playbook-for-contractors",
     "large-loss-commercial-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "retail-office-insurance-claims-guide",

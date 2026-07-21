@@ -371,6 +371,7 @@ export const COMMERCIAL_RESOURCES = {
     "Practical guides and articles from the Claims Ninja commercial authority ecosystem.",
   guideSlugs: [
     "commercial-insurance-claims-documentation-guide",
+    "commercial-insurance-supplement-playbook-for-contractors",
     "large-loss-commercial-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "hoa-insurance-claims-guide",
@@ -385,6 +386,7 @@ export const COMMERCIAL_RESOURCES = {
   ],
   blogSlugs: [
     "why-commercial-insurance-claims-get-underpaid",
+    "commercial-claims-documentation-checklist",
     "water-damage-documentation-for-apartment-complexes",
     "large-loss-water-mitigation-documentation-best-practices",
     "multifamily-water-claims-that-get-underpaid",

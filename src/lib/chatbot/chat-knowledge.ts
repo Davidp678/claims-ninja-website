@@ -2669,6 +2669,83 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["commercial_claims", "documentation", "large_loss", "supplements"],
   },
+  "commercial-insurance-supplements": {
+    phrases: [
+      "what are commercial insurance supplements for contractors",
+      "commercial insurance supplements",
+      "commercial insurance supplement",
+      "what is a commercial insurance supplement",
+      "commercial supplements for contractors",
+    ],
+    keywords: [
+      "commercial insurance supplements",
+      "commercial supplement",
+      "commercial insurance supplement",
+      "commercial claim supplement",
+    ],
+    topics: ["commercial_claims", "supplements", "documentation"],
+  },
+  "commercial-supplement-documentation": {
+    phrases: [
+      "how should contractors document commercial insurance supplements",
+      "commercial supplement documentation",
+      "document commercial supplements",
+      "commercial insurance supplement documentation",
+    ],
+    keywords: [
+      "commercial supplement documentation",
+      "document commercial supplements",
+      "commercial supplement evidence",
+    ],
+    topics: ["commercial_claims", "supplements", "documentation"],
+  },
+  "commercial-supplement-package": {
+    phrases: [
+      "what belongs in a commercial supplement package",
+      "commercial supplement package",
+      "commercial insurance supplement package",
+      "what to include in a commercial supplement",
+    ],
+    keywords: [
+      "commercial supplement package",
+      "supplement package",
+      "commercial supplement contents",
+    ],
+    topics: ["commercial_claims", "supplements", "documentation"],
+  },
+  "commercial-reinspection-support": {
+    phrases: [
+      "how should contractors support commercial reinspections",
+      "commercial reinspection support",
+      "prepare for a commercial reinspection",
+      "commercial insurance reinspection",
+    ],
+    keywords: [
+      "commercial reinspection",
+      "commercial reinspection support",
+      "reinspection preparation",
+    ],
+    topics: ["commercial_claims", "supplements", "documentation", "large_loss"],
+  },
+  "commercial-supplement-timelines": {
+    phrases: [
+      "what timelines should contractors follow on commercial supplements",
+      "commercial supplement timelines",
+      "when to submit commercial supplements",
+      "commercial supplement follow-up",
+      "multiple commercial supplement cycles",
+      "how should contractors handle large-loss commercial supplements",
+      "large-loss commercial supplements",
+    ],
+    keywords: [
+      "commercial supplement timelines",
+      "commercial supplement timing",
+      "supplement cycles",
+      "3-7-14 follow-up",
+      "large-loss commercial supplements",
+    ],
+    topics: ["commercial_claims", "supplements", "documentation", "large_loss"],
+  },
   "commercial-national-restoration-programs": {
     phrases: [
       "support national restoration companies",

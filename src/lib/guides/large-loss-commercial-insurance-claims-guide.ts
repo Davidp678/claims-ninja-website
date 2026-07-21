@@ -38,6 +38,7 @@ export const LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE = defineGuide({
     "Document large-loss commercial insurance claims for contractors: multi-building indexing, phased restoration, mitigation, complex estimates, reinspections, supplements, and indexed claim packages across commercial property types.",
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
+    "commercial-insurance-supplement-playbook-for-contractors",
     "multifamily-apartment-insurance-claims-guide",
     "industrial-warehouse-insurance-claims-guide",
     "hoa-insurance-claims-guide",
@@ -791,6 +792,10 @@ export const LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE = defineGuide({
     {
       label: "Commercial Insurance Claims Documentation Guide",
       href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+    },
+    {
+      label: "Commercial Insurance Supplement Playbook for Contractors",
+      href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
     },
     {
       label: "Multifamily & Apartment Insurance Claims Guide",

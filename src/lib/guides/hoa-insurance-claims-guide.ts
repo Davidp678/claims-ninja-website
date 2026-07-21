@@ -39,6 +39,7 @@ export const HOA_INSURANCE_CLAIMS_GUIDE = defineGuide({
     "Document HOA and condominium association insurance claims for contractors: governance and board workflows, master vs homeowner policies, common elements vs unit property, building-wide and unit documentation, mitigation, roofing, water, fire, mold, supplements, and indexed claim packages.",
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
+    "commercial-insurance-supplement-playbook-for-contractors",
     "large-loss-commercial-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "retail-office-insurance-claims-guide",

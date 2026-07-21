@@ -39,6 +39,7 @@ export const MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE = defineGuide({
     "Document apartment and multifamily insurance claims for contractors: unit-by-unit inspections, common areas, property manager coordination, occupied vs vacant units, shared systems, code upgrades, supplements, and indexed claim packages.",
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
+    "commercial-insurance-supplement-playbook-for-contractors",
     "large-loss-commercial-insurance-claims-guide",
     "hoa-insurance-claims-guide",
     "retail-office-insurance-claims-guide",

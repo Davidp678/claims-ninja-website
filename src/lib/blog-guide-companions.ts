@@ -220,22 +220,22 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "why-commercial-insurance-claims-get-underpaid": {
     intro:
-      "You've learned why commercial claims get underpaid. Now run commercial documentation standards and the large-loss playbook that defend building indexes, quantities, code, TI, and multi-area packages.",
+      "You've learned why commercial claims get underpaid. Now run commercial documentation standards and the Commercial Insurance Supplement Playbook — then apply the large-loss and multifamily guides that defend building indexes, quantities, code, TI, and multi-area packages.",
     guideSlugs: [
       "commercial-insurance-claims-documentation-guide",
+      "commercial-insurance-supplement-playbook-for-contractors",
       "large-loss-commercial-insurance-claims-guide",
       "multifamily-apartment-insurance-claims-guide",
-      "industrial-warehouse-insurance-claims-guide",
     ],
   },
   "commercial-claims-documentation-checklist": {
     intro:
-      "You've reviewed the commercial documentation checklist. Now run the Commercial Insurance Claims Documentation Guide as your operational hub — then apply large-loss, multifamily, and retail/office standards so every checklist item becomes reviewer-ready evidence.",
+      "You've reviewed the commercial documentation checklist. Now run the Commercial Insurance Claims Documentation Guide and the Commercial Insurance Supplement Playbook — then apply large-loss and multifamily standards so every checklist item becomes reviewer-ready evidence and a defensible supplement package.",
     guideSlugs: [
       "commercial-insurance-claims-documentation-guide",
+      "commercial-insurance-supplement-playbook-for-contractors",
       "large-loss-commercial-insurance-claims-guide",
       "multifamily-apartment-insurance-claims-guide",
-      "retail-office-insurance-claims-guide",
     ],
   },
   "fire-damage-claim-documentation-guide": {

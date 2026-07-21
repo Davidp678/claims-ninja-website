@@ -6100,4 +6100,115 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
     ],
   },
+  // Commercial Insurance Supplement Playbook FAQs (5)
+  {
+    id: "commercial-insurance-supplements",
+    category: "insurance_supplements",
+    question: "¿Qué son los suplementos de seguros comerciales para contratistas?",
+    answer:
+      "Los suplementos de seguros comerciales son los paquetes del contratista que documentan y solicitan pago por alcance legítimo más allá del estimado inicial de la aseguradora en pérdidas de propiedades comerciales: edificios o suites faltantes, correcciones de cantidades, protección temporal, condiciones generales y supervisión, días de equipo, mano de obra, materiales, apoyo de código y ordenanza, y organización multiedificio. A diferencia de los suplementos residenciales de una sola vivienda, los flujos comerciales requieren indexación Edificio → Piso → Suite/Unidad → Habitación, ciclos por fases y paquetes de evidencia navegables. Es un flujo operativo de documentación — no interpretación de póliza, ajuste público, asesoría legal ni negociación de reclamaciones.",
+    relatedLinks: [
+      {
+        label: "Manual operativo de suplementos de seguros comerciales para contratistas",
+        href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "¿Qué debe incluir un paquete de suplemento comercial?",
+        href: "/faq#faq-commercial-supplement-package",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-supplement-documentation",
+    category: "insurance_supplements",
+    question: "¿Cómo deben documentar los contratistas los suplementos de seguros comerciales?",
+    answer:
+      "Documente los suplementos comerciales con un índice maestro de áreas bloqueado, fotos contemporáneas etiquetadas por edificio e ID de área, hojas de validación de alcance y cantidades, registros de equipo/mano de obra/materiales, evidencias de protección temporal y condiciones generales, y apoyo de código cuando se facturen mejoras. Cada línea solicitada debe mapearse al menos a un anexo nombrado antes del envío. Construya la evidencia durante el trabajo — no al facturar — y separe paquetes multiedificio por ID de ubicación para que los revisores puedan navegar en una sola sesión.",
+    relatedLinks: [
+      {
+        label: "Manual operativo de suplementos de seguros comerciales para contratistas",
+        href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Lista de verificación de documentación de reclamaciones comerciales",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "¿Qué son los suplementos de seguros comerciales para contratistas?",
+        href: "/faq#faq-commercial-insurance-supplements",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-supplement-package",
+    category: "insurance_supplements",
+    question: "¿Qué debe incluir un paquete de suplemento comercial?",
+    answer:
+      "Un paquete de suplemento comercial debe incluir una carta de presentación con tabla resumen e índice de anexos, un estimado revisado con secciones etiquetadas por área, el índice maestro Edificio → Piso → Suite/Unidad → Habitación, anexos fotográficos indexados, registros de equipo/mano de obra/materiales, evidencias de protección temporal y condiciones generales, apoyo de código y ordenanza cuando se facturen mejoras, y un registro de correspondencia con fechas de envío y seguimiento. Los totales en dólares de la carta deben coincidir con el delta del estimado, y cada línea de alto valor debe referenciar un anexo nombrado.",
+    relatedLinks: [
+      {
+        label: "Manual operativo de suplementos de seguros comerciales para contratistas",
+        href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Flujo de trabajo de envío de suplementos",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas los suplementos de seguros comerciales?",
+        href: "/faq#faq-commercial-supplement-documentation",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-reinspection-support",
+    category: "insurance_supplements",
+    question: "¿Cómo deben apoyar los contratistas las reinspecciones comerciales?",
+    answer:
+      "Apoye las reinspecciones comerciales confirmando el acceso con la propiedad o administración, recorriendo previamente los edificios y áreas en disputa, preparando estaciones fotográficas y hojas de cantidades por ID de área, preparando un resumen de una página con referencias a líneas del estimado, asignando un acompañante de campo con anexos indexados, respondiendo con evidencia y no con opiniones, y registrando los resultados en el CRM el mismo día. Prepare solo las ubicaciones en disputa — no un archivador de campus sin etiquetar para una disputa de una sola suite. Actualice el estimado revisado dentro de una semana de la visita.",
+    relatedLinks: [
+      {
+        label: "Manual operativo de suplementos de seguros comerciales para contratistas",
+        href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Guía de reclamaciones de seguros comerciales de grandes pérdidas",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo deben prepararse los contratistas para reinspecciones y suplementos de grandes pérdidas?",
+        href: "/faq#faq-commercial-large-loss-reinspection-supplements",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-supplement-timelines",
+    category: "insurance_supplements",
+    question: "¿Qué plazos deben seguir los contratistas en suplementos comerciales?",
+    answer:
+      "Revise el estimado de la aseguradora dentro de las 48 horas de recibirlo, envíe cuando el alcance documentado exceda el estimado y exista evidencia contemporánea, haga seguimiento a los 3, 7 y 14 días hábiles, y espere múltiples ciclos de suplemento en archivos comerciales: emergencia/mitigación, descubrimiento en demolición, luego reconstrucción y código. Rastree el estado de cada versión en el CRM hasta la conciliación del cierre. El envío por fases supera esperar a la factura final, cuando la producción suele ocultar evidencia y las aseguradoras tratan paquetes tardíos como disputas de facturación.",
+    relatedLinks: [
+      {
+        label: "Manual operativo de suplementos de seguros comerciales para contratistas",
+        href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      },
+      {
+        label: "Lista de verificación: primeras 48 horas tras el estimado de la aseguradora",
+        href: "/resources/guides/general-claims/first-48-hours-checklist",
+      },
+      {
+        label: "¿Qué debe incluir un paquete de suplemento comercial?",
+        href: "/faq#faq-commercial-supplement-package",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
 ] as const;

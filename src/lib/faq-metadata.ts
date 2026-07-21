@@ -2307,15 +2307,17 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
       "general-claims/large-loss-commercial-insurance-claims-guide",
+      "general-claims/commercial-insurance-supplement-playbook-for-contractors",
       "general-claims/supplement-submission-guide",
     ],
     relatedFaqIds: [
       "commercial-large-loss-insurance-claims",
       "commercial-large-loss-estimate-organization",
       "commercial-large-loss-project-documentation",
+      "commercial-reinspection-support",
     ],
     internalLinkNotes:
-      "Large-loss reinspection preparation and supplement strategy FAQ.",
+      "Large-loss reinspection preparation and supplement strategy FAQ; cross-link commercial reinspection support.",
   },
   "commercial-national-restoration-programs": {
     searchIntent: "informational",
@@ -3392,6 +3394,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
       "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/commercial-insurance-supplement-playbook-for-contractors",
       "general-claims/large-loss-commercial-insurance-claims-guide",
     ],
     relatedFaqIds: [
@@ -3399,9 +3402,87 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "commercial-claim-file-organization",
       "commercial-settlement-documentation",
       "commercial-insurance-documentation-requirements",
+      "commercial-supplement-package",
     ],
     internalLinkNotes:
-      "Commercial final submission package FAQ; CTA to checklist blog and documentation guide.",
+      "Commercial final submission package FAQ; CTA to checklist blog, documentation guide, and supplement playbook.",
+  },
+  "commercial-insurance-supplements": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-supplement-documentation",
+      "commercial-supplement-package",
+      "commercial-supplement-timelines",
+      "commercial-property-claims-underpaid",
+    ],
+    internalLinkNotes:
+      "Primary commercial supplement playbook FAQ; what commercial insurance supplements are for contractors.",
+  },
+  "commercial-supplement-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-insurance-supplements",
+      "commercial-supplement-package",
+      "commercial-claim-documentation",
+      "commercial-documentation-checklist",
+    ],
+    internalLinkNotes:
+      "Commercial supplement documentation FAQ; operational evidence standards for multi-area packages.",
+  },
+  "commercial-supplement-package": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-insurance-supplements",
+      "commercial-supplement-documentation",
+      "commercial-final-submission",
+      "commercial-reinspection-support",
+    ],
+    internalLinkNotes:
+      "Commercial supplement package contents FAQ; cover letter, estimate, exhibits, and logs.",
+  },
+  "commercial-reinspection-support": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      "general-claims/large-loss-commercial-insurance-claims-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-large-loss-reinspection-supplements",
+      "commercial-supplement-package",
+      "commercial-supplement-timelines",
+      "commercial-insurance-supplements",
+    ],
+    internalLinkNotes:
+      "Commercial reinspection support FAQ; broader than large-loss-only reinspection FAQ.",
+  },
+  "commercial-supplement-timelines": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      "general-claims/first-48-hours-checklist",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-insurance-supplements",
+      "commercial-supplement-package",
+      "commercial-reinspection-support",
+      "supplements-process",
+    ],
+    internalLinkNotes:
+      "Commercial supplement timelines FAQ; 48-hour review, 3-7-14 follow-up, and multiple cycles.",
   },
 };
 

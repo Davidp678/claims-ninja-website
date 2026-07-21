@@ -2989,6 +2989,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "commercial insurance supplement playbook retrieves guide",
+    message: "commercial insurance supplement playbook for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-insurance-supplement-playbook-for-contractors|commercial insurance supplement playbook|commercial-insurance-supplements/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial supplements FAQ retrieves",
+    message: "what are commercial insurance supplements for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-insurance-supplements|commercial-insurance-supplement-playbook|commercial insurance supplements are the contractor packages/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "large-loss commercial supplements retrieves playbook or FAQ",
+    message: "how should contractors handle large-loss commercial supplements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-insurance-supplement-playbook-for-contractors|commercial-supplement-timelines|What timelines should contractors follow on commercial supplements|multiple supplement cycles on commercial|large-loss-commercial-insurance-claims-guide|large-loss supplement/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "missing commercial scope supplement retrieves playbook",
+    message: "missing commercial scope on carrier estimate supplement",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-insurance-supplement-playbook-for-contractors|commercial-insurance-supplements|scope and quantity validation|missing buildings or suites/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial supplement documentation FAQ retrieves",
+    message: "how should contractors document commercial insurance supplements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-supplement-documentation|commercial-insurance-supplement-playbook|Document commercial supplements with a locked master area index/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial reinspection support FAQ retrieves",
+    message: "how should contractors support commercial reinspections",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-reinspection-support|commercial-insurance-supplement-playbook|Support commercial reinspections by confirming access/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "why commercial insurance claims underpaid blog retrieves",
     message: "why commercial insurance claims get underpaid",
     assert: (result) =>

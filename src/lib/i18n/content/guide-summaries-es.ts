@@ -11,6 +11,12 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Estándares fundamentales de documentación para reclamaciones de seguros comerciales: identificación de la propiedad, indexación multiárea, mejoras de inquilinos, consideraciones de código, apoyo a interrupción de negocio y paquetes finales de reclamación en multifamiliares, oficinas, retail, industrial, hospitalidad, educación, salud y uso mixto.",
   },
+  "general-claims/commercial-insurance-supplement-playbook-for-contractors": {
+    title:
+      "Manual operativo de suplementos de seguros comerciales para contratistas",
+    excerpt:
+      "Manual operativo definitivo para suplementos de seguros comerciales: identificación de alcance insuficiente, validación de cantidades, protección temporal, condiciones generales, documentación de equipos, mano de obra y materiales, paquetes de evidencia, comunicación con la aseguradora, reinspección, ciclos múltiples y cierre de reclamaciones en propiedades comerciales y grandes pérdidas.",
+  },
   "general-claims/multifamily-apartment-insurance-claims-guide": {
     title:
       "Guía de reclamaciones de seguros multifamiliares y de apartamentos para contratistas",
