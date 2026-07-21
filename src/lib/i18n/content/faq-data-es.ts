@@ -5434,6 +5434,102 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
   {
+    id: "commercial-warehouse-insurance-claims",
+    category: "insurance_supplements",
+    question: "¿Cómo funcionan las reclamaciones de seguros de almacenes para contratistas?",
+    answer:
+      "Las reclamaciones de almacenes y centros de distribución se organizan alrededor de índices de zonas de la instalación — almacenamiento de gran altura, pasillos de estanterías, muelles y sistemas del edificio — no carpetas de suites de oficinas. Los contratistas publican la nomenclatura Instalación → Edificio → Zona, documentan estanterías y muelles por separado, mantienen registros de acceso en instalaciones ocupadas y presentan estimaciones que reflejan la misma jerarquía para que las aseguradoras puedan atribuir el alcance.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros industriales y de almacenes para contratistas",
+        href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas las reclamaciones de seguros en propiedades industriales?",
+        href: "/faq#faq-commercial-industrial-property-documentation",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-industrial-property-documentation",
+    category: "documentation",
+    question: "¿Cómo deben documentar los contratistas las reclamaciones de seguros en propiedades industriales?",
+    answer:
+      "Publique un índice Instalación → Edificio → Zona / Sistema / Equipo alineado a los planos de la instalación dentro de las 24 horas. Separe los paquetes de sistemas del edificio y de equipos de los acabados, mantenga registros de autorización en instalaciones ocupadas y presente estimaciones que reflejen la misma jerarquía con referencias cruzadas de línea a evidencia.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros industriales y de almacenes para contratistas",
+        href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "¿Cómo funcionan las reclamaciones de seguros de almacenes para contratistas?",
+        href: "/faq#faq-commercial-warehouse-insurance-claims",
+      },
+    ],
+  },
+  {
+    id: "commercial-equipment-documentation",
+    category: "documentation",
+    question: "¿Cómo deben documentarse equipos y maquinaria en reclamaciones de seguros industriales?",
+    answer:
+      "Trate cada activo principal como su propia cámara de documentación: vista general, placa o número de serie cuando sea visible, detalle del daño antes de alterar la escena y IDs de zona recíprocos. No fusione la maquinaria en galerías sin etiqueta de acabados de almacén — el subpago de equipos a menudo comienza con fotos inseparables.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros industriales y de almacenes para contratistas",
+        href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas las reclamaciones de seguros en propiedades industriales?",
+        href: "/faq#faq-commercial-industrial-property-documentation",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-warehouse-inspections",
+    category: "documentation",
+    question: "¿Cómo deben estructurarse las inspecciones de almacenes para reclamaciones de seguros?",
+    answer:
+      "Preinspeccione con planos de la instalación y luego secuencie exterior y techo, sistemas del edificio, zonas, equipos, estanterías y muelles. Complete fotos de vista general a detalle y etiquetado el mismo día antes de abrir el siguiente bloque de superficie — el etiquetado atrasado destruye la atribución de pasillos y muelles en archivos grandes de almacén.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros industriales y de almacenes para contratistas",
+        href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo funcionan las reclamaciones de seguros de almacenes para contratistas?",
+        href: "/faq#faq-commercial-warehouse-insurance-claims",
+      },
+      {
+        label: "Procedimiento de campo de documentación fotográfica",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-industrial-restoration-claims",
+    category: "documentation",
+    question: "¿En qué se diferencian las reclamaciones de restauración industrial de otras reclamaciones comerciales de restauración?",
+    answer:
+      "La restauración industrial añade volumen de gran altura, equipos de proceso, estanterías, muelles y restricciones de operaciones continuas bajo reglas de seguridad de la instalación. La documentación y las estimaciones deben seguir índices de zona, sistema y equipo — los patrones de oficinas y retail invitan al subpago en archivos industriales y de almacén.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros industriales y de almacenes para contratistas",
+        href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo funcionan las reclamaciones de seguros de almacenes para contratistas?",
+        href: "/faq#faq-commercial-warehouse-insurance-claims",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
     id: "commercial-national-restoration-programs",
     category: "insurance_supplements",
     question: "¿Apoyan a empresas nacionales de restauración?",

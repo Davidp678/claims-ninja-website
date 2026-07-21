@@ -5447,6 +5447,102 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
   {
+    id: "commercial-warehouse-insurance-claims",
+    category: "insurance_supplements",
+    question: "How do warehouse insurance claims work for contractors?",
+    answer:
+      "Warehouse and distribution claims organize around facility zone indexes — high-bay storage, racking aisles, docks, and building systems — not office suite folders. Contractors publish Facility → Building → Zone naming, document racking and docks separately, maintain occupied-facility access logs, and submit estimates that mirror the same hierarchy so carriers can attribute scope.",
+    relatedLinks: [
+      {
+        label: "Industrial & Warehouse Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
+      },
+      {
+        label: "How should contractors document industrial property insurance claims?",
+        href: "/faq#faq-commercial-industrial-property-documentation",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-industrial-property-documentation",
+    category: "documentation",
+    question: "How should contractors document industrial property insurance claims?",
+    answer:
+      "Publish a Facility → Building → Zone / System / Equipment index aligned to facility site maps within 24 hours. Separate building-systems and equipment packs from finishes, maintain occupied-facility authorization logs, and submit estimates that mirror the same hierarchy with line-to-evidence cross-references.",
+    relatedLinks: [
+      {
+        label: "Industrial & Warehouse Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "How do warehouse insurance claims work for contractors?",
+        href: "/faq#faq-commercial-warehouse-insurance-claims",
+      },
+    ],
+  },
+  {
+    id: "commercial-equipment-documentation",
+    category: "documentation",
+    question: "How should equipment and machinery be documented on industrial insurance claims?",
+    answer:
+      "Treat each major asset as its own documentation chamber: overview, nameplate or serial when visible, pre-disturbance damage detail, and reciprocal zone IDs. Do not merge machinery into unlabeled warehouse finish galleries — equipment underpayment often starts with inseparable photos.",
+    relatedLinks: [
+      {
+        label: "Industrial & Warehouse Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
+      },
+      {
+        label: "How should contractors document industrial property insurance claims?",
+        href: "/faq#faq-commercial-industrial-property-documentation",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-warehouse-inspections",
+    category: "documentation",
+    question: "How should warehouse inspections be structured for insurance claims?",
+    answer:
+      "Pre-inspect with facility maps, then sequence exterior and roof, building systems, zones, equipment, racking, and docks. Complete overview-to-detail photos and same-day labeling before opening the next footprint block — backlog labeling destroys aisle and dock attribution on large warehouse files.",
+    relatedLinks: [
+      {
+        label: "Industrial & Warehouse Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
+      },
+      {
+        label: "How do warehouse insurance claims work for contractors?",
+        href: "/faq#faq-commercial-warehouse-insurance-claims",
+      },
+      {
+        label: "Photo Documentation Field Procedure",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-industrial-restoration-claims",
+    category: "documentation",
+    question: "How do industrial restoration claims differ from other commercial restoration claims?",
+    answer:
+      "Industrial restoration adds high-bay volume, process equipment, racking, docks, and continuous-operations constraints under facility safety rules. Documentation and estimates must follow zone, system, and equipment indexes — office and retail patterns invite underpayment on industrial and warehouse files.",
+    relatedLinks: [
+      {
+        label: "Industrial & Warehouse Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
+      },
+      {
+        label: "How do warehouse insurance claims work for contractors?",
+        href: "/faq#faq-commercial-warehouse-insurance-claims",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
     id: "commercial-national-restoration-programs",
     category: "insurance_supplements",
     question: "Do you support national restoration companies?",

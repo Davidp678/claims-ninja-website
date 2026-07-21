@@ -42,6 +42,7 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
     "commercial-insurance-claims-documentation-guide",
     "multifamily-apartment-insurance-claims-guide",
     "hoa-insurance-claims-guide",
+    "industrial-warehouse-insurance-claims-guide",
     "fire-damage-supplement-playbook-for-contractors",
     "fire-damage-documentation-guide",
     "fire-code-upgrade-documentation-guide",
@@ -632,6 +633,10 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
     {
       label: "HOA Insurance Claims Guide for Contractors",
       href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+    },
+    {
+      label: "Industrial & Warehouse Insurance Claims Guide",
+      href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
     },
     {
       label: "Fire Damage Documentation Guide",

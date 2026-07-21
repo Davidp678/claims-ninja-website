@@ -42,6 +42,7 @@ export const COMMERCIAL_MOLD_CLAIMS_GUIDE = defineGuide({
     "commercial-insurance-claims-documentation-guide",
     "multifamily-apartment-insurance-claims-guide",
     "hoa-insurance-claims-guide",
+    "industrial-warehouse-insurance-claims-guide",
     "mold-supplement-playbook-for-contractors",
     "mold-damage-documentation-guide",
     "mold-remediation-documentation-guide",
@@ -660,6 +661,10 @@ export const COMMERCIAL_MOLD_CLAIMS_GUIDE = defineGuide({
     {
       label: "HOA Insurance Claims Guide for Contractors",
       href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+    },
+    {
+      label: "Industrial & Warehouse Insurance Claims Guide",
+      href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
     },
     {
       label: "Mold Damage Documentation Guide",

@@ -73,7 +73,7 @@ export const whyCommercialInsuranceClaimsGetUnderpaid: BlogPost = {
       paragraphs: [
         "Commercial claims are more complex than residential claims because the loss footprint, stakeholder map, and documentation volume scale beyond a single dwelling. A commercial property loss may span multiple buildings, floors, suites, tenant spaces, common areas, and shared mechanical systems — each requiring consistent identifiers from intake through closeout.",
         "Carriers apply specialist desk review, third-party audit, and consultant involvement on commercial invoices. Residential single-folder patterns fail when reviewers must attribute billed lines to a labeled Building → Floor → Suite/Unit → Room index. Merged commercial files invite proportional cuts across the entire property when any area lacks contemporaneous evidence.",
-        "Occupancy status, business interruption pressure, after-hours access, and property management coordination multiply evidence requirements. Multifamily, HOA, retail, office, warehouse, and mixed-use footprints each add documentation layers that residential templates never capture. Underpayment follows when contractors apply residential photo counts and narrative depth to commercial scale.",
+        "Occupancy status, business interruption pressure, after-hours access, and property management coordination multiply evidence requirements. Multifamily, HOA, retail, office, warehouse, industrial, and mixed-use footprints each add documentation layers that residential templates never capture. Underpayment follows when contractors apply residential photo counts and narrative depth to commercial scale.",
       ],
       bullets: [
         "Multi-building and multi-suite footprints — separate evidence per indexed area",
@@ -94,6 +94,10 @@ export const whyCommercialInsuranceClaimsGetUnderpaid: BlogPost = {
         {
           label: "HOA Insurance Claims Guide",
           href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+        },
+        {
+          label: "Industrial & Warehouse Insurance Claims Guide",
+          href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
         },
         {
           label: "Commercial insurance claims",

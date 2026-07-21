@@ -2374,6 +2374,78 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["commercial_claims", "documentation", "hoa_claims"],
   },
+  "commercial-warehouse-insurance-claims": {
+    phrases: [
+      "how do warehouse insurance claims work for contractors",
+      "warehouse insurance claims",
+      "commercial warehouse insurance claims",
+      "distribution center insurance claims",
+    ],
+    keywords: [
+      "warehouse insurance claims",
+      "commercial warehouse",
+      "distribution center",
+      "warehouse claims",
+    ],
+    topics: ["commercial_claims", "industrial_warehouse_claims"],
+  },
+  "commercial-industrial-property-documentation": {
+    phrases: [
+      "how should contractors document industrial property insurance claims",
+      "industrial property documentation",
+      "document industrial insurance claims",
+      "industrial insurance claims documentation",
+    ],
+    keywords: [
+      "industrial property documentation",
+      "industrial insurance claims",
+      "industrial documentation",
+    ],
+    topics: ["commercial_claims", "documentation", "industrial_warehouse_claims"],
+  },
+  "commercial-equipment-documentation": {
+    phrases: [
+      "how should equipment and machinery be documented on industrial insurance claims",
+      "equipment documentation industrial claims",
+      "machinery documentation warehouse claims",
+      "document equipment industrial insurance",
+    ],
+    keywords: [
+      "equipment documentation",
+      "machinery documentation",
+      "industrial equipment",
+      "equipment and machinery",
+    ],
+    topics: ["commercial_claims", "documentation", "industrial_warehouse_claims"],
+  },
+  "commercial-warehouse-inspections": {
+    phrases: [
+      "how should warehouse inspections be structured for insurance claims",
+      "warehouse inspections insurance claims",
+      "warehouse inspection workflow",
+      "inspect warehouse insurance claim",
+    ],
+    keywords: [
+      "warehouse inspections",
+      "warehouse inspection",
+      "warehouse inspection workflow",
+    ],
+    topics: ["commercial_claims", "documentation", "industrial_warehouse_claims"],
+  },
+  "commercial-industrial-restoration-claims": {
+    phrases: [
+      "how do industrial restoration claims differ from other commercial restoration claims",
+      "industrial restoration claims",
+      "industrial restoration documentation",
+      "manufacturing facility restoration claims",
+    ],
+    keywords: [
+      "industrial restoration claims",
+      "industrial restoration",
+      "manufacturing restoration",
+    ],
+    topics: ["commercial_claims", "industrial_warehouse_claims"],
+  },
   "commercial-national-restoration-programs": {
     phrases: [
       "support national restoration companies",

@@ -367,6 +367,11 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "shopping center",
     "office building",
     "industrial facility",
+    "warehouse",
+    "warehouse insurance claims",
+    "industrial insurance claims",
+    "distribution center",
+    "manufacturing facility",
     "mixed-use",
     "multi-building",
     "multi-building loss",
@@ -397,6 +402,28 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "HOA board",
     "HOA restoration",
     "HOA property damage",
+  ],
+  industrial_warehouse_claims: [
+    "industrial",
+    "industrial insurance",
+    "industrial insurance claims",
+    "warehouse",
+    "warehouse insurance",
+    "warehouse insurance claims",
+    "warehouse damage documentation",
+    "industrial restoration",
+    "industrial restoration documentation",
+    "commercial warehouse",
+    "commercial warehouse insurance claims",
+    "manufacturing facility",
+    "distribution center",
+    "logistics",
+    "high-bay",
+    "racking",
+    "loading docks",
+    "equipment documentation",
+    "industrial property documentation",
+    "warehouse inspections",
   ],
   large_loss: [
     "large loss",
@@ -2756,6 +2783,61 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /hoa-insurance-claims-guide|commercial-hoa-claim-coordination|coordinate HOA claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "warehouse insurance claims retrieves industrial guide or FAQ",
+    message: "how do warehouse insurance claims work for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /industrial-warehouse-insurance-claims-guide|commercial-warehouse-insurance-claims|warehouse insurance claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "industrial property documentation retrieves guide or FAQ",
+    message: "how should contractors document industrial property insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /industrial-warehouse-insurance-claims-guide|commercial-industrial-property-documentation|industrial property/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "equipment documentation retrieves industrial guide or FAQ",
+    message: "how should equipment and machinery be documented on industrial insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /industrial-warehouse-insurance-claims-guide|commercial-equipment-documentation|equipment and machinery/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "warehouse inspections retrieves guide or FAQ",
+    message: "how should warehouse inspections be structured for insurance claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /industrial-warehouse-insurance-claims-guide|commercial-warehouse-inspections|warehouse inspections/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "industrial restoration claims retrieves guide or FAQ",
+    message: "how do industrial restoration claims differ from other commercial restoration claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /industrial-warehouse-insurance-claims-guide|commercial-industrial-restoration-claims|industrial restoration claims/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

@@ -225,7 +225,7 @@ export const BLOG_GUIDE_COMPANIONS = {
       "commercial-insurance-claims-documentation-guide",
       "multifamily-apartment-insurance-claims-guide",
       "hoa-insurance-claims-guide",
-      "commercial-water-loss-documentation-guide",
+      "industrial-warehouse-insurance-claims-guide",
     ],
   },
   "fire-damage-claim-documentation-guide": {

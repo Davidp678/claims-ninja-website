@@ -373,6 +373,7 @@ export const COMMERCIAL_RESOURCES = {
     "commercial-insurance-claims-documentation-guide",
     "multifamily-apartment-insurance-claims-guide",
     "hoa-insurance-claims-guide",
+    "industrial-warehouse-insurance-claims-guide",
     "commercial-fire-claims-guide",
     "commercial-water-loss-documentation-guide",
     "commercial-mold-claims-guide",

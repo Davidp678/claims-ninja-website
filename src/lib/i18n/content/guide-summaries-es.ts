@@ -22,6 +22,12 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Manual operativo para contratistas sobre documentación, gestión, estimación y suplementos de reclamaciones de seguros en HOAs, asociaciones de condominios, comunidades de townhomes y asociaciones comunitarias: gobernanza, pólizas maestras frente a pólizas de propietarios, elementos comunes, coordinación con juntas y administradores, y paquetes indexados de reclamación.",
   },
+  "general-claims/industrial-warehouse-insurance-claims-guide": {
+    title:
+      "Guía de reclamaciones de seguros industriales y de almacenes para contratistas",
+    excerpt:
+      "Manual operativo para contratistas sobre documentación, gestión, estimación y suplementos de reclamaciones de seguros en almacenes, plantas de manufactura, edificios industriales, centros de distribución y propiedades logísticas: sistemas del edificio, equipos y maquinaria, estanterías de gran altura, zonas de inventario, muelles de carga, instalaciones ocupadas y paquetes indexados de reclamación.",
+  },
   "general-claims/first-48-hours-checklist": {
     title: "Lista de verificación: primeras 48 horas tras el estimado de la aseguradora",
     excerpt:

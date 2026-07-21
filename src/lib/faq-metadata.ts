@@ -2107,6 +2107,75 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Board and manager coordination FAQ for HOA and community association claims.",
   },
+  "commercial-warehouse-insurance-claims": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/industrial-warehouse-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-industrial-property-documentation",
+      "commercial-warehouse-inspections",
+      "commercial-industrial-restoration-claims",
+    ],
+    internalLinkNotes:
+      "Warehouse insurance claims overview FAQ for contractors; anchors Industrial & Warehouse Insurance Claims Guide.",
+  },
+  "commercial-industrial-property-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/industrial-warehouse-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-warehouse-insurance-claims",
+      "commercial-equipment-documentation",
+      "commercial-industrial-restoration-claims",
+    ],
+    internalLinkNotes:
+      "Industrial property documentation standards FAQ; Facility → Building → Zone / System / Equipment indexing.",
+  },
+  "commercial-equipment-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/industrial-warehouse-insurance-claims-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-industrial-property-documentation",
+      "commercial-warehouse-insurance-claims",
+      "commercial-warehouse-inspections",
+    ],
+    internalLinkNotes:
+      "Equipment and machinery documentation FAQ for industrial and warehouse insurance claims.",
+  },
+  "commercial-warehouse-inspections": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/industrial-warehouse-insurance-claims-guide",
+      "general-claims/photo-documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-warehouse-insurance-claims",
+      "commercial-industrial-property-documentation",
+      "commercial-equipment-documentation",
+    ],
+    internalLinkNotes:
+      "Warehouse inspection workflow FAQ; zone, racking, dock, and systems sequencing.",
+  },
+  "commercial-industrial-restoration-claims": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/industrial-warehouse-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-warehouse-insurance-claims",
+      "commercial-industrial-property-documentation",
+      "commercial-equipment-documentation",
+    ],
+    internalLinkNotes:
+      "Industrial restoration claims FAQ; contrasts industrial footprints with office/retail commercial patterns.",
+  },
   "commercial-national-restoration-programs": {
     searchIntent: "informational",
     relatedFaqIds: [

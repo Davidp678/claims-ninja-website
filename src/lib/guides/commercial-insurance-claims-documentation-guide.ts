@@ -38,6 +38,7 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "multifamily-apartment-insurance-claims-guide",
     "hoa-insurance-claims-guide",
+    "industrial-warehouse-insurance-claims-guide",
     "commercial-water-loss-documentation-guide",
     "commercial-fire-claims-guide",
     "commercial-mold-claims-guide",
@@ -620,6 +621,10 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "HOA Insurance Claims Guide for Contractors",
       href: "/resources/guides/general-claims/hoa-insurance-claims-guide",
+    },
+    {
+      label: "Industrial & Warehouse Insurance Claims Guide",
+      href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
     },
     {
       label: "Commercial Water Loss Documentation Guide",
