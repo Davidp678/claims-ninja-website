@@ -41,12 +41,12 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
     "commercial-insurance-supplement-playbook-for-contractors",
+    "fire-damage-supplement-playbook-for-contractors",
     "large-loss-commercial-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "retail-office-insurance-claims-guide",
     "hoa-insurance-claims-guide",
     "industrial-warehouse-insurance-claims-guide",
-    "fire-damage-supplement-playbook-for-contractors",
     "fire-damage-documentation-guide",
     "fire-code-upgrade-documentation-guide",
     "smoke-soot-damage-documentation-guide",

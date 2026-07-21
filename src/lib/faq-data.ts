@@ -5228,8 +5228,12 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     relatedLinks: [
       { label: "Commercial insurance claims", href: "/solutions/commercial" },
       {
-        label: "Commercial Fire Claims Guide",
-        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Commercial Insurance Supplement Playbook",
+        href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
       },
     ],
   },

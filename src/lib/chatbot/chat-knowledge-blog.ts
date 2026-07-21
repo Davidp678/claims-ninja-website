@@ -491,7 +491,7 @@ const SLUG_BOOSTS: Record<
       "code ordinance",
       "shared building systems",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-claims-documentation-checklist": {
     phrases: [
@@ -513,7 +513,7 @@ const SLUG_BOOSTS: Record<
       "commercial claim file",
       "commercial restoration documentation",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "daily-monitoring-documentation-best-practices": {
     phrases: ["daily monitoring", "monitoring documentation"],

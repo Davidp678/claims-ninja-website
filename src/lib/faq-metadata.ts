@@ -1945,15 +1945,17 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "commercial-claims-handled": {
     searchIntent: "informational",
     relatedGuideSlugs: [
-      "fire-damage/commercial-fire-claims-guide",
-      "water-damage/commercial-water-loss-documentation-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/commercial-insurance-supplement-playbook-for-contractors",
+      "general-claims/large-loss-commercial-insurance-claims-guide",
     ],
     relatedFaqIds: [
       "commercial-large-loss-support",
       "commercial-property-types-supported",
+      "commercial-insurance-documentation-requirements",
     ],
     internalLinkNotes:
-      "Primary commercial capability FAQ; anchor for the /solutions/commercial hub page.",
+      "Primary commercial capability FAQ; anchor for the /solutions/commercial hub page. Point to docs guide, supplement playbook, and large-loss guide as primary learning path.",
   },
   "commercial-apartment-complex-claims": {
     searchIntent: "informational",

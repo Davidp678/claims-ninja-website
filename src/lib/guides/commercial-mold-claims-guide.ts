@@ -41,12 +41,12 @@ export const COMMERCIAL_MOLD_CLAIMS_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
     "commercial-insurance-supplement-playbook-for-contractors",
+    "mold-supplement-playbook-for-contractors",
     "large-loss-commercial-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "retail-office-insurance-claims-guide",
     "hoa-insurance-claims-guide",
     "industrial-warehouse-insurance-claims-guide",
-    "mold-supplement-playbook-for-contractors",
     "mold-damage-documentation-guide",
     "mold-remediation-documentation-guide",
     "mold-protocol-documentation-guide",

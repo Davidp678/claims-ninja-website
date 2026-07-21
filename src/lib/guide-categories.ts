@@ -20,6 +20,24 @@ export type GuideCategory = {
   relatedSolutionPath?: string;
 };
 
+/** Editorial hub order for /resources/guides/general-claims (commercial learning path first). */
+export const GENERAL_CLAIMS_HUB_ORDER = [
+  "commercial-insurance-claims-documentation-guide",
+  "commercial-insurance-supplement-playbook-for-contractors",
+  "large-loss-commercial-insurance-claims-guide",
+  "multifamily-apartment-insurance-claims-guide",
+  "hoa-insurance-claims-guide",
+  "retail-office-insurance-claims-guide",
+  "industrial-warehouse-insurance-claims-guide",
+  "first-48-hours-checklist",
+  "claim-file-audit-guide",
+  "supplement-submission-guide",
+  "carrier-estimate-review-guide",
+  "op-qualification-guide",
+  "documentation-standards-guide",
+  "photo-documentation-standards-guide",
+] as const;
+
 /** Editorial hub order for /resources/guides/fire-damage (matches FIRE_DAMAGE_GUIDES bundle). */
 export const FIRE_DAMAGE_HUB_ORDER = [
   "fire-damage-supplement-playbook-for-contractors",

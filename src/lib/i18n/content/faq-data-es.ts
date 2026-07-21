@@ -5215,8 +5215,12 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     relatedLinks: [
       { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
       {
-        label: "Guía de reclamaciones comerciales por incendio",
-        href: "/resources/guides/fire-damage/commercial-fire-claims-guide",
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "Manual de suplementos de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
       },
     ],
   },

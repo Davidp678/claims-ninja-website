@@ -1,6 +1,7 @@
 import { CLAIM_GUIDES } from "@/lib/guides";
 import {
   FIRE_DAMAGE_HUB_ORDER,
+  GENERAL_CLAIMS_HUB_ORDER,
   MOLD_HUB_ORDER,
   type GuideCategorySlug,
 } from "@/lib/guide-categories";
@@ -64,6 +65,9 @@ export function getRecommendedGuides(limit = 4): Guide[] {
 
 export function getGuidesByCategory(category: GuideCategorySlug): Guide[] {
   const guides = getAllGuides().filter((guide) => guide.category === category);
+  if (category === "general-claims") {
+    return sortGuidesByHubOrder(guides, GENERAL_CLAIMS_HUB_ORDER);
+  }
   if (category === "fire-damage") {
     return sortGuidesByHubOrder(guides, FIRE_DAMAGE_HUB_ORDER);
   }

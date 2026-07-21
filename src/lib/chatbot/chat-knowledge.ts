@@ -664,7 +664,7 @@ const FAQ_ID_BOOSTS: Record<
       "membrane damage",
       "roof plan",
     ],
-    topics: ["roofing_claims", "commercial", "supplements"],
+    topics: ["roofing_claims", "commercial_claims", "supplements"],
   },
   "roof-commercial-supplement-documentation": {
     phrases: [
@@ -677,7 +677,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial supplement documentation",
       "low slope supplement",
     ],
-    topics: ["roofing_claims", "commercial", "supplements"],
+    topics: ["roofing_claims", "commercial_claims", "supplements"],
   },
   "roof-commercial-moisture-survey-payment": {
     phrases: [
@@ -691,7 +691,7 @@ const FAQ_ID_BOOSTS: Record<
       "wet insulation",
       "commercial roof moisture",
     ],
-    topics: ["roofing_claims", "commercial"],
+    topics: ["roofing_claims", "commercial_claims"],
   },
   "roof-commercial-inspection-photos": {
     phrases: [
@@ -705,7 +705,7 @@ const FAQ_ID_BOOSTS: Record<
       "membrane photos",
       "roof inspection documentation",
     ],
-    topics: ["roofing_claims", "commercial"],
+    topics: ["roofing_claims", "commercial_claims"],
   },
   "roof-commercial-system-replacement-documentation": {
     phrases: [
@@ -719,7 +719,7 @@ const FAQ_ID_BOOSTS: Record<
       "membrane replacement",
       "wet insulation replacement",
     ],
-    topics: ["roofing_claims", "commercial", "supplements"],
+    topics: ["roofing_claims", "commercial_claims", "supplements"],
   },
   "roof-hoa-responsible-damage": {
     phrases: [
@@ -843,7 +843,7 @@ const FAQ_ID_BOOSTS: Record<
       "building-indexed scope",
       "multi-building mobilization",
     ],
-    topics: ["roofing_claims", "supplements", "commercial"],
+    topics: ["roofing_claims", "supplements", "commercial_claims"],
   },
   "fire-damage-documentation-insurance": {
     phrases: [
@@ -1191,7 +1191,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial mold claims differ",
       "residential vs commercial mold",
     ],
-    topics: ["mold_claims", "commercial_mold"],
+    topics: ["commercial_claims"],
   },
   "mold-commercial-documentation-organization": {
     phrases: [
@@ -1205,7 +1205,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial mold documentation plan",
       "mold documentation organization",
     ],
-    topics: ["mold_claims", "commercial_mold"],
+    topics: ["commercial_claims"],
   },
   "mold-commercial-multi-unit-documentation": {
     phrases: [
@@ -1219,7 +1219,7 @@ const FAQ_ID_BOOSTS: Record<
       "multi unit mold documentation",
       "multifamily mold claims",
     ],
-    topics: ["mold_claims", "commercial_mold"],
+    topics: ["commercial_claims"],
   },
   "mold-commercial-insurance-documentation": {
     phrases: [
@@ -1235,7 +1235,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial mold package",
       "supports commercial mold insurance",
     ],
-    topics: ["mold_claims", "commercial_mold"],
+    topics: ["commercial_claims"],
   },
   "mold-commercial-phased-remediation": {
     phrases: [
@@ -1251,7 +1251,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial mold phasing",
       "area-level mold remediation",
     ],
-    topics: ["mold_claims", "commercial_mold"],
+    topics: ["commercial_claims"],
   },
   "commercial-claim-documentation": {
     phrases: [
@@ -1266,7 +1266,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial insurance claim documentation",
       "document commercial claims",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-large-loss-project-documentation": {
     phrases: [
@@ -1280,7 +1280,7 @@ const FAQ_ID_BOOSTS: Record<
       "large loss project documentation",
       "document large-loss commercial",
     ],
-    topics: ["commercial_claims", "documentation", "large_loss"],
+    topics: ["commercial_claims", "large_loss"],
   },
   "commercial-multi-building-documentation": {
     phrases: [
@@ -1294,7 +1294,7 @@ const FAQ_ID_BOOSTS: Record<
       "multiple buildings commercial claim",
       "campus commercial documentation",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-tenant-improvements-documentation": {
     phrases: [
@@ -1308,7 +1308,7 @@ const FAQ_ID_BOOSTS: Record<
       "TI documentation commercial",
       "leasehold documentation",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-insurance-documentation-requirements": {
     phrases: [
@@ -1322,7 +1322,7 @@ const FAQ_ID_BOOSTS: Record<
       "required commercial documentation",
       "commercial claim package requirements",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-property-claims-underpaid": {
     phrases: [
@@ -1337,7 +1337,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial underpayment",
       "commercial claims underpaid",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-documentation-gaps-underpayment": {
     phrases: [
@@ -1352,7 +1352,7 @@ const FAQ_ID_BOOSTS: Record<
       "building documentation",
       "commercial underpayment",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-estimate-accuracy": {
     phrases: [
@@ -1367,7 +1367,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial estimate",
       "mismatched quantities",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-code-ordinance-upgrades": {
     phrases: [
@@ -1382,7 +1382,7 @@ const FAQ_ID_BOOSTS: Record<
       "ordinance and law",
       "commercial code documentation",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-settlement-documentation": {
     phrases: [
@@ -1396,7 +1396,7 @@ const FAQ_ID_BOOSTS: Record<
       "settlement documentation",
       "improve commercial settlements",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-documentation-checklist": {
     phrases: [
@@ -1410,7 +1410,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial claims checklist",
       "commercial insurance checklist",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-inspection-checklist": {
     phrases: [
@@ -1424,7 +1424,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial insurance inspection",
       "commercial site inspection checklist",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-photo-documentation": {
     phrases: [
@@ -1438,7 +1438,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial claim photos",
       "commercial photo checklist",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-claim-file-organization": {
     phrases: [
@@ -1452,7 +1452,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial file organization",
       "commercial claim index",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-final-submission": {
     phrases: [
@@ -1466,7 +1466,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial submission package",
       "commercial claim package",
     ],
-    topics: ["commercial_claims", "documentation"],
+    topics: ["commercial_claims"],
   },
   "mold-supplement-included-items": {
     phrases: [
@@ -2285,7 +2285,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial claim support",
     ],
     keywords: [
-      "commercial",
+      "commercial_claims",
       "commercial insurance",
       "commercial claims",
       "commercial property",
@@ -2298,8 +2298,8 @@ const FAQ_ID_BOOSTS: Record<
       "help with apartment complex claims",
       "multifamily commercial claims",
     ],
-    keywords: ["apartment complex", "multifamily", "commercial"],
-    topics: ["commercial_claims", "commercial_water", "apartment_multifamily"],
+    keywords: ["apartment complex", "multifamily", "commercial_claims"],
+    topics: ["commercial_claims", "commercial_water"],
   },
   "commercial-apartment-insurance-claims": {
     phrases: [
@@ -2313,7 +2313,7 @@ const FAQ_ID_BOOSTS: Record<
       "apartment claims",
       "commercial apartment",
     ],
-    topics: ["commercial_claims", "apartment_multifamily"],
+    topics: ["commercial_claims"],
   },
   "commercial-multifamily-documentation": {
     phrases: [
@@ -2327,7 +2327,7 @@ const FAQ_ID_BOOSTS: Record<
       "multifamily insurance claims",
       "apartment damage documentation",
     ],
-    topics: ["commercial_claims", "documentation", "apartment_multifamily"],
+    topics: ["commercial_claims"],
   },
   "commercial-unit-inspections": {
     phrases: [
@@ -2341,7 +2341,7 @@ const FAQ_ID_BOOSTS: Record<
       "unit-by-unit",
       "apartment unit documentation",
     ],
-    topics: ["commercial_claims", "documentation", "apartment_multifamily"],
+    topics: ["commercial_claims"],
   },
   "commercial-multifamily-common-areas": {
     phrases: [
@@ -2355,7 +2355,7 @@ const FAQ_ID_BOOSTS: Record<
       "multifamily common areas",
       "common area documentation",
     ],
-    topics: ["commercial_claims", "documentation", "apartment_multifamily"],
+    topics: ["commercial_claims"],
   },
   "commercial-property-manager-coordination": {
     phrases: [
@@ -2369,7 +2369,7 @@ const FAQ_ID_BOOSTS: Record<
       "property manager coordination",
       "apartment property manager",
     ],
-    topics: ["commercial_claims", "documentation", "apartment_multifamily"],
+    topics: ["commercial_claims"],
   },
   "commercial-hoa-insurance-claims": {
     phrases: [
@@ -2398,7 +2398,7 @@ const FAQ_ID_BOOSTS: Record<
       "HOA documentation",
       "HOA property damage documentation",
     ],
-    topics: ["commercial_claims", "documentation", "hoa_claims"],
+    topics: ["commercial_claims", "hoa_claims"],
   },
   "commercial-hoa-master-policies": {
     phrases: [
@@ -2427,7 +2427,7 @@ const FAQ_ID_BOOSTS: Record<
       "HOA common elements",
       "association common elements",
     ],
-    topics: ["commercial_claims", "documentation", "hoa_claims"],
+    topics: ["commercial_claims", "hoa_claims"],
   },
   "commercial-hoa-claim-coordination": {
     phrases: [
@@ -2442,7 +2442,7 @@ const FAQ_ID_BOOSTS: Record<
       "association manager",
       "board coordination",
     ],
-    topics: ["commercial_claims", "documentation", "hoa_claims"],
+    topics: ["commercial_claims", "hoa_claims"],
   },
   "commercial-warehouse-insurance-claims": {
     phrases: [
@@ -2471,7 +2471,7 @@ const FAQ_ID_BOOSTS: Record<
       "industrial insurance claims",
       "industrial documentation",
     ],
-    topics: ["commercial_claims", "documentation", "industrial_warehouse_claims"],
+    topics: ["commercial_claims", "industrial_warehouse_claims"],
   },
   "commercial-equipment-documentation": {
     phrases: [
@@ -2486,7 +2486,7 @@ const FAQ_ID_BOOSTS: Record<
       "industrial equipment",
       "equipment and machinery",
     ],
-    topics: ["commercial_claims", "documentation", "industrial_warehouse_claims"],
+    topics: ["commercial_claims", "industrial_warehouse_claims"],
   },
   "commercial-warehouse-inspections": {
     phrases: [
@@ -2500,7 +2500,7 @@ const FAQ_ID_BOOSTS: Record<
       "warehouse inspection",
       "warehouse inspection workflow",
     ],
-    topics: ["commercial_claims", "documentation", "industrial_warehouse_claims"],
+    topics: ["commercial_claims", "industrial_warehouse_claims"],
   },
   "commercial-industrial-restoration-claims": {
     phrases: [
@@ -2561,7 +2561,7 @@ const FAQ_ID_BOOSTS: Record<
       "retail tenant improvements",
       "office tenant improvements",
     ],
-    topics: ["commercial_claims", "documentation", "retail_office_claims"],
+    topics: ["commercial_claims", "retail_office_claims"],
   },
   "commercial-multi-tenant-damage-documentation": {
     phrases: [
@@ -2576,7 +2576,7 @@ const FAQ_ID_BOOSTS: Record<
       "multi-tenant damage",
       "suite documentation",
     ],
-    topics: ["commercial_claims", "documentation", "retail_office_claims"],
+    topics: ["commercial_claims", "retail_office_claims"],
   },
   "commercial-occupied-business-restoration": {
     phrases: [
@@ -2592,7 +2592,7 @@ const FAQ_ID_BOOSTS: Record<
       "occupied restoration",
       "after-hours restoration",
     ],
-    topics: ["commercial_claims", "documentation", "retail_office_claims"],
+    topics: ["commercial_claims", "retail_office_claims"],
   },
   "commercial-large-loss-insurance-claims": {
     phrases: [
@@ -2623,7 +2623,7 @@ const FAQ_ID_BOOSTS: Record<
       "multiple buildings or areas",
       "large-loss multi-area",
     ],
-    topics: ["commercial_claims", "documentation", "large_loss"],
+    topics: ["commercial_claims", "large_loss"],
   },
   "commercial-large-loss-mitigation-documentation": {
     phrases: [
@@ -2637,7 +2637,7 @@ const FAQ_ID_BOOSTS: Record<
       "emergency mitigation large loss",
       "large commercial mitigation",
     ],
-    topics: ["commercial_claims", "documentation", "large_loss"],
+    topics: ["commercial_claims", "large_loss"],
   },
   "commercial-large-loss-estimate-organization": {
     phrases: [
@@ -2652,7 +2652,7 @@ const FAQ_ID_BOOSTS: Record<
       "complex commercial estimate",
       "phased estimate",
     ],
-    topics: ["commercial_claims", "documentation", "large_loss"],
+    topics: ["commercial_claims", "large_loss"],
   },
   "commercial-large-loss-reinspection-supplements": {
     phrases: [
@@ -2667,7 +2667,7 @@ const FAQ_ID_BOOSTS: Record<
       "reinspection preparation",
       "supplement strategy",
     ],
-    topics: ["commercial_claims", "documentation", "large_loss", "supplements"],
+    topics: ["commercial_claims", "large_loss", "supplements"],
   },
   "commercial-insurance-supplements": {
     phrases: [
@@ -2683,7 +2683,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial insurance supplement",
       "commercial claim supplement",
     ],
-    topics: ["commercial_claims", "supplements", "documentation"],
+    topics: ["commercial_claims", "supplements"],
   },
   "commercial-supplement-documentation": {
     phrases: [
@@ -2697,7 +2697,7 @@ const FAQ_ID_BOOSTS: Record<
       "document commercial supplements",
       "commercial supplement evidence",
     ],
-    topics: ["commercial_claims", "supplements", "documentation"],
+    topics: ["commercial_claims", "supplements"],
   },
   "commercial-supplement-package": {
     phrases: [
@@ -2711,7 +2711,7 @@ const FAQ_ID_BOOSTS: Record<
       "supplement package",
       "commercial supplement contents",
     ],
-    topics: ["commercial_claims", "supplements", "documentation"],
+    topics: ["commercial_claims", "supplements"],
   },
   "commercial-reinspection-support": {
     phrases: [
@@ -2725,7 +2725,7 @@ const FAQ_ID_BOOSTS: Record<
       "commercial reinspection support",
       "reinspection preparation",
     ],
-    topics: ["commercial_claims", "supplements", "documentation", "large_loss"],
+    topics: ["commercial_claims", "supplements", "large_loss"],
   },
   "commercial-supplement-timelines": {
     phrases: [
@@ -2744,7 +2744,7 @@ const FAQ_ID_BOOSTS: Record<
       "3-7-14 follow-up",
       "large-loss commercial supplements",
     ],
-    topics: ["commercial_claims", "supplements", "documentation", "large_loss"],
+    topics: ["commercial_claims", "supplements", "large_loss"],
   },
   "commercial-national-restoration-programs": {
     phrases: [
@@ -2752,7 +2752,7 @@ const FAQ_ID_BOOSTS: Record<
       "national restoration programs",
       "multi-market restoration program",
     ],
-    keywords: ["national restoration", "national program", "commercial"],
+    keywords: ["national restoration", "national program", "commercial_claims"],
     topics: ["commercial_claims"],
   },
   "commercial-large-loss-support": {
@@ -2761,7 +2761,7 @@ const FAQ_ID_BOOSTS: Record<
       "assist with large loss commercial claims",
       "large-loss insurance claims",
     ],
-    keywords: ["large loss", "large-loss", "commercial", "reconstruction"],
+    keywords: ["large loss", "large-loss", "commercial_claims", "reconstruction"],
     topics: ["commercial_claims", "large_loss"],
   },
   "commercial-property-types-supported": {
@@ -2779,7 +2779,7 @@ const FAQ_ID_BOOSTS: Record<
     ],
     keywords: [
       "commercial property types",
-      "commercial",
+      "commercial_claims",
       "property types",
       "hotel",
       "hotels",
@@ -3199,7 +3199,7 @@ export const CHAT_KNOWLEDGE_CHUNKS: readonly ChatKnowledgeChunk[] = [
     },
     ["commercial_claims", "contractor_fit", "large_loss"],
     [
-      "commercial",
+      "commercial_claims",
       "commercial insurance",
       "commercial property",
       "large loss",

@@ -162,7 +162,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "structural fire damage",
       "commercial fire",
     ],
-    topics: ["fire_damage_claims", "documentation", "commercial_fire"],
+    topics: ["fire_damage_claims", "commercial_fire"],
   },
   "mold-supplement-playbook-for-contractors": {
     phrases: [
@@ -328,7 +328,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "commercial mold estimate",
       "mold protocol PRV commercial",
     ],
-    topics: ["mold_claims", "commercial_mold", "documentation"],
+    topics: ["commercial_claims"],
   },
   "commercial-insurance-claims-documentation-guide": {
     phrases: [
@@ -356,7 +356,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "tenant improvements documentation",
       "commercial documentation standards",
     ],
-    topics: ["commercial_claims", "documentation", "large_loss"],
+    topics: ["commercial_claims", "large_loss"],
   },
   "commercial-insurance-supplement-playbook-for-contractors": {
     phrases: [
@@ -387,7 +387,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "large-loss commercial supplements",
       "large-loss supplements",
     ],
-    topics: ["commercial_claims", "supplements", "documentation", "large_loss"],
+    topics: ["commercial_claims", "supplements", "large_loss"],
   },
   "multifamily-apartment-insurance-claims-guide": {
     phrases: [
@@ -416,7 +416,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "multifamily documentation",
       "apartment complex claims",
     ],
-    topics: ["commercial_claims", "documentation", "apartment_multifamily"],
+    topics: ["commercial_claims"],
   },
   "hoa-insurance-claims-guide": {
     phrases: [
@@ -445,7 +445,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "HOA restoration",
       "townhome community",
     ],
-    topics: ["commercial_claims", "documentation", "hoa_claims"],
+    topics: ["commercial_claims", "hoa_claims"],
   },
   "industrial-warehouse-insurance-claims-guide": {
     phrases: [
@@ -476,7 +476,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "equipment documentation",
       "industrial property documentation",
     ],
-    topics: ["commercial_claims", "documentation", "industrial_warehouse_claims"],
+    topics: ["commercial_claims", "industrial_warehouse_claims"],
   },
   "retail-office-insurance-claims-guide": {
     phrases: [
@@ -509,7 +509,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "occupied business",
       "suite documentation",
     ],
-    topics: ["commercial_claims", "documentation", "retail_office_claims"],
+    topics: ["commercial_claims", "retail_office_claims"],
   },
   "large-loss-commercial-insurance-claims-guide": {
     phrases: [
@@ -542,7 +542,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "large-loss mitigation",
       "complex commercial estimate",
     ],
-    topics: ["commercial_claims", "documentation", "large_loss"],
+    topics: ["commercial_claims", "large_loss"],
   },
   "fire-code-upgrade-documentation-guide": {
     phrases: [
@@ -592,7 +592,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "shell versus tenant",
       "commercial supplement",
     ],
-    topics: ["fire_damage_claims", "commercial_fire", "documentation"],
+    topics: ["fire_damage_claims", "commercial_fire"],
   },
   "smoke-soot-damage-documentation-guide": {
     phrases: [
@@ -839,7 +839,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "roof plan",
       "low slope",
     ],
-    topics: ["roofing_claims", "commercial", "supplements"],
+    topics: ["roofing_claims", "commercial_claims", "supplements"],
   },
   "hoa-roofing-claims-guide": {
     phrases: [
@@ -883,7 +883,7 @@ const GUIDE_SLUG_BOOSTS: Record<
       "multi-structure property",
       "building inventory",
     ],
-    topics: ["roofing_claims", "supplements", "documentation", "commercial"],
+    topics: ["roofing_claims", "supplements", "commercial_claims"],
   },
   "moisture-mapping-guide": {
     phrases: ["moisture mapping", "moisture map procedure", "how do i moisture map"],
