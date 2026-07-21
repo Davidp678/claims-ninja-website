@@ -5543,6 +5543,103 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
   {
+    id: "commercial-retail-insurance-claims",
+    category: "insurance_supplements",
+    question: "How do retail property insurance claims work for contractors?",
+    answer:
+      "Retail and shopping-center claims organize around suite and common-area indexes — storefronts, tenant spaces, corridors, and shared systems — not residential room folders. Contractors publish Property → Building → Suite naming, document tenant improvements and common areas separately, maintain occupied-business access logs, and submit estimates that mirror the same hierarchy so carriers can attribute scope.",
+    relatedLinks: [
+      {
+        label: "Retail & Office Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
+      },
+      {
+        label: "How do office building insurance claims work for contractors?",
+        href: "/faq#faq-commercial-office-building-insurance-claims",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-office-building-insurance-claims",
+    category: "insurance_supplements",
+    question: "How do office building insurance claims work for contractors?",
+    answer:
+      "Office building claims organize by floor and suite IDs matching property management directories, with separate packs for demised offices, common areas, and building systems. After-hours and security constraints become claim evidence when they drive phased labor and temporary protection — residential templates invite underpayment on multi-floor office files.",
+    relatedLinks: [
+      {
+        label: "Retail & Office Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
+      },
+      {
+        label: "How do retail property insurance claims work for contractors?",
+        href: "/faq#faq-commercial-retail-insurance-claims",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-retail-office-tenant-improvements",
+    category: "documentation",
+    question:
+      "How should contractors document leasehold and tenant improvements on retail and office claims?",
+    answer:
+      "Obtain written direction from ownership, property management, or tenants on shell versus leasehold boundaries — do not interpret leases. Photograph TI finishes and fixtures with suite IDs before demolition, keep suite-labeled TI packs separate from base-building folders, and avoid mixing leasehold evidence into unlabeled commercial galleries.",
+    relatedLinks: [
+      {
+        label: "Retail & Office Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
+      },
+      {
+        label: "How should contractors document tenant improvements on commercial claims?",
+        href: "/faq#faq-commercial-tenant-improvements-documentation",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-multi-tenant-damage-documentation",
+    category: "documentation",
+    question: "How should multi-tenant commercial damage be documented?",
+    answer:
+      "Maintain a suite directory index matching property management labels, complete overview-to-detail packs per suite, document common areas and shared systems with reciprocal IDs to affected suites, and structure estimates by suite so desk reviewers can attribute quantities — sample-suite photo dumps fail multi-tenant review.",
+    relatedLinks: [
+      {
+        label: "Retail & Office Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
+      },
+      {
+        label: "How do retail property insurance claims work for contractors?",
+        href: "/faq#faq-commercial-retail-insurance-claims",
+      },
+      {
+        label: "How should contractors document multiple buildings on a commercial claim?",
+        href: "/faq#faq-commercial-multi-building-documentation",
+      },
+    ],
+  },
+  {
+    id: "commercial-occupied-business-restoration",
+    category: "documentation",
+    question: "How should contractors restore occupied commercial businesses during a claim?",
+    answer:
+      "Map open versus closed suites on day one, coordinate after-hours and security access through ownership or property management, log authorizations by suite ID, and phase mitigation so operations can continue in undamaged areas. Contemporaneous access logs defend after-hours labor and temporary barriers — end-of-job narratives do not.",
+    relatedLinks: [
+      {
+        label: "Retail & Office Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
+      },
+      {
+        label: "How do office building insurance claims work for contractors?",
+        href: "/faq#faq-commercial-office-building-insurance-claims",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
     id: "commercial-national-restoration-programs",
     category: "insurance_supplements",
     question: "Do you support national restoration companies?",
@@ -5561,8 +5658,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     relatedLinks: [
       { label: "Commercial insurance claims", href: "/solutions/commercial" },
       {
-        label: "Large-loss water mitigation documentation best practices",
-        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+        label: "Large-loss water mitigation documentation best practices",        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
       },
     ],
   },
@@ -5647,11 +5743,16 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Commercial Insurance Claims Documentation Guide",
         href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
       },
-      { label: "Commercial insurance claims", href: "/solutions/commercial" },
       {
-        label: "What documentation do commercial insurance claims require?",
-        href: "/faq#faq-commercial-insurance-documentation-requirements",
+        label: "Retail & Office Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
       },
+      {
+        label:
+          "How should contractors document leasehold and tenant improvements on retail and office claims?",
+        href: "/faq#faq-commercial-retail-office-tenant-improvements",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
     ],
   },
   {

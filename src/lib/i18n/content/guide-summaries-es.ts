@@ -28,6 +28,12 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Manual operativo para contratistas sobre documentación, gestión, estimación y suplementos de reclamaciones de seguros en almacenes, plantas de manufactura, edificios industriales, centros de distribución y propiedades logísticas: sistemas del edificio, equipos y maquinaria, estanterías de gran altura, zonas de inventario, muelles de carga, instalaciones ocupadas y paquetes indexados de reclamación.",
   },
+  "general-claims/retail-office-insurance-claims-guide": {
+    title:
+      "Guía de reclamaciones de seguros comerciales de retail y oficinas para contratistas",
+    excerpt:
+      "Manual operativo para contratistas sobre documentación, gestión, estimación y suplementos de reclamaciones de seguros en centros comerciales, locales, centros de compras, edificios de oficinas, oficinas profesionales, propiedades de uso mixto e instalaciones comerciales multiinquilino: espacios de inquilinos, mejoras arrendaticias, áreas comunes, operaciones de negocios ocupados y paquetes indexados de reclamación.",
+  },
   "general-claims/first-48-hours-checklist": {
     title: "Lista de verificación: primeras 48 horas tras el estimado de la aseguradora",
     excerpt:

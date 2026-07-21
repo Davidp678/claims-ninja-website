@@ -2176,6 +2176,76 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Industrial restoration claims FAQ; contrasts industrial footprints with office/retail commercial patterns.",
   },
+  "commercial-retail-insurance-claims": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/retail-office-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-office-building-insurance-claims",
+      "commercial-multi-tenant-damage-documentation",
+      "commercial-occupied-business-restoration",
+    ],
+    internalLinkNotes:
+      "Retail property insurance claims overview FAQ for contractors; anchors Retail & Office Commercial Insurance Claims Guide.",
+  },
+  "commercial-office-building-insurance-claims": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/retail-office-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-retail-insurance-claims",
+      "commercial-multi-tenant-damage-documentation",
+      "commercial-retail-office-tenant-improvements",
+    ],
+    internalLinkNotes:
+      "Office building insurance claims overview FAQ for contractors; floor/suite indexing and after-hours workflows.",
+  },
+  "commercial-retail-office-tenant-improvements": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/retail-office-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-tenant-improvements-documentation",
+      "commercial-retail-insurance-claims",
+      "commercial-multi-tenant-damage-documentation",
+    ],
+    internalLinkNotes:
+      "Retail/office leasehold and TI documentation FAQ; distinct from general commercial TI FAQ.",
+  },
+  "commercial-multi-tenant-damage-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/retail-office-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-retail-insurance-claims",
+      "commercial-office-building-insurance-claims",
+      "commercial-multi-building-documentation",
+    ],
+    internalLinkNotes:
+      "Multi-tenant commercial damage documentation FAQ; suite directory and common-area reciprocal IDs.",
+  },
+  "commercial-occupied-business-restoration": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/retail-office-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-retail-insurance-claims",
+      "commercial-office-building-insurance-claims",
+      "commercial-multi-tenant-damage-documentation",
+    ],
+    internalLinkNotes:
+      "Occupied commercial business restoration FAQ; after-hours access logs and phased mitigation.",
+  },
   "commercial-national-restoration-programs": {
     searchIntent: "informational",
     relatedFaqIds: [
@@ -3080,14 +3150,16 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
       "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/retail-office-insurance-claims-guide",
     ],
     relatedFaqIds: [
       "commercial-claim-documentation",
+      "commercial-retail-office-tenant-improvements",
       "commercial-insurance-documentation-requirements",
       "commercial-multi-building-documentation",
     ],
     internalLinkNotes:
-      "Tenant improvements / leasehold documentation FAQ for commercial claims.",
+      "Tenant improvements / leasehold documentation FAQ for commercial claims; cross-links retail/office TI FAQ.",
   },
   "commercial-insurance-documentation-requirements": {
     searchIntent: "documentation-standard",

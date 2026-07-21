@@ -5530,6 +5530,103 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
   {
+    id: "commercial-retail-insurance-claims",
+    category: "insurance_supplements",
+    question: "¿Cómo funcionan las reclamaciones de seguros de propiedades retail para contratistas?",
+    answer:
+      "Las reclamaciones de retail y centros comerciales se organizan alrededor de índices de suites y áreas comunes — escaparates, espacios de inquilinos, pasillos y sistemas compartidos — no carpetas de habitaciones residenciales. Los contratistas publican la nomenclatura Propiedad → Edificio → Suite, documentan mejoras de inquilinos y áreas comunes por separado, mantienen registros de acceso con negocios ocupados y presentan estimaciones que reflejan la misma jerarquía para que las aseguradoras puedan atribuir el alcance.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros comerciales de retail y oficinas para contratistas",
+        href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo funcionan las reclamaciones de seguros de edificios de oficinas para contratistas?",
+        href: "/faq#faq-commercial-office-building-insurance-claims",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-office-building-insurance-claims",
+    category: "insurance_supplements",
+    question: "¿Cómo funcionan las reclamaciones de seguros de edificios de oficinas para contratistas?",
+    answer:
+      "Las reclamaciones de edificios de oficinas se organizan por IDs de piso y suite que coinciden con los directorios de administración de la propiedad, con paquetes separados para oficinas demarcadas, áreas comunes y sistemas del edificio. Las restricciones de horario nocturno y seguridad se convierten en evidencia de reclamación cuando impulsan mano de obra por fases y protección temporal — las plantillas residenciales invitan al subpago en archivos de oficinas de varios pisos.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros comerciales de retail y oficinas para contratistas",
+        href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo funcionan las reclamaciones de seguros de propiedades retail para contratistas?",
+        href: "/faq#faq-commercial-retail-insurance-claims",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-retail-office-tenant-improvements",
+    category: "documentation",
+    question:
+      "¿Cómo deben documentar los contratistas las mejoras arrendaticias y de inquilinos en reclamaciones de retail y oficinas?",
+    answer:
+      "Obtenga dirección escrita de la propiedad, la administración o los inquilinos sobre los límites entre shell y leasehold — no interprete arrendamientos. Fotografíe acabados y accesorios de TI con IDs de suite antes de la demolición, mantenga paquetes de TI etiquetados por suite separados de las carpetas del edificio base y evite mezclar evidencia arrendaticia en galerías comerciales sin etiqueta.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros comerciales de retail y oficinas para contratistas",
+        href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas las mejoras de inquilinos en reclamaciones comerciales?",
+        href: "/faq#faq-commercial-tenant-improvements-documentation",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-multi-tenant-damage-documentation",
+    category: "documentation",
+    question: "¿Cómo debe documentarse el daño en propiedades comerciales multiinquilino?",
+    answer:
+      "Mantenga un índice de directorio de suites que coincida con las etiquetas de administración de la propiedad, complete paquetes de vista general a detalle por suite, documente áreas comunes y sistemas compartidos con IDs recíprocos a las suites afectadas y estructure las estimaciones por suite para que los revisores de escritorio puedan atribuir cantidades — los volcados fotográficos de una suite de muestra fallan en la revisión multiinquilino.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros comerciales de retail y oficinas para contratistas",
+        href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo funcionan las reclamaciones de seguros de propiedades retail para contratistas?",
+        href: "/faq#faq-commercial-retail-insurance-claims",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas varios edificios en una reclamación comercial?",
+        href: "/faq#faq-commercial-multi-building-documentation",
+      },
+    ],
+  },
+  {
+    id: "commercial-occupied-business-restoration",
+    category: "documentation",
+    question: "¿Cómo deben restaurar los contratistas negocios comerciales ocupados durante una reclamación?",
+    answer:
+      "Mapee suites abiertas frente a cerradas el primer día, coordine el acceso fuera de horario y de seguridad a través de la propiedad o la administración, registre autorizaciones por ID de suite y fasee la mitigación para que las operaciones puedan continuar en áreas no dañadas. Los registros de acceso contemporáneos defienden la mano de obra nocturna y las barreras temporales — las narrativas de fin de trabajo no lo hacen.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros comerciales de retail y oficinas para contratistas",
+        href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo funcionan las reclamaciones de seguros de edificios de oficinas para contratistas?",
+        href: "/faq#faq-commercial-office-building-insurance-claims",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
     id: "commercial-national-restoration-programs",
     category: "insurance_supplements",
     question: "¿Apoyan a empresas nacionales de restauración?",
@@ -5634,11 +5731,16 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Guía de documentación de reclamaciones de seguros comerciales",
         href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
       },
-      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
       {
-        label: "¿Qué documentación requieren las reclamaciones de seguros comerciales?",
-        href: "/faq#faq-commercial-insurance-documentation-requirements",
+        label: "Guía de reclamaciones de seguros comerciales de retail y oficinas para contratistas",
+        href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
       },
+      {
+        label:
+          "¿Cómo deben documentar los contratistas las mejoras arrendaticias y de inquilinos en reclamaciones de retail y oficinas?",
+        href: "/faq#faq-commercial-retail-office-tenant-improvements",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
     ],
   },
   {

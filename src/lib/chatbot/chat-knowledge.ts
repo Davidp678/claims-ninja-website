@@ -2446,6 +2446,84 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["commercial_claims", "industrial_warehouse_claims"],
   },
+  "commercial-retail-insurance-claims": {
+    phrases: [
+      "how do retail property insurance claims work for contractors",
+      "retail insurance claims",
+      "retail property insurance claims",
+      "shopping center insurance claims",
+      "retail center insurance claims",
+    ],
+    keywords: [
+      "retail insurance claims",
+      "retail property",
+      "shopping center",
+      "retail center",
+    ],
+    topics: ["commercial_claims", "retail_office_claims"],
+  },
+  "commercial-office-building-insurance-claims": {
+    phrases: [
+      "how do office building insurance claims work for contractors",
+      "office building insurance claims",
+      "office insurance claims",
+      "professional office insurance claims",
+    ],
+    keywords: [
+      "office building insurance claims",
+      "office insurance claims",
+      "office building",
+      "professional office",
+    ],
+    topics: ["commercial_claims", "retail_office_claims"],
+  },
+  "commercial-retail-office-tenant-improvements": {
+    phrases: [
+      "how should contractors document leasehold and tenant improvements on retail and office claims",
+      "retail office tenant improvements",
+      "leasehold documentation retail office",
+      "document tenant improvements retail office",
+      "tenant improvement damage retail",
+    ],
+    keywords: [
+      "leasehold",
+      "tenant improvements",
+      "retail tenant improvements",
+      "office tenant improvements",
+    ],
+    topics: ["commercial_claims", "documentation", "retail_office_claims"],
+  },
+  "commercial-multi-tenant-damage-documentation": {
+    phrases: [
+      "how should multi-tenant commercial damage be documented",
+      "multi-tenant commercial damage documentation",
+      "multi-tenant commercial losses",
+      "document multi-tenant commercial property",
+    ],
+    keywords: [
+      "multi-tenant",
+      "multi-tenant commercial",
+      "multi-tenant damage",
+      "suite documentation",
+    ],
+    topics: ["commercial_claims", "documentation", "retail_office_claims"],
+  },
+  "commercial-occupied-business-restoration": {
+    phrases: [
+      "how should contractors restore occupied commercial businesses during a claim",
+      "occupied commercial restoration",
+      "occupied business restoration",
+      "after-hours commercial restoration",
+      "occupied business insurance claim",
+    ],
+    keywords: [
+      "occupied commercial",
+      "occupied business",
+      "occupied restoration",
+      "after-hours restoration",
+    ],
+    topics: ["commercial_claims", "documentation", "retail_office_claims"],
+  },
   "commercial-national-restoration-programs": {
     phrases: [
       "support national restoration companies",

@@ -39,6 +39,7 @@ export const MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE = defineGuide({
     "Document apartment and multifamily insurance claims for contractors: unit-by-unit inspections, common areas, property manager coordination, occupied vs vacant units, shared systems, code upgrades, supplements, and indexed claim packages.",
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
+    "retail-office-insurance-claims-guide",
     "hoa-insurance-claims-guide",
     "industrial-warehouse-insurance-claims-guide",
     "commercial-water-loss-documentation-guide",
@@ -659,6 +660,10 @@ export const MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE = defineGuide({
     {
       label: "Industrial & Warehouse Insurance Claims Guide",
       href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
+    },
+    {
+      label: "Retail & Office Commercial Insurance Claims Guide",
+      href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
     },
     {
       label: "Commercial Water Loss Documentation Guide",

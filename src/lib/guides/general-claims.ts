@@ -3,12 +3,14 @@ import { COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE } from "@/lib/guides/co
 import { HOA_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/hoa-insurance-claims-guide";
 import { INDUSTRIAL_WAREHOUSE_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/industrial-warehouse-insurance-claims-guide";
 import { MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/multifamily-apartment-insurance-claims-guide";
+import { RETAIL_OFFICE_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/retail-office-insurance-claims-guide";
 
 export const GENERAL_CLAIMS_GUIDES = [
   COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE,
   MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE,
   HOA_INSURANCE_CLAIMS_GUIDE,
   INDUSTRIAL_WAREHOUSE_INSURANCE_CLAIMS_GUIDE,
+  RETAIL_OFFICE_INSURANCE_CLAIMS_GUIDE,
   defineGuide({
     slug: "first-48-hours-checklist",
     title: "First 48 Hours After Carrier Estimate Checklist",

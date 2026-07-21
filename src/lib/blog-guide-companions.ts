@@ -224,8 +224,8 @@ export const BLOG_GUIDE_COMPANIONS = {
     guideSlugs: [
       "commercial-insurance-claims-documentation-guide",
       "multifamily-apartment-insurance-claims-guide",
-      "hoa-insurance-claims-guide",
       "industrial-warehouse-insurance-claims-guide",
+      "retail-office-insurance-claims-guide",
     ],
   },
   "fire-damage-claim-documentation-guide": {

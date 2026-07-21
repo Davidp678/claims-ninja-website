@@ -35,6 +35,7 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
     "Learn how to document commercial water losses, multifamily projects, apartment losses, retail properties, and large-loss mitigation jobs to support insurance recovery and claim success.",
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
+    "retail-office-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "hoa-insurance-claims-guide",
     "industrial-warehouse-insurance-claims-guide",
@@ -630,6 +631,10 @@ export const COMMERCIAL_WATER_LOSS_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Industrial & Warehouse Insurance Claims Guide",
       href: "/resources/guides/general-claims/industrial-warehouse-insurance-claims-guide",
+    },
+    {
+      label: "Retail & Office Commercial Insurance Claims Guide",
+      href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
     },
     {
       label: "Commercial Fire Claims Guide",

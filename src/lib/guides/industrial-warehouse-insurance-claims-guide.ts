@@ -40,6 +40,7 @@ export const INDUSTRIAL_WAREHOUSE_INSURANCE_CLAIMS_GUIDE = defineGuide({
     "Document industrial and warehouse insurance claims for contractors: manufacturing vs warehouse footprints, building systems, equipment and machinery, high-bay racking, inventory zones, loading docks, occupied facilities, mitigation, safety, large-loss strategies, code, supplements, and indexed claim packages.",
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
+    "retail-office-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "hoa-insurance-claims-guide",
     "commercial-water-loss-documentation-guide",
@@ -663,6 +664,10 @@ export const INDUSTRIAL_WAREHOUSE_INSURANCE_CLAIMS_GUIDE = defineGuide({
     {
       label: "Multifamily & Apartment Insurance Claims Guide",
       href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",
+    },
+    {
+      label: "Retail & Office Commercial Insurance Claims Guide",
+      href: "/resources/guides/general-claims/retail-office-insurance-claims-guide",
     },
     {
       label: "HOA Insurance Claims Guide",

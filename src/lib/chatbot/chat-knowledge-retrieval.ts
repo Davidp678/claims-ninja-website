@@ -425,6 +425,29 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "industrial property documentation",
     "warehouse inspections",
   ],
+  retail_office_claims: [
+    "retail",
+    "retail insurance",
+    "retail insurance claims",
+    "retail property",
+    "retail property damage",
+    "office building",
+    "office building insurance claims",
+    "office restoration",
+    "office restoration documentation",
+    "shopping center",
+    "storefront",
+    "tenant improvement",
+    "tenant improvements",
+    "leasehold",
+    "multi-tenant",
+    "multi-tenant commercial",
+    "occupied business",
+    "occupied commercial",
+    "suite documentation",
+    "professional office",
+    "mixed-use",
+  ],
   large_loss: [
     "large loss",
     "large-loss",
@@ -2838,6 +2861,62 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /industrial-warehouse-insurance-claims-guide|commercial-industrial-restoration-claims|industrial restoration claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "retail insurance claims retrieves retail/office guide or FAQ",
+    message: "how do retail property insurance claims work for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /retail-office-insurance-claims-guide|commercial-retail-insurance-claims|retail property insurance claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "office building insurance claims retrieves guide or FAQ",
+    message: "how do office building insurance claims work for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /retail-office-insurance-claims-guide|commercial-office-building-insurance-claims|office building insurance claims/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "retail/office tenant improvements retrieves guide or FAQ",
+    message:
+      "how should contractors document leasehold and tenant improvements on retail and office claims",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /retail-office-insurance-claims-guide|commercial-retail-office-tenant-improvements|leasehold and tenant improvements/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "multi-tenant damage documentation retrieves guide or FAQ",
+    message: "how should multi-tenant commercial damage be documented",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /retail-office-insurance-claims-guide|commercial-multi-tenant-damage-documentation|multi-tenant commercial damage/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "occupied business restoration retrieves guide or FAQ",
+    message: "how should contractors restore occupied commercial businesses during a claim",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /retail-office-insurance-claims-guide|commercial-occupied-business-restoration|occupied commercial businesses/i.test(
           `${s.text} ${s.source}`,
         ),
       ),
