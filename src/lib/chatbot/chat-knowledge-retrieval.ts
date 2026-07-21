@@ -3022,6 +3022,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "commercial claims documentation checklist blog retrieves",
+    message: "commercial claims documentation checklist for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-claims-documentation-checklist|Commercial Claims Documentation Checklist/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial documentation checklist FAQ retrieves",
+    message: "what should a commercial claims documentation checklist include",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-documentation-checklist|commercial-claims-documentation-checklist|commercial claims documentation checklist include/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial inspection checklist FAQ retrieves",
+    message: "what should a commercial insurance inspection checklist cover",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-inspection-checklist|commercial insurance inspection checklist|commercial-claims-documentation-checklist/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial photo documentation FAQ retrieves",
+    message: "how should contractors handle commercial photo documentation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-photo-documentation|commercial photo documentation|commercial-claims-documentation-checklist/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial claim file organization FAQ retrieves",
+    message: "how should contractors organize a commercial claim file",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-claim-file-organization|organize a commercial claim file|commercial-claims-documentation-checklist/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial final submission FAQ retrieves",
+    message: "what belongs in a commercial claim final submission package",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /commercial-final-submission|commercial claim final submission|commercial-claims-documentation-checklist/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "why mold insurance claims underpaid blog retrieves",
     message: "why mold insurance claims get underpaid documentation",
     assert: (result) =>

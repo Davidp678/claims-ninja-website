@@ -3327,6 +3327,82 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "How better documentation improves commercial settlements; CTA to commercial docs guide.",
   },
+  "commercial-documentation-checklist": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/large-loss-commercial-insurance-claims-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-inspection-checklist",
+      "commercial-photo-documentation",
+      "commercial-claim-file-organization",
+      "commercial-final-submission",
+      "commercial-claim-documentation",
+    ],
+    internalLinkNotes:
+      "Commercial documentation checklist FAQ; bridge to checklist blog and documentation guide.",
+  },
+  "commercial-inspection-checklist": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/multifamily-apartment-insurance-claims-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-documentation-checklist",
+      "commercial-photo-documentation",
+      "commercial-claim-file-organization",
+      "commercial-unit-inspections",
+    ],
+    internalLinkNotes:
+      "Commercial insurance inspection checklist FAQ; cross-link checklist blog and unit inspection FAQ.",
+  },
+  "commercial-photo-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/photo-documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-documentation-checklist",
+      "commercial-claim-file-organization",
+      "commercial-final-submission",
+      "documentation-photos",
+    ],
+    internalLinkNotes:
+      "Commercial photo documentation FAQ; distinct from generic documentation-photos.",
+  },
+  "commercial-claim-file-organization": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/large-loss-commercial-insurance-claims-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-documentation-checklist",
+      "commercial-multi-building-documentation",
+      "commercial-photo-documentation",
+      "commercial-final-submission",
+    ],
+    internalLinkNotes:
+      "Commercial claim file organization FAQ; cross-link multi-building and checklist cluster.",
+  },
+  "commercial-final-submission": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/large-loss-commercial-insurance-claims-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-documentation-checklist",
+      "commercial-claim-file-organization",
+      "commercial-settlement-documentation",
+      "commercial-insurance-documentation-requirements",
+    ],
+    internalLinkNotes:
+      "Commercial final submission package FAQ; CTA to checklist blog and documentation guide.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

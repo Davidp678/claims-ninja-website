@@ -61,6 +61,7 @@ export const MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE = defineGuide({
     "supplement-submission-guide",
   ],
   relatedBlogSlugs: [
+    "commercial-claims-documentation-checklist",
     "why-commercial-insurance-claims-get-underpaid",
     "water-damage-documentation-for-apartment-complexes",
     "multifamily-water-claims-that-get-underpaid",

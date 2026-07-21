@@ -57,6 +57,7 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     "claim-file-audit-guide",
   ],
   relatedBlogSlugs: [
+    "commercial-claims-documentation-checklist",
     "why-commercial-insurance-claims-get-underpaid",
     "water-damage-documentation-for-apartment-complexes",
     "large-loss-water-mitigation-documentation-best-practices",
@@ -75,6 +76,8 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     "commercial-code-ordinance-upgrades",
     "commercial-settlement-documentation",
     "commercial-claim-documentation",
+    "commercial-documentation-checklist",
+    "commercial-final-submission",
     "commercial-large-loss-project-documentation",
     "commercial-multi-building-documentation",
     "commercial-tenant-improvements-documentation",

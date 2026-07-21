@@ -24,6 +24,7 @@ export const whyCommercialInsuranceClaimsGetUnderpaid: BlogPost = {
   seoDescription:
     "Why commercial insurance claims get underpaid: building documentation gaps, quantity validation failures, weak photos, missed code upgrades, TI issues, and documentation strategies that improve commercial claim settlements.",
   relatedPostSlugs: [
+    "commercial-claims-documentation-checklist",
     "multifamily-water-claims-that-get-underpaid",
     "common-documentation-mistakes-on-commercial-water-losses",
     "large-loss-water-mitigation-documentation-best-practices",

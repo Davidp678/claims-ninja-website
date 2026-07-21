@@ -5981,4 +5981,123 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
     ],
   },
+  {
+    id: "commercial-documentation-checklist",
+    category: "documentation",
+    question:
+      "¿Qué debe incluir una lista de verificación de documentación de reclamaciones comerciales?",
+    answer:
+      "Una lista de verificación de documentación de reclamaciones comerciales debe cubrir la preparación previa al sitio, un índice maestro Edificio → Piso → Suite/Unidad → Habitación, registros de propiedad y ocupación, fotos iniciales de daños, registros de mitigación de emergencia, carpetas multiárea, evidencias de techo y envolvente, documentación interior y MEP, separación de estructura versus TI, evidencia de equipos y contenidos, informes diarios de progreso, soporte de código y ordenanza cuando apliquen mejoras, índices de anexos para suplementos y un paquete final firmado de envío. Ejecute la lista desde la recepción hasta el envío para que cada línea facturada se vincule a un anexo nombrado y fechado.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones comerciales",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas las reclamaciones de seguros comerciales?",
+        href: "/faq#faq-commercial-claim-documentation",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-inspection-checklist",
+    category: "documentation",
+    question:
+      "¿Qué debe cubrir una lista de verificación de inspección de seguros comerciales?",
+    answer:
+      "Una lista de verificación de inspección de seguros comerciales debe confirmar datos de reclamación y contactos, fijar la nomenclatura de áreas antes de las fotos, capturar identificación del edificio y estado de ocupación, recorrer cada suite y área común afectada con secuencias amplio/medio/primer plano, anotar envolvente y sistemas MEP, señalar límites estructura versus TI, iniciar una lista de brechas frente al estimado de la aseguradora y preparar plantillas de informe diario. Una inspección sin índice fijado produce evidencia sin etiquetar que los revisores de escritorio no pueden atribuir en huellas multiinquilino.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones comerciales",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "¿Qué debe incluir una lista de verificación de documentación de reclamaciones comerciales?",
+        href: "/faq#faq-commercial-documentation-checklist",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-photo-documentation",
+    category: "documentation",
+    question: "¿Cómo deben manejar los contratistas la documentación fotográfica comercial?",
+    answer:
+      "Maneje la documentación fotográfica comercial como un flujo de indexación: active sellos de fecha, fije etiquetas Edificio → Piso → Suite/Unidad → Habitación antes de la primera imagen, capture secuencias amplio/medio/primer plano para cada área facturada, fotografíe puntos de origen, elevaciones de envolvente, estado MEP, acabados TI y equipos en sitio, y suba a carpetas de área el mismo día. El volumen importa menos que la cobertura completa de áreas y etiquetas que coincidan con el croquis y el estimado — los volcados fotográficos sin etiquetar invitan recortes proporcionales en archivos comerciales.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones comerciales",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "Procedimiento de campo de documentación fotográfica",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "¿Cómo deben organizar los contratistas un archivo de reclamación comercial?",
+        href: "/faq#faq-commercial-claim-file-organization",
+      },
+    ],
+  },
+  {
+    id: "commercial-claim-file-organization",
+    category: "documentation",
+    question: "¿Cómo deben organizar los contratistas un archivo de reclamación comercial?",
+    answer:
+      "Organice un archivo de reclamación comercial alrededor de un índice maestro Edificio → Piso → Suite/Unidad → Habitación publicado en 24 horas. Mantenga carpetas separadas para cada edificio o suite principal, almacene fotos e informes diarios bajo los mismos IDs de área usados en el estimado, separe paquetes de estructura y TI cuando la propiedad difiera, cruce sistemas MEP compartidos y mantenga un índice de anexos de portada para suplementos. Nunca fusione evidencia multiedificio o multiinquilino en una sola carpeta de estilo residencial.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones comerciales",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas varios edificios en una reclamación comercial?",
+        href: "/faq#faq-commercial-multi-building-documentation",
+      },
+      {
+        label: "Guía de reclamaciones de seguros comerciales de gran pérdida",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-final-submission",
+    category: "documentation",
+    question:
+      "¿Qué debe incluir el paquete final de envío de una reclamación comercial?",
+    answer:
+      "Un paquete final de envío de reclamación comercial debe incluir una carta de presentación con índice de anexos, estimado revisado con etiquetas de área que coincidan con fotos e informes, el índice maestro de áreas, registros continuos de mitigación de emergencia y diarios, conciliación de equipos y materiales, separación TI/estructura en pérdidas multiinquilino, evidencias de código y ordenanza cuando se facturen mejoras, validación de cantidades para ensambles grandes, notas de correspondencia y firma del responsable del paquete con carga versionada al CRM. Retrase el envío o elimine líneas no respaldadas cuando falten elementos de la lista de verificación.",
+    relatedLinks: [
+      {
+        label: "Lista de verificación de documentación de reclamaciones comerciales",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "¿Qué debe incluir una lista de verificación de documentación de reclamaciones comerciales?",
+        href: "/faq#faq-commercial-documentation-checklist",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
 ] as const;

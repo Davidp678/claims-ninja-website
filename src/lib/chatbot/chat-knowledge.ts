@@ -1398,6 +1398,76 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["commercial_claims", "documentation"],
   },
+  "commercial-documentation-checklist": {
+    phrases: [
+      "what should a commercial claims documentation checklist include",
+      "commercial claims documentation checklist",
+      "commercial documentation checklist",
+      "commercial insurance documentation checklist",
+    ],
+    keywords: [
+      "commercial documentation checklist",
+      "commercial claims checklist",
+      "commercial insurance checklist",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
+  "commercial-inspection-checklist": {
+    phrases: [
+      "what should a commercial insurance inspection checklist cover",
+      "commercial insurance inspection checklist",
+      "commercial inspection checklist",
+      "commercial claim inspection checklist",
+    ],
+    keywords: [
+      "commercial inspection checklist",
+      "commercial insurance inspection",
+      "commercial site inspection checklist",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
+  "commercial-photo-documentation": {
+    phrases: [
+      "how should contractors handle commercial photo documentation",
+      "commercial photo documentation",
+      "commercial claims photo documentation",
+      "photograph commercial insurance claims",
+    ],
+    keywords: [
+      "commercial photo documentation",
+      "commercial claim photos",
+      "commercial photo checklist",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
+  "commercial-claim-file-organization": {
+    phrases: [
+      "how should contractors organize a commercial claim file",
+      "commercial claim file organization",
+      "organize commercial claim file",
+      "commercial claim file index",
+    ],
+    keywords: [
+      "commercial claim file",
+      "commercial file organization",
+      "commercial claim index",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
+  "commercial-final-submission": {
+    phrases: [
+      "what belongs in a commercial claim final submission package",
+      "commercial claim final submission",
+      "commercial final submission package",
+      "commercial claim submission checklist",
+    ],
+    keywords: [
+      "commercial final submission",
+      "commercial submission package",
+      "commercial claim package",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
   "mold-supplement-included-items": {
     phrases: [
       "what should be included in a mold damage supplement",

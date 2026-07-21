@@ -30,6 +30,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Reclamaciones de agua multifamiliar que se pagan por debajo del valor",
   "why-commercial-insurance-claims-get-underpaid":
     "Por qué las reclamaciones de seguro comercial reciben pagos insuficientes",
+  "commercial-claims-documentation-checklist":
+    "Lista de verificación de documentación de reclamaciones comerciales para contratistas",
   "roofing-supplement-playbook":
     "Manual de suplementos de techado para contratistas",
   "what-is-a-roof-supplement": "¿Qué es un suplemento de techo?",

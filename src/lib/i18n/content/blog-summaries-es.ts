@@ -53,6 +53,12 @@ export const BLOG_SUMMARIES_ES: Record<string, BlogSummary> = {
     excerpt:
       "Por qué las reclamaciones de seguro de propiedad comercial reciben pagos insuficientes: documentación incompleta del edificio, validación de cantidades ausente, fotos débiles, oportunidades de código y ordenanza omitidas, mejoras de inquilinos, sistemas compartidos y estrategias prácticas de documentación para contratistas de restauración.",
   },
+  "commercial-claims-documentation-checklist": {
+    title:
+      "Lista de verificación de documentación de reclamaciones comerciales para contratistas",
+    excerpt:
+      "Lista de verificación de documentación de reclamaciones comerciales para contratistas: preparación previa, registros de edificio y ocupación, evidencia de daños y mitigación, índices multiárea, documentación MEP y TI, progreso diario, mejoras de código y paquete final de reclamación para equipos de restauración comercial.",
+  },
 };
 
 export function getBlogSummaryEs(

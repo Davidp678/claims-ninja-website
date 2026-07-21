@@ -493,6 +493,28 @@ const SLUG_BOOSTS: Record<
     ],
     topics: ["commercial_claims", "documentation"],
   },
+  "commercial-claims-documentation-checklist": {
+    phrases: [
+      "commercial claims documentation checklist",
+      "commercial insurance checklist",
+      "commercial restoration documentation checklist",
+      "commercial inspection checklist",
+      "commercial insurance documentation checklist",
+      "commercial claim final submission checklist",
+      "commercial photo documentation checklist",
+      "commercial claim file organization",
+    ],
+    keywords: [
+      "commercial documentation checklist",
+      "commercial insurance checklist",
+      "commercial inspection checklist",
+      "commercial photo documentation",
+      "commercial final submission",
+      "commercial claim file",
+      "commercial restoration documentation",
+    ],
+    topics: ["commercial_claims", "documentation"],
+  },
   "daily-monitoring-documentation-best-practices": {
     phrases: ["daily monitoring", "monitoring documentation"],
     keywords: ["monitoring visit", "monitoring log"],

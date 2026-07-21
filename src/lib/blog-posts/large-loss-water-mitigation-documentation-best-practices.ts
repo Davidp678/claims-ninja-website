@@ -30,6 +30,7 @@ export const largeLossWaterMitigationDocumentationBestPractices: BlogPost = {
   seoDescription:
     "Learn large-loss water mitigation documentation best practices, including moisture mapping, equipment tracking, daily reporting, occupant impact documentation, vendor coordination, and executive-level claim reporting.",
   relatedPostSlugs: [
+    "commercial-claims-documentation-checklist",
     "why-commercial-insurance-claims-get-underpaid",
     "multifamily-water-claims-that-get-underpaid",
     "water-damage-documentation-for-apartment-complexes",

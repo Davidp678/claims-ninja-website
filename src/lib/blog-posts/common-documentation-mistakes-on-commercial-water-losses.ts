@@ -28,6 +28,7 @@ export const commonDocumentationMistakesOnCommercialWaterLosses: BlogPost = {
   seoDescription:
     "Learn the most common documentation mistakes that lead to reduced payments on commercial water losses, including missing moisture maps, dry logs, equipment records, tenant impacts, and monitoring documentation.",
   relatedPostSlugs: [
+    "commercial-claims-documentation-checklist",
     "why-commercial-insurance-claims-get-underpaid",
     "multifamily-water-claims-that-get-underpaid",
     "documentation-gaps-that-trigger-water-claim-denials",

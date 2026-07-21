@@ -5994,4 +5994,123 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       { label: "Commercial insurance claims", href: "/solutions/commercial" },
     ],
   },
+  {
+    id: "commercial-documentation-checklist",
+    category: "documentation",
+    question:
+      "What should a commercial claims documentation checklist include?",
+    answer:
+      "A commercial claims documentation checklist should cover pre-site prep, a Building → Floor → Suite/Unit → Room master index, property and occupancy records, initial damage photos, emergency mitigation logs, multi-area folders, roof and envelope exhibits, interior and MEP documentation, shell versus TI separation, equipment and contents evidence, daily progress reports, code and ordinance support when upgrades apply, supplement attachment indexes, and a signed final submission package. Run the checklist from intake through submission so every billed line maps to a named, dated exhibit.",
+    relatedLinks: [
+      {
+        label: "Commercial Claims Documentation Checklist",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "How should contractors document commercial insurance claims?",
+        href: "/faq#faq-commercial-claim-documentation",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-inspection-checklist",
+    category: "documentation",
+    question:
+      "What should a commercial insurance inspection checklist cover?",
+    answer:
+      "A commercial insurance inspection checklist should confirm claim and contact data, lock area naming before photos, capture building identification and occupancy status, walk every affected suite and common area with wide/mid/close-up sequences, note envelope and MEP systems, flag shell versus TI boundaries, start a gap list against the carrier estimate, and stage daily report templates. Inspection without a locked index produces unlabeled evidence that desk reviewers cannot attribute across multi-tenant footprints.",
+    relatedLinks: [
+      {
+        label: "Commercial Claims Documentation Checklist",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "What should a commercial claims documentation checklist include?",
+        href: "/faq#faq-commercial-documentation-checklist",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-photo-documentation",
+    category: "documentation",
+    question: "How should contractors handle commercial photo documentation?",
+    answer:
+      "Handle commercial photo documentation as an indexing workflow: enable date stamps, lock Building → Floor → Suite/Unit → Room labels before the first image, capture wide/mid/close-up sequences for every billed area, photograph origin points, envelope elevations, MEP status, TI finishes, and equipment in place, and upload to area folders the same day. Volume matters less than complete area coverage and labels that match the sketch and estimate — unlabeled photo dumps invite proportional cuts on commercial files.",
+    relatedLinks: [
+      {
+        label: "Commercial Claims Documentation Checklist",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "Photo Documentation Field Procedure",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "How should contractors organize a commercial claim file?",
+        href: "/faq#faq-commercial-claim-file-organization",
+      },
+    ],
+  },
+  {
+    id: "commercial-claim-file-organization",
+    category: "documentation",
+    question: "How should contractors organize a commercial claim file?",
+    answer:
+      "Organize a commercial claim file around a master Building → Floor → Suite/Unit → Room index published within 24 hours. Keep separate folders for each major building or suite, store photos and daily logs under the same area IDs used on the estimate, separate shell from TI packages when ownership differs, cross-link shared MEP systems, and maintain a cover attachment index for supplements. Never merge multi-building or multi-tenant evidence into a single residential-style folder.",
+    relatedLinks: [
+      {
+        label: "Commercial Claims Documentation Checklist",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "How should contractors document multiple buildings on a commercial claim?",
+        href: "/faq#faq-commercial-multi-building-documentation",
+      },
+      {
+        label: "Large-Loss Commercial Insurance Claims Guide",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+    ],
+  },
+  {
+    id: "commercial-final-submission",
+    category: "documentation",
+    question:
+      "What belongs in a commercial claim final submission package?",
+    answer:
+      "A commercial claim final submission package should include a cover letter with attachment index, revised estimate with area labels matching photos and logs, the master area index, continuous emergency and daily mitigation logs, equipment and material reconciliation, TI/shell separation on multi-tenant losses, code and ordinance exhibits when upgrades are billed, quantity validation for large assemblies, correspondence notes, and package-owner sign-off with a versioned CRM upload. Delay submission or drop unsupported lines when checklist items are incomplete.",
+    relatedLinks: [
+      {
+        label: "Commercial Claims Documentation Checklist",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      {
+        label: "What should a commercial claims documentation checklist include?",
+        href: "/faq#faq-commercial-documentation-checklist",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
 ] as const;

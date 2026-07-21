@@ -60,6 +60,7 @@ export const LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE = defineGuide({
     "supplement-submission-guide",
   ],
   relatedBlogSlugs: [
+    "commercial-claims-documentation-checklist",
     "why-commercial-insurance-claims-get-underpaid",
     "large-loss-water-mitigation-documentation-best-practices",
     "common-documentation-mistakes-on-commercial-water-losses",

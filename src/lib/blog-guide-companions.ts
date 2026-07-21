@@ -228,6 +228,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "industrial-warehouse-insurance-claims-guide",
     ],
   },
+  "commercial-claims-documentation-checklist": {
+    intro:
+      "You've reviewed the commercial documentation checklist. Now run the Commercial Insurance Claims Documentation Guide as your operational hub — then apply large-loss, multifamily, and retail/office standards so every checklist item becomes reviewer-ready evidence.",
+    guideSlugs: [
+      "commercial-insurance-claims-documentation-guide",
+      "large-loss-commercial-insurance-claims-guide",
+      "multifamily-apartment-insurance-claims-guide",
+      "retail-office-insurance-claims-guide",
+    ],
+  },
   "fire-damage-claim-documentation-guide": {
     intro:
       "You've learned fire claim documentation fundamentals. Now execute the cornerstone documentation standards and specialty procedures that defend migration, HVAC, contents, and pack-out scope.",

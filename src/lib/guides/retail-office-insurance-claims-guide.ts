@@ -62,6 +62,7 @@ export const RETAIL_OFFICE_INSURANCE_CLAIMS_GUIDE = defineGuide({
     "supplement-submission-guide",
   ],
   relatedBlogSlugs: [
+    "commercial-claims-documentation-checklist",
     "why-commercial-insurance-claims-get-underpaid",
     "large-loss-water-mitigation-documentation-best-practices",
     "common-documentation-mistakes-on-commercial-water-losses",
