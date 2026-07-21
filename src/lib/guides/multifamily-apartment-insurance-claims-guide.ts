@@ -39,8 +39,9 @@ export const MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE = defineGuide({
     "Document apartment and multifamily insurance claims for contractors: unit-by-unit inspections, common areas, property manager coordination, occupied vs vacant units, shared systems, code upgrades, supplements, and indexed claim packages.",
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
-    "retail-office-insurance-claims-guide",
+    "large-loss-commercial-insurance-claims-guide",
     "hoa-insurance-claims-guide",
+    "retail-office-insurance-claims-guide",
     "industrial-warehouse-insurance-claims-guide",
     "commercial-water-loss-documentation-guide",
     "commercial-fire-claims-guide",
@@ -652,6 +653,10 @@ export const MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE = defineGuide({
     {
       label: "Commercial Insurance Claims Documentation Guide",
       href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+    },
+    {
+      label: "Large-Loss Commercial Insurance Claims Guide",
+      href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
     },
     {
       label: "HOA Insurance Claims Guide for Contractors",

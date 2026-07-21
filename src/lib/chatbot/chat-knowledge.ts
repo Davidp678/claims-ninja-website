@@ -2524,6 +2524,81 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["commercial_claims", "documentation", "retail_office_claims"],
   },
+  "commercial-large-loss-insurance-claims": {
+    phrases: [
+      "what qualifies as a large-loss commercial insurance claim for contractors",
+      "large-loss commercial insurance claims",
+      "large loss commercial insurance claim",
+      "what is a large-loss commercial claim",
+      "large commercial property damage claims",
+    ],
+    keywords: [
+      "large-loss commercial",
+      "large loss commercial",
+      "large-loss claim",
+      "commercial large-loss",
+    ],
+    topics: ["commercial_claims", "large_loss"],
+  },
+  "commercial-large-loss-multi-area-documentation": {
+    phrases: [
+      "how should contractors document multiple buildings or areas on a large commercial loss",
+      "document multiple buildings large commercial loss",
+      "campus multi-area large-loss documentation",
+      "multi-area commercial documentation large loss",
+    ],
+    keywords: [
+      "multi-area documentation",
+      "campus documentation",
+      "multiple buildings or areas",
+      "large-loss multi-area",
+    ],
+    topics: ["commercial_claims", "documentation", "large_loss"],
+  },
+  "commercial-large-loss-mitigation-documentation": {
+    phrases: [
+      "how should contractors document emergency mitigation on a large commercial loss",
+      "large-loss emergency mitigation documentation",
+      "large-loss mitigation documentation",
+      "document mitigation on large commercial loss",
+    ],
+    keywords: [
+      "large-loss mitigation",
+      "emergency mitigation large loss",
+      "large commercial mitigation",
+    ],
+    topics: ["commercial_claims", "documentation", "large_loss"],
+  },
+  "commercial-large-loss-estimate-organization": {
+    phrases: [
+      "how should contractors organize estimates on large commercial losses",
+      "large-loss estimate organization",
+      "organize large-loss commercial estimates",
+      "complex commercial estimate organization",
+    ],
+    keywords: [
+      "large-loss estimate",
+      "estimate organization",
+      "complex commercial estimate",
+      "phased estimate",
+    ],
+    topics: ["commercial_claims", "documentation", "large_loss"],
+  },
+  "commercial-large-loss-reinspection-supplements": {
+    phrases: [
+      "how should contractors prepare for large-loss reinspections and supplements",
+      "large-loss reinspection preparation",
+      "large-loss supplement strategy",
+      "commercial reinspection preparation large loss",
+    ],
+    keywords: [
+      "large-loss reinspection",
+      "large-loss supplement",
+      "reinspection preparation",
+      "supplement strategy",
+    ],
+    topics: ["commercial_claims", "documentation", "large_loss", "supplements"],
+  },
   "commercial-national-restoration-programs": {
     phrases: [
       "support national restoration companies",

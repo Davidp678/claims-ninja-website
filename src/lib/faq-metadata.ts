@@ -2246,6 +2246,77 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Occupied commercial business restoration FAQ; after-hours access logs and phased mitigation.",
   },
+  "commercial-large-loss-insurance-claims": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/large-loss-commercial-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-large-loss-multi-area-documentation",
+      "commercial-large-loss-mitigation-documentation",
+      "commercial-large-loss-estimate-organization",
+      "commercial-large-loss-reinspection-supplements",
+    ],
+    internalLinkNotes:
+      "Large-loss commercial insurance claims overview FAQ; anchors Large-Loss Commercial Insurance Claims Guide.",
+  },
+  "commercial-large-loss-multi-area-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/large-loss-commercial-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-large-loss-insurance-claims",
+      "commercial-multi-building-documentation",
+      "commercial-large-loss-estimate-organization",
+    ],
+    internalLinkNotes:
+      "Campus / multi-area large-loss documentation FAQ; distinct from building-only multi-building FAQ.",
+  },
+  "commercial-large-loss-mitigation-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/large-loss-commercial-insurance-claims-guide",
+      "water-damage/commercial-water-loss-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-large-loss-insurance-claims",
+      "commercial-large-loss-project-documentation",
+      "water-large-loss-documentation",
+    ],
+    internalLinkNotes:
+      "Cross-peril large-loss emergency mitigation documentation FAQ; distinct from water-only large-loss FAQs.",
+  },
+  "commercial-large-loss-estimate-organization": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/large-loss-commercial-insurance-claims-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-large-loss-insurance-claims",
+      "commercial-large-loss-multi-area-documentation",
+      "commercial-large-loss-reinspection-supplements",
+    ],
+    internalLinkNotes:
+      "Large-loss estimate organization FAQ; building/area/system/phase section structure.",
+  },
+  "commercial-large-loss-reinspection-supplements": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/large-loss-commercial-insurance-claims-guide",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "commercial-large-loss-insurance-claims",
+      "commercial-large-loss-estimate-organization",
+      "commercial-large-loss-project-documentation",
+    ],
+    internalLinkNotes:
+      "Large-loss reinspection preparation and supplement strategy FAQ.",
+  },
   "commercial-national-restoration-programs": {
     searchIntent: "informational",
     relatedFaqIds: [
@@ -2258,14 +2329,16 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "commercial-large-loss-support": {
     searchIntent: "informational",
     relatedGuideSlugs: [
+      "general-claims/large-loss-commercial-insurance-claims-guide",
       "water-damage/commercial-water-loss-documentation-guide",
     ],
     relatedFaqIds: [
+      "commercial-large-loss-insurance-claims",
       "water-large-loss-qualifies",
       "commercial-claims-handled",
     ],
     internalLinkNotes:
-      "Large-loss commercial FAQ; link large-loss water documentation guide and blog.",
+      "Large-loss commercial service FAQ; link Large-Loss guide, water documentation guide, and blog.",
   },
   "commercial-property-types-supported": {
     searchIntent: "informational",
@@ -3122,29 +3195,33 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "commercial-large-loss-project-documentation": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
+      "general-claims/large-loss-commercial-insurance-claims-guide",
       "general-claims/commercial-insurance-claims-documentation-guide",
     ],
     relatedFaqIds: [
       "commercial-claim-documentation",
+      "commercial-large-loss-insurance-claims",
       "commercial-multi-building-documentation",
       "commercial-large-loss-support",
     ],
     internalLinkNotes:
-      "Large-loss commercial project documentation FAQ; cross-link multi-building and service FAQs.",
+      "Large-loss commercial project documentation FAQ; cross-link Large-Loss guide and multi-building FAQs.",
   },
   "commercial-multi-building-documentation": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
+      "general-claims/large-loss-commercial-insurance-claims-guide",
       "general-claims/commercial-insurance-claims-documentation-guide",
       "roofing-claims/multi-building-roofing-claims-guide",
     ],
     relatedFaqIds: [
       "commercial-claim-documentation",
+      "commercial-large-loss-multi-area-documentation",
       "commercial-large-loss-project-documentation",
       "commercial-tenant-improvements-documentation",
     ],
     internalLinkNotes:
-      "Multi-building commercial documentation FAQ; cross-link multi-building roofing guide.",
+      "Multi-building commercial documentation FAQ; cross-link Large-Loss guide and multi-building roofing guide.",
   },
   "commercial-tenant-improvements-documentation": {
     searchIntent: "documentation-standard",

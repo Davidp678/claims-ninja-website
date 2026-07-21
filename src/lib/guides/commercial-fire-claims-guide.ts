@@ -40,8 +40,9 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
     "Document, estimate, and recover commercial fire insurance claims: tenant coordination, large-loss documentation, engineering scope, business interruption support, supplements, and phased reconstruction for contractors.",
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
-    "retail-office-insurance-claims-guide",
+    "large-loss-commercial-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
+    "retail-office-insurance-claims-guide",
     "hoa-insurance-claims-guide",
     "industrial-warehouse-insurance-claims-guide",
     "fire-damage-supplement-playbook-for-contractors",
@@ -627,6 +628,10 @@ export const COMMERCIAL_FIRE_CLAIMS_GUIDE = defineGuide({
     },
   ],
   relatedResources: [
+    {
+      label: "Large-Loss Commercial Insurance Claims Guide",
+      href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+    },
     {
       label: "Multifamily & Apartment Insurance Claims Guide",
       href: "/resources/guides/general-claims/multifamily-apartment-insurance-claims-guide",

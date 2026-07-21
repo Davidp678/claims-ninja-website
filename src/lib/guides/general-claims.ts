@@ -2,11 +2,13 @@ import { defineGuide, GUIDE_PUBLISHED_AT } from "@/lib/guides/guide-builder";
 import { COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE } from "@/lib/guides/commercial-insurance-claims-documentation-guide";
 import { HOA_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/hoa-insurance-claims-guide";
 import { INDUSTRIAL_WAREHOUSE_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/industrial-warehouse-insurance-claims-guide";
+import { LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/large-loss-commercial-insurance-claims-guide";
 import { MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/multifamily-apartment-insurance-claims-guide";
 import { RETAIL_OFFICE_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/retail-office-insurance-claims-guide";
 
 export const GENERAL_CLAIMS_GUIDES = [
   COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE,
+  LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE,
   MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE,
   HOA_INSURANCE_CLAIMS_GUIDE,
   INDUSTRIAL_WAREHOUSE_INSURANCE_CLAIMS_GUIDE,

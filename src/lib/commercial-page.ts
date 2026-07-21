@@ -371,6 +371,7 @@ export const COMMERCIAL_RESOURCES = {
     "Practical guides and articles from the Claims Ninja commercial authority ecosystem.",
   guideSlugs: [
     "commercial-insurance-claims-documentation-guide",
+    "large-loss-commercial-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "hoa-insurance-claims-guide",
     "industrial-warehouse-insurance-claims-guide",

@@ -40,6 +40,7 @@ export const RETAIL_OFFICE_INSURANCE_CLAIMS_GUIDE = defineGuide({
     "Document retail and office insurance claims for contractors: multi-tenant suites, tenant improvements, common areas, occupied businesses, after-hours restoration, roofing water fire mold considerations, code, supplements, and indexed claim packages.",
   relatedGuideSlugs: [
     "commercial-insurance-claims-documentation-guide",
+    "large-loss-commercial-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "industrial-warehouse-insurance-claims-guide",
     "hoa-insurance-claims-guide",
@@ -729,6 +730,10 @@ export const RETAIL_OFFICE_INSURANCE_CLAIMS_GUIDE = defineGuide({
     {
       label: "Commercial Insurance Claims Documentation Guide",
       href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+    },
+    {
+      label: "Large-Loss Commercial Insurance Claims Guide",
+      href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
     },
     {
       label: "Multifamily & Apartment Insurance Claims Guide",

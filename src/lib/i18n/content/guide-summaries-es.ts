@@ -34,6 +34,12 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Manual operativo para contratistas sobre documentación, gestión, estimación y suplementos de reclamaciones de seguros en centros comerciales, locales, centros de compras, edificios de oficinas, oficinas profesionales, propiedades de uso mixto e instalaciones comerciales multiinquilino: espacios de inquilinos, mejoras arrendaticias, áreas comunes, operaciones de negocios ocupados y paquetes indexados de reclamación.",
   },
+  "general-claims/large-loss-commercial-insurance-claims-guide": {
+    title:
+      "Guía de reclamaciones de seguros comerciales de grandes pérdidas para contratistas",
+    excerpt:
+      "Manual operativo para contratistas sobre documentación, gestión, estimación y suplementos de grandes pérdidas comerciales: campuses multiedificio, restauración por fases, alcances complejos, coordinación de partes interesadas y paquetes indexados de reclamación en multifamiliares, HOA, retail, oficinas, industrial, almacenes, hospitalidad, institucionales y uso mixto.",
+  },
   "general-claims/first-48-hours-checklist": {
     title: "Lista de verificación: primeras 48 horas tras el estimado de la aseguradora",
     excerpt:

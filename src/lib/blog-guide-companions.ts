@@ -200,12 +200,12 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "large-loss-water-mitigation-documentation-best-practices": {
     intro:
-      "You've learned how to document large-loss water mitigation at enterprise scale. Now run the commercial documentation standards and field procedures that support multi-zone scope, executive reporting, and indexed closeout packets.",
+      "You've learned how to document large-loss water mitigation at enterprise scale. Now run the large-loss commercial playbook and commercial water documentation standards that support multi-zone scope, phased restoration, and indexed closeout packets.",
     guideSlugs: [
       "commercial-insurance-claims-documentation-guide",
+      "large-loss-commercial-insurance-claims-guide",
       "commercial-water-loss-documentation-guide",
       "water-mitigation-invoice-defense-guide",
-      "moisture-mapping-guide",
     ],
   },
   "multifamily-water-claims-that-get-underpaid": {
@@ -220,12 +220,12 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "why-commercial-insurance-claims-get-underpaid": {
     intro:
-      "You've learned why commercial claims get underpaid. Now run commercial documentation standards that defend building indexes, quantities, code, TI, and multi-area packages.",
+      "You've learned why commercial claims get underpaid. Now run commercial documentation standards and the large-loss playbook that defend building indexes, quantities, code, TI, and multi-area packages.",
     guideSlugs: [
       "commercial-insurance-claims-documentation-guide",
+      "large-loss-commercial-insurance-claims-guide",
       "multifamily-apartment-insurance-claims-guide",
       "industrial-warehouse-insurance-claims-guide",
-      "retail-office-insurance-claims-guide",
     ],
   },
   "fire-damage-claim-documentation-guide": {

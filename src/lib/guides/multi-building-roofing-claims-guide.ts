@@ -36,6 +36,7 @@ export const MULTI_BUILDING_ROOFING_CLAIMS_GUIDE = defineGuide({
     "Document, estimate, and manage multi-building roofing insurance claims on apartments, campuses, and commercial portfolios — inspections, sampling disputes, supplements, and phased production.",
   relatedGuideSlugs: [
     "commercial-roofing-documentation-guide",
+    "large-loss-commercial-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "hoa-insurance-claims-guide",
     "hoa-roofing-claims-guide",
@@ -423,6 +424,10 @@ export const MULTI_BUILDING_ROOFING_CLAIMS_GUIDE = defineGuide({
     {
       label: "Commercial Roofing Documentation Guide",
       href: "/resources/guides/roofing-claims/commercial-roofing-documentation-guide",
+    },
+    {
+      label: "Large-Loss Commercial Insurance Claims Guide",
+      href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
     },
     {
       label: "Multifamily & Apartment Insurance Claims Guide",

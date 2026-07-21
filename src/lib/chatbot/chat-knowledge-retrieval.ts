@@ -454,6 +454,17 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "large-loss claim",
     "large-loss reconstruction",
     "large loss commercial",
+    "large-loss commercial",
+    "commercial large-loss",
+    "multi-building insurance",
+    "multi-area documentation",
+    "campus documentation",
+    "phased restoration",
+    "large-loss estimate",
+    "large-loss reinspection",
+    "large-loss mitigation",
+    "complex commercial estimate",
+    "commercial reinspection",
   ],
   commercial_fire: [
     "commercial fire",
@@ -2922,6 +2933,62 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "large-loss commercial insurance claims retrieves guide or FAQ",
+    message: "what qualifies as a large-loss commercial insurance claim for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /large-loss-commercial-insurance-claims-guide|commercial-large-loss-insurance-claims|large-loss commercial insurance claim/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "large-loss multi-area documentation retrieves guide or FAQ",
+    message:
+      "how should contractors document multiple buildings or areas on a large commercial loss",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /large-loss-commercial-insurance-claims-guide|commercial-large-loss-multi-area-documentation|multiple buildings or areas on a large commercial loss/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "large-loss mitigation documentation retrieves guide or FAQ",
+    message: "how should contractors document emergency mitigation on a large commercial loss",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /large-loss-commercial-insurance-claims-guide|commercial-large-loss-mitigation-documentation|emergency mitigation on a large commercial loss/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "large-loss estimate organization retrieves guide or FAQ",
+    message: "how should contractors organize estimates on large commercial losses",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /large-loss-commercial-insurance-claims-guide|commercial-large-loss-estimate-organization|organize estimates on large commercial losses/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "large-loss reinspection and supplements retrieves guide or FAQ",
+    message: "how should contractors prepare for large-loss reinspections and supplements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /large-loss-commercial-insurance-claims-guide|commercial-large-loss-reinspection-supplements|large-loss reinspections and supplements/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "why commercial insurance claims underpaid blog retrieves",
     message: "why commercial insurance claims get underpaid",
     assert: (result) =>
@@ -3546,7 +3613,7 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
     assert: (result) =>
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
-        /page:\/solutions\/commercial|commercial-large-loss-support|large-loss|large loss/i.test(
+        /page:\/solutions\/commercial|commercial-large-loss-support|large-loss-commercial-insurance-claims-guide|large-loss|large loss/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

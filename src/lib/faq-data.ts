@@ -5639,6 +5639,100 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       { label: "Commercial insurance claims", href: "/solutions/commercial" },
     ],
   },
+  // Large-loss commercial specialty (5)
+  {
+    id: "commercial-large-loss-insurance-claims",
+    category: "insurance_supplements",
+    question: "What qualifies as a large-loss commercial insurance claim for contractors?",
+    answer:
+      "Operationally, large-loss commercial claims involve multi-building or multi-zone footprints, high evidence volume, phased restoration, specialty consultants, or specialist adjuster scrutiny that residential templates cannot organize. Treat indexing complexity — not an internal dollar guess — as the contractor trigger to publish a documentation plan and assign a documentation lead within 24 hours. The same discipline applies across multifamily, HOA, retail, office, industrial, warehouse, hospitality, institutional, and mixed-use properties.",
+    relatedLinks: [
+      {
+        label: "Large-Loss Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-large-loss-multi-area-documentation",
+    category: "documentation",
+    question: "How should contractors document multiple buildings or areas on a large commercial loss?",
+    answer:
+      "Publish a Property → Building → Floor / Unit / Suite / Zone index aligned to facility records, treat each building as a top-level node, complete overview-to-detail packs per area, nest shared systems under the buildings they serve with reciprocal IDs, and structure estimates so desk reviewers can attribute quantities without parsing an unlabeled campus dump. Update the master index the same day new areas are discovered.",
+    relatedLinks: [
+      {
+        label: "Large-Loss Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+      {
+        label: "How should contractors document multiple buildings on a commercial claim?",
+        href: "/faq#faq-commercial-multi-building-documentation",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-large-loss-mitigation-documentation",
+    category: "documentation",
+    question: "How should contractors document emergency mitigation on a large commercial loss?",
+    answer:
+      "Log who authorized stop-loss, index extraction, drying start, temporary protection, board-up, and safety actions by building and area ID, photograph equipment placement per chamber with asset tags visible, and keep mitigation packages separate from reconstruction estimates. Property-level equipment photos do not defend multi-area lines — reconcile counts to area logs before invoice or supplement submission.",
+    relatedLinks: [
+      {
+        label: "Large-Loss Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+      {
+        label: "Commercial Water Loss Documentation Guide",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Large-loss water mitigation documentation best practices",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+    ],
+  },
+  {
+    id: "commercial-large-loss-estimate-organization",
+    category: "documentation",
+    question: "How should contractors organize estimates on large commercial losses?",
+    answer:
+      "Mirror the campus documentation index with building, area, system, and phase sections; validate quantities against area-indexed measurements and photos; separate general conditions, temporary protection, and supervision with authorization references keyed to location IDs; and never bury multi-structure scope in a single commercial finishes block. Version estimates and never overwrite baselines needed for delta review.",
+    relatedLinks: [
+      {
+        label: "Large-Loss Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+      {
+        label: "How should contractors document large-loss commercial projects?",
+        href: "/faq#faq-commercial-large-loss-project-documentation",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-large-loss-reinspection-supplements",
+    category: "documentation",
+    question: "How should contractors prepare for large-loss reinspections and supplements?",
+    answer:
+      "Pre-stage indexed exhibits by disputed building and area, bring quantity validation worksheets that map high-dollar lines to labeled photos and logs, confirm access with ownership or property management, and log the walk the same day. Package supplements by location ID with discovery photos, revised sketches, and estimate deltas — not unlabeled campus dumps for a single-area dispute.",
+    relatedLinks: [
+      {
+        label: "Large-Loss Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+      {
+        label: "Supplement Submission Guide",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      { label: "Commercial insurance claims", href: "/solutions/commercial" },
+    ],
+  },
   {
     id: "commercial-national-restoration-programs",
     category: "insurance_supplements",
@@ -5656,9 +5750,14 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     answer:
       "Yes. Large-loss commercial claims are a core focus. Claims Ninja supports phased reconstruction scopes, general conditions, multiple mobilizations, engineering coordination, and code-driven upgrades — with the estimating discipline and evidence quality these higher-scrutiny claims require. We help contractors document and negotiate legitimate large-loss recovery without building an internal claims department.",
     relatedLinks: [
+      {
+        label: "Large-Loss Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
       { label: "Commercial insurance claims", href: "/solutions/commercial" },
       {
-        label: "Large-loss water mitigation documentation best practices",        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+        label: "Large-loss water mitigation documentation best practices",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
       },
     ],
   },
@@ -5698,12 +5797,12 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Assign a documentation lead, publish a written documentation plan within 24 hours, maintain daily reports by area, reconcile equipment and materials to field logs, document change orders with contemporaneous discovery photos, and organize the final package by building or phase. Large-loss files without a plan produce inconsistent evidence that desk reviewers discount proportionally.",
     relatedLinks: [
       {
-        label: "Commercial Insurance Claims Documentation Guide",
-        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+        label: "Large-Loss Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
       },
       {
-        label: "Large-loss water mitigation documentation best practices",
-        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
       },
       {
         label: "How should contractors document commercial insurance claims?",
@@ -5719,12 +5818,12 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Treat each building as a top-level index node with its own photo sequences, daily reports, and estimate sections. Maintain a master campus index, assign documentation owners per major building or phase, and never merge buildings into a single residential-style folder. Spot-check that random artifacts resolve to the same building and area IDs used on the estimate.",
     relatedLinks: [
       {
-        label: "Commercial Insurance Claims Documentation Guide",
-        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+        label: "Large-Loss Commercial Insurance Claims Guide for Contractors",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
       },
       {
-        label: "Multi-Building Roofing Claims Guide",
-        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
       },
       {
         label: "How should contractors document large-loss commercial projects?",

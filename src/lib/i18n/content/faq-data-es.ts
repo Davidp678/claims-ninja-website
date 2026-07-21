@@ -5626,6 +5626,100 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
     ],
   },
+  // Large-loss commercial specialty (5)
+  {
+    id: "commercial-large-loss-insurance-claims",
+    category: "insurance_supplements",
+    question: "¿Qué califica como una reclamación comercial de gran pérdida para contratistas?",
+    answer:
+      "Operativamente, las reclamaciones comerciales de grandes pérdidas involucran huellas multiedificio o multizona, alto volumen de evidencia, restauración por fases, consultores especializados o escrutinio de ajustadores especialistas que las plantillas residenciales no pueden organizar. Trate la complejidad de indexación — no una estimación interna en dólares — como el disparador del contratista para publicar un plan de documentación y asignar un responsable de documentación en 24 horas. La misma disciplina aplica en multifamiliares, HOA, retail, oficinas, industrial, almacenes, hospitalidad, institucionales y uso mixto.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros comerciales de grandes pérdidas para contratistas",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-large-loss-multi-area-documentation",
+    category: "documentation",
+    question: "¿Cómo deben documentar los contratistas varios edificios o áreas en una gran pérdida comercial?",
+    answer:
+      "Publique un índice Propiedad → Edificio → Piso / Unidad / Suite / Zona alineado a los registros de la instalación, trate cada edificio como un nodo de primer nivel, complete paquetes de general a detalle por área, anide sistemas compartidos bajo los edificios que sirven con IDs recíprocos y estructure los estimados para que los revisores puedan atribuir cantidades sin analizar un volcado sin etiquetar del campus. Actualice el índice maestro el mismo día en que se descubran nuevas áreas.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros comerciales de grandes pérdidas para contratistas",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas varios edificios en una reclamación comercial?",
+        href: "/faq#faq-commercial-multi-building-documentation",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-large-loss-mitigation-documentation",
+    category: "documentation",
+    question: "¿Cómo deben documentar los contratistas la mitigación de emergencia en una gran pérdida comercial?",
+    answer:
+      "Registre quién autorizó el stop-loss, indexe extracción, inicio de secado, protección temporal, board-up y acciones de seguridad por ID de edificio y área, fotografie la colocación de equipos por cámara con etiquetas de activo visibles y mantenga los paquetes de mitigación separados de los estimados de reconstrucción. Las fotos de equipos a nivel de propiedad no defienden partidas multiárea — concilie conteos con registros por área antes de facturar o enviar suplementos.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros comerciales de grandes pérdidas para contratistas",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+      {
+        label: "Guía de documentación de pérdidas de agua comerciales",
+        href: "/resources/guides/water-damage/commercial-water-loss-documentation-guide",
+      },
+      {
+        label: "Mejores prácticas de documentación de mitigación de agua en grandes pérdidas",
+        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+      },
+    ],
+  },
+  {
+    id: "commercial-large-loss-estimate-organization",
+    category: "documentation",
+    question: "¿Cómo deben organizar los contratistas los estimados en grandes pérdidas comerciales?",
+    answer:
+      "Refleje el índice de documentación del campus con secciones por edificio, área, sistema y fase; valide cantidades frente a mediciones y fotos indexadas por área; separe condiciones generales, protección temporal y supervisión con referencias de autorización vinculadas a IDs de ubicación; y nunca oculte un alcance multiestructura en un solo bloque de acabados comerciales. Versiona los estimados y nunca sobrescriba las líneas base necesarias para la revisión de deltas.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros comerciales de grandes pérdidas para contratistas",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+      {
+        label: "¿Cómo deben documentar los contratistas proyectos comerciales de grandes pérdidas?",
+        href: "/faq#faq-commercial-large-loss-project-documentation",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
+  {
+    id: "commercial-large-loss-reinspection-supplements",
+    category: "documentation",
+    question: "¿Cómo deben prepararse los contratistas para reinspecciones y suplementos en grandes pérdidas?",
+    answer:
+      "Prepare de antemano exhibiciones indexadas por edificio y área en disputa, lleve hojas de validación de cantidades que mapeen partidas de alto valor a fotos y registros etiquetados, confirme el acceso con la propiedad o la administración y registre la visita el mismo día. Empaquete suplementos por ID de ubicación con fotos del hallazgo, croquis revisados y deltas del estimado — no volcados sin etiquetar del campus para una disputa de un solo área.",
+    relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros comerciales de grandes pérdidas para contratistas",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
+      {
+        label: "Flujo de trabajo de envío de suplementos",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
+    ],
+  },
   {
     id: "commercial-national-restoration-programs",
     category: "insurance_supplements",
@@ -5643,6 +5737,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     answer:
       "Sí. Las reclamaciones comerciales de grandes pérdidas son un enfoque central. Claims Ninja apoya alcances de reconstrucción por fases, condiciones generales, múltiples movilizaciones, coordinación de ingeniería y mejoras requeridas por código, con la disciplina de estimación y la calidad de evidencia que exigen estas reclamaciones de mayor escrutinio. Ayudamos a los contratistas a documentar y negociar una recuperación legítima de grandes pérdidas sin crear un departamento interno de reclamaciones.",
     relatedLinks: [
+      {
+        label: "Guía de reclamaciones de seguros comerciales de grandes pérdidas para contratistas",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+      },
       { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
       {
         label: "Mejores prácticas de documentación de mitigación de agua en grandes pérdidas",
@@ -5686,12 +5784,12 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "Asigne un responsable de documentación, publique un plan escrito en 24 horas, mantenga reportes diarios por área, concilie equipos y materiales con registros de campo, documente órdenes de cambio con fotos contemporáneas del hallazgo y organice el paquete final por edificio o fase. Los expedientes de grandes pérdidas sin plan producen evidencia inconsistente que los revisores descuentan de forma proporcional.",
     relatedLinks: [
       {
-        label: "Guía de documentación de reclamaciones de seguros comerciales",
-        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+        label: "Guía de reclamaciones de seguros comerciales de grandes pérdidas para contratistas",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
       },
       {
-        label: "Mejores prácticas de documentación de mitigación de agua en grandes pérdidas",
-        href: "/resources/blog/large-loss-water-mitigation-documentation-best-practices",
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
       },
       {
         label: "¿Cómo deben documentar los contratistas las reclamaciones de seguros comerciales?",
@@ -5707,12 +5805,12 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "Trate cada edificio como un nodo de índice de primer nivel con sus propias secuencias de fotos, reportes diarios y secciones de estimado. Mantenga un índice maestro del campus, asigne responsables de documentación por edificio o fase principal y nunca fusione edificios en una sola carpeta de estilo residencial. Verifique que artefactos aleatorios resuelvan a los mismos IDs de edificio y área usados en el estimado.",
     relatedLinks: [
       {
-        label: "Guía de documentación de reclamaciones de seguros comerciales",
-        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+        label: "Guía de reclamaciones de seguros comerciales de grandes pérdidas para contratistas",
+        href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
       },
       {
-        label: "Guía de reclamaciones de techado multibuilding",
-        href: "/resources/guides/roofing-claims/multi-building-roofing-claims-guide",
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
       },
       {
         label: "¿Cómo deben documentar los contratistas proyectos comerciales de grandes pérdidas?",
