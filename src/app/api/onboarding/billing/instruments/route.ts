@@ -57,7 +57,20 @@ export async function POST(request: Request) {
       );
     }
 
-    // Forward opaque adapter payload only — never persist instrument secrets here.
+    const tokenPayload = body.tokenPayload ?? {};
+    const rawKey =
+      /^(cardNumber|card_number|pan|cvv|cvc|securityCode|accountNumber|routingNumber|iban)$/i;
+    for (const key of Object.keys(tokenPayload)) {
+      if (rawKey.test(key)) {
+        return jsonError(
+          400,
+          "VALIDATION_ERROR",
+          "Raw card or bank values are not accepted.",
+        );
+      }
+    }
+
+    // Forward opaque adapter token only — never persist instrument secrets here.
     const { status, envelope } = await externalIntakeS2SJson(
       "POST",
       "/api/external-intake/v1/billing/instruments",
@@ -66,7 +79,7 @@ export async function POST(request: Request) {
         expectedVersion: body.expectedVersion,
         tokenPayload: {
           method: body.method,
-          ...(body.tokenPayload ?? {}),
+          ...tokenPayload,
         },
       },
     );
