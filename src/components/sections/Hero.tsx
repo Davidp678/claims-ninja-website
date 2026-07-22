@@ -1,9 +1,10 @@
+import Link from "next/link";
+
 import type { Locale } from "@/lib/i18n/config";
-import { getHomeContent } from "@/lib/i18n/content/home";
-import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
+import { getHeroIntakeContent } from "@/lib/onboarding/content";
 import { Container } from "@/components/ui/Container";
 import { HeroBackdrop } from "./HeroBackdrop";
-import { HeroVideoCard } from "./HeroVideoCard";
+import { HeroClaimIntakeCard } from "./HeroClaimIntakeCard";
 
 type StatIconName = "clock" | "calendar" | "bars";
 
@@ -64,16 +65,32 @@ function StatIcon({ name, className }: { name: StatIconName; className?: string 
   }
 }
 
+function CheckBullet({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex items-center gap-2.5 text-sm text-zinc-200 sm:text-base">
+      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
+        <svg
+          aria-hidden
+          viewBox="0 0 20 20"
+          className="h-3.5 w-3.5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.4"
+        >
+          <path d="M4.5 10.5 8 14l7.5-8" />
+        </svg>
+      </span>
+      {children}
+    </li>
+  );
+}
+
 export function Hero({ locale = "en" }: { locale?: Locale }) {
-  const content = getHomeContent(locale).hero;
+  const content = getHeroIntakeContent(locale);
   const stats = content.stats.map((stat, index) => ({
     ...stat,
     icon: STAT_ICONS[index] ?? "bars",
   }));
-  const heroCtaButtonClass =
-    locale === "es"
-      ? "w-full xl:w-[20.5rem]"
-      : "w-full px-6! sm:flex-1";
 
   return (
     <section
@@ -82,34 +99,42 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
     >
       <HeroBackdrop />
 
-      <Container className="relative z-10 grid grid-cols-1 gap-10 pb-14 pt-28 sm:gap-12 sm:pb-16 sm:pt-32 lg:grid-cols-[minmax(0,0.9fr)_minmax(620px,1.15fr)] lg:grid-rows-[auto_auto] lg:items-start lg:gap-x-16 lg:gap-y-10 lg:pb-20 lg:pt-28">
-        <div className="min-w-0 max-w-2xl lg:col-start-1 lg:row-start-1 lg:max-w-none">
+      <Container className="relative z-10 grid grid-cols-1 gap-10 pb-14 pt-28 sm:gap-12 sm:pb-16 sm:pt-32 lg:grid-cols-[minmax(0,1fr)_minmax(420px,480px)] lg:items-start lg:gap-x-14 lg:gap-y-10 lg:pb-20 lg:pt-28">
+        <div className="min-w-0 max-w-2xl lg:max-w-none">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-red-light">
+            {content.eyebrow}
+          </p>
           <h1
             id="hero-heading"
-            className="font-display text-4xl font-semibold leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl"
+            className="mt-4 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.35rem]"
           >
-            {content.titleLine1}
-            <span className="block text-brand-red-light">{content.titleLine2}</span>
+            {content.title}
           </h1>
-          <p className="mt-5 text-lg leading-relaxed text-zinc-300 sm:text-xl">
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-zinc-300 sm:text-xl">
             {content.subhead}
           </p>
-          <ConversionCtaGroup
-            className={locale === "es" ? "mt-8 max-w-xl" : "mt-8"}
-            rowBreakpoint={locale === "es" ? "xl" : "sm"}
-            allowWrap={locale === "es"}
-            primaryLabel={content.primaryCta}
-            secondaryLabel={content.secondaryCta}
-            primaryClassName={heroCtaButtonClass}
-            secondaryClassName={heroCtaButtonClass}
-          />
+
+          <ul className="mt-7 space-y-3">
+            {content.bullets.map((bullet) => (
+              <CheckBullet key={bullet}>{bullet}</CheckBullet>
+            ))}
+          </ul>
+
+          <p className="mt-8">
+            <Link
+              href="/login"
+              className="text-sm font-semibold text-brand-red-light transition hover:text-brand-red"
+            >
+              {content.loginLink}
+            </Link>
+          </p>
         </div>
 
-        <div className="w-full lg:col-start-2 lg:row-start-1 lg:mt-2">
-          <HeroVideoCard />
+        <div className="w-full lg:mt-1">
+          <HeroClaimIntakeCard content={content} locale={locale} />
         </div>
 
-        <dl className="flex flex-col gap-2.5 border-t border-white/15 pt-8 sm:hidden lg:col-start-1 lg:row-start-2">
+        <dl className="flex flex-col gap-2.5 border-t border-white/15 pt-8 sm:hidden lg:col-span-2">
           {stats.map((stat) => (
             <div
               key={stat.label}
@@ -128,13 +153,13 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
           ))}
         </dl>
 
-        <dl className="hidden max-w-2xl grid-cols-2 gap-y-6 border-t border-white/15 pt-8 sm:grid sm:grid-cols-[calc((100%/3)_-_8px)_calc((100%/3)_+_16px)_calc((100%/3)_-_8px)] sm:gap-y-0 sm:divide-x sm:divide-white/10 lg:col-start-1 lg:row-start-2 lg:max-w-none">
+        <dl className="hidden max-w-3xl grid-cols-3 gap-y-0 divide-x divide-white/10 border-t border-white/15 pt-8 sm:grid lg:col-span-2 lg:max-w-none">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
               className={`flex flex-col gap-2 ${
-                index === 0 ? "sm:pr-6" : "sm:px-6"
-              } first:sm:pl-0 last:sm:pr-0`}
+                index === 0 ? "pr-6" : "px-6"
+              } first:pl-0 last:pr-0`}
             >
               <div className="flex items-center gap-2">
                 <StatIcon

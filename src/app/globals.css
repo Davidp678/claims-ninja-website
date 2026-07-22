@@ -179,3 +179,13 @@ body {
     animation: none;
   }
 }
+
+/* Scoped onboarding journey helpers — do not alter non-onboarding pages. */
+.onboarding-shell .onboarding-field:focus-visible {
+  outline: none;
+}
+
+.onboarding-progress-rail li {
+  list-style: none;
+}
+
