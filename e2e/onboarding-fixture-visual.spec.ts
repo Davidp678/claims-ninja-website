@@ -100,7 +100,7 @@ for (const viewport of VIEWPORTS) {
       ]);
       await page.goto("/onboarding/claim");
       await expect(page.getByText("Uploading…")).toBeVisible();
-      await expect(page.getByText("Scan unavailable")).toBeVisible();
+      await expect(page.getByText("Protected — scan unavailable")).toBeVisible();
       await expect(page.getByText("Rejected")).toBeVisible();
       await expect(page.getByText("Failed")).toBeVisible();
       await shot(page, "upload-states", viewport);

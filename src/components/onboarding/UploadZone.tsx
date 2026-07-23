@@ -26,22 +26,22 @@ function formatBytes(bytes: number) {
 export function stateLabel(state: string) {
   switch (state) {
     case "ready":
-      return "Ready";
+      return "Accepted";
     case "scanning":
     case "scan_pending":
-      return "Scanning…";
+      return "Security scan in progress…";
     case "scan_unavailable":
-      return "Scan unavailable";
+      return "Protected — scan unavailable";
     case "uploading":
       return "Uploading…";
     case "uploaded":
-      return "Uploaded";
+      return "Upload received";
     case "preparing":
       return "Preparing…";
     case "rejected":
-      return "Rejected";
+      return "Rejected — replace this file";
     case "failed":
-      return "Failed";
+      return "Temporary scan problem — try again";
     default:
       return state;
   }
