@@ -5,6 +5,8 @@ export {
   INTAKE_CSRF_HEADER,
   INTAKE_HANDLE_COOKIE,
 } from "./constants";
+import { assertStagingPlatformUrl } from "./staging-guard";
+export { assertStagingPlatformUrl } from "./staging-guard";
 
 export type ExternalIntakeConfig = {
   platformBaseUrl: string;
@@ -24,6 +26,10 @@ export function getExternalIntakeConfig(): ExternalIntakeConfig | null {
 
   if (!platformBaseUrl || !credentialId || !credentialSecret) {
     return null;
+  }
+
+  if (process.env.EXTERNAL_INTAKE_STAGING_ONLY === "true") {
+    assertStagingPlatformUrl(platformBaseUrl);
   }
 
   return {

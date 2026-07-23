@@ -19,6 +19,9 @@
 /blob-report/
 /playwright/.cache/
 
+# local visual QA artifacts (do not commit)
+.qa-artifacts/
+
 # next.js
 /.next/
 /out/

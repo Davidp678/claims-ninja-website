@@ -12,7 +12,10 @@
     "test:chat-leads": "node scripts/chat-lead-api-smoke.mjs",
     "test:chat-lead-flow": "npx tsx --test src/components/chatbot/chat-lead-flow.test.ts",
     "test:chat:unit": "npm run test:chat-knowledge && npm run test:chat-lead-flow",
-    "test:onboarding:unit": "npx tsx --test src/lib/onboarding/s2s.test.ts src/lib/onboarding/password-policy.test.ts src/lib/onboarding/agreement-canonical.test.ts",
+    "test:onboarding:unit": "npx tsx --test src/lib/onboarding/s2s.test.ts src/lib/onboarding/password-policy.test.ts src/lib/onboarding/agreement-canonical.test.ts src/lib/onboarding/staging-guard.test.ts",
+    "validate:onboarding-staging": "node --env-file=.env.staging.local scripts/validate-onboarding-staging.mjs",
+    "scan:client-bundle-secrets": "node scripts/scan-client-bundle-secrets.mjs",
+    "visual:onboarding:staging": "playwright test --config=playwright.onboarding-visual.config.ts",
     "audit:seo": "npx tsx scripts/seo-migration-audit.ts",
     "test:seo-redirects": "npx tsx scripts/seo-redirect-smoke.ts",
     "smoke:production": "playwright test --config=playwright.smoke.config.ts"

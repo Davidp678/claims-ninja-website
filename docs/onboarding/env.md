@@ -17,9 +17,14 @@ Without these, onboarding APIs return `503 EXTERNAL_INTAKE_NOT_CONFIGURED`.
 | Variable | Default | Purpose |
 |----------|---------|---------|
 | `EXTERNAL_INTAKE_PAYMENT_CAPTURE_ENABLED` | `false` | When not `true`, billing instrument UI/continue stay blocked |
+| `EXTERNAL_INTAKE_STAGING_ONLY` | unset | When `true`, refuse production platform hosts / production Supabase refs |
 | `EXTERNAL_INTAKE_ALLOWED_ORIGINS` | (built-in localhost + production site) | Comma-separated extra Origins for CSRF Origin checks |
 | `NEXT_PUBLIC_SITE_URL` | production site URL | Included in Origin allowlist |
 | `NEXT_PUBLIC_PLATFORM_URL` | `https://app.theclaimsninja.com` | Client redirect base after handoff mint |
+
+## Staging validation
+
+Use a gitignored `.env.staging.local` (never commit). Point `EXTERNAL_INTAKE_PLATFORM_URL` at a local/staging platform origin, set matching S2S credentials, and set `EXTERNAL_INTAKE_STAGING_ONLY=true`. Do not put service-role keys, peppers, or signing secrets in `NEXT_PUBLIC_*` variables.
 
 ## Explicitly not used by website client
 
