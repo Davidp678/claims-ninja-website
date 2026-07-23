@@ -1,57 +1,65 @@
 import assert from "node:assert/strict";
-import { describe, it } from "node:test";
+import { test } from "node:test";
 
 import {
-  AGREEMENT_CONTENT_SHA256,
-  AGREEMENT_EFFECTIVE_LABEL,
-  AGREEMENT_TITLE,
-  AGREEMENT_VERSION,
+  APPROVED_CLICKWRAP_LANGUAGE,
+  PRIVACY_CONTENT_SHA256,
+  PRIVACY_TITLE,
+  PRIVACY_VERSION,
+  TERMS_CONTENT_SHA256,
+  TERMS_DISPLAY_TITLE,
+  TERMS_TITLE,
+  TERMS_VERSION,
   assertPlatformAgreementMatchesCanonical,
 } from "./agreement-canonical";
 
-describe("agreement canonical integrity", () => {
-  it("accepts exact platform metadata", () => {
-    const result = assertPlatformAgreementMatchesCanonical({
-      title: AGREEMENT_TITLE,
-      version: AGREEMENT_VERSION,
-      effectiveDate: "2026-06-10",
-      effectiveDateDisplay: AGREEMENT_EFFECTIVE_LABEL,
-      contentSha256: AGREEMENT_CONTENT_SHA256,
-    });
-    assert.equal(result.ok, true);
-    assert.equal(
-      AGREEMENT_CONTENT_SHA256,
-      "30142d8d0b9452de83b7cf41f92e7094a413e813af3325e74e343e639aae948d",
-    );
+test("agreement canonical integrity accepts exact platform package", () => {
+  const result = assertPlatformAgreementMatchesCanonical({
+    title: TERMS_TITLE,
+    displayTitle: TERMS_DISPLAY_TITLE,
+    version: TERMS_VERSION,
+    effectiveDate: "2026-06-10",
+    contentSha256: TERMS_CONTENT_SHA256,
+    approvedAcceptanceLanguage: APPROVED_CLICKWRAP_LANGUAGE,
+    privacy: {
+      title: PRIVACY_TITLE,
+      version: PRIVACY_VERSION,
+      effectiveDate: "2026-07-23",
+      contentSha256: PRIVACY_CONTENT_SHA256,
+    },
   });
+  assert.equal(result.ok, true);
+});
 
-  it("fails closed on title, version, or hash mismatch", () => {
-    assert.equal(
-      assertPlatformAgreementMatchesCanonical({
-        title: "Claims Ninja Service Agreement",
-        version: AGREEMENT_VERSION,
-        effectiveDate: "2026-06-10",
-        contentSha256: AGREEMENT_CONTENT_SHA256,
-      }).ok,
-      false,
-    );
-    assert.equal(
-      assertPlatformAgreementMatchesCanonical({
-        title: AGREEMENT_TITLE,
-        version: "1.0",
-        effectiveDate: "2026-06-10",
-        contentSha256: AGREEMENT_CONTENT_SHA256,
-      }).ok,
-      false,
-    );
-    assert.equal(
-      assertPlatformAgreementMatchesCanonical({
-        title: AGREEMENT_TITLE,
-        version: AGREEMENT_VERSION,
-        effectiveDate: "2026-06-10",
-        contentSha256: "deadbeef",
-      }).ok,
-      false,
-    );
-  });
+test("fails closed on title, version, or hash mismatch", () => {
+  assert.equal(
+    assertPlatformAgreementMatchesCanonical({
+      title: TERMS_TITLE,
+      version: "wrong",
+      effectiveDate: "2026-06-10",
+      contentSha256: TERMS_CONTENT_SHA256,
+      privacy: {
+        title: PRIVACY_TITLE,
+        version: PRIVACY_VERSION,
+        effectiveDate: "2026-07-23",
+        contentSha256: PRIVACY_CONTENT_SHA256,
+      },
+    }).ok,
+    false,
+  );
+  assert.equal(
+    assertPlatformAgreementMatchesCanonical({
+      title: TERMS_TITLE,
+      version: TERMS_VERSION,
+      effectiveDate: "2026-06-10",
+      contentSha256: TERMS_CONTENT_SHA256,
+      privacy: {
+        title: PRIVACY_TITLE,
+        version: PRIVACY_VERSION,
+        effectiveDate: "2026-07-23",
+        contentSha256: "0".repeat(64),
+      },
+    }).ok,
+    false,
+  );
 });

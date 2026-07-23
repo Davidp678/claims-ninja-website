@@ -219,7 +219,7 @@ export function BillingStage() {
       setLocalError(cont.message);
       return;
     }
-    router.push("/onboarding/account");
+    router.push("/onboarding/activated");
   }
 
   if (loading) {

@@ -168,7 +168,7 @@ export function AccountStage() {
           <div className="flex gap-3">
             <button
               type="button"
-              onClick={() => router.push("/onboarding/billing")}
+              onClick={() => router.push("/onboarding/company")}
               className="rounded-lg border border-white/25 px-4 py-2.5 text-sm text-white hover:border-white/40"
             >
               Back

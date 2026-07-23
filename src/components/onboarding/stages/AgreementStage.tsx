@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { SectionCard } from "@/components/onboarding/FormField";
@@ -9,43 +9,44 @@ import { OnboardingShell } from "@/components/onboarding/OnboardingShell";
 import { useOnboardingSession } from "@/components/onboarding/useOnboardingSession";
 import { onboardingFetchJson } from "@/lib/onboarding/client-api";
 import {
-  AGREEMENT_CONTENT_SHA256,
-  AGREEMENT_EFFECTIVE_LABEL,
-  AGREEMENT_TITLE,
-  AGREEMENT_VERSION,
+  APPROVED_CLICKWRAP_LANGUAGE,
+  PRIVACY_TITLE,
+  TERMS_DISPLAY_TITLE,
+  TERMS_EFFECTIVE_LABEL,
+  TERMS_VERSION,
   assertPlatformAgreementMatchesCanonical,
+  type PlatformAgreementMeta,
 } from "@/lib/onboarding/agreement-canonical";
 
-type AgreementMeta = {
+type AgreementPackage = PlatformAgreementMeta & {
   documentId?: string;
-  title?: string;
-  version?: string;
-  effectiveDate?: string;
-  effectiveDateDisplay?: string;
-  contentSha256?: string;
-  acceptanceEnabled?: boolean;
   textPreview?: string;
+  acceptanceEnabled?: boolean;
 };
 
 export function AgreementStage() {
   const router = useRouter();
   const { session, loading, error, saveState, saveExit, version } =
     useOnboardingSession();
-  const [agreement, setAgreement] = useState<AgreementMeta | null>(null);
+  const [agreement, setAgreement] = useState<AgreementPackage | null>(null);
   const [integrityError, setIntegrityError] = useState<string | null>(null);
   const [authority, setAuthority] = useState(false);
-  const [terms, setTerms] = useState(false);
+  const [clickwrap, setClickwrap] = useState(false);
   const [busy, setBusy] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
+  const [activeDoc, setActiveDoc] = useState<"terms" | "privacy">("terms");
+  const checkboxId = useId();
+  const authorityId = useId();
+  const errorRef = useRef<HTMLParagraphElement | null>(null);
 
   useEffect(() => {
     void (async () => {
-      const result = await onboardingFetchJson<AgreementMeta>(
+      const result = await onboardingFetchJson<AgreementPackage>(
         "/api/onboarding/agreement",
       );
       if (!result.ok) {
         setIntegrityError(
-          "Agreement is temporarily unavailable. Please try again later.",
+          "Legal documents are temporarily unavailable. Please try again later.",
         );
         return;
       }
@@ -53,7 +54,7 @@ export function AgreementStage() {
       if (!check.ok) {
         setAgreement(null);
         setIntegrityError(
-          "Agreement configuration is unavailable. The document metadata from the platform does not match the approved Consulting Agreement.",
+          "Legal configuration is unavailable. Document metadata from the platform does not match the approved clickwrap package.",
         );
         return;
       }
@@ -61,6 +62,10 @@ export function AgreementStage() {
       setAgreement(result.data);
     })();
   }, []);
+
+  useEffect(() => {
+    if (localError) errorRef.current?.focus();
+  }, [localError]);
 
   const company =
     session?.company?.legalCompanyName ||
@@ -70,20 +75,32 @@ export function AgreementStage() {
     .filter(Boolean)
     .join(" ");
 
-  async function handleContinue() {
+  const termsText =
+    agreement?.textPreview ||
+    agreement?.documents?.find((d) => d.title === "Consulting Agreement")
+      ?.textPreview ||
+    "";
+  const privacyText =
+    agreement?.privacy?.textPreview ||
+    agreement?.documents?.find((d) => d.title === PRIVACY_TITLE)?.textPreview ||
+    "";
+
+  async function handleAgreeAndContinue() {
     setLocalError(null);
     if (integrityError || !agreement) {
-      setLocalError("Agreement is unavailable.");
+      setLocalError("Legal documents are unavailable.");
       return;
     }
-    if (!authority || !terms) {
-      setLocalError("Confirm both acceptance boxes to continue.");
+    if (!authority || !clickwrap) {
+      setLocalError(
+        "Confirm authorization and the required acceptance checkbox to continue.",
+      );
       return;
     }
     const check = assertPlatformAgreementMatchesCanonical(agreement);
     if (!check.ok) {
       setIntegrityError(
-        "Agreement configuration is unavailable. Please refresh and try again.",
+        "Legal configuration is unavailable. Please refresh and try again.",
       );
       return;
     }
@@ -93,14 +110,19 @@ export function AgreementStage() {
       json: {
         expectedVersion: version,
         documentId: agreement.documentId,
-        documentVersion: AGREEMENT_VERSION,
-        contentSha256: AGREEMENT_CONTENT_SHA256,
+        documentVersion: TERMS_VERSION,
+        contentSha256: agreement.contentSha256,
+        privacyDocumentId: agreement.privacy?.documentId,
+        privacyDocumentVersion: agreement.privacy?.version,
+        privacyContentSha256: agreement.privacy?.contentSha256,
         signerName,
-        signerEmail: session?.company?.workEmail,
+        signerEmail: session?.company?.workEmail || session?.accountEmail,
         organizationName: company,
         authorityAttested: true,
         termsAttested: true,
-        acceptanceLanguage: `I have read and agree to the ${AGREEMENT_TITLE} and Privacy Policy.`,
+        checkboxAttested: true,
+        explicitSubmit: true,
+        acceptanceLanguage: APPROVED_CLICKWRAP_LANGUAGE,
       },
     });
     setBusy(false);
@@ -130,16 +152,18 @@ export function AgreementStage() {
     !agreement ||
     agreement.acceptanceEnabled === false;
 
+  const canSubmit = authority && clickwrap && !acceptanceBlocked && !busy;
+
   return (
     <OnboardingShell
       stage="agreement"
-      title="Consulting Agreement"
-      description={`Review and accept the agreement for ${company}.`}
+      title="Terms & privacy"
+      description={`Review the Claims Ninja Terms of Service and Privacy Policy for ${company}, then agree to continue.`}
       saveState={saveState}
       onSaveExit={() => void saveExit()}
-      continueLabel="Accept & continue to billing →"
-      onContinue={() => void handleContinue()}
-      continueDisabled={!authority || !terms || acceptanceBlocked}
+      continueLabel="Agree and continue"
+      onContinue={() => void handleAgreeAndContinue()}
+      continueDisabled={!canSubmit}
       continueLoading={busy}
     >
       {integrityError ? (
@@ -148,40 +172,76 @@ export function AgreementStage() {
             {integrityError}
           </p>
           <p className="mt-3 text-xs text-zinc-500">
-            Expected: {AGREEMENT_TITLE} · {AGREEMENT_VERSION} ·{" "}
-            {AGREEMENT_EFFECTIVE_LABEL}
+            Expected: {TERMS_DISPLAY_TITLE} · {TERMS_VERSION} ·{" "}
+            {TERMS_EFFECTIVE_LABEL}
           </p>
         </SectionCard>
       ) : (
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(280px,0.8fr)]">
           <SectionCard>
-            <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
-              <div>
-                <h2 className="text-lg font-semibold text-white">
-                  {AGREEMENT_TITLE}
-                </h2>
-                <p className="mt-1 text-sm text-zinc-400">
-                  Version {AGREEMENT_VERSION} · Effective {AGREEMENT_EFFECTIVE_LABEL}
-                </p>
-              </div>
+            <div className="mb-4 flex flex-wrap items-center gap-2" role="tablist" aria-label="Legal documents">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeDoc === "terms"}
+                className={`rounded-lg px-3 py-2 text-sm ${
+                  activeDoc === "terms"
+                    ? "bg-brand-red text-white"
+                    : "border border-white/20 text-zinc-300 hover:border-white/40"
+                }`}
+                onClick={() => setActiveDoc("terms")}
+              >
+                Terms of Service
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeDoc === "privacy"}
+                className={`rounded-lg px-3 py-2 text-sm ${
+                  activeDoc === "privacy"
+                    ? "bg-brand-red text-white"
+                    : "border border-white/20 text-zinc-300 hover:border-white/40"
+                }`}
+                onClick={() => setActiveDoc("privacy")}
+              >
+                Privacy Policy
+              </button>
               <a
-                href="/api/onboarding/agreement/download"
-                className="rounded-lg border border-white/20 px-3 py-2 text-sm text-white hover:border-white/40"
+                href={`/api/onboarding/agreement/download?doc=${activeDoc === "privacy" ? "privacy" : "terms"}`}
+                className="ml-auto rounded-lg border border-white/20 px-3 py-2 text-sm text-white hover:border-white/40"
               >
                 Download
               </a>
             </div>
-            <div className="max-h-[28rem] overflow-y-auto rounded-xl border border-white/10 bg-brand-black/50 p-4 text-sm leading-relaxed text-zinc-300">
-              {agreement?.textPreview ? (
-                <pre className="whitespace-pre-wrap font-sans">
-                  {agreement.textPreview}
-                </pre>
-              ) : (
-                <p className="text-zinc-500">Loading agreement snapshot…</p>
-              )}
+            <div>
+              <h2 className="text-lg font-semibold text-white">
+                {activeDoc === "privacy"
+                  ? PRIVACY_TITLE
+                  : TERMS_DISPLAY_TITLE}
+              </h2>
+              <p className="mt-1 text-sm text-zinc-400">
+                {activeDoc === "privacy"
+                  ? "Staging placeholder document for architecture validation"
+                  : `Version ${TERMS_VERSION} · Effective ${TERMS_EFFECTIVE_LABEL}`}
+              </p>
+            </div>
+            <div
+              className="mt-4 max-h-[28rem] overflow-y-auto rounded-xl border border-white/10 bg-brand-black/50 p-4 text-sm leading-relaxed text-zinc-300"
+              tabIndex={0}
+              aria-label={
+                activeDoc === "privacy"
+                  ? "Privacy Policy text"
+                  : "Terms of Service text"
+              }
+            >
+              <pre className="whitespace-pre-wrap font-sans">
+                {(activeDoc === "privacy" ? privacyText : termsText) ||
+                  "Loading document…"}
+              </pre>
             </div>
             <p className="mt-3 text-xs text-zinc-500">
-              Scroll to review the complete agreement.
+              Documents are available for full review before acceptance. Native
+              clickwrap only — no third-party e-signature provider.
             </p>
           </SectionCard>
 
@@ -192,28 +252,31 @@ export function AgreementStage() {
                 <dd className="text-white">{signerName || "—"}</dd>
               </div>
               <div className="flex justify-between gap-3">
-                <dt className="text-zinc-500">Title</dt>
-                <dd className="text-white">{session.company?.jobTitle || "—"}</dd>
-              </div>
-              <div className="flex justify-between gap-3">
                 <dt className="text-zinc-500">Company</dt>
                 <dd className="text-right text-white">{company}</dd>
               </div>
               <div className="flex justify-between gap-3">
-                <dt className="text-zinc-500">Email</dt>
+                <dt className="text-zinc-500">Verified email</dt>
                 <dd className="text-right text-white">
-                  {session.company?.workEmail || "—"}
+                  {session.accountEmail ||
+                    session.company?.workEmail ||
+                    "—"}
                 </dd>
               </div>
             </dl>
 
             <div className="mt-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3 text-sm text-emerald-100">
-              Your acceptance is securely recorded. We record the agreement
-              version, date, signer, and verification details.
+              Acceptance is recorded with the document versions, content hashes,
+              verified identity context, and server timestamp. No handwritten
+              signature ceremony is used.
             </div>
 
-            <label className="mt-5 flex items-start gap-3 text-sm text-zinc-200">
+            <label
+              htmlFor={authorityId}
+              className="mt-5 flex items-start gap-3 text-sm text-zinc-200"
+            >
               <input
+                id={authorityId}
                 type="checkbox"
                 checked={authority}
                 onChange={(e) => setAuthority(e.target.checked)}
@@ -222,34 +285,50 @@ export function AgreementStage() {
               <span>I confirm that I am authorized to bind {company}.</span>
             </label>
 
-            <label className="mt-3 flex items-start gap-3 text-sm text-zinc-200">
+            <label
+              htmlFor={checkboxId}
+              className="mt-3 flex items-start gap-3 text-sm text-zinc-200"
+            >
               <input
+                id={checkboxId}
                 type="checkbox"
-                checked={terms}
-                onChange={(e) => setTerms(e.target.checked)}
+                checked={clickwrap}
+                onChange={(e) => setClickwrap(e.target.checked)}
                 className="mt-1 h-4 w-4 rounded border-white/30 bg-brand-black text-brand-red focus:ring-brand-red"
               />
-              <span>
-                I have read and agree to the{" "}
-                <span className="text-brand-red-light">{AGREEMENT_TITLE}</span>{" "}
-                and Privacy Policy.
-              </span>
+              <span>{APPROVED_CLICKWRAP_LANGUAGE}</span>
             </label>
 
-            <p className="mt-4 text-xs text-zinc-500">
-              By continuing, you are providing an electronic signature.
-            </p>
-
             {(localError || error) && (
-              <p className="mt-3 text-sm text-brand-red-light" role="alert">
+              <p
+                ref={errorRef}
+                tabIndex={-1}
+                className="mt-3 text-sm text-brand-red-light outline-none"
+                role="alert"
+                aria-live="assertive"
+              >
                 {localError || error}
               </p>
             )}
 
             {agreement?.acceptanceEnabled === false ? (
-              <p className="mt-3 text-sm text-amber-300">
+              <p className="mt-3 text-sm text-amber-300" role="status">
                 Legal acceptance is currently disabled pending release gates.
               </p>
+            ) : null}
+
+            {session.agreement?.accepted ? (
+              <div className="mt-4 space-y-2">
+                <p className="text-sm text-emerald-200">
+                  Acceptance already recorded for this intake.
+                </p>
+                <a
+                  href="/api/onboarding/agreement/receipt"
+                  className="inline-block text-sm text-brand-red-light hover:underline"
+                >
+                  Download acceptance receipt
+                </a>
+              </div>
             ) : null}
           </SectionCard>
         </div>

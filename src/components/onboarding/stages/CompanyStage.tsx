@@ -70,7 +70,7 @@ function CompanyStageForm({
     setBusy(true);
     const saved = await patch("company", { company: form });
     setBusy(false);
-    if (saved) router.push("/onboarding/agreement");
+    if (saved) router.push("/onboarding/account");
   }
 
   const ownerName = [form.firstName, form.lastName].filter(Boolean).join(" ");

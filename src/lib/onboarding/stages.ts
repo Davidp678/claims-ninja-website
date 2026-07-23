@@ -1,9 +1,14 @@
+/**
+ * Public onboarding journey.
+ * Legal clickwrap is placed after OTP verification so acceptance evidence
+ * always binds a verified identity.
+ */
 export const ONBOARDING_STAGES = [
   "claim",
   "company",
+  "account",
   "agreement",
   "billing",
-  "account",
 ] as const;
 
 export type OnboardingStage = (typeof ONBOARDING_STAGES)[number];
@@ -19,9 +24,9 @@ export type OnboardingRoute = (typeof ONBOARDING_JOURNEY_ROUTES)[number];
 export const STAGE_LABELS: Record<OnboardingStage, string> = {
   claim: "Claim",
   company: "Company",
+  account: "Account",
   agreement: "Agreement",
   billing: "Billing",
-  account: "Account",
 };
 
 export function stageIndex(stage: OnboardingStage): number {
@@ -35,10 +40,12 @@ export function isOnboardingStage(value: string): value is OnboardingStage {
 export function nextStage(
   stage: OnboardingStage,
 ): OnboardingStage | "verify" | null {
-  const i = stageIndex(stage);
-  if (i < 0) return null;
-  if (i < ONBOARDING_STAGES.length - 1) return ONBOARDING_STAGES[i + 1]!;
-  return "verify";
+  if (stage === "account") return "verify";
+  if (stage === "company") return "account";
+  if (stage === "claim") return "company";
+  if (stage === "agreement") return "billing";
+  if (stage === "billing") return null;
+  return null;
 }
 
 export function stagePath(stage: OnboardingRoute): string {

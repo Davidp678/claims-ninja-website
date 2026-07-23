@@ -1,28 +1,104 @@
 /**
- * Platform is canonical for Consulting Agreement metadata.
+ * Platform is canonical for clickwrap document metadata.
  * Website must fail closed if the platform response conflicts.
  */
 
-export const AGREEMENT_TITLE = "Consulting Agreement";
-export const AGREEMENT_VERSION = "2026-06-10";
-export const AGREEMENT_EFFECTIVE_DATE = "2026-06-10";
-export const AGREEMENT_EFFECTIVE_LABEL = "June 10, 2026";
-
-/** Full immutable snapshot content SHA-256 (must match platform seed). */
-export const AGREEMENT_CONTENT_SHA256 =
+export const TERMS_TITLE = "Consulting Agreement";
+export const TERMS_DISPLAY_TITLE = "Claims Ninja Terms of Service";
+export const TERMS_VERSION = "2026-06-10";
+export const TERMS_EFFECTIVE_DATE = "2026-06-10";
+export const TERMS_EFFECTIVE_LABEL = "June 10, 2026";
+export const TERMS_CONTENT_SHA256 =
   "30142d8d0b9452de83b7cf41f92e7094a413e813af3325e74e343e639aae948d";
 
-export type PlatformAgreementMeta = {
+export const PRIVACY_TITLE = "Privacy Policy";
+export const PRIVACY_VERSION = "staging-placeholder-2026-07-23";
+export const PRIVACY_EFFECTIVE_DATE = "2026-07-23";
+export const PRIVACY_EFFECTIVE_LABEL = "July 23, 2026";
+export const PRIVACY_CONTENT_SHA256 =
+  "40a3971ab186f598b1ec2ac925ccfe30573b360246560076cadce353241b5e38";
+
+/** Exact approved checkbox language (native clickwrap; no e-sign provider). */
+export const APPROVED_CLICKWRAP_LANGUAGE =
+  "I have read and agree to the Claims Ninja Terms of Service and acknowledge the Privacy Policy. I consent to use electronic records and signatures for this onboarding process.";
+
+/** @deprecated Use TERMS_* constants */
+export const AGREEMENT_TITLE = TERMS_TITLE;
+/** @deprecated Use TERMS_VERSION */
+export const AGREEMENT_VERSION = TERMS_VERSION;
+/** @deprecated Use TERMS_EFFECTIVE_DATE */
+export const AGREEMENT_EFFECTIVE_DATE = TERMS_EFFECTIVE_DATE;
+/** @deprecated Use TERMS_EFFECTIVE_LABEL */
+export const AGREEMENT_EFFECTIVE_LABEL = TERMS_EFFECTIVE_LABEL;
+/** @deprecated Use TERMS_CONTENT_SHA256 */
+export const AGREEMENT_CONTENT_SHA256 = TERMS_CONTENT_SHA256;
+
+export type PlatformAgreementDoc = {
+  documentId?: string | null;
   title?: string | null;
+  displayTitle?: string | null;
   version?: string | null;
   effectiveDate?: string | null;
   effectiveDateDisplay?: string | null;
   contentSha256?: string | null;
+  textPreview?: string | null;
+  stagingPlaceholder?: boolean;
+};
+
+export type PlatformAgreementMeta = PlatformAgreementDoc & {
+  acceptanceEnabled?: boolean;
+  approvedAcceptanceLanguage?: string | null;
+  documents?: PlatformAgreementDoc[] | null;
+  privacy?: PlatformAgreementDoc | null;
+  configurationError?: string | null;
 };
 
 export type AgreementIntegrityResult =
   | { ok: true }
   | { ok: false; reason: string };
+
+function matchesDoc(
+  meta: PlatformAgreementDoc | null | undefined,
+  expected: {
+    title: string;
+    displayTitle?: string;
+    version: string;
+    effectiveDate: string;
+    effectiveLabel: string;
+    hash: string;
+  },
+): AgreementIntegrityResult {
+  if (!meta) {
+    return { ok: false, reason: "Document metadata is unavailable." };
+  }
+  const title = (meta.title ?? "").trim();
+  const displayTitle = (meta.displayTitle ?? "").trim();
+  const version = (meta.version ?? "").trim();
+  const effectiveDate = (meta.effectiveDate ?? "").trim();
+  const effectiveDisplay = (meta.effectiveDateDisplay ?? "").trim();
+  const hash = (meta.contentSha256 ?? "").trim().toLowerCase();
+
+  const titleOk =
+    title === expected.title ||
+    (expected.displayTitle !== undefined &&
+      (displayTitle === expected.displayTitle || title === expected.displayTitle));
+  if (!titleOk) {
+    return { ok: false, reason: "Document title mismatch." };
+  }
+  if (version !== expected.version) {
+    return { ok: false, reason: "Document version mismatch." };
+  }
+  if (
+    effectiveDate !== expected.effectiveDate &&
+    effectiveDisplay !== expected.effectiveLabel
+  ) {
+    return { ok: false, reason: "Document effective date mismatch." };
+  }
+  if (hash !== expected.hash) {
+    return { ok: false, reason: "Document content hash mismatch." };
+  }
+  return { ok: true };
+}
 
 export function assertPlatformAgreementMatchesCanonical(
   meta: PlatformAgreementMeta | null | undefined,
@@ -33,27 +109,43 @@ export function assertPlatformAgreementMatchesCanonical(
       reason: "Agreement metadata is unavailable from the platform.",
     };
   }
-
-  const title = (meta.title ?? "").trim();
-  const version = (meta.version ?? "").trim();
-  const effectiveDate = (meta.effectiveDate ?? "").trim();
-  const effectiveDisplay = (meta.effectiveDateDisplay ?? "").trim();
-  const hash = (meta.contentSha256 ?? "").trim().toLowerCase();
-
-  if (title !== AGREEMENT_TITLE) {
-    return { ok: false, reason: "Agreement title mismatch." };
+  if (meta.configurationError) {
+    return {
+      ok: false,
+      reason: "Agreement configuration is unavailable.",
+    };
   }
-  if (version !== AGREEMENT_VERSION) {
-    return { ok: false, reason: "Agreement version mismatch." };
-  }
+
+  const termsCheck = matchesDoc(meta, {
+    title: TERMS_TITLE,
+    displayTitle: TERMS_DISPLAY_TITLE,
+    version: TERMS_VERSION,
+    effectiveDate: TERMS_EFFECTIVE_DATE,
+    effectiveLabel: TERMS_EFFECTIVE_LABEL,
+    hash: TERMS_CONTENT_SHA256,
+  });
+  if (!termsCheck.ok) return termsCheck;
+
+  const privacy = meta.privacy ??
+    meta.documents?.find(
+      (d) =>
+        (d.title ?? "").trim() === PRIVACY_TITLE ||
+        (d.displayTitle ?? "").trim() === PRIVACY_TITLE,
+    );
+  const privacyCheck = matchesDoc(privacy, {
+    title: PRIVACY_TITLE,
+    version: PRIVACY_VERSION,
+    effectiveDate: PRIVACY_EFFECTIVE_DATE,
+    effectiveLabel: PRIVACY_EFFECTIVE_LABEL,
+    hash: PRIVACY_CONTENT_SHA256,
+  });
+  if (!privacyCheck.ok) return privacyCheck;
+
   if (
-    effectiveDate !== AGREEMENT_EFFECTIVE_DATE &&
-    effectiveDisplay !== AGREEMENT_EFFECTIVE_LABEL
+    meta.approvedAcceptanceLanguage &&
+    meta.approvedAcceptanceLanguage.trim() !== APPROVED_CLICKWRAP_LANGUAGE
   ) {
-    return { ok: false, reason: "Agreement effective date mismatch." };
-  }
-  if (hash !== AGREEMENT_CONTENT_SHA256) {
-    return { ok: false, reason: "Agreement content hash mismatch." };
+    return { ok: false, reason: "Approved acceptance language mismatch." };
   }
 
   return { ok: true };

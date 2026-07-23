@@ -77,7 +77,7 @@ export function VerifyStage() {
       setLocalError(result.message);
       return;
     }
-    router.push("/onboarding/activated");
+    router.push("/onboarding/agreement");
   }
 
   async function handleResend() {

@@ -1,9 +1,9 @@
 import { getIntakeHandleFromCookie } from "@/lib/onboarding/cookie";
 import { assertMutationSecurity } from "@/lib/onboarding/csrf";
 import {
-  AGREEMENT_TITLE,
-  AGREEMENT_VERSION,
-} from "@/lib/onboarding/constants";
+  APPROVED_CLICKWRAP_LANGUAGE,
+  TERMS_VERSION,
+} from "@/lib/onboarding/agreement-canonical";
 import {
   handleOnboardingRouteError,
   jsonError,
@@ -32,11 +32,14 @@ export async function POST(request: Request) {
       return jsonError(400, "INVALID_JSON", "Invalid JSON body.");
     }
 
-    if (!body.authorityAttested || !body.termsAttested) {
+    const checkboxAttested = Boolean(
+      body.checkboxAttested ?? body.termsAttested,
+    );
+    if (!body.authorityAttested || !checkboxAttested || body.explicitSubmit === false) {
       return jsonError(
         400,
         "VALIDATION_ERROR",
-        "Both acceptance confirmations are required.",
+        "Required acceptance confirmations are missing.",
       );
     }
 
@@ -47,16 +50,22 @@ export async function POST(request: Request) {
         intakeHandle,
         expectedVersion: body.expectedVersion,
         documentId: body.documentId,
-        documentVersion: body.documentVersion ?? AGREEMENT_VERSION,
+        documentVersion: body.documentVersion ?? TERMS_VERSION,
         contentSha256: body.contentSha256,
+        privacyDocumentId: body.privacyDocumentId,
+        privacyDocumentVersion: body.privacyDocumentVersion,
+        privacyContentSha256: body.privacyContentSha256,
         signerName: body.signerName,
         signerEmail: body.signerEmail,
         organizationName: body.organizationName,
         authorityAttested: true,
         termsAttested: true,
+        checkboxAttested: true,
+        explicitSubmit: true,
         acceptanceLanguage:
-          body.acceptanceLanguage ??
-          `I have read and agree to the ${AGREEMENT_TITLE}.`,
+          typeof body.acceptanceLanguage === "string"
+            ? body.acceptanceLanguage
+            : APPROVED_CLICKWRAP_LANGUAGE,
         locale: body.locale ?? "en-US",
         ip:
           request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
