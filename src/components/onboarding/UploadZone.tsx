@@ -13,6 +13,8 @@ type UploadZoneProps = {
   title?: string;
   hint?: string;
   compact?: boolean;
+  /** Accessible upload/validation error (disallowed type, oversize, interrupted, etc.). */
+  bannerError?: string | null;
 };
 
 function formatBytes(bytes: number) {
@@ -21,7 +23,7 @@ function formatBytes(bytes: number) {
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
-function stateLabel(state: string) {
+export function stateLabel(state: string) {
   switch (state) {
     case "ready":
       return "Ready";
@@ -53,12 +55,18 @@ export function UploadZone({
   title = "Drop your carrier estimate, photos, or scope here",
   hint = "PDF, images, DOCX, XLSX • Up to 50 MB each",
   compact = false,
+  bannerError = null,
 }: UploadZoneProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);
 
   return (
     <div className="space-y-3">
+      {bannerError ? (
+        <p className="text-sm text-brand-red-light" role="alert">
+          {bannerError}
+        </p>
+      ) : null}
       {files.length > 0 && (
         <ul className="space-y-2">
           {files.map((file) => (

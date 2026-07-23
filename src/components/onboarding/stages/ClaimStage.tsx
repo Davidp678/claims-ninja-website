@@ -60,6 +60,7 @@ function ClaimStageForm({
   const router = useRouter();
   const [form, setForm] = useState<ClaimDraft>(initialClaim);
   const [busy, setBusy] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
 
   function update<K extends keyof ClaimDraft>(key: K, value: ClaimDraft[K]) {
     setForm((prev) => {
@@ -293,13 +294,20 @@ function ClaimStageForm({
         <UploadZone
           files={session.files}
           title="Add more files"
+          bannerError={uploadError}
           onUpload={async (list) => {
+            setUploadError(null);
             for (const file of Array.from(list)) {
-              await onboardingUploadFile(file, version);
+              const result = await onboardingUploadFile(file, version);
+              if (!result.ok) {
+                setUploadError(result.message);
+                return;
+              }
             }
             await refresh();
           }}
           onRemove={async (fileId) => {
+            setUploadError(null);
             await onboardingFetchJson("/api/onboarding/files", {
               method: "DELETE",
               json: { fileId, expectedVersion: version },

@@ -26,15 +26,32 @@ type HandoffResult = {
 export function ActivatedStage() {
   const { session, loading, error } = useOnboardingSession();
   const [provision, setProvision] = useState<ProvisionStatus | null>(null);
+  const [provisionLoading, setProvisionLoading] = useState(true);
+  const [provisionError, setProvisionError] = useState<string | null>(null);
   const [handoffError, setHandoffError] = useState<string | null>(null);
   const [opening, setOpening] = useState(false);
 
   useEffect(() => {
     void (async () => {
+      setProvisionLoading(true);
+      setProvisionError(null);
       const result = await onboardingFetchJson<ProvisionStatus>(
         "/api/onboarding/provision",
       );
-      if (result.ok) setProvision(result.data);
+      setProvisionLoading(false);
+      if (result.ok) {
+        setProvision(result.data);
+        if (
+          result.data?.status === "failed_retryable" ||
+          result.data?.status === "failed"
+        ) {
+          setProvisionError(
+            "Workspace setup hit a temporary issue. You can retry in a moment.",
+          );
+        }
+      } else {
+        setProvisionError(result.message);
+      }
     })();
   }, []);
 
@@ -118,13 +135,56 @@ export function ActivatedStage() {
 
         <div className="text-center">
           <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-            Your workspace is ready
+            {provisionLoading
+              ? "Setting up your workspace"
+              : provisionError
+                ? "Workspace setup needs attention"
+                : "Your workspace is ready"}
           </h1>
           <p className="mt-3 text-base text-zinc-400 sm:text-lg">
-            {organizationName} is set up and your first claim is live.
+            {provisionLoading
+              ? "Please wait while we finish provisioning."
+              : provisionError
+                ? "You can retry setup without creating duplicate records."
+                : `${organizationName} is set up and your first claim is live.`}
           </p>
         </div>
 
+        {provisionLoading ? (
+          <SectionCard className="mx-auto mt-8 max-w-xl text-center">
+            <p className="text-sm text-zinc-400" aria-live="polite">
+              Provisioning in progress…
+            </p>
+          </SectionCard>
+        ) : null}
+
+        {provisionError ? (
+          <SectionCard className="mx-auto mt-8 max-w-xl text-center">
+            <p className="text-sm text-brand-red-light" role="alert">
+              {provisionError}
+            </p>
+            <button
+              type="button"
+              className="mt-4 rounded-xl border border-white/15 px-4 py-2 text-sm text-white hover:bg-white/5"
+              onClick={() => {
+                setProvisionLoading(true);
+                setProvisionError(null);
+                void (async () => {
+                  const result = await onboardingFetchJson<ProvisionStatus>(
+                    "/api/onboarding/provision",
+                  );
+                  setProvisionLoading(false);
+                  if (result.ok) setProvision(result.data);
+                  else setProvisionError(result.message);
+                })();
+              }}
+            >
+              Retry setup
+            </button>
+          </SectionCard>
+        ) : null}
+
+        {!provisionLoading && !provisionError ? (
         <SectionCard className="mx-auto mt-8 max-w-xl text-center">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/15 text-3xl text-emerald-400 shadow-[0_0_40px_-10px_rgba(16,185,129,0.8)]">
             ✓
@@ -153,12 +213,13 @@ export function ActivatedStage() {
             your company from the platform.
           </p>
         </SectionCard>
+        ) : null}
 
         <div className="mx-auto mt-8 max-w-xl space-y-3 text-center">
           <button
             type="button"
             onClick={() => void openWorkspace()}
-            disabled={opening}
+            disabled={opening || provisionLoading || Boolean(provisionError)}
             className="w-full rounded-xl bg-brand-red px-5 py-3.5 text-base font-semibold text-white shadow-[0_14px_40px_-18px_rgba(220,38,38,0.95)] transition hover:brightness-110 disabled:opacity-60"
           >
             {opening ? "Opening…" : "Open Claim Workspace"}
