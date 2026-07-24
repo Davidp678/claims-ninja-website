@@ -28,6 +28,7 @@ const US_STATES = [
 type BillingStatus = {
   captureEnabled: boolean;
   continueAllowed: boolean;
+  continueMode?: string | null;
   previewSyntheticEnabled?: boolean;
   integrationPending?: boolean;
   message?: string | null;
@@ -39,41 +40,15 @@ type BillingStatus = {
     accepted?: boolean;
     legalApprovalPending?: boolean;
   };
-  hostedFieldSession?: {
-    status?: string;
-    message?: string;
-    mountRegions?: string[];
-  };
   instrument?: {
     isSynthetic?: boolean;
     maskedDisplay?: string | null;
   } | null;
   noChargeDuringOnboarding?: boolean;
   manualChargesOnly?: boolean;
+  noPaymentCollected?: boolean;
   noPaymentCollectedInPreview?: boolean;
 };
-
-function HostedFieldPlaceholder({
-  label,
-  hint,
-}: {
-  label: string;
-  hint: string;
-}) {
-  return (
-    <div
-      className="rounded-xl border border-dashed border-white/20 bg-brand-black/50 px-4 py-5"
-      aria-label={`${label} — secure processor field placeholder`}
-    >
-      <p className="text-sm font-medium text-zinc-200">{label}</p>
-      <p className="mt-1 text-xs text-zinc-500">{hint}</p>
-      <div
-        className="mt-3 h-11 rounded-lg border border-white/10 bg-white/[0.03]"
-        aria-hidden
-      />
-    </div>
-  );
-}
 
 export function BillingStage() {
   const router = useRouter();
@@ -82,7 +57,6 @@ export function BillingStage() {
   const [status, setStatus] = useState<BillingStatus | null>(null);
   const [contact, setContact] = useState<BillingContactDraft>({});
   const [address, setAddress] = useState<BillingAddressDraft>({});
-  const [methodTab, setMethodTab] = useState<"card" | "ach">("card");
   const [authorized, setAuthorized] = useState(false);
   const [busy, setBusy] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
@@ -103,10 +77,11 @@ export function BillingStage() {
         setStatus({
           captureEnabled: false,
           continueAllowed: false,
+          continueMode: null,
           integrationPending: true,
-          reason: "PAYMENT_CAPTURE_DISABLED",
+          reason: "BILLING_AUTHORIZATION_REQUIRED",
           message:
-            "Secure billing setup is being finalized. No payment information is collected in this preview.",
+            "Billing is handled securely through QuickBooks. Confirm billing authorization to continue. Payment setup happens later through an authorized QuickBooks invoice or payment request.",
         });
       }
     })();
@@ -178,11 +153,11 @@ export function BillingStage() {
 
     const cont = await onboardingFetchJson<{
       noPaymentCollected?: boolean;
+      continueMode?: string;
     }>("/api/onboarding/billing/continue", {
       method: "POST",
       json: {
         expectedVersion: authz.data.sessionVersion ?? version,
-        methodType: methodTab,
       },
     });
     setBusy(false);
@@ -211,12 +186,12 @@ export function BillingStage() {
     session.company?.legalCompanyName ||
     session.company?.dbaName ||
     "your company";
-  const integrationPending = status?.integrationPending !== false;
-  const previewContinue =
-    Boolean(status?.previewSyntheticEnabled) || Boolean(status?.continueAllowed);
   const authLanguage =
     status?.authorization?.acceptanceLanguage ??
-    "I authorize Claims Ninja billing staff to initiate charges manually under the signed agreement and approved invoice or workflow terms. No charge occurs during this onboarding. Adding a payment method does not itself create a charge. [Staging preview — final billing-authorization wording awaiting legal approval.]";
+    "I authorize Claims Ninja billing staff to initiate approved invoice and payment-request workflows through QuickBooks under the signed agreement. No charge occurs during this onboarding. [Staging preview — final billing-authorization wording awaiting legal approval.]";
+  const previewSyntheticNote =
+    status?.previewSyntheticEnabled &&
+    status?.instrument?.isSynthetic === true;
 
   return (
     <OnboardingShell
@@ -226,30 +201,34 @@ export function BillingStage() {
       saveState={saveState}
       onSaveExit={() => void saveExit()}
       continueLabel={
-        previewContinue
-          ? "Save & continue →"
-          : "Billing setup pending"
+        authorized ? "Save & continue →" : "Confirm authorization to continue"
       }
       onContinue={() => void handleContinue()}
-      continueDisabled={busy || !authorized || !previewContinue}
+      continueDisabled={busy || !authorized}
       continueLoading={busy}
-      hint="Manual charges only — after onboarding is complete."
+      hint="Billing is handled securely through QuickBooks. Manual invoices and payment requests only."
     >
       <div
-        className="mb-6 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-100"
+        className="mb-6 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm text-zinc-200"
         role="status"
         aria-live="polite"
       >
-        <p className="font-medium">Secure billing setup is being finalized.</p>
-        <p className="mt-1 text-amber-100/80">
-          No payment information is collected in this preview. Claims Ninja never
-          stores card or bank account numbers here.
+        <p className="font-medium text-white">
+          Billing handled securely through QuickBooks
         </p>
+        <p className="mt-1 text-zinc-400">
+          Claims Ninja does not collect card or bank account numbers during
+          onboarding. Payment setup happens later through an authorized
+          QuickBooks invoice or payment request initiated by billing staff.
+        </p>
+        {status?.message ? (
+          <p className="mt-2 text-xs text-zinc-500">{status.message}</p>
+        ) : null}
       </div>
 
-      {(localError || status?.message) && (
+      {(localError) && (
         <p className="mb-4 text-sm text-brand-red-light" role="alert">
-          {localError ?? status?.message}
+          {localError}
         </p>
       )}
 
@@ -364,70 +343,28 @@ export function BillingStage() {
         </SectionCard>
       </div>
 
-      <SectionCard title="Payment method" className="mt-6">
-        <div className="mb-4 flex gap-2" role="tablist" aria-label="Payment method type">
-          {(
-            [
-              ["card", "Card"],
-              ["ach", "Bank (ACH)"],
-            ] as const
-          ).map(([id, label]) => (
-            <button
-              key={id}
-              type="button"
-              role="tab"
-              aria-selected={methodTab === id}
-              onClick={() => setMethodTab(id)}
-              className={
-                methodTab === id
-                  ? "rounded-lg bg-brand-red px-3 py-1.5 text-sm text-white"
-                  : "rounded-lg border border-white/15 px-3 py-1.5 text-sm text-zinc-300"
-              }
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-
-        <p className="mb-4 text-sm text-zinc-400">
-          Future secure fields will be provided by the payment processor. Claims
-          Ninja will never see full card or bank numbers.
+      <SectionCard title="Payment setup" className="mt-6">
+        <p className="text-sm text-zinc-300">
+          No payment method is collected on this step. After onboarding, billing
+          staff initiate approved invoice or payment-request workflows through
+          QuickBooks under your signed agreement.
         </p>
-
-        <div className="grid gap-3 sm:grid-cols-2">
-          {methodTab === "card" ? (
-            <>
-              <HostedFieldPlaceholder
-                label="Card number"
-                hint="Processor-hosted field — not editable in preview"
-              />
-              <HostedFieldPlaceholder
-                label="Security code"
-                hint="Processor-hosted field — not editable in preview"
-              />
-            </>
-          ) : (
-            <>
-              <HostedFieldPlaceholder
-                label="Routing number"
-                hint="Processor-hosted field — not editable in preview"
-              />
-              <HostedFieldPlaceholder
-                label="Account number"
-                hint="Processor-hosted field — not editable in preview"
-              />
-            </>
-          )}
-        </div>
-
-        {integrationPending ? (
+        <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-zinc-400">
+          <li>No onboarding charge</li>
+          <li>No automatic or recurring charges as a product feature</li>
+          <li>Claims Ninja never stores raw card or bank numbers here</li>
+        </ul>
+        {previewSyntheticNote ? (
           <p className="mt-4 text-xs text-zinc-500">
-            Status: integration pending · Manual charges only ·{" "}
-            {status?.hostedFieldSession?.status === "synthetic_only"
-              ? "Preview continuation available"
-              : "Awaiting provider connection"}
+            Preview QA note: {status?.instrument?.maskedDisplay ?? "Preview · no payment collected"}.
+            This is not a QuickBooks transaction.
           </p>
-        ) : null}
+        ) : (
+          <p className="mt-4 text-xs text-zinc-500">
+            Status: QuickBooks ops handoff · Manual invoices / payment requests
+            only
+          </p>
+        )}
       </SectionCard>
 
       <SectionCard title="Billing authorization" className="mt-6">

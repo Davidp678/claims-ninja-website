@@ -25,7 +25,7 @@ Verified journey order in code: `claim → company → account → verify (OTP) 
 ## Privacy Policy / legal readiness
 
 - Public `/privacy` page and footer link ship the frozen Privacy Policy (`counsel-approved-2026-07-24`, effective July 24, 2026).
-- Clickwrap canonical constants in `src/lib/onboarding/agreement-canonical.ts` must match Platform snapshot hash `927f4b982ef4408653ed6f5d9288e339c6d4ea2992bb6cc24ca569b27399d8a3`.
+- Clickwrap canonical constants in `src/lib/onboarding/agreement-canonical.ts` must match Platform snapshot hash `ce1c4acf446674334dcc6b92e26d08847a5c4b42c6febb72ee1a3f5591ac87a1`.
 - Website fail-closed: Agreement continue stays disabled when `acceptanceEnabled === false` **or** `privacy.stagingPlaceholder === true`.
 - **Legal acceptance remains disabled** until Platform env/DB gates are explicitly enabled (not part of this publication freeze). See platform `docs/external-intake/privacy-policy-handoff.md`.
 
@@ -67,16 +67,19 @@ Browser multipart → /api/onboarding/files → signed S2S multipart → platfor
 
 No signed storage URLs are returned to the browser.
 
-## Payment capture default
+## Billing / QuickBooks boundary
 
-`EXTERNAL_INTAKE_PAYMENT_CAPTURE_ENABLED` defaults **off**.
+`EXTERNAL_INTAKE_PAYMENT_CAPTURE_ENABLED` defaults **off**. QuickBooks is the billing/payment processor.
 
-When off:
+When capture is off (default):
 
 - Billing contact/address autosave allowed
 - Card/bank fields are **not** collected
-- `POST /api/onboarding/billing/continue` returns `403 PAYMENT_CAPTURE_DISABLED`
-- UI continue CTA stays disabled with a truthful unavailable state
+- UI presents “Billing handled securely through QuickBooks” ops handoff
+- After billing authorization, continue uses `quickbooks_ops_handoff` (no payment method collected)
+- Payment setup happens later through an authorized QuickBooks invoice or payment request
+- `POST /api/onboarding/billing/instruments` with raw PAN/CVV remains rejected
+- Optional Preview synthetic instruments are Preview-only QA and are not QuickBooks transactions
 
 ## Environment variables
 

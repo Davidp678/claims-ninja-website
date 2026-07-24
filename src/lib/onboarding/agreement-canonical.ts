@@ -16,7 +16,7 @@ export const PRIVACY_VERSION = "counsel-approved-2026-07-24";
 export const PRIVACY_EFFECTIVE_DATE = "2026-07-24";
 export const PRIVACY_EFFECTIVE_LABEL = "July 24, 2026";
 export const PRIVACY_CONTENT_SHA256 =
-  "927f4b982ef4408653ed6f5d9288e339c6d4ea2992bb6cc24ca569b27399d8a3";
+  "ce1c4acf446674334dcc6b92e26d08847a5c4b42c6febb72ee1a3f5591ac87a1";
 
 /** Exact approved checkbox language (native clickwrap; no e-sign provider). */
 export const APPROVED_CLICKWRAP_LANGUAGE =

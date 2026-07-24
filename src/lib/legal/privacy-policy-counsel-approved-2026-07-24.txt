@@ -88,8 +88,8 @@ Confidential Information (including financial data, client lists, and claim deta
 
 • No onboarding charge. Completing public onboarding or acknowledging legal documents does not itself cause a fee.
 • Authorized charges under the Consulting Agreement may include approved invoices, authorized pass-through expenses, and applicable undisputed past-due amounts (Agreement §§5, 7.6). This Privacy Policy does not require a separate per-charge approval beyond the Agreement and ordinary invoice/approval workflows.
-• Manual operational initiation. Billing staff manually initiate charges against the payment method on file. The external-onboarding product does not enable recurring or automatic charging as a self-running product feature. (Counsel note: Agreement §5 contains broader ACH/electronic-debit language that contemplates one-time or recurring payments; product/ops currently do not enable automatic recurring charging.)
-• No raw card/bank storage by Claims Ninja. We do not store raw card numbers, CVV/CVC, routing numbers, or bank account numbers. Future payment-method capture is designed to use processor-hosted / tokenized fields (intended Freedom Merchants integration — not connected yet). Until that path is live and cleared, payment capture remains disabled; onboarding may collect billing contact/address only.
+• Manual operational initiation through QuickBooks. Billing staff initiate approved invoice and payment-request workflows operationally through QuickBooks, consistent with the signed Consulting Agreement. The external-onboarding product does not enable recurring or automatic charging as a self-running product feature. (Counsel note: Agreement §5 contains broader ACH/electronic-debit language that contemplates one-time or recurring payments; product/ops currently do not enable automatic recurring charging.)
+• No raw card/bank storage by Claims Ninja. We do not store raw card numbers, CVV/CVC, routing numbers, or bank account numbers. QuickBooks is the billing/payment processor and financial source of truth. Public onboarding does not capture a payment method unless a verified QuickBooks-hosted payment-link or session workflow is explicitly configured; until then, onboarding may collect billing contact/address only, and payment setup occurs later through an authorized QuickBooks invoice or payment request.
 
 
 7. Disclosures and service providers / processors
@@ -103,8 +103,7 @@ Vercel — Application hosting / delivery
 Resend — Transactional email (OTP, resume, similar)
 Cloudmersive — Malware / virus scanning of upload bytes
 OpenAI — AI inference for platform claim/estimate assistance and (where enabled) website assistive features
-QuickBooks — Accounting / invoice-related sync as configured
-Freedom Merchants (future) — Payment tokenization / processor-hosted capture — not connected
+QuickBooks — Billing/payment processor and accounting / invoice workflows as configured
 
 We may also disclose information to:
 
@@ -323,9 +322,8 @@ Based on architecture and marketing/onboarding surfaces in scope for this packag
 • Public onboarding does not currently load common third-party advertising
   analytics stacks (e.g., GA/GTM) for cross-context behavioral advertising.
 • Named integrations in scope (Supabase, Vercel, Resend, Cloudmersive, OpenAI,
-  QuickBooks, future Freedom Merchants) are used as service providers /
-  processors for hosting, security, communications, AI assistance, and
-  accounting.
+  QuickBooks) are used as service providers / processors for hosting,
+  security, communications, AI assistance, billing/payments, and accounting.
 
 Therefore, this Addendum does not state that Claims Ninja currently “sells”
 or “shares” personal information. If any cookie, pixel, or data flow later

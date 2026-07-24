@@ -190,7 +190,7 @@ for (const viewport of VIEWPORTS) {
             effectiveDate: "2026-07-24",
             effectiveDateDisplay: "July 24, 2026",
             contentSha256:
-              "927f4b982ef4408653ed6f5d9288e339c6d4ea2992bb6cc24ca569b27399d8a3",
+              "ce1c4acf446674334dcc6b92e26d08847a5c4b42c6febb72ee1a3f5591ac87a1",
             textPreview: privacyPlaceholder
               ? "[STAGING PLACEHOLDER — NOT APPROVED LEGAL TEXT]\nFixture privacy body."
               : "Fixture Privacy Policy body for approved-content-ready visual QA.",

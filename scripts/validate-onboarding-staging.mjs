@@ -221,9 +221,13 @@ async function main() {
   });
   const payJson = await pay.json().catch(() => ({}));
   check(
-    "billing continue fails closed without vault",
+    "billing continue fails closed without authorization / session",
     pay.status === 403 ||
-      payJson?.error?.code === "PAYMENT_CAPTURE_DISABLED",
+      pay.status === 400 ||
+      payJson?.error?.code === "BILLING_AUTHORIZATION_REQUIRED" ||
+      payJson?.error?.code === "FORBIDDEN" ||
+      payJson?.error?.code === "VALIDATION_ERROR" ||
+      payJson?.error?.code === "SESSION_UNAUTHORIZED",
     `status=${pay.status} code=${payJson?.error?.code ?? "-"}`,
   );
 

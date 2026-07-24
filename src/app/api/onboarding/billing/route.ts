@@ -35,9 +35,13 @@ export async function GET() {
           address: {},
           instrument: null,
           continueAllowed: false,
+          continueMode: null,
+          integrationPending: true,
+          message:
+            "Billing is handled securely through QuickBooks. Payment setup happens later through an authorized QuickBooks invoice or payment request.",
           reason: isPaymentCaptureEnabled()
             ? "PAYMENT_VAULT_UNAVAILABLE"
-            : "PAYMENT_CAPTURE_DISABLED",
+            : "BILLING_AUTHORIZATION_REQUIRED",
         });
       }
     }
