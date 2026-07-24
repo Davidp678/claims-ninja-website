@@ -155,6 +155,16 @@ export async function PATCH(request: Request) {
         },
       );
 
+    if (!envelope.ok) {
+      console.error("[api/onboarding/session] PATCH platform error", {
+        status,
+        code: envelope.error?.code ?? null,
+        message: envelope.error?.message ?? null,
+        hasExpectedVersion: body.expectedVersion !== undefined,
+        stage: typeof body.stage === "string" ? body.stage : null,
+      });
+    }
+
     if (envelope.ok && envelope.data) {
       return mapPlatformResponse(status, {
         ...envelope,

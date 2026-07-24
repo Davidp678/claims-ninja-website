@@ -13,6 +13,7 @@ import {
 import type { HeroIntakeContent } from "@/lib/onboarding/content";
 import { isTerminalSecurityState } from "@/lib/onboarding/file-summary";
 import { LOSS_TYPE_OPTIONS, type IntakeFileSummary } from "@/lib/onboarding/types";
+import { userFacingOnboardingError } from "@/lib/onboarding/user-errors";
 import { cn } from "@/lib/cn";
 
 const MAX_UPLOAD_BYTES = 50 * 1024 * 1024;
@@ -420,14 +421,20 @@ export function HeroClaimIntakeCard({
           lossType,
         });
         if (!session.ok) {
-          setError(session.message);
+          setError(userFacingOnboardingError(undefined, session.message));
           return;
         }
+
+        // Refresh projection/version after upload so Continue uses current state.
+        const refreshedBefore = await refreshSessionVersion();
+        const expectedVersion = refreshedBefore.ok
+          ? refreshedBefore.version
+          : (versionRef.current ?? session.version);
 
         let patched = await onboardingFetchJson("/api/onboarding/session", {
           method: "PATCH",
           json: {
-            expectedVersion: versionRef.current ?? session.version,
+            expectedVersion,
             stage: "claim",
             patch: {
               claim: {
@@ -445,7 +452,9 @@ export function HeroClaimIntakeCard({
         ) {
           const refreshed = await refreshSessionVersion();
           if (!refreshed.ok) {
-            setError(patched.message);
+            setError(
+              userFacingOnboardingError(patched.code, patched.message),
+            );
             return;
           }
           patched = await onboardingFetchJson("/api/onboarding/session", {
@@ -464,7 +473,7 @@ export function HeroClaimIntakeCard({
         }
 
         if (!patched.ok) {
-          setError(patched.message);
+          setError(userFacingOnboardingError(patched.code, patched.message));
           return;
         }
 
