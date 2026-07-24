@@ -297,12 +297,32 @@ function ClaimStageForm({
           bannerError={uploadError}
           onUpload={async (list) => {
             setUploadError(null);
+            let currentVersion = version;
             for (const file of Array.from(list)) {
-              const result = await onboardingUploadFile(file, version);
+              const result = await onboardingUploadFile(file, currentVersion);
               if (!result.ok) {
                 setUploadError(result.message);
+                await refresh();
                 return;
               }
+              if (typeof result.data.version === "number") {
+                currentVersion = result.data.version;
+              }
+            }
+            await refresh();
+          }}
+          onRetry={async (fileId) => {
+            setUploadError(null);
+            const result = await onboardingFetchJson("/api/onboarding/files", {
+              method: "PATCH",
+              json: {
+                fileId,
+                expectedVersion: version,
+                action: "recover",
+              },
+            });
+            if (!result.ok) {
+              setUploadError(result.message);
             }
             await refresh();
           }}

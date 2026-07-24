@@ -62,6 +62,56 @@ export async function POST(request: Request) {
   }
 }
 
+export async function PATCH(request: Request) {
+  try {
+    const security = assertMutationSecurity(request);
+    if (!security.ok) {
+      return jsonError(security.status, security.code, security.message);
+    }
+
+    const intakeHandle = await getIntakeHandleFromCookie();
+    if (!intakeHandle) {
+      return jsonError(401, "SESSION_UNAUTHORIZED", "No active intake session.");
+    }
+
+    let body: {
+      fileId?: string;
+      expectedVersion?: number;
+      action?: string;
+    } = {};
+    try {
+      body = (await request.json()) as typeof body;
+    } catch {
+      return jsonError(400, "INVALID_JSON", "Invalid JSON body.");
+    }
+
+    if (!body.fileId) {
+      return jsonError(400, "VALIDATION_ERROR", "fileId is required.");
+    }
+    if (body.action !== "recover") {
+      return jsonError(
+        400,
+        "VALIDATION_ERROR",
+        "Unsupported action. Use action=recover.",
+      );
+    }
+
+    const { status, envelope } = await externalIntakeS2SJson(
+      "POST",
+      `/api/external-intake/v1/files/${encodeURIComponent(body.fileId)}`,
+      {
+        intakeHandle,
+        expectedVersion: body.expectedVersion,
+        action: "recover",
+      },
+    );
+
+    return mapPlatformResponse(status, envelope);
+  } catch (err) {
+    return handleOnboardingRouteError(err);
+  }
+}
+
 export async function DELETE(request: Request) {
   try {
     const security = assertMutationSecurity(request);

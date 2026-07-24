@@ -9,6 +9,8 @@ type UploadZoneProps = {
   files?: IntakeFileSummary[];
   onUpload: (files: FileList | File[]) => void | Promise<void>;
   onRemove?: (fileId: string) => void;
+  /** Retry a failed / timed-out upload for the given file row id. */
+  onRetry?: (fileId: string) => void;
   disabled?: boolean;
   title?: string;
   hint?: string;
@@ -51,6 +53,7 @@ export function UploadZone({
   files = [],
   onUpload,
   onRemove,
+  onRetry,
   disabled,
   title = "Drop your carrier estimate, photos, or scope here",
   hint = "PDF, images, DOCX, XLSX • Up to 50 MB each",
@@ -69,31 +72,53 @@ export function UploadZone({
       ) : null}
       {files.length > 0 && (
         <ul className="space-y-2">
-          {files.map((file) => (
-            <li
-              key={file.id}
-              className="flex items-center justify-between gap-3 rounded-lg border border-white/10 bg-brand-black/60 px-3 py-2.5"
-            >
-              <div className="min-w-0">
-                <p className="truncate text-sm font-medium text-white">
-                  {file.filename}
-                </p>
-                <p className="text-xs text-zinc-500">
-                  {formatBytes(file.sizeBytes)} · {stateLabel(file.securityState)}
-                </p>
-              </div>
-              {onRemove ? (
-                <button
-                  type="button"
-                  aria-label={`Remove ${file.filename}`}
-                  onClick={() => onRemove(file.id)}
-                  className="rounded p-1 text-zinc-400 hover:bg-white/5 hover:text-white"
-                >
-                  ×
-                </button>
-              ) : null}
-            </li>
-          ))}
+          {files.map((file) => {
+            const canRetry =
+              Boolean(onRetry) &&
+              (file.securityState === "failed" ||
+                file.securityState === "scan_pending" ||
+                file.securityState === "preparing");
+            return (
+              <li
+                key={file.id}
+                className="flex items-center justify-between gap-3 rounded-lg border border-white/10 bg-brand-black/60 px-3 py-2.5"
+              >
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-medium text-white">
+                    {file.filename}
+                  </p>
+                  <p className="text-xs text-zinc-500">
+                    {formatBytes(file.sizeBytes)} ·{" "}
+                    {stateLabel(file.securityState)}
+                  </p>
+                </div>
+                <div className="flex shrink-0 items-center gap-1">
+                  {canRetry ? (
+                    <button
+                      type="button"
+                      aria-label={`Retry ${file.filename}`}
+                      onClick={() => onRetry?.(file.id)}
+                      disabled={disabled}
+                      className="rounded px-2 py-1 text-xs font-medium text-brand-red-light hover:bg-white/5 disabled:opacity-50"
+                    >
+                      Retry
+                    </button>
+                  ) : null}
+                  {onRemove ? (
+                    <button
+                      type="button"
+                      aria-label={`Remove ${file.filename}`}
+                      onClick={() => onRemove(file.id)}
+                      disabled={disabled}
+                      className="rounded p-1 text-zinc-400 hover:bg-white/5 hover:text-white disabled:opacity-50"
+                    >
+                      ×
+                    </button>
+                  ) : null}
+                </div>
+              </li>
+            );
+          })}
         </ul>
       )}
 

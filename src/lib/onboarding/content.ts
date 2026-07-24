@@ -20,8 +20,14 @@ export type HeroIntakeContent = {
   stats: { label: string; value: string }[];
 };
 
+const EN_STATS = [
+  { label: "estimate turnaround", value: "24-hour" },
+  { label: "average claim uplift", value: "40%+" },
+  { label: "average settlement", value: "3–5 week" },
+] as const;
+
 const EN: Omit<HeroIntakeContent, "stats"> = {
-  eyebrow: "Claims operations, built for contractors",
+  eyebrow: "CLAIMS OPERATIONS, BUILT FOR CONTRACTORS",
   title: "Turn your next claim into a stronger recovery.",
   subhead:
     "Upload the carrier estimate and job details. Claims Ninja will organize the file, create your secure workspace, and put our claims team to work.",
@@ -65,6 +71,9 @@ const ES: Omit<HeroIntakeContent, "stats"> = {
 
 export function getHeroIntakeContent(locale: Locale = "en"): HeroIntakeContent {
   const base = locale === "es" ? ES : EN;
-  const stats = getHomeContent(locale).hero.stats;
-  return { ...base, stats };
+  if (locale === "es") {
+    const stats = getHomeContent(locale).hero.stats;
+    return { ...base, stats };
+  }
+  return { ...base, stats: [...EN_STATS] };
 }

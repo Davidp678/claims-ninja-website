@@ -7,7 +7,6 @@ import type { Locale } from "@/lib/i18n/config";
 import { ES_CTA_LABELS } from "@/lib/i18n/es-navigation";
 import type { NavEntry } from "@/lib/navigation";
 import { cn } from "@/lib/cn";
-import { Button } from "@/components/ui/Button";
 
 type MobileNavMenuProps = {
   nav: readonly NavEntry[];
@@ -90,16 +89,18 @@ export function MobileNavMenu({
       })}
 
       <li className="mt-4 space-y-3 px-4 md:hidden">
-        <Button href={CTA_LINKS.startHere} className="w-full" onClick={onNavigate}>
-          {locale === "es"
-            ? ES_CTA_LABELS.startClaimReview
-            : "Start Claim Review"}
-        </Button>
+        <Link
+          href="/login"
+          className="block text-center text-sm font-medium text-zinc-300 transition-colors hover:text-white"
+          onClick={onNavigate}
+        >
+          {locale === "es" ? "Iniciar sesión" : "Log in"}
+        </Link>
         <a
           href={CTA_LINKS.schedule}
           target="_blank"
           rel="noopener noreferrer"
-          className="block text-center text-sm font-medium text-zinc-300 transition-colors hover:text-white"
+          className="flex h-11 w-full items-center justify-center rounded-lg border border-brand-red text-sm font-medium text-white transition hover:bg-brand-red/10"
           onClick={onNavigate}
         >
           {locale === "es" ? ES_CTA_LABELS.scheduleCall : "Schedule Call"}

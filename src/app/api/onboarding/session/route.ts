@@ -10,8 +10,18 @@ import {
   jsonOk,
   mapPlatformResponse,
 } from "@/lib/onboarding/http";
+import { normalizeIntakeFileList } from "@/lib/onboarding/file-summary";
 import { externalIntakeS2SJson } from "@/lib/onboarding/s2s";
 import type { IntakeSessionProjection } from "@/lib/onboarding/types";
+
+function normalizeSessionProjection(
+  data: IntakeSessionProjection,
+): IntakeSessionProjection {
+  return {
+    ...data,
+    files: normalizeIntakeFileList(data.files),
+  };
+}
 
 export const runtime = "nodejs";
 
@@ -30,6 +40,13 @@ export async function GET() {
         undefined,
         { searchParams: { intakeHandle } },
       );
+
+    if (envelope.ok && envelope.data) {
+      return mapPlatformResponse(status, {
+        ...envelope,
+        data: normalizeSessionProjection(envelope.data),
+      });
+    }
 
     return mapPlatformResponse(status, envelope);
   } catch (err) {
@@ -137,6 +154,13 @@ export async function PATCH(request: Request) {
           patch,
         },
       );
+
+    if (envelope.ok && envelope.data) {
+      return mapPlatformResponse(status, {
+        ...envelope,
+        data: normalizeSessionProjection(envelope.data),
+      });
+    }
 
     return mapPlatformResponse(status, envelope);
   } catch (err) {

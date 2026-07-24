@@ -7,6 +7,7 @@ export {
 } from "./constants";
 import { assertStagingPlatformUrl } from "./staging-guard";
 export { assertStagingPlatformUrl } from "./staging-guard";
+export { getMissingExternalIntakeEnvNames } from "./env-check";
 
 export type ExternalIntakeConfig = {
   platformBaseUrl: string;

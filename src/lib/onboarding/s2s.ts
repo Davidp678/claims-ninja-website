@@ -3,6 +3,7 @@ import "server-only";
 import { randomBytes } from "node:crypto";
 
 import { getExternalIntakeConfig } from "./config";
+import { getMissingExternalIntakeEnvNames } from "./env-check";
 import {
   buildCanonicalString,
   sha256Hex,
@@ -18,10 +19,20 @@ export {
 
 export class ExternalIntakeConfigError extends Error {
   readonly code = "EXTERNAL_INTAKE_NOT_CONFIGURED";
+  readonly missingEnvNames: string[];
 
-  constructor(message = "External intake platform is not configured.") {
-    super(message);
+  constructor(message?: string, missingEnvNames?: string[]) {
+    const missing = missingEnvNames ?? getMissingExternalIntakeEnvNames();
+    const detail =
+      missing.length > 0
+        ? ` Missing server environment: ${missing.join(", ")}.`
+        : "";
+    super(
+      message ??
+        `Claim intake is temporarily unavailable because the Preview server-to-server connection is not configured.${detail}`,
+    );
     this.name = "ExternalIntakeConfigError";
+    this.missingEnvNames = missing;
   }
 }
 
@@ -60,7 +71,12 @@ export async function externalIntakeS2SRequest<T>(
 ): Promise<{ status: number; envelope: PlatformEnvelope<T>; rawText: string }> {
   const config = getExternalIntakeConfig();
   if (!config) {
-    throw new ExternalIntakeConfigError();
+    const missing = getMissingExternalIntakeEnvNames();
+    console.error(
+      "[onboarding/s2s] EXTERNAL_INTAKE_NOT_CONFIGURED — missing env names:",
+      missing.join(", ") || "(unknown)",
+    );
+    throw new ExternalIntakeConfigError(undefined, missing);
   }
 
   if (!options.path.startsWith("/api/external-intake/")) {

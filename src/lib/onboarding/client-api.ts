@@ -1,4 +1,9 @@
 import { INTAKE_CSRF_COOKIE, INTAKE_CSRF_HEADER } from "./constants";
+import {
+  normalizeIntakeFileSummary,
+  ONBOARDING_UPLOAD_TIMEOUT_MS,
+} from "./file-summary";
+import type { IntakeFileSummary } from "./types";
 
 function readBrowserCookie(name: string): string | null {
   if (typeof document === "undefined") return null;
@@ -12,6 +17,26 @@ function readBrowserCookie(name: string): string | null {
 
 export type OnboardingApiResult<T> =
   | { ok: true; data: T }
+  | {
+      ok: false;
+      status: number;
+      code: string;
+      message: string;
+      retryable?: boolean;
+    };
+
+export type OnboardingUploadResult =
+  | {
+      ok: true;
+      data: {
+        id: string;
+        filename: string;
+        sizeBytes: number;
+        securityState: string;
+        version?: number;
+        checksumSha256?: string | null;
+      };
+    }
   | {
       ok: false;
       status: number;
@@ -85,36 +110,112 @@ export async function onboardingFetchJson<T>(
   return { ok: true, data: payload.data as T };
 }
 
-export async function onboardingUploadFile(file: File, expectedVersion: number) {
+export async function onboardingUploadFile(
+  file: File,
+  expectedVersion: number,
+  options?: { timeoutMs?: number; signal?: AbortSignal },
+): Promise<OnboardingUploadResult> {
   const csrf = await ensureCsrf();
   const form = new FormData();
   form.append("file", file);
   form.append("expectedVersion", String(expectedVersion));
 
-  const res = await fetch("/api/onboarding/files", {
-    method: "POST",
-    headers: {
-      [INTAKE_CSRF_HEADER]: csrf,
-    },
-    body: form,
-    credentials: "same-origin",
-  });
+  const timeoutMs = options?.timeoutMs ?? ONBOARDING_UPLOAD_TIMEOUT_MS;
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
-  const payload = (await res.json()) as {
-    ok?: boolean;
-    data?: unknown;
-    error?: { code?: string; message?: string; retryable?: boolean };
-  };
+  const onExternalAbort = () => controller.abort();
+  options?.signal?.addEventListener("abort", onExternalAbort);
 
-  if (!res.ok || payload.ok === false) {
-    return {
-      ok: false as const,
-      status: res.status,
-      code: payload.error?.code ?? "UPLOAD_FAILED",
-      message: payload.error?.message ?? "Upload failed.",
-      retryable: payload.error?.retryable,
+  try {
+    const res = await fetch("/api/onboarding/files", {
+      method: "POST",
+      headers: {
+        [INTAKE_CSRF_HEADER]: csrf,
+      },
+      body: form,
+      credentials: "same-origin",
+      signal: controller.signal,
+    });
+
+    const payload = (await res.json()) as {
+      ok?: boolean;
+      data?: Record<string, unknown>;
+      error?: { code?: string; message?: string; retryable?: boolean };
     };
-  }
 
-  return { ok: true as const, data: payload.data };
+    if (!res.ok || payload.ok === false) {
+      return {
+        ok: false,
+        status: res.status,
+        code: payload.error?.code ?? "UPLOAD_FAILED",
+        message: payload.error?.message ?? "Upload failed.",
+        retryable: payload.error?.retryable ?? res.status >= 500,
+      };
+    }
+
+    const summary = normalizeIntakeFileSummary(payload.data ?? null);
+    if (!summary) {
+      return {
+        ok: false,
+        status: 502,
+        code: "UPLOAD_INVALID_RESPONSE",
+        message: "Upload completed but file details were missing. Please retry.",
+        retryable: true,
+      };
+    }
+
+    const version =
+      typeof payload.data?.version === "number"
+        ? payload.data.version
+        : undefined;
+    const checksumSha256 =
+      typeof payload.data?.checksumSha256 === "string"
+        ? payload.data.checksumSha256
+        : null;
+
+    return {
+      ok: true,
+      data: {
+        id: summary.id,
+        filename: summary.filename,
+        sizeBytes: summary.sizeBytes,
+        securityState: summary.securityState,
+        version,
+        checksumSha256,
+      },
+    };
+  } catch (err) {
+    if (err instanceof DOMException && err.name === "AbortError") {
+      return {
+        ok: false,
+        status: 408,
+        code: "UPLOAD_TIMEOUT",
+        message:
+          "Upload timed out while preparing your file. Please retry — your previous attempt will not create a duplicate.",
+        retryable: true,
+      };
+    }
+    return {
+      ok: false,
+      status: 0,
+      code: "UPLOAD_NETWORK",
+      message: "Network error during upload. Please try again.",
+      retryable: true,
+    };
+  } finally {
+    clearTimeout(timeoutId);
+    options?.signal?.removeEventListener("abort", onExternalAbort);
+  }
+}
+
+export function mapSessionFiles(raw: unknown): IntakeFileSummary[] {
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .map((item) =>
+      item && typeof item === "object"
+        ? normalizeIntakeFileSummary(item as Record<string, unknown>)
+        : null,
+    )
+    .filter((f): f is IntakeFileSummary => f !== null);
 }

@@ -89,8 +89,8 @@ const EN: HomeContent = {
     ],
   },
   process: {
-    eyebrow: "How it works",
-    title: "Four simple steps to a stronger claim",
+    eyebrow: "The Claims Ninja Platform",
+    title: "Everything you need. Built for how you work.",
     description:
       "A clear, guided process—from first call to final settlement—built for speed and outcomes.",
     steps: [

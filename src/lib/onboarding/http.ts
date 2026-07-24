@@ -43,6 +43,10 @@ export function mapPlatformResponse<T>(
 
 export function handleOnboardingRouteError(err: unknown) {
   if (err instanceof ExternalIntakeConfigError) {
+    console.error(
+      "[api/onboarding] intake not configured; missing env:",
+      err.missingEnvNames.join(", ") || "(none listed)",
+    );
     return jsonError(503, err.code, err.message, false);
   }
   if (err instanceof ExternalIntakeS2SError) {
