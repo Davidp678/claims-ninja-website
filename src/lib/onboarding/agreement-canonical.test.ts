@@ -24,7 +24,7 @@ test("agreement canonical integrity accepts exact platform package", () => {
     privacy: {
       title: PRIVACY_TITLE,
       version: PRIVACY_VERSION,
-      effectiveDate: "2026-07-23",
+      effectiveDate: "2026-07-24",
       contentSha256: PRIVACY_CONTENT_SHA256,
     },
   });
@@ -41,7 +41,7 @@ test("fails closed on title, version, or hash mismatch", () => {
       privacy: {
         title: PRIVACY_TITLE,
         version: PRIVACY_VERSION,
-        effectiveDate: "2026-07-23",
+        effectiveDate: "2026-07-24",
         contentSha256: PRIVACY_CONTENT_SHA256,
       },
     }).ok,
@@ -56,7 +56,7 @@ test("fails closed on title, version, or hash mismatch", () => {
       privacy: {
         title: PRIVACY_TITLE,
         version: PRIVACY_VERSION,
-        effectiveDate: "2026-07-23",
+        effectiveDate: "2026-07-24",
         contentSha256: "0".repeat(64),
       },
     }).ok,
@@ -64,7 +64,7 @@ test("fails closed on title, version, or hash mismatch", () => {
   );
 });
 
-test("canonical package still matches staging Privacy placeholder metadata", () => {
+test("canonical package matches counsel-approved Privacy metadata", () => {
   const result = assertPlatformAgreementMatchesCanonical({
     title: TERMS_TITLE,
     displayTitle: TERMS_DISPLAY_TITLE,
@@ -76,11 +76,11 @@ test("canonical package still matches staging Privacy placeholder metadata", () 
     privacy: {
       title: PRIVACY_TITLE,
       version: PRIVACY_VERSION,
-      effectiveDate: "2026-07-23",
+      effectiveDate: "2026-07-24",
       contentSha256: PRIVACY_CONTENT_SHA256,
-      stagingPlaceholder: true,
+      stagingPlaceholder: false,
     },
   });
   assert.equal(result.ok, true);
-  assert.equal(PRIVACY_VERSION, "staging-placeholder-2026-07-23");
+  assert.equal(PRIVACY_VERSION, "counsel-approved-2026-07-24");
 });

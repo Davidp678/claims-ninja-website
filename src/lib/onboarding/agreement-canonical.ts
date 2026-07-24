@@ -12,11 +12,11 @@ export const TERMS_CONTENT_SHA256 =
   "30142d8d0b9452de83b7cf41f92e7094a413e813af3325e74e343e639aae948d";
 
 export const PRIVACY_TITLE = "Privacy Policy";
-export const PRIVACY_VERSION = "staging-placeholder-2026-07-23";
-export const PRIVACY_EFFECTIVE_DATE = "2026-07-23";
-export const PRIVACY_EFFECTIVE_LABEL = "July 23, 2026";
+export const PRIVACY_VERSION = "counsel-approved-2026-07-24";
+export const PRIVACY_EFFECTIVE_DATE = "2026-07-24";
+export const PRIVACY_EFFECTIVE_LABEL = "July 24, 2026";
 export const PRIVACY_CONTENT_SHA256 =
-  "40a3971ab186f598b1ec2ac925ccfe30573b360246560076cadce353241b5e38";
+  "927f4b982ef4408653ed6f5d9288e339c6d4ea2992bb6cc24ca569b27399d8a3";
 
 /** Exact approved checkbox language (native clickwrap; no e-sign provider). */
 export const APPROVED_CLICKWRAP_LANGUAGE =

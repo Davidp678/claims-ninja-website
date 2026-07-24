@@ -184,13 +184,13 @@ for (const viewport of VIEWPORTS) {
           approvedAcceptanceLanguage:
             "I have read and agree to the Claims Ninja Terms of Service and acknowledge the Privacy Policy. I consent to use electronic records and signatures for this onboarding process.",
           privacy: {
-            documentId: "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+            documentId: "c3d4e5f6-a7b8-9012-cdef-123456789012",
             title: "Privacy Policy",
-            version: "staging-placeholder-2026-07-23",
-            effectiveDate: "2026-07-23",
-            effectiveDateDisplay: "July 23, 2026",
+            version: "counsel-approved-2026-07-24",
+            effectiveDate: "2026-07-24",
+            effectiveDateDisplay: "July 24, 2026",
             contentSha256:
-              "40a3971ab186f598b1ec2ac925ccfe30573b360246560076cadce353241b5e38",
+              "927f4b982ef4408653ed6f5d9288e339c6d4ea2992bb6cc24ca569b27399d8a3",
             textPreview: privacyPlaceholder
               ? "[STAGING PLACEHOLDER — NOT APPROVED LEGAL TEXT]\nFixture privacy body."
               : "Fixture Privacy Policy body for approved-content-ready visual QA.",
@@ -218,7 +218,7 @@ for (const viewport of VIEWPORTS) {
       await page
         .getByText(/I have read and agree to the Claims Ninja Terms of Service/i)
         .click();
-      // Placeholder Privacy stays fail-closed even with checkboxes attested.
+      // stagingPlaceholder=true stays fail-closed even with checkboxes attested.
       await expect(page.getByRole("button", { name: /agree and continue/i })).toBeDisabled();
       await expect(page.getByText(/staging placeholder and cannot be accepted/i)).toBeVisible();
 

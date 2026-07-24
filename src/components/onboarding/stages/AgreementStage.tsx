@@ -10,7 +10,9 @@ import { useOnboardingSession } from "@/components/onboarding/useOnboardingSessi
 import { onboardingFetchJson } from "@/lib/onboarding/client-api";
 import {
   APPROVED_CLICKWRAP_LANGUAGE,
+  PRIVACY_EFFECTIVE_LABEL,
   PRIVACY_TITLE,
+  PRIVACY_VERSION,
   TERMS_DISPLAY_TITLE,
   TERMS_EFFECTIVE_LABEL,
   TERMS_VERSION,
@@ -241,8 +243,8 @@ export function AgreementStage() {
               <p className="mt-1 text-sm text-zinc-400">
                 {activeDoc === "privacy"
                   ? privacyPlaceholder
-                    ? "DRAFT / staging placeholder — not approved for acceptance"
-                    : `Version ${agreement?.privacy?.version ?? ""} · Effective ${agreement?.privacy?.effectiveDateDisplay ?? ""}`
+                    ? "Staging placeholder — not approved for acceptance"
+                    : `Version ${agreement?.privacy?.version ?? PRIVACY_VERSION} · Effective ${agreement?.privacy?.effectiveDateDisplay ?? PRIVACY_EFFECTIVE_LABEL}`
                   : `Version ${TERMS_VERSION} · Effective ${TERMS_EFFECTIVE_LABEL}`}
               </p>
             </div>

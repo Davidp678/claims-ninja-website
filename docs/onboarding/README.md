@@ -17,16 +17,17 @@ Verified journey order in code: `claim → company → account → verify (OTP) 
 | `/onboarding/company` | Company / contractor |
 | `/onboarding/account` | Password |
 | `/onboarding/verify` | Email OTP |
-| `/onboarding/agreement` | Native clickwrap (Terms `2026-06-10` + Privacy staging placeholder) |
+| `/onboarding/agreement` | Native clickwrap (Terms `2026-06-10` + Privacy `counsel-approved-2026-07-24`) |
 | `/onboarding/billing` | Billing contact / authorization |
 | `/onboarding/activated` | Workspace ready + handoff |
+| `/privacy` | Public Privacy Policy (frozen counsel-approved text) |
 
 ## Privacy Policy / legal readiness
 
-- There is **no** public marketing `/privacy` or `/terms` page yet.
-- Onboarding Privacy content in the clickwrap package is still a **staging placeholder**. Platform owns the business draft for counsel: `claims-ninja-platform/docs/external-intake/privacy-policy-draft-for-legal-review.md` (**DRAFT — REQUIRES LEGAL APPROVAL**).
-- Website fail-closed: Agreement continue stays disabled when `acceptanceEnabled === false` **or** `privacy.stagingPlaceholder === true`. Canonical hashes stay pinned in `src/lib/onboarding/agreement-canonical.ts` until an approved Privacy version is swapped in.
-- **Legal readiness incomplete** — do not treat Draft PRs as privacy-approved. See platform `docs/external-intake/privacy-policy-handoff.md`.
+- Public `/privacy` page and footer link ship the frozen Privacy Policy (`counsel-approved-2026-07-24`, effective July 24, 2026).
+- Clickwrap canonical constants in `src/lib/onboarding/agreement-canonical.ts` must match Platform snapshot hash `927f4b982ef4408653ed6f5d9288e339c6d4ea2992bb6cc24ca569b27399d8a3`.
+- Website fail-closed: Agreement continue stays disabled when `acceptanceEnabled === false` **or** `privacy.stagingPlaceholder === true`.
+- **Legal acceptance remains disabled** until Platform env/DB gates are explicitly enabled (not part of this publication freeze). See platform `docs/external-intake/privacy-policy-handoff.md`.
 
 ## BFF map
 
