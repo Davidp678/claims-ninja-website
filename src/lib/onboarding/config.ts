@@ -8,6 +8,7 @@ export {
 import { assertStagingPlatformUrl } from "./staging-guard";
 export { assertStagingPlatformUrl } from "./staging-guard";
 export { getMissingExternalIntakeEnvNames } from "./env-check";
+export { getAllowedOrigins } from "./allowed-origins";
 
 export type ExternalIntakeConfig = {
   platformBaseUrl: string;
@@ -46,20 +47,3 @@ export function isPaymentCaptureEnabled(): boolean {
   return process.env.EXTERNAL_INTAKE_PAYMENT_CAPTURE_ENABLED === "true";
 }
 
-export function getAllowedOrigins(): string[] {
-  const configured = (process.env.EXTERNAL_INTAKE_ALLOWED_ORIGINS ?? "")
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
-
-  const site = (process.env.NEXT_PUBLIC_SITE_URL ?? "").trim().replace(/\/$/, "");
-  const defaults = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://www.theclaimsninja.com",
-    "https://theclaimsninja.com",
-    "https://claims-ninja-website.vercel.app",
-  ];
-
-  return Array.from(new Set([...configured, ...(site ? [site] : []), ...defaults]));
-}

@@ -333,9 +333,9 @@ export function HeroClaimIntakeCard({
     <div className="relative">
       <div
         aria-hidden
-        className="pointer-events-none absolute -inset-8 rounded-[2rem] bg-[radial-gradient(circle_at_50%_40%,rgba(220,38,38,0.28),transparent_62%)] blur-2xl"
+        className="pointer-events-none absolute -inset-8 rounded-[2rem] bg-[radial-gradient(circle_at_50%_40%,rgb(var(--brand-red-rgb)_/_0.28),transparent_62%)] blur-2xl"
       />
-      <div className="relative rounded-2xl border border-white/12 bg-gradient-to-b from-[#1a1a1a] to-[#121212] p-5 shadow-[0_30px_80px_-40px_rgba(220,38,38,0.55)] ring-1 ring-white/5 sm:p-6">
+      <div className="relative rounded-2xl border border-white/12 bg-gradient-to-b from-brand-surface to-brand-elevated p-5 shadow-[0_30px_80px_-40px_rgb(var(--brand-red-rgb)_/_0.55)] ring-1 ring-white/5 sm:p-6">
         <h2 className="font-display text-2xl font-semibold text-white sm:text-[1.7rem]">
           {content.cardTitle}
         </h2>
@@ -351,7 +351,7 @@ export function HeroClaimIntakeCard({
             <div
               role="group"
               aria-label="What are you submitting?"
-              className="grid grid-cols-2 overflow-hidden rounded-lg border border-white/15"
+              className="grid grid-cols-2 divide-x divide-white/15 overflow-hidden rounded-lg border border-white/15"
             >
               {(
                 [
@@ -369,10 +369,10 @@ export function HeroClaimIntakeCard({
                     setResumeMessage(null);
                   }}
                   className={cn(
-                    "px-3 py-2.5 text-sm font-medium transition",
+                    "px-3 py-2.5 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-red-light",
                     claimMode === option.id
-                      ? "border border-brand-red bg-brand-red/10 text-white"
-                      : "border border-transparent text-zinc-400 hover:text-zinc-200",
+                      ? "bg-brand-red/10 text-white ring-1 ring-inset ring-brand-red"
+                      : "bg-transparent text-zinc-400 hover:bg-white/[0.03] hover:text-zinc-200",
                   )}
                 >
                   {option.label}
@@ -405,7 +405,7 @@ export function HeroClaimIntakeCard({
                 type="button"
                 disabled={resumeBusy}
                 onClick={() => void handleResumeRequest()}
-                className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-brand-red to-brand-red-deep px-5 py-3.5 text-base font-semibold text-white shadow-[0_14px_40px_-18px_rgba(220,38,38,0.95)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light disabled:opacity-60"
+                className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-brand-red to-brand-red-deep px-5 py-3.5 text-base font-semibold text-white shadow-[0_14px_40px_-18px_rgb(var(--brand-red-rgb)_/_0.95)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light disabled:opacity-60"
               >
                 {resumeBusy ? "Sending…" : "Send resume link →"}
               </button>
@@ -461,7 +461,7 @@ export function HeroClaimIntakeCard({
                 type="button"
                 disabled={submitting || uploading}
                 onClick={() => void handleContinue()}
-                className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-brand-red to-brand-red-deep px-5 py-3.5 text-base font-semibold text-white shadow-[0_14px_40px_-18px_rgba(220,38,38,0.95)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light disabled:opacity-60"
+                className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-brand-red to-brand-red-deep px-5 py-3.5 text-base font-semibold text-white shadow-[0_14px_40px_-18px_rgb(var(--brand-red-rgb)_/_0.95)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light disabled:opacity-60"
               >
                 {submitting ? "Starting…" : content.continueCta}
               </button>

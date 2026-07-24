@@ -1,11 +1,11 @@
-/** Nearly-black hero environment: centered red glow + faint perspective grid. */
+/** Nearly-black hero environment: centered brand-red glow + faint perspective grid. */
 
 export function HeroBackdrop() {
   return (
     <div className="pointer-events-none absolute inset-0" aria-hidden>
-      <div className="absolute inset-0 bg-[#050505]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_62%_42%,rgba(220,38,38,0.22),transparent_70%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_35%_at_55%_48%,rgba(185,28,28,0.12),transparent_65%)]" />
+      <div className="absolute inset-0 bg-brand-black" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_62%_42%,rgb(var(--brand-red-rgb)_/_0.22),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_35%_at_55%_48%,rgb(var(--brand-red-rgb)_/_0.12),transparent_65%)]" />
       <div
         className="absolute inset-x-0 bottom-0 h-[55%] opacity-[0.14]"
         style={{

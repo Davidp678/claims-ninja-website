@@ -9,6 +9,7 @@ import { localizePath } from "@/lib/i18n/paths";
 import { useMarketingLocale } from "@/lib/i18n/use-marketing-locale";
 import { MAIN_NAV } from "@/lib/navigation";
 import { cn } from "@/lib/cn";
+import { Button } from "@/components/ui/Button";
 
 import { LanguageToggle } from "./LanguageToggle";
 import { MobileNavMenu } from "./MobileNavMenu";
@@ -40,8 +41,8 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-white/12 bg-brand-black/90 py-2 backdrop-blur-xl"
-          : "border-b border-white/10 bg-transparent py-3",
+          ? "border-b border-white/15 bg-brand-black/85 py-1 backdrop-blur-xl"
+          : "bg-transparent py-2",
       )}
     >
       <nav
@@ -56,14 +57,14 @@ export function Navbar() {
           <Image
             src="/logo.png"
             alt={SITE.name}
-            width={160}
-            height={40}
+            width={96}
+            height={96}
             priority
-            className="h-8 w-auto md:h-9"
+            className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24"
           />
         </Link>
 
-        <ul className="hidden items-center gap-5 md:flex lg:gap-7">
+        <ul className="hidden items-center gap-4 md:flex md:gap-5 lg:gap-6 xl:gap-8">
           {nav.map((entry) =>
             entry.type === "dropdown" ? (
               <NavDropdown
@@ -85,22 +86,16 @@ export function Navbar() {
           )}
         </ul>
 
-        <div className="hidden shrink-0 items-center gap-3 md:flex md:gap-4">
+        <div className="hidden shrink-0 items-center gap-3 md:flex md:gap-4 lg:gap-5">
           <LanguageToggle />
-          <Link
-            href="/login"
-            className="text-sm font-medium text-zinc-300 transition-colors hover:text-white"
-          >
-            {locale === "es" ? "Iniciar sesión" : "Log in"}
-          </Link>
-          <a
+          <Button
             href={CTA_LINKS.schedule}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-9 items-center justify-center rounded-lg border border-brand-red px-3.5 text-sm font-medium text-white transition hover:bg-brand-red/10"
+            size="sm"
+            external
+            className="rounded-full"
           >
             {locale === "es" ? ES_CTA_LABELS.scheduleCall : "Schedule Call"}
-          </a>
+          </Button>
         </div>
 
         <div className="flex shrink-0 items-center gap-2 md:hidden">
@@ -135,7 +130,7 @@ export function Navbar() {
       <div
         id="mobile-menu"
         className={cn(
-          "fixed inset-0 top-[3.75rem] z-40 overflow-y-auto bg-brand-black/95 backdrop-blur-xl transition-opacity md:hidden",
+          "fixed inset-0 top-20 z-40 overflow-y-auto bg-brand-black/95 backdrop-blur-xl transition-opacity md:hidden",
           menuOpen ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       >

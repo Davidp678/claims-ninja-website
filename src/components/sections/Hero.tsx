@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import type { Locale } from "@/lib/i18n/config";
 import { getHeroIntakeContent } from "@/lib/onboarding/content";
 import { Container } from "@/components/ui/Container";
@@ -95,8 +93,8 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
     >
       <HeroBackdrop />
 
-      <Container className="relative z-10 grid grid-cols-1 gap-12 pb-10 pt-28 sm:gap-14 sm:pb-12 sm:pt-32 lg:grid-cols-[minmax(0,1.05fr)_minmax(440px,520px)] lg:items-start lg:gap-x-16 lg:gap-y-12 lg:pb-14 lg:pt-32">
-        <div className="min-w-0 max-w-xl lg:max-w-none lg:pt-4">
+      <Container className="relative z-10 grid grid-cols-1 gap-12 pb-10 pt-28 sm:gap-14 sm:pb-12 sm:pt-32 lg:grid-cols-[minmax(0,1.05fr)_minmax(440px,520px)] lg:items-center lg:gap-x-16 lg:gap-y-12 lg:pb-14 lg:pt-32">
+        <div className="min-w-0 max-w-xl lg:max-w-none">
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red-light sm:text-xs">
             {content.eyebrow}
           </p>
@@ -124,23 +122,14 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
               </li>
             ))}
           </ul>
-
-          <p className="mt-8">
-            <Link
-              href="/login"
-              className="text-sm font-medium text-[#f3a5a5] transition hover:text-brand-red-light"
-            >
-              {content.loginLink}
-            </Link>
-          </p>
         </div>
 
-        <div className="w-full lg:mt-0">
+        <div className="w-full">
           <HeroClaimIntakeCard content={content} locale={locale} />
         </div>
 
         <div className="lg:col-span-2 lg:mx-auto lg:w-full lg:max-w-4xl">
-          <dl className="grid grid-cols-1 divide-y divide-white/10 rounded-2xl border border-white/12 bg-[#121212]/90 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <dl className="grid grid-cols-1 divide-y divide-white/10 rounded-2xl border border-white/12 bg-brand-elevated/90 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {stats.map((stat) => (
               <div
                 key={stat.label}

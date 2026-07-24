@@ -20,6 +20,8 @@ Without these, onboarding APIs return `503 EXTERNAL_INTAKE_NOT_CONFIGURED`.
 | `EXTERNAL_INTAKE_STAGING_ONLY` | unset | When `true`, refuse production platform hosts / production Supabase refs |
 | `EXTERNAL_INTAKE_ALLOWED_ORIGINS` | (built-in localhost + production site) | Comma-separated extra Origins for CSRF Origin checks |
 | `NEXT_PUBLIC_SITE_URL` | production site URL | Included in Origin allowlist |
+
+On Vercel Preview (`VERCEL_ENV=preview`), the current deployment host (`VERCEL_URL`) and branch alias (`VERCEL_BRANCH_URL`, when set) are auto-added to the CSRF Origin allowlist. Production never auto-allows Preview hosts. Do not use `*.vercel.app` wildcards.
 | `NEXT_PUBLIC_PLATFORM_URL` | `https://app.theclaimsninja.com` | Client redirect base after handoff mint |
 
 ## Staging validation

@@ -1,7 +1,7 @@
 import { randomBytes, timingSafeEqual } from "node:crypto";
 
 import { INTAKE_CSRF_COOKIE, INTAKE_CSRF_HEADER } from "./constants";
-import { getAllowedOrigins } from "./config";
+import { getAllowedOrigins } from "./allowed-origins";
 
 export function createCsrfToken(): string {
   return randomBytes(32).toString("hex");
