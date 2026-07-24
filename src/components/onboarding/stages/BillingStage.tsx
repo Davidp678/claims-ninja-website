@@ -28,19 +28,51 @@ const US_STATES = [
 type BillingStatus = {
   captureEnabled: boolean;
   continueAllowed: boolean;
+  previewSyntheticEnabled?: boolean;
+  integrationPending?: boolean;
+  message?: string | null;
   reason?: string | null;
   contact?: BillingContactDraft;
   address?: BillingAddressDraft;
+  authorization?: {
+    acceptanceLanguage?: string;
+    accepted?: boolean;
+    legalApprovalPending?: boolean;
+  };
+  hostedFieldSession?: {
+    status?: string;
+    message?: string;
+    mountRegions?: string[];
+  };
+  instrument?: {
+    isSynthetic?: boolean;
+    maskedDisplay?: string | null;
+  } | null;
+  noChargeDuringOnboarding?: boolean;
+  manualChargesOnly?: boolean;
+  noPaymentCollectedInPreview?: boolean;
 };
 
-function digitsOnly(value: string, max: number) {
-  return value.replace(/\D/g, "").slice(0, max);
-}
-
-function maskAccountDisplay(digits: string) {
-  if (!digits) return "";
-  if (digits.length <= 4) return digits;
-  return `${"•".repeat(digits.length - 4)}${digits.slice(-4)}`;
+function HostedFieldPlaceholder({
+  label,
+  hint,
+}: {
+  label: string;
+  hint: string;
+}) {
+  return (
+    <div
+      className="rounded-xl border border-dashed border-white/20 bg-brand-black/50 px-4 py-5"
+      aria-label={`${label} — secure processor field placeholder`}
+    >
+      <p className="text-sm font-medium text-zinc-200">{label}</p>
+      <p className="mt-1 text-xs text-zinc-500">{hint}</p>
+      <div
+        className="mt-3 h-11 rounded-lg border border-white/10 bg-white/[0.03]"
+        aria-hidden
+      />
+    </div>
+  );
 }
 
 export function BillingStage() {
@@ -50,24 +82,10 @@ export function BillingStage() {
   const [status, setStatus] = useState<BillingStatus | null>(null);
   const [contact, setContact] = useState<BillingContactDraft>({});
   const [address, setAddress] = useState<BillingAddressDraft>({});
-  const [methodTab, setMethodTab] = useState<"card" | "bank">("card");
+  const [methodTab, setMethodTab] = useState<"card" | "ach">("card");
   const [authorized, setAuthorized] = useState(false);
   const [busy, setBusy] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
-
-  // Card fields — UI / BFF only; never autosaved to session.
-  const [nameOnCard, setNameOnCard] = useState("");
-  const [cardNumber, setCardNumber] = useState("");
-  const [expiration, setExpiration] = useState("");
-  const [cvv, setCvv] = useState("");
-
-  // Bank fields — UI / BFF only; never autosaved to session.
-  const [bankName, setBankName] = useState("");
-  const [businessNameOnAccount, setBusinessNameOnAccount] = useState("");
-  const [accountType, setAccountType] = useState<"checking" | "savings" | "">("");
-  const [routingNumber, setRoutingNumber] = useState("");
-  const [accountNumber, setAccountNumber] = useState("");
-  const [accountFocused, setAccountFocused] = useState(false);
 
   useEffect(() => {
     void (async () => {
@@ -78,11 +96,17 @@ export function BillingStage() {
         setStatus(result.data);
         setContact(result.data.contact ?? session?.billingContact ?? {});
         setAddress(result.data.address ?? session?.billingAddress ?? {});
+        if (result.data.authorization?.accepted) {
+          setAuthorized(true);
+        }
       } else {
         setStatus({
           captureEnabled: false,
           continueAllowed: false,
+          integrationPending: true,
           reason: "PAYMENT_CAPTURE_DISABLED",
+          message:
+            "Secure billing setup is being finalized. No payment information is collected in this preview.",
         });
       }
     })();
@@ -126,93 +150,40 @@ export function BillingStage() {
     });
   }
 
-  function validateInstrument(): string | null {
-    if (!authorized) {
-      return "Confirm payment authorization to continue.";
-    }
-    if (methodTab === "card") {
-      if (!nameOnCard.trim()) return "Enter the name on the card.";
-      if (digitsOnly(cardNumber, 19).length < 13) {
-        return "Enter a valid card number.";
-      }
-      if (!/^\d{2}\s*\/\s*\d{2}$/.test(expiration.trim())) {
-        return "Enter expiration as MM / YY.";
-      }
-      if (digitsOnly(cvv, 4).length < 3) {
-        return "Enter the security code.";
-      }
-      return null;
-    }
-    if (!bankName.trim()) return "Enter the bank name.";
-    if (!businessNameOnAccount.trim()) {
-      return "Enter the business name on the account.";
-    }
-    if (!accountType) return "Select an account type.";
-    if (routingNumber.length !== 9) {
-      return "Routing number must be 9 digits.";
-    }
-    if (accountNumber.length < 4) {
-      return "Enter a valid account number.";
-    }
-    return null;
-  }
-
   async function handleContinue() {
     setLocalError(null);
-    if (!status?.captureEnabled) {
-      setLocalError(
-        "Payment capture is not configured yet. Contact and address can be saved, but you cannot continue until payment capture is enabled.",
-      );
-      return;
-    }
-
-    const validationError = validateInstrument();
-    if (validationError) {
-      setLocalError(validationError);
+    if (!authorized) {
+      setLocalError("Confirm billing authorization to continue.");
       return;
     }
 
     setBusy(true);
 
-    const tokenPayload =
-      methodTab === "card"
-        ? {
-            nameOnCard: nameOnCard.trim(),
-            cardNumber: digitsOnly(cardNumber, 19),
-            expiration: expiration.trim(),
-            cvv: digitsOnly(cvv, 4),
-            authorized: true,
-          }
-        : {
-            bankName: bankName.trim(),
-            businessNameOnAccount: businessNameOnAccount.trim(),
-            accountType,
-            routingNumber,
-            accountNumber,
-            authorized: true,
-          };
-
-    const vault = await onboardingFetchJson<{
-      instrument?: { id?: string; status?: string };
-      version?: number;
-    }>("/api/onboarding/billing/instruments", {
+    const authz = await onboardingFetchJson<{
+      sessionVersion?: number;
+    }>("/api/onboarding/billing/authorization", {
       method: "POST",
       json: {
         expectedVersion: version,
-        method: methodTab,
-        tokenPayload,
+        acceptanceLanguage: status?.authorization?.acceptanceLanguage,
+        signerName: contact.name,
+        signerEmail: contact.email,
       },
     });
-
-    if (!vault.ok) {
+    if (!authz.ok) {
       setBusy(false);
-      setLocalError(vault.message);
+      setLocalError(authz.message);
       return;
     }
 
-    const cont = await onboardingFetchJson("/api/onboarding/billing/continue", {
+    const cont = await onboardingFetchJson<{
+      noPaymentCollected?: boolean;
+    }>("/api/onboarding/billing/continue", {
       method: "POST",
-      json: { expectedVersion: vault.data.version ?? version },
+      json: {
+        expectedVersion: authz.data.sessionVersion ?? version,
+        methodType: methodTab,
+      },
     });
     setBusy(false);
     if (!cont.ok) {
@@ -240,26 +211,48 @@ export function BillingStage() {
     session.company?.legalCompanyName ||
     session.company?.dbaName ||
     "your company";
-  const captureEnabled = Boolean(status?.captureEnabled);
-  const continueBlocked = !captureEnabled || busy;
+  const integrationPending = status?.integrationPending !== false;
+  const previewContinue =
+    Boolean(status?.previewSyntheticEnabled) || Boolean(status?.continueAllowed);
+  const authLanguage =
+    status?.authorization?.acceptanceLanguage ??
+    "I authorize Claims Ninja billing staff to initiate charges manually under the signed agreement and approved invoice or workflow terms. No charge occurs during this onboarding. Adding a payment method does not itself create a charge. [Staging preview — final billing-authorization wording awaiting legal approval.]";
 
   return (
     <OnboardingShell
       stage="billing"
-      title="Billing Information"
-      description={`Add billing details for ${company}.`}
+      title="Billing setup"
+      description={`Confirm billing details for ${company}. No charge happens during onboarding.`}
       saveState={saveState}
       onSaveExit={() => void saveExit()}
-      continueLabel="Save billing & continue to account →"
-      onContinue={() => void handleContinue()}
-      continueDisabled={continueBlocked || (captureEnabled && !authorized)}
-      continueLoading={busy}
-      hint={
-        captureEnabled
-          ? "You can return and finish later."
-          : "Payment capture unavailable — continue blocked."
+      continueLabel={
+        previewContinue
+          ? "Save & continue →"
+          : "Billing setup pending"
       }
+      onContinue={() => void handleContinue()}
+      continueDisabled={busy || !authorized || !previewContinue}
+      continueLoading={busy}
+      hint="Manual charges only — after onboarding is complete."
     >
+      <div
+        className="mb-6 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-100"
+        role="status"
+        aria-live="polite"
+      >
+        <p className="font-medium">Secure billing setup is being finalized.</p>
+        <p className="mt-1 text-amber-100/80">
+          No payment information is collected in this preview. Claims Ninja never
+          stores card or bank account numbers here.
+        </p>
+      </div>
+
+      {(localError || status?.message) && (
+        <p className="mb-4 text-sm text-brand-red-light" role="alert">
+          {localError ?? status?.message}
+        </p>
+      )}
+
       <div className="grid gap-6 lg:grid-cols-2">
         <SectionCard title="Billing contact">
           <div className="space-y-4">
@@ -269,6 +262,7 @@ export function BillingStage() {
                 id="billingName"
                 value={contact.name ?? ""}
                 onChange={(e) => updateContact("name", e.target.value)}
+                autoComplete="name"
               />
             </div>
             <div>
@@ -278,6 +272,7 @@ export function BillingStage() {
                 type="email"
                 value={contact.email ?? ""}
                 onChange={(e) => updateContact("email", e.target.value)}
+                autoComplete="email"
               />
             </div>
             <div>
@@ -286,6 +281,7 @@ export function BillingStage() {
                 id="billingPhone"
                 value={contact.phone ?? ""}
                 onChange={(e) => updateContact("phone", e.target.value)}
+                autoComplete="tel"
               />
             </div>
             <label className="flex items-center gap-2 text-sm text-zinc-300">
@@ -316,38 +312,29 @@ export function BillingStage() {
               Billing address is the same as company address
             </label>
           </div>
+        </SectionCard>
 
-          <h3 className="mb-3 mt-6 text-sm font-semibold text-white">
-            Billing address
-          </h3>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="sm:col-span-2">
+        <SectionCard title="Billing address">
+          <div className="space-y-4">
+            <div>
               <FieldLabel htmlFor="street">Street address</FieldLabel>
               <TextInput
                 id="street"
                 value={address.streetAddress ?? ""}
                 onChange={(e) => updateAddress("streetAddress", e.target.value)}
+                autoComplete="street-address"
               />
             </div>
-            <div className="sm:col-span-2">
-              <FieldLabel htmlFor="suite" optional>
-                Suite / unit
-              </FieldLabel>
-              <TextInput
-                id="suite"
-                value={address.suite ?? ""}
-                onChange={(e) => updateAddress("suite", e.target.value)}
-              />
-            </div>
-            <div>
-              <FieldLabel htmlFor="city">City</FieldLabel>
-              <TextInput
-                id="city"
-                value={address.city ?? ""}
-                onChange={(e) => updateAddress("city", e.target.value)}
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <FieldLabel htmlFor="city">City</FieldLabel>
+                <TextInput
+                  id="city"
+                  value={address.city ?? ""}
+                  onChange={(e) => updateAddress("city", e.target.value)}
+                  autoComplete="address-level2"
+                />
+              </div>
               <div>
                 <FieldLabel htmlFor="state">State</FieldLabel>
                 <SelectInput
@@ -355,245 +342,111 @@ export function BillingStage() {
                   value={address.state ?? ""}
                   onChange={(e) => updateAddress("state", e.target.value)}
                 >
-                  <option value="">State</option>
-                  {US_STATES.map((s) => (
-                    <option key={s} value={s}>
-                      {s}
+                  <option value="">Select</option>
+                  {US_STATES.map((st) => (
+                    <option key={st} value={st}>
+                      {st}
                     </option>
                   ))}
                 </SelectInput>
               </div>
-              <div>
-                <FieldLabel htmlFor="zip">ZIP code</FieldLabel>
-                <TextInput
-                  id="zip"
-                  value={address.postalCode ?? ""}
-                  onChange={(e) => updateAddress("postalCode", e.target.value)}
-                />
-              </div>
+            </div>
+            <div>
+              <FieldLabel htmlFor="postal">ZIP</FieldLabel>
+              <TextInput
+                id="postal"
+                value={address.postalCode ?? ""}
+                onChange={(e) => updateAddress("postalCode", e.target.value)}
+                autoComplete="postal-code"
+              />
             </div>
           </div>
         </SectionCard>
-
-        <SectionCard title="Payment method">
-          {!captureEnabled ? (
-            <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-100">
-              <p className="font-semibold">Payment capture unavailable</p>
-              <p className="mt-2 text-amber-100/85">
-                Payment vault configuration is pending. Card and bank details are
-                not collected while payment capture is disabled. Your billing
-                contact and address can still be saved. Continue to account
-                remains blocked until an approved payment vault is configured.
-              </p>
-              {status?.reason ? (
-                <p className="mt-3 text-xs text-amber-200/70">
-                  Reason: {status.reason}
-                </p>
-              ) : null}
-            </div>
-          ) : (
-            <>
-              <div className="mb-4 flex gap-2 border-b border-white/10">
-                {(
-                  [
-                    ["card", "Card"],
-                    ["bank", "Bank account"],
-                  ] as const
-                ).map(([id, label]) => (
-                  <button
-                    key={id}
-                    type="button"
-                    onClick={() => setMethodTab(id)}
-                    className={`-mb-px border-b-2 px-3 py-2 text-sm font-medium transition ${
-                      methodTab === id
-                        ? "border-brand-red text-white"
-                        : "border-transparent text-zinc-500 hover:text-zinc-300"
-                    }`}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-
-              {methodTab === "card" ? (
-                <div className="space-y-4">
-                  <div>
-                    <FieldLabel htmlFor="nameOnCard">Name on card</FieldLabel>
-                    <TextInput
-                      id="nameOnCard"
-                      autoComplete="cc-name"
-                      value={nameOnCard}
-                      onChange={(e) => setNameOnCard(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <FieldLabel htmlFor="cardNumber">Card number</FieldLabel>
-                    <TextInput
-                      id="cardNumber"
-                      autoComplete="cc-number"
-                      inputMode="numeric"
-                      placeholder="•••• •••• •••• ••••"
-                      pattern="[0-9 ]{13,23}"
-                      value={cardNumber}
-                      onChange={(e) =>
-                        setCardNumber(digitsOnly(e.target.value, 19))
-                      }
-                    />
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <FieldLabel htmlFor="exp">Expiration</FieldLabel>
-                      <TextInput
-                        id="exp"
-                        autoComplete="cc-exp"
-                        placeholder="MM / YY"
-                        value={expiration}
-                        onChange={(e) => {
-                          const digits = digitsOnly(e.target.value, 4);
-                          if (digits.length <= 2) {
-                            setExpiration(digits);
-                            return;
-                          }
-                          setExpiration(`${digits.slice(0, 2)} / ${digits.slice(2)}`);
-                        }}
-                      />
-                    </div>
-                    <div>
-                      <FieldLabel htmlFor="cvv">Security code</FieldLabel>
-                      <TextInput
-                        id="cvv"
-                        autoComplete="cc-csc"
-                        inputMode="numeric"
-                        placeholder="•••"
-                        pattern="[0-9]{3,4}"
-                        value={cvv}
-                        onChange={(e) => setCvv(digitsOnly(e.target.value, 4))}
-                      />
-                      <p className="mt-1 text-xs text-zinc-500">
-                        Used for verification only. CVV is never stored.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  <div>
-                    <FieldLabel htmlFor="bankName">Bank name</FieldLabel>
-                    <TextInput
-                      id="bankName"
-                      autoComplete="off"
-                      value={bankName}
-                      onChange={(e) => setBankName(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <FieldLabel htmlFor="businessNameOnAccount">
-                      Business name on account
-                    </FieldLabel>
-                    <TextInput
-                      id="businessNameOnAccount"
-                      autoComplete="off"
-                      value={businessNameOnAccount}
-                      onChange={(e) => setBusinessNameOnAccount(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <FieldLabel htmlFor="accountType">Account type</FieldLabel>
-                    <SelectInput
-                      id="accountType"
-                      value={accountType}
-                      onChange={(e) =>
-                        setAccountType(
-                          e.target.value as "checking" | "savings" | "",
-                        )
-                      }
-                    >
-                      <option value="">Select account type</option>
-                      <option value="checking">Checking</option>
-                      <option value="savings">Savings</option>
-                    </SelectInput>
-                  </div>
-                  <div>
-                    <FieldLabel htmlFor="routing">Routing number</FieldLabel>
-                    <TextInput
-                      id="routing"
-                      inputMode="numeric"
-                      autoComplete="off"
-                      placeholder="•••••••••"
-                      pattern="[0-9]{9}"
-                      maxLength={9}
-                      value={routingNumber}
-                      onChange={(e) =>
-                        setRoutingNumber(digitsOnly(e.target.value, 9))
-                      }
-                    />
-                    <p className="mt-1 text-xs text-zinc-500">
-                      9-digit ABA routing number.
-                    </p>
-                  </div>
-                  <div>
-                    <FieldLabel htmlFor="accountNumber">Account number</FieldLabel>
-                    <TextInput
-                      id="accountNumber"
-                      inputMode="numeric"
-                      autoComplete="off"
-                      placeholder="••••••••••••"
-                      pattern="[0-9]{4,17}"
-                      maxLength={17}
-                      value={
-                        accountFocused
-                          ? accountNumber
-                          : maskAccountDisplay(accountNumber)
-                      }
-                      onFocus={() => setAccountFocused(true)}
-                      onBlur={() => setAccountFocused(false)}
-                      onChange={(e) => {
-                        const next = accountFocused
-                          ? digitsOnly(e.target.value, 17)
-                          : digitsOnly(
-                              e.target.value.replace(/•/g, ""),
-                              17,
-                            );
-                        setAccountNumber(next);
-                      }}
-                    />
-                    <p className="mt-1 text-xs text-zinc-500">
-                      Shown masked when not focused. Never stored in session
-                      drafts.
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              <div className="mt-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3 text-sm text-emerald-100">
-                Stored securely for organization billing. Payment details are
-                encrypted, masked, role-restricted, and logged when accessed.
-              </div>
-              <label className="mt-4 flex items-start gap-3 text-sm text-zinc-200">
-                <input
-                  type="checkbox"
-                  checked={authorized}
-                  onChange={(e) => setAuthorized(e.target.checked)}
-                  className="mt-1 h-4 w-4 rounded border-white/30 bg-brand-black text-brand-red"
-                />
-                <span>
-                  I authorize Claims Ninja to store and use this payment method for
-                  charges permitted by the Consulting Agreement.
-                </span>
-              </label>
-              <p className="mt-3 text-xs text-zinc-500">
-                You can update this payment method later in Organization settings.
-              </p>
-            </>
-          )}
-        </SectionCard>
       </div>
 
-      {(localError || error) && (
-        <p className="mt-4 text-sm text-brand-red-light" role="alert">
-          {localError || error}
+      <SectionCard title="Payment method" className="mt-6">
+        <div className="mb-4 flex gap-2" role="tablist" aria-label="Payment method type">
+          {(
+            [
+              ["card", "Card"],
+              ["ach", "Bank (ACH)"],
+            ] as const
+          ).map(([id, label]) => (
+            <button
+              key={id}
+              type="button"
+              role="tab"
+              aria-selected={methodTab === id}
+              onClick={() => setMethodTab(id)}
+              className={
+                methodTab === id
+                  ? "rounded-lg bg-brand-red px-3 py-1.5 text-sm text-white"
+                  : "rounded-lg border border-white/15 px-3 py-1.5 text-sm text-zinc-300"
+              }
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        <p className="mb-4 text-sm text-zinc-400">
+          Future secure fields will be provided by the payment processor. Claims
+          Ninja will never see full card or bank numbers.
         </p>
-      )}
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          {methodTab === "card" ? (
+            <>
+              <HostedFieldPlaceholder
+                label="Card number"
+                hint="Processor-hosted field — not editable in preview"
+              />
+              <HostedFieldPlaceholder
+                label="Security code"
+                hint="Processor-hosted field — not editable in preview"
+              />
+            </>
+          ) : (
+            <>
+              <HostedFieldPlaceholder
+                label="Routing number"
+                hint="Processor-hosted field — not editable in preview"
+              />
+              <HostedFieldPlaceholder
+                label="Account number"
+                hint="Processor-hosted field — not editable in preview"
+              />
+            </>
+          )}
+        </div>
+
+        {integrationPending ? (
+          <p className="mt-4 text-xs text-zinc-500">
+            Status: integration pending · Manual charges only ·{" "}
+            {status?.hostedFieldSession?.status === "synthetic_only"
+              ? "Preview continuation available"
+              : "Awaiting provider connection"}
+          </p>
+        ) : null}
+      </SectionCard>
+
+      <SectionCard title="Billing authorization" className="mt-6">
+        <label className="flex gap-3 text-sm leading-relaxed text-zinc-200">
+          <input
+            type="checkbox"
+            checked={authorized}
+            onChange={(e) => setAuthorized(e.target.checked)}
+            className="mt-1 h-4 w-4 shrink-0 rounded border-white/30 bg-brand-black text-brand-red"
+          />
+          <span>{authLanguage}</span>
+        </label>
+        {status?.authorization?.legalApprovalPending ? (
+          <p className="mt-3 text-xs text-zinc-500">
+            Final authorization wording is awaiting legal approval. This staging
+            acknowledgment is recorded for preview validation only.
+          </p>
+        ) : null}
+      </SectionCard>
     </OnboardingShell>
   );
 }

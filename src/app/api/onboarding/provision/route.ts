@@ -15,11 +15,12 @@ export async function GET() {
       return jsonError(401, "SESSION_UNAUTHORIZED", "No active intake session.");
     }
 
+    // Trigger idempotent saga when gates are ready (Activated stage).
     const { status, envelope } = await externalIntakeS2SJson(
       "GET",
       "/api/external-intake/v1/provision/status",
       undefined,
-      { searchParams: { intakeHandle } },
+      { searchParams: { intakeHandle, retry: "1" } },
     );
 
     return mapPlatformResponse(status, envelope);

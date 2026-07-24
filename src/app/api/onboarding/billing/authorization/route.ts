@@ -9,6 +9,26 @@ import { externalIntakeS2SJson } from "@/lib/onboarding/s2s";
 
 export const runtime = "nodejs";
 
+export async function GET() {
+  try {
+    const intakeHandle = await getIntakeHandleFromCookie();
+    if (!intakeHandle) {
+      return jsonError(401, "SESSION_UNAUTHORIZED", "No active intake session.");
+    }
+
+    const { status, envelope } = await externalIntakeS2SJson(
+      "GET",
+      "/api/external-intake/v1/billing/authorization",
+      undefined,
+      { searchParams: { intakeHandle } },
+    );
+
+    return mapPlatformResponse(status, envelope);
+  } catch (err) {
+    return handleOnboardingRouteError(err);
+  }
+}
+
 export async function POST(request: Request) {
   try {
     const security = assertMutationSecurity(request);
@@ -25,34 +45,18 @@ export async function POST(request: Request) {
     try {
       body = (await request.json()) as Record<string, unknown>;
     } catch {
-      body = {};
-    }
-
-    // Never accept raw instrument fields on continue.
-    const banned = [
-      "cardNumber",
-      "cvv",
-      "cvc",
-      "routingNumber",
-      "accountNumber",
-      "pan",
-      "tokenPayload",
-    ];
-    if (banned.some((k) => k in body)) {
-      return jsonError(
-        400,
-        "VALIDATION_ERROR",
-        "Raw payment fields are not accepted.",
-      );
+      return jsonError(400, "INVALID_JSON", "Invalid JSON body.");
     }
 
     const { status, envelope } = await externalIntakeS2SJson(
       "POST",
-      "/api/external-intake/v1/billing/continue",
+      "/api/external-intake/v1/billing/authorization",
       {
         intakeHandle,
         expectedVersion: body.expectedVersion,
-        methodType: body.methodType === "ach" ? "ach" : "card",
+        acceptanceLanguage: body.acceptanceLanguage,
+        signerName: body.signerName,
+        signerEmail: body.signerEmail,
       },
     );
 
