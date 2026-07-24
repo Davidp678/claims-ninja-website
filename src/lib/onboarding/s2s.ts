@@ -4,6 +4,7 @@ import { randomBytes } from "node:crypto";
 
 import { getExternalIntakeConfig } from "./config";
 import { getMissingExternalIntakeEnvNames } from "./env-check";
+import { getPlatformProtectionBypass } from "./platform-protection-bypass";
 import {
   buildCanonicalString,
   sha256Hex,
@@ -131,6 +132,14 @@ export async function externalIntakeS2SRequest<T>(
     headers["Idempotency-Key"] = options.idempotencyKey;
   }
 
+  // Preview Platform deployments sit behind Vercel Deployment Protection.
+  // Browser SSO cookies do not apply to server-side S2S fetch — attach the
+  // Platform automation bypass when configured (never set-bypass-cookie).
+  const platformBypass = getPlatformProtectionBypass(url.hostname);
+  if (platformBypass) {
+    headers["x-vercel-protection-bypass"] = platformBypass;
+  }
+
   const response = await fetch(url, {
     method: options.method,
     headers,
@@ -143,12 +152,20 @@ export async function externalIntakeS2SRequest<T>(
   try {
     envelope = JSON.parse(rawText) as PlatformEnvelope<T>;
   } catch {
+    const looksLikeProtection =
+      response.status === 401 ||
+      response.status === 403 ||
+      /vercel|authentication required|login/i.test(rawText.slice(0, 400));
     envelope = {
       ok: false,
       data: null,
       error: {
-        code: "INVALID_PLATFORM_RESPONSE",
-        message: "Platform returned a non-JSON response.",
+        code: looksLikeProtection
+          ? "PLATFORM_PROTECTION_BLOCKED"
+          : "INVALID_PLATFORM_RESPONSE",
+        message: looksLikeProtection
+          ? "Platform Preview blocked the server-to-server request (Deployment Protection)."
+          : "Platform returned a non-JSON response.",
         retryable: true,
       },
     };

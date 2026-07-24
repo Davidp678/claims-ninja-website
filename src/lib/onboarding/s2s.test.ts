@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
+import { getPlatformProtectionBypass } from "./platform-protection-bypass";
 import {
   buildCanonicalString,
   safeEqualHex,
@@ -54,4 +55,27 @@ test("signCanonical is deterministic for a fixed secret", () => {
   assert.equal(a.length, 64);
   assert.equal(safeEqualHex(a, b), true);
   assert.equal(safeEqualHex(a, "00".repeat(32)), false);
+});
+
+test("attaches Platform Preview protection bypass only on allowed hosts", () => {
+  const env = {
+    EXTERNAL_INTAKE_PLATFORM_PROTECTION_BYPASS: "preview-bypass-secret",
+  };
+  assert.equal(
+    getPlatformProtectionBypass(
+      "claims-ninja-platform-git-feat-exter.vercel.app",
+      env,
+    ),
+    "preview-bypass-secret",
+  );
+  assert.equal(getPlatformProtectionBypass("127.0.0.1", env), "preview-bypass-secret");
+  assert.equal(
+    getPlatformProtectionBypass("app.theclaimsninja.com", env),
+    undefined,
+  );
+  assert.equal(getPlatformProtectionBypass("evil.example.com", env), undefined);
+  assert.equal(
+    getPlatformProtectionBypass("claims-ninja-platform.vercel.app", {}),
+    undefined,
+  );
 });

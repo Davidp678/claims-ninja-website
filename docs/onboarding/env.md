@@ -9,8 +9,9 @@ Set these in `.env.local` (local) or Vercel project settings (preview/production
 | `EXTERNAL_INTAKE_PLATFORM_URL` | Platform origin, e.g. `https://app.theclaimsninja.com` (no trailing slash) |
 | `EXTERNAL_INTAKE_CREDENTIAL_ID` | S2S credential id (`X-CN-Credential-Id`) |
 | `EXTERNAL_INTAKE_CREDENTIAL_SECRET` | S2S HMAC secret (server-only) |
+| `EXTERNAL_INTAKE_PLATFORM_PROTECTION_BYPASS` | Optional. Platform Preview **Protection Bypass for Automation** secret. Website BFF sends `x-vercel-protection-bypass` on S2S calls to `*.vercel.app` / localhost only (never Production hosts). Keep distinct from any Website inbound automation bypass. |
 
-Without these, onboarding APIs return `503 EXTERNAL_INTAKE_NOT_CONFIGURED`.
+Without the three required S2S variables, onboarding APIs return `503 EXTERNAL_INTAKE_NOT_CONFIGURED`.
 
 ## Optional / feature flags
 

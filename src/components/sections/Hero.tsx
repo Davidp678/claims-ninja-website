@@ -1,65 +1,11 @@
 import type { Locale } from "@/lib/i18n/config";
-import { getHeroIntakeContent } from "@/lib/onboarding/content";
+import {
+  getHeroIntakeContent,
+  type HeroProofMetric,
+} from "@/lib/onboarding/content";
 import { Container } from "@/components/ui/Container";
 import { HeroBackdrop } from "./HeroBackdrop";
 import { HeroClaimIntakeCard } from "./HeroClaimIntakeCard";
-
-type StatIconName = "clock" | "trend" | "calendar";
-
-const STAT_ICONS: StatIconName[] = ["clock", "trend", "calendar"];
-
-function StatIcon({ name, className }: { name: StatIconName; className?: string }) {
-  switch (name) {
-    case "clock":
-      return (
-        <svg
-          aria-hidden
-          viewBox="0 0 24 24"
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="12" cy="12" r="9" />
-          <path d="M12 7v5l3 2" />
-        </svg>
-      );
-    case "trend":
-      return (
-        <svg
-          aria-hidden
-          viewBox="0 0 24 24"
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M3 17 9 11l4 4 8-8" />
-          <path d="M14 7h6v6" />
-        </svg>
-      );
-    case "calendar":
-      return (
-        <svg
-          aria-hidden
-          viewBox="0 0 24 24"
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <rect x="4" y="5" width="16" height="15" rx="2" />
-          <path d="M8 3v4M16 3v4M4 10h16" />
-        </svg>
-      );
-  }
-}
 
 function ShieldIcon({ className }: { className?: string }) {
   return (
@@ -79,12 +25,29 @@ function ShieldIcon({ className }: { className?: string }) {
   );
 }
 
+function RedDot() {
+  return (
+    <span
+      aria-hidden
+      className="mx-2 inline-block h-1 w-1 shrink-0 rounded-full bg-brand-red-light sm:mx-2.5"
+    />
+  );
+}
+
+function ProofMetricText({ metric }: { metric: HeroProofMetric }) {
+  return (
+    <span className="whitespace-nowrap">
+      {metric.text}
+      {metric.accent ? (
+        <span className="text-brand-red-light">{metric.accent}</span>
+      ) : null}
+      {metric.suffix ?? null}
+    </span>
+  );
+}
+
 export function Hero({ locale = "en" }: { locale?: Locale }) {
   const content = getHeroIntakeContent(locale);
-  const stats = content.stats.map((stat, index) => ({
-    ...stat,
-    icon: STAT_ICONS[index] ?? "clock",
-  }));
 
   return (
     <section
@@ -108,46 +71,35 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             {content.subhead}
           </p>
 
-          <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-zinc-200">
-            {content.bullets.map((bullet, index) => (
-              <li key={bullet} className="flex items-center gap-2">
-                {index > 0 ? (
-                  <span
-                    aria-hidden
-                    className="mr-1 h-1.5 w-1.5 rounded-full bg-emerald-400"
-                  />
-                ) : null}
-                <ShieldIcon className="h-4 w-4 shrink-0 text-emerald-400" />
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-7 max-w-xl text-[13px] leading-snug text-zinc-300 sm:text-sm">
+            <ul className="flex flex-wrap items-center gap-y-2">
+              {content.bullets.map((bullet, index) => (
+                <li key={bullet} className="flex items-center">
+                  {index > 0 ? <RedDot /> : null}
+                  <ShieldIcon className="mr-1.5 h-3.5 w-3.5 shrink-0 text-emerald-400 sm:h-4 sm:w-4" />
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div
+              aria-hidden
+              className="my-3 h-px max-w-md bg-white/10"
+            />
+
+            <ul className="flex flex-wrap items-center gap-y-2 text-zinc-400">
+              {content.proofMetrics.map((metric, index) => (
+                <li key={`${metric.text}-${index}`} className="flex items-center">
+                  {index > 0 ? <RedDot /> : null}
+                  <ProofMetricText metric={metric} />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="w-full">
           <HeroClaimIntakeCard content={content} locale={locale} />
-        </div>
-
-        <div className="lg:col-span-2 lg:mx-auto lg:w-full lg:max-w-4xl">
-          <dl className="grid grid-cols-1 divide-y divide-white/10 rounded-2xl border border-white/12 bg-brand-elevated/90 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="flex items-start gap-3 px-5 py-5 sm:px-6 sm:py-6"
-              >
-                <StatIcon
-                  name={stat.icon}
-                  className="mt-0.5 h-5 w-5 shrink-0 text-brand-red-light"
-                />
-                <div className="min-w-0">
-                  <dd className="font-display text-xl font-semibold tracking-tight text-white sm:text-2xl">
-                    {stat.value}
-                  </dd>
-                  <dt className="mt-1 text-sm text-zinc-400">{stat.label}</dt>
-                </div>
-              </div>
-            ))}
-          </dl>
         </div>
       </Container>
     </section>
