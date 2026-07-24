@@ -110,6 +110,14 @@ export async function onboardingFetchJson<T>(
   return { ok: true, data: payload.data as T };
 }
 
+async function sha256HexOfFile(file: File): Promise<string> {
+  const buffer = await file.arrayBuffer();
+  const digest = await crypto.subtle.digest("SHA-256", buffer);
+  return Array.from(new Uint8Array(digest))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
 export async function onboardingUploadFile(
   file: File,
   expectedVersion: number,
@@ -119,6 +127,11 @@ export async function onboardingUploadFile(
   const form = new FormData();
   form.append("file", file);
   form.append("expectedVersion", String(expectedVersion));
+  try {
+    form.append("clientChecksumSha256", await sha256HexOfFile(file));
+  } catch {
+    // Platform still hashes the body; checksum is best-effort from the browser.
+  }
 
   const timeoutMs = options?.timeoutMs ?? ONBOARDING_UPLOAD_TIMEOUT_MS;
   const controller = new AbortController();

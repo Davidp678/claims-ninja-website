@@ -185,7 +185,7 @@ export function ChatWidget() {
     }
 
     const currentPath = pathname ?? "";
-    const delayMs = 2500 + Math.floor(Math.random() * 1501);
+    const delayMs = 20000;
     const timer = window.setTimeout(() => {
       setTeaserMessage(pickTeaserMessage(currentPath));
       setActiveTeaserPath(currentPath);

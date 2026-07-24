@@ -46,6 +46,12 @@ type HeroClaimIntakeCardProps = {
   locale?: string;
 };
 
+type SessionProjection = {
+  stage?: string;
+  version: number;
+  files?: IntakeFileSummary[];
+};
+
 function extOf(name: string) {
   return name.split(".").pop()?.toLowerCase() ?? "";
 }
@@ -76,6 +82,10 @@ export function HeroClaimIntakeCard({
   const [resumeMessage, setResumeMessage] = useState<string | null>(null);
   const [resumeBusy, setResumeBusy] = useState(false);
   const versionRef = useRef<number | null>(null);
+  const ensureSessionPromiseRef = useRef<Promise<
+    { ok: true; version: number } | { ok: false; message: string }
+  > | null>(null);
+  const mutationChainRef = useRef<Promise<void>>(Promise.resolve());
 
   const updateTracked = useCallback(
     (localId: string, patch: Partial<TrackedFile>) => {
@@ -86,6 +96,44 @@ export function HeroClaimIntakeCard({
     [],
   );
 
+  const syncVersion = useCallback((version: number) => {
+    versionRef.current = version;
+    setSessionVersion(version);
+  }, []);
+
+  function runSerialized<T>(fn: () => Promise<T>): Promise<T> {
+    const next = mutationChainRef.current.then(fn, fn);
+    mutationChainRef.current = next.then(
+      () => undefined,
+      () => undefined,
+    );
+    return next;
+  }
+
+  async function refreshSessionVersion(): Promise<
+    { ok: true; version: number; files?: IntakeFileSummary[] } | { ok: false; message: string }
+  > {
+    const current = await onboardingFetchJson<SessionProjection>(
+      "/api/onboarding/session",
+      { method: "GET" },
+    );
+    if (!current.ok) {
+      return { ok: false, message: current.message };
+    }
+    if (typeof current.data.version !== "number") {
+      return {
+        ok: false,
+        message: "Session version is unavailable. Refresh and try again.",
+      };
+    }
+    syncVersion(current.data.version);
+    return {
+      ok: true,
+      version: current.data.version,
+      files: current.data.files,
+    };
+  }
+
   async function ensureSession(claimDraft?: {
     propertyOrJobName?: string;
     lossType?: string;
@@ -94,30 +142,77 @@ export function HeroClaimIntakeCard({
       return { ok: true, version: versionRef.current };
     }
 
-    const created = await onboardingFetchJson<{
-      stage: string;
-      version: number;
-    }>("/api/onboarding/session", {
-      method: "POST",
-      json: {
-        source: "website_hero",
-        locale: locale === "es" ? "es-US" : "en-US",
-        claimDraft: claimDraft ?? {},
-      },
-    });
-
-    if (!created.ok) {
-      return { ok: false, message: created.message };
+    if (ensureSessionPromiseRef.current) {
+      return ensureSessionPromiseRef.current;
     }
 
-    versionRef.current = created.data.version ?? 1;
-    setSessionVersion(versionRef.current);
-    return { ok: true, version: versionRef.current };
+    ensureSessionPromiseRef.current = (async () => {
+      const existing = await onboardingFetchJson<SessionProjection>(
+        "/api/onboarding/session",
+        { method: "GET" },
+      );
+      if (existing.ok && typeof existing.data.version === "number") {
+        syncVersion(existing.data.version);
+        return { ok: true as const, version: existing.data.version };
+      }
+
+      if (existing.ok === false && existing.status !== 401) {
+        return { ok: false as const, message: existing.message };
+      }
+
+      const created = await onboardingFetchJson<{
+        stage: string;
+        version: number;
+      }>("/api/onboarding/session", {
+        method: "POST",
+        json: {
+          source: "website_hero",
+          locale: locale === "es" ? "es-US" : "en-US",
+          claimDraft: claimDraft ?? {},
+        },
+      });
+
+      if (!created.ok) {
+        return { ok: false as const, message: created.message };
+      }
+
+      const version = created.data.version;
+      if (typeof version !== "number") {
+        return {
+          ok: false as const,
+          message: "Session created without a version. Please retry.",
+        };
+      }
+      syncVersion(version);
+      return { ok: true as const, version };
+    })().finally(() => {
+      ensureSessionPromiseRef.current = null;
+    });
+
+    return ensureSessionPromiseRef.current;
   }
 
   async function uploadOne(localId: string, file: File, version: number) {
     updateTracked(localId, { securityState: "uploading", error: undefined });
-    const uploaded = await onboardingUploadFile(file, version);
+
+    let uploaded = await onboardingUploadFile(file, version);
+
+    if (
+      !uploaded.ok &&
+      uploaded.code === "VERSION_MISMATCH" &&
+      uploaded.status === 409
+    ) {
+      const refreshed = await refreshSessionVersion();
+      if (!refreshed.ok) {
+        updateTracked(localId, {
+          securityState: "failed",
+          error: uploaded.message,
+        });
+        return { ok: false as const, message: uploaded.message, version };
+      }
+      uploaded = await onboardingUploadFile(file, refreshed.version);
+    }
+
     if (!uploaded.ok) {
       updateTracked(localId, {
         securityState: "failed",
@@ -126,11 +221,28 @@ export function HeroClaimIntakeCard({
       return { ok: false as const, message: uploaded.message, version };
     }
 
-    if (typeof uploaded.data.version === "number") {
-      versionRef.current = uploaded.data.version;
-      setSessionVersion(uploaded.data.version);
+    if (typeof uploaded.data.version !== "number") {
+      const refreshed = await refreshSessionVersion();
+      if (!refreshed.ok) {
+        const message =
+          "Upload completed but session version could not be confirmed. Please retry.";
+        updateTracked(localId, {
+          securityState: "failed",
+          error: message,
+        });
+        return { ok: false as const, message, version };
+      }
+      updateTracked(localId, {
+        remoteId: uploaded.data.id,
+        filename: uploaded.data.filename,
+        sizeBytes: uploaded.data.sizeBytes,
+        securityState: uploaded.data.securityState,
+        error: undefined,
+      });
+      return { ok: true as const, version: refreshed.version };
     }
 
+    syncVersion(uploaded.data.version);
     updateTracked(localId, {
       remoteId: uploaded.data.id,
       filename: uploaded.data.filename,
@@ -141,12 +253,11 @@ export function HeroClaimIntakeCard({
 
     return {
       ok: true as const,
-      version: versionRef.current ?? version,
+      version: uploaded.data.version,
     };
   }
 
   async function handleUpload(list: FileList | File[]) {
-    setError(null);
     const incoming = Array.from(list);
     if (incoming.length === 0) return;
 
@@ -168,55 +279,61 @@ export function HeroClaimIntakeCard({
     if (nextTracked.length === 0) return;
 
     setTrackedFiles((prev) => [...prev, ...nextTracked]);
-    setUploading(true);
+    setError(null);
 
-    try {
-      const session = await ensureSession({
-        propertyOrJobName: propertyOrJobName.trim() || undefined,
-        lossType: lossType || undefined,
-      });
-      if (!session.ok) {
-        setError(session.message);
-        for (const item of nextTracked) {
-          updateTracked(item.localId, {
-            securityState: "failed",
-            error: session.message,
-          });
+    await runSerialized(async () => {
+      setUploading(true);
+      try {
+        const session = await ensureSession({
+          propertyOrJobName: propertyOrJobName.trim() || undefined,
+          lossType: lossType || undefined,
+        });
+        if (!session.ok) {
+          setError(session.message);
+          for (const item of nextTracked) {
+            updateTracked(item.localId, {
+              securityState: "failed",
+              error: session.message,
+            });
+          }
+          return;
         }
-        return;
-      }
 
-      let version = session.version;
-      for (const item of nextTracked) {
-        const result = await uploadOne(item.localId, item.file, version);
-        if (result.ok) version = result.version;
-        else setError(result.message);
+        let version = session.version;
+        for (const item of nextTracked) {
+          const result = await uploadOne(item.localId, item.file, version);
+          if (result.ok) version = result.version;
+          else setError(result.message);
+        }
+      } finally {
+        setUploading(false);
       }
-    } finally {
-      setUploading(false);
-    }
+    });
   }
 
   async function handleRetry(localId: string) {
     const target = trackedFiles.find((f) => f.localId === localId);
     if (!target) return;
-    setError(null);
-    setUploading(true);
-    try {
-      const session = await ensureSession();
-      if (!session.ok) {
-        setError(session.message);
-        updateTracked(localId, {
-          securityState: "failed",
-          error: session.message,
-        });
-        return;
+
+    await runSerialized(async () => {
+      setError(null);
+      setUploading(true);
+      try {
+        const session = await ensureSession();
+        if (!session.ok) {
+          setError(session.message);
+          updateTracked(localId, {
+            securityState: "failed",
+            error: session.message,
+          });
+          return;
+        }
+        const result = await uploadOne(localId, target.file, session.version);
+        if (!result.ok) setError(result.message);
+      } finally {
+        setUploading(false);
       }
-      const result = await uploadOne(localId, target.file, session.version);
-      if (!result.ok) setError(result.message);
-    } finally {
-      setUploading(false);
-    }
+    });
   }
 
   async function handleRemove(localId: string) {
@@ -224,19 +341,56 @@ export function HeroClaimIntakeCard({
     setTrackedFiles((prev) => prev.filter((f) => f.localId !== localId));
     setError(null);
 
-    if (!target?.remoteId || versionRef.current == null) return;
+    if (!target?.remoteId) return;
 
-    const result = await onboardingFetchJson("/api/onboarding/files", {
-      method: "DELETE",
-      json: { fileId: target.remoteId, expectedVersion: versionRef.current },
-    });
-    if (result.ok && result.data && typeof result.data === "object") {
-      const data = result.data as { version?: number };
-      if (typeof data.version === "number") {
-        versionRef.current = data.version;
-        setSessionVersion(data.version);
+    await runSerialized(async () => {
+      let version = versionRef.current;
+      if (version == null) {
+        const refreshed = await refreshSessionVersion();
+        if (!refreshed.ok) return;
+        version = refreshed.version;
       }
-    }
+
+      let result = await onboardingFetchJson<{ version?: number }>(
+        "/api/onboarding/files",
+        {
+          method: "DELETE",
+          json: { fileId: target.remoteId, expectedVersion: version },
+        },
+      );
+
+      if (
+        !result.ok &&
+        result.code === "VERSION_MISMATCH" &&
+        result.status === 409
+      ) {
+        const refreshed = await refreshSessionVersion();
+        if (!refreshed.ok) {
+          setError(result.message);
+          return;
+        }
+        result = await onboardingFetchJson<{ version?: number }>(
+          "/api/onboarding/files",
+          {
+            method: "DELETE",
+            json: {
+              fileId: target.remoteId,
+              expectedVersion: refreshed.version,
+            },
+          },
+        );
+      }
+
+      if (!result.ok) {
+        setError(result.message);
+        return;
+      }
+      if (typeof result.data?.version === "number") {
+        syncVersion(result.data.version);
+      } else {
+        await refreshSessionVersion();
+      }
+    });
   }
 
   async function handleContinue() {
@@ -258,43 +412,69 @@ export function HeroClaimIntakeCard({
       return;
     }
 
-    setSubmitting(true);
-    try {
-      const session = await ensureSession({
-        propertyOrJobName: propertyOrJobName.trim(),
-        lossType,
-      });
-      if (!session.ok) {
-        setError(session.message);
-        setSubmitting(false);
-        return;
-      }
+    await runSerialized(async () => {
+      setSubmitting(true);
+      try {
+        const session = await ensureSession({
+          propertyOrJobName: propertyOrJobName.trim(),
+          lossType,
+        });
+        if (!session.ok) {
+          setError(session.message);
+          return;
+        }
 
-      const patched = await onboardingFetchJson("/api/onboarding/session", {
-        method: "PATCH",
-        json: {
-          expectedVersion: versionRef.current ?? session.version,
-          stage: "claim",
-          patch: {
-            claim: {
-              propertyOrJobName: propertyOrJobName.trim(),
-              lossType,
+        let patched = await onboardingFetchJson("/api/onboarding/session", {
+          method: "PATCH",
+          json: {
+            expectedVersion: versionRef.current ?? session.version,
+            stage: "claim",
+            patch: {
+              claim: {
+                propertyOrJobName: propertyOrJobName.trim(),
+                lossType,
+              },
             },
           },
-        },
-      });
+        });
 
-      if (!patched.ok) {
-        setError(patched.message);
+        if (
+          !patched.ok &&
+          patched.code === "VERSION_MISMATCH" &&
+          patched.status === 409
+        ) {
+          const refreshed = await refreshSessionVersion();
+          if (!refreshed.ok) {
+            setError(patched.message);
+            return;
+          }
+          patched = await onboardingFetchJson("/api/onboarding/session", {
+            method: "PATCH",
+            json: {
+              expectedVersion: refreshed.version,
+              stage: "claim",
+              patch: {
+                claim: {
+                  propertyOrJobName: propertyOrJobName.trim(),
+                  lossType,
+                },
+              },
+            },
+          });
+        }
+
+        if (!patched.ok) {
+          setError(patched.message);
+          return;
+        }
+
+        router.push("/onboarding/claim");
+      } catch {
+        setError("Unable to start claim intake. Please try again.");
+      } finally {
         setSubmitting(false);
-        return;
       }
-
-      router.push("/onboarding/claim");
-    } catch {
-      setError("Unable to start claim intake. Please try again.");
-      setSubmitting(false);
-    }
+    });
   }
 
   async function handleResumeRequest() {

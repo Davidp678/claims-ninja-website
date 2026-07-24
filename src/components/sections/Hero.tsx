@@ -71,7 +71,7 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             {content.subhead}
           </p>
 
-          <div className="mt-7 max-w-xl text-[13px] leading-snug text-zinc-300 sm:text-sm">
+          <div className="mt-7 inline-flex max-w-full flex-col text-[13px] leading-snug text-zinc-300 sm:text-sm">
             <ul className="flex flex-wrap items-center gap-y-2">
               {content.bullets.map((bullet, index) => (
                 <li key={bullet} className="flex items-center">
@@ -82,10 +82,7 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
               ))}
             </ul>
 
-            <div
-              aria-hidden
-              className="my-3 h-px max-w-md bg-white/10"
-            />
+            <div aria-hidden className="my-3 h-px w-full bg-white/10" />
 
             <ul className="flex flex-wrap items-center gap-y-2 text-zinc-400">
               {content.proofMetrics.map((metric, index) => (
