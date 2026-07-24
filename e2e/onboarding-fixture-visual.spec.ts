@@ -168,6 +168,38 @@ for (const viewport of VIEWPORTS) {
           lastName: "Owner",
         },
       });
+      const agreementPackage = (privacyPlaceholder: boolean) => ({
+        ok: true,
+        data: {
+          documentId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+          title: "Consulting Agreement",
+          displayTitle: "Claims Ninja Terms of Service",
+          version: "2026-06-10",
+          effectiveDate: "2026-06-10",
+          effectiveDateDisplay: "June 10, 2026",
+          contentSha256:
+            "30142d8d0b9452de83b7cf41f92e7094a413e813af3325e74e343e639aae948d",
+          acceptanceEnabled: true,
+          textPreview: "Fixture Terms of Service body for visual QA.",
+          approvedAcceptanceLanguage:
+            "I have read and agree to the Claims Ninja Terms of Service and acknowledge the Privacy Policy. I consent to use electronic records and signatures for this onboarding process.",
+          privacy: {
+            documentId: "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+            title: "Privacy Policy",
+            version: "staging-placeholder-2026-07-23",
+            effectiveDate: "2026-07-23",
+            effectiveDateDisplay: "July 23, 2026",
+            contentSha256:
+              "40a3971ab186f598b1ec2ac925ccfe30573b360246560076cadce353241b5e38",
+            textPreview: privacyPlaceholder
+              ? "[STAGING PLACEHOLDER — NOT APPROVED LEGAL TEXT]\nFixture privacy body."
+              : "Fixture Privacy Policy body for approved-content-ready visual QA.",
+            stagingPlaceholder: privacyPlaceholder,
+          },
+        },
+        error: null,
+      });
+
       await page.route("**/api/onboarding/agreement", async (route) => {
         if (route.request().url().includes("accept")) {
           await route.continue();
@@ -176,41 +208,33 @@ for (const viewport of VIEWPORTS) {
         await route.fulfill({
           status: 200,
           contentType: "application/json",
-          body: JSON.stringify({
-            ok: true,
-            data: {
-              documentId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-              title: "Consulting Agreement",
-              displayTitle: "Claims Ninja Terms of Service",
-              version: "2026-06-10",
-              effectiveDate: "2026-06-10",
-              effectiveDateDisplay: "June 10, 2026",
-              contentSha256:
-                "30142d8d0b9452de83b7cf41f92e7094a413e813af3325e74e343e639aae948d",
-              acceptanceEnabled: true,
-              textPreview: "Fixture Terms of Service body for visual QA.",
-              approvedAcceptanceLanguage:
-                "I have read and agree to the Claims Ninja Terms of Service and acknowledge the Privacy Policy. I consent to use electronic records and signatures for this onboarding process.",
-              privacy: {
-                documentId: "b2c3d4e5-f6a7-8901-bcde-f12345678901",
-                title: "Privacy Policy",
-                version: "staging-placeholder-2026-07-23",
-                effectiveDate: "2026-07-23",
-                effectiveDateDisplay: "July 23, 2026",
-                contentSha256:
-                  "40a3971ab186f598b1ec2ac925ccfe30573b360246560076cadce353241b5e38",
-                textPreview:
-                  "[STAGING PLACEHOLDER — NOT APPROVED LEGAL TEXT]\nFixture privacy body.",
-                stagingPlaceholder: true,
-              },
-            },
-            error: null,
-          }),
+          body: JSON.stringify(agreementPackage(true)),
         });
       });
       await page.goto("/onboarding/agreement");
       await expect(page.getByRole("button", { name: /agree and continue/i })).toBeDisabled();
       await shot(page, "legal-clickwrap-default", viewport);
+      await page.getByLabel(/authorized to bind/i).check();
+      await page
+        .getByText(/I have read and agree to the Claims Ninja Terms of Service/i)
+        .click();
+      // Placeholder Privacy stays fail-closed even with checkboxes attested.
+      await expect(page.getByRole("button", { name: /agree and continue/i })).toBeDisabled();
+      await expect(page.getByText(/staging placeholder and cannot be accepted/i)).toBeVisible();
+
+      await page.unroute("**/api/onboarding/agreement");
+      await page.route("**/api/onboarding/agreement", async (route) => {
+        if (route.request().url().includes("accept")) {
+          await route.continue();
+          return;
+        }
+        await route.fulfill({
+          status: 200,
+          contentType: "application/json",
+          body: JSON.stringify(agreementPackage(false)),
+        });
+      });
+      await page.goto("/onboarding/agreement");
       await page.getByLabel(/authorized to bind/i).check();
       await page
         .getByText(/I have read and agree to the Claims Ninja Terms of Service/i)

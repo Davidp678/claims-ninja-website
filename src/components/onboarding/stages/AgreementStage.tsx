@@ -91,6 +91,15 @@ export function AgreementStage() {
       setLocalError("Legal documents are unavailable.");
       return;
     }
+    if (
+      agreement.acceptanceEnabled === false ||
+      agreement.privacy?.stagingPlaceholder === true
+    ) {
+      setLocalError(
+        "Legal acceptance is unavailable until an approved Privacy Policy is published.",
+      );
+      return;
+    }
     if (!authority || !clickwrap) {
       setLocalError(
         "Confirm authorization and the required acceptance checkbox to continue.",
@@ -147,10 +156,20 @@ export function AgreementStage() {
     );
   }
 
+  const privacyPlaceholder =
+    agreement?.privacy?.stagingPlaceholder === true ||
+    agreement?.documents?.some(
+      (d) =>
+        ((d.title ?? "").trim() === PRIVACY_TITLE ||
+          (d.displayTitle ?? "").trim() === PRIVACY_TITLE) &&
+        d.stagingPlaceholder === true,
+    ) === true;
+
   const acceptanceBlocked =
     !!integrityError ||
     !agreement ||
-    agreement.acceptanceEnabled === false;
+    agreement.acceptanceEnabled === false ||
+    privacyPlaceholder;
 
   const canSubmit = authority && clickwrap && !acceptanceBlocked && !busy;
 
@@ -221,7 +240,9 @@ export function AgreementStage() {
               </h2>
               <p className="mt-1 text-sm text-zinc-400">
                 {activeDoc === "privacy"
-                  ? "Staging placeholder document for architecture validation"
+                  ? privacyPlaceholder
+                    ? "DRAFT / staging placeholder — not approved for acceptance"
+                    : `Version ${agreement?.privacy?.version ?? ""} · Effective ${agreement?.privacy?.effectiveDateDisplay ?? ""}`
                   : `Version ${TERMS_VERSION} · Effective ${TERMS_EFFECTIVE_LABEL}`}
               </p>
             </div>
@@ -311,9 +332,11 @@ export function AgreementStage() {
               </p>
             )}
 
-            {agreement?.acceptanceEnabled === false ? (
+            {agreement?.acceptanceEnabled === false || privacyPlaceholder ? (
               <p className="mt-3 text-sm text-amber-300" role="status">
-                Legal acceptance is currently disabled pending release gates.
+                {privacyPlaceholder
+                  ? "Privacy Policy is still a staging placeholder and cannot be accepted. Legal readiness is incomplete until counsel-approved text is published."
+                  : "Legal acceptance is currently disabled pending release gates."}
               </p>
             ) : null}
 
