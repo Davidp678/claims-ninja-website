@@ -23,6 +23,7 @@ export const xactimateEstimateReviewChecklistContractors: BlogPost = {
   seoDescription:
     "Contractor checklist for Xactimate estimate review on insurance claims: scope, roofing line items, pricing, O&P, documentation, and supplement timing — step by step.",
   relatedPostSlugs: [
+    "most-overlooked-line-items-in-insurance-estimates",
     "insurance-supplementing-guide-contractors",
     "xactimate-vs-market-pricing",
     "claim-documentation-approval-rates",

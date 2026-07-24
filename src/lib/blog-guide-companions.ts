@@ -33,6 +33,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "You've learned why carrier estimates miss scope. Now use the estimate review workflow to catch gaps before production commits to under-scoped work.",
     guideSlugs: ["carrier-estimate-review-guide"],
   },
+  "most-overlooked-line-items-in-insurance-estimates": {
+    intro:
+      "You've learned which line items get overlooked and how to document them. Now run the estimate review, documentation standards, commercial supplement playbook, and submission workflow that turn gap lists into reviewer-ready packages.",
+    guideSlugs: [
+      "carrier-estimate-review-guide",
+      "documentation-standards-guide",
+      "commercial-insurance-supplement-playbook-for-contractors",
+      "supplement-submission-guide",
+    ],
+  },
   "op-on-insurance-claims": {
     intro:
       "You've learned when O&P applies on insurance claims. Now document coordination and trade count the way desk reviewers expect before submission.",

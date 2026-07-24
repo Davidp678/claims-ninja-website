@@ -489,6 +489,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "commercial-supplement-package",
       "commercial-reinspection-support",
       "commercial-supplement-timelines",
+      "overlooked-insurance-estimate-items",
+      "missing-line-items-insurance-estimates",
+      "documentation-supporting-supplements",
+      "estimate-review-best-practices",
+      "common-estimate-mistakes-contractors",
     ],
   },
   guides: {
@@ -591,6 +596,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "commercial-supplement-package",
       "commercial-reinspection-support",
       "commercial-supplement-timelines",
+      "overlooked-insurance-estimate-items",
+      "missing-line-items-insurance-estimates",
+      "documentation-supporting-supplements",
+      "estimate-review-best-practices",
+      "common-estimate-mistakes-contractors",
     ],
   },
   caseStudies: {

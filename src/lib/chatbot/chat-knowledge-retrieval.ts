@@ -3154,6 +3154,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "overlooked line items blog retrieves",
+    message: "most overlooked line items in insurance estimates",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /most-overlooked-line-items-in-insurance-estimates|Most Overlooked Line Items in Insurance Estimates|overlooked line items/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "overlooked insurance estimate items FAQ retrieves",
+    message: "what are the most overlooked line items in insurance estimates",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /overlooked-insurance-estimate-items|most-overlooked-line-items-in-insurance-estimates|overlooked line items typically include temporary protection/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "missing line items insurance estimates FAQ retrieves",
+    message: "why are line items missing from carrier insurance estimates",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /missing-line-items-insurance-estimates|most-overlooked-line-items-in-insurance-estimates|Line items are missing when templates/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "documentation supporting supplements FAQ retrieves",
+    message: "what documentation supports insurance estimate supplements",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /documentation-supporting-supplements|most-overlooked-line-items-in-insurance-estimates|Supplements are supported by labeled dated photos/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "estimate review best practices FAQ retrieves",
+    message: "what are estimate review best practices for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /estimate-review-best-practices|most-overlooked-line-items-in-insurance-estimates|assign a review owner within hours/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "common estimate mistakes contractors FAQ retrieves",
+    message: "what are common insurance estimate mistakes contractors make",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /common-estimate-mistakes-contractors|most-overlooked-line-items-in-insurance-estimates|treating the carrier estimate as final/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "why mold insurance claims underpaid blog retrieves",
     message: "why mold insurance claims get underpaid documentation",
     assert: (result) =>

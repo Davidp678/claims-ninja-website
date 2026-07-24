@@ -16,6 +16,7 @@ export const whyCarrierEstimatesMissLineItems: BlogPost = {
   seoDescription:
     "Understand why insurance carrier estimates miss profitable line items and how contractors identify scope gaps before they erode job margin.",
   relatedPostSlugs: [
+    "most-overlooked-line-items-in-insurance-estimates",
     "xactimate-vs-market-pricing",
     "insurance-supplementing-guide-contractors",
     "what-is-a-roof-supplement",

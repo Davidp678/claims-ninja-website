@@ -28,6 +28,7 @@ export const INSURANCE_SUPPLEMENTING_PILLAR: BlogPost = {
   seoDescription:
     "Insurance supplementing for contractors: Xactimate estimate review, roofing supplements, documentation, carrier scope gaps, and contractor claim recovery — step by step.",
   relatedPostSlugs: [
+    "most-overlooked-line-items-in-insurance-estimates",
     "first-48-hours-after-carrier-estimate",
     "supplement-denial-recovery-guide",
     "water-damage-mitigation-supplement-playbook",
