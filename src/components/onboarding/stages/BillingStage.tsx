@@ -10,6 +10,7 @@ import {
   SelectInput,
   TextInput,
 } from "@/components/onboarding/FormField";
+import { OnboardingLoading } from "@/components/onboarding/OnboardingLoading";
 import { OnboardingShell } from "@/components/onboarding/OnboardingShell";
 import { useOnboardingSession } from "@/components/onboarding/useOnboardingSession";
 import { onboardingFetchJson } from "@/lib/onboarding/client-api";
@@ -165,11 +166,11 @@ export function BillingStage() {
       setLocalError(cont.message);
       return;
     }
-    router.push("/onboarding/activated");
+    router.push("/onboarding/account");
   }
 
   if (loading) {
-    return <div className="bg-brand-black px-5 py-24 text-zinc-400">Loading…</div>;
+    return <OnboardingLoading />;
   }
   if (!session) {
     return (
@@ -201,7 +202,7 @@ export function BillingStage() {
       saveState={saveState}
       onSaveExit={() => void saveExit()}
       continueLabel={
-        authorized ? "Save & continue →" : "Confirm authorization to continue"
+        authorized ? "Continue to account →" : "Confirm authorization to continue"
       }
       onContinue={() => void handleContinue()}
       continueDisabled={busy || !authorized}

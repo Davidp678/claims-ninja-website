@@ -1,10 +1,11 @@
 import { cn } from "@/lib/cn";
 
-/** Marketing-only hero stepper — Claim → Company → Agreement → Account (no Billing). */
+/** Marketing hero stepper — Claim → Company → Agreement → Billing → Account. */
 export const HERO_STEPS = [
   { key: "claim", label: "Claim" },
   { key: "company", label: "Company" },
   { key: "agreement", label: "Agreement" },
+  { key: "billing", label: "Billing" },
   { key: "account", label: "Account" },
 ] as const;
 
@@ -34,7 +35,8 @@ export function HeroProgressRail({
             key={step.key}
             className={cn(
               "flex min-w-0 flex-1 items-center",
-              showConnector && "after:mx-1.5 after:h-px after:flex-1 after:bg-white/20 sm:after:mx-2",
+              showConnector &&
+                "after:mx-1.5 after:h-px after:flex-1 after:bg-white/20 sm:after:mx-2",
               complete && showConnector && "after:bg-white/35",
             )}
           >

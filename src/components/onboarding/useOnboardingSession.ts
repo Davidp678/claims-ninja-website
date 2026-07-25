@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { onboardingFetchJson } from "@/lib/onboarding/client-api";
 import { stagePath, type OnboardingStage } from "@/lib/onboarding/stages";
 import type { IntakeSessionProjection, SaveState } from "@/lib/onboarding/types";
+import { userFacingOnboardingError } from "@/lib/onboarding/user-errors";
 
 export function useOnboardingSession() {
   const router = useRouter();
@@ -16,6 +17,7 @@ export function useOnboardingSession() {
   const [version, setVersion] = useState(0);
   const versionRef = useRef(0);
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const mutationChainRef = useRef<Promise<void>>(Promise.resolve());
 
   const applySession = useCallback((data: IntakeSessionProjection) => {
     const nextVersion = data.version ?? 0;
@@ -25,21 +27,38 @@ export function useOnboardingSession() {
     setError(null);
   }, []);
 
-  const refresh = useCallback(async () => {
-    setLoading(true);
+  const syncVersion = useCallback((next: number) => {
+    versionRef.current = next;
+    setVersion(next);
+  }, []);
+
+  const runSerialized = useCallback(<T,>(fn: () => Promise<T>): Promise<T> => {
+    const next = mutationChainRef.current.then(fn, fn);
+    mutationChainRef.current = next.then(
+      () => undefined,
+      () => undefined,
+    );
+    return next;
+  }, []);
+
+  const softRefresh = useCallback(async () => {
     const result = await onboardingFetchJson<IntakeSessionProjection>(
       "/api/onboarding/session",
     );
     if (!result.ok) {
-      setError(result.message);
-      setSession(null);
-      setLoading(false);
+      setError(userFacingOnboardingError(result.code, result.message));
       return null;
     }
     applySession(result.data);
-    setLoading(false);
     return result.data;
   }, [applySession]);
+
+  const refresh = useCallback(async () => {
+    setLoading(true);
+    const data = await softRefresh();
+    setLoading(false);
+    return data;
+  }, [softRefresh]);
 
   useEffect(() => {
     let cancelled = false;
@@ -49,7 +68,7 @@ export function useOnboardingSession() {
       );
       if (cancelled) return;
       if (!result.ok) {
-        setError(result.message);
+        setError(userFacingOnboardingError(result.code, result.message));
         setSession(null);
         setLoading(false);
         return;
@@ -62,56 +81,104 @@ export function useOnboardingSession() {
     };
   }, [applySession]);
 
+  const clearAutosaveTimer = useCallback(() => {
+    if (saveTimer.current) {
+      clearTimeout(saveTimer.current);
+      saveTimer.current = null;
+    }
+  }, []);
+
   const patch = useCallback(
     async (stage: OnboardingStage, patchBody: Record<string, unknown>) => {
-      setSaveState("saving");
-      const result = await onboardingFetchJson<IntakeSessionProjection>(
-        "/api/onboarding/session",
-        {
-          method: "PATCH",
-          json: {
-            expectedVersion: versionRef.current,
-            stage,
-            patch: patchBody,
-          },
-        },
-      );
-      if (!result.ok) {
-        setSaveState("error");
-        setError(result.message);
-        return null;
-      }
-      applySession(result.data);
-      setSaveState("saved");
-      return result.data;
+      return runSerialized(async () => {
+        clearAutosaveTimer();
+        setSaveState("saving");
+
+        const send = (expectedVersion: number) =>
+          onboardingFetchJson<IntakeSessionProjection>(
+            "/api/onboarding/session",
+            {
+              method: "PATCH",
+              json: {
+                expectedVersion,
+                stage,
+                patch: patchBody,
+              },
+            },
+          );
+
+        let result = await send(versionRef.current);
+
+        if (
+          !result.ok &&
+          result.code === "VERSION_MISMATCH" &&
+          result.status === 409
+        ) {
+          const refreshed = await softRefresh();
+          if (refreshed) {
+            result = await send(versionRef.current);
+          }
+        }
+
+        if (!result.ok) {
+          setSaveState("error");
+          await softRefresh();
+          setError(userFacingOnboardingError(result.code, result.message));
+          return null;
+        }
+
+        applySession(result.data);
+        setSaveState("saved");
+        return result.data;
+      });
     },
-    [applySession],
+    [applySession, clearAutosaveTimer, runSerialized, softRefresh],
   );
 
   const autosave = useCallback(
     (stage: OnboardingStage, patchBody: Record<string, unknown>) => {
-      if (saveTimer.current) clearTimeout(saveTimer.current);
+      clearAutosaveTimer();
       saveTimer.current = setTimeout(() => {
         void patch(stage, patchBody);
       }, 600);
     },
-    [patch],
+    [clearAutosaveTimer, patch],
   );
 
   const saveExit = useCallback(async () => {
-    setSaveState("saving");
-    const result = await onboardingFetchJson("/api/onboarding/save-exit", {
-      method: "POST",
-      json: { expectedVersion: versionRef.current },
+    return runSerialized(async () => {
+      clearAutosaveTimer();
+      setSaveState("saving");
+
+      const send = (expectedVersion: number) =>
+        onboardingFetchJson("/api/onboarding/save-exit", {
+          method: "POST",
+          json: { expectedVersion },
+        });
+
+      let result = await send(versionRef.current);
+
+      if (
+        !result.ok &&
+        result.code === "VERSION_MISMATCH" &&
+        result.status === 409
+      ) {
+        const refreshed = await softRefresh();
+        if (refreshed) {
+          result = await send(versionRef.current);
+        }
+      }
+
+      if (!result.ok) {
+        setSaveState("error");
+        await softRefresh();
+        setError(userFacingOnboardingError(result.code, result.message));
+        return;
+      }
+      setSaveState("saved");
+      router.push("/");
     });
-    if (!result.ok) {
-      setSaveState("error");
-      setError(result.message);
-      return;
-    }
-    setSaveState("saved");
-    router.push("/");
-  }, [router]);
+  }, [clearAutosaveTimer, router, runSerialized, softRefresh]);
 
   return {
     session,
@@ -119,7 +186,12 @@ export function useOnboardingSession() {
     error,
     saveState,
     version,
+    versionRef,
     refresh,
+    softRefresh,
+    syncVersion,
+    runSerialized,
+    clearAutosaveTimer,
     patch,
     autosave,
     saveExit,

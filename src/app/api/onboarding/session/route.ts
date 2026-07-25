@@ -10,18 +10,9 @@ import {
   jsonOk,
   mapPlatformResponse,
 } from "@/lib/onboarding/http";
-import { normalizeIntakeFileList } from "@/lib/onboarding/file-summary";
+import { normalizeSessionProjection } from "@/lib/onboarding/session-projection";
 import { externalIntakeS2SJson } from "@/lib/onboarding/s2s";
 import type { IntakeSessionProjection } from "@/lib/onboarding/types";
-
-function normalizeSessionProjection(
-  data: IntakeSessionProjection,
-): IntakeSessionProjection {
-  return {
-    ...data,
-    files: normalizeIntakeFileList(data.files),
-  };
-}
 
 export const runtime = "nodejs";
 
@@ -75,6 +66,13 @@ export async function POST(request: Request) {
             propertyOrJobName: body.propertyOrJobName,
             lossType: body.lossType,
           };
+    const companyDraft =
+      body.companyDraft && typeof body.companyDraft === "object"
+        ? body.companyDraft
+        : {
+            firstName: body.firstName,
+            lastName: body.lastName,
+          };
 
     const { status, envelope } = await externalIntakeS2SJson<{
       intakeHandle: string;
@@ -86,6 +84,7 @@ export async function POST(request: Request) {
       source: body.source ?? "website_hero",
       locale: body.locale ?? "en-US",
       claimDraft,
+      companyDraft,
     });
 
     if (envelope.ok && envelope.data?.intakeHandle) {

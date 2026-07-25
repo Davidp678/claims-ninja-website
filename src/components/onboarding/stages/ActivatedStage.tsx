@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { SectionCard } from "@/components/onboarding/FormField";
+import { OnboardingLoading } from "@/components/onboarding/OnboardingLoading";
 import { ProgressRail } from "@/components/onboarding/ProgressRail";
 import { useOnboardingSession } from "@/components/onboarding/useOnboardingSession";
 import { onboardingFetchJson } from "@/lib/onboarding/client-api";
@@ -108,7 +109,7 @@ export function ActivatedStage() {
   }
 
   if (loading) {
-    return <div className="bg-brand-black px-5 py-24 text-zinc-400">Loading…</div>;
+    return <OnboardingLoading />;
   }
 
   if (!session && error) {

@@ -8,17 +8,17 @@ Browsers never call platform intake endpoints directly and never receive platfor
 
 All routes live under the marketing layout (production Navbar untouched).
 
-Verified journey order in code: `claim → company → account → verify (OTP) → agreement → billing → activated`.
+Verified journey order in code: `claim → company → agreement → billing → account → verify (OTP) → activated`.
 
 | Path | Stage |
 |------|--------|
-| `/` hero intake card | Start session + optional staged files |
+| `/` hero intake card | Start session + name, loss type, optional staged files |
 | `/onboarding/claim` | Claim draft |
 | `/onboarding/company` | Company / contractor |
+| `/onboarding/agreement` | Native clickwrap (Terms `2026-06-10` + Privacy `counsel-approved-2026-07-24`) |
+| `/onboarding/billing` | Billing contact / authorization (QuickBooks ops handoff) |
 | `/onboarding/account` | Password |
 | `/onboarding/verify` | Email OTP |
-| `/onboarding/agreement` | Native clickwrap (Terms `2026-06-10` + Privacy `counsel-approved-2026-07-24`) |
-| `/onboarding/billing` | Billing contact / authorization |
 | `/onboarding/activated` | Workspace ready + handoff |
 | `/privacy` | Public Privacy Policy (frozen counsel-approved text) |
 

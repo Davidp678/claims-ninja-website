@@ -53,7 +53,12 @@ export function OnboardingShell({
     >
       <HeroBackdrop />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-8 pt-28 sm:px-6 sm:pt-32 lg:px-8">
+      <div
+        className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-8 sm:px-6 lg:px-8"
+        style={{
+          paddingTop: "calc(var(--site-header-height, 6rem) + 1.5rem)",
+        }}
+      >
         <div className="mb-5 flex items-center justify-between gap-4">
           <Link
             href="/"

@@ -72,6 +72,8 @@ export function HeroClaimIntakeCard({
 }: HeroClaimIntakeCardProps) {
   const router = useRouter();
   const [claimMode, setClaimMode] = useState<ClaimMode>("new");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [propertyOrJobName, setPropertyOrJobName] = useState("");
   const [lossType, setLossType] = useState("");
   const [trackedFiles, setTrackedFiles] = useState<TrackedFile[]>([]);
@@ -135,9 +137,11 @@ export function HeroClaimIntakeCard({
     };
   }
 
-  async function ensureSession(claimDraft?: {
+  async function ensureSession(draft?: {
     propertyOrJobName?: string;
     lossType?: string;
+    firstName?: string;
+    lastName?: string;
   }): Promise<{ ok: true; version: number } | { ok: false; message: string }> {
     if (versionRef.current != null) {
       return { ok: true, version: versionRef.current };
@@ -169,7 +173,14 @@ export function HeroClaimIntakeCard({
         json: {
           source: "website_hero",
           locale: locale === "es" ? "es-US" : "en-US",
-          claimDraft: claimDraft ?? {},
+          claimDraft: {
+            propertyOrJobName: draft?.propertyOrJobName,
+            lossType: draft?.lossType,
+          },
+          companyDraft: {
+            firstName: draft?.firstName,
+            lastName: draft?.lastName,
+          },
         },
       });
 
@@ -288,6 +299,8 @@ export function HeroClaimIntakeCard({
         const session = await ensureSession({
           propertyOrJobName: propertyOrJobName.trim() || undefined,
           lossType: lossType || undefined,
+          firstName: firstName.trim() || undefined,
+          lastName: lastName.trim() || undefined,
         });
         if (!session.ok) {
           setError(session.message);
@@ -396,6 +409,10 @@ export function HeroClaimIntakeCard({
 
   async function handleContinue() {
     setError(null);
+    if (!firstName.trim() || !lastName.trim()) {
+      setError("Enter your first and last name to continue.");
+      return;
+    }
     if (!propertyOrJobName.trim()) {
       setError("Enter a property or job name to continue.");
       return;
@@ -413,12 +430,21 @@ export function HeroClaimIntakeCard({
       return;
     }
 
+    const claimPatch = {
+      propertyOrJobName: propertyOrJobName.trim(),
+      lossType,
+    };
+    const companyPatch = {
+      firstName: firstName.trim(),
+      lastName: lastName.trim(),
+    };
+
     await runSerialized(async () => {
       setSubmitting(true);
       try {
         const session = await ensureSession({
-          propertyOrJobName: propertyOrJobName.trim(),
-          lossType,
+          ...claimPatch,
+          ...companyPatch,
         });
         if (!session.ok) {
           setError(userFacingOnboardingError(undefined, session.message));
@@ -437,10 +463,8 @@ export function HeroClaimIntakeCard({
             expectedVersion,
             stage: "claim",
             patch: {
-              claim: {
-                propertyOrJobName: propertyOrJobName.trim(),
-                lossType,
-              },
+              claim: claimPatch,
+              company: companyPatch,
             },
           },
         });
@@ -463,10 +487,8 @@ export function HeroClaimIntakeCard({
               expectedVersion: refreshed.version,
               stage: "claim",
               patch: {
-                claim: {
-                  propertyOrJobName: propertyOrJobName.trim(),
-                  lossType,
-                },
+                claim: claimPatch,
+                company: companyPatch,
               },
             },
           });
@@ -601,6 +623,30 @@ export function HeroClaimIntakeCard({
             </div>
           ) : (
             <>
+              <div>
+                <FieldLabel htmlFor="hero-first-name">
+                  {content.yourNameLabel}
+                </FieldLabel>
+                <div className="grid grid-cols-2 gap-3">
+                  <TextInput
+                    id="hero-first-name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder={content.firstNamePlaceholder}
+                    autoComplete="given-name"
+                    aria-label={content.firstNamePlaceholder}
+                  />
+                  <TextInput
+                    id="hero-last-name"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder={content.lastNamePlaceholder}
+                    autoComplete="family-name"
+                    aria-label={content.lastNamePlaceholder}
+                  />
+                </div>
+              </div>
+
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <FieldLabel htmlFor="hero-property">

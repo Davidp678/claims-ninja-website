@@ -10,6 +10,7 @@ import {
   SelectInput,
   TextInput,
 } from "@/components/onboarding/FormField";
+import { OnboardingLoading } from "@/components/onboarding/OnboardingLoading";
 import { OnboardingShell } from "@/components/onboarding/OnboardingShell";
 import { useOnboardingSession } from "@/components/onboarding/useOnboardingSession";
 import type { OnboardingStage } from "@/lib/onboarding/stages";
@@ -68,9 +69,9 @@ function CompanyStageForm({
 
   async function handleContinue() {
     setBusy(true);
-    const saved = await patch("company", { company: form });
+    const saved = await patch("agreement", { company: form });
     setBusy(false);
-    if (saved) router.push("/onboarding/account");
+    if (saved) router.push("/onboarding/agreement");
   }
 
   const ownerName = [form.firstName, form.lastName].filter(Boolean).join(" ");
@@ -311,7 +312,7 @@ export function CompanyStage() {
     useOnboardingSession();
 
   if (loading) {
-    return <div className="bg-brand-black px-5 py-24 text-zinc-400">Loading…</div>;
+    return <OnboardingLoading />;
   }
   if (!session) {
     return (

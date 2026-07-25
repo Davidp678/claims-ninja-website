@@ -25,15 +25,6 @@ function ShieldIcon({ className }: { className?: string }) {
   );
 }
 
-function RedDot() {
-  return (
-    <span
-      aria-hidden
-      className="h-1 w-1 shrink-0 justify-self-center self-center rounded-full bg-brand-red-light"
-    />
-  );
-}
-
 /** Fixed-width icon gutter so bullet text and metric text share an identical start edge. */
 function IconGutter({ showShield }: { showShield?: boolean }) {
   return (
@@ -74,13 +65,30 @@ function ProofCell({
   return (
     <div
       className={`flex min-w-0 items-center gap-1.5 ${
-        align === "center" ? "justify-self-center" : "justify-self-start"
+        align === "center" ? "justify-center" : "justify-start"
       } ${muted ? "text-zinc-400" : ""}`}
     >
-      {align === "center" && !showShield ? null : (
-        <IconGutter showShield={showShield} />
-      )}
+      {/* Always reserve the gutter so S→2 and N→3 share the same text start edge. */}
+      <IconGutter showShield={showShield} />
       <span className="min-w-0 whitespace-nowrap">{children}</span>
+    </div>
+  );
+}
+
+/** Red dots sit on the two column boundaries of the shared 3-col grid. */
+function ProofDotRail() {
+  return (
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-y-0 left-0 right-0 grid grid-cols-3"
+    >
+      <span className="relative">
+        <span className="absolute right-0 top-1/2 h-1 w-1 -translate-y-1/2 translate-x-1/2 rounded-full bg-brand-red-light" />
+      </span>
+      <span className="relative">
+        <span className="absolute right-0 top-1/2 h-1 w-1 -translate-y-1/2 translate-x-1/2 rounded-full bg-brand-red-light" />
+      </span>
+      <span />
     </div>
   );
 }
@@ -97,7 +105,7 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
     >
       <HeroBackdrop />
 
-      <Container className="relative z-10 grid grid-cols-1 gap-12 pb-14 pt-28 sm:gap-14 sm:pb-16 sm:pt-32 lg:grid-cols-[minmax(0,1.05fr)_minmax(440px,520px)] lg:items-center lg:gap-x-16 lg:gap-y-12 lg:pb-20 lg:pt-32">
+      <Container className="relative z-10 grid grid-cols-1 gap-12 pb-20 pt-28 sm:gap-14 sm:pb-24 sm:pt-32 lg:grid-cols-[minmax(0,1.05fr)_minmax(440px,520px)] lg:items-center lg:gap-x-16 lg:gap-y-12 lg:pb-28 lg:pt-32">
         <div className="min-w-0 max-w-xl lg:max-w-none">
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red-light sm:text-xs">
             {content.eyebrow}
@@ -136,41 +144,61 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             </div>
 
             {/*
-              Desktop: one shared 5-column grid. Left/right cells use the same
-              icon-gutter + text flex so S→2 and N→3 share an exact start edge.
-              Center metric stays visually centered (no gutter).
+              Desktop: one parent 3-column grid shared by both rows + divider.
+              Equal 1fr tracks keep S→2 and N→3 on the same start edges.
+              Red dots overlay column boundaries (not independent auto tracks).
             */}
-            <div className="hidden w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-center sm:grid">
-              <ProofCell align="start" showShield>
-                {leftBullet}
-              </ProofCell>
-              <RedDot />
-              <ProofCell align="center" showShield>
-                {centerBullet}
-              </ProofCell>
-              <RedDot />
-              <ProofCell align="start" showShield>
-                {rightBullet}
-              </ProofCell>
+            <div className="relative hidden w-full sm:block">
+              <div className="grid w-full grid-cols-3 gap-x-6">
+                <div className="relative py-0.5">
+                  <ProofCell align="start" showShield>
+                    {leftBullet}
+                  </ProofCell>
+                </div>
+                <div className="relative py-0.5">
+                  <ProofCell align="center" showShield>
+                    {centerBullet}
+                  </ProofCell>
+                </div>
+                <div className="relative py-0.5">
+                  <ProofCell align="start" showShield>
+                    {rightBullet}
+                  </ProofCell>
+                </div>
 
-              <div
-                aria-hidden
-                className="col-span-full my-3 h-px w-full bg-white/10"
-              />
+                <div
+                  aria-hidden
+                  className="col-span-3 my-3 h-px w-full bg-white/10"
+                />
 
-              <ProofCell align="start" muted>
-                {leftMetric ? <ProofMetricText metric={leftMetric} /> : null}
-              </ProofCell>
-              <RedDot />
-              <ProofCell align="center" muted>
-                {centerMetric ? (
-                  <ProofMetricText metric={centerMetric} />
-                ) : null}
-              </ProofCell>
-              <RedDot />
-              <ProofCell align="start" muted>
-                {rightMetric ? <ProofMetricText metric={rightMetric} /> : null}
-              </ProofCell>
+                <div className="relative py-0.5">
+                  <ProofCell align="start" muted>
+                    {leftMetric ? <ProofMetricText metric={leftMetric} /> : null}
+                  </ProofCell>
+                </div>
+                <div className="relative py-0.5">
+                  <ProofCell align="center" muted>
+                    {centerMetric ? (
+                      <ProofMetricText metric={centerMetric} />
+                    ) : null}
+                  </ProofCell>
+                </div>
+                <div className="relative py-0.5">
+                  <ProofCell align="start" muted>
+                    {rightMetric ? (
+                      <ProofMetricText metric={rightMetric} />
+                    ) : null}
+                  </ProofCell>
+                </div>
+              </div>
+
+              {/* Dot rails for each content row (exclude divider band). */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-[1.75rem]">
+                <ProofDotRail />
+              </div>
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[1.75rem]">
+                <ProofDotRail />
+              </div>
             </div>
           </div>
         </div>

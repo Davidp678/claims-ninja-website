@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  /* Measured by Navbar ResizeObserver; fallback covers large logo + padding. */
+  --site-header-height: 6rem;
   --brand-black: #050505;
   --brand-elevated: #101010;
   --brand-surface: #181818;

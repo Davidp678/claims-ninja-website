@@ -1,29 +1,9 @@
 import { cn } from "@/lib/cn";
 import {
+  ONBOARDING_STAGES,
   STAGE_LABELS,
   type OnboardingStage,
 } from "@/lib/onboarding/stages";
-
-/**
- * Visual stepper order for the mockup (Claim → Company → Agreement → Billing → Account).
- * Route / state-machine order remains unchanged in `ONBOARDING_STAGES`.
- */
-export const PROGRESS_DISPLAY_STAGES: readonly OnboardingStage[] = [
-  "claim",
-  "company",
-  "agreement",
-  "billing",
-  "account",
-] as const;
-
-/** Journey progression order used only to derive complete vs upcoming. */
-const FLOW_ORDER: readonly OnboardingStage[] = [
-  "claim",
-  "company",
-  "account",
-  "agreement",
-  "billing",
-] as const;
 
 type ProgressRailProps = {
   current: OnboardingStage;
@@ -54,7 +34,7 @@ export function ProgressRail({
   className,
   allComplete = false,
 }: ProgressRailProps) {
-  const currentFlowIndex = FLOW_ORDER.indexOf(current);
+  const currentIndex = ONBOARDING_STAGES.indexOf(current);
 
   return (
     <ol
@@ -64,13 +44,11 @@ export function ProgressRail({
         className,
       )}
     >
-      {PROGRESS_DISPLAY_STAGES.map((stage, index) => {
-        const flowIndex = FLOW_ORDER.indexOf(stage);
-        const complete =
-          allComplete || (flowIndex >= 0 && flowIndex < currentFlowIndex);
+      {ONBOARDING_STAGES.map((stage, index) => {
+        const complete = allComplete || index < currentIndex;
         const active = !allComplete && stage === current;
         const upcoming = !complete && !active;
-        const showConnector = index < PROGRESS_DISPLAY_STAGES.length - 1;
+        const showConnector = index < ONBOARDING_STAGES.length - 1;
 
         return (
           <li

@@ -9,6 +9,7 @@ import {
   SectionCard,
   TextInput,
 } from "@/components/onboarding/FormField";
+import { OnboardingLoading } from "@/components/onboarding/OnboardingLoading";
 import { OnboardingShell } from "@/components/onboarding/OnboardingShell";
 import { useOnboardingSession } from "@/components/onboarding/useOnboardingSession";
 import { onboardingFetchJson } from "@/lib/onboarding/client-api";
@@ -61,7 +62,7 @@ export function AccountStage() {
   }
 
   if (loading) {
-    return <div className="bg-brand-black px-5 py-24 text-zinc-400">Loading…</div>;
+    return <OnboardingLoading />;
   }
   if (!session) {
     return (
@@ -155,8 +156,8 @@ export function AccountStage() {
           </ul>
 
           <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3 text-sm text-emerald-100">
-            After email verification, you&apos;ll become the organization owner and
-            your claim workspace will be created.
+            After email verification, your claim workspace will be provisioned with
+            you as the organization owner.
           </div>
 
           {(localError || error) && (
@@ -168,7 +169,7 @@ export function AccountStage() {
           <div className="flex gap-3">
             <button
               type="button"
-              onClick={() => router.push("/onboarding/company")}
+              onClick={() => router.push("/onboarding/billing")}
               className="rounded-lg border border-white/25 px-4 py-2.5 text-sm text-white hover:border-white/40"
             >
               Back

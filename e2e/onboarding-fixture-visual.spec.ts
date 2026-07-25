@@ -50,7 +50,12 @@ async function mockSession(
           stage: "claim",
           version: 2,
           claim: { propertyOrJobName: "Fixture Job" },
-          company: { legalCompanyName: "Fixture Co", workEmail: "owner@fixture.test" },
+          company: {
+            firstName: "Pat",
+            lastName: "Owner",
+            legalCompanyName: "Fixture Co",
+            workEmail: "owner@fixture.test",
+          },
           files,
           accountEmail: "owner@fixture.test",
           ...extras,

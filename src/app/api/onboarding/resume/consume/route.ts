@@ -10,6 +10,10 @@ import {
   mapPlatformResponse,
 } from "@/lib/onboarding/http";
 import { externalIntakeS2SJson } from "@/lib/onboarding/s2s";
+import {
+  maxAllowedOnboardingRoute,
+  stagePath,
+} from "@/lib/onboarding/stages";
 
 export const runtime = "nodejs";
 
@@ -33,6 +37,7 @@ export async function POST(request: Request) {
       stage: string;
       version: number;
       expiresAt?: string;
+      agreement?: { accepted?: boolean };
     }>("POST", "/api/external-intake/v1/resume/consume", {
       email: body.email,
       code: body.code,
@@ -41,11 +46,18 @@ export async function POST(request: Request) {
     if (envelope.ok && envelope.data?.intakeHandle) {
       await setIntakeHandleCookie(envelope.data.intakeHandle);
       await ensureCsrfCookie();
+      const nextRoute = maxAllowedOnboardingRoute({
+        status: envelope.data.status,
+        stage: envelope.data.stage,
+        agreement: envelope.data.agreement,
+      });
       return jsonOk({
         status: envelope.data.status,
         stage: envelope.data.stage,
         version: envelope.data.version,
         expiresAt: envelope.data.expiresAt,
+        nextStage: nextRoute,
+        nextPath: stagePath(nextRoute),
       });
     }
 

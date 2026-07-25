@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type MutableRefObject } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -13,6 +13,7 @@ import {
   TextInput,
 } from "@/components/onboarding/FormField";
 import { UploadZone } from "@/components/onboarding/UploadZone";
+import { OnboardingLoading } from "@/components/onboarding/OnboardingLoading";
 import { useOnboardingSession } from "@/components/onboarding/useOnboardingSession";
 import { CTA_LINKS } from "@/lib/constants";
 import { onboardingFetchJson, onboardingUploadFile } from "@/lib/onboarding/client-api";
@@ -23,6 +24,7 @@ import {
   type SaveState,
 } from "@/lib/onboarding/types";
 import type { OnboardingStage } from "@/lib/onboarding/stages";
+import { userFacingOnboardingError } from "@/lib/onboarding/user-errors";
 
 const US_STATES = [
   "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA",
@@ -36,14 +38,17 @@ type ClaimStageFormProps = {
   initialClaim: ClaimDraft;
   error: string | null;
   saveState: SaveState;
-  version: number;
+  versionRef: MutableRefObject<number>;
   autosave: (stage: OnboardingStage, patchBody: Record<string, unknown>) => void;
   patch: (
     stage: OnboardingStage,
     patchBody: Record<string, unknown>,
   ) => Promise<IntakeSessionProjection | null>;
   saveExit: () => Promise<void>;
-  refresh: () => Promise<IntakeSessionProjection | null>;
+  softRefresh: () => Promise<IntakeSessionProjection | null>;
+  syncVersion: (version: number) => void;
+  runSerialized: <T>(fn: () => Promise<T>) => Promise<T>;
+  clearAutosaveTimer: () => void;
 };
 
 function LockIcon({ className }: { className?: string }) {
@@ -69,11 +74,14 @@ function ClaimStageForm({
   initialClaim,
   error,
   saveState,
-  version,
+  versionRef,
   autosave,
   patch,
   saveExit,
-  refresh,
+  softRefresh,
+  syncVersion,
+  runSerialized,
+  clearAutosaveTimer,
 }: ClaimStageFormProps) {
   const router = useRouter();
   const [form, setForm] = useState<ClaimDraft>(initialClaim);
@@ -90,7 +98,8 @@ function ClaimStageForm({
 
   async function handleContinue() {
     setBusy(true);
-    const saved = await patch("claim", { claim: form });
+    clearAutosaveTimer();
+    const saved = await patch("company", { claim: form });
     setBusy(false);
     if (saved) router.push("/onboarding/company");
   }
@@ -344,43 +353,129 @@ function ClaimStageForm({
           compact
           bannerError={uploadError}
           onUpload={async (list) => {
-            setUploadError(null);
-            let currentVersion = version;
-            for (const file of Array.from(list)) {
-              const result = await onboardingUploadFile(file, currentVersion);
-              if (!result.ok) {
-                setUploadError(result.message);
-                await refresh();
-                return;
+            await runSerialized(async () => {
+              setUploadError(null);
+              clearAutosaveTimer();
+              let currentVersion = versionRef.current;
+              for (const file of Array.from(list)) {
+                let result = await onboardingUploadFile(file, currentVersion);
+                if (
+                  !result.ok &&
+                  result.code === "VERSION_MISMATCH" &&
+                  result.status === 409
+                ) {
+                  const refreshed = await softRefresh();
+                  if (!refreshed) {
+                    setUploadError(
+                      userFacingOnboardingError(result.code, result.message),
+                    );
+                    return;
+                  }
+                  currentVersion = versionRef.current;
+                  result = await onboardingUploadFile(file, currentVersion);
+                }
+                if (!result.ok) {
+                  setUploadError(
+                    userFacingOnboardingError(result.code, result.message),
+                  );
+                  await softRefresh();
+                  return;
+                }
+                if (typeof result.data.version === "number") {
+                  currentVersion = result.data.version;
+                  syncVersion(result.data.version);
+                }
               }
-              if (typeof result.data.version === "number") {
-                currentVersion = result.data.version;
-              }
-            }
-            await refresh();
+              await softRefresh();
+            });
           }}
           onRetry={async (fileId) => {
-            setUploadError(null);
-            const result = await onboardingFetchJson("/api/onboarding/files", {
-              method: "PATCH",
-              json: {
-                fileId,
-                expectedVersion: version,
-                action: "recover",
-              },
+            await runSerialized(async () => {
+              setUploadError(null);
+              clearAutosaveTimer();
+              let result = await onboardingFetchJson<{ version?: number }>(
+                "/api/onboarding/files",
+                {
+                  method: "PATCH",
+                  json: {
+                    fileId,
+                    expectedVersion: versionRef.current,
+                    action: "recover",
+                  },
+                },
+              );
+              if (
+                !result.ok &&
+                result.code === "VERSION_MISMATCH" &&
+                result.status === 409
+              ) {
+                const refreshed = await softRefresh();
+                if (refreshed) {
+                  result = await onboardingFetchJson<{ version?: number }>(
+                    "/api/onboarding/files",
+                    {
+                      method: "PATCH",
+                      json: {
+                        fileId,
+                        expectedVersion: versionRef.current,
+                        action: "recover",
+                      },
+                    },
+                  );
+                }
+              }
+              if (!result.ok) {
+                setUploadError(
+                  userFacingOnboardingError(result.code, result.message),
+                );
+              } else if (typeof result.data?.version === "number") {
+                syncVersion(result.data.version);
+              }
+              await softRefresh();
             });
-            if (!result.ok) {
-              setUploadError(result.message);
-            }
-            await refresh();
           }}
           onRemove={async (fileId) => {
-            setUploadError(null);
-            await onboardingFetchJson("/api/onboarding/files", {
-              method: "DELETE",
-              json: { fileId, expectedVersion: version },
+            await runSerialized(async () => {
+              setUploadError(null);
+              clearAutosaveTimer();
+              let result = await onboardingFetchJson<{ version?: number }>(
+                "/api/onboarding/files",
+                {
+                  method: "DELETE",
+                  json: {
+                    fileId,
+                    expectedVersion: versionRef.current,
+                  },
+                },
+              );
+              if (
+                !result.ok &&
+                result.code === "VERSION_MISMATCH" &&
+                result.status === 409
+              ) {
+                const refreshed = await softRefresh();
+                if (refreshed) {
+                  result = await onboardingFetchJson<{ version?: number }>(
+                    "/api/onboarding/files",
+                    {
+                      method: "DELETE",
+                      json: {
+                        fileId,
+                        expectedVersion: versionRef.current,
+                      },
+                    },
+                  );
+                }
+              }
+              if (!result.ok) {
+                setUploadError(
+                  userFacingOnboardingError(result.code, result.message),
+                );
+              } else if (typeof result.data?.version === "number") {
+                syncVersion(result.data.version);
+              }
+              await softRefresh();
             });
-            await refresh();
           }}
         />
       </SectionCard>
@@ -403,14 +498,15 @@ export function ClaimStage() {
     autosave,
     patch,
     saveExit,
-    version,
-    refresh,
+    versionRef,
+    softRefresh,
+    syncVersion,
+    runSerialized,
+    clearAutosaveTimer,
   } = useOnboardingSession();
 
   if (loading) {
-    return (
-      <div className="bg-brand-black px-5 py-24 text-zinc-400">Loading claim…</div>
-    );
+    return <OnboardingLoading label="Loading claim…" />;
   }
 
   if (!session) {
@@ -430,11 +526,14 @@ export function ClaimStage() {
       initialClaim={session.claim ?? {}}
       error={error}
       saveState={saveState}
-      version={version}
+      versionRef={versionRef}
       autosave={autosave}
       patch={patch}
       saveExit={saveExit}
-      refresh={refresh}
+      softRefresh={softRefresh}
+      syncVersion={syncVersion}
+      runSerialized={runSerialized}
+      clearAutosaveTimer={clearAutosaveTimer}
     />
   );
 }

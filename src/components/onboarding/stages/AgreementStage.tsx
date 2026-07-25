@@ -5,6 +5,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { SectionCard } from "@/components/onboarding/FormField";
+import { OnboardingLoading } from "@/components/onboarding/OnboardingLoading";
 import { OnboardingShell } from "@/components/onboarding/OnboardingShell";
 import { useOnboardingSession } from "@/components/onboarding/useOnboardingSession";
 import { onboardingFetchJson } from "@/lib/onboarding/client-api";
@@ -145,7 +146,7 @@ export function AgreementStage() {
   }
 
   if (loading) {
-    return <div className="bg-brand-black px-5 py-24 text-zinc-400">Loading…</div>;
+    return <OnboardingLoading />;
   }
   if (!session) {
     return (

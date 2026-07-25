@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CTA_LINKS, SITE } from "@/lib/constants";
 import { ES_CTA_LABELS, getLocalizedMainNav } from "@/lib/i18n/es-navigation";
 import { localizePath } from "@/lib/i18n/paths";
@@ -34,6 +34,7 @@ export function Navbar() {
   const homeHref = localizePath(locale, "/");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -49,8 +50,31 @@ export function Navbar() {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    const publishHeight = () => {
+      const height = Math.ceil(header.getBoundingClientRect().height);
+      document.documentElement.style.setProperty(
+        "--site-header-height",
+        `${height}px`,
+      );
+    };
+
+    publishHeight();
+    const observer = new ResizeObserver(publishHeight);
+    observer.observe(header);
+    window.addEventListener("resize", publishHeight);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", publishHeight);
+    };
+  }, [onOnboarding, scrolled, menuOpen]);
+
   return (
     <header
+      ref={headerRef}
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         onOnboarding || scrolled

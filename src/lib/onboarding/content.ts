@@ -18,6 +18,9 @@ export type HeroIntakeContent = {
   loginLink: string;
   cardTitle: string;
   cardSubhead: string;
+  yourNameLabel: string;
+  firstNamePlaceholder: string;
+  lastNamePlaceholder: string;
   propertyLabel: string;
   propertyPlaceholder: string;
   lossTypeLabel: string;
@@ -42,6 +45,9 @@ const EN: HeroIntakeContent = {
   loginLink: "Already a client? Log in →",
   cardTitle: "Start your claim",
   cardSubhead: "A few details now. Finish setup in one guided flow.",
+  yourNameLabel: "Your name",
+  firstNamePlaceholder: "First name",
+  lastNamePlaceholder: "Last name",
   propertyLabel: "Property / job name",
   propertyPlaceholder: "e.g. Johnson Residence",
   lossTypeLabel: "Loss type",
@@ -70,6 +76,9 @@ const ES: HeroIntakeContent = {
   loginLink: "¿Ya es cliente? Inicie sesión →",
   cardTitle: "Comience su reclamación",
   cardSubhead: "Algunos datos ahora. Complete la configuración en un flujo guiado.",
+  yourNameLabel: "Su nombre",
+  firstNamePlaceholder: "Nombre",
+  lastNamePlaceholder: "Apellido",
   propertyLabel: "Propiedad / nombre del trabajo",
   propertyPlaceholder: "p. ej. Residencia Johnson",
   lossTypeLabel: "Tipo de pérdida",
