@@ -1,9 +1,29 @@
 import { cn } from "@/lib/cn";
 import {
-  ONBOARDING_STAGES,
   STAGE_LABELS,
   type OnboardingStage,
 } from "@/lib/onboarding/stages";
+
+/**
+ * Visual stepper order for the mockup (Claim → Company → Agreement → Billing → Account).
+ * Route / state-machine order remains unchanged in `ONBOARDING_STAGES`.
+ */
+export const PROGRESS_DISPLAY_STAGES: readonly OnboardingStage[] = [
+  "claim",
+  "company",
+  "agreement",
+  "billing",
+  "account",
+] as const;
+
+/** Journey progression order used only to derive complete vs upcoming. */
+const FLOW_ORDER: readonly OnboardingStage[] = [
+  "claim",
+  "company",
+  "account",
+  "agreement",
+  "billing",
+] as const;
 
 type ProgressRailProps = {
   current: OnboardingStage;
@@ -34,48 +54,54 @@ export function ProgressRail({
   className,
   allComplete = false,
 }: ProgressRailProps) {
-  const currentIndex = ONBOARDING_STAGES.indexOf(current);
+  const currentFlowIndex = FLOW_ORDER.indexOf(current);
 
   return (
     <ol
       aria-label="Onboarding progress"
       className={cn(
-        "onboarding-progress-rail flex w-full max-w-3xl items-center justify-between gap-1",
+        "onboarding-progress-rail flex w-full items-center justify-between gap-1",
         className,
       )}
     >
-      {ONBOARDING_STAGES.map((stage, index) => {
-        const complete = allComplete || index < currentIndex;
-        const active = !allComplete && index === currentIndex;
+      {PROGRESS_DISPLAY_STAGES.map((stage, index) => {
+        const flowIndex = FLOW_ORDER.indexOf(stage);
+        const complete =
+          allComplete || (flowIndex >= 0 && flowIndex < currentFlowIndex);
+        const active = !allComplete && stage === current;
         const upcoming = !complete && !active;
+        const showConnector = index < PROGRESS_DISPLAY_STAGES.length - 1;
 
         return (
           <li
             key={stage}
             className={cn(
               "flex min-w-0 flex-1 items-center",
-              index < ONBOARDING_STAGES.length - 1 && "after:mx-2 after:h-px after:flex-1 after:bg-white/15",
-              complete &&
-                index < ONBOARDING_STAGES.length - 1 &&
-                "after:bg-emerald-500/70",
+              showConnector && "after:mx-2 after:h-px after:flex-1 after:bg-white/15",
+              complete && showConnector && "after:bg-white/35",
             )}
           >
             <div className="flex items-center gap-2">
               <span
                 className={cn(
                   "flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-semibold",
-                  complete && "bg-emerald-500 text-white",
-                  active && "bg-brand-red text-white shadow-[0_0_0_4px_rgba(220,38,38,0.18)]",
-                  upcoming && "border border-white/20 bg-brand-elevated text-zinc-400",
+                  complete && "border border-white/25 bg-transparent text-zinc-300",
+                  active && "bg-brand-red text-white",
+                  upcoming &&
+                    "border border-white/20 bg-transparent text-zinc-400",
                 )}
                 aria-current={active ? "step" : undefined}
               >
-                {complete ? <CheckIcon className="h-4 w-4" /> : index + 1}
+                {complete && !active ? (
+                  <CheckIcon className="h-4 w-4" />
+                ) : (
+                  index + 1
+                )}
               </span>
               <span
                 className={cn(
                   "hidden text-sm font-medium sm:inline",
-                  active || complete ? "text-white" : "text-zinc-500",
+                  active ? "text-white" : "text-zinc-500",
                 )}
               >
                 {STAGE_LABELS[stage]}

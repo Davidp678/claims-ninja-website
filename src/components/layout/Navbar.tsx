@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { CTA_LINKS, SITE } from "@/lib/constants";
 import { ES_CTA_LABELS, getLocalizedMainNav } from "@/lib/i18n/es-navigation";
@@ -15,8 +16,20 @@ import { LanguageToggle } from "./LanguageToggle";
 import { MobileNavMenu } from "./MobileNavMenu";
 import { NavDropdown } from "./NavDropdown";
 
+function isOnboardingPath(pathname: string | null): boolean {
+  if (!pathname) return false;
+  return (
+    pathname === "/onboarding" ||
+    pathname.startsWith("/onboarding/") ||
+    pathname === "/es/onboarding" ||
+    pathname.startsWith("/es/onboarding/")
+  );
+}
+
 export function Navbar() {
   const locale = useMarketingLocale();
+  const pathname = usePathname();
+  const onOnboarding = isOnboardingPath(pathname);
   const nav = locale === "es" ? getLocalizedMainNav() : MAIN_NAV;
   const homeHref = localizePath(locale, "/");
   const [scrolled, setScrolled] = useState(false);
@@ -40,8 +53,8 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "border-b border-white/15 bg-brand-black/85 py-1 backdrop-blur-xl"
+        onOnboarding || scrolled
+          ? "border-b border-white/15 bg-brand-black/95 py-1 backdrop-blur-xl"
           : "bg-transparent py-2",
       )}
     >

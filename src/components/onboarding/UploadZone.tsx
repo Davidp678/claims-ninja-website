@@ -25,13 +25,62 @@ function formatBytes(bytes: number) {
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
+function fileKind(filename: string): "pdf" | "zip" | "sheet" | "image" | "doc" | "other" {
+  const ext = filename.split(".").pop()?.toLowerCase() ?? "";
+  if (ext === "pdf") return "pdf";
+  if (ext === "zip" || ext === "rar" || ext === "7z") return "zip";
+  if (["xls", "xlsx", "csv"].includes(ext)) return "sheet";
+  if (["png", "jpg", "jpeg", "webp", "gif", "heic"].includes(ext)) return "image";
+  if (["doc", "docx"].includes(ext)) return "doc";
+  return "other";
+}
+
+function FileTypeIcon({ filename }: { filename: string }) {
+  const kind = fileKind(filename);
+  const tone =
+    kind === "pdf"
+      ? "bg-brand-red/15 text-brand-red-light"
+      : kind === "sheet"
+        ? "bg-emerald-500/15 text-emerald-300"
+        : kind === "zip"
+          ? "bg-white/10 text-zinc-200"
+          : kind === "image"
+            ? "bg-sky-500/15 text-sky-300"
+            : "bg-white/10 text-zinc-300";
+
+  const label =
+    kind === "pdf"
+      ? "PDF"
+      : kind === "sheet"
+        ? "XLS"
+        : kind === "zip"
+          ? "ZIP"
+          : kind === "image"
+            ? "IMG"
+            : kind === "doc"
+              ? "DOC"
+              : "FILE";
+
+  return (
+    <span
+      aria-hidden
+      className={cn(
+        "flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-[10px] font-bold tracking-wide",
+        tone,
+      )}
+    >
+      {label}
+    </span>
+  );
+}
+
 export function stateLabel(state: string) {
   switch (state) {
     case "ready":
-      return "Accepted";
+      return "Ready";
     case "scanning":
     case "scan_pending":
-      return "Security scan in progress…";
+      return "Scanning…";
     case "scan_unavailable":
       return "Protected — scan unavailable";
     case "uploading":
@@ -47,6 +96,10 @@ export function stateLabel(state: string) {
     default:
       return state;
   }
+}
+
+function isScanning(state: string) {
+  return state === "scanning" || state === "scan_pending";
 }
 
 export function UploadZone({
@@ -78,44 +131,68 @@ export function UploadZone({
               (file.securityState === "failed" ||
                 file.securityState === "scan_pending" ||
                 file.securityState === "preparing");
+            const scanning = isScanning(file.securityState);
+            const ready = file.securityState === "ready";
             return (
               <li
                 key={file.id}
-                className="flex items-center justify-between gap-3 rounded-lg border border-white/10 bg-brand-black/60 px-3 py-2.5"
+                className="rounded-lg border border-white/10 bg-brand-black/60 px-3 py-2.5"
               >
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-medium text-white">
-                    {file.filename}
-                  </p>
-                  <p className="text-xs text-zinc-500">
-                    {formatBytes(file.sizeBytes)} ·{" "}
-                    {stateLabel(file.securityState)}
-                  </p>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex min-w-0 items-center gap-3">
+                    <FileTypeIcon filename={file.filename} />
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-medium text-white">
+                        {file.filename}
+                      </p>
+                      <p className="mt-0.5 flex flex-wrap items-center gap-x-2 text-xs text-zinc-500">
+                        <span
+                          className={cn(
+                            ready && "text-emerald-400",
+                            scanning && "text-zinc-300",
+                          )}
+                        >
+                          {ready ? "✓ " : null}
+                          {stateLabel(file.securityState)}
+                        </span>
+                        <span aria-hidden>·</span>
+                        <span>{formatBytes(file.sizeBytes)}</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex shrink-0 items-center gap-1">
+                    {canRetry ? (
+                      <button
+                        type="button"
+                        aria-label={`Retry ${file.filename}`}
+                        onClick={() => onRetry?.(file.id)}
+                        disabled={disabled}
+                        className="rounded px-2 py-1 text-xs font-medium text-brand-red-light hover:bg-white/5 disabled:opacity-50"
+                      >
+                        Retry
+                      </button>
+                    ) : null}
+                    {onRemove ? (
+                      <button
+                        type="button"
+                        aria-label={`Remove ${file.filename}`}
+                        onClick={() => onRemove(file.id)}
+                        disabled={disabled}
+                        className="rounded p-1 text-zinc-400 hover:bg-white/5 hover:text-white disabled:opacity-50"
+                      >
+                        ×
+                      </button>
+                    ) : null}
+                  </div>
                 </div>
-                <div className="flex shrink-0 items-center gap-1">
-                  {canRetry ? (
-                    <button
-                      type="button"
-                      aria-label={`Retry ${file.filename}`}
-                      onClick={() => onRetry?.(file.id)}
-                      disabled={disabled}
-                      className="rounded px-2 py-1 text-xs font-medium text-brand-red-light hover:bg-white/5 disabled:opacity-50"
-                    >
-                      Retry
-                    </button>
-                  ) : null}
-                  {onRemove ? (
-                    <button
-                      type="button"
-                      aria-label={`Remove ${file.filename}`}
-                      onClick={() => onRemove(file.id)}
-                      disabled={disabled}
-                      className="rounded p-1 text-zinc-400 hover:bg-white/5 hover:text-white disabled:opacity-50"
-                    >
-                      ×
-                    </button>
-                  ) : null}
-                </div>
+                {scanning ? (
+                  <div
+                    aria-hidden
+                    className="mt-2 h-1 overflow-hidden rounded-full bg-white/10"
+                  >
+                    <div className="h-full w-2/3 animate-pulse rounded-full bg-brand-red" />
+                  </div>
+                ) : null}
               </li>
             );
           })}
@@ -141,18 +218,18 @@ export function UploadZone({
         }}
         className={cn(
           "flex w-full flex-col items-center justify-center rounded-xl border border-dashed px-4 text-center transition",
-          compact ? "py-6" : "py-10",
+          compact ? "py-5" : "py-10",
           dragging
             ? "border-brand-red bg-brand-red/10"
             : "border-white/20 bg-brand-black/40 hover:border-brand-red/50 hover:bg-brand-red/5",
           disabled && "pointer-events-none opacity-55",
         )}
       >
-        <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-brand-red/40 bg-brand-red/10 text-brand-red-light">
+        <span className="mb-2 flex h-9 w-9 items-center justify-center rounded-full border border-brand-red/40 bg-brand-red/10 text-brand-red-light">
           <svg
             aria-hidden
             viewBox="0 0 24 24"
-            className="h-5 w-5"
+            className="h-4 w-4"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"

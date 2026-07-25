@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 import type { Locale } from "@/lib/i18n/config";
 import {
   getHeroIntakeContent,
@@ -36,6 +34,14 @@ function RedDot() {
   );
 }
 
+function IconSlot({ children }: { children?: React.ReactNode }) {
+  return (
+    <span className="mr-1.5 inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center sm:h-4 sm:w-4">
+      {children}
+    </span>
+  );
+}
+
 function ProofMetricText({ metric }: { metric: HeroProofMetric }) {
   return (
     <span className="whitespace-nowrap">
@@ -48,14 +54,10 @@ function ProofMetricText({ metric }: { metric: HeroProofMetric }) {
   );
 }
 
-function cellAlignClass(index: number, total: number): string {
-  if (index === 0) return "justify-self-start";
-  if (index === total - 1) return "justify-self-end";
-  return "justify-self-center";
-}
-
 export function Hero({ locale = "en" }: { locale?: Locale }) {
   const content = getHeroIntakeContent(locale);
+  const [leftBullet, centerBullet, rightBullet] = content.bullets;
+  const [leftMetric, centerMetric, rightMetric] = content.proofMetrics;
 
   return (
     <section
@@ -104,37 +106,57 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             </div>
 
             {/*
-              Desktop: one shared grid — identical left/right edges for both
-              rows and the divider; red dots occupy the same separator columns.
+              Desktop: shared grid with a reserved left icon column so metric
+              text starts under bullet text (S→2). Right column uses the same
+              icon-slot + text pattern so N→3. Center stays visually centered.
+              [icon | left | · | center | · | right]
             */}
-            <div className="hidden w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-center sm:grid">
-              {content.bullets.map((bullet, index) => (
-                <Fragment key={`bullet-row-${bullet}`}>
-                  {index > 0 ? <RedDot /> : null}
-                  <div
-                    className={`flex min-w-0 items-center ${cellAlignClass(index, content.bullets.length)}`}
-                  >
-                    <ShieldIcon className="mr-1.5 h-3.5 w-3.5 shrink-0 text-emerald-400 sm:h-4 sm:w-4" />
-                    <span className="min-w-0">{bullet}</span>
-                  </div>
-                </Fragment>
-              ))}
+            <div className="hidden w-full grid-cols-[auto_minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-center sm:grid">
+              <IconSlot>
+                <ShieldIcon className="h-3.5 w-3.5 text-emerald-400 sm:h-4 sm:w-4" />
+              </IconSlot>
+              <span className="min-w-0 justify-self-start whitespace-nowrap">
+                {leftBullet}
+              </span>
+              <RedDot />
+              <div className="flex min-w-0 items-center justify-self-center">
+                <IconSlot>
+                  <ShieldIcon className="h-3.5 w-3.5 text-emerald-400 sm:h-4 sm:w-4" />
+                </IconSlot>
+                <span className="whitespace-nowrap">{centerBullet}</span>
+              </div>
+              <RedDot />
+              <div className="flex min-w-0 items-center justify-self-start">
+                <IconSlot>
+                  <ShieldIcon className="h-3.5 w-3.5 text-emerald-400 sm:h-4 sm:w-4" />
+                </IconSlot>
+                <span className="whitespace-nowrap">{rightBullet}</span>
+              </div>
 
               <div
                 aria-hidden
                 className="col-span-full my-3 h-px w-full bg-white/10"
               />
 
-              {content.proofMetrics.map((metric, index) => (
-                <Fragment key={`metric-row-${metric.text}-${index}`}>
-                  {index > 0 ? <RedDot /> : null}
-                  <div
-                    className={`flex min-w-0 items-center text-zinc-400 ${cellAlignClass(index, content.proofMetrics.length)}`}
-                  >
-                    <ProofMetricText metric={metric} />
-                  </div>
-                </Fragment>
-              ))}
+              <IconSlot />
+              <span className="min-w-0 justify-self-start whitespace-nowrap text-zinc-400">
+                {leftMetric ? <ProofMetricText metric={leftMetric} /> : null}
+              </span>
+              <RedDot />
+              <span className="min-w-0 justify-self-center whitespace-nowrap text-center text-zinc-400">
+                {centerMetric ? (
+                  <ProofMetricText metric={centerMetric} />
+                ) : null}
+              </span>
+              <RedDot />
+              <div className="flex min-w-0 items-center justify-self-start text-zinc-400">
+                <IconSlot />
+                <span className="whitespace-nowrap">
+                  {rightMetric ? (
+                    <ProofMetricText metric={rightMetric} />
+                  ) : null}
+                </span>
+              </div>
             </div>
           </div>
         </div>

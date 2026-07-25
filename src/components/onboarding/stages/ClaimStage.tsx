@@ -46,6 +46,24 @@ type ClaimStageFormProps = {
   refresh: () => Promise<IntakeSessionProjection | null>;
 };
 
+function LockIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="5" y="11" width="14" height="10" rx="2" />
+      <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+    </svg>
+  );
+}
+
 function ClaimStageForm({
   session,
   initialClaim,
@@ -77,6 +95,8 @@ function ClaimStageForm({
     if (saved) router.push("/onboarding/company");
   }
 
+  const fileCount = session.files?.length ?? 0;
+
   return (
     <OnboardingShell
       stage="claim"
@@ -89,8 +109,8 @@ function ClaimStageForm({
       continueLoading={busy}
       continueDisabled={!form.propertyOrJobName || !form.lossType}
       sidebar={
-        <SectionCard title="Claim intake">
-          <dl className="space-y-2 text-sm">
+        <SectionCard title="Claim intake" className="p-5">
+          <dl className="space-y-2.5 text-sm">
             <div className="flex justify-between gap-3">
               <dt className="text-zinc-500">Property</dt>
               <dd className="text-right text-zinc-200">
@@ -108,107 +128,129 @@ function ClaimStageForm({
             <div className="flex justify-between gap-3">
               <dt className="text-zinc-500">Files</dt>
               <dd className="text-right text-zinc-200">
-                {session.files?.length ?? 0} uploaded
+                {fileCount} uploaded
               </dd>
             </div>
           </dl>
-          <div className="mt-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3 text-sm text-emerald-100">
-            <p className="font-medium">Private & secure</p>
-            <p className="mt-1 text-emerald-100/80">
-              Your documents are not shared with the carrier.
-            </p>
+
+          <div className="my-4 h-px bg-white/10" />
+
+          <div className="flex gap-2.5">
+            <LockIcon className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+            <div>
+              <p className="text-sm font-medium text-emerald-100">
+                Private & secure
+              </p>
+              <p className="mt-1 text-sm leading-snug text-zinc-400">
+                Your documents are not shared with the carrier.
+              </p>
+            </div>
           </div>
-          <a
-            href={CTA_LINKS.schedule}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-block text-sm font-medium text-brand-red-light hover:text-brand-red"
-          >
-            Need help? Schedule a call
-          </a>
+
+          <div className="my-4 h-px bg-white/10" />
+
+          <div className="text-sm">
+            <p className="text-zinc-400">Need help?</p>
+            <a
+              href={CTA_LINKS.schedule}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-block font-medium text-brand-red-light underline underline-offset-2 hover:text-brand-red"
+            >
+              Schedule a call
+            </a>
+          </div>
         </SectionCard>
       }
     >
-      <SectionCard title="Property & loss">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="sm:col-span-2">
-            <FieldLabel htmlFor="property">Property / job name</FieldLabel>
-            <TextInput
-              id="property"
-              value={form.propertyOrJobName ?? ""}
-              onChange={(e) => update("propertyOrJobName", e.target.value)}
-            />
-          </div>
-          <div>
-            <FieldLabel htmlFor="lossDate">Loss date</FieldLabel>
-            <TextInput
-              id="lossDate"
-              type="date"
-              value={form.lossDate ?? ""}
-              onChange={(e) => update("lossDate", e.target.value)}
-            />
-          </div>
-          <div>
-            <FieldLabel htmlFor="lossType">Loss type</FieldLabel>
-            <SelectInput
-              id="lossType"
-              value={form.lossType ?? ""}
-              onChange={(e) => update("lossType", e.target.value)}
-            >
-              <option value="">Select loss type</option>
-              {LOSS_TYPE_OPTIONS.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </SelectInput>
-          </div>
-          <div className="sm:col-span-2">
-            <FieldLabel>Claim type</FieldLabel>
-            <div className="grid grid-cols-2 gap-2">
-              {(
-                [
-                  ["insurance", "Insurance claim"],
-                  ["retail_other", "Retail / other"],
-                ] as const
-              ).map(([value, label]) => (
-                <button
-                  key={value}
-                  type="button"
-                  onClick={() => update("claimType", value)}
-                  className={`rounded-lg border px-3 py-2.5 text-sm font-medium transition ${
-                    form.claimType === value
-                      ? "border-brand-red bg-brand-red text-white"
-                      : "border-white/15 bg-brand-black text-zinc-300 hover:border-white/30"
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
+      <SectionCard>
+        <div>
+          <h2 className="mb-4 text-base font-semibold text-white">
+            Property & loss
+          </h2>
+          <div className="grid gap-4 lg:grid-cols-4">
+            <div>
+              <FieldLabel htmlFor="property">Property / job name</FieldLabel>
+              <TextInput
+                id="property"
+                value={form.propertyOrJobName ?? ""}
+                onChange={(e) => update("propertyOrJobName", e.target.value)}
+              />
+            </div>
+            <div>
+              <FieldLabel htmlFor="lossDate">Loss date</FieldLabel>
+              <TextInput
+                id="lossDate"
+                type="date"
+                value={form.lossDate ?? ""}
+                onChange={(e) => update("lossDate", e.target.value)}
+              />
+            </div>
+            <div>
+              <FieldLabel htmlFor="lossType">Loss type</FieldLabel>
+              <SelectInput
+                id="lossType"
+                value={form.lossType ?? ""}
+                onChange={(e) => update("lossType", e.target.value)}
+              >
+                <option value="">Select loss type</option>
+                {LOSS_TYPE_OPTIONS.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </SelectInput>
+            </div>
+            <div>
+              <FieldLabel>Claim type</FieldLabel>
+              <div className="grid grid-cols-2 gap-1.5">
+                {(
+                  [
+                    ["insurance", "Insurance claim"],
+                    ["retail_other", "Retail / other"],
+                  ] as const
+                ).map(([value, label]) => (
+                  <button
+                    key={value}
+                    type="button"
+                    onClick={() => update("claimType", value)}
+                    className={`rounded-lg border px-2 py-2.5 text-xs font-medium transition sm:text-sm ${
+                      form.claimType === value
+                        ? "border-brand-red bg-brand-red text-white"
+                        : "border-white/15 bg-brand-black text-zinc-300 hover:border-white/30"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </SectionCard>
 
-      <SectionCard title="Property address">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="sm:col-span-2">
-            <FieldLabel htmlFor="street">Street address</FieldLabel>
-            <TextInput
-              id="street"
-              value={form.streetAddress ?? ""}
-              onChange={(e) => update("streetAddress", e.target.value)}
-            />
-          </div>
-          <div>
-            <FieldLabel htmlFor="city">City</FieldLabel>
-            <TextInput
-              id="city"
-              value={form.city ?? ""}
-              onChange={(e) => update("city", e.target.value)}
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-3">
+        <div className="my-5 h-px bg-white/10" />
+
+        <div>
+          <h2 className="mb-4 text-base font-semibold text-white">
+            Property address
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)_minmax(0,0.8fr)_minmax(0,0.9fr)]">
+            <div className="sm:col-span-2 lg:col-span-1">
+              <FieldLabel htmlFor="street">Street address</FieldLabel>
+              <TextInput
+                id="street"
+                value={form.streetAddress ?? ""}
+                onChange={(e) => update("streetAddress", e.target.value)}
+              />
+            </div>
+            <div>
+              <FieldLabel htmlFor="city">City</FieldLabel>
+              <TextInput
+                id="city"
+                value={form.city ?? ""}
+                onChange={(e) => update("city", e.target.value)}
+              />
+            </div>
             <div>
               <FieldLabel htmlFor="state">State</FieldLabel>
               <SelectInput
@@ -234,58 +276,63 @@ function ClaimStageForm({
             </div>
           </div>
         </div>
-      </SectionCard>
 
-      <SectionCard title="Claim information">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <FieldLabel htmlFor="homeowner" optional>
-              Homeowner name
-            </FieldLabel>
-            <TextInput
-              id="homeowner"
-              value={form.homeownerName ?? ""}
-              onChange={(e) => update("homeownerName", e.target.value)}
-            />
-          </div>
-          <div>
-            <FieldLabel htmlFor="carrier" optional>
-              Insurance carrier
-            </FieldLabel>
-            <TextInput
-              id="carrier"
-              value={form.insuranceCarrier ?? ""}
-              onChange={(e) => update("insuranceCarrier", e.target.value)}
-            />
-          </div>
-          <div>
-            <FieldLabel htmlFor="claimNumber" optional>
-              Claim number
-            </FieldLabel>
-            <TextInput
-              id="claimNumber"
-              value={form.claimNumber ?? ""}
-              onChange={(e) => update("claimNumber", e.target.value)}
-            />
-          </div>
-          <div>
-            <FieldLabel htmlFor="policyNumber" optional>
-              Policy number
-            </FieldLabel>
-            <TextInput
-              id="policyNumber"
-              value={form.policyNumber ?? ""}
-              onChange={(e) => update("policyNumber", e.target.value)}
-            />
-          </div>
-          <div className="sm:col-span-2">
-            <FieldLabel htmlFor="description">Loss description</FieldLabel>
-            <TextArea
-              id="description"
-              value={form.lossDescription ?? ""}
-              onChange={(e) => update("lossDescription", e.target.value)}
-              placeholder="Briefly describe what happened and the work involved."
-            />
+        <div className="my-5 h-px bg-white/10" />
+
+        <div>
+          <h2 className="mb-4 text-base font-semibold text-white">
+            Claim information
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <FieldLabel htmlFor="homeowner" optional>
+                Homeowner name
+              </FieldLabel>
+              <TextInput
+                id="homeowner"
+                value={form.homeownerName ?? ""}
+                onChange={(e) => update("homeownerName", e.target.value)}
+              />
+            </div>
+            <div>
+              <FieldLabel htmlFor="carrier" optional>
+                Insurance carrier
+              </FieldLabel>
+              <TextInput
+                id="carrier"
+                value={form.insuranceCarrier ?? ""}
+                onChange={(e) => update("insuranceCarrier", e.target.value)}
+              />
+            </div>
+            <div>
+              <FieldLabel htmlFor="claimNumber" optional>
+                Claim number
+              </FieldLabel>
+              <TextInput
+                id="claimNumber"
+                value={form.claimNumber ?? ""}
+                onChange={(e) => update("claimNumber", e.target.value)}
+              />
+            </div>
+            <div>
+              <FieldLabel htmlFor="policyNumber" optional>
+                Policy number
+              </FieldLabel>
+              <TextInput
+                id="policyNumber"
+                value={form.policyNumber ?? ""}
+                onChange={(e) => update("policyNumber", e.target.value)}
+              />
+            </div>
+            <div className="sm:col-span-2 lg:col-span-4">
+              <FieldLabel htmlFor="description">Loss description</FieldLabel>
+              <TextArea
+                id="description"
+                value={form.lossDescription ?? ""}
+                onChange={(e) => update("lossDescription", e.target.value)}
+                placeholder="Briefly describe what happened and the work involved."
+              />
+            </div>
           </div>
         </div>
       </SectionCard>
@@ -294,6 +341,7 @@ function ClaimStageForm({
         <UploadZone
           files={session.files}
           title="Add more files"
+          compact
           bannerError={uploadError}
           onUpload={async (list) => {
             setUploadError(null);
