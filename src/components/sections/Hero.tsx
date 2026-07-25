@@ -29,15 +29,21 @@ function RedDot() {
   return (
     <span
       aria-hidden
-      className="inline-block h-1 w-1 shrink-0 justify-self-center rounded-full bg-brand-red-light"
+      className="h-1 w-1 shrink-0 justify-self-center self-center rounded-full bg-brand-red-light"
     />
   );
 }
 
-function IconSlot({ children }: { children?: React.ReactNode }) {
+/** Fixed-width icon gutter so bullet text and metric text share an identical start edge. */
+function IconGutter({ showShield }: { showShield?: boolean }) {
   return (
-    <span className="mr-1.5 inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center sm:h-4 sm:w-4">
-      {children}
+    <span
+      aria-hidden
+      className="inline-flex h-4 w-4 shrink-0 items-center justify-center"
+    >
+      {showShield ? (
+        <ShieldIcon className="h-3.5 w-3.5 text-emerald-400 sm:h-4 sm:w-4" />
+      ) : null}
     </span>
   );
 }
@@ -51,6 +57,31 @@ function ProofMetricText({ metric }: { metric: HeroProofMetric }) {
       ) : null}
       {metric.suffix ?? null}
     </span>
+  );
+}
+
+function ProofCell({
+  align,
+  showShield,
+  children,
+  muted,
+}: {
+  align: "start" | "center";
+  showShield?: boolean;
+  children: React.ReactNode;
+  muted?: boolean;
+}) {
+  return (
+    <div
+      className={`flex min-w-0 items-center gap-1.5 ${
+        align === "center" ? "justify-self-center" : "justify-self-start"
+      } ${muted ? "text-zinc-400" : ""}`}
+    >
+      {align === "center" && !showShield ? null : (
+        <IconGutter showShield={showShield} />
+      )}
+      <span className="min-w-0 whitespace-nowrap">{children}</span>
+    </div>
   );
 }
 
@@ -86,11 +117,10 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             role="group"
             aria-label="Trust and proof points"
           >
-            {/* Mobile: single shared-width stack (no independent row widths). */}
             <div className="flex w-full flex-col gap-2 sm:hidden">
               {content.bullets.map((bullet) => (
-                <div key={bullet} className="flex items-center">
-                  <ShieldIcon className="mr-1.5 h-3.5 w-3.5 shrink-0 text-emerald-400" />
+                <div key={bullet} className="flex items-center gap-1.5">
+                  <IconGutter showShield />
                   <span>{bullet}</span>
                 </div>
               ))}
@@ -106,57 +136,41 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             </div>
 
             {/*
-              Desktop: shared grid with a reserved left icon column so metric
-              text starts under bullet text (S→2). Right column uses the same
-              icon-slot + text pattern so N→3. Center stays visually centered.
-              [icon | left | · | center | · | right]
+              Desktop: one shared 5-column grid. Left/right cells use the same
+              icon-gutter + text flex so S→2 and N→3 share an exact start edge.
+              Center metric stays visually centered (no gutter).
             */}
-            <div className="hidden w-full grid-cols-[auto_minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-center sm:grid">
-              <IconSlot>
-                <ShieldIcon className="h-3.5 w-3.5 text-emerald-400 sm:h-4 sm:w-4" />
-              </IconSlot>
-              <span className="min-w-0 justify-self-start whitespace-nowrap">
+            <div className="hidden w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-center sm:grid">
+              <ProofCell align="start" showShield>
                 {leftBullet}
-              </span>
+              </ProofCell>
               <RedDot />
-              <div className="flex min-w-0 items-center justify-self-center">
-                <IconSlot>
-                  <ShieldIcon className="h-3.5 w-3.5 text-emerald-400 sm:h-4 sm:w-4" />
-                </IconSlot>
-                <span className="whitespace-nowrap">{centerBullet}</span>
-              </div>
+              <ProofCell align="center" showShield>
+                {centerBullet}
+              </ProofCell>
               <RedDot />
-              <div className="flex min-w-0 items-center justify-self-start">
-                <IconSlot>
-                  <ShieldIcon className="h-3.5 w-3.5 text-emerald-400 sm:h-4 sm:w-4" />
-                </IconSlot>
-                <span className="whitespace-nowrap">{rightBullet}</span>
-              </div>
+              <ProofCell align="start" showShield>
+                {rightBullet}
+              </ProofCell>
 
               <div
                 aria-hidden
                 className="col-span-full my-3 h-px w-full bg-white/10"
               />
 
-              <IconSlot />
-              <span className="min-w-0 justify-self-start whitespace-nowrap text-zinc-400">
+              <ProofCell align="start" muted>
                 {leftMetric ? <ProofMetricText metric={leftMetric} /> : null}
-              </span>
+              </ProofCell>
               <RedDot />
-              <span className="min-w-0 justify-self-center whitespace-nowrap text-center text-zinc-400">
+              <ProofCell align="center" muted>
                 {centerMetric ? (
                   <ProofMetricText metric={centerMetric} />
                 ) : null}
-              </span>
+              </ProofCell>
               <RedDot />
-              <div className="flex min-w-0 items-center justify-self-start text-zinc-400">
-                <IconSlot />
-                <span className="whitespace-nowrap">
-                  {rightMetric ? (
-                    <ProofMetricText metric={rightMetric} />
-                  ) : null}
-                </span>
-              </div>
+              <ProofCell align="start" muted>
+                {rightMetric ? <ProofMetricText metric={rightMetric} /> : null}
+              </ProofCell>
             </div>
           </div>
         </div>
