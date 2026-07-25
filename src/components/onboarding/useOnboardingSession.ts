@@ -83,21 +83,20 @@ export function useOnboardingSession() {
   }, [softRefresh]);
 
   // Prefer the guard's shared snapshot; only GET if the guard finished without one.
+  // Apply snapshot asynchronously so we do not setState synchronously inside the effect.
   useEffect(() => {
     if (!guardReady) return;
 
-    if (snapshot) {
-      const nextVersion = snapshot.version ?? 0;
-      versionRef.current = nextVersion;
-      setSessionState(snapshot);
-      setVersion(nextVersion);
-      setError(null);
-      setLoading(false);
-      return;
-    }
-
     let cancelled = false;
     void (async () => {
+      if (snapshot) {
+        await Promise.resolve();
+        if (cancelled) return;
+        applySession(snapshot);
+        setLoading(false);
+        return;
+      }
+
       const result = await onboardingFetchJson<IntakeSessionProjection>(
         "/api/onboarding/session",
       );
