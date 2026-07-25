@@ -1,7 +1,6 @@
 import { cn } from "@/lib/cn";
 import {
   ONBOARDING_STAGES,
-  STAGE_LABELS,
   type OnboardingStage,
 } from "@/lib/onboarding/stages";
 
@@ -12,82 +11,51 @@ type ProgressRailProps = {
   allComplete?: boolean;
 };
 
-function CheckIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      aria-hidden
-      viewBox="0 0 20 20"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M4.5 10.5 8 14l7.5-8" />
-    </svg>
-  );
-}
+/** Compact progress labels — distinct from page titles. */
+const PROGRESS_LABELS: Record<OnboardingStage, string> = {
+  claim: "Claim details",
+  company: "Company",
+  agreement: "Agreement",
+  billing: "Billing",
+  account: "Account",
+};
 
 export function ProgressRail({
   current,
   className,
   allComplete = false,
 }: ProgressRailProps) {
-  const currentIndex = ONBOARDING_STAGES.indexOf(current);
+  const total = ONBOARDING_STAGES.length;
+  const currentIndex = Math.max(0, ONBOARDING_STAGES.indexOf(current));
+  const stepNumber = allComplete ? total : currentIndex + 1;
+  const label = PROGRESS_LABELS[allComplete ? "account" : current] ?? "Claim details";
+  const fillPercent = (stepNumber / total) * 100;
 
   return (
-    <ol
+    <div
       aria-label="Onboarding progress"
-      className={cn(
-        "onboarding-progress-rail flex w-full items-center justify-between gap-1",
-        className,
-      )}
+      className={cn("w-full max-w-xl", className)}
     >
-      {ONBOARDING_STAGES.map((stage, index) => {
-        const complete = allComplete || index < currentIndex;
-        const active = !allComplete && stage === current;
-        const upcoming = !complete && !active;
-        const showConnector = index < ONBOARDING_STAGES.length - 1;
-
-        return (
-          <li
-            key={stage}
-            className={cn(
-              "flex min-w-0 flex-1 items-center",
-              showConnector && "after:mx-2 after:h-px after:flex-1 after:bg-white/15",
-              complete && showConnector && "after:bg-white/35",
-            )}
-          >
-            <div className="flex items-center gap-2">
-              <span
-                className={cn(
-                  "flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-semibold",
-                  complete && "border border-white/25 bg-transparent text-zinc-300",
-                  active && "bg-brand-red text-white",
-                  upcoming &&
-                    "border border-white/20 bg-transparent text-zinc-400",
-                )}
-                aria-current={active ? "step" : undefined}
-              >
-                {complete && !active ? (
-                  <CheckIcon className="h-4 w-4" />
-                ) : (
-                  index + 1
-                )}
-              </span>
-              <span
-                className={cn(
-                  "hidden text-sm font-medium sm:inline",
-                  active ? "text-white" : "text-zinc-500",
-                )}
-              >
-                {STAGE_LABELS[stage]}
-              </span>
-            </div>
-          </li>
-        );
-      })}
-    </ol>
+      <p className="text-sm leading-snug">
+        <span className="font-semibold text-white">{label}</span>
+        <span className="text-zinc-500">{"  ·  "}</span>
+        <span className="font-normal text-zinc-500">
+          Step {stepNumber} of {total}
+        </span>
+      </p>
+      <div
+        className="mt-2.5 h-0.5 w-full overflow-hidden bg-white/15"
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={total}
+        aria-valuenow={stepNumber}
+        aria-valuetext={`${label}, Step ${stepNumber} of ${total}`}
+      >
+        <div
+          className="h-full bg-brand-red transition-[width] duration-300 ease-out"
+          style={{ width: `${fillPercent}%` }}
+        />
+      </div>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { OnboardingSessionProvider } from "@/components/onboarding/OnboardingSessionContext";
 import { OnboardingStageGuard } from "@/components/onboarding/OnboardingStageGuard";
 
 export const metadata: Metadata = {
@@ -13,7 +14,9 @@ export default function OnboardingMarketingLayout({
   // Uses the parent (marketing) layout Navbar/Footer unchanged.
   return (
     <div className="min-h-[70vh] bg-brand-black">
-      <OnboardingStageGuard>{children}</OnboardingStageGuard>
+      <OnboardingSessionProvider>
+        <OnboardingStageGuard>{children}</OnboardingStageGuard>
+      </OnboardingSessionProvider>
     </div>
   );
 }

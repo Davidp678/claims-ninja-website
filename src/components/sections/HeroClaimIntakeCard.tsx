@@ -451,11 +451,9 @@ export function HeroClaimIntakeCard({
           return;
         }
 
-        // Refresh projection/version after upload so Continue uses current state.
-        const refreshedBefore = await refreshSessionVersion();
-        const expectedVersion = refreshedBefore.ok
-          ? refreshedBefore.version
-          : (versionRef.current ?? session.version);
+        // Prefer the version already tracked through uploads; refresh only on 409.
+        const expectedVersion = versionRef.current ?? session.version;
+        router.prefetch("/onboarding/claim");
 
         let patched = await onboardingFetchJson("/api/onboarding/session", {
           method: "PATCH",

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { useOnboardingSessionContext } from "@/components/onboarding/OnboardingSessionContext";
 import { onboardingFetchJson } from "@/lib/onboarding/client-api";
 import { stagePath, type OnboardingStage } from "@/lib/onboarding/stages";
 import type { IntakeSessionProjection, SaveState } from "@/lib/onboarding/types";
@@ -10,22 +11,43 @@ import { userFacingOnboardingError } from "@/lib/onboarding/user-errors";
 
 export function useOnboardingSession() {
   const router = useRouter();
-  const [session, setSession] = useState<IntakeSessionProjection | null>(null);
-  const [loading, setLoading] = useState(true);
+  const { snapshot, guardReady, setSnapshot } = useOnboardingSessionContext();
+  const [session, setSessionState] = useState<IntakeSessionProjection | null>(
+    snapshot,
+  );
+  const [loading, setLoading] = useState(!snapshot);
   const [error, setError] = useState<string | null>(null);
   const [saveState, setSaveState] = useState<SaveState>("idle");
-  const [version, setVersion] = useState(0);
-  const versionRef = useRef(0);
+  const [version, setVersion] = useState(snapshot?.version ?? 0);
+  const versionRef = useRef(snapshot?.version ?? 0);
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const mutationChainRef = useRef<Promise<void>>(Promise.resolve());
+  const setSession = useCallback(
+    (
+      next:
+        | IntakeSessionProjection
+        | null
+        | ((prev: IntakeSessionProjection | null) => IntakeSessionProjection | null),
+    ) => {
+      setSessionState((prev) => {
+        const resolved = typeof next === "function" ? next(prev) : next;
+        setSnapshot(resolved);
+        return resolved;
+      });
+    },
+    [setSnapshot],
+  );
 
-  const applySession = useCallback((data: IntakeSessionProjection) => {
-    const nextVersion = data.version ?? 0;
-    versionRef.current = nextVersion;
-    setSession(data);
-    setVersion(nextVersion);
-    setError(null);
-  }, []);
+  const applySession = useCallback(
+    (data: IntakeSessionProjection) => {
+      const nextVersion = data.version ?? 0;
+      versionRef.current = nextVersion;
+      setSession(data);
+      setVersion(nextVersion);
+      setError(null);
+    },
+    [setSession],
+  );
 
   const syncVersion = useCallback((next: number) => {
     versionRef.current = next;
@@ -60,7 +82,20 @@ export function useOnboardingSession() {
     return data;
   }, [softRefresh]);
 
+  // Prefer the guard's shared snapshot; only GET if the guard finished without one.
   useEffect(() => {
+    if (!guardReady) return;
+
+    if (snapshot) {
+      const nextVersion = snapshot.version ?? 0;
+      versionRef.current = nextVersion;
+      setSessionState(snapshot);
+      setVersion(nextVersion);
+      setError(null);
+      setLoading(false);
+      return;
+    }
+
     let cancelled = false;
     void (async () => {
       const result = await onboardingFetchJson<IntakeSessionProjection>(
@@ -79,7 +114,7 @@ export function useOnboardingSession() {
     return () => {
       cancelled = true;
     };
-  }, [applySession]);
+  }, [applySession, guardReady, setSession, snapshot]);
 
   const clearAutosaveTimer = useCallback(() => {
     if (saveTimer.current) {

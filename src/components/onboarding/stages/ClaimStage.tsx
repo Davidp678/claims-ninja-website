@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, type MutableRefObject } from "react";
+import {
+  useEffect,
+  useState,
+  type Dispatch,
+  type MutableRefObject,
+  type SetStateAction,
+} from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -17,9 +23,11 @@ import { OnboardingLoading } from "@/components/onboarding/OnboardingLoading";
 import { useOnboardingSession } from "@/components/onboarding/useOnboardingSession";
 import { CTA_LINKS } from "@/lib/constants";
 import { onboardingFetchJson, onboardingUploadFile } from "@/lib/onboarding/client-api";
+import { isTerminalSecurityState } from "@/lib/onboarding/file-summary";
 import {
   LOSS_TYPE_OPTIONS,
   type ClaimDraft,
+  type IntakeFileSummary,
   type IntakeSessionProjection,
   type SaveState,
 } from "@/lib/onboarding/types";
@@ -49,7 +57,36 @@ type ClaimStageFormProps = {
   syncVersion: (version: number) => void;
   runSerialized: <T>(fn: () => Promise<T>) => Promise<T>;
   clearAutosaveTimer: () => void;
+  setSession: Dispatch<SetStateAction<IntakeSessionProjection | null>>;
 };
+
+function mergeUploadedFile(
+  prev: IntakeSessionProjection,
+  uploaded: {
+    id: string;
+    filename: string;
+    sizeBytes: number;
+    securityState: string;
+    contentType?: string;
+  },
+): IntakeSessionProjection {
+  const nextFile: IntakeFileSummary = {
+    id: uploaded.id,
+    filename: uploaded.filename,
+    sizeBytes: uploaded.sizeBytes,
+    securityState: uploaded.securityState,
+    contentType: uploaded.contentType,
+  };
+  const files = [...(prev.files ?? [])];
+  const idx = files.findIndex((f) => f.id === nextFile.id);
+  if (idx >= 0) files[idx] = nextFile;
+  else files.push(nextFile);
+  return { ...prev, files };
+}
+
+function filesNeedScanRefresh(files: IntakeFileSummary[] | undefined): boolean {
+  return (files ?? []).some((f) => !isTerminalSecurityState(f.securityState));
+}
 
 function LockIcon({ className }: { className?: string }) {
   return (
@@ -82,11 +119,18 @@ function ClaimStageForm({
   syncVersion,
   runSerialized,
   clearAutosaveTimer,
+  setSession,
 }: ClaimStageFormProps) {
   const router = useRouter();
   const [form, setForm] = useState<ClaimDraft>(initialClaim);
   const [busy, setBusy] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (form.propertyOrJobName && form.lossType) {
+      router.prefetch("/onboarding/company");
+    }
+  }, [form.lossType, form.propertyOrJobName, router]);
 
   function update<K extends keyof ClaimDraft>(key: K, value: ClaimDraft[K]) {
     setForm((prev) => {
@@ -99,6 +143,7 @@ function ClaimStageForm({
   async function handleContinue() {
     setBusy(true);
     clearAutosaveTimer();
+    router.prefetch("/onboarding/company");
     const saved = await patch("company", { claim: form });
     setBusy(false);
     if (saved) router.push("/onboarding/company");
@@ -384,16 +429,40 @@ function ClaimStageForm({
                 if (typeof result.data.version === "number") {
                   currentVersion = result.data.version;
                   syncVersion(result.data.version);
+                } else {
+                  // Mutation omitted version — reconcile from server.
+                  await softRefresh();
+                  currentVersion = versionRef.current;
+                  continue;
+                }
+                let mergedFiles: IntakeFileSummary[] | undefined;
+                setSession((prev) => {
+                  if (!prev) return prev;
+                  const merged = mergeUploadedFile(prev, result.data);
+                  mergedFiles = merged.files;
+                  return {
+                    ...merged,
+                    version: result.data.version ?? prev.version,
+                  };
+                });
+                if (filesNeedScanRefresh(mergedFiles)) {
+                  await softRefresh();
                 }
               }
-              await softRefresh();
             });
           }}
           onRetry={async (fileId) => {
             await runSerialized(async () => {
               setUploadError(null);
               clearAutosaveTimer();
-              let result = await onboardingFetchJson<{ version?: number }>(
+              let result = await onboardingFetchJson<{
+                version?: number;
+                securityState?: string;
+                id?: string;
+                filename?: string;
+                fileName?: string;
+                sizeBytes?: number;
+              }>(
                 "/api/onboarding/files",
                 {
                   method: "PATCH",
@@ -411,7 +480,14 @@ function ClaimStageForm({
               ) {
                 const refreshed = await softRefresh();
                 if (refreshed) {
-                  result = await onboardingFetchJson<{ version?: number }>(
+                  result = await onboardingFetchJson<{
+                    version?: number;
+                    securityState?: string;
+                    id?: string;
+                    filename?: string;
+                    fileName?: string;
+                    sizeBytes?: number;
+                  }>(
                     "/api/onboarding/files",
                     {
                       method: "PATCH",
@@ -428,9 +504,13 @@ function ClaimStageForm({
                 setUploadError(
                   userFacingOnboardingError(result.code, result.message),
                 );
-              } else if (typeof result.data?.version === "number") {
+                await softRefresh();
+                return;
+              }
+              if (typeof result.data?.version === "number") {
                 syncVersion(result.data.version);
               }
+              // Recover may change scan state — refresh for truthfulness.
               await softRefresh();
             });
           }}
@@ -471,10 +551,21 @@ function ClaimStageForm({
                 setUploadError(
                   userFacingOnboardingError(result.code, result.message),
                 );
-              } else if (typeof result.data?.version === "number") {
+                await softRefresh();
+                return;
+              }
+              if (typeof result.data?.version === "number") {
                 syncVersion(result.data.version);
               }
-              await softRefresh();
+              setSession((prev) =>
+                prev
+                  ? {
+                      ...prev,
+                      version: result.data?.version ?? prev.version,
+                      files: (prev.files ?? []).filter((f) => f.id !== fileId),
+                    }
+                  : prev,
+              );
             });
           }}
         />
@@ -503,6 +594,7 @@ export function ClaimStage() {
     syncVersion,
     runSerialized,
     clearAutosaveTimer,
+    setSession,
   } = useOnboardingSession();
 
   if (loading) {
@@ -534,6 +626,7 @@ export function ClaimStage() {
       syncVersion={syncVersion}
       runSerialized={runSerialized}
       clearAutosaveTimer={clearAutosaveTimer}
+      setSession={setSession}
     />
   );
 }

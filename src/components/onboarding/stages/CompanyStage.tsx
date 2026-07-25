@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import {
@@ -67,8 +67,21 @@ function CompanyStageForm({
     });
   }
 
+  useEffect(() => {
+    if (form.firstName && form.lastName && form.workEmail && form.legalCompanyName) {
+      router.prefetch("/onboarding/agreement");
+    }
+  }, [
+    form.firstName,
+    form.lastName,
+    form.legalCompanyName,
+    form.workEmail,
+    router,
+  ]);
+
   async function handleContinue() {
     setBusy(true);
+    router.prefetch("/onboarding/agreement");
     const saved = await patch("agreement", { company: form });
     setBusy(false);
     if (saved) router.push("/onboarding/agreement");
