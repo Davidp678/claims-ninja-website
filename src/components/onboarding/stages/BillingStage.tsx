@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import {
@@ -128,8 +128,18 @@ function isProfileComplete(
 
 export function BillingStage() {
   const router = useRouter();
-  const { session, loading, error, saveState, saveExit, version, setSaveState } =
-    useOnboardingSession();
+  const {
+    session,
+    loading,
+    error,
+    saveState,
+    saveExit,
+    versionRef,
+    syncVersion,
+    softRefresh,
+    runSerialized,
+    setSaveState,
+  } = useOnboardingSession();
   const [status, setStatus] = useState<BillingStatus | null>(null);
   const [contact, setContact] = useState<BillingContactDraft>({});
   const [address, setAddress] = useState<BillingAddressDraft>({});
@@ -137,6 +147,7 @@ export function BillingStage() {
   const [busy, setBusy] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
   const [hydrated, setHydrated] = useState(false);
+  const autosaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     void (async () => {
@@ -188,20 +199,56 @@ export function BillingStage() {
 
   const profileComplete = isProfileComplete(contact, address);
 
-  async function autosaveProfile(
+  async function saveBillingProfile(
+    nextContact: BillingContactDraft,
+    nextAddress: BillingAddressDraft,
+  ): Promise<{ ok: true; version: number } | { ok: false; message: string }> {
+    return runSerialized(async () => {
+      setSaveState("saving");
+      const send = (expectedVersion: number) =>
+        onboardingFetchJson<{ version?: number }>("/api/onboarding/billing", {
+          method: "PATCH",
+          json: {
+            expectedVersion,
+            contact: nextContact,
+            address: nextAddress,
+          },
+        });
+
+      let result = await send(versionRef.current);
+      if (
+        !result.ok &&
+        result.code === "VERSION_MISMATCH" &&
+        result.status === 409
+      ) {
+        await softRefresh();
+        result = await send(versionRef.current);
+      }
+
+      if (!result.ok) {
+        setSaveState("error");
+        await softRefresh();
+        return { ok: false as const, message: result.message };
+      }
+
+      if (typeof result.data.version === "number") {
+        syncVersion(result.data.version);
+      } else {
+        await softRefresh();
+      }
+      setSaveState("saved");
+      return { ok: true as const, version: versionRef.current };
+    });
+  }
+
+  function scheduleAutosave(
     nextContact: BillingContactDraft,
     nextAddress: BillingAddressDraft,
   ) {
-    setSaveState("saving");
-    const result = await onboardingFetchJson("/api/onboarding/billing", {
-      method: "PATCH",
-      json: {
-        expectedVersion: version,
-        contact: nextContact,
-        address: nextAddress,
-      },
-    });
-    setSaveState(result.ok ? "saved" : "error");
+    if (autosaveTimer.current) clearTimeout(autosaveTimer.current);
+    autosaveTimer.current = setTimeout(() => {
+      void saveBillingProfile(nextContact, nextAddress);
+    }, 600);
   }
 
   function updateContact<K extends keyof BillingContactDraft>(
@@ -210,7 +257,7 @@ export function BillingStage() {
   ) {
     setContact((prev) => {
       const next = { ...prev, [key]: value };
-      void autosaveProfile(next, address);
+      scheduleAutosave(next, address);
       return next;
     });
   }
@@ -221,7 +268,7 @@ export function BillingStage() {
   ) {
     setAddress((prev) => {
       const next = { ...prev, [key]: value };
-      void autosaveProfile(contact, next);
+      scheduleAutosave(contact, next);
       return next;
     });
   }
@@ -238,18 +285,12 @@ export function BillingStage() {
     }
 
     setBusy(true);
+    if (autosaveTimer.current) {
+      clearTimeout(autosaveTimer.current);
+      autosaveTimer.current = null;
+    }
 
-    const save = await onboardingFetchJson<{ version?: number }>(
-      "/api/onboarding/billing",
-      {
-        method: "PATCH",
-        json: {
-          expectedVersion: version,
-          contact,
-          address,
-        },
-      },
-    );
+    const save = await saveBillingProfile(contact, address);
     if (!save.ok) {
       setBusy(false);
       setLocalError(save.message);
@@ -260,17 +301,35 @@ export function BillingStage() {
       .filter((part) => nonEmpty(part))
       .join(" ");
 
-    const authz = await onboardingFetchJson<{
-      sessionVersion?: number;
-    }>("/api/onboarding/billing/authorization", {
-      method: "POST",
-      json: {
-        expectedVersion: save.data.version ?? version,
-        acceptanceLanguage:
-          status?.authorization?.acceptanceLanguage ?? ACKNOWLEDGEMENT_FALLBACK,
-        signerName,
-        signerEmail: contact.email,
-      },
+    const authz = await runSerialized(async () => {
+      const send = (expectedVersion: number) =>
+        onboardingFetchJson<{
+          sessionVersion?: number;
+        }>("/api/onboarding/billing/authorization", {
+          method: "POST",
+          json: {
+            expectedVersion,
+            acceptanceLanguage:
+              status?.authorization?.acceptanceLanguage ??
+              ACKNOWLEDGEMENT_FALLBACK,
+            signerName,
+            signerEmail: contact.email,
+          },
+        });
+
+      let result = await send(versionRef.current);
+      if (
+        !result.ok &&
+        result.code === "VERSION_MISMATCH" &&
+        result.status === 409
+      ) {
+        await softRefresh();
+        result = await send(versionRef.current);
+      }
+      if (result.ok && typeof result.data.sessionVersion === "number") {
+        syncVersion(result.data.sessionVersion);
+      }
+      return result;
     });
     if (!authz.ok) {
       setBusy(false);
@@ -278,14 +337,30 @@ export function BillingStage() {
       return;
     }
 
-    const cont = await onboardingFetchJson<{
-      noPaymentCollected?: boolean;
-      continueMode?: string;
-    }>("/api/onboarding/billing/continue", {
-      method: "POST",
-      json: {
-        expectedVersion: authz.data.sessionVersion ?? save.data.version ?? version,
-      },
+    const cont = await runSerialized(async () => {
+      const send = (expectedVersion: number) =>
+        onboardingFetchJson<{
+          noPaymentCollected?: boolean;
+          continueMode?: string;
+          version?: number;
+        }>("/api/onboarding/billing/continue", {
+          method: "POST",
+          json: { expectedVersion },
+        });
+
+      let result = await send(versionRef.current);
+      if (
+        !result.ok &&
+        result.code === "VERSION_MISMATCH" &&
+        result.status === 409
+      ) {
+        await softRefresh();
+        result = await send(versionRef.current);
+      }
+      if (result.ok && typeof result.data.version === "number") {
+        syncVersion(result.data.version);
+      }
+      return result;
     });
     setBusy(false);
     if (!cont.ok) {
@@ -468,14 +543,14 @@ export function BillingStage() {
                       suite: address.suite,
                     }
                   : address;
-                setContact(nextContact);
-                setAddress(nextAddress);
-                void autosaveProfile(nextContact, nextAddress);
-              }}
-              className="h-4 w-4 rounded border-white/30 bg-brand-black text-brand-red"
-            />
-            Billing address is the same as company address
-          </label>
+                  setContact(nextContact);
+                  setAddress(nextAddress);
+                  scheduleAutosave(nextContact, nextAddress);
+                }}
+                className="h-4 w-4 rounded border-white/30 bg-brand-black text-brand-red"
+              />
+              Billing address is the same as company address
+            </label>
 
           <div className={sameAsCompany ? "opacity-60" : undefined}>
             <div>
