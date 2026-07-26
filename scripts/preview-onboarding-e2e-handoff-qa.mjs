@@ -276,9 +276,15 @@ try {
   // --- Account password ---
   await page.locator("#password").fill(password);
   await page.locator("#confirm").fill(password);
+  await page.waitForFunction(() => {
+    const btn = [...document.querySelectorAll("button")].find((b) =>
+      /send verification code/i.test(b.textContent || ""),
+    );
+    return btn && !btn.disabled;
+  });
   await Promise.all([
     page.waitForURL(/\/onboarding\/verify/, { timeout: 90_000 }),
-    page.getByRole("button", { name: /create account|continue|verify/i }).click(),
+    page.getByRole("button", { name: /send verification code/i }).click(),
   ]);
   await page.waitForTimeout(1500);
 
