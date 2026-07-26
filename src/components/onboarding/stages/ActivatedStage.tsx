@@ -50,6 +50,9 @@ export function ActivatedStage() {
           setProvisionError(
             "Workspace setup hit a temporary issue. You can retry in a moment.",
           );
+        } else {
+          // Clear a prior retryable failure once the saga reports ready/completed.
+          setProvisionError(null);
         }
       } else {
         setProvisionError(result.message);
@@ -180,8 +183,19 @@ export function ActivatedStage() {
                     "/api/onboarding/provision",
                   );
                   setProvisionLoading(false);
-                  if (result.ok) setProvision(result.data);
-                  else setProvisionError(result.message);
+                  if (result.ok) {
+                    setProvision(result.data);
+                    if (
+                      result.data?.status === "failed_retryable" ||
+                      result.data?.status === "failed"
+                    ) {
+                      setProvisionError(
+                        "Workspace setup hit a temporary issue. You can retry in a moment.",
+                      );
+                    } else {
+                      setProvisionError(null);
+                    }
+                  } else setProvisionError(result.message);
                 })();
               }}
             >

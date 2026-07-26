@@ -140,6 +140,13 @@ const context = await browser.newContext({
 
 let handoffCodeForReplay = null;
 let claimWorkspacePath = null;
+const network = {
+  otpVerify: [],
+  provision: [],
+  handoffMint: [],
+  instruments: [],
+  billingContinue: [],
+};
 
 try {
   const seed = new URL(SITE);
@@ -156,14 +163,6 @@ try {
   const stamp = Date.now().toString(36);
   const email = `qa+e2e${stamp}@example.com`;
   const password = `E2e-${stamp}-Aa1!`;
-
-  const network = {
-    otpVerify: [],
-    provision: [],
-    handoffMint: [],
-    instruments: [],
-    billingContinue: [],
-  };
 
   page.on("response", async (res) => {
     const url = res.url();
@@ -183,7 +182,13 @@ try {
       paymentMethodOnFile: json?.data?.paymentMethodOnFile ?? null,
     };
     if (url.includes("/account/otp/verify")) network.otpVerify.push(entry);
-    if (url.includes("/provision")) network.provision.push(entry);
+    if (url.includes("/api/onboarding/provision")) {
+      network.provision.push({
+        ...entry,
+        statusField: json?.data?.status ?? null,
+        message: json?.error?.message ?? json?.data?.message ?? null,
+      });
+    }
     if (url.endsWith("/handoff") || url.includes("/api/onboarding/handoff")) {
       network.handoffMint.push(entry);
     }
@@ -282,10 +287,32 @@ try {
     );
     return btn && !btn.disabled;
   });
-  await Promise.all([
-    page.waitForURL(/\/onboarding\/verify/, { timeout: 90_000 }),
-    page.getByRole("button", { name: /send verification code/i }).click(),
-  ]);
+  const passwordWait = page.waitForResponse(
+    (res) =>
+      res.url().includes("/api/onboarding/account/password") &&
+      res.request().method() === "POST",
+    { timeout: 90_000 },
+  );
+  await page.getByRole("button", { name: /send verification code/i }).click();
+  const passwordRes = await passwordWait;
+  let passwordJson = null;
+  try {
+    passwordJson = await passwordRes.json();
+  } catch {
+    passwordJson = null;
+  }
+  report.checks.passwordSubmit = {
+    status: passwordRes.status(),
+    ok: passwordJson?.ok ?? null,
+    code: passwordJson?.error?.code ?? null,
+    message: passwordJson?.error?.message ?? null,
+  };
+  if (!passwordJson?.ok) {
+    throw new Error(
+      `Password submit failed: ${passwordJson?.error?.code ?? passwordRes.status()}`,
+    );
+  }
+  await page.waitForURL(/\/onboarding\/verify/, { timeout: 90_000 });
   await page.waitForTimeout(1500);
 
   const handleBeforeOtp = (await context.cookies())
@@ -352,24 +379,45 @@ try {
     ),
   };
 
-  // Wait for provision ready
-  await page.waitForFunction(
-    () =>
-      /your workspace is ready/i.test(document.body.innerText) ||
-      /open claim workspace/i.test(document.body.innerText),
-    null,
-    { timeout: 180_000 },
-  );
+  // Wait until provision finishes (button label alone is always visible).
+  const provisionDeadline = Date.now() + 240_000;
+  let activatedText = "";
+  let retried = false;
+  while (Date.now() < provisionDeadline) {
+    activatedText = await page.locator("body").innerText();
+    if (/your workspace is ready/i.test(activatedText)) break;
+    if (
+      !retried &&
+      /workspace setup needs attention|temporary issue/i.test(activatedText)
+    ) {
+      const retryBtn = page.getByRole("button", { name: /retry setup/i });
+      if (await retryBtn.count()) {
+        retried = true;
+        await retryBtn.click();
+        await page.waitForTimeout(2000);
+        continue;
+      }
+    }
+    await page.waitForTimeout(2000);
+  }
+  if (!/your workspace is ready/i.test(activatedText)) {
+    report.checks.activated = {
+      url: page.url().replace(/\?.*$/, ""),
+      bodyHasReady: false,
+      provisionTimedOut: true,
+      provisionNetwork: network.provision.slice(-5),
+      bodySnippet: activatedText.replace(/\s+/g, " ").slice(0, 800),
+    };
+    throw new Error("Provisioning timed out on activated stage");
+  }
   await page.screenshot({
     path: resolve(OUT, "activated-ready.png"),
     fullPage: true,
   });
   report.checks.activated = {
     url: page.url().replace(/\?.*$/, ""),
-    bodyHasReady: /your workspace is ready/i.test(
-      await page.locator("body").innerText(),
-    ),
-    provisionNetwork: network.provision.slice(-3),
+    bodyHasReady: /your workspace is ready/i.test(activatedText),
+    provisionNetwork: network.provision.slice(-5),
   };
 
   // Capture mint response code (for replay) + observe handoff URL (not claim?code=)
