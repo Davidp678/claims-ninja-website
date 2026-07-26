@@ -550,7 +550,7 @@ export function HeroClaimIntakeCard({
         </h2>
         <p className="mt-1.5 text-sm text-zinc-400">{content.cardSubhead}</p>
 
-        <HeroProgressRail current="claim" className="hero-intake-progress mt-5" />
+        <HeroProgressRail current="claim" className="mt-5" />
 
         <div className="hero-intake-fields mt-6 space-y-4">
           <div>
