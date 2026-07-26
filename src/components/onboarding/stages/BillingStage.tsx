@@ -17,6 +17,7 @@ import { onboardingFetchJson } from "@/lib/onboarding/client-api";
 import type {
   BillingAddressDraft,
   BillingContactDraft,
+  CompanyDraft,
 } from "@/lib/onboarding/types";
 
 const US_STATES = [
@@ -26,12 +27,16 @@ const US_STATES = [
   "VA","WA","WV","WI","WY","DC",
 ];
 
+const ACKNOWLEDGEMENT_FALLBACK =
+  "I understand Claims Ninja will collect my payment method securely through QuickBooks before payment is processed, and that payment is handled only according to my agreement and approved invoice workflow.";
+
 type BillingStatus = {
   captureEnabled: boolean;
   continueAllowed: boolean;
   continueMode?: string | null;
   previewSyntheticEnabled?: boolean;
   integrationPending?: boolean;
+  profileComplete?: boolean;
   message?: string | null;
   reason?: string | null;
   contact?: BillingContactDraft;
@@ -48,8 +53,78 @@ type BillingStatus = {
   noChargeDuringOnboarding?: boolean;
   manualChargesOnly?: boolean;
   noPaymentCollected?: boolean;
-  noPaymentCollectedInPreview?: boolean;
+  paymentMethodOnFile?: boolean;
 };
+
+function nonEmpty(value: string | undefined | null): boolean {
+  return Boolean(value && value.trim().length > 0);
+}
+
+function prefillContact(
+  existing: BillingContactDraft | undefined,
+  company: CompanyDraft | undefined,
+): BillingContactDraft {
+  const base = existing ?? {};
+  const legacyName = base.name?.trim() ?? "";
+  const [legacyFirst, ...legacyRest] = legacyName.split(/\s+/).filter(Boolean);
+  return {
+    ...base,
+    firstName:
+      base.firstName || company?.firstName || legacyFirst || undefined,
+    lastName:
+      base.lastName ||
+      company?.lastName ||
+      (legacyRest.length > 0 ? legacyRest.join(" ") : undefined),
+    title: base.title || company?.jobTitle || undefined,
+    email: base.email || company?.workEmail || undefined,
+    phone: base.phone || company?.mobilePhone || company?.companyPhone || undefined,
+    legalCompanyName:
+      base.legalCompanyName || company?.legalCompanyName || undefined,
+    dbaName: base.dbaName || company?.dbaName || undefined,
+    apEmail: base.apEmail || undefined,
+    apPhone: base.apPhone || undefined,
+    sameAsCompanyAddress: base.sameAsCompanyAddress ?? true,
+  };
+}
+
+function prefillAddress(
+  existing: BillingAddressDraft | undefined,
+  company: CompanyDraft | undefined,
+  sameAsCompany: boolean,
+): BillingAddressDraft {
+  if (sameAsCompany) {
+    return {
+      streetAddress: company?.streetAddress ?? existing?.streetAddress,
+      suite: existing?.suite,
+      city: company?.city ?? existing?.city,
+      state: company?.state ?? existing?.state,
+      postalCode: company?.postalCode ?? existing?.postalCode,
+    };
+  }
+  return existing ?? {};
+}
+
+function isProfileComplete(
+  contact: BillingContactDraft,
+  address: BillingAddressDraft,
+): boolean {
+  if (
+    !nonEmpty(contact.firstName) ||
+    !nonEmpty(contact.lastName) ||
+    !nonEmpty(contact.title) ||
+    !nonEmpty(contact.email) ||
+    !nonEmpty(contact.phone) ||
+    !nonEmpty(contact.legalCompanyName)
+  ) {
+    return false;
+  }
+  return (
+    nonEmpty(address.streetAddress) &&
+    nonEmpty(address.city) &&
+    nonEmpty(address.state) &&
+    nonEmpty(address.postalCode)
+  );
+}
 
 export function BillingStage() {
   const router = useRouter();
@@ -61,6 +136,7 @@ export function BillingStage() {
   const [authorized, setAuthorized] = useState(false);
   const [busy, setBusy] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     void (async () => {
@@ -69,8 +145,17 @@ export function BillingStage() {
       );
       if (result.ok) {
         setStatus(result.data);
-        setContact(result.data.contact ?? session?.billingContact ?? {});
-        setAddress(result.data.address ?? session?.billingAddress ?? {});
+        const nextContact = prefillContact(
+          result.data.contact ?? session?.billingContact,
+          session?.company,
+        );
+        const nextAddress = prefillAddress(
+          result.data.address ?? session?.billingAddress,
+          session?.company,
+          Boolean(nextContact.sameAsCompanyAddress),
+        );
+        setContact(nextContact);
+        setAddress(nextAddress);
         if (result.data.authorization?.accepted) {
           setAuthorized(true);
         }
@@ -82,11 +167,26 @@ export function BillingStage() {
           integrationPending: true,
           reason: "BILLING_AUTHORIZATION_REQUIRED",
           message:
-            "Billing is handled securely through QuickBooks. Confirm billing authorization to continue. Payment setup happens later through an authorized QuickBooks invoice or payment request.",
+            "Secure payment-method setup will be completed with our billing team through QuickBooks before any invoice payment is processed.",
         });
+        const nextContact = prefillContact(
+          session?.billingContact,
+          session?.company,
+        );
+        setContact(nextContact);
+        setAddress(
+          prefillAddress(
+            session?.billingAddress,
+            session?.company,
+            Boolean(nextContact.sameAsCompanyAddress),
+          ),
+        );
       }
+      setHydrated(true);
     })();
   }, [session]);
+
+  const profileComplete = isProfileComplete(contact, address);
 
   async function autosaveProfile(
     nextContact: BillingContactDraft,
@@ -128,21 +228,47 @@ export function BillingStage() {
 
   async function handleContinue() {
     setLocalError(null);
+    if (!profileComplete) {
+      setLocalError("Complete the billing profile to continue.");
+      return;
+    }
     if (!authorized) {
-      setLocalError("Confirm billing authorization to continue.");
+      setLocalError("Confirm the billing acknowledgement to continue.");
       return;
     }
 
     setBusy(true);
+
+    const save = await onboardingFetchJson<{ version?: number }>(
+      "/api/onboarding/billing",
+      {
+        method: "PATCH",
+        json: {
+          expectedVersion: version,
+          contact,
+          address,
+        },
+      },
+    );
+    if (!save.ok) {
+      setBusy(false);
+      setLocalError(save.message);
+      return;
+    }
+
+    const signerName = [contact.firstName, contact.lastName]
+      .filter((part) => nonEmpty(part))
+      .join(" ");
 
     const authz = await onboardingFetchJson<{
       sessionVersion?: number;
     }>("/api/onboarding/billing/authorization", {
       method: "POST",
       json: {
-        expectedVersion: version,
-        acceptanceLanguage: status?.authorization?.acceptanceLanguage,
-        signerName: contact.name,
+        expectedVersion: save.data.version ?? version,
+        acceptanceLanguage:
+          status?.authorization?.acceptanceLanguage ?? ACKNOWLEDGEMENT_FALLBACK,
+        signerName,
         signerEmail: contact.email,
       },
     });
@@ -158,7 +284,7 @@ export function BillingStage() {
     }>("/api/onboarding/billing/continue", {
       method: "POST",
       json: {
-        expectedVersion: authz.data.sessionVersion ?? version,
+        expectedVersion: authz.data.sessionVersion ?? save.data.version ?? version,
       },
     });
     setBusy(false);
@@ -169,7 +295,7 @@ export function BillingStage() {
     router.push("/onboarding/account");
   }
 
-  if (loading) {
+  if (loading || !hydrated) {
     return <OnboardingLoading />;
   }
   if (!session) {
@@ -188,11 +314,9 @@ export function BillingStage() {
     session.company?.dbaName ||
     "your company";
   const authLanguage =
-    status?.authorization?.acceptanceLanguage ??
-    "I authorize Claims Ninja billing staff to initiate approved invoice and payment-request workflows through QuickBooks under the signed agreement. No charge occurs during this onboarding. [Staging preview — final billing-authorization wording awaiting legal approval.]";
-  const previewSyntheticNote =
-    status?.previewSyntheticEnabled &&
-    status?.instrument?.isSynthetic === true;
+    status?.authorization?.acceptanceLanguage ?? ACKNOWLEDGEMENT_FALLBACK;
+  const sameAsCompany = Boolean(contact.sameAsCompanyAddress);
+  const canContinue = profileComplete && authorized && !busy;
 
   return (
     <OnboardingShell
@@ -202,47 +326,53 @@ export function BillingStage() {
       saveState={saveState}
       onSaveExit={() => void saveExit()}
       continueLabel={
-        authorized ? "Continue to account →" : "Confirm authorization to continue"
+        canContinue
+          ? "Continue to account →"
+          : !profileComplete
+            ? "Complete billing profile to continue"
+            : "Confirm acknowledgement to continue"
       }
       onContinue={() => void handleContinue()}
-      continueDisabled={busy || !authorized}
+      continueDisabled={!canContinue}
       continueLoading={busy}
-      hint="Billing is handled securely through QuickBooks. Manual invoices and payment requests only."
+      hint="Payment method setup happens later through QuickBooks with our billing team."
     >
-      <div
-        className="mb-6 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm text-zinc-200"
-        role="status"
-        aria-live="polite"
-      >
-        <p className="font-medium text-white">
-          Billing handled securely through QuickBooks
-        </p>
-        <p className="mt-1 text-zinc-400">
-          Claims Ninja does not collect card or bank account numbers during
-          onboarding. Payment setup happens later through an authorized
-          QuickBooks invoice or payment request initiated by billing staff.
-        </p>
-        {status?.message ? (
-          <p className="mt-2 text-xs text-zinc-500">{status.message}</p>
-        ) : null}
-      </div>
-
-      {(localError) && (
+      {localError ? (
         <p className="mb-4 text-sm text-brand-red-light" role="alert">
           {localError}
         </p>
-      )}
+      ) : null}
 
       <div className="grid gap-6 lg:grid-cols-2">
         <SectionCard title="Billing contact">
           <div className="space-y-4">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <FieldLabel htmlFor="billingFirstName">First name</FieldLabel>
+                <TextInput
+                  id="billingFirstName"
+                  value={contact.firstName ?? ""}
+                  onChange={(e) => updateContact("firstName", e.target.value)}
+                  autoComplete="given-name"
+                />
+              </div>
+              <div>
+                <FieldLabel htmlFor="billingLastName">Last name</FieldLabel>
+                <TextInput
+                  id="billingLastName"
+                  value={contact.lastName ?? ""}
+                  onChange={(e) => updateContact("lastName", e.target.value)}
+                  autoComplete="family-name"
+                />
+              </div>
+            </div>
             <div>
-              <FieldLabel htmlFor="billingName">Billing contact name</FieldLabel>
+              <FieldLabel htmlFor="billingTitle">Title / role</FieldLabel>
               <TextInput
-                id="billingName"
-                value={contact.name ?? ""}
-                onChange={(e) => updateContact("name", e.target.value)}
-                autoComplete="name"
+                id="billingTitle"
+                value={contact.title ?? ""}
+                onChange={(e) => updateContact("title", e.target.value)}
+                autoComplete="organization-title"
               />
             </div>
             <div>
@@ -264,48 +394,113 @@ export function BillingStage() {
                 autoComplete="tel"
               />
             </div>
-            <label className="flex items-center gap-2 text-sm text-zinc-300">
-              <input
-                type="checkbox"
-                checked={Boolean(contact.sameAsCompanyAddress)}
-                onChange={(e) => {
-                  const checked = e.target.checked;
-                  const nextContact = {
-                    ...contact,
-                    sameAsCompanyAddress: checked,
-                  };
-                  const nextAddress = checked
-                    ? {
-                        streetAddress: session.company?.streetAddress,
-                        city: session.company?.city,
-                        state: session.company?.state,
-                        postalCode: session.company?.postalCode,
-                        suite: address.suite,
-                      }
-                    : address;
-                  setContact(nextContact);
-                  setAddress(nextAddress);
-                  void autosaveProfile(nextContact, nextAddress);
-                }}
-                className="h-4 w-4 rounded border-white/30 bg-brand-black text-brand-red"
-              />
-              Billing address is the same as company address
-            </label>
           </div>
         </SectionCard>
 
-        <SectionCard title="Billing address">
+        <SectionCard title="Accounts payable">
           <div className="space-y-4">
             <div>
-              <FieldLabel htmlFor="street">Street address</FieldLabel>
+              <FieldLabel htmlFor="legalCompanyName">Legal company name</FieldLabel>
+              <TextInput
+                id="legalCompanyName"
+                value={contact.legalCompanyName ?? ""}
+                onChange={(e) =>
+                  updateContact("legalCompanyName", e.target.value)
+                }
+                autoComplete="organization"
+              />
+            </div>
+            <div>
+              <FieldLabel htmlFor="dbaName" optional>
+                DBA / trade name
+              </FieldLabel>
+              <TextInput
+                id="dbaName"
+                value={contact.dbaName ?? ""}
+                onChange={(e) => updateContact("dbaName", e.target.value)}
+              />
+            </div>
+            <div>
+              <FieldLabel htmlFor="apEmail" optional>
+                Accounts payable email
+              </FieldLabel>
+              <TextInput
+                id="apEmail"
+                type="email"
+                value={contact.apEmail ?? ""}
+                onChange={(e) => updateContact("apEmail", e.target.value)}
+                placeholder="Same as billing email if left blank"
+              />
+            </div>
+            <div>
+              <FieldLabel htmlFor="apPhone" optional>
+                Accounts payable phone
+              </FieldLabel>
+              <TextInput
+                id="apPhone"
+                value={contact.apPhone ?? ""}
+                onChange={(e) => updateContact("apPhone", e.target.value)}
+                placeholder="Same as billing phone if left blank"
+              />
+            </div>
+          </div>
+        </SectionCard>
+      </div>
+
+      <SectionCard title="Billing address" className="mt-6">
+        <div className="space-y-4">
+          <label className="flex items-center gap-2 text-sm text-zinc-300">
+            <input
+              type="checkbox"
+              checked={sameAsCompany}
+              onChange={(e) => {
+                const checked = e.target.checked;
+                const nextContact = {
+                  ...contact,
+                  sameAsCompanyAddress: checked,
+                };
+                const nextAddress = checked
+                  ? {
+                      streetAddress: session.company?.streetAddress,
+                      city: session.company?.city,
+                      state: session.company?.state,
+                      postalCode: session.company?.postalCode,
+                      suite: address.suite,
+                    }
+                  : address;
+                setContact(nextContact);
+                setAddress(nextAddress);
+                void autosaveProfile(nextContact, nextAddress);
+              }}
+              className="h-4 w-4 rounded border-white/30 bg-brand-black text-brand-red"
+            />
+            Billing address is the same as company address
+          </label>
+
+          <div className={sameAsCompany ? "opacity-60" : undefined}>
+            <div>
+              <FieldLabel htmlFor="street">Address line 1</FieldLabel>
               <TextInput
                 id="street"
                 value={address.streetAddress ?? ""}
                 onChange={(e) => updateAddress("streetAddress", e.target.value)}
-                autoComplete="street-address"
+                autoComplete="address-line1"
+                disabled={sameAsCompany}
               />
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="mt-4">
+              <FieldLabel htmlFor="suite" optional>
+                Address line 2
+              </FieldLabel>
+              <TextInput
+                id="suite"
+                value={address.suite ?? ""}
+                onChange={(e) => updateAddress("suite", e.target.value)}
+                autoComplete="address-line2"
+                disabled={sameAsCompany}
+              />
+            </div>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <div>
                 <FieldLabel htmlFor="city">City</FieldLabel>
                 <TextInput
@@ -313,6 +508,7 @@ export function BillingStage() {
                   value={address.city ?? ""}
                   onChange={(e) => updateAddress("city", e.target.value)}
                   autoComplete="address-level2"
+                  disabled={sameAsCompany}
                 />
               </div>
               <div>
@@ -321,6 +517,7 @@ export function BillingStage() {
                   id="state"
                   value={address.state ?? ""}
                   onChange={(e) => updateAddress("state", e.target.value)}
+                  disabled={sameAsCompany}
                 >
                   <option value="">Select</option>
                   {US_STATES.map((st) => (
@@ -331,45 +528,39 @@ export function BillingStage() {
                 </SelectInput>
               </div>
             </div>
-            <div>
+            <div className="mt-4">
               <FieldLabel htmlFor="postal">ZIP</FieldLabel>
               <TextInput
                 id="postal"
                 value={address.postalCode ?? ""}
                 onChange={(e) => updateAddress("postalCode", e.target.value)}
                 autoComplete="postal-code"
+                disabled={sameAsCompany}
               />
             </div>
           </div>
-        </SectionCard>
-      </div>
-
-      <SectionCard title="Payment setup" className="mt-6">
-        <p className="text-sm text-zinc-300">
-          No payment method is collected on this step. After onboarding, billing
-          staff initiate approved invoice or payment-request workflows through
-          QuickBooks under your signed agreement.
-        </p>
-        <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-zinc-400">
-          <li>No onboarding charge</li>
-          <li>No automatic or recurring charges as a product feature</li>
-          <li>Claims Ninja never stores raw card or bank numbers here</li>
-        </ul>
-        {previewSyntheticNote ? (
-          <p className="mt-4 text-xs text-zinc-500">
-            Preview QA note: {status?.instrument?.maskedDisplay ?? "Preview · no payment collected"}.
-            This is not a QuickBooks transaction.
-          </p>
-        ) : (
-          <p className="mt-4 text-xs text-zinc-500">
-            Status: QuickBooks ops handoff · Manual invoices / payment requests
-            only
-          </p>
-        )}
+        </div>
       </SectionCard>
 
-      <SectionCard title="Billing authorization" className="mt-6">
-        <label className="flex gap-3 text-sm leading-relaxed text-zinc-200">
+      <SectionCard title="Payment method on file" className="mt-6">
+        <p className="text-sm text-zinc-300">
+          Secure payment-method setup will be completed with our billing team
+          through QuickBooks before any invoice payment is processed.
+        </p>
+      </SectionCard>
+
+      <SectionCard title="How billing works" className="mt-6">
+        <p className="text-sm text-zinc-300">
+          There is no onboarding charge and no monthly platform fee. Claims
+          Ninja charges only for completed work under your agreement. We will
+          send invoices for your review and approval before any payment is
+          processed.
+        </p>
+        <p className="mt-3 text-sm text-zinc-400">
+          ACH payments are available at no additional charge. A 3% convenience
+          fee applies to card payments, as provided in your agreement.
+        </p>
+        <label className="mt-5 flex gap-3 text-sm leading-relaxed text-zinc-200">
           <input
             type="checkbox"
             checked={authorized}
@@ -378,12 +569,6 @@ export function BillingStage() {
           />
           <span>{authLanguage}</span>
         </label>
-        {status?.authorization?.legalApprovalPending ? (
-          <p className="mt-3 text-xs text-zinc-500">
-            Final authorization wording is awaiting legal approval. This staging
-            acknowledgment is recorded for preview validation only.
-          </p>
-        ) : null}
       </SectionCard>
     </OnboardingShell>
   );

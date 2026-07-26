@@ -16,7 +16,7 @@ Verified journey order in code: `claim → company → agreement → billing →
 | `/onboarding/claim` | Claim draft |
 | `/onboarding/company` | Company / contractor |
 | `/onboarding/agreement` | Native clickwrap (Terms `2026-06-10` + Privacy `counsel-approved-2026-07-24`) |
-| `/onboarding/billing` | Billing contact / authorization (QuickBooks ops handoff) |
+| `/onboarding/billing` | Billing profile + disclosure acknowledgement (QuickBooks ops handoff) |
 | `/onboarding/account` | Password |
 | `/onboarding/verify` | Email OTP |
 | `/onboarding/activated` | Workspace ready + handoff |
@@ -73,11 +73,11 @@ No signed storage URLs are returned to the browser.
 
 When capture is off (default):
 
-- Billing contact/address autosave allowed
-- Card/bank fields are **not** collected
-- UI presents “Billing handled securely through QuickBooks” ops handoff
-- After billing authorization, continue uses `quickbooks_ops_handoff` (no payment method collected)
-- Payment setup happens later through an authorized QuickBooks invoice or payment request
+- Complete billing profile (contact, AP, address) autosave is required
+- Card/bank fields are **not** collected; UI shows honest “Payment method on file” recovery copy (no saved method)
+- “How billing works” disclosure + durable acknowledgement required before continue
+- Continue uses `quickbooks_ops_handoff` after complete profile + acknowledgement (no payment method collected)
+- Secure payment-method setup is completed later with billing team through QuickBooks before invoice payment
 - `POST /api/onboarding/billing/instruments` with raw PAN/CVV remains rejected
 - Optional Preview synthetic instruments are Preview-only QA and are not QuickBooks transactions
 

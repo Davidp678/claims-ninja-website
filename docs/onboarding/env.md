@@ -17,7 +17,7 @@ Without the three required S2S variables, onboarding APIs return `503 EXTERNAL_I
 
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `EXTERNAL_INTAKE_PAYMENT_CAPTURE_ENABLED` | `false` | When not `true`, no payment-method capture; onboarding uses QuickBooks ops handoff after billing authorization |
+| `EXTERNAL_INTAKE_PAYMENT_CAPTURE_ENABLED` | `false` | When not `true`, no payment-method capture; onboarding uses QuickBooks ops handoff after complete billing profile + disclosure acknowledgement |
 | `EXTERNAL_INTAKE_STAGING_ONLY` | unset | When `true`, refuse production platform hosts / production Supabase refs |
 | `EXTERNAL_INTAKE_ALLOWED_ORIGINS` | (built-in localhost + production site) | Comma-separated extra Origins for CSRF Origin checks |
 | `NEXT_PUBLIC_SITE_URL` | production site URL | Included in Origin allowlist |

@@ -225,6 +225,7 @@ async function main() {
     pay.status === 403 ||
       pay.status === 400 ||
       payJson?.error?.code === "BILLING_AUTHORIZATION_REQUIRED" ||
+      payJson?.error?.code === "BILLING_PROFILE_INCOMPLETE" ||
       payJson?.error?.code === "FORBIDDEN" ||
       payJson?.error?.code === "VALIDATION_ERROR" ||
       payJson?.error?.code === "SESSION_UNAUTHORIZED",

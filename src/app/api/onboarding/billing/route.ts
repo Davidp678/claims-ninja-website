@@ -34,14 +34,22 @@ export async function GET() {
           contact: {},
           address: {},
           instrument: null,
+          profileComplete: false,
+          paymentMethodOnFile: false,
           continueAllowed: false,
           continueMode: null,
           integrationPending: true,
           message:
-            "Billing is handled securely through QuickBooks. Payment setup happens later through an authorized QuickBooks invoice or payment request.",
+            "Secure payment-method setup will be completed with our billing team through QuickBooks before any invoice payment is processed.",
           reason: isPaymentCaptureEnabled()
             ? "PAYMENT_VAULT_UNAVAILABLE"
-            : "BILLING_AUTHORIZATION_REQUIRED",
+            : "BILLING_PROFILE_INCOMPLETE",
+          authorization: {
+            acceptanceLanguage:
+              "I understand Claims Ninja will collect my payment method securely through QuickBooks before payment is processed, and that payment is handled only according to my agreement and approved invoice workflow.",
+            accepted: false,
+            legalApprovalPending: false,
+          },
         });
       }
     }

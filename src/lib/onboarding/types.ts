@@ -53,9 +53,17 @@ export type CompanyDraft = {
 };
 
 export type BillingContactDraft = {
-  name?: string;
+  firstName?: string;
+  lastName?: string;
+  title?: string;
   email?: string;
   phone?: string;
+  legalCompanyName?: string;
+  dbaName?: string;
+  apEmail?: string;
+  apPhone?: string;
+  /** @deprecated Prefer firstName + lastName */
+  name?: string;
   sameAsCompanyAddress?: boolean;
 };
 
