@@ -2793,6 +2793,72 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["commercial_claims"],
   },
+  "overlooked-insurance-estimate-items": {
+    phrases: [
+      "most overlooked line items in insurance estimates",
+      "overlooked insurance estimate items",
+      "overlooked line items insurance estimates",
+      "commonly overlooked estimate items",
+    ],
+    keywords: [
+      "overlooked line items",
+      "overlooked estimate",
+      "temporary protection",
+      "general conditions",
+      "detach reset",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "missing-line-items-insurance-estimates": {
+    phrases: [
+      "why are line items missing from carrier estimates",
+      "missing line items insurance estimates",
+      "carrier estimate missing line items",
+      "why line items missing from insurance estimates",
+    ],
+    keywords: ["missing line items", "carrier estimate gaps", "estimate omissions"],
+    topics: ["supplements", "xactimate"],
+  },
+  "documentation-supporting-supplements": {
+    phrases: [
+      "documentation supporting supplements",
+      "what documentation supports insurance estimate supplements",
+      "documentation that supports supplements",
+      "supplement supporting documentation",
+    ],
+    keywords: [
+      "supplement documentation",
+      "supporting documentation",
+      "attachment index",
+      "estimate supplements",
+    ],
+    topics: ["documentation", "supplements"],
+  },
+  "estimate-review-best-practices": {
+    phrases: [
+      "estimate review best practices",
+      "estimate review best practices for contractors",
+      "best practices for insurance estimate review",
+      "how should contractors review carrier estimates",
+    ],
+    keywords: ["estimate review", "best practices", "gap list", "48 hours"],
+    topics: ["supplements", "xactimate"],
+  },
+  "common-estimate-mistakes-contractors": {
+    phrases: [
+      "common insurance estimate mistakes contractors make",
+      "common estimate mistakes contractors",
+      "contractor estimate review mistakes",
+      "mistakes reviewing insurance estimates",
+    ],
+    keywords: [
+      "estimate mistakes",
+      "contractor mistakes",
+      "carrier estimate as final",
+      "estimate review mistakes",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

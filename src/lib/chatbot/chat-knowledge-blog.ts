@@ -567,6 +567,27 @@ const SLUG_BOOSTS: Record<
     keywords: ["missed line", "line item"],
     topics: ["xactimate"],
   },
+  "most-overlooked-line-items-in-insurance-estimates": {
+    phrases: [
+      "most overlooked line items in insurance estimates",
+      "overlooked insurance estimate items",
+      "overlooked line items insurance",
+      "temporary protection estimate",
+      "general conditions insurance estimate",
+      "detach reset estimate",
+      "missing estimate line items contractors",
+    ],
+    keywords: [
+      "overlooked line items",
+      "missing line items",
+      "general conditions",
+      "temporary protection",
+      "detach reset",
+      "estimate omissions",
+      "estimate review",
+    ],
+    topics: ["xactimate", "supplements", "documentation"],
+  },
   "op-on-insurance-claims": {
     phrases: ["overhead and profit", "o&p"],
     keywords: ["o&p", "overhead", "profit"],

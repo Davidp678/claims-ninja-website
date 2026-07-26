@@ -6215,4 +6215,114 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       { label: "Reclamaciones de seguros comerciales", href: "/solutions/commercial" },
     ],
   },
+  // Overlooked estimate line items FAQs (5)
+  {
+    id: "overlooked-insurance-estimate-items",
+    category: "insurance_supplements",
+    question: "¿Cuáles son los renglones más pasados por alto en los estimados de seguros?",
+    answer:
+      "Los renglones más pasados por alto suelen incluir protección temporal, condiciones generales (supervisión, contenedores, permisos), cargos de equipo y monitoreo, manipulación de contenidos, desmontar y reponer, alcance relacionado con código, mano de obra o equipo por acceso, e investigación de humedad más allá del croquis inicial. Estas omisiones aparecen porque los estimados de primera pasada priorizan velocidad y plantillas — no porque el trabajo sea opcional. Los contratistas las detectan con revisión temprana del estimado y documentación contemporánea.",
+    relatedLinks: [
+      {
+        label: "Los renglones más pasados por alto en los estimados de seguros",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "Guía de revisión de estimados de la aseguradora",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "¿Por qué faltan renglones en los estimados de la aseguradora?",
+        href: "/faq#faq-missing-line-items-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "missing-line-items-insurance-estimates",
+    category: "insurance_supplements",
+    question: "¿Por qué faltan renglones en los estimados de seguros de la aseguradora?",
+    answer:
+      "Faltan renglones cuando plantillas, macros, inspecciones remotas y límites de autoridad subestiman condiciones específicas del trabajo — acceso ocupado, protección, equipo especializado, mejoras de código y hallazgos después de la demolición. Las omisiones suelen ser estructurales, no personales. Compare el estimado de la aseguradora con las condiciones de campo dentro de 48 horas, mantenga una lista de brechas y capture fotos y registros etiquetados mientras las condiciones sigan visibles.",
+    relatedLinks: [
+      {
+        label: "Los renglones más pasados por alto en los estimados de seguros",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "Por qué los estimados de la aseguradora omiten renglones",
+        href: "/resources/blog/why-carrier-estimates-miss-line-items",
+      },
+      {
+        label: "¿Cuáles son las mejores prácticas de revisión de estimados para contratistas?",
+        href: "/faq#faq-estimate-review-best-practices",
+      },
+    ],
+  },
+  {
+    id: "documentation-supporting-supplements",
+    category: "documentation",
+    question: "¿Qué documentación respalda los suplementos de estimados de seguros?",
+    answer:
+      "Los suplementos se respaldan con fotos etiquetadas y fechadas, hojas de medición o cantidades, registros de secado y mapas de humedad, prueba de colocación de equipo, referencias de permisos o autoridad competente para ítems de código, registros de contenidos y desmontar/reponer, y un índice de adjuntos que mapea cada evidencia a renglones del estimado. Capture evidencia durante la producción — no en la factura final — para que el revisor de escritorio pueda aprobar sin reconstruir el trabajo de memoria.",
+    relatedLinks: [
+      {
+        label: "Los renglones más pasados por alto en los estimados de seguros",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "Guía de estándares de documentación",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "Guía de documentación de reclamaciones de seguros comerciales",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "estimate-review-best-practices",
+    category: "insurance_supplements",
+    question: "¿Cuáles son las mejores prácticas de revisión de estimados para contratistas?",
+    answer:
+      "Mejores prácticas: asigne un responsable de revisión a las horas de recibir el estimado, compare el croquis y las habitaciones con las condiciones de campo dentro de 48 horas, inicie una lista escrita de brechas, capture la documentación faltante el mismo día, clasifique las brechas como listas para suplemento o que necesitan más evidencia, y enrute los ítems respaldados por su flujo de suplementos antes de que la producción absorba alcance no pagado. Use una lista de verificación — no la memoria — en archivos de techos, agua, fuego y comerciales.",
+    relatedLinks: [
+      {
+        label: "Los renglones más pasados por alto en los estimados de seguros",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "Lista de verificación de revisión de estimados Xactimate",
+        href: "/resources/blog/xactimate-estimate-review-checklist-contractors",
+      },
+      {
+        label: "Las primeras 48 horas después de un estimado de la aseguradora",
+        href: "/resources/blog/first-48-hours-after-carrier-estimate",
+      },
+      {
+        label: "Guía de revisión de estimados de la aseguradora",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+    ],
+  },
+  {
+    id: "common-estimate-mistakes-contractors",
+    category: "insurance_supplements",
+    question: "¿Cuáles son los errores comunes de estimados de seguros que cometen los contratistas?",
+    answer:
+      "Errores comunes: tratar el estimado de la aseguradora como final, movilizar producción completa antes de comparar, posponer fotos hasta el suplemento, omitir condiciones generales y protección de la lista de brechas, mezclar disputas de precio con alcance sin respaldo, y enviar suplementos sin un índice de adjuntos a renglones. Corrija el proceso: revisión temprana, documentación contemporánea y paquetes organizados mejoran la claridad — los resultados siguen variando según la aseguradora y la solidez del archivo.",
+    relatedLinks: [
+      {
+        label: "Los renglones más pasados por alto en los estimados de seguros",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "Guía de suplementos de seguros para contratistas",
+        href: "/resources/blog/insurance-supplementing-guide-contractors",
+      },
+      {
+        label: "¿Cuáles son los renglones más pasados por alto en los estimados de seguros?",
+        href: "/faq#faq-overlooked-insurance-estimate-items",
+      },
+    ],
+  },
 ] as const;

@@ -6228,4 +6228,114 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       { label: "Commercial insurance claims", href: "/solutions/commercial" },
     ],
   },
+  // Overlooked estimate line items FAQs (5)
+  {
+    id: "overlooked-insurance-estimate-items",
+    category: "insurance_supplements",
+    question: "What are the most overlooked line items in insurance estimates?",
+    answer:
+      "The most overlooked line items typically include temporary protection, general conditions (supervision, dumpsters, permits), equipment charges and monitoring, contents manipulation, detach and reset, code-related scope, access-driven labor or equipment, and moisture investigation beyond the first sketch. These gaps appear because first-pass estimates optimize for speed and templates — not because the work is optional. Contractors catch them with early estimate review and contemporaneous documentation.",
+    relatedLinks: [
+      {
+        label: "The Most Overlooked Line Items in Insurance Estimates",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "Carrier Estimate Review Guide",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "Why are line items missing from carrier insurance estimates?",
+        href: "/faq#faq-missing-line-items-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "missing-line-items-insurance-estimates",
+    category: "insurance_supplements",
+    question: "Why are line items missing from carrier insurance estimates?",
+    answer:
+      "Line items are missing when templates, macros, remote inspections, and file-authority limits understate job-specific conditions — occupied access, protection, specialty equipment, code upgrades, and discovery after tear-out. Omissions are usually structural, not personal. Compare the carrier estimate to field conditions within 48 hours, keep a gap list, and capture labeled photos and logs while conditions remain visible.",
+    relatedLinks: [
+      {
+        label: "The Most Overlooked Line Items in Insurance Estimates",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "Why carrier estimates miss line items",
+        href: "/resources/blog/why-carrier-estimates-miss-line-items",
+      },
+      {
+        label: "What are estimate review best practices for contractors?",
+        href: "/faq#faq-estimate-review-best-practices",
+      },
+    ],
+  },
+  {
+    id: "documentation-supporting-supplements",
+    category: "documentation",
+    question: "What documentation supports insurance estimate supplements?",
+    answer:
+      "Supplements are supported by labeled dated photos, measurement or quantity worksheets, dry logs and moisture maps, equipment placement proof, permit or AHJ references for code items, contents and detach/reset records, and a cover attachment index mapping each exhibit to estimate lines. Capture evidence during production — not at final invoice — so desk reviewers can approve without reconstructing the job from memory.",
+    relatedLinks: [
+      {
+        label: "The Most Overlooked Line Items in Insurance Estimates",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "Documentation Standards Guide",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "Commercial Insurance Claims Documentation Guide",
+        href: "/resources/guides/general-claims/commercial-insurance-claims-documentation-guide",
+      },
+    ],
+  },
+  {
+    id: "estimate-review-best-practices",
+    category: "insurance_supplements",
+    question: "What are estimate review best practices for contractors?",
+    answer:
+      "Best practices: assign a review owner within hours of estimate receipt, compare sketch and rooms to field conditions within 48 hours, start a written gap list, capture missing documentation the same day, classify gaps as supplement-ready or needs more evidence, and route supported items through your supplement workflow before full production absorbs unpaid scope. Use a checklist — not memory — across roofing, water, fire, and commercial files.",
+    relatedLinks: [
+      {
+        label: "The Most Overlooked Line Items in Insurance Estimates",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "Xactimate estimate review checklist",
+        href: "/resources/blog/xactimate-estimate-review-checklist-contractors",
+      },
+      {
+        label: "First 48 hours after a carrier estimate",
+        href: "/resources/blog/first-48-hours-after-carrier-estimate",
+      },
+      {
+        label: "Carrier Estimate Review Guide",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+    ],
+  },
+  {
+    id: "common-estimate-mistakes-contractors",
+    category: "insurance_supplements",
+    question: "What are common insurance estimate mistakes contractors make?",
+    answer:
+      "Common mistakes include treating the carrier estimate as final, mobilizing full production before comparison, skipping photos until supplement time, omitting general conditions and protection from gap lists, mixing pricing disputes with unsupported scope, and submitting supplements without an attachment-to-line-item index. Fix the process: early review, contemporaneous documentation, and organized packages improve clarity — outcomes still vary by carrier and file strength.",
+    relatedLinks: [
+      {
+        label: "The Most Overlooked Line Items in Insurance Estimates",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "Insurance supplementing guide for contractors",
+        href: "/resources/blog/insurance-supplementing-guide-contractors",
+      },
+      {
+        label: "What are the most overlooked line items in insurance estimates?",
+        href: "/faq#faq-overlooked-insurance-estimate-items",
+      },
+    ],
+  },
 ] as const;

@@ -23,6 +23,7 @@ export const first48HoursAfterCarrierEstimate: BlogPost = {
   seoDescription:
     "Contractor playbook for the first 48 hours after a carrier estimate: insurance estimate review, documentation, supplement opportunities, and under-scoped estimate warning signs.",
   relatedPostSlugs: [
+    "most-overlooked-line-items-in-insurance-estimates",
     "insurance-supplementing-guide-contractors",
     "xactimate-estimate-review-checklist-contractors",
     "supplement-denial-recovery-guide",

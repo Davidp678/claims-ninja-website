@@ -20,22 +20,37 @@ export type GuideCategory = {
   relatedSolutionPath?: string;
 };
 
-/** Editorial hub order for /resources/guides/general-claims (commercial learning path first). */
+/** Editorial hub order for /resources/guides/general-claims (curated Commercial + operational breadth). */
 export const GENERAL_CLAIMS_HUB_ORDER = [
-  "commercial-insurance-claims-documentation-guide",
   "commercial-insurance-supplement-playbook-for-contractors",
-  "large-loss-commercial-insurance-claims-guide",
-  "multifamily-apartment-insurance-claims-guide",
-  "hoa-insurance-claims-guide",
-  "retail-office-insurance-claims-guide",
-  "industrial-warehouse-insurance-claims-guide",
-  "first-48-hours-checklist",
-  "claim-file-audit-guide",
-  "supplement-submission-guide",
-  "carrier-estimate-review-guide",
-  "op-qualification-guide",
   "documentation-standards-guide",
+  "large-loss-commercial-insurance-claims-guide",
+  "carrier-estimate-review-guide",
+  "retail-office-insurance-claims-guide",
+  "first-48-hours-checklist",
+  "multifamily-apartment-insurance-claims-guide",
   "photo-documentation-standards-guide",
+  "industrial-warehouse-insurance-claims-guide",
+  "claim-file-audit-guide",
+  "hoa-insurance-claims-guide",
+  "supplement-submission-guide",
+  "commercial-insurance-claims-documentation-guide",
+  "op-qualification-guide",
+] as const;
+
+/** Curated Featured playbooks on /resources/guides (cross-category breadth). */
+export const FEATURED_GUIDE_SLUGS = [
+  "commercial-insurance-supplement-playbook-for-contractors",
+  "category-3-water-damage-documentation-guide",
+  "roof-matching-documentation-guide",
+] as const;
+
+/** Curated Recommended guides on /resources/guides (cross-category breadth). */
+export const RECOMMENDED_GUIDE_SLUGS = [
+  "large-loss-commercial-insurance-claims-guide",
+  "fire-damage-documentation-guide",
+  "documentation-standards-guide",
+  "moisture-mapping-guide",
 ] as const;
 
 /** Editorial hub order for /resources/guides/fire-damage (matches FIRE_DAMAGE_GUIDES bundle). */

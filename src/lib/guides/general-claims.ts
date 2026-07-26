@@ -443,7 +443,7 @@ export const GENERAL_CLAIMS_GUIDES = [
     seoTitle: "Insurance Supplement Submission Workflow for Contractors",
     seoDescription:
       "Contractor supplement submission workflow: package assembly, carrier routing, follow-up schedule, and documentation standards that improve approval rates.",
-    relatedBlogSlugs: ["insurance-supplementing-guide-contractors"],
+    relatedBlogSlugs: ["insurance-supplementing-guide-contractors", "most-overlooked-line-items-in-insurance-estimates"],
     relatedGuideSlugs: ["carrier-estimate-review-guide", "claim-file-audit-guide"],
     purpose:
       "Deliver supplement packages that adjusters can approve on first review — organized evidence, clear narrative, correct routing, and disciplined follow-up. This workflow turns estimate gaps into paid scope without adversarial carrier relationships.",
@@ -646,7 +646,10 @@ export const GENERAL_CLAIMS_GUIDES = [
     seoTitle: "Carrier Estimate Review Workflow for Contractors",
     seoDescription:
       "How contractors review carrier Xactimate estimates: room list validation, line item gaps, quantity checks, and supplement routing before production starts.",
-    relatedBlogSlugs: ["why-carrier-estimates-miss-line-items"],
+    relatedBlogSlugs: [
+      "why-carrier-estimates-miss-line-items",
+      "most-overlooked-line-items-in-insurance-estimates",
+    ],
     relatedGuideSlugs: ["supplement-submission-guide", "op-qualification-guide"],
     purpose:
       "Review every carrier estimate against field reality using a structured comparison method — not gut feel. Carriers build estimates for speed and standardization; this workflow catches the profitable line items and quantity gaps that templates routinely miss.",
@@ -1032,7 +1035,11 @@ export const GENERAL_CLAIMS_GUIDES = [
     seoTitle: "Insurance Claim Documentation Standards for Contractors",
     seoDescription:
       "Claim documentation standards for contractors: photo requirements, labeling conventions, file organization, and daily capture habits that improve supplement approval rates.",
-    relatedBlogSlugs: ["claim-documentation-approval-rates", "why-fire-damage-claims-get-underpaid"],
+    relatedBlogSlugs: [
+      "claim-documentation-approval-rates",
+      "most-overlooked-line-items-in-insurance-estimates",
+      "why-fire-damage-claims-get-underpaid",
+    ],
     relatedGuideSlugs: [
       "commercial-insurance-claims-documentation-guide",
       "photo-documentation-standards-guide",

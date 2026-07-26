@@ -60,6 +60,7 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
   relatedBlogSlugs: [
     "commercial-claims-documentation-checklist",
     "why-commercial-insurance-claims-get-underpaid",
+    "most-overlooked-line-items-in-insurance-estimates",
     "water-damage-documentation-for-apartment-complexes",
     "large-loss-water-mitigation-documentation-best-practices",
     "multifamily-water-claims-that-get-underpaid",

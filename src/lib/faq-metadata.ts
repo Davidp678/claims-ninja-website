@@ -3486,6 +3486,80 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Commercial supplement timelines FAQ; 48-hour review, 3-7-14 follow-up, and multiple cycles.",
   },
+  "overlooked-insurance-estimate-items": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/carrier-estimate-review-guide",
+      "general-claims/documentation-standards-guide",
+      "general-claims/commercial-insurance-supplement-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "missing-line-items-insurance-estimates",
+      "documentation-supporting-supplements",
+      "estimate-review-best-practices",
+      "common-estimate-mistakes-contractors",
+    ],
+    internalLinkNotes:
+      "Blog bridge FAQ; anchors Most Overlooked Line Items in Insurance Estimates article.",
+  },
+  "missing-line-items-insurance-estimates": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/carrier-estimate-review-guide",
+      "general-claims/first-48-hours-checklist",
+    ],
+    relatedFaqIds: [
+      "overlooked-insurance-estimate-items",
+      "estimate-review-best-practices",
+      "help-missed-line-items",
+    ],
+    internalLinkNotes:
+      "Why carrier estimates omit line items; pairs with overlooked items blog and estimate review guide.",
+  },
+  "documentation-supporting-supplements": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/documentation-standards-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "overlooked-insurance-estimate-items",
+      "estimate-review-best-practices",
+      "documentation-essentials",
+    ],
+    internalLinkNotes:
+      "Documentation that supports supplements for overlooked estimate scope.",
+  },
+  "estimate-review-best-practices": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/carrier-estimate-review-guide",
+      "general-claims/first-48-hours-checklist",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "overlooked-insurance-estimate-items",
+      "missing-line-items-insurance-estimates",
+      "common-estimate-mistakes-contractors",
+    ],
+    internalLinkNotes:
+      "Estimate review best practices FAQ; bridges overlooked line items blog to operational guides.",
+  },
+  "common-estimate-mistakes-contractors": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/carrier-estimate-review-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "overlooked-insurance-estimate-items",
+      "estimate-review-best-practices",
+      "documentation-supporting-supplements",
+    ],
+    internalLinkNotes:
+      "Common contractor estimate mistakes; pairs with overlooked line items educational article.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

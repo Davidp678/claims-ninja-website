@@ -60,6 +60,7 @@ export const COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGu
   relatedBlogSlugs: [
     "commercial-claims-documentation-checklist",
     "why-commercial-insurance-claims-get-underpaid",
+    "most-overlooked-line-items-in-insurance-estimates",
     "insurance-supplementing-guide-contractors",
     "first-48-hours-after-carrier-estimate",
     "large-loss-water-mitigation-documentation-best-practices",

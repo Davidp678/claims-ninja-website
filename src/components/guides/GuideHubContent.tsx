@@ -8,7 +8,11 @@ import type { GuideCategorySlug } from "@/lib/guide-categories";
 import { GUIDE_CATEGORY_REGISTRY, getGuideCategoryPath } from "@/lib/guide-categories";
 import { getLocalizedGuideCategory } from "@/lib/guide-display";
 import type { GuideRole, GuideType } from "@/lib/guide-types";
-import { GUIDE_TYPES, getAllGuides } from "@/lib/guide-page";
+import {
+  GUIDE_TYPES,
+  getAllGuides,
+  getGuidesForCategoryPreview,
+} from "@/lib/guide-page";
 import type { Locale } from "@/lib/i18n/config";
 import { getResourcesContent } from "@/lib/i18n/content/resources";
 import { filterGuides } from "@/lib/guide-search";
@@ -106,7 +110,7 @@ export function GuideHubContent({ locale = "en" }: { locale?: Locale }) {
 
       {!isFiltering
         ? GUIDE_CATEGORY_REGISTRY.map((cat) => {
-            const categoryGuides = allGuides.filter((g) => g.category === cat.slug).slice(0, 4);
+            const categoryGuides = getGuidesForCategoryPreview(cat.slug, 4);
             const count = allGuides.filter((g) => g.category === cat.slug).length;
             if (categoryGuides.length === 0) return null;
 

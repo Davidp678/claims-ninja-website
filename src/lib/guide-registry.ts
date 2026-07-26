@@ -1,8 +1,10 @@
 import { CLAIM_GUIDES } from "@/lib/guides";
 import {
+  FEATURED_GUIDE_SLUGS,
   FIRE_DAMAGE_HUB_ORDER,
   GENERAL_CLAIMS_HUB_ORDER,
   MOLD_HUB_ORDER,
+  RECOMMENDED_GUIDE_SLUGS,
   type GuideCategorySlug,
 } from "@/lib/guide-categories";
 import type { ClaimPhase, Guide, GuideRole, GuideType } from "@/lib/guide-types";
@@ -19,6 +21,17 @@ function sortGuidesByHubOrder(guides: Guide[], hubOrder: readonly string[]): Gui
     if (bIndex === undefined) return -1;
     return aIndex - bIndex;
   });
+}
+
+function resolveGuidesBySlugOrder(slugs: readonly string[]): Guide[] {
+  const guides: Guide[] = [];
+  for (const slug of slugs) {
+    const guide = getGuideBySlugOnly(slug);
+    if (guide) {
+      guides.push(guide);
+    }
+  }
+  return guides;
 }
 
 export function getAllGuides(): readonly Guide[] {
@@ -48,19 +61,11 @@ export function getAllGuidePathParams(): GuidePathParams[] {
 }
 
 export function getFeaturedGuides(limit = 3): Guide[] {
-  return CLAIM_GUIDES.filter((guide) => guide.featured)
-    .sort(
-      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-    )
-    .slice(0, limit);
+  return resolveGuidesBySlugOrder(FEATURED_GUIDE_SLUGS).slice(0, limit);
 }
 
 export function getRecommendedGuides(limit = 4): Guide[] {
-  return CLAIM_GUIDES.filter((guide) => guide.recommended)
-    .sort(
-      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-    )
-    .slice(0, limit);
+  return resolveGuidesBySlugOrder(RECOMMENDED_GUIDE_SLUGS).slice(0, limit);
 }
 
 export function getGuidesByCategory(category: GuideCategorySlug): Guide[] {
