@@ -191,3 +191,125 @@ body {
   list-style: none;
 }
 
+/*
+ * Desktop hero first-viewport fit.
+ * Vertical geometry is measured below the fixed Navbar (--site-header-height).
+ * Short-height queries only tighten whitespace — no clipping/zoom/overflow hacks.
+ */
+@media (min-width: 1024px) {
+  .hero-first-viewport {
+    flex: 1 1 auto;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
+    padding-top: calc(
+      var(--site-header-height, 6rem) + clamp(0.75rem, 2vh, 2rem)
+    );
+    padding-bottom: clamp(0.75rem, 2.5vh, 4.5rem);
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 1000px) {
+  .hero-first-viewport {
+    align-items: start;
+    align-content: start;
+    padding-top: calc(var(--site-header-height, 6rem) + 0.65rem);
+    padding-bottom: 0.85rem;
+  }
+
+  .hero-first-viewport .hero-copy-title {
+    margin-top: 1rem;
+  }
+
+  .hero-first-viewport .hero-copy-subhead {
+    margin-top: 0.85rem;
+  }
+
+  .hero-first-viewport .hero-copy-proof {
+    margin-top: 1.15rem;
+  }
+
+  .hero-intake-card {
+    padding-top: 1.15rem;
+    padding-bottom: 1.15rem;
+  }
+
+  .hero-intake-card .hero-intake-progress {
+    margin-top: 0.9rem;
+  }
+
+  .hero-intake-card .hero-intake-fields {
+    margin-top: 1rem;
+    row-gap: 0.8rem;
+  }
+
+  .hero-intake-card .hero-intake-fields > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.8rem;
+  }
+
+  .hero-intake-card .hero-intake-upload {
+    padding-top: 0.95rem;
+    padding-bottom: 0.95rem;
+  }
+
+  .hero-intake-card .hero-intake-cta {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 900px) {
+  .hero-first-viewport {
+    padding-top: calc(var(--site-header-height, 6rem) + 0.4rem);
+    padding-bottom: 0.6rem;
+  }
+
+  .hero-first-viewport .hero-copy-title {
+    margin-top: 0.75rem;
+  }
+
+  .hero-first-viewport .hero-copy-subhead {
+    margin-top: 0.7rem;
+  }
+
+  .hero-first-viewport .hero-copy-proof {
+    margin-top: 0.9rem;
+  }
+
+  .hero-first-viewport .hero-copy-proof .my-3 {
+    margin-top: 0.55rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .hero-intake-card {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .hero-intake-card .hero-intake-progress {
+    margin-top: 0.7rem;
+  }
+
+  .hero-intake-card .hero-intake-fields {
+    margin-top: 0.85rem;
+  }
+
+  .hero-intake-card .hero-intake-fields > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.65rem;
+  }
+
+  .hero-intake-card .hero-intake-upload {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .hero-intake-card .hero-intake-upload .mb-2 {
+    margin-bottom: 0.35rem;
+  }
+
+  .hero-intake-card .hero-intake-cta {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+}
+

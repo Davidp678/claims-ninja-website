@@ -544,15 +544,15 @@ export function HeroClaimIntakeCard({
         aria-hidden
         className="pointer-events-none absolute -inset-8 rounded-[2rem] bg-[radial-gradient(circle_at_50%_40%,rgb(var(--brand-red-rgb)_/_0.28),transparent_62%)] blur-2xl"
       />
-      <div className="relative rounded-2xl border border-white/12 bg-gradient-to-b from-brand-surface to-brand-elevated p-5 shadow-[0_30px_80px_-40px_rgb(var(--brand-red-rgb)_/_0.55)] ring-1 ring-white/5 sm:p-6">
+      <div className="hero-intake-card relative rounded-2xl border border-white/12 bg-gradient-to-b from-brand-surface to-brand-elevated p-5 shadow-[0_30px_80px_-40px_rgb(var(--brand-red-rgb)_/_0.55)] ring-1 ring-white/5 sm:p-6">
         <h2 className="font-display text-2xl font-semibold text-white sm:text-[1.7rem]">
           {content.cardTitle}
         </h2>
         <p className="mt-1.5 text-sm text-zinc-400">{content.cardSubhead}</p>
 
-        <HeroProgressRail current="claim" className="mt-5" />
+        <HeroProgressRail current="claim" className="hero-intake-progress mt-5" />
 
-        <div className="mt-6 space-y-4">
+        <div className="hero-intake-fields mt-6 space-y-4">
           <div>
             <p className="mb-2 text-sm font-medium text-zinc-300">
               What are you submitting?
@@ -688,13 +688,14 @@ export function HeroClaimIntakeCard({
                 onUpload={(list) => void handleUpload(list)}
                 onRemove={(id) => void handleRemove(id)}
                 onRetry={(id) => void handleRetry(id)}
+                dropzoneClassName="hero-intake-upload"
               />
 
               <button
                 type="button"
                 disabled={submitting || uploading}
                 onClick={() => void handleContinue()}
-                className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-brand-red to-brand-red-deep px-5 py-3.5 text-base font-semibold text-white shadow-[0_14px_40px_-18px_rgb(var(--brand-red-rgb)_/_0.95)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light disabled:opacity-60"
+                className="hero-intake-cta flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-brand-red to-brand-red-deep px-5 py-3.5 text-base font-semibold text-white shadow-[0_14px_40px_-18px_rgb(var(--brand-red-rgb)_/_0.95)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light disabled:opacity-60"
               >
                 {submitting ? "Starting…" : content.continueCta}
               </button>

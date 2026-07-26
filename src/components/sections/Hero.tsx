@@ -101,27 +101,27 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden bg-brand-black lg:min-h-[100svh]"
+      className="relative overflow-hidden bg-brand-black lg:flex lg:min-h-[100svh] lg:flex-col"
     >
       <HeroBackdrop />
 
-      <Container className="relative z-10 grid grid-cols-1 gap-12 pb-20 pt-28 sm:gap-14 sm:pb-24 sm:pt-32 lg:grid-cols-[minmax(0,1.05fr)_minmax(440px,520px)] lg:items-center lg:gap-x-16 lg:gap-y-12 lg:pb-28 lg:pt-32">
-        <div className="min-w-0 max-w-xl lg:max-w-none">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red-light sm:text-xs">
+      <Container className="hero-first-viewport relative z-10 grid grid-cols-1 gap-12 pb-20 pt-28 sm:gap-14 sm:pb-24 sm:pt-32 lg:grid-cols-[minmax(0,1.05fr)_minmax(440px,520px)] lg:gap-x-16">
+        <div className="hero-copy-stack min-w-0 max-w-xl lg:max-w-none">
+          <p className="hero-copy-eyebrow text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red-light sm:text-xs">
             {content.eyebrow}
           </p>
           <h1
             id="hero-heading"
-            className="mt-5 font-display text-[2.35rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]"
+            className="hero-copy-title mt-5 font-display text-[2.35rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]"
           >
             {content.title}
           </h1>
-          <p className="mt-5 max-w-lg text-base leading-relaxed text-zinc-400 sm:text-lg">
+          <p className="hero-copy-subhead mt-5 max-w-lg text-base leading-relaxed text-zinc-400 sm:text-lg">
             {content.subhead}
           </p>
 
           <div
-            className="mt-7 w-full max-w-xl text-[13px] leading-snug text-zinc-300 sm:text-sm lg:max-w-none"
+            className="hero-copy-proof mt-7 w-full max-w-xl text-[13px] leading-snug text-zinc-300 sm:text-sm lg:max-w-none"
             role="group"
             aria-label="Trust and proof points"
           >

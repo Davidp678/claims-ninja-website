@@ -17,6 +17,8 @@ type UploadZoneProps = {
   compact?: boolean;
   /** Accessible upload/validation error (disallowed type, oversize, interrupted, etc.). */
   bannerError?: string | null;
+  /** Optional class on the dashed drop target (layout-only; no behavior change). */
+  dropzoneClassName?: string;
 };
 
 function formatBytes(bytes: number) {
@@ -112,6 +114,7 @@ export function UploadZone({
   hint = "PDF, images, DOCX, XLSX • Up to 50 MB each",
   compact = false,
   bannerError = null,
+  dropzoneClassName,
 }: UploadZoneProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);
@@ -223,6 +226,7 @@ export function UploadZone({
             ? "border-brand-red bg-brand-red/10"
             : "border-white/20 bg-brand-black/40 hover:border-brand-red/50 hover:bg-brand-red/5",
           disabled && "pointer-events-none opacity-55",
+          dropzoneClassName,
         )}
       >
         <span className="mb-2 flex h-9 w-9 items-center justify-center rounded-full border border-brand-red/40 bg-brand-red/10 text-brand-red-light">
