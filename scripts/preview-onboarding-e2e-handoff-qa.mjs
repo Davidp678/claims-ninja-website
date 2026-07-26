@@ -359,6 +359,14 @@ try {
     page.getByRole("button", { name: /verify.*workspace/i }).click(),
   ]);
 
+  await page.waitForFunction(
+    () =>
+      /your workspace is ready|setting up your workspace|provisioning in progress/i.test(
+        document.body.innerText || "",
+      ),
+    null,
+    { timeout: 60_000 },
+  );
   await page.screenshot({
     path: resolve(OUT, "otp-success-activated-entry.png"),
     fullPage: true,
@@ -432,6 +440,22 @@ try {
     }
   });
 
+  // Seed Platform deployment-protection cookie before cross-origin handoff.
+  if (PLATFORM_BYPASS) {
+    const platformSeed = await context.newPage();
+    const seedUrl = new URL(PLATFORM);
+    seedUrl.searchParams.set(
+      "x-vercel-protection-bypass",
+      PLATFORM_BYPASS,
+    );
+    seedUrl.searchParams.set("x-vercel-set-bypass-cookie", "true");
+    await platformSeed.goto(seedUrl.toString(), {
+      waitUntil: "domcontentloaded",
+      timeout: 90_000,
+    });
+    await platformSeed.close();
+  }
+
   const mintWait = page.waitForResponse(
     (res) =>
       res.url().includes("/api/onboarding/handoff") &&
@@ -468,12 +492,26 @@ try {
     handoffCodeForReplay = mintJson.data.handoffCode;
   }
   handoffNavUrl = handoffReq.url();
+  if (!handoffCodeForReplay && handoffNavUrl) {
+    try {
+      handoffCodeForReplay = new URL(handoffNavUrl).searchParams.get("code");
+    } catch {
+      // ignore
+    }
+  }
   report.checks.mintHandoff = {
     hasBrowserHandoffUrl: Boolean(mintJson?.data?.browserHandoffUrl),
     browserHandoffPath: mintJson?.data?.browserHandoffUrl
       ? new URL(mintJson.data.browserHandoffUrl).pathname
       : null,
     omitsRawCodeField: !mintJson?.data?.handoffCode,
+    handoffRequestHost: (() => {
+      try {
+        return new URL(handoffNavUrl).host;
+      } catch {
+        return null;
+      }
+    })(),
   };
 
   await page.waitForURL(/\/dashboard\/claims\//, { timeout: 120_000 });
@@ -530,7 +568,6 @@ try {
     ackTextKnown: ACK.length > 20,
   };
 
-  report.checks.sawHandoffEndpoint = sawHandoffEndpoint;
 } catch (err) {
   report.error = err instanceof Error ? err.message : String(err);
   try {
