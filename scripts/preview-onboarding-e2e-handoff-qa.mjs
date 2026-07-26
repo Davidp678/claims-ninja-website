@@ -456,10 +456,25 @@ try {
   } catch {
     mintJson = null;
   }
-  if (mintJson?.data?.handoffCode) {
+  if (mintJson?.data?.browserHandoffUrl) {
+    try {
+      handoffCodeForReplay = new URL(
+        mintJson.data.browserHandoffUrl,
+      ).searchParams.get("code");
+    } catch {
+      handoffCodeForReplay = null;
+    }
+  } else if (mintJson?.data?.handoffCode) {
     handoffCodeForReplay = mintJson.data.handoffCode;
   }
   handoffNavUrl = handoffReq.url();
+  report.checks.mintHandoff = {
+    hasBrowserHandoffUrl: Boolean(mintJson?.data?.browserHandoffUrl),
+    browserHandoffPath: mintJson?.data?.browserHandoffUrl
+      ? new URL(mintJson.data.browserHandoffUrl).pathname
+      : null,
+    omitsRawCodeField: !mintJson?.data?.handoffCode,
+  };
 
   await page.waitForURL(/\/dashboard\/claims\//, { timeout: 120_000 });
 

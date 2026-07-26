@@ -8,7 +8,6 @@ import { OnboardingLoading } from "@/components/onboarding/OnboardingLoading";
 import { ProgressRail } from "@/components/onboarding/ProgressRail";
 import { useOnboardingSession } from "@/components/onboarding/useOnboardingSession";
 import { onboardingFetchJson } from "@/lib/onboarding/client-api";
-import { buildIntakeHandoffUrl } from "@/lib/onboarding/intake-handoff-url";
 import { SITE } from "@/lib/constants";
 
 type ProvisionStatus = {
@@ -20,9 +19,10 @@ type ProvisionStatus = {
 };
 
 type HandoffResult = {
-  handoffCode?: string;
   expiresAt?: string;
   redirectPathHint?: string;
+  /** Full Platform `/auth/intake-handoff?code=…` URL built server-side. */
+  browserHandoffUrl?: string;
 };
 
 export function ActivatedStage() {
@@ -93,7 +93,7 @@ export function ActivatedStage() {
       { method: "POST", json: {} },
     );
     setOpening(false);
-    if (!result.ok || !result.data.handoffCode) {
+    if (!result.ok || !result.data.browserHandoffUrl) {
       // Never echo handoff codes into UI/error text.
       setHandoffError(
         result.ok
@@ -103,14 +103,16 @@ export function ActivatedStage() {
       return;
     }
 
-    const platformBase =
-      process.env.NEXT_PUBLIC_PLATFORM_URL ||
-      "https://app.theclaimsninja.com";
     try {
-      // Code must go to /auth/intake-handoff — not the claim workspace path.
-      window.location.assign(
-        buildIntakeHandoffUrl(platformBase, result.data.handoffCode),
-      );
+      const handoffUrl = new URL(result.data.browserHandoffUrl);
+      if (
+        handoffUrl.pathname !== "/auth/intake-handoff" ||
+        !handoffUrl.searchParams.get("code")
+      ) {
+        setHandoffError("Handoff is not available yet.");
+        return;
+      }
+      window.location.assign(handoffUrl.toString());
     } catch {
       setHandoffError("Handoff is not available yet.");
     }
