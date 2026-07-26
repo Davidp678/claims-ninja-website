@@ -94,16 +94,18 @@ export function AgreementStage() {
       setLocalError("Legal documents are unavailable.");
       return;
     }
+    const alreadyAccepted = session?.agreement?.accepted === true;
     if (
-      agreement.acceptanceEnabled === false ||
-      agreement.privacy?.stagingPlaceholder === true
+      !alreadyAccepted &&
+      (agreement.acceptanceEnabled === false ||
+        agreement.privacy?.stagingPlaceholder === true)
     ) {
       setLocalError(
         "Legal acceptance is unavailable until an approved Privacy Policy is published.",
       );
       return;
     }
-    if (!authority || !clickwrap) {
+    if (!alreadyAccepted && (!authority || !clickwrap)) {
       setLocalError(
         "Confirm authorization and the required acceptance checkbox to continue.",
       );
@@ -168,13 +170,18 @@ export function AgreementStage() {
         d.stagingPlaceholder === true,
     ) === true;
 
+  const alreadyAccepted = session.agreement?.accepted === true;
+
   const acceptanceBlocked =
     !!integrityError ||
     !agreement ||
-    agreement.acceptanceEnabled === false ||
-    privacyPlaceholder;
+    (!alreadyAccepted &&
+      (agreement.acceptanceEnabled === false || privacyPlaceholder));
 
-  const canSubmit = authority && clickwrap && !acceptanceBlocked && !busy;
+  const canSubmit =
+    !busy &&
+    !acceptanceBlocked &&
+    (alreadyAccepted || (authority && clickwrap));
 
   return (
     <OnboardingShell
