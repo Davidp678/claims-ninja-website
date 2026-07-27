@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FOOTER_LINKS, SITE } from "@/lib/constants";
 import { translateFooterLabel } from "@/lib/i18n/es-navigation";
 import { localizePath } from "@/lib/i18n/paths";
@@ -67,10 +68,25 @@ function FooterNavLink({
   );
 }
 
+function isOnboardingPath(pathname: string | null): boolean {
+  if (!pathname) return false;
+  return (
+    pathname === "/onboarding" ||
+    pathname.startsWith("/onboarding/") ||
+    pathname === "/es/onboarding" ||
+    pathname.startsWith("/es/onboarding/")
+  );
+}
+
 export function LocalizedFooter() {
   const locale = useMarketingLocale();
+  const pathname = usePathname();
   const year = new Date().getFullYear();
   const homeHref = localizePath(locale, "/");
+
+  if (isOnboardingPath(pathname)) {
+    return null;
+  }
 
   return (
     <footer className="border-t border-white/12 bg-brand-black">

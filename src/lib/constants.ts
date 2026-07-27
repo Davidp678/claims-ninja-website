@@ -69,6 +69,7 @@ export const FOOTER_LINKS = {
     { label: "Partner Network", href: "/partner-network" },
     { label: "Reviews", href: "/reviews" },
     { label: "Contact", href: "/contact" },
+    { label: "Privacy Policy", href: "/privacy" },
   ],
   resources: [
     { label: "Claim intake", href: CTA_LINKS.startHere },

@@ -1,20 +1,29 @@
-/** Layered environment: depth, soft red wash, restrained texture — no video. */
+/** Nearly-black hero environment: centered brand-red glow + faint perspective grid. */
 
 export function HeroBackdrop() {
   return (
     <div className="pointer-events-none absolute inset-0" aria-hidden>
       <div className="absolute inset-0 bg-brand-black" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_50%_at_92%_8%,rgba(220,38,38,0.15),transparent_58%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_45%_at_70%_92%,rgba(220,38,38,0.09),transparent_55%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_70%_at_0%_35%,rgba(0,0,0,0.55),transparent_62%)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/40 to-brand-black" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent sm:from-black/40" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_62%_42%,rgb(var(--brand-red-rgb)_/_0.22),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_35%_at_55%_48%,rgb(var(--brand-red-rgb)_/_0.12),transparent_65%)]" />
       <div
-        className="absolute inset-0 opacity-[0.035]"
+        className="absolute inset-x-0 bottom-0 h-[55%] opacity-[0.14]"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundImage: `
+            linear-gradient(to right, rgba(148,163,184,0.35) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(148,163,184,0.25) 1px, transparent 1px)
+          `,
+          backgroundSize: "48px 48px",
+          maskImage:
+            "linear-gradient(to top, rgba(0,0,0,0.9), transparent 85%)",
+          WebkitMaskImage:
+            "linear-gradient(to top, rgba(0,0,0,0.9), transparent 85%)",
+          transform: "perspective(700px) rotateX(52deg)",
+          transformOrigin: "center bottom",
         }}
       />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/20" />
     </div>
   );
 }

@@ -81,9 +81,8 @@ export function LanguageToggle({ compact = false }: LanguageToggleProps) {
         type="button"
         className={cn(
           "inline-flex items-center gap-1.5 font-medium text-zinc-300 transition-colors hover:text-white",
-          compact
-            ? "h-10 rounded-lg border border-white/18 px-2.5 text-sm"
-            : "text-sm",
+          "h-9 rounded-full border border-white/20 px-3 text-sm",
+          compact && "h-10 rounded-lg px-2.5",
         )}
         aria-expanded={open}
         aria-haspopup="listbox"

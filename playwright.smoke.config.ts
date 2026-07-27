@@ -7,6 +7,7 @@ import { defineConfig, devices } from "@playwright/test";
  */
 export default defineConfig({
   testDir: "./e2e",
+  testIgnore: /onboarding-(staging|fixture)-visual\.spec\.ts/,
   fullyParallel: process.env.SMOKE_BASE_URL?.includes("localhost") ? false : true,
   workers: process.env.SMOKE_BASE_URL?.includes("localhost") ? 1 : undefined,
   forbidOnly: !!process.env.CI,

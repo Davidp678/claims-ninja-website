@@ -90,20 +90,15 @@ export function MobileNavMenu({
       })}
 
       <li className="mt-4 space-y-3 px-4 md:hidden">
-        <Button href={CTA_LINKS.startHere} className="w-full" onClick={onNavigate}>
-          {locale === "es"
-            ? ES_CTA_LABELS.startClaimReview
-            : "Start Claim Review"}
-        </Button>
-        <a
+        <Button
           href={CTA_LINKS.schedule}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block text-center text-sm font-medium text-zinc-300 transition-colors hover:text-white"
+          size="sm"
+          external
+          className="w-full rounded-full"
           onClick={onNavigate}
         >
           {locale === "es" ? ES_CTA_LABELS.scheduleCall : "Schedule Call"}
-        </a>
+        </Button>
       </li>
     </ul>
   );

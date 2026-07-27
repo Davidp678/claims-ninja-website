@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { CTA_LINKS, SITE } from "@/lib/constants";
 import { ES_CTA_LABELS, getLocalizedMainNav } from "@/lib/i18n/es-navigation";
 import { localizePath } from "@/lib/i18n/paths";
@@ -15,12 +16,25 @@ import { LanguageToggle } from "./LanguageToggle";
 import { MobileNavMenu } from "./MobileNavMenu";
 import { NavDropdown } from "./NavDropdown";
 
+function isOnboardingPath(pathname: string | null): boolean {
+  if (!pathname) return false;
+  return (
+    pathname === "/onboarding" ||
+    pathname.startsWith("/onboarding/") ||
+    pathname === "/es/onboarding" ||
+    pathname.startsWith("/es/onboarding/")
+  );
+}
+
 export function Navbar() {
   const locale = useMarketingLocale();
+  const pathname = usePathname();
+  const onOnboarding = isOnboardingPath(pathname);
   const nav = locale === "es" ? getLocalizedMainNav() : MAIN_NAV;
   const homeHref = localizePath(locale, "/");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -36,12 +50,35 @@ export function Navbar() {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    const publishHeight = () => {
+      const height = Math.ceil(header.getBoundingClientRect().height);
+      document.documentElement.style.setProperty(
+        "--site-header-height",
+        `${height}px`,
+      );
+    };
+
+    publishHeight();
+    const observer = new ResizeObserver(publishHeight);
+    observer.observe(header);
+    window.addEventListener("resize", publishHeight);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", publishHeight);
+    };
+  }, [onOnboarding, scrolled, menuOpen]);
+
   return (
     <header
+      ref={headerRef}
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "border-b border-white/15 bg-brand-black/85 py-1 backdrop-blur-xl"
+        onOnboarding || scrolled
+          ? "border-b border-white/15 bg-brand-black/95 py-1 backdrop-blur-xl"
           : "bg-transparent py-2",
       )}
     >
@@ -49,7 +86,11 @@ export function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8"
         aria-label="Main"
       >
-        <Link href={homeHref} className="flex shrink-0 items-center" aria-label={SITE.name}>
+        <Link
+          href={homeHref}
+          className="flex shrink-0 items-center"
+          aria-label={SITE.name}
+        >
           <Image
             src="/logo.png"
             alt={SITE.name}
@@ -84,19 +125,14 @@ export function Navbar() {
 
         <div className="hidden shrink-0 items-center gap-3 md:flex md:gap-4 lg:gap-5">
           <LanguageToggle />
-          <Button href={CTA_LINKS.startHere} size="sm">
-            {locale === "es"
-              ? ES_CTA_LABELS.startClaimReview
-              : "Start Claim Review"}
-          </Button>
-          <a
+          <Button
             href={CTA_LINKS.schedule}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-zinc-300 transition-colors hover:text-white"
+            size="sm"
+            external
+            className="rounded-full"
           >
             {locale === "es" ? ES_CTA_LABELS.scheduleCall : "Schedule Call"}
-          </a>
+          </Button>
         </div>
 
         <div className="flex shrink-0 items-center gap-2 md:hidden">
