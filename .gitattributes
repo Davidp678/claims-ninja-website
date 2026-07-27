@@ -1,0 +1,2 @@
+# Approved legal snapshots are hashed as UTF-8 LF.
+src/lib/legal/*.txt text eol=lf

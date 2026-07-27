@@ -35,6 +35,8 @@ const ES_FOOTER_LABELS: Record<string, string> = {
   "Partner Network": "Red de socios",
   Reviews: "Reseñas",
   Contact: "Contacto",
+  "Terms of Service": "Términos del servicio",
+  "Privacy Policy": "Política de privacidad",
   "Claim intake": "Ingreso de reclamación",
   "Schedule consultation": "Agendar consulta",
   "Results & Insights": "Resultados e información",
