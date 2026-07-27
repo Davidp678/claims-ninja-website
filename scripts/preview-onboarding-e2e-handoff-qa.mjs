@@ -676,17 +676,11 @@ try {
 
     const stampB = Date.now().toString(36);
     const propertyB = `QA JourneyB Residence ${stampB}`;
-    await journeyBPage
-      .getByLabel(/property|job name/i)
-      .first()
-      .fill(propertyB);
-    const lossSelect = journeyBPage.locator("select").first();
-    if (await lossSelect.count()) {
-      await lossSelect.selectOption({ index: 1 });
-    }
-    const continueBtn = journeyBPage.getByRole("button", {
-      name: /continue claim intake/i,
-    });
+    await journeyBPage.locator("#hero-first-name").fill("Journey");
+    await journeyBPage.locator("#hero-last-name").fill("Bee");
+    await journeyBPage.locator("#hero-property").fill(propertyB);
+    await journeyBPage.locator("#hero-loss-type").selectOption({ index: 1 });
+    const continueBtn = journeyBPage.locator("button.hero-intake-cta");
     await continueBtn.click();
     await journeyBPage.waitForURL(/\/onboarding\/(claim|company)/, {
       timeout: 90_000,
