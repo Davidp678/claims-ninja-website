@@ -657,6 +657,96 @@ try {
   };
 }
 
+// Journey B — same browser: return to website and start a distinct new intake.
+try {
+  if (!report.error && report.checks.handoffNavigation?.landedOnClaimWorkspace) {
+    const journeyBPage = await context.newPage();
+    const homeUrl = new URL(SITE);
+    homeUrl.searchParams.set("x-vercel-protection-bypass", BYPASS);
+    homeUrl.searchParams.set("x-vercel-set-bypass-cookie", "true");
+    await journeyBPage.goto(homeUrl.toString(), {
+      waitUntil: "domcontentloaded",
+      timeout: 90_000,
+    });
+    await journeyBPage.waitForTimeout(1500);
+
+    const cookieBeforeB = (await context.cookies())
+      .find((c) => c.name === "cn_intake_handle")
+      ?.value;
+
+    const stampB = Date.now().toString(36);
+    const propertyB = `QA JourneyB Residence ${stampB}`;
+    await journeyBPage
+      .getByLabel(/property|job name/i)
+      .first()
+      .fill(propertyB);
+    const lossSelect = journeyBPage.locator("select").first();
+    if (await lossSelect.count()) {
+      await lossSelect.selectOption({ index: 1 });
+    }
+    const continueBtn = journeyBPage.getByRole("button", {
+      name: /continue claim intake/i,
+    });
+    await continueBtn.click();
+    await journeyBPage.waitForURL(/\/onboarding\/(claim|company)/, {
+      timeout: 90_000,
+    });
+    const bodyB = await journeyBPage.locator("body").innerText();
+    const cookieAfterB = (await context.cookies())
+      .find((c) => c.name === "cn_intake_handle")
+      ?.value;
+
+    let sessionIdB = null;
+    if (cookieAfterB && HANDLE_PEPPER) {
+      const handleHashB = hashWithPepper(cookieAfterB, HANDLE_PEPPER);
+      const { data: sessB } = await sb
+        .from("external_intake_sessions")
+        .select("id, status, stage")
+        .eq("handle_hash", handleHashB)
+        .maybeSingle();
+      sessionIdB = sessB?.id ?? null;
+      report.checks.journeyB = {
+        advancedPastStep1: /\/onboarding\/(claim|company)/.test(
+          journeyBPage.url(),
+        ),
+        noStaleStageError: !/cannot advance to that onboarding stage/i.test(
+          bodyB,
+        ),
+        noInternalStateLeak: !/invalid_stage_transition|session_completed/i.test(
+          bodyB,
+        ),
+        cookieRetiredBeforeStart: !cookieBeforeB,
+        distinctHandleFromPriorMintPath: Boolean(cookieAfterB),
+        sessionIdMasked: sessionIdB
+          ? `${sessionIdB.slice(0, 6)}…${sessionIdB.slice(-4)}`
+          : null,
+        status: sessB?.status ?? null,
+        url: journeyBPage.url().replace(/\?.*$/, ""),
+      };
+    } else {
+      report.checks.journeyB = {
+        advancedPastStep1: /\/onboarding\/(claim|company)/.test(
+          journeyBPage.url(),
+        ),
+        noStaleStageError: !/cannot advance to that onboarding stage/i.test(
+          bodyB,
+        ),
+        cookieRetiredBeforeStart: !cookieBeforeB,
+      };
+    }
+
+    await journeyBPage.screenshot({
+      path: resolve(OUT, "journey-b-second-intake.png"),
+      fullPage: true,
+    });
+    await journeyBPage.close();
+  }
+} catch (err) {
+  report.checks.journeyB = {
+    error: err instanceof Error ? err.message : String(err),
+  };
+}
+
 await browser.close();
 
 report.checks.paymentSideEffectsAbsent = {
@@ -675,6 +765,8 @@ report.pass = Boolean(
     report.checks.handoffReplay?.rejectedSafely &&
     report.checks.handoffReplay?.didNotLandOnClaim &&
     report.checks.noPaymentArtifacts?.paymentMethodOnFileNeverTrue &&
+    report.checks.journeyB?.advancedPastStep1 &&
+    report.checks.journeyB?.noStaleStageError &&
     !report.error,
 );
 
