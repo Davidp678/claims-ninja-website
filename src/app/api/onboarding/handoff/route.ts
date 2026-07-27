@@ -48,6 +48,8 @@ export async function POST(request: Request) {
     if (envelope.ok && envelope.data?.handoffCode) {
       // Build the browser landing URL server-side from EXTERNAL_INTAKE_PLATFORM_URL
       // so Preview does not depend on NEXT_PUBLIC_PLATFORM_URL.
+      // Cookie retirement happens client-side immediately before navigation so a
+      // failed assign can still retry mint with the same session.
       const browserHandoffUrl = buildIntakeHandoffUrl(
         config.platformBaseUrl,
         envelope.data.handoffCode,

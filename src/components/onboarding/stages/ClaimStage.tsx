@@ -142,11 +142,22 @@ function ClaimStageForm({
 
   async function handleContinue() {
     setBusy(true);
+    setUploadError(null);
     clearAutosaveTimer();
     router.prefetch("/onboarding/company");
     const saved = await patch("company", { claim: form });
     setBusy(false);
-    if (saved) router.push("/onboarding/company");
+    if (saved) {
+      router.push("/onboarding/company");
+      return;
+    }
+    // patch() surfaces mapped errors via session hook; reinforce safe copy.
+    setUploadError(
+      userFacingOnboardingError(
+        undefined,
+        "We couldn’t continue this submission. Your information is safe. Please try again.",
+      ),
+    );
   }
 
   const fileCount = session.files?.length ?? 0;

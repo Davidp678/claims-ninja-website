@@ -132,10 +132,12 @@ export function UploadZone({
             const canRetry =
               Boolean(onRetry) &&
               (file.securityState === "failed" ||
+                file.securityState === "scan_unavailable" ||
                 file.securityState === "scan_pending" ||
                 file.securityState === "preparing");
             const scanning = isScanning(file.securityState);
             const ready = file.securityState === "ready";
+            const scanUnavailable = file.securityState === "scan_unavailable";
             return (
               <li
                 key={file.id}
@@ -153,6 +155,7 @@ export function UploadZone({
                           className={cn(
                             ready && "text-emerald-400",
                             scanning && "text-zinc-300",
+                            scanUnavailable && "text-amber-300",
                           )}
                         >
                           {ready ? "✓ " : null}
@@ -161,6 +164,14 @@ export function UploadZone({
                         <span aria-hidden>·</span>
                         <span>{formatBytes(file.sizeBytes)}</span>
                       </p>
+                      {scanUnavailable ? (
+                        <p className="mt-1 text-xs text-amber-200/90">
+                          Scanning is temporarily unavailable. Retry, replace
+                          this file, or remove it to continue without an
+                          upload. Unscanned files stay protected and cannot
+                          finish workspace setup.
+                        </p>
+                      ) : null}
                     </div>
                   </div>
                   <div className="flex shrink-0 items-center gap-1">
@@ -178,12 +189,12 @@ export function UploadZone({
                     {onRemove ? (
                       <button
                         type="button"
-                        aria-label={`Remove ${file.filename}`}
+                        aria-label={`Replace or remove ${file.filename}`}
                         onClick={() => onRemove(file.id)}
                         disabled={disabled}
-                        className="rounded p-1 text-zinc-400 hover:bg-white/5 hover:text-white disabled:opacity-50"
+                        className="rounded px-2 py-1 text-xs font-medium text-zinc-300 hover:bg-white/5 hover:text-white disabled:opacity-50"
                       >
-                        ×
+                        Replace
                       </button>
                     ) : null}
                   </div>

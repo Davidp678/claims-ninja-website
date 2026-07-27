@@ -145,7 +145,8 @@ export function useOnboardingSession() {
 
         if (
           !result.ok &&
-          result.code === "VERSION_MISMATCH" &&
+          (result.code === "VERSION_MISMATCH" ||
+            result.code === "STALE_SESSION_VERSION") &&
           result.status === 409
         ) {
           const refreshed = await softRefresh();
@@ -156,7 +157,12 @@ export function useOnboardingSession() {
 
         if (!result.ok) {
           setSaveState("error");
-          await softRefresh();
+          if (
+            result.code !== "SESSION_COMPLETED" &&
+            result.code !== "SESSION_EXPIRED"
+          ) {
+            await softRefresh();
+          }
           setError(userFacingOnboardingError(result.code, result.message));
           return null;
         }
@@ -194,7 +200,8 @@ export function useOnboardingSession() {
 
       if (
         !result.ok &&
-        result.code === "VERSION_MISMATCH" &&
+        (result.code === "VERSION_MISMATCH" ||
+          result.code === "STALE_SESSION_VERSION") &&
         result.status === 409
       ) {
         const refreshed = await softRefresh();
