@@ -152,8 +152,48 @@ export function HeroClaimIntakeCard({
     }
 
     ensureSessionPromiseRef.current = (async () => {
+      const createFresh = async () => {
+        const created = await onboardingFetchJson<{
+          stage: string;
+          version: number;
+        }>("/api/onboarding/session", {
+          method: "POST",
+          json: {
+            source: "website_hero",
+            locale: locale === "es" ? "es-US" : "en-US",
+            claimDraft: {
+              propertyOrJobName: draft?.propertyOrJobName,
+              lossType: draft?.lossType,
+            },
+            companyDraft: {
+              firstName: draft?.firstName,
+              lastName: draft?.lastName,
+            },
+          },
+        });
+
+        if (!created.ok) {
+          return {
+            ok: false as const,
+            message: userFacingOnboardingError(created.code, created.message),
+          };
+        }
+
+        const version = created.data.version;
+        if (typeof version !== "number") {
+          return {
+            ok: false as const,
+            message: "Session created without a version. Please retry.",
+          };
+        }
+        syncVersion(version);
+        return { ok: true as const, version };
+      };
+
+      // Prefer an editable incomplete session. Completed/expired cookies must
+      // not be reused for a new Step-1 submission.
       const existing = await onboardingFetchJson<SessionProjection>(
-        "/api/onboarding/session",
+        "/api/onboarding/session?editable=1",
         { method: "GET" },
       );
       if (existing.ok && typeof existing.data.version === "number") {
@@ -161,42 +201,27 @@ export function HeroClaimIntakeCard({
         return { ok: true as const, version: existing.data.version };
       }
 
-      if (existing.ok === false && existing.status !== 401) {
-        return { ok: false as const, message: existing.message };
-      }
+      const nonResumable =
+        existing.ok === false &&
+        (existing.status === 401 ||
+          existing.code === "SESSION_COMPLETED" ||
+          existing.code === "SESSION_EXPIRED" ||
+          existing.code === "EXPIRED" ||
+          existing.code === "NOT_FOUND" ||
+          existing.code === "SESSION_UNAUTHORIZED");
 
-      const created = await onboardingFetchJson<{
-        stage: string;
-        version: number;
-      }>("/api/onboarding/session", {
-        method: "POST",
-        json: {
-          source: "website_hero",
-          locale: locale === "es" ? "es-US" : "en-US",
-          claimDraft: {
-            propertyOrJobName: draft?.propertyOrJobName,
-            lossType: draft?.lossType,
-          },
-          companyDraft: {
-            firstName: draft?.firstName,
-            lastName: draft?.lastName,
-          },
-        },
-      });
-
-      if (!created.ok) {
-        return { ok: false as const, message: created.message };
-      }
-
-      const version = created.data.version;
-      if (typeof version !== "number") {
+      if (existing.ok === false && !nonResumable) {
         return {
           ok: false as const,
-          message: "Session created without a version. Please retry.",
+          message: userFacingOnboardingError(existing.code, existing.message),
         };
       }
-      syncVersion(version);
-      return { ok: true as const, version };
+
+      // Clear client version and create once (cookie already cleared by BFF
+      // for completed/expired responses).
+      versionRef.current = null;
+      setSessionVersion(null);
+      return createFresh();
     })().finally(() => {
       ensureSessionPromiseRef.current = null;
     });
@@ -211,7 +236,8 @@ export function HeroClaimIntakeCard({
 
     if (
       !uploaded.ok &&
-      uploaded.code === "VERSION_MISMATCH" &&
+      (uploaded.code === "VERSION_MISMATCH" ||
+        uploaded.code === "STALE_SESSION_VERSION") &&
       uploaded.status === 409
     ) {
       const refreshed = await refreshSessionVersion();
@@ -375,7 +401,8 @@ export function HeroClaimIntakeCard({
 
       if (
         !result.ok &&
-        result.code === "VERSION_MISMATCH" &&
+        (result.code === "VERSION_MISMATCH" ||
+          result.code === "STALE_SESSION_VERSION") &&
         result.status === 409
       ) {
         const refreshed = await refreshSessionVersion();
@@ -469,7 +496,8 @@ export function HeroClaimIntakeCard({
 
         if (
           !patched.ok &&
-          patched.code === "VERSION_MISMATCH" &&
+          (patched.code === "VERSION_MISMATCH" ||
+            patched.code === "STALE_SESSION_VERSION") &&
           patched.status === 409
         ) {
           const refreshed = await refreshSessionVersion();

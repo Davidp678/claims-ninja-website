@@ -1,4 +1,5 @@
 import {
+  clearIntakeHandleCookie,
   ensureCsrfCookie,
   getIntakeHandleFromCookie,
   setIntakeHandleCookie,
@@ -16,7 +17,15 @@ import type { IntakeSessionProjection } from "@/lib/onboarding/types";
 
 export const runtime = "nodejs";
 
-export async function GET() {
+const CLEAR_COOKIE_CODES = new Set([
+  "SESSION_COMPLETED",
+  "SESSION_EXPIRED",
+  "EXPIRED",
+  "NOT_FOUND",
+  "SESSION_UNAUTHORIZED",
+]);
+
+export async function GET(request: Request) {
   try {
     await ensureCsrfCookie();
     const intakeHandle = await getIntakeHandleFromCookie();
@@ -24,13 +33,29 @@ export async function GET() {
       return jsonError(401, "SESSION_UNAUTHORIZED", "No active intake session.");
     }
 
+    const url = new URL(request.url);
+    const editable = url.searchParams.get("editable") === "1";
+
     const { status, envelope } =
       await externalIntakeS2SJson<IntakeSessionProjection>(
         "GET",
         "/api/external-intake/v1/sessions/current",
         undefined,
-        { searchParams: { intakeHandle } },
+        {
+          searchParams: {
+            intakeHandle,
+            ...(editable ? { editable: "1" } : {}),
+          },
+        },
       );
+
+    if (!envelope.ok) {
+      const code = envelope.error?.code;
+      if (code && CLEAR_COOKIE_CODES.has(code)) {
+        await clearIntakeHandleCookie();
+      }
+      return mapPlatformResponse(status, envelope);
+    }
 
     if (envelope.ok && envelope.data) {
       return mapPlatformResponse(status, {
@@ -155,9 +180,13 @@ export async function PATCH(request: Request) {
       );
 
     if (!envelope.ok) {
+      const code = envelope.error?.code;
+      if (code && CLEAR_COOKIE_CODES.has(code)) {
+        await clearIntakeHandleCookie();
+      }
       console.error("[api/onboarding/session] PATCH platform error", {
         status,
-        code: envelope.error?.code ?? null,
+        code: code ?? null,
         message: envelope.error?.message ?? null,
         hasExpectedVersion: body.expectedVersion !== undefined,
         stage: typeof body.stage === "string" ? body.stage : null,
