@@ -28,18 +28,20 @@ export function OnboardingStageGuard({
   const pathname = usePathname();
   const router = useRouter();
   const { setSnapshot, setGuardReady } = useOnboardingSessionContext();
-  const [checked, setChecked] = useState(false);
+  // Derive readiness from pathname so path changes show loading without
+  // synchronously resetting state at the top of an effect.
+  const [readyForPath, setReadyForPath] = useState<string | null>(null);
+  const checked = readyForPath === pathname;
 
   useEffect(() => {
     let cancelled = false;
-    setChecked(false);
     setGuardReady(false);
 
     void (async () => {
       const segment = pathname.split("/").filter(Boolean).pop() ?? "";
       if (!isOnboardingRoute(segment)) {
         if (!cancelled) {
-          setChecked(true);
+          setReadyForPath(pathname);
           setGuardReady(true);
         }
         return;
@@ -54,7 +56,7 @@ export function OnboardingStageGuard({
       if (!result.ok) {
         // No session — stage pages already render their own empty states.
         setSnapshot(null);
-        setChecked(true);
+        setReadyForPath(pathname);
         setGuardReady(true);
         return;
       }
@@ -64,7 +66,7 @@ export function OnboardingStageGuard({
       if (!isRouteAllowed(requested, maxAllowed)) {
         router.replace(stagePath(maxAllowed));
       }
-      setChecked(true);
+      setReadyForPath(pathname);
       setGuardReady(true);
     })();
 
