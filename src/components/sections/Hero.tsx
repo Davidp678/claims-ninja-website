@@ -13,6 +13,7 @@ function ShieldIcon({ className }: { className?: string }) {
   return (
     <svg
       aria-hidden
+      data-proof-icon="shield"
       viewBox="0 0 24 24"
       className={className}
       fill="none"
@@ -64,9 +65,11 @@ function TrendingUpIcon({ className }: { className?: string }) {
 }
 
 function CalendarIcon({ className }: { className?: string }) {
+  // Paths inset to match the shield’s optical left ink edge (~x=5 in a 24 viewBox).
   return (
     <svg
       aria-hidden
+      data-proof-icon="calendar"
       viewBox="0 0 24 24"
       className={className}
       fill="none"
@@ -75,8 +78,8 @@ function CalendarIcon({ className }: { className?: string }) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <rect x="4" y="5" width="16" height="15" rx="2" />
-      <path d="M8 3v4M16 3v4M4 10h16" />
+      <rect x="5" y="5" width="14" height="15" rx="2" />
+      <path d="M8.5 3v4M15.5 3v4M5 10h14" />
     </svg>
   );
 }

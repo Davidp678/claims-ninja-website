@@ -4,15 +4,38 @@ import {
   type HomeProcessStep,
   type HomeProcessVisual,
 } from "@/lib/i18n/content/home";
-import { Section } from "@/components/ui/Section";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+
+/**
+ * Reference canvas: 1024×467 (native mock).
+ * Card row: left 85 → right 921, top 170, height 229, gap 24,
+ * widths 174 / 229 / 217 / 145, connector Y ≈ 240.
+ */
+const REF = {
+  width: 1024,
+  height: 467,
+  padX: 85,
+  cardTop: 170,
+  cardHeight: 229,
+  gap: 24,
+  widths: [174, 229, 217, 145] as const,
+  connectorY: 240,
+  numberTop: 18,
+  numberLeft: 16,
+  visualTop: 48,
+  visualHeight: 72,
+  titleTop: 128,
+  descTop: 154,
+  pillBottom: 16,
+};
 
 function StrokeIcon({
   className,
   children,
+  strokeWidth = 1.5,
 }: {
   className?: string;
   children: React.ReactNode;
+  strokeWidth?: number;
 }) {
   return (
     <svg
@@ -21,7 +44,7 @@ function StrokeIcon({
       className={className}
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.55"
+      strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
     >
@@ -32,7 +55,7 @@ function StrokeIcon({
 
 function LockBadgeIcon({ className }: { className?: string }) {
   return (
-    <StrokeIcon className={className}>
+    <StrokeIcon className={className} strokeWidth={1.7}>
       <rect x="5" y="11" width="14" height="10" rx="2" />
       <path d="M8 11V8a4 4 0 0 1 8 0v3" />
     </StrokeIcon>
@@ -41,7 +64,7 @@ function LockBadgeIcon({ className }: { className?: string }) {
 
 function DatabaseBadgeIcon({ className }: { className?: string }) {
   return (
-    <StrokeIcon className={className}>
+    <StrokeIcon className={className} strokeWidth={1.7}>
       <ellipse cx="12" cy="6" rx="7" ry="2.5" />
       <path d="M5 6v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6" />
       <path d="M5 10v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4" />
@@ -52,7 +75,7 @@ function DatabaseBadgeIcon({ className }: { className?: string }) {
 
 function PulseBadgeIcon({ className }: { className?: string }) {
   return (
-    <StrokeIcon className={className}>
+    <StrokeIcon className={className} strokeWidth={1.7}>
       <path d="M3 12h4l2-5 4 10 2-5h6" />
     </StrokeIcon>
   );
@@ -60,28 +83,25 @@ function PulseBadgeIcon({ className }: { className?: string }) {
 
 function EyeBadgeIcon({ className }: { className?: string }) {
   return (
-    <StrokeIcon className={className}>
+    <StrokeIcon className={className} strokeWidth={1.7}>
       <path d="M2.5 12S6 6.5 12 6.5 21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12Z" />
       <circle cx="12" cy="12" r="2.5" />
     </StrokeIcon>
   );
 }
 
-/** Shared primary icon frame — identical geometry on all four stages. */
-function PrimaryIconFrame({ children }: { children: React.ReactNode }) {
+function PrimaryIconFrame({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
     <div
       data-process-icon-frame
-      className="relative z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-[#141414] text-brand-red shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:h-[5.5rem] sm:w-[5.5rem]"
+      className={`relative z-10 flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[9px] border border-white/16 bg-[#141414] text-brand-red ${className}`}
     >
-      {children}
-    </div>
-  );
-}
-
-function AbstractPanel({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="relative z-0 h-[5.25rem] w-[6.75rem] overflow-hidden rounded-xl border border-white/10 bg-[#101010] shadow-inner shadow-black/50 sm:h-[5.75rem] sm:w-[7.25rem]">
       {children}
     </div>
   );
@@ -89,16 +109,13 @@ function AbstractPanel({ children }: { children: React.ReactNode }) {
 
 function UploadDocVisual() {
   return (
-    <div
-      aria-hidden
-      className="flex h-full w-full items-center justify-center"
-    >
+    <div aria-hidden className="flex h-full items-start justify-start pl-1 pt-1">
       <PrimaryIconFrame>
-        <StrokeIcon className="h-10 w-10 sm:h-11 sm:w-11">
-          <path d="M14 2.75H8.25A2.25 2.25 0 0 0 6 5v14a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 19V7.25L14 2.75Z" />
-          <path d="M14 2.75V7.5h3.75" />
-          <path d="M12 11.25v6" />
-          <path d="m9.5 13.75 2.5-2.5 2.5 2.5" />
+        <StrokeIcon className="h-6 w-6" strokeWidth={1.45}>
+          <path d="M14 2.8H8.2A2.2 2.2 0 0 0 6 5v14a2.2 2.2 0 0 0 2.2 2.2h7.6A2.2 2.2 0 0 0 18 19V7.2L14 2.8Z" />
+          <path d="M14 2.8V7.4h3.8" />
+          <path d="M12 11.2v6" />
+          <path d="m9.6 13.6 2.4-2.4 2.4 2.4" />
         </StrokeIcon>
       </PrimaryIconFrame>
     </div>
@@ -107,37 +124,33 @@ function UploadDocVisual() {
 
 function WorkspaceVisual() {
   return (
-    <div
-      aria-hidden
-      className="relative flex h-full w-full items-center justify-center"
-    >
-      <div className="absolute right-[8%] top-1/2 -translate-y-1/2 sm:right-[6%]">
-        <AbstractPanel>
-          <div className="flex h-full">
-            <div className="relative w-4 shrink-0 border-r border-white/10 bg-black/45">
-              <span className="absolute left-1/2 top-2.5 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-brand-red" />
-              <span className="absolute left-1/2 top-6 h-1 w-1 -translate-x-1/2 rounded-full bg-white/25" />
-              <span className="absolute left-1/2 top-9 h-1 w-1 -translate-x-1/2 rounded-full bg-white/20" />
-              <span className="absolute left-1/2 top-12 h-1 w-1 -translate-x-1/2 rounded-full bg-white/15" />
-            </div>
-            <div className="flex flex-1 flex-col gap-1.5 p-2">
-              <span className="h-1.5 w-full rounded-sm bg-white/12" />
-              <span className="h-6 w-full rounded-sm bg-white/[0.06]" />
-              <div className="mt-auto flex gap-1">
-                <span className="h-2.5 flex-1 rounded-sm bg-white/10" />
-                <span className="h-2.5 w-5 rounded-sm bg-white/[0.07]" />
-              </div>
+    <div aria-hidden className="relative h-full w-full">
+      <div className="absolute left-[36px] top-[2px] h-[60px] w-[110px] overflow-hidden rounded-[9px] border border-white/14 bg-[#101010]">
+        <div className="flex h-full">
+          <div className="relative w-[16px] shrink-0 border-r border-white/10 bg-black/50">
+            <span className="absolute left-1/2 top-[7px] h-[5px] w-[5px] -translate-x-1/2 rounded-full bg-brand-red" />
+            <span className="absolute left-1/2 top-[18px] h-[3px] w-[7px] -translate-x-1/2 rounded-[1px] bg-white/25" />
+            <span className="absolute left-1/2 top-[26px] h-[3px] w-[7px] -translate-x-1/2 rounded-[1px] bg-white/18" />
+            <span className="absolute left-1/2 top-[34px] h-[3px] w-[7px] -translate-x-1/2 rounded-[1px] bg-white/14" />
+          </div>
+          <div className="flex flex-1 flex-col gap-[5px] p-[7px]">
+            <span className="h-[3px] w-[70%] rounded-[1px] bg-white/16" />
+            <span className="h-[3px] w-[86%] rounded-[1px] bg-white/12" />
+            <div className="mt-auto flex gap-[4px]">
+              <span className="h-[12px] flex-1 rounded-[3px] bg-white/[0.08]" />
+              <span className="h-[12px] w-[20px] rounded-[3px] bg-white/[0.08]" />
+              <span className="h-[12px] w-[16px] rounded-[3px] bg-white/[0.08]" />
             </div>
           </div>
-        </AbstractPanel>
+        </div>
       </div>
-      <div className="relative -translate-x-5 sm:-translate-x-6">
+      <div className="absolute left-[1px] top-[8px]">
         <PrimaryIconFrame>
-          <StrokeIcon className="h-10 w-10 sm:h-11 sm:w-11">
-            <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" />
-            <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" />
-            <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" />
-            <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
+          <StrokeIcon className="h-6 w-6" strokeWidth={1.45}>
+            <rect x="3.5" y="3.5" width="7" height="7" rx="1.4" />
+            <rect x="13.5" y="3.5" width="7" height="7" rx="1.4" />
+            <rect x="3.5" y="13.5" width="7" height="7" rx="1.4" />
+            <rect x="13.5" y="13.5" width="7" height="7" rx="1.4" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -147,44 +160,43 @@ function WorkspaceVisual() {
 
 function ManageVisual() {
   return (
-    <div
-      aria-hidden
-      className="relative flex h-full w-full items-center justify-center"
-    >
-      <div className="absolute right-[6%] top-1/2 -translate-y-1/2 sm:right-[4%]">
-        <AbstractPanel>
-          <div className="flex h-full flex-col justify-center gap-2 px-2.5 py-2">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="flex items-center gap-2">
-                <span className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full border border-brand-red/75 text-brand-red">
-                  <svg
-                    aria-hidden
-                    viewBox="0 0 12 12"
-                    className="h-2 w-2"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="m2.5 6.2 2.2 2.2L9.5 3.8" />
-                  </svg>
-                </span>
-                <span className="h-1.5 flex-1 rounded-sm bg-white/12" />
-              </div>
-            ))}
-          </div>
-        </AbstractPanel>
+    <div aria-hidden className="relative h-full w-full">
+      <div className="absolute left-[36px] top-[2px] h-[60px] w-[110px] overflow-hidden rounded-[9px] border border-white/14 bg-[#101010]">
+        <div className="flex h-full flex-col justify-center gap-[6px] px-[9px] py-[7px]">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="flex items-center gap-[6px]">
+              <span className="flex h-[11px] w-[11px] shrink-0 items-center justify-center rounded-full border border-brand-red/80 text-brand-red">
+                <svg
+                  aria-hidden
+                  viewBox="0 0 12 12"
+                  className="h-[6px] w-[6px]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m2.4 6.2 2.2 2.2L9.6 3.7" />
+                </svg>
+              </span>
+              <span className="h-[3px] flex-1 rounded-[1px] bg-white/14" />
+              {i === 0 ? (
+                <span className="h-[3px] w-[16px] rounded-[1px] bg-white/10" />
+              ) : null}
+            </div>
+          ))}
+        </div>
+        <span className="absolute bottom-[7px] right-[5px] top-[7px] w-px bg-white/10" />
       </div>
-      <div className="relative -translate-x-5 sm:-translate-x-6">
+      <div className="absolute left-[1px] top-[8px]">
         <PrimaryIconFrame>
-          <StrokeIcon className="h-10 w-10 sm:h-11 sm:w-11">
-            <circle cx="9" cy="8.25" r="2.6" />
-            <circle cx="16" cy="9" r="2.1" />
-            <path d="M4.25 18.25c.65-2.55 2.55-4 4.75-4s4.1 1.45 4.75 4" />
-            <path d="M14.25 14.75c1.55-.45 3 .15 3.85 1.55" />
-            <path d="M16.5 4.75h3.75v2.4" />
-            <path d="M20.25 4.75 17.5 7.25" />
+          <StrokeIcon className="h-6 w-6" strokeWidth={1.45}>
+            <circle cx="9" cy="8.2" r="2.5" />
+            <circle cx="15.8" cy="9" r="2" />
+            <path d="M4.4 18c.6-2.4 2.4-3.8 4.6-3.8s4 1.4 4.6 3.8" />
+            <path d="M14.2 14.7c1.5-.4 2.9.2 3.7 1.5" />
+            <path d="M16.2 4.6h3.6v2.2" />
+            <path d="m19.8 4.6-2.4 2.2" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -194,15 +206,12 @@ function ManageVisual() {
 
 function RecoverVisual() {
   return (
-    <div
-      aria-hidden
-      className="flex h-full w-full items-center justify-center"
-    >
+    <div aria-hidden className="flex h-full items-start justify-start pl-1 pt-1">
       <PrimaryIconFrame>
-        <StrokeIcon className="h-10 w-10 sm:h-11 sm:w-11">
-          <circle cx="12" cy="12" r="8.25" />
-          <path d="m7.75 14.25 2.75-3.25 2.15 2.15L16.5 8.75" />
-          <path d="M14.25 8.75h2.25v2.25" />
+        <StrokeIcon className="h-6 w-6" strokeWidth={1.45}>
+          <circle cx="12" cy="12" r="8.1" />
+          <path d="m7.8 14.2 2.7-3.2 2.1 2.1L16.4 8.8" />
+          <path d="M14.2 8.8h2.2v2.2" />
         </StrokeIcon>
       </PrimaryIconFrame>
     </div>
@@ -217,53 +226,64 @@ function StageVisual({ visual }: { visual: HomeProcessVisual }) {
 }
 
 function SupportBadgeIcon({ visual }: { visual: HomeProcessVisual }) {
-  const className = "h-3.5 w-3.5 shrink-0 text-brand-red";
+  const className = "h-3 w-3 shrink-0 text-brand-red";
   if (visual === "intake") return <LockBadgeIcon className={className} />;
   if (visual === "workspace") return <DatabaseBadgeIcon className={className} />;
   if (visual === "manage") return <PulseBadgeIcon className={className} />;
   return <EyeBadgeIcon className={className} />;
 }
 
-function ProcessStageCard({ item }: { item: HomeProcessStep }) {
+function ProcessStageCard({
+  item,
+  referenceMode,
+}: {
+  item: HomeProcessStep;
+  referenceMode?: boolean;
+}) {
   return (
     <div
       data-process-card
-      className="group relative flex h-full min-h-[26rem] flex-col rounded-[1.25rem] border border-white/12 bg-[#161616] p-6 shadow-[0_18px_48px_-28px_rgba(0,0,0,0.85),0_0_40px_-28px_rgba(220,38,38,0.22)] transition-colors hover:border-brand-red/40 motion-reduce:transition-none sm:min-h-[28rem] sm:p-7"
+      data-width={item.width}
+      className="group relative flex h-full min-h-0 flex-col overflow-hidden rounded-[11px] border border-white/[0.13] bg-[#181818] shadow-[0_8px_24px_-16px_rgba(0,0,0,0.95)]"
     >
       <span
         data-process-step
-        className="font-display text-[2.5rem] font-semibold leading-none tracking-tight text-brand-red transition-colors group-hover:text-brand-red-light motion-reduce:transition-none sm:text-5xl"
+        className="absolute left-[14px] top-[14px] font-display text-[22px] font-semibold leading-none tracking-tight text-brand-red"
       >
         {item.step}
       </span>
 
       <div
         data-process-visual
-        className="mt-5 h-36 shrink-0 sm:mt-6 sm:h-40"
+        className="absolute left-[10px] right-[10px] top-[42px] h-[68px]"
       >
         <StageVisual visual={item.visual} />
       </div>
 
       <h3
         data-process-title
-        className="mt-6 min-h-[3.75rem] font-display text-xl font-semibold leading-snug text-white sm:min-h-[4rem] sm:text-[1.35rem]"
+        className="absolute left-[14px] right-[8px] top-[116px] font-display text-[12px] font-semibold leading-[1.15] tracking-tight text-white"
       >
         {item.title}
       </h3>
 
       <p
         data-process-description
-        className="mt-2 min-h-[4.5rem] flex-1 text-[0.9375rem] leading-relaxed text-zinc-400"
+        className="absolute left-[14px] right-[8px] top-[142px] text-[10px] leading-[1.35] text-zinc-400"
       >
-        {item.description}
+        {(referenceMode ? item.descriptionLines : null)?.map((line) => (
+          <span key={line} className="block">
+            {line}
+          </span>
+        )) ?? item.description}
       </p>
 
       <div
         data-process-pill
-        className="mt-6 inline-flex h-8 w-fit max-w-full items-center gap-2 rounded-lg border border-white/12 bg-black/35 px-3"
+        className="absolute bottom-[12px] left-[12px] inline-flex h-[24px] w-fit max-w-[calc(100%-1.5rem)] items-center gap-1.5 rounded-[6px] border border-white/14 bg-black/45 px-2"
       >
         <SupportBadgeIcon visual={item.visual} />
-        <span className="truncate text-[12px] font-medium leading-none text-brand-red-light">
+        <span className="truncate text-[10.5px] font-medium leading-none text-zinc-200">
           {item.supportLabel}
         </span>
       </div>
@@ -271,93 +291,175 @@ function ProcessStageCard({ item }: { item: HomeProcessStep }) {
   );
 }
 
-function DesktopProcessRail({ count }: { count: number }) {
-  const gapSlots = Math.max(count - 1, 0);
-
+function DesktopJourney({
+  steps,
+  referenceMode,
+}: {
+  steps: HomeProcessStep[];
+  referenceMode?: boolean;
+}) {
+  // Explicit narrow/wide/wide/narrow track sizing from the mock.
   return (
     <div
-      aria-hidden
-      data-process-rail
-      className="pointer-events-none absolute inset-x-0 top-[9.75rem] z-[1] sm:top-[11.25rem]"
+      data-process-desktop
+      className={
+        referenceMode
+          ? "relative mx-auto w-full max-w-[1024px] px-[85px]"
+          : "relative mx-auto hidden w-full max-w-[1024px] px-[85px] xl:block"
+      }
+      style={
+        referenceMode
+          ? { height: REF.cardHeight, marginTop: 0 }
+          : { minHeight: REF.cardHeight }
+      }
     >
-      {/* Continuous rail through card centers; solid cards mask the mid-span. */}
-      <div className="absolute left-[12.5%] right-[12.5%] top-1/2 h-px -translate-y-1/2 bg-brand-red/60" />
-
-      {/* Nodes centered in the three equal gaps between four columns. */}
-      <div className="absolute inset-x-0 top-1/2 grid -translate-y-1/2 grid-cols-4 gap-6 xl:gap-8">
-        {Array.from({ length: gapSlots }).map((_, index) => (
-          <div key={index} className="relative">
-            <span
-              data-process-node
-              className="absolute left-[calc(100%+0.75rem)] top-1/2 flex h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[1.5px] border-brand-red bg-brand-elevated shadow-[0_0_14px_rgba(220,38,38,0.4)] xl:left-[calc(100%+1rem)]"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
-            </span>
-          </div>
+      <ol
+        className="relative grid h-full items-stretch"
+        style={{
+          gridTemplateColumns: "174fr 229fr 217fr 145fr",
+          gap: REF.gap,
+        }}
+      >
+        {steps.map((item, index) => (
+          <li key={item.step} className="relative h-full min-w-0">
+            <ProcessStageCard item={item} referenceMode={referenceMode} />
+            {index < steps.length - 1 ? (
+              <span
+                aria-hidden
+                data-process-connector
+                className="absolute top-[66px] z-20 flex items-center"
+                style={{
+                  left: "100%",
+                  width: REF.gap,
+                }}
+              >
+                <span
+                  data-process-rail-segment
+                  className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-[#dc2626]/75"
+                />
+                <span
+                  data-process-node
+                  className="absolute left-1/2 top-1/2 flex h-[11px] w-[11px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[1.5px] border-[#dc2626] bg-[#111]"
+                >
+                  <span className="h-[4px] w-[4px] rounded-full bg-[#dc2626]" />
+                </span>
+              </span>
+            ) : null}
+          </li>
         ))}
-        <div />
-      </div>
+      </ol>
     </div>
   );
 }
 
-export function ProcessSection({ locale = "en" }: { locale?: Locale }) {
+export function ProcessSection({
+  locale = "en",
+  referenceMode = false,
+}: {
+  locale?: Locale;
+  /** Lock copy wrapping + canvas proportions to the 1024×467 mock. */
+  referenceMode?: boolean;
+}) {
   const content = getHomeContent(locale).process;
 
   return (
-    <Section id="process" bordered className="bg-brand-elevated">
+    <section
+      id="process"
+      data-process-section
+      data-reference-mode={referenceMode ? "true" : undefined}
+      className="relative overflow-hidden bg-[#101010]"
+      style={
+        referenceMode
+          ? { width: REF.width, height: REF.height }
+          : undefined
+      }
+    >
+      {/* Vignette + center glow */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_55%,rgba(120,30,30,0.22),transparent_62%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_55%_at_50%_18%,rgba(90,40,20,0.12),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_90%_at_50%_50%,transparent_45%,rgba(0,0,0,0.55)_100%)]" />
+      </div>
+
+      <div
+        className={
+          referenceMode
+            ? "relative z-10 flex h-full flex-col"
+            : "relative z-10 mx-auto w-full max-w-[1024px] px-0 pb-16 pt-10 sm:pb-20 sm:pt-12 xl:min-h-[467px] xl:pb-[67px] xl:pt-0"
+        }
+      >
+        <header
+          className={
+            referenceMode
+              ? "px-8 pt-[42px] text-center"
+              : "mx-auto max-w-3xl px-6 pt-2 text-center xl:pt-[42px]"
+          }
+        >
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-brand-red sm:text-[11px]">
+            {content.eyebrow}
+          </p>
+          <h2 className="mt-[10px] font-display text-[28px] font-semibold leading-[1.15] tracking-tight text-white sm:text-[32px] xl:text-[34px]">
+            {content.title}
+          </h2>
+          <p className="mx-auto mt-[10px] max-w-[40rem] text-[13px] leading-relaxed text-zinc-400 sm:text-[14px]">
+            {content.description}
+          </p>
+        </header>
+
+        <div
+          className={
+            referenceMode
+              ? "mt-[52px] flex-1"
+              : "mt-10 sm:mt-12 xl:mt-[52px]"
+          }
+        >
+          {referenceMode ? null : (
+            <>
+              {/* Mobile timeline */}
+              <div className="relative px-5 sm:hidden">
+                <div
+                  aria-hidden
+                  className="absolute bottom-4 left-[1.35rem] top-4 w-px bg-gradient-to-b from-brand-red/70 via-brand-red/40 to-brand-red/15"
+                />
+                <ol className="space-y-4">
+                  {content.steps.map((item) => (
+                    <li key={item.step} className="relative pl-10">
+                      <span
+                        aria-hidden
+                        className="absolute left-[0.95rem] top-7 flex h-3 w-3 items-center justify-center rounded-full border-[1.5px] border-brand-red bg-[#111]"
+                      >
+                        <span className="h-1 w-1 rounded-full bg-brand-red" />
+                      </span>
+                      <div className="h-[229px]">
+                        <ProcessStageCard item={item} />
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* Tablet 2×2 */}
+              <ol className="mx-auto hidden max-w-[720px] grid-cols-2 gap-5 px-6 sm:grid xl:hidden">
+                {content.steps.map((item) => (
+                  <li key={item.step} className="h-[240px] min-h-0">
+                    <ProcessStageCard item={item} />
+                  </li>
+                ))}
+              </ol>
+            </>
+          )}
+
+          <DesktopJourney steps={content.steps} referenceMode={referenceMode} />
+        </div>
+      </div>
+
+      {/* Full-width bottom boundary */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-[42%] z-0 mx-auto h-[28rem] w-[70%] max-w-5xl bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.14),transparent_68%)]"
+        data-process-bottom-line
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-white/12"
       />
-
-      <SectionHeading
-        eyebrow={content.eyebrow}
-        title={content.title}
-        description={content.description}
-      />
-
-      {/* Mobile: vertical timeline */}
-      <div className="relative mt-10 sm:hidden">
-        <div
-          aria-hidden
-          className="absolute bottom-6 left-[1.15rem] top-6 w-px bg-gradient-to-b from-brand-red/70 via-brand-red/40 to-brand-red/20"
-        />
-        <ol className="space-y-5">
-          {content.steps.map((item) => (
-            <li key={item.step} className="relative pl-10">
-              <span
-                aria-hidden
-                className="absolute left-2.5 top-8 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 border-brand-red bg-brand-elevated"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
-              </span>
-              <ProcessStageCard item={item} />
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      {/* Tablet: 2×2 — no misleading horizontal rail */}
-      <ol className="mt-12 hidden grid-cols-2 gap-6 sm:grid xl:hidden">
-        {content.steps.map((item) => (
-          <li key={item.step} className="h-full min-h-0">
-            <ProcessStageCard item={item} />
-          </li>
-        ))}
-      </ol>
-
-      {/* Desktop: four tall stages + rail with nodes in gaps */}
-      <div className="relative mt-12 hidden xl:block">
-        <DesktopProcessRail count={content.steps.length} />
-        <ol className="relative z-10 grid grid-cols-4 items-stretch gap-6 xl:gap-8">
-          {content.steps.map((item) => (
-            <li key={item.step} className="h-full min-h-0">
-              <ProcessStageCard item={item} />
-            </li>
-          ))}
-        </ol>
-      </div>
-    </Section>
+    </section>
   );
 }
+

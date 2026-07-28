@@ -1,0 +1,196 @@
+{
+  "canvas": {
+    "width": 1024,
+    "height": 467
+  },
+  "backgroundRGB": [
+    16,
+    16,
+    16
+  ],
+  "cardSampleRGB": [
+    22,
+    22,
+    22
+  ],
+  "borderSampleRGB": [
+    34,
+    34,
+    34
+  ],
+  "connectorRedRGB": [
+    116,
+    51,
+    55
+  ],
+  "heading": {
+    "eyebrowY": 50,
+    "headlineY": 81,
+    "supportY": 118
+  },
+  "cards": [
+    {
+      "index": 1,
+      "left": 85,
+      "right": 241,
+      "width": 157,
+      "top": 170,
+      "bottom": 398,
+      "height": 229,
+      "number": {
+        "cx": 108,
+        "minX": 101,
+        "maxX": 113,
+        "count": 51
+      }
+    },
+    {
+      "index": 2,
+      "left": 281,
+      "right": 479,
+      "width": 199,
+      "top": 170,
+      "bottom": 398,
+      "height": 229,
+      "number": {
+        "cx": 306,
+        "minX": 299,
+        "maxX": 313,
+        "count": 53
+      }
+    },
+    {
+      "index": 3,
+      "left": 485,
+      "right": 745,
+      "width": 261,
+      "top": 170,
+      "bottom": 398,
+      "height": 229,
+      "number": {
+        "cx": 560,
+        "minX": 552,
+        "maxX": 567,
+        "count": 60
+      }
+    },
+    {
+      "index": 4,
+      "left": 777,
+      "right": 921,
+      "width": 145,
+      "top": 170,
+      "bottom": 398,
+      "height": 229,
+      "number": {
+        "cx": 802,
+        "minX": 793,
+        "maxX": 809,
+        "count": 49
+      }
+    }
+  ],
+  "connectors": [
+    {
+      "from": 1,
+      "to": 2,
+      "gapCenterX": 242,
+      "gapAvgLum": 18.5,
+      "gapLeft": 242,
+      "gapRight": 280,
+      "gapWidth": 39,
+      "node": {
+        "left": 239,
+        "right": 260,
+        "top": 238,
+        "bottom": 241,
+        "cx": 250,
+        "cy": 240,
+        "width": 22,
+        "height": 4
+      },
+      "lineY": 240
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "gapCenterX": 483,
+      "gapAvgLum": 22.7,
+      "gapLeft": 480,
+      "gapRight": 484,
+      "gapWidth": 5,
+      "node": {
+        "left": 500,
+        "right": 501,
+        "top": 238,
+        "bottom": 241,
+        "cx": 501,
+        "cy": 240,
+        "width": 2,
+        "height": 4
+      },
+      "lineY": 240
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "gapCenterX": 776,
+      "gapAvgLum": 16.8,
+      "gapLeft": 746,
+      "gapRight": 776,
+      "gapWidth": 31,
+      "node": {
+        "left": 758,
+        "right": 776,
+        "top": 239,
+        "bottom": 239,
+        "cx": 767,
+        "cy": 239,
+        "width": 19,
+        "height": 1
+      },
+      "lineY": 239
+    }
+  ],
+  "numberInsets": [
+    16,
+    18,
+    67,
+    16
+  ],
+  "bottomLineY": 465,
+  "chat": {
+    "left": 977,
+    "top": 412,
+    "right": 1014,
+    "bottom": 450,
+    "width": 38,
+    "height": 39,
+    "cx": 996,
+    "cy": 431
+  },
+  "cardWidthPattern": [
+    157,
+    199,
+    261,
+    145
+  ],
+  "gaps": [
+    39,
+    5,
+    31
+  ],
+  "designTokens": {
+    "sectionHeight": 467,
+    "contentLeft": 85,
+    "contentRight": 921,
+    "cardTop": 170,
+    "cardBottom": 398,
+    "cardHeight": 229,
+    "connectorY": 240,
+    "headingToCards": 52,
+    "cardsToBottomLine": 67,
+    "chatRightOffset": 9,
+    "chatBottomOffset": 16
+  }
+}

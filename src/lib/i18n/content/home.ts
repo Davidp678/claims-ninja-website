@@ -7,9 +7,14 @@ export type HomeProcessVisual = "intake" | "workspace" | "manage" | "recover";
 export type HomeProcessStep = {
   step: string;
   title: string;
+  /** Plain description; line breaks at the reference viewport are controlled in CSS. */
   description: string;
+  /** Explicit reference-viewport line breaks (used for pixel match). */
+  descriptionLines: string[];
   supportLabel: string;
   visual: HomeProcessVisual;
+  /** Desktop column proportion relative to the mock’s narrow/wide pattern. */
+  width: "narrow" | "wide";
 };
 
 export type HomeMetric = {
@@ -93,42 +98,66 @@ const EN: HomeContent = {
     ],
   },
   process: {
-    eyebrow: "FROM UPLOAD TO RECOVERY",
-    title: "One connected claim journey.",
+    eyebrow: "THE CLAIMS NINJA WORKFLOW",
+    title: "From first upload to final recovery.",
     description:
-      "Submit the loss once. Your documentation, communication, approvals, and claim progress stay connected from intake through completion.",
+      "One guided workspace for every document, decision, approval, and next step.",
     steps: [
       {
         step: "01",
         title: "Submit Your Claim",
         description:
-          "Tell us what happened and securely upload the documents you already have.",
+          "Upload project details and documents directly from the website.",
+        descriptionLines: [
+          "Upload project details and",
+          "documents directly from",
+          "the website.",
+        ],
         supportLabel: "Secure intake",
         visual: "intake",
+        width: "narrow",
       },
       {
         step: "02",
         title: "Enter Your Workspace",
         description:
-          "Create your account and open the dedicated workspace for that exact claim.",
-        supportLabel: "Your claim workspace",
+          "Create your account and continue inside one organized Claim Workspace.",
+        descriptionLines: [
+          "Create your account and",
+          "continue inside one",
+          "organized Claim Workspace.",
+        ],
+        supportLabel: "One source of truth",
         visual: "workspace",
+        width: "wide",
       },
       {
         step: "03",
         title: "We Manage the Claim",
         description:
-          "Our team reviews the file, prepares the strategy, and moves the work forward.",
-        supportLabel: "Expert claim support",
+          "Estimate preparation, carrier communication, negotiation, and expert support.",
+        descriptionLines: [
+          "Estimate preparation, carrier",
+          "communication, negotiation,",
+          "and expert support.",
+        ],
+        supportLabel: "Claims Ninja in motion",
         visual: "manage",
+        width: "wide",
       },
       {
         step: "04",
         title: "Approve. Track. Recover.",
         description:
-          "Follow progress, respond to approvals, and see the financial outcome through completion.",
-        supportLabel: "Clear visibility",
+          "Review decisions, follow progress, and see every outcome through completion.",
+        descriptionLines: [
+          "Review decisions, follow",
+          "progress, and see every",
+          "outcome through completion.",
+        ],
+        supportLabel: "Always visible",
         visual: "recover",
+        width: "narrow",
       },
     ],
   },
@@ -245,42 +274,66 @@ const ES: HomeContent = {
     ],
   },
   process: {
-    eyebrow: "DE LA CARGA A LA RECUPERACIÓN",
-    title: "Un recorrido de reclamación conectado.",
+    eyebrow: "EL FLUJO DE TRABAJO DE CLAIMS NINJA",
+    title: "De la primera carga a la recuperación final.",
     description:
-      "Envíe la pérdida una sola vez. Su documentación, comunicación, aprobaciones y progreso de la reclamación permanecen conectados desde el ingreso hasta la finalización.",
+      "Un espacio de trabajo guiado para cada documento, decisión, aprobación y siguiente paso.",
     steps: [
       {
         step: "01",
         title: "Envíe su reclamación",
         description:
-          "Cuéntenos qué ocurrió y cargue de forma segura los documentos que ya tiene.",
+          "Cargue los detalles del proyecto y los documentos directamente desde el sitio web.",
+        descriptionLines: [
+          "Cargue los detalles del proyecto y",
+          "los documentos directamente desde",
+          "el sitio web.",
+        ],
         supportLabel: "Ingreso seguro",
         visual: "intake",
+        width: "narrow",
       },
       {
         step: "02",
         title: "Ingrese a su espacio de trabajo",
         description:
-          "Cree su cuenta y abra el espacio de trabajo dedicado para esa reclamación exacta.",
-        supportLabel: "Su espacio de reclamación",
+          "Cree su cuenta y continúe dentro de un Claim Workspace organizado.",
+        descriptionLines: [
+          "Cree su cuenta y",
+          "continúe dentro de un",
+          "Claim Workspace organizado.",
+        ],
+        supportLabel: "Una sola fuente de verdad",
         visual: "workspace",
+        width: "wide",
       },
       {
         step: "03",
         title: "Gestionamos la reclamación",
         description:
-          "Nuestro equipo revisa el expediente, prepara la estrategia y avanza el trabajo.",
-        supportLabel: "Apoyo experto",
+          "Preparación de estimados, comunicación con la aseguradora, negociación y apoyo experto.",
+        descriptionLines: [
+          "Preparación de estimados, comunicación",
+          "con la aseguradora, negociación",
+          "y apoyo experto.",
+        ],
+        supportLabel: "Claims Ninja en movimiento",
         visual: "manage",
+        width: "wide",
       },
       {
         step: "04",
         title: "Apruebe. Siga. Recupere.",
         description:
-          "Siga el progreso, responda a las aprobaciones y vea el resultado financiero hasta el cierre.",
-        supportLabel: "Visibilidad clara",
+          "Revise decisiones, siga el progreso y vea cada resultado hasta la finalización.",
+        descriptionLines: [
+          "Revise decisiones, siga",
+          "el progreso y vea cada",
+          "resultado hasta la finalización.",
+        ],
+        supportLabel: "Siempre visible",
         visual: "recover",
+        width: "narrow",
       },
     ],
   },
