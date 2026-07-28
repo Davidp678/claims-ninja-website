@@ -28,7 +28,7 @@ export async function POST(request: Request) {
       body = {};
     }
 
-    const { status, envelope } = await externalIntakeS2SJson(
+    const { status, envelope, correlationId } = await externalIntakeS2SJson(
       "POST",
       "/api/external-intake/v1/account/otp/resend",
       {
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
       },
     );
 
-    return mapPlatformResponse(status, envelope);
+    return mapPlatformResponse(status, envelope, correlationId);
   } catch (err) {
     return handleOnboardingRouteError(err);
   }

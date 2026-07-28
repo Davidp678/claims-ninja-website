@@ -10,6 +10,9 @@ type SaveExitBarProps = {
   onContinue?: () => void;
   continueDisabled?: boolean;
   continueLoading?: boolean;
+  continueLoadingLabel?: string;
+  /** Shown beside/above the CTA when the form cannot submit yet. */
+  continueBlockedReason?: string | null;
   hint?: string;
   className?: string;
   showContinue?: boolean;
@@ -22,6 +25,8 @@ export function SaveExitBar({
   onContinue,
   continueDisabled = false,
   continueLoading = false,
+  continueLoadingLabel = "Working…",
+  continueBlockedReason = null,
   hint = "You can return and finish later.",
   className,
   showContinue = true,
@@ -56,14 +61,34 @@ export function SaveExitBar({
         </div>
 
         {showContinue && (
-          <button
-            type="button"
-            onClick={onContinue}
-            disabled={continueDisabled || continueLoading}
-            className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-brand-red px-6 text-sm font-semibold text-white shadow-[0_10px_30px_-14px_rgba(220,38,38,0.9)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light disabled:cursor-not-allowed disabled:bg-zinc-700 disabled:text-zinc-400 disabled:shadow-none sm:w-auto"
-          >
-            {continueLoading ? "Working…" : continueLabel}
-          </button>
+          <div className="flex w-full min-w-0 flex-col items-stretch gap-2 sm:max-w-md sm:items-end">
+            {continueBlockedReason && !continueLoading ? (
+              <p
+                id="onboarding-continue-blocker"
+                className="text-sm text-amber-200 sm:text-right"
+                role="status"
+                aria-live="polite"
+              >
+                {continueBlockedReason}
+                <span className="mt-1 block text-xs text-zinc-400">
+                  No verification email has been sent yet.
+                </span>
+              </p>
+            ) : null}
+            <button
+              type="button"
+              onClick={onContinue}
+              disabled={continueDisabled || continueLoading}
+              aria-describedby={
+                continueBlockedReason && !continueLoading
+                  ? "onboarding-continue-blocker"
+                  : undefined
+              }
+              className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-brand-red px-6 text-sm font-semibold text-white shadow-[0_10px_30px_-14px_rgba(220,38,38,0.9)] transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light disabled:cursor-not-allowed disabled:bg-zinc-700 disabled:text-zinc-400 disabled:shadow-none sm:w-auto"
+            >
+              {continueLoading ? continueLoadingLabel : continueLabel}
+            </button>
+          </div>
         )}
       </div>
     </div>

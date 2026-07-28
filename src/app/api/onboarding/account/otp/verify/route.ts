@@ -39,15 +39,16 @@ export async function POST(request: Request) {
       return jsonError(400, "VALIDATION_ERROR", "Enter the 6-digit code.");
     }
 
-    const { status, envelope } = await externalIntakeS2SJson<OtpVerifyPlatformData>(
-      "POST",
-      "/api/external-intake/v1/account/otp/verify",
-      {
-        intakeHandle,
-        expectedVersion: body.expectedVersion,
-        code,
-      },
-    );
+    const { status, envelope, correlationId } =
+      await externalIntakeS2SJson<OtpVerifyPlatformData>(
+        "POST",
+        "/api/external-intake/v1/account/otp/verify",
+        {
+          intakeHandle,
+          expectedVersion: body.expectedVersion,
+          code,
+        },
+      );
 
     if (envelope.ok && envelope.data) {
       const rotated = resolveOtpVerifyCookieRotation(envelope.data);
@@ -61,12 +62,16 @@ export async function POST(request: Request) {
 
       // Privilege change: persist rotated handle for provision/handoff.
       await setIntakeHandleCookie(rotated.intakeHandle);
-      return jsonOk(rotated.clientData, {
+      const okResponse = jsonOk(rotated.clientData, {
         status: status >= 200 && status < 300 ? status : 200,
       });
+      if (correlationId) {
+        okResponse.headers.set("x-cn-correlation-id", correlationId);
+      }
+      return okResponse;
     }
 
-    return mapPlatformResponse(status, envelope);
+    return mapPlatformResponse(status, envelope, correlationId);
   } catch (err) {
     return handleOnboardingRouteError(err);
   }

@@ -29,16 +29,28 @@ export function jsonError(
 export function mapPlatformResponse<T>(
   status: number,
   envelope: PlatformEnvelope<T>,
+  correlationId?: string | null,
 ) {
+  const withCorrelation = (response: NextResponse) => {
+    if (correlationId) {
+      response.headers.set("x-cn-correlation-id", correlationId);
+    }
+    return response;
+  };
+
   if (envelope.ok && envelope.data !== null && envelope.data !== undefined) {
-    return jsonOk(envelope.data, { status: status >= 200 && status < 300 ? status : 200 });
+    return withCorrelation(
+      jsonOk(envelope.data, {
+        status: status >= 200 && status < 300 ? status : 200,
+      }),
+    );
   }
 
   const code = envelope.error?.code ?? "PLATFORM_ERROR";
   const message =
     envelope.error?.message ?? "The onboarding service returned an error.";
   const retryable = Boolean(envelope.error?.retryable);
-  return jsonError(status || 502, code, message, retryable);
+  return withCorrelation(jsonError(status || 502, code, message, retryable));
 }
 
 export function handleOnboardingRouteError(err: unknown) {

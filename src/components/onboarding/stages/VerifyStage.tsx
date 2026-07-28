@@ -15,15 +15,20 @@ import { OnboardingLoading } from "@/components/onboarding/OnboardingLoading";
 import { OnboardingShell } from "@/components/onboarding/OnboardingShell";
 import { useOnboardingSession } from "@/components/onboarding/useOnboardingSession";
 import { onboardingFetchJson } from "@/lib/onboarding/client-api";
+import { maskEmailAddress } from "@/lib/onboarding/password-policy";
+
+const RESEND_COOLDOWN_SECONDS = 60;
 
 export function VerifyStage() {
   const router = useRouter();
   const { session, loading, error, saveState, saveExit, version } =
     useOnboardingSession();
   const [digits, setDigits] = useState(["", "", "", "", "", ""]);
-  const [seconds, setSeconds] = useState(42);
+  const [seconds, setSeconds] = useState(RESEND_COOLDOWN_SECONDS);
   const [busy, setBusy] = useState(false);
+  const [resendBusy, setResendBusy] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
+  const [correlationId, setCorrelationId] = useState<string | null>(null);
   const inputs = useRef<Array<HTMLInputElement | null>>([]);
 
   useEffect(() => {
@@ -32,8 +37,11 @@ export function VerifyStage() {
     return () => window.clearInterval(id);
   }, [seconds]);
 
-  const email =
-    session?.accountEmail || session?.company?.workEmail || "your email";
+  const emailRaw =
+    session?.accountEmail || session?.company?.workEmail || "";
+  const emailMasked = emailRaw
+    ? maskEmailAddress(emailRaw)
+    : "your email";
   const code = digits.join("");
   const complete = code.length === 6;
 
@@ -67,7 +75,8 @@ export function VerifyStage() {
 
   async function handleVerify() {
     setLocalError(null);
-    if (!complete) return;
+    setCorrelationId(null);
+    if (!complete || busy) return;
     setBusy(true);
     const result = await onboardingFetchJson("/api/onboarding/account/otp/verify", {
       method: "POST",
@@ -76,23 +85,28 @@ export function VerifyStage() {
     setBusy(false);
     if (!result.ok) {
       setLocalError(result.message);
+      if (result.correlationId) setCorrelationId(result.correlationId);
       return;
     }
     router.push("/onboarding/activated");
   }
 
   async function handleResend() {
-    if (seconds > 0) return;
+    if (seconds > 0 || resendBusy) return;
     setLocalError(null);
+    setCorrelationId(null);
+    setResendBusy(true);
     const result = await onboardingFetchJson("/api/onboarding/account/otp/resend", {
       method: "POST",
       json: { expectedVersion: version },
     });
+    setResendBusy(false);
     if (!result.ok) {
       setLocalError(result.message);
+      if (result.correlationId) setCorrelationId(result.correlationId);
       return;
     }
-    setSeconds(60);
+    setSeconds(RESEND_COOLDOWN_SECONDS);
   }
 
   if (loading) {
@@ -113,12 +127,17 @@ export function VerifyStage() {
     <OnboardingShell
       stage="account"
       title="Verify your email"
-      description={`We sent a 6-digit verification code to ${email}.`}
+      description={`Verification code sent to ${emailMasked}.`}
       saveState={saveState}
       onSaveExit={() => void saveExit()}
       showContinue={false}
     >
       <SectionCard className="mx-auto max-w-xl">
+        <p className="mb-4 text-center text-sm text-zinc-400">
+          Login email:{" "}
+          <span className="font-medium text-white">{emailMasked}</span>
+        </p>
+
         <div className="flex justify-center gap-2 sm:gap-3" onPaste={onPaste}>
           {digits.map((digit, index) => (
             <input
@@ -145,13 +164,15 @@ export function VerifyStage() {
         <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-sm">
           <button
             type="button"
-            disabled={seconds > 0}
+            disabled={seconds > 0 || resendBusy}
             onClick={() => void handleResend()}
             className="text-zinc-400 disabled:cursor-not-allowed"
           >
-            {seconds > 0
-              ? `Resend code in 00:${String(seconds).padStart(2, "0")}`
-              : "Resend code"}
+            {resendBusy
+              ? "Sending…"
+              : seconds > 0
+                ? `Resend code in 00:${String(seconds).padStart(2, "0")}`
+                : "Resend code"}
           </button>
           <Link
             href="/onboarding/company"
@@ -166,9 +187,14 @@ export function VerifyStage() {
         </div>
 
         {(localError || error) && (
-          <p className="mt-4 text-center text-sm text-brand-red-light" role="alert">
-            {localError || error}
-          </p>
+          <div className="mt-4 space-y-1 text-center" role="alert">
+            <p className="text-sm text-brand-red-light">
+              {localError || error}
+            </p>
+            {correlationId ? (
+              <p className="text-xs text-zinc-500">Reference: {correlationId}</p>
+            ) : null}
+          </div>
         )}
 
         <div className="mt-6 flex flex-wrap justify-center gap-3">

@@ -21,6 +21,8 @@ type OnboardingShellProps = {
   onContinue?: () => void;
   continueDisabled?: boolean;
   continueLoading?: boolean;
+  continueLoadingLabel?: string;
+  continueBlockedReason?: string | null;
   showContinue?: boolean;
   allComplete?: boolean;
   className?: string;
@@ -39,6 +41,8 @@ export function OnboardingShell({
   onContinue,
   continueDisabled,
   continueLoading,
+  continueLoadingLabel,
+  continueBlockedReason,
   showContinue = true,
   allComplete = false,
   className,
@@ -115,6 +119,8 @@ export function OnboardingShell({
           onContinue={onContinue}
           continueDisabled={continueDisabled}
           continueLoading={continueLoading}
+          continueLoadingLabel={continueLoadingLabel}
+          continueBlockedReason={continueBlockedReason}
           showContinue={showContinue}
           hint={hint}
           className="mt-8"
