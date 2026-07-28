@@ -132,12 +132,42 @@ function ProofCell({
   return (
     <div
       data-proof-group
-      className={`flex min-w-0 items-center justify-center gap-1.5 ${
+      className={`flex min-w-0 items-center gap-1.5 ${
         muted ? "text-zinc-400" : ""
       }`}
     >
       <IconGutter icon={icon} />
       <span className="min-w-0 whitespace-nowrap">{children}</span>
+    </div>
+  );
+}
+
+/** One column stacks both rows so icon left edges share a vertical line. */
+function ProofColumn({
+  upperIcon,
+  upper,
+  lowerIcon,
+  lower,
+}: {
+  upperIcon: ProofIconKind;
+  upper: React.ReactNode;
+  lowerIcon: ProofIconKind;
+  lower: React.ReactNode;
+}) {
+  return (
+    <div className="flex justify-center">
+      <div data-proof-column className="inline-flex min-w-0 flex-col">
+        <div className="py-0.5">
+          <ProofCell icon={upperIcon}>{upper}</ProofCell>
+        </div>
+        {/* Spacer matches the continuous strip divider band (my-3 + 1px). */}
+        <div aria-hidden className="my-3 h-px w-full shrink-0 opacity-0" />
+        <div className="py-0.5">
+          <ProofCell icon={lowerIcon} muted>
+            {lower}
+          </ProofCell>
+        </div>
+      </div>
     </div>
   );
 }
@@ -222,47 +252,49 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             </div>
 
             {/*
-              Desktop: one parent 3-column grid shared by both rows + divider.
-              Equal 1fr tracks + justify-center keep upper/lower group centers aligned.
+              Desktop: three columns; each column stacks trust + performance so the
+              icon left edges (shield over clock/trend/calendar) share one vertical line.
+              A continuous divider is painted across the strip; per-column spacers match its band.
               Red dots overlay upper-row column boundaries only.
             */}
             <div className="relative hidden w-full sm:block">
               <div className="grid w-full grid-cols-3 gap-x-6">
-                <div className="relative py-0.5">
-                  <ProofCell icon="shield">{leftBullet}</ProofCell>
-                </div>
-                <div className="relative py-0.5">
-                  <ProofCell icon="shield">{centerBullet}</ProofCell>
-                </div>
-                <div className="relative py-0.5">
-                  <ProofCell icon="shield">{rightBullet}</ProofCell>
-                </div>
-
-                <div
-                  aria-hidden
-                  className="col-span-3 my-3 h-px w-full bg-white/10"
+                <ProofColumn
+                  upperIcon="shield"
+                  upper={leftBullet}
+                  lowerIcon="clock"
+                  lower={
+                    leftMetric ? <ProofMetricText metric={leftMetric} /> : null
+                  }
                 />
-
-                <div className="relative py-0.5">
-                  <ProofCell icon="clock" muted>
-                    {leftMetric ? <ProofMetricText metric={leftMetric} /> : null}
-                  </ProofCell>
-                </div>
-                <div className="relative py-0.5">
-                  <ProofCell icon="trend" muted>
-                    {centerMetric ? (
+                <ProofColumn
+                  upperIcon="shield"
+                  upper={centerBullet}
+                  lowerIcon="trend"
+                  lower={
+                    centerMetric ? (
                       <ProofMetricText metric={centerMetric} />
-                    ) : null}
-                  </ProofCell>
-                </div>
-                <div className="relative py-0.5">
-                  <ProofCell icon="calendar" muted>
-                    {rightMetric ? (
+                    ) : null
+                  }
+                />
+                <ProofColumn
+                  upperIcon="shield"
+                  upper={rightBullet}
+                  lowerIcon="calendar"
+                  lower={
+                    rightMetric ? (
                       <ProofMetricText metric={rightMetric} />
-                    ) : null}
-                  </ProofCell>
-                </div>
+                    ) : null
+                  }
+                />
               </div>
+
+              {/* Full-width divider through the shared spacer band of every column. */}
+              <div
+                aria-hidden
+                data-proof-divider
+                className="pointer-events-none absolute inset-x-0 top-[2.125rem] h-px bg-white/10"
+              />
 
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[1.75rem]">
                 <ProofDotRail />
