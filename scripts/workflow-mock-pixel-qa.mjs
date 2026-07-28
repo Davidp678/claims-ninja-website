@@ -197,15 +197,15 @@ writePng(resolve(OUT, "side-by-side.png"), sideBySide(ref, actual));
 
 const regions = [
   { name: "heading", x: 120, y: 30, w: 780, h: 120 },
-  { name: "stage-01", x: 85, y: 170, w: 174, h: 229 },
-  { name: "stage-02", x: 283, y: 170, w: 229, h: 229 },
-  { name: "stage-03", x: 536, y: 170, w: 217, h: 229 },
-  { name: "stage-04", x: 777, y: 170, w: 145, h: 229 },
-  { name: "connector-01-02", x: 250, y: 230, w: 40, h: 24 },
-  { name: "connector-02-03", x: 505, y: 230, w: 40, h: 24 },
-  { name: "connector-03-04", x: 745, y: 230, w: 40, h: 24 },
-  { name: "chat", x: 960, y: 400, w: 60, h: 60 },
-  { name: "bottom-line", x: 0, y: 455, w: 1024, h: 12 },
+  { name: "stage-01", x: 85, y: 170, w: 157, h: 229 },
+  { name: "stage-02", x: 282, y: 170, w: 220, h: 229 },
+  { name: "stage-03", x: 536, y: 170, w: 210, h: 229 },
+  { name: "stage-04", x: 779, y: 170, w: 142, h: 229 },
+  { name: "connector-01-02", x: 242, y: 230, w: 40, h: 24 },
+  { name: "connector-02-03", x: 502, y: 230, w: 34, h: 24 },
+  { name: "connector-03-04", x: 746, y: 230, w: 33, h: 24 },
+  { name: "chat", x: 970, y: 405, w: 50, h: 55 },
+  { name: "bottom-line", x: 0, y: 460, w: 1024, h: 7 },
 ];
 
 const regionResults = regions.map((r) => compareRegion(ref, actual, r, r.name));
