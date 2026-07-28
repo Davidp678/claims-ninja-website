@@ -2,10 +2,14 @@ import type { Locale } from "@/lib/i18n/config";
 
 export type HomeHeroStat = { label: string; value: string };
 
+export type HomeProcessVisual = "intake" | "workspace" | "manage" | "recover";
+
 export type HomeProcessStep = {
   step: string;
   title: string;
   description: string;
+  supportLabel: string;
+  visual: HomeProcessVisual;
 };
 
 export type HomeMetric = {
@@ -89,34 +93,42 @@ const EN: HomeContent = {
     ],
   },
   process: {
-    eyebrow: "The Claims Ninja Platform",
-    title: "Everything you need. Built for how you work.",
+    eyebrow: "FROM UPLOAD TO RECOVERY",
+    title: "One connected claim journey.",
     description:
-      "A clear, guided process—from first call to final settlement—built for speed and outcomes.",
+      "Submit the loss once. Your documentation, communication, approvals, and claim progress stay connected from intake through completion.",
     steps: [
       {
         step: "01",
-        title: "Access Your Client Platform",
+        title: "Submit Your Claim",
         description:
-          "Upload project details to our secure contractor platform for streamlined collaboration and claim management.",
+          "Tell us what happened and securely upload the documents you already have.",
+        supportLabel: "SECURE INTAKE",
+        visual: "intake",
       },
       {
         step: "02",
-        title: "Expert Estimate Writing",
+        title: "Enter Your Workspace",
         description:
-          "Receive a professional insurance-ready estimate prepared for carrier review and supplement support.",
+          "Create your account and open the dedicated workspace for that exact claim.",
+        supportLabel: "YOUR CLAIM WORKSPACE",
+        visual: "workspace",
       },
       {
         step: "03",
-        title: "Negotiation & Approval",
+        title: "We Manage the Claim",
         description:
-          "We manage carrier communication, supplement negotiations, and approval workflows to maximize recovery.",
+          "Our team reviews the file, prepares the strategy, and moves the work forward.",
+        supportLabel: "EXPERT CLAIM SUPPORT",
+        visual: "manage",
       },
       {
         step: "04",
-        title: "Public Adjuster Services",
+        title: "Approve. Track. Recover.",
         description:
-          "When needed, licensed public adjuster support is available for full claim ownership — keeping complex files managed without building an in-house team.",
+          "Follow progress, respond to approvals, and see the financial outcome through completion.",
+        supportLabel: "CLEAR VISIBILITY",
+        visual: "recover",
       },
     ],
   },
@@ -233,34 +245,42 @@ const ES: HomeContent = {
     ],
   },
   process: {
-    eyebrow: "Cómo funciona",
-    title: "Cuatro pasos sencillos hacia una reclamación más sólida",
+    eyebrow: "DE LA CARGA A LA RECUPERACIÓN",
+    title: "Un recorrido de reclamación conectado.",
     description:
-      "Un proceso claro y guiado—desde la primera llamada hasta el acuerdo final—diseñado para la rapidez y los resultados.",
+      "Envíe la pérdida una sola vez. Su documentación, comunicación, aprobaciones y progreso de la reclamación permanecen conectados desde el ingreso hasta la finalización.",
     steps: [
       {
         step: "01",
-        title: "Acceda a su plataforma de cliente",
+        title: "Envíe su reclamación",
         description:
-          "Suba los detalles del proyecto a nuestra plataforma segura para contratistas y agilice la colaboración y la gestión de reclamaciones.",
+          "Cuéntenos qué ocurrió y cargue de forma segura los documentos que ya tiene.",
+        supportLabel: "INGRESO SEGURO",
+        visual: "intake",
       },
       {
         step: "02",
-        title: "Redacción experta de estimados",
+        title: "Ingrese a su espacio de trabajo",
         description:
-          "Reciba un estimado profesional, listo para el seguro, preparado para la revisión de la aseguradora y el apoyo en suplementos.",
+          "Cree su cuenta y abra el espacio de trabajo dedicado para esa reclamación exacta.",
+        supportLabel: "SU ESPACIO DE RECLAMACIÓN",
+        visual: "workspace",
       },
       {
         step: "03",
-        title: "Negociación y aprobación",
+        title: "Gestionamos la reclamación",
         description:
-          "Gestionamos la comunicación con la aseguradora, las negociaciones de suplementos y los flujos de aprobación para maximizar la recuperación.",
+          "Nuestro equipo revisa el expediente, prepara la estrategia y avanza el trabajo.",
+        supportLabel: "APOYO EXPERTO",
+        visual: "manage",
       },
       {
         step: "04",
-        title: "Servicios de ajustador público",
+        title: "Apruebe. Siga. Recupere.",
         description:
-          "Cuando se necesita, hay apoyo de un ajustador público licenciado para asumir la reclamación por completo — manteniendo los expedientes complejos bajo control sin formar un equipo interno.",
+          "Siga el progreso, responda a las aprobaciones y vea el resultado financiero hasta el cierre.",
+        supportLabel: "VISIBILIDAD CLARA",
+        visual: "recover",
       },
     ],
   },

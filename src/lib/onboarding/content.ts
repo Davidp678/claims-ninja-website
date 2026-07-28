@@ -36,7 +36,7 @@ const EN: HeroIntakeContent = {
   title: "Turn your next claim into a stronger recovery.",
   subhead:
     "Upload the carrier estimate and job details. Claims Ninja will organize the file, create your secure workspace, and put our claims team to work.",
-  bullets: ["Secure upload", "Save and resume", "No setup call required"],
+  bullets: ["Secure upload", "NDA available", "No setup call required"],
   proofMetrics: [
     { text: "24-hour review" },
     { text: "40%", accent: "+", suffix: " recovery" },
@@ -65,7 +65,7 @@ const ES: HeroIntakeContent = {
     "Suba el estimado de la aseguradora y los detalles del trabajo. Claims Ninja organizará el expediente, creará su espacio de trabajo seguro y pondrá a nuestro equipo a trabajar.",
   bullets: [
     "Carga segura",
-    "Guarde y reanude",
+    "NDA disponible",
     "Sin llamada de configuración",
   ],
   proofMetrics: [
