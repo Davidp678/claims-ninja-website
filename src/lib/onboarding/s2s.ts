@@ -69,7 +69,12 @@ export type PlatformEnvelope<T> = {
 
 export async function externalIntakeS2SRequest<T>(
   options: S2SRequestOptions,
-): Promise<{ status: number; envelope: PlatformEnvelope<T>; rawText: string }> {
+): Promise<{
+  status: number;
+  envelope: PlatformEnvelope<T>;
+  rawText: string;
+  correlationId: string | null;
+}> {
   const config = getExternalIntakeConfig();
   if (!config) {
     const missing = getMissingExternalIntakeEnvNames();
@@ -171,7 +176,12 @@ export async function externalIntakeS2SRequest<T>(
     };
   }
 
-  return { status: response.status, envelope, rawText };
+  const correlationId =
+    response.headers.get("x-cn-correlation-id") ||
+    response.headers.get("x-request-id") ||
+    null;
+
+  return { status: response.status, envelope, rawText, correlationId };
 }
 
 export async function externalIntakeS2SJson<T>(
@@ -179,7 +189,11 @@ export async function externalIntakeS2SJson<T>(
   path: string,
   body?: unknown,
   extras?: Pick<S2SRequestOptions, "idempotencyKey" | "searchParams">,
-): Promise<{ status: number; envelope: PlatformEnvelope<T> }> {
+): Promise<{
+  status: number;
+  envelope: PlatformEnvelope<T>;
+  correlationId: string | null;
+}> {
   const payload =
     body === undefined || body === null ? null : JSON.stringify(body);
   const result = await externalIntakeS2SRequest<T>({
@@ -189,5 +203,9 @@ export async function externalIntakeS2SJson<T>(
     contentType: payload ? "application/json" : undefined,
     ...extras,
   });
-  return { status: result.status, envelope: result.envelope };
+  return {
+    status: result.status,
+    envelope: result.envelope,
+    correlationId: result.correlationId,
+  };
 }

@@ -49,7 +49,7 @@ export async function POST(request: Request) {
     }
 
     // Password is request-ephemeral only — never written to cookies or logs.
-    const { status, envelope } = await externalIntakeS2SJson(
+    const { status, envelope, correlationId } = await externalIntakeS2SJson(
       "POST",
       "/api/external-intake/v1/account/password",
       {
@@ -60,7 +60,7 @@ export async function POST(request: Request) {
       },
     );
 
-    return mapPlatformResponse(status, envelope);
+    return mapPlatformResponse(status, envelope, correlationId);
   } catch (err) {
     return handleOnboardingRouteError(err);
   }

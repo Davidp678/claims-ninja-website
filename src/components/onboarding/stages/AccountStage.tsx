@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import {
@@ -15,7 +15,11 @@ import { useOnboardingSession } from "@/components/onboarding/useOnboardingSessi
 import { onboardingFetchJson } from "@/lib/onboarding/client-api";
 import {
   evaluatePassword,
+  getAccountFormBlockers,
+  getPrimaryAccountFormBlocker,
   isPasswordValid,
+  isValidAccountEmail,
+  maskEmailAddress,
   passwordsMatch,
 } from "@/lib/onboarding/password-policy";
 
@@ -28,21 +32,40 @@ export function AccountStage() {
   const [showPassword, setShowPassword] = useState(false);
   const [busy, setBusy] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
+  const [correlationId, setCorrelationId] = useState<string | null>(null);
+  const [sentNotice, setSentNotice] = useState<string | null>(null);
+  const inFlight = useRef(false);
 
   const email =
     session?.accountEmail || session?.company?.workEmail || "";
   const requirements = useMemo(() => evaluatePassword(password), [password]);
+  const blockers = useMemo(
+    () => getAccountFormBlockers({ password, confirm, email }),
+    [password, confirm, email],
+  );
+  const primaryBlocker = getPrimaryAccountFormBlocker({
+    password,
+    confirm,
+    email,
+  });
   const valid =
-    isPasswordValid(password) && passwordsMatch(password, confirm) && !!email;
+    isPasswordValid(password) &&
+    passwordsMatch(password, confirm) &&
+    isValidAccountEmail(email);
 
   async function handleSendCode() {
     setLocalError(null);
-    if (!valid) {
-      setLocalError("Meet all password requirements and confirm your password.");
+    setCorrelationId(null);
+    setSentNotice(null);
+    if (!valid || inFlight.current) {
       return;
     }
+    inFlight.current = true;
     setBusy(true);
-    const result = await onboardingFetchJson("/api/onboarding/account/password", {
+    const result = await onboardingFetchJson<{
+      status?: string;
+      emailSent?: boolean;
+    }>("/api/onboarding/account/password", {
       method: "POST",
       json: {
         expectedVersion: version,
@@ -50,14 +73,24 @@ export function AccountStage() {
         password,
       },
     });
-    // Clear local password material immediately after the request returns.
-    setPassword("");
-    setConfirm("");
     setBusy(false);
+    inFlight.current = false;
+
     if (!result.ok) {
-      setLocalError(result.message);
+      setLocalError(
+        result.message ||
+          "We couldn’t send your verification code. Please try again.",
+      );
+      if (result.correlationId) setCorrelationId(result.correlationId);
       return;
     }
+
+    // Clear password material only after confirmed server success.
+    setPassword("");
+    setConfirm("");
+    setSentNotice(
+      `Verification code sent to ${maskEmailAddress(email)}.`,
+    );
     router.push("/onboarding/verify");
   }
 
@@ -83,8 +116,10 @@ export function AccountStage() {
       saveState={saveState}
       onSaveExit={() => void saveExit()}
       continueLabel="Send verification code"
+      continueLoadingLabel="Sending verification code…"
+      continueBlockedReason={!valid ? primaryBlocker : null}
       onContinue={() => void handleSendCode()}
-      continueDisabled={!valid}
+      continueDisabled={!valid || busy}
       continueLoading={busy}
       hint="Saved just now"
     >
@@ -119,6 +154,12 @@ export function AccountStage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="pr-16"
+                aria-invalid={
+                  password.length > 0 && !isPasswordValid(password)
+                    ? true
+                    : undefined
+                }
+                aria-describedby="password-requirements"
               />
               <button
                 type="button"
@@ -138,32 +179,75 @@ export function AccountStage() {
               autoComplete="new-password"
               value={confirm}
               onChange={(e) => setConfirm(e.target.value)}
+              aria-invalid={
+                confirm.length > 0 && !passwordsMatch(password, confirm)
+                  ? true
+                  : undefined
+              }
             />
           </div>
 
-          <ul className="grid gap-2 sm:grid-cols-2">
+          <ul
+            id="password-requirements"
+            className="grid gap-2 sm:grid-cols-2"
+            aria-label="Password requirements"
+          >
             {requirements.map((req) => (
               <li
                 key={req.id}
                 className={`flex items-center gap-2 text-sm ${
-                  req.met ? "text-emerald-400" : "text-zinc-500"
+                  req.met ? "text-emerald-400" : "font-medium text-amber-200"
                 }`}
               >
                 <span aria-hidden>{req.met ? "✓" : "○"}</span>
-                {req.label}
+                <span>
+                  {req.label}
+                  <span className="sr-only">
+                    {req.met ? " met" : " not met"}
+                  </span>
+                </span>
               </li>
             ))}
           </ul>
+
+          {blockers.length > 1 ? (
+            <ul className="space-y-1 text-sm text-amber-100/90" aria-live="polite">
+              {blockers.slice(0, 3).map((b) => (
+                <li key={b}>• {b}</li>
+              ))}
+            </ul>
+          ) : null}
 
           <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3 text-sm text-emerald-100">
             After email verification, your claim workspace will be provisioned with
             you as the organization owner.
           </div>
 
-          {(localError || error) && (
-            <p className="text-sm text-brand-red-light" role="alert">
-              {localError || error}
+          {sentNotice ? (
+            <p className="text-sm text-emerald-300" role="status">
+              {sentNotice}
             </p>
+          ) : null}
+
+          {(localError || error) && (
+            <div className="space-y-2" role="alert">
+              <p className="text-sm text-brand-red-light">
+                {localError || error}
+              </p>
+              {correlationId ? (
+                <p className="text-xs text-zinc-500">
+                  Reference: {correlationId}
+                </p>
+              ) : null}
+              <button
+                type="button"
+                onClick={() => void handleSendCode()}
+                disabled={!valid || busy}
+                className="rounded-lg border border-white/25 px-3 py-1.5 text-sm text-white hover:border-white/40 disabled:opacity-50"
+              >
+                Retry
+              </button>
+            </div>
           )}
 
           <div className="flex gap-3">

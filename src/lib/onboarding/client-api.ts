@@ -16,13 +16,14 @@ function readBrowserCookie(name: string): string | null {
 }
 
 export type OnboardingApiResult<T> =
-  | { ok: true; data: T }
+  | { ok: true; data: T; correlationId?: string | null }
   | {
       ok: false;
       status: number;
       code: string;
       message: string;
       retryable?: boolean;
+      correlationId?: string | null;
     };
 
 export type OnboardingUploadResult =
@@ -97,6 +98,11 @@ export async function onboardingFetchJson<T>(
     /* empty */
   }
 
+  const correlationId =
+    res.headers.get("x-cn-correlation-id") ||
+    res.headers.get("x-request-id") ||
+    null;
+
   if (!res.ok || payload.ok === false) {
     return {
       ok: false,
@@ -104,10 +110,11 @@ export async function onboardingFetchJson<T>(
       code: payload.error?.code ?? "REQUEST_FAILED",
       message: payload.error?.message ?? "Request failed.",
       retryable: payload.error?.retryable,
+      correlationId,
     };
   }
 
-  return { ok: true, data: payload.data as T };
+  return { ok: true, data: payload.data as T, correlationId };
 }
 
 async function sha256HexOfFile(file: File): Promise<string> {
