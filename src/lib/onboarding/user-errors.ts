@@ -37,7 +37,7 @@ export function userFacingOnboardingError(
     case "INVALID_STATE":
       return INTAKE_RECOVERY;
     case "FILE_NOT_READY":
-      return "Your file is still being protected. Wait for scanning to finish, or replace the file.";
+      return "Security scan in progress. You can continue once your file has been checked.";
     case "PROVISIONING_INCOMPLETE":
     case "HANDOFF_EXPIRED":
     case "HANDOFF_REDEEMED":
@@ -45,7 +45,7 @@ export function userFacingOnboardingError(
     case "RATE_LIMITED":
       return "Too many attempts. Wait a moment and try again.";
     case "SCANNER_UNAVAILABLE":
-      return "File scanning is temporarily unavailable. Retry the upload shortly, or remove the file to continue without it.";
+      return "We couldn’t complete the security scan. Your file remains protected. Retry Scan, Replace File, or Remove File to continue.";
     case "LEGAL_UNAVAILABLE":
       return "Legal documents are temporarily unavailable. Please try again later.";
     case "INTERNAL_ERROR":
