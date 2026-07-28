@@ -7,6 +7,8 @@ import { Container } from "@/components/ui/Container";
 import { HeroBackdrop } from "./HeroBackdrop";
 import { HeroClaimIntakeCard } from "./HeroClaimIntakeCard";
 
+const ICON_CLASS = "h-3.5 w-3.5 sm:h-4 sm:w-4";
+
 function ShieldIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -25,16 +27,83 @@ function ShieldIcon({ className }: { className?: string }) {
   );
 }
 
-/** Fixed-width icon gutter so bullet text and metric text share an identical start edge. */
-function IconGutter({ showShield }: { showShield?: boolean }) {
+function ClockIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="8" />
+      <path d="M12 8v4.5l2.5 1.5" />
+    </svg>
+  );
+}
+
+function TrendingUpIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m4 16 5-5 4 4 7-7" />
+      <path d="M14 8h6v6" />
+    </svg>
+  );
+}
+
+function CalendarIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="4" y="5" width="16" height="15" rx="2" />
+      <path d="M8 3v4M16 3v4M4 10h16" />
+    </svg>
+  );
+}
+
+type ProofIconKind = "shield" | "clock" | "trend" | "calendar";
+
+function ProofIcon({ kind }: { kind: ProofIconKind }) {
+  if (kind === "shield") {
+    return <ShieldIcon className={`${ICON_CLASS} text-emerald-400`} />;
+  }
+  if (kind === "clock") {
+    return <ClockIcon className={`${ICON_CLASS} text-brand-red`} />;
+  }
+  if (kind === "trend") {
+    return <TrendingUpIcon className={`${ICON_CLASS} text-brand-red`} />;
+  }
+  return <CalendarIcon className={`${ICON_CLASS} text-brand-red`} />;
+}
+
+/** Fixed-width icon gutter so every icon+label group shares identical icon geometry. */
+function IconGutter({ icon }: { icon: ProofIconKind }) {
   return (
     <span
       aria-hidden
       className="inline-flex h-4 w-4 shrink-0 items-center justify-center"
     >
-      {showShield ? (
-        <ShieldIcon className="h-3.5 w-3.5 text-emerald-400 sm:h-4 sm:w-4" />
-      ) : null}
+      <ProofIcon kind={icon} />
     </span>
   );
 }
@@ -52,30 +121,28 @@ function ProofMetricText({ metric }: { metric: HeroProofMetric }) {
 }
 
 function ProofCell({
-  align,
-  showShield,
+  icon,
   children,
   muted,
 }: {
-  align: "start" | "center";
-  showShield?: boolean;
+  icon: ProofIconKind;
   children: React.ReactNode;
   muted?: boolean;
 }) {
   return (
     <div
-      className={`flex min-w-0 items-center gap-1.5 ${
-        align === "center" ? "justify-center" : "justify-start"
-      } ${muted ? "text-zinc-400" : ""}`}
+      data-proof-group
+      className={`flex min-w-0 items-center justify-center gap-1.5 ${
+        muted ? "text-zinc-400" : ""
+      }`}
     >
-      {/* Always reserve the gutter so S→2 and N→3 share the same text start edge. */}
-      <IconGutter showShield={showShield} />
+      <IconGutter icon={icon} />
       <span className="min-w-0 whitespace-nowrap">{children}</span>
     </div>
   );
 }
 
-/** Red dots sit on the two column boundaries of the shared 3-col grid. */
+/** Red dots sit on the two column boundaries of the shared 3-col grid (upper row only). */
 function ProofDotRail() {
   return (
     <div
@@ -92,6 +159,9 @@ function ProofDotRail() {
     </div>
   );
 }
+
+const TRUST_ICONS: ProofIconKind[] = ["shield", "shield", "shield"];
+const PERFORMANCE_ICONS: ProofIconKind[] = ["clock", "trend", "calendar"];
 
 export function Hero({ locale = "en" }: { locale?: Locale }) {
   const content = getHeroIntakeContent(locale);
@@ -126,9 +196,13 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             aria-label="Trust and proof points"
           >
             <div className="flex w-full flex-col gap-2 sm:hidden">
-              {content.bullets.map((bullet) => (
-                <div key={bullet} className="flex items-center gap-1.5">
-                  <IconGutter showShield />
+              {content.bullets.map((bullet, index) => (
+                <div
+                  key={bullet}
+                  data-proof-group
+                  className="flex items-center gap-1.5"
+                >
+                  <IconGutter icon={TRUST_ICONS[index] ?? "shield"} />
                   <span>{bullet}</span>
                 </div>
               ))}
@@ -136,8 +210,12 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
               {content.proofMetrics.map((metric, index) => (
                 <div
                   key={`${metric.text}-${index}`}
-                  className="text-zinc-400"
+                  data-proof-group
+                  className="flex items-center gap-1.5 text-zinc-400"
                 >
+                  <IconGutter
+                    icon={PERFORMANCE_ICONS[index] ?? "clock"}
+                  />
                   <ProofMetricText metric={metric} />
                 </div>
               ))}
@@ -145,25 +223,19 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
 
             {/*
               Desktop: one parent 3-column grid shared by both rows + divider.
-              Equal 1fr tracks keep S→2 and N→3 on the same start edges.
-              Red dots overlay column boundaries (not independent auto tracks).
+              Equal 1fr tracks + justify-center keep upper/lower group centers aligned.
+              Red dots overlay upper-row column boundaries only.
             */}
             <div className="relative hidden w-full sm:block">
               <div className="grid w-full grid-cols-3 gap-x-6">
                 <div className="relative py-0.5">
-                  <ProofCell align="start" showShield>
-                    {leftBullet}
-                  </ProofCell>
+                  <ProofCell icon="shield">{leftBullet}</ProofCell>
                 </div>
                 <div className="relative py-0.5">
-                  <ProofCell align="center" showShield>
-                    {centerBullet}
-                  </ProofCell>
+                  <ProofCell icon="shield">{centerBullet}</ProofCell>
                 </div>
                 <div className="relative py-0.5">
-                  <ProofCell align="start" showShield>
-                    {rightBullet}
-                  </ProofCell>
+                  <ProofCell icon="shield">{rightBullet}</ProofCell>
                 </div>
 
                 <div
@@ -172,19 +244,19 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
                 />
 
                 <div className="relative py-0.5">
-                  <ProofCell align="start" muted>
+                  <ProofCell icon="clock" muted>
                     {leftMetric ? <ProofMetricText metric={leftMetric} /> : null}
                   </ProofCell>
                 </div>
                 <div className="relative py-0.5">
-                  <ProofCell align="center" muted>
+                  <ProofCell icon="trend" muted>
                     {centerMetric ? (
                       <ProofMetricText metric={centerMetric} />
                     ) : null}
                   </ProofCell>
                 </div>
                 <div className="relative py-0.5">
-                  <ProofCell align="start" muted>
+                  <ProofCell icon="calendar" muted>
                     {rightMetric ? (
                       <ProofMetricText metric={rightMetric} />
                     ) : null}
@@ -192,11 +264,7 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
                 </div>
               </div>
 
-              {/* Dot rails for each content row (exclude divider band). */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[1.75rem]">
-                <ProofDotRail />
-              </div>
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[1.75rem]">
                 <ProofDotRail />
               </div>
             </div>
