@@ -103,7 +103,7 @@ const EN: HomeContent = {
         title: "Submit Your Claim",
         description:
           "Tell us what happened and securely upload the documents you already have.",
-        supportLabel: "SECURE INTAKE",
+        supportLabel: "Secure intake",
         visual: "intake",
       },
       {
@@ -111,7 +111,7 @@ const EN: HomeContent = {
         title: "Enter Your Workspace",
         description:
           "Create your account and open the dedicated workspace for that exact claim.",
-        supportLabel: "YOUR CLAIM WORKSPACE",
+        supportLabel: "Your claim workspace",
         visual: "workspace",
       },
       {
@@ -119,7 +119,7 @@ const EN: HomeContent = {
         title: "We Manage the Claim",
         description:
           "Our team reviews the file, prepares the strategy, and moves the work forward.",
-        supportLabel: "EXPERT CLAIM SUPPORT",
+        supportLabel: "Expert claim support",
         visual: "manage",
       },
       {
@@ -127,7 +127,7 @@ const EN: HomeContent = {
         title: "Approve. Track. Recover.",
         description:
           "Follow progress, respond to approvals, and see the financial outcome through completion.",
-        supportLabel: "CLEAR VISIBILITY",
+        supportLabel: "Clear visibility",
         visual: "recover",
       },
     ],
@@ -255,7 +255,7 @@ const ES: HomeContent = {
         title: "Envíe su reclamación",
         description:
           "Cuéntenos qué ocurrió y cargue de forma segura los documentos que ya tiene.",
-        supportLabel: "INGRESO SEGURO",
+        supportLabel: "Ingreso seguro",
         visual: "intake",
       },
       {
@@ -263,7 +263,7 @@ const ES: HomeContent = {
         title: "Ingrese a su espacio de trabajo",
         description:
           "Cree su cuenta y abra el espacio de trabajo dedicado para esa reclamación exacta.",
-        supportLabel: "SU ESPACIO DE RECLAMACIÓN",
+        supportLabel: "Su espacio de reclamación",
         visual: "workspace",
       },
       {
@@ -271,7 +271,7 @@ const ES: HomeContent = {
         title: "Gestionamos la reclamación",
         description:
           "Nuestro equipo revisa el expediente, prepara la estrategia y avanza el trabajo.",
-        supportLabel: "APOYO EXPERTO",
+        supportLabel: "Apoyo experto",
         visual: "manage",
       },
       {
@@ -279,7 +279,7 @@ const ES: HomeContent = {
         title: "Apruebe. Siga. Recupere.",
         description:
           "Siga el progreso, responda a las aprobaciones y vea el resultado financiero hasta el cierre.",
-        supportLabel: "VISIBILIDAD CLARA",
+        supportLabel: "Visibilidad clara",
         visual: "recover",
       },
     ],
