@@ -715,6 +715,7 @@ export function HeroClaimIntakeCard({
                 disabled={uploading || submitting}
                 onUpload={(list) => void handleUpload(list)}
                 onRemove={(id) => void handleRemove(id)}
+                onReplace={(id) => void handleRemove(id)}
                 onRetry={(id) => void handleRetry(id)}
                 dropzoneClassName="hero-intake-upload"
               />

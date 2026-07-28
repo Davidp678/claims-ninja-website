@@ -8,8 +8,11 @@ import type { IntakeFileSummary } from "@/lib/onboarding/types";
 type UploadZoneProps = {
   files?: IntakeFileSummary[];
   onUpload: (files: FileList | File[]) => void | Promise<void>;
+  /** Remove the file and continue without it. */
   onRemove?: (fileId: string) => void;
-  /** Retry a failed / timed-out upload for the given file row id. */
+  /** Remove the file so the customer can upload a different one. */
+  onReplace?: (fileId: string) => void;
+  /** Retry malware scan / recover for the given file row id. */
   onRetry?: (fileId: string) => void;
   disabled?: boolean;
   title?: string;
@@ -82,9 +85,9 @@ export function stateLabel(state: string) {
       return "Ready";
     case "scanning":
     case "scan_pending":
-      return "Scanning…";
+      return "Security scan in progress";
     case "scan_unavailable":
-      return "Protected — scan unavailable";
+      return "We couldn’t complete the security scan.";
     case "uploading":
       return "Uploading…";
     case "uploaded":
@@ -94,7 +97,7 @@ export function stateLabel(state: string) {
     case "rejected":
       return "Rejected — replace this file";
     case "failed":
-      return "Temporary scan problem — try again";
+      return "We couldn’t complete the security scan.";
     default:
       return state;
   }
@@ -104,10 +107,15 @@ function isScanning(state: string) {
   return state === "scanning" || state === "scan_pending";
 }
 
+function isScanProblem(state: string) {
+  return state === "scan_unavailable" || state === "failed";
+}
+
 export function UploadZone({
   files = [],
   onUpload,
   onRemove,
+  onReplace,
   onRetry,
   disabled,
   title = "Drop your carrier estimate, photos, or scope here",
@@ -118,6 +126,7 @@ export function UploadZone({
 }: UploadZoneProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);
+  const [retryingId, setRetryingId] = useState<string | null>(null);
 
   return (
     <div className="space-y-3">
@@ -137,7 +146,8 @@ export function UploadZone({
                 file.securityState === "preparing");
             const scanning = isScanning(file.securityState);
             const ready = file.securityState === "ready";
-            const scanUnavailable = file.securityState === "scan_unavailable";
+            const scanProblem = isScanProblem(file.securityState);
+            const showRetryProgress = retryingId === file.id;
             return (
               <li
                 key={file.id}
@@ -155,51 +165,88 @@ export function UploadZone({
                           className={cn(
                             ready && "text-emerald-400",
                             scanning && "text-zinc-300",
-                            scanUnavailable && "text-amber-300",
+                            scanProblem && "text-amber-300",
                           )}
                         >
                           {ready ? "✓ " : null}
-                          {stateLabel(file.securityState)}
+                          {showRetryProgress
+                            ? "Security scan in progress"
+                            : stateLabel(file.securityState)}
                         </span>
                         <span aria-hidden>·</span>
                         <span>{formatBytes(file.sizeBytes)}</span>
                       </p>
-                      {scanUnavailable ? (
+                      {scanning || showRetryProgress ? (
+                        <p className="mt-1 text-xs text-zinc-400">
+                          You can continue once your file has been checked.
+                        </p>
+                      ) : null}
+                      {scanProblem && !showRetryProgress ? (
                         <p className="mt-1 text-xs text-amber-200/90">
-                          Scanning is temporarily unavailable. Retry, replace
-                          this file, or remove it to continue without an
-                          upload. Unscanned files stay protected and cannot
-                          finish workspace setup.
+                          Your file remains protected and has not been added to
+                          your workspace.
+                          {file.scanReferenceId ? (
+                            <>
+                              {" "}
+                              Reference:{" "}
+                              <span className="font-mono text-amber-100/90">
+                                {file.scanReferenceId}
+                              </span>
+                            </>
+                          ) : null}
                         </p>
                       ) : null}
                     </div>
                   </div>
-                  <div className="flex shrink-0 items-center gap-1">
+                  <div className="flex shrink-0 flex-wrap items-center justify-end gap-1">
                     {canRetry ? (
                       <button
                         type="button"
-                        aria-label={`Retry ${file.filename}`}
-                        onClick={() => onRetry?.(file.id)}
-                        disabled={disabled}
+                        aria-label={`Retry scan for ${file.filename}`}
+                        onClick={() => {
+                          setRetryingId(file.id);
+                          try {
+                            onRetry?.(file.id);
+                          } finally {
+                            // Parent refresh clears state; keep brief progress signal.
+                            window.setTimeout(() => {
+                              setRetryingId((current) =>
+                                current === file.id ? null : current,
+                              );
+                            }, 8_000);
+                          }
+                        }}
+                        disabled={disabled || showRetryProgress}
                         className="rounded px-2 py-1 text-xs font-medium text-brand-red-light hover:bg-white/5 disabled:opacity-50"
                       >
-                        Retry
+                        Retry Scan
+                      </button>
+                    ) : null}
+                    {onReplace ? (
+                      <button
+                        type="button"
+                        aria-label={`Replace file ${file.filename}`}
+                        onClick={() => onReplace(file.id)}
+                        disabled={disabled}
+                        className="rounded px-2 py-1 text-xs font-medium text-zinc-300 hover:bg-white/5 hover:text-white disabled:opacity-50"
+                      >
+                        Replace File
                       </button>
                     ) : null}
                     {onRemove ? (
                       <button
                         type="button"
-                        aria-label={`Replace or remove ${file.filename}`}
+                        aria-label={`Remove file ${file.filename}`}
                         onClick={() => onRemove(file.id)}
                         disabled={disabled}
-                        className="rounded px-2 py-1 text-xs font-medium text-zinc-300 hover:bg-white/5 hover:text-white disabled:opacity-50"
+                        className="rounded px-2 py-1 text-xs font-medium text-zinc-400 hover:bg-white/5 hover:text-white disabled:opacity-50"
                       >
-                        Replace
+                        Remove File
                       </button>
                     ) : null}
                   </div>
                 </div>
-                {scanning ? (
+                {scanning || showRetryProgress ? (
                   <div
                     aria-hidden
                     className="mt-2 h-1 overflow-hidden rounded-full bg-white/10"

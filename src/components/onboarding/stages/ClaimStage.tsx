@@ -160,6 +160,61 @@ function ClaimStageForm({
     );
   }
 
+  async function deleteSessionFile(fileId: string) {
+    await runSerialized(async () => {
+      setUploadError(null);
+      clearAutosaveTimer();
+      let result = await onboardingFetchJson<{ version?: number }>(
+        "/api/onboarding/files",
+        {
+          method: "DELETE",
+          json: {
+            fileId,
+            expectedVersion: versionRef.current,
+          },
+        },
+      );
+      if (
+        !result.ok &&
+        result.code === "VERSION_MISMATCH" &&
+        result.status === 409
+      ) {
+        const refreshed = await softRefresh();
+        if (refreshed) {
+          result = await onboardingFetchJson<{ version?: number }>(
+            "/api/onboarding/files",
+            {
+              method: "DELETE",
+              json: {
+                fileId,
+                expectedVersion: versionRef.current,
+              },
+            },
+          );
+        }
+      }
+      if (!result.ok) {
+        setUploadError(
+          userFacingOnboardingError(result.code, result.message),
+        );
+        await softRefresh();
+        return;
+      }
+      if (typeof result.data?.version === "number") {
+        syncVersion(result.data.version);
+      }
+      setSession((prev) =>
+        prev
+          ? {
+              ...prev,
+              version: result.data?.version ?? prev.version,
+              files: (prev.files ?? []).filter((f) => f.id !== fileId),
+            }
+          : prev,
+      );
+    });
+  }
+
   const fileCount = session.files?.length ?? 0;
 
   return (
@@ -525,60 +580,8 @@ function ClaimStageForm({
               await softRefresh();
             });
           }}
-          onRemove={async (fileId) => {
-            await runSerialized(async () => {
-              setUploadError(null);
-              clearAutosaveTimer();
-              let result = await onboardingFetchJson<{ version?: number }>(
-                "/api/onboarding/files",
-                {
-                  method: "DELETE",
-                  json: {
-                    fileId,
-                    expectedVersion: versionRef.current,
-                  },
-                },
-              );
-              if (
-                !result.ok &&
-                result.code === "VERSION_MISMATCH" &&
-                result.status === 409
-              ) {
-                const refreshed = await softRefresh();
-                if (refreshed) {
-                  result = await onboardingFetchJson<{ version?: number }>(
-                    "/api/onboarding/files",
-                    {
-                      method: "DELETE",
-                      json: {
-                        fileId,
-                        expectedVersion: versionRef.current,
-                      },
-                    },
-                  );
-                }
-              }
-              if (!result.ok) {
-                setUploadError(
-                  userFacingOnboardingError(result.code, result.message),
-                );
-                await softRefresh();
-                return;
-              }
-              if (typeof result.data?.version === "number") {
-                syncVersion(result.data.version);
-              }
-              setSession((prev) =>
-                prev
-                  ? {
-                      ...prev,
-                      version: result.data?.version ?? prev.version,
-                      files: (prev.files ?? []).filter((f) => f.id !== fileId),
-                    }
-                  : prev,
-              );
-            });
-          }}
+          onReplace={(fileId) => void deleteSessionFile(fileId)}
+          onRemove={(fileId) => void deleteSessionFile(fileId)}
         />
       </SectionCard>
 

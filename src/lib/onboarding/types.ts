@@ -81,6 +81,8 @@ export type IntakeFileSummary = {
   sizeBytes: number;
   securityState: string;
   contentType?: string;
+  /** Masked correlation / support reference — never a secret. */
+  scanReferenceId?: string;
 };
 
 export type IntakeSessionProjection = {

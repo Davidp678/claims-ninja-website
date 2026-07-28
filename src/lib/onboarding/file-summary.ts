@@ -34,7 +34,14 @@ export function normalizeIntakeFileSummary(
         ? raw.mime_type
         : undefined;
 
-  return { id, filename, sizeBytes, securityState, contentType };
+  const scanReferenceId =
+    typeof raw.scanReferenceId === "string"
+      ? raw.scanReferenceId
+      : typeof raw.scan_reference_id === "string"
+        ? raw.scan_reference_id
+        : undefined;
+
+  return { id, filename, sizeBytes, securityState, contentType, scanReferenceId };
 }
 
 export function normalizeIntakeFileList(raw: unknown): IntakeFileSummary[] {
