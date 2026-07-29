@@ -22,7 +22,7 @@ These two bound types are never mixed in a single delta cell. Mask audit overlay
 |---|---|
 | actual vs actual mismatched | **0** |
 | amplified hot pixels | **0** |
-| overall mismatch | **6.09%** (29100 px) |
+| overall mismatch | **6.08%** (29056 px) |
 
 ## Locked outer geometry (unchanged)
 
@@ -65,7 +65,7 @@ These two bound types are never mixed in a single delta cell. Mask audit overlay
 | `stage-03-check-0` | 589,208 16×16 | 589,208 16×16 | 0,0 0×0 |
 | `stage-03-check-1` | 589,228 16×16 | 589,228 16×16 | 0,0 0×0 |
 | `stage-03-check-2` | 589,248 16×16 | 589,248 16×16 | 0,0 0×0 |
-| `stage-02-active-dot` | 327,208 9×9 | 328,211 9×9 | +1,+3 0×0 |
+| `stage-02-active-dot` | 327,208 9×9 | 326,210 9×9 | -1,+2 0×0 |
 | `stage-01-pill-icon` | 104,364 14×14 | 106,367 14×14 | +2,+3 0×0 |
 | `stage-02-pill-icon` | 300,364 14×14 | 303,367 14×14 | +3,+3 0×0 |
 | `stage-03-pill-icon` | 552,364 14×14 | 557,367 14×14 | +5,+3 0×0 |
@@ -180,7 +180,7 @@ Primitives marked `geometry-only` intentionally omit painted-ink deltas (JPEG in
 | `stage-03-pill-label` | 574,367 95×10 | 577,369 96×9 | +3,+2 +1×-1 | ref=mask-ink:gray; act=paint-diff-isolation |
 | `stage-04-pill-label` | 817,367 58×9 | 820,369 59×9 | +3,+2 +1×0 | ref=mask-ink:gray; act=paint-diff-isolation |
 | `stage-01-icon-frame` | 97,213 55×51 | 98,211 50×50 | +1,-2 -5×-1 | ref=mask-ink:edge; act=mask-ink:edge |
-| `stage-02-icon-frame` | 296,213 50×49 | 295,210 48×52 | -1,-3 -2×+3 | ref=mask-ink:edge; act=mask-ink:edge |
+| `stage-02-icon-frame` | 296,213 50×49 | 295,210 49×52 | -1,-3 -1×+3 | ref=mask-ink:edge; act=mask-ink:edge |
 | `stage-03-icon-frame` | 547,212 51×50 | 550,210 48×52 | +3,-2 -3×+2 | ref=mask-ink:edge; act=mask-ink:edge |
 | `stage-04-icon-frame` | 792,214 48×46 | 791,211 49×49 | -1,-3 +1×+3 | ref=mask-ink:edge; act=mask-ink:edge |
 | `stage-02-rear-panel` | 318,200 170×72 | 318,201 170×71 | 0,+1 0×-1 | ref=mask-ink:edge; act=mask-ink:edge |
@@ -226,28 +226,28 @@ Primitives marked `geometry-only` intentionally omit painted-ink deltas (JPEG in
 | `stage-01-symbol` | 105,218 36×36 |
 | `stage-01-title` | 99,283 130×13 |
 | `stage-01-visual` | 97,199 136×82 |
-| `stage-02-active-dot` | 328,211 9×9 |
+| `stage-02-active-dot` | 326,210 9×9 |
 | `stage-02-body` | 296,304 185×39 |
 | `stage-02-body-line-0` | 296,304 185×13 |
 | `stage-02-body-line-1` | 296,317 185×13 |
 | `stage-02-body-line-2` | 296,330 185×13 |
 | `stage-02-card` | 282,170 220×229 |
-| `stage-02-content-bar-0` | 341,214 28×4 |
-| `stage-02-content-bar-1` | 347,230 118×8 |
-| `stage-02-divider` | - |
+| `stage-02-content-bar-0` | 353,212 88×7 |
+| `stage-02-content-bar-1` | 353,226 110×7 |
+| `stage-02-divider` | 343,202 1×70 |
 | `stage-02-glow` | 330,205 120×52 |
 | `stage-02-icon-frame` | 295,211 48×48 |
-| `stage-02-lower-block-0` | 347,250 14×14 |
-| `stage-02-lower-block-1` | 366,250 14×14 |
-| `stage-02-lower-block-2` | 385,250 14×14 |
+| `stage-02-lower-block-0` | 353,249 15×15 |
+| `stage-02-lower-block-1` | 373,249 15×15 |
+| `stage-02-lower-block-2` | 393,249 15×15 |
 | `stage-02-number` | 296,187 17×15 |
 | `stage-02-pill` | 294,363 125×22 |
 | `stage-02-pill-icon` | 303,367 14×14 |
 | `stage-02-pill-label` | 323,369 85×10 |
 | `stage-02-rear-panel` | 318,201 170×72 |
-| `stage-02-sidebar` | 330,228 4×37 |
-| `stage-02-sidebar-row-0` | 330,228 4×4 |
-| `stage-02-sidebar-row-1` | 330,239 4×4 |
+| `stage-02-sidebar` | 319,202 24×70 |
+| `stage-02-sidebar-row-0` | 325,224 11×2 |
+| `stage-02-sidebar-row-1` | 325,234 11×2 |
 | `stage-02-symbol` | 302,218 34×34 |
 | `stage-02-title` | 296,283 187×13 |
 | `stage-02-visual` | 294,199 199×82 |
@@ -318,7 +318,7 @@ Primitives marked `geometry-only` intentionally omit painted-ink deltas (JPEG in
 | `stage-01-pill-label` | 126,369 58×7 | 202 |
 | `stage-01-symbol` | 108,218 29×36 | 496 |
 | `stage-01-title` | 99,285 97×10 | 468 |
-| `stage-02-active-dot` | - | 0 |
+| `stage-02-active-dot` | 329,210 4×1 | 4 |
 | `stage-02-body-line-0` | 296,306 107×9 | 382 |
 | `stage-02-body-line-1` | 296,319 85×7 | 313 |
 | `stage-02-body-line-2` | 296,332 122×10 | 487 |
@@ -368,11 +368,11 @@ Primitives marked `geometry-only` intentionally omit painted-ink deltas (JPEG in
 |---|---:|---:|---:|
 | heading | 9575 | 101400 | 9.44% |
 | stage-01 | 3209 | 35953 | 8.93% |
-| stage-02 | 6183 | 50380 | 12.27% |
+| stage-02 | 6139 | 50380 | 12.19% |
 | stage-03 | 6078 | 48090 | 12.64% |
 | stage-04 | 3464 | 32518 | 10.65% |
 | stage-01-visual | 551 | 5600 | 9.84% |
-| stage-02-visual | 3041 | 16000 | 19.01% |
+| stage-02-visual | 2997 | 16000 | 18.73% |
 | stage-03-visual | 2901 | 15200 | 19.09% |
 | stage-04-visual | 495 | 5600 | 8.84% |
 | connector-01-02 | 138 | 960 | 14.37% |
@@ -398,7 +398,6 @@ Primitives marked `geometry-only` intentionally omit painted-ink deltas (JPEG in
 - `connector-3-node`: ink 758,238 11×3 → 758,233 12×13 (0,-5 +1×+10); geo 757,233 13×13 → 757,233 13×13 (0,0 0×0)
 - `connector-3-node-border`: ink 758,238 11×3 → 758,234 5×11 (0,-4 -6×+8); geo 757,233 13×13 → 758,234 11×11 (+1,+1 -2×-2)
 - `connector-3-glow`: ink 755,238 17×4 → 755,230 18×19 (0,-8 +1×+15); geo 754,230 19×19 → 754,230 19×19 (0,0 0×0)
-- `stage-02-active-dot` (geometry-only): geo 327,208 9×9 → 328,211 9×9 (+1,+3 0×0)
 - `stage-01-pill-icon`: ink 105,364 13×14 → 108,369 10×11 (+3,+5 -3×-3); geo 104,364 14×14 → 106,367 14×14 (+2,+3 0×0)
 - `stage-02-pill-icon`: ink 300,364 14×14 → 305,368 10×9 (+5,+4 -4×-5); geo 300,364 14×14 → 303,367 14×14 (+3,+3 0×0)
 - `stage-03-pill-icon`: ink 554,364 12×14 → 559,371 10×6 (+5,+7 -2×-8); geo 552,364 14×14 → 557,367 14×14 (+5,+3 0×0)
@@ -422,6 +421,6 @@ Primitives marked `geometry-only` intentionally omit painted-ink deltas (JPEG in
 - `stage-03-pill-label`: ink 574,367 95×10 → 577,369 96×9 (+3,+2 +1×-1); geo 568,366 105×12 → 577,369 96×10 (+9,+3 -9×-2)
 - `stage-04-pill-label`: ink 817,367 58×9 → 820,369 59×9 (+3,+2 +1×0); geo 812,366 70×12 → 820,369 59×10 (+8,+3 -11×-2)
 - `stage-01-icon-frame`: ink 97,213 55×51 → 98,211 50×50 (+1,-2 -5×-1); geo 97,210 55×55 → 98,211 50×50 (+1,+1 -5×-5)
-- `stage-02-icon-frame`: ink 296,213 50×49 → 295,210 48×52 (-1,-3 -2×+3); geo 294,210 52×52 → 295,211 48×48 (+1,+1 -4×-4)
+- `stage-02-icon-frame`: ink 296,213 50×49 → 295,210 49×52 (-1,-3 -1×+3); geo 294,210 52×52 → 295,211 48×48 (+1,+1 -4×-4)
 - `stage-03-icon-frame`: ink 547,212 51×50 → 550,210 48×52 (+3,-2 -3×+2); geo 546,210 52×52 → 550,211 48×48 (+4,+1 -4×-4)
 - `stage-04-icon-frame`: ink 792,214 48×46 → 791,211 49×49 (-1,-3 +1×+3); geo 790,210 50×50 → 791,211 50×50 (+1,+1 0×0)

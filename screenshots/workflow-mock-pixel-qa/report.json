@@ -39,9 +39,9 @@
     "mismatchRatio": 0,
     "passed": true
   },
-  "mismatchedPixels": 29100,
+  "mismatchedPixels": 29056,
   "totalPixels": 478208,
-  "mismatchRatio": 0.06085218147751606,
+  "mismatchRatio": 0.06076017130620985,
   "headingTitleContamination": {
     "note": "Loose L>=160 detector on reference can include glow/AA below glyphs; dense L>=180 is glyph ink.",
     "looseRef": {
@@ -1090,15 +1090,15 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 328,
-          "y": 211,
+          "x": 326,
+          "y": 210,
           "w": 9,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 1,
-          "y": 3,
+          "x": -1,
+          "y": 2,
           "w": 0,
           "h": 0
         }
@@ -3147,15 +3147,15 @@
         "actual": {
           "x": 295,
           "y": 210,
-          "w": 48,
+          "w": 49,
           "h": 52,
-          "count": 426,
+          "count": 498,
           "method": "mask-ink:edge"
         },
         "delta": {
           "x": -1,
           "y": -3,
-          "w": -2,
+          "w": -1,
           "h": 3
         }
       }
@@ -3299,7 +3299,7 @@
           "y": 201,
           "w": 170,
           "h": 71,
-          "count": 2320,
+          "count": 1913,
           "method": "mask-ink:edge"
         },
         "delta": {
@@ -3792,67 +3792,73 @@
       "method": "dom-geometry"
     },
     "stage-02-sidebar": {
-      "x": 330,
-      "y": 228,
-      "w": 4,
-      "h": 37,
+      "x": 319,
+      "y": 202,
+      "w": 24,
+      "h": 70,
       "method": "dom-geometry"
     },
-    "stage-02-divider": null,
+    "stage-02-divider": {
+      "x": 343,
+      "y": 202,
+      "w": 1,
+      "h": 70,
+      "method": "dom-geometry"
+    },
     "stage-02-active-dot": {
-      "x": 328,
-      "y": 211,
+      "x": 326,
+      "y": 210,
       "w": 9,
       "h": 9,
       "method": "dom-geometry"
     },
     "stage-02-sidebar-row-0": {
-      "x": 330,
-      "y": 228,
-      "w": 4,
-      "h": 4,
+      "x": 325,
+      "y": 224,
+      "w": 11,
+      "h": 2,
       "method": "dom-geometry"
     },
     "stage-02-sidebar-row-1": {
-      "x": 330,
-      "y": 239,
-      "w": 4,
-      "h": 4,
+      "x": 325,
+      "y": 234,
+      "w": 11,
+      "h": 2,
       "method": "dom-geometry"
     },
     "stage-02-content-bar-0": {
-      "x": 341,
-      "y": 214,
-      "w": 28,
-      "h": 4,
+      "x": 353,
+      "y": 212,
+      "w": 88,
+      "h": 7,
       "method": "dom-geometry"
     },
     "stage-02-content-bar-1": {
-      "x": 347,
-      "y": 230,
-      "w": 118,
-      "h": 8,
+      "x": 353,
+      "y": 226,
+      "w": 110,
+      "h": 7,
       "method": "dom-geometry"
     },
     "stage-02-lower-block-0": {
-      "x": 347,
-      "y": 250,
-      "w": 14,
-      "h": 14,
+      "x": 353,
+      "y": 249,
+      "w": 15,
+      "h": 15,
       "method": "dom-geometry"
     },
     "stage-02-lower-block-1": {
-      "x": 366,
-      "y": 250,
-      "w": 14,
-      "h": 14,
+      "x": 373,
+      "y": 249,
+      "w": 15,
+      "h": 15,
       "method": "dom-geometry"
     },
     "stage-02-lower-block-2": {
-      "x": 385,
-      "y": 250,
-      "w": 14,
-      "h": 14,
+      "x": 393,
+      "y": 249,
+      "w": 15,
+      "h": 15,
       "method": "dom-geometry"
     },
     "stage-03-row-0": {
@@ -4138,7 +4144,14 @@
       "count": 516,
       "method": "paint-diff-isolation"
     },
-    "stage-02-active-dot": null,
+    "stage-02-active-dot": {
+      "x": 329,
+      "y": 210,
+      "w": 4,
+      "h": 1,
+      "count": 4,
+      "method": "paint-diff-isolation"
+    },
     "stage-02-title": {
       "x": 297,
       "y": 285,
@@ -6581,15 +6594,15 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 328,
-          "y": 211,
+          "x": 326,
+          "y": 210,
           "w": 9,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 1,
-          "y": 3,
+          "x": -1,
+          "y": 2,
           "w": 0,
           "h": 0
         }
@@ -8775,15 +8788,15 @@
       "actual": {
         "x": 295,
         "y": 210,
-        "w": 48,
+        "w": 49,
         "h": 52,
-        "count": 426,
+        "count": 498,
         "method": "mask-ink:edge"
       },
       "delta": {
         "x": -1,
         "y": -3,
-        "w": -2,
+        "w": -1,
         "h": 3
       },
       "geometric": {
@@ -8939,7 +8952,7 @@
         "y": 201,
         "w": 170,
         "h": 71,
-        "count": 2320,
+        "count": 1913,
         "method": "mask-ink:edge"
       },
       "delta": {
@@ -9250,9 +9263,9 @@
         "w": 220,
         "h": 229
       },
-      "mismatched": 6183,
+      "mismatched": 6139,
       "total": 50380,
-      "ratio": 0.12272727272727273
+      "ratio": 0.12185391028185788
     },
     {
       "name": "stage-03",
@@ -9302,9 +9315,9 @@
         "w": 200,
         "h": 80
       },
-      "mismatched": 3041,
+      "mismatched": 2997,
       "total": 16000,
-      "ratio": 0.1900625
+      "ratio": 0.1873125
     },
     {
       "name": "stage-03-visual",
