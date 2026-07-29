@@ -8,13 +8,7 @@ import {
 
 /**
  * Native mock canvas: 1024×467 — outer card geometry LOCKED.
- *   Stage 01: 85,170 157×229
- *   Stage 02: 282,170 220×229
- *   Stage 03: 536,170 210×229
- *   Stage 04: 779,170 142×229
- * Gaps 40/34/33 · connector Y 239 · chat 38×38 @ r9/b17
- *
- * Surface RGB sampled from normalized reference.
+ * data-qa-* selectors exist for paint-isolation measurement only.
  */
 const REF = {
   width: 1024,
@@ -26,41 +20,50 @@ const REF = {
   gaps: [40, 34, 33] as const,
   connectorY: 239,
   bottomLineY: 465,
-  pageBg: "#111111", // 17,17,17
-  cardBg: "#171717", // 23,23,23
-  cardBorder: "#222222", // 34,34,34
-  title: "#f1f1f1", // 241,241,241
-  bodyText: "#686868", // sampled body ink ~104
+  pageBg: "#111111",
+  cardBg: "#171717",
+  cardBorder: "#222222",
+  /** Solid glyph interior target ≈ 226/226/226. */
+  title: "#e2e2e2",
+  bodyText: "#686868",
   supportText: "#5a5a5a",
-  pillBorder: "#2c2c2c", // target painted border ~28 after AA
-  mutedRed: "#773f3b",
-  connector: "#984746", // 152,71,70
-  numberRed: "#77403b",
+  /** Pill stroke target ≈ 28/28/28. */
+  pillBorder: "#1c1c1c",
+  /**
+   * Muted icon stroke — reference solid samples sit near 30/20/28,
+   * not bright brand-red.
+   */
+  mutedRed: "#3a2428",
+  connector: "#984746",
+  numberRed: "#77403b", // ≈119/64/59 solid ink
 };
 
-/** Interior layout relative to card top-left (painted ink). */
+/** Card-relative layout from reference painted ink (not DOM wrappers). */
 const CARD_INK = {
-  number: { left: 16, top: 16, size: 22 },
-  visual: { left: 14, top: 40, height: 72 },
-  title: { left: 16, top: 114, size: 17 },
-  desc: { left: 16, top: 136, size: 12.5, lineHeight: 1.42 },
-  pill: { left: 12, top: 186, height: 30 },
+  number: { left: 15, top: 18, size: 13 },
+  visual: { left: 14, top: 30, height: 78 },
+  title: { left: 15, top: 113, size: 14.5 },
+  desc: { left: 15, top: 133, size: 10.75, lineHeight: 1.35 },
+  pill: { left: 12, top: 192, height: 22 },
 } as const;
 
 function StrokeIcon({
   className,
   children,
-  strokeWidth = 1.3,
+  strokeWidth = 1.25,
   color,
+  qa,
 }: {
   className?: string;
   children: ReactNode;
   strokeWidth?: number;
   color?: string;
+  qa?: string;
 }) {
   return (
     <svg
       aria-hidden
+      data-qa={qa}
       viewBox="0 0 24 24"
       className={className}
       fill="none"
@@ -74,37 +77,43 @@ function StrokeIcon({
   );
 }
 
-function LockBadgeIcon({ className }: { className?: string }) {
+function PillIcon({
+  visual,
+  stage,
+}: {
+  visual: HomeProcessVisual;
+  stage: string;
+}) {
+  const className = "h-[12px] w-[12px] shrink-0";
+  const qa = `stage-${stage}-pill-icon`;
+  const color = REF.mutedRed;
+  if (visual === "intake") {
+    return (
+      <StrokeIcon className={className} strokeWidth={1.5} color={color} qa={qa}>
+        <rect x="5" y="11" width="14" height="10" rx="2" />
+        <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+      </StrokeIcon>
+    );
+  }
+  if (visual === "workspace") {
+    return (
+      <StrokeIcon className={className} strokeWidth={1.5} color={color} qa={qa}>
+        <ellipse cx="12" cy="6" rx="7" ry="2.5" />
+        <path d="M5 6v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6" />
+        <path d="M5 10v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4" />
+        <path d="M5 14v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4" />
+      </StrokeIcon>
+    );
+  }
+  if (visual === "manage") {
+    return (
+      <StrokeIcon className={className} strokeWidth={1.5} color={color} qa={qa}>
+        <path d="M3 12h4l2-5 4 10 2-5h6" />
+      </StrokeIcon>
+    );
+  }
   return (
-    <StrokeIcon className={className} strokeWidth={1.55} color={REF.mutedRed}>
-      <rect x="5" y="11" width="14" height="10" rx="2" />
-      <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-    </StrokeIcon>
-  );
-}
-
-function DatabaseBadgeIcon({ className }: { className?: string }) {
-  return (
-    <StrokeIcon className={className} strokeWidth={1.55} color={REF.mutedRed}>
-      <ellipse cx="12" cy="6" rx="7" ry="2.5" />
-      <path d="M5 6v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6" />
-      <path d="M5 10v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4" />
-      <path d="M5 14v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4" />
-    </StrokeIcon>
-  );
-}
-
-function PulseBadgeIcon({ className }: { className?: string }) {
-  return (
-    <StrokeIcon className={className} strokeWidth={1.55} color={REF.mutedRed}>
-      <path d="M3 12h4l2-5 4 10 2-5h6" />
-    </StrokeIcon>
-  );
-}
-
-function EyeBadgeIcon({ className }: { className?: string }) {
-  return (
-    <StrokeIcon className={className} strokeWidth={1.55} color={REF.mutedRed}>
+    <StrokeIcon className={className} strokeWidth={1.5} color={color} qa={qa}>
       <path d="M2.5 12S6 6.5 12 6.5 21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12Z" />
       <circle cx="12" cy="12" r="2.5" />
     </StrokeIcon>
@@ -113,24 +122,24 @@ function EyeBadgeIcon({ className }: { className?: string }) {
 
 function PrimaryIconFrame({
   children,
-  className = "",
-  size = 58,
+  stage,
+  size = 48,
 }: {
   children: ReactNode;
-  className?: string;
+  stage: string;
   size?: number;
 }) {
   return (
     <div
-      data-process-icon-frame
-      className={`relative z-10 flex shrink-0 items-center justify-center rounded-[11px] ${className}`}
+      data-qa={`stage-${stage}-icon-frame`}
+      className="relative z-10 flex shrink-0 items-center justify-center rounded-[10px]"
       style={{
         width: size,
         height: size,
         color: REF.mutedRed,
         background: "#121212",
-        border: "1px solid rgba(255,255,255,0.14)",
-        boxShadow: "0 0 20px -4px rgba(56,25,22,0.75)",
+        border: "1px solid rgba(255,255,255,0.11)",
+        boxShadow: "0 0 12px -5px rgba(30,20,28,0.65)",
       }}
     >
       {children}
@@ -138,20 +147,29 @@ function PrimaryIconFrame({
   );
 }
 
-function UploadDocVisual() {
+function UploadDocVisual({ stage }: { stage: string }) {
   return (
-    <div aria-hidden className="relative h-full w-full">
+    <div
+      aria-hidden
+      data-qa={`stage-${stage}-visual`}
+      className="relative h-full w-full"
+    >
       <div
-        aria-hidden
-        className="pointer-events-none absolute left-[-6px] top-[6px] h-[58px] w-[58px] rounded-full blur-[7px]"
+        data-qa={`stage-${stage}-glow`}
+        className="pointer-events-none absolute left-[-4px] top-[4px] h-[48px] w-[48px] rounded-full blur-[6px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(56,25,22,0.55), transparent 70%)",
+            "radial-gradient(circle, rgba(56,25,22,0.45), transparent 70%)",
         }}
       />
-      <div className="absolute left-0 top-[2px]">
-        <PrimaryIconFrame size={52}>
-          <StrokeIcon className="h-[30px] w-[30px]" strokeWidth={1.2}>
+      <div className="absolute left-0 top-[13px]">
+        <PrimaryIconFrame stage={stage} size={52}>
+          <StrokeIcon
+            className="h-[30px] w-[30px]"
+            strokeWidth={1.1}
+            color={REF.mutedRed}
+            qa={`stage-${stage}-symbol`}
+          >
             <path d="M14.4 2.4H7.6A2.5 2.5 0 0 0 5.1 4.9v14.4A2.5 2.5 0 0 0 7.6 21.8h8.8a2.5 2.5 0 0 0 2.5-2.5V7.2L14.4 2.4Z" />
             <path d="M14.4 2.4V7.8h4.5" />
             <path d="M12 11v6.8" />
@@ -163,28 +181,33 @@ function UploadDocVisual() {
   );
 }
 
-function WorkspaceVisual() {
+function WorkspaceVisual({ stage }: { stage: string }) {
   return (
-    <div aria-hidden className="relative h-full w-full overflow-visible">
+    <div
+      aria-hidden
+      data-qa={`stage-${stage}-visual`}
+      className="relative h-full w-full overflow-visible"
+    >
       <div
-        aria-hidden
-        className="pointer-events-none absolute left-[28px] top-0 h-[72px] w-[160px] rounded-[14px] blur-[9px]"
+        data-qa={`stage-${stage}-glow`}
+        className="pointer-events-none absolute left-[24px] top-0 h-[64px] w-[150px] rounded-[12px] blur-[8px]"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(56,25,22,0.5), transparent 72%)",
+            "radial-gradient(ellipse at center, rgba(56,25,22,0.42), transparent 72%)",
         }}
       />
       <div
-        className="absolute left-[28px] top-0 h-[74px] overflow-hidden rounded-[10px]"
+        data-qa={`stage-${stage}-rear-panel`}
+        className="absolute left-[22px] top-0 h-[72px] overflow-hidden rounded-[9px]"
         style={{
-          width: "min(172px, calc(100% - 18px))",
+          width: "min(172px, calc(100% - 14px))",
           background: "#0d0d0d",
           border: "1px solid rgba(255,255,255,0.15)",
-          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
         }}
       >
         <div className="flex h-full">
           <div
+            data-qa={`stage-${stage}-sidebar`}
             className="relative w-[22px] shrink-0"
             style={{
               background: "#080808",
@@ -192,36 +215,43 @@ function WorkspaceVisual() {
             }}
           >
             <span
+              data-qa={`stage-${stage}-active-dot`}
               className="absolute left-1/2 top-[8px] h-[6px] w-[6px] -translate-x-1/2 rounded-full"
-              style={{
-                background: "#c44a42",
-                boxShadow: "0 0 6px rgba(196,74,66,0.8)",
-              }}
+              style={{ background: "#9a4540" }}
             />
-            {[19, 28, 37, 46, 55].map((top) => (
+            {[18, 27, 36, 45, 54].map((top, i) => (
               <span
                 key={top}
-                className="absolute left-1/2 h-[2.5px] w-[9px] -translate-x-1/2 rounded-[1px]"
+                data-qa={`stage-${stage}-sidebar-row-${i}`}
+                className="absolute left-1/2 h-[2px] w-[9px] -translate-x-1/2 rounded-[1px]"
                 style={{ top, background: "rgba(255,255,255,0.2)" }}
               />
             ))}
           </div>
+          <div
+            data-qa={`stage-${stage}-divider`}
+            className="w-px shrink-0"
+            style={{ background: "rgba(255,255,255,0.13)" }}
+          />
           <div className="flex min-w-0 flex-1 flex-col px-[8px] py-[8px]">
             <span
+              data-qa={`stage-${stage}-content-bar-0`}
               className="mb-[7px] h-[9px] w-[70%] rounded-[3px]"
-              style={{ background: "rgba(255,255,255,0.18)" }}
+              style={{ background: "rgba(255,255,255,0.17)" }}
             />
             <span
-              className="mb-auto h-[9px] w-[92%] rounded-[3px]"
+              data-qa={`stage-${stage}-content-bar-1`}
+              className="mb-auto h-[9px] w-[88%] rounded-[3px]"
               style={{ background: "rgba(255,255,255,0.12)" }}
             />
-            <div className="mt-[8px] grid grid-cols-3 gap-[5px]">
+            <div className="mt-[7px] grid grid-cols-3 gap-[5px]">
               {[0, 1, 2].map((i) => (
                 <span
                   key={i}
-                  className="h-[18px] rounded-[4px]"
+                  data-qa={`stage-${stage}-lower-block-${i}`}
+                  className="h-[18px] rounded-[3px]"
                   style={{
-                    background: "rgba(255,255,255,0.07)",
+                    background: "rgba(255,255,255,0.08)",
                     border: "1px solid rgba(255,255,255,0.1)",
                   }}
                 />
@@ -230,9 +260,14 @@ function WorkspaceVisual() {
           </div>
         </div>
       </div>
-      <div className="absolute left-0 top-[8px]">
-        <PrimaryIconFrame size={50}>
-          <StrokeIcon className="h-[26px] w-[26px]" strokeWidth={1.25}>
+      <div className="absolute left-0 top-[12px]">
+        <PrimaryIconFrame stage={stage} size={50}>
+          <StrokeIcon
+            className="h-[26px] w-[26px]"
+            strokeWidth={1.15}
+            color={REF.mutedRed}
+            qa={`stage-${stage}-symbol`}
+          >
             <rect x="3" y="3" width="7.6" height="7.6" rx="1.5" />
             <rect x="13.4" y="3" width="7.6" height="7.6" rx="1.5" />
             <rect x="3" y="13.4" width="7.6" height="7.6" rx="1.5" />
@@ -244,22 +279,26 @@ function WorkspaceVisual() {
   );
 }
 
-function ManageVisual() {
+function ManageVisual({ stage }: { stage: string }) {
   return (
-    <div aria-hidden className="relative h-full w-full overflow-visible">
+    <div
+      aria-hidden
+      data-qa={`stage-${stage}-visual`}
+      className="relative h-full w-full overflow-visible"
+    >
       <div
-        aria-hidden
-        className="pointer-events-none absolute left-[26px] top-0 h-[74px] w-[160px] rounded-[14px] blur-[9px]"
+        data-qa={`stage-${stage}-glow`}
+        className="pointer-events-none absolute left-[22px] top-0 h-[66px] w-[150px] rounded-[12px] blur-[8px]"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(56,25,22,0.48), transparent 72%)",
+            "radial-gradient(ellipse at center, rgba(56,25,22,0.4), transparent 72%)",
         }}
       />
-      {/* Three distinct checklist row pills — matches 4× ref crop */}
       <div
-        className="absolute left-[28px] top-0 flex h-[74px] flex-col justify-center gap-[5px] overflow-hidden rounded-[10px] px-[7px] py-[6px]"
+        data-qa={`stage-${stage}-rear-panel`}
+        className="absolute left-[22px] top-0 flex h-[72px] flex-col justify-center gap-[5px] overflow-hidden rounded-[9px] px-[7px] py-[6px]"
         style={{
-          width: "min(168px, calc(100% - 18px))",
+          width: "min(168px, calc(100% - 14px))",
           background: "#0d0d0d",
           border: "1px solid rgba(255,255,255,0.15)",
         }}
@@ -267,15 +306,20 @@ function ManageVisual() {
         {[0, 1, 2].map((i) => (
           <div
             key={i}
-            className="flex h-[18px] items-center gap-[6px] rounded-[5px] px-[5px]"
+            data-qa={`stage-${stage}-row-${i}`}
+            className="flex h-[17px] items-center gap-[5px] rounded-[4px] px-[5px]"
             style={{
-              background: "rgba(0,0,0,0.45)",
+              background: "rgba(0,0,0,0.42)",
               border: "1px solid rgba(255,255,255,0.1)",
             }}
           >
             <span
+              data-qa={`stage-${stage}-check-${i}`}
               className="flex h-[12px] w-[12px] shrink-0 items-center justify-center rounded-full"
-              style={{ border: `1.25px solid ${REF.mutedRed}`, color: REF.mutedRed }}
+              style={{
+                border: `1.2px solid ${REF.mutedRed}`,
+                color: REF.mutedRed,
+              }}
             >
               <svg
                 aria-hidden
@@ -291,26 +335,34 @@ function ManageVisual() {
               </svg>
             </span>
             <span
-              className="h-[5px] flex-1 rounded-[2px]"
+              data-qa={`stage-${stage}-bar-a-${i}`}
+              className="h-[4px] flex-1 rounded-[1px]"
               style={{ background: "rgba(255,255,255,0.16)" }}
             />
             <span
-              className="h-[5px] rounded-[2px]"
+              data-qa={`stage-${stage}-bar-b-${i}`}
+              className="h-[4px] rounded-[1px]"
               style={{
                 width: i === 0 ? 20 : i === 1 ? 14 : 10,
-                background: "rgba(255,255,255,0.1)",
+                background: "rgba(255,255,255,0.11)",
               }}
             />
           </div>
         ))}
         <span
-          className="absolute bottom-[6px] right-[5px] top-[6px] w-px"
-          style={{ background: "rgba(255,255,255,0.12)" }}
+          data-qa={`stage-${stage}-right-edge`}
+          className="absolute bottom-[6px] right-[6px] top-[6px] w-px"
+          style={{ background: "rgba(255,255,255,0.13)" }}
         />
       </div>
-      <div className="absolute left-0 top-[8px]">
-        <PrimaryIconFrame size={50}>
-          <StrokeIcon className="h-[26px] w-[26px]" strokeWidth={1.25}>
+      <div className="absolute left-0 top-[12px]">
+        <PrimaryIconFrame stage={stage} size={50}>
+          <StrokeIcon
+            className="h-[26px] w-[26px]"
+            strokeWidth={1.15}
+            color={REF.mutedRed}
+            qa={`stage-${stage}-symbol`}
+          >
             <circle cx="8.4" cy="8" r="2.8" />
             <circle cx="15.5" cy="8.8" r="2.3" />
             <path d="M3.6 18.4c.7-2.7 2.7-4.2 4.9-4.2s4.2 1.5 4.9 4.2" />
@@ -324,20 +376,29 @@ function ManageVisual() {
   );
 }
 
-function RecoverVisual() {
+function RecoverVisual({ stage }: { stage: string }) {
   return (
-    <div aria-hidden className="relative h-full w-full">
+    <div
+      aria-hidden
+      data-qa={`stage-${stage}-visual`}
+      className="relative h-full w-full"
+    >
       <div
-        aria-hidden
-        className="pointer-events-none absolute left-[-4px] top-[6px] h-[58px] w-[58px] rounded-full blur-[7px]"
+        data-qa={`stage-${stage}-glow`}
+        className="pointer-events-none absolute left-[-4px] top-[4px] h-[48px] w-[48px] rounded-full blur-[6px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(56,25,22,0.55), transparent 70%)",
+            "radial-gradient(circle, rgba(56,25,22,0.45), transparent 70%)",
         }}
       />
-      <div className="absolute left-0 top-[2px]">
-        <PrimaryIconFrame size={52}>
-          <StrokeIcon className="h-[30px] w-[30px]" strokeWidth={1.2}>
+      <div className="absolute left-0 top-[13px]">
+        <PrimaryIconFrame stage={stage} size={52}>
+          <StrokeIcon
+            className="h-[30px] w-[30px]"
+            strokeWidth={1.1}
+            color={REF.mutedRed}
+            qa={`stage-${stage}-symbol`}
+          >
             <circle cx="12" cy="12" r="8.6" />
             <path d="m7.2 14.6 3-3.5 2.3 2.3L17 8.2" />
             <path d="M14.2 8.2h2.8v2.8" />
@@ -348,19 +409,17 @@ function RecoverVisual() {
   );
 }
 
-function StageVisual({ visual }: { visual: HomeProcessVisual }) {
-  if (visual === "intake") return <UploadDocVisual />;
-  if (visual === "workspace") return <WorkspaceVisual />;
-  if (visual === "manage") return <ManageVisual />;
-  return <RecoverVisual />;
-}
-
-function SupportBadgeIcon({ visual }: { visual: HomeProcessVisual }) {
-  const className = "h-[14px] w-[14px] shrink-0";
-  if (visual === "intake") return <LockBadgeIcon className={className} />;
-  if (visual === "workspace") return <DatabaseBadgeIcon className={className} />;
-  if (visual === "manage") return <PulseBadgeIcon className={className} />;
-  return <EyeBadgeIcon className={className} />;
+function StageVisual({
+  visual,
+  stage,
+}: {
+  visual: HomeProcessVisual;
+  stage: string;
+}) {
+  if (visual === "intake") return <UploadDocVisual stage={stage} />;
+  if (visual === "workspace") return <WorkspaceVisual stage={stage} />;
+  if (visual === "manage") return <ManageVisual stage={stage} />;
+  return <RecoverVisual stage={stage} />;
 }
 
 function ProcessStageCard({
@@ -370,11 +429,15 @@ function ProcessStageCard({
   item: HomeProcessStep;
   referenceMode?: boolean;
 }) {
-  const titleSize = item.step === "04" ? 14 : CARD_INK.title.size;
+  const stage = item.step;
+  const titleSize =
+    stage === "04" ? 13.5 : stage === "01" ? 14.5 : CARD_INK.title.size;
+  const lines = referenceMode ? item.descriptionLines : null;
 
   return (
     <div
       data-process-card
+      data-qa={`stage-${stage}-card`}
       data-width={item.width}
       className="group relative flex h-full min-h-0 flex-col overflow-hidden rounded-[11px]"
       style={{
@@ -385,12 +448,14 @@ function ProcessStageCard({
     >
       <span
         data-process-step
+        data-qa={`stage-${stage}-number`}
         className="absolute font-display leading-none tracking-tight"
         style={{
           left: CARD_INK.number.left,
           top: CARD_INK.number.top,
           fontSize: CARD_INK.number.size,
-          fontWeight: 600,
+          fontWeight: 500,
+          letterSpacing: "-0.02em",
           color: REF.numberRed,
         }}
       >
@@ -407,21 +472,22 @@ function ProcessStageCard({
           height: CARD_INK.visual.height,
         }}
       >
-        <StageVisual visual={item.visual} />
+        <StageVisual visual={item.visual} stage={stage} />
       </div>
 
       <h3
         data-process-title
+        data-qa={`stage-${stage}-title`}
         className="absolute font-display tracking-[-0.01em]"
         style={{
           left: CARD_INK.title.left,
-          right: 8,
+          right: 10,
           top: CARD_INK.title.top,
           fontSize: titleSize,
           fontWeight: 600,
-          lineHeight: 1.18,
+          lineHeight: 1.15,
           color: REF.title,
-          whiteSpace: item.step === "04" ? "nowrap" : undefined,
+          whiteSpace: stage === "04" ? "nowrap" : undefined,
         }}
       >
         {item.title}
@@ -429,42 +495,57 @@ function ProcessStageCard({
 
       <p
         data-process-description
+        data-qa={`stage-${stage}-body`}
         className="absolute"
         style={{
           left: CARD_INK.desc.left,
-          right: 8,
+          right: stage === "04" ? 8 : 10,
           top: CARD_INK.desc.top,
-          fontSize: CARD_INK.desc.size,
+          fontSize: stage === "04" ? 10.25 : CARD_INK.desc.size,
           lineHeight: CARD_INK.desc.lineHeight,
           color: REF.bodyText,
+          overflow: "visible",
         }}
       >
-        {(referenceMode ? item.descriptionLines : null)?.map((line) => (
-          <span key={line} className="block">
-            {line}
-          </span>
-        )) ?? item.description}
+        {lines
+          ? lines.map((line, i) => (
+              <span
+                key={line}
+                data-qa={`stage-${stage}-body-line-${i}`}
+                className="block"
+                style={{
+                  whiteSpace: "nowrap",
+                  overflow: "visible",
+                }}
+              >
+                {line}
+              </span>
+            ))
+          : item.description}
       </p>
 
       <div
         data-process-pill
-        className="absolute inline-flex items-center gap-[7px]"
+        data-qa={`stage-${stage}-pill`}
+        className="absolute inline-flex items-center gap-[6px]"
         style={{
           left: CARD_INK.pill.left,
           top: CARD_INK.pill.top,
           height: CARD_INK.pill.height,
-          borderRadius: 7,
+          borderRadius: 6,
           border: `1px solid ${REF.pillBorder}`,
-          background: "rgba(0,0,0,0.55)",
-          paddingLeft: 10,
-          paddingRight: 11,
+          background: "rgba(8,8,8,0.72)",
+          paddingLeft: 7,
+          paddingRight: 8,
           maxWidth: "calc(100% - 1.35rem)",
+          boxSizing: "border-box",
         }}
       >
-        <SupportBadgeIcon visual={item.visual} />
+        <PillIcon visual={item.visual} stage={stage} />
         <span
+          data-qa={`stage-${stage}-pill-label`}
           className="truncate font-medium leading-none"
-          style={{ fontSize: 12, color: "#cfcfcf" }}
+          style={{ fontSize: 10.5, color: "#bdbdbd" }}
         >
           {item.supportLabel}
         </span>
@@ -473,37 +554,41 @@ function ProcessStageCard({
   );
 }
 
-function ConnectorSegment() {
+function ConnectorSegment({ index }: { index: number }) {
   return (
     <span
       aria-hidden
       data-process-connector
+      data-qa={`connector-${index}-wrap`}
       className="relative block h-[16px] w-full"
     >
       <span
         data-process-rail-segment
+        data-qa={`connector-${index}-line`}
         className="absolute inset-x-0 top-1/2 -translate-y-1/2"
         style={{
-          height: 2,
+          height: 1.5,
           background: REF.connector,
-          opacity: 0.92,
-          boxShadow: "0 0 5px rgba(56,25,22,0.7)",
+          opacity: 0.9,
+          boxShadow: "0 0 4px rgba(56,25,22,0.55)",
         }}
       />
       <span
         data-process-node
+        data-qa={`connector-${index}-node`}
         className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full"
         style={{
-          width: 11,
-          height: 11,
+          width: 10,
+          height: 10,
           border: `1.5px solid ${REF.connector}`,
           background: "#111111",
-          boxShadow: "0 0 7px rgba(56,25,22,0.65)",
+          boxShadow: "0 0 6px rgba(56,25,22,0.5)",
         }}
       >
         <span
+          data-qa={`connector-${index}-dot`}
           className="rounded-full"
-          style={{ width: 3.5, height: 3.5, background: REF.connector }}
+          style={{ width: 3, height: 3, background: REF.connector }}
         />
       </span>
     </span>
@@ -556,7 +641,7 @@ function DesktopJourney({
             className="absolute inset-x-0 -translate-y-1/2"
             style={{ top: connectorTop }}
           >
-            <ConnectorSegment />
+            <ConnectorSegment index={index + 1} />
           </div>
         </div>,
       );
@@ -614,7 +699,6 @@ export function ProcessSection({
       }}
     >
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        {/* Center glow target ~56,25,22 at 512,250 */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_64%_at_50%_58%,rgba(72,32,28,1),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_48%_at_50%_20%,rgba(56,25,22,0.55),transparent_56%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_130%_110%_at_50%_50%,transparent_58%,rgba(0,0,0,0.22)_100%)]" />
@@ -628,6 +712,7 @@ export function ProcessSection({
         }
       >
         <header
+          data-qa="heading"
           className={
             referenceMode
               ? "pointer-events-none absolute inset-x-0 text-center"
@@ -636,13 +721,15 @@ export function ProcessSection({
           style={referenceMode ? { top: 0, height: 160 } : undefined}
         >
           <p
+            data-qa="heading-eyebrow"
             className={`font-semibold uppercase leading-none ${
               referenceMode ? "absolute inset-x-0" : ""
             }`}
             style={{
               top: referenceMode ? 49 : undefined,
+              left: referenceMode ? 0 : undefined,
               fontSize: referenceMode ? 9.5 : 11,
-              letterSpacing: referenceMode ? "0.135em" : "0.2em",
+              letterSpacing: referenceMode ? "0.148em" : "0.2em",
               fontWeight: 700,
               color: "#711929",
             }}
@@ -650,17 +737,17 @@ export function ProcessSection({
             {content.eyebrow}
           </p>
           <h2
+            data-qa="heading-title"
             className={`font-display ${
               referenceMode
                 ? "absolute inset-x-0"
                 : "mt-4 text-[28px] sm:text-[32px] xl:text-[34px]"
             }`}
             style={{
-              // Dense ink target ~463×29 starting at y=74
-              top: referenceMode ? 71 : undefined,
-              fontSize: referenceMode ? 30.5 : undefined,
-              lineHeight: referenceMode ? "32px" : 1.15,
-              letterSpacing: "0em",
+              top: referenceMode ? 69 : undefined,
+              fontSize: referenceMode ? 30.25 : undefined,
+              lineHeight: referenceMode ? "31px" : 1.15,
+              letterSpacing: referenceMode ? "0.008em" : "0.01em",
               fontWeight: 600,
               color: REF.title,
             }}
@@ -668,14 +755,16 @@ export function ProcessSection({
             {content.title}
           </h2>
           <p
+            data-qa="heading-support"
             className={`mx-auto ${
               referenceMode ? "absolute inset-x-0" : "mt-3"
             }`}
             style={{
-              top: referenceMode ? 112 : undefined,
-              maxWidth: referenceMode ? 500 : 460,
-              fontSize: referenceMode ? 12.75 : 13.5,
+              top: referenceMode ? 113 : undefined,
+              maxWidth: referenceMode ? 452 : 460,
+              fontSize: referenceMode ? 12.5 : 13.5,
               lineHeight: 1.3,
+              letterSpacing: referenceMode ? "0.005em" : undefined,
               color: REF.supportText,
               whiteSpace: referenceMode ? "nowrap" : undefined,
             }}

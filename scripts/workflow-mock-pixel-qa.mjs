@@ -17,6 +17,16 @@ import { chromium } from "@playwright/test";
 import pixelmatch from "pixelmatch";
 import { PNG } from "pngjs";
 import sharp from "sharp";
+import {
+  delta,
+  fmtBox,
+  fmtDelta,
+  measureAllReferenceRois,
+  measureDomBounds,
+  measurePaintIsolation,
+  preferActual,
+  REFERENCE_ROIS,
+} from "./lib/workflow-element-measure.mjs";
 
 const SITE = (process.env.SITE || "http://localhost:3017").replace(/\/$/, "");
 const OUT = resolve("screenshots/workflow-mock-pixel-qa");
@@ -320,10 +330,25 @@ await section.waitFor({ state: "visible" });
 const actualPath = resolve(OUT, "actual.png");
 await page.screenshot({ path: actualPath, animations: "disabled" });
 
+// Reliable element measurement WHILE page is still clean of QA paint.
+const domBounds = await measureDomBounds(page);
+console.error(
+  `DOM measured ${Object.values(domBounds).filter(Boolean).length} selectors`,
+);
+const paintBounds = await measurePaintIsolation(page, section);
+console.error(
+  `Paint-isolated ${Object.values(paintBounds).filter(Boolean).length} selectors`,
+);
+
+await browser.close();
+
 const ref = normalizeRgba(loadPng(refPngPath));
 const actual = normalizeRgba(loadPng(actualPath));
 writePng(refPngPath, ref);
 writePng(actualPath, actual);
+
+const refRoiBounds = measureAllReferenceRois(ref);
+const actualRoiBounds = measureAllReferenceRois(actual);
 
 // --- Control tests (must pass) ---
 const control = compareImages(actual, actual);
@@ -339,7 +364,6 @@ if (!controlOk) {
     mismatched: control.mismatched,
     controlHot,
   });
-  await browser.close();
   process.exit(3);
 }
 writePng(resolve(OUT, "control-actual-vs-actual-diff.png"), controlAmp);
@@ -352,93 +376,89 @@ writePng(resolve(OUT, "side-by-side.png"), sideBySide(ref, actual));
 
 const regionResults = regions.map((r) => compareRegion(ref, actual, r, r.name));
 
-function stageElementBounds(png, card) {
-  const { l, t, w } = card;
-  const isRed = (x, y) => {
-    const [r, g, b] = sampleRgb(png, x, y);
-    return r > 85 && r > g * 1.3 && r > b * 1.3;
-  };
-  const isWhite = (x, y) => {
-    const [r, g, b] = sampleRgb(png, x, y);
-    return 0.2126 * r + 0.7152 * g + 0.0722 * b >= 170;
-  };
-  const isGray = (x, y) => {
-    const [r, g, b] = sampleRgb(png, x, y);
-    const L = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    return L > 70 && L < 160 && !(r > 85 && r > g * 1.3 && r > b * 1.3);
-  };
-  const box = (x0, y0, x1, y1, pred) => {
-    let minX = x1;
-    let minY = y1;
-    let maxX = x0;
-    let maxY = y0;
-    let count = 0;
-    for (let y = y0; y <= y1; y++) {
-      for (let x = x0; x <= x1; x++) {
-        if (!pred(x, y)) continue;
-        count += 1;
-        minX = Math.min(minX, x);
-        minY = Math.min(minY, y);
-        maxX = Math.max(maxX, x);
-        maxY = Math.max(maxY, y);
-      }
-    }
-    if (!count) return null;
-    return {
-      x: minX,
-      y: minY,
-      w: maxX - minX + 1,
-      h: maxY - minY + 1,
-      count,
-    };
-  };
-  return {
-    number: box(l, t, l + 40, t + 45, isRed),
-    icon: box(l + 4, t + 28, l + w - 4, t + 120, isRed),
-    title: box(l + 4, t + 100, l + w - 4, t + 150, isWhite),
-    body: box(l + 4, t + 128, l + w - 4, t + 185, isGray),
-    pillIcon: box(l + 4, t + 185, l + w - 4, t + 225, isRed),
-  };
-}
-
-function deltaRow(name, refB, actB) {
-  if (!refB && !actB) {
-    return { element: name, ref: null, actual: null, delta: null };
-  }
-  const z = { x: 0, y: 0, w: 0, h: 0 };
-  const r = refB || z;
-  const a = actB || z;
+function deltaRow(name, refB, actB, methods = {}) {
   return {
     element: name,
     ref: refB,
     actual: actB,
-    delta: {
-      x: (a.x ?? 0) - (r.x ?? 0),
-      y: (a.y ?? 0) - (r.y ?? 0),
-      w: (a.w ?? 0) - (r.w ?? 0),
-      h: (a.h ?? 0) - (r.h ?? 0),
-    },
+    delta: delta(refB, actB),
+    methods,
   };
 }
 
-function fmtBox(b) {
-  if (!b) return "-";
-  return `${b.x},${b.y} ${b.w}x${b.h}`;
-}
+/** Canonical comparison keys: ref ROI vs actual paint-ink (fallback DOM). */
+const COMPARE_KEYS = [
+  "heading-eyebrow",
+  "heading-title",
+  "heading-support",
+  ...["01", "02", "03", "04"].flatMap((s) => [
+    `stage-${s}-number`,
+    `stage-${s}-icon-frame`,
+    `stage-${s}-symbol`,
+    `stage-${s}-title`,
+    `stage-${s}-body-line-0`,
+    `stage-${s}-body-line-1`,
+    `stage-${s}-body-line-2`,
+    `stage-${s}-pill`,
+    `stage-${s}-pill-icon`,
+    `stage-${s}-pill-label`,
+  ]),
+  "stage-02-rear-panel",
+  "stage-02-active-dot",
+  "stage-03-rear-panel",
+  "stage-03-check-0",
+  "stage-03-check-1",
+  "stage-03-check-2",
+  "connector-1-line",
+  "connector-1-node",
+  "connector-1-dot",
+  "connector-2-line",
+  "connector-2-node",
+  "connector-2-dot",
+  "connector-3-line",
+  "connector-3-node",
+  "connector-3-dot",
+];
 
-function fmtDelta(d) {
-  if (!d) return "-";
-  const s = (n) => (n > 0 ? `+${n}` : `${n}`);
-  return `${s(d.x)},${s(d.y)} ${s(d.w)}x${s(d.h)}`;
-}
+const elementDeltas = COMPARE_KEYS.map((key) => {
+  const refB = refRoiBounds[key] || null;
+  const actRoi = actualRoiBounds[key] || null;
+  const actPaint = paintBounds[key] || null;
+  const actDom = domBounds[key] || null;
+  const actB = preferActual(key, {
+    roiActual: actRoi,
+    paint: actPaint,
+    dom: actDom,
+  });
+  return deltaRow(key, refB, actB, {
+    ref: refB?.method || (REFERENCE_ROIS[key] ? "roi-miss" : "no-roi"),
+    actual: actB?.method || (actDom ? "dom" : "missing"),
+    paint: actPaint,
+    dom: actDom,
+  });
+});
 
-// Headline dense-ink bounds (stricter white) + full detector for continuity
+// Headline contamination note: wide loose white detector vs dense glyph ink
+const headingTitleLooseRef = paintedTextBounds(ref, {
+  x0: 180,
+  y0: 65,
+  x1: 850,
+  y1: 115,
+  minL: 160,
+});
 const headingTitleDenseRef = paintedTextBounds(ref, {
   x0: 180,
   y0: 70,
   x1: 850,
   y1: 105,
   minL: 180,
+});
+const headingTitleLooseAct = paintedTextBounds(actual, {
+  x0: 180,
+  y0: 65,
+  x1: 850,
+  y1: 115,
+  minL: 160,
 });
 const headingTitleDenseAct = paintedTextBounds(actual, {
   x0: 180,
@@ -448,134 +468,6 @@ const headingTitleDenseAct = paintedTextBounds(actual, {
   minL: 180,
 });
 
-const paintedBounds = {
-  headingEyebrow: paintedTextBounds(ref, {
-    x0: 300,
-    y0: 40,
-    x1: 720,
-    y1: 62,
-    redOnly: true,
-  }),
-  headingTitle: paintedTextBounds(ref, {
-    x0: 180,
-    y0: 65,
-    x1: 850,
-    y1: 115,
-    minL: 160,
-  }),
-  headingTitleDense: headingTitleDenseRef,
-  headingSupport: paintedTextBounds(ref, {
-    x0: 200,
-    y0: 110,
-    x1: 820,
-    y1: 145,
-    minL: 70,
-  }),
-  actualHeadingEyebrow: paintedTextBounds(actual, {
-    x0: 300,
-    y0: 40,
-    x1: 720,
-    y1: 62,
-    redOnly: true,
-  }),
-  actualHeadingTitle: paintedTextBounds(actual, {
-    x0: 180,
-    y0: 65,
-    x1: 850,
-    y1: 115,
-    minL: 160,
-  }),
-  actualHeadingTitleDense: headingTitleDenseAct,
-  actualHeadingSupport: paintedTextBounds(actual, {
-    x0: 200,
-    y0: 110,
-    x1: 820,
-    y1: 145,
-    minL: 70,
-  }),
-};
-
-const cards = [
-  { name: "stage-01", l: 85, t: 170, w: 157 },
-  { name: "stage-02", l: 282, t: 170, w: 220 },
-  { name: "stage-03", l: 536, t: 170, w: 210 },
-  { name: "stage-04", l: 779, t: 170, w: 142 },
-];
-
-const elementDeltas = [
-  deltaRow(
-    "heading.eyebrow",
-    paintedBounds.headingEyebrow && {
-      x: paintedBounds.headingEyebrow.left,
-      y: paintedBounds.headingEyebrow.top,
-      w: paintedBounds.headingEyebrow.width,
-      h: paintedBounds.headingEyebrow.height,
-    },
-    paintedBounds.actualHeadingEyebrow && {
-      x: paintedBounds.actualHeadingEyebrow.left,
-      y: paintedBounds.actualHeadingEyebrow.top,
-      w: paintedBounds.actualHeadingEyebrow.width,
-      h: paintedBounds.actualHeadingEyebrow.height,
-    },
-  ),
-  deltaRow(
-    "heading.title",
-    paintedBounds.headingTitle && {
-      x: paintedBounds.headingTitle.left,
-      y: paintedBounds.headingTitle.top,
-      w: paintedBounds.headingTitle.width,
-      h: paintedBounds.headingTitle.height,
-    },
-    paintedBounds.actualHeadingTitle && {
-      x: paintedBounds.actualHeadingTitle.left,
-      y: paintedBounds.actualHeadingTitle.top,
-      w: paintedBounds.actualHeadingTitle.width,
-      h: paintedBounds.actualHeadingTitle.height,
-    },
-  ),
-  deltaRow(
-    "heading.titleDense",
-    headingTitleDenseRef && {
-      x: headingTitleDenseRef.left,
-      y: headingTitleDenseRef.top,
-      w: headingTitleDenseRef.width,
-      h: headingTitleDenseRef.height,
-    },
-    headingTitleDenseAct && {
-      x: headingTitleDenseAct.left,
-      y: headingTitleDenseAct.top,
-      w: headingTitleDenseAct.width,
-      h: headingTitleDenseAct.height,
-    },
-  ),
-  deltaRow(
-    "heading.support",
-    paintedBounds.headingSupport && {
-      x: paintedBounds.headingSupport.left,
-      y: paintedBounds.headingSupport.top,
-      w: paintedBounds.headingSupport.width,
-      h: paintedBounds.headingSupport.height,
-    },
-    paintedBounds.actualHeadingSupport && {
-      x: paintedBounds.actualHeadingSupport.left,
-      y: paintedBounds.actualHeadingSupport.top,
-      w: paintedBounds.actualHeadingSupport.width,
-      h: paintedBounds.actualHeadingSupport.height,
-    },
-  ),
-];
-
-for (const card of cards) {
-  const refE = stageElementBounds(ref, card);
-  const actE = stageElementBounds(actual, card);
-  for (const key of ["number", "icon", "title", "body", "pillIcon"]) {
-    elementDeltas.push(
-      deltaRow(`${card.name}.${key}`, refE[key], actE[key]),
-    );
-  }
-}
-
-// Body-text sample: find a gray ink pixel inside stage-01 description band
 function findBodySample(png) {
   for (let y = 310; y <= 340; y++) {
     for (let x = 105; x <= 200; x++) {
@@ -591,6 +483,62 @@ function findBodySample(png) {
 const bodyRef = findBodySample(ref);
 const bodyAct = findBodySample(actual);
 
+function findMutedStroke(png) {
+  // Walk stage-01 icon symbol band; take median-ish dark red stroke sample
+  const samples = [];
+  for (let y = 220; y <= 255; y++) {
+    for (let x = 108; x <= 145; x++) {
+      const [r, g, b] = sampleRgb(png, x, y);
+      if (r > 20 && r < 120 && r > g && r > b && r - g > 5) {
+        samples.push({ xy: [x, y], rgb: [r, g, b] });
+      }
+    }
+  }
+  if (!samples.length) {
+    return { xy: [125, 240], rgb: sampleRgb(png, 125, 240) };
+  }
+  samples.sort((a, b) => a.rgb[0] - b.rgb[0]);
+  return samples[Math.floor(samples.length / 2)];
+}
+const mutedRef = findMutedStroke(ref);
+const mutedAct = findMutedStroke(actual);
+
+function findTitleInk(png) {
+  const candidates = [];
+  for (let y = 286; y <= 300; y++) {
+    for (let x = 105; x <= 200; x++) {
+      const [r, g, b] = sampleRgb(png, x, y);
+      if (r > 200 && g > 200 && b > 200 && Math.abs(r - g) < 8) {
+        candidates.push({ xy: [x, y], rgb: [r, g, b] });
+      }
+    }
+  }
+  if (!candidates.length) {
+    return { xy: [120, 290], rgb: sampleRgb(png, 120, 290) };
+  }
+  // Prefer solid interiors near the mode (not brightest AA fringe)
+  candidates.sort((a, b) => a.rgb[0] - b.rgb[0]);
+  return candidates[Math.floor(candidates.length * 0.35)];
+}
+const titleRef = findTitleInk(ref);
+const titleAct = findTitleInk(actual);
+
+function findPillBorder(png) {
+  // Scan left edge of stage-01 pill band for mid-dark border (not fill, not card)
+  for (let y = 364; y <= 384; y++) {
+    for (let x = 96; x <= 110; x++) {
+      const [r, g, b] = sampleRgb(png, x, y);
+      const L = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      if (L >= 20 && L <= 45 && Math.abs(r - g) < 8) {
+        return { xy: [x, y], rgb: [r, g, b] };
+      }
+    }
+  }
+  return { xy: [100, 368], rgb: sampleRgb(png, 100, 368) };
+}
+const pillRef = findPillBorder(ref);
+const pillAct = findPillBorder(actual);
+
 const colorSamples = {
   pageBg: {
     xy: [40, 40],
@@ -598,10 +546,10 @@ const colorSamples = {
     actual: sampleRgb(actual, 40, 40),
   },
   card1Fill: {
-    // Below visual / above description — avoid icon glow contamination
-    xy: [155, 355],
-    ref: sampleRgb(ref, 155, 355),
-    actual: sampleRgb(actual, 155, 355),
+    // Empty card fill between visual and title (avoid body/pill ink)
+    xy: [200, 270],
+    ref: sampleRgb(ref, 200, 270),
+    actual: sampleRgb(actual, 200, 270),
   },
   card1Border: {
     xy: [85, 280],
@@ -614,42 +562,17 @@ const colorSamples = {
     actual: sampleRgb(actual, 108, 192),
   },
   mutedIconStroke: {
-    xy: [125, 240],
-    ref: sampleRgb(ref, 125, 240),
-    actual: sampleRgb(actual, 125, 240),
+    xyRef: mutedRef.xy,
+    xyActual: mutedAct.xy,
+    ref: mutedRef.rgb,
+    actual: mutedAct.rgb,
   },
-  title: (() => {
-    // Seek a bright title glyph inside stage-01 title band
-    for (const png of [ref, actual]) {
-      void png;
-    }
-    let refXY = [120, 290];
-    let actXY = [120, 290];
-    for (let y = 286; y <= 298; y++) {
-      for (let x = 105; x <= 200; x++) {
-        const [r, g, b] = sampleRgb(ref, x, y);
-        if (r > 200 && g > 200 && b > 200) {
-          refXY = [x, y];
-          break;
-        }
-      }
-    }
-    for (let y = 286; y <= 298; y++) {
-      for (let x = 105; x <= 200; x++) {
-        const [r, g, b] = sampleRgb(actual, x, y);
-        if (r > 200 && g > 200 && b > 200) {
-          actXY = [x, y];
-          break;
-        }
-      }
-    }
-    return {
-      xyRef: refXY,
-      xyActual: actXY,
-      ref: sampleRgb(ref, refXY[0], refXY[1]),
-      actual: sampleRgb(actual, actXY[0], actXY[1]),
-    };
-  })(),
+  title: {
+    xyRef: titleRef.xy,
+    xyActual: titleAct.xy,
+    ref: titleRef.rgb,
+    actual: titleAct.rgb,
+  },
   bodyText: {
     xyRef: bodyRef.xy,
     xyActual: bodyAct.xy,
@@ -657,9 +580,10 @@ const colorSamples = {
     actual: bodyAct.rgb,
   },
   pillBorder: {
-    xy: [100, 368],
-    ref: sampleRgb(ref, 100, 368),
-    actual: sampleRgb(actual, 100, 368),
+    xyRef: pillRef.xy,
+    xyActual: pillAct.xy,
+    ref: pillRef.rgb,
+    actual: pillAct.rgb,
   },
   connector: {
     xy: [262, 239],
@@ -673,10 +597,64 @@ const colorSamples = {
   },
 };
 
+mkdirSync(resolve(OUT, "isolated"), { recursive: true });
+function cropPair(name, box, pad = 4) {
+  if (!box) return;
+  const x = Math.max(0, box.x - pad);
+  const y = Math.max(0, box.y - pad);
+  const w = Math.min(W - x, box.w + pad * 2);
+  const h = Math.min(H - y, box.h + pad * 2);
+  const region = { x, y, w, h };
+  writePng(
+    resolve(OUT, `isolated/${name}-ref.png`),
+    crop(ref, region),
+  );
+  writePng(
+    resolve(OUT, `isolated/${name}-actual.png`),
+    crop(actual, region),
+  );
+  const side = sideBySide(crop(ref, region), crop(actual, region));
+  writePng(resolve(OUT, `isolated/${name}-side.png`), side);
+}
+
+const isolateNames = [
+  "heading-eyebrow",
+  "heading-title",
+  "heading-support",
+  "stage-01-number",
+  "stage-01-symbol",
+  "stage-01-pill-icon",
+  "stage-01-title",
+  "stage-01-body-line-0",
+  "stage-02-symbol",
+  "stage-02-rear-panel",
+  "stage-02-active-dot",
+  "stage-03-symbol",
+  "stage-03-rear-panel",
+  "stage-03-check-0",
+  "stage-04-symbol",
+  "connector-1-node",
+];
+for (const name of isolateNames) {
+  const box =
+    preferActual(name, {
+      roiActual: actualRoiBounds[name],
+      paint: paintBounds[name],
+      dom: domBounds[name],
+    }) || refRoiBounds[name];
+  cropPair(name, box, 6);
+}
+
 const report = {
   site: SITE,
   viewport: { width: W, height: H },
   pixelmatchOptions: PM_OPTS,
+  measurementMethod: {
+    actual:
+      "DOM layout + sequential unique-color paint isolation (full SVG restore) + symmetric tight ROIs on actual PNG",
+    reference: "curated tight ROI color extraction (no card-wide flood fill)",
+    note: "pill-icon / symbol / number never use merged card flood fills",
+  },
   controlTest: {
     name: "actual-vs-actual",
     mismatchedPixels: control.mismatched,
@@ -687,7 +665,17 @@ const report = {
   mismatchedPixels: mismatched,
   totalPixels: W * H,
   mismatchRatio: mismatched / (W * H),
-  paintedBounds,
+  headingTitleContamination: {
+    note: "Loose L>=160 detector on reference can include glow/AA below glyphs; dense L>=180 is glyph ink.",
+    looseRef: headingTitleLooseRef,
+    denseRef: headingTitleDenseRef,
+    looseActual: headingTitleLooseAct,
+    denseActual: headingTitleDenseAct,
+  },
+  domBounds,
+  paintBounds,
+  refRoiBounds,
+  actualRoiBounds,
   elementDeltas,
   colorSamples,
   regions: regionResults,
@@ -699,6 +687,7 @@ const report = {
     sideBySide: "side-by-side.png",
     controlDiff: "control-actual-vs-actual-diff.png",
     crops: "crops/",
+    isolated: "isolated/",
     measurement: "MEASUREMENT.md",
   },
 };
@@ -706,9 +695,24 @@ const report = {
 writeFileSync(resolve(OUT, "report.json"), JSON.stringify(report, null, 2));
 
 const md = [];
-md.push("# Workflow mock visual QA - measurement delta table");
+md.push("# Workflow mock visual QA — element measurement");
 md.push("");
-md.push(`Canvas: **1024x467** | Generated from capture at \`${SITE}\``);
+md.push(`Canvas: **1024×467** | Capture: \`${SITE}\``);
+md.push("");
+md.push("## Measurement method (repaired)");
+md.push("");
+md.push("| Side | Method |");
+md.push("|---|---|");
+md.push(
+  "| **Actual** | Stable `data-qa` selectors → DOM layout; sequential unique-color paint isolation with full SVG descendant restore; plus the same tight ROIs on the actual PNG for symmetric ink bounds. QA paint is never left in normal rendering. |",
+);
+md.push(
+  "| **Reference** | Curated tight ROIs only (see `REFERENCE_ROIS`). No card-wide red flood fills that merge glow, rear panels, borders, or pill chrome into “icon” labels. |",
+);
+md.push("");
+md.push(
+  "**Do not trust prior MEASUREMENT rows** that labeled combined regions as `pillIcon` / `icon`. Those used connected-color bounds and are retired.",
+);
 md.push("");
 md.push("## Control");
 md.push("");
@@ -716,13 +720,9 @@ md.push("| Check | Result |");
 md.push("|---|---|");
 md.push(`| actual vs actual mismatched | **${control.mismatched}** |`);
 md.push(`| amplified hot pixels | **${controlHot}** |`);
-md.push(`| overall mismatch | **${(mismatched / (W * H) * 100).toFixed(2)}%** (${mismatched} px) |`);
-md.push("");
-md.push("## Pixelmatch options");
-md.push("");
-md.push("```json");
-md.push(JSON.stringify(PM_OPTS, null, 2));
-md.push("```");
+md.push(
+  `| overall mismatch | **${((mismatched / (W * H)) * 100).toFixed(2)}%** (${mismatched} px) |`,
+);
 md.push("");
 md.push("## Locked outer geometry (unchanged)");
 md.push("");
@@ -733,14 +733,52 @@ md.push("| 02 | 282 | 170 | 220 | 229 |");
 md.push("| 03 | 536 | 170 | 210 | 229 |");
 md.push("| 04 | 779 | 170 | 142 | 229 |");
 md.push("");
-md.push("## Per-element painted bounds delta");
+md.push("## Heading title isolation note");
 md.push("");
-md.push("| Element | Reference x,y w x h | Actual x,y w x h | Delta x,y w x h |");
-md.push("|---|---|---|---|");
+md.push(
+  `| Detector | Reference | Actual |`,
+);
+md.push("|---|---|---|");
+md.push(
+  `| Loose (L≥160, can include glow) | ${headingTitleLooseRef ? `${headingTitleLooseRef.left},${headingTitleLooseRef.top} ${headingTitleLooseRef.width}×${headingTitleLooseRef.height}` : "-"} | ${headingTitleLooseAct ? `${headingTitleLooseAct.left},${headingTitleLooseAct.top} ${headingTitleLooseAct.width}×${headingTitleLooseAct.height}` : "-"} |`,
+);
+md.push(
+  `| Dense glyph (L≥180) | ${headingTitleDenseRef ? `${headingTitleDenseRef.left},${headingTitleDenseRef.top} ${headingTitleDenseRef.width}×${headingTitleDenseRef.height}` : "-"} | ${headingTitleDenseAct ? `${headingTitleDenseAct.left},${headingTitleDenseAct.top} ${headingTitleDenseAct.width}×${headingTitleDenseAct.height}` : "-"} |`,
+);
+md.push(
+  `| Symmetric ROI + paint | ${fmtBox(refRoiBounds["heading-title"])} | roi ${fmtBox(actualRoiBounds["heading-title"])} / paint ${fmtBox(paintBounds["heading-title"])} |`,
+);
+md.push("");
+md.push("## Element-specific bounds (truthful)");
+md.push("");
+md.push(
+  "| Element | Reference (ROI) | Actual (paint∥DOM) | Delta | Methods |",
+);
+md.push("|---|---|---|---|---|");
 for (const row of elementDeltas) {
   md.push(
-    `| ${row.element} | ${fmtBox(row.ref)} | ${fmtBox(row.actual)} | ${fmtDelta(row.delta)} |`,
+    `| \`${row.element}\` | ${fmtBox(row.ref)} | ${fmtBox(row.actual)} | ${fmtDelta(row.delta)} | ref=${row.methods.ref}; act=${row.methods.actual} |`,
   );
+}
+md.push("");
+md.push("## Actual DOM layout boxes (complete)");
+md.push("");
+md.push("| Selector | x,y w×h |");
+md.push("|---|---|");
+for (const [name, b] of Object.entries(domBounds).sort(([a], [c]) =>
+  a.localeCompare(c),
+)) {
+  md.push(`| \`${name}\` | ${fmtBox(b)} |`);
+}
+md.push("");
+md.push("## Actual paint-isolated ink (subset)");
+md.push("");
+md.push("| Selector | x,y w×h | count |");
+md.push("|---|---|---:|");
+for (const [name, b] of Object.entries(paintBounds).sort(([a], [c]) =>
+  a.localeCompare(c),
+)) {
+  md.push(`| \`${name}\` | ${fmtBox(b)} | ${b?.count ?? 0} |`);
 }
 md.push("");
 md.push("## Color samples (RGB)");
@@ -766,13 +804,50 @@ for (const r of regionResults) {
   );
 }
 md.push("");
+md.push("## Isolated primitive comparisons");
+md.push("");
+md.push(
+  "Under `isolated/`: `*-ref.png`, `*-actual.png`, `*-side.png` for major primitives.",
+);
+md.push("");
 md.push("## Crops");
 md.push("");
-md.push("Nearest-neighbor 4× ref/actual/diff under `crops/`.");
+md.push("Nearest-neighbor 4× region ref/actual/diff under `crops/`.");
+md.push("");
+md.push("## Remaining discrepancies (from this capture)");
+md.push("");
+const material = elementDeltas.filter((row) => {
+  if (!row.delta || !row.ref || !row.actual) return true;
+  return (
+    Math.abs(row.delta.x) > 2 ||
+    Math.abs(row.delta.y) > 2 ||
+    Math.abs(row.delta.w) > 3 ||
+    Math.abs(row.delta.h) > 3
+  );
+});
+for (const row of material) {
+  md.push(
+    `- \`${row.element}\`: ref ${fmtBox(row.ref)} → act ${fmtBox(row.actual)} (${fmtDelta(row.delta)}; ${row.methods.actual})`,
+  );
+}
 writeFileSync(resolve(OUT, "MEASUREMENT.md"), md.join("\n"));
 
-console.log(JSON.stringify(report, null, 2));
-
-await browser.close();
+console.log(
+  JSON.stringify(
+    {
+      overall: `${((mismatched / (W * H)) * 100).toFixed(2)}%`,
+      mismatched,
+      control: control.mismatched,
+      elementRows: elementDeltas.length,
+      materialDeltas: material.length,
+      regions: regionResults.map((r) => ({
+        name: r.name,
+        pct: `${(r.ratio * 100).toFixed(2)}%`,
+      })),
+    },
+    null,
+    2,
+  ),
+);
 
 process.exit(mismatched / (W * H) > 0.45 ? 2 : 0);
