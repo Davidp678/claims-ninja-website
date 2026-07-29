@@ -1,6 +1,6 @@
 import { PROCESS } from "./tokens";
 
-/** Connector rail segment: line + ring + interior + center dot + local glow. */
+/** Connector rail: line + ring + interior + center dot + local glow. */
 export function ProcessConnector({ index }: { index: 1 | 2 | 3 }) {
   const spec = PROCESS.connectorLines[index - 1];
   const node = PROCESS.connectorNode;
@@ -11,7 +11,7 @@ export function ProcessConnector({ index }: { index: 1 | 2 | 3 }) {
       aria-hidden
       data-process-connector
       data-qa={`connector-${index}-wrap`}
-      className="relative block h-[16px] w-full overflow-visible"
+      className="relative block h-[19px] w-full overflow-visible"
     >
       <span
         data-qa={`connector-${index}-glow`}
@@ -23,7 +23,7 @@ export function ProcessConnector({ index }: { index: 1 | 2 | 3 }) {
           height: node.glow,
           transform: "translate(-50%, -50%)",
           background:
-            "radial-gradient(circle, rgba(56,25,22,0.7) 0%, rgba(56,25,22,0.28) 42%, transparent 70%)",
+            "radial-gradient(circle, rgba(152,71,70,0.55) 0%, rgba(56,25,22,0.35) 45%, transparent 72%)",
         }}
       />
 
@@ -36,7 +36,6 @@ export function ProcessConnector({ index }: { index: 1 | 2 | 3 }) {
           width: spec.width,
           height: 3,
           background: PROCESS.connector,
-          opacity: 0.9,
         }}
       />
 
@@ -55,11 +54,9 @@ export function ProcessConnector({ index }: { index: 1 | 2 | 3 }) {
           overflow: "hidden",
         }}
       >
-        {/* Measurement targets only — ring paint lives on the node itself. */}
         <span
           data-qa={`connector-${index}-node-border`}
           className="pointer-events-none absolute inset-0 rounded-full"
-          style={{ opacity: 0 }}
         />
         <span
           data-qa={`connector-${index}-node-interior`}
@@ -69,12 +66,11 @@ export function ProcessConnector({ index }: { index: 1 | 2 | 3 }) {
             height: node.interior,
             transform: "translate(-50%, -50%)",
             background: PROCESS.pageBg,
-            opacity: 0,
           }}
         />
         <span
           data-qa={`connector-${index}-dot`}
-          className="relative rounded-full"
+          className="relative z-[1] rounded-full"
           style={{
             width: node.dot,
             height: node.dot,

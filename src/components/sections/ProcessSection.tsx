@@ -51,9 +51,11 @@ export function ProcessSection({
         >
           <p
             data-qa="heading-eyebrow"
-            className={`font-semibold uppercase leading-none ${
-              referenceMode ? "absolute inset-x-0" : ""
-            }`}
+            className={
+              referenceMode
+                ? "absolute left-1/2 -translate-x-1/2 font-semibold uppercase leading-none"
+                : "font-semibold uppercase leading-none"
+            }
             style={{
               top: referenceMode ? heading.eyebrowTop : undefined,
               fontSize: referenceMode ? heading.eyebrowSize : 11,
@@ -62,46 +64,56 @@ export function ProcessSection({
                 : "0.2em",
               fontWeight: 700,
               color: PROCESS.eyebrow,
+              whiteSpace: "nowrap",
             }}
           >
             {content.eyebrow}
           </p>
           <h2
             data-qa="heading-title"
-            className={`font-display ${
+            className={
               referenceMode
-                ? "absolute inset-x-0"
-                : "mt-4 text-[28px] sm:text-[32px] xl:text-[34px]"
-            }`}
+                ? "absolute left-1/2 -translate-x-1/2 font-display whitespace-nowrap"
+                : "mt-4 font-display text-[28px] sm:text-[32px] xl:text-[34px]"
+            }
             style={{
               top: referenceMode ? heading.titleTop : undefined,
               fontSize: referenceMode ? heading.titleSize : undefined,
               lineHeight: referenceMode ? heading.titleLineHeight : 1.15,
-              letterSpacing: referenceMode ? "-0.004em" : "0.01em",
+              letterSpacing: referenceMode ? "-0.01em" : "0.01em",
               fontWeight: 600,
               color: PROCESS.title,
-              // Optical center vs glyph bounds at the locked canvas.
-              marginLeft: referenceMode ? 4 : undefined,
             }}
           >
             {content.title}
           </h2>
           <p
             data-qa="heading-support"
-            className={`mx-auto ${
-              referenceMode ? "absolute inset-x-0" : "mt-3"
-            }`}
-            style={{
-              top: referenceMode ? heading.supportTop : undefined,
-              maxWidth: referenceMode ? heading.supportMaxWidth : 460,
-              fontSize: referenceMode ? heading.supportSize : 13.5,
-              lineHeight: 1.25,
-              fontWeight: 400,
-              color: PROCESS.supportText,
-              opacity: 0.95,
-              whiteSpace: referenceMode ? "nowrap" : undefined,
-              marginLeft: referenceMode ? 4 : undefined,
-            }}
+            className={
+              referenceMode
+                ? "absolute whitespace-nowrap"
+                : "mx-auto mt-3"
+            }
+            style={
+              referenceMode
+                ? {
+                    top: heading.supportTop,
+                    left: heading.supportLeft,
+                    width: heading.supportMaxWidth,
+                    fontSize: heading.supportSize,
+                    lineHeight: 1.25,
+                    fontWeight: 400,
+                    color: PROCESS.supportText,
+                    textAlign: "center",
+                  }
+                : {
+                    maxWidth: 460,
+                    fontSize: 13.5,
+                    lineHeight: 1.25,
+                    fontWeight: 400,
+                    color: PROCESS.supportText,
+                  }
+            }
           >
             {content.description}
           </p>

@@ -19,13 +19,14 @@ export const PROCESS = {
   cardRadius: 11,
   cardShadow: "0 12px 28px -16px rgba(0,0,0,0.92)",
 
-  title: "#e7e7e7",
-  bodyText: "#686868",
-  supportText: "#686868",
+  title: "#e8e8e8",
+  bodyText: "#7a7a7a",
+  supportText: "#8a8a8a",
   pillBorder: "#1c1c1c",
-  pillLabel: "#a3a3a3",
+  pillLabel: "#b0b0b0",
   pillBg: "rgba(8,8,8,0.72)",
-  mutedRed: "#2b1c1f",
+  /** Symbol / pill stroke — readable against card fills (reference appearance). */
+  mutedRed: "#8a4548",
   connector: "#984746",
   numberRed: "#762e31",
   numberRedRgb: "118, 46, 49",
@@ -36,27 +37,36 @@ export const PROCESS = {
   frameBorder: "rgba(255,255,255,0.13)",
   frameBg: "#121212",
 
+  /**
+   * Card-relative ink from reference masks:
+   * number (98,186), frame (97,210), title (98,282), body (98,303), pill (96,362)
+   * for card 01 at (85,170).
+   */
   ink: {
-    number: { left: 15, top: 16, size: 14.5 },
+    number: { left: 13, top: 16, size: 14.5 },
     visual: { left: 11, top: 28, height: 82 },
-    title: { left: 14, top: 112, size: 12.25 },
-    desc: { left: 15, top: 133, size: 9.4, lineHeight: 1.52 },
-    pill: { left: 11, top: 191, height: 22 },
+    title: { left: 13, top: 112, size: 12.4 },
+    desc: { left: 13, top: 133, size: 9.5, lineHeight: 1.4 },
+    pill: { left: 11, top: 192, height: 22 },
   },
+
+  /** Frame top relative to visual area (mask y 210 − cardTop 170 − visualTop 28). */
+  frameTop: 12,
 
   heading: {
     eyebrowTop: 49,
-    eyebrowSize: 9.4,
-    eyebrowTracking: "0.142em",
-    titleTop: 70,
-    titleSize: 30.1,
-    titleLineHeight: "30px",
+    eyebrowSize: 9.5,
+    eyebrowTracking: "0.16em",
+    titleTop: 72,
+    titleSize: 30,
+    titleLineHeight: "32px",
     supportTop: 113,
-    supportSize: 12.35,
-    supportMaxWidth: 450,
+    supportSize: 13,
+    supportMaxWidth: 460,
+    /** Canvas x for centered support (mask 288). */
+    supportLeft: 288,
   },
 
-  /** Gap-indexed connector line insets (gaps 40 / 34 / 33). */
   connectorLines: [
     { left: 4, width: 30, nodeNudgeX: 0 },
     { left: 6, width: 24, nodeNudgeX: 0 },
@@ -68,15 +78,15 @@ export const PROCESS = {
     border: 1.5,
     interior: 9,
     dot: 5,
-    /** Soft node halo; keep tight to avoid washing the connector crop. */
-    glow: 14,
+    glow: 19,
   },
 
+  /** Allow full labels; mask widths were outer ink, not hard clip. */
   pillMaxWidth: {
-    "01": 94,
-    "02": 120,
-    "03": 132,
-    "04": 100,
+    "01": 120,
+    "02": 150,
+    "03": 165,
+    "04": 120,
   } as const,
 } as const;
 

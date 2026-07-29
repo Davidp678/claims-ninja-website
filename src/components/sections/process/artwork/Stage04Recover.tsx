@@ -2,7 +2,6 @@ import { PrimaryIconFrame } from "../PrimaryIconFrame";
 import { StrokeIcon } from "../StrokeIcon";
 import { PROCESS } from "../tokens";
 
-/** Framed circular trend / recovery mark (Stage 04). */
 export function Stage04Recover({ stage }: { stage: string }) {
   return (
     <div
@@ -12,17 +11,17 @@ export function Stage04Recover({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[-1px] top-[4px] h-[48px] w-[48px] rounded-full blur-[4px]"
+        className="pointer-events-none absolute left-[-1px] top-[2px] h-[48px] w-[48px] rounded-full blur-[4px]"
         style={{
           background:
             "radial-gradient(circle, rgba(56,25,22,0.48), transparent 68%)",
         }}
       />
-      <div className="absolute left-[1px] top-[13px]">
+      <div className="absolute left-[0px]" style={{ top: PROCESS.frameTop }}>
         <PrimaryIconFrame stage={stage} size={50}>
           <StrokeIcon
             className="h-[36px] w-[36px]"
-            strokeWidth={1.85}
+            strokeWidth={1.8}
             color={PROCESS.mutedRed}
             qa={`stage-${stage}-symbol`}
           >

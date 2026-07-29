@@ -2,7 +2,6 @@ import { PrimaryIconFrame } from "../PrimaryIconFrame";
 import { StrokeIcon } from "../StrokeIcon";
 import { PROCESS } from "../tokens";
 
-/** Framed document + upward arrow (Stage 01). */
 export function Stage01Upload({ stage }: { stage: string }) {
   return (
     <div
@@ -12,17 +11,17 @@ export function Stage01Upload({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[-1px] top-[4px] h-[48px] w-[48px] rounded-full blur-[4px]"
+        className="pointer-events-none absolute left-[-1px] top-[2px] h-[48px] w-[48px] rounded-full blur-[4px]"
         style={{
           background:
             "radial-gradient(circle, rgba(56,25,22,0.48), transparent 68%)",
         }}
       />
-      <div className="absolute left-[2px] top-[15px]">
+      <div className="absolute left-[1px]" style={{ top: PROCESS.frameTop }}>
         <PrimaryIconFrame stage={stage} size={50}>
           <StrokeIcon
             className="h-[36px] w-[36px]"
-            strokeWidth={1.9}
+            strokeWidth={1.85}
             color={PROCESS.mutedRed}
             qa={`stage-${stage}-symbol`}
           >

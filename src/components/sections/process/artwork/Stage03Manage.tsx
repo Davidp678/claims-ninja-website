@@ -3,11 +3,15 @@ import { StrokeIcon } from "../StrokeIcon";
 import { PROCESS } from "../tokens";
 
 /**
- * Stage 03: people + speech-bubble mark over a three-row checklist panel.
+ * Stage 03 — people + speech bubble over a three-row checklist panel.
+ * Checks sit on the left edge of each row (mask x=589).
  */
 export function Stage03Manage({ stage }: { stage: string }) {
-  /** Check tops relative to visual: canvas 208/228/248 − cardTop 170 − visualTop 28. */
-  const checkTops = [9, 29, 49] as const;
+  const rows = [
+    { top: 10, checkTop: 9, barW: 92 },
+    { top: 30, checkTop: 29, barW: 78 },
+    { top: 50, checkTop: 49, barW: 64 },
+  ] as const;
 
   return (
     <div
@@ -17,7 +21,7 @@ export function Stage03Manage({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[34px] top-[8px] h-[52px] w-[110px] rounded-[10px] blur-[6px]"
+        className="pointer-events-none absolute left-[34px] top-[6px] h-[52px] w-[110px] rounded-[10px] blur-[6px]"
         style={{
           background:
             "radial-gradient(ellipse at 45% 45%, rgba(56,25,22,0.4), transparent 70%)",
@@ -26,56 +30,48 @@ export function Stage03Manage({ stage }: { stage: string }) {
 
       <div
         data-qa={`stage-${stage}-rear-panel`}
-        className="absolute left-[24px] top-[1px] h-[72px] overflow-hidden rounded-[9px]"
+        className="absolute left-[24px] top-[2px] h-[72px] overflow-hidden rounded-[9px]"
         style={{
           width: 160,
           background: PROCESS.panelBg,
           border: `1px solid ${PROCESS.panelBorder}`,
         }}
       >
-        {[0, 1, 2].map((i) => (
+        {rows.map((row, i) => (
           <div
             key={i}
             data-qa={`stage-${stage}-row-${i}`}
-            className="absolute left-[26px] right-[10px] flex h-[14px] items-center gap-[5px] rounded-[4px] px-[5px]"
+            className="absolute flex h-[16px] items-center rounded-[4px]"
             style={{
-              top: 8 + i * 20,
-              background: "rgba(0,0,0,0.38)",
-              border: "1px solid rgba(255,255,255,0.09)",
+              left: 28,
+              right: 10,
+              top: row.top,
+              background: "rgba(0,0,0,0.45)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              paddingLeft: 14,
             }}
           >
             <span
               data-qa={`stage-${stage}-bar-a-${i}`}
-              className="h-[4px] flex-1 rounded-[2px]"
-              style={{ background: "rgba(255,255,255,0.17)" }}
-            />
-            <span
-              data-qa={`stage-${stage}-bar-b-${i}`}
-              className="h-[4px] rounded-[2px]"
+              className="h-[5px] rounded-full"
               style={{
-                width: i === 0 ? 18 : i === 1 ? 14 : 10,
-                background: "rgba(255,255,255,0.11)",
+                width: row.barW,
+                background: "rgba(255,255,255,0.34)",
               }}
             />
           </div>
         ))}
-        <span
-          data-qa={`stage-${stage}-right-edge`}
-          className="absolute bottom-[7px] right-[6px] top-[7px] w-px"
-          style={{ background: "rgba(255,255,255,0.12)" }}
-        />
       </div>
 
-      {checkTops.map((top, i) => (
+      {rows.map((row, i) => (
         <span
           key={i}
           data-qa={`stage-${stage}-check-${i}`}
           className="absolute z-20 flex h-[16px] w-[16px] items-center justify-center rounded-full"
           style={{
             left: 41,
-            top,
-            border: `1.35px solid ${PROCESS.mutedRed}`,
-            color: PROCESS.mutedRed,
+            top: row.checkTop,
+            border: `1.5px solid ${PROCESS.mutedRed}`,
             background: PROCESS.panelBg,
           }}
         >
@@ -86,7 +82,7 @@ export function Stage03Manage({ stage }: { stage: string }) {
             className="h-[8px] w-[8px]"
             fill="none"
             stroke={PROCESS.mutedRed}
-            strokeWidth="2"
+            strokeWidth="2.1"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
@@ -95,20 +91,22 @@ export function Stage03Manage({ stage }: { stage: string }) {
         </span>
       ))}
 
-      <div className="absolute left-[2px] top-[14px]">
+      <div className="absolute left-[2px]" style={{ top: PROCESS.frameTop }}>
         <PrimaryIconFrame stage={stage} size={48}>
           <StrokeIcon
-            className="h-[33px] w-[33px]"
-            strokeWidth={1.75}
+            className="h-[34px] w-[34px]"
+            strokeWidth={1.85}
             color={PROCESS.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
-            <circle cx="7.8" cy="7.4" r="3.1" />
-            <circle cx="15.7" cy="8.4" r="2.6" />
-            <path d="M2.9 18.9c.8-2.9 3-4.7 5.1-4.7s4.3 1.8 5.1 4.7" />
-            <path d="M13.4 14.9c1.85-.5 3.4.3 4.4 1.9" />
-            <rect x="14.9" y="2.9" width="5.8" height="4" rx="1.15" />
-            <path d="M16.1 4.85h3M16.1 6h2.1" />
+            <circle cx="7.6" cy="8.2" r="3.2" />
+            <circle cx="15.4" cy="9" r="2.6" />
+            <path d="M2.6 19.4c.85-3 3.1-4.8 5.2-4.8s4.3 1.8 5.15 4.8" />
+            <path d="M13.2 15.4c1.9-.55 3.5.25 4.55 2" />
+            <rect x="14.4" y="2.2" width="6.4" height="4.4" rx="1.25" />
+            <circle cx="16" cy="4.4" r="0.6" fill={PROCESS.mutedRed} />
+            <circle cx="17.7" cy="4.4" r="0.6" fill={PROCESS.mutedRed} />
+            <circle cx="19.4" cy="4.4" r="0.6" fill={PROCESS.mutedRed} />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>

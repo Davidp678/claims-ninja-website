@@ -22,7 +22,7 @@ These two bound types are never mixed in a single delta cell. Mask audit overlay
 |---|---|
 | actual vs actual mismatched | **0** |
 | amplified hot pixels | **0** |
-| overall mismatch | **5.07%** (24245 px) |
+| overall mismatch | **6.09%** (29100 px) |
 
 ## Locked outer geometry (unchanged)
 
@@ -37,8 +37,8 @@ These two bound types are never mixed in a single delta cell. Mask audit overlay
 
 | Detector | Reference | Actual |
 |---|---|---|
-| Loose (L≥160, can include glow) | 285,74 463×42 | 283,74 463×28 |
-| Dense glyph (L≥180) | 285,74 463×29 | 284,74 462×28 |
+| Loose (L≥160, can include glow) | 285,74 463×42 | 285,77 455×28 |
+| Dense glyph (L≥180) | 285,74 463×29 | 286,77 454×28 |
 
 ## Geometric bounds (mask geometry vs DOM)
 
@@ -46,71 +46,71 @@ These two bound types are never mixed in a single delta cell. Mask audit overlay
 |---|---|---|---|
 | `connector-1-line` | 246,238 30×3 | 246,238 30×3 | 0,0 0×0 |
 | `connector-1-node` | 256,233 13×13 | 256,233 13×13 | 0,0 0×0 |
-| `connector-1-node-border` | 256,233 13×13 | - | -256,-233 -13×-13 |
-| `connector-1-node-interior` | 258,235 9×9 | - | -258,-235 -9×-9 |
+| `connector-1-node-border` | 256,233 13×13 | 257,234 11×11 | +1,+1 -2×-2 |
+| `connector-1-node-interior` | 258,235 9×9 | 258,235 9×9 | 0,0 0×0 |
 | `connector-1-dot` | 260,237 5×5 | 260,237 5×5 | 0,0 0×0 |
-| `connector-1-glow` | 253,230 19×19 | 255,232 14×14 | +2,+2 -5×-5 |
+| `connector-1-glow` | 253,230 19×19 | 253,230 19×19 | 0,0 0×0 |
 | `connector-2-line` | 508,238 24×3 | 508,238 24×3 | 0,0 0×0 |
 | `connector-2-node` | 513,233 13×13 | 513,233 13×13 | 0,0 0×0 |
-| `connector-2-node-border` | 513,233 13×13 | - | -513,-233 -13×-13 |
-| `connector-2-node-interior` | 515,235 9×9 | - | -515,-235 -9×-9 |
+| `connector-2-node-border` | 513,233 13×13 | 514,234 11×11 | +1,+1 -2×-2 |
+| `connector-2-node-interior` | 515,235 9×9 | 515,235 9×9 | 0,0 0×0 |
 | `connector-2-dot` | 517,237 5×5 | 517,237 5×5 | 0,0 0×0 |
-| `connector-2-glow` | 510,230 19×19 | 512,232 14×14 | +2,+2 -5×-5 |
+| `connector-2-glow` | 510,230 19×19 | 510,230 19×19 | 0,0 0×0 |
 | `connector-3-line` | 750,238 24×3 | 750,238 24×3 | 0,0 0×0 |
 | `connector-3-node` | 757,233 13×13 | 757,233 13×13 | 0,0 0×0 |
-| `connector-3-node-border` | 757,233 13×13 | - | -757,-233 -13×-13 |
-| `connector-3-node-interior` | 759,235 9×9 | - | -759,-235 -9×-9 |
+| `connector-3-node-border` | 757,233 13×13 | 758,234 11×11 | +1,+1 -2×-2 |
+| `connector-3-node-interior` | 759,235 9×9 | 759,235 9×9 | 0,0 0×0 |
 | `connector-3-dot` | 761,237 5×5 | 761,237 5×5 | 0,0 0×0 |
-| `connector-3-glow` | 754,230 19×19 | 757,232 14×14 | +3,+2 -5×-5 |
+| `connector-3-glow` | 754,230 19×19 | 754,230 19×19 | 0,0 0×0 |
 | `stage-03-check-0` | 589,208 16×16 | 589,208 16×16 | 0,0 0×0 |
 | `stage-03-check-1` | 589,228 16×16 | 589,228 16×16 | 0,0 0×0 |
 | `stage-03-check-2` | 589,248 16×16 | 589,248 16×16 | 0,0 0×0 |
-| `stage-02-active-dot` | 327,208 9×9 | 326,209 9×9 | -1,+1 0×0 |
-| `stage-01-pill-icon` | 104,364 14×14 | 105,367 13×13 | +1,+3 -1×-1 |
-| `stage-02-pill-icon` | 300,364 14×14 | 302,367 13×13 | +2,+3 -1×-1 |
-| `stage-03-pill-icon` | 552,364 14×14 | 556,367 13×13 | +4,+3 -1×-1 |
-| `stage-04-pill-icon` | 796,364 14×14 | 798,367 13×13 | +2,+3 -1×-1 |
-| `heading-eyebrow` | 420,47 185×12 | 0,49 1024×9 | -420,+2 +839×-3 |
-| `heading-title` | 280,72 470×34 | 4,70 1020×30 | -276,-2 +550×-4 |
-| `heading-support` | 288,113 460×16 | 4,113 450×15 | -284,0 -10×-1 |
-| `stage-01-number` | 98,186 24×20 | 101,187 14×15 | +3,+1 -10×-5 |
-| `stage-02-number` | 295,186 28×20 | 298,187 17×15 | +3,+1 -11×-5 |
-| `stage-03-number` | 548,186 28×20 | 552,187 17×15 | +4,+1 -11×-5 |
-| `stage-04-number` | 790,186 28×20 | 795,187 18×15 | +5,+1 -10×-5 |
-| `stage-01-symbol` | 108,218 36×40 | 106,221 36×36 | -2,+3 0×-4 |
-| `stage-02-symbol` | 300,216 36×36 | 302,220 34×34 | +2,+4 -2×-2 |
-| `stage-03-symbol` | 554,216 36×36 | 558,221 33×33 | +4,+5 -3×-3 |
-| `stage-04-symbol` | 800,218 34×34 | 799,219 36×36 | -1,+1 +2×+2 |
-| `stage-01-title` | 98,282 120×18 | 100,283 125×12 | +2,+1 +5×-6 |
-| `stage-02-title` | 296,282 140×18 | 297,283 184×12 | +1,+1 +44×-6 |
-| `stage-03-title` | 548,282 140×18 | 551,283 174×12 | +3,+1 +34×-6 |
-| `stage-04-title` | 790,282 128×18 | 794,283 116×12 | +4,+1 -12×-6 |
-| `stage-01-body-line-0` | 98,303 120×13 | 101,304 126×14 | +3,+1 +6×+1 |
-| `stage-01-body-line-1` | 98,316 120×13 | 101,318 126×14 | +3,+2 +6×+1 |
-| `stage-01-body-line-2` | 98,329 80×13 | 101,332 126×14 | +3,+3 +46×+1 |
-| `stage-02-body-line-0` | 296,303 140×13 | 298,304 179×14 | +2,+1 +39×+1 |
-| `stage-02-body-line-1` | 296,316 140×13 | 298,318 179×14 | +2,+2 +39×+1 |
-| `stage-02-body-line-2` | 296,329 140×13 | 298,332 179×14 | +2,+3 +39×+1 |
-| `stage-03-body-line-0` | 548,303 140×13 | 552,304 169×14 | +4,+1 +29×+1 |
-| `stage-03-body-line-1` | 548,316 140×13 | 552,318 169×14 | +4,+2 +29×+1 |
-| `stage-03-body-line-2` | 548,329 120×13 | 552,332 169×14 | +4,+3 +49×+1 |
-| `stage-04-body-line-0` | 790,303 128×13 | 795,304 111×14 | +5,+1 -17×+1 |
-| `stage-04-body-line-1` | 790,316 128×13 | 795,318 111×14 | +5,+2 -17×+1 |
-| `stage-04-body-line-2` | 790,329 128×13 | 795,332 111×14 | +5,+3 -17×+1 |
-| `stage-01-pill` | 96,362 94×22 | 97,362 90×22 | +1,0 -4×0 |
-| `stage-02-pill` | 294,362 120×22 | 294,362 115×22 | 0,0 -5×0 |
-| `stage-03-pill` | 546,362 132×22 | 548,362 125×22 | +2,0 -7×0 |
-| `stage-04-pill` | 788,362 94×22 | 790,362 93×22 | +2,0 -1×0 |
-| `stage-01-pill-label` | 118,366 70×12 | 123,368 55×9 | +5,+2 -15×-3 |
-| `stage-02-pill-label` | 316,366 95×12 | 320,368 80×9 | +4,+2 -15×-3 |
-| `stage-03-pill-label` | 568,366 105×12 | 574,368 90×9 | +6,+2 -15×-3 |
-| `stage-04-pill-label` | 812,366 70×12 | 816,368 56×9 | +4,+2 -14×-3 |
-| `stage-01-icon-frame` | 97,210 55×55 | 99,214 50×50 | +2,+4 -5×-5 |
-| `stage-02-icon-frame` | 294,210 52×52 | 295,213 48×48 | +1,+3 -4×-4 |
-| `stage-03-icon-frame` | 546,210 52×52 | 550,213 48×48 | +4,+3 -4×-4 |
-| `stage-04-icon-frame` | 790,210 50×50 | 792,212 50×50 | +2,+2 0×0 |
-| `stage-02-rear-panel` | 318,200 170×72 | 318,200 170×72 | 0,0 0×0 |
-| `stage-03-rear-panel` | 572,200 160×78 | 572,200 160×72 | 0,0 0×-6 |
+| `stage-02-active-dot` | 327,208 9×9 | 328,211 9×9 | +1,+3 0×0 |
+| `stage-01-pill-icon` | 104,364 14×14 | 106,367 14×14 | +2,+3 0×0 |
+| `stage-02-pill-icon` | 300,364 14×14 | 303,367 14×14 | +3,+3 0×0 |
+| `stage-03-pill-icon` | 552,364 14×14 | 557,367 14×14 | +5,+3 0×0 |
+| `stage-04-pill-icon` | 796,364 14×14 | 800,367 14×14 | +4,+3 0×0 |
+| `heading-eyebrow` | 420,47 185×12 | 421,49 182×10 | +1,+2 -3×-2 |
+| `heading-title` | 280,72 470×34 | 283,72 457×32 | +3,0 -13×-2 |
+| `heading-support` | 288,113 460×16 | 288,113 460×16 | 0,0 0×0 |
+| `stage-01-number` | 98,186 24×20 | 99,187 14×15 | +1,+1 -10×-5 |
+| `stage-02-number` | 295,186 28×20 | 296,187 17×15 | +1,+1 -11×-5 |
+| `stage-03-number` | 548,186 28×20 | 550,187 17×15 | +2,+1 -11×-5 |
+| `stage-04-number` | 790,186 28×20 | 793,187 18×15 | +3,+1 -10×-5 |
+| `stage-01-symbol` | 108,218 36×40 | 105,218 36×36 | -3,0 0×-4 |
+| `stage-02-symbol` | 300,216 36×36 | 302,218 34×34 | +2,+2 -2×-2 |
+| `stage-03-symbol` | 554,216 36×36 | 557,218 34×34 | +3,+2 -2×-2 |
+| `stage-04-symbol` | 800,218 34×34 | 798,218 36×36 | -2,0 +2×+2 |
+| `stage-01-title` | 98,282 120×18 | 99,283 130×13 | +1,+1 +10×-5 |
+| `stage-02-title` | 296,282 140×18 | 296,283 187×13 | 0,+1 +47×-5 |
+| `stage-03-title` | 548,282 140×18 | 550,283 177×13 | +2,+1 +37×-5 |
+| `stage-04-title` | 790,282 128×18 | 793,283 115×12 | +3,+1 -13×-6 |
+| `stage-01-body-line-0` | 98,303 120×13 | 99,304 130×13 | +1,+1 +10×0 |
+| `stage-01-body-line-1` | 98,316 120×13 | 99,317 130×13 | +1,+1 +10×0 |
+| `stage-01-body-line-2` | 98,329 80×13 | 99,330 130×13 | +1,+1 +50×0 |
+| `stage-02-body-line-0` | 296,303 140×13 | 296,304 185×13 | 0,+1 +45×0 |
+| `stage-02-body-line-1` | 296,316 140×13 | 296,317 185×13 | 0,+1 +45×0 |
+| `stage-02-body-line-2` | 296,329 140×13 | 296,330 185×13 | 0,+1 +45×0 |
+| `stage-03-body-line-0` | 548,303 140×13 | 550,304 175×13 | +2,+1 +35×0 |
+| `stage-03-body-line-1` | 548,316 140×13 | 550,317 175×13 | +2,+1 +35×0 |
+| `stage-03-body-line-2` | 548,329 120×13 | 550,330 175×13 | +2,+1 +55×0 |
+| `stage-04-body-line-0` | 790,303 128×13 | 793,304 115×13 | +3,+1 -13×0 |
+| `stage-04-body-line-1` | 790,316 128×13 | 793,317 115×13 | +3,+1 -13×0 |
+| `stage-04-body-line-2` | 790,329 128×13 | 793,330 115×13 | +3,+1 -13×0 |
+| `stage-01-pill` | 96,362 94×22 | 97,363 98×22 | +1,+1 +4×0 |
+| `stage-02-pill` | 294,362 120×22 | 294,363 125×22 | 0,+1 +5×0 |
+| `stage-03-pill` | 546,362 132×22 | 548,363 136×22 | +2,+1 +4×0 |
+| `stage-04-pill` | 788,362 94×22 | 791,363 99×22 | +3,+1 +5×0 |
+| `stage-01-pill-label` | 118,366 70×12 | 126,369 58×10 | +8,+3 -12×-2 |
+| `stage-02-pill-label` | 316,366 95×12 | 323,369 85×10 | +7,+3 -10×-2 |
+| `stage-03-pill-label` | 568,366 105×12 | 577,369 96×10 | +9,+3 -9×-2 |
+| `stage-04-pill-label` | 812,366 70×12 | 820,369 59×10 | +8,+3 -11×-2 |
+| `stage-01-icon-frame` | 97,210 55×55 | 98,211 50×50 | +1,+1 -5×-5 |
+| `stage-02-icon-frame` | 294,210 52×52 | 295,211 48×48 | +1,+1 -4×-4 |
+| `stage-03-icon-frame` | 546,210 52×52 | 550,211 48×48 | +4,+1 -4×-4 |
+| `stage-04-icon-frame` | 790,210 50×50 | 791,211 50×50 | +1,+1 0×0 |
+| `stage-02-rear-panel` | 318,200 170×72 | 318,201 170×72 | 0,+1 0×0 |
+| `stage-03-rear-panel` | 572,200 160×78 | 572,201 160×72 | 0,+1 0×-6 |
 
 ## Painted-ink bounds (mask ink vs paint-isolation)
 
@@ -118,228 +118,234 @@ Primitives marked `geometry-only` intentionally omit painted-ink deltas (JPEG in
 
 | Element | Ref ink | Actual ink | Delta | Methods |
 |---|---|---|---|---|
-| `connector-1-line` | 246,238 30×3 | 246,238 30×2 | 0,0 0×-1 | ref=mask-ink:connector; act=paint-layer-isolation |
-| `connector-1-node` | 257,238 11×3 | 256,233 12×12 | -1,-5 +1×+9 | ref=mask-ink:connector; act=paint-layer-isolation |
-| `connector-1-node-border` | 257,238 11×3 | 260,237 8×8 | +3,-1 -3×+5 | ref=mask-ink:connector; act=mask-ink:connector |
-| `connector-1-node-interior` | 259,236 7×7 | 259,236 7×7 | 0,0 0×0 | ref=mask-ink:dark; act=mask-ink:dark |
-| `connector-1-dot` | 261,238 3×3 | 260,237 4×4 | -1,-1 +1×+1 | ref=mask-ink:connector; act=paint-layer-isolation |
-| `connector-1-glow` | 254,237 17×5 | 255,232 14×14 | +1,-5 -3×+9 | ref=mask-ink:glow; act=paint-layer-isolation |
-| `connector-2-line` | 508,238 24×3 | 508,238 24×2 | 0,0 0×-1 | ref=mask-ink:connector; act=paint-layer-isolation |
-| `connector-2-node` | 514,236 11×9 | 513,233 12×12 | -1,-3 +1×+3 | ref=mask-ink:connector; act=paint-layer-isolation |
-| `connector-2-node-border` | 514,236 11×9 | 517,237 8×8 | +3,+1 -3×-1 | ref=mask-ink:connector; act=mask-ink:connector |
-| `connector-2-node-interior` | 522,238 1×1 | 516,236 7×7 | -6,-2 +6×+6 | ref=mask-ink:dark; act=mask-ink:dark |
-| `connector-2-dot` | 518,238 3×3 | 517,237 4×4 | -1,-1 +1×+1 | ref=mask-ink:connector; act=paint-layer-isolation |
-| `connector-2-glow` | 511,230 17×19 | 512,232 14×14 | +1,+2 -3×-5 | ref=mask-ink:glow; act=paint-layer-isolation |
-| `connector-3-line` | 751,238 23×3 | 750,238 24×2 | -1,0 +1×-1 | ref=mask-ink:connector; act=paint-layer-isolation |
-| `connector-3-node` | 758,238 11×3 | 758,233 12×12 | 0,-5 +1×+9 | ref=mask-ink:connector; act=paint-layer-isolation |
-| `connector-3-node-border` | 758,238 11×3 | 758,237 8×8 | 0,-1 -3×+5 | ref=mask-ink:connector; act=mask-ink:connector |
-| `connector-3-node-interior` | 760,236 7×7 | 760,236 7×7 | 0,0 0×0 | ref=mask-ink:dark; act=mask-ink:dark |
-| `connector-3-dot` | 762,238 3×3 | 762,237 4×4 | 0,-1 +1×+1 | ref=mask-ink:connector; act=paint-layer-isolation |
-| `connector-3-glow` | 755,238 17×4 | 757,232 14×14 | +2,-6 -3×+10 | ref=mask-ink:glow; act=paint-layer-isolation |
+| `connector-1-line` | 246,238 30×3 | 246,238 30×3 | 0,0 0×0 | ref=mask-ink:connector; act=paint-layer-isolation |
+| `connector-1-node` | 257,238 11×3 | 256,233 12×13 | -1,-5 +1×+10 | ref=mask-ink:connector; act=paint-layer-isolation |
+| `connector-1-node-border` | 257,238 11×3 | 264,234 4×11 | +7,-4 -7×+8 | ref=mask-ink:connector; act=mask-ink:connector |
+| `connector-1-node-interior` | 259,236 7×7 | 261,236 5×7 | +2,0 -2×0 | ref=mask-ink:dark; act=mask-ink:dark |
+| `connector-1-dot` | 261,238 3×3 | 260,237 4×5 | -1,-1 +1×+2 | ref=mask-ink:connector; act=paint-layer-isolation |
+| `connector-1-glow` | 254,237 17×5 | 253,230 18×19 | -1,-7 +1×+14 | ref=mask-ink:glow; act=paint-layer-isolation |
+| `connector-2-line` | 508,238 24×3 | 508,238 24×3 | 0,0 0×0 | ref=mask-ink:connector; act=paint-layer-isolation |
+| `connector-2-node` | 514,236 11×9 | 513,233 12×13 | -1,-3 +1×+4 | ref=mask-ink:connector; act=paint-layer-isolation |
+| `connector-2-node-border` | 514,236 11×9 | 521,234 4×11 | +7,-2 -7×+2 | ref=mask-ink:connector; act=mask-ink:connector |
+| `connector-2-node-interior` | 522,238 1×1 | 518,236 5×7 | -4,-2 +4×+6 | ref=mask-ink:dark; act=mask-ink:dark |
+| `connector-2-dot` | 518,238 3×3 | 517,237 4×5 | -1,-1 +1×+2 | ref=mask-ink:connector; act=paint-layer-isolation |
+| `connector-2-glow` | 511,230 17×19 | 510,230 18×19 | -1,0 +1×0 | ref=mask-ink:glow; act=paint-layer-isolation |
+| `connector-3-line` | 751,238 23×3 | 750,238 24×3 | -1,0 +1×0 | ref=mask-ink:connector; act=paint-layer-isolation |
+| `connector-3-node` | 758,238 11×3 | 758,233 12×13 | 0,-5 +1×+10 | ref=mask-ink:connector; act=paint-layer-isolation |
+| `connector-3-node-border` | 758,238 11×3 | 758,234 5×11 | 0,-4 -6×+8 | ref=mask-ink:connector; act=mask-ink:connector |
+| `connector-3-node-interior` | 760,236 7×7 | 760,236 5×7 | 0,0 -2×0 | ref=mask-ink:dark; act=mask-ink:dark |
+| `connector-3-dot` | 762,238 3×3 | 762,237 4×5 | 0,-1 +1×+2 | ref=mask-ink:connector; act=paint-layer-isolation |
+| `connector-3-glow` | 755,238 17×4 | 755,230 18×19 | 0,-8 +1×+15 | ref=mask-ink:glow; act=paint-layer-isolation |
 | `stage-03-check-0` | — | — | — | geometry-only (no painted-ink delta) |
 | `stage-03-check-1` | — | — | — | geometry-only (no painted-ink delta) |
 | `stage-03-check-2` | — | — | — | geometry-only (no painted-ink delta) |
 | `stage-02-active-dot` | — | — | — | geometry-only (no painted-ink delta) |
-| `stage-01-pill-icon` | 105,364 13×14 | 107,368 9×11 | +2,+4 -4×-3 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
-| `stage-02-pill-icon` | 300,364 14×14 | 304,368 9×9 | +4,+4 -5×-5 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
-| `stage-03-pill-icon` | 554,364 12×14 | 557,371 11×5 | +3,+7 -1×-9 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
-| `stage-04-pill-icon` | 797,364 13×14 | 798,370 12×7 | +1,+6 -1×-7 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
-| `heading-eyebrow` | 424,49 176×7 | 424,49 175×7 | 0,0 -1×0 | ref=mask-ink:red; act=paint-diff-isolation |
-| `heading-title` | 285,74 463×29 | 283,74 462×28 | -2,0 -1×-1 | ref=mask-ink:white180; act=paint-diff-isolation |
-| `heading-support` | 292,115 450×12 | 8,115 443×12 | -284,0 -7×0 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-01-number` | 101,189 13×11 | 101,188 14×12 | 0,-1 +1×+1 | ref=mask-ink:red; act=paint-diff-isolation |
-| `stage-02-number` | 298,189 17×11 | 298,188 17×12 | 0,-1 0×+1 | ref=mask-ink:red; act=paint-diff-isolation |
-| `stage-03-number` | 551,188 17×12 | 552,188 17×12 | +1,0 0×0 | ref=mask-ink:red; act=paint-diff-isolation |
-| `stage-04-number` | 793,189 18×11 | 795,188 18×12 | +2,-1 0×+1 | ref=mask-ink:red; act=paint-diff-isolation |
-| `stage-01-symbol` | 111,223 33×33 | 109,221 29×36 | -2,-2 -4×+3 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
-| `stage-02-symbol` | 304,224 32×28 | 304,223 30×28 | 0,-1 -2×0 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
-| `stage-03-symbol` | 560,223 30×29 | 561,223 27×25 | +1,0 -3×-4 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
-| `stage-04-symbol` | 800,223 33×29 | 802,221 30×32 | +2,-2 -3×+3 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
-| `stage-01-title` | 101,285 99×9 | 100,284 95×10 | -1,-1 -4×+1 | ref=mask-ink:white170; act=paint-diff-isolation |
-| `stage-02-title` | 299,285 119×11 | 298,284 115×12 | -1,-1 -4×+1 | ref=mask-ink:white170; act=paint-diff-isolation |
-| `stage-03-title` | 551,285 120×11 | 551,284 115×12 | 0,-1 -5×+1 | ref=mask-ink:white170; act=paint-diff-isolation |
-| `stage-04-title` | 793,285 118×10 | 794,284 123×12 | +1,-1 +5×+2 | ref=mask-ink:white170; act=paint-diff-isolation |
-| `stage-01-body-line-0` | 101,305 112×10 | 101,307 112×9 | 0,+2 0×-1 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-01-body-line-1` | 101,320 107×9 | 101,321 106×9 | 0,+1 -1×0 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-01-body-line-2` | 101,335 50×7 | 101,335 52×7 | 0,0 +2×0 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-02-body-line-0` | 298,305 106×9 | 298,307 106×9 | 0,+2 0×0 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-02-body-line-1` | 298,320 85×7 | 298,321 84×7 | 0,+1 -1×0 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-02-body-line-2` | 298,335 121×7 | 298,335 120×10 | 0,0 -1×+3 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-03-body-line-0` | 551,305 123×10 | 552,307 121×9 | +1,+2 -2×-1 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-03-body-line-1` | 551,320 124×9 | 552,321 120×10 | +1,+1 -4×+1 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-03-body-line-2` | 551,335 86×7 | 552,335 84×9 | +1,0 -2×+2 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-04-body-line-0` | 793,305 100×9 | 795,307 101×8 | +2,+2 +1×-1 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-04-body-line-1` | 794,320 95×9 | 795,321 101×10 | +1,+1 +6×+1 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-04-body-line-2` | 793,335 121×7 | 795,335 118×10 | +2,0 -3×+3 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-01-pill` | 97,362 92×22 | 97,362 90×22 | 0,0 -2×0 | ref=mask-ink:edge; act=mask-ink:edge |
-| `stage-02-pill` | 295,362 119×22 | 294,362 115×22 | -1,0 -4×0 | ref=mask-ink:edge; act=mask-ink:edge |
-| `stage-03-pill` | 547,362 130×22 | 548,362 125×22 | +1,0 -5×0 | ref=mask-ink:edge; act=mask-ink:edge |
-| `stage-04-pill` | 789,362 93×22 | 790,362 88×22 | +1,0 -5×0 | ref=mask-ink:edge; act=mask-ink:edge |
-| `stage-01-pill-label` | 124,368 57×7 | 123,368 55×7 | -1,0 -2×0 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-02-pill-label` | 321,367 83×8 | 320,368 80×7 | -1,+1 -3×-1 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-03-pill-label` | 574,367 95×10 | 574,368 90×9 | 0,+1 -5×-1 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-04-pill-label` | 817,367 58×9 | 816,368 56×9 | -1,+1 -2×0 | ref=mask-ink:gray; act=paint-diff-isolation |
-| `stage-01-icon-frame` | 97,213 55×51 | 99,214 50×50 | +2,+1 -5×-1 | ref=mask-ink:edge; act=mask-ink:edge |
-| `stage-02-icon-frame` | 296,213 50×49 | 295,210 49×52 | -1,-3 -1×+3 | ref=mask-ink:edge; act=mask-ink:edge |
+| `stage-01-pill-icon` | 105,364 13×14 | 108,369 10×11 | +3,+5 -3×-3 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
+| `stage-02-pill-icon` | 300,364 14×14 | 305,368 10×9 | +5,+4 -4×-5 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
+| `stage-03-pill-icon` | 554,364 12×14 | 559,371 10×6 | +5,+7 -2×-8 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
+| `stage-04-pill-icon` | 797,364 13×14 | 801,370 12×8 | +4,+6 -1×-6 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
+| `heading-eyebrow` | 424,49 176×7 | 421,49 181×7 | -3,0 +5×0 | ref=mask-ink:red; act=paint-diff-isolation |
+| `heading-title` | 285,74 463×29 | 285,77 455×28 | 0,+3 -8×-1 | ref=mask-ink:white180; act=paint-diff-isolation |
+| `heading-support` | 292,115 450×12 | 288,115 466×13 | -4,0 +16×+1 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-01-number` | 101,189 13×11 | 99,188 14×12 | -2,-1 +1×+1 | ref=mask-ink:red; act=paint-diff-isolation |
+| `stage-02-number` | 298,189 17×11 | 296,188 17×12 | -2,-1 0×+1 | ref=mask-ink:red; act=paint-diff-isolation |
+| `stage-03-number` | 551,188 17×12 | 550,188 17×12 | -1,0 0×0 | ref=mask-ink:red; act=paint-diff-isolation |
+| `stage-04-number` | 793,189 18×11 | 793,188 18×12 | 0,-1 0×+1 | ref=mask-ink:red; act=paint-diff-isolation |
+| `stage-01-symbol` | 111,223 33×33 | 108,218 29×36 | -3,-5 -4×+3 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
+| `stage-02-symbol` | 304,224 32×28 | 304,221 30×28 | 0,-3 -2×0 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
+| `stage-03-symbol` | 560,223 30×29 | 559,220 29×27 | -1,-3 -1×-2 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
+| `stage-04-symbol` | 800,223 33×29 | 801,221 30×30 | +1,-2 -3×+1 | ref=mask-ink:mutedRed; act=paint-diff-isolation |
+| `stage-01-title` | 101,285 99×9 | 99,285 97×10 | -2,0 -2×+1 | ref=mask-ink:white170; act=paint-diff-isolation |
+| `stage-02-title` | 299,285 119×11 | 297,285 118×12 | -2,0 -1×+1 | ref=mask-ink:white170; act=paint-diff-isolation |
+| `stage-03-title` | 551,285 120×11 | 550,285 117×12 | -1,0 -3×+1 | ref=mask-ink:white170; act=paint-diff-isolation |
+| `stage-04-title` | 793,285 118×10 | 793,284 122×12 | 0,-1 +4×+2 | ref=mask-ink:white170; act=paint-diff-isolation |
+| `stage-01-body-line-0` | 101,305 112×10 | 99,306 114×9 | -2,+1 +2×-1 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-01-body-line-1` | 101,320 107×9 | 99,319 107×9 | -2,-1 0×0 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-01-body-line-2` | 101,335 50×7 | 99,332 53×7 | -2,-3 +3×0 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-02-body-line-0` | 298,305 106×9 | 296,306 107×9 | -2,+1 +1×0 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-02-body-line-1` | 298,320 85×7 | 296,319 85×7 | -2,-1 0×0 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-02-body-line-2` | 298,335 121×7 | 296,332 122×10 | -2,-3 +1×+3 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-03-body-line-0` | 551,305 123×10 | 550,306 123×9 | -1,+1 0×-1 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-03-body-line-1` | 551,320 124×9 | 550,319 122×10 | -1,-1 -2×+1 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-03-body-line-2` | 551,335 86×7 | 550,332 85×9 | -1,-3 -1×+2 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-04-body-line-0` | 793,305 100×9 | 793,306 103×8 | 0,+1 +3×-1 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-04-body-line-1` | 794,320 95×9 | 793,319 102×10 | -1,-1 +7×+1 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-04-body-line-2` | 793,335 121×7 | 793,332 122×10 | 0,-3 +1×+3 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-01-pill` | 97,362 92×22 | 97,363 93×18 | 0,+1 +1×-4 | ref=mask-ink:edge; act=mask-ink:edge |
+| `stage-02-pill` | 295,362 119×22 | 294,363 120×18 | -1,+1 +1×-4 | ref=mask-ink:edge; act=mask-ink:edge |
+| `stage-03-pill` | 547,362 130×22 | 548,363 130×18 | +1,+1 0×-4 | ref=mask-ink:edge; act=mask-ink:edge |
+| `stage-04-pill` | 789,362 93×22 | 791,363 91×18 | +2,+1 -2×-4 | ref=mask-ink:edge; act=mask-ink:edge |
+| `stage-01-pill-label` | 124,368 57×7 | 126,369 58×7 | +2,+1 +1×0 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-02-pill-label` | 321,367 83×8 | 323,369 85×7 | +2,+2 +2×-1 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-03-pill-label` | 574,367 95×10 | 577,369 96×9 | +3,+2 +1×-1 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-04-pill-label` | 817,367 58×9 | 820,369 59×9 | +3,+2 +1×0 | ref=mask-ink:gray; act=paint-diff-isolation |
+| `stage-01-icon-frame` | 97,213 55×51 | 98,211 50×50 | +1,-2 -5×-1 | ref=mask-ink:edge; act=mask-ink:edge |
+| `stage-02-icon-frame` | 296,213 50×49 | 295,210 48×52 | -1,-3 -2×+3 | ref=mask-ink:edge; act=mask-ink:edge |
 | `stage-03-icon-frame` | 547,212 51×50 | 550,210 48×52 | +3,-2 -3×+2 | ref=mask-ink:edge; act=mask-ink:edge |
-| `stage-04-icon-frame` | 792,214 48×46 | 792,212 48×48 | 0,-2 0×+2 | ref=mask-ink:edge; act=mask-ink:edge |
-| `stage-02-rear-panel` | 318,200 170×72 | 318,200 170×72 | 0,0 0×0 | ref=mask-ink:edge; act=mask-ink:edge |
-| `stage-03-rear-panel` | 572,200 160×72 | 572,200 160×72 | 0,0 0×0 | ref=mask-ink:edge; act=mask-ink:edge |
+| `stage-04-icon-frame` | 792,214 48×46 | 791,211 49×49 | -1,-3 +1×+3 | ref=mask-ink:edge; act=mask-ink:edge |
+| `stage-02-rear-panel` | 318,200 170×72 | 318,201 170×71 | 0,+1 0×-1 | ref=mask-ink:edge; act=mask-ink:edge |
+| `stage-03-rear-panel` | 572,200 160×72 | 572,201 160×72 | 0,+1 0×0 | ref=mask-ink:edge; act=mask-ink:edge |
 
 ## Actual DOM layout boxes
 
 | Selector | x,y w×h |
 |---|---|
 | `connector-1-dot` | 260,237 5×5 |
-| `connector-1-glow` | 255,232 14×14 |
+| `connector-1-glow` | 253,230 19×19 |
 | `connector-1-line` | 246,238 30×3 |
 | `connector-1-node` | 256,233 13×13 |
+| `connector-1-node-border` | 257,234 11×11 |
+| `connector-1-node-interior` | 258,235 9×9 |
 | `connector-2-dot` | 517,237 5×5 |
-| `connector-2-glow` | 512,232 14×14 |
+| `connector-2-glow` | 510,230 19×19 |
 | `connector-2-line` | 508,238 24×3 |
 | `connector-2-node` | 513,233 13×13 |
+| `connector-2-node-border` | 514,234 11×11 |
+| `connector-2-node-interior` | 515,235 9×9 |
 | `connector-3-dot` | 761,237 5×5 |
-| `connector-3-glow` | 757,232 14×14 |
+| `connector-3-glow` | 754,230 19×19 |
 | `connector-3-line` | 750,238 24×3 |
 | `connector-3-node` | 757,233 13×13 |
-| `heading-eyebrow` | 0,49 1024×9 |
-| `heading-support` | 4,113 450×15 |
-| `heading-title` | 4,70 1020×30 |
-| `stage-01-body` | 101,304 126×42 |
-| `stage-01-body-line-0` | 101,304 126×14 |
-| `stage-01-body-line-1` | 101,318 126×14 |
-| `stage-01-body-line-2` | 101,332 126×14 |
+| `connector-3-node-border` | 758,234 11×11 |
+| `connector-3-node-interior` | 759,235 9×9 |
+| `heading-eyebrow` | 421,49 182×10 |
+| `heading-support` | 288,113 460×16 |
+| `heading-title` | 283,72 457×32 |
+| `stage-01-body` | 99,304 130×39 |
+| `stage-01-body-line-0` | 99,304 130×13 |
+| `stage-01-body-line-1` | 99,317 130×13 |
+| `stage-01-body-line-2` | 99,330 130×13 |
 | `stage-01-card` | 85,170 157×229 |
-| `stage-01-glow` | 96,203 48×48 |
-| `stage-01-icon-frame` | 99,214 50×50 |
-| `stage-01-number` | 101,187 14×15 |
-| `stage-01-pill` | 97,362 90×22 |
-| `stage-01-pill-icon` | 105,367 13×13 |
-| `stage-01-pill-label` | 123,368 55×9 |
+| `stage-01-glow` | 96,201 48×48 |
+| `stage-01-icon-frame` | 98,211 50×50 |
+| `stage-01-number` | 99,187 14×15 |
+| `stage-01-pill` | 97,363 98×22 |
+| `stage-01-pill-icon` | 106,367 14×14 |
+| `stage-01-pill-label` | 126,369 58×10 |
 | `stage-01-rear-panel` | - |
-| `stage-01-symbol` | 106,221 36×36 |
-| `stage-01-title` | 100,283 125×12 |
+| `stage-01-symbol` | 105,218 36×36 |
+| `stage-01-title` | 99,283 130×13 |
 | `stage-01-visual` | 97,199 136×82 |
-| `stage-02-active-dot` | 326,209 9×9 |
-| `stage-02-body` | 298,304 179×42 |
-| `stage-02-body-line-0` | 298,304 179×14 |
-| `stage-02-body-line-1` | 298,318 179×14 |
-| `stage-02-body-line-2` | 298,332 179×14 |
+| `stage-02-active-dot` | 328,211 9×9 |
+| `stage-02-body` | 296,304 185×39 |
+| `stage-02-body-line-0` | 296,304 185×13 |
+| `stage-02-body-line-1` | 296,317 185×13 |
+| `stage-02-body-line-2` | 296,330 185×13 |
 | `stage-02-card` | 282,170 220×229 |
-| `stage-02-content-bar-0` | 353,211 88×7 |
-| `stage-02-content-bar-1` | 353,225 110×7 |
-| `stage-02-divider` | 343,201 1×70 |
-| `stage-02-glow` | 330,207 120×52 |
-| `stage-02-icon-frame` | 295,213 48×48 |
-| `stage-02-lower-block-0` | 353,248 15×15 |
-| `stage-02-lower-block-1` | 373,248 15×15 |
-| `stage-02-lower-block-2` | 393,248 15×15 |
-| `stage-02-number` | 298,187 17×15 |
-| `stage-02-pill` | 294,362 115×22 |
-| `stage-02-pill-icon` | 302,367 13×13 |
-| `stage-02-pill-label` | 320,368 80×9 |
-| `stage-02-rear-panel` | 318,200 170×72 |
-| `stage-02-sidebar` | 319,201 24×70 |
-| `stage-02-sidebar-row-0` | 325,223 11×2 |
-| `stage-02-sidebar-row-1` | 325,233 11×2 |
-| `stage-02-symbol` | 302,220 34×34 |
-| `stage-02-title` | 297,283 184×12 |
+| `stage-02-content-bar-0` | 341,214 28×4 |
+| `stage-02-content-bar-1` | 347,230 118×8 |
+| `stage-02-divider` | - |
+| `stage-02-glow` | 330,205 120×52 |
+| `stage-02-icon-frame` | 295,211 48×48 |
+| `stage-02-lower-block-0` | 347,250 14×14 |
+| `stage-02-lower-block-1` | 366,250 14×14 |
+| `stage-02-lower-block-2` | 385,250 14×14 |
+| `stage-02-number` | 296,187 17×15 |
+| `stage-02-pill` | 294,363 125×22 |
+| `stage-02-pill-icon` | 303,367 14×14 |
+| `stage-02-pill-label` | 323,369 85×10 |
+| `stage-02-rear-panel` | 318,201 170×72 |
+| `stage-02-sidebar` | 330,228 4×37 |
+| `stage-02-sidebar-row-0` | 330,228 4×4 |
+| `stage-02-sidebar-row-1` | 330,239 4×4 |
+| `stage-02-symbol` | 302,218 34×34 |
+| `stage-02-title` | 296,283 187×13 |
 | `stage-02-visual` | 294,199 199×82 |
-| `stage-03-bar-a-0` | 605,214 87×4 |
-| `stage-03-bar-b-0` | 697,214 18×4 |
-| `stage-03-body` | 552,304 169×42 |
-| `stage-03-body-line-0` | 552,304 169×14 |
-| `stage-03-body-line-1` | 552,318 169×14 |
-| `stage-03-body-line-2` | 552,332 169×14 |
+| `stage-03-bar-a-0` | 616,218 92×5 |
+| `stage-03-bar-b-0` | - |
+| `stage-03-body` | 550,304 175×39 |
+| `stage-03-body-line-0` | 550,304 175×13 |
+| `stage-03-body-line-1` | 550,317 175×13 |
+| `stage-03-body-line-2` | 550,330 175×13 |
 | `stage-03-card` | 536,170 210×229 |
 | `stage-03-check-0` | 589,208 16×16 |
 | `stage-03-check-1` | 589,228 16×16 |
 | `stage-03-check-2` | 589,248 16×16 |
-| `stage-03-glow` | 582,207 110×52 |
-| `stage-03-icon-frame` | 550,213 48×48 |
-| `stage-03-number` | 552,187 17×15 |
-| `stage-03-pill` | 548,362 125×22 |
-| `stage-03-pill-icon` | 556,367 13×13 |
-| `stage-03-pill-label` | 574,368 90×9 |
-| `stage-03-rear-panel` | 572,200 160×72 |
-| `stage-03-right-edge` | 724,208 1×56 |
-| `stage-03-row-0` | 599,209 122×14 |
-| `stage-03-row-1` | 599,229 122×14 |
-| `stage-03-row-2` | 599,249 122×14 |
-| `stage-03-symbol` | 558,221 33×33 |
-| `stage-03-title` | 551,283 174×12 |
+| `stage-03-glow` | 582,205 110×52 |
+| `stage-03-icon-frame` | 550,211 48×48 |
+| `stage-03-number` | 550,187 17×15 |
+| `stage-03-pill` | 548,363 136×22 |
+| `stage-03-pill-icon` | 557,367 14×14 |
+| `stage-03-pill-label` | 577,369 96×10 |
+| `stage-03-rear-panel` | 572,201 160×72 |
+| `stage-03-right-edge` | - |
+| `stage-03-row-0` | 601,212 120×16 |
+| `stage-03-row-1` | 601,232 120×16 |
+| `stage-03-row-2` | 601,252 120×16 |
+| `stage-03-symbol` | 557,218 34×34 |
+| `stage-03-title` | 550,283 177×13 |
 | `stage-03-visual` | 548,199 189×82 |
-| `stage-04-body` | 795,304 111×42 |
-| `stage-04-body-line-0` | 795,304 111×14 |
-| `stage-04-body-line-1` | 795,318 111×14 |
-| `stage-04-body-line-2` | 795,332 111×14 |
+| `stage-04-body` | 793,304 115×39 |
+| `stage-04-body-line-0` | 793,304 115×13 |
+| `stage-04-body-line-1` | 793,317 115×13 |
+| `stage-04-body-line-2` | 793,330 115×13 |
 | `stage-04-card` | 779,170 142×229 |
-| `stage-04-glow` | 790,203 48×48 |
-| `stage-04-icon-frame` | 792,212 50×50 |
-| `stage-04-number` | 795,187 18×15 |
-| `stage-04-pill` | 790,362 93×22 |
-| `stage-04-pill-icon` | 798,367 13×13 |
-| `stage-04-pill-label` | 816,368 56×9 |
+| `stage-04-glow` | 790,201 48×48 |
+| `stage-04-icon-frame` | 791,211 50×50 |
+| `stage-04-number` | 793,187 18×15 |
+| `stage-04-pill` | 791,363 99×22 |
+| `stage-04-pill-icon` | 800,367 14×14 |
+| `stage-04-pill-label` | 820,369 59×10 |
 | `stage-04-rear-panel` | - |
-| `stage-04-symbol` | 799,219 36×36 |
-| `stage-04-title` | 794,283 116×12 |
+| `stage-04-symbol` | 798,218 36×36 |
+| `stage-04-title` | 793,283 115×12 |
 | `stage-04-visual` | 791,199 121×82 |
 
 ## Actual paint-isolated ink
 
 | Selector | x,y w×h | count |
 |---|---|---:|
-| `connector-1-dot` | 260,237 4×4 | 16 |
-| `connector-1-glow` | 255,232 14×14 | 145 |
-| `connector-1-line` | 246,238 30×2 | 32 |
-| `connector-1-node` | 256,233 12×12 | 24 |
-| `connector-2-dot` | 517,237 4×4 | 16 |
-| `connector-2-glow` | 512,232 14×14 | 145 |
-| `connector-2-line` | 508,238 24×2 | 20 |
-| `connector-2-node` | 513,233 12×12 | 24 |
-| `connector-3-dot` | 762,237 4×4 | 16 |
-| `connector-3-glow` | 757,232 14×14 | 142 |
-| `connector-3-line` | 750,238 24×2 | 20 |
-| `connector-3-node` | 758,233 12×12 | 22 |
-| `heading-eyebrow` | 424,49 175×7 | 714 |
-| `heading-support` | 8,115 443×12 | 2086 |
-| `heading-title` | 283,74 462×28 | 4501 |
-| `stage-01-body-line-0` | 101,307 112×9 | 461 |
-| `stage-01-body-line-1` | 101,321 106×9 | 407 |
-| `stage-01-body-line-2` | 101,335 52×7 | 207 |
-| `stage-01-number` | 101,188 14×12 | 112 |
-| `stage-01-pill-icon` | 107,368 9×11 | 41 |
-| `stage-01-pill-label` | 123,368 55×7 | 234 |
-| `stage-01-symbol` | 109,221 29×36 | 526 |
-| `stage-01-title` | 100,284 95×10 | 469 |
-| `stage-02-active-dot` | 326,209 10×4 | 30 |
-| `stage-02-body-line-0` | 298,307 106×9 | 374 |
-| `stage-02-body-line-1` | 298,321 84×7 | 317 |
-| `stage-02-body-line-2` | 298,335 120×10 | 498 |
-| `stage-02-number` | 298,188 17×12 | 131 |
-| `stage-02-pill-icon` | 304,368 9×9 | 55 |
-| `stage-02-pill-label` | 320,368 80×7 | 315 |
-| `stage-02-symbol` | 304,223 30×28 | 516 |
-| `stage-02-title` | 298,284 115×12 | 574 |
-| `stage-03-body-line-0` | 552,307 121×9 | 469 |
-| `stage-03-body-line-1` | 552,321 120×10 | 472 |
-| `stage-03-body-line-2` | 552,335 84×9 | 306 |
+| `connector-1-dot` | 260,237 4×5 | 16 |
+| `connector-1-glow` | 253,230 18×19 | 265 |
+| `connector-1-line` | 246,238 30×3 | 52 |
+| `connector-1-node` | 256,233 12×13 | 15 |
+| `connector-2-dot` | 517,237 4×5 | 16 |
+| `connector-2-glow` | 510,230 18×19 | 265 |
+| `connector-2-line` | 508,238 24×3 | 34 |
+| `connector-2-node` | 513,233 12×13 | 17 |
+| `connector-3-dot` | 762,237 4×5 | 16 |
+| `connector-3-glow` | 755,230 18×19 | 265 |
+| `connector-3-line` | 750,238 24×3 | 34 |
+| `connector-3-node` | 758,233 12×13 | 12 |
+| `heading-eyebrow` | 421,49 181×7 | 743 |
+| `heading-support` | 288,115 466×13 | 2043 |
+| `heading-title` | 285,77 455×28 | 4487 |
+| `stage-01-body-line-0` | 99,306 114×9 | 444 |
+| `stage-01-body-line-1` | 99,319 107×9 | 394 |
+| `stage-01-body-line-2` | 99,332 53×7 | 202 |
+| `stage-01-number` | 99,188 14×12 | 112 |
+| `stage-01-pill-icon` | 108,369 10×11 | 48 |
+| `stage-01-pill-label` | 126,369 58×7 | 202 |
+| `stage-01-symbol` | 108,218 29×36 | 496 |
+| `stage-01-title` | 99,285 97×10 | 468 |
+| `stage-02-active-dot` | - | 0 |
+| `stage-02-body-line-0` | 296,306 107×9 | 382 |
+| `stage-02-body-line-1` | 296,319 85×7 | 313 |
+| `stage-02-body-line-2` | 296,332 122×10 | 487 |
+| `stage-02-number` | 296,188 17×12 | 131 |
+| `stage-02-pill-icon` | 305,368 10×9 | 57 |
+| `stage-02-pill-label` | 323,369 85×7 | 274 |
+| `stage-02-symbol` | 304,221 30×28 | 516 |
+| `stage-02-title` | 297,285 118×12 | 566 |
+| `stage-03-body-line-0` | 550,306 123×9 | 462 |
+| `stage-03-body-line-1` | 550,319 122×10 | 465 |
+| `stage-03-body-line-2` | 550,332 85×9 | 309 |
 | `stage-03-check-0` | 589,208 16×16 | 208 |
 | `stage-03-check-1` | 589,228 16×16 | 208 |
 | `stage-03-check-2` | 589,248 16×16 | 208 |
-| `stage-03-number` | 552,188 17×12 | 135 |
-| `stage-03-pill-icon` | 557,371 11×5 | 23 |
-| `stage-03-pill-label` | 574,368 90×9 | 404 |
-| `stage-03-symbol` | 561,223 27×25 | 300 |
-| `stage-03-title` | 551,284 115×12 | 575 |
-| `stage-04-body-line-0` | 795,307 101×8 | 414 |
-| `stage-04-body-line-1` | 795,321 101×10 | 378 |
-| `stage-04-body-line-2` | 795,335 118×10 | 447 |
-| `stage-04-number` | 795,188 18×12 | 130 |
-| `stage-04-pill-icon` | 798,370 12×7 | 40 |
-| `stage-04-pill-label` | 816,368 56×9 | 267 |
-| `stage-04-symbol` | 802,221 30×32 | 402 |
-| `stage-04-title` | 794,284 123×12 | 577 |
+| `stage-03-number` | 550,188 17×12 | 135 |
+| `stage-03-pill-icon` | 559,371 10×6 | 27 |
+| `stage-03-pill-label` | 577,369 96×9 | 332 |
+| `stage-03-symbol` | 559,220 29×27 | 339 |
+| `stage-03-title` | 550,285 117×12 | 617 |
+| `stage-04-body-line-0` | 793,306 103×8 | 415 |
+| `stage-04-body-line-1` | 793,319 102×10 | 379 |
+| `stage-04-body-line-2` | 793,332 122×10 | 459 |
+| `stage-04-number` | 793,188 18×12 | 130 |
+| `stage-04-pill-icon` | 801,370 12×8 | 52 |
+| `stage-04-pill-label` | 820,369 59×9 | 230 |
+| `stage-04-symbol` | 801,221 30×30 | 373 |
+| `stage-04-title` | 793,284 122×12 | 565 |
 
 ## Color samples (RGB)
 
@@ -348,10 +354,10 @@ Primitives marked `geometry-only` intentionally omit painted-ink deltas (JPEG in
 | pageBg | 40,40 | 17,17,17 | 17,17,17 |
 | card1Fill | 200,270 | 23,23,23 | 23,23,23 |
 | card1Border | 85,280 | 34,34,34 | 34,34,34 |
-| primaryRedNumber | ref 103,189 / act 104,189 | 118,46,49 | 115,46,49 |
-| mutedIconStroke | ref 120,246 / act 124,223 | 43,28,31 | 43,28,31 |
-| title | ref 172,286 / act 174,287 | 231,231,231 | 231,231,218 |
-| bodyText | ref 118,310 / act 122,311 | 104,104,104 | 88,91,88 |
+| primaryRedNumber | ref 103,189 / act 102,189 | 118,46,49 | 115,46,49 |
+| mutedIconStroke | ref 120,246 / act 121,246 | 43,28,31 | 64,37,38 |
+| title | ref 172,286 / act 133,288 | 231,231,231 | 232,232,232 |
+| bodyText | ref 118,310 / act 120,310 | 104,104,104 | 100,106,103 |
 | pillBorder | ref 96,364 / act 96,364 | 22,24,21 | 23,23,23 |
 | connector | 262,239 | 152,71,70 | 151,70,69 |
 | centerGlow | 512,250 | 56,25,22 | 50,22,19 |
@@ -360,18 +366,18 @@ Primitives marked `geometry-only` intentionally omit painted-ink deltas (JPEG in
 
 | Region | Mismatched | Total | Ratio |
 |---|---:|---:|---:|
-| heading | 8559 | 101400 | 8.44% |
-| stage-01 | 2672 | 35953 | 7.43% |
-| stage-02 | 4635 | 50380 | 9.20% |
-| stage-03 | 4358 | 48090 | 9.06% |
-| stage-04 | 3063 | 32518 | 9.42% |
-| stage-01-visual | 272 | 5600 | 4.86% |
-| stage-02-visual | 1905 | 16000 | 11.91% |
-| stage-03-visual | 1425 | 15200 | 9.38% |
-| stage-04-visual | 257 | 5600 | 4.59% |
-| connector-01-02 | 144 | 960 | 15.00% |
+| heading | 9575 | 101400 | 9.44% |
+| stage-01 | 3209 | 35953 | 8.93% |
+| stage-02 | 6183 | 50380 | 12.27% |
+| stage-03 | 6078 | 48090 | 12.64% |
+| stage-04 | 3464 | 32518 | 10.65% |
+| stage-01-visual | 551 | 5600 | 9.84% |
+| stage-02-visual | 3041 | 16000 | 19.01% |
+| stage-03-visual | 2901 | 15200 | 19.09% |
+| stage-04-visual | 495 | 5600 | 8.84% |
+| connector-01-02 | 138 | 960 | 14.37% |
 | connector-02-03 | 123 | 816 | 15.07% |
-| connector-03-04 | 119 | 792 | 15.03% |
+| connector-03-04 | 123 | 792 | 15.53% |
 | chat | 206 | 2750 | 7.49% |
 | bottom-line | 0 | 7168 | 0.00% |
 
@@ -383,33 +389,39 @@ Primitives marked `geometry-only` intentionally omit painted-ink deltas (JPEG in
 
 ## Remaining visual discrepancies
 
-- `connector-1-node`: ink 257,238 11×3 → 256,233 12×12 (-1,-5 +1×+9); geo 256,233 13×13 → 256,233 13×13 (0,0 0×0)
-- `connector-1-node-border`: ink 257,238 11×3 → 260,237 8×8 (+3,-1 -3×+5); geo 256,233 13×13 → - (-256,-233 -13×-13)
-- `connector-1-glow`: ink 254,237 17×5 → 255,232 14×14 (+1,-5 -3×+9); geo 253,230 19×19 → 255,232 14×14 (+2,+2 -5×-5)
-- `connector-2-node`: ink 514,236 11×9 → 513,233 12×12 (-1,-3 +1×+3); geo 513,233 13×13 → 513,233 13×13 (0,0 0×0)
-- `connector-2-node-border`: ink 514,236 11×9 → 517,237 8×8 (+3,+1 -3×-1); geo 513,233 13×13 → - (-513,-233 -13×-13)
-- `connector-2-node-interior`: ink 522,238 1×1 → 516,236 7×7 (-6,-2 +6×+6); geo 515,235 9×9 → - (-515,-235 -9×-9)
-- `connector-2-glow`: ink 511,230 17×19 → 512,232 14×14 (+1,+2 -3×-5); geo 510,230 19×19 → 512,232 14×14 (+2,+2 -5×-5)
-- `connector-3-node`: ink 758,238 11×3 → 758,233 12×12 (0,-5 +1×+9); geo 757,233 13×13 → 757,233 13×13 (0,0 0×0)
-- `connector-3-node-border`: ink 758,238 11×3 → 758,237 8×8 (0,-1 -3×+5); geo 757,233 13×13 → - (-757,-233 -13×-13)
-- `connector-3-glow`: ink 755,238 17×4 → 757,232 14×14 (+2,-6 -3×+10); geo 754,230 19×19 → 757,232 14×14 (+3,+2 -5×-5)
-- `stage-01-pill-icon`: ink 105,364 13×14 → 107,368 9×11 (+2,+4 -4×-3); geo 104,364 14×14 → 105,367 13×13 (+1,+3 -1×-1)
-- `stage-02-pill-icon`: ink 300,364 14×14 → 304,368 9×9 (+4,+4 -5×-5); geo 300,364 14×14 → 302,367 13×13 (+2,+3 -1×-1)
-- `stage-03-pill-icon`: ink 554,364 12×14 → 557,371 11×5 (+3,+7 -1×-9); geo 552,364 14×14 → 556,367 13×13 (+4,+3 -1×-1)
-- `stage-04-pill-icon`: ink 797,364 13×14 → 798,370 12×7 (+1,+6 -1×-7); geo 796,364 14×14 → 798,367 13×13 (+2,+3 -1×-1)
-- `heading-support`: ink 292,115 450×12 → 8,115 443×12 (-284,0 -7×0); geo 288,113 460×16 → 4,113 450×15 (-284,0 -10×-1)
-- `stage-01-symbol`: ink 111,223 33×33 → 109,221 29×36 (-2,-2 -4×+3); geo 108,218 36×40 → 106,221 36×36 (-2,+3 0×-4)
-- `stage-03-symbol`: ink 560,223 30×29 → 561,223 27×25 (+1,0 -3×-4); geo 554,216 36×36 → 558,221 33×33 (+4,+5 -3×-3)
-- `stage-01-title`: ink 101,285 99×9 → 100,284 95×10 (-1,-1 -4×+1); geo 98,282 120×18 → 100,283 125×12 (+2,+1 +5×-6)
-- `stage-02-title`: ink 299,285 119×11 → 298,284 115×12 (-1,-1 -4×+1); geo 296,282 140×18 → 297,283 184×12 (+1,+1 +44×-6)
-- `stage-03-title`: ink 551,285 120×11 → 551,284 115×12 (0,-1 -5×+1); geo 548,282 140×18 → 551,283 174×12 (+3,+1 +34×-6)
-- `stage-04-title`: ink 793,285 118×10 → 794,284 123×12 (+1,-1 +5×+2); geo 790,282 128×18 → 794,283 116×12 (+4,+1 -12×-6)
-- `stage-03-body-line-1`: ink 551,320 124×9 → 552,321 120×10 (+1,+1 -4×+1); geo 548,316 140×13 → 552,318 169×14 (+4,+2 +29×+1)
-- `stage-04-body-line-1`: ink 794,320 95×9 → 795,321 101×10 (+1,+1 +6×+1); geo 790,316 128×13 → 795,318 111×14 (+5,+2 -17×+1)
-- `stage-02-pill`: ink 295,362 119×22 → 294,362 115×22 (-1,0 -4×0); geo 294,362 120×22 → 294,362 115×22 (0,0 -5×0)
-- `stage-03-pill`: ink 547,362 130×22 → 548,362 125×22 (+1,0 -5×0); geo 546,362 132×22 → 548,362 125×22 (+2,0 -7×0)
-- `stage-04-pill`: ink 789,362 93×22 → 790,362 88×22 (+1,0 -5×0); geo 788,362 94×22 → 790,362 93×22 (+2,0 -1×0)
-- `stage-03-pill-label`: ink 574,367 95×10 → 574,368 90×9 (0,+1 -5×-1); geo 568,366 105×12 → 574,368 90×9 (+6,+2 -15×-3)
-- `stage-01-icon-frame`: ink 97,213 55×51 → 99,214 50×50 (+2,+1 -5×-1); geo 97,210 55×55 → 99,214 50×50 (+2,+4 -5×-5)
-- `stage-02-icon-frame`: ink 296,213 50×49 → 295,210 49×52 (-1,-3 -1×+3); geo 294,210 52×52 → 295,213 48×48 (+1,+3 -4×-4)
-- `stage-03-icon-frame`: ink 547,212 51×50 → 550,210 48×52 (+3,-2 -3×+2); geo 546,210 52×52 → 550,213 48×48 (+4,+3 -4×-4)
+- `connector-1-node`: ink 257,238 11×3 → 256,233 12×13 (-1,-5 +1×+10); geo 256,233 13×13 → 256,233 13×13 (0,0 0×0)
+- `connector-1-node-border`: ink 257,238 11×3 → 264,234 4×11 (+7,-4 -7×+8); geo 256,233 13×13 → 257,234 11×11 (+1,+1 -2×-2)
+- `connector-1-glow`: ink 254,237 17×5 → 253,230 18×19 (-1,-7 +1×+14); geo 253,230 19×19 → 253,230 19×19 (0,0 0×0)
+- `connector-2-node`: ink 514,236 11×9 → 513,233 12×13 (-1,-3 +1×+4); geo 513,233 13×13 → 513,233 13×13 (0,0 0×0)
+- `connector-2-node-border`: ink 514,236 11×9 → 521,234 4×11 (+7,-2 -7×+2); geo 513,233 13×13 → 514,234 11×11 (+1,+1 -2×-2)
+- `connector-2-node-interior`: ink 522,238 1×1 → 518,236 5×7 (-4,-2 +4×+6); geo 515,235 9×9 → 515,235 9×9 (0,0 0×0)
+- `connector-3-node`: ink 758,238 11×3 → 758,233 12×13 (0,-5 +1×+10); geo 757,233 13×13 → 757,233 13×13 (0,0 0×0)
+- `connector-3-node-border`: ink 758,238 11×3 → 758,234 5×11 (0,-4 -6×+8); geo 757,233 13×13 → 758,234 11×11 (+1,+1 -2×-2)
+- `connector-3-glow`: ink 755,238 17×4 → 755,230 18×19 (0,-8 +1×+15); geo 754,230 19×19 → 754,230 19×19 (0,0 0×0)
+- `stage-02-active-dot` (geometry-only): geo 327,208 9×9 → 328,211 9×9 (+1,+3 0×0)
+- `stage-01-pill-icon`: ink 105,364 13×14 → 108,369 10×11 (+3,+5 -3×-3); geo 104,364 14×14 → 106,367 14×14 (+2,+3 0×0)
+- `stage-02-pill-icon`: ink 300,364 14×14 → 305,368 10×9 (+5,+4 -4×-5); geo 300,364 14×14 → 303,367 14×14 (+3,+3 0×0)
+- `stage-03-pill-icon`: ink 554,364 12×14 → 559,371 10×6 (+5,+7 -2×-8); geo 552,364 14×14 → 557,367 14×14 (+5,+3 0×0)
+- `stage-04-pill-icon`: ink 797,364 13×14 → 801,370 12×8 (+4,+6 -1×-6); geo 796,364 14×14 → 800,367 14×14 (+4,+3 0×0)
+- `heading-eyebrow`: ink 424,49 176×7 → 421,49 181×7 (-3,0 +5×0); geo 420,47 185×12 → 421,49 182×10 (+1,+2 -3×-2)
+- `heading-title`: ink 285,74 463×29 → 285,77 455×28 (0,+3 -8×-1); geo 280,72 470×34 → 283,72 457×32 (+3,0 -13×-2)
+- `heading-support`: ink 292,115 450×12 → 288,115 466×13 (-4,0 +16×+1); geo 288,113 460×16 → 288,113 460×16 (0,0 0×0)
+- `stage-01-symbol`: ink 111,223 33×33 → 108,218 29×36 (-3,-5 -4×+3); geo 108,218 36×40 → 105,218 36×36 (-3,0 0×-4)
+- `stage-02-symbol`: ink 304,224 32×28 → 304,221 30×28 (0,-3 -2×0); geo 300,216 36×36 → 302,218 34×34 (+2,+2 -2×-2)
+- `stage-03-symbol`: ink 560,223 30×29 → 559,220 29×27 (-1,-3 -1×-2); geo 554,216 36×36 → 557,218 34×34 (+3,+2 -2×-2)
+- `stage-04-title`: ink 793,285 118×10 → 793,284 122×12 (0,-1 +4×+2); geo 790,282 128×18 → 793,283 115×12 (+3,+1 -13×-6)
+- `stage-01-body-line-2`: ink 101,335 50×7 → 99,332 53×7 (-2,-3 +3×0); geo 98,329 80×13 → 99,330 130×13 (+1,+1 +50×0)
+- `stage-02-body-line-2`: ink 298,335 121×7 → 296,332 122×10 (-2,-3 +1×+3); geo 296,329 140×13 → 296,330 185×13 (0,+1 +45×0)
+- `stage-03-body-line-2`: ink 551,335 86×7 → 550,332 85×9 (-1,-3 -1×+2); geo 548,329 120×13 → 550,330 175×13 (+2,+1 +55×0)
+- `stage-04-body-line-1`: ink 794,320 95×9 → 793,319 102×10 (-1,-1 +7×+1); geo 790,316 128×13 → 793,317 115×13 (+3,+1 -13×0)
+- `stage-04-body-line-2`: ink 793,335 121×7 → 793,332 122×10 (0,-3 +1×+3); geo 790,329 128×13 → 793,330 115×13 (+3,+1 -13×0)
+- `stage-01-pill`: ink 97,362 92×22 → 97,363 93×18 (0,+1 +1×-4); geo 96,362 94×22 → 97,363 98×22 (+1,+1 +4×0)
+- `stage-02-pill`: ink 295,362 119×22 → 294,363 120×18 (-1,+1 +1×-4); geo 294,362 120×22 → 294,363 125×22 (0,+1 +5×0)
+- `stage-03-pill`: ink 547,362 130×22 → 548,363 130×18 (+1,+1 0×-4); geo 546,362 132×22 → 548,363 136×22 (+2,+1 +4×0)
+- `stage-04-pill`: ink 789,362 93×22 → 791,363 91×18 (+2,+1 -2×-4); geo 788,362 94×22 → 791,363 99×22 (+3,+1 +5×0)
+- `stage-03-pill-label`: ink 574,367 95×10 → 577,369 96×9 (+3,+2 +1×-1); geo 568,366 105×12 → 577,369 96×10 (+9,+3 -9×-2)
+- `stage-04-pill-label`: ink 817,367 58×9 → 820,369 59×9 (+3,+2 +1×0); geo 812,366 70×12 → 820,369 59×10 (+8,+3 -11×-2)
+- `stage-01-icon-frame`: ink 97,213 55×51 → 98,211 50×50 (+1,-2 -5×-1); geo 97,210 55×55 → 98,211 50×50 (+1,+1 -5×-5)
+- `stage-02-icon-frame`: ink 296,213 50×49 → 295,210 48×52 (-1,-3 -2×+3); geo 294,210 52×52 → 295,211 48×48 (+1,+1 -4×-4)
+- `stage-03-icon-frame`: ink 547,212 51×50 → 550,210 48×52 (+3,-2 -3×+2); geo 546,210 52×52 → 550,211 48×48 (+4,+1 -4×-4)
+- `stage-04-icon-frame`: ink 792,214 48×46 → 791,211 49×49 (-1,-3 +1×+3); geo 790,210 50×50 → 791,211 50×50 (+1,+1 0×0)

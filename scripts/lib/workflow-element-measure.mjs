@@ -62,16 +62,55 @@ export const DOM_SELECTORS = [
   "stage-03-right-edge",
   "connector-1-line",
   "connector-1-node",
+  "connector-1-node-border",
+  "connector-1-node-interior",
   "connector-1-dot",
   "connector-1-glow",
   "connector-2-line",
   "connector-2-node",
+  "connector-2-node-border",
+  "connector-2-node-interior",
   "connector-2-dot",
   "connector-2-glow",
   "connector-3-line",
   "connector-3-node",
+  "connector-3-node-border",
+  "connector-3-node-interior",
   "connector-3-dot",
   "connector-3-glow",
+];
+
+/** Required DOM geometry — suite must fail when these are null. */
+export const REQUIRED_DOM = [
+  "heading-eyebrow",
+  "heading-title",
+  "heading-support",
+  "connector-1-line",
+  "connector-1-node",
+  "connector-1-node-border",
+  "connector-1-node-interior",
+  "connector-1-dot",
+  "connector-1-glow",
+  "connector-2-line",
+  "connector-2-node",
+  "connector-2-node-border",
+  "connector-2-node-interior",
+  "connector-2-dot",
+  "connector-2-glow",
+  "connector-3-line",
+  "connector-3-node",
+  "connector-3-node-border",
+  "connector-3-node-interior",
+  "connector-3-dot",
+  "connector-3-glow",
+  "stage-02-active-dot",
+  "stage-03-check-0",
+  "stage-03-check-1",
+  "stage-03-check-2",
+  "stage-01-pill",
+  "stage-02-pill",
+  "stage-03-pill",
+  "stage-04-pill",
 ];
 
 /** Must succeed paint-isolation with plausible ink. */
@@ -621,6 +660,40 @@ export function validateIsolation({
 }) {
   const failures = [];
 
+  // Required DOM geometry cannot be null or implausibly empty.
+  for (const name of REQUIRED_DOM) {
+    const dom = domBounds?.[name];
+    if (!dom) {
+      failures.push({
+        name,
+        rule: "dom-null",
+        detail: "required data-qa element missing or zero-sized",
+      });
+      continue;
+    }
+    if (dom.w < 2 || dom.h < 2) {
+      failures.push({
+        name,
+        rule: "dom-implausible",
+        detail: `geometry too small ${fmtBox(dom)}`,
+      });
+    }
+  }
+
+  // Heading support must be near the centered mask (x≈288), not left-anchored.
+  const supportDom = domBounds?.["heading-support"];
+  const supportGeo = refGeometric?.["heading-support"];
+  if (supportDom && supportGeo) {
+    const dx = Math.abs(supportDom.x - supportGeo.x);
+    if (dx > 40) {
+      failures.push({
+        name: "heading-support",
+        rule: "dom-misaligned",
+        detail: `actual x=${supportDom.x} vs ref x=${supportGeo.x} (Δ${dx}) — text not centered`,
+      });
+    }
+  }
+
   // Expected reference painted primitives cannot silently miss ink.
   if (maskDoc?.primitives) {
     for (const [name, spec] of Object.entries(maskDoc.primitives)) {
@@ -638,8 +711,17 @@ export function validateIsolation({
   }
 
   for (const name of REQUIRED_PAINT) {
-    // Geometry-only primitives still require actual paint isolation for implementation QA.
-    void geometryOnly;
+    // Geometry-only masks (JPEG ink unreliable) require DOM geometry, not paint ink.
+    if (geometryOnly?.[name]) {
+      if (!domBounds?.[name]) {
+        failures.push({
+          name,
+          rule: "dom-null",
+          detail: "geometry-only primitive missing required DOM bounds",
+        });
+      }
+      continue;
+    }
     const paint = paintBounds[name];
     if (!paint) {
       failures.push({ name, rule: "paint-null", detail: "expected visible paint-isolation returned null" });

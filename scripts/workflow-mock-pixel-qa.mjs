@@ -31,8 +31,10 @@ import {
 const SITE = (process.env.SITE || "http://localhost:3017").replace(/\/$/, "");
 const OUT = resolve("screenshots/workflow-mock-pixel-qa");
 const REF_JPG = resolve("docs/design-system/workflow-mock/reference-native.jpg");
+/** Set WORKFLOW_QA_DIAGNOSTICS=1 to also write crops/, isolated/, masks/, region-* triplets. */
+const DIAGNOSTICS = process.env.WORKFLOW_QA_DIAGNOSTICS === "1";
 mkdirSync(OUT, { recursive: true });
-mkdirSync(resolve(OUT, "crops"), { recursive: true });
+if (DIAGNOSTICS) mkdirSync(resolve(OUT, "crops"), { recursive: true });
 
 const W = 1024;
 const H = 467;
@@ -207,15 +209,17 @@ function compareRegion(ref, actual, region, name) {
   const r = normalizeRgba(crop(ref, region), region.w, region.h);
   const a = normalizeRgba(crop(actual, region), region.w, region.h);
   const { mismatched, diff, total } = compareImages(r, a);
-  writePng(resolve(OUT, `region-${name}-ref.png`), r);
-  writePng(resolve(OUT, `region-${name}-actual.png`), a);
-  writePng(resolve(OUT, `region-${name}-diff.png`), amplifyDiff(diff));
-  writePng(resolve(OUT, `crops/${name}-ref-4x.png`), nearestScale(r, 4));
-  writePng(resolve(OUT, `crops/${name}-actual-4x.png`), nearestScale(a, 4));
-  writePng(
-    resolve(OUT, `crops/${name}-diff-4x.png`),
-    nearestScale(amplifyDiff(diff), 4),
-  );
+  if (DIAGNOSTICS) {
+    writePng(resolve(OUT, `region-${name}-ref.png`), r);
+    writePng(resolve(OUT, `region-${name}-actual.png`), a);
+    writePng(resolve(OUT, `region-${name}-diff.png`), amplifyDiff(diff));
+    writePng(resolve(OUT, `crops/${name}-ref-4x.png`), nearestScale(r, 4));
+    writePng(resolve(OUT, `crops/${name}-actual-4x.png`), nearestScale(a, 4));
+    writePng(
+      resolve(OUT, `crops/${name}-diff-4x.png`),
+      nearestScale(amplifyDiff(diff), 4),
+    );
+  }
   return {
     name,
     region,
@@ -297,7 +301,9 @@ const page = await browser.newPage({
 
 const refPngPath = resolve(OUT, "reference-normalized.png");
 await jpegToPngSharp(REF_JPG, refPngPath);
-copyFileSync(REF_JPG, resolve(OUT, "reference-native.jpg"));
+if (DIAGNOSTICS) {
+  copyFileSync(REF_JPG, resolve(OUT, "reference-native.jpg"));
+}
 
 await page.goto(`${SITE}/dev/workflow-visual-qa`, {
   waitUntil: "networkidle",
@@ -348,7 +354,7 @@ writePng(refPngPath, ref);
 writePng(actualPath, actual);
 
 const maskDoc = loadReferenceMasks();
-const maskAuditDir = resolve(OUT, "masks");
+const maskAuditDir = DIAGNOSTICS ? resolve(OUT, "masks") : null;
 const refMasks = measureAllReferenceMasks(ref, maskDoc, maskAuditDir);
 const actualMasks = measureAllReferenceMasks(actual, maskDoc, null);
 
@@ -622,9 +628,9 @@ const colorSamples = {
   },
 };
 
-mkdirSync(resolve(OUT, "isolated"), { recursive: true });
+if (DIAGNOSTICS) mkdirSync(resolve(OUT, "isolated"), { recursive: true });
 function cropPair(name, box, pad = 4) {
-  if (!box) return;
+  if (!DIAGNOSTICS || !box) return;
   const x = Math.max(0, box.x - pad);
   const y = Math.max(0, box.y - pad);
   const w = Math.min(W - x, box.w + pad * 2);
