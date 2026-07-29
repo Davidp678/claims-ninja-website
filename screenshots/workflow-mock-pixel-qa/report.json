@@ -39,9 +39,9 @@
     "mismatchRatio": 0,
     "passed": true
   },
-  "mismatchedPixels": 23552,
+  "mismatchedPixels": 22904,
   "totalPixels": 478208,
-  "mismatchRatio": 0.04925053533190578,
+  "mismatchRatio": 0.04789547644539614,
   "headingTitleContamination": {
     "note": "Loose L>=160 detector on reference can include glow/AA below glyphs; dense L>=180 is glyph ink.",
     "looseRef": {
@@ -63,22 +63,22 @@
       "count": 3997
     },
     "looseActual": {
-      "left": 283,
+      "left": 285,
       "top": 74,
       "right": 747,
       "bottom": 101,
-      "width": 465,
+      "width": 463,
       "height": 28,
-      "count": 4113
+      "count": 4298
     },
     "denseActual": {
-      "left": 283,
+      "left": 286,
       "top": 74,
       "right": 747,
       "bottom": 101,
-      "width": 465,
+      "width": 462,
       "height": 28,
-      "count": 3933
+      "count": 4120
     }
   },
   "dualBounds": [
@@ -117,18 +117,18 @@
           "method": "mask-ink:connector"
         },
         "actual": {
-          "x": 244,
-          "y": 235,
-          "w": 34,
-          "h": 8,
-          "count": 180,
-          "method": "paint-diff-isolation"
+          "x": 246,
+          "y": 238,
+          "w": 30,
+          "h": 2,
+          "count": 32,
+          "method": "paint-layer-isolation"
         },
         "delta": {
-          "x": -2,
-          "y": -3,
-          "w": 4,
-          "h": 5
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": -1
         }
       }
     },
@@ -167,18 +167,18 @@
           "method": "mask-ink:connector"
         },
         "actual": {
-          "x": 253,
-          "y": 230,
-          "w": 18,
-          "h": 18,
-          "count": 220,
-          "method": "paint-diff-isolation"
+          "x": 256,
+          "y": 233,
+          "w": 12,
+          "h": 12,
+          "count": 24,
+          "method": "paint-layer-isolation"
         },
         "delta": {
-          "x": -4,
-          "y": -8,
-          "w": 7,
-          "h": 15
+          "x": -1,
+          "y": -5,
+          "w": 1,
+          "h": 9
         }
       }
     },
@@ -305,18 +305,18 @@
           "method": "mask-ink:connector"
         },
         "actual": {
-          "x": 257,
-          "y": 234,
-          "w": 10,
-          "h": 10,
-          "count": 75,
-          "method": "paint-diff-isolation"
+          "x": 260,
+          "y": 237,
+          "w": 4,
+          "h": 4,
+          "count": 16,
+          "method": "paint-layer-isolation"
         },
         "delta": {
-          "x": -4,
-          "y": -4,
-          "w": 7,
-          "h": 7
+          "x": -1,
+          "y": -1,
+          "w": 1,
+          "h": 1
         }
       }
     },
@@ -331,12 +331,18 @@
           "h": 19,
           "method": "mask-geometry"
         },
-        "actual": null,
+        "actual": {
+          "x": 255,
+          "y": 232,
+          "w": 14,
+          "h": 14,
+          "method": "dom-geometry"
+        },
         "delta": {
-          "x": -253,
-          "y": -230,
-          "w": -19,
-          "h": -19
+          "x": 2,
+          "y": 2,
+          "w": -5,
+          "h": -5
         }
       },
       "paintedInk": {
@@ -349,17 +355,17 @@
           "method": "mask-ink:glow"
         },
         "actual": {
-          "x": 254,
+          "x": 255,
           "y": 232,
-          "w": 17,
+          "w": 14,
           "h": 14,
-          "count": 34,
-          "method": "mask-ink:glow"
+          "count": 145,
+          "method": "paint-layer-isolation"
         },
         "delta": {
-          "x": 0,
+          "x": 1,
           "y": -5,
-          "w": 0,
+          "w": -3,
           "h": 9
         }
       }
@@ -399,18 +405,18 @@
           "method": "mask-ink:connector"
         },
         "actual": {
-          "x": 506,
-          "y": 235,
-          "w": 28,
-          "h": 8,
-          "count": 132,
-          "method": "paint-diff-isolation"
+          "x": 508,
+          "y": 238,
+          "w": 24,
+          "h": 2,
+          "count": 20,
+          "method": "paint-layer-isolation"
         },
         "delta": {
-          "x": -2,
-          "y": -3,
-          "w": 4,
-          "h": 5
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": -1
         }
       }
     },
@@ -449,18 +455,18 @@
           "method": "mask-ink:connector"
         },
         "actual": {
-          "x": 510,
-          "y": 230,
-          "w": 18,
-          "h": 18,
-          "count": 220,
-          "method": "paint-diff-isolation"
+          "x": 513,
+          "y": 233,
+          "w": 12,
+          "h": 12,
+          "count": 24,
+          "method": "paint-layer-isolation"
         },
         "delta": {
-          "x": -4,
-          "y": -6,
-          "w": 7,
-          "h": 9
+          "x": -1,
+          "y": -3,
+          "w": 1,
+          "h": 3
         }
       }
     },
@@ -587,18 +593,18 @@
           "method": "mask-ink:connector"
         },
         "actual": {
-          "x": 514,
-          "y": 234,
-          "w": 10,
-          "h": 10,
-          "count": 75,
-          "method": "paint-diff-isolation"
+          "x": 517,
+          "y": 237,
+          "w": 4,
+          "h": 4,
+          "count": 16,
+          "method": "paint-layer-isolation"
         },
         "delta": {
-          "x": -4,
-          "y": -4,
-          "w": 7,
-          "h": 7
+          "x": -1,
+          "y": -1,
+          "w": 1,
+          "h": 1
         }
       }
     },
@@ -613,12 +619,18 @@
           "h": 19,
           "method": "mask-geometry"
         },
-        "actual": null,
+        "actual": {
+          "x": 512,
+          "y": 232,
+          "w": 14,
+          "h": 14,
+          "method": "dom-geometry"
+        },
         "delta": {
-          "x": -510,
-          "y": -230,
-          "w": -19,
-          "h": -19
+          "x": 2,
+          "y": 2,
+          "w": -5,
+          "h": -5
         }
       },
       "paintedInk": {
@@ -631,18 +643,18 @@
           "method": "mask-ink:glow"
         },
         "actual": {
-          "x": 511,
-          "y": 230,
-          "w": 17,
-          "h": 19,
-          "count": 118,
-          "method": "mask-ink:glow"
+          "x": 512,
+          "y": 232,
+          "w": 14,
+          "h": 14,
+          "count": 145,
+          "method": "paint-layer-isolation"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
-          "w": 0,
-          "h": 0
+          "x": 1,
+          "y": 2,
+          "w": -3,
+          "h": -5
         }
       }
     },
@@ -681,18 +693,18 @@
           "method": "mask-ink:connector"
         },
         "actual": {
-          "x": 748,
-          "y": 235,
-          "w": 28,
-          "h": 8,
-          "count": 132,
-          "method": "paint-diff-isolation"
+          "x": 750,
+          "y": 238,
+          "w": 24,
+          "h": 2,
+          "count": 20,
+          "method": "paint-layer-isolation"
         },
         "delta": {
-          "x": -3,
-          "y": -3,
-          "w": 5,
-          "h": 5
+          "x": -1,
+          "y": 0,
+          "w": 1,
+          "h": -1
         }
       }
     },
@@ -731,18 +743,18 @@
           "method": "mask-ink:connector"
         },
         "actual": {
-          "x": 755,
-          "y": 230,
-          "w": 18,
-          "h": 18,
-          "count": 220,
-          "method": "paint-diff-isolation"
+          "x": 758,
+          "y": 233,
+          "w": 12,
+          "h": 12,
+          "count": 22,
+          "method": "paint-layer-isolation"
         },
         "delta": {
-          "x": -3,
-          "y": -8,
-          "w": 7,
-          "h": 15
+          "x": 0,
+          "y": -5,
+          "w": 1,
+          "h": 9
         }
       }
     },
@@ -869,18 +881,18 @@
           "method": "mask-ink:connector"
         },
         "actual": {
-          "x": 759,
-          "y": 234,
-          "w": 10,
-          "h": 10,
-          "count": 75,
-          "method": "paint-diff-isolation"
+          "x": 762,
+          "y": 237,
+          "w": 4,
+          "h": 4,
+          "count": 16,
+          "method": "paint-layer-isolation"
         },
         "delta": {
-          "x": -3,
-          "y": -4,
-          "w": 7,
-          "h": 7
+          "x": 0,
+          "y": -1,
+          "w": 1,
+          "h": 1
         }
       }
     },
@@ -895,12 +907,18 @@
           "h": 19,
           "method": "mask-geometry"
         },
-        "actual": null,
+        "actual": {
+          "x": 757,
+          "y": 232,
+          "w": 14,
+          "h": 14,
+          "method": "dom-geometry"
+        },
         "delta": {
-          "x": -754,
-          "y": -230,
-          "w": -19,
-          "h": -19
+          "x": 3,
+          "y": 2,
+          "w": -5,
+          "h": -5
         }
       },
       "paintedInk": {
@@ -913,17 +931,17 @@
           "method": "mask-ink:glow"
         },
         "actual": {
-          "x": 755,
+          "x": 757,
           "y": 232,
-          "w": 17,
+          "w": 14,
           "h": 14,
-          "count": 34,
-          "method": "mask-ink:glow"
+          "count": 142,
+          "method": "paint-layer-isolation"
         },
         "delta": {
-          "x": 0,
+          "x": 2,
           "y": -6,
-          "w": 0,
+          "w": -3,
           "h": 10
         }
       }
@@ -1069,16 +1087,16 @@
         },
         "actual": {
           "x": 105,
-          "y": 363,
-          "w": 14,
-          "h": 14,
+          "y": 366,
+          "w": 13,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 1,
-          "y": -1,
-          "w": 0,
-          "h": 0
+          "y": 2,
+          "w": -1,
+          "h": -1
         }
       },
       "paintedInk": {
@@ -1092,16 +1110,16 @@
         },
         "actual": {
           "x": 107,
-          "y": 365,
-          "w": 10,
+          "y": 367,
+          "w": 9,
           "h": 11,
-          "count": 54,
+          "count": 41,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 2,
-          "y": 1,
-          "w": -3,
+          "y": 3,
+          "w": -4,
           "h": -3
         }
       }
@@ -1119,16 +1137,16 @@
         },
         "actual": {
           "x": 302,
-          "y": 363,
-          "w": 14,
-          "h": 14,
+          "y": 366,
+          "w": 13,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
-          "y": -1,
-          "w": 0,
-          "h": 0
+          "y": 2,
+          "w": -1,
+          "h": -1
         }
       },
       "paintedInk": {
@@ -1142,17 +1160,17 @@
         },
         "actual": {
           "x": 304,
-          "y": 364,
-          "w": 10,
-          "h": 12,
-          "count": 83,
+          "y": 367,
+          "w": 9,
+          "h": 11,
+          "count": 69,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 4,
-          "y": 0,
-          "w": -4,
-          "h": -2
+          "y": 3,
+          "w": -5,
+          "h": -3
         }
       }
     },
@@ -1169,16 +1187,16 @@
         },
         "actual": {
           "x": 556,
-          "y": 363,
-          "w": 14,
-          "h": 14,
+          "y": 366,
+          "w": 13,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 4,
-          "y": -1,
-          "w": 0,
-          "h": 0
+          "y": 2,
+          "w": -1,
+          "h": -1
         }
       },
       "paintedInk": {
@@ -1192,16 +1210,16 @@
         },
         "actual": {
           "x": 557,
-          "y": 367,
-          "w": 12,
+          "y": 369,
+          "w": 11,
           "h": 6,
-          "count": 28,
+          "count": 19,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 3,
-          "y": 3,
-          "w": 0,
+          "y": 5,
+          "w": -1,
           "h": -8
         }
       }
@@ -1219,16 +1237,16 @@
         },
         "actual": {
           "x": 798,
-          "y": 363,
-          "w": 14,
-          "h": 14,
+          "y": 366,
+          "w": 13,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
-          "y": -1,
-          "w": 0,
-          "h": 0
+          "y": 2,
+          "w": -1,
+          "h": -1
         }
       },
       "paintedInk": {
@@ -1241,18 +1259,18 @@
           "method": "mask-ink:mutedRed"
         },
         "actual": {
-          "x": 799,
-          "y": 366,
+          "x": 798,
+          "y": 369,
           "w": 12,
-          "h": 8,
-          "count": 52,
+          "h": 7,
+          "count": 41,
           "method": "paint-diff-isolation"
         },
         "delta": {
-          "x": 2,
-          "y": 2,
+          "x": 1,
+          "y": 5,
           "w": -1,
-          "h": -6
+          "h": -7
         }
       }
     },
@@ -1318,14 +1336,14 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 3,
+          "x": 4,
           "y": 70,
           "w": 1024,
           "h": 30,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -277,
+          "x": -276,
           "y": -2,
           "w": 554,
           "h": -4
@@ -1341,17 +1359,17 @@
           "method": "mask-ink:white180"
         },
         "actual": {
-          "x": 283,
+          "x": 285,
           "y": 74,
-          "w": 465,
+          "w": 462,
           "h": 28,
-          "count": 4450,
+          "count": 4501,
           "method": "paint-diff-isolation"
         },
         "delta": {
-          "x": -2,
+          "x": 0,
           "y": 0,
-          "w": 2,
+          "w": -1,
           "h": -1
         }
       }
@@ -1368,17 +1386,17 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 288,
-          "y": 112,
-          "w": 452,
-          "h": 16,
+          "x": 291,
+          "y": 113,
+          "w": 450,
+          "h": 15,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": -1,
-          "w": -8,
-          "h": 0
+          "x": 3,
+          "y": 0,
+          "w": -10,
+          "h": -1
         }
       },
       "paintedInk": {
@@ -1391,17 +1409,17 @@
           "method": "mask-ink:gray"
         },
         "actual": {
-          "x": 288,
+          "x": 294,
           "y": 115,
-          "w": 452,
+          "w": 444,
           "h": 12,
-          "count": 2042,
+          "count": 1422,
           "method": "paint-diff-isolation"
         },
         "delta": {
-          "x": -4,
+          "x": 2,
           "y": 0,
-          "w": 2,
+          "w": -6,
           "h": 0
         }
       }
@@ -1619,16 +1637,16 @@
         },
         "actual": {
           "x": 106,
-          "y": 222,
-          "w": 33,
-          "h": 33,
+          "y": 221,
+          "w": 36,
+          "h": 36,
           "method": "dom-geometry"
         },
         "delta": {
           "x": -2,
-          "y": 4,
-          "w": -3,
-          "h": -7
+          "y": 3,
+          "w": 0,
+          "h": -4
         }
       },
       "paintedInk": {
@@ -1641,18 +1659,18 @@
           "method": "mask-ink:mutedRed"
         },
         "actual": {
-          "x": 111,
-          "y": 223,
-          "w": 23,
-          "h": 31,
-          "count": 320,
+          "x": 109,
+          "y": 221,
+          "w": 29,
+          "h": 36,
+          "count": 526,
           "method": "paint-diff-isolation"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
-          "w": -10,
-          "h": -2
+          "x": -2,
+          "y": -2,
+          "w": -4,
+          "h": 3
         }
       }
     },
@@ -1668,17 +1686,17 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 304,
-          "y": 221,
-          "w": 32,
-          "h": 32,
+          "x": 302,
+          "y": 220,
+          "w": 34,
+          "h": 34,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 4,
-          "y": 5,
-          "w": -4,
-          "h": -4
+          "x": 2,
+          "y": 4,
+          "w": -2,
+          "h": -2
         }
       },
       "paintedInk": {
@@ -1691,18 +1709,18 @@
           "method": "mask-ink:mutedRed"
         },
         "actual": {
-          "x": 306,
-          "y": 224,
-          "w": 28,
-          "h": 26,
-          "count": 378,
+          "x": 304,
+          "y": 223,
+          "w": 30,
+          "h": 28,
+          "count": 516,
           "method": "paint-diff-isolation"
         },
         "delta": {
-          "x": 2,
-          "y": 0,
-          "w": -4,
-          "h": -2
+          "x": 0,
+          "y": -1,
+          "w": -2,
+          "h": 0
         }
       }
     },
@@ -1718,17 +1736,17 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 559,
+          "x": 558,
           "y": 221,
-          "w": 30,
-          "h": 30,
+          "w": 33,
+          "h": 33,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 5,
+          "x": 4,
           "y": 5,
-          "w": -6,
-          "h": -6
+          "w": -3,
+          "h": -3
         }
       },
       "paintedInk": {
@@ -1741,18 +1759,18 @@
           "method": "mask-ink:mutedRed"
         },
         "actual": {
-          "x": 562,
-          "y": 224,
-          "w": 24,
-          "h": 21,
-          "count": 197,
+          "x": 561,
+          "y": 223,
+          "w": 27,
+          "h": 25,
+          "count": 300,
           "method": "paint-diff-isolation"
         },
         "delta": {
-          "x": 2,
-          "y": 1,
-          "w": -6,
-          "h": -8
+          "x": 1,
+          "y": 0,
+          "w": -3,
+          "h": -4
         }
       }
     },
@@ -1768,17 +1786,17 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 801,
-          "y": 221,
-          "w": 33,
-          "h": 33,
+          "x": 799,
+          "y": 219,
+          "w": 36,
+          "h": 36,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 1,
-          "y": 3,
-          "w": -1,
-          "h": -1
+          "x": -1,
+          "y": 1,
+          "w": 2,
+          "h": 2
         }
       },
       "paintedInk": {
@@ -1791,18 +1809,18 @@
           "method": "mask-ink:mutedRed"
         },
         "actual": {
-          "x": 804,
-          "y": 224,
-          "w": 27,
-          "h": 27,
-          "count": 261,
+          "x": 802,
+          "y": 221,
+          "w": 30,
+          "h": 32,
+          "count": 402,
           "method": "paint-diff-isolation"
         },
         "delta": {
-          "x": 4,
-          "y": 1,
-          "w": -6,
-          "h": -2
+          "x": 2,
+          "y": -2,
+          "w": -3,
+          "h": 3
         }
       }
     },
@@ -1821,14 +1839,14 @@
           "x": 100,
           "y": 283,
           "w": 125,
-          "h": 13,
+          "h": 12,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
           "y": 1,
           "w": 5,
-          "h": -5
+          "h": -6
         }
       },
       "paintedInk": {
@@ -1842,16 +1860,16 @@
         },
         "actual": {
           "x": 100,
-          "y": 285,
-          "w": 99,
+          "y": 284,
+          "w": 95,
           "h": 10,
-          "count": 499,
+          "count": 469,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": -1,
-          "y": 0,
-          "w": 0,
+          "y": -1,
+          "w": -4,
           "h": 1
         }
       }
@@ -1871,14 +1889,14 @@
           "x": 297,
           "y": 283,
           "w": 184,
-          "h": 13,
+          "h": 12,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 1,
           "y": 1,
           "w": 44,
-          "h": -5
+          "h": -6
         }
       },
       "paintedInk": {
@@ -1891,17 +1909,17 @@
           "method": "mask-ink:white170"
         },
         "actual": {
-          "x": 297,
-          "y": 285,
-          "w": 120,
+          "x": 298,
+          "y": 284,
+          "w": 115,
           "h": 12,
-          "count": 618,
+          "count": 574,
           "method": "paint-diff-isolation"
         },
         "delta": {
-          "x": -2,
-          "y": 0,
-          "w": 1,
+          "x": -1,
+          "y": -1,
+          "w": -4,
           "h": 1
         }
       }
@@ -1921,14 +1939,14 @@
           "x": 551,
           "y": 283,
           "w": 174,
-          "h": 13,
+          "h": 12,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 3,
           "y": 1,
           "w": 34,
-          "h": -5
+          "h": -6
         }
       },
       "paintedInk": {
@@ -1942,16 +1960,16 @@
         },
         "actual": {
           "x": 551,
-          "y": 285,
-          "w": 119,
+          "y": 284,
+          "w": 115,
           "h": 12,
-          "count": 625,
+          "count": 575,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 0,
-          "y": 0,
-          "w": -1,
+          "y": -1,
+          "w": -5,
           "h": 1
         }
       }
@@ -1971,14 +1989,14 @@
           "x": 794,
           "y": 283,
           "w": 116,
-          "h": 13,
+          "h": 12,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 4,
           "y": 1,
           "w": -12,
-          "h": -5
+          "h": -6
         }
       },
       "paintedInk": {
@@ -1995,7 +2013,7 @@
           "y": 284,
           "w": 123,
           "h": 12,
-          "count": 585,
+          "count": 577,
           "method": "paint-diff-isolation"
         },
         "delta": {
@@ -2043,15 +2061,15 @@
         "actual": {
           "x": 101,
           "y": 306,
-          "w": 114,
+          "w": 112,
           "h": 9,
-          "count": 453,
+          "count": 461,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 0,
           "y": 1,
-          "w": 2,
+          "w": 0,
           "h": -1
         }
       }
@@ -2069,14 +2087,14 @@
         },
         "actual": {
           "x": 101,
-          "y": 317,
+          "y": 318,
           "w": 126,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 3,
-          "y": 1,
+          "y": 2,
           "w": 6,
           "h": 1
         }
@@ -2092,16 +2110,16 @@
         },
         "actual": {
           "x": 101,
-          "y": 320,
-          "w": 108,
+          "y": 321,
+          "w": 106,
           "h": 9,
-          "count": 400,
+          "count": 407,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 0,
-          "y": 0,
-          "w": 1,
+          "y": 1,
+          "w": -1,
           "h": 0
         }
       }
@@ -2119,14 +2137,14 @@
         },
         "actual": {
           "x": 101,
-          "y": 331,
+          "y": 333,
           "w": 126,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 3,
-          "y": 2,
+          "y": 4,
           "w": 46,
           "h": 1
         }
@@ -2142,16 +2160,16 @@
         },
         "actual": {
           "x": 101,
-          "y": 334,
-          "w": 53,
+          "y": 336,
+          "w": 52,
           "h": 7,
-          "count": 204,
+          "count": 207,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 0,
-          "y": -1,
-          "w": 3,
+          "y": 1,
+          "w": 2,
           "h": 0
         }
       }
@@ -2193,15 +2211,15 @@
         "actual": {
           "x": 298,
           "y": 306,
-          "w": 108,
+          "w": 106,
           "h": 9,
-          "count": 380,
+          "count": 374,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 0,
           "y": 1,
-          "w": 2,
+          "w": 0,
           "h": 0
         }
       }
@@ -2219,14 +2237,14 @@
         },
         "actual": {
           "x": 298,
-          "y": 317,
+          "y": 318,
           "w": 179,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
-          "y": 1,
+          "y": 2,
           "w": 39,
           "h": 1
         }
@@ -2242,16 +2260,16 @@
         },
         "actual": {
           "x": 298,
-          "y": 320,
-          "w": 85,
+          "y": 321,
+          "w": 84,
           "h": 7,
-          "count": 311,
+          "count": 317,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 0,
-          "y": 0,
-          "w": 0,
+          "y": 1,
+          "w": -1,
           "h": 0
         }
       }
@@ -2269,14 +2287,14 @@
         },
         "actual": {
           "x": 298,
-          "y": 331,
+          "y": 333,
           "w": 179,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
-          "y": 2,
+          "y": 4,
           "w": 39,
           "h": 1
         }
@@ -2292,16 +2310,16 @@
         },
         "actual": {
           "x": 298,
-          "y": 334,
-          "w": 122,
+          "y": 336,
+          "w": 120,
           "h": 10,
-          "count": 486,
+          "count": 498,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 0,
-          "y": -1,
-          "w": 1,
+          "y": 1,
+          "w": -1,
           "h": 3
         }
       }
@@ -2343,15 +2361,15 @@
         "actual": {
           "x": 552,
           "y": 306,
-          "w": 124,
+          "w": 121,
           "h": 9,
-          "count": 465,
+          "count": 469,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 1,
           "y": 1,
-          "w": 1,
+          "w": -2,
           "h": -1
         }
       }
@@ -2369,14 +2387,14 @@
         },
         "actual": {
           "x": 552,
-          "y": 317,
+          "y": 318,
           "w": 169,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 4,
-          "y": 1,
+          "y": 2,
           "w": 29,
           "h": 1
         }
@@ -2392,16 +2410,16 @@
         },
         "actual": {
           "x": 552,
-          "y": 320,
-          "w": 123,
+          "y": 321,
+          "w": 120,
           "h": 10,
-          "count": 464,
+          "count": 472,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 1,
-          "y": 0,
-          "w": -1,
+          "y": 1,
+          "w": -4,
           "h": 1
         }
       }
@@ -2419,14 +2437,14 @@
         },
         "actual": {
           "x": 552,
-          "y": 331,
+          "y": 333,
           "w": 169,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 4,
-          "y": 2,
+          "y": 4,
           "w": 49,
           "h": 1
         }
@@ -2442,16 +2460,16 @@
         },
         "actual": {
           "x": 552,
-          "y": 334,
-          "w": 86,
+          "y": 336,
+          "w": 84,
           "h": 9,
-          "count": 316,
+          "count": 306,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 1,
-          "y": -1,
-          "w": 0,
+          "y": 1,
+          "w": -2,
           "h": 2
         }
       }
@@ -2493,15 +2511,15 @@
         "actual": {
           "x": 795,
           "y": 306,
-          "w": 103,
+          "w": 101,
           "h": 8,
-          "count": 416,
+          "count": 414,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 2,
           "y": 1,
-          "w": 3,
+          "w": 1,
           "h": -1
         }
       }
@@ -2519,14 +2537,14 @@
         },
         "actual": {
           "x": 795,
-          "y": 317,
+          "y": 318,
           "w": 111,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 5,
-          "y": 1,
+          "y": 2,
           "w": -17,
           "h": 1
         }
@@ -2542,16 +2560,16 @@
         },
         "actual": {
           "x": 795,
-          "y": 320,
-          "w": 103,
+          "y": 321,
+          "w": 101,
           "h": 10,
-          "count": 383,
+          "count": 378,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 1,
-          "y": 0,
-          "w": 8,
+          "y": 1,
+          "w": 6,
           "h": 1
         }
       }
@@ -2569,14 +2587,14 @@
         },
         "actual": {
           "x": 795,
-          "y": 331,
+          "y": 333,
           "w": 111,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 5,
-          "y": 2,
+          "y": 4,
           "w": -17,
           "h": 1
         }
@@ -2592,15 +2610,15 @@
         },
         "actual": {
           "x": 795,
-          "y": 334,
+          "y": 336,
           "w": 118,
           "h": 10,
-          "count": 441,
+          "count": 447,
           "method": "paint-diff-isolation"
         },
         "delta": {
           "x": 2,
-          "y": -1,
+          "y": 1,
           "w": -3,
           "h": 3
         }
@@ -2620,14 +2638,14 @@
         "actual": {
           "x": 97,
           "y": 362,
-          "w": 94,
+          "w": 90,
           "h": 22,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 1,
           "y": 0,
-          "w": 0,
+          "w": -4,
           "h": 0
         }
       },
@@ -2643,15 +2661,15 @@
         "actual": {
           "x": 97,
           "y": 362,
-          "w": 89,
+          "w": 90,
           "h": 22,
-          "count": 228,
+          "count": 262,
           "method": "mask-ink:edge"
         },
         "delta": {
           "x": 0,
           "y": 0,
-          "w": -3,
+          "w": -2,
           "h": 0
         }
       }
@@ -2670,14 +2688,14 @@
         "actual": {
           "x": 294,
           "y": 362,
-          "w": 120,
+          "w": 115,
           "h": 22,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
           "y": 0,
-          "w": 0,
+          "w": -5,
           "h": 0
         }
       },
@@ -2693,15 +2711,15 @@
         "actual": {
           "x": 294,
           "y": 362,
-          "w": 120,
+          "w": 115,
           "h": 22,
-          "count": 324,
+          "count": 342,
           "method": "mask-ink:edge"
         },
         "delta": {
           "x": -1,
           "y": 0,
-          "w": 1,
+          "w": -4,
           "h": 0
         }
       }
@@ -2720,14 +2738,14 @@
         "actual": {
           "x": 548,
           "y": 362,
-          "w": 131,
+          "w": 125,
           "h": 22,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
           "y": 0,
-          "w": -1,
+          "w": -7,
           "h": 0
         }
       },
@@ -2743,15 +2761,15 @@
         "actual": {
           "x": 548,
           "y": 362,
-          "w": 126,
+          "w": 125,
           "h": 22,
-          "count": 354,
+          "count": 380,
           "method": "mask-ink:edge"
         },
         "delta": {
           "x": 1,
           "y": 0,
-          "w": -4,
+          "w": -5,
           "h": 0
         }
       }
@@ -2770,14 +2788,14 @@
         "actual": {
           "x": 790,
           "y": 362,
-          "w": 97,
+          "w": 93,
           "h": 22,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
           "y": 0,
-          "w": 3,
+          "w": -1,
           "h": 0
         }
       },
@@ -2793,15 +2811,15 @@
         "actual": {
           "x": 790,
           "y": 362,
-          "w": 92,
+          "w": 88,
           "h": 22,
-          "count": 246,
+          "count": 272,
           "method": "mask-ink:edge"
         },
         "delta": {
           "x": 1,
           "y": 0,
-          "w": -1,
+          "w": -5,
           "h": 0
         }
       }
@@ -2818,16 +2836,16 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 125,
-          "y": 369,
-          "w": 58,
+          "x": 123,
+          "y": 368,
+          "w": 55,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 7,
-          "y": 3,
-          "w": -12,
+          "x": 5,
+          "y": 2,
+          "w": -15,
           "h": -3
         }
       },
@@ -2841,17 +2859,17 @@
           "method": "mask-ink:gray"
         },
         "actual": {
-          "x": 125,
-          "y": 369,
-          "w": 54,
+          "x": 123,
+          "y": 368,
+          "w": 55,
           "h": 7,
-          "count": 175,
+          "count": 130,
           "method": "paint-diff-isolation"
         },
         "delta": {
-          "x": 1,
-          "y": 1,
-          "w": -3,
+          "x": -1,
+          "y": 0,
+          "w": -2,
           "h": 0
         }
       }
@@ -2868,16 +2886,16 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 322,
-          "y": 369,
-          "w": 84,
+          "x": 319,
+          "y": 367,
+          "w": 80,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 6,
-          "y": 3,
-          "w": -11,
+          "x": 3,
+          "y": 1,
+          "w": -15,
           "h": -3
         }
       },
@@ -2891,17 +2909,17 @@
           "method": "mask-ink:gray"
         },
         "actual": {
-          "x": 322,
-          "y": 369,
-          "w": 84,
+          "x": 319,
+          "y": 367,
+          "w": 80,
           "h": 7,
-          "count": 272,
+          "count": 167,
           "method": "paint-diff-isolation"
         },
         "delta": {
-          "x": 1,
-          "y": 2,
-          "w": 1,
+          "x": -2,
+          "y": 0,
+          "w": -3,
           "h": -1
         }
       }
@@ -2918,16 +2936,16 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 576,
-          "y": 369,
-          "w": 95,
+          "x": 573,
+          "y": 367,
+          "w": 90,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 8,
-          "y": 3,
-          "w": -10,
+          "x": 5,
+          "y": 1,
+          "w": -15,
           "h": -3
         }
       },
@@ -2941,18 +2959,18 @@
           "method": "mask-ink:gray"
         },
         "actual": {
-          "x": 576,
-          "y": 369,
-          "w": 95,
-          "h": 9,
-          "count": 358,
+          "x": 573,
+          "y": 368,
+          "w": 90,
+          "h": 8,
+          "count": 196,
           "method": "paint-diff-isolation"
         },
         "delta": {
-          "x": 2,
-          "y": 2,
-          "w": 0,
-          "h": -1
+          "x": -1,
+          "y": 1,
+          "w": -5,
+          "h": -2
         }
       }
     },
@@ -2968,16 +2986,16 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 818,
-          "y": 369,
-          "w": 59,
+          "x": 816,
+          "y": 367,
+          "w": 56,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 6,
-          "y": 3,
-          "w": -11,
+          "x": 4,
+          "y": 1,
+          "w": -14,
           "h": -3
         }
       },
@@ -2991,17 +3009,17 @@
           "method": "mask-ink:gray"
         },
         "actual": {
-          "x": 818,
-          "y": 369,
-          "w": 59,
+          "x": 816,
+          "y": 367,
+          "w": 56,
           "h": 9,
-          "count": 238,
+          "count": 130,
           "method": "paint-diff-isolation"
         },
         "delta": {
-          "x": 1,
-          "y": 2,
-          "w": 1,
+          "x": -1,
+          "y": 0,
+          "w": -2,
           "h": 0
         }
       }
@@ -3018,15 +3036,15 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 97,
-          "y": 213,
+          "x": 99,
+          "y": 214,
           "w": 50,
           "h": 50,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 3,
+          "x": 2,
+          "y": 4,
           "w": -5,
           "h": -5
         }
@@ -3041,16 +3059,16 @@
           "method": "mask-ink:edge"
         },
         "actual": {
-          "x": 97,
-          "y": 213,
+          "x": 99,
+          "y": 214,
           "w": 50,
           "h": 50,
-          "count": 420,
+          "count": 546,
           "method": "mask-ink:edge"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
+          "x": 2,
+          "y": 1,
           "w": -5,
           "h": -1
         }
@@ -3069,16 +3087,16 @@
         },
         "actual": {
           "x": 295,
-          "y": 212,
-          "w": 50,
-          "h": 50,
+          "y": 213,
+          "w": 48,
+          "h": 48,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 1,
-          "y": 2,
-          "w": -2,
-          "h": -2
+          "y": 3,
+          "w": -4,
+          "h": -4
         }
       },
       "paintedInk": {
@@ -3093,15 +3111,15 @@
         "actual": {
           "x": 295,
           "y": 210,
-          "w": 50,
+          "w": 49,
           "h": 52,
-          "count": 438,
+          "count": 633,
           "method": "mask-ink:edge"
         },
         "delta": {
           "x": -1,
           "y": -3,
-          "w": 0,
+          "w": -1,
           "h": 3
         }
       }
@@ -3118,17 +3136,17 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 549,
-          "y": 211,
-          "w": 50,
-          "h": 50,
+          "x": 550,
+          "y": 213,
+          "w": 48,
+          "h": 48,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 3,
-          "y": 1,
-          "w": -2,
-          "h": -2
+          "x": 4,
+          "y": 3,
+          "w": -4,
+          "h": -4
         }
       },
       "paintedInk": {
@@ -3141,17 +3159,17 @@
           "method": "mask-ink:edge"
         },
         "actual": {
-          "x": 549,
+          "x": 550,
           "y": 210,
-          "w": 49,
+          "w": 48,
           "h": 52,
-          "count": 301,
+          "count": 417,
           "method": "mask-ink:edge"
         },
         "delta": {
-          "x": 2,
+          "x": 3,
           "y": -2,
-          "w": -2,
+          "w": -3,
           "h": 2
         }
       }
@@ -3195,7 +3213,7 @@
           "y": 212,
           "w": 48,
           "h": 48,
-          "count": 279,
+          "count": 433,
           "method": "mask-ink:edge"
         },
         "delta": {
@@ -3245,7 +3263,7 @@
           "y": 200,
           "w": 170,
           "h": 72,
-          "count": 2775,
+          "count": 2861,
           "method": "mask-ink:edge"
         },
         "delta": {
@@ -3295,7 +3313,7 @@
           "y": 200,
           "w": 160,
           "h": 72,
-          "count": 2642,
+          "count": 2719,
           "method": "mask-ink:edge"
         },
         "delta": {
@@ -3316,17 +3334,17 @@
       "method": "dom-geometry"
     },
     "heading-title": {
-      "x": 3,
+      "x": 4,
       "y": 70,
       "w": 1024,
       "h": 30,
       "method": "dom-geometry"
     },
     "heading-support": {
-      "x": 288,
-      "y": 112,
-      "w": 452,
-      "h": 16,
+      "x": 291,
+      "y": 113,
+      "w": 450,
+      "h": 15,
       "method": "dom-geometry"
     },
     "stage-01-card": {
@@ -3344,29 +3362,29 @@
       "method": "dom-geometry"
     },
     "stage-01-icon-frame": {
-      "x": 97,
-      "y": 213,
+      "x": 99,
+      "y": 214,
       "w": 50,
       "h": 50,
       "method": "dom-geometry"
     },
     "stage-01-symbol": {
       "x": 106,
-      "y": 222,
-      "w": 33,
-      "h": 33,
+      "y": 221,
+      "w": 36,
+      "h": 36,
       "method": "dom-geometry"
     },
     "stage-01-title": {
       "x": 100,
       "y": 283,
       "w": 125,
-      "h": 13,
+      "h": 12,
       "method": "dom-geometry"
     },
     "stage-01-body": {
       "x": 101,
-      "y": 303,
+      "y": 304,
       "w": 126,
       "h": 42,
       "method": "dom-geometry"
@@ -3380,14 +3398,14 @@
     },
     "stage-01-body-line-1": {
       "x": 101,
-      "y": 317,
+      "y": 318,
       "w": 126,
       "h": 14,
       "method": "dom-geometry"
     },
     "stage-01-body-line-2": {
       "x": 101,
-      "y": 331,
+      "y": 333,
       "w": 126,
       "h": 14,
       "method": "dom-geometry"
@@ -3395,30 +3413,30 @@
     "stage-01-pill": {
       "x": 97,
       "y": 362,
-      "w": 94,
+      "w": 90,
       "h": 22,
       "method": "dom-geometry"
     },
     "stage-01-pill-icon": {
       "x": 105,
-      "y": 363,
-      "w": 14,
-      "h": 14,
+      "y": 366,
+      "w": 13,
+      "h": 13,
       "method": "dom-geometry"
     },
     "stage-01-pill-label": {
-      "x": 125,
-      "y": 369,
-      "w": 58,
+      "x": 123,
+      "y": 368,
+      "w": 55,
       "h": 9,
       "method": "dom-geometry"
     },
     "stage-01-rear-panel": null,
     "stage-01-glow": {
-      "x": 95,
-      "y": 201,
-      "w": 52,
-      "h": 52,
+      "x": 96,
+      "y": 203,
+      "w": 48,
+      "h": 48,
       "method": "dom-geometry"
     },
     "stage-01-visual": {
@@ -3444,28 +3462,28 @@
     },
     "stage-02-icon-frame": {
       "x": 295,
-      "y": 212,
-      "w": 50,
-      "h": 50,
+      "y": 213,
+      "w": 48,
+      "h": 48,
       "method": "dom-geometry"
     },
     "stage-02-symbol": {
-      "x": 304,
-      "y": 221,
-      "w": 32,
-      "h": 32,
+      "x": 302,
+      "y": 220,
+      "w": 34,
+      "h": 34,
       "method": "dom-geometry"
     },
     "stage-02-title": {
       "x": 297,
       "y": 283,
       "w": 184,
-      "h": 13,
+      "h": 12,
       "method": "dom-geometry"
     },
     "stage-02-body": {
       "x": 298,
-      "y": 303,
+      "y": 304,
       "w": 179,
       "h": 42,
       "method": "dom-geometry"
@@ -3479,14 +3497,14 @@
     },
     "stage-02-body-line-1": {
       "x": 298,
-      "y": 317,
+      "y": 318,
       "w": 179,
       "h": 14,
       "method": "dom-geometry"
     },
     "stage-02-body-line-2": {
       "x": 298,
-      "y": 331,
+      "y": 333,
       "w": 179,
       "h": 14,
       "method": "dom-geometry"
@@ -3494,21 +3512,21 @@
     "stage-02-pill": {
       "x": 294,
       "y": 362,
-      "w": 120,
+      "w": 115,
       "h": 22,
       "method": "dom-geometry"
     },
     "stage-02-pill-icon": {
       "x": 302,
-      "y": 363,
-      "w": 14,
-      "h": 14,
+      "y": 366,
+      "w": 13,
+      "h": 13,
       "method": "dom-geometry"
     },
     "stage-02-pill-label": {
-      "x": 322,
-      "y": 369,
-      "w": 84,
+      "x": 319,
+      "y": 367,
+      "w": 80,
       "h": 9,
       "method": "dom-geometry"
     },
@@ -3520,10 +3538,10 @@
       "method": "dom-geometry"
     },
     "stage-02-glow": {
-      "x": 318,
-      "y": 199,
-      "w": 150,
-      "h": 66,
+      "x": 330,
+      "y": 207,
+      "w": 120,
+      "h": 52,
       "method": "dom-geometry"
     },
     "stage-02-visual": {
@@ -3548,29 +3566,29 @@
       "method": "dom-geometry"
     },
     "stage-03-icon-frame": {
-      "x": 549,
-      "y": 211,
-      "w": 50,
-      "h": 50,
+      "x": 550,
+      "y": 213,
+      "w": 48,
+      "h": 48,
       "method": "dom-geometry"
     },
     "stage-03-symbol": {
-      "x": 559,
+      "x": 558,
       "y": 221,
-      "w": 30,
-      "h": 30,
+      "w": 33,
+      "h": 33,
       "method": "dom-geometry"
     },
     "stage-03-title": {
       "x": 551,
       "y": 283,
       "w": 174,
-      "h": 13,
+      "h": 12,
       "method": "dom-geometry"
     },
     "stage-03-body": {
       "x": 552,
-      "y": 303,
+      "y": 304,
       "w": 169,
       "h": 42,
       "method": "dom-geometry"
@@ -3584,14 +3602,14 @@
     },
     "stage-03-body-line-1": {
       "x": 552,
-      "y": 317,
+      "y": 318,
       "w": 169,
       "h": 14,
       "method": "dom-geometry"
     },
     "stage-03-body-line-2": {
       "x": 552,
-      "y": 331,
+      "y": 333,
       "w": 169,
       "h": 14,
       "method": "dom-geometry"
@@ -3599,21 +3617,21 @@
     "stage-03-pill": {
       "x": 548,
       "y": 362,
-      "w": 131,
+      "w": 125,
       "h": 22,
       "method": "dom-geometry"
     },
     "stage-03-pill-icon": {
       "x": 556,
-      "y": 363,
-      "w": 14,
-      "h": 14,
+      "y": 366,
+      "w": 13,
+      "h": 13,
       "method": "dom-geometry"
     },
     "stage-03-pill-label": {
-      "x": 576,
-      "y": 369,
-      "w": 95,
+      "x": 573,
+      "y": 367,
+      "w": 90,
       "h": 9,
       "method": "dom-geometry"
     },
@@ -3625,10 +3643,10 @@
       "method": "dom-geometry"
     },
     "stage-03-glow": {
-      "x": 570,
-      "y": 199,
-      "w": 145,
-      "h": 66,
+      "x": 582,
+      "y": 207,
+      "w": 110,
+      "h": 52,
       "method": "dom-geometry"
     },
     "stage-03-visual": {
@@ -3660,22 +3678,22 @@
       "method": "dom-geometry"
     },
     "stage-04-symbol": {
-      "x": 801,
-      "y": 221,
-      "w": 33,
-      "h": 33,
+      "x": 799,
+      "y": 219,
+      "w": 36,
+      "h": 36,
       "method": "dom-geometry"
     },
     "stage-04-title": {
       "x": 794,
       "y": 283,
       "w": 116,
-      "h": 13,
+      "h": 12,
       "method": "dom-geometry"
     },
     "stage-04-body": {
       "x": 795,
-      "y": 303,
+      "y": 304,
       "w": 111,
       "h": 42,
       "method": "dom-geometry"
@@ -3689,14 +3707,14 @@
     },
     "stage-04-body-line-1": {
       "x": 795,
-      "y": 317,
+      "y": 318,
       "w": 111,
       "h": 14,
       "method": "dom-geometry"
     },
     "stage-04-body-line-2": {
       "x": 795,
-      "y": 331,
+      "y": 333,
       "w": 111,
       "h": 14,
       "method": "dom-geometry"
@@ -3704,30 +3722,30 @@
     "stage-04-pill": {
       "x": 790,
       "y": 362,
-      "w": 97,
+      "w": 93,
       "h": 22,
       "method": "dom-geometry"
     },
     "stage-04-pill-icon": {
       "x": 798,
-      "y": 363,
-      "w": 14,
-      "h": 14,
+      "y": 366,
+      "w": 13,
+      "h": 13,
       "method": "dom-geometry"
     },
     "stage-04-pill-label": {
-      "x": 818,
-      "y": 369,
-      "w": 59,
+      "x": 816,
+      "y": 367,
+      "w": 56,
       "h": 9,
       "method": "dom-geometry"
     },
     "stage-04-rear-panel": null,
     "stage-04-glow": {
-      "x": 789,
-      "y": 201,
-      "w": 52,
-      "h": 52,
+      "x": 790,
+      "y": 203,
+      "w": 48,
+      "h": 48,
       "method": "dom-geometry"
     },
     "stage-04-visual": {
@@ -3773,36 +3791,36 @@
       "method": "dom-geometry"
     },
     "stage-02-content-bar-0": {
-      "x": 352,
-      "y": 210,
-      "w": 89,
+      "x": 353,
+      "y": 211,
+      "w": 88,
       "h": 7,
       "method": "dom-geometry"
     },
     "stage-02-content-bar-1": {
-      "x": 352,
-      "y": 224,
-      "w": 112,
+      "x": 353,
+      "y": 225,
+      "w": 110,
       "h": 7,
       "method": "dom-geometry"
     },
     "stage-02-lower-block-0": {
-      "x": 352,
-      "y": 249,
+      "x": 353,
+      "y": 248,
       "w": 15,
       "h": 15,
       "method": "dom-geometry"
     },
     "stage-02-lower-block-1": {
-      "x": 372,
-      "y": 249,
+      "x": 373,
+      "y": 248,
       "w": 15,
       "h": 15,
       "method": "dom-geometry"
     },
     "stage-02-lower-block-2": {
-      "x": 392,
-      "y": 249,
+      "x": 393,
+      "y": 248,
       "w": 15,
       "h": 15,
       "method": "dom-geometry"
@@ -3891,6 +3909,13 @@
       "h": 5,
       "method": "dom-geometry"
     },
+    "connector-1-glow": {
+      "x": 255,
+      "y": 232,
+      "w": 14,
+      "h": 14,
+      "method": "dom-geometry"
+    },
     "connector-2-line": {
       "x": 508,
       "y": 238,
@@ -3910,6 +3935,13 @@
       "y": 237,
       "w": 5,
       "h": 5,
+      "method": "dom-geometry"
+    },
+    "connector-2-glow": {
+      "x": 512,
+      "y": 232,
+      "w": 14,
+      "h": 14,
       "method": "dom-geometry"
     },
     "connector-3-line": {
@@ -3932,6 +3964,13 @@
       "w": 5,
       "h": 5,
       "method": "dom-geometry"
+    },
+    "connector-3-glow": {
+      "x": 757,
+      "y": 232,
+      "w": 14,
+      "h": 14,
+      "method": "dom-geometry"
     }
   },
   "paintBounds": {
@@ -3944,19 +3983,19 @@
       "method": "paint-diff-isolation"
     },
     "heading-title": {
-      "x": 283,
+      "x": 285,
       "y": 74,
-      "w": 465,
+      "w": 462,
       "h": 28,
-      "count": 4450,
+      "count": 4501,
       "method": "paint-diff-isolation"
     },
     "heading-support": {
-      "x": 288,
+      "x": 294,
       "y": 115,
-      "w": 452,
+      "w": 444,
       "h": 12,
-      "count": 2042,
+      "count": 1422,
       "method": "paint-diff-isolation"
     },
     "stage-01-number": {
@@ -3968,59 +4007,59 @@
       "method": "paint-diff-isolation"
     },
     "stage-01-symbol": {
-      "x": 111,
-      "y": 223,
-      "w": 23,
-      "h": 31,
-      "count": 320,
+      "x": 109,
+      "y": 221,
+      "w": 29,
+      "h": 36,
+      "count": 526,
       "method": "paint-diff-isolation"
     },
     "stage-01-title": {
       "x": 100,
-      "y": 285,
-      "w": 99,
+      "y": 284,
+      "w": 95,
       "h": 10,
-      "count": 499,
+      "count": 469,
       "method": "paint-diff-isolation"
     },
     "stage-01-body-line-0": {
       "x": 101,
       "y": 306,
-      "w": 114,
+      "w": 112,
       "h": 9,
-      "count": 453,
+      "count": 461,
       "method": "paint-diff-isolation"
     },
     "stage-01-body-line-1": {
       "x": 101,
-      "y": 320,
-      "w": 108,
+      "y": 321,
+      "w": 106,
       "h": 9,
-      "count": 400,
+      "count": 407,
       "method": "paint-diff-isolation"
     },
     "stage-01-body-line-2": {
       "x": 101,
-      "y": 334,
-      "w": 53,
+      "y": 336,
+      "w": 52,
       "h": 7,
-      "count": 204,
+      "count": 207,
       "method": "paint-diff-isolation"
     },
     "stage-01-pill-icon": {
       "x": 107,
-      "y": 365,
-      "w": 10,
+      "y": 367,
+      "w": 9,
       "h": 11,
-      "count": 54,
+      "count": 41,
       "method": "paint-diff-isolation"
     },
     "stage-01-pill-label": {
-      "x": 125,
-      "y": 369,
-      "w": 54,
+      "x": 123,
+      "y": 368,
+      "w": 55,
       "h": 7,
-      "count": 175,
+      "count": 130,
       "method": "paint-diff-isolation"
     },
     "stage-02-number": {
@@ -4032,67 +4071,67 @@
       "method": "paint-diff-isolation"
     },
     "stage-02-symbol": {
-      "x": 306,
-      "y": 224,
-      "w": 28,
-      "h": 26,
-      "count": 378,
+      "x": 304,
+      "y": 223,
+      "w": 30,
+      "h": 28,
+      "count": 516,
       "method": "paint-diff-isolation"
     },
     "stage-02-active-dot": {
-      "x": 325,
-      "y": 207,
-      "w": 12,
-      "h": 6,
-      "count": 49,
+      "x": 326,
+      "y": 209,
+      "w": 10,
+      "h": 4,
+      "count": 30,
       "method": "paint-diff-isolation"
     },
     "stage-02-title": {
-      "x": 297,
-      "y": 285,
-      "w": 120,
+      "x": 298,
+      "y": 284,
+      "w": 115,
       "h": 12,
-      "count": 618,
+      "count": 574,
       "method": "paint-diff-isolation"
     },
     "stage-02-body-line-0": {
       "x": 298,
       "y": 306,
-      "w": 108,
+      "w": 106,
       "h": 9,
-      "count": 380,
+      "count": 374,
       "method": "paint-diff-isolation"
     },
     "stage-02-body-line-1": {
       "x": 298,
-      "y": 320,
-      "w": 85,
+      "y": 321,
+      "w": 84,
       "h": 7,
-      "count": 311,
+      "count": 317,
       "method": "paint-diff-isolation"
     },
     "stage-02-body-line-2": {
       "x": 298,
-      "y": 334,
-      "w": 122,
+      "y": 336,
+      "w": 120,
       "h": 10,
-      "count": 486,
+      "count": 498,
       "method": "paint-diff-isolation"
     },
     "stage-02-pill-icon": {
       "x": 304,
-      "y": 364,
-      "w": 10,
-      "h": 12,
-      "count": 83,
+      "y": 367,
+      "w": 9,
+      "h": 11,
+      "count": 69,
       "method": "paint-diff-isolation"
     },
     "stage-02-pill-label": {
-      "x": 322,
-      "y": 369,
-      "w": 84,
+      "x": 319,
+      "y": 367,
+      "w": 80,
       "h": 7,
-      "count": 272,
+      "count": 167,
       "method": "paint-diff-isolation"
     },
     "stage-03-number": {
@@ -4104,83 +4143,83 @@
       "method": "paint-diff-isolation"
     },
     "stage-03-symbol": {
-      "x": 562,
-      "y": 224,
-      "w": 24,
-      "h": 21,
-      "count": 197,
+      "x": 561,
+      "y": 223,
+      "w": 27,
+      "h": 25,
+      "count": 300,
       "method": "paint-diff-isolation"
     },
     "stage-03-check-0": {
-      "x": 587,
-      "y": 206,
-      "w": 20,
-      "h": 20,
-      "count": 322,
+      "x": 589,
+      "y": 208,
+      "w": 16,
+      "h": 16,
+      "count": 208,
       "method": "paint-diff-isolation"
     },
     "stage-03-check-1": {
-      "x": 587,
-      "y": 226,
-      "w": 20,
-      "h": 20,
-      "count": 322,
+      "x": 589,
+      "y": 228,
+      "w": 16,
+      "h": 16,
+      "count": 208,
       "method": "paint-diff-isolation"
     },
     "stage-03-check-2": {
-      "x": 587,
-      "y": 246,
-      "w": 20,
-      "h": 20,
-      "count": 322,
+      "x": 589,
+      "y": 248,
+      "w": 16,
+      "h": 16,
+      "count": 208,
       "method": "paint-diff-isolation"
     },
     "stage-03-title": {
       "x": 551,
-      "y": 285,
-      "w": 119,
+      "y": 284,
+      "w": 115,
       "h": 12,
-      "count": 625,
+      "count": 575,
       "method": "paint-diff-isolation"
     },
     "stage-03-body-line-0": {
       "x": 552,
       "y": 306,
-      "w": 124,
+      "w": 121,
       "h": 9,
-      "count": 465,
+      "count": 469,
       "method": "paint-diff-isolation"
     },
     "stage-03-body-line-1": {
       "x": 552,
-      "y": 320,
-      "w": 123,
+      "y": 321,
+      "w": 120,
       "h": 10,
-      "count": 464,
+      "count": 472,
       "method": "paint-diff-isolation"
     },
     "stage-03-body-line-2": {
       "x": 552,
-      "y": 334,
-      "w": 86,
+      "y": 336,
+      "w": 84,
       "h": 9,
-      "count": 316,
+      "count": 306,
       "method": "paint-diff-isolation"
     },
     "stage-03-pill-icon": {
       "x": 557,
-      "y": 367,
-      "w": 12,
+      "y": 369,
+      "w": 11,
       "h": 6,
-      "count": 28,
+      "count": 19,
       "method": "paint-diff-isolation"
     },
     "stage-03-pill-label": {
-      "x": 576,
-      "y": 369,
-      "w": 95,
-      "h": 9,
-      "count": 358,
+      "x": 573,
+      "y": 368,
+      "w": 90,
+      "h": 8,
+      "count": 196,
       "method": "paint-diff-isolation"
     },
     "stage-04-number": {
@@ -4192,11 +4231,11 @@
       "method": "paint-diff-isolation"
     },
     "stage-04-symbol": {
-      "x": 804,
-      "y": 224,
-      "w": 27,
-      "h": 27,
-      "count": 261,
+      "x": 802,
+      "y": 221,
+      "w": 30,
+      "h": 32,
+      "count": 402,
       "method": "paint-diff-isolation"
     },
     "stage-04-title": {
@@ -4204,120 +4243,144 @@
       "y": 284,
       "w": 123,
       "h": 12,
-      "count": 585,
+      "count": 577,
       "method": "paint-diff-isolation"
     },
     "stage-04-body-line-0": {
       "x": 795,
       "y": 306,
-      "w": 103,
+      "w": 101,
       "h": 8,
-      "count": 416,
+      "count": 414,
       "method": "paint-diff-isolation"
     },
     "stage-04-body-line-1": {
       "x": 795,
-      "y": 320,
-      "w": 103,
+      "y": 321,
+      "w": 101,
       "h": 10,
-      "count": 383,
+      "count": 378,
       "method": "paint-diff-isolation"
     },
     "stage-04-body-line-2": {
       "x": 795,
-      "y": 334,
+      "y": 336,
       "w": 118,
       "h": 10,
-      "count": 441,
+      "count": 447,
       "method": "paint-diff-isolation"
     },
     "stage-04-pill-icon": {
-      "x": 799,
-      "y": 366,
+      "x": 798,
+      "y": 369,
       "w": 12,
-      "h": 8,
-      "count": 52,
+      "h": 7,
+      "count": 41,
       "method": "paint-diff-isolation"
     },
     "stage-04-pill-label": {
-      "x": 818,
-      "y": 369,
-      "w": 59,
+      "x": 816,
+      "y": 367,
+      "w": 56,
       "h": 9,
-      "count": 238,
+      "count": 130,
       "method": "paint-diff-isolation"
     },
     "connector-1-line": {
-      "x": 244,
-      "y": 235,
-      "w": 34,
-      "h": 8,
-      "count": 180,
-      "method": "paint-diff-isolation"
+      "x": 246,
+      "y": 238,
+      "w": 30,
+      "h": 2,
+      "count": 32,
+      "method": "paint-layer-isolation"
     },
     "connector-1-node": {
-      "x": 253,
-      "y": 230,
-      "w": 18,
-      "h": 18,
-      "count": 220,
-      "method": "paint-diff-isolation"
+      "x": 256,
+      "y": 233,
+      "w": 12,
+      "h": 12,
+      "count": 24,
+      "method": "paint-layer-isolation"
     },
     "connector-1-dot": {
-      "x": 257,
-      "y": 234,
-      "w": 10,
-      "h": 10,
-      "count": 75,
-      "method": "paint-diff-isolation"
+      "x": 260,
+      "y": 237,
+      "w": 4,
+      "h": 4,
+      "count": 16,
+      "method": "paint-layer-isolation"
+    },
+    "connector-1-glow": {
+      "x": 255,
+      "y": 232,
+      "w": 14,
+      "h": 14,
+      "count": 145,
+      "method": "paint-layer-isolation"
     },
     "connector-2-line": {
-      "x": 506,
-      "y": 235,
-      "w": 28,
-      "h": 8,
-      "count": 132,
-      "method": "paint-diff-isolation"
+      "x": 508,
+      "y": 238,
+      "w": 24,
+      "h": 2,
+      "count": 20,
+      "method": "paint-layer-isolation"
     },
     "connector-2-node": {
-      "x": 510,
-      "y": 230,
-      "w": 18,
-      "h": 18,
-      "count": 220,
-      "method": "paint-diff-isolation"
+      "x": 513,
+      "y": 233,
+      "w": 12,
+      "h": 12,
+      "count": 24,
+      "method": "paint-layer-isolation"
     },
     "connector-2-dot": {
-      "x": 514,
-      "y": 234,
-      "w": 10,
-      "h": 10,
-      "count": 75,
-      "method": "paint-diff-isolation"
+      "x": 517,
+      "y": 237,
+      "w": 4,
+      "h": 4,
+      "count": 16,
+      "method": "paint-layer-isolation"
+    },
+    "connector-2-glow": {
+      "x": 512,
+      "y": 232,
+      "w": 14,
+      "h": 14,
+      "count": 145,
+      "method": "paint-layer-isolation"
     },
     "connector-3-line": {
-      "x": 748,
-      "y": 235,
-      "w": 28,
-      "h": 8,
-      "count": 132,
-      "method": "paint-diff-isolation"
+      "x": 750,
+      "y": 238,
+      "w": 24,
+      "h": 2,
+      "count": 20,
+      "method": "paint-layer-isolation"
     },
     "connector-3-node": {
-      "x": 755,
-      "y": 230,
-      "w": 18,
-      "h": 18,
-      "count": 220,
-      "method": "paint-diff-isolation"
+      "x": 758,
+      "y": 233,
+      "w": 12,
+      "h": 12,
+      "count": 22,
+      "method": "paint-layer-isolation"
     },
     "connector-3-dot": {
-      "x": 759,
-      "y": 234,
-      "w": 10,
-      "h": 10,
-      "count": 75,
-      "method": "paint-diff-isolation"
+      "x": 762,
+      "y": 237,
+      "w": 4,
+      "h": 4,
+      "count": 16,
+      "method": "paint-layer-isolation"
+    },
+    "connector-3-glow": {
+      "x": 757,
+      "y": 232,
+      "w": 14,
+      "h": 14,
+      "count": 142,
+      "method": "paint-layer-isolation"
     }
   },
   "refMasks": {
@@ -5385,18 +5448,18 @@
         "method": "mask-ink:connector"
       },
       "actual": {
-        "x": 244,
-        "y": 235,
-        "w": 34,
-        "h": 8,
-        "count": 180,
-        "method": "paint-diff-isolation"
+        "x": 246,
+        "y": 238,
+        "w": 30,
+        "h": 2,
+        "count": 32,
+        "method": "paint-layer-isolation"
       },
       "delta": {
-        "x": -2,
-        "y": -3,
-        "w": 4,
-        "h": 5
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": -1
       },
       "geometric": {
         "ref": {
@@ -5422,7 +5485,7 @@
       },
       "methods": {
         "refInk": "mask-ink:connector",
-        "actInk": "paint-diff-isolation",
+        "actInk": "paint-layer-isolation",
         "refGeo": "mask-geometry",
         "actGeo": "dom-geometry"
       }
@@ -5439,18 +5502,18 @@
         "method": "mask-ink:connector"
       },
       "actual": {
-        "x": 253,
-        "y": 230,
-        "w": 18,
-        "h": 18,
-        "count": 220,
-        "method": "paint-diff-isolation"
+        "x": 256,
+        "y": 233,
+        "w": 12,
+        "h": 12,
+        "count": 24,
+        "method": "paint-layer-isolation"
       },
       "delta": {
-        "x": -4,
-        "y": -8,
-        "w": 7,
-        "h": 15
+        "x": -1,
+        "y": -5,
+        "w": 1,
+        "h": 9
       },
       "geometric": {
         "ref": {
@@ -5476,7 +5539,7 @@
       },
       "methods": {
         "refInk": "mask-ink:connector",
-        "actInk": "paint-diff-isolation",
+        "actInk": "paint-layer-isolation",
         "refGeo": "mask-geometry",
         "actGeo": "dom-geometry"
       }
@@ -5589,18 +5652,18 @@
         "method": "mask-ink:connector"
       },
       "actual": {
-        "x": 257,
-        "y": 234,
-        "w": 10,
-        "h": 10,
-        "count": 75,
-        "method": "paint-diff-isolation"
+        "x": 260,
+        "y": 237,
+        "w": 4,
+        "h": 4,
+        "count": 16,
+        "method": "paint-layer-isolation"
       },
       "delta": {
-        "x": -4,
-        "y": -4,
-        "w": 7,
-        "h": 7
+        "x": -1,
+        "y": -1,
+        "w": 1,
+        "h": 1
       },
       "geometric": {
         "ref": {
@@ -5626,7 +5689,7 @@
       },
       "methods": {
         "refInk": "mask-ink:connector",
-        "actInk": "paint-diff-isolation",
+        "actInk": "paint-layer-isolation",
         "refGeo": "mask-geometry",
         "actGeo": "dom-geometry"
       }
@@ -5643,17 +5706,17 @@
         "method": "mask-ink:glow"
       },
       "actual": {
-        "x": 254,
+        "x": 255,
         "y": 232,
-        "w": 17,
+        "w": 14,
         "h": 14,
-        "count": 34,
-        "method": "mask-ink:glow"
+        "count": 145,
+        "method": "paint-layer-isolation"
       },
       "delta": {
-        "x": 0,
+        "x": 1,
         "y": -5,
-        "w": 0,
+        "w": -3,
         "h": 9
       },
       "geometric": {
@@ -5664,19 +5727,25 @@
           "h": 19,
           "method": "mask-geometry"
         },
-        "actual": null,
+        "actual": {
+          "x": 255,
+          "y": 232,
+          "w": 14,
+          "h": 14,
+          "method": "dom-geometry"
+        },
         "delta": {
-          "x": -253,
-          "y": -230,
-          "w": -19,
-          "h": -19
+          "x": 2,
+          "y": 2,
+          "w": -5,
+          "h": -5
         }
       },
       "methods": {
         "refInk": "mask-ink:glow",
-        "actInk": "mask-ink:glow",
+        "actInk": "paint-layer-isolation",
         "refGeo": "mask-geometry",
-        "actGeo": "act-geo-miss"
+        "actGeo": "dom-geometry"
       }
     },
     {
@@ -5691,18 +5760,18 @@
         "method": "mask-ink:connector"
       },
       "actual": {
-        "x": 506,
-        "y": 235,
-        "w": 28,
-        "h": 8,
-        "count": 132,
-        "method": "paint-diff-isolation"
+        "x": 508,
+        "y": 238,
+        "w": 24,
+        "h": 2,
+        "count": 20,
+        "method": "paint-layer-isolation"
       },
       "delta": {
-        "x": -2,
-        "y": -3,
-        "w": 4,
-        "h": 5
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": -1
       },
       "geometric": {
         "ref": {
@@ -5728,7 +5797,7 @@
       },
       "methods": {
         "refInk": "mask-ink:connector",
-        "actInk": "paint-diff-isolation",
+        "actInk": "paint-layer-isolation",
         "refGeo": "mask-geometry",
         "actGeo": "dom-geometry"
       }
@@ -5745,18 +5814,18 @@
         "method": "mask-ink:connector"
       },
       "actual": {
-        "x": 510,
-        "y": 230,
-        "w": 18,
-        "h": 18,
-        "count": 220,
-        "method": "paint-diff-isolation"
+        "x": 513,
+        "y": 233,
+        "w": 12,
+        "h": 12,
+        "count": 24,
+        "method": "paint-layer-isolation"
       },
       "delta": {
-        "x": -4,
-        "y": -6,
-        "w": 7,
-        "h": 9
+        "x": -1,
+        "y": -3,
+        "w": 1,
+        "h": 3
       },
       "geometric": {
         "ref": {
@@ -5782,7 +5851,7 @@
       },
       "methods": {
         "refInk": "mask-ink:connector",
-        "actInk": "paint-diff-isolation",
+        "actInk": "paint-layer-isolation",
         "refGeo": "mask-geometry",
         "actGeo": "dom-geometry"
       }
@@ -5895,18 +5964,18 @@
         "method": "mask-ink:connector"
       },
       "actual": {
-        "x": 514,
-        "y": 234,
-        "w": 10,
-        "h": 10,
-        "count": 75,
-        "method": "paint-diff-isolation"
+        "x": 517,
+        "y": 237,
+        "w": 4,
+        "h": 4,
+        "count": 16,
+        "method": "paint-layer-isolation"
       },
       "delta": {
-        "x": -4,
-        "y": -4,
-        "w": 7,
-        "h": 7
+        "x": -1,
+        "y": -1,
+        "w": 1,
+        "h": 1
       },
       "geometric": {
         "ref": {
@@ -5932,7 +6001,7 @@
       },
       "methods": {
         "refInk": "mask-ink:connector",
-        "actInk": "paint-diff-isolation",
+        "actInk": "paint-layer-isolation",
         "refGeo": "mask-geometry",
         "actGeo": "dom-geometry"
       }
@@ -5949,18 +6018,18 @@
         "method": "mask-ink:glow"
       },
       "actual": {
-        "x": 511,
-        "y": 230,
-        "w": 17,
-        "h": 19,
-        "count": 118,
-        "method": "mask-ink:glow"
+        "x": 512,
+        "y": 232,
+        "w": 14,
+        "h": 14,
+        "count": 145,
+        "method": "paint-layer-isolation"
       },
       "delta": {
-        "x": 0,
-        "y": 0,
-        "w": 0,
-        "h": 0
+        "x": 1,
+        "y": 2,
+        "w": -3,
+        "h": -5
       },
       "geometric": {
         "ref": {
@@ -5970,19 +6039,25 @@
           "h": 19,
           "method": "mask-geometry"
         },
-        "actual": null,
+        "actual": {
+          "x": 512,
+          "y": 232,
+          "w": 14,
+          "h": 14,
+          "method": "dom-geometry"
+        },
         "delta": {
-          "x": -510,
-          "y": -230,
-          "w": -19,
-          "h": -19
+          "x": 2,
+          "y": 2,
+          "w": -5,
+          "h": -5
         }
       },
       "methods": {
         "refInk": "mask-ink:glow",
-        "actInk": "mask-ink:glow",
+        "actInk": "paint-layer-isolation",
         "refGeo": "mask-geometry",
-        "actGeo": "act-geo-miss"
+        "actGeo": "dom-geometry"
       }
     },
     {
@@ -5997,18 +6072,18 @@
         "method": "mask-ink:connector"
       },
       "actual": {
-        "x": 748,
-        "y": 235,
-        "w": 28,
-        "h": 8,
-        "count": 132,
-        "method": "paint-diff-isolation"
+        "x": 750,
+        "y": 238,
+        "w": 24,
+        "h": 2,
+        "count": 20,
+        "method": "paint-layer-isolation"
       },
       "delta": {
-        "x": -3,
-        "y": -3,
-        "w": 5,
-        "h": 5
+        "x": -1,
+        "y": 0,
+        "w": 1,
+        "h": -1
       },
       "geometric": {
         "ref": {
@@ -6034,7 +6109,7 @@
       },
       "methods": {
         "refInk": "mask-ink:connector",
-        "actInk": "paint-diff-isolation",
+        "actInk": "paint-layer-isolation",
         "refGeo": "mask-geometry",
         "actGeo": "dom-geometry"
       }
@@ -6051,18 +6126,18 @@
         "method": "mask-ink:connector"
       },
       "actual": {
-        "x": 755,
-        "y": 230,
-        "w": 18,
-        "h": 18,
-        "count": 220,
-        "method": "paint-diff-isolation"
+        "x": 758,
+        "y": 233,
+        "w": 12,
+        "h": 12,
+        "count": 22,
+        "method": "paint-layer-isolation"
       },
       "delta": {
-        "x": -3,
-        "y": -8,
-        "w": 7,
-        "h": 15
+        "x": 0,
+        "y": -5,
+        "w": 1,
+        "h": 9
       },
       "geometric": {
         "ref": {
@@ -6088,7 +6163,7 @@
       },
       "methods": {
         "refInk": "mask-ink:connector",
-        "actInk": "paint-diff-isolation",
+        "actInk": "paint-layer-isolation",
         "refGeo": "mask-geometry",
         "actGeo": "dom-geometry"
       }
@@ -6201,18 +6276,18 @@
         "method": "mask-ink:connector"
       },
       "actual": {
-        "x": 759,
-        "y": 234,
-        "w": 10,
-        "h": 10,
-        "count": 75,
-        "method": "paint-diff-isolation"
+        "x": 762,
+        "y": 237,
+        "w": 4,
+        "h": 4,
+        "count": 16,
+        "method": "paint-layer-isolation"
       },
       "delta": {
-        "x": -3,
-        "y": -4,
-        "w": 7,
-        "h": 7
+        "x": 0,
+        "y": -1,
+        "w": 1,
+        "h": 1
       },
       "geometric": {
         "ref": {
@@ -6238,7 +6313,7 @@
       },
       "methods": {
         "refInk": "mask-ink:connector",
-        "actInk": "paint-diff-isolation",
+        "actInk": "paint-layer-isolation",
         "refGeo": "mask-geometry",
         "actGeo": "dom-geometry"
       }
@@ -6255,17 +6330,17 @@
         "method": "mask-ink:glow"
       },
       "actual": {
-        "x": 755,
+        "x": 757,
         "y": 232,
-        "w": 17,
+        "w": 14,
         "h": 14,
-        "count": 34,
-        "method": "mask-ink:glow"
+        "count": 142,
+        "method": "paint-layer-isolation"
       },
       "delta": {
-        "x": 0,
+        "x": 2,
         "y": -6,
-        "w": 0,
+        "w": -3,
         "h": 10
       },
       "geometric": {
@@ -6276,19 +6351,25 @@
           "h": 19,
           "method": "mask-geometry"
         },
-        "actual": null,
+        "actual": {
+          "x": 757,
+          "y": 232,
+          "w": 14,
+          "h": 14,
+          "method": "dom-geometry"
+        },
         "delta": {
-          "x": -754,
-          "y": -230,
-          "w": -19,
-          "h": -19
+          "x": 3,
+          "y": 2,
+          "w": -5,
+          "h": -5
         }
       },
       "methods": {
         "refInk": "mask-ink:glow",
-        "actInk": "mask-ink:glow",
+        "actInk": "paint-layer-isolation",
         "refGeo": "mask-geometry",
-        "actGeo": "act-geo-miss"
+        "actGeo": "dom-geometry"
       }
     },
     {
@@ -6444,16 +6525,16 @@
       },
       "actual": {
         "x": 107,
-        "y": 365,
-        "w": 10,
+        "y": 367,
+        "w": 9,
         "h": 11,
-        "count": 54,
+        "count": 41,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 2,
-        "y": 1,
-        "w": -3,
+        "y": 3,
+        "w": -4,
         "h": -3
       },
       "geometric": {
@@ -6466,16 +6547,16 @@
         },
         "actual": {
           "x": 105,
-          "y": 363,
-          "w": 14,
-          "h": 14,
+          "y": 366,
+          "w": 13,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 1,
-          "y": -1,
-          "w": 0,
-          "h": 0
+          "y": 2,
+          "w": -1,
+          "h": -1
         }
       },
       "methods": {
@@ -6498,17 +6579,17 @@
       },
       "actual": {
         "x": 304,
-        "y": 364,
-        "w": 10,
-        "h": 12,
-        "count": 83,
+        "y": 367,
+        "w": 9,
+        "h": 11,
+        "count": 69,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 4,
-        "y": 0,
-        "w": -4,
-        "h": -2
+        "y": 3,
+        "w": -5,
+        "h": -3
       },
       "geometric": {
         "ref": {
@@ -6520,16 +6601,16 @@
         },
         "actual": {
           "x": 302,
-          "y": 363,
-          "w": 14,
-          "h": 14,
+          "y": 366,
+          "w": 13,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
-          "y": -1,
-          "w": 0,
-          "h": 0
+          "y": 2,
+          "w": -1,
+          "h": -1
         }
       },
       "methods": {
@@ -6552,16 +6633,16 @@
       },
       "actual": {
         "x": 557,
-        "y": 367,
-        "w": 12,
+        "y": 369,
+        "w": 11,
         "h": 6,
-        "count": 28,
+        "count": 19,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 3,
-        "y": 3,
-        "w": 0,
+        "y": 5,
+        "w": -1,
         "h": -8
       },
       "geometric": {
@@ -6574,16 +6655,16 @@
         },
         "actual": {
           "x": 556,
-          "y": 363,
-          "w": 14,
-          "h": 14,
+          "y": 366,
+          "w": 13,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 4,
-          "y": -1,
-          "w": 0,
-          "h": 0
+          "y": 2,
+          "w": -1,
+          "h": -1
         }
       },
       "methods": {
@@ -6605,18 +6686,18 @@
         "method": "mask-ink:mutedRed"
       },
       "actual": {
-        "x": 799,
-        "y": 366,
+        "x": 798,
+        "y": 369,
         "w": 12,
-        "h": 8,
-        "count": 52,
+        "h": 7,
+        "count": 41,
         "method": "paint-diff-isolation"
       },
       "delta": {
-        "x": 2,
-        "y": 2,
+        "x": 1,
+        "y": 5,
         "w": -1,
-        "h": -6
+        "h": -7
       },
       "geometric": {
         "ref": {
@@ -6628,16 +6709,16 @@
         },
         "actual": {
           "x": 798,
-          "y": 363,
-          "w": 14,
-          "h": 14,
+          "y": 366,
+          "w": 13,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
-          "y": -1,
-          "w": 0,
-          "h": 0
+          "y": 2,
+          "w": -1,
+          "h": -1
         }
       },
       "methods": {
@@ -6713,17 +6794,17 @@
         "method": "mask-ink:white180"
       },
       "actual": {
-        "x": 283,
+        "x": 285,
         "y": 74,
-        "w": 465,
+        "w": 462,
         "h": 28,
-        "count": 4450,
+        "count": 4501,
         "method": "paint-diff-isolation"
       },
       "delta": {
-        "x": -2,
+        "x": 0,
         "y": 0,
-        "w": 2,
+        "w": -1,
         "h": -1
       },
       "geometric": {
@@ -6735,14 +6816,14 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 3,
+          "x": 4,
           "y": 70,
           "w": 1024,
           "h": 30,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -277,
+          "x": -276,
           "y": -2,
           "w": 554,
           "h": -4
@@ -6767,17 +6848,17 @@
         "method": "mask-ink:gray"
       },
       "actual": {
-        "x": 288,
+        "x": 294,
         "y": 115,
-        "w": 452,
+        "w": 444,
         "h": 12,
-        "count": 2042,
+        "count": 1422,
         "method": "paint-diff-isolation"
       },
       "delta": {
-        "x": -4,
+        "x": 2,
         "y": 0,
-        "w": 2,
+        "w": -6,
         "h": 0
       },
       "geometric": {
@@ -6789,17 +6870,17 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 288,
-          "y": 112,
-          "w": 452,
-          "h": 16,
+          "x": 291,
+          "y": 113,
+          "w": 450,
+          "h": 15,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": -1,
-          "w": -8,
-          "h": 0
+          "x": 3,
+          "y": 0,
+          "w": -10,
+          "h": -1
         }
       },
       "methods": {
@@ -7037,18 +7118,18 @@
         "method": "mask-ink:mutedRed"
       },
       "actual": {
-        "x": 111,
-        "y": 223,
-        "w": 23,
-        "h": 31,
-        "count": 320,
+        "x": 109,
+        "y": 221,
+        "w": 29,
+        "h": 36,
+        "count": 526,
         "method": "paint-diff-isolation"
       },
       "delta": {
-        "x": 0,
-        "y": 0,
-        "w": -10,
-        "h": -2
+        "x": -2,
+        "y": -2,
+        "w": -4,
+        "h": 3
       },
       "geometric": {
         "ref": {
@@ -7060,16 +7141,16 @@
         },
         "actual": {
           "x": 106,
-          "y": 222,
-          "w": 33,
-          "h": 33,
+          "y": 221,
+          "w": 36,
+          "h": 36,
           "method": "dom-geometry"
         },
         "delta": {
           "x": -2,
-          "y": 4,
-          "w": -3,
-          "h": -7
+          "y": 3,
+          "w": 0,
+          "h": -4
         }
       },
       "methods": {
@@ -7091,18 +7172,18 @@
         "method": "mask-ink:mutedRed"
       },
       "actual": {
-        "x": 306,
-        "y": 224,
-        "w": 28,
-        "h": 26,
-        "count": 378,
+        "x": 304,
+        "y": 223,
+        "w": 30,
+        "h": 28,
+        "count": 516,
         "method": "paint-diff-isolation"
       },
       "delta": {
-        "x": 2,
-        "y": 0,
-        "w": -4,
-        "h": -2
+        "x": 0,
+        "y": -1,
+        "w": -2,
+        "h": 0
       },
       "geometric": {
         "ref": {
@@ -7113,17 +7194,17 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 304,
-          "y": 221,
-          "w": 32,
-          "h": 32,
+          "x": 302,
+          "y": 220,
+          "w": 34,
+          "h": 34,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 4,
-          "y": 5,
-          "w": -4,
-          "h": -4
+          "x": 2,
+          "y": 4,
+          "w": -2,
+          "h": -2
         }
       },
       "methods": {
@@ -7145,18 +7226,18 @@
         "method": "mask-ink:mutedRed"
       },
       "actual": {
-        "x": 562,
-        "y": 224,
-        "w": 24,
-        "h": 21,
-        "count": 197,
+        "x": 561,
+        "y": 223,
+        "w": 27,
+        "h": 25,
+        "count": 300,
         "method": "paint-diff-isolation"
       },
       "delta": {
-        "x": 2,
-        "y": 1,
-        "w": -6,
-        "h": -8
+        "x": 1,
+        "y": 0,
+        "w": -3,
+        "h": -4
       },
       "geometric": {
         "ref": {
@@ -7167,17 +7248,17 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 559,
+          "x": 558,
           "y": 221,
-          "w": 30,
-          "h": 30,
+          "w": 33,
+          "h": 33,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 5,
+          "x": 4,
           "y": 5,
-          "w": -6,
-          "h": -6
+          "w": -3,
+          "h": -3
         }
       },
       "methods": {
@@ -7199,18 +7280,18 @@
         "method": "mask-ink:mutedRed"
       },
       "actual": {
-        "x": 804,
-        "y": 224,
-        "w": 27,
-        "h": 27,
-        "count": 261,
+        "x": 802,
+        "y": 221,
+        "w": 30,
+        "h": 32,
+        "count": 402,
         "method": "paint-diff-isolation"
       },
       "delta": {
-        "x": 4,
-        "y": 1,
-        "w": -6,
-        "h": -2
+        "x": 2,
+        "y": -2,
+        "w": -3,
+        "h": 3
       },
       "geometric": {
         "ref": {
@@ -7221,17 +7302,17 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 801,
-          "y": 221,
-          "w": 33,
-          "h": 33,
+          "x": 799,
+          "y": 219,
+          "w": 36,
+          "h": 36,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 1,
-          "y": 3,
-          "w": -1,
-          "h": -1
+          "x": -1,
+          "y": 1,
+          "w": 2,
+          "h": 2
         }
       },
       "methods": {
@@ -7254,16 +7335,16 @@
       },
       "actual": {
         "x": 100,
-        "y": 285,
-        "w": 99,
+        "y": 284,
+        "w": 95,
         "h": 10,
-        "count": 499,
+        "count": 469,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": -1,
-        "y": 0,
-        "w": 0,
+        "y": -1,
+        "w": -4,
         "h": 1
       },
       "geometric": {
@@ -7278,14 +7359,14 @@
           "x": 100,
           "y": 283,
           "w": 125,
-          "h": 13,
+          "h": 12,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
           "y": 1,
           "w": 5,
-          "h": -5
+          "h": -6
         }
       },
       "methods": {
@@ -7307,17 +7388,17 @@
         "method": "mask-ink:white170"
       },
       "actual": {
-        "x": 297,
-        "y": 285,
-        "w": 120,
+        "x": 298,
+        "y": 284,
+        "w": 115,
         "h": 12,
-        "count": 618,
+        "count": 574,
         "method": "paint-diff-isolation"
       },
       "delta": {
-        "x": -2,
-        "y": 0,
-        "w": 1,
+        "x": -1,
+        "y": -1,
+        "w": -4,
         "h": 1
       },
       "geometric": {
@@ -7332,14 +7413,14 @@
           "x": 297,
           "y": 283,
           "w": 184,
-          "h": 13,
+          "h": 12,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 1,
           "y": 1,
           "w": 44,
-          "h": -5
+          "h": -6
         }
       },
       "methods": {
@@ -7362,16 +7443,16 @@
       },
       "actual": {
         "x": 551,
-        "y": 285,
-        "w": 119,
+        "y": 284,
+        "w": 115,
         "h": 12,
-        "count": 625,
+        "count": 575,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 0,
-        "y": 0,
-        "w": -1,
+        "y": -1,
+        "w": -5,
         "h": 1
       },
       "geometric": {
@@ -7386,14 +7467,14 @@
           "x": 551,
           "y": 283,
           "w": 174,
-          "h": 13,
+          "h": 12,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 3,
           "y": 1,
           "w": 34,
-          "h": -5
+          "h": -6
         }
       },
       "methods": {
@@ -7419,7 +7500,7 @@
         "y": 284,
         "w": 123,
         "h": 12,
-        "count": 585,
+        "count": 577,
         "method": "paint-diff-isolation"
       },
       "delta": {
@@ -7440,14 +7521,14 @@
           "x": 794,
           "y": 283,
           "w": 116,
-          "h": 13,
+          "h": 12,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 4,
           "y": 1,
           "w": -12,
-          "h": -5
+          "h": -6
         }
       },
       "methods": {
@@ -7471,15 +7552,15 @@
       "actual": {
         "x": 101,
         "y": 306,
-        "w": 114,
+        "w": 112,
         "h": 9,
-        "count": 453,
+        "count": 461,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 0,
         "y": 1,
-        "w": 2,
+        "w": 0,
         "h": -1
       },
       "geometric": {
@@ -7524,16 +7605,16 @@
       },
       "actual": {
         "x": 101,
-        "y": 320,
-        "w": 108,
+        "y": 321,
+        "w": 106,
         "h": 9,
-        "count": 400,
+        "count": 407,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 0,
-        "y": 0,
-        "w": 1,
+        "y": 1,
+        "w": -1,
         "h": 0
       },
       "geometric": {
@@ -7546,14 +7627,14 @@
         },
         "actual": {
           "x": 101,
-          "y": 317,
+          "y": 318,
           "w": 126,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 3,
-          "y": 1,
+          "y": 2,
           "w": 6,
           "h": 1
         }
@@ -7578,16 +7659,16 @@
       },
       "actual": {
         "x": 101,
-        "y": 334,
-        "w": 53,
+        "y": 336,
+        "w": 52,
         "h": 7,
-        "count": 204,
+        "count": 207,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 0,
-        "y": -1,
-        "w": 3,
+        "y": 1,
+        "w": 2,
         "h": 0
       },
       "geometric": {
@@ -7600,14 +7681,14 @@
         },
         "actual": {
           "x": 101,
-          "y": 331,
+          "y": 333,
           "w": 126,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 3,
-          "y": 2,
+          "y": 4,
           "w": 46,
           "h": 1
         }
@@ -7633,15 +7714,15 @@
       "actual": {
         "x": 298,
         "y": 306,
-        "w": 108,
+        "w": 106,
         "h": 9,
-        "count": 380,
+        "count": 374,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 0,
         "y": 1,
-        "w": 2,
+        "w": 0,
         "h": 0
       },
       "geometric": {
@@ -7686,16 +7767,16 @@
       },
       "actual": {
         "x": 298,
-        "y": 320,
-        "w": 85,
+        "y": 321,
+        "w": 84,
         "h": 7,
-        "count": 311,
+        "count": 317,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 0,
-        "y": 0,
-        "w": 0,
+        "y": 1,
+        "w": -1,
         "h": 0
       },
       "geometric": {
@@ -7708,14 +7789,14 @@
         },
         "actual": {
           "x": 298,
-          "y": 317,
+          "y": 318,
           "w": 179,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
-          "y": 1,
+          "y": 2,
           "w": 39,
           "h": 1
         }
@@ -7740,16 +7821,16 @@
       },
       "actual": {
         "x": 298,
-        "y": 334,
-        "w": 122,
+        "y": 336,
+        "w": 120,
         "h": 10,
-        "count": 486,
+        "count": 498,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 0,
-        "y": -1,
-        "w": 1,
+        "y": 1,
+        "w": -1,
         "h": 3
       },
       "geometric": {
@@ -7762,14 +7843,14 @@
         },
         "actual": {
           "x": 298,
-          "y": 331,
+          "y": 333,
           "w": 179,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
-          "y": 2,
+          "y": 4,
           "w": 39,
           "h": 1
         }
@@ -7795,15 +7876,15 @@
       "actual": {
         "x": 552,
         "y": 306,
-        "w": 124,
+        "w": 121,
         "h": 9,
-        "count": 465,
+        "count": 469,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 1,
         "y": 1,
-        "w": 1,
+        "w": -2,
         "h": -1
       },
       "geometric": {
@@ -7848,16 +7929,16 @@
       },
       "actual": {
         "x": 552,
-        "y": 320,
-        "w": 123,
+        "y": 321,
+        "w": 120,
         "h": 10,
-        "count": 464,
+        "count": 472,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 1,
-        "y": 0,
-        "w": -1,
+        "y": 1,
+        "w": -4,
         "h": 1
       },
       "geometric": {
@@ -7870,14 +7951,14 @@
         },
         "actual": {
           "x": 552,
-          "y": 317,
+          "y": 318,
           "w": 169,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 4,
-          "y": 1,
+          "y": 2,
           "w": 29,
           "h": 1
         }
@@ -7902,16 +7983,16 @@
       },
       "actual": {
         "x": 552,
-        "y": 334,
-        "w": 86,
+        "y": 336,
+        "w": 84,
         "h": 9,
-        "count": 316,
+        "count": 306,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 1,
-        "y": -1,
-        "w": 0,
+        "y": 1,
+        "w": -2,
         "h": 2
       },
       "geometric": {
@@ -7924,14 +8005,14 @@
         },
         "actual": {
           "x": 552,
-          "y": 331,
+          "y": 333,
           "w": 169,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 4,
-          "y": 2,
+          "y": 4,
           "w": 49,
           "h": 1
         }
@@ -7957,15 +8038,15 @@
       "actual": {
         "x": 795,
         "y": 306,
-        "w": 103,
+        "w": 101,
         "h": 8,
-        "count": 416,
+        "count": 414,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 2,
         "y": 1,
-        "w": 3,
+        "w": 1,
         "h": -1
       },
       "geometric": {
@@ -8010,16 +8091,16 @@
       },
       "actual": {
         "x": 795,
-        "y": 320,
-        "w": 103,
+        "y": 321,
+        "w": 101,
         "h": 10,
-        "count": 383,
+        "count": 378,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 1,
-        "y": 0,
-        "w": 8,
+        "y": 1,
+        "w": 6,
         "h": 1
       },
       "geometric": {
@@ -8032,14 +8113,14 @@
         },
         "actual": {
           "x": 795,
-          "y": 317,
+          "y": 318,
           "w": 111,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 5,
-          "y": 1,
+          "y": 2,
           "w": -17,
           "h": 1
         }
@@ -8064,15 +8145,15 @@
       },
       "actual": {
         "x": 795,
-        "y": 334,
+        "y": 336,
         "w": 118,
         "h": 10,
-        "count": 441,
+        "count": 447,
         "method": "paint-diff-isolation"
       },
       "delta": {
         "x": 2,
-        "y": -1,
+        "y": 1,
         "w": -3,
         "h": 3
       },
@@ -8086,14 +8167,14 @@
         },
         "actual": {
           "x": 795,
-          "y": 331,
+          "y": 333,
           "w": 111,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 5,
-          "y": 2,
+          "y": 4,
           "w": -17,
           "h": 1
         }
@@ -8119,15 +8200,15 @@
       "actual": {
         "x": 97,
         "y": 362,
-        "w": 89,
+        "w": 90,
         "h": 22,
-        "count": 228,
+        "count": 262,
         "method": "mask-ink:edge"
       },
       "delta": {
         "x": 0,
         "y": 0,
-        "w": -3,
+        "w": -2,
         "h": 0
       },
       "geometric": {
@@ -8141,14 +8222,14 @@
         "actual": {
           "x": 97,
           "y": 362,
-          "w": 94,
+          "w": 90,
           "h": 22,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 1,
           "y": 0,
-          "w": 0,
+          "w": -4,
           "h": 0
         }
       },
@@ -8173,15 +8254,15 @@
       "actual": {
         "x": 294,
         "y": 362,
-        "w": 120,
+        "w": 115,
         "h": 22,
-        "count": 324,
+        "count": 342,
         "method": "mask-ink:edge"
       },
       "delta": {
         "x": -1,
         "y": 0,
-        "w": 1,
+        "w": -4,
         "h": 0
       },
       "geometric": {
@@ -8195,14 +8276,14 @@
         "actual": {
           "x": 294,
           "y": 362,
-          "w": 120,
+          "w": 115,
           "h": 22,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
           "y": 0,
-          "w": 0,
+          "w": -5,
           "h": 0
         }
       },
@@ -8227,15 +8308,15 @@
       "actual": {
         "x": 548,
         "y": 362,
-        "w": 126,
+        "w": 125,
         "h": 22,
-        "count": 354,
+        "count": 380,
         "method": "mask-ink:edge"
       },
       "delta": {
         "x": 1,
         "y": 0,
-        "w": -4,
+        "w": -5,
         "h": 0
       },
       "geometric": {
@@ -8249,14 +8330,14 @@
         "actual": {
           "x": 548,
           "y": 362,
-          "w": 131,
+          "w": 125,
           "h": 22,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
           "y": 0,
-          "w": -1,
+          "w": -7,
           "h": 0
         }
       },
@@ -8281,15 +8362,15 @@
       "actual": {
         "x": 790,
         "y": 362,
-        "w": 92,
+        "w": 88,
         "h": 22,
-        "count": 246,
+        "count": 272,
         "method": "mask-ink:edge"
       },
       "delta": {
         "x": 1,
         "y": 0,
-        "w": -1,
+        "w": -5,
         "h": 0
       },
       "geometric": {
@@ -8303,14 +8384,14 @@
         "actual": {
           "x": 790,
           "y": 362,
-          "w": 97,
+          "w": 93,
           "h": 22,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 2,
           "y": 0,
-          "w": 3,
+          "w": -1,
           "h": 0
         }
       },
@@ -8333,17 +8414,17 @@
         "method": "mask-ink:gray"
       },
       "actual": {
-        "x": 125,
-        "y": 369,
-        "w": 54,
+        "x": 123,
+        "y": 368,
+        "w": 55,
         "h": 7,
-        "count": 175,
+        "count": 130,
         "method": "paint-diff-isolation"
       },
       "delta": {
-        "x": 1,
-        "y": 1,
-        "w": -3,
+        "x": -1,
+        "y": 0,
+        "w": -2,
         "h": 0
       },
       "geometric": {
@@ -8355,16 +8436,16 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 125,
-          "y": 369,
-          "w": 58,
+          "x": 123,
+          "y": 368,
+          "w": 55,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 7,
-          "y": 3,
-          "w": -12,
+          "x": 5,
+          "y": 2,
+          "w": -15,
           "h": -3
         }
       },
@@ -8387,17 +8468,17 @@
         "method": "mask-ink:gray"
       },
       "actual": {
-        "x": 322,
-        "y": 369,
-        "w": 84,
+        "x": 319,
+        "y": 367,
+        "w": 80,
         "h": 7,
-        "count": 272,
+        "count": 167,
         "method": "paint-diff-isolation"
       },
       "delta": {
-        "x": 1,
-        "y": 2,
-        "w": 1,
+        "x": -2,
+        "y": 0,
+        "w": -3,
         "h": -1
       },
       "geometric": {
@@ -8409,16 +8490,16 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 322,
-          "y": 369,
-          "w": 84,
+          "x": 319,
+          "y": 367,
+          "w": 80,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 6,
-          "y": 3,
-          "w": -11,
+          "x": 3,
+          "y": 1,
+          "w": -15,
           "h": -3
         }
       },
@@ -8441,18 +8522,18 @@
         "method": "mask-ink:gray"
       },
       "actual": {
-        "x": 576,
-        "y": 369,
-        "w": 95,
-        "h": 9,
-        "count": 358,
+        "x": 573,
+        "y": 368,
+        "w": 90,
+        "h": 8,
+        "count": 196,
         "method": "paint-diff-isolation"
       },
       "delta": {
-        "x": 2,
-        "y": 2,
-        "w": 0,
-        "h": -1
+        "x": -1,
+        "y": 1,
+        "w": -5,
+        "h": -2
       },
       "geometric": {
         "ref": {
@@ -8463,16 +8544,16 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 576,
-          "y": 369,
-          "w": 95,
+          "x": 573,
+          "y": 367,
+          "w": 90,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 8,
-          "y": 3,
-          "w": -10,
+          "x": 5,
+          "y": 1,
+          "w": -15,
           "h": -3
         }
       },
@@ -8495,17 +8576,17 @@
         "method": "mask-ink:gray"
       },
       "actual": {
-        "x": 818,
-        "y": 369,
-        "w": 59,
+        "x": 816,
+        "y": 367,
+        "w": 56,
         "h": 9,
-        "count": 238,
+        "count": 130,
         "method": "paint-diff-isolation"
       },
       "delta": {
-        "x": 1,
-        "y": 2,
-        "w": 1,
+        "x": -1,
+        "y": 0,
+        "w": -2,
         "h": 0
       },
       "geometric": {
@@ -8517,16 +8598,16 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 818,
-          "y": 369,
-          "w": 59,
+          "x": 816,
+          "y": 367,
+          "w": 56,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 6,
-          "y": 3,
-          "w": -11,
+          "x": 4,
+          "y": 1,
+          "w": -14,
           "h": -3
         }
       },
@@ -8549,16 +8630,16 @@
         "method": "mask-ink:edge"
       },
       "actual": {
-        "x": 97,
-        "y": 213,
+        "x": 99,
+        "y": 214,
         "w": 50,
         "h": 50,
-        "count": 420,
+        "count": 546,
         "method": "mask-ink:edge"
       },
       "delta": {
-        "x": 0,
-        "y": 0,
+        "x": 2,
+        "y": 1,
         "w": -5,
         "h": -1
       },
@@ -8571,15 +8652,15 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 97,
-          "y": 213,
+          "x": 99,
+          "y": 214,
           "w": 50,
           "h": 50,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 3,
+          "x": 2,
+          "y": 4,
           "w": -5,
           "h": -5
         }
@@ -8605,15 +8686,15 @@
       "actual": {
         "x": 295,
         "y": 210,
-        "w": 50,
+        "w": 49,
         "h": 52,
-        "count": 438,
+        "count": 633,
         "method": "mask-ink:edge"
       },
       "delta": {
         "x": -1,
         "y": -3,
-        "w": 0,
+        "w": -1,
         "h": 3
       },
       "geometric": {
@@ -8626,16 +8707,16 @@
         },
         "actual": {
           "x": 295,
-          "y": 212,
-          "w": 50,
-          "h": 50,
+          "y": 213,
+          "w": 48,
+          "h": 48,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 1,
-          "y": 2,
-          "w": -2,
-          "h": -2
+          "y": 3,
+          "w": -4,
+          "h": -4
         }
       },
       "methods": {
@@ -8657,17 +8738,17 @@
         "method": "mask-ink:edge"
       },
       "actual": {
-        "x": 549,
+        "x": 550,
         "y": 210,
-        "w": 49,
+        "w": 48,
         "h": 52,
-        "count": 301,
+        "count": 417,
         "method": "mask-ink:edge"
       },
       "delta": {
-        "x": 2,
+        "x": 3,
         "y": -2,
-        "w": -2,
+        "w": -3,
         "h": 2
       },
       "geometric": {
@@ -8679,17 +8760,17 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 549,
-          "y": 211,
-          "w": 50,
-          "h": 50,
+          "x": 550,
+          "y": 213,
+          "w": 48,
+          "h": 48,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 3,
-          "y": 1,
-          "w": -2,
-          "h": -2
+          "x": 4,
+          "y": 3,
+          "w": -4,
+          "h": -4
         }
       },
       "methods": {
@@ -8715,7 +8796,7 @@
         "y": 212,
         "w": 48,
         "h": 48,
-        "count": 279,
+        "count": 433,
         "method": "mask-ink:edge"
       },
       "delta": {
@@ -8769,7 +8850,7 @@
         "y": 200,
         "w": 170,
         "h": 72,
-        "count": 2775,
+        "count": 2861,
         "method": "mask-ink:edge"
       },
       "delta": {
@@ -8823,7 +8904,7 @@
         "y": 200,
         "w": 160,
         "h": 72,
-        "count": 2642,
+        "count": 2719,
         "method": "mask-ink:edge"
       },
       "delta": {
@@ -8937,8 +9018,8 @@
         246
       ],
       "xyActual": [
-        132,
-        231
+        124,
+        223
       ],
       "ref": [
         43,
@@ -8946,9 +9027,9 @@
         31
       ],
       "actual": [
-        41,
-        27,
-        29
+        43,
+        28,
+        31
       ]
     },
     "title": {
@@ -8957,8 +9038,8 @@
         286
       ],
       "xyActual": [
-        184,
-        288
+        174,
+        287
       ],
       "ref": [
         231,
@@ -8986,9 +9067,9 @@
         104
       ],
       "actual": [
-        83,
         88,
-        91
+        91,
+        88
       ]
     },
     "pillBorder": {
@@ -9038,7 +9119,7 @@
         22
       ],
       "actual": [
-        48,
+        50,
         22,
         19
       ]
@@ -9054,9 +9135,9 @@
         "w": 780,
         "h": 130
       },
-      "mismatched": 8325,
+      "mismatched": 7590,
       "total": 101400,
-      "ratio": 0.08210059171597633
+      "ratio": 0.07485207100591716
     },
     {
       "name": "stage-01",
@@ -9067,9 +9148,9 @@
         "w": 157,
         "h": 229
       },
-      "mismatched": 2671,
+      "mismatched": 2605,
       "total": 35953,
-      "ratio": 0.07429143604149863
+      "ratio": 0.07245570606069035
     },
     {
       "name": "stage-02",
@@ -9080,9 +9161,9 @@
         "w": 220,
         "h": 229
       },
-      "mismatched": 4439,
+      "mismatched": 4652,
       "total": 50380,
-      "ratio": 0.08811036125446606
+      "ratio": 0.09233822945613339
     },
     {
       "name": "stage-03",
@@ -9093,9 +9174,9 @@
         "w": 210,
         "h": 229
       },
-      "mismatched": 4339,
+      "mismatched": 4362,
       "total": 48090,
-      "ratio": 0.0902266583489291
+      "ratio": 0.09070492825951341
     },
     {
       "name": "stage-04",
@@ -9106,9 +9187,9 @@
         "w": 142,
         "h": 229
       },
-      "mismatched": 3167,
+      "mismatched": 3100,
       "total": 32518,
-      "ratio": 0.09739221354326834
+      "ratio": 0.09533181622486007
     },
     {
       "name": "stage-01-visual",
@@ -9119,9 +9200,9 @@
         "w": 70,
         "h": 80
       },
-      "mismatched": 250,
+      "mismatched": 272,
       "total": 5600,
-      "ratio": 0.044642857142857144
+      "ratio": 0.04857142857142857
     },
     {
       "name": "stage-02-visual",
@@ -9132,9 +9213,9 @@
         "w": 200,
         "h": 80
       },
-      "mismatched": 1749,
+      "mismatched": 1905,
       "total": 16000,
-      "ratio": 0.1093125
+      "ratio": 0.1190625
     },
     {
       "name": "stage-03-visual",
@@ -9145,9 +9226,9 @@
         "w": 190,
         "h": 80
       },
-      "mismatched": 1304,
+      "mismatched": 1425,
       "total": 15200,
-      "ratio": 0.08578947368421053
+      "ratio": 0.09375
     },
     {
       "name": "stage-04-visual",
@@ -9158,9 +9239,9 @@
         "w": 70,
         "h": 80
       },
-      "mismatched": 266,
+      "mismatched": 257,
       "total": 5600,
-      "ratio": 0.0475
+      "ratio": 0.045892857142857145
     },
     {
       "name": "connector-01-02",
@@ -9171,9 +9252,9 @@
         "w": 40,
         "h": 24
       },
-      "mismatched": 145,
+      "mismatched": 146,
       "total": 960,
-      "ratio": 0.15104166666666666
+      "ratio": 0.15208333333333332
     },
     {
       "name": "connector-02-03",
@@ -9184,9 +9265,9 @@
         "w": 34,
         "h": 24
       },
-      "mismatched": 124,
+      "mismatched": 123,
       "total": 816,
-      "ratio": 0.15196078431372548
+      "ratio": 0.15073529411764705
     },
     {
       "name": "connector-03-04",
@@ -9197,9 +9278,9 @@
         "w": 33,
         "h": 24
       },
-      "mismatched": 121,
+      "mismatched": 119,
       "total": 792,
-      "ratio": 0.1527777777777778
+      "ratio": 0.15025252525252525
     },
     {
       "name": "chat",

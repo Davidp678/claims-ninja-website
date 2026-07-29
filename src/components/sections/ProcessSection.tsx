@@ -27,7 +27,7 @@ const REF = {
   title: "#e7e7e7",
   /** Neutral body ≈ 104/104/104. */
   bodyText: "#686868",
-  supportText: "#5a5a5a",
+  supportText: "#686868",
   /** Pill stroke target ≈ 28/28/28. */
   pillBorder: "#1c1c1c",
   /** Muted icon stroke ≈ 43/28/31. */
@@ -42,8 +42,8 @@ const REF = {
 const CARD_INK = {
   number: { left: 15, top: 16, size: 14.5 },
   visual: { left: 11, top: 28, height: 82 },
-  title: { left: 14, top: 112, size: 12.45 },
-  desc: { left: 15, top: 132, size: 9.55, lineHeight: 1.48 },
+  title: { left: 14, top: 112, size: 12.4 },
+  desc: { left: 15, top: 133, size: 9.4, lineHeight: 1.52 },
   pill: { left: 11, top: 191, height: 22 },
 } as const;
 
@@ -84,7 +84,7 @@ function PillIcon({
   visual: HomeProcessVisual;
   stage: string;
 }) {
-  const className = "h-[14px] w-[14px] shrink-0 -translate-y-[3px]";
+  const className = "h-[13px] w-[13px] shrink-0 -translate-y-[1px]";
   const qa = `stage-${stage}-pill-icon`;
   const color = REF.mutedRed;
   if (visual === "intake") {
@@ -138,8 +138,8 @@ function PrimaryIconFrame({
         height: size,
         color: REF.mutedRed,
         background: "#121212",
-        border: "1px solid rgba(255,255,255,0.11)",
-        boxShadow: "0 0 12px -5px rgba(30,20,28,0.65)",
+        border: "1px solid rgba(255,255,255,0.13)",
+        boxShadow: "none",
       }}
     >
       {children}
@@ -156,24 +156,24 @@ function UploadDocVisual({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[-2px] top-[2px] h-[52px] w-[52px] rounded-full blur-[5px]"
+        className="pointer-events-none absolute left-[-1px] top-[4px] h-[48px] w-[48px] rounded-full blur-[4px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(56,25,22,0.55), transparent 70%)",
+            "radial-gradient(circle, rgba(56,25,22,0.48), transparent 68%)",
         }}
       />
-      <div className="absolute left-[0px] top-[14px]">
+      <div className="absolute left-[2px] top-[15px]">
         <PrimaryIconFrame stage={stage} size={50}>
           <StrokeIcon
-            className="h-[33px] w-[33px]"
-            strokeWidth={1.4}
+            className="h-[36px] w-[36px]"
+            strokeWidth={1.9}
             color={REF.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
-            <path d="M14.4 1.6H7A2.7 2.7 0 0 0 4.3 4.3v15.4A2.7 2.7 0 0 0 7 22.4h9.4a2.7 2.7 0 0 0 2.7-2.7V7.1L14.4 1.6Z" />
-            <path d="M14.4 1.6V7.4h5" />
-            <path d="M12 11.2v7.2" />
-            <path d="m8.5 14.3 3.5-3.5 3.5 3.5" />
+            <path d="M15 1.2H6.4A3 3 0 0 0 3.4 4.2v16A3 3 0 0 0 6.4 23.2h10a3 3 0 0 0 3-3V7L15 1.2Z" />
+            <path d="M15 1.2V7.6h5.4" />
+            <path d="M12 10.8v8.2" />
+            <path d="m8 14.2 4-4 4 4" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -190,10 +190,10 @@ function WorkspaceVisual({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[24px] top-0 h-[66px] w-[150px] rounded-[12px] blur-[8px]"
+        className="pointer-events-none absolute left-[36px] top-[8px] h-[52px] w-[120px] rounded-[10px] blur-[6px]"
         style={{
           background:
-            "radial-gradient(ellipse at 40% 45%, rgba(56,25,22,0.55), transparent 72%)",
+            "radial-gradient(ellipse at 40% 45%, rgba(56,25,22,0.42), transparent 70%)",
         }}
       />
       <div
@@ -202,7 +202,7 @@ function WorkspaceVisual({ stage }: { stage: string }) {
         style={{
           width: 170,
           background: "#0d0d0d",
-          border: "1px solid rgba(255,255,255,0.15)",
+          border: "1px solid rgba(255,255,255,0.17)",
         }}
       >
         <div className="relative flex h-full">
@@ -210,8 +210,8 @@ function WorkspaceVisual({ stage }: { stage: string }) {
             data-qa={`stage-${stage}-sidebar`}
             className="relative w-[24px] shrink-0"
             style={{
-              background: "#080808",
-              borderRight: "1px solid rgba(255,255,255,0.12)",
+              background: "#090909",
+              borderRight: "1px solid rgba(255,255,255,0.14)",
             }}
           >
             <span
@@ -224,16 +224,19 @@ function WorkspaceVisual({ stage }: { stage: string }) {
                 key={top}
                 data-qa={`stage-${stage}-sidebar-row-${i}`}
                 className="absolute left-1/2 h-[2px] w-[11px] -translate-x-1/2 rounded-[1px]"
-                style={{ top, background: "rgba(255,255,255,0.2)" }}
+                style={{
+                  top,
+                  background: "rgba(255,255,255,0.2)",
+                }}
               />
             ))}
           </div>
           <div
             data-qa={`stage-${stage}-divider`}
             className="w-px shrink-0"
-            style={{ background: "rgba(255,255,255,0.12)" }}
+            style={{ background: "rgba(255,255,255,0.14)" }}
           />
-          <div className="relative flex min-w-0 flex-1 flex-col px-[8px] pb-[7px] pt-[9px]">
+          <div className="relative flex min-w-0 flex-1 flex-col px-[9px] pb-[8px] pt-[10px]">
             <span
               data-qa={`stage-${stage}-content-bar-0`}
               className="mb-[7px] h-[7px] w-[70%] rounded-[3px]"
@@ -251,8 +254,8 @@ function WorkspaceVisual({ stage }: { stage: string }) {
                   data-qa={`stage-${stage}-lower-block-${i}`}
                   className="h-[15px] w-[15px] rounded-[3px]"
                   style={{
-                    background: "rgba(255,255,255,0.07)",
-                    border: "1px solid rgba(255,255,255,0.11)",
+                    background: "rgba(255,255,255,0.08)",
+                    border: "1px solid rgba(255,255,255,0.12)",
                   }}
                 />
               ))}
@@ -260,18 +263,18 @@ function WorkspaceVisual({ stage }: { stage: string }) {
           </div>
         </div>
       </div>
-      <div className="absolute left-[1px] top-[13px]">
-        <PrimaryIconFrame stage={stage} size={50}>
+      <div className="absolute left-[1px] top-[14px]">
+        <PrimaryIconFrame stage={stage} size={48}>
           <StrokeIcon
-            className="h-[32px] w-[32px]"
-            strokeWidth={1.35}
+            className="h-[34px] w-[34px]"
+            strokeWidth={1.8}
             color={REF.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
-            <rect x="2.6" y="3.4" width="8" height="7" rx="1.35" />
-            <rect x="13.4" y="3.4" width="8" height="7" rx="1.35" />
-            <rect x="2.6" y="13.8" width="8" height="7" rx="1.35" />
-            <rect x="13.4" y="13.8" width="8" height="7" rx="1.35" />
+            <rect x="2.2" y="3" width="8.4" height="7.4" rx="1.4" />
+            <rect x="13.4" y="3" width="8.4" height="7.4" rx="1.4" />
+            <rect x="2.2" y="13.6" width="8.4" height="7.4" rx="1.4" />
+            <rect x="13.4" y="13.6" width="8.4" height="7.4" rx="1.4" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -290,10 +293,10 @@ function ManageVisual({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[22px] top-0 h-[66px] w-[145px] rounded-[12px] blur-[8px]"
+        className="pointer-events-none absolute left-[34px] top-[8px] h-[52px] w-[110px] rounded-[10px] blur-[6px]"
         style={{
           background:
-            "radial-gradient(ellipse at 45% 45%, rgba(56,25,22,0.5), transparent 72%)",
+            "radial-gradient(ellipse at 45% 45%, rgba(56,25,22,0.4), transparent 70%)",
         }}
       />
       <div
@@ -302,7 +305,7 @@ function ManageVisual({ stage }: { stage: string }) {
         style={{
           width: 160,
           background: "#0d0d0d",
-          border: "1px solid rgba(255,255,255,0.15)",
+          border: "1px solid rgba(255,255,255,0.17)",
         }}
       >
         {[0, 1, 2].map((i) => (
@@ -365,20 +368,20 @@ function ManageVisual({ stage }: { stage: string }) {
           </svg>
         </span>
       ))}
-      <div className="absolute left-[1px] top-[12px]">
-        <PrimaryIconFrame stage={stage} size={50}>
+      <div className="absolute left-[2px] top-[14px]">
+        <PrimaryIconFrame stage={stage} size={48}>
           <StrokeIcon
-            className="h-[30px] w-[30px]"
-            strokeWidth={1.35}
+            className="h-[33px] w-[33px]"
+            strokeWidth={1.75}
             color={REF.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
-            <circle cx="8.2" cy="7.8" r="2.9" />
-            <circle cx="15.5" cy="8.6" r="2.4" />
-            <path d="M3.4 18.6c.7-2.7 2.7-4.2 4.9-4.2s4.2 1.5 4.9 4.2" />
-            <path d="M13.7 14.8c1.7-.45 3.2.25 4.1 1.7" />
-            <rect x="15.1" y="3.4" width="5.3" height="3.7" rx="1.1" />
-            <path d="M16.3 5.2h2.8M16.3 6.2h1.8" />
+            <circle cx="7.8" cy="7.4" r="3.1" />
+            <circle cx="15.7" cy="8.4" r="2.6" />
+            <path d="M2.9 18.9c.8-2.9 3-4.7 5.1-4.7s4.3 1.8 5.1 4.7" />
+            <path d="M13.4 14.9c1.85-.5 3.4.3 4.4 1.9" />
+            <rect x="14.9" y="2.9" width="5.8" height="4" rx="1.15" />
+            <path d="M16.1 4.85h3M16.1 6h2.1" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -395,23 +398,23 @@ function RecoverVisual({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[-2px] top-[2px] h-[52px] w-[52px] rounded-full blur-[5px]"
+        className="pointer-events-none absolute left-[-1px] top-[4px] h-[48px] w-[48px] rounded-full blur-[4px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(56,25,22,0.55), transparent 70%)",
+            "radial-gradient(circle, rgba(56,25,22,0.48), transparent 68%)",
         }}
       />
       <div className="absolute left-[1px] top-[13px]">
         <PrimaryIconFrame stage={stage} size={50}>
           <StrokeIcon
-            className="h-[33px] w-[33px]"
-            strokeWidth={1.4}
+            className="h-[36px] w-[36px]"
+            strokeWidth={1.85}
             color={REF.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
-            <circle cx="12" cy="12" r="8.8" />
-            <path d="m6.8 14.8 3.2-3.7 2.4 2.4L17.4 7.8" />
-            <path d="M14 7.8h3.2v3.2" />
+            <circle cx="12" cy="12" r="9.2" />
+            <path d="m6.4 15 3.4-4 2.6 2.6L17.8 7.4" />
+            <path d="M13.8 7.4h3.6v3.6" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -440,7 +443,7 @@ function ProcessStageCard({
   referenceMode?: boolean;
 }) {
   const stage = item.step;
-  const titleSize = stage === "04" ? 12.05 : 12.45;
+  const titleSize = stage === "04" ? 11.9 : 12.25;
   const lines = referenceMode ? item.descriptionLines : null;
 
   return (
@@ -495,11 +498,12 @@ function ProcessStageCard({
           right: stage === "01" ? 16 : stage === "04" ? 10 : 20,
           top: CARD_INK.title.top,
           fontSize: titleSize,
-          fontWeight: 600,
-          lineHeight: 1.05,
-          letterSpacing: stage === "04" ? "-0.022em" : "-0.018em",
+          fontWeight: 500,
+          lineHeight: 1.02,
+          letterSpacing: stage === "04" ? "-0.024em" : "-0.02em",
           color: REF.title,
           whiteSpace: "nowrap",
+          WebkitFontSmoothing: "antialiased",
         }}
       >
         {item.title}
@@ -515,10 +519,11 @@ function ProcessStageCard({
           top: CARD_INK.desc.top,
           fontSize: CARD_INK.desc.size,
           lineHeight: CARD_INK.desc.lineHeight,
-          letterSpacing: "-0.01em",
-          fontWeight: 400,
+          letterSpacing: "-0.012em",
+          fontWeight: 300,
           color: REF.bodyText,
           overflow: "visible",
+          WebkitFontSmoothing: "antialiased",
         }}
       >
         {lines
@@ -533,6 +538,12 @@ function ProcessStageCard({
                   height: Math.round(
                     CARD_INK.desc.size * CARD_INK.desc.lineHeight,
                   ),
+                  transform:
+                    i === 0
+                      ? "translateY(-1px)"
+                      : i === 2
+                        ? "translateY(1px)"
+                        : undefined,
                 }}
               >
                 {line}
@@ -569,12 +580,20 @@ function ProcessStageCard({
         <PillIcon visual={item.visual} stage={stage} />
         <span
           data-qa={`stage-${stage}-pill-label`}
-          className="truncate font-medium leading-none"
+          className="truncate leading-none"
           style={{
-            fontSize: 9.35,
-            color: "#bdbdbd",
-            letterSpacing: "-0.015em",
-            transform: "translate(1px, 0.5px)",
+            fontSize: 9.1,
+            fontWeight: 400,
+            color: "#a3a3a3",
+            letterSpacing: "-0.018em",
+            opacity: 0.92,
+            transform:
+              stage === "01"
+                ? "translate(0px, -0.5px)"
+                : stage === "02" || stage === "03"
+                  ? "translate(-1px, -1.5px)"
+                  : "translate(0px, -1.5px)",
+            WebkitFontSmoothing: "antialiased",
           }}
         >
           {item.supportLabel}
@@ -600,16 +619,20 @@ function ConnectorSegment({ index }: { index: number }) {
       aria-hidden
       data-process-connector
       data-qa={`connector-${index}-wrap`}
-      className="relative block h-[16px] w-full"
+      className="relative block h-[16px] w-full overflow-visible"
     >
       <span
         data-qa={`connector-${index}-glow`}
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[16px] w-[16px] -translate-y-1/2 rounded-full"
+        className="pointer-events-none absolute rounded-full"
         style={{
           left: `calc(50% + ${nodeNudgeX}px)`,
+          top: "50%",
+          width: 14,
+          height: 14,
           transform: "translate(-50%, -50%)",
           background:
-            "radial-gradient(circle, rgba(56,25,22,0.4), transparent 68%)",
+            "radial-gradient(circle, rgba(56,25,22,0.62) 0%, rgba(56,25,22,0.22) 40%, transparent 68%)",
+          filter: "none",
         }}
       />
       <span
@@ -621,7 +644,10 @@ function ConnectorSegment({ index }: { index: number }) {
           width: lineSpec.width,
           height: 3,
           background: REF.connector,
-          opacity: 0.92,
+          opacity: 0.88,
+          borderRadius: 0,
+          boxShadow: "none",
+          filter: "none",
         }}
       />
       <span
@@ -636,12 +662,21 @@ function ConnectorSegment({ index }: { index: number }) {
           border: `1.5px solid ${REF.connector}`,
           background: "#111111",
           boxSizing: "border-box",
+          boxShadow: "none",
+          filter: "none",
+          overflow: "hidden",
         }}
       >
         <span
           data-qa={`connector-${index}-dot`}
           className="rounded-full"
-          style={{ width: 5, height: 5, background: REF.connector }}
+          style={{
+            width: 5,
+            height: 5,
+            background: REF.connector,
+            boxShadow: "none",
+            filter: "none",
+          }}
         />
       </span>
     </span>
@@ -752,9 +787,9 @@ export function ProcessSection({
       }}
     >
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_78%_66%_at_50%_58%,rgba(56,25,22,1.18),transparent_56%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_88%_50%_at_50%_20%,rgba(56,25,22,0.66),transparent_52%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_130%_110%_at_50%_50%,transparent_58%,rgba(0,0,0,0.18)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_72%_60%_at_50%_56%,rgba(56,25,22,1.55),transparent_52%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_44%_at_50%_22%,rgba(56,25,22,0.8),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_130%_110%_at_50%_50%,transparent_58%,rgba(0,0,0,0.14)_100%)]" />
       </div>
 
       <div
@@ -798,12 +833,13 @@ export function ProcessSection({
             }`}
             style={{
               top: referenceMode ? 70 : undefined,
-              fontSize: referenceMode ? 29.85 : undefined,
+              fontSize: referenceMode ? 30.1 : undefined,
               lineHeight: referenceMode ? "30px" : 1.15,
-              letterSpacing: referenceMode ? "0.002em" : "0.01em",
+              letterSpacing: referenceMode ? "-0.004em" : "0.01em",
               fontWeight: 600,
               color: REF.title,
-              transform: referenceMode ? "translateX(3px)" : undefined,
+              transform: referenceMode ? "translateX(4px)" : undefined,
+              WebkitFontSmoothing: "antialiased",
             }}
           >
             {content.title}
@@ -814,14 +850,17 @@ export function ProcessSection({
               referenceMode ? "absolute inset-x-0" : "mt-3"
             }`}
             style={{
-              top: referenceMode ? 112 : undefined,
-              maxWidth: referenceMode ? 452 : 460,
-              fontSize: referenceMode ? 12.5 : 13.5,
-              lineHeight: 1.3,
-              letterSpacing: referenceMode ? "0.003em" : undefined,
+              top: referenceMode ? 113 : undefined,
+              maxWidth: referenceMode ? 450 : 460,
+              fontSize: referenceMode ? 12.35 : 13.5,
+              lineHeight: 1.25,
+              letterSpacing: referenceMode ? "0.001em" : undefined,
+              fontWeight: 400,
               color: REF.supportText,
+              opacity: 0.95,
               whiteSpace: referenceMode ? "nowrap" : undefined,
-              transform: referenceMode ? "translateX(2px)" : undefined,
+              transform: referenceMode ? "translateX(4px)" : undefined,
+              WebkitFontSmoothing: "antialiased",
             }}
           >
             {content.description}

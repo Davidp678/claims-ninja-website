@@ -63,12 +63,15 @@ export const DOM_SELECTORS = [
   "connector-1-line",
   "connector-1-node",
   "connector-1-dot",
+  "connector-1-glow",
   "connector-2-line",
   "connector-2-node",
   "connector-2-dot",
+  "connector-2-glow",
   "connector-3-line",
   "connector-3-node",
   "connector-3-dot",
+  "connector-3-glow",
 ];
 
 /** Must succeed paint-isolation with plausible ink. */
@@ -115,12 +118,15 @@ export const REQUIRED_PAINT = [
   "connector-1-line",
   "connector-1-node",
   "connector-1-dot",
+  "connector-1-glow",
   "connector-2-line",
   "connector-2-node",
   "connector-2-dot",
+  "connector-2-glow",
   "connector-3-line",
   "connector-3-node",
   "connector-3-dot",
+  "connector-3-glow",
 ];
 
 export function loadReferenceMasks() {
@@ -321,7 +327,13 @@ function isQaMagenta(r, g, b) {
 }
 
 /** Diff painted frame vs clean baseline inside a padded DOM box. */
-function extractDiffBounds(cleanPng, paintedPng, box, pad = 4) {
+function extractDiffBounds(
+  cleanPng,
+  paintedPng,
+  box,
+  pad = 4,
+  { magentaOnly = false } = {},
+) {
   if (!box) return null;
   const x0 = Math.max(0, box.x - pad);
   const y0 = Math.max(0, box.y - pad);
@@ -338,12 +350,16 @@ function extractDiffBounds(cleanPng, paintedPng, box, pad = 4) {
       const pr = paintedPng.data[i];
       const pg = paintedPng.data[i + 1];
       const pb = paintedPng.data[i + 2];
-      const dr = Math.abs(pr - cleanPng.data[i]);
-      const dg = Math.abs(pg - cleanPng.data[i + 1]);
-      const db = Math.abs(pb - cleanPng.data[i + 2]);
       const magenta = isQaMagenta(pr, pg, pb);
-      const changed = dr + dg + db >= 90;
-      if (!magenta && !changed) continue;
+      if (magentaOnly) {
+        if (!magenta) continue;
+      } else {
+        const dr = Math.abs(pr - cleanPng.data[i]);
+        const dg = Math.abs(pg - cleanPng.data[i + 1]);
+        const db = Math.abs(pb - cleanPng.data[i + 2]);
+        const changed = dr + dg + db >= 90;
+        if (!magenta && !changed) continue;
+      }
       count += 1;
       minX = Math.min(minX, x);
       minY = Math.min(minY, y);
@@ -358,7 +374,9 @@ function extractDiffBounds(cleanPng, paintedPng, box, pad = 4) {
     w: maxX - minX + 1,
     h: maxY - minY + 1,
     count,
-    method: "paint-diff-isolation",
+    method: magentaOnly
+      ? "paint-layer-isolation"
+      : "paint-diff-isolation",
   };
 }
 
@@ -378,7 +396,34 @@ async function paintElement(page, name) {
           strokeWidth: node.getAttribute("stroke-width"),
         });
       }
-      window.__qaSnap = { name: qaName, snap };
+
+      const connectorBase = qaName.match(/^(connector-\d+)/)?.[1];
+      const isConnectorLayer = Boolean(connectorBase);
+      const isConnectorNode = /^connector-\d+-node$/.test(qaName);
+      const isConnectorDot = /^connector-\d+-dot$/.test(qaName);
+      const isConnectorLine = /^connector-\d+-line$/.test(qaName);
+      const isConnectorGlow = /^connector-\d+-glow$/.test(qaName);
+
+      /** Layer-specific isolation: hide glow + nested named layers. */
+      const hidden = [];
+      const hideEl = (node) => {
+        if (!node || hidden.some((h) => h.el === node)) return;
+        hidden.push({ el: node, visibility: node.style.visibility });
+        node.style.setProperty("visibility", "hidden", "important");
+      };
+      if (isConnectorLayer && !isConnectorGlow) {
+        hideEl(document.querySelector(`[data-qa="${connectorBase}-glow"]`));
+      }
+      if (isConnectorGlow) {
+        hideEl(document.querySelector(`[data-qa="${connectorBase}-line"]`));
+        hideEl(document.querySelector(`[data-qa="${connectorBase}-node"]`));
+        hideEl(document.querySelector(`[data-qa="${connectorBase}-dot"]`));
+      }
+      if (isConnectorNode) {
+        el.querySelectorAll('[data-qa$="-dot"]').forEach((n) => hideEl(n));
+      }
+
+      window.__qaSnap = { name: qaName, snap, hidden };
 
       const cs = getComputedStyle(el);
       const hadFillBg =
@@ -394,18 +439,33 @@ async function paintElement(page, name) {
       el.style.setProperty("text-shadow", "none", "important");
       el.style.setProperty("filter", "none", "important");
       el.style.setProperty("opacity", "1", "important");
+
+      /**
+       * Connector nodes are rings: paint border only, keep dark interior.
+       * Never inflate layers with a synthetic 2px glow ring — that was
+       * turning 5×5 dots into ~10×10 and 13×13 nodes into ~18×18.
+       */
       const forceFill =
-        hadFillBg ||
-        qaName.includes("active-dot") ||
-        qaName.endsWith("-dot") ||
-        qaName.includes("check-");
+        !isConnectorNode &&
+        (hadFillBg ||
+          isConnectorDot ||
+          isConnectorLine ||
+          isConnectorGlow ||
+          qaName.includes("active-dot") ||
+          qaName.endsWith("-dot") ||
+          qaName.includes("check-"));
+
       if (forceFill) {
         el.style.setProperty("background-color", css, "important");
         el.style.setProperty("background", css, "important");
-        el.style.setProperty("box-shadow", `0 0 0 2px ${css}`, "important");
+      } else if (isConnectorNode) {
+        el.style.setProperty("background-color", "#111111", "important");
+        el.style.setProperty("background", "#111111", "important");
+        el.style.setProperty("border-color", css, "important");
       }
 
       for (const node of nodes) {
+        if (hidden.some((h) => h.el === node || h.el.contains(node))) continue;
         const tag = node.tagName?.toLowerCase?.() || "";
         const isSvg =
           node instanceof SVGElement ||
@@ -427,6 +487,7 @@ async function paintElement(page, name) {
       }
 
       el.querySelectorAll("svg").forEach((svg) => {
+        if (hidden.some((h) => h.el === svg || h.el.contains(svg))) return;
         svg.setAttribute("stroke", css);
         svg.style.setProperty("color", css, "important");
         svg.style.setProperty("stroke", css, "important");
@@ -437,7 +498,7 @@ async function paintElement(page, name) {
         });
       });
 
-      // Scoped style: only this primitive + descendants (not whole page reds)
+      // Scoped style: only this named layer; nested named layers are JS-hidden above.
       const style = document.createElement("style");
       style.setAttribute("data-qa-paint", qaName);
       style.textContent = `
@@ -445,6 +506,8 @@ async function paintElement(page, name) {
           color: ${css} !important;
           -webkit-text-fill-color: ${css} !important;
           border-color: ${css} !important;
+          box-shadow: none !important;
+          filter: none !important;
         }
         [data-qa="${qaName}"] svg,
         [data-qa="${qaName}"] svg * {
@@ -467,6 +530,13 @@ async function restoreElement(page) {
     if (!state) return;
     if (state.styleTag?.parentNode) state.styleTag.parentNode.removeChild(state.styleTag);
     document.querySelectorAll(`style[data-qa-paint="${state.name}"]`).forEach((n) => n.remove());
+    if (Array.isArray(state.hidden)) {
+      for (const h of state.hidden) {
+        if (!h?.el) continue;
+        if (h.visibility) h.el.style.visibility = h.visibility;
+        else h.el.style.removeProperty("visibility");
+      }
+    }
     const el = document.querySelector(`[data-qa="${state.name}"]`);
     if (!el) return;
     const nodes = [el, ...el.querySelectorAll("*")];
@@ -498,7 +568,16 @@ export async function measurePaintIsolation(page, sectionLocator, domBounds) {
     }
     const shot = await sectionLocator.screenshot({ type: "png" });
     const painted = PNG.sync.read(shot);
-    out[name] = extractDiffBounds(cleanPng, painted, domBounds?.[name] || null, 6);
+    // Connector layers: count only the recolored named layer (ignore glow
+    // disappearance / sibling diffs that inflate the footprint).
+    const magentaOnly = name.startsWith("connector-");
+    out[name] = extractDiffBounds(
+      cleanPng,
+      painted,
+      domBounds?.[name] || null,
+      6,
+      { magentaOnly },
+    );
     await restoreElement(page);
   }
   return out;
