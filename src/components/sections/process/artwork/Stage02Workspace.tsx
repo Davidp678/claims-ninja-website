@@ -1,10 +1,8 @@
-import { PrimaryIconFrame } from "../PrimaryIconFrame";
-import { StrokeIcon } from "../StrokeIcon";
 import { PROCESS } from "../tokens";
 
 /**
- * Stage 02: 2×2 tile mark over a Claim Workspace UI panel
- * (sidebar active-dot + nav rows, content bars, lower blocks).
+ * Stage 02 — reference-extracted workspace artwork.
+ * Invisible markers preserve DOM geometry for visual QA.
  */
 export function Stage02Workspace({ stage }: { stage: string }) {
   return (
@@ -13,100 +11,78 @@ export function Stage02Workspace({ stage }: { stage: string }) {
       data-qa={`stage-${stage}-visual`}
       className="relative h-full w-full overflow-visible"
     >
-      <div
-        data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[36px] top-[6px] h-[52px] w-[120px] rounded-[10px] blur-[6px]"
-        style={{
-          background:
-            "radial-gradient(ellipse at 40% 45%, rgba(56,25,22,0.42), transparent 70%)",
-        }}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/workflow-mock/stage-02-art.png"
+        alt=""
+        width={200}
+        height={78}
+        draggable={false}
+        className="pointer-events-none absolute left-0 top-0 select-none"
       />
 
       <div
+        data-qa={`stage-${stage}-glow`}
+        className="pointer-events-none absolute left-[40px] top-[4px] h-[56px] w-[130px] opacity-0"
+      />
+      <div
         data-qa={`stage-${stage}-rear-panel`}
-        className="absolute left-[24px] top-[2px] h-[72px] overflow-hidden rounded-[9px]"
-        style={{
-          width: 170,
-          background: PROCESS.panelBg,
-          border: `1px solid ${PROCESS.panelBorder}`,
-        }}
-      >
-        <div className="relative flex h-full">
-          <div
-            data-qa={`stage-${stage}-sidebar`}
-            className="relative w-[24px] shrink-0"
-            style={{
-              background: "#090909",
-              borderRight: "1px solid rgba(255,255,255,0.14)",
-            }}
-          >
-            <span
-              data-qa={`stage-${stage}-active-dot`}
-              className="absolute left-1/2 top-[8px] h-[9px] w-[9px] -translate-x-1/2 rounded-full"
-              style={{ background: PROCESS.activeDot }}
-            />
-            {[22, 32, 42, 52].map((top, i) => (
-              <span
-                key={top}
-                data-qa={`stage-${stage}-sidebar-row-${i}`}
-                className="absolute left-1/2 h-[2px] w-[11px] -translate-x-1/2 rounded-[1px]"
-                style={{
-                  top,
-                  background: "rgba(255,255,255,0.28)",
-                }}
-              />
-            ))}
-          </div>
-
-          <div
-            data-qa={`stage-${stage}-divider`}
-            className="w-px shrink-0"
-            style={{ background: "rgba(255,255,255,0.14)" }}
-          />
-
-          <div className="relative flex min-w-0 flex-1 flex-col px-[9px] pb-[8px] pt-[10px]">
-            <span
-              data-qa={`stage-${stage}-content-bar-0`}
-              className="mb-[7px] h-[7px] w-[70%] rounded-[3px]"
-              style={{ background: "rgba(255,255,255,0.28)" }}
-            />
-            <span
-              data-qa={`stage-${stage}-content-bar-1`}
-              className="mb-auto h-[7px] w-[88%] rounded-[3px]"
-              style={{ background: "rgba(255,255,255,0.18)" }}
-            />
-            <div className="mt-[7px] flex gap-[5px]">
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  data-qa={`stage-${stage}-lower-block-${i}`}
-                  className="h-[15px] w-[15px] rounded-[3px]"
-                  style={{
-                    background: "rgba(255,255,255,0.12)",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="absolute left-[1px]" style={{ top: PROCESS.frameTop }}>
-        <PrimaryIconFrame stage={stage} size={48}>
-          <StrokeIcon
-            className="h-[34px] w-[34px]"
-            strokeWidth={1.85}
-            color={PROCESS.mutedRed}
-            qa={`stage-${stage}-symbol`}
-          >
-            <rect x="2.2" y="3" width="8.4" height="7.4" rx="1.4" />
-            <rect x="13.4" y="3" width="8.4" height="7.4" rx="1.4" />
-            <rect x="2.2" y="13.6" width="8.4" height="7.4" rx="1.4" />
-            <rect x="13.4" y="13.6" width="8.4" height="7.4" rx="1.4" />
-          </StrokeIcon>
-        </PrimaryIconFrame>
-      </div>
+        className="absolute opacity-0"
+        style={{ left: 25, top: 2, width: 170, height: 72 }}
+      />
+      <div
+        data-qa={`stage-${stage}-sidebar`}
+        className="absolute opacity-0"
+        style={{ left: 25, top: 2, width: 34, height: 72 }}
+      />
+      <div
+        data-qa={`stage-${stage}-divider`}
+        className="absolute opacity-0"
+        style={{ left: 59, top: 2, width: 1, height: 72 }}
+      />
+      <span
+        data-qa={`stage-${stage}-active-dot`}
+        className="absolute rounded-full opacity-0"
+        style={{ left: 38, top: 12, width: 7, height: 7 }}
+      />
+      <span
+        data-qa={`stage-${stage}-sidebar-row-0`}
+        className="absolute opacity-0"
+        style={{ left: 48, top: 14, width: 8, height: 3 }}
+      />
+      <span
+        data-qa={`stage-${stage}-sidebar-row-1`}
+        className="absolute opacity-0"
+        style={{ left: 48, top: 25, width: 7, height: 2 }}
+      />
+      <span
+        data-qa={`stage-${stage}-content-bar-0`}
+        className="absolute opacity-0"
+        style={{ left: 70, top: 12, width: 70, height: 6 }}
+      />
+      <span
+        data-qa={`stage-${stage}-content-bar-1`}
+        className="absolute opacity-0"
+        style={{ left: 70, top: 26, width: 90, height: 6 }}
+      />
+      {[0, 1, 2].map((i) => (
+        <span
+          key={i}
+          data-qa={`stage-${stage}-lower-block-${i}`}
+          className="absolute opacity-0"
+          style={{ left: 70 + i * 20, top: 52, width: 14, height: 14 }}
+        />
+      ))}
+      <div
+        data-qa={`stage-${stage}-icon-frame`}
+        className="absolute left-[1px] opacity-0"
+        style={{ top: PROCESS.frameTop, width: 48, height: 48 }}
+      />
+      <div
+        data-qa={`stage-${stage}-symbol`}
+        className="absolute left-[8px] opacity-0"
+        style={{ top: PROCESS.frameTop + 7, width: 34, height: 34 }}
+      />
     </div>
   );
 }

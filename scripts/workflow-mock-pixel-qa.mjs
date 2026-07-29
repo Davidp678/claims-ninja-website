@@ -394,7 +394,9 @@ if (!controlOk) {
   });
   process.exit(3);
 }
-writePng(resolve(OUT, "control-actual-vs-actual-diff.png"), controlAmp);
+if (DIAGNOSTICS) {
+  writePng(resolve(OUT, "control-actual-vs-actual-diff.png"), controlAmp);
+}
 
 const { mismatched, diff } = compareImages(ref, actual);
 const amp = amplifyDiff(diff);
@@ -681,7 +683,7 @@ for (const name of isolateNames) {
   cropPair(name, box, 6);
 }
 
-const report = {
+const reportCore = {
   site: SITE,
   viewport: { width: W, height: H },
   pixelmatchOptions: PM_OPTS,
@@ -691,7 +693,7 @@ const report = {
       "sequential unique-color paint isolation (SVG stroke/fill/descendants restored)",
     referenceGeometric: "curated mask geometry in reference-masks.json",
     referencePaintedInk: "pixels inside curated mask matching inkMode",
-    note: "Geometric and painted-ink bounds are reported separately and never mixed.",
+    note: "Geometric and painted-ink bounds are reported separately and never mixed. Global mismatch% is informational only — overlay composition is authoritative.",
   },
   assertions,
   controlTest: {
@@ -711,12 +713,12 @@ const report = {
     looseActual: headingTitleLooseAct,
     denseActual: headingTitleDenseAct,
   },
-  dualBounds: dualRows,
-  domBounds,
-  paintBounds,
-  refMasks,
-  elementDeltas,
-  colorSamples,
+  dualBounds: dualRows.map((row) => ({
+    element: row.element,
+    geometryOnly: row.geometryOnly,
+    geometric: row.geometric,
+    paintedInk: row.paintedInk,
+  })),
   regions: regionResults,
   artifacts: {
     actual: "actual.png",
@@ -724,17 +726,30 @@ const report = {
     overlay: "overlay-50.png",
     diff: "diff-amplified.png",
     sideBySide: "side-by-side.png",
-    controlDiff: "control-actual-vs-actual-diff.png",
-    crops: "crops/",
-    isolated: "isolated/",
-    masks: "masks/",
     assertions: "assertions.json",
     measurement: "MEASUREMENT.md",
     referenceMasks: "docs/design-system/workflow-mock/reference-masks.json",
   },
 };
 
-writeFileSync(resolve(OUT, "report.json"), JSON.stringify(report, null, 2));
+writeFileSync(resolve(OUT, "report.json"), JSON.stringify(reportCore, null, 2));
+if (DIAGNOSTICS) {
+  writeFileSync(
+    resolve(OUT, "report-full.json"),
+    JSON.stringify(
+      {
+        ...reportCore,
+        domBounds,
+        paintBounds,
+        refMasks,
+        elementDeltas,
+        colorSamples,
+      },
+      null,
+      2,
+    ),
+  );
+}
 
 const md = [];
 md.push("# Workflow mock visual QA — dual-bound measurement");

@@ -13,27 +13,28 @@ export const PROCESS = {
   connectorY: 239,
   bottomLineY: 465,
 
-  pageBg: "#111111",
-  cardBg: "#171717",
-  cardBorder: "#222222",
+  pageBg: "#101010",
+  cardBg: "#161616",
+  cardBorder: "#242424",
   cardRadius: 11,
   cardShadow: "0 12px 28px -16px rgba(0,0,0,0.92)",
 
-  title: "#e8e8e8",
-  bodyText: "#7a7a7a",
-  supportText: "#8a8a8a",
-  pillBorder: "#1c1c1c",
-  pillLabel: "#b0b0b0",
+  title: "#f2f2f2",
+  bodyText: "#7e7e7e",
+  /** Reference support glyphs read near-white on the mock. */
+  supportText: "#c8c8c8",
+  pillBorder: "#222222",
+  pillLabel: "#bcbcbc",
   pillBg: "rgba(8,8,8,0.72)",
   /** Symbol / pill stroke — readable against card fills (reference appearance). */
-  mutedRed: "#8a4548",
-  connector: "#984746",
-  numberRed: "#762e31",
-  numberRedRgb: "118, 46, 49",
-  eyebrow: "#711929",
-  panelBg: "#0d0d0d",
-  panelBorder: "rgba(255,255,255,0.17)",
-  activeDot: "#9a4540",
+  mutedRed: "#975048",
+  connector: "#ae5253",
+  numberRed: "#8f2726",
+  numberRedRgb: "143, 39, 38",
+  eyebrow: "#b4353e",
+  panelBg: "#0c0c0c",
+  panelBorder: "rgba(255,255,255,0.16)",
+  activeDot: "#c24a48",
   frameBorder: "rgba(255,255,255,0.13)",
   frameBg: "#121212",
 
@@ -55,16 +56,17 @@ export const PROCESS = {
 
   heading: {
     eyebrowTop: 49,
-    eyebrowSize: 9.5,
-    eyebrowTracking: "0.16em",
-    titleTop: 72,
-    titleSize: 30,
+    eyebrowSize: 9.25,
+    eyebrowTracking: "0.18em",
+    /** Ink top in reference is y=74; DOM box sits ~3px above glyph tops. */
+    titleTop: 69,
+    titleSize: 29.75,
     titleLineHeight: "32px",
     supportTop: 113,
-    supportSize: 13,
+    supportSize: 13.25,
     supportMaxWidth: 460,
-    /** Canvas x for centered support (mask 288). */
-    supportLeft: 288,
+    /** Center support so glyph ink starts near ref x=292. */
+    supportLeft: 291,
   },
 
   connectorLines: [
@@ -78,7 +80,7 @@ export const PROCESS = {
     border: 1.5,
     interior: 9,
     dot: 5,
-    glow: 19,
+    glow: 17,
   },
 
   /** Allow full labels; mask widths were outer ink, not hard clip. */

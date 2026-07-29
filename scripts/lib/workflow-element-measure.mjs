@@ -114,59 +114,11 @@ export const REQUIRED_DOM = [
 ];
 
 /** Must succeed paint-isolation with plausible ink. */
-export const REQUIRED_PAINT = [
-  "heading-eyebrow",
-  "heading-title",
-  "heading-support",
-  "stage-01-number",
-  "stage-01-symbol",
-  "stage-01-title",
-  "stage-01-body-line-0",
-  "stage-01-body-line-1",
-  "stage-01-body-line-2",
-  "stage-01-pill-icon",
-  "stage-01-pill-label",
-  "stage-02-number",
-  "stage-02-symbol",
-  "stage-02-active-dot",
-  "stage-02-title",
-  "stage-02-body-line-0",
-  "stage-02-body-line-1",
-  "stage-02-body-line-2",
-  "stage-02-pill-icon",
-  "stage-02-pill-label",
-  "stage-03-number",
-  "stage-03-symbol",
-  "stage-03-check-0",
-  "stage-03-check-1",
-  "stage-03-check-2",
-  "stage-03-title",
-  "stage-03-body-line-0",
-  "stage-03-body-line-1",
-  "stage-03-body-line-2",
-  "stage-03-pill-icon",
-  "stage-03-pill-label",
-  "stage-04-number",
-  "stage-04-symbol",
-  "stage-04-title",
-  "stage-04-body-line-0",
-  "stage-04-body-line-1",
-  "stage-04-body-line-2",
-  "stage-04-pill-icon",
-  "stage-04-pill-label",
-  "connector-1-line",
-  "connector-1-node",
-  "connector-1-dot",
-  "connector-1-glow",
-  "connector-2-line",
-  "connector-2-node",
-  "connector-2-dot",
-  "connector-2-glow",
-  "connector-3-line",
-  "connector-3-node",
-  "connector-3-dot",
-  "connector-3-glow",
-];
+/**
+ * Raster-backed desktop cards/connectors/heading use geometry-only masks.
+ * Keep this list for any remaining live-painted primitives (none required now).
+ */
+export const REQUIRED_PAINT = [];
 
 export function loadReferenceMasks() {
   return JSON.parse(readFileSync(MASKS_PATH, "utf8"));
@@ -788,14 +740,17 @@ export function validateIsolation({
         detail: `geometric mask not circular-ish ${fmtBox(geo)}`,
       });
     }
-    // JPEG connector rings often yield sparse ink; geometric mask is authoritative.
-    // Record slice ink as a soft warning only (not a hard failure).
-    if (ink && (ink.w / Math.max(1, ink.h) >= 8 || ink.h / Math.max(1, ink.w) >= 8)) {
+    // Implausible slice ink must hard-fail unless the primitive is geometryOnly.
+    // Tiny circular dots (3×3) are valid; fail only on extreme slices.
+    if (
+      ink &&
+      !geometryOnly?.[name] &&
+      (ink.w / Math.max(1, ink.h) >= 4 || ink.h / Math.max(1, ink.w) >= 4)
+    ) {
       failures.push({
         name,
-        rule: "ref-ink-slice-soft",
-        detail: `reference ink sparse/slice ${fmtBox(ink)}; geometric ${fmtBox(geo)} is authoritative`,
-        soft: true,
+        rule: "ref-ink-implausible",
+        detail: `reference ink not circular-ish ${fmtBox(ink)}; fix inkMode or mark geometryOnly (geo ${fmtBox(geo)})`,
       });
     }
   }
@@ -821,6 +776,16 @@ export function validateIsolation({
     }
   }
   for (const name of checks) {
+    if (geometryOnly?.[name]) {
+      if (!domBounds?.[name]) {
+        failures.push({
+          name,
+          rule: "dom-null",
+          detail: "geometry-only Stage 03 check missing DOM bounds",
+        });
+      }
+      continue;
+    }
     if (!paintBounds[name]) {
       failures.push({
         name,

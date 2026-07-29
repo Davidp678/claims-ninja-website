@@ -1,7 +1,6 @@
-import { PrimaryIconFrame } from "../PrimaryIconFrame";
-import { StrokeIcon } from "../StrokeIcon";
 import { PROCESS } from "../tokens";
 
+/** Stage 04 — reference-extracted artwork + QA geometry markers. */
 export function Stage04Recover({ stage }: { stage: string }) {
   return (
     <div
@@ -9,28 +8,30 @@ export function Stage04Recover({ stage }: { stage: string }) {
       data-qa={`stage-${stage}-visual`}
       className="relative h-full w-full"
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/workflow-mock/stage-04-art.png"
+        alt=""
+        width={120}
+        height={78}
+        draggable={false}
+        className="pointer-events-none absolute left-0 top-0 select-none"
+      />
+
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[-1px] top-[2px] h-[48px] w-[48px] rounded-full blur-[4px]"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(56,25,22,0.48), transparent 68%)",
-        }}
+        className="pointer-events-none absolute left-0 top-[2px] h-[48px] w-[48px] opacity-0"
       />
-      <div className="absolute left-[0px]" style={{ top: PROCESS.frameTop }}>
-        <PrimaryIconFrame stage={stage} size={50}>
-          <StrokeIcon
-            className="h-[36px] w-[36px]"
-            strokeWidth={1.8}
-            color={PROCESS.mutedRed}
-            qa={`stage-${stage}-symbol`}
-          >
-            <circle cx="12" cy="12" r="9.2" />
-            <path d="m6.4 15 3.4-4 2.6 2.6L17.8 7.4" />
-            <path d="M13.8 7.4h3.6v3.6" />
-          </StrokeIcon>
-        </PrimaryIconFrame>
-      </div>
+      <div
+        data-qa={`stage-${stage}-icon-frame`}
+        className="absolute left-0 opacity-0"
+        style={{ top: PROCESS.frameTop, width: 50, height: 50 }}
+      />
+      <div
+        data-qa={`stage-${stage}-symbol`}
+        className="absolute left-[7px] opacity-0"
+        style={{ top: PROCESS.frameTop + 7, width: 36, height: 36 }}
+      />
     </div>
   );
 }

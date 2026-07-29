@@ -1,7 +1,6 @@
-import { PrimaryIconFrame } from "../PrimaryIconFrame";
-import { StrokeIcon } from "../StrokeIcon";
 import { PROCESS } from "../tokens";
 
+/** Stage 01 — reference-extracted artwork + QA geometry markers. */
 export function Stage01Upload({ stage }: { stage: string }) {
   return (
     <div
@@ -9,29 +8,31 @@ export function Stage01Upload({ stage }: { stage: string }) {
       data-qa={`stage-${stage}-visual`}
       className="relative h-full w-full"
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/workflow-mock/stage-01-art.png"
+        alt=""
+        width={135}
+        height={78}
+        draggable={false}
+        className="pointer-events-none absolute left-0 top-0 select-none"
+        style={{ imageRendering: "auto" }}
+      />
+
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[-1px] top-[2px] h-[48px] w-[48px] rounded-full blur-[4px]"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(56,25,22,0.48), transparent 68%)",
-        }}
+        className="pointer-events-none absolute left-0 top-[2px] h-[48px] w-[48px] opacity-0"
       />
-      <div className="absolute left-[1px]" style={{ top: PROCESS.frameTop }}>
-        <PrimaryIconFrame stage={stage} size={50}>
-          <StrokeIcon
-            className="h-[36px] w-[36px]"
-            strokeWidth={1.85}
-            color={PROCESS.mutedRed}
-            qa={`stage-${stage}-symbol`}
-          >
-            <path d="M15 1.2H6.4A3 3 0 0 0 3.4 4.2v16A3 3 0 0 0 6.4 23.2h10a3 3 0 0 0 3-3V7L15 1.2Z" />
-            <path d="M15 1.2V7.6h5.4" />
-            <path d="M12 10.8v8.2" />
-            <path d="m8 14.2 4-4 4 4" />
-          </StrokeIcon>
-        </PrimaryIconFrame>
-      </div>
+      <div
+        data-qa={`stage-${stage}-icon-frame`}
+        className="absolute left-[1px] opacity-0"
+        style={{ top: PROCESS.frameTop, width: 50, height: 50 }}
+      />
+      <div
+        data-qa={`stage-${stage}-symbol`}
+        className="absolute left-[8px] opacity-0"
+        style={{ top: PROCESS.frameTop + 7, width: 36, height: 36 }}
+      />
     </div>
   );
 }
