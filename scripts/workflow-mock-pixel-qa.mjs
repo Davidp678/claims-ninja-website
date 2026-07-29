@@ -21,11 +21,11 @@ import {
   delta,
   fmtBox,
   fmtDelta,
-  measureAllReferenceRois,
+  loadReferenceMasks,
+  measureAllReferenceMasks,
   measureDomBounds,
   measurePaintIsolation,
-  preferActual,
-  REFERENCE_ROIS,
+  validateIsolation,
 } from "./lib/workflow-element-measure.mjs";
 
 const SITE = (process.env.SITE || "http://localhost:3017").replace(/\/$/, "");
@@ -335,7 +335,7 @@ const domBounds = await measureDomBounds(page);
 console.error(
   `DOM measured ${Object.values(domBounds).filter(Boolean).length} selectors`,
 );
-const paintBounds = await measurePaintIsolation(page, section);
+const paintBounds = await measurePaintIsolation(page, section, domBounds);
 console.error(
   `Paint-isolated ${Object.values(paintBounds).filter(Boolean).length} selectors`,
 );
@@ -347,8 +347,28 @@ const actual = normalizeRgba(loadPng(actualPath));
 writePng(refPngPath, ref);
 writePng(actualPath, actual);
 
-const refRoiBounds = measureAllReferenceRois(ref);
-const actualRoiBounds = measureAllReferenceRois(actual);
+const maskDoc = loadReferenceMasks();
+const maskAuditDir = resolve(OUT, "masks");
+const refMasks = measureAllReferenceMasks(ref, maskDoc, maskAuditDir);
+const actualMasks = measureAllReferenceMasks(actual, maskDoc, null);
+
+const assertions = validateIsolation({
+  paintBounds,
+  domBounds,
+  refInk: refMasks.ink,
+  refGeometric: refMasks.geometric,
+});
+writeFileSync(
+  resolve(OUT, "assertions.json"),
+  JSON.stringify(assertions, null, 2),
+);
+if (!assertions.ok) {
+  console.error("MEASUREMENT ASSERTIONS FAILED:");
+  for (const f of assertions.failures) {
+    console.error(`  [${f.rule}] ${f.name}: ${f.detail}`);
+  }
+  // Still write artifacts below, then exit non-zero so the run cannot be treated as pass.
+}
 
 // --- Control tests (must pass) ---
 const control = compareImages(actual, actual);
@@ -376,67 +396,43 @@ writePng(resolve(OUT, "side-by-side.png"), sideBySide(ref, actual));
 
 const regionResults = regions.map((r) => compareRegion(ref, actual, r, r.name));
 
-function deltaRow(name, refB, actB, methods = {}) {
+const COMPARE_KEYS = Object.keys(maskDoc.primitives);
+
+/** Dual-bound rows: geometric and painted-ink reported separately. */
+const dualRows = COMPARE_KEYS.map((key) => {
+  const refGeo = refMasks.geometric[key] || null;
+  const refInk = refMasks.ink[key] || null;
+  const actGeo = domBounds[key] || null;
+  const actInk = paintBounds[key] || actualMasks.ink[key] || null;
   return {
-    element: name,
-    ref: refB,
-    actual: actB,
-    delta: delta(refB, actB),
-    methods,
+    element: key,
+    geometric: {
+      ref: refGeo,
+      actual: actGeo,
+      delta: delta(refGeo, actGeo),
+    },
+    paintedInk: {
+      ref: refInk,
+      actual: actInk,
+      delta: delta(refInk, actInk),
+    },
   };
-}
-
-/** Canonical comparison keys: ref ROI vs actual paint-ink (fallback DOM). */
-const COMPARE_KEYS = [
-  "heading-eyebrow",
-  "heading-title",
-  "heading-support",
-  ...["01", "02", "03", "04"].flatMap((s) => [
-    `stage-${s}-number`,
-    `stage-${s}-icon-frame`,
-    `stage-${s}-symbol`,
-    `stage-${s}-title`,
-    `stage-${s}-body-line-0`,
-    `stage-${s}-body-line-1`,
-    `stage-${s}-body-line-2`,
-    `stage-${s}-pill`,
-    `stage-${s}-pill-icon`,
-    `stage-${s}-pill-label`,
-  ]),
-  "stage-02-rear-panel",
-  "stage-02-active-dot",
-  "stage-03-rear-panel",
-  "stage-03-check-0",
-  "stage-03-check-1",
-  "stage-03-check-2",
-  "connector-1-line",
-  "connector-1-node",
-  "connector-1-dot",
-  "connector-2-line",
-  "connector-2-node",
-  "connector-2-dot",
-  "connector-3-line",
-  "connector-3-node",
-  "connector-3-dot",
-];
-
-const elementDeltas = COMPARE_KEYS.map((key) => {
-  const refB = refRoiBounds[key] || null;
-  const actRoi = actualRoiBounds[key] || null;
-  const actPaint = paintBounds[key] || null;
-  const actDom = domBounds[key] || null;
-  const actB = preferActual(key, {
-    roiActual: actRoi,
-    paint: actPaint,
-    dom: actDom,
-  });
-  return deltaRow(key, refB, actB, {
-    ref: refB?.method || (REFERENCE_ROIS[key] ? "roi-miss" : "no-roi"),
-    actual: actB?.method || (actDom ? "dom" : "missing"),
-    paint: actPaint,
-    dom: actDom,
-  });
 });
+
+/** Ink-vs-ink deltas for review table (never mix ink with DOM). */
+const elementDeltas = dualRows.map((row) => ({
+  element: row.element,
+  ref: row.paintedInk.ref,
+  actual: row.paintedInk.actual,
+  delta: row.paintedInk.delta,
+  geometric: row.geometric,
+  methods: {
+    refInk: row.paintedInk.ref?.method || "ref-ink-miss",
+    actInk: row.paintedInk.actual?.method || "act-ink-miss",
+    refGeo: row.geometric.ref?.method || "ref-geo-miss",
+    actGeo: row.geometric.actual?.method || "act-geo-miss",
+  },
+}));
 
 // Headline contamination note: wide loose white detector vs dense glyph ink
 const headingTitleLooseRef = paintedTextBounds(ref, {
@@ -556,11 +552,27 @@ const colorSamples = {
     ref: sampleRgb(ref, 85, 280),
     actual: sampleRgb(actual, 85, 280),
   },
-  primaryRedNumber: {
-    xy: [108, 192],
-    ref: sampleRgb(ref, 108, 192),
-    actual: sampleRgb(actual, 108, 192),
-  },
+  primaryRedNumber: (() => {
+    const find = (png) => {
+      for (let y = 186; y <= 200; y++) {
+        for (let x = 100; x <= 120; x++) {
+          const [r, g, b] = sampleRgb(png, x, y);
+          if (r > 90 && r > g * 1.3 && r > b * 1.3) {
+            return { xy: [x, y], rgb: [r, g, b] };
+          }
+        }
+      }
+      return { xy: [108, 192], rgb: sampleRgb(png, 108, 192) };
+    };
+    const r = find(ref);
+    const a = find(actual);
+    return {
+      xyRef: r.xy,
+      xyActual: a.xy,
+      ref: r.rgb,
+      actual: a.rgb,
+    };
+  })(),
   mutedIconStroke: {
     xyRef: mutedRef.xy,
     xyActual: mutedAct.xy,
@@ -632,16 +644,21 @@ const isolateNames = [
   "stage-03-symbol",
   "stage-03-rear-panel",
   "stage-03-check-0",
+  "stage-03-check-1",
+  "stage-03-check-2",
   "stage-04-symbol",
+  "connector-1-line",
   "connector-1-node",
+  "connector-1-dot",
+  "connector-2-node",
+  "connector-3-node",
 ];
 for (const name of isolateNames) {
   const box =
-    preferActual(name, {
-      roiActual: actualRoiBounds[name],
-      paint: paintBounds[name],
-      dom: domBounds[name],
-    }) || refRoiBounds[name];
+    paintBounds[name] ||
+    domBounds[name] ||
+    refMasks.geometric[name] ||
+    refMasks.ink[name];
   cropPair(name, box, 6);
 }
 
@@ -650,11 +667,14 @@ const report = {
   viewport: { width: W, height: H },
   pixelmatchOptions: PM_OPTS,
   measurementMethod: {
-    actual:
-      "DOM layout + sequential unique-color paint isolation (full SVG restore) + symmetric tight ROIs on actual PNG",
-    reference: "curated tight ROI color extraction (no card-wide flood fill)",
-    note: "pill-icon / symbol / number never use merged card flood fills",
+    actualGeometric: "DOM getBoundingClientRect via data-qa",
+    actualPaintedInk:
+      "sequential unique-color paint isolation (SVG stroke/fill/descendants restored)",
+    referenceGeometric: "curated mask geometry in reference-masks.json",
+    referencePaintedInk: "pixels inside curated mask matching inkMode",
+    note: "Geometric and painted-ink bounds are reported separately and never mixed.",
   },
+  assertions,
   controlTest: {
     name: "actual-vs-actual",
     mismatchedPixels: control.mismatched,
@@ -672,10 +692,10 @@ const report = {
     looseActual: headingTitleLooseAct,
     denseActual: headingTitleDenseAct,
   },
+  dualBounds: dualRows,
   domBounds,
   paintBounds,
-  refRoiBounds,
-  actualRoiBounds,
+  refMasks,
   elementDeltas,
   colorSamples,
   regions: regionResults,
@@ -688,32 +708,48 @@ const report = {
     controlDiff: "control-actual-vs-actual-diff.png",
     crops: "crops/",
     isolated: "isolated/",
+    masks: "masks/",
+    assertions: "assertions.json",
     measurement: "MEASUREMENT.md",
+    referenceMasks: "docs/design-system/workflow-mock/reference-masks.json",
   },
 };
 
 writeFileSync(resolve(OUT, "report.json"), JSON.stringify(report, null, 2));
 
 const md = [];
-md.push("# Workflow mock visual QA — element measurement");
+md.push("# Workflow mock visual QA — dual-bound measurement");
 md.push("");
 md.push(`Canvas: **1024×467** | Capture: \`${SITE}\``);
 md.push("");
-md.push("## Measurement method (repaired)");
+md.push("## Measurement method");
 md.push("");
-md.push("| Side | Method |");
-md.push("|---|---|");
+md.push("| Bound type | Actual | Reference |");
+md.push("|---|---|---|");
 md.push(
-  "| **Actual** | Stable `data-qa` selectors → DOM layout; sequential unique-color paint isolation with full SVG descendant restore; plus the same tight ROIs on the actual PNG for symmetric ink bounds. QA paint is never left in normal rendering. |",
+  "| **Geometric** | `data-qa` DOM `getBoundingClientRect` | Curated mask geometry (`reference-masks.json`) |",
 );
 md.push(
-  "| **Reference** | Curated tight ROIs only (see `REFERENCE_ROIS`). No card-wide red flood fills that merge glow, rear panels, borders, or pill chrome into “icon” labels. |",
+  "| **Painted ink** | Sequential unique-color isolation (full SVG descendant recolor + restore) | Pixels **inside** the curated mask matching `inkMode` |",
 );
 md.push("");
 md.push(
-  "**Do not trust prior MEASUREMENT rows** that labeled combined regions as `pillIcon` / `icon`. Those used connected-color bounds and are retired.",
+  "These two bound types are never mixed in a single delta cell. Mask audit overlays (magenta = ink hits) live under `masks/`.",
 );
 md.push("");
+md.push("## Isolation assertions");
+md.push("");
+md.push(`| Result | **${assertions.ok ? "PASS" : "FAIL"}** |`);
+md.push(`| Failures | **${assertions.failures.length}** |`);
+md.push("");
+if (assertions.failures.length) {
+  md.push("| Rule | Element | Detail |");
+  md.push("|---|---|---|");
+  for (const f of assertions.failures) {
+    md.push(`| \`${f.rule}\` | \`${f.name}\` | ${f.detail} |`);
+  }
+  md.push("");
+}
 md.push("## Control");
 md.push("");
 md.push("| Check | Result |");
@@ -735,9 +771,7 @@ md.push("| 04 | 779 | 170 | 142 | 229 |");
 md.push("");
 md.push("## Heading title isolation note");
 md.push("");
-md.push(
-  `| Detector | Reference | Actual |`,
-);
+md.push("| Detector | Reference | Actual |");
 md.push("|---|---|---|");
 md.push(
   `| Loose (L≥160, can include glow) | ${headingTitleLooseRef ? `${headingTitleLooseRef.left},${headingTitleLooseRef.top} ${headingTitleLooseRef.width}×${headingTitleLooseRef.height}` : "-"} | ${headingTitleLooseAct ? `${headingTitleLooseAct.left},${headingTitleLooseAct.top} ${headingTitleLooseAct.width}×${headingTitleLooseAct.height}` : "-"} |`,
@@ -745,23 +779,28 @@ md.push(
 md.push(
   `| Dense glyph (L≥180) | ${headingTitleDenseRef ? `${headingTitleDenseRef.left},${headingTitleDenseRef.top} ${headingTitleDenseRef.width}×${headingTitleDenseRef.height}` : "-"} | ${headingTitleDenseAct ? `${headingTitleDenseAct.left},${headingTitleDenseAct.top} ${headingTitleDenseAct.width}×${headingTitleDenseAct.height}` : "-"} |`,
 );
-md.push(
-  `| Symmetric ROI + paint | ${fmtBox(refRoiBounds["heading-title"])} | roi ${fmtBox(actualRoiBounds["heading-title"])} / paint ${fmtBox(paintBounds["heading-title"])} |`,
-);
 md.push("");
-md.push("## Element-specific bounds (truthful)");
+md.push("## Geometric bounds (mask geometry vs DOM)");
 md.push("");
-md.push(
-  "| Element | Reference (ROI) | Actual (paint∥DOM) | Delta | Methods |",
-);
-md.push("|---|---|---|---|---|");
-for (const row of elementDeltas) {
+md.push("| Element | Ref geometric | Actual DOM | Delta |");
+md.push("|---|---|---|---|");
+for (const row of dualRows) {
   md.push(
-    `| \`${row.element}\` | ${fmtBox(row.ref)} | ${fmtBox(row.actual)} | ${fmtDelta(row.delta)} | ref=${row.methods.ref}; act=${row.methods.actual} |`,
+    `| \`${row.element}\` | ${fmtBox(row.geometric.ref)} | ${fmtBox(row.geometric.actual)} | ${fmtDelta(row.geometric.delta)} |`,
   );
 }
 md.push("");
-md.push("## Actual DOM layout boxes (complete)");
+md.push("## Painted-ink bounds (mask ink vs paint-isolation)");
+md.push("");
+md.push("| Element | Ref ink | Actual ink | Delta | Methods |");
+md.push("|---|---|---|---|---|");
+for (const row of elementDeltas) {
+  md.push(
+    `| \`${row.element}\` | ${fmtBox(row.ref)} | ${fmtBox(row.actual)} | ${fmtDelta(row.delta)} | ref=${row.methods.refInk}; act=${row.methods.actInk} |`,
+  );
+}
+md.push("");
+md.push("## Actual DOM layout boxes");
 md.push("");
 md.push("| Selector | x,y w×h |");
 md.push("|---|---|");
@@ -771,7 +810,7 @@ for (const [name, b] of Object.entries(domBounds).sort(([a], [c]) =>
   md.push(`| \`${name}\` | ${fmtBox(b)} |`);
 }
 md.push("");
-md.push("## Actual paint-isolated ink (subset)");
+md.push("## Actual paint-isolated ink");
 md.push("");
 md.push("| Selector | x,y w×h | count |");
 md.push("|---|---|---:|");
@@ -804,30 +843,27 @@ for (const r of regionResults) {
   );
 }
 md.push("");
-md.push("## Isolated primitive comparisons");
+md.push("## Mask audits + isolated pairs");
 md.push("");
-md.push(
-  "Under `isolated/`: `*-ref.png`, `*-actual.png`, `*-side.png` for major primitives.",
-);
+md.push("- `masks/*.png` — reference mask geometry with magenta ink hits");
+md.push("- `isolated/*` — ref/actual/side crops for major primitives");
+md.push("- `crops/` — nearest-neighbor 4× region triplets");
 md.push("");
-md.push("## Crops");
+md.push("## Remaining visual discrepancies");
 md.push("");
-md.push("Nearest-neighbor 4× region ref/actual/diff under `crops/`.");
-md.push("");
-md.push("## Remaining discrepancies (from this capture)");
-md.push("");
-const material = elementDeltas.filter((row) => {
-  if (!row.delta || !row.ref || !row.actual) return true;
+const material = dualRows.filter((row) => {
+  const d = row.paintedInk.delta || row.geometric.delta;
+  if (!d) return true;
   return (
-    Math.abs(row.delta.x) > 2 ||
-    Math.abs(row.delta.y) > 2 ||
-    Math.abs(row.delta.w) > 3 ||
-    Math.abs(row.delta.h) > 3
+    Math.abs(d.x) > 2 ||
+    Math.abs(d.y) > 2 ||
+    Math.abs(d.w) > 3 ||
+    Math.abs(d.h) > 3
   );
 });
 for (const row of material) {
   md.push(
-    `- \`${row.element}\`: ref ${fmtBox(row.ref)} → act ${fmtBox(row.actual)} (${fmtDelta(row.delta)}; ${row.methods.actual})`,
+    `- \`${row.element}\`: ink ${fmtBox(row.paintedInk.ref)} → ${fmtBox(row.paintedInk.actual)} (${fmtDelta(row.paintedInk.delta)}); geo ${fmtBox(row.geometric.ref)} → ${fmtBox(row.geometric.actual)} (${fmtDelta(row.geometric.delta)})`,
   );
 }
 writeFileSync(resolve(OUT, "MEASUREMENT.md"), md.join("\n"));
@@ -838,6 +874,8 @@ console.log(
       overall: `${((mismatched / (W * H)) * 100).toFixed(2)}%`,
       mismatched,
       control: control.mismatched,
+      assertionsOk: assertions.ok,
+      assertionFailures: assertions.failures.length,
       elementRows: elementDeltas.length,
       materialDeltas: material.length,
       regions: regionResults.map((r) => ({
@@ -850,4 +888,5 @@ console.log(
   ),
 );
 
+if (!assertions.ok) process.exit(4);
 process.exit(mismatched / (W * H) > 0.45 ? 2 : 0);

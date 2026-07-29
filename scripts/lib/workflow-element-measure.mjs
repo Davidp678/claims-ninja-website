@@ -1,19 +1,25 @@
 /**
- * Reliable element measurement for workflow visual QA.
+ * Workflow visual QA measurement.
  *
- * Actual:
- *   - DOM getBoundingClientRect relative to #process (layout boxes)
- *   - Sequential unique-color paint for ink (text/SVG), with full restore
- * Reference:
- *   - Same curated tight ROIs on the reference PNG
- * Actual ink (symmetric check):
- *   - Same curated ROIs on the actual PNG (apples-to-apples painted bounds)
+ * Dual reporting (never conflated):
+ *   - geometric bounds (DOM for actual; curated mask geometry for reference)
+ *   - painted-ink bounds (unique-color isolation for actual; mask+mode for reference)
+ *
+ * QA fails when expected visible primitives return null / implausible ink.
  */
+import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
+import { resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { PNG } from "pngjs";
 
 const QA_RGB = [255, 0, 220];
+const HERE = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(HERE, "../..");
+const MASKS_PATH = resolve(
+  ROOT,
+  "docs/design-system/workflow-mock/reference-masks.json",
+);
 
-/** Layout boxes — measured via DOM. */
 export const DOM_SELECTORS = [
   "heading-eyebrow",
   "heading-title",
@@ -65,8 +71,8 @@ export const DOM_SELECTORS = [
   "connector-3-dot",
 ];
 
-/** Ink elements — sequential unique-color paint isolation. */
-export const PAINT_SELECTORS = [
+/** Must succeed paint-isolation with plausible ink. */
+export const REQUIRED_PAINT = [
   "heading-eyebrow",
   "heading-title",
   "heading-support",
@@ -117,70 +123,9 @@ export const PAINT_SELECTORS = [
   "connector-3-dot",
 ];
 
-/**
- * Curated ROIs — windows small enough that extraction cannot merge neighbors.
- * Applied to BOTH reference and actual PNGs for symmetric painted bounds.
- */
-export const REFERENCE_ROIS = {
-  "heading-eyebrow": { x: 420, y: 47, w: 185, h: 12, mode: "red" },
-  "heading-title": { x: 280, y: 72, w: 470, h: 34, mode: "white180" },
-  "heading-support": { x: 288, y: 113, w: 460, h: 16, mode: "gray" },
-  "stage-01-number": { x: 98, y: 186, w: 24, h: 20, mode: "red" },
-  "stage-01-symbol": { x: 108, y: 220, w: 36, h: 36, mode: "red" },
-  "stage-01-icon-frame": { x: 96, y: 210, w: 56, h: 56, mode: "edge" },
-  "stage-01-title": { x: 98, y: 282, w: 120, h: 22, mode: "white170" },
-  "stage-01-body-line-0": { x: 98, y: 303, w: 120, h: 13, mode: "gray" },
-  "stage-01-body-line-1": { x: 98, y: 316, w: 120, h: 13, mode: "gray" },
-  "stage-01-body-line-2": { x: 98, y: 329, w: 120, h: 13, mode: "gray" },
-  "stage-01-pill": { x: 96, y: 362, w: 110, h: 22, mode: "edge" },
-  "stage-01-pill-icon": { x: 100, y: 364, w: 16, h: 16, mode: "red" },
-  "stage-01-pill-label": { x: 116, y: 366, w: 85, h: 14, mode: "gray" },
-  "stage-02-number": { x: 295, y: 186, w: 28, h: 20, mode: "red" },
-  "stage-02-symbol": { x: 300, y: 218, w: 36, h: 36, mode: "red" },
-  "stage-02-icon-frame": { x: 292, y: 208, w: 56, h: 56, mode: "edge" },
-  "stage-02-rear-panel": { x: 318, y: 200, w: 170, h: 72, mode: "edge" },
-  "stage-02-active-dot": { x: 322, y: 205, w: 20, h: 24, mode: "red" },
-  "stage-02-title": { x: 296, y: 282, w: 140, h: 22, mode: "white170" },
-  "stage-02-body-line-0": { x: 296, y: 303, w: 140, h: 13, mode: "gray" },
-  "stage-02-body-line-1": { x: 296, y: 316, w: 140, h: 13, mode: "gray" },
-  "stage-02-body-line-2": { x: 296, y: 329, w: 140, h: 13, mode: "gray" },
-  "stage-02-pill": { x: 294, y: 362, w: 150, h: 22, mode: "edge" },
-  "stage-02-pill-icon": { x: 298, y: 364, w: 16, h: 16, mode: "red" },
-  "stage-02-pill-label": { x: 314, y: 366, w: 125, h: 14, mode: "gray" },
-  "stage-03-number": { x: 548, y: 186, w: 28, h: 20, mode: "red" },
-  "stage-03-symbol": { x: 554, y: 218, w: 36, h: 36, mode: "red" },
-  "stage-03-icon-frame": { x: 546, y: 208, w: 56, h: 56, mode: "edge" },
-  "stage-03-rear-panel": { x: 572, y: 200, w: 160, h: 72, mode: "edge" },
-  "stage-03-check-0": { x: 580, y: 208, w: 24, h: 20, mode: "red" },
-  "stage-03-check-1": { x: 580, y: 228, w: 24, h: 20, mode: "red" },
-  "stage-03-check-2": { x: 580, y: 248, w: 24, h: 20, mode: "red" },
-  "stage-03-title": { x: 548, y: 282, w: 140, h: 22, mode: "white170" },
-  "stage-03-body-line-0": { x: 548, y: 303, w: 140, h: 13, mode: "gray" },
-  "stage-03-body-line-1": { x: 548, y: 316, w: 140, h: 13, mode: "gray" },
-  "stage-03-body-line-2": { x: 548, y: 329, w: 140, h: 13, mode: "gray" },
-  "stage-03-pill": { x: 546, y: 362, w: 160, h: 22, mode: "edge" },
-  "stage-03-pill-icon": { x: 550, y: 364, w: 16, h: 16, mode: "red" },
-  "stage-03-pill-label": { x: 566, y: 366, w: 135, h: 14, mode: "gray" },
-  "stage-04-number": { x: 790, y: 186, w: 28, h: 20, mode: "red" },
-  "stage-04-symbol": { x: 800, y: 220, w: 34, h: 34, mode: "red" },
-  "stage-04-icon-frame": { x: 790, y: 210, w: 52, h: 52, mode: "edge" },
-  "stage-04-title": { x: 790, y: 282, w: 128, h: 22, mode: "white170" },
-  "stage-04-body-line-0": { x: 790, y: 303, w: 128, h: 13, mode: "gray" },
-  "stage-04-body-line-1": { x: 790, y: 316, w: 128, h: 13, mode: "gray" },
-  "stage-04-body-line-2": { x: 790, y: 329, w: 128, h: 13, mode: "gray" },
-  "stage-04-pill": { x: 788, y: 362, w: 120, h: 22, mode: "edge" },
-  "stage-04-pill-icon": { x: 792, y: 364, w: 16, h: 16, mode: "red" },
-  "stage-04-pill-label": { x: 808, y: 366, w: 95, h: 14, mode: "gray" },
-  "connector-1-line": { x: 246, y: 236, w: 30, h: 8, mode: "red" },
-  "connector-1-node": { x: 254, y: 233, w: 16, h: 14, mode: "red" },
-  "connector-1-dot": { x: 258, y: 236, w: 8, h: 8, mode: "red" },
-  "connector-2-line": { x: 508, y: 236, w: 24, h: 8, mode: "red" },
-  "connector-2-node": { x: 512, y: 233, w: 16, h: 14, mode: "red" },
-  "connector-2-dot": { x: 516, y: 236, w: 8, h: 8, mode: "red" },
-  "connector-3-line": { x: 750, y: 236, w: 24, h: 8, mode: "red" },
-  "connector-3-node": { x: 756, y: 233, w: 16, h: 14, mode: "red" },
-  "connector-3-dot": { x: 760, y: 236, w: 8, h: 8, mode: "red" },
-};
+export function loadReferenceMasks() {
+  return JSON.parse(readFileSync(MASKS_PATH, "utf8"));
+}
 
 function sample(png, x, y) {
   const i = (y * png.width + x) * 4;
@@ -190,30 +135,81 @@ function sample(png, x, y) {
 function matchesMode(r, g, b, mode) {
   const L = 0.2126 * r + 0.7152 * g + 0.0722 * b;
   if (mode === "red") return r > 70 && r > g * 1.2 && r > b * 1.2;
+  if (mode === "connector")
+    return r > 55 && r >= g * 1.05 && r >= b * 1.05 && L < 170;
+  if (mode === "mutedRed")
+    return r > 28 && r < 140 && r >= g && r >= b * 0.85 && r - Math.min(g, b) >= 4;
   if (mode === "white180") return L >= 180;
   if (mode === "white170") return L >= 170;
   if (mode === "gray") return L > 70 && L < 165 && !(r > 80 && r > g * 1.25);
   if (mode === "edge") return L > 26 && L < 72;
+  if (mode === "dark") return L < 28;
+  if (mode === "glow")
+    return r > 40 && r < 90 && g < 45 && b < 45 && r > g && r > b;
   return false;
 }
 
-export function measureRoi(png, roi) {
-  const { x, y, w, h, mode } = roi;
-  let minX = x + w;
-  let minY = y + h;
-  let maxX = x;
-  let maxY = y;
+function geometricBox(geo) {
+  if (geo.type === "rect") {
+    return { x: geo.x, y: geo.y, w: geo.w, h: geo.h, method: "mask-geometry" };
+  }
+  if (geo.type === "disk") {
+    const r = Math.ceil(geo.r);
+    return {
+      x: Math.round(geo.cx - r),
+      y: Math.round(geo.cy - r),
+      w: r * 2 + 1,
+      h: r * 2 + 1,
+      method: "mask-geometry",
+    };
+  }
+  if (geo.type === "annulus") {
+    const r = Math.ceil(geo.rOuter);
+    return {
+      x: Math.round(geo.cx - r),
+      y: Math.round(geo.cy - r),
+      w: r * 2 + 1,
+      h: r * 2 + 1,
+      method: "mask-geometry",
+    };
+  }
+  return null;
+}
+
+function insideGeometry(geo, x, y) {
+  if (geo.type === "rect") {
+    return x >= geo.x && y >= geo.y && x < geo.x + geo.w && y < geo.y + geo.h;
+  }
+  if (geo.type === "disk") {
+    return Math.hypot(x - geo.cx, y - geo.cy) <= geo.r;
+  }
+  if (geo.type === "annulus") {
+    const d = Math.hypot(x - geo.cx, y - geo.cy);
+    return d <= geo.rOuter && d >= geo.rInner;
+  }
+  return false;
+}
+
+/** Painted-ink bounds inside a curated mask. */
+export function measureMaskInk(png, geo, mode) {
+  const box = geometricBox(geo);
+  if (!box) return null;
+  let minX = box.x + box.w;
+  let minY = box.y + box.h;
+  let maxX = box.x;
+  let maxY = box.y;
   let count = 0;
-  for (let yy = y; yy < y + h; yy++) {
-    for (let xx = x; xx < x + w; xx++) {
-      if (xx < 0 || yy < 0 || xx >= png.width || yy >= png.height) continue;
-      const [r, g, b] = sample(png, xx, yy);
+  for (let y = box.y; y < box.y + box.h; y++) {
+    for (let x = box.x; x < box.x + box.w; x++) {
+      if (x < 0 || y < 0 || x >= png.width || y >= png.height) continue;
+      if (!insideGeometry(geo, x, y)) continue;
+      const [r, g, b] = sample(png, x, y);
       if (!matchesMode(r, g, b, mode)) continue;
       count += 1;
-      minX = Math.min(minX, xx);
-      minY = Math.min(minY, yy);
-      maxX = Math.max(maxX, xx);
-      maxY = Math.max(maxY, yy);
+      minX = Math.min(minX, x);
+      minY = Math.min(minY, y);
+      maxX = Math.max(maxX, x);
+      maxY = Math.max(maxY, y);
     }
   }
   if (!count) return null;
@@ -223,16 +219,61 @@ export function measureRoi(png, roi) {
     w: maxX - minX + 1,
     h: maxY - minY + 1,
     count,
-    method: `roi:${mode}`,
+    method: `mask-ink:${mode}`,
   };
 }
 
-export function measureAllReferenceRois(png) {
-  const out = {};
-  for (const [name, roi] of Object.entries(REFERENCE_ROIS)) {
-    out[name] = measureRoi(png, roi);
+/** Write magenta overlay of mask geometry + ink hits for audit. */
+export function writeMaskAudit(png, name, geo, mode, outDir) {
+  mkdirSync(outDir, { recursive: true });
+  const box = geometricBox(geo);
+  if (!box) return;
+  const pad = 6;
+  const x0 = Math.max(0, box.x - pad);
+  const y0 = Math.max(0, box.y - pad);
+  const w = Math.min(png.width - x0, box.w + pad * 2);
+  const h = Math.min(png.height - y0, box.h + pad * 2);
+  const out = new PNG({ width: w, height: h });
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const sx = x0 + x;
+      const sy = y0 + y;
+      const i = (y * w + x) * 4;
+      const [r, g, b] = sample(png, sx, sy);
+      const inGeo = insideGeometry(geo, sx, sy);
+      const ink = inGeo && matchesMode(r, g, b, mode);
+      if (ink) {
+        out.data[i] = 255;
+        out.data[i + 1] = 0;
+        out.data[i + 2] = 220;
+        out.data[i + 3] = 255;
+      } else if (inGeo) {
+        out.data[i] = Math.min(255, r + 40);
+        out.data[i + 1] = Math.min(255, g + 20);
+        out.data[i + 2] = Math.min(255, b + 40);
+        out.data[i + 3] = 255;
+      } else {
+        out.data[i] = r;
+        out.data[i + 1] = g;
+        out.data[i + 2] = b;
+        out.data[i + 3] = 255;
+      }
+    }
   }
-  return out;
+  writeFileSync(resolve(outDir, `${name}.png`), PNG.sync.write(out));
+}
+
+export function measureAllReferenceMasks(png, maskDoc, auditDir) {
+  const geometric = {};
+  const ink = {};
+  for (const [name, spec] of Object.entries(maskDoc.primitives)) {
+    geometric[name] = geometricBox(spec.geometric);
+    ink[name] = measureMaskInk(png, spec.geometric, spec.inkMode);
+    if (auditDir) {
+      writeMaskAudit(png, name, spec.geometric, spec.inkMode, auditDir);
+    }
+  }
+  return { geometric, ink };
 }
 
 export async function measureDomBounds(page) {
@@ -257,33 +298,47 @@ export async function measureDomBounds(page) {
         y: Math.round(r.top - sr.top),
         w: Math.round(r.width),
         h: Math.round(r.height),
-        method: "dom",
+        method: "dom-geometry",
       };
     }
     return out;
   }, DOM_SELECTORS);
 }
 
-function extractQaColorBounds(png) {
-  let minX = png.width;
-  let minY = png.height;
-  let maxX = 0;
-  let maxY = 0;
+function isQaMagenta(r, g, b) {
+  // Unique QA color 255,0,220 — must NOT match brand reds (high R, low B).
+  return r > 190 && b > 160 && g < 90 && b > r * 0.55 && r - g > 100;
+}
+
+/** Diff painted frame vs clean baseline inside a padded DOM box. */
+function extractDiffBounds(cleanPng, paintedPng, box, pad = 4) {
+  if (!box) return null;
+  const x0 = Math.max(0, box.x - pad);
+  const y0 = Math.max(0, box.y - pad);
+  const x1 = Math.min(cleanPng.width - 1, box.x + box.w + pad);
+  const y1 = Math.min(cleanPng.height - 1, box.y + box.h + pad);
+  let minX = x1;
+  let minY = y1;
+  let maxX = x0;
+  let maxY = y0;
   let count = 0;
-  for (let y = 0; y < png.height; y++) {
-    for (let x = 0; x < png.width; x++) {
-      const i = (y * png.width + x) * 4;
-      const r = png.data[i];
-      const g = png.data[i + 1];
-      const b = png.data[i + 2];
-      // Hot magenta QA paint
-      if (r > 200 && g < 90 && b > 150) {
-        count += 1;
-        minX = Math.min(minX, x);
-        minY = Math.min(minY, y);
-        maxX = Math.max(maxX, x);
-        maxY = Math.max(maxY, y);
-      }
+  for (let y = y0; y <= y1; y++) {
+    for (let x = x0; x <= x1; x++) {
+      const i = (y * cleanPng.width + x) * 4;
+      const pr = paintedPng.data[i];
+      const pg = paintedPng.data[i + 1];
+      const pb = paintedPng.data[i + 2];
+      const dr = Math.abs(pr - cleanPng.data[i]);
+      const dg = Math.abs(pg - cleanPng.data[i + 1]);
+      const db = Math.abs(pb - cleanPng.data[i + 2]);
+      const magenta = isQaMagenta(pr, pg, pb);
+      const changed = dr + dg + db >= 90;
+      if (!magenta && !changed) continue;
+      count += 1;
+      minX = Math.min(minX, x);
+      minY = Math.min(minY, y);
+      maxX = Math.max(maxX, x);
+      maxY = Math.max(maxY, y);
     }
   }
   if (!count) return null;
@@ -293,13 +348,10 @@ function extractQaColorBounds(png) {
     w: maxX - minX + 1,
     h: maxY - minY + 1,
     count,
-    method: "paint-isolation",
+    method: "paint-diff-isolation",
   };
 }
 
-/**
- * Snapshot every attribute/style we may mutate, including SVG descendants.
- */
 async function paintElement(page, name) {
   return page.evaluate(
     ({ name: qaName, rgb }) => {
@@ -313,39 +365,86 @@ async function paintElement(page, name) {
           stroke: node.getAttribute("stroke"),
           fill: node.getAttribute("fill"),
           style: node.getAttribute("style"),
-          className: node.getAttribute("class"),
+          strokeWidth: node.getAttribute("stroke-width"),
         });
       }
       window.__qaSnap = { name: qaName, snap };
-      const hadFillBg = (() => {
-        const bg = getComputedStyle(el).backgroundColor;
-        return Boolean(bg && bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent");
-      })();
+
+      const cs = getComputedStyle(el);
+      const hadFillBg =
+        cs.backgroundColor &&
+        cs.backgroundColor !== "rgba(0, 0, 0, 0)" &&
+        cs.backgroundColor !== "transparent";
+
       el.style.setProperty("color", css, "important");
       el.style.setProperty("-webkit-text-fill-color", css, "important");
       el.style.setProperty("border-color", css, "important");
+      el.style.setProperty("outline", "none", "important");
       el.style.setProperty("box-shadow", "none", "important");
       el.style.setProperty("text-shadow", "none", "important");
       el.style.setProperty("filter", "none", "important");
       el.style.setProperty("opacity", "1", "important");
-      // Only recolor filled chrome (dots/checks). Never flood text layout boxes.
-      if (hadFillBg) {
+      const forceFill =
+        hadFillBg ||
+        qaName.includes("active-dot") ||
+        qaName.endsWith("-dot") ||
+        qaName.includes("check-");
+      if (forceFill) {
         el.style.setProperty("background-color", css, "important");
+        el.style.setProperty("background", css, "important");
+        el.style.setProperty("box-shadow", `0 0 0 2px ${css}`, "important");
       }
+
       for (const node of nodes) {
-        if (
-          node.tagName === "circle" ||
-          node.tagName === "rect" ||
-          node.tagName === "ellipse" ||
-          node.tagName === "path" ||
-          node.tagName === "svg" ||
-          node instanceof SVGElement
-        ) {
-          node.setAttribute("stroke", css);
-          const f = node.getAttribute("fill");
-          if (f && f !== "none") node.setAttribute("fill", css);
+        const tag = node.tagName?.toLowerCase?.() || "";
+        const isSvg =
+          node instanceof SVGElement ||
+          ["svg", "path", "circle", "rect", "ellipse", "line", "polyline", "polygon", "g"].includes(
+            tag,
+          );
+        if (!isSvg) continue;
+        node.style.setProperty("stroke", css, "important");
+        node.style.setProperty("color", css, "important");
+        node.style.setProperty("fill", "none", "important");
+        node.setAttribute("stroke", css);
+        const f = node.getAttribute("fill");
+        if (f && f !== "none") {
+          node.setAttribute("fill", css);
+          node.style.setProperty("fill", css, "important");
+        } else {
+          node.setAttribute("fill", "none");
         }
       }
+
+      el.querySelectorAll("svg").forEach((svg) => {
+        svg.setAttribute("stroke", css);
+        svg.style.setProperty("color", css, "important");
+        svg.style.setProperty("stroke", css, "important");
+        svg.querySelectorAll("*").forEach((child) => {
+          child.setAttribute("stroke", css);
+          child.style.setProperty("stroke", css, "important");
+          child.style.setProperty("color", css, "important");
+        });
+      });
+
+      // Scoped style: only this primitive + descendants (not whole page reds)
+      const style = document.createElement("style");
+      style.setAttribute("data-qa-paint", qaName);
+      style.textContent = `
+        [data-qa="${qaName}"] {
+          color: ${css} !important;
+          -webkit-text-fill-color: ${css} !important;
+          border-color: ${css} !important;
+        }
+        [data-qa="${qaName}"] svg,
+        [data-qa="${qaName}"] svg * {
+          stroke: ${css} !important;
+          color: ${css} !important;
+        }
+      `;
+      document.head.appendChild(style);
+      window.__qaSnap.styleTag = style;
+
       return true;
     },
     { name, rgb: QA_RGB },
@@ -356,6 +455,8 @@ async function restoreElement(page) {
   await page.evaluate(() => {
     const state = window.__qaSnap;
     if (!state) return;
+    if (state.styleTag?.parentNode) state.styleTag.parentNode.removeChild(state.styleTag);
+    document.querySelectorAll(`style[data-qa-paint="${state.name}"]`).forEach((n) => n.remove());
     const el = document.querySelector(`[data-qa="${state.name}"]`);
     if (!el) return;
     const nodes = [el, ...el.querySelectorAll("*")];
@@ -366,6 +467,8 @@ async function restoreElement(page) {
       else node.setAttribute("stroke", prev.stroke);
       if (prev.fill == null) node.removeAttribute("fill");
       else node.setAttribute("fill", prev.fill);
+      if (prev.strokeWidth == null) node.removeAttribute("stroke-width");
+      else node.setAttribute("stroke-width", prev.strokeWidth);
       if (prev.style == null) node.removeAttribute("style");
       else node.setAttribute("style", prev.style);
     });
@@ -373,21 +476,19 @@ async function restoreElement(page) {
   });
 }
 
-/**
- * Sequential unique-color isolation — one primitive at a time.
- * Full descendant snapshot restore prevents QA-color leakage.
- */
-export async function measurePaintIsolation(page, sectionLocator) {
+export async function measurePaintIsolation(page, sectionLocator, domBounds) {
+  const cleanShot = await sectionLocator.screenshot({ type: "png" });
+  const cleanPng = PNG.sync.read(cleanShot);
   const out = {};
-  for (const name of PAINT_SELECTORS) {
+  for (const name of REQUIRED_PAINT) {
     const ok = await paintElement(page, name);
     if (!ok) {
       out[name] = null;
       continue;
     }
     const shot = await sectionLocator.screenshot({ type: "png" });
-    const png = PNG.sync.read(shot);
-    out[name] = extractQaColorBounds(png);
+    const painted = PNG.sync.read(shot);
+    out[name] = extractDiffBounds(cleanPng, painted, domBounds?.[name] || null, 6);
     await restoreElement(page);
   }
   return out;
@@ -418,24 +519,126 @@ export function fmtDelta(d) {
 }
 
 /**
- * Comparison priority for the delta table:
- * 1) Symmetric ROI (ref PNG vs actual PNG) — preferred for painted ink
- * 2) Actual paint-isolation vs ref ROI
- * 3) DOM for chrome boxes
+ * Validate isolation quality. Returns { ok, failures[] }.
+ * Measurement generation must fail when ok is false.
  */
-export function preferActual(key, { roiActual, paint, dom }) {
-  const chrome =
-    (key.includes("-pill") &&
-      !key.includes("pill-icon") &&
-      !key.includes("pill-label")) ||
-    key.includes("icon-frame") ||
-    key.includes("rear-panel") ||
-    key.includes("card") ||
-    key.includes("check-") ||
-    key.includes("active-dot");
-  if (chrome) return dom || roiActual || paint || null;
-  // Reject microscopic paint hits (dark strokes can under-detect).
-  const paintOk =
-    paint && paint.count >= 20 && paint.w >= 6 && paint.h >= 6 ? paint : null;
-  return roiActual || paintOk || dom || null;
+export function validateIsolation({
+  paintBounds,
+  domBounds,
+  refInk,
+  refGeometric,
+}) {
+  const failures = [];
+
+  for (const name of REQUIRED_PAINT) {
+    const paint = paintBounds[name];
+    if (!paint) {
+      failures.push({ name, rule: "paint-null", detail: "expected visible paint-isolation returned null" });
+      continue;
+    }
+    const minCount =
+      name.endsWith("-dot") || name.includes("active-dot")
+        ? 3
+        : name.includes("check-")
+          ? 6
+          : name.includes("pill-icon")
+            ? 8
+            : 8;
+    if (paint.count < minCount) {
+      failures.push({
+        name,
+        rule: "paint-too-few",
+        detail: `count=${paint.count} box=${fmtBox(paint)} (min ${minCount})`,
+      });
+    }
+    if (name.includes("pill-icon")) {
+      const dom = domBounds[name];
+      if (dom && paint) {
+        const areaRatio = (paint.w * paint.h) / (dom.w * dom.h);
+        if (areaRatio < 0.15 || areaRatio > 1.35) {
+          failures.push({
+            name,
+            rule: "pill-icon-area",
+            detail: `paint/dom area ratio ${areaRatio.toFixed(3)} (paint ${fmtBox(paint)} dom ${fmtBox(dom)})`,
+          });
+        }
+      }
+    }
+    if (name.includes("connector") && (name.includes("node") || name.includes("dot"))) {
+      if (paint.w / Math.max(1, paint.h) >= 8 || paint.h / Math.max(1, paint.w) >= 8) {
+        failures.push({
+          name,
+          rule: "connector-aspect",
+          detail: `extreme aspect ${paint.w}:${paint.h}`,
+        });
+      }
+    }
+  }
+
+  // Reference connector nodes/dots cannot be flat slices
+  for (const name of [
+    "connector-1-node",
+    "connector-1-dot",
+    "connector-2-node",
+    "connector-2-dot",
+    "connector-3-node",
+    "connector-3-dot",
+  ]) {
+    const ink = refInk[name];
+    const geo = refGeometric[name];
+    if (!geo) {
+      failures.push({ name, rule: "ref-geo-missing", detail: "mask geometry missing" });
+      continue;
+    }
+    if (geo.w / Math.max(1, geo.h) >= 4 || geo.h / Math.max(1, geo.w) >= 4) {
+      failures.push({
+        name,
+        rule: "ref-geo-aspect",
+        detail: `geometric mask not circular-ish ${fmtBox(geo)}`,
+      });
+    }
+    // JPEG connector rings often yield sparse ink; geometric mask is authoritative.
+    // Record slice ink as a soft warning only (not a hard failure).
+    if (ink && (ink.w / Math.max(1, ink.h) >= 8 || ink.h / Math.max(1, ink.w) >= 8)) {
+      failures.push({
+        name,
+        rule: "ref-ink-slice-soft",
+        detail: `reference ink sparse/slice ${fmtBox(ink)}; geometric ${fmtBox(geo)} is authoritative`,
+        soft: true,
+      });
+    }
+  }
+
+  // Three separate Stage 03 checks
+  const checks = ["stage-03-check-0", "stage-03-check-1", "stage-03-check-2"];
+  const checkBoxes = checks.map((n) => refGeometric[n]);
+  if (checkBoxes.some((b) => !b)) {
+    failures.push({
+      name: "stage-03-checks",
+      rule: "ref-checks-missing",
+      detail: "one or more check geometric masks missing",
+    });
+  } else {
+    // Must be three distinct y bands
+    const ys = checkBoxes.map((b) => b.y).sort((a, b) => a - b);
+    if (!(ys[1] > ys[0] + 8 && ys[2] > ys[1] + 8)) {
+      failures.push({
+        name: "stage-03-checks",
+        rule: "ref-checks-overlap",
+        detail: `check geometric y not separated: ${ys.join(",")}`,
+      });
+    }
+  }
+  for (const name of checks) {
+    if (!paintBounds[name]) {
+      failures.push({
+        name,
+        rule: "check-paint-null",
+        detail: "Stage 03 check paint-isolation null",
+      });
+    }
+  }
+
+  const hard = failures.filter((f) => !f.soft);
+  return { ok: hard.length === 0, failures, hardFailures: hard };
 }

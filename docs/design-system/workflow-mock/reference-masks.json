@@ -1,0 +1,274 @@
+{
+  "canvas": { "width": 1024, "height": 467 },
+  "note": "Manually curated complete primitive masks. Painted-ink bounds = pixels inside the mask matching the mode. Geometric bounds = the mask shape itself. Audit PNGs are written under screenshots/workflow-mock-pixel-qa/masks/.",
+  "primitives": {
+    "connector-1-line": {
+      "geometric": { "type": "rect", "x": 246, "y": 238, "w": 30, "h": 3 },
+      "inkMode": "connector"
+    },
+    "connector-1-node": {
+      "geometric": { "type": "annulus", "cx": 262, "cy": 239, "rOuter": 5.5, "rInner": 2.0 },
+      "inkMode": "connector"
+    },
+    "connector-1-node-border": {
+      "geometric": { "type": "annulus", "cx": 262, "cy": 239, "rOuter": 5.5, "rInner": 3.5 },
+      "inkMode": "connector"
+    },
+    "connector-1-node-interior": {
+      "geometric": { "type": "disk", "cx": 262, "cy": 239, "r": 3.2 },
+      "inkMode": "dark"
+    },
+    "connector-1-dot": {
+      "geometric": { "type": "disk", "cx": 262, "cy": 239, "r": 1.6 },
+      "inkMode": "connector"
+    },
+    "connector-1-glow": {
+      "geometric": { "type": "disk", "cx": 262, "cy": 239, "r": 9 },
+      "inkMode": "glow"
+    },
+    "connector-2-line": {
+      "geometric": { "type": "rect", "x": 508, "y": 238, "w": 24, "h": 3 },
+      "inkMode": "connector"
+    },
+    "connector-2-node": {
+      "geometric": { "type": "annulus", "cx": 519, "cy": 239, "rOuter": 5.5, "rInner": 2.0 },
+      "inkMode": "connector"
+    },
+    "connector-2-node-border": {
+      "geometric": { "type": "annulus", "cx": 519, "cy": 239, "rOuter": 5.5, "rInner": 3.5 },
+      "inkMode": "connector"
+    },
+    "connector-2-node-interior": {
+      "geometric": { "type": "disk", "cx": 519, "cy": 239, "r": 3.2 },
+      "inkMode": "dark"
+    },
+    "connector-2-dot": {
+      "geometric": { "type": "disk", "cx": 519, "cy": 239, "r": 1.6 },
+      "inkMode": "connector"
+    },
+    "connector-2-glow": {
+      "geometric": { "type": "disk", "cx": 519, "cy": 239, "r": 9 },
+      "inkMode": "glow"
+    },
+    "connector-3-line": {
+      "geometric": { "type": "rect", "x": 750, "y": 238, "w": 24, "h": 3 },
+      "inkMode": "connector"
+    },
+    "connector-3-node": {
+      "geometric": { "type": "annulus", "cx": 763, "cy": 239, "rOuter": 5.5, "rInner": 2.0 },
+      "inkMode": "connector"
+    },
+    "connector-3-node-border": {
+      "geometric": { "type": "annulus", "cx": 763, "cy": 239, "rOuter": 5.5, "rInner": 3.5 },
+      "inkMode": "connector"
+    },
+    "connector-3-node-interior": {
+      "geometric": { "type": "disk", "cx": 763, "cy": 239, "r": 3.2 },
+      "inkMode": "dark"
+    },
+    "connector-3-dot": {
+      "geometric": { "type": "disk", "cx": 763, "cy": 239, "r": 1.6 },
+      "inkMode": "connector"
+    },
+    "connector-3-glow": {
+      "geometric": { "type": "disk", "cx": 763, "cy": 239, "r": 9 },
+      "inkMode": "glow"
+    },
+    "stage-03-check-0": {
+      "geometric": { "type": "rect", "x": 600, "y": 208, "w": 16, "h": 16 },
+      "inkMode": "mutedRed"
+    },
+    "stage-03-check-1": {
+      "geometric": { "type": "rect", "x": 600, "y": 228, "w": 16, "h": 16 },
+      "inkMode": "mutedRed"
+    },
+    "stage-03-check-2": {
+      "geometric": { "type": "rect", "x": 600, "y": 248, "w": 16, "h": 16 },
+      "inkMode": "mutedRed"
+    },
+    "stage-02-active-dot": {
+      "geometric": { "type": "disk", "cx": 331, "cy": 212, "r": 3.5 },
+      "inkMode": "connector"
+    },
+    "stage-01-pill-icon": {
+      "geometric": { "type": "rect", "x": 104, "y": 364, "w": 14, "h": 14 },
+      "inkMode": "mutedRed"
+    },
+    "stage-02-pill-icon": {
+      "geometric": { "type": "rect", "x": 300, "y": 364, "w": 14, "h": 14 },
+      "inkMode": "mutedRed"
+    },
+    "stage-03-pill-icon": {
+      "geometric": { "type": "rect", "x": 552, "y": 364, "w": 14, "h": 14 },
+      "inkMode": "mutedRed"
+    },
+    "stage-04-pill-icon": {
+      "geometric": { "type": "rect", "x": 796, "y": 364, "w": 14, "h": 14 },
+      "inkMode": "mutedRed"
+    },
+    "heading-eyebrow": {
+      "geometric": { "type": "rect", "x": 420, "y": 47, "w": 185, "h": 12 },
+      "inkMode": "red"
+    },
+    "heading-title": {
+      "geometric": { "type": "rect", "x": 280, "y": 72, "w": 470, "h": 34 },
+      "inkMode": "white180"
+    },
+    "heading-support": {
+      "geometric": { "type": "rect", "x": 288, "y": 113, "w": 460, "h": 16 },
+      "inkMode": "gray"
+    },
+    "stage-01-number": {
+      "geometric": { "type": "rect", "x": 98, "y": 186, "w": 24, "h": 20 },
+      "inkMode": "red"
+    },
+    "stage-02-number": {
+      "geometric": { "type": "rect", "x": 295, "y": 186, "w": 28, "h": 20 },
+      "inkMode": "red"
+    },
+    "stage-03-number": {
+      "geometric": { "type": "rect", "x": 548, "y": 186, "w": 28, "h": 20 },
+      "inkMode": "red"
+    },
+    "stage-04-number": {
+      "geometric": { "type": "rect", "x": 790, "y": 186, "w": 28, "h": 20 },
+      "inkMode": "red"
+    },
+    "stage-01-symbol": {
+      "geometric": { "type": "rect", "x": 108, "y": 218, "w": 36, "h": 40 },
+      "inkMode": "mutedRed"
+    },
+    "stage-02-symbol": {
+      "geometric": { "type": "rect", "x": 300, "y": 216, "w": 36, "h": 36 },
+      "inkMode": "mutedRed"
+    },
+    "stage-03-symbol": {
+      "geometric": { "type": "rect", "x": 554, "y": 216, "w": 36, "h": 36 },
+      "inkMode": "mutedRed"
+    },
+    "stage-04-symbol": {
+      "geometric": { "type": "rect", "x": 800, "y": 218, "w": 34, "h": 34 },
+      "inkMode": "mutedRed"
+    },
+    "stage-01-title": {
+      "geometric": { "type": "rect", "x": 98, "y": 282, "w": 120, "h": 18 },
+      "inkMode": "white170"
+    },
+    "stage-02-title": {
+      "geometric": { "type": "rect", "x": 296, "y": 282, "w": 140, "h": 18 },
+      "inkMode": "white170"
+    },
+    "stage-03-title": {
+      "geometric": { "type": "rect", "x": 548, "y": 282, "w": 140, "h": 18 },
+      "inkMode": "white170"
+    },
+    "stage-04-title": {
+      "geometric": { "type": "rect", "x": 790, "y": 282, "w": 128, "h": 18 },
+      "inkMode": "white170"
+    },
+    "stage-01-body-line-0": {
+      "geometric": { "type": "rect", "x": 98, "y": 303, "w": 120, "h": 13 },
+      "inkMode": "gray"
+    },
+    "stage-01-body-line-1": {
+      "geometric": { "type": "rect", "x": 98, "y": 316, "w": 120, "h": 13 },
+      "inkMode": "gray"
+    },
+    "stage-01-body-line-2": {
+      "geometric": { "type": "rect", "x": 98, "y": 329, "w": 80, "h": 13 },
+      "inkMode": "gray"
+    },
+    "stage-02-body-line-0": {
+      "geometric": { "type": "rect", "x": 296, "y": 303, "w": 140, "h": 13 },
+      "inkMode": "gray"
+    },
+    "stage-02-body-line-1": {
+      "geometric": { "type": "rect", "x": 296, "y": 316, "w": 140, "h": 13 },
+      "inkMode": "gray"
+    },
+    "stage-02-body-line-2": {
+      "geometric": { "type": "rect", "x": 296, "y": 329, "w": 140, "h": 13 },
+      "inkMode": "gray"
+    },
+    "stage-03-body-line-0": {
+      "geometric": { "type": "rect", "x": 548, "y": 303, "w": 140, "h": 13 },
+      "inkMode": "gray"
+    },
+    "stage-03-body-line-1": {
+      "geometric": { "type": "rect", "x": 548, "y": 316, "w": 140, "h": 13 },
+      "inkMode": "gray"
+    },
+    "stage-03-body-line-2": {
+      "geometric": { "type": "rect", "x": 548, "y": 329, "w": 120, "h": 13 },
+      "inkMode": "gray"
+    },
+    "stage-04-body-line-0": {
+      "geometric": { "type": "rect", "x": 790, "y": 303, "w": 128, "h": 13 },
+      "inkMode": "gray"
+    },
+    "stage-04-body-line-1": {
+      "geometric": { "type": "rect", "x": 790, "y": 316, "w": 128, "h": 13 },
+      "inkMode": "gray"
+    },
+    "stage-04-body-line-2": {
+      "geometric": { "type": "rect", "x": 790, "y": 329, "w": 128, "h": 13 },
+      "inkMode": "gray"
+    },
+    "stage-01-pill": {
+      "geometric": { "type": "rect", "x": 96, "y": 362, "w": 94, "h": 22 },
+      "inkMode": "edge"
+    },
+    "stage-02-pill": {
+      "geometric": { "type": "rect", "x": 294, "y": 362, "w": 120, "h": 22 },
+      "inkMode": "edge"
+    },
+    "stage-03-pill": {
+      "geometric": { "type": "rect", "x": 546, "y": 362, "w": 132, "h": 22 },
+      "inkMode": "edge"
+    },
+    "stage-04-pill": {
+      "geometric": { "type": "rect", "x": 788, "y": 362, "w": 94, "h": 22 },
+      "inkMode": "edge"
+    },
+    "stage-01-pill-label": {
+      "geometric": { "type": "rect", "x": 118, "y": 366, "w": 70, "h": 12 },
+      "inkMode": "gray"
+    },
+    "stage-02-pill-label": {
+      "geometric": { "type": "rect", "x": 316, "y": 366, "w": 95, "h": 12 },
+      "inkMode": "gray"
+    },
+    "stage-03-pill-label": {
+      "geometric": { "type": "rect", "x": 568, "y": 366, "w": 105, "h": 12 },
+      "inkMode": "gray"
+    },
+    "stage-04-pill-label": {
+      "geometric": { "type": "rect", "x": 812, "y": 366, "w": 70, "h": 12 },
+      "inkMode": "gray"
+    },
+    "stage-01-icon-frame": {
+      "geometric": { "type": "rect", "x": 97, "y": 210, "w": 55, "h": 55 },
+      "inkMode": "edge"
+    },
+    "stage-02-icon-frame": {
+      "geometric": { "type": "rect", "x": 294, "y": 210, "w": 52, "h": 52 },
+      "inkMode": "edge"
+    },
+    "stage-03-icon-frame": {
+      "geometric": { "type": "rect", "x": 546, "y": 210, "w": 52, "h": 52 },
+      "inkMode": "edge"
+    },
+    "stage-04-icon-frame": {
+      "geometric": { "type": "rect", "x": 790, "y": 210, "w": 50, "h": 50 },
+      "inkMode": "edge"
+    },
+    "stage-02-rear-panel": {
+      "geometric": { "type": "rect", "x": 318, "y": 200, "w": 170, "h": 72 },
+      "inkMode": "edge"
+    },
+    "stage-03-rear-panel": {
+      "geometric": { "type": "rect", "x": 572, "y": 200, "w": 160, "h": 78 },
+      "inkMode": "edge"
+    }
+  }
+}

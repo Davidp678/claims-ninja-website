@@ -35,16 +35,18 @@ const REF = {
    */
   mutedRed: "#3a2428",
   connector: "#984746",
-  numberRed: "#77403b", // ≈119/64/59 solid ink
+  /** Solid glyph interior target ≈ 119/64/59. */
+  numberRed: "#77403b",
+  numberRedRgb: "119, 64, 59",
 };
 
 /** Card-relative layout from reference painted ink (not DOM wrappers). */
 const CARD_INK = {
-  number: { left: 15, top: 18, size: 13 },
-  visual: { left: 14, top: 30, height: 78 },
-  title: { left: 15, top: 113, size: 14.5 },
-  desc: { left: 15, top: 133, size: 10.75, lineHeight: 1.35 },
-  pill: { left: 12, top: 192, height: 22 },
+  number: { left: 16, top: 16, size: 14.5 },
+  visual: { left: 12, top: 30, height: 80 },
+  title: { left: 14, top: 112, size: 13.5 },
+  desc: { left: 14, top: 132, size: 10.25, lineHeight: 1.45 },
+  pill: { left: 11, top: 191, height: 22 },
 } as const;
 
 function StrokeIcon({
@@ -162,11 +164,11 @@ function UploadDocVisual({ stage }: { stage: string }) {
             "radial-gradient(circle, rgba(56,25,22,0.45), transparent 70%)",
         }}
       />
-      <div className="absolute left-0 top-[13px]">
-        <PrimaryIconFrame stage={stage} size={52}>
+      <div className="absolute left-0 top-[11px]">
+        <PrimaryIconFrame stage={stage} size={54}>
           <StrokeIcon
-            className="h-[30px] w-[30px]"
-            strokeWidth={1.1}
+            className="h-[32px] w-[32px]"
+            strokeWidth={1.2}
             color={REF.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
@@ -260,11 +262,11 @@ function WorkspaceVisual({ stage }: { stage: string }) {
           </div>
         </div>
       </div>
-      <div className="absolute left-0 top-[12px]">
-        <PrimaryIconFrame stage={stage} size={50}>
+      <div className="absolute left-0 top-[10px]">
+        <PrimaryIconFrame stage={stage} size={54}>
           <StrokeIcon
-            className="h-[26px] w-[26px]"
-            strokeWidth={1.15}
+            className="h-[30px] w-[30px]"
+            strokeWidth={1.2}
             color={REF.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
@@ -296,9 +298,9 @@ function ManageVisual({ stage }: { stage: string }) {
       />
       <div
         data-qa={`stage-${stage}-rear-panel`}
-        className="absolute left-[22px] top-0 flex h-[72px] flex-col justify-center gap-[5px] overflow-hidden rounded-[9px] px-[7px] py-[6px]"
+        className="absolute left-[48px] top-0 flex h-[78px] flex-col justify-center gap-[4px] overflow-visible rounded-[9px] px-[7px] py-[5px]"
         style={{
-          width: "min(168px, calc(100% - 14px))",
+          width: "min(140px, calc(100% - 52px))",
           background: "#0d0d0d",
           border: "1px solid rgba(255,255,255,0.15)",
         }}
@@ -307,7 +309,7 @@ function ManageVisual({ stage }: { stage: string }) {
           <div
             key={i}
             data-qa={`stage-${stage}-row-${i}`}
-            className="flex h-[17px] items-center gap-[5px] rounded-[4px] px-[5px]"
+            className="flex h-[18px] items-center gap-[5px] rounded-[4px] px-[5px]"
             style={{
               background: "rgba(0,0,0,0.42)",
               border: "1px solid rgba(255,255,255,0.1)",
@@ -319,19 +321,21 @@ function ManageVisual({ stage }: { stage: string }) {
               style={{
                 border: `1.2px solid ${REF.mutedRed}`,
                 color: REF.mutedRed,
+                background: "transparent",
               }}
             >
               <svg
                 aria-hidden
+                data-qa={`stage-${stage}-check-mark-${i}`}
                 viewBox="0 0 12 12"
                 className="h-[6px] w-[6px]"
                 fill="none"
-                stroke="currentColor"
+                stroke={REF.mutedRed}
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="m2.3 6.1 2.3 2.3L9.7 3.6" />
+                <path d="m2.3 6.1 2.3 2.3L9.7 3.6" fill="none" stroke={REF.mutedRed} />
               </svg>
             </span>
             <span
@@ -355,11 +359,11 @@ function ManageVisual({ stage }: { stage: string }) {
           style={{ background: "rgba(255,255,255,0.13)" }}
         />
       </div>
-      <div className="absolute left-0 top-[12px]">
+      <div className="absolute left-0 top-[10px]">
         <PrimaryIconFrame stage={stage} size={50}>
           <StrokeIcon
-            className="h-[26px] w-[26px]"
-            strokeWidth={1.15}
+            className="h-[28px] w-[28px]"
+            strokeWidth={1.2}
             color={REF.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
@@ -391,11 +395,11 @@ function RecoverVisual({ stage }: { stage: string }) {
             "radial-gradient(circle, rgba(56,25,22,0.45), transparent 70%)",
         }}
       />
-      <div className="absolute left-0 top-[13px]">
-        <PrimaryIconFrame stage={stage} size={52}>
+      <div className="absolute left-0 top-[11px]">
+        <PrimaryIconFrame stage={stage} size={54}>
           <StrokeIcon
-            className="h-[30px] w-[30px]"
-            strokeWidth={1.1}
+            className="h-[32px] w-[32px]"
+            strokeWidth={1.2}
             color={REF.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
@@ -431,7 +435,7 @@ function ProcessStageCard({
 }) {
   const stage = item.step;
   const titleSize =
-    stage === "04" ? 13.5 : stage === "01" ? 14.5 : CARD_INK.title.size;
+    stage === "04" ? 12.75 : stage === "01" ? 13.25 : 13.25;
   const lines = referenceMode ? item.descriptionLines : null;
 
   return (
@@ -439,7 +443,7 @@ function ProcessStageCard({
       data-process-card
       data-qa={`stage-${stage}-card`}
       data-width={item.width}
-      className="group relative flex h-full min-h-0 flex-col overflow-hidden rounded-[11px]"
+      className="group relative flex h-full min-h-0 flex-col overflow-visible rounded-[11px]"
       style={{
         background: REF.cardBg,
         border: `1px solid ${REF.cardBorder}`,
@@ -454,9 +458,11 @@ function ProcessStageCard({
           left: CARD_INK.number.left,
           top: CARD_INK.number.top,
           fontSize: CARD_INK.number.size,
-          fontWeight: 500,
-          letterSpacing: "-0.02em",
-          color: REF.numberRed,
+          fontWeight: 600,
+          letterSpacing: "0",
+          color: `rgb(${REF.numberRedRgb})`,
+          WebkitTextFillColor: `rgb(${REF.numberRedRgb})`,
+          opacity: 1,
         }}
       >
         {item.step}
@@ -481,13 +487,14 @@ function ProcessStageCard({
         className="absolute font-display tracking-[-0.01em]"
         style={{
           left: CARD_INK.title.left,
-          right: 10,
+          right: stage === "01" ? 14 : stage === "04" ? 8 : 18,
           top: CARD_INK.title.top,
           fontSize: titleSize,
           fontWeight: 600,
-          lineHeight: 1.15,
+          lineHeight: 1.1,
+          letterSpacing: "-0.015em",
           color: REF.title,
-          whiteSpace: stage === "04" ? "nowrap" : undefined,
+          whiteSpace: "nowrap",
         }}
       >
         {item.title}
@@ -499,9 +506,9 @@ function ProcessStageCard({
         className="absolute"
         style={{
           left: CARD_INK.desc.left,
-          right: stage === "04" ? 8 : 10,
+          right: stage === "01" || stage === "04" ? 12 : 22,
           top: CARD_INK.desc.top,
-          fontSize: stage === "04" ? 10.25 : CARD_INK.desc.size,
+          fontSize: CARD_INK.desc.size,
           lineHeight: CARD_INK.desc.lineHeight,
           color: REF.bodyText,
           overflow: "visible",
@@ -510,12 +517,13 @@ function ProcessStageCard({
         {lines
           ? lines.map((line, i) => (
               <span
-                key={line}
+                key={`${stage}-${i}-${line}`}
                 data-qa={`stage-${stage}-body-line-${i}`}
                 className="block"
                 style={{
                   whiteSpace: "nowrap",
                   overflow: "visible",
+                  height: Math.round(CARD_INK.desc.size * CARD_INK.desc.lineHeight),
                 }}
               >
                 {line}
@@ -532,12 +540,20 @@ function ProcessStageCard({
           left: CARD_INK.pill.left,
           top: CARD_INK.pill.top,
           height: CARD_INK.pill.height,
-          borderRadius: 6,
+          borderRadius: 5,
           border: `1px solid ${REF.pillBorder}`,
           background: "rgba(8,8,8,0.72)",
-          paddingLeft: 7,
-          paddingRight: 8,
-          maxWidth: "calc(100% - 1.35rem)",
+          paddingLeft: 6,
+          paddingRight: 7,
+          gap: 5,
+          maxWidth:
+            stage === "01"
+              ? 94
+              : stage === "02"
+                ? 120
+                : stage === "03"
+                  ? 132
+                  : 94,
           boxSizing: "border-box",
         }}
       >
@@ -545,7 +561,7 @@ function ProcessStageCard({
         <span
           data-qa={`stage-${stage}-pill-label`}
           className="truncate font-medium leading-none"
-          style={{ fontSize: 10.5, color: "#bdbdbd" }}
+          style={{ fontSize: 9.5, color: "#bdbdbd", letterSpacing: "-0.01em" }}
         >
           {item.supportLabel}
         </span>
@@ -699,8 +715,8 @@ export function ProcessSection({
       }}
     >
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_64%_at_50%_58%,rgba(72,32,28,1),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_48%_at_50%_20%,rgba(56,25,22,0.55),transparent_56%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_64%_at_50%_58%,rgba(56,25,22,1),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_48%_at_50%_20%,rgba(56,25,22,0.5),transparent_56%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_130%_110%_at_50%_50%,transparent_58%,rgba(0,0,0,0.22)_100%)]" />
       </div>
 
@@ -727,9 +743,9 @@ export function ProcessSection({
             }`}
             style={{
               top: referenceMode ? 49 : undefined,
-              left: referenceMode ? 0 : undefined,
-              fontSize: referenceMode ? 9.5 : 11,
-              letterSpacing: referenceMode ? "0.148em" : "0.2em",
+              left: referenceMode ? 1 : undefined,
+              fontSize: referenceMode ? 9.4 : 11,
+              letterSpacing: referenceMode ? "0.142em" : "0.2em",
               fontWeight: 700,
               color: "#711929",
             }}
@@ -744,12 +760,13 @@ export function ProcessSection({
                 : "mt-4 text-[28px] sm:text-[32px] xl:text-[34px]"
             }`}
             style={{
-              top: referenceMode ? 69 : undefined,
-              fontSize: referenceMode ? 30.25 : undefined,
-              lineHeight: referenceMode ? "31px" : 1.15,
-              letterSpacing: referenceMode ? "0.008em" : "0.01em",
+              top: referenceMode ? 71 : undefined,
+              fontSize: referenceMode ? 29.75 : undefined,
+              lineHeight: referenceMode ? "30px" : 1.15,
+              letterSpacing: referenceMode ? "0.002em" : "0.01em",
               fontWeight: 600,
               color: REF.title,
+              transform: referenceMode ? "translateX(3px)" : undefined,
             }}
           >
             {content.title}
@@ -760,13 +777,14 @@ export function ProcessSection({
               referenceMode ? "absolute inset-x-0" : "mt-3"
             }`}
             style={{
-              top: referenceMode ? 113 : undefined,
-              maxWidth: referenceMode ? 452 : 460,
-              fontSize: referenceMode ? 12.5 : 13.5,
+              top: referenceMode ? 112 : undefined,
+              maxWidth: referenceMode ? 450 : 460,
+              fontSize: referenceMode ? 12.4 : 13.5,
               lineHeight: 1.3,
-              letterSpacing: referenceMode ? "0.005em" : undefined,
+              letterSpacing: referenceMode ? "0.002em" : undefined,
               color: REF.supportText,
               whiteSpace: referenceMode ? "nowrap" : undefined,
+              transform: referenceMode ? "translateX(2px)" : undefined,
             }}
           >
             {content.description}
