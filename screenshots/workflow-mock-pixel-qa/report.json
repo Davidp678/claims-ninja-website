@@ -4,9 +4,210 @@
     "width": 1024,
     "height": 467
   },
-  "mismatchedPixels": 32187,
+  "pixelmatchOptions": {
+    "threshold": 0.1,
+    "includeAA": true,
+    "diffMask": true,
+    "alpha": 0,
+    "diffColor": [
+      255,
+      64,
+      64
+    ],
+    "aaColor": [
+      255,
+      200,
+      0
+    ]
+  },
+  "controlTest": {
+    "name": "actual-vs-actual",
+    "mismatchedPixels": 0,
+    "amplifiedHotPixels": 0,
+    "mismatchRatio": 0,
+    "passed": true
+  },
+  "mismatchedPixels": 33760,
   "totalPixels": 478208,
-  "mismatchRatio": 0.06730753145074947,
+  "mismatchRatio": 0.07059689507494647,
+  "paintedBounds": {
+    "headingEyebrow": {
+      "left": 425,
+      "top": 49,
+      "right": 599,
+      "bottom": 55,
+      "width": 175,
+      "height": 7,
+      "count": 395
+    },
+    "headingTitle": {
+      "left": 285,
+      "top": 74,
+      "right": 747,
+      "bottom": 115,
+      "width": 463,
+      "height": 42,
+      "count": 4173
+    },
+    "headingSupport": {
+      "left": 292,
+      "top": 115,
+      "right": 741,
+      "bottom": 126,
+      "width": 450,
+      "height": 12,
+      "count": 1646
+    },
+    "actualHeadingEyebrow": {
+      "left": 415,
+      "top": 50,
+      "right": 607,
+      "bottom": 56,
+      "width": 193,
+      "height": 7,
+      "count": 268
+    },
+    "actualHeadingTitle": {
+      "left": 278,
+      "top": 74,
+      "right": 746,
+      "bottom": 103,
+      "width": 469,
+      "height": 30,
+      "count": 4568
+    },
+    "actualHeadingSupport": {
+      "left": 289,
+      "top": 117,
+      "right": 735,
+      "bottom": 128,
+      "width": 447,
+      "height": 12,
+      "count": 659
+    }
+  },
+  "colorSamples": {
+    "pageBg": {
+      "ref": [
+        17,
+        17,
+        17
+      ],
+      "actual": [
+        13,
+        13,
+        13
+      ]
+    },
+    "card1Fill": {
+      "ref": [
+        23,
+        23,
+        23
+      ],
+      "actual": [
+        30,
+        24,
+        24
+      ]
+    },
+    "card1Border": {
+      "ref": [
+        34,
+        34,
+        34
+      ],
+      "actual": [
+        49,
+        49,
+        49
+      ]
+    },
+    "primaryRedNumber": {
+      "ref": [
+        119,
+        64,
+        59
+      ],
+      "actual": [
+        122,
+        64,
+        59
+      ]
+    },
+    "mutedIconStroke": {
+      "ref": [
+        30,
+        20,
+        28
+      ],
+      "actual": [
+        35,
+        25,
+        24
+      ]
+    },
+    "title": {
+      "ref": [
+        241,
+        241,
+        241
+      ],
+      "actual": [
+        255,
+        255,
+        255
+      ]
+    },
+    "bodyText": {
+      "ref": [
+        99,
+        99,
+        99
+      ],
+      "actual": [
+        22,
+        22,
+        22
+      ]
+    },
+    "pillBorder": {
+      "ref": [
+        28,
+        28,
+        28
+      ],
+      "actual": [
+        53,
+        53,
+        53
+      ]
+    },
+    "connector": {
+      "ref": [
+        152,
+        71,
+        70
+      ],
+      "actual": [
+        150,
+        70,
+        69
+      ]
+    },
+    "centerGlow": {
+      "ref": [
+        56,
+        25,
+        22
+      ],
+      "actual": [
+        41,
+        18,
+        17
+      ]
+    }
+  },
   "regions": [
     {
       "name": "heading",
@@ -15,11 +216,11 @@
         "x": 120,
         "y": 30,
         "w": 780,
-        "h": 120
+        "h": 130
       },
-      "mismatched": 11412,
-      "total": 93600,
-      "ratio": 0.12192307692307693
+      "mismatched": 8806,
+      "total": 101400,
+      "ratio": 0.08684418145956607
     },
     {
       "name": "stage-01",
@@ -30,9 +231,9 @@
         "w": 157,
         "h": 229
       },
-      "mismatched": 3915,
+      "mismatched": 4637,
       "total": 35953,
-      "ratio": 0.10889216477067282
+      "ratio": 0.12897393819709066
     },
     {
       "name": "stage-02",
@@ -43,9 +244,9 @@
         "w": 220,
         "h": 229
       },
-      "mismatched": 5853,
+      "mismatched": 7274,
       "total": 50380,
-      "ratio": 0.11617705438666137
+      "ratio": 0.14438269154426359
     },
     {
       "name": "stage-03",
@@ -56,9 +257,9 @@
         "w": 210,
         "h": 229
       },
-      "mismatched": 6241,
+      "mismatched": 7713,
       "total": 48090,
-      "ratio": 0.1297775005198586
+      "ratio": 0.16038677479725513
     },
     {
       "name": "stage-04",
@@ -69,9 +270,61 @@
         "w": 142,
         "h": 229
       },
-      "mismatched": 4225,
+      "mismatched": 4731,
       "total": 32518,
-      "ratio": 0.12992803985484963
+      "ratio": 0.14548865243864936
+    },
+    {
+      "name": "stage-01-visual",
+      "region": {
+        "name": "stage-01-visual",
+        "x": 95,
+        "y": 200,
+        "w": 70,
+        "h": 80
+      },
+      "mismatched": 620,
+      "total": 5600,
+      "ratio": 0.11071428571428571
+    },
+    {
+      "name": "stage-02-visual",
+      "region": {
+        "name": "stage-02-visual",
+        "x": 292,
+        "y": 200,
+        "w": 200,
+        "h": 80
+      },
+      "mismatched": 2175,
+      "total": 16000,
+      "ratio": 0.1359375
+    },
+    {
+      "name": "stage-03-visual",
+      "region": {
+        "name": "stage-03-visual",
+        "x": 546,
+        "y": 200,
+        "w": 190,
+        "h": 80
+      },
+      "mismatched": 2344,
+      "total": 15200,
+      "ratio": 0.15421052631578946
+    },
+    {
+      "name": "stage-04-visual",
+      "region": {
+        "name": "stage-04-visual",
+        "x": 789,
+        "y": 200,
+        "w": 70,
+        "h": 80
+      },
+      "mismatched": 690,
+      "total": 5600,
+      "ratio": 0.12321428571428572
     },
     {
       "name": "connector-01-02",
@@ -82,9 +335,9 @@
         "w": 40,
         "h": 24
       },
-      "mismatched": 136,
+      "mismatched": 137,
       "total": 960,
-      "ratio": 0.14166666666666666
+      "ratio": 0.14270833333333333
     },
     {
       "name": "connector-02-03",
@@ -95,9 +348,9 @@
         "w": 34,
         "h": 24
       },
-      "mismatched": 121,
+      "mismatched": 131,
       "total": 816,
-      "ratio": 0.1482843137254902
+      "ratio": 0.16053921568627452
     },
     {
       "name": "connector-03-04",
@@ -108,9 +361,9 @@
         "w": 33,
         "h": 24
       },
-      "mismatched": 121,
+      "mismatched": 119,
       "total": 792,
-      "ratio": 0.1527777777777778
+      "ratio": 0.15025252525252525
     },
     {
       "name": "chat",
@@ -121,9 +374,9 @@
         "w": 50,
         "h": 55
       },
-      "mismatched": 163,
+      "mismatched": 212,
       "total": 2750,
-      "ratio": 0.059272727272727276
+      "ratio": 0.07709090909090908
     },
     {
       "name": "bottom-line",
@@ -144,6 +397,8 @@
     "reference": "reference-normalized.png",
     "overlay": "overlay-50.png",
     "diff": "diff-amplified.png",
-    "sideBySide": "side-by-side.png"
+    "sideBySide": "side-by-side.png",
+    "controlDiff": "control-actual-vs-actual-diff.png",
+    "crops": "crops/"
   }
 }
