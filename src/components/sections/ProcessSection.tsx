@@ -23,29 +23,27 @@ const REF = {
   pageBg: "#111111",
   cardBg: "#171717",
   cardBorder: "#222222",
-  /** Solid glyph interior target ≈ 226/226/226. */
-  title: "#e2e2e2",
+  /** Solid glyph interior target ≈ 231/231/231. */
+  title: "#e7e7e7",
+  /** Neutral body ≈ 104/104/104. */
   bodyText: "#686868",
   supportText: "#5a5a5a",
   /** Pill stroke target ≈ 28/28/28. */
   pillBorder: "#1c1c1c",
-  /**
-   * Muted icon stroke — reference solid samples sit near 30/20/28,
-   * not bright brand-red.
-   */
-  mutedRed: "#3a2428",
+  /** Muted icon stroke ≈ 43/28/31. */
+  mutedRed: "#2b1c1f",
   connector: "#984746",
-  /** Solid glyph interior target ≈ 119/64/59. */
-  numberRed: "#77403b",
-  numberRedRgb: "119, 64, 59",
+  /** Number solid ≈ 118/46/49. */
+  numberRed: "#762e31",
+  numberRedRgb: "118, 46, 49",
 };
 
 /** Card-relative layout from reference painted ink (not DOM wrappers). */
 const CARD_INK = {
-  number: { left: 16, top: 16, size: 14.5 },
-  visual: { left: 12, top: 30, height: 80 },
-  title: { left: 14, top: 112, size: 13.5 },
-  desc: { left: 14, top: 132, size: 10.25, lineHeight: 1.45 },
+  number: { left: 15, top: 16, size: 14.5 },
+  visual: { left: 11, top: 28, height: 82 },
+  title: { left: 14, top: 112, size: 12.45 },
+  desc: { left: 15, top: 132, size: 9.55, lineHeight: 1.48 },
   pill: { left: 11, top: 191, height: 22 },
 } as const;
 
@@ -86,7 +84,7 @@ function PillIcon({
   visual: HomeProcessVisual;
   stage: string;
 }) {
-  const className = "h-[12px] w-[12px] shrink-0";
+  const className = "h-[14px] w-[14px] shrink-0 -translate-y-[3px]";
   const qa = `stage-${stage}-pill-icon`;
   const color = REF.mutedRed;
   if (visual === "intake") {
@@ -158,24 +156,24 @@ function UploadDocVisual({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[-4px] top-[4px] h-[48px] w-[48px] rounded-full blur-[6px]"
+        className="pointer-events-none absolute left-[-2px] top-[2px] h-[52px] w-[52px] rounded-full blur-[5px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(56,25,22,0.45), transparent 70%)",
+            "radial-gradient(circle, rgba(56,25,22,0.55), transparent 70%)",
         }}
       />
-      <div className="absolute left-0 top-[11px]">
-        <PrimaryIconFrame stage={stage} size={54}>
+      <div className="absolute left-[0px] top-[14px]">
+        <PrimaryIconFrame stage={stage} size={50}>
           <StrokeIcon
-            className="h-[32px] w-[32px]"
-            strokeWidth={1.2}
+            className="h-[33px] w-[33px]"
+            strokeWidth={1.4}
             color={REF.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
-            <path d="M14.4 2.4H7.6A2.5 2.5 0 0 0 5.1 4.9v14.4A2.5 2.5 0 0 0 7.6 21.8h8.8a2.5 2.5 0 0 0 2.5-2.5V7.2L14.4 2.4Z" />
-            <path d="M14.4 2.4V7.8h4.5" />
-            <path d="M12 11v6.8" />
-            <path d="m9 13.8 3-3 3 3" />
+            <path d="M14.4 1.6H7A2.7 2.7 0 0 0 4.3 4.3v15.4A2.7 2.7 0 0 0 7 22.4h9.4a2.7 2.7 0 0 0 2.7-2.7V7.1L14.4 1.6Z" />
+            <path d="M14.4 1.6V7.4h5" />
+            <path d="M12 11.2v7.2" />
+            <path d="m8.5 14.3 3.5-3.5 3.5 3.5" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -192,40 +190,40 @@ function WorkspaceVisual({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[24px] top-0 h-[64px] w-[150px] rounded-[12px] blur-[8px]"
+        className="pointer-events-none absolute left-[24px] top-0 h-[66px] w-[150px] rounded-[12px] blur-[8px]"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(56,25,22,0.42), transparent 72%)",
+            "radial-gradient(ellipse at 40% 45%, rgba(56,25,22,0.55), transparent 72%)",
         }}
       />
       <div
         data-qa={`stage-${stage}-rear-panel`}
-        className="absolute left-[22px] top-0 h-[72px] overflow-hidden rounded-[9px]"
+        className="absolute left-[24px] top-[1px] h-[72px] overflow-hidden rounded-[9px]"
         style={{
-          width: "min(172px, calc(100% - 14px))",
+          width: 170,
           background: "#0d0d0d",
           border: "1px solid rgba(255,255,255,0.15)",
         }}
       >
-        <div className="flex h-full">
+        <div className="relative flex h-full">
           <div
             data-qa={`stage-${stage}-sidebar`}
-            className="relative w-[22px] shrink-0"
+            className="relative w-[24px] shrink-0"
             style={{
               background: "#080808",
-              borderRight: "1px solid rgba(255,255,255,0.14)",
+              borderRight: "1px solid rgba(255,255,255,0.12)",
             }}
           >
             <span
               data-qa={`stage-${stage}-active-dot`}
-              className="absolute left-1/2 top-[8px] h-[6px] w-[6px] -translate-x-1/2 rounded-full"
+              className="absolute left-1/2 top-[8px] h-[9px] w-[9px] -translate-x-1/2 rounded-full"
               style={{ background: "#9a4540" }}
             />
-            {[18, 27, 36, 45, 54].map((top, i) => (
+            {[22, 32, 42, 52].map((top, i) => (
               <span
                 key={top}
                 data-qa={`stage-${stage}-sidebar-row-${i}`}
-                className="absolute left-1/2 h-[2px] w-[9px] -translate-x-1/2 rounded-[1px]"
+                className="absolute left-1/2 h-[2px] w-[11px] -translate-x-1/2 rounded-[1px]"
                 style={{ top, background: "rgba(255,255,255,0.2)" }}
               />
             ))}
@@ -233,28 +231,28 @@ function WorkspaceVisual({ stage }: { stage: string }) {
           <div
             data-qa={`stage-${stage}-divider`}
             className="w-px shrink-0"
-            style={{ background: "rgba(255,255,255,0.13)" }}
+            style={{ background: "rgba(255,255,255,0.12)" }}
           />
-          <div className="flex min-w-0 flex-1 flex-col px-[8px] py-[8px]">
+          <div className="relative flex min-w-0 flex-1 flex-col px-[8px] pb-[7px] pt-[9px]">
             <span
               data-qa={`stage-${stage}-content-bar-0`}
-              className="mb-[7px] h-[9px] w-[70%] rounded-[3px]"
-              style={{ background: "rgba(255,255,255,0.17)" }}
+              className="mb-[7px] h-[7px] w-[70%] rounded-[3px]"
+              style={{ background: "rgba(255,255,255,0.2)" }}
             />
             <span
               data-qa={`stage-${stage}-content-bar-1`}
-              className="mb-auto h-[9px] w-[88%] rounded-[3px]"
-              style={{ background: "rgba(255,255,255,0.12)" }}
+              className="mb-auto h-[7px] w-[88%] rounded-[3px]"
+              style={{ background: "rgba(255,255,255,0.13)" }}
             />
-            <div className="mt-[7px] grid grid-cols-3 gap-[5px]">
+            <div className="mt-[7px] flex gap-[5px]">
               {[0, 1, 2].map((i) => (
                 <span
                   key={i}
                   data-qa={`stage-${stage}-lower-block-${i}`}
-                  className="h-[18px] rounded-[3px]"
+                  className="h-[15px] w-[15px] rounded-[3px]"
                   style={{
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.1)",
+                    background: "rgba(255,255,255,0.07)",
+                    border: "1px solid rgba(255,255,255,0.11)",
                   }}
                 />
               ))}
@@ -262,18 +260,18 @@ function WorkspaceVisual({ stage }: { stage: string }) {
           </div>
         </div>
       </div>
-      <div className="absolute left-0 top-[10px]">
-        <PrimaryIconFrame stage={stage} size={54}>
+      <div className="absolute left-[1px] top-[13px]">
+        <PrimaryIconFrame stage={stage} size={50}>
           <StrokeIcon
-            className="h-[30px] w-[30px]"
-            strokeWidth={1.2}
+            className="h-[32px] w-[32px]"
+            strokeWidth={1.35}
             color={REF.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
-            <rect x="3" y="3" width="7.6" height="7.6" rx="1.5" />
-            <rect x="13.4" y="3" width="7.6" height="7.6" rx="1.5" />
-            <rect x="3" y="13.4" width="7.6" height="7.6" rx="1.5" />
-            <rect x="13.4" y="13.4" width="7.6" height="7.6" rx="1.5" />
+            <rect x="2.6" y="3.4" width="8" height="7" rx="1.35" />
+            <rect x="13.4" y="3.4" width="8" height="7" rx="1.35" />
+            <rect x="2.6" y="13.8" width="8" height="7" rx="1.35" />
+            <rect x="13.4" y="13.8" width="8" height="7" rx="1.35" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -282,6 +280,8 @@ function WorkspaceVisual({ stage }: { stage: string }) {
 }
 
 function ManageVisual({ stage }: { stage: string }) {
+  /** Check tops relative to visual: canvas 208/228/248 − cardTop 170 − visualTop 28. */
+  const checkTops = [9, 29, 49] as const;
   return (
     <div
       aria-hidden
@@ -290,17 +290,17 @@ function ManageVisual({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[22px] top-0 h-[66px] w-[150px] rounded-[12px] blur-[8px]"
+        className="pointer-events-none absolute left-[22px] top-0 h-[66px] w-[145px] rounded-[12px] blur-[8px]"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(56,25,22,0.4), transparent 72%)",
+            "radial-gradient(ellipse at 45% 45%, rgba(56,25,22,0.5), transparent 72%)",
         }}
       />
       <div
         data-qa={`stage-${stage}-rear-panel`}
-        className="absolute left-[48px] top-0 flex h-[78px] flex-col justify-center gap-[4px] overflow-visible rounded-[9px] px-[7px] py-[5px]"
+        className="absolute left-[24px] top-[1px] h-[72px] overflow-hidden rounded-[9px]"
         style={{
-          width: "min(140px, calc(100% - 52px))",
+          width: 160,
           background: "#0d0d0d",
           border: "1px solid rgba(255,255,255,0.15)",
         }}
@@ -309,45 +309,23 @@ function ManageVisual({ stage }: { stage: string }) {
           <div
             key={i}
             data-qa={`stage-${stage}-row-${i}`}
-            className="flex h-[18px] items-center gap-[5px] rounded-[4px] px-[5px]"
+            className="absolute left-[26px] right-[10px] flex h-[14px] items-center gap-[5px] rounded-[4px] px-[5px]"
             style={{
-              background: "rgba(0,0,0,0.42)",
-              border: "1px solid rgba(255,255,255,0.1)",
+              top: 8 + i * 20,
+              background: "rgba(0,0,0,0.38)",
+              border: "1px solid rgba(255,255,255,0.09)",
             }}
           >
             <span
-              data-qa={`stage-${stage}-check-${i}`}
-              className="flex h-[12px] w-[12px] shrink-0 items-center justify-center rounded-full"
-              style={{
-                border: `1.2px solid ${REF.mutedRed}`,
-                color: REF.mutedRed,
-                background: "transparent",
-              }}
-            >
-              <svg
-                aria-hidden
-                data-qa={`stage-${stage}-check-mark-${i}`}
-                viewBox="0 0 12 12"
-                className="h-[6px] w-[6px]"
-                fill="none"
-                stroke={REF.mutedRed}
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m2.3 6.1 2.3 2.3L9.7 3.6" fill="none" stroke={REF.mutedRed} />
-              </svg>
-            </span>
-            <span
               data-qa={`stage-${stage}-bar-a-${i}`}
-              className="h-[4px] flex-1 rounded-[1px]"
-              style={{ background: "rgba(255,255,255,0.16)" }}
+              className="h-[4px] flex-1 rounded-[2px]"
+              style={{ background: "rgba(255,255,255,0.17)" }}
             />
             <span
               data-qa={`stage-${stage}-bar-b-${i}`}
-              className="h-[4px] rounded-[1px]"
+              className="h-[4px] rounded-[2px]"
               style={{
-                width: i === 0 ? 20 : i === 1 ? 14 : 10,
+                width: i === 0 ? 18 : i === 1 ? 14 : 10,
                 background: "rgba(255,255,255,0.11)",
               }}
             />
@@ -355,24 +333,52 @@ function ManageVisual({ stage }: { stage: string }) {
         ))}
         <span
           data-qa={`stage-${stage}-right-edge`}
-          className="absolute bottom-[6px] right-[6px] top-[6px] w-px"
-          style={{ background: "rgba(255,255,255,0.13)" }}
+          className="absolute bottom-[7px] right-[6px] top-[7px] w-px"
+          style={{ background: "rgba(255,255,255,0.12)" }}
         />
       </div>
-      <div className="absolute left-0 top-[10px]">
+      {checkTops.map((top, i) => (
+        <span
+          key={i}
+          data-qa={`stage-${stage}-check-${i}`}
+          className="absolute z-20 flex h-[16px] w-[16px] items-center justify-center rounded-full"
+          style={{
+            left: 41,
+            top,
+            border: `1.35px solid ${REF.mutedRed}`,
+            color: REF.mutedRed,
+            background: "#0d0d0d",
+          }}
+        >
+          <svg
+            aria-hidden
+            data-qa={`stage-${stage}-check-mark-${i}`}
+            viewBox="0 0 12 12"
+            className="h-[8px] w-[8px]"
+            fill="none"
+            stroke={REF.mutedRed}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m2.2 6.2 2.5 2.5L9.9 3.5" fill="none" stroke={REF.mutedRed} />
+          </svg>
+        </span>
+      ))}
+      <div className="absolute left-[1px] top-[12px]">
         <PrimaryIconFrame stage={stage} size={50}>
           <StrokeIcon
-            className="h-[28px] w-[28px]"
-            strokeWidth={1.2}
+            className="h-[30px] w-[30px]"
+            strokeWidth={1.35}
             color={REF.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
-            <circle cx="8.4" cy="8" r="2.8" />
-            <circle cx="15.5" cy="8.8" r="2.3" />
-            <path d="M3.6 18.4c.7-2.7 2.7-4.2 4.9-4.2s4.2 1.5 4.9 4.2" />
-            <path d="M13.8 14.7c1.7-.45 3.2.25 4.1 1.7" />
-            <rect x="15.2" y="3.6" width="5.2" height="3.6" rx="1.1" />
-            <path d="M16.4 5.4h2.8M16.4 6.4h1.8" />
+            <circle cx="8.2" cy="7.8" r="2.9" />
+            <circle cx="15.5" cy="8.6" r="2.4" />
+            <path d="M3.4 18.6c.7-2.7 2.7-4.2 4.9-4.2s4.2 1.5 4.9 4.2" />
+            <path d="M13.7 14.8c1.7-.45 3.2.25 4.1 1.7" />
+            <rect x="15.1" y="3.4" width="5.3" height="3.7" rx="1.1" />
+            <path d="M16.3 5.2h2.8M16.3 6.2h1.8" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -389,23 +395,23 @@ function RecoverVisual({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[-4px] top-[4px] h-[48px] w-[48px] rounded-full blur-[6px]"
+        className="pointer-events-none absolute left-[-2px] top-[2px] h-[52px] w-[52px] rounded-full blur-[5px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(56,25,22,0.45), transparent 70%)",
+            "radial-gradient(circle, rgba(56,25,22,0.55), transparent 70%)",
         }}
       />
-      <div className="absolute left-0 top-[11px]">
-        <PrimaryIconFrame stage={stage} size={54}>
+      <div className="absolute left-[1px] top-[13px]">
+        <PrimaryIconFrame stage={stage} size={50}>
           <StrokeIcon
-            className="h-[32px] w-[32px]"
-            strokeWidth={1.2}
+            className="h-[33px] w-[33px]"
+            strokeWidth={1.4}
             color={REF.mutedRed}
             qa={`stage-${stage}-symbol`}
           >
-            <circle cx="12" cy="12" r="8.6" />
-            <path d="m7.2 14.6 3-3.5 2.3 2.3L17 8.2" />
-            <path d="M14.2 8.2h2.8v2.8" />
+            <circle cx="12" cy="12" r="8.8" />
+            <path d="m6.8 14.8 3.2-3.7 2.4 2.4L17.4 7.8" />
+            <path d="M14 7.8h3.2v3.2" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -434,8 +440,7 @@ function ProcessStageCard({
   referenceMode?: boolean;
 }) {
   const stage = item.step;
-  const titleSize =
-    stage === "04" ? 12.75 : stage === "01" ? 13.25 : 13.25;
+  const titleSize = stage === "04" ? 12.05 : 12.45;
   const lines = referenceMode ? item.descriptionLines : null;
 
   return (
@@ -484,15 +489,15 @@ function ProcessStageCard({
       <h3
         data-process-title
         data-qa={`stage-${stage}-title`}
-        className="absolute font-display tracking-[-0.01em]"
+        className="absolute font-display tracking-tight"
         style={{
           left: CARD_INK.title.left,
-          right: stage === "01" ? 14 : stage === "04" ? 8 : 18,
+          right: stage === "01" ? 16 : stage === "04" ? 10 : 20,
           top: CARD_INK.title.top,
           fontSize: titleSize,
           fontWeight: 600,
-          lineHeight: 1.1,
-          letterSpacing: "-0.015em",
+          lineHeight: 1.05,
+          letterSpacing: stage === "04" ? "-0.022em" : "-0.018em",
           color: REF.title,
           whiteSpace: "nowrap",
         }}
@@ -506,10 +511,12 @@ function ProcessStageCard({
         className="absolute"
         style={{
           left: CARD_INK.desc.left,
-          right: stage === "01" || stage === "04" ? 12 : 22,
+          right: stage === "01" || stage === "04" ? 14 : 24,
           top: CARD_INK.desc.top,
           fontSize: CARD_INK.desc.size,
           lineHeight: CARD_INK.desc.lineHeight,
+          letterSpacing: "-0.01em",
+          fontWeight: 400,
           color: REF.bodyText,
           overflow: "visible",
         }}
@@ -523,7 +530,9 @@ function ProcessStageCard({
                 style={{
                   whiteSpace: "nowrap",
                   overflow: "visible",
-                  height: Math.round(CARD_INK.desc.size * CARD_INK.desc.lineHeight),
+                  height: Math.round(
+                    CARD_INK.desc.size * CARD_INK.desc.lineHeight,
+                  ),
                 }}
               >
                 {line}
@@ -535,16 +544,16 @@ function ProcessStageCard({
       <div
         data-process-pill
         data-qa={`stage-${stage}-pill`}
-        className="absolute inline-flex items-center gap-[6px]"
+        className="absolute inline-flex items-center"
         style={{
-          left: CARD_INK.pill.left,
+          left: stage === "04" ? CARD_INK.pill.left - 1 : CARD_INK.pill.left,
           top: CARD_INK.pill.top,
           height: CARD_INK.pill.height,
           borderRadius: 5,
           border: `1px solid ${REF.pillBorder}`,
           background: "rgba(8,8,8,0.72)",
-          paddingLeft: 6,
-          paddingRight: 7,
+          paddingLeft: 7,
+          paddingRight: stage === "04" ? 10 : 8,
           gap: 5,
           maxWidth:
             stage === "01"
@@ -553,7 +562,7 @@ function ProcessStageCard({
                 ? 120
                 : stage === "03"
                   ? 132
-                  : 94,
+                  : 100,
           boxSizing: "border-box",
         }}
       >
@@ -561,7 +570,12 @@ function ProcessStageCard({
         <span
           data-qa={`stage-${stage}-pill-label`}
           className="truncate font-medium leading-none"
-          style={{ fontSize: 9.5, color: "#bdbdbd", letterSpacing: "-0.01em" }}
+          style={{
+            fontSize: 9.35,
+            color: "#bdbdbd",
+            letterSpacing: "-0.015em",
+            transform: "translate(1px, 0.5px)",
+          }}
         >
           {item.supportLabel}
         </span>
@@ -571,6 +585,16 @@ function ProcessStageCard({
 }
 
 function ConnectorSegment({ index }: { index: number }) {
+  /** Exact reference line insets within each gap (40 / 34 / 33). */
+  const lineSpec =
+    index === 1
+      ? { left: 4, width: 30 }
+      : index === 2
+        ? { left: 6, width: 24 }
+        : { left: 4, width: 24 };
+  /** Gap 3 is odd-width (33); nudge node/dot +1px to match mask centers. */
+  const nodeNudgeX = index === 3 ? 1 : 0;
+
   return (
     <span
       aria-hidden
@@ -579,32 +603,45 @@ function ConnectorSegment({ index }: { index: number }) {
       className="relative block h-[16px] w-full"
     >
       <span
+        data-qa={`connector-${index}-glow`}
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[16px] w-[16px] -translate-y-1/2 rounded-full"
+        style={{
+          left: `calc(50% + ${nodeNudgeX}px)`,
+          transform: "translate(-50%, -50%)",
+          background:
+            "radial-gradient(circle, rgba(56,25,22,0.4), transparent 68%)",
+        }}
+      />
+      <span
         data-process-rail-segment
         data-qa={`connector-${index}-line`}
-        className="absolute inset-x-0 top-1/2 -translate-y-1/2"
+        className="absolute top-1/2 -translate-y-1/2"
         style={{
-          height: 1.5,
+          left: lineSpec.left,
+          width: lineSpec.width,
+          height: 3,
           background: REF.connector,
-          opacity: 0.9,
-          boxShadow: "0 0 4px rgba(56,25,22,0.55)",
+          opacity: 0.92,
         }}
       />
       <span
         data-process-node
         data-qa={`connector-${index}-node`}
-        className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full"
+        className="absolute top-1/2 flex items-center justify-center rounded-full"
         style={{
-          width: 10,
-          height: 10,
+          left: `calc(50% + ${nodeNudgeX}px)`,
+          transform: "translate(-50%, -50%)",
+          width: 13,
+          height: 13,
           border: `1.5px solid ${REF.connector}`,
           background: "#111111",
-          boxShadow: "0 0 6px rgba(56,25,22,0.5)",
+          boxSizing: "border-box",
         }}
       >
         <span
           data-qa={`connector-${index}-dot`}
           className="rounded-full"
-          style={{ width: 3, height: 3, background: REF.connector }}
+          style={{ width: 5, height: 5, background: REF.connector }}
         />
       </span>
     </span>
@@ -715,9 +752,9 @@ export function ProcessSection({
       }}
     >
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_64%_at_50%_58%,rgba(56,25,22,1),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_48%_at_50%_20%,rgba(56,25,22,0.5),transparent_56%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_130%_110%_at_50%_50%,transparent_58%,rgba(0,0,0,0.22)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_78%_66%_at_50%_58%,rgba(56,25,22,1.18),transparent_56%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_88%_50%_at_50%_20%,rgba(56,25,22,0.66),transparent_52%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_130%_110%_at_50%_50%,transparent_58%,rgba(0,0,0,0.18)_100%)]" />
       </div>
 
       <div
@@ -760,8 +797,8 @@ export function ProcessSection({
                 : "mt-4 text-[28px] sm:text-[32px] xl:text-[34px]"
             }`}
             style={{
-              top: referenceMode ? 71 : undefined,
-              fontSize: referenceMode ? 29.75 : undefined,
+              top: referenceMode ? 70 : undefined,
+              fontSize: referenceMode ? 29.85 : undefined,
               lineHeight: referenceMode ? "30px" : 1.15,
               letterSpacing: referenceMode ? "0.002em" : "0.01em",
               fontWeight: 600,
@@ -778,10 +815,10 @@ export function ProcessSection({
             }`}
             style={{
               top: referenceMode ? 112 : undefined,
-              maxWidth: referenceMode ? 450 : 460,
-              fontSize: referenceMode ? 12.4 : 13.5,
+              maxWidth: referenceMode ? 452 : 460,
+              fontSize: referenceMode ? 12.5 : 13.5,
               lineHeight: 1.3,
-              letterSpacing: referenceMode ? "0.002em" : undefined,
+              letterSpacing: referenceMode ? "0.003em" : undefined,
               color: REF.supportText,
               whiteSpace: referenceMode ? "nowrap" : undefined,
               transform: referenceMode ? "translateX(2px)" : undefined,

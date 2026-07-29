@@ -357,6 +357,8 @@ const assertions = validateIsolation({
   domBounds,
   refInk: refMasks.ink,
   refGeometric: refMasks.geometric,
+  geometryOnly: refMasks.geometryOnly,
+  maskDoc,
 });
 writeFileSync(
   resolve(OUT, "assertions.json"),
@@ -400,35 +402,46 @@ const COMPARE_KEYS = Object.keys(maskDoc.primitives);
 
 /** Dual-bound rows: geometric and painted-ink reported separately. */
 const dualRows = COMPARE_KEYS.map((key) => {
+  const isGeoOnly = Boolean(refMasks.geometryOnly?.[key]);
   const refGeo = refMasks.geometric[key] || null;
-  const refInk = refMasks.ink[key] || null;
+  const refInk = isGeoOnly ? null : refMasks.ink[key] || null;
   const actGeo = domBounds[key] || null;
-  const actInk = paintBounds[key] || actualMasks.ink[key] || null;
+  const actInk = isGeoOnly
+    ? null
+    : paintBounds[key] || actualMasks.ink[key] || null;
   return {
     element: key,
+    geometryOnly: isGeoOnly,
     geometric: {
       ref: refGeo,
       actual: actGeo,
       delta: delta(refGeo, actGeo),
     },
-    paintedInk: {
-      ref: refInk,
-      actual: actInk,
-      delta: delta(refInk, actInk),
-    },
+    paintedInk: isGeoOnly
+      ? { ref: null, actual: null, delta: null, skipped: "geometry-only" }
+      : {
+          ref: refInk,
+          actual: actInk,
+          delta: delta(refInk, actInk),
+        },
   };
 });
 
 /** Ink-vs-ink deltas for review table (never mix ink with DOM). */
 const elementDeltas = dualRows.map((row) => ({
   element: row.element,
+  geometryOnly: row.geometryOnly,
   ref: row.paintedInk.ref,
   actual: row.paintedInk.actual,
   delta: row.paintedInk.delta,
   geometric: row.geometric,
   methods: {
-    refInk: row.paintedInk.ref?.method || "ref-ink-miss",
-    actInk: row.paintedInk.actual?.method || "act-ink-miss",
+    refInk: row.geometryOnly
+      ? "geometry-only"
+      : row.paintedInk.ref?.method || "ref-ink-miss",
+    actInk: row.geometryOnly
+      ? "geometry-only"
+      : row.paintedInk.actual?.method || "act-ink-miss",
     refGeo: row.geometric.ref?.method || "ref-geo-miss",
     actGeo: row.geometric.actual?.method || "act-geo-miss",
   },
@@ -792,9 +805,19 @@ for (const row of dualRows) {
 md.push("");
 md.push("## Painted-ink bounds (mask ink vs paint-isolation)");
 md.push("");
+md.push(
+  "Primitives marked `geometry-only` intentionally omit painted-ink deltas (JPEG ink is unreliable for those marks).",
+);
+md.push("");
 md.push("| Element | Ref ink | Actual ink | Delta | Methods |");
 md.push("|---|---|---|---|---|");
 for (const row of elementDeltas) {
+  if (row.geometryOnly) {
+    md.push(
+      `| \`${row.element}\` | — | — | — | geometry-only (no painted-ink delta) |`,
+    );
+    continue;
+  }
   md.push(
     `| \`${row.element}\` | ${fmtBox(row.ref)} | ${fmtBox(row.actual)} | ${fmtDelta(row.delta)} | ref=${row.methods.refInk}; act=${row.methods.actInk} |`,
   );
@@ -852,8 +875,10 @@ md.push("");
 md.push("## Remaining visual discrepancies");
 md.push("");
 const material = dualRows.filter((row) => {
-  const d = row.paintedInk.delta || row.geometric.delta;
-  if (!d) return true;
+  const d = row.geometryOnly
+    ? row.geometric.delta
+    : row.paintedInk.delta || row.geometric.delta;
+  if (!d) return !row.geometryOnly;
   return (
     Math.abs(d.x) > 2 ||
     Math.abs(d.y) > 2 ||
@@ -862,6 +887,12 @@ const material = dualRows.filter((row) => {
   );
 });
 for (const row of material) {
+  if (row.geometryOnly) {
+    md.push(
+      `- \`${row.element}\` (geometry-only): geo ${fmtBox(row.geometric.ref)} → ${fmtBox(row.geometric.actual)} (${fmtDelta(row.geometric.delta)})`,
+    );
+    continue;
+  }
   md.push(
     `- \`${row.element}\`: ink ${fmtBox(row.paintedInk.ref)} → ${fmtBox(row.paintedInk.actual)} (${fmtDelta(row.paintedInk.delta)}); geo ${fmtBox(row.geometric.ref)} → ${fmtBox(row.geometric.actual)} (${fmtDelta(row.geometric.delta)})`,
   );

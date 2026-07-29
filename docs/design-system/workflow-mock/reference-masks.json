@@ -75,20 +75,24 @@
       "inkMode": "glow"
     },
     "stage-03-check-0": {
-      "geometric": { "type": "rect", "x": 600, "y": 208, "w": 16, "h": 16 },
-      "inkMode": "mutedRed"
+      "geometric": { "type": "rect", "x": 589, "y": 208, "w": 16, "h": 16 },
+      "geometryOnly": true,
+      "note": "JPEG check marks are too sparse for reliable mask-ink; compare geometric bounds only."
     },
     "stage-03-check-1": {
-      "geometric": { "type": "rect", "x": 600, "y": 228, "w": 16, "h": 16 },
-      "inkMode": "mutedRed"
+      "geometric": { "type": "rect", "x": 589, "y": 228, "w": 16, "h": 16 },
+      "geometryOnly": true,
+      "note": "JPEG check marks are too sparse for reliable mask-ink; compare geometric bounds only."
     },
     "stage-03-check-2": {
-      "geometric": { "type": "rect", "x": 600, "y": 248, "w": 16, "h": 16 },
-      "inkMode": "mutedRed"
+      "geometric": { "type": "rect", "x": 589, "y": 248, "w": 16, "h": 16 },
+      "geometryOnly": true,
+      "note": "JPEG check marks are too sparse for reliable mask-ink; compare geometric bounds only."
     },
     "stage-02-active-dot": {
       "geometric": { "type": "disk", "cx": 331, "cy": 212, "r": 3.5 },
-      "inkMode": "connector"
+      "geometryOnly": true,
+      "note": "Active-dot ink is sub-pixel on the JPEG; compare geometric bounds only."
     },
     "stage-01-pill-icon": {
       "geometric": { "type": "rect", "x": 104, "y": 364, "w": 14, "h": 14 },

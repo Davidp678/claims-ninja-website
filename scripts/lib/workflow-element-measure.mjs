@@ -266,14 +266,24 @@ export function writeMaskAudit(png, name, geo, mode, outDir) {
 export function measureAllReferenceMasks(png, maskDoc, auditDir) {
   const geometric = {};
   const ink = {};
+  const geometryOnly = {};
   for (const [name, spec] of Object.entries(maskDoc.primitives)) {
     geometric[name] = geometricBox(spec.geometric);
+    geometryOnly[name] = Boolean(spec.geometryOnly);
+    if (spec.geometryOnly) {
+      ink[name] = null;
+      if (auditDir) {
+        // Audit shows geometric mask only (no inkMode extraction).
+        writeMaskAudit(png, name, spec.geometric, "edge", auditDir);
+      }
+      continue;
+    }
     ink[name] = measureMaskInk(png, spec.geometric, spec.inkMode);
     if (auditDir) {
       writeMaskAudit(png, name, spec.geometric, spec.inkMode, auditDir);
     }
   }
-  return { geometric, ink };
+  return { geometric, ink, geometryOnly };
 }
 
 export async function measureDomBounds(page) {
@@ -527,10 +537,30 @@ export function validateIsolation({
   domBounds,
   refInk,
   refGeometric,
+  geometryOnly = {},
+  maskDoc = null,
 }) {
   const failures = [];
 
+  // Expected reference painted primitives cannot silently miss ink.
+  if (maskDoc?.primitives) {
+    for (const [name, spec] of Object.entries(maskDoc.primitives)) {
+      if (spec.geometryOnly) continue;
+      if (!spec.inkMode) continue;
+      if (!refInk[name]) {
+        failures.push({
+          name,
+          rule: "ref-ink-miss",
+          detail:
+            "expected reference painted-ink returned null; fix inkMode or mark geometryOnly",
+        });
+      }
+    }
+  }
+
   for (const name of REQUIRED_PAINT) {
+    // Geometry-only primitives still require actual paint isolation for implementation QA.
+    void geometryOnly;
     const paint = paintBounds[name];
     if (!paint) {
       failures.push({ name, rule: "paint-null", detail: "expected visible paint-isolation returned null" });
