@@ -1,0 +1,149 @@
+{
+  "site": "http://localhost:3017",
+  "viewport": {
+    "width": 1024,
+    "height": 467
+  },
+  "mismatchedPixels": 32187,
+  "totalPixels": 478208,
+  "mismatchRatio": 0.06730753145074947,
+  "regions": [
+    {
+      "name": "heading",
+      "region": {
+        "name": "heading",
+        "x": 120,
+        "y": 30,
+        "w": 780,
+        "h": 120
+      },
+      "mismatched": 11412,
+      "total": 93600,
+      "ratio": 0.12192307692307693
+    },
+    {
+      "name": "stage-01",
+      "region": {
+        "name": "stage-01",
+        "x": 85,
+        "y": 170,
+        "w": 157,
+        "h": 229
+      },
+      "mismatched": 3915,
+      "total": 35953,
+      "ratio": 0.10889216477067282
+    },
+    {
+      "name": "stage-02",
+      "region": {
+        "name": "stage-02",
+        "x": 282,
+        "y": 170,
+        "w": 220,
+        "h": 229
+      },
+      "mismatched": 5853,
+      "total": 50380,
+      "ratio": 0.11617705438666137
+    },
+    {
+      "name": "stage-03",
+      "region": {
+        "name": "stage-03",
+        "x": 536,
+        "y": 170,
+        "w": 210,
+        "h": 229
+      },
+      "mismatched": 6241,
+      "total": 48090,
+      "ratio": 0.1297775005198586
+    },
+    {
+      "name": "stage-04",
+      "region": {
+        "name": "stage-04",
+        "x": 779,
+        "y": 170,
+        "w": 142,
+        "h": 229
+      },
+      "mismatched": 4225,
+      "total": 32518,
+      "ratio": 0.12992803985484963
+    },
+    {
+      "name": "connector-01-02",
+      "region": {
+        "name": "connector-01-02",
+        "x": 242,
+        "y": 230,
+        "w": 40,
+        "h": 24
+      },
+      "mismatched": 136,
+      "total": 960,
+      "ratio": 0.14166666666666666
+    },
+    {
+      "name": "connector-02-03",
+      "region": {
+        "name": "connector-02-03",
+        "x": 502,
+        "y": 230,
+        "w": 34,
+        "h": 24
+      },
+      "mismatched": 121,
+      "total": 816,
+      "ratio": 0.1482843137254902
+    },
+    {
+      "name": "connector-03-04",
+      "region": {
+        "name": "connector-03-04",
+        "x": 746,
+        "y": 230,
+        "w": 33,
+        "h": 24
+      },
+      "mismatched": 121,
+      "total": 792,
+      "ratio": 0.1527777777777778
+    },
+    {
+      "name": "chat",
+      "region": {
+        "name": "chat",
+        "x": 970,
+        "y": 405,
+        "w": 50,
+        "h": 55
+      },
+      "mismatched": 163,
+      "total": 2750,
+      "ratio": 0.059272727272727276
+    },
+    {
+      "name": "bottom-line",
+      "region": {
+        "name": "bottom-line",
+        "x": 0,
+        "y": 460,
+        "w": 1024,
+        "h": 7
+      },
+      "mismatched": 0,
+      "total": 7168,
+      "ratio": 0
+    }
+  ],
+  "artifacts": {
+    "actual": "actual.png",
+    "reference": "reference-normalized.png",
+    "overlay": "overlay-50.png",
+    "diff": "diff-amplified.png",
+    "sideBySide": "side-by-side.png"
+  }
+}
