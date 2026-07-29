@@ -352,7 +352,102 @@ writePng(resolve(OUT, "side-by-side.png"), sideBySide(ref, actual));
 
 const regionResults = regions.map((r) => compareRegion(ref, actual, r, r.name));
 
-// Painted text bounds (heading + per-card title/desc/pill bands)
+function stageElementBounds(png, card) {
+  const { l, t, w } = card;
+  const isRed = (x, y) => {
+    const [r, g, b] = sampleRgb(png, x, y);
+    return r > 85 && r > g * 1.3 && r > b * 1.3;
+  };
+  const isWhite = (x, y) => {
+    const [r, g, b] = sampleRgb(png, x, y);
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b >= 170;
+  };
+  const isGray = (x, y) => {
+    const [r, g, b] = sampleRgb(png, x, y);
+    const L = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    return L > 70 && L < 160 && !(r > 85 && r > g * 1.3 && r > b * 1.3);
+  };
+  const box = (x0, y0, x1, y1, pred) => {
+    let minX = x1;
+    let minY = y1;
+    let maxX = x0;
+    let maxY = y0;
+    let count = 0;
+    for (let y = y0; y <= y1; y++) {
+      for (let x = x0; x <= x1; x++) {
+        if (!pred(x, y)) continue;
+        count += 1;
+        minX = Math.min(minX, x);
+        minY = Math.min(minY, y);
+        maxX = Math.max(maxX, x);
+        maxY = Math.max(maxY, y);
+      }
+    }
+    if (!count) return null;
+    return {
+      x: minX,
+      y: minY,
+      w: maxX - minX + 1,
+      h: maxY - minY + 1,
+      count,
+    };
+  };
+  return {
+    number: box(l, t, l + 40, t + 45, isRed),
+    icon: box(l + 4, t + 28, l + w - 4, t + 120, isRed),
+    title: box(l + 4, t + 100, l + w - 4, t + 150, isWhite),
+    body: box(l + 4, t + 128, l + w - 4, t + 185, isGray),
+    pillIcon: box(l + 4, t + 185, l + w - 4, t + 225, isRed),
+  };
+}
+
+function deltaRow(name, refB, actB) {
+  if (!refB && !actB) {
+    return { element: name, ref: null, actual: null, delta: null };
+  }
+  const z = { x: 0, y: 0, w: 0, h: 0 };
+  const r = refB || z;
+  const a = actB || z;
+  return {
+    element: name,
+    ref: refB,
+    actual: actB,
+    delta: {
+      x: (a.x ?? 0) - (r.x ?? 0),
+      y: (a.y ?? 0) - (r.y ?? 0),
+      w: (a.w ?? 0) - (r.w ?? 0),
+      h: (a.h ?? 0) - (r.h ?? 0),
+    },
+  };
+}
+
+function fmtBox(b) {
+  if (!b) return "-";
+  return `${b.x},${b.y} ${b.w}x${b.h}`;
+}
+
+function fmtDelta(d) {
+  if (!d) return "-";
+  const s = (n) => (n > 0 ? `+${n}` : `${n}`);
+  return `${s(d.x)},${s(d.y)} ${s(d.w)}x${s(d.h)}`;
+}
+
+// Headline dense-ink bounds (stricter white) + full detector for continuity
+const headingTitleDenseRef = paintedTextBounds(ref, {
+  x0: 180,
+  y0: 70,
+  x1: 850,
+  y1: 105,
+  minL: 180,
+});
+const headingTitleDenseAct = paintedTextBounds(actual, {
+  x0: 180,
+  y0: 70,
+  x1: 850,
+  y1: 105,
+  minL: 180,
+});
+
 const paintedBounds = {
   headingEyebrow: paintedTextBounds(ref, {
     x0: 300,
@@ -368,6 +463,7 @@ const paintedBounds = {
     y1: 115,
     minL: 160,
   }),
+  headingTitleDense: headingTitleDenseRef,
   headingSupport: paintedTextBounds(ref, {
     x0: 200,
     y0: 110,
@@ -389,6 +485,7 @@ const paintedBounds = {
     y1: 115,
     minL: 160,
   }),
+  actualHeadingTitleDense: headingTitleDenseAct,
   actualHeadingSupport: paintedTextBounds(actual, {
     x0: 200,
     y0: 110,
@@ -398,41 +495,179 @@ const paintedBounds = {
   }),
 };
 
+const cards = [
+  { name: "stage-01", l: 85, t: 170, w: 157 },
+  { name: "stage-02", l: 282, t: 170, w: 220 },
+  { name: "stage-03", l: 536, t: 170, w: 210 },
+  { name: "stage-04", l: 779, t: 170, w: 142 },
+];
+
+const elementDeltas = [
+  deltaRow(
+    "heading.eyebrow",
+    paintedBounds.headingEyebrow && {
+      x: paintedBounds.headingEyebrow.left,
+      y: paintedBounds.headingEyebrow.top,
+      w: paintedBounds.headingEyebrow.width,
+      h: paintedBounds.headingEyebrow.height,
+    },
+    paintedBounds.actualHeadingEyebrow && {
+      x: paintedBounds.actualHeadingEyebrow.left,
+      y: paintedBounds.actualHeadingEyebrow.top,
+      w: paintedBounds.actualHeadingEyebrow.width,
+      h: paintedBounds.actualHeadingEyebrow.height,
+    },
+  ),
+  deltaRow(
+    "heading.title",
+    paintedBounds.headingTitle && {
+      x: paintedBounds.headingTitle.left,
+      y: paintedBounds.headingTitle.top,
+      w: paintedBounds.headingTitle.width,
+      h: paintedBounds.headingTitle.height,
+    },
+    paintedBounds.actualHeadingTitle && {
+      x: paintedBounds.actualHeadingTitle.left,
+      y: paintedBounds.actualHeadingTitle.top,
+      w: paintedBounds.actualHeadingTitle.width,
+      h: paintedBounds.actualHeadingTitle.height,
+    },
+  ),
+  deltaRow(
+    "heading.titleDense",
+    headingTitleDenseRef && {
+      x: headingTitleDenseRef.left,
+      y: headingTitleDenseRef.top,
+      w: headingTitleDenseRef.width,
+      h: headingTitleDenseRef.height,
+    },
+    headingTitleDenseAct && {
+      x: headingTitleDenseAct.left,
+      y: headingTitleDenseAct.top,
+      w: headingTitleDenseAct.width,
+      h: headingTitleDenseAct.height,
+    },
+  ),
+  deltaRow(
+    "heading.support",
+    paintedBounds.headingSupport && {
+      x: paintedBounds.headingSupport.left,
+      y: paintedBounds.headingSupport.top,
+      w: paintedBounds.headingSupport.width,
+      h: paintedBounds.headingSupport.height,
+    },
+    paintedBounds.actualHeadingSupport && {
+      x: paintedBounds.actualHeadingSupport.left,
+      y: paintedBounds.actualHeadingSupport.top,
+      w: paintedBounds.actualHeadingSupport.width,
+      h: paintedBounds.actualHeadingSupport.height,
+    },
+  ),
+];
+
+for (const card of cards) {
+  const refE = stageElementBounds(ref, card);
+  const actE = stageElementBounds(actual, card);
+  for (const key of ["number", "icon", "title", "body", "pillIcon"]) {
+    elementDeltas.push(
+      deltaRow(`${card.name}.${key}`, refE[key], actE[key]),
+    );
+  }
+}
+
+// Body-text sample: find a gray ink pixel inside stage-01 description band
+function findBodySample(png) {
+  for (let y = 310; y <= 340; y++) {
+    for (let x = 105; x <= 200; x++) {
+      const [r, g, b] = sampleRgb(png, x, y);
+      const L = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      if (L > 80 && L < 140 && Math.abs(r - g) < 12 && Math.abs(g - b) < 12) {
+        return { xy: [x, y], rgb: [r, g, b] };
+      }
+    }
+  }
+  return { xy: [130, 325], rgb: sampleRgb(png, 130, 325) };
+}
+const bodyRef = findBodySample(ref);
+const bodyAct = findBodySample(actual);
+
 const colorSamples = {
-  pageBg: { ref: sampleRgb(ref, 20, 20), actual: sampleRgb(actual, 20, 20) },
+  pageBg: {
+    xy: [40, 40],
+    ref: sampleRgb(ref, 40, 40),
+    actual: sampleRgb(actual, 40, 40),
+  },
   card1Fill: {
-    ref: sampleRgb(ref, 160, 250),
-    actual: sampleRgb(actual, 160, 250),
+    // Below visual / above description — avoid icon glow contamination
+    xy: [155, 355],
+    ref: sampleRgb(ref, 155, 355),
+    actual: sampleRgb(actual, 155, 355),
   },
   card1Border: {
+    xy: [85, 280],
     ref: sampleRgb(ref, 85, 280),
     actual: sampleRgb(actual, 85, 280),
   },
   primaryRedNumber: {
+    xy: [108, 192],
     ref: sampleRgb(ref, 108, 192),
     actual: sampleRgb(actual, 108, 192),
   },
   mutedIconStroke: {
+    xy: [125, 240],
     ref: sampleRgb(ref, 125, 240),
     actual: sampleRgb(actual, 125, 240),
   },
-  title: {
-    ref: sampleRgb(ref, 130, 292),
-    actual: sampleRgb(actual, 130, 292),
-  },
+  title: (() => {
+    // Seek a bright title glyph inside stage-01 title band
+    for (const png of [ref, actual]) {
+      void png;
+    }
+    let refXY = [120, 290];
+    let actXY = [120, 290];
+    for (let y = 286; y <= 298; y++) {
+      for (let x = 105; x <= 200; x++) {
+        const [r, g, b] = sampleRgb(ref, x, y);
+        if (r > 200 && g > 200 && b > 200) {
+          refXY = [x, y];
+          break;
+        }
+      }
+    }
+    for (let y = 286; y <= 298; y++) {
+      for (let x = 105; x <= 200; x++) {
+        const [r, g, b] = sampleRgb(actual, x, y);
+        if (r > 200 && g > 200 && b > 200) {
+          actXY = [x, y];
+          break;
+        }
+      }
+    }
+    return {
+      xyRef: refXY,
+      xyActual: actXY,
+      ref: sampleRgb(ref, refXY[0], refXY[1]),
+      actual: sampleRgb(actual, actXY[0], actXY[1]),
+    };
+  })(),
   bodyText: {
-    ref: sampleRgb(ref, 130, 325),
-    actual: sampleRgb(actual, 130, 325),
+    xyRef: bodyRef.xy,
+    xyActual: bodyAct.xy,
+    ref: bodyRef.rgb,
+    actual: bodyAct.rgb,
   },
   pillBorder: {
+    xy: [100, 368],
     ref: sampleRgb(ref, 100, 368),
     actual: sampleRgb(actual, 100, 368),
   },
   connector: {
+    xy: [262, 239],
     ref: sampleRgb(ref, 262, 239),
     actual: sampleRgb(actual, 262, 239),
   },
   centerGlow: {
+    xy: [512, 250],
     ref: sampleRgb(ref, 512, 250),
     actual: sampleRgb(actual, 512, 250),
   },
@@ -453,6 +688,7 @@ const report = {
   totalPixels: W * H,
   mismatchRatio: mismatched / (W * H),
   paintedBounds,
+  elementDeltas,
   colorSamples,
   regions: regionResults,
   artifacts: {
@@ -463,13 +699,80 @@ const report = {
     sideBySide: "side-by-side.png",
     controlDiff: "control-actual-vs-actual-diff.png",
     crops: "crops/",
+    measurement: "MEASUREMENT.md",
   },
 };
 
 writeFileSync(resolve(OUT, "report.json"), JSON.stringify(report, null, 2));
+
+const md = [];
+md.push("# Workflow mock visual QA - measurement delta table");
+md.push("");
+md.push(`Canvas: **1024x467** | Generated from capture at \`${SITE}\``);
+md.push("");
+md.push("## Control");
+md.push("");
+md.push("| Check | Result |");
+md.push("|---|---|");
+md.push(`| actual vs actual mismatched | **${control.mismatched}** |`);
+md.push(`| amplified hot pixels | **${controlHot}** |`);
+md.push(`| overall mismatch | **${(mismatched / (W * H) * 100).toFixed(2)}%** (${mismatched} px) |`);
+md.push("");
+md.push("## Pixelmatch options");
+md.push("");
+md.push("```json");
+md.push(JSON.stringify(PM_OPTS, null, 2));
+md.push("```");
+md.push("");
+md.push("## Locked outer geometry (unchanged)");
+md.push("");
+md.push("| Stage | x | y | w | h |");
+md.push("|---|---:|---:|---:|---:|");
+md.push("| 01 | 85 | 170 | 157 | 229 |");
+md.push("| 02 | 282 | 170 | 220 | 229 |");
+md.push("| 03 | 536 | 170 | 210 | 229 |");
+md.push("| 04 | 779 | 170 | 142 | 229 |");
+md.push("");
+md.push("## Per-element painted bounds delta");
+md.push("");
+md.push("| Element | Reference x,y w x h | Actual x,y w x h | Delta x,y w x h |");
+md.push("|---|---|---|---|");
+for (const row of elementDeltas) {
+  md.push(
+    `| ${row.element} | ${fmtBox(row.ref)} | ${fmtBox(row.actual)} | ${fmtDelta(row.delta)} |`,
+  );
+}
+md.push("");
+md.push("## Color samples (RGB)");
+md.push("");
+md.push("| Sample | XY | Reference | Actual |");
+md.push("|---|---|---|---|");
+for (const [name, s] of Object.entries(colorSamples)) {
+  const xy = s.xy
+    ? `${s.xy[0]},${s.xy[1]}`
+    : `ref ${s.xyRef?.join(",")} / act ${s.xyActual?.join(",")}`;
+  md.push(
+    `| ${name} | ${xy} | ${s.ref.join(",")} | ${s.actual.join(",")} |`,
+  );
+}
+md.push("");
+md.push("## Region mismatch ratios");
+md.push("");
+md.push("| Region | Mismatched | Total | Ratio |");
+md.push("|---|---:|---:|---:|");
+for (const r of regionResults) {
+  md.push(
+    `| ${r.name} | ${r.mismatched} | ${r.total} | ${(r.ratio * 100).toFixed(2)}% |`,
+  );
+}
+md.push("");
+md.push("## Crops");
+md.push("");
+md.push("Nearest-neighbor 4× ref/actual/diff under `crops/`.");
+writeFileSync(resolve(OUT, "MEASUREMENT.md"), md.join("\n"));
+
 console.log(JSON.stringify(report, null, 2));
 
 await browser.close();
 
-// Informational exit — visual approval still required
 process.exit(mismatched / (W * H) > 0.45 ? 2 : 0);

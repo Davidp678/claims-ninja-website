@@ -14,7 +14,7 @@ import {
  *   Stage 04: 779,170 142×229
  * Gaps 40/34/33 · connector Y 239 · chat 38×38 @ r9/b17
  *
- * Interior positions are painted-ink measurements from the normalized mock.
+ * Surface RGB sampled from normalized reference.
  */
 const REF = {
   width: 1024,
@@ -26,28 +26,31 @@ const REF = {
   gaps: [40, 34, 33] as const,
   connectorY: 239,
   bottomLineY: 465,
-  pageBg: "#111111",
-  cardBg: "#171717",
-  cardBorder: "rgba(255,255,255,0.11)",
-  mutedRed: "#7a403b",
-  connector: "#984746",
-  bodyText: "#636363",
+  pageBg: "#111111", // 17,17,17
+  cardBg: "#171717", // 23,23,23
+  cardBorder: "#222222", // 34,34,34
+  title: "#f1f1f1", // 241,241,241
+  bodyText: "#686868", // sampled body ink ~104
   supportText: "#5a5a5a",
+  pillBorder: "#2c2c2c", // target painted border ~28 after AA
+  mutedRed: "#773f3b",
+  connector: "#984746", // 152,71,70
+  numberRed: "#77403b",
 };
 
-/** Per-card interior layout relative to card top-left (painted bounds). */
+/** Interior layout relative to card top-left (painted ink). */
 const CARD_INK = {
-  number: { left: 16, top: 15, size: 26 },
-  visual: { left: 14, top: 38, height: 80 },
-  title: { left: 16, top: 114, size: 15.5 },
-  desc: { left: 16, top: 136, size: 12, lineHeight: 1.4 },
-  pill: { left: 14, top: 186, height: 30 },
+  number: { left: 16, top: 16, size: 22 },
+  visual: { left: 14, top: 40, height: 72 },
+  title: { left: 16, top: 114, size: 17 },
+  desc: { left: 16, top: 136, size: 12.5, lineHeight: 1.42 },
+  pill: { left: 12, top: 186, height: 30 },
 } as const;
 
 function StrokeIcon({
   className,
   children,
-  strokeWidth = 1.35,
+  strokeWidth = 1.3,
   color,
 }: {
   className?: string;
@@ -73,7 +76,7 @@ function StrokeIcon({
 
 function LockBadgeIcon({ className }: { className?: string }) {
   return (
-    <StrokeIcon className={className} strokeWidth={1.6} color={REF.mutedRed}>
+    <StrokeIcon className={className} strokeWidth={1.55} color={REF.mutedRed}>
       <rect x="5" y="11" width="14" height="10" rx="2" />
       <path d="M8 11V8a4 4 0 0 1 8 0v3" />
     </StrokeIcon>
@@ -82,7 +85,7 @@ function LockBadgeIcon({ className }: { className?: string }) {
 
 function DatabaseBadgeIcon({ className }: { className?: string }) {
   return (
-    <StrokeIcon className={className} strokeWidth={1.6} color={REF.mutedRed}>
+    <StrokeIcon className={className} strokeWidth={1.55} color={REF.mutedRed}>
       <ellipse cx="12" cy="6" rx="7" ry="2.5" />
       <path d="M5 6v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6" />
       <path d="M5 10v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4" />
@@ -93,7 +96,7 @@ function DatabaseBadgeIcon({ className }: { className?: string }) {
 
 function PulseBadgeIcon({ className }: { className?: string }) {
   return (
-    <StrokeIcon className={className} strokeWidth={1.6} color={REF.mutedRed}>
+    <StrokeIcon className={className} strokeWidth={1.55} color={REF.mutedRed}>
       <path d="M3 12h4l2-5 4 10 2-5h6" />
     </StrokeIcon>
   );
@@ -101,7 +104,7 @@ function PulseBadgeIcon({ className }: { className?: string }) {
 
 function EyeBadgeIcon({ className }: { className?: string }) {
   return (
-    <StrokeIcon className={className} strokeWidth={1.6} color={REF.mutedRed}>
+    <StrokeIcon className={className} strokeWidth={1.55} color={REF.mutedRed}>
       <path d="M2.5 12S6 6.5 12 6.5 21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12Z" />
       <circle cx="12" cy="12" r="2.5" />
     </StrokeIcon>
@@ -111,7 +114,7 @@ function EyeBadgeIcon({ className }: { className?: string }) {
 function PrimaryIconFrame({
   children,
   className = "",
-  size = 56,
+  size = 58,
 }: {
   children: ReactNode;
   className?: string;
@@ -120,11 +123,14 @@ function PrimaryIconFrame({
   return (
     <div
       data-process-icon-frame
-      className={`relative z-10 flex shrink-0 items-center justify-center rounded-[10px] border border-white/20 bg-[#121212] shadow-[0_0_18px_-6px_rgba(140,40,40,0.55)] ${className}`}
+      className={`relative z-10 flex shrink-0 items-center justify-center rounded-[11px] ${className}`}
       style={{
         width: size,
         height: size,
         color: REF.mutedRed,
+        background: "#121212",
+        border: "1px solid rgba(255,255,255,0.14)",
+        boxShadow: "0 0 20px -4px rgba(56,25,22,0.75)",
       }}
     >
       {children}
@@ -137,15 +143,19 @@ function UploadDocVisual() {
     <div aria-hidden className="relative h-full w-full">
       <div
         aria-hidden
-        className="pointer-events-none absolute left-[-4px] top-[8px] h-[52px] w-[52px] rounded-full bg-[radial-gradient(circle,rgba(140,40,40,0.35),transparent_70%)] blur-[6px]"
+        className="pointer-events-none absolute left-[-6px] top-[6px] h-[58px] w-[58px] rounded-full blur-[7px]"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(56,25,22,0.55), transparent 70%)",
+        }}
       />
-      <div className="absolute left-0 top-[4px]">
-        <PrimaryIconFrame size={56}>
-          <StrokeIcon className="h-8 w-8" strokeWidth={1.25}>
-            <path d="M14.2 2.6H7.8A2.4 2.4 0 0 0 5.4 5v14.2A2.4 2.4 0 0 0 7.8 21.6h8.4A2.4 2.4 0 0 0 18.6 19.2V7.2L14.2 2.6Z" />
-            <path d="M14.2 2.6V7.6h4.2" />
-            <path d="M12 11.2v6.4" />
-            <path d="m9.2 13.8 2.8-2.8 2.8 2.8" />
+      <div className="absolute left-0 top-[2px]">
+        <PrimaryIconFrame size={52}>
+          <StrokeIcon className="h-[30px] w-[30px]" strokeWidth={1.2}>
+            <path d="M14.4 2.4H7.6A2.5 2.5 0 0 0 5.1 4.9v14.4A2.5 2.5 0 0 0 7.6 21.8h8.8a2.5 2.5 0 0 0 2.5-2.5V7.2L14.4 2.4Z" />
+            <path d="M14.4 2.4V7.8h4.5" />
+            <path d="M12 11v6.8" />
+            <path d="m9 13.8 3-3 3 3" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -158,39 +168,75 @@ function WorkspaceVisual() {
     <div aria-hidden className="relative h-full w-full overflow-visible">
       <div
         aria-hidden
-        className="pointer-events-none absolute left-[40px] top-[4px] h-[64px] w-[140px] rounded-[12px] bg-[radial-gradient(ellipse_at_center,rgba(130,35,35,0.32),transparent_72%)] blur-[8px]"
+        className="pointer-events-none absolute left-[28px] top-0 h-[72px] w-[160px] rounded-[14px] blur-[9px]"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(56,25,22,0.5), transparent 72%)",
+        }}
       />
-      {/* Dense rear application panel */}
-      <div className="absolute left-[30px] top-0 h-[70px] w-[min(168px,calc(100%-22px))] overflow-hidden rounded-[9px] border border-white/18 bg-[#0d0d0d] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+      <div
+        className="absolute left-[28px] top-0 h-[74px] overflow-hidden rounded-[10px]"
+        style={{
+          width: "min(172px, calc(100% - 18px))",
+          background: "#0d0d0d",
+          border: "1px solid rgba(255,255,255,0.15)",
+          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
+        }}
+      >
         <div className="flex h-full">
-          <div className="relative w-[20px] shrink-0 border-r border-white/16 bg-[#080808]">
-            <span className="absolute left-1/2 top-[7px] h-[5px] w-[5px] -translate-x-1/2 rounded-full bg-[#c44a42] shadow-[0_0_5px_rgba(196,74,66,0.75)]" />
-            {[17, 25, 33, 41, 49].map((top) => (
+          <div
+            className="relative w-[22px] shrink-0"
+            style={{
+              background: "#080808",
+              borderRight: "1px solid rgba(255,255,255,0.14)",
+            }}
+          >
+            <span
+              className="absolute left-1/2 top-[8px] h-[6px] w-[6px] -translate-x-1/2 rounded-full"
+              style={{
+                background: "#c44a42",
+                boxShadow: "0 0 6px rgba(196,74,66,0.8)",
+              }}
+            />
+            {[19, 28, 37, 46, 55].map((top) => (
               <span
                 key={top}
-                className="absolute left-1/2 h-[2px] w-[8px] -translate-x-1/2 rounded-[1px] bg-white/20"
-                style={{ top }}
+                className="absolute left-1/2 h-[2.5px] w-[9px] -translate-x-1/2 rounded-[1px]"
+                style={{ top, background: "rgba(255,255,255,0.2)" }}
               />
             ))}
           </div>
           <div className="flex min-w-0 flex-1 flex-col px-[8px] py-[8px]">
-            <span className="mb-[6px] h-[8px] w-[72%] rounded-[3px] bg-white/18" />
-            <span className="mb-auto h-[8px] w-[90%] rounded-[3px] bg-white/12" />
+            <span
+              className="mb-[7px] h-[9px] w-[70%] rounded-[3px]"
+              style={{ background: "rgba(255,255,255,0.18)" }}
+            />
+            <span
+              className="mb-auto h-[9px] w-[92%] rounded-[3px]"
+              style={{ background: "rgba(255,255,255,0.12)" }}
+            />
             <div className="mt-[8px] grid grid-cols-3 gap-[5px]">
-              <span className="h-[17px] rounded-[4px] border border-white/10 bg-white/[0.07]" />
-              <span className="h-[17px] rounded-[4px] border border-white/10 bg-white/[0.07]" />
-              <span className="h-[17px] rounded-[4px] border border-white/10 bg-white/[0.07]" />
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  className="h-[18px] rounded-[4px]"
+                  style={{
+                    background: "rgba(255,255,255,0.07)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                  }}
+                />
+              ))}
             </div>
           </div>
         </div>
       </div>
       <div className="absolute left-0 top-[8px]">
-        <PrimaryIconFrame size={54}>
-          <StrokeIcon className="h-[26px] w-[26px]" strokeWidth={1.3}>
-            <rect x="3.2" y="3.2" width="7.4" height="7.4" rx="1.5" />
-            <rect x="13.4" y="3.2" width="7.4" height="7.4" rx="1.5" />
-            <rect x="3.2" y="13.4" width="7.4" height="7.4" rx="1.5" />
-            <rect x="13.4" y="13.4" width="7.4" height="7.4" rx="1.5" />
+        <PrimaryIconFrame size={50}>
+          <StrokeIcon className="h-[26px] w-[26px]" strokeWidth={1.25}>
+            <rect x="3" y="3" width="7.6" height="7.6" rx="1.5" />
+            <rect x="13.4" y="3" width="7.6" height="7.6" rx="1.5" />
+            <rect x="3" y="13.4" width="7.6" height="7.6" rx="1.5" />
+            <rect x="13.4" y="13.4" width="7.6" height="7.6" rx="1.5" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -203,54 +249,74 @@ function ManageVisual() {
     <div aria-hidden className="relative h-full w-full overflow-visible">
       <div
         aria-hidden
-        className="pointer-events-none absolute left-[36px] top-[2px] h-[66px] w-[140px] rounded-[12px] bg-[radial-gradient(ellipse_at_center,rgba(130,35,35,0.3),transparent_72%)] blur-[8px]"
+        className="pointer-events-none absolute left-[26px] top-0 h-[74px] w-[160px] rounded-[14px] blur-[9px]"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(56,25,22,0.48), transparent 72%)",
+        }}
       />
-      <div className="absolute left-[30px] top-0 h-[70px] w-[min(160px,calc(100%-22px))] overflow-hidden rounded-[9px] border border-white/18 bg-[#0d0d0d] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
-        <div className="flex h-full flex-col justify-center gap-[6px] px-[8px] py-[7px]">
-          {[0, 1, 2].map((i) => (
-            <div
-              key={i}
-              className="flex h-[16px] items-center gap-[6px] rounded-[3px] bg-black/35 px-[4px]"
+      {/* Three distinct checklist row pills — matches 4× ref crop */}
+      <div
+        className="absolute left-[28px] top-0 flex h-[74px] flex-col justify-center gap-[5px] overflow-hidden rounded-[10px] px-[7px] py-[6px]"
+        style={{
+          width: "min(168px, calc(100% - 18px))",
+          background: "#0d0d0d",
+          border: "1px solid rgba(255,255,255,0.15)",
+        }}
+      >
+        {[0, 1, 2].map((i) => (
+          <div
+            key={i}
+            className="flex h-[18px] items-center gap-[6px] rounded-[5px] px-[5px]"
+            style={{
+              background: "rgba(0,0,0,0.45)",
+              border: "1px solid rgba(255,255,255,0.1)",
+            }}
+          >
+            <span
+              className="flex h-[12px] w-[12px] shrink-0 items-center justify-center rounded-full"
+              style={{ border: `1.25px solid ${REF.mutedRed}`, color: REF.mutedRed }}
             >
-              <span
-                className="flex h-[13px] w-[13px] shrink-0 items-center justify-center rounded-full border"
-                style={{ borderColor: REF.mutedRed, color: REF.mutedRed }}
+              <svg
+                aria-hidden
+                viewBox="0 0 12 12"
+                className="h-[6px] w-[6px]"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <svg
-                  aria-hidden
-                  viewBox="0 0 12 12"
-                  className="h-[6px] w-[6px]"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="m2.3 6.1 2.3 2.3L9.7 3.6" />
-                </svg>
-              </span>
-              <span className="h-[4px] flex-1 rounded-[1px] bg-white/18" />
-              <span
-                className="h-[4px] rounded-[1px] bg-white/12"
-                style={{ width: i === 0 ? 22 : i === 1 ? 14 : 10 }}
-              />
-            </div>
-          ))}
-        </div>
-        <span className="absolute bottom-[6px] right-[6px] top-[6px] w-px bg-white/14" />
+                <path d="m2.3 6.1 2.3 2.3L9.7 3.6" />
+              </svg>
+            </span>
+            <span
+              className="h-[5px] flex-1 rounded-[2px]"
+              style={{ background: "rgba(255,255,255,0.16)" }}
+            />
+            <span
+              className="h-[5px] rounded-[2px]"
+              style={{
+                width: i === 0 ? 20 : i === 1 ? 14 : 10,
+                background: "rgba(255,255,255,0.1)",
+              }}
+            />
+          </div>
+        ))}
+        <span
+          className="absolute bottom-[6px] right-[5px] top-[6px] w-px"
+          style={{ background: "rgba(255,255,255,0.12)" }}
+        />
       </div>
       <div className="absolute left-0 top-[8px]">
-        <PrimaryIconFrame size={54}>
-          <StrokeIcon className="h-[26px] w-[26px]" strokeWidth={1.3}>
-            <circle cx="8.6" cy="8" r="2.7" />
-            <circle cx="15.6" cy="8.8" r="2.2" />
-            <path d="M3.8 18.2c.7-2.6 2.6-4.1 4.8-4.1s4.1 1.5 4.8 4.1" />
-            <path d="M14 14.6c1.6-.4 3.1.3 4 1.7" />
-            <path d="M15.8 4.2h4v2.4" />
-            <path d="m19.8 4.2-2.6 2.4" />
-            <circle cx="18.6" cy="5.8" r="0.7" fill="currentColor" stroke="none" />
-            <circle cx="17.2" cy="5.8" r="0.7" fill="currentColor" stroke="none" />
-            <circle cx="19.9" cy="5.8" r="0.7" fill="currentColor" stroke="none" />
+        <PrimaryIconFrame size={50}>
+          <StrokeIcon className="h-[26px] w-[26px]" strokeWidth={1.25}>
+            <circle cx="8.4" cy="8" r="2.8" />
+            <circle cx="15.5" cy="8.8" r="2.3" />
+            <path d="M3.6 18.4c.7-2.7 2.7-4.2 4.9-4.2s4.2 1.5 4.9 4.2" />
+            <path d="M13.8 14.7c1.7-.45 3.2.25 4.1 1.7" />
+            <rect x="15.2" y="3.6" width="5.2" height="3.6" rx="1.1" />
+            <path d="M16.4 5.4h2.8M16.4 6.4h1.8" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -263,14 +329,18 @@ function RecoverVisual() {
     <div aria-hidden className="relative h-full w-full">
       <div
         aria-hidden
-        className="pointer-events-none absolute left-[-2px] top-[8px] h-[52px] w-[52px] rounded-full bg-[radial-gradient(circle,rgba(140,40,40,0.35),transparent_70%)] blur-[6px]"
+        className="pointer-events-none absolute left-[-4px] top-[6px] h-[58px] w-[58px] rounded-full blur-[7px]"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(56,25,22,0.55), transparent 70%)",
+        }}
       />
-      <div className="absolute left-0 top-[4px]">
-        <PrimaryIconFrame size={56}>
-          <StrokeIcon className="h-8 w-8" strokeWidth={1.25}>
-            <circle cx="12" cy="12" r="8.4" />
-            <path d="m7.4 14.4 2.9-3.4 2.2 2.2L16.8 8.4" />
-            <path d="M14.4 8.4h2.5v2.5" />
+      <div className="absolute left-0 top-[2px]">
+        <PrimaryIconFrame size={52}>
+          <StrokeIcon className="h-[30px] w-[30px]" strokeWidth={1.2}>
+            <circle cx="12" cy="12" r="8.6" />
+            <path d="m7.2 14.6 3-3.5 2.3 2.3L17 8.2" />
+            <path d="M14.2 8.2h2.8v2.8" />
           </StrokeIcon>
         </PrimaryIconFrame>
       </div>
@@ -286,7 +356,7 @@ function StageVisual({ visual }: { visual: HomeProcessVisual }) {
 }
 
 function SupportBadgeIcon({ visual }: { visual: HomeProcessVisual }) {
-  const className = "h-[13px] w-[13px] shrink-0";
+  const className = "h-[14px] w-[14px] shrink-0";
   if (visual === "intake") return <LockBadgeIcon className={className} />;
   if (visual === "workspace") return <DatabaseBadgeIcon className={className} />;
   if (visual === "manage") return <PulseBadgeIcon className={className} />;
@@ -300,29 +370,28 @@ function ProcessStageCard({
   item: HomeProcessStep;
   referenceMode?: boolean;
 }) {
-  const titleSize =
-    item.width === "narrow" && item.step === "04"
-      ? 13.5
-      : CARD_INK.title.size;
+  const titleSize = item.step === "04" ? 14 : CARD_INK.title.size;
 
   return (
     <div
       data-process-card
       data-width={item.width}
-      className="group relative flex h-full min-h-0 flex-col overflow-hidden rounded-[11px] shadow-[0_10px_28px_-14px_rgba(0,0,0,0.9)]"
+      className="group relative flex h-full min-h-0 flex-col overflow-hidden rounded-[11px]"
       style={{
-        background: `linear-gradient(180deg, #1a1a1a 0%, ${REF.cardBg} 55%, #141414 100%)`,
+        background: REF.cardBg,
         border: `1px solid ${REF.cardBorder}`,
+        boxShadow: "0 12px 28px -16px rgba(0,0,0,0.92)",
       }}
     >
       <span
         data-process-step
-        className="absolute font-display font-semibold leading-none tracking-tight"
+        className="absolute font-display leading-none tracking-tight"
         style={{
           left: CARD_INK.number.left,
           top: CARD_INK.number.top,
           fontSize: CARD_INK.number.size,
-          color: REF.mutedRed,
+          fontWeight: 600,
+          color: REF.numberRed,
         }}
       >
         {item.step}
@@ -333,7 +402,7 @@ function ProcessStageCard({
         className="absolute"
         style={{
           left: CARD_INK.visual.left,
-          right: 10,
+          right: 8,
           top: CARD_INK.visual.top,
           height: CARD_INK.visual.height,
         }}
@@ -343,13 +412,15 @@ function ProcessStageCard({
 
       <h3
         data-process-title
-        className="absolute font-display font-semibold tracking-[-0.01em] text-white"
+        className="absolute font-display tracking-[-0.01em]"
         style={{
           left: CARD_INK.title.left,
-          right: 10,
+          right: 8,
           top: CARD_INK.title.top,
           fontSize: titleSize,
-          lineHeight: 1.15,
+          fontWeight: 600,
+          lineHeight: 1.18,
+          color: REF.title,
           whiteSpace: item.step === "04" ? "nowrap" : undefined,
         }}
       >
@@ -361,7 +432,7 @@ function ProcessStageCard({
         className="absolute"
         style={{
           left: CARD_INK.desc.left,
-          right: 10,
+          right: 8,
           top: CARD_INK.desc.top,
           fontSize: CARD_INK.desc.size,
           lineHeight: CARD_INK.desc.lineHeight,
@@ -377,22 +448,23 @@ function ProcessStageCard({
 
       <div
         data-process-pill
-        className="absolute inline-flex items-center gap-[7px] border bg-black/55"
+        className="absolute inline-flex items-center gap-[7px]"
         style={{
           left: CARD_INK.pill.left,
           top: CARD_INK.pill.top,
           height: CARD_INK.pill.height,
           borderRadius: 7,
-          borderColor: "rgba(255,255,255,0.18)",
-          paddingLeft: 9,
-          paddingRight: 10,
-          maxWidth: "calc(100% - 1.4rem)",
+          border: `1px solid ${REF.pillBorder}`,
+          background: "rgba(0,0,0,0.55)",
+          paddingLeft: 10,
+          paddingRight: 11,
+          maxWidth: "calc(100% - 1.35rem)",
         }}
       >
         <SupportBadgeIcon visual={item.visual} />
         <span
-          className="truncate font-medium leading-none text-[#d4d4d4]"
-          style={{ fontSize: 11.5 }}
+          className="truncate font-medium leading-none"
+          style={{ fontSize: 12, color: "#cfcfcf" }}
         >
           {item.supportLabel}
         </span>
@@ -406,34 +478,32 @@ function ConnectorSegment() {
     <span
       aria-hidden
       data-process-connector
-      className="relative block h-[14px] w-full"
+      className="relative block h-[16px] w-full"
     >
       <span
         data-process-rail-segment
-        className="absolute inset-x-0 top-1/2 h-[1.5px] -translate-y-1/2"
+        className="absolute inset-x-0 top-1/2 -translate-y-1/2"
         style={{
-          background: `linear-gradient(90deg, transparent, ${REF.connector} 12%, ${REF.connector} 88%, transparent)`,
-          boxShadow: "0 0 6px rgba(152,71,70,0.55)",
+          height: 2,
+          background: REF.connector,
+          opacity: 0.92,
+          boxShadow: "0 0 5px rgba(56,25,22,0.7)",
         }}
       />
       <span
         data-process-node
         className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full"
         style={{
-          width: 12,
-          height: 12,
+          width: 11,
+          height: 11,
           border: `1.5px solid ${REF.connector}`,
-          background: "#111",
-          boxShadow: "0 0 8px rgba(152,71,70,0.45)",
+          background: "#111111",
+          boxShadow: "0 0 7px rgba(56,25,22,0.65)",
         }}
       >
         <span
           className="rounded-full"
-          style={{
-            width: 4,
-            height: 4,
-            background: REF.connector,
-          }}
+          style={{ width: 3.5, height: 3.5, background: REF.connector }}
         />
       </span>
     </span>
@@ -526,7 +596,6 @@ export function ProcessSection({
   referenceMode = false,
 }: {
   locale?: Locale;
-  /** Lock copy wrapping + canvas proportions to the 1024×467 mock. */
   referenceMode?: boolean;
 }) {
   const content = getHomeContent(locale).process;
@@ -545,9 +614,10 @@ export function ProcessSection({
       }}
     >
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_62%_at_50%_62%,rgba(120,32,28,0.34),transparent_64%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_48%_at_50%_20%,rgba(100,45,25,0.16),transparent_58%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_95%_at_50%_50%,transparent_42%,rgba(0,0,0,0.62)_100%)]" />
+        {/* Center glow target ~56,25,22 at 512,250 */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_64%_at_50%_58%,rgba(72,32,28,1),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_48%_at_50%_20%,rgba(56,25,22,0.55),transparent_56%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_130%_110%_at_50%_50%,transparent_58%,rgba(0,0,0,0.22)_100%)]" />
       </div>
 
       <div
@@ -571,25 +641,28 @@ export function ProcessSection({
             }`}
             style={{
               top: referenceMode ? 49 : undefined,
-              fontSize: referenceMode ? 10 : 11,
-              letterSpacing: referenceMode ? "0.185em" : "0.22em",
+              fontSize: referenceMode ? 9.5 : 11,
+              letterSpacing: referenceMode ? "0.135em" : "0.2em",
+              fontWeight: 700,
               color: "#711929",
             }}
           >
             {content.eyebrow}
           </p>
           <h2
-            className={`font-display font-semibold text-white ${
+            className={`font-display ${
               referenceMode
                 ? "absolute inset-x-0"
                 : "mt-4 text-[28px] sm:text-[32px] xl:text-[34px]"
             }`}
             style={{
-              top: referenceMode ? 68 : undefined,
-              fontSize: referenceMode ? 31 : undefined,
-              lineHeight: 1.18,
-              letterSpacing: "-0.01em",
+              // Dense ink target ~463×29 starting at y=74
+              top: referenceMode ? 71 : undefined,
+              fontSize: referenceMode ? 30.5 : undefined,
+              lineHeight: referenceMode ? "32px" : 1.15,
+              letterSpacing: "0em",
               fontWeight: 600,
+              color: REF.title,
             }}
           >
             {content.title}
@@ -599,9 +672,9 @@ export function ProcessSection({
               referenceMode ? "absolute inset-x-0" : "mt-3"
             }`}
             style={{
-              top: referenceMode ? 114 : undefined,
+              top: referenceMode ? 112 : undefined,
               maxWidth: referenceMode ? 500 : 460,
-              fontSize: referenceMode ? 12.5 : 13.5,
+              fontSize: referenceMode ? 12.75 : 13.5,
               lineHeight: 1.3,
               color: REF.supportText,
               whiteSpace: referenceMode ? "nowrap" : undefined,
@@ -660,8 +733,11 @@ export function ProcessSection({
       <div
         aria-hidden
         data-process-bottom-line
-        className="pointer-events-none absolute inset-x-0 h-px bg-white/14"
-        style={{ bottom: referenceMode ? REF.height - REF.bottomLineY : 0 }}
+        className="pointer-events-none absolute inset-x-0 h-px"
+        style={{
+          bottom: referenceMode ? REF.height - REF.bottomLineY : 0,
+          background: "rgba(255,255,255,0.12)",
+        }}
       />
     </section>
   );

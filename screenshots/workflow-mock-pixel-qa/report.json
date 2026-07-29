@@ -27,9 +27,9 @@
     "mismatchRatio": 0,
     "passed": true
   },
-  "mismatchedPixels": 33760,
+  "mismatchedPixels": 32728,
   "totalPixels": 478208,
-  "mismatchRatio": 0.07059689507494647,
+  "mismatchRatio": 0.06843883832976445,
   "paintedBounds": {
     "headingEyebrow": {
       "left": 425,
@@ -49,6 +49,15 @@
       "height": 42,
       "count": 4173
     },
+    "headingTitleDense": {
+      "left": 285,
+      "top": 74,
+      "right": 747,
+      "bottom": 102,
+      "width": 463,
+      "height": 29,
+      "count": 3997
+    },
     "headingSupport": {
       "left": 292,
       "top": 115,
@@ -59,152 +68,755 @@
       "count": 1646
     },
     "actualHeadingEyebrow": {
-      "left": 415,
-      "top": 50,
-      "right": 607,
-      "bottom": 56,
-      "width": 193,
+      "left": 426,
+      "top": 49,
+      "right": 598,
+      "bottom": 55,
+      "width": 173,
       "height": 7,
-      "count": 268
+      "count": 269
     },
     "actualHeadingTitle": {
       "left": 278,
-      "top": 74,
+      "top": 75,
       "right": 746,
       "bottom": 103,
       "width": 469,
-      "height": 30,
-      "count": 4568
+      "height": 29,
+      "count": 4342
+    },
+    "actualHeadingTitleDense": {
+      "left": 278,
+      "top": 75,
+      "right": 746,
+      "bottom": 103,
+      "width": 469,
+      "height": 29,
+      "count": 4172
     },
     "actualHeadingSupport": {
-      "left": 289,
-      "top": 117,
-      "right": 735,
-      "bottom": 128,
-      "width": 447,
+      "left": 284,
+      "top": 115,
+      "right": 739,
+      "bottom": 126,
+      "width": 456,
       "height": 12,
-      "count": 659
+      "count": 687
     }
   },
+  "elementDeltas": [
+    {
+      "element": "heading.eyebrow",
+      "ref": {
+        "x": 425,
+        "y": 49,
+        "w": 175,
+        "h": 7
+      },
+      "actual": {
+        "x": 426,
+        "y": 49,
+        "w": 173,
+        "h": 7
+      },
+      "delta": {
+        "x": 1,
+        "y": 0,
+        "w": -2,
+        "h": 0
+      }
+    },
+    {
+      "element": "heading.title",
+      "ref": {
+        "x": 285,
+        "y": 74,
+        "w": 463,
+        "h": 42
+      },
+      "actual": {
+        "x": 278,
+        "y": 75,
+        "w": 469,
+        "h": 29
+      },
+      "delta": {
+        "x": -7,
+        "y": 1,
+        "w": 6,
+        "h": -13
+      }
+    },
+    {
+      "element": "heading.titleDense",
+      "ref": {
+        "x": 285,
+        "y": 74,
+        "w": 463,
+        "h": 29
+      },
+      "actual": {
+        "x": 278,
+        "y": 75,
+        "w": 469,
+        "h": 29
+      },
+      "delta": {
+        "x": -7,
+        "y": 1,
+        "w": 6,
+        "h": 0
+      }
+    },
+    {
+      "element": "heading.support",
+      "ref": {
+        "x": 292,
+        "y": 115,
+        "w": 450,
+        "h": 12
+      },
+      "actual": {
+        "x": 284,
+        "y": 115,
+        "w": 456,
+        "h": 12
+      },
+      "delta": {
+        "x": -8,
+        "y": 0,
+        "w": 6,
+        "h": 0
+      }
+    },
+    {
+      "element": "stage-01.number",
+      "ref": {
+        "x": 101,
+        "y": 189,
+        "w": 13,
+        "h": 11,
+        "count": 79
+      },
+      "actual": {
+        "x": 103,
+        "y": 190,
+        "w": 20,
+        "h": 16,
+        "count": 152
+      },
+      "delta": {
+        "x": 2,
+        "y": 1,
+        "w": 7,
+        "h": 5
+      }
+    },
+    {
+      "element": "stage-01.icon",
+      "ref": {
+        "x": 102,
+        "y": 198,
+        "w": 135,
+        "h": 55,
+        "count": 215
+      },
+      "actual": {
+        "x": 103,
+        "y": 198,
+        "w": 67,
+        "h": 93,
+        "count": 214
+      },
+      "delta": {
+        "x": 1,
+        "y": 0,
+        "w": -68,
+        "h": 38
+      }
+    },
+    {
+      "element": "stage-01.title",
+      "ref": {
+        "x": 101,
+        "y": 285,
+        "w": 111,
+        "h": 36,
+        "count": 389
+      },
+      "actual": {
+        "x": 103,
+        "y": 289,
+        "w": 89,
+        "h": 32,
+        "count": 622
+      },
+      "delta": {
+        "x": 2,
+        "y": 4,
+        "w": -22,
+        "h": -4
+      }
+    },
+    {
+      "element": "stage-01.body",
+      "ref": {
+        "x": 101,
+        "y": 305,
+        "w": 112,
+        "h": 37,
+        "count": 554
+      },
+      "actual": {
+        "x": 102,
+        "y": 298,
+        "w": 127,
+        "h": 58,
+        "count": 621
+      },
+      "delta": {
+        "x": 1,
+        "y": -7,
+        "w": 15,
+        "h": 21
+      }
+    },
+    {
+      "element": "stage-01.pillIcon",
+      "ref": {
+        "x": 107,
+        "y": 366,
+        "w": 9,
+        "h": 10,
+        "count": 43
+      },
+      "actual": {
+        "x": 104,
+        "y": 367,
+        "w": 103,
+        "h": 23,
+        "count": 92
+      },
+      "delta": {
+        "x": -3,
+        "y": 1,
+        "w": 94,
+        "h": 13
+      }
+    },
+    {
+      "element": "stage-02.number",
+      "ref": {
+        "x": 298,
+        "y": 189,
+        "w": 17,
+        "h": 11,
+        "count": 103
+      },
+      "actual": {
+        "x": 300,
+        "y": 190,
+        "w": 23,
+        "h": 16,
+        "count": 174
+      },
+      "delta": {
+        "x": 2,
+        "y": 1,
+        "w": 6,
+        "h": 5
+      }
+    },
+    {
+      "element": "stage-02.icon",
+      "ref": {
+        "x": 300,
+        "y": 198,
+        "w": 198,
+        "h": 55,
+        "count": 347
+      },
+      "actual": {
+        "x": 300,
+        "y": 198,
+        "w": 117,
+        "h": 93,
+        "count": 227
+      },
+      "delta": {
+        "x": 0,
+        "y": 0,
+        "w": -81,
+        "h": 38
+      }
+    },
+    {
+      "element": "stage-02.title",
+      "ref": {
+        "x": 299,
+        "y": 285,
+        "w": 119,
+        "h": 36,
+        "count": 457
+      },
+      "actual": {
+        "x": 300,
+        "y": 289,
+        "w": 165,
+        "h": 15,
+        "count": 831
+      },
+      "delta": {
+        "x": 1,
+        "y": 4,
+        "w": 46,
+        "h": -21
+      }
+    },
+    {
+      "element": "stage-02.body",
+      "ref": {
+        "x": 298,
+        "y": 305,
+        "w": 121,
+        "h": 39,
+        "count": 598
+      },
+      "actual": {
+        "x": 300,
+        "y": 298,
+        "w": 164,
+        "h": 58,
+        "count": 885
+      },
+      "delta": {
+        "x": 2,
+        "y": -7,
+        "w": 43,
+        "h": 19
+      }
+    },
+    {
+      "element": "stage-02.pillIcon",
+      "ref": {
+        "x": 304,
+        "y": 366,
+        "w": 10,
+        "h": 10,
+        "count": 69
+      },
+      "actual": {
+        "x": 308,
+        "y": 355,
+        "w": 130,
+        "h": 22,
+        "count": 100
+      },
+      "delta": {
+        "x": 4,
+        "y": -11,
+        "w": 120,
+        "h": 12
+      }
+    },
+    {
+      "element": "stage-03.number",
+      "ref": {
+        "x": 551,
+        "y": 188,
+        "w": 17,
+        "h": 12,
+        "count": 102
+      },
+      "actual": {
+        "x": 554,
+        "y": 190,
+        "w": 23,
+        "h": 16,
+        "count": 167
+      },
+      "delta": {
+        "x": 3,
+        "y": 2,
+        "w": 6,
+        "h": 4
+      }
+    },
+    {
+      "element": "stage-03.icon",
+      "ref": {
+        "x": 552,
+        "y": 198,
+        "w": 191,
+        "h": 62,
+        "count": 322
+      },
+      "actual": {
+        "x": 554,
+        "y": 198,
+        "w": 132,
+        "h": 93,
+        "count": 193
+      },
+      "delta": {
+        "x": 2,
+        "y": 0,
+        "w": -59,
+        "h": 31
+      }
+    },
+    {
+      "element": "stage-03.title",
+      "ref": {
+        "x": 551,
+        "y": 285,
+        "w": 121,
+        "h": 36,
+        "count": 468
+      },
+      "actual": {
+        "x": 554,
+        "y": 289,
+        "w": 163,
+        "h": 16,
+        "count": 864
+      },
+      "delta": {
+        "x": 3,
+        "y": 4,
+        "w": 42,
+        "h": -20
+      }
+    },
+    {
+      "element": "stage-03.body",
+      "ref": {
+        "x": 551,
+        "y": 305,
+        "w": 124,
+        "h": 39,
+        "count": 668
+      },
+      "actual": {
+        "x": 554,
+        "y": 298,
+        "w": 164,
+        "h": 58,
+        "count": 946
+      },
+      "delta": {
+        "x": 3,
+        "y": -7,
+        "w": 40,
+        "h": 19
+      }
+    },
+    {
+      "element": "stage-03.pillIcon",
+      "ref": {
+        "x": 557,
+        "y": 366,
+        "w": 11,
+        "h": 10,
+        "count": 32
+      },
+      "actual": {
+        "x": 564,
+        "y": 367,
+        "w": 142,
+        "h": 11,
+        "count": 99
+      },
+      "delta": {
+        "x": 7,
+        "y": 1,
+        "w": 131,
+        "h": 1
+      }
+    },
+    {
+      "element": "stage-04.number",
+      "ref": {
+        "x": 793,
+        "y": 189,
+        "w": 17,
+        "h": 11,
+        "count": 94
+      },
+      "actual": {
+        "x": 797,
+        "y": 190,
+        "w": 23,
+        "h": 16,
+        "count": 162
+      },
+      "delta": {
+        "x": 4,
+        "y": 1,
+        "w": 6,
+        "h": 5
+      }
+    },
+    {
+      "element": "stage-04.icon",
+      "ref": {
+        "x": 794,
+        "y": 198,
+        "w": 37,
+        "h": 56,
+        "count": 226
+      },
+      "actual": {
+        "x": 797,
+        "y": 198,
+        "w": 109,
+        "h": 93,
+        "count": 219
+      },
+      "delta": {
+        "x": 3,
+        "y": 0,
+        "w": 72,
+        "h": 37
+      }
+    },
+    {
+      "element": "stage-04.title",
+      "ref": {
+        "x": 793,
+        "y": 285,
+        "w": 118,
+        "h": 27,
+        "count": 373
+      },
+      "actual": {
+        "x": 796,
+        "y": 288,
+        "w": 122,
+        "h": 13,
+        "count": 497
+      },
+      "delta": {
+        "x": 3,
+        "y": 3,
+        "w": 4,
+        "h": -14
+      }
+    },
+    {
+      "element": "stage-04.body",
+      "ref": {
+        "x": 793,
+        "y": 305,
+        "w": 121,
+        "h": 39,
+        "count": 611
+      },
+      "actual": {
+        "x": 797,
+        "y": 298,
+        "w": 121,
+        "h": 58,
+        "count": 507
+      },
+      "delta": {
+        "x": 4,
+        "y": -7,
+        "w": 0,
+        "h": 19
+      }
+    },
+    {
+      "element": "stage-04.pillIcon",
+      "ref": {
+        "x": 798,
+        "y": 367,
+        "w": 12,
+        "h": 9,
+        "count": 57
+      },
+      "actual": {
+        "x": 802,
+        "y": 355,
+        "w": 90,
+        "h": 37,
+        "count": 98
+      },
+      "delta": {
+        "x": 4,
+        "y": -12,
+        "w": 78,
+        "h": 28
+      }
+    }
+  ],
   "colorSamples": {
     "pageBg": {
+      "xy": [
+        40,
+        40
+      ],
       "ref": [
         17,
         17,
         17
       ],
       "actual": [
-        13,
-        13,
-        13
+        17,
+        17,
+        17
       ]
     },
     "card1Fill": {
+      "xy": [
+        155,
+        355
+      ],
       "ref": [
+        24,
+        24,
+        24
+      ],
+      "actual": [
         23,
         23,
         23
-      ],
-      "actual": [
-        30,
-        24,
-        24
       ]
     },
     "card1Border": {
+      "xy": [
+        85,
+        280
+      ],
       "ref": [
         34,
         34,
         34
       ],
       "actual": [
-        49,
-        49,
-        49
+        34,
+        34,
+        34
       ]
     },
     "primaryRedNumber": {
+      "xy": [
+        108,
+        192
+      ],
       "ref": [
         119,
         64,
         59
       ],
       "actual": [
-        122,
+        119,
         64,
         59
       ]
     },
     "mutedIconStroke": {
+      "xy": [
+        125,
+        240
+      ],
       "ref": [
         30,
         20,
         28
       ],
       "actual": [
-        35,
-        25,
-        24
+        93,
+        51,
+        48
       ]
     },
     "title": {
+      "xyRef": [
+        109,
+        293
+      ],
+      "xyActual": [
+        109,
+        298
+      ],
       "ref": [
+        226,
+        226,
+        226
+      ],
+      "actual": [
         241,
         241,
         241
-      ],
-      "actual": [
-        255,
-        255,
-        255
       ]
     },
     "bodyText": {
+      "xyRef": [
+        118,
+        310
+      ],
+      "xyActual": [
+        125,
+        312
+      ],
       "ref": [
-        99,
-        99,
-        99
+        104,
+        104,
+        104
       ],
       "actual": [
-        22,
-        22,
-        22
+        99,
+        98,
+        97
       ]
     },
     "pillBorder": {
+      "xy": [
+        100,
+        368
+      ],
       "ref": [
         28,
         28,
         28
       ],
       "actual": [
-        53,
-        53,
-        53
+        10,
+        10,
+        10
       ]
     },
     "connector": {
+      "xy": [
+        262,
+        239
+      ],
       "ref": [
         152,
         71,
         70
       ],
       "actual": [
-        150,
+        151,
         70,
         69
       ]
     },
     "centerGlow": {
+      "xy": [
+        512,
+        250
+      ],
       "ref": [
         56,
         25,
         22
       ],
       "actual": [
-        41,
-        18,
-        17
+        60,
+        27,
+        23
       ]
     }
   },
@@ -218,9 +830,9 @@
         "w": 780,
         "h": 130
       },
-      "mismatched": 8806,
+      "mismatched": 8846,
       "total": 101400,
-      "ratio": 0.08684418145956607
+      "ratio": 0.08723865877712031
     },
     {
       "name": "stage-01",
@@ -231,9 +843,9 @@
         "w": 157,
         "h": 229
       },
-      "mismatched": 4637,
+      "mismatched": 4483,
       "total": 35953,
-      "ratio": 0.12897393819709066
+      "ratio": 0.12469056824187133
     },
     {
       "name": "stage-02",
@@ -244,9 +856,9 @@
         "w": 220,
         "h": 229
       },
-      "mismatched": 7274,
+      "mismatched": 7088,
       "total": 50380,
-      "ratio": 0.14438269154426359
+      "ratio": 0.1406907502977372
     },
     {
       "name": "stage-03",
@@ -257,9 +869,9 @@
         "w": 210,
         "h": 229
       },
-      "mismatched": 7713,
+      "mismatched": 7359,
       "total": 48090,
-      "ratio": 0.16038677479725513
+      "ratio": 0.1530255770430443
     },
     {
       "name": "stage-04",
@@ -270,9 +882,9 @@
         "w": 142,
         "h": 229
       },
-      "mismatched": 4731,
+      "mismatched": 4364,
       "total": 32518,
-      "ratio": 0.14548865243864936
+      "ratio": 0.13420259548557723
     },
     {
       "name": "stage-01-visual",
@@ -283,9 +895,9 @@
         "w": 70,
         "h": 80
       },
-      "mismatched": 620,
+      "mismatched": 420,
       "total": 5600,
-      "ratio": 0.11071428571428571
+      "ratio": 0.075
     },
     {
       "name": "stage-02-visual",
@@ -296,9 +908,9 @@
         "w": 200,
         "h": 80
       },
-      "mismatched": 2175,
+      "mismatched": 1833,
       "total": 16000,
-      "ratio": 0.1359375
+      "ratio": 0.1145625
     },
     {
       "name": "stage-03-visual",
@@ -309,9 +921,9 @@
         "w": 190,
         "h": 80
       },
-      "mismatched": 2344,
+      "mismatched": 1770,
       "total": 15200,
-      "ratio": 0.15421052631578946
+      "ratio": 0.11644736842105263
     },
     {
       "name": "stage-04-visual",
@@ -322,9 +934,9 @@
         "w": 70,
         "h": 80
       },
-      "mismatched": 690,
+      "mismatched": 462,
       "total": 5600,
-      "ratio": 0.12321428571428572
+      "ratio": 0.0825
     },
     {
       "name": "connector-01-02",
@@ -335,9 +947,9 @@
         "w": 40,
         "h": 24
       },
-      "mismatched": 137,
+      "mismatched": 133,
       "total": 960,
-      "ratio": 0.14270833333333333
+      "ratio": 0.13854166666666667
     },
     {
       "name": "connector-02-03",
@@ -361,9 +973,9 @@
         "w": 33,
         "h": 24
       },
-      "mismatched": 119,
+      "mismatched": 118,
       "total": 792,
-      "ratio": 0.15025252525252525
+      "ratio": 0.14898989898989898
     },
     {
       "name": "chat",
@@ -374,9 +986,9 @@
         "w": 50,
         "h": 55
       },
-      "mismatched": 212,
+      "mismatched": 206,
       "total": 2750,
-      "ratio": 0.07709090909090908
+      "ratio": 0.07490909090909091
     },
     {
       "name": "bottom-line",
@@ -399,6 +1011,7 @@
     "diff": "diff-amplified.png",
     "sideBySide": "side-by-side.png",
     "controlDiff": "control-actual-vs-actual-diff.png",
-    "crops": "crops/"
+    "crops": "crops/",
+    "measurement": "MEASUREMENT.md"
   }
 }
