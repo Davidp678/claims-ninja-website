@@ -54,7 +54,7 @@ export function ProcessDesktopJourney({
       className={
         referenceMode
           ? "relative w-full"
-          : "relative mx-auto hidden w-full max-w-[1024px] origin-top xl:block xl:scale-[1.15] 2xl:scale-[1.35]"
+          : "relative mx-auto hidden w-full max-w-[1024px] xl:block"
       }
       style={{
         height: PROCESS.cardHeight,
