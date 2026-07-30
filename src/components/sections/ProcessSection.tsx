@@ -121,7 +121,7 @@ export function ProcessSection({
           className={
             referenceMode
               ? "absolute inset-x-0"
-              : "mt-10 sm:mt-12 xl:absolute xl:inset-x-0 xl:top-[170px] xl:mt-0"
+              : "mt-10 sm:mt-12 xl:absolute xl:inset-x-0 xl:top-[160px] xl:mt-0 2xl:top-[155px]"
           }
           style={referenceMode ? { top: PROCESS.cardTop } : undefined}
         >
