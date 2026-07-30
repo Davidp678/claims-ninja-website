@@ -3,13 +3,13 @@ import { StrokeIcon } from "../StrokeIcon";
 import { PROCESS } from "../tokens";
 
 /**
- * Stage 03 — native people + speech bubble over a three-row checklist panel.
+ * Stage 03 — people and communication in front of a layered three-row claim list.
  */
 export function Stage03Manage({ stage }: { stage: string }) {
   const rows = [
-    { top: 10, checkTop: 9, barW: 92 },
-    { top: 30, checkTop: 29, barW: 78 },
-    { top: 50, checkTop: 49, barW: 64 },
+    { top: 1, barWidth: 47 },
+    { top: 27, barWidth: 65 },
+    { top: 53, barWidth: 62 },
   ] as const;
 
   return (
@@ -20,83 +20,95 @@ export function Stage03Manage({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[40px] top-[4px] h-[56px] w-[120px] rounded-[10px] blur-[7px]"
+        className="pointer-events-none absolute left-[63px] top-[-8px] h-[90px] w-[115px] rounded-[12px] blur-[9px]"
         style={{
           background:
-            "radial-gradient(ellipse at 40% 40%, rgba(56,25,22,0.48), transparent 72%)",
+            "radial-gradient(ellipse at 48% 46%, rgba(56,25,22,0.42), transparent 70%)",
         }}
       />
 
       <div
         data-qa={`stage-${stage}-rear-panel`}
-        className="absolute overflow-hidden rounded-[9px]"
+        className="absolute rounded-[9px]"
         style={{
-          left: 25,
-          top: 2,
+          left: 24,
+          top: 1,
           width: 160,
           height: 72,
-          background: PROCESS.panelBg,
-          border: `1px solid ${PROCESS.panelBorder}`,
+          background: "rgba(9,9,9,0.18)",
+          border: "1px solid rgba(255,255,255,0.03)",
+          boxShadow: "6px -5px 14px rgba(0,0,0,0.28)",
+        }}
+      />
+
+      <div
+        className="absolute overflow-hidden rounded-[8px]"
+        style={{
+          left: 72,
+          top: -6,
+          width: 115,
+          height: 82,
+          background: "#0d0d0d",
+          border: "1px solid rgba(255,255,255,0.1)",
+          boxShadow:
+            "-7px 7px 15px rgba(0,0,0,0.34), 0 0 18px rgba(56,25,22,0.15)",
         }}
       >
-        {rows.map((row, i) => (
+        {rows.map((row, index) => (
           <div
-            key={i}
-            data-qa={`stage-${stage}-row-${i}`}
-            className="absolute flex h-[16px] items-center rounded-[4px]"
+            key={index}
+            data-qa={`stage-${stage}-row-${index}`}
+            className="absolute h-[20px] rounded-[4px]"
             style={{
-              left: 28,
-              right: 10,
+              left: 7,
+              right: 7,
               top: row.top,
-              background: "rgba(0,0,0,0.42)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              paddingLeft: 18,
+              background: "rgba(0,0,0,0.36)",
+              border: "1px solid rgba(255,255,255,0.065)",
             }}
           >
             <span
-              data-qa={`stage-${stage}-bar-a-${i}`}
-              className="h-[5px] rounded-full"
+              data-qa={`stage-${stage}-check-${index}`}
+              className="absolute flex h-[14px] w-[14px] items-center justify-center rounded-full"
               style={{
-                width: row.barW,
-                background: "rgba(255,255,255,0.32)",
+                left: 2,
+                top: 2,
+                border: `1px solid ${PROCESS.mutedRed}`,
+                background: PROCESS.panelBg,
+              }}
+            >
+              <svg
+                aria-hidden
+                data-qa={`stage-${stage}-check-mark-${index}`}
+                viewBox="0 0 12 12"
+                className="h-[7px] w-[7px]"
+                fill="none"
+                stroke={PROCESS.mutedRed}
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="m2.2 6.2 2.5 2.5L9.9 3.5" />
+              </svg>
+            </span>
+            <span
+              data-qa={`stage-${stage}-bar-a-${index}`}
+              className="absolute h-[5px] rounded-full"
+              style={{
+                left: 26,
+                top: 7,
+                width: row.barWidth,
+                background: "rgba(255,255,255,0.2)",
               }}
             />
           </div>
         ))}
       </div>
 
-      {rows.map((row, i) => (
-        <span
-          key={i}
-          data-qa={`stage-${stage}-check-${i}`}
-          className="absolute z-20 flex h-[16px] w-[16px] items-center justify-center rounded-full"
-          style={{
-            left: 42,
-            top: row.checkTop,
-            border: `1.5px solid ${PROCESS.mutedRed}`,
-            background: PROCESS.panelBg,
-          }}
-        >
-          <svg
-            aria-hidden
-            data-qa={`stage-${stage}-check-mark-${i}`}
-            viewBox="0 0 12 12"
-            className="h-[8px] w-[8px]"
-            fill="none"
-            stroke={PROCESS.mutedRed}
-            strokeWidth="2.1"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="m2.2 6.2 2.5 2.5L9.9 3.5" />
-          </svg>
-        </span>
-      ))}
-
-      <div className="absolute left-[1px] z-10" style={{ top: PROCESS.frameTop }}>
-        <PrimaryIconFrame stage={stage} size={48}>
+      <div className="absolute left-[-2px] z-20" style={{ top: PROCESS.frameTop }}>
+        <PrimaryIconFrame stage={stage} size={52}>
           <StrokeIcon
-            className="h-[32px] w-[32px]"
+            className="h-[34px] w-[32px] translate-x-[2px] translate-y-[3px]"
             strokeWidth={1.85}
             color={PROCESS.mutedRed}
             qa={`stage-${stage}-symbol`}

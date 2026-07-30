@@ -80,7 +80,7 @@ export function ProcessSection({
               top: referenceMode ? heading.titleTop : undefined,
               fontSize: referenceMode ? heading.titleSize : undefined,
               lineHeight: referenceMode ? heading.titleLineHeight : 1.15,
-              letterSpacing: referenceMode ? "-0.005em" : "0.01em",
+              letterSpacing: referenceMode ? "0" : "0.01em",
               fontWeight: 600,
               color: PROCESS.title,
             }}

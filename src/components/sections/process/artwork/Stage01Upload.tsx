@@ -17,10 +17,10 @@ export function Stage01Upload({ stage }: { stage: string }) {
             "radial-gradient(circle, rgba(56,25,22,0.48), transparent 68%)",
         }}
       />
-      <div className="absolute left-[1px]" style={{ top: PROCESS.frameTop }}>
-        <PrimaryIconFrame stage={stage} size={50}>
+      <div className="absolute left-0" style={{ top: PROCESS.frameTop }}>
+        <PrimaryIconFrame stage={stage} size={55}>
           <StrokeIcon
-            className="h-[36px] w-[36px]"
+            className="h-[33px] w-[40px] translate-x-[3px] translate-y-[2px]"
             strokeWidth={1.85}
             color={PROCESS.mutedRed}
             qa={`stage-${stage}-symbol`}

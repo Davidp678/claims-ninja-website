@@ -16,6 +16,10 @@ export function ProcessStageCard({
   const lines = referenceMode ? item.descriptionLines : null;
   const titleSize = stage === "04" ? 11.8 : ink.title.size;
   const pillMax = PROCESS.pillMaxWidth[stage];
+  const textNudge = { "01": 2, "02": 2, "03": 1, "04": 0 }[stage];
+  const numberTopNudge = { "01": 1, "02": 1, "03": 0, "04": 1 }[stage];
+  const pillNudge = { "01": 0, "02": 1, "03": -1, "04": -2 }[stage];
+  const pillRightPadding = { "01": 8, "02": 7, "03": 8, "04": 7 }[stage];
 
   return (
     <div
@@ -35,9 +39,9 @@ export function ProcessStageCard({
         data-qa={`stage-${stage}-number`}
         className="absolute font-display leading-none tracking-tight"
         style={{
-          left: ink.number.left,
-          top: ink.number.top,
-          fontSize: ink.number.size,
+          left: ink.number.left + textNudge,
+          top: ink.number.top + numberTopNudge,
+          fontSize: stage === "01" ? 14 : ink.number.size,
           fontWeight: 600,
           color: `rgb(${PROCESS.numberRedRgb})`,
           WebkitTextFillColor: `rgb(${PROCESS.numberRedRgb})`,
@@ -64,13 +68,13 @@ export function ProcessStageCard({
         data-qa={`stage-${stage}-title`}
         className="absolute font-display tracking-tight"
         style={{
-          left: ink.title.left,
+          left: ink.title.left + textNudge,
           right: stage === "01" || stage === "04" ? 12 : 18,
-          top: ink.title.top,
+          top: ink.title.top + (stage === "04" ? 1 : 0),
           fontSize: titleSize,
           fontWeight: 500,
           lineHeight: 1.05,
-          letterSpacing: stage === "04" ? "-0.02em" : "-0.015em",
+          letterSpacing: stage === "04" ? "-0.05em" : "-0.005em",
           color: PROCESS.title,
           whiteSpace: "nowrap",
         }}
@@ -83,7 +87,7 @@ export function ProcessStageCard({
         data-qa={`stage-${stage}-body`}
         className="absolute"
         style={{
-          left: ink.desc.left,
+          left: ink.desc.left + textNudge,
           right: stage === "01" || stage === "04" ? 12 : 20,
           top: ink.desc.top,
           fontSize: ink.desc.size,
@@ -115,20 +119,28 @@ export function ProcessStageCard({
         data-qa={`stage-${stage}-pill`}
         className="absolute inline-flex items-center"
         style={{
-          left: ink.pill.left,
+          left: ink.pill.left + pillNudge,
           top: ink.pill.top,
           height: ink.pill.height,
           borderRadius: 5,
           border: `1px solid ${PROCESS.pillBorder}`,
           background: PROCESS.pillBg,
-          paddingLeft: 8,
-          paddingRight: 10,
-          gap: 6,
+          paddingLeft: 7,
+          paddingRight: pillRightPadding,
+          gap: 5,
           maxWidth: pillMax,
           boxSizing: "border-box",
         }}
       >
-        <PillIcon visual={item.visual} stage={stage} />
+        <span
+          className={
+            stage === "03" || stage === "04"
+              ? "-translate-y-[3px]"
+              : "-translate-y-[2px]"
+          }
+        >
+          <PillIcon visual={item.visual} stage={stage} />
+        </span>
         <span
           data-qa={`stage-${stage}-pill-label`}
           className="leading-none"

@@ -17,7 +17,7 @@ export function ProcessConnector({ index }: { index: 1 | 2 | 3 }) {
         data-qa={`connector-${index}-glow`}
         className="pointer-events-none absolute rounded-full"
         style={{
-          left: `calc(50% + ${nudge}px)`,
+          left: nudge,
           top: "50%",
           width: node.glow,
           height: node.glow,
@@ -44,7 +44,7 @@ export function ProcessConnector({ index }: { index: 1 | 2 | 3 }) {
         data-qa={`connector-${index}-node`}
         className="absolute top-1/2 flex items-center justify-center rounded-full"
         style={{
-          left: `calc(50% + ${nudge}px)`,
+          left: nudge,
           transform: "translate(-50%, -50%)",
           width: node.outer,
           height: node.outer,

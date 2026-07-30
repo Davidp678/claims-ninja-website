@@ -17,10 +17,10 @@ export function Stage04Recover({ stage }: { stage: string }) {
             "radial-gradient(circle, rgba(56,25,22,0.48), transparent 68%)",
         }}
       />
-      <div className="absolute left-[0px]" style={{ top: PROCESS.frameTop }}>
+      <div className="absolute left-[-1px]" style={{ top: PROCESS.frameTop }}>
         <PrimaryIconFrame stage={stage} size={50}>
           <StrokeIcon
-            className="h-[36px] w-[36px]"
+            className="h-[36px] w-[39px] translate-y-[3px]"
             strokeWidth={1.8}
             color={PROCESS.mutedRed}
             qa={`stage-${stage}-symbol`}

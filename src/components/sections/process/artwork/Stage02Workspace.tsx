@@ -3,11 +3,11 @@ import { StrokeIcon } from "../StrokeIcon";
 import { PROCESS } from "../tokens";
 
 /**
- * Stage 02 — native 2×2 mark over a Claim Workspace panel.
- * Sidebar: active red-dot + light bar, then inactive dot+bar rows.
+ * Stage 02 — a foreground workspace mark over a layered application panel.
+ * The broad rear plate supplies depth; the narrower face contains the actual UI.
  */
 export function Stage02Workspace({ stage }: { stage: string }) {
-  const inactive = [22, 34, 46, 58] as const;
+  const sidebarRows = [25, 36, 47, 58] as const;
 
   return (
     <div
@@ -17,130 +17,148 @@ export function Stage02Workspace({ stage }: { stage: string }) {
     >
       <div
         data-qa={`stage-${stage}-glow`}
-        className="pointer-events-none absolute left-[40px] top-[4px] h-[56px] w-[130px] rounded-[10px] blur-[7px]"
+        className="pointer-events-none absolute left-[58px] top-[-7px] h-[88px] w-[125px] rounded-[12px] blur-[9px]"
         style={{
           background:
-            "radial-gradient(ellipse at 35% 40%, rgba(56,25,22,0.5), transparent 72%)",
+            "radial-gradient(ellipse at 52% 45%, rgba(56,25,22,0.44), transparent 70%)",
         }}
       />
 
       <div
         data-qa={`stage-${stage}-rear-panel`}
-        className="absolute overflow-hidden rounded-[9px]"
+        className="absolute rounded-[9px]"
         style={{
-          left: 25,
-          top: 2,
+          left: 24,
+          top: 1,
           width: 170,
           height: 72,
-          background: PROCESS.panelBg,
-          border: `1px solid ${PROCESS.panelBorder}`,
+          background: "rgba(9,9,9,0.2)",
+          border: "1px solid rgba(255,255,255,0.035)",
+          boxShadow: "6px -5px 14px rgba(0,0,0,0.28)",
+        }}
+      />
+
+      <div
+        className="absolute overflow-hidden rounded-[8px]"
+        style={{
+          left: 74,
+          top: -5,
+          width: 122,
+          height: 84,
+          background: "#0d0d0d",
+          border: "1px solid rgba(255,255,255,0.1)",
+          boxShadow:
+            "-7px 7px 15px rgba(0,0,0,0.34), 0 0 18px rgba(56,25,22,0.16)",
         }}
       >
-        <div className="relative flex h-full">
-          <div
-            data-qa={`stage-${stage}-sidebar`}
-            className="relative shrink-0"
+        <div
+          data-qa={`stage-${stage}-sidebar`}
+          className="absolute inset-y-0 left-0"
+          style={{
+            width: 39,
+            background: "#0a0a0a",
+            borderRight: "1px solid rgba(255,255,255,0.11)",
+          }}
+        >
+          <span
+            data-qa={`stage-${stage}-active-dot`}
+            className="absolute rounded-full"
             style={{
-              width: 34,
-              background: "#0a0a0a",
-              borderRight: "1px solid rgba(255,255,255,0.12)",
+              left: 6,
+              top: 8,
+              width: 6,
+              height: 6,
+              background: PROCESS.activeDot,
+              boxShadow: "0 0 5px rgba(194,74,72,0.52)",
             }}
-          >
-            <span
-              data-qa={`stage-${stage}-active-dot`}
-              className="absolute rounded-full"
-              style={{
-                left: 13,
-                top: 10,
-                width: 7,
-                height: 7,
-                background: PROCESS.activeDot,
-                boxShadow: "0 0 5px rgba(194,74,72,0.55)",
-              }}
-            />
-            <span
-              data-qa={`stage-${stage}-sidebar-row-0`}
-              className="absolute rounded-[1px]"
-              style={{
-                left: 23,
-                top: 12,
-                width: 8,
-                height: 3,
-                background: "rgba(255,255,255,0.45)",
-              }}
-            />
-
-            {inactive.map((top, i) => (
-              <span key={top}>
-                <span
-                  className="absolute rounded-full"
-                  style={{
-                    left: 14,
-                    top,
-                    width: 5,
-                    height: 5,
-                    background: "rgba(255,255,255,0.2)",
-                  }}
-                />
-                <span
-                  data-qa={i === 0 ? `stage-${stage}-sidebar-row-1` : undefined}
-                  className="absolute rounded-[1px]"
-                  style={{
-                    left: 23,
-                    top: top + 1,
-                    width: 7,
-                    height: 2,
-                    background: "rgba(255,255,255,0.16)",
-                  }}
-                />
-              </span>
-            ))}
-          </div>
-
-          <div
-            data-qa={`stage-${stage}-divider`}
-            className="w-px shrink-0"
-            style={{ background: "rgba(255,255,255,0.12)" }}
+          />
+          <span
+            data-qa={`stage-${stage}-sidebar-row-0`}
+            className="absolute rounded-full"
+            style={{
+              left: 16,
+              top: 9,
+              width: 19,
+              height: 4,
+              background: "rgba(255,255,255,0.34)",
+            }}
           />
 
-          <div className="relative flex min-w-0 flex-1 flex-col px-[10px] pb-[8px] pt-[10px]">
+          {sidebarRows.map((top, index) => (
+            <span key={top}>
+              <span
+                className="absolute rounded-full"
+                style={{
+                  left: 7,
+                  top,
+                  width: 4,
+                  height: 4,
+                  background: "rgba(255,255,255,0.14)",
+                }}
+              />
+              <span
+                data-qa={
+                  index === 0 ? `stage-${stage}-sidebar-row-1` : undefined
+                }
+                className="absolute rounded-full"
+                style={{
+                  left: 16,
+                  top: top + 1,
+                  width: index === 3 ? 21 : 18,
+                  height: 3,
+                  background: "rgba(255,255,255,0.13)",
+                }}
+              />
+            </span>
+          ))}
+        </div>
+
+        <span
+          data-qa={`stage-${stage}-divider`}
+          className="absolute inset-y-0 w-px"
+          style={{ left: 38, background: "rgba(255,255,255,0.1)" }}
+        />
+
+        <span
+          data-qa={`stage-${stage}-content-bar-0`}
+          className="absolute h-[6px] rounded-[2px]"
+          style={{
+            left: 47,
+            top: 17,
+            width: 39,
+            background: "rgba(255,255,255,0.22)",
+          }}
+        />
+        <span
+          data-qa={`stage-${stage}-content-bar-1`}
+          className="absolute h-[6px] rounded-[2px]"
+          style={{
+            left: 47,
+            top: 37,
+            width: 52,
+            background: "rgba(255,255,255,0.14)",
+          }}
+        />
+
+        <div className="absolute bottom-[8px] left-[47px] flex gap-[5px]">
+          {[0, 1, 2].map((index) => (
             <span
-              data-qa={`stage-${stage}-content-bar-0`}
-              className="mb-[8px] h-[6px] rounded-[2px]"
+              key={index}
+              data-qa={`stage-${stage}-lower-block-${index}`}
+              className="h-[18px] w-[18px] rounded-[3px]"
               style={{
-                width: "70%",
-                background: "rgba(255,255,255,0.34)",
+                background: "rgba(255,255,255,0.055)",
+                border: "1px solid rgba(255,255,255,0.08)",
               }}
             />
-            <span
-              data-qa={`stage-${stage}-content-bar-1`}
-              className="mb-auto h-[6px] rounded-[2px]"
-              style={{
-                width: "86%",
-                background: "rgba(255,255,255,0.2)",
-              }}
-            />
-            <div className="mt-[8px] flex gap-[6px]">
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  data-qa={`stage-${stage}-lower-block-${i}`}
-                  className="h-[14px] w-[14px] rounded-[3px]"
-                  style={{
-                    background: "rgba(255,255,255,0.1)",
-                    border: "1px solid rgba(255,255,255,0.18)",
-                  }}
-                />
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      <div className="absolute left-[1px] z-20" style={{ top: PROCESS.frameTop }}>
-        <PrimaryIconFrame stage={stage} size={48}>
+      <div className="absolute left-0 z-20" style={{ top: PROCESS.frameTop }}>
+        <PrimaryIconFrame stage={stage} size={52}>
           <StrokeIcon
-            className="h-[30px] w-[30px]"
+            className="h-[36px] w-[36px]"
             strokeWidth={1.75}
             color={PROCESS.mutedRed}
             qa={`stage-${stage}-symbol`}
