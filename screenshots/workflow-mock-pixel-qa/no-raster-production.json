@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "failures": [],
+  "scannedFiles": [
+    "src/components/sections/ProcessSection.tsx",
+    "src/components/sections/process/PillIcon.tsx",
+    "src/components/sections/process/PrimaryIconFrame.tsx",
+    "src/components/sections/process/ProcessConnector.tsx",
+    "src/components/sections/process/ProcessDesktopJourney.tsx",
+    "src/components/sections/process/ProcessStageCard.tsx",
+    "src/components/sections/process/StrokeIcon.tsx",
+    "src/components/sections/process/artwork/Stage01Upload.tsx",
+    "src/components/sections/process/artwork/Stage02Workspace.tsx",
+    "src/components/sections/process/artwork/Stage03Manage.tsx",
+    "src/components/sections/process/artwork/Stage04Recover.tsx",
+    "src/components/sections/process/artwork/index.tsx",
+    "src/components/sections/process/tokens.ts",
+    "src/components/chatbot/ChatWidget.tsx"
+  ]
+}

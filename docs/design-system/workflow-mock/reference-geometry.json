@@ -1,0 +1,45 @@
+{
+  "canvas": { "width": 1024, "height": 467 },
+  "backgroundRGB": [16, 16, 16],
+  "heading": {
+    "eyebrowY": 50,
+    "eyebrowHeight": 6,
+    "headlineY": 74,
+    "supportY": 120
+  },
+  "cards": [
+    { "index": 1, "left": 85, "right": 241, "width": 157, "top": 170, "bottom": 398, "height": 229 },
+    { "index": 2, "left": 282, "right": 501, "width": 220, "top": 170, "bottom": 398, "height": 229 },
+    { "index": 3, "left": 536, "right": 745, "width": 210, "top": 170, "bottom": 398, "height": 229 },
+    { "index": 4, "left": 779, "right": 920, "width": 142, "top": 170, "bottom": 398, "height": 229 }
+  ],
+  "gaps": [40, 34, 33],
+  "cardWidthPattern": [157, 220, 210, 142],
+  "connectors": [
+    { "from": 1, "to": 2, "gapLeft": 242, "gapRight": 281, "gapWidth": 40, "lineY": 239 },
+    { "from": 2, "to": 3, "gapLeft": 502, "gapRight": 535, "gapWidth": 34, "lineY": 239 },
+    { "from": 3, "to": 4, "gapLeft": 746, "gapRight": 778, "gapWidth": 33, "lineY": 239 }
+  ],
+  "bottomLineY": 465,
+  "chat": {
+    "left": 977,
+    "top": 412,
+    "right": 1014,
+    "bottom": 449,
+    "width": 38,
+    "height": 38,
+    "rightOffset": 9,
+    "bottomOffset": 17
+  },
+  "designTokens": {
+    "sectionHeight": 467,
+    "contentLeft": 85,
+    "contentRight": 920,
+    "cardTop": 170,
+    "cardBottom": 398,
+    "cardHeight": 229,
+    "connectorY": 239,
+    "chatRightOffset": 9,
+    "chatBottomOffset": 17
+  }
+}

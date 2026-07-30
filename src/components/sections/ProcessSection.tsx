@@ -1,363 +1,184 @@
 import type { Locale } from "@/lib/i18n/config";
-import {
-  getHomeContent,
-  type HomeProcessStep,
-  type HomeProcessVisual,
-} from "@/lib/i18n/content/home";
-import { Section } from "@/components/ui/Section";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { getHomeContent } from "@/lib/i18n/content/home";
+import { ProcessDesktopJourney } from "./process/ProcessDesktopJourney";
+import { ProcessStageCard } from "./process/ProcessStageCard";
+import { PROCESS } from "./process/tokens";
 
-function StrokeIcon({
-  className,
-  children,
+export function ProcessSection({
+  locale = "en",
+  referenceMode = false,
 }: {
-  className?: string;
-  children: React.ReactNode;
+  locale?: Locale;
+  referenceMode?: boolean;
 }) {
-  return (
-    <svg
-      aria-hidden
-      viewBox="0 0 24 24"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.55"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      {children}
-    </svg>
-  );
-}
-
-function LockBadgeIcon({ className }: { className?: string }) {
-  return (
-    <StrokeIcon className={className}>
-      <rect x="5" y="11" width="14" height="10" rx="2" />
-      <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-    </StrokeIcon>
-  );
-}
-
-function DatabaseBadgeIcon({ className }: { className?: string }) {
-  return (
-    <StrokeIcon className={className}>
-      <ellipse cx="12" cy="6" rx="7" ry="2.5" />
-      <path d="M5 6v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6" />
-      <path d="M5 10v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4" />
-      <path d="M5 14v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4" />
-    </StrokeIcon>
-  );
-}
-
-function PulseBadgeIcon({ className }: { className?: string }) {
-  return (
-    <StrokeIcon className={className}>
-      <path d="M3 12h4l2-5 4 10 2-5h6" />
-    </StrokeIcon>
-  );
-}
-
-function EyeBadgeIcon({ className }: { className?: string }) {
-  return (
-    <StrokeIcon className={className}>
-      <path d="M2.5 12S6 6.5 12 6.5 21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12Z" />
-      <circle cx="12" cy="12" r="2.5" />
-    </StrokeIcon>
-  );
-}
-
-/** Shared primary icon frame — identical geometry on all four stages. */
-function PrimaryIconFrame({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      data-process-icon-frame
-      className="relative z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-[#141414] text-brand-red shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:h-[5.5rem] sm:w-[5.5rem]"
-    >
-      {children}
-    </div>
-  );
-}
-
-function AbstractPanel({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="relative z-0 h-[5.25rem] w-[6.75rem] overflow-hidden rounded-xl border border-white/10 bg-[#101010] shadow-inner shadow-black/50 sm:h-[5.75rem] sm:w-[7.25rem]">
-      {children}
-    </div>
-  );
-}
-
-function UploadDocVisual() {
-  return (
-    <div
-      aria-hidden
-      className="flex h-full w-full items-center justify-center"
-    >
-      <PrimaryIconFrame>
-        <StrokeIcon className="h-10 w-10 sm:h-11 sm:w-11">
-          <path d="M14 2.75H8.25A2.25 2.25 0 0 0 6 5v14a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 19V7.25L14 2.75Z" />
-          <path d="M14 2.75V7.5h3.75" />
-          <path d="M12 11.25v6" />
-          <path d="m9.5 13.75 2.5-2.5 2.5 2.5" />
-        </StrokeIcon>
-      </PrimaryIconFrame>
-    </div>
-  );
-}
-
-function WorkspaceVisual() {
-  return (
-    <div
-      aria-hidden
-      className="relative flex h-full w-full items-center justify-center"
-    >
-      <div className="absolute right-[8%] top-1/2 -translate-y-1/2 sm:right-[6%]">
-        <AbstractPanel>
-          <div className="flex h-full">
-            <div className="relative w-4 shrink-0 border-r border-white/10 bg-black/45">
-              <span className="absolute left-1/2 top-2.5 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-brand-red" />
-              <span className="absolute left-1/2 top-6 h-1 w-1 -translate-x-1/2 rounded-full bg-white/25" />
-              <span className="absolute left-1/2 top-9 h-1 w-1 -translate-x-1/2 rounded-full bg-white/20" />
-              <span className="absolute left-1/2 top-12 h-1 w-1 -translate-x-1/2 rounded-full bg-white/15" />
-            </div>
-            <div className="flex flex-1 flex-col gap-1.5 p-2">
-              <span className="h-1.5 w-full rounded-sm bg-white/12" />
-              <span className="h-6 w-full rounded-sm bg-white/[0.06]" />
-              <div className="mt-auto flex gap-1">
-                <span className="h-2.5 flex-1 rounded-sm bg-white/10" />
-                <span className="h-2.5 w-5 rounded-sm bg-white/[0.07]" />
-              </div>
-            </div>
-          </div>
-        </AbstractPanel>
-      </div>
-      <div className="relative -translate-x-5 sm:-translate-x-6">
-        <PrimaryIconFrame>
-          <StrokeIcon className="h-10 w-10 sm:h-11 sm:w-11">
-            <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" />
-            <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" />
-            <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" />
-            <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
-          </StrokeIcon>
-        </PrimaryIconFrame>
-      </div>
-    </div>
-  );
-}
-
-function ManageVisual() {
-  return (
-    <div
-      aria-hidden
-      className="relative flex h-full w-full items-center justify-center"
-    >
-      <div className="absolute right-[6%] top-1/2 -translate-y-1/2 sm:right-[4%]">
-        <AbstractPanel>
-          <div className="flex h-full flex-col justify-center gap-2 px-2.5 py-2">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="flex items-center gap-2">
-                <span className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full border border-brand-red/75 text-brand-red">
-                  <svg
-                    aria-hidden
-                    viewBox="0 0 12 12"
-                    className="h-2 w-2"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="m2.5 6.2 2.2 2.2L9.5 3.8" />
-                  </svg>
-                </span>
-                <span className="h-1.5 flex-1 rounded-sm bg-white/12" />
-              </div>
-            ))}
-          </div>
-        </AbstractPanel>
-      </div>
-      <div className="relative -translate-x-5 sm:-translate-x-6">
-        <PrimaryIconFrame>
-          <StrokeIcon className="h-10 w-10 sm:h-11 sm:w-11">
-            <circle cx="9" cy="8.25" r="2.6" />
-            <circle cx="16" cy="9" r="2.1" />
-            <path d="M4.25 18.25c.65-2.55 2.55-4 4.75-4s4.1 1.45 4.75 4" />
-            <path d="M14.25 14.75c1.55-.45 3 .15 3.85 1.55" />
-            <path d="M16.5 4.75h3.75v2.4" />
-            <path d="M20.25 4.75 17.5 7.25" />
-          </StrokeIcon>
-        </PrimaryIconFrame>
-      </div>
-    </div>
-  );
-}
-
-function RecoverVisual() {
-  return (
-    <div
-      aria-hidden
-      className="flex h-full w-full items-center justify-center"
-    >
-      <PrimaryIconFrame>
-        <StrokeIcon className="h-10 w-10 sm:h-11 sm:w-11">
-          <circle cx="12" cy="12" r="8.25" />
-          <path d="m7.75 14.25 2.75-3.25 2.15 2.15L16.5 8.75" />
-          <path d="M14.25 8.75h2.25v2.25" />
-        </StrokeIcon>
-      </PrimaryIconFrame>
-    </div>
-  );
-}
-
-function StageVisual({ visual }: { visual: HomeProcessVisual }) {
-  if (visual === "intake") return <UploadDocVisual />;
-  if (visual === "workspace") return <WorkspaceVisual />;
-  if (visual === "manage") return <ManageVisual />;
-  return <RecoverVisual />;
-}
-
-function SupportBadgeIcon({ visual }: { visual: HomeProcessVisual }) {
-  const className = "h-3.5 w-3.5 shrink-0 text-brand-red";
-  if (visual === "intake") return <LockBadgeIcon className={className} />;
-  if (visual === "workspace") return <DatabaseBadgeIcon className={className} />;
-  if (visual === "manage") return <PulseBadgeIcon className={className} />;
-  return <EyeBadgeIcon className={className} />;
-}
-
-function ProcessStageCard({ item }: { item: HomeProcessStep }) {
-  return (
-    <div
-      data-process-card
-      className="group relative flex h-full min-h-[26rem] flex-col rounded-[1.25rem] border border-white/12 bg-[#161616] p-6 shadow-[0_18px_48px_-28px_rgba(0,0,0,0.85),0_0_40px_-28px_rgba(220,38,38,0.22)] transition-colors hover:border-brand-red/40 motion-reduce:transition-none sm:min-h-[28rem] sm:p-7"
-    >
-      <span
-        data-process-step
-        className="font-display text-[2.5rem] font-semibold leading-none tracking-tight text-brand-red transition-colors group-hover:text-brand-red-light motion-reduce:transition-none sm:text-5xl"
-      >
-        {item.step}
-      </span>
-
-      <div
-        data-process-visual
-        className="mt-5 h-36 shrink-0 sm:mt-6 sm:h-40"
-      >
-        <StageVisual visual={item.visual} />
-      </div>
-
-      <h3
-        data-process-title
-        className="mt-6 min-h-[3.75rem] font-display text-xl font-semibold leading-snug text-white sm:min-h-[4rem] sm:text-[1.35rem]"
-      >
-        {item.title}
-      </h3>
-
-      <p
-        data-process-description
-        className="mt-2 min-h-[4.5rem] flex-1 text-[0.9375rem] leading-relaxed text-zinc-400"
-      >
-        {item.description}
-      </p>
-
-      <div
-        data-process-pill
-        className="mt-6 inline-flex h-8 w-fit max-w-full items-center gap-2 rounded-lg border border-white/12 bg-black/35 px-3"
-      >
-        <SupportBadgeIcon visual={item.visual} />
-        <span className="truncate text-[12px] font-medium leading-none text-brand-red-light">
-          {item.supportLabel}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function DesktopProcessRail({ count }: { count: number }) {
-  const gapSlots = Math.max(count - 1, 0);
-
-  return (
-    <div
-      aria-hidden
-      data-process-rail
-      className="pointer-events-none absolute inset-x-0 top-[9.75rem] z-[1] sm:top-[11.25rem]"
-    >
-      {/* Continuous rail through card centers; solid cards mask the mid-span. */}
-      <div className="absolute left-[12.5%] right-[12.5%] top-1/2 h-px -translate-y-1/2 bg-brand-red/60" />
-
-      {/* Nodes centered in the three equal gaps between four columns. */}
-      <div className="absolute inset-x-0 top-1/2 grid -translate-y-1/2 grid-cols-4 gap-6 xl:gap-8">
-        {Array.from({ length: gapSlots }).map((_, index) => (
-          <div key={index} className="relative">
-            <span
-              data-process-node
-              className="absolute left-[calc(100%+0.75rem)] top-1/2 flex h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[1.5px] border-brand-red bg-brand-elevated shadow-[0_0_14px_rgba(220,38,38,0.4)] xl:left-[calc(100%+1rem)]"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
-            </span>
-          </div>
-        ))}
-        <div />
-      </div>
-    </div>
-  );
-}
-
-export function ProcessSection({ locale = "en" }: { locale?: Locale }) {
   const content = getHomeContent(locale).process;
+  const heading = PROCESS.heading;
 
   return (
-    <Section id="process" bordered className="bg-brand-elevated">
+    <section
+      id="process"
+      data-process-section
+      data-reference-mode={referenceMode ? "true" : undefined}
+      className={
+        referenceMode
+          ? "relative overflow-hidden"
+          : "relative overflow-hidden xl:h-[537px] min-[1440px]:h-[607px] 2xl:h-[645px] min-[1760px]:h-[724px]"
+      }
+      style={{
+        backgroundColor: PROCESS.pageBg,
+        ...(referenceMode
+          ? { width: PROCESS.width, height: PROCESS.height }
+          : undefined),
+      }}
+    >
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_72%_60%_at_50%_56%,rgba(56,25,22,1.55),transparent_52%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_44%_at_50%_22%,rgba(56,25,22,0.8),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_130%_110%_at_50%_50%,transparent_58%,rgba(0,0,0,0.14)_100%)]" />
+      </div>
+
+      <div
+        className={
+          referenceMode
+            ? "relative z-10 flex h-full flex-col"
+            : "relative z-10 mx-auto w-full max-w-[1024px] px-0 pb-16 pt-10 sm:pb-20 sm:pt-12 xl:h-[467px] xl:min-h-0 xl:origin-top xl:scale-[1.15] xl:pb-0 xl:pt-0 min-[1440px]:scale-[1.3] 2xl:scale-[1.38] min-[1760px]:scale-[1.55]"
+        }
+      >
+        <header
+          data-qa="heading"
+          className={
+            referenceMode
+              ? "pointer-events-none absolute inset-x-0 text-center"
+              : "mx-auto max-w-3xl px-6 pt-2 text-center xl:pointer-events-none xl:absolute xl:inset-x-0 xl:top-0 xl:h-[160px] xl:max-w-none xl:px-0 xl:pt-0"
+          }
+          style={referenceMode ? { top: 0, height: 160 } : undefined}
+        >
+          <p
+            data-qa="heading-eyebrow"
+            className={
+              referenceMode
+                ? "absolute left-1/2 -translate-x-1/2 font-semibold uppercase leading-none"
+                : "font-semibold uppercase leading-none xl:absolute xl:left-1/2 xl:top-[49px] xl:-translate-x-1/2"
+            }
+            style={{
+              top: referenceMode ? heading.eyebrowTop : undefined,
+              fontSize: heading.eyebrowSize,
+              letterSpacing: heading.eyebrowTracking,
+              fontWeight: 700,
+              color: PROCESS.eyebrow,
+              whiteSpace: "nowrap",
+            }}
+          >
+            {content.eyebrow}
+          </p>
+          <h2
+            data-qa="heading-title"
+            className={
+              referenceMode
+                ? "absolute left-1/2 -translate-x-1/2 font-display whitespace-nowrap"
+                : "mt-4 font-display text-[28px] sm:text-[32px] xl:absolute xl:left-1/2 xl:top-[69px] xl:mt-0 xl:-translate-x-1/2 xl:whitespace-nowrap xl:text-[30.25px]"
+            }
+            style={{
+              top: referenceMode ? heading.titleTop : undefined,
+              fontSize: referenceMode ? heading.titleSize : undefined,
+              lineHeight: referenceMode ? heading.titleLineHeight : 1.15,
+              letterSpacing: "0",
+              fontWeight: 600,
+              color: PROCESS.title,
+            }}
+          >
+            {content.title}
+          </h2>
+          <p
+            data-qa="heading-support"
+            className={
+              referenceMode
+                ? "absolute whitespace-nowrap"
+                : "mx-auto mt-3 xl:absolute xl:left-[288px] xl:top-[113px] xl:mt-0 xl:w-[460px] xl:whitespace-nowrap"
+            }
+            style={
+              referenceMode
+                ? {
+                    top: heading.supportTop,
+                    left: heading.supportLeft,
+                    width: heading.supportMaxWidth,
+                    fontSize: heading.supportSize,
+                    lineHeight: 1.25,
+                    fontWeight: 400,
+                    color: PROCESS.supportText,
+                    textAlign: "center",
+                  }
+                : {
+                    maxWidth: 460,
+                    fontSize: heading.supportSize,
+                    lineHeight: 1.25,
+                    fontWeight: 400,
+                    color: PROCESS.supportText,
+                  }
+            }
+          >
+            {content.description}
+          </p>
+        </header>
+
+        <div
+          className={
+            referenceMode
+              ? "absolute inset-x-0"
+              : "mt-10 sm:mt-12 xl:absolute xl:inset-x-0 xl:top-[170px] xl:mt-0"
+          }
+          style={referenceMode ? { top: PROCESS.cardTop } : undefined}
+        >
+          {referenceMode ? null : (
+            <>
+              <div className="relative px-5 sm:hidden">
+                <div
+                  aria-hidden
+                  className="absolute bottom-4 left-[1.35rem] top-4 w-px bg-gradient-to-b from-brand-red/70 via-brand-red/40 to-brand-red/15"
+                />
+                <ol className="space-y-4">
+                  {content.steps.map((item) => (
+                    <li key={item.step} className="relative pl-10">
+                      <span
+                        aria-hidden
+                        className="absolute left-[0.95rem] top-7 flex h-3 w-3 items-center justify-center rounded-full border-[1.5px] border-brand-red bg-[#111]"
+                      >
+                        <span className="h-1 w-1 rounded-full bg-brand-red" />
+                      </span>
+                      <div className="h-[229px]">
+                        <ProcessStageCard item={item} />
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <ol className="mx-auto hidden max-w-[720px] grid-cols-2 gap-5 px-6 sm:grid xl:hidden">
+                {content.steps.map((item) => (
+                  <li key={item.step} className="h-[240px] min-h-0">
+                    <ProcessStageCard item={item} />
+                  </li>
+                ))}
+              </ol>
+            </>
+          )}
+
+          <ProcessDesktopJourney
+            steps={content.steps}
+            referenceMode={referenceMode}
+          />
+        </div>
+      </div>
+
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-[42%] z-0 mx-auto h-[28rem] w-[70%] max-w-5xl bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.14),transparent_68%)]"
+        data-process-bottom-line
+        className="pointer-events-none absolute inset-x-0 h-px"
+        style={{
+          bottom: referenceMode ? PROCESS.height - PROCESS.bottomLineY : 0,
+          background: "rgba(255,255,255,0.12)",
+        }}
       />
-
-      <SectionHeading
-        eyebrow={content.eyebrow}
-        title={content.title}
-        description={content.description}
-      />
-
-      {/* Mobile: vertical timeline */}
-      <div className="relative mt-10 sm:hidden">
-        <div
-          aria-hidden
-          className="absolute bottom-6 left-[1.15rem] top-6 w-px bg-gradient-to-b from-brand-red/70 via-brand-red/40 to-brand-red/20"
-        />
-        <ol className="space-y-5">
-          {content.steps.map((item) => (
-            <li key={item.step} className="relative pl-10">
-              <span
-                aria-hidden
-                className="absolute left-2.5 top-8 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 border-brand-red bg-brand-elevated"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
-              </span>
-              <ProcessStageCard item={item} />
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      {/* Tablet: 2×2 — no misleading horizontal rail */}
-      <ol className="mt-12 hidden grid-cols-2 gap-6 sm:grid xl:hidden">
-        {content.steps.map((item) => (
-          <li key={item.step} className="h-full min-h-0">
-            <ProcessStageCard item={item} />
-          </li>
-        ))}
-      </ol>
-
-      {/* Desktop: four tall stages + rail with nodes in gaps */}
-      <div className="relative mt-12 hidden xl:block">
-        <DesktopProcessRail count={content.steps.length} />
-        <ol className="relative z-10 grid grid-cols-4 items-stretch gap-6 xl:gap-8">
-          {content.steps.map((item) => (
-            <li key={item.step} className="h-full min-h-0">
-              <ProcessStageCard item={item} />
-            </li>
-          ))}
-        </ol>
-      </div>
-    </Section>
+    </section>
   );
 }

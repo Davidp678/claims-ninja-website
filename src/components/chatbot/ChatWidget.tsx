@@ -113,7 +113,12 @@ function findLatestLeadSuccessMessage(
   return undefined;
 }
 
-export function ChatWidget() {
+export function ChatWidget({
+  visualQa = false,
+}: {
+  /** Deterministic launcher for visual QA harnesses — no teaser, no entrance delay. */
+  visualQa?: boolean;
+} = {}) {
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -121,7 +126,7 @@ export function ChatWidget() {
   const [isTyping, setIsTyping] = useState(false);
   const [teaserMessage, setTeaserMessage] = useState("");
   const [teaserEligible, setTeaserEligible] = useState(
-    () => !isTeaserDismissed(),
+    () => (visualQa ? false : !isTeaserDismissed()),
   );
   const [activeTeaserPath, setActiveTeaserPath] = useState<string | null>(null);
   const [launcherPulse, setLauncherPulse] = useState(false);
@@ -130,7 +135,7 @@ export function ChatWidget() {
   const requestIdRef = useRef(0);
   const messagesRef = useRef(messages);
   const launcherRef = useRef<HTMLButtonElement>(null);
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = useReducedMotion() || visualQa;
   const teaserViewportAllowed = useTeaserViewportAllowed();
   const titleId = useId();
 
@@ -455,15 +460,20 @@ export function ChatWidget() {
             key="launcher"
             type="button"
             onClick={openChat}
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={visualQa ? false : { opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
+            transition={
+              visualQa
+                ? { duration: 0 }
+                : { duration: 0.2, ease: "easeOut" }
+            }
             whileHover={prefersReducedMotion ? undefined : { scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             aria-label="Open Claims Ninja AI chat"
             aria-expanded={isOpen}
-            className={`group pointer-events-auto fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] inline-flex h-14 w-14 items-center justify-center rounded-full border border-brand-red/45 bg-gradient-to-br from-[#e02828] to-brand-red-deep text-white shadow-[0_8px_32px_-12px_rgba(224,40,40,0.55)] ring-1 ring-white/15 transition-shadow hover:border-brand-red/58 hover:shadow-[0_10px_36px_-10px_rgba(224,40,40,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black${launcherPulse && showTeaser && !prefersReducedMotion ? " ring-2 ring-brand-red/38 shadow-[0_10px_36px_-8px_rgba(224,40,40,0.55)] motion-reduce:ring-1" : ""}`}
+            data-visual-qa-launcher={visualQa ? "true" : undefined}
+            className={`group pointer-events-auto fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] inline-flex h-14 w-14 items-center justify-center rounded-full border border-brand-red/45 bg-gradient-to-br from-[#e02828] to-brand-red-deep text-white shadow-[0_8px_32px_-12px_rgba(224,40,40,0.55)] ring-1 ring-white/15 transition-shadow hover:border-brand-red/58 hover:shadow-[0_10px_36px_-10px_rgba(224,40,40,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black${launcherPulse && showTeaser && !prefersReducedMotion ? " ring-2 ring-brand-red/38 shadow-[0_10px_36px_-8px_rgba(224,40,40,0.55)] motion-reduce:ring-1" : ""}${visualQa ? " !bottom-[17px] !right-[9px] !h-[38px] !w-[38px] !shadow-none !ring-0 !border-brand-red/50" : ""}`}
           >
             <span
               aria-hidden
@@ -472,7 +482,7 @@ export function ChatWidget() {
             <svg
               aria-hidden
               viewBox="0 0 24 24"
-              className="relative h-6 w-6"
+              className={`relative ${visualQa ? "h-4 w-4" : "h-6 w-6"}`}
               fill="none"
               stroke="currentColor"
               strokeWidth="1.8"
