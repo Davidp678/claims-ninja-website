@@ -30,7 +30,7 @@ export function ProcessDesktopJourney({
   steps.forEach((item, index) => {
     cells.push(
       <div key={item.step} className="relative h-full min-w-0">
-        <ProcessStageCard item={item} referenceMode={referenceMode} />
+        <ProcessStageCard item={item} referenceMode />
       </div>,
     );
     if (index < steps.length - 1) {

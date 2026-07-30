@@ -37,7 +37,7 @@ export function ProcessSection({
         className={
           referenceMode
             ? "relative z-10 flex h-full flex-col"
-            : "relative z-10 mx-auto w-full max-w-[1024px] px-0 pb-16 pt-10 sm:pb-20 sm:pt-12 xl:min-h-[467px] xl:pb-[67px] xl:pt-0"
+            : "relative z-10 mx-auto w-full max-w-[1024px] px-0 pb-16 pt-10 sm:pb-20 sm:pt-12 xl:h-[467px] xl:min-h-0 xl:pb-0 xl:pt-0"
         }
       >
         <header
@@ -45,7 +45,7 @@ export function ProcessSection({
           className={
             referenceMode
               ? "pointer-events-none absolute inset-x-0 text-center"
-              : "mx-auto max-w-3xl px-6 pt-2 text-center xl:pt-[49px]"
+              : "mx-auto max-w-3xl px-6 pt-2 text-center xl:pointer-events-none xl:absolute xl:inset-x-0 xl:top-0 xl:h-[160px] xl:max-w-none xl:px-0 xl:pt-0"
           }
           style={referenceMode ? { top: 0, height: 160 } : undefined}
         >
@@ -54,14 +54,12 @@ export function ProcessSection({
             className={
               referenceMode
                 ? "absolute left-1/2 -translate-x-1/2 font-semibold uppercase leading-none"
-                : "font-semibold uppercase leading-none"
+                : "font-semibold uppercase leading-none xl:absolute xl:left-1/2 xl:top-[49px] xl:-translate-x-1/2"
             }
             style={{
               top: referenceMode ? heading.eyebrowTop : undefined,
-              fontSize: referenceMode ? heading.eyebrowSize : 11,
-              letterSpacing: referenceMode
-                ? heading.eyebrowTracking
-                : "0.2em",
+              fontSize: heading.eyebrowSize,
+              letterSpacing: heading.eyebrowTracking,
               fontWeight: 700,
               color: PROCESS.eyebrow,
               whiteSpace: "nowrap",
@@ -74,13 +72,13 @@ export function ProcessSection({
             className={
               referenceMode
                 ? "absolute left-1/2 -translate-x-1/2 font-display whitespace-nowrap"
-                : "mt-4 font-display text-[28px] sm:text-[32px] xl:text-[30px]"
+                : "mt-4 font-display text-[28px] sm:text-[32px] xl:absolute xl:left-1/2 xl:top-[69px] xl:mt-0 xl:-translate-x-1/2 xl:whitespace-nowrap xl:text-[30.25px]"
             }
             style={{
               top: referenceMode ? heading.titleTop : undefined,
               fontSize: referenceMode ? heading.titleSize : undefined,
               lineHeight: referenceMode ? heading.titleLineHeight : 1.15,
-              letterSpacing: referenceMode ? "0" : "0.01em",
+              letterSpacing: "0",
               fontWeight: 600,
               color: PROCESS.title,
             }}
@@ -90,7 +88,9 @@ export function ProcessSection({
           <p
             data-qa="heading-support"
             className={
-              referenceMode ? "absolute whitespace-nowrap" : "mx-auto mt-3"
+              referenceMode
+                ? "absolute whitespace-nowrap"
+                : "mx-auto mt-3 xl:absolute xl:left-[288px] xl:top-[113px] xl:mt-0 xl:w-[460px] xl:whitespace-nowrap"
             }
             style={
               referenceMode
@@ -106,7 +106,7 @@ export function ProcessSection({
                   }
                 : {
                     maxWidth: 460,
-                    fontSize: 13.5,
+                    fontSize: heading.supportSize,
                     lineHeight: 1.25,
                     fontWeight: 400,
                     color: PROCESS.supportText,
@@ -121,7 +121,7 @@ export function ProcessSection({
           className={
             referenceMode
               ? "absolute inset-x-0"
-              : "mt-10 sm:mt-12 xl:mt-[46px]"
+              : "mt-10 sm:mt-12 xl:absolute xl:inset-x-0 xl:top-[170px] xl:mt-0"
           }
           style={referenceMode ? { top: PROCESS.cardTop } : undefined}
         >
