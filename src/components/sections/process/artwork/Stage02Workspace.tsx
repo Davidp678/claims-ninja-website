@@ -69,7 +69,7 @@ export function Stage02Workspace({ stage }: { stage: string }) {
               width: 6,
               height: 6,
               background: PROCESS.activeDot,
-              boxShadow: "0 0 5px rgba(194,74,72,0.52)",
+              boxShadow: "0 0 6px rgba(239,68,68,0.58)",
             }}
           />
           <span

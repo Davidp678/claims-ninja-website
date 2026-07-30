@@ -26,15 +26,15 @@ export const PROCESS = {
   pillBorder: "#222222",
   pillLabel: "#bcbcbc",
   pillBg: "rgba(8,8,8,0.72)",
-  /** Symbol / pill stroke — readable against card fills (reference appearance). */
-  mutedRed: "#975048",
-  connector: "#ae5253",
-  numberRed: "#8f2726",
-  numberRedRgb: "143, 39, 38",
-  eyebrow: "#b4353e",
+  /** Site-native accent system: vivid enough to read against the dark card fills. */
+  mutedRed: "#ef4444",
+  connector: "#dc2626",
+  numberRed: "#dc2626",
+  numberRedRgb: "220, 38, 38",
+  eyebrow: "#ef4444",
   panelBg: "#0c0c0c",
   panelBorder: "rgba(255,255,255,0.16)",
-  activeDot: "#c24a48",
+  activeDot: "#ef4444",
   frameBorder: "rgba(255,255,255,0.13)",
   frameBg: "#121212",
 

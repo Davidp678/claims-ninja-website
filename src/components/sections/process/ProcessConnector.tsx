@@ -23,7 +23,7 @@ export function ProcessConnector({ index }: { index: 1 | 2 | 3 }) {
           height: node.glow,
           transform: "translate(-50%, -50%)",
           background:
-            "radial-gradient(circle, rgba(174,82,83,0.42) 0%, rgba(56,25,22,0.28) 42%, transparent 70%)",
+            "radial-gradient(circle, rgba(239,68,68,0.5) 0%, rgba(220,38,38,0.26) 42%, transparent 70%)",
         }}
       />
 
