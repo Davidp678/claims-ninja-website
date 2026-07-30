@@ -126,7 +126,7 @@ export function Stage02Workspace({ stage }: { stage: string }) {
             left: 47,
             top: 17,
             width: 39,
-            background: "rgba(255,255,255,0.22)",
+            background: "rgba(255,255,255,0.16)",
           }}
         />
         <span
@@ -136,7 +136,7 @@ export function Stage02Workspace({ stage }: { stage: string }) {
             left: 47,
             top: 37,
             width: 52,
-            background: "rgba(255,255,255,0.14)",
+            background: "rgba(255,255,255,0.1)",
           }}
         />
 

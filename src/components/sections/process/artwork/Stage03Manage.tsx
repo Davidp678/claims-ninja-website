@@ -98,7 +98,7 @@ export function Stage03Manage({ stage }: { stage: string }) {
                 left: 26,
                 top: 7,
                 width: row.barWidth,
-                background: "rgba(255,255,255,0.2)",
+                background: "rgba(255,255,255,0.16)",
               }}
             />
           </div>
