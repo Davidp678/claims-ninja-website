@@ -19,7 +19,11 @@ export function ProcessSection({
       id="process"
       data-process-section
       data-reference-mode={referenceMode ? "true" : undefined}
-      className="relative overflow-hidden"
+      className={
+        referenceMode
+          ? "relative overflow-hidden"
+          : "relative overflow-hidden xl:h-[537px] min-[1440px]:h-[607px] 2xl:h-[645px] min-[1760px]:h-[724px]"
+      }
       style={{
         backgroundColor: PROCESS.pageBg,
         ...(referenceMode
@@ -37,7 +41,7 @@ export function ProcessSection({
         className={
           referenceMode
             ? "relative z-10 flex h-full flex-col"
-            : "relative z-10 mx-auto w-full max-w-[1024px] px-0 pb-16 pt-10 sm:pb-20 sm:pt-12 xl:h-[467px] xl:min-h-0 xl:pb-0 xl:pt-0"
+            : "relative z-10 mx-auto w-full max-w-[1024px] px-0 pb-16 pt-10 sm:pb-20 sm:pt-12 xl:h-[467px] xl:min-h-0 xl:origin-top xl:scale-[1.15] xl:pb-0 xl:pt-0 min-[1440px]:scale-[1.3] 2xl:scale-[1.38] min-[1760px]:scale-[1.55]"
         }
       >
         <header
@@ -121,7 +125,7 @@ export function ProcessSection({
           className={
             referenceMode
               ? "absolute inset-x-0"
-              : "mt-10 sm:mt-12 xl:absolute xl:inset-x-0 xl:top-[160px] xl:mt-0 2xl:top-[155px]"
+              : "mt-10 sm:mt-12 xl:absolute xl:inset-x-0 xl:top-[170px] xl:mt-0"
           }
           style={referenceMode ? { top: PROCESS.cardTop } : undefined}
         >
