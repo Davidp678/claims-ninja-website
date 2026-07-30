@@ -19,7 +19,8 @@
     "visual:onboarding:fixtures": "playwright test --config=playwright.onboarding-fixture-visual.config.ts",
     "audit:seo": "npx tsx scripts/seo-migration-audit.ts",
     "test:seo-redirects": "npx tsx scripts/seo-redirect-smoke.ts",
-    "smoke:production": "playwright test --config=playwright.smoke.config.ts"
+    "smoke:production": "playwright test --config=playwright.smoke.config.ts",
+    "assert:workflow-no-raster": "node scripts/assert-workflow-no-raster-production.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.3",

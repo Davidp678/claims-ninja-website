@@ -49,27 +49,12 @@ export function ProcessSection({
           }
           style={referenceMode ? { top: 0, height: 160 } : undefined}
         >
-          {/* Desktop/reference: raster heading for mock fidelity. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/workflow-mock/heading-art.png"
-            alt=""
-            width={524}
-            height={95}
-            draggable={false}
-            className={
-              referenceMode
-                ? "pointer-events-none absolute left-1/2 top-[40px] -translate-x-1/2 select-none"
-                : "pointer-events-none mx-auto hidden select-none xl:block"
-            }
-          />
-
           <p
             data-qa="heading-eyebrow"
             className={
               referenceMode
-                ? "absolute left-1/2 -translate-x-1/2 font-semibold uppercase leading-none opacity-0"
-                : "font-semibold uppercase leading-none xl:opacity-0"
+                ? "absolute left-1/2 -translate-x-1/2 font-semibold uppercase leading-none"
+                : "font-semibold uppercase leading-none"
             }
             style={{
               top: referenceMode ? heading.eyebrowTop : undefined,
@@ -88,8 +73,8 @@ export function ProcessSection({
             data-qa="heading-title"
             className={
               referenceMode
-                ? "absolute left-1/2 -translate-x-1/2 font-display whitespace-nowrap opacity-0"
-                : "mt-4 font-display text-[28px] sm:text-[32px] xl:opacity-0"
+                ? "absolute left-1/2 -translate-x-1/2 font-display whitespace-nowrap"
+                : "mt-4 font-display text-[28px] sm:text-[32px] xl:text-[30px]"
             }
             style={{
               top: referenceMode ? heading.titleTop : undefined,
@@ -105,9 +90,7 @@ export function ProcessSection({
           <p
             data-qa="heading-support"
             className={
-              referenceMode
-                ? "absolute whitespace-nowrap opacity-0"
-                : "mx-auto mt-3 xl:opacity-0"
+              referenceMode ? "absolute whitespace-nowrap" : "mx-auto mt-3"
             }
             style={
               referenceMode

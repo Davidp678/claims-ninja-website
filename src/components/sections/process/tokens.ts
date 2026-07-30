@@ -58,15 +58,13 @@ export const PROCESS = {
     eyebrowTop: 49,
     eyebrowSize: 9.25,
     eyebrowTracking: "0.18em",
-    /** Ink top in reference is y=74; DOM box sits ~3px above glyph tops. */
-    titleTop: 69,
-    titleSize: 29.75,
+    titleTop: 72,
+    titleSize: 29.5,
     titleLineHeight: "32px",
     supportTop: 113,
-    supportSize: 13.25,
+    supportSize: 13,
     supportMaxWidth: 460,
-    /** Center support so glyph ink starts near ref x=292. */
-    supportLeft: 291,
+    supportLeft: 288,
   },
 
   connectorLines: [

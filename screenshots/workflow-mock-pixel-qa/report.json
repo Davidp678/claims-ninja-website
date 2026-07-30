@@ -39,9 +39,9 @@
     "mismatchRatio": 0,
     "passed": true
   },
-  "mismatchedPixels": 1,
+  "mismatchedPixels": 29318,
   "totalPixels": 478208,
-  "mismatchRatio": 0.000002091140256959315,
+  "mismatchRatio": 0.06130805005353319,
   "headingTitleContamination": {
     "note": "Loose L>=160 detector on reference can include glow/AA below glyphs; dense L>=180 is glyph ink.",
     "looseRef": {
@@ -63,28 +63,28 @@
       "count": 3997
     },
     "looseActual": {
-      "left": 285,
-      "top": 74,
-      "right": 747,
+      "left": 287,
+      "top": 77,
+      "right": 737,
       "bottom": 115,
-      "width": 463,
-      "height": 42,
-      "count": 4173
+      "width": 451,
+      "height": 39,
+      "count": 4136
     },
     "denseActual": {
-      "left": 285,
-      "top": 74,
-      "right": 747,
-      "bottom": 102,
-      "width": 463,
-      "height": 29,
-      "count": 3997
+      "left": 287,
+      "top": 77,
+      "right": 737,
+      "bottom": 104,
+      "width": 451,
+      "height": 28,
+      "count": 3930
     }
   },
   "dualBounds": [
     {
       "element": "connector-1-line",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 246,
@@ -95,28 +95,46 @@
         },
         "actual": {
           "x": 246,
-          "y": 239,
+          "y": 238,
           "w": 30,
           "h": 3,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
-          "y": 1,
+          "y": 0,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 246,
+          "y": 238,
+          "w": 30,
+          "h": 3,
+          "count": 88,
+          "method": "mask-ink:connector"
+        },
+        "actual": {
+          "x": 246,
+          "y": 238,
+          "w": 30,
+          "h": 3,
+          "count": 52,
+          "method": "paint-layer-isolation"
+        },
+        "delta": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        }
       }
     },
     {
       "element": "connector-1-node",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 256,
@@ -127,28 +145,46 @@
         },
         "actual": {
           "x": 256,
-          "y": 234,
+          "y": 233,
           "w": 13,
           "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
-          "y": 1,
+          "y": 0,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 257,
+          "y": 238,
+          "w": 11,
+          "h": 3,
+          "count": 24,
+          "method": "mask-ink:connector"
+        },
+        "actual": {
+          "x": 256,
+          "y": 233,
+          "w": 12,
+          "h": 13,
+          "count": 15,
+          "method": "paint-layer-isolation"
+        },
+        "delta": {
+          "x": -1,
+          "y": -5,
+          "w": 1,
+          "h": 10
+        }
       }
     },
     {
       "element": "connector-1-node-border",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 256,
@@ -158,29 +194,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 256,
+          "x": 257,
           "y": 234,
-          "w": 13,
-          "h": 13,
+          "w": 11,
+          "h": 11,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
+          "x": 1,
           "y": 1,
-          "w": 0,
-          "h": 0
+          "w": -2,
+          "h": -2
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 257,
+          "y": 238,
+          "w": 11,
+          "h": 3,
+          "count": 12,
+          "method": "mask-ink:connector"
+        },
+        "actual": {
+          "x": 257,
+          "y": 234,
+          "w": 11,
+          "h": 11,
+          "count": 31,
+          "method": "mask-ink:connector"
+        },
+        "delta": {
+          "x": 0,
+          "y": -4,
+          "w": 0,
+          "h": 8
+        }
       }
     },
     {
       "element": "connector-1-node-interior",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 258,
@@ -191,28 +245,46 @@
         },
         "actual": {
           "x": 258,
-          "y": 236,
+          "y": 235,
           "w": 9,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
-          "y": 1,
+          "y": 0,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 259,
+          "y": 236,
+          "w": 7,
+          "h": 7,
+          "count": 23,
+          "method": "mask-ink:dark"
+        },
+        "actual": {
+          "x": 261,
+          "y": 236,
+          "w": 5,
+          "h": 7,
+          "count": 11,
+          "method": "mask-ink:dark"
+        },
+        "delta": {
+          "x": 2,
+          "y": 0,
+          "w": -2,
+          "h": 0
+        }
       }
     },
     {
       "element": "connector-1-dot",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 260,
@@ -223,28 +295,46 @@
         },
         "actual": {
           "x": 260,
-          "y": 238,
+          "y": 237,
           "w": 5,
           "h": 5,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
-          "y": 1,
+          "y": 0,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 261,
+          "y": 238,
+          "w": 3,
+          "h": 3,
+          "count": 9,
+          "method": "mask-ink:connector"
+        },
+        "actual": {
+          "x": 260,
+          "y": 237,
+          "w": 4,
+          "h": 5,
+          "count": 16,
+          "method": "paint-layer-isolation"
+        },
+        "delta": {
+          "x": -1,
+          "y": -1,
+          "w": 1,
+          "h": 2
+        }
       }
     },
     {
       "element": "connector-1-glow",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 253,
@@ -255,28 +345,46 @@
         },
         "actual": {
           "x": 254,
-          "y": 232,
+          "y": 231,
           "w": 17,
           "h": 17,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 1,
-          "y": 2,
+          "y": 1,
           "w": -2,
           "h": -2
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 254,
+          "y": 237,
+          "w": 17,
+          "h": 5,
+          "count": 42,
+          "method": "mask-ink:glow"
+        },
+        "actual": {
+          "x": 254,
+          "y": 231,
+          "w": 16,
+          "h": 17,
+          "count": 213,
+          "method": "paint-layer-isolation"
+        },
+        "delta": {
+          "x": 0,
+          "y": -6,
+          "w": -1,
+          "h": 12
+        }
       }
     },
     {
       "element": "connector-2-line",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 508,
@@ -287,28 +395,46 @@
         },
         "actual": {
           "x": 508,
-          "y": 239,
+          "y": 238,
           "w": 24,
           "h": 3,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
-          "y": 1,
+          "y": 0,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 508,
+          "y": 238,
+          "w": 24,
+          "h": 3,
+          "count": 72,
+          "method": "mask-ink:connector"
+        },
+        "actual": {
+          "x": 508,
+          "y": 238,
+          "w": 24,
+          "h": 3,
+          "count": 34,
+          "method": "paint-layer-isolation"
+        },
+        "delta": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        }
       }
     },
     {
       "element": "connector-2-node",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 513,
@@ -319,28 +445,46 @@
         },
         "actual": {
           "x": 513,
-          "y": 234,
+          "y": 233,
           "w": 13,
           "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
-          "y": 1,
+          "y": 0,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 514,
+          "y": 236,
+          "w": 11,
+          "h": 9,
+          "count": 73,
+          "method": "mask-ink:connector"
+        },
+        "actual": {
+          "x": 513,
+          "y": 233,
+          "w": 12,
+          "h": 13,
+          "count": 17,
+          "method": "paint-layer-isolation"
+        },
+        "delta": {
+          "x": -1,
+          "y": -3,
+          "w": 1,
+          "h": 4
+        }
       }
     },
     {
       "element": "connector-2-node-border",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 513,
@@ -350,29 +494,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 513,
+          "x": 514,
           "y": 234,
-          "w": 13,
-          "h": 13,
+          "w": 11,
+          "h": 11,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
+          "x": 1,
           "y": 1,
-          "w": 0,
-          "h": 0
+          "w": -2,
+          "h": -2
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 514,
+          "y": 236,
+          "w": 11,
+          "h": 9,
+          "count": 45,
+          "method": "mask-ink:connector"
+        },
+        "actual": {
+          "x": 514,
+          "y": 234,
+          "w": 11,
+          "h": 11,
+          "count": 31,
+          "method": "mask-ink:connector"
+        },
+        "delta": {
+          "x": 0,
+          "y": -2,
+          "w": 0,
+          "h": 2
+        }
       }
     },
     {
       "element": "connector-2-node-interior",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 515,
@@ -383,28 +545,46 @@
         },
         "actual": {
           "x": 515,
-          "y": 236,
+          "y": 235,
           "w": 9,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
-          "y": 1,
+          "y": 0,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 522,
+          "y": 238,
+          "w": 1,
+          "h": 1,
+          "count": 1,
+          "method": "mask-ink:dark"
+        },
+        "actual": {
+          "x": 518,
+          "y": 236,
+          "w": 5,
+          "h": 7,
+          "count": 11,
+          "method": "mask-ink:dark"
+        },
+        "delta": {
+          "x": -4,
+          "y": -2,
+          "w": 4,
+          "h": 6
+        }
       }
     },
     {
       "element": "connector-2-dot",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 517,
@@ -415,28 +595,46 @@
         },
         "actual": {
           "x": 517,
-          "y": 238,
+          "y": 237,
           "w": 5,
           "h": 5,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
-          "y": 1,
+          "y": 0,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 518,
+          "y": 238,
+          "w": 3,
+          "h": 3,
+          "count": 9,
+          "method": "mask-ink:connector"
+        },
+        "actual": {
+          "x": 517,
+          "y": 237,
+          "w": 4,
+          "h": 5,
+          "count": 16,
+          "method": "paint-layer-isolation"
+        },
+        "delta": {
+          "x": -1,
+          "y": -1,
+          "w": 1,
+          "h": 2
+        }
       }
     },
     {
       "element": "connector-2-glow",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 510,
@@ -447,28 +645,46 @@
         },
         "actual": {
           "x": 511,
-          "y": 232,
+          "y": 231,
           "w": 17,
           "h": 17,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 1,
-          "y": 2,
+          "y": 1,
           "w": -2,
           "h": -2
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 511,
+          "y": 230,
+          "w": 17,
+          "h": 19,
+          "count": 203,
+          "method": "mask-ink:glow"
+        },
+        "actual": {
+          "x": 511,
+          "y": 231,
+          "w": 16,
+          "h": 17,
+          "count": 213,
+          "method": "paint-layer-isolation"
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": -1,
+          "h": -2
+        }
       }
     },
     {
       "element": "connector-3-line",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 750,
@@ -479,28 +695,46 @@
         },
         "actual": {
           "x": 750,
-          "y": 239,
+          "y": 238,
           "w": 24,
           "h": 3,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
-          "y": 1,
+          "y": 0,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 751,
+          "y": 238,
+          "w": 23,
+          "h": 3,
+          "count": 68,
+          "method": "mask-ink:connector"
+        },
+        "actual": {
+          "x": 750,
+          "y": 238,
+          "w": 24,
+          "h": 3,
+          "count": 34,
+          "method": "paint-layer-isolation"
+        },
+        "delta": {
+          "x": -1,
+          "y": 0,
+          "w": 1,
+          "h": 0
+        }
       }
     },
     {
       "element": "connector-3-node",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 757,
@@ -511,28 +745,46 @@
         },
         "actual": {
           "x": 757,
-          "y": 234,
+          "y": 233,
           "w": 13,
           "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
-          "y": 1,
+          "y": 0,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 758,
+          "y": 238,
+          "w": 11,
+          "h": 3,
+          "count": 24,
+          "method": "mask-ink:connector"
+        },
+        "actual": {
+          "x": 758,
+          "y": 233,
+          "w": 12,
+          "h": 13,
+          "count": 12,
+          "method": "paint-layer-isolation"
+        },
+        "delta": {
+          "x": 0,
+          "y": -5,
+          "w": 1,
+          "h": 10
+        }
       }
     },
     {
       "element": "connector-3-node-border",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 757,
@@ -542,29 +794,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 757,
+          "x": 758,
           "y": 234,
-          "w": 13,
-          "h": 13,
+          "w": 11,
+          "h": 11,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
+          "x": 1,
           "y": 1,
-          "w": 0,
-          "h": 0
+          "w": -2,
+          "h": -2
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 758,
+          "y": 238,
+          "w": 11,
+          "h": 3,
+          "count": 12,
+          "method": "mask-ink:connector"
+        },
+        "actual": {
+          "x": 758,
+          "y": 234,
+          "w": 11,
+          "h": 11,
+          "count": 31,
+          "method": "mask-ink:connector"
+        },
+        "delta": {
+          "x": 0,
+          "y": -4,
+          "w": 0,
+          "h": 8
+        }
       }
     },
     {
       "element": "connector-3-node-interior",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 759,
@@ -575,28 +845,46 @@
         },
         "actual": {
           "x": 759,
-          "y": 236,
+          "y": 235,
           "w": 9,
           "h": 9,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
-          "y": 1,
+          "y": 0,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 760,
+          "y": 236,
+          "w": 7,
+          "h": 7,
+          "count": 23,
+          "method": "mask-ink:dark"
+        },
+        "actual": {
+          "x": 760,
+          "y": 236,
+          "w": 5,
+          "h": 7,
+          "count": 11,
+          "method": "mask-ink:dark"
+        },
+        "delta": {
+          "x": 0,
+          "y": 0,
+          "w": -2,
+          "h": 0
+        }
       }
     },
     {
       "element": "connector-3-dot",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 761,
@@ -607,28 +895,46 @@
         },
         "actual": {
           "x": 761,
-          "y": 238,
+          "y": 237,
           "w": 5,
           "h": 5,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 0,
-          "y": 1,
+          "y": 0,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 762,
+          "y": 238,
+          "w": 3,
+          "h": 3,
+          "count": 9,
+          "method": "mask-ink:connector"
+        },
+        "actual": {
+          "x": 762,
+          "y": 237,
+          "w": 4,
+          "h": 5,
+          "count": 16,
+          "method": "paint-layer-isolation"
+        },
+        "delta": {
+          "x": 0,
+          "y": -1,
+          "w": 1,
+          "h": 2
+        }
       }
     },
     {
       "element": "connector-3-glow",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 754,
@@ -639,23 +945,41 @@
         },
         "actual": {
           "x": 755,
-          "y": 232,
+          "y": 231,
           "w": 17,
           "h": 17,
           "method": "dom-geometry"
         },
         "delta": {
           "x": 1,
-          "y": 2,
+          "y": 1,
           "w": -2,
           "h": -2
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 755,
+          "y": 238,
+          "w": 17,
+          "h": 4,
+          "count": 34,
+          "method": "mask-ink:glow"
+        },
+        "actual": {
+          "x": 756,
+          "y": 231,
+          "w": 16,
+          "h": 17,
+          "count": 212,
+          "method": "paint-layer-isolation"
+        },
+        "delta": {
+          "x": 1,
+          "y": -7,
+          "w": -1,
+          "h": 13
+        }
       }
     },
     {
@@ -670,14 +994,14 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 589,
+          "x": 590,
           "y": 208,
           "w": 16,
           "h": 16,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
+          "x": 1,
           "y": 0,
           "w": 0,
           "h": 0
@@ -702,14 +1026,14 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 589,
+          "x": 590,
           "y": 228,
           "w": 16,
           "h": 16,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
+          "x": 1,
           "y": 0,
           "w": 0,
           "h": 0
@@ -734,14 +1058,14 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 589,
+          "x": 590,
           "y": 248,
           "w": 16,
           "h": 16,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
+          "x": 1,
           "y": 0,
           "w": 0,
           "h": 0
@@ -766,15 +1090,15 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 331,
-          "y": 210,
+          "x": 333,
+          "y": 212,
           "w": 7,
           "h": 7,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 4,
-          "y": 2,
+          "x": 6,
+          "y": 4,
           "w": -2,
           "h": -2
         }
@@ -788,7 +1112,7 @@
     },
     {
       "element": "stage-01-pill-icon",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 104,
@@ -798,29 +1122,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 96,
-          "y": 362,
+          "x": 106,
+          "y": 367,
           "w": 14,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -8,
-          "y": -2,
+          "x": 2,
+          "y": 3,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 105,
+          "y": 364,
+          "w": 13,
+          "h": 14,
+          "count": 160,
+          "method": "mask-ink:mutedRed"
+        },
+        "actual": {
+          "x": 108,
+          "y": 369,
+          "w": 10,
+          "h": 11,
+          "count": 48,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 3,
+          "y": 5,
+          "w": -3,
+          "h": -3
+        }
       }
     },
     {
       "element": "stage-02-pill-icon",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 300,
@@ -830,29 +1172,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 293,
-          "y": 362,
+          "x": 303,
+          "y": 367,
           "w": 14,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -7,
-          "y": -2,
+          "x": 3,
+          "y": 3,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 300,
+          "y": 364,
+          "w": 14,
+          "h": 14,
+          "count": 158,
+          "method": "mask-ink:mutedRed"
+        },
+        "actual": {
+          "x": 305,
+          "y": 368,
+          "w": 10,
+          "h": 9,
+          "count": 57,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 5,
+          "y": 4,
+          "w": -4,
+          "h": -5
+        }
       }
     },
     {
       "element": "stage-03-pill-icon",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 552,
@@ -862,29 +1222,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 547,
-          "y": 362,
+          "x": 557,
+          "y": 367,
           "w": 14,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -5,
-          "y": -2,
+          "x": 5,
+          "y": 3,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 554,
+          "y": 364,
+          "w": 12,
+          "h": 14,
+          "count": 100,
+          "method": "mask-ink:mutedRed"
+        },
+        "actual": {
+          "x": 559,
+          "y": 371,
+          "w": 10,
+          "h": 6,
+          "count": 27,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 5,
+          "y": 7,
+          "w": -2,
+          "h": -8
+        }
       }
     },
     {
       "element": "stage-04-pill-icon",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 796,
@@ -894,29 +1272,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 790,
-          "y": 362,
+          "x": 800,
+          "y": 367,
           "w": 14,
           "h": 14,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -6,
-          "y": -2,
+          "x": 4,
+          "y": 3,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 797,
+          "y": 364,
+          "w": 13,
+          "h": 14,
+          "count": 151,
+          "method": "mask-ink:mutedRed"
+        },
+        "actual": {
+          "x": 801,
+          "y": 370,
+          "w": 12,
+          "h": 8,
+          "count": 52,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 4,
+          "y": 6,
+          "w": -1,
+          "h": -6
+        }
       }
     },
     {
       "element": "heading-eyebrow",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 420,
@@ -940,15 +1336,33 @@
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 424,
+          "y": 49,
+          "w": 176,
+          "h": 7,
+          "count": 518,
+          "method": "mask-ink:red"
+        },
+        "actual": {
+          "x": 421,
+          "y": 49,
+          "w": 180,
+          "h": 7,
+          "count": 602,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -3,
+          "y": 0,
+          "w": 4,
+          "h": 0
+        }
       }
     },
     {
       "element": "heading-title",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 280,
@@ -958,29 +1372,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 283,
-          "y": 69,
-          "w": 459,
+          "x": 284,
+          "y": 72,
+          "w": 455,
           "h": 32,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 3,
-          "y": -3,
-          "w": -11,
+          "x": 4,
+          "y": 0,
+          "w": -15,
           "h": -2
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 285,
+          "y": 74,
+          "w": 463,
+          "h": 29,
+          "count": 3997,
+          "method": "mask-ink:white180"
+        },
+        "actual": {
+          "x": 286,
+          "y": 77,
+          "w": 452,
+          "h": 28,
+          "count": 4325,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 1,
+          "y": 3,
+          "w": -11,
+          "h": -1
+        }
       }
     },
     {
       "element": "heading-support",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 288,
@@ -990,29 +1422,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 291,
+          "x": 288,
           "y": 113,
           "w": 460,
-          "h": 17,
+          "h": 16,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 3,
+          "x": 0,
           "y": 0,
           "w": 0,
-          "h": 1
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 292,
+          "y": 115,
+          "w": 450,
+          "h": 12,
+          "count": 891,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 288,
+          "y": 115,
+          "w": 466,
+          "h": 13,
+          "count": 1827,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -4,
+          "y": 0,
+          "w": 16,
+          "h": 1
+        }
       }
     },
     {
       "element": "stage-01-number",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 98,
@@ -1022,29 +1472,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 98,
-          "y": 186,
+          "x": 99,
+          "y": 187,
           "w": 14,
-          "h": 22,
+          "h": 15,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
+          "x": 1,
+          "y": 1,
           "w": -10,
-          "h": 2
+          "h": -5
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 101,
+          "y": 189,
+          "w": 13,
+          "h": 11,
+          "count": 86,
+          "method": "mask-ink:red"
+        },
+        "actual": {
+          "x": 99,
+          "y": 188,
+          "w": 14,
+          "h": 12,
+          "count": 110,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -2,
+          "y": -1,
+          "w": 1,
+          "h": 1
+        }
       }
     },
     {
       "element": "stage-02-number",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 295,
@@ -1054,29 +1522,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 295,
-          "y": 186,
-          "w": 18,
-          "h": 22,
+          "x": 296,
+          "y": 187,
+          "w": 17,
+          "h": 15,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
-          "w": -10,
-          "h": 2
+          "x": 1,
+          "y": 1,
+          "w": -11,
+          "h": -5
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 298,
+          "y": 189,
+          "w": 17,
+          "h": 11,
+          "count": 117,
+          "method": "mask-ink:red"
+        },
+        "actual": {
+          "x": 296,
+          "y": 188,
+          "w": 17,
+          "h": 12,
+          "count": 130,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -2,
+          "y": -1,
+          "w": 0,
+          "h": 1
+        }
       }
     },
     {
       "element": "stage-03-number",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 548,
@@ -1086,29 +1572,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 549,
-          "y": 186,
-          "w": 19,
-          "h": 22,
+          "x": 550,
+          "y": 187,
+          "w": 17,
+          "h": 15,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 1,
-          "y": 0,
-          "w": -9,
-          "h": 2
+          "x": 2,
+          "y": 1,
+          "w": -11,
+          "h": -5
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 551,
+          "y": 188,
+          "w": 17,
+          "h": 12,
+          "count": 121,
+          "method": "mask-ink:red"
+        },
+        "actual": {
+          "x": 550,
+          "y": 188,
+          "w": 17,
+          "h": 12,
+          "count": 132,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -1,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        }
       }
     },
     {
       "element": "stage-04-number",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 790,
@@ -1118,29 +1622,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 792,
-          "y": 186,
-          "w": 19,
-          "h": 22,
+          "x": 793,
+          "y": 187,
+          "w": 18,
+          "h": 15,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 2,
-          "y": 0,
-          "w": -9,
-          "h": 2
+          "x": 3,
+          "y": 1,
+          "w": -10,
+          "h": -5
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 793,
+          "y": 189,
+          "w": 18,
+          "h": 11,
+          "count": 112,
+          "method": "mask-ink:red"
+        },
+        "actual": {
+          "x": 793,
+          "y": 188,
+          "w": 18,
+          "h": 12,
+          "count": 128,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 0,
+          "y": -1,
+          "w": 0,
+          "h": 1
+        }
       }
     },
     {
       "element": "stage-01-symbol",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 108,
@@ -1150,29 +1672,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 104,
-          "y": 217,
+          "x": 105,
+          "y": 218,
           "w": 36,
           "h": 36,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -4,
-          "y": -1,
+          "x": -3,
+          "y": 0,
           "w": 0,
           "h": -4
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 111,
+          "y": 223,
+          "w": 33,
+          "h": 33,
+          "count": 568,
+          "method": "mask-ink:mutedRed"
+        },
+        "actual": {
+          "x": 108,
+          "y": 218,
+          "w": 29,
+          "h": 36,
+          "count": 496,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -3,
+          "y": -5,
+          "w": -4,
+          "h": 3
+        }
       }
     },
     {
       "element": "stage-02-symbol",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 300,
@@ -1182,29 +1722,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 301,
-          "y": 217,
-          "w": 34,
-          "h": 34,
+          "x": 304,
+          "y": 220,
+          "w": 30,
+          "h": 30,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 1,
-          "y": 1,
-          "w": -2,
-          "h": -2
+          "x": 4,
+          "y": 4,
+          "w": -6,
+          "h": -6
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 304,
+          "y": 224,
+          "w": 32,
+          "h": 28,
+          "count": 653,
+          "method": "mask-ink:mutedRed"
+        },
+        "actual": {
+          "x": 306,
+          "y": 223,
+          "w": 26,
+          "h": 24,
+          "count": 316,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 2,
+          "y": -1,
+          "w": -6,
+          "h": -4
+        }
       }
     },
     {
       "element": "stage-03-symbol",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 554,
@@ -1214,29 +1772,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 555,
-          "y": 217,
-          "w": 34,
-          "h": 34,
+          "x": 557,
+          "y": 219,
+          "w": 32,
+          "h": 32,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 1,
-          "y": 1,
-          "w": -2,
-          "h": -2
+          "x": 3,
+          "y": 3,
+          "w": -4,
+          "h": -4
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 560,
+          "y": 223,
+          "w": 30,
+          "h": 29,
+          "count": 594,
+          "method": "mask-ink:mutedRed"
+        },
+        "actual": {
+          "x": 559,
+          "y": 220,
+          "w": 30,
+          "h": 27,
+          "count": 344,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -1,
+          "y": -3,
+          "w": 0,
+          "h": -2
+        }
       }
     },
     {
       "element": "stage-04-symbol",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 800,
@@ -1246,29 +1822,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 797,
-          "y": 217,
+          "x": 798,
+          "y": 218,
           "w": 36,
           "h": 36,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -3,
-          "y": -1,
+          "x": -2,
+          "y": 0,
           "w": 2,
           "h": 2
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 800,
+          "y": 223,
+          "w": 33,
+          "h": 29,
+          "count": 570,
+          "method": "mask-ink:mutedRed"
+        },
+        "actual": {
+          "x": 801,
+          "y": 221,
+          "w": 30,
+          "h": 30,
+          "count": 373,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 1,
+          "y": -2,
+          "w": -3,
+          "h": 1
+        }
       }
     },
     {
       "element": "stage-01-title",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 98,
@@ -1278,29 +1872,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 98,
-          "y": 282,
-          "w": 105,
-          "h": 19,
+          "x": 99,
+          "y": 283,
+          "w": 130,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
-          "w": -15,
-          "h": 1
+          "x": 1,
+          "y": 1,
+          "w": 10,
+          "h": -5
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 101,
+          "y": 285,
+          "w": 99,
+          "h": 9,
+          "count": 283,
+          "method": "mask-ink:white170"
+        },
+        "actual": {
+          "x": 99,
+          "y": 285,
+          "w": 97,
+          "h": 10,
+          "count": 467,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -2,
+          "y": 0,
+          "w": -2,
+          "h": 1
+        }
       }
     },
     {
       "element": "stage-02-title",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 296,
@@ -1310,29 +1922,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 295,
-          "y": 282,
-          "w": 126,
-          "h": 19,
+          "x": 296,
+          "y": 283,
+          "w": 187,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -1,
-          "y": 0,
-          "w": -14,
-          "h": 1
+          "x": 0,
+          "y": 1,
+          "w": 47,
+          "h": -5
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 299,
+          "y": 285,
+          "w": 119,
+          "h": 11,
+          "count": 371,
+          "method": "mask-ink:white170"
+        },
+        "actual": {
+          "x": 297,
+          "y": 285,
+          "w": 117,
+          "h": 12,
+          "count": 567,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -2,
+          "y": 0,
+          "w": -2,
+          "h": 1
+        }
       }
     },
     {
       "element": "stage-03-title",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 548,
@@ -1342,29 +1972,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 549,
-          "y": 282,
-          "w": 125,
-          "h": 19,
+          "x": 550,
+          "y": 283,
+          "w": 177,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 1,
-          "y": 0,
-          "w": -15,
-          "h": 1
+          "x": 2,
+          "y": 1,
+          "w": 37,
+          "h": -5
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 551,
+          "y": 285,
+          "w": 120,
+          "h": 11,
+          "count": 360,
+          "method": "mask-ink:white170"
+        },
+        "actual": {
+          "x": 550,
+          "y": 285,
+          "w": 117,
+          "h": 12,
+          "count": 615,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -1,
+          "y": 0,
+          "w": -3,
+          "h": 1
+        }
       }
     },
     {
       "element": "stage-04-title",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 790,
@@ -1374,29 +2022,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 792,
-          "y": 282,
-          "w": 129,
-          "h": 35,
+          "x": 793,
+          "y": 283,
+          "w": 115,
+          "h": 12,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 2,
-          "y": 0,
-          "w": 1,
-          "h": 17
+          "x": 3,
+          "y": 1,
+          "w": -13,
+          "h": -6
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 793,
+          "y": 285,
+          "w": 118,
+          "h": 10,
+          "count": 279,
+          "method": "mask-ink:white170"
+        },
+        "actual": {
+          "x": 793,
+          "y": 284,
+          "w": 122,
+          "h": 12,
+          "count": 568,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 0,
+          "y": -1,
+          "w": 4,
+          "h": 2
+        }
       }
     },
     {
       "element": "stage-01-body-line-0",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 98,
@@ -1406,29 +2072,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 98,
-          "y": 303,
-          "w": 144,
-          "h": 48,
+          "x": 99,
+          "y": 304,
+          "w": 130,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
-          "w": 24,
-          "h": 35
+          "x": 1,
+          "y": 1,
+          "w": 10,
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 101,
+          "y": 305,
+          "w": 112,
+          "h": 10,
+          "count": 273,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 99,
+          "y": 306,
+          "w": 114,
+          "h": 9,
+          "count": 441,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -2,
+          "y": 1,
+          "w": 2,
+          "h": -1
+        }
       }
     },
     {
       "element": "stage-01-body-line-1",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 98,
@@ -1438,29 +2122,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 98,
-          "y": 351,
-          "w": 144,
-          "h": 48,
+          "x": 99,
+          "y": 317,
+          "w": 130,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 35,
-          "w": 24,
-          "h": 35
+          "x": 1,
+          "y": 1,
+          "w": 10,
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 101,
+          "y": 320,
+          "w": 107,
+          "h": 9,
+          "count": 213,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 99,
+          "y": 319,
+          "w": 107,
+          "h": 9,
+          "count": 390,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -2,
+          "y": -1,
+          "w": 0,
+          "h": 0
+        }
       }
     },
     {
       "element": "stage-01-body-line-2",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 98,
@@ -1470,29 +2172,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 98,
-          "y": 399,
-          "w": 144,
-          "h": 24,
+          "x": 99,
+          "y": 330,
+          "w": 130,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 70,
-          "w": 64,
-          "h": 11
+          "x": 1,
+          "y": 1,
+          "w": 50,
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 101,
+          "y": 335,
+          "w": 50,
+          "h": 7,
+          "count": 104,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 99,
+          "y": 332,
+          "w": 53,
+          "h": 7,
+          "count": 199,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -2,
+          "y": -3,
+          "w": 3,
+          "h": 0
+        }
       }
     },
     {
       "element": "stage-02-body-line-0",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 296,
@@ -1502,29 +2222,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 295,
-          "y": 303,
-          "w": 207,
-          "h": 24,
+          "x": 296,
+          "y": 304,
+          "w": 185,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -1,
-          "y": 0,
-          "w": 67,
-          "h": 11
+          "x": 0,
+          "y": 1,
+          "w": 45,
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 298,
+          "y": 305,
+          "w": 106,
+          "h": 9,
+          "count": 231,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 296,
+          "y": 306,
+          "w": 107,
+          "h": 9,
+          "count": 378,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -2,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        }
       }
     },
     {
       "element": "stage-02-body-line-1",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 296,
@@ -1534,29 +2272,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 295,
-          "y": 327,
-          "w": 207,
-          "h": 24,
+          "x": 296,
+          "y": 317,
+          "w": 185,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -1,
-          "y": 11,
-          "w": 67,
-          "h": 11
+          "x": 0,
+          "y": 1,
+          "w": 45,
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 298,
+          "y": 320,
+          "w": 85,
+          "h": 7,
+          "count": 170,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 296,
+          "y": 319,
+          "w": 85,
+          "h": 7,
+          "count": 310,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -2,
+          "y": -1,
+          "w": 0,
+          "h": 0
+        }
       }
     },
     {
       "element": "stage-02-body-line-2",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 296,
@@ -1566,29 +2322,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 295,
-          "y": 351,
-          "w": 207,
-          "h": 48,
+          "x": 296,
+          "y": 330,
+          "w": 185,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -1,
-          "y": 22,
-          "w": 67,
-          "h": 35
+          "x": 0,
+          "y": 1,
+          "w": 45,
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 298,
+          "y": 335,
+          "w": 121,
+          "h": 7,
+          "count": 221,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 296,
+          "y": 332,
+          "w": 122,
+          "h": 10,
+          "count": 484,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -2,
+          "y": -3,
+          "w": 1,
+          "h": 3
+        }
       }
     },
     {
       "element": "stage-03-body-line-0",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 548,
@@ -1598,29 +2372,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 549,
-          "y": 303,
-          "w": 197,
-          "h": 48,
+          "x": 550,
+          "y": 304,
+          "w": 175,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 1,
-          "y": 0,
-          "w": 57,
-          "h": 35
+          "x": 2,
+          "y": 1,
+          "w": 35,
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 551,
+          "y": 305,
+          "w": 123,
+          "h": 10,
+          "count": 294,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 550,
+          "y": 306,
+          "w": 123,
+          "h": 9,
+          "count": 456,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -1,
+          "y": 1,
+          "w": 0,
+          "h": -1
+        }
       }
     },
     {
       "element": "stage-03-body-line-1",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 548,
@@ -1630,29 +2422,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 549,
-          "y": 351,
-          "w": 197,
-          "h": 48,
+          "x": 550,
+          "y": 317,
+          "w": 175,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 1,
-          "y": 35,
-          "w": 57,
-          "h": 35
+          "x": 2,
+          "y": 1,
+          "w": 35,
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 551,
+          "y": 320,
+          "w": 124,
+          "h": 9,
+          "count": 240,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 550,
+          "y": 319,
+          "w": 122,
+          "h": 10,
+          "count": 461,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -1,
+          "y": -1,
+          "w": -2,
+          "h": 1
+        }
       }
     },
     {
       "element": "stage-03-body-line-2",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 548,
@@ -1662,29 +2472,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 549,
-          "y": 399,
-          "w": 197,
-          "h": 24,
+          "x": 550,
+          "y": 330,
+          "w": 175,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 1,
-          "y": 70,
-          "w": 77,
-          "h": 11
+          "x": 2,
+          "y": 1,
+          "w": 55,
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 551,
+          "y": 335,
+          "w": 86,
+          "h": 7,
+          "count": 162,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 550,
+          "y": 332,
+          "w": 85,
+          "h": 9,
+          "count": 306,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -1,
+          "y": -3,
+          "w": -1,
+          "h": 2
+        }
       }
     },
     {
       "element": "stage-04-body-line-0",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 790,
@@ -1694,29 +2522,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 792,
-          "y": 303,
-          "w": 129,
-          "h": 48,
+          "x": 793,
+          "y": 304,
+          "w": 115,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 2,
-          "y": 0,
-          "w": 1,
-          "h": 35
+          "x": 3,
+          "y": 1,
+          "w": -13,
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 793,
+          "y": 305,
+          "w": 100,
+          "h": 9,
+          "count": 237,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 793,
+          "y": 306,
+          "w": 103,
+          "h": 8,
+          "count": 410,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 3,
+          "h": -1
+        }
       }
     },
     {
       "element": "stage-04-body-line-1",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 790,
@@ -1726,29 +2572,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 792,
-          "y": 351,
-          "w": 129,
-          "h": 48,
+          "x": 793,
+          "y": 317,
+          "w": 115,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 2,
-          "y": 35,
-          "w": 1,
-          "h": 35
+          "x": 3,
+          "y": 1,
+          "w": -13,
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 794,
+          "y": 320,
+          "w": 95,
+          "h": 9,
+          "count": 180,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 793,
+          "y": 319,
+          "w": 102,
+          "h": 10,
+          "count": 376,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": -1,
+          "y": -1,
+          "w": 7,
+          "h": 1
+        }
       }
     },
     {
       "element": "stage-04-body-line-2",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 790,
@@ -1758,29 +2622,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 792,
-          "y": 399,
-          "w": 129,
-          "h": 48,
+          "x": 793,
+          "y": 330,
+          "w": 115,
+          "h": 13,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 2,
-          "y": 70,
-          "w": 1,
-          "h": 35
+          "x": 3,
+          "y": 1,
+          "w": -13,
+          "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 793,
+          "y": 335,
+          "w": 121,
+          "h": 7,
+          "count": 218,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 793,
+          "y": 332,
+          "w": 122,
+          "h": 10,
+          "count": 456,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 0,
+          "y": -3,
+          "w": 1,
+          "h": 3
+        }
       }
     },
     {
       "element": "stage-01-pill",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 96,
@@ -1790,29 +2672,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 96,
-          "y": 362,
-          "w": 120,
+          "x": 97,
+          "y": 363,
+          "w": 98,
           "h": 22,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
-          "w": 26,
+          "x": 1,
+          "y": 1,
+          "w": 4,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 97,
+          "y": 362,
+          "w": 92,
+          "h": 22,
+          "count": 1449,
+          "method": "mask-ink:edge"
+        },
+        "actual": {
+          "x": 97,
+          "y": 363,
+          "w": 93,
+          "h": 21,
+          "count": 212,
+          "method": "mask-ink:edge"
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 1,
+          "h": -1
+        }
       }
     },
     {
       "element": "stage-02-pill",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 294,
@@ -1822,29 +2722,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 293,
-          "y": 362,
-          "w": 150,
+          "x": 294,
+          "y": 363,
+          "w": 125,
           "h": 22,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -1,
-          "y": 0,
-          "w": 30,
+          "x": 0,
+          "y": 1,
+          "w": 5,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 295,
+          "y": 362,
+          "w": 119,
+          "h": 22,
+          "count": 1893,
+          "method": "mask-ink:edge"
+        },
+        "actual": {
+          "x": 294,
+          "y": 363,
+          "w": 120,
+          "h": 21,
+          "count": 236,
+          "method": "mask-ink:edge"
+        },
+        "delta": {
+          "x": -1,
+          "y": 1,
+          "w": 1,
+          "h": -1
+        }
       }
     },
     {
       "element": "stage-03-pill",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 546,
@@ -1854,29 +2772,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 547,
-          "y": 362,
-          "w": 165,
+          "x": 548,
+          "y": 363,
+          "w": 136,
           "h": 22,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 1,
-          "y": 0,
-          "w": 33,
+          "x": 2,
+          "y": 1,
+          "w": 4,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 547,
+          "y": 362,
+          "w": 130,
+          "h": 22,
+          "count": 2071,
+          "method": "mask-ink:edge"
+        },
+        "actual": {
+          "x": 548,
+          "y": 363,
+          "w": 130,
+          "h": 21,
+          "count": 261,
+          "method": "mask-ink:edge"
+        },
+        "delta": {
+          "x": 1,
+          "y": 1,
+          "w": 0,
+          "h": -1
+        }
       }
     },
     {
       "element": "stage-04-pill",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 788,
@@ -1886,29 +2822,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 790,
-          "y": 362,
-          "w": 120,
+          "x": 791,
+          "y": 363,
+          "w": 99,
           "h": 22,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 2,
-          "y": 0,
-          "w": 26,
+          "x": 3,
+          "y": 1,
+          "w": 5,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 789,
+          "y": 362,
+          "w": 93,
+          "h": 22,
+          "count": 1506,
+          "method": "mask-ink:edge"
+        },
+        "actual": {
+          "x": 791,
+          "y": 363,
+          "w": 91,
+          "h": 21,
+          "count": 202,
+          "method": "mask-ink:edge"
+        },
+        "delta": {
+          "x": 2,
+          "y": 1,
+          "w": -2,
+          "h": -1
+        }
       }
     },
     {
       "element": "stage-01-pill-label",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 118,
@@ -1918,29 +2872,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 96,
-          "y": 377,
-          "w": 100,
-          "h": 21,
+          "x": 126,
+          "y": 369,
+          "w": 58,
+          "h": 10,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -22,
-          "y": 11,
-          "w": 30,
-          "h": 9
+          "x": 8,
+          "y": 3,
+          "w": -12,
+          "h": -2
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 124,
+          "y": 368,
+          "w": 57,
+          "h": 7,
+          "count": 159,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 126,
+          "y": 369,
+          "w": 58,
+          "h": 7,
+          "count": 199,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 2,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        }
       }
     },
     {
       "element": "stage-02-pill-label",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 316,
@@ -1950,29 +2922,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 293,
-          "y": 377,
-          "w": 146,
-          "h": 21,
+          "x": 323,
+          "y": 369,
+          "w": 85,
+          "h": 10,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -23,
-          "y": 11,
-          "w": 51,
-          "h": 9
+          "x": 7,
+          "y": 3,
+          "w": -10,
+          "h": -2
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 321,
+          "y": 367,
+          "w": 83,
+          "h": 8,
+          "count": 187,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 323,
+          "y": 369,
+          "w": 85,
+          "h": 7,
+          "count": 263,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 2,
+          "y": 2,
+          "w": 2,
+          "h": -1
+        }
       }
     },
     {
       "element": "stage-03-pill-label",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 568,
@@ -1982,29 +2972,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 547,
-          "y": 377,
-          "w": 165,
-          "h": 21,
+          "x": 577,
+          "y": 369,
+          "w": 96,
+          "h": 10,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -21,
-          "y": 11,
-          "w": 60,
-          "h": 9
+          "x": 9,
+          "y": 3,
+          "w": -9,
+          "h": -2
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 574,
+          "y": 367,
+          "w": 95,
+          "h": 10,
+          "count": 201,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 577,
+          "y": 369,
+          "w": 96,
+          "h": 9,
+          "count": 322,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 3,
+          "y": 2,
+          "w": 1,
+          "h": -1
+        }
       }
     },
     {
       "element": "stage-04-pill-label",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 812,
@@ -2014,29 +3022,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 790,
-          "y": 377,
-          "w": 102,
-          "h": 21,
+          "x": 820,
+          "y": 369,
+          "w": 59,
+          "h": 10,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": -22,
-          "y": 11,
-          "w": 32,
-          "h": 9
+          "x": 8,
+          "y": 3,
+          "w": -11,
+          "h": -2
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 817,
+          "y": 367,
+          "w": 58,
+          "h": 9,
+          "count": 137,
+          "method": "mask-ink:gray"
+        },
+        "actual": {
+          "x": 820,
+          "y": 369,
+          "w": 59,
+          "h": 9,
+          "count": 225,
+          "method": "paint-diff-isolation"
+        },
+        "delta": {
+          "x": 3,
+          "y": 2,
+          "w": 1,
+          "h": 0
+        }
       }
     },
     {
       "element": "stage-01-icon-frame",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 97,
@@ -2046,29 +3072,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 97,
-          "y": 210,
+          "x": 98,
+          "y": 211,
           "w": 50,
           "h": 50,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
+          "x": 1,
+          "y": 1,
           "w": -5,
           "h": -5
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 97,
+          "y": 213,
+          "w": 55,
+          "h": 51,
+          "count": 726,
+          "method": "mask-ink:edge"
+        },
+        "actual": {
+          "x": 98,
+          "y": 211,
+          "w": 50,
+          "h": 50,
+          "count": 406,
+          "method": "mask-ink:edge"
+        },
+        "delta": {
+          "x": 1,
+          "y": -2,
+          "w": -5,
+          "h": -1
+        }
       }
     },
     {
       "element": "stage-02-icon-frame",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 294,
@@ -2078,29 +3122,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 294,
-          "y": 210,
+          "x": 295,
+          "y": 211,
           "w": 48,
           "h": 48,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
+          "x": 1,
+          "y": 1,
           "w": -4,
           "h": -4
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 296,
+          "y": 213,
+          "w": 50,
+          "h": 49,
+          "count": 953,
+          "method": "mask-ink:edge"
+        },
+        "actual": {
+          "x": 295,
+          "y": 210,
+          "w": 51,
+          "h": 52,
+          "count": 369,
+          "method": "mask-ink:edge"
+        },
+        "delta": {
+          "x": -1,
+          "y": -3,
+          "w": 1,
+          "h": 3
+        }
       }
     },
     {
       "element": "stage-03-icon-frame",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 546,
@@ -2110,29 +3172,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 548,
-          "y": 210,
+          "x": 549,
+          "y": 211,
           "w": 48,
           "h": 48,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 2,
-          "y": 0,
+          "x": 3,
+          "y": 1,
           "w": -4,
           "h": -4
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 547,
+          "y": 212,
+          "w": 51,
+          "h": 50,
+          "count": 901,
+          "method": "mask-ink:edge"
+        },
+        "actual": {
+          "x": 549,
+          "y": 210,
+          "w": 49,
+          "h": 52,
+          "count": 334,
+          "method": "mask-ink:edge"
+        },
+        "delta": {
+          "x": 2,
+          "y": -2,
+          "w": -2,
+          "h": 2
+        }
       }
     },
     {
       "element": "stage-04-icon-frame",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 790,
@@ -2142,29 +3222,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 790,
-          "y": 210,
+          "x": 791,
+          "y": 211,
           "w": 50,
           "h": 50,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
+          "x": 1,
+          "y": 1,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 792,
+          "y": 214,
+          "w": 48,
+          "h": 46,
+          "count": 856,
+          "method": "mask-ink:edge"
+        },
+        "actual": {
+          "x": 791,
+          "y": 211,
+          "w": 49,
+          "h": 49,
+          "count": 260,
+          "method": "mask-ink:edge"
+        },
+        "delta": {
+          "x": -1,
+          "y": -3,
+          "w": 1,
+          "h": 3
+        }
       }
     },
     {
       "element": "stage-02-rear-panel",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 318,
@@ -2174,29 +3272,47 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 318,
-          "y": 200,
+          "x": 319,
+          "y": 201,
           "w": 170,
           "h": 72,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
+          "x": 1,
+          "y": 1,
           "w": 0,
           "h": 0
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 318,
+          "y": 200,
+          "w": 170,
+          "h": 72,
+          "count": 5519,
+          "method": "mask-ink:edge"
+        },
+        "actual": {
+          "x": 318,
+          "y": 201,
+          "w": 170,
+          "h": 71,
+          "count": 1661,
+          "method": "mask-ink:edge"
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": -1
+        }
       }
     },
     {
       "element": "stage-03-rear-panel",
-      "geometryOnly": true,
+      "geometryOnly": false,
       "geometric": {
         "ref": {
           "x": 572,
@@ -2206,24 +3322,42 @@
           "method": "mask-geometry"
         },
         "actual": {
-          "x": 572,
-          "y": 200,
+          "x": 573,
+          "y": 201,
           "w": 160,
           "h": 72,
           "method": "dom-geometry"
         },
         "delta": {
-          "x": 0,
-          "y": 0,
+          "x": 1,
+          "y": 1,
           "w": 0,
           "h": -6
         }
       },
       "paintedInk": {
-        "ref": null,
-        "actual": null,
-        "delta": null,
-        "skipped": "geometry-only"
+        "ref": {
+          "x": 572,
+          "y": 200,
+          "w": 160,
+          "h": 72,
+          "count": 3826,
+          "method": "mask-ink:edge"
+        },
+        "actual": {
+          "x": 572,
+          "y": 201,
+          "w": 160,
+          "h": 72,
+          "count": 680,
+          "method": "mask-ink:edge"
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        }
       }
     }
   ],
@@ -2237,9 +3371,9 @@
         "w": 780,
         "h": 130
       },
-      "mismatched": 0,
+      "mismatched": 9948,
       "total": 101400,
-      "ratio": 0
+      "ratio": 0.09810650887573964
     },
     {
       "name": "stage-01",
@@ -2250,9 +3384,9 @@
         "w": 157,
         "h": 229
       },
-      "mismatched": 0,
+      "mismatched": 3250,
       "total": 35953,
-      "ratio": 0
+      "ratio": 0.09039579450949851
     },
     {
       "name": "stage-02",
@@ -2263,9 +3397,9 @@
         "w": 220,
         "h": 229
       },
-      "mismatched": 0,
+      "mismatched": 5822,
       "total": 50380,
-      "ratio": 0
+      "ratio": 0.11556173084557364
     },
     {
       "name": "stage-03",
@@ -2276,9 +3410,9 @@
         "w": 210,
         "h": 229
       },
-      "mismatched": 0,
+      "mismatched": 6094,
       "total": 48090,
-      "ratio": 0
+      "ratio": 0.12672073196090664
     },
     {
       "name": "stage-04",
@@ -2289,9 +3423,9 @@
         "w": 142,
         "h": 229
       },
-      "mismatched": 0,
+      "mismatched": 3514,
       "total": 32518,
-      "ratio": 0
+      "ratio": 0.10806322652069623
     },
     {
       "name": "stage-01-visual",
@@ -2302,9 +3436,9 @@
         "w": 70,
         "h": 80
       },
-      "mismatched": 0,
+      "mismatched": 575,
       "total": 5600,
-      "ratio": 0
+      "ratio": 0.10267857142857142
     },
     {
       "name": "stage-02-visual",
@@ -2315,9 +3449,9 @@
         "w": 200,
         "h": 80
       },
-      "mismatched": 0,
+      "mismatched": 2628,
       "total": 16000,
-      "ratio": 0
+      "ratio": 0.16425
     },
     {
       "name": "stage-03-visual",
@@ -2328,9 +3462,9 @@
         "w": 190,
         "h": 80
       },
-      "mismatched": 0,
+      "mismatched": 2889,
       "total": 15200,
-      "ratio": 0
+      "ratio": 0.19006578947368422
     },
     {
       "name": "stage-04-visual",
@@ -2341,9 +3475,9 @@
         "w": 70,
         "h": 80
       },
-      "mismatched": 0,
+      "mismatched": 506,
       "total": 5600,
-      "ratio": 0
+      "ratio": 0.09035714285714286
     },
     {
       "name": "connector-01-02",
@@ -2354,9 +3488,9 @@
         "w": 40,
         "h": 24
       },
-      "mismatched": 0,
+      "mismatched": 172,
       "total": 960,
-      "ratio": 0
+      "ratio": 0.17916666666666667
     },
     {
       "name": "connector-02-03",
@@ -2367,9 +3501,9 @@
         "w": 34,
         "h": 24
       },
-      "mismatched": 0,
+      "mismatched": 158,
       "total": 816,
-      "ratio": 0
+      "ratio": 0.19362745098039216
     },
     {
       "name": "connector-03-04",
@@ -2380,9 +3514,9 @@
         "w": 33,
         "h": 24
       },
-      "mismatched": 0,
+      "mismatched": 151,
       "total": 792,
-      "ratio": 0
+      "ratio": 0.19065656565656566
     },
     {
       "name": "chat",
@@ -2393,9 +3527,9 @@
         "w": 50,
         "h": 55
       },
-      "mismatched": 0,
+      "mismatched": 208,
       "total": 2750,
-      "ratio": 0
+      "ratio": 0.07563636363636364
     },
     {
       "name": "bottom-line",
@@ -2419,6 +3553,28 @@
     "sideBySide": "side-by-side.png",
     "assertions": "assertions.json",
     "measurement": "MEASUREMENT.md",
+    "noRasterProduction": "no-raster-production.json",
     "referenceMasks": "docs/design-system/workflow-mock/reference-masks.json"
-  }
+  },
+  "noRasterProduction": {
+    "ok": true,
+    "failures": [],
+    "scannedFiles": [
+      "src/components/sections/ProcessSection.tsx",
+      "src/components/sections/process/artwork/index.tsx",
+      "src/components/sections/process/artwork/Stage01Upload.tsx",
+      "src/components/sections/process/artwork/Stage02Workspace.tsx",
+      "src/components/sections/process/artwork/Stage03Manage.tsx",
+      "src/components/sections/process/artwork/Stage04Recover.tsx",
+      "src/components/sections/process/PillIcon.tsx",
+      "src/components/sections/process/PrimaryIconFrame.tsx",
+      "src/components/sections/process/ProcessConnector.tsx",
+      "src/components/sections/process/ProcessDesktopJourney.tsx",
+      "src/components/sections/process/ProcessStageCard.tsx",
+      "src/components/sections/process/StrokeIcon.tsx",
+      "src/components/sections/process/tokens.ts",
+      "src/components/chatbot/ChatWidget.tsx"
+    ]
+  },
+  "implementationNote": "Production renders native HTML/CSS/SVG only. Reference imagery is QA/documentation-only and is never loaded by ProcessSection production dependencies."
 }

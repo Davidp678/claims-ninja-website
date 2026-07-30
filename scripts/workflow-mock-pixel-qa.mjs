@@ -13,6 +13,7 @@ import {
   writeFileSync,
 } from "node:fs";
 import { resolve } from "node:path";
+import { spawnSync } from "node:child_process";
 import { chromium } from "@playwright/test";
 import pixelmatch from "pixelmatch";
 import { PNG } from "pngjs";
@@ -35,6 +36,22 @@ const REF_JPG = resolve("docs/design-system/workflow-mock/reference-native.jpg")
 const DIAGNOSTICS = process.env.WORKFLOW_QA_DIAGNOSTICS === "1";
 mkdirSync(OUT, { recursive: true });
 if (DIAGNOSTICS) mkdirSync(resolve(OUT, "crops"), { recursive: true });
+
+const rasterAssert = spawnSync(
+  process.execPath,
+  [resolve("scripts/assert-workflow-no-raster-production.mjs")],
+  { encoding: "utf8" },
+);
+const rasterAssertReport = JSON.parse(rasterAssert.stdout || "{}");
+writeFileSync(
+  resolve(OUT, "no-raster-production.json"),
+  JSON.stringify(rasterAssertReport, null, 2),
+);
+if (rasterAssert.status !== 0 || !rasterAssertReport.ok) {
+  console.error("PRODUCTION RASTER ASSERTION FAILED:");
+  console.error(rasterAssert.stdout || rasterAssert.stderr);
+  process.exit(2);
+}
 
 const W = 1024;
 const H = 467;
@@ -728,8 +745,12 @@ const reportCore = {
     sideBySide: "side-by-side.png",
     assertions: "assertions.json",
     measurement: "MEASUREMENT.md",
+    noRasterProduction: "no-raster-production.json",
     referenceMasks: "docs/design-system/workflow-mock/reference-masks.json",
   },
+  noRasterProduction: rasterAssertReport,
+  implementationNote:
+    "Production renders native HTML/CSS/SVG only. Reference imagery is QA/documentation-only and is never loaded by ProcessSection production dependencies.",
 };
 
 writeFileSync(resolve(OUT, "report.json"), JSON.stringify(reportCore, null, 2));

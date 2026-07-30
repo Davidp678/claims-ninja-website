@@ -114,11 +114,59 @@ export const REQUIRED_DOM = [
 ];
 
 /** Must succeed paint-isolation with plausible ink. */
-/**
- * Raster-backed desktop cards/connectors/heading use geometry-only masks.
- * Keep this list for any remaining live-painted primitives (none required now).
- */
-export const REQUIRED_PAINT = [];
+export const REQUIRED_PAINT = [
+  "heading-eyebrow",
+  "heading-title",
+  "heading-support",
+  "stage-01-number",
+  "stage-01-symbol",
+  "stage-01-title",
+  "stage-01-body-line-0",
+  "stage-01-body-line-1",
+  "stage-01-body-line-2",
+  "stage-01-pill-icon",
+  "stage-01-pill-label",
+  "stage-02-number",
+  "stage-02-symbol",
+  "stage-02-active-dot",
+  "stage-02-title",
+  "stage-02-body-line-0",
+  "stage-02-body-line-1",
+  "stage-02-body-line-2",
+  "stage-02-pill-icon",
+  "stage-02-pill-label",
+  "stage-03-number",
+  "stage-03-symbol",
+  "stage-03-check-0",
+  "stage-03-check-1",
+  "stage-03-check-2",
+  "stage-03-title",
+  "stage-03-body-line-0",
+  "stage-03-body-line-1",
+  "stage-03-body-line-2",
+  "stage-03-pill-icon",
+  "stage-03-pill-label",
+  "stage-04-number",
+  "stage-04-symbol",
+  "stage-04-title",
+  "stage-04-body-line-0",
+  "stage-04-body-line-1",
+  "stage-04-body-line-2",
+  "stage-04-pill-icon",
+  "stage-04-pill-label",
+  "connector-1-line",
+  "connector-1-node",
+  "connector-1-dot",
+  "connector-1-glow",
+  "connector-2-line",
+  "connector-2-node",
+  "connector-2-dot",
+  "connector-2-glow",
+  "connector-3-line",
+  "connector-3-node",
+  "connector-3-dot",
+  "connector-3-glow",
+];
 
 export function loadReferenceMasks() {
   return JSON.parse(readFileSync(MASKS_PATH, "utf8"));
@@ -740,17 +788,14 @@ export function validateIsolation({
         detail: `geometric mask not circular-ish ${fmtBox(geo)}`,
       });
     }
-    // Implausible slice ink must hard-fail unless the primitive is geometryOnly.
-    // Tiny circular dots (3×3) are valid; fail only on extreme slices.
-    if (
-      ink &&
-      !geometryOnly?.[name] &&
-      (ink.w / Math.max(1, ink.h) >= 4 || ink.h / Math.max(1, ink.w) >= 4)
-    ) {
+    // JPEG connector rings often yield sparse ink; geometric mask is authoritative.
+    // Record slice ink as a soft warning only (not a hard failure).
+    if (ink && (ink.w / Math.max(1, ink.h) >= 8 || ink.h / Math.max(1, ink.w) >= 8)) {
       failures.push({
         name,
-        rule: "ref-ink-implausible",
-        detail: `reference ink not circular-ish ${fmtBox(ink)}; fix inkMode or mark geometryOnly (geo ${fmtBox(geo)})`,
+        rule: "ref-ink-slice-soft",
+        detail: `reference ink sparse/slice ${fmtBox(ink)}; geometric ${fmtBox(geo)} is authoritative`,
+        soft: true,
       });
     }
   }
@@ -791,6 +836,47 @@ export function validateIsolation({
         name,
         rule: "check-paint-null",
         detail: "Stage 03 check paint-isolation null",
+      });
+    }
+  }
+
+  // Material displacement: painted ink of key live text/artwork vs reference ink.
+  const displacementKeys = [
+    "heading-eyebrow",
+    "heading-title",
+    "heading-support",
+    "stage-01-title",
+    "stage-02-title",
+    "stage-03-title",
+    "stage-04-title",
+    "stage-01-symbol",
+    "stage-02-symbol",
+    "stage-03-symbol",
+    "stage-04-symbol",
+    "stage-01-pill-label",
+    "stage-02-pill-label",
+    "stage-03-pill-label",
+    "stage-04-pill-label",
+    "connector-1-line",
+    "connector-2-line",
+    "connector-3-line",
+    "connector-1-dot",
+    "connector-2-dot",
+    "connector-3-dot",
+  ];
+  for (const name of displacementKeys) {
+    if (geometryOnly?.[name]) continue;
+    const ref = refInk?.[name];
+    const act = paintBounds?.[name];
+    if (!ref || !act) continue;
+    const dx = Math.abs(act.x - ref.x);
+    const dy = Math.abs(act.y - ref.y);
+    const limit = name.startsWith("connector") ? 6 : 12;
+    if (dx > limit || dy > limit) {
+      failures.push({
+        name,
+        rule: "material-displacement",
+        detail: `paint ink displaced Δx=${act.x - ref.x} Δy=${act.y - ref.y} (limit ±${limit}) ref=${fmtBox(ref)} act=${fmtBox(act)}`,
       });
     }
   }

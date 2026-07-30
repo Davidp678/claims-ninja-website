@@ -473,43 +473,25 @@ export function ChatWidget({
             aria-label="Open Claims Ninja AI chat"
             aria-expanded={isOpen}
             data-visual-qa-launcher={visualQa ? "true" : undefined}
-            className={
-              visualQa
-                ? "pointer-events-auto fixed left-[970px] top-[405px] h-[55px] w-[50px] border-0 bg-transparent p-0 shadow-none"
-                : `group pointer-events-auto fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] inline-flex h-14 w-14 items-center justify-center rounded-full border border-brand-red/45 bg-gradient-to-br from-[#e02828] to-brand-red-deep text-white shadow-[0_8px_32px_-12px_rgba(224,40,40,0.55)] ring-1 ring-white/15 transition-shadow hover:border-brand-red/58 hover:shadow-[0_10px_36px_-10px_rgba(224,40,40,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black${launcherPulse && showTeaser && !prefersReducedMotion ? " ring-2 ring-brand-red/38 shadow-[0_10px_36px_-8px_rgba(224,40,40,0.55)] motion-reduce:ring-1" : ""}`
-            }
+            className={`group pointer-events-auto fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] inline-flex h-14 w-14 items-center justify-center rounded-full border border-brand-red/45 bg-gradient-to-br from-[#e02828] to-brand-red-deep text-white shadow-[0_8px_32px_-12px_rgba(224,40,40,0.55)] ring-1 ring-white/15 transition-shadow hover:border-brand-red/58 hover:shadow-[0_10px_36px_-10px_rgba(224,40,40,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black${launcherPulse && showTeaser && !prefersReducedMotion ? " ring-2 ring-brand-red/38 shadow-[0_10px_36px_-8px_rgba(224,40,40,0.55)] motion-reduce:ring-1" : ""}${visualQa ? " !bottom-[17px] !right-[9px] !h-[38px] !w-[38px] !shadow-none !ring-0 !border-brand-red/50" : ""}`}
           >
-            {visualQa ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src="/images/workflow-mock/chat-art.png"
-                alt=""
-                width={50}
-                height={55}
-                draggable={false}
-                className="pointer-events-none select-none"
-              />
-            ) : (
-              <>
-                <span
-                  aria-hidden
-                  className="absolute inset-0 rounded-full bg-brand-red/30 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100 motion-reduce:hidden"
-                />
-                <svg
-                  aria-hidden
-                  viewBox="0 0 24 24"
-                  className="relative h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H9l-4 3.5V16H5.5A1.5 1.5 0 0 1 4 14.5v-9Z" />
-                  <path d="M8.5 9.5h7M8.5 12h4.5" />
-                </svg>
-              </>
-            )}
+            <span
+              aria-hidden
+              className="absolute inset-0 rounded-full bg-brand-red/30 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100 motion-reduce:hidden"
+            />
+            <svg
+              aria-hidden
+              viewBox="0 0 24 24"
+              className={`relative ${visualQa ? "h-4 w-4" : "h-6 w-6"}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H9l-4 3.5V16H5.5A1.5 1.5 0 0 1 4 14.5v-9Z" />
+              <path d="M8.5 9.5h7M8.5 12h4.5" />
+            </svg>
           </motion.button>
         )}
       </AnimatePresence>

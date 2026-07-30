@@ -14,8 +14,7 @@ export function ProcessDesktopJourney({
   const widthSum = PROCESS.widths.reduce((a, b) => a + b, 0);
   const gapSum = PROCESS.gaps.reduce((a, b) => a + b, 0);
   const padRight = PROCESS.width - PROCESS.padLeft - widthSum - gapSum;
-  /** Art strip is 40px tall extracted at canvas y=220 → card-relative top 50. */
-  const connectorTop = 220 - PROCESS.cardTop;
+  const connectorTop = PROCESS.connectorY - PROCESS.cardTop;
 
   const track = [
     `${PROCESS.widths[0]}px`,
@@ -31,18 +30,17 @@ export function ProcessDesktopJourney({
   steps.forEach((item, index) => {
     cells.push(
       <div key={item.step} className="relative h-full min-w-0">
-        <ProcessStageCard
-          item={item}
-          referenceMode={referenceMode}
-          desktopRaster
-        />
+        <ProcessStageCard item={item} referenceMode={referenceMode} />
       </div>,
     );
     if (index < steps.length - 1) {
       const connectorIndex = (index + 1) as 1 | 2 | 3;
       cells.push(
         <div key={`gap-${item.step}`} aria-hidden className="relative h-full">
-          <div className="absolute inset-x-0" style={{ top: connectorTop }}>
+          <div
+            className="absolute inset-x-0 -translate-y-1/2"
+            style={{ top: connectorTop }}
+          >
             <ProcessConnector index={connectorIndex} />
           </div>
         </div>,
