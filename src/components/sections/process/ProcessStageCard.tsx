@@ -132,13 +132,7 @@ export function ProcessStageCard({
           boxSizing: "border-box",
         }}
       >
-        <span
-          className={
-            stage === "03" || stage === "04"
-              ? "-translate-y-[3px]"
-              : "-translate-y-[2px]"
-          }
-        >
+        <span className="flex h-[14px] w-[14px] shrink-0 items-center justify-center leading-none">
           <PillIcon visual={item.visual} stage={stage} />
         </span>
         <span
