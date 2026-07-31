@@ -23,7 +23,10 @@ export default function PrivacyPolicyPage() {
     );
   }
 
-  const text = loadPublishedPrivacyPolicyText();
+  const text = loadPublishedPrivacyPolicyText().replaceAll(
+    "The Claims Ninja LLC",
+    "The Claims Ninja",
+  );
 
   return (
     <main className="bg-brand-black text-zinc-200">
