@@ -16,17 +16,21 @@ export function PillIcon({
   if (visual === "intake") {
     return (
       <StrokeIcon className={className} strokeWidth={1.6} color={color} qa={qa}>
-        <rect x="5" y="11" width="14" height="10" rx="2" />
-        <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+        <g transform="translate(0 -0.5)">
+          <rect x="5" y="11" width="14" height="10" rx="2" />
+          <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+        </g>
       </StrokeIcon>
     );
   }
   if (visual === "workspace") {
     return (
       <StrokeIcon className={className} strokeWidth={1.6} color={color} qa={qa}>
-        <ellipse cx="12" cy="5.5" rx="6.5" ry="2.4" />
-        <path d="M5.5 5.5v4.2c0 1.3 2.9 2.4 6.5 2.4s6.5-1.1 6.5-2.4V5.5" />
-        <path d="M5.5 9.7v4.2c0 1.3 2.9 2.4 6.5 2.4s6.5-1.1 6.5-2.4V9.7" />
+        <g transform="translate(0 2.3)">
+          <ellipse cx="12" cy="5.5" rx="6.5" ry="2.4" />
+          <path d="M5.5 5.5v4.2c0 1.3 2.9 2.4 6.5 2.4s6.5-1.1 6.5-2.4V5.5" />
+          <path d="M5.5 9.7v4.2c0 1.3 2.9 2.4 6.5 2.4s6.5-1.1 6.5-2.4V9.7" />
+        </g>
       </StrokeIcon>
     );
   }
