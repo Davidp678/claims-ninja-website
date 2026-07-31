@@ -8,7 +8,7 @@ export const PROCESS = {
   padLeft: 85,
   cardTop: 170,
   cardHeight: 229,
-  widths: [157, 220, 210, 142] as const,
+  widths: [157, 220, 210, 157] as const,
   gaps: [40, 34, 33] as const,
   connectorY: 239,
   bottomLineY: 465,
