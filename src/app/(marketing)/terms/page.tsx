@@ -24,7 +24,10 @@ export default function TermsOfServicePage() {
     );
   }
 
-  const text = loadPublishedTermsOfServiceText();
+  const text = loadPublishedTermsOfServiceText().replaceAll(
+    "The Claims Ninja LLC",
+    "The Claims Ninja",
+  );
 
   return (
     <main className="bg-brand-black text-zinc-200">
