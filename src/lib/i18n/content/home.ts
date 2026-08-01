@@ -203,7 +203,7 @@ const EN: HomeContent = {
         value: "AI + expert",
         label: "Review workflow",
         detail:
-          "AI flags opportunities; experienced supplement professionals finalize, with public adjuster escalation when a claim requires it.",
+          "AI flags claim opportunities; experienced supplement professionals finalize the strategy, with public adjuster escalation whenever the claim requires it.",
       },
     ],
     modules: [
