@@ -1,5 +1,3 @@
-import { CTA_LINKS } from "@/lib/constants";
-
 export function isExternalHref(href: string): boolean {
   return (
     href.startsWith("http://") ||
@@ -9,6 +7,7 @@ export function isExternalHref(href: string): boolean {
   );
 }
 
-export function opensStartHereInNewTab(href: string): boolean {
-  return href === CTA_LINKS.startHere;
+/** Homepage intake CTAs now stay in the current tab. */
+export function opensStartHereInNewTab(): boolean {
+  return false;
 }
