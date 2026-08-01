@@ -368,7 +368,8 @@ export function ChatWidget({
         leadSuccessMessage &&
         !leadFlow.isActive
       ) {
-        window.open(CTA_LINKS.startHere, "_blank", "noopener,noreferrer");
+        closePanel();
+        router.push(CTA_LINKS.startHere);
         return;
       }
 
