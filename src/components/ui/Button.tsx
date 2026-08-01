@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
-import { isExternalHref, opensStartHereInNewTab } from "@/lib/urls";
+import { isExternalHref } from "@/lib/urls";
 
 const variants = {
   primary:
@@ -50,7 +50,7 @@ export function Button({
 
   if (href) {
     const openExternal = external ?? isExternalHref(href);
-    const openNewTab = openExternal || opensStartHereInNewTab(href);
+    const openNewTab = openExternal;
 
     if (openNewTab) {
       if (openExternal) {
