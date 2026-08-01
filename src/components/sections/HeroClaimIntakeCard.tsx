@@ -606,10 +606,10 @@ export function HeroClaimIntakeCard({
                     setResumeMessage(null);
                   }}
                   className={cn(
-                    "px-3 py-2.5 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-red-light",
+                    "px-3 py-2.5 text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-red-light",
                     claimMode === option.id
-                      ? "bg-brand-red/20 text-white shadow-[inset_0_-2px_0_rgb(var(--brand-red-rgb))]"
-                      : "bg-transparent text-zinc-400 hover:bg-white/[0.03] hover:text-zinc-200",
+                      ? "bg-gradient-to-b from-brand-red/35 via-brand-red/25 to-brand-red/15 text-white shadow-[inset_0_-2px_0_rgb(var(--brand-red-rgb)),0_8px_24px_-16px_rgb(var(--brand-red-rgb)_/_0.9)]"
+                      : "bg-transparent text-zinc-400 hover:bg-white/[0.06] hover:text-zinc-100",
                   )}
                 >
                   {option.label}
