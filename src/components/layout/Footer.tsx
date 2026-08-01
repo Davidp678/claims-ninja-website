@@ -28,6 +28,15 @@ function FooterNavLink({ link }: { link: FooterLinkItem }) {
     );
   }
 
+  // Hash intake CTAs use a native anchor so same-page scroll is reliable.
+  if (link.href.includes("#")) {
+    return (
+      <a href={link.href} className={footerLinkClass}>
+        {link.label}
+      </a>
+    );
+  }
+
   return (
     <Link href={link.href} className={footerLinkClass}>
       {link.label}

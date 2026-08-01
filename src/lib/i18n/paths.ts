@@ -84,25 +84,41 @@ export function isEsMarketingEnPath(path: string): path is EsMarketingEnPath {
   return (ES_MARKETING_EN_PATHS as readonly string[]).includes(path);
 }
 
+function splitPathSearchHash(path: string): {
+  pathname: string;
+  search: string;
+  hash: string;
+} {
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  const url = new URL(normalized, "http://local.invalid");
+  return {
+    pathname: url.pathname || "/",
+    search: url.search,
+    hash: url.hash,
+  };
+}
+
 export function localizePath(locale: Locale, enPath: string): string {
-  const normalized = enPath.startsWith("/") ? enPath : `/${enPath}`;
+  const { pathname, search, hash } = splitPathSearchHash(enPath);
+  const suffix = `${search}${hash}`;
+
   if (locale === "en") {
-    return normalized;
+    return `${pathname}${suffix}`;
   }
-  if (locale === "es" && isGuideSubpath(normalized)) {
-    const parsed = parseGuideSubpath(normalized);
+  if (locale === "es" && isGuideSubpath(pathname)) {
+    const parsed = parseGuideSubpath(pathname);
     if (parsed && hasSpanishGuideDetail(parsed.category, parsed.slug)) {
-      return `${ES_PREFIX}${normalized}`;
+      return `${ES_PREFIX}${pathname}${suffix}`;
     }
-    return ES_PATH_BY_EN_PATH["/resources/guides"];
+    return `${ES_PATH_BY_EN_PATH["/resources/guides"]}${suffix}`;
   }
-  if (locale === "es" && isBlogSubpath(normalized)) {
-    return ES_PATH_BY_EN_PATH["/resources/blog"];
+  if (locale === "es" && isBlogSubpath(pathname)) {
+    return `${ES_PATH_BY_EN_PATH["/resources/blog"]}${suffix}`;
   }
-  if (isEsMarketingEnPath(normalized)) {
-    return ES_PATH_BY_EN_PATH[normalized];
+  if (isEsMarketingEnPath(pathname)) {
+    return `${ES_PATH_BY_EN_PATH[pathname]}${suffix}`;
   }
-  return ES_PREFIX;
+  return `${ES_PREFIX}${suffix}`;
 }
 
 export function localizePathname(pathname: string, locale: Locale): string {

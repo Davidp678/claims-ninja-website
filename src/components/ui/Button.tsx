@@ -1,5 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { cn } from "@/lib/cn";
+import {
+  handleSameDocumentHomepageIntakeClick,
+  homepageIntakeHref,
+  hrefHasHash,
+  isHomepageIntakeHref,
+} from "@/lib/homepage-intake";
+import { localeFromPathname } from "@/lib/i18n/paths";
 import { isExternalHref } from "@/lib/urls";
 
 const variants = {
@@ -41,6 +52,7 @@ export function Button({
   disabled = false,
   external,
 }: ButtonProps) {
+  const pathname = usePathname();
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black disabled:pointer-events-none disabled:opacity-55",
     variants[variant],
@@ -51,11 +63,15 @@ export function Button({
   if (href) {
     const hrefIsExternal = isExternalHref(href);
     const openNewTab = hrefIsExternal && external !== false;
+    const resolvedHref =
+      !hrefIsExternal && isHomepageIntakeHref(href)
+        ? homepageIntakeHref(localeFromPathname(pathname ?? "/"))
+        : href;
 
     if (openNewTab) {
       return (
         <a
-          href={href}
+          href={resolvedHref}
           className={classes}
           onClick={onClick}
           target="_blank"
@@ -68,14 +84,33 @@ export function Button({
 
     if (hrefIsExternal) {
       return (
-        <a href={href} className={classes} onClick={onClick}>
+        <a href={resolvedHref} className={classes} onClick={onClick}>
+          {children}
+        </a>
+      );
+    }
+
+    // Hash destinations: native <a> for cross-document reliability, plus
+    // same-document scroll handling (Next <Link> often skips hash scroll).
+    if (hrefHasHash(resolvedHref)) {
+      return (
+        <a
+          href={resolvedHref}
+          className={classes}
+          onClick={(event) => {
+            onClick?.();
+            if (handleSameDocumentHomepageIntakeClick(resolvedHref)) {
+              event.preventDefault();
+            }
+          }}
+        >
           {children}
         </a>
       );
     }
 
     return (
-      <Link href={href} className={classes} onClick={onClick}>
+      <Link href={resolvedHref} className={classes} onClick={onClick}>
         {children}
       </Link>
     );

@@ -1,3 +1,5 @@
+import { HOMEPAGE_INTAKE_HREF } from "@/lib/homepage-intake";
+
 export const HERO_VIDEO_URL =
   "https://customer-qmgpb08arenbn1zo.cloudflarestream.com/1df6b7b88fc207a3eb3fa6f7323f6420/downloads/default.mp4";
 
@@ -58,8 +60,8 @@ export const SOCIAL_LINKS = [
 
 /** Live conversion destinations — homepage intake vs strategy call. */
 export const CTA_LINKS = {
-  startHere: "/#top",
-  onboardingForm: "/#top",
+  startHere: HOMEPAGE_INTAKE_HREF,
+  onboardingForm: HOMEPAGE_INTAKE_HREF,
   schedule: "https://meetings.hubspot.com/taylor-handsel/team",
 } as const;
 

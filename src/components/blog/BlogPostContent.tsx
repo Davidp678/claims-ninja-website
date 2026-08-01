@@ -86,6 +86,10 @@ export function BlogPostContent({ sections }: BlogPostContentProps) {
                       >
                         {link.label} →
                       </a>
+                    ) : link.href.includes("#") ? (
+                      <a href={link.href} className={sectionLinkClass}>
+                        {link.label} →
+                      </a>
                     ) : (
                       <Link href={link.href} className={sectionLinkClass}>
                         {link.label} →

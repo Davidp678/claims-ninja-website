@@ -39,6 +39,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Keep hash targets (homepage intake) clear of the fixed Navbar. */
+  scroll-padding-top: var(--site-header-height, 6rem);
 }
 
 body {
