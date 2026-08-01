@@ -221,7 +221,7 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
               <>
                 <span className="lg:hidden">{content.title}</span>
                 <span className="hidden lg:block">
-                  <span className="block translate-x-px">
+                  <span className="block -translate-x-[3px]">
                     Turn your next claim into a
                   </span>
                   <span className="block">stronger recovery.</span>
