@@ -203,6 +203,7 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
 
   return (
     <section
+      id="top"
       aria-labelledby="hero-heading"
       className="relative overflow-hidden bg-brand-black lg:flex lg:min-h-[100svh] lg:flex-col"
     >
