@@ -26,7 +26,7 @@ type ButtonProps = {
   type?: "button" | "submit";
   onClick?: () => void;
   disabled?: boolean;
-  /** Open external href in a new tab with noopener. Auto-detected for http(s) URLs. */
+  /** Open an external href in a new tab with noopener. Internal hrefs always stay in the current tab. */
   external?: boolean;
 };
 
@@ -49,26 +49,12 @@ export function Button({
   );
 
   if (href) {
-    const openExternal = external ?? isExternalHref(href);
-    const openNewTab = openExternal;
+    const hrefIsExternal = isExternalHref(href);
+    const openNewTab = hrefIsExternal && external !== false;
 
     if (openNewTab) {
-      if (openExternal) {
-        return (
-          <a
-            href={href}
-            className={classes}
-            onClick={onClick}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {children}
-          </a>
-        );
-      }
-
       return (
-        <Link
+        <a
           href={href}
           className={classes}
           onClick={onClick}
@@ -76,7 +62,15 @@ export function Button({
           rel="noopener noreferrer"
         >
           {children}
-        </Link>
+        </a>
+      );
+    }
+
+    if (hrefIsExternal) {
+      return (
+        <a href={href} className={classes} onClick={onClick}>
+          {children}
+        </a>
       );
     }
 
