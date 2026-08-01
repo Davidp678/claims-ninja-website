@@ -217,7 +217,19 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             id="hero-heading"
             className="mt-5 font-display text-[2.35rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]"
           >
-            {content.title}
+            {locale === "en" ? (
+              <>
+                <span className="lg:hidden">{content.title}</span>
+                <span className="hidden lg:block">
+                  <span className="block translate-x-px">
+                    Turn your next claim into a
+                  </span>
+                  <span className="block">stronger recovery.</span>
+                </span>
+              </>
+            ) : (
+              content.title
+            )}
           </h1>
           <p className="mt-5 max-w-lg text-base leading-relaxed text-zinc-400 sm:text-lg">
             {content.subhead}
