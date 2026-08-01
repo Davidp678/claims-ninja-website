@@ -6,8 +6,3 @@ export function isExternalHref(href: string): boolean {
     href.startsWith("tel:")
   );
 }
-
-/** Homepage intake CTAs now stay in the current tab. */
-export function opensStartHereInNewTab(): boolean {
-  return false;
-}

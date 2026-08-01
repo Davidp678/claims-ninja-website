@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { FOOTER_LINKS, SITE } from "@/lib/constants";
 import { translateFooterLabel } from "@/lib/i18n/es-navigation";
 import { localizePath } from "@/lib/i18n/paths";
-import { opensStartHereInNewTab } from "@/lib/urls";
 import { useMarketingLocale } from "@/lib/i18n/use-marketing-locale";
 import { Container } from "@/components/ui/Container";
 
@@ -45,19 +44,6 @@ function FooterNavLink({
       >
         {label}
       </a>
-    );
-  }
-
-  if (opensStartHereInNewTab(link.href)) {
-    return (
-      <Link
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={footerLinkClass}
-      >
-        {label}
-      </Link>
     );
   }
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { BlogSection } from "@/lib/blog-data";
 import { BLOG_ANCHOR_SCROLL_CLASS } from "@/lib/blog-page";
 import { cn } from "@/lib/cn";
-import { isExternalHref, opensStartHereInNewTab } from "@/lib/urls";
+import { isExternalHref } from "@/lib/urls";
 
 const sectionLinkClass =
   "text-sm font-medium text-brand-red-light transition-colors hover:text-white";
@@ -86,15 +86,6 @@ export function BlogPostContent({ sections }: BlogPostContentProps) {
                       >
                         {link.label} →
                       </a>
-                    ) : opensStartHereInNewTab(link.href) ? (
-                      <Link
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={sectionLinkClass}
-                      >
-                        {link.label} →
-                      </Link>
                     ) : (
                       <Link href={link.href} className={sectionLinkClass}>
                         {link.label} →

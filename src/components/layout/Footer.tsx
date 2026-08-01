@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FOOTER_LINKS, SITE } from "@/lib/constants";
-import { opensStartHereInNewTab } from "@/lib/urls";
 import { Container } from "@/components/ui/Container";
 
 import { FooterSocialLinks } from "./FooterSocialLinks";
@@ -26,19 +25,6 @@ function FooterNavLink({ link }: { link: FooterLinkItem }) {
       >
         {link.label}
       </a>
-    );
-  }
-
-  if (opensStartHereInNewTab(link.href)) {
-    return (
-      <Link
-        href={link.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={footerLinkClass}
-      >
-        {link.label}
-      </Link>
     );
   }
 
