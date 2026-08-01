@@ -200,10 +200,10 @@ const EN: HomeContent = {
       },
       {
         id: "review_workflow",
-        value: "AI + expert",
+        value: "AI + Expert",
         label: "Review workflow",
         detail:
-          "Intelligence flagged; experienced supplement professionals finalize",
+          "AI flags claim opportunities; experienced supplement professionals finalize the strategy, with public adjuster escalation whenever the claim requires it.",
       },
     ],
     modules: [

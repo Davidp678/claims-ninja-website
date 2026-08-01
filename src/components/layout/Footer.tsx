@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FOOTER_LINKS, SITE } from "@/lib/constants";
-import { opensStartHereInNewTab } from "@/lib/urls";
 import { Container } from "@/components/ui/Container";
 
 import { FooterSocialLinks } from "./FooterSocialLinks";
@@ -29,16 +28,12 @@ function FooterNavLink({ link }: { link: FooterLinkItem }) {
     );
   }
 
-  if (opensStartHereInNewTab(link.href)) {
+  // Hash intake CTAs use a native anchor so same-page scroll is reliable.
+  if (link.href.includes("#")) {
     return (
-      <Link
-        href={link.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={footerLinkClass}
-      >
+      <a href={link.href} className={footerLinkClass}>
         {link.label}
-      </Link>
+      </a>
     );
   }
 

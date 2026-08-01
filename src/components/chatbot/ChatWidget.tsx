@@ -10,7 +10,11 @@ import {
   useState,
   useSyncExternalStore,
 } from "react";
-import { CTA_LINKS } from "@/lib/constants";
+import {
+  handleSameDocumentHomepageIntakeClick,
+  homepageIntakeHref,
+} from "@/lib/homepage-intake";
+import { localeFromPathname } from "@/lib/i18n/paths";
 import { ChatPanel } from "./ChatPanel";
 import {
   ChatTeaser,
@@ -368,7 +372,13 @@ export function ChatWidget({
         leadSuccessMessage &&
         !leadFlow.isActive
       ) {
-        window.open(CTA_LINKS.startHere, "_blank", "noopener,noreferrer");
+        closePanel();
+        const intakeHref = homepageIntakeHref(
+          localeFromPathname(pathname ?? "/"),
+        );
+        if (!handleSameDocumentHomepageIntakeClick(intakeHref)) {
+          router.push(intakeHref);
+        }
         return;
       }
 
@@ -392,7 +402,7 @@ export function ChatWidget({
         sendUserMessage(action.prompt ?? action.label);
       }
     },
-    [closePanel, isTyping, leadFlow, router, sendUserMessage],
+    [closePanel, isTyping, leadFlow, pathname, router, sendUserMessage],
   );
 
   useEffect(() => {

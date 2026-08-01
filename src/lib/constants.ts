@@ -1,3 +1,5 @@
+import { HOMEPAGE_INTAKE_HREF } from "@/lib/homepage-intake";
+
 export const HERO_VIDEO_URL =
   "https://customer-qmgpb08arenbn1zo.cloudflarestream.com/1df6b7b88fc207a3eb3fa6f7323f6420/downloads/default.mp4";
 
@@ -56,10 +58,10 @@ export const SOCIAL_LINKS = [
   { label: "YouTube", href: "https://www.youtube.com/@TheClaimsNinja" },
 ] as const;
 
-/** Live conversion destinations — onboarding launch center vs agreement form vs strategy call. */
+/** Live conversion destinations — homepage intake vs strategy call. */
 export const CTA_LINKS = {
-  startHere: "/starthere",
-  onboardingForm: "https://form.jotform.com/260536051303041",
+  startHere: HOMEPAGE_INTAKE_HREF,
+  onboardingForm: HOMEPAGE_INTAKE_HREF,
   schedule: "https://meetings.hubspot.com/taylor-handsel/team",
 } as const;
 

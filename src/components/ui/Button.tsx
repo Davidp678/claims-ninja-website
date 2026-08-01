@@ -1,6 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { cn } from "@/lib/cn";
-import { isExternalHref, opensStartHereInNewTab } from "@/lib/urls";
+import {
+  handleSameDocumentHomepageIntakeClick,
+  homepageIntakeHref,
+  hrefHasHash,
+  isHomepageIntakeHref,
+} from "@/lib/homepage-intake";
+import { localeFromPathname } from "@/lib/i18n/paths";
+import { isExternalHref } from "@/lib/urls";
 
 const variants = {
   primary:
@@ -26,7 +37,7 @@ type ButtonProps = {
   type?: "button" | "submit";
   onClick?: () => void;
   disabled?: boolean;
-  /** Open external href in a new tab with noopener. Auto-detected for http(s) URLs. */
+  /** Open an external href in a new tab with noopener. Internal hrefs always stay in the current tab. */
   external?: boolean;
 };
 
@@ -41,6 +52,7 @@ export function Button({
   disabled = false,
   external,
 }: ButtonProps) {
+  const pathname = usePathname();
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black disabled:pointer-events-none disabled:opacity-55",
     variants[variant],
@@ -49,39 +61,56 @@ export function Button({
   );
 
   if (href) {
-    const openExternal = external ?? isExternalHref(href);
-    const openNewTab = openExternal || opensStartHereInNewTab(href);
+    const hrefIsExternal = isExternalHref(href);
+    const openNewTab = hrefIsExternal && external !== false;
+    const resolvedHref =
+      !hrefIsExternal && isHomepageIntakeHref(href)
+        ? homepageIntakeHref(localeFromPathname(pathname ?? "/"))
+        : href;
 
     if (openNewTab) {
-      if (openExternal) {
-        return (
-          <a
-            href={href}
-            className={classes}
-            onClick={onClick}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {children}
-          </a>
-        );
-      }
-
       return (
-        <Link
-          href={href}
+        <a
+          href={resolvedHref}
           className={classes}
           onClick={onClick}
           target="_blank"
           rel="noopener noreferrer"
         >
           {children}
-        </Link>
+        </a>
+      );
+    }
+
+    if (hrefIsExternal) {
+      return (
+        <a href={resolvedHref} className={classes} onClick={onClick}>
+          {children}
+        </a>
+      );
+    }
+
+    // Hash destinations: native <a> for cross-document reliability, plus
+    // same-document scroll handling (Next <Link> often skips hash scroll).
+    if (hrefHasHash(resolvedHref)) {
+      return (
+        <a
+          href={resolvedHref}
+          className={classes}
+          onClick={(event) => {
+            onClick?.();
+            if (handleSameDocumentHomepageIntakeClick(resolvedHref)) {
+              event.preventDefault();
+            }
+          }}
+        >
+          {children}
+        </a>
       );
     }
 
     return (
-      <Link href={href} className={classes} onClick={onClick}>
+      <Link href={resolvedHref} className={classes} onClick={onClick}>
         {children}
       </Link>
     );

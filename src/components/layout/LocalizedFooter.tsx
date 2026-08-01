@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { FOOTER_LINKS, SITE } from "@/lib/constants";
 import { translateFooterLabel } from "@/lib/i18n/es-navigation";
 import { localizePath } from "@/lib/i18n/paths";
-import { opensStartHereInNewTab } from "@/lib/urls";
 import { useMarketingLocale } from "@/lib/i18n/use-marketing-locale";
 import { Container } from "@/components/ui/Container";
 
@@ -48,16 +47,12 @@ function FooterNavLink({
     );
   }
 
-  if (opensStartHereInNewTab(link.href)) {
+  // Hash intake CTAs use a native anchor so same-page scroll is reliable.
+  if (href.includes("#")) {
     return (
-      <Link
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={footerLinkClass}
-      >
+      <a href={href} className={footerLinkClass}>
         {label}
-      </Link>
+      </a>
     );
   }
 

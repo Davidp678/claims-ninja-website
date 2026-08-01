@@ -3,9 +3,11 @@ import {
   getHeroIntakeContent,
   type HeroProofMetric,
 } from "@/lib/onboarding/content";
+import { HOMEPAGE_INTAKE_ANCHOR_ID } from "@/lib/homepage-intake";
 import { Container } from "@/components/ui/Container";
 import { HeroBackdrop } from "./HeroBackdrop";
 import { HeroClaimIntakeCard } from "./HeroClaimIntakeCard";
+import { HomepageIntakeHashScroll } from "./HomepageIntakeHashScroll";
 
 const ICON_CLASS = "h-3.5 w-3.5 sm:h-4 sm:w-4";
 
@@ -203,9 +205,11 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
 
   return (
     <section
+      id={HOMEPAGE_INTAKE_ANCHOR_ID}
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden bg-brand-black lg:flex lg:min-h-[100svh] lg:flex-col"
+      className="relative scroll-mt-[var(--site-header-height,6rem)] overflow-hidden bg-brand-black lg:flex lg:min-h-[100svh] lg:flex-col"
     >
+      <HomepageIntakeHashScroll />
       <HeroBackdrop />
 
       <Container className="hero-first-viewport relative z-10 grid grid-cols-1 gap-12 pb-20 pt-28 sm:gap-14 sm:pb-24 sm:pt-32 lg:grid-cols-[minmax(0,1.05fr)_minmax(440px,520px)] lg:gap-x-16">
@@ -217,7 +221,19 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             id="hero-heading"
             className="mt-5 font-display text-[2.35rem] font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]"
           >
-            {content.title}
+            {locale === "en" ? (
+              <>
+                <span className="lg:hidden">{content.title}</span>
+                <span className="hidden lg:block">
+                  <span className="block -translate-x-[5px]">
+                    Turn your next claim into a
+                  </span>
+                  <span className="block">stronger recovery.</span>
+                </span>
+              </>
+            ) : (
+              content.title
+            )}
           </h1>
           <p className="mt-5 max-w-lg text-base leading-relaxed text-zinc-400 sm:text-lg">
             {content.subhead}

@@ -24,7 +24,7 @@ export function StartHereFinalCta() {
             {FINAL_CTA_SECTION.description}
           </p>
           <div className="mt-8">
-            <Button href={CTA_LINKS.onboardingForm} size="lg" external className="whitespace-nowrap">
+            <Button href={CTA_LINKS.onboardingForm} size="lg" className="whitespace-nowrap">
               {FINAL_CTA_SECTION.primaryCta}
             </Button>
             <p className="mt-4 text-sm leading-relaxed text-zinc-400">

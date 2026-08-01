@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import type { ClaimAnalysisResult } from "@/lib/claim-analysis";
+import { CTA_LINKS } from "@/lib/constants";
 import {
   formatRevenueRange,
   getOpportunityTier,
@@ -85,11 +86,11 @@ export function ClaimReportConversionCTA({ analysis }: ClaimReportConversionCTAP
           </ul>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-            <Button href="/#calculator" size="lg" className="w-full sm:w-auto">
+            <Button href={CTA_LINKS.startHere} size="lg" className="w-full sm:w-auto">
               Request Full Supplement Review
             </Button>
             <Button
-              href="/#calculator"
+              href={CTA_LINKS.startHere}
               variant="secondary"
               size="lg"
               className="w-full sm:w-auto"
