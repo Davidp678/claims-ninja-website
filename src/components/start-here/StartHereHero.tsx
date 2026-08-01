@@ -55,7 +55,7 @@ export function StartHereHero() {
             </span>
           </div>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button href={CTA_LINKS.onboardingForm} size="lg" external className="whitespace-nowrap">
+            <Button href={CTA_LINKS.onboardingForm} size="lg" className="whitespace-nowrap">
               {START_HERE_HERO.primaryCta}
             </Button>
             <Button
