@@ -56,10 +56,10 @@ export const SOCIAL_LINKS = [
   { label: "YouTube", href: "https://www.youtube.com/@TheClaimsNinja" },
 ] as const;
 
-/** Live conversion destinations — onboarding launch center vs agreement form vs strategy call. */
+/** Live conversion destinations — homepage intake vs strategy call. */
 export const CTA_LINKS = {
-  startHere: "/starthere",
-  onboardingForm: "https://form.jotform.com/260536051303041",
+  startHere: "/#top",
+  onboardingForm: "/#top",
   schedule: "https://meetings.hubspot.com/taylor-handsel/team",
 } as const;
 
