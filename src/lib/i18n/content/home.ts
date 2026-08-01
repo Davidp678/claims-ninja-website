@@ -203,7 +203,7 @@ const EN: HomeContent = {
         value: "AI + expert",
         label: "Review workflow",
         detail:
-          "Intelligence flagged; experienced supplement professionals finalize",
+          "AI flags opportunities; experienced supplement professionals finalize, with public adjuster escalation when a claim requires it.",
       },
     ],
     modules: [
