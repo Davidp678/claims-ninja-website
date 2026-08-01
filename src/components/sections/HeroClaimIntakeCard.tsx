@@ -608,7 +608,7 @@ export function HeroClaimIntakeCard({
                   className={cn(
                     "px-3 py-2.5 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-red-light",
                     claimMode === option.id
-                      ? "bg-brand-red/10 text-white ring-1 ring-inset ring-brand-red"
+                      ? "bg-brand-red/10 text-white"
                       : "bg-transparent text-zinc-400 hover:bg-white/[0.03] hover:text-zinc-200",
                   )}
                 >
