@@ -588,7 +588,7 @@ export function HeroClaimIntakeCard({
             <div
               role="group"
               aria-label="What are you submitting?"
-              className="grid grid-cols-2 divide-x divide-white/15 overflow-hidden rounded-lg border border-white/15"
+              className="grid grid-cols-2 divide-x divide-white/15 overflow-hidden rounded-lg border border-white/15 bg-black/20 shadow-inner"
             >
               {(
                 [
