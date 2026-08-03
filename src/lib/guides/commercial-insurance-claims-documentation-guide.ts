@@ -47,6 +47,7 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     "commercial-mold-claims-guide",
     "commercial-roofing-documentation-guide",
     "documentation-standards-guide",
+    "insurance-estimate-review-scope-validation-guide",
     "photo-documentation-standards-guide",
     "fire-damage-documentation-guide",
     "mold-damage-documentation-guide",
@@ -56,6 +57,7 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     "hoa-roofing-claims-guide",
     "supplement-submission-guide",
     "claim-file-audit-guide",
+    "carrier-estimate-review-guide",
   ],
   relatedBlogSlugs: [
     "commercial-claims-documentation-checklist",
@@ -669,6 +671,10 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Claim Documentation Standards",
       href: "/resources/guides/general-claims/documentation-standards-guide",
+    },
+    {
+      label: "Insurance Estimate Review & Scope Validation Guide for Contractors",
+      href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
     },
     {
       label: "Photo Documentation Field Procedure",

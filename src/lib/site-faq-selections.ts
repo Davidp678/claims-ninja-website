@@ -494,6 +494,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "documentation-supporting-supplements",
       "estimate-review-best-practices",
       "common-estimate-mistakes-contractors",
+      "estimate-review-for-contractors",
+      "scope-validation-carrier-estimates",
+      "quantity-validation-insurance-estimates",
+      "carrier-estimate-anatomy-contractors",
+      "estimate-documentation-requirements",
     ],
   },
   guides: {
@@ -601,6 +606,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "documentation-supporting-supplements",
       "estimate-review-best-practices",
       "common-estimate-mistakes-contractors",
+      "estimate-review-for-contractors",
+      "scope-validation-carrier-estimates",
+      "quantity-validation-insurance-estimates",
+      "carrier-estimate-anatomy-contractors",
+      "estimate-documentation-requirements",
     ],
   },
   caseStudies: {

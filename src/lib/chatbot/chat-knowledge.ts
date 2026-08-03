@@ -2859,6 +2859,85 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["supplements", "xactimate", "documentation"],
   },
+  "estimate-review-for-contractors": {
+    phrases: [
+      "how should contractors review an insurance estimate against field conditions",
+      "estimate review for contractors",
+      "review insurance estimate against field conditions",
+      "contractor insurance estimate review workflow",
+    ],
+    keywords: [
+      "estimate review",
+      "field conditions",
+      "comparison worksheet",
+      "gap list",
+      "scope validation",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "scope-validation-carrier-estimates": {
+    phrases: [
+      "how do contractors validate scope on a carrier estimate",
+      "scope validation carrier estimates",
+      "validate scope on carrier estimate",
+      "carrier estimate scope validation",
+    ],
+    keywords: [
+      "scope validation",
+      "carrier estimate scope",
+      "truncated rooms",
+      "missing phases",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "quantity-validation-insurance-estimates": {
+    phrases: [
+      "how should contractors validate quantities on insurance estimates",
+      "quantity validation insurance estimates",
+      "validate quantities on carrier estimates",
+      "insurance estimate quantity verification",
+    ],
+    keywords: [
+      "quantity validation",
+      "quantity verification",
+      "field measurements",
+      "takeoff",
+      "square footage",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "carrier-estimate-anatomy-contractors": {
+    phrases: [
+      "what is the anatomy of a carrier insurance estimate",
+      "anatomy of a carrier estimate",
+      "carrier estimate anatomy for contractors",
+      "parts of a carrier insurance estimate",
+    ],
+    keywords: [
+      "carrier estimate anatomy",
+      "estimate sketch",
+      "trade sections",
+      "price list",
+      "macros",
+    ],
+    topics: ["supplements", "xactimate"],
+  },
+  "estimate-documentation-requirements": {
+    phrases: [
+      "what documentation is required for estimate review and scope validation",
+      "estimate documentation requirements",
+      "documentation required for estimate review",
+      "estimate review supporting documentation",
+    ],
+    keywords: [
+      "estimate documentation",
+      "comparison worksheet",
+      "gap list",
+      "labeled photos",
+      "field scope worksheet",
+    ],
+    topics: ["documentation", "supplements", "xactimate"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

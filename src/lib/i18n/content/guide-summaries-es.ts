@@ -66,6 +66,12 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Flujo sistemático para revisar estimados Xactimate de aseguradoras: validación de la lista de habitaciones, análisis de brechas en partidas, verificación de cantidades y enrutamiento de suplementos antes de que la producción se comprometa con un alcance insuficiente.",
   },
+  "general-claims/insurance-estimate-review-scope-validation-guide": {
+    title:
+      "Guía de revisión de estimados de seguros y validación de alcance para contratistas",
+    excerpt:
+      "Guía fundamental para evaluar estimados de aseguradoras frente a condiciones de campo documentadas: anatomía del estimado, validación de cantidades y alcance, partidas faltantes, código y protección temporal, equipo y mano de obra, documentación de respaldo, flujo de auditoría de alcance, preparación para reinspección y controles de calidad.",
+  },
   "general-claims/op-qualification-guide": {
     title: "Estándar de documentación para calificación de O&P",
     excerpt:

@@ -24,6 +24,7 @@ export type GuideCategory = {
 export const GENERAL_CLAIMS_HUB_ORDER = [
   "commercial-insurance-supplement-playbook-for-contractors",
   "documentation-standards-guide",
+  "insurance-estimate-review-scope-validation-guide",
   "large-loss-commercial-insurance-claims-guide",
   "carrier-estimate-review-guide",
   "retail-office-insurance-claims-guide",
@@ -50,6 +51,7 @@ export const RECOMMENDED_GUIDE_SLUGS = [
   "large-loss-commercial-insurance-claims-guide",
   "fire-damage-documentation-guide",
   "documentation-standards-guide",
+  "insurance-estimate-review-scope-validation-guide",
   "moisture-mapping-guide",
 ] as const;
 

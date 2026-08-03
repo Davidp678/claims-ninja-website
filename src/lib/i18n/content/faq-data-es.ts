@@ -6228,6 +6228,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
       },
       {
+        label: "Guía de revisión de estimados y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
         label: "Guía de revisión de estimados de la aseguradora",
         href: "/resources/guides/general-claims/carrier-estimate-review-guide",
       },
@@ -6299,6 +6303,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/blog/first-48-hours-after-carrier-estimate",
       },
       {
+        label: "Guía de revisión de estimados y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
         label: "Guía de revisión de estimados de la aseguradora",
         href: "/resources/guides/general-claims/carrier-estimate-review-guide",
       },
@@ -6316,12 +6324,145 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
       },
       {
+        label: "Guía de revisión de estimados y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
         label: "Guía de suplementos de seguros para contratistas",
         href: "/resources/blog/insurance-supplementing-guide-contractors",
       },
       {
         label: "¿Cuáles son los renglones más pasados por alto en los estimados de seguros?",
         href: "/faq#faq-overlooked-insurance-estimate-items",
+      },
+    ],
+  },
+  {
+    id: "estimate-review-for-contractors",
+    category: "insurance_supplements",
+    question:
+      "¿Cómo deben los contratistas revisar un estimado de seguros frente a las condiciones de campo?",
+    answer:
+      "Asigne un responsable de revisión a las horas de recibir el estimado, archive la versión más reciente, valide el croquis y la lista de habitaciones contra el sitio, y construya una hoja de comparación escrita con cantidad de la aseguradora, cantidad de campo, diferencia y referencias fotográficas. Ejecute pases de cantidad y alcance más revisiones de protección temporal, código, equipo, materiales y condiciones generales. Clasifique cada brecha como lista para suplemento o que necesita más evidencia antes de que la producción absorba alcance no pagado.",
+    relatedLinks: [
+      {
+        label: "Guía de revisión de estimados y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Guía de revisión de estimados de la aseguradora",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "¿Cómo validan los contratistas el alcance en un estimado de la aseguradora?",
+        href: "/faq#faq-scope-validation-carrier-estimates",
+      },
+      {
+        label: "¿Qué documentación se requiere para la revisión de estimados?",
+        href: "/faq#faq-estimate-documentation-requirements",
+      },
+    ],
+  },
+  {
+    id: "scope-validation-carrier-estimates",
+    category: "insurance_supplements",
+    question: "¿Cómo validan los contratistas el alcance en un estimado de la aseguradora?",
+    answer:
+      "La validación de alcance confirma que cada área dañada y cada fase requerida aparecen en el estimado con etiquetas coincidentes — demolición, protección temporal, mitigación y reconstrucción — respaldadas por fotos y registros fechados. Señale habitaciones truncadas, elevaciones faltantes, estructuras anexas omitidas y desajustes de indexación multiárea. Clasifique brechas como listas para suplemento solo cuando la evidencia de campo esté completa; de lo contrario asigne captura el mismo día antes de empaquetar.",
+    relatedLinks: [
+      {
+        label: "Guía de revisión de estimados y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Guía de estándares de documentación",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "¿Cómo deben los contratistas validar cantidades en estimados de seguros?",
+        href: "/faq#faq-quantity-validation-insurance-estimates",
+      },
+      {
+        label:
+          "¿Cómo deben los contratistas revisar un estimado de seguros frente a las condiciones de campo?",
+        href: "/faq#faq-estimate-review-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "quantity-validation-insurance-estimates",
+    category: "insurance_supplements",
+    question: "¿Cómo deben los contratistas validar cantidades en estimados de seguros?",
+    answer:
+      "Recalcule renglones de alto valor en SF y conteos a partir de mediciones de campo independientes — cuadros de techo, pisos, drywall, pintura, aberturas, accesorios y días de equipo — y compárelos con el croquis y los renglones de la aseguradora. Fotografíe el contexto de medición, documente la metodología en ensambles grandes y registre diferencias en una hoja de comparación. Priorice disputas por impacto en dólares y solidez de la evidencia antes de marcar brechas como listas para suplemento.",
+    relatedLinks: [
+      {
+        label: "Guía de revisión de estimados y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Guía de revisión de estimados de la aseguradora",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "¿Cuál es la anatomía de un estimado de seguros de la aseguradora?",
+        href: "/faq#faq-carrier-estimate-anatomy-contractors",
+      },
+      {
+        label: "Los renglones más pasados por alto en los estimados de seguros",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "carrier-estimate-anatomy-contractors",
+    category: "insurance_supplements",
+    question: "¿Cuál es la anatomía de un estimado de seguros de la aseguradora?",
+    answer:
+      "Un estimado de la aseguradora suele incluir un bloque administrativo (número de reclamo, dirección, lista de precios, versión), un croquis y lista de habitaciones/áreas, secciones por oficio (condiciones generales, protección temporal, demolición, mitigación, acabados, exterior), macros o supuestos de plantilla, y tratamientos de O&P/impuestos. Revise la anatomía antes de los totales en dólares: errores de croquis y categorías de oficio faltantes impulsan las mayores brechas de alcance y cantidad que los contratistas deben documentar.",
+    relatedLinks: [
+      {
+        label: "Guía de revisión de estimados y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Guía de revisión de estimados de la aseguradora",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label:
+          "¿Cómo deben los contratistas revisar un estimado de seguros frente a las condiciones de campo?",
+        href: "/faq#faq-estimate-review-for-contractors",
+      },
+      {
+        label: "Lista de verificación de revisión de estimados Xactimate",
+        href: "/resources/blog/xactimate-estimate-review-checklist-contractors",
+      },
+    ],
+  },
+  {
+    id: "estimate-documentation-requirements",
+    category: "documentation",
+    question:
+      "¿Qué documentación se requiere para la revisión de estimados y la validación de alcance?",
+    answer:
+      "La documentación requerida incluye la versión más reciente del estimado de la aseguradora, una hoja de alcance de campo independiente, fotos etiquetadas de general a detalle, takeoffs de medición, una hoja de comparación renglón por renglón y una lista priorizada de brechas. Agregue registros especializados por tipo de pérdida, archivos de código/autoridad competente, registros de protección temporal y reportes de equipo o diarios cuando apliquen. Cada brecha lista para suplemento necesita una foto o referencia de medición en la versión actual del estimado.",
+    relatedLinks: [
+      {
+        label: "Guía de revisión de estimados y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Guía de estándares de documentación",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "Lista de verificación de documentación de reclamaciones comerciales",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "¿Cómo validan los contratistas el alcance en un estimado de la aseguradora?",
+        href: "/faq#faq-scope-validation-carrier-estimates",
       },
     ],
   },

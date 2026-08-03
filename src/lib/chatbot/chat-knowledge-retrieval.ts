@@ -3220,6 +3220,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "estimate review scope validation guide retrieves",
+    message: "insurance estimate review and scope validation guide for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /insurance-estimate-review-scope-validation-guide|Insurance Estimate Review & Scope Validation Guide|evaluate carrier estimates against documented field conditions/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "estimate review for contractors FAQ retrieves",
+    message: "how should contractors review an insurance estimate against field conditions",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /estimate-review-for-contractors|insurance-estimate-review-scope-validation-guide|Assign a review owner within hours of receipt/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "scope validation carrier estimates FAQ retrieves",
+    message: "how do contractors validate scope on a carrier estimate",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /scope-validation-carrier-estimates|insurance-estimate-review-scope-validation-guide|Scope validation confirms every damaged area/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "quantity validation insurance estimates FAQ retrieves",
+    message: "how should contractors validate quantities on insurance estimates",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /quantity-validation-insurance-estimates|insurance-estimate-review-scope-validation-guide|Recalculate high-value SF and count lines/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "carrier estimate anatomy contractors FAQ retrieves",
+    message: "what is the anatomy of a carrier insurance estimate",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /carrier-estimate-anatomy-contractors|insurance-estimate-review-scope-validation-guide|administrative block \(claim number/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "estimate documentation requirements FAQ retrieves",
+    message: "what documentation is required for estimate review and scope validation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /estimate-documentation-requirements|insurance-estimate-review-scope-validation-guide|latest carrier estimate version, an independent field scope worksheet/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "why mold insurance claims underpaid blog retrieves",
     message: "why mold insurance claims get underpaid documentation",
     assert: (result) =>

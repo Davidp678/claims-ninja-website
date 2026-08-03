@@ -11,8 +11,11 @@ export type BlogGuideCompanionEntry = {
 export const BLOG_GUIDE_COMPANIONS = {
   "first-48-hours-after-carrier-estimate": {
     intro:
-      "You've learned what to prioritize in the first 48 hours after a carrier estimate. Now run the intake checklist your office and field teams can execute on every file.",
-    guideSlugs: ["first-48-hours-checklist"],
+      "You've learned what to prioritize in the first 48 hours after a carrier estimate. Now run the intake checklist and the estimate review & scope validation cornerstone your office and field teams can execute on every file.",
+    guideSlugs: [
+      "first-48-hours-checklist",
+      "insurance-estimate-review-scope-validation-guide",
+    ],
   },
   "claim-documentation-approval-rates": {
     intro:
@@ -30,16 +33,19 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "why-carrier-estimates-miss-line-items": {
     intro:
-      "You've learned why carrier estimates miss scope. Now use the estimate review workflow to catch gaps before production commits to under-scoped work.",
-    guideSlugs: ["carrier-estimate-review-guide"],
+      "You've learned why carrier estimates miss scope. Now use the estimate review & scope validation cornerstone and the day-one carrier estimate review workflow to catch gaps before production commits to under-scoped work.",
+    guideSlugs: [
+      "insurance-estimate-review-scope-validation-guide",
+      "carrier-estimate-review-guide",
+    ],
   },
   "most-overlooked-line-items-in-insurance-estimates": {
     intro:
-      "You've learned which line items get overlooked and how to document them. Now run the estimate review, documentation standards, commercial supplement playbook, and submission workflow that turn gap lists into reviewer-ready packages.",
+      "You've learned which line items get overlooked and how to document them. Now run the estimate review & scope validation cornerstone, carrier estimate review workflow, documentation standards, and submission workflow that turn gap lists into reviewer-ready packages.",
     guideSlugs: [
+      "insurance-estimate-review-scope-validation-guide",
       "carrier-estimate-review-guide",
       "documentation-standards-guide",
-      "commercial-insurance-supplement-playbook-for-contractors",
       "supplement-submission-guide",
     ],
   },

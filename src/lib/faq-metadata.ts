@@ -3489,15 +3489,16 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "overlooked-insurance-estimate-items": {
     searchIntent: "informational",
     relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-scope-validation-guide",
       "general-claims/carrier-estimate-review-guide",
       "general-claims/documentation-standards-guide",
-      "general-claims/commercial-insurance-supplement-playbook-for-contractors",
     ],
     relatedFaqIds: [
       "missing-line-items-insurance-estimates",
       "documentation-supporting-supplements",
       "estimate-review-best-practices",
       "common-estimate-mistakes-contractors",
+      "estimate-review-for-contractors",
     ],
     internalLinkNotes:
       "Blog bridge FAQ; anchors Most Overlooked Line Items in Insurance Estimates article.",
@@ -3505,6 +3506,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "missing-line-items-insurance-estimates": {
     searchIntent: "informational",
     relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-scope-validation-guide",
       "general-claims/carrier-estimate-review-guide",
       "general-claims/first-48-hours-checklist",
     ],
@@ -3520,12 +3522,14 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
       "general-claims/documentation-standards-guide",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
       "general-claims/commercial-insurance-claims-documentation-guide",
       "general-claims/supplement-submission-guide",
     ],
     relatedFaqIds: [
       "overlooked-insurance-estimate-items",
       "estimate-review-best-practices",
+      "estimate-documentation-requirements",
       "documentation-essentials",
     ],
     internalLinkNotes:
@@ -3534,6 +3538,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "estimate-review-best-practices": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-scope-validation-guide",
       "general-claims/carrier-estimate-review-guide",
       "general-claims/first-48-hours-checklist",
       "general-claims/supplement-submission-guide",
@@ -3542,6 +3547,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "overlooked-insurance-estimate-items",
       "missing-line-items-insurance-estimates",
       "common-estimate-mistakes-contractors",
+      "estimate-review-for-contractors",
     ],
     internalLinkNotes:
       "Estimate review best practices FAQ; bridges overlooked line items blog to operational guides.",
@@ -3549,6 +3555,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "common-estimate-mistakes-contractors": {
     searchIntent: "informational",
     relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-scope-validation-guide",
       "general-claims/carrier-estimate-review-guide",
       "general-claims/documentation-standards-guide",
     ],
@@ -3559,6 +3566,83 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     ],
     internalLinkNotes:
       "Common contractor estimate mistakes; pairs with overlooked line items educational article.",
+  },
+  "estimate-review-for-contractors": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/carrier-estimate-review-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "scope-validation-carrier-estimates",
+      "quantity-validation-insurance-estimates",
+      "carrier-estimate-anatomy-contractors",
+      "estimate-documentation-requirements",
+      "estimate-review-best-practices",
+    ],
+    internalLinkNotes:
+      "Cornerstone FAQ for estimate review against field conditions; anchors Estimate Review & Scope Validation Guide.",
+  },
+  "scope-validation-carrier-estimates": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/documentation-standards-guide",
+      "general-claims/claim-file-audit-guide",
+    ],
+    relatedFaqIds: [
+      "estimate-review-for-contractors",
+      "quantity-validation-insurance-estimates",
+      "estimate-documentation-requirements",
+    ],
+    internalLinkNotes:
+      "Scope validation FAQ for carrier estimates; pairs with cornerstone guide and documentation standards.",
+  },
+  "quantity-validation-insurance-estimates": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/carrier-estimate-review-guide",
+    ],
+    relatedFaqIds: [
+      "estimate-review-for-contractors",
+      "scope-validation-carrier-estimates",
+      "carrier-estimate-anatomy-contractors",
+      "overlooked-insurance-estimate-items",
+    ],
+    internalLinkNotes:
+      "Quantity validation FAQ; measurement and takeoff reconciliation against carrier lines.",
+  },
+  "carrier-estimate-anatomy-contractors": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/carrier-estimate-review-guide",
+      "general-claims/first-48-hours-checklist",
+    ],
+    relatedFaqIds: [
+      "estimate-review-for-contractors",
+      "quantity-validation-insurance-estimates",
+      "scope-validation-carrier-estimates",
+    ],
+    internalLinkNotes:
+      "Carrier estimate anatomy FAQ; administrative block, sketch, trade sections, macros.",
+  },
+  "estimate-documentation-requirements": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/documentation-standards-guide",
+      "general-claims/commercial-insurance-claims-documentation-guide",
+    ],
+    relatedFaqIds: [
+      "estimate-review-for-contractors",
+      "scope-validation-carrier-estimates",
+      "documentation-supporting-supplements",
+    ],
+    internalLinkNotes:
+      "Documentation requirements for estimate review and scope validation packages.",
   },
 };
 

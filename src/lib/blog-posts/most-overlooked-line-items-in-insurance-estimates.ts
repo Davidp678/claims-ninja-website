@@ -60,6 +60,10 @@ export const mostOverlookedLineItemsInInsuranceEstimates: BlogPost = {
           href: "/resources/blog/first-48-hours-after-carrier-estimate",
         },
         {
+          label: "Insurance Estimate Review & Scope Validation Guide",
+          href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+        },
+        {
           label: "Carrier Estimate Review Guide",
           href: "/resources/guides/general-claims/carrier-estimate-review-guide",
         },
@@ -212,6 +216,10 @@ export const mostOverlookedLineItemsInInsuranceEstimates: BlogPost = {
       ],
       links: [
         {
+          label: "Insurance Estimate Review & Scope Validation Guide",
+          href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+        },
+        {
           label: "Carrier Estimate Review Guide",
           href: "/resources/guides/general-claims/carrier-estimate-review-guide",
         },
@@ -363,10 +371,14 @@ export const mostOverlookedLineItemsInInsuranceEstimates: BlogPost = {
       heading: "Closing: Build an Overlook Checklist Into Every File",
       paragraphs: [
         "Overlooked line items are predictable. Temporary protection, general conditions, equipment, contents manipulation, detach/reset, code scope, access, and moisture investigation appear on gap lists across trades because first-pass estimates optimize for speed and standardization.",
-        "Contractors who win on process treat estimate review as a daily operations habit: compare early, photograph while conditions are visible, label consistently, and package supported gaps through a documented supplement workflow. Pair this article with the Carrier Estimate Review Guide, Documentation Standards Guide, and Commercial Insurance Supplement Playbook so your team executes the same standard on every file.",
+        "Contractors who win on process treat estimate review as a daily operations habit: compare early, photograph while conditions are visible, label consistently, and package supported gaps through a documented supplement workflow. Pair this article with the Insurance Estimate Review & Scope Validation Guide, Carrier Estimate Review Guide, and Documentation Standards Guide so your team executes the same standard on every file.",
         "Educational content for contractors only — not legal advice, not claim negotiation guidance, and not a substitute for policy-specific review on any individual loss.",
       ],
       links: [
+        {
+          label: "Insurance Estimate Review & Scope Validation Guide",
+          href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+        },
         {
           label: "Carrier Estimate Review Guide",
           href: "/resources/guides/general-claims/carrier-estimate-review-guide",

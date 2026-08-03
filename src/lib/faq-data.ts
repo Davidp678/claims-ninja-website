@@ -6241,6 +6241,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
       },
       {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
         label: "Carrier Estimate Review Guide",
         href: "/resources/guides/general-claims/carrier-estimate-review-guide",
       },
@@ -6312,6 +6316,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/blog/first-48-hours-after-carrier-estimate",
       },
       {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
         label: "Carrier Estimate Review Guide",
         href: "/resources/guides/general-claims/carrier-estimate-review-guide",
       },
@@ -6329,12 +6337,141 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
       },
       {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
         label: "Insurance supplementing guide for contractors",
         href: "/resources/blog/insurance-supplementing-guide-contractors",
       },
       {
         label: "What are the most overlooked line items in insurance estimates?",
         href: "/faq#faq-overlooked-insurance-estimate-items",
+      },
+    ],
+  },
+  {
+    id: "estimate-review-for-contractors",
+    category: "insurance_supplements",
+    question: "How should contractors review an insurance estimate against field conditions?",
+    answer:
+      "Assign a review owner within hours of receipt, file the latest estimate version, validate the sketch and room list against the site, then build a written comparison worksheet with carrier qty, field qty, delta, and photo refs. Run quantity and scope passes plus specialty checks for temporary protection, code, equipment, materials, and general conditions. Classify each gap as supplement-ready or needs more evidence before production absorbs unpaid scope.",
+    relatedLinks: [
+      {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Carrier Estimate Review Guide",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "How do contractors validate scope on a carrier estimate?",
+        href: "/faq#faq-scope-validation-carrier-estimates",
+      },
+      {
+        label: "What documentation is required for estimate review?",
+        href: "/faq#faq-estimate-documentation-requirements",
+      },
+    ],
+  },
+  {
+    id: "scope-validation-carrier-estimates",
+    category: "insurance_supplements",
+    question: "How do contractors validate scope on a carrier estimate?",
+    answer:
+      "Scope validation confirms every damaged area and required phase appears in the estimate with matching labels — demolition, temporary protection, mitigation, and rebuild — supported by dated photos and logs. Flag truncated rooms, missing elevations, omitted attached structures, and multi-area indexing mismatches. Classify gaps as supplement-ready only when field evidence is complete; otherwise assign same-day recapture before packaging.",
+    relatedLinks: [
+      {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Documentation Standards Guide",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "How should contractors validate quantities on insurance estimates?",
+        href: "/faq#faq-quantity-validation-insurance-estimates",
+      },
+      {
+        label: "How should contractors review an insurance estimate against field conditions?",
+        href: "/faq#faq-estimate-review-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "quantity-validation-insurance-estimates",
+    category: "insurance_supplements",
+    question: "How should contractors validate quantities on insurance estimates?",
+    answer:
+      "Recalculate high-value SF and count lines from independent field measurements — roofing squares, flooring, drywall, paint, openings, fixtures, and equipment days — and compare them to the carrier sketch and line items. Photograph measurement context, document methodology on large assemblies, and record deltas on a comparison worksheet. Prioritize disputes by dollar impact and evidence strength before marking gaps supplement-ready.",
+    relatedLinks: [
+      {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Carrier Estimate Review Guide",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "What is the anatomy of a carrier insurance estimate?",
+        href: "/faq#faq-carrier-estimate-anatomy-contractors",
+      },
+      {
+        label: "The Most Overlooked Line Items in Insurance Estimates",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "carrier-estimate-anatomy-contractors",
+    category: "insurance_supplements",
+    question: "What is the anatomy of a carrier insurance estimate?",
+    answer:
+      "A carrier estimate typically includes an administrative block (claim number, address, price list, version), a sketch and room/area list, trade sections (general conditions, temporary protection, demo, mitigation, finishes, exterior), macros or template assumptions, and O&P/tax treatments. Review anatomy before dollar totals: sketch errors and missing trade categories drive the largest scope and quantity gaps contractors must document.",
+    relatedLinks: [
+      {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Carrier Estimate Review Guide",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "How should contractors review an insurance estimate against field conditions?",
+        href: "/faq#faq-estimate-review-for-contractors",
+      },
+      {
+        label: "Xactimate estimate review checklist",
+        href: "/resources/blog/xactimate-estimate-review-checklist-contractors",
+      },
+    ],
+  },
+  {
+    id: "estimate-documentation-requirements",
+    category: "documentation",
+    question: "What documentation is required for estimate review and scope validation?",
+    answer:
+      "Required documentation includes the latest carrier estimate version, an independent field scope worksheet, labeled overview-to-detail photos, measurement takeoffs, a line-by-line comparison worksheet, and a prioritized gap list. Add specialty logs by peril, code/AHJ files, temporary protection records, and equipment or daily reports when those categories apply. Every supplement-ready gap needs a photo or measurement reference on the current estimate version.",
+    relatedLinks: [
+      {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Documentation Standards Guide",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "Commercial Claims Documentation Checklist",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+      {
+        label: "How do contractors validate scope on a carrier estimate?",
+        href: "/faq#faq-scope-validation-carrier-estimates",
       },
     ],
   },
