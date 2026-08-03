@@ -6346,6 +6346,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "Asigne un responsable de revisión a las horas de recibir el estimado, archive la versión más reciente, valide el croquis y la lista de habitaciones contra el sitio, y construya una hoja de comparación escrita con cantidad de la aseguradora, cantidad de campo, diferencia y referencias fotográficas. Ejecute pases de cantidad y alcance más revisiones de protección temporal, código, equipo, materiales y condiciones generales. Clasifique cada brecha como lista para suplemento o que necesita más evidencia antes de que la producción absorba alcance no pagado.",
     relatedLinks: [
       {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
         label: "Guía de revisión de estimados y validación de alcance",
         href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
       },
@@ -6354,12 +6358,8 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/carrier-estimate-review-guide",
       },
       {
-        label: "¿Cómo validan los contratistas el alcance en un estimado de la aseguradora?",
-        href: "/faq#faq-scope-validation-carrier-estimates",
-      },
-      {
-        label: "¿Qué documentación se requiere para la revisión de estimados?",
-        href: "/faq#faq-estimate-documentation-requirements",
+        label: "¿Cuál es el flujo de trabajo de revisión de estimados para contratistas?",
+        href: "/faq#faq-estimate-review-workflow",
       },
     ],
   },
@@ -6371,16 +6371,16 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "La validación de alcance confirma que cada área dañada y cada fase requerida aparecen en el estimado con etiquetas coincidentes — demolición, protección temporal, mitigación y reconstrucción — respaldadas por fotos y registros fechados. Señale habitaciones truncadas, elevaciones faltantes, estructuras anexas omitidas y desajustes de indexación multiárea. Clasifique brechas como listas para suplemento solo cuando la evidencia de campo esté completa; de lo contrario asigne captura el mismo día antes de empaquetar.",
     relatedLinks: [
       {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
         label: "Guía de revisión de estimados y validación de alcance",
         href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
       },
       {
-        label: "Guía de estándares de documentación",
-        href: "/resources/guides/general-claims/documentation-standards-guide",
-      },
-      {
-        label: "¿Cómo deben los contratistas validar cantidades en estimados de seguros?",
-        href: "/faq#faq-quantity-validation-insurance-estimates",
+        label: "¿Cómo ejecutan los contratistas un flujo de auditoría de alcance?",
+        href: "/faq#faq-scope-audit-workflow",
       },
       {
         label:
@@ -6449,6 +6449,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "La documentación requerida incluye la versión más reciente del estimado de la aseguradora, una hoja de alcance de campo independiente, fotos etiquetadas de general a detalle, takeoffs de medición, una hoja de comparación renglón por renglón y una lista priorizada de brechas. Agregue registros especializados por tipo de pérdida, archivos de código/autoridad competente, registros de protección temporal y reportes de equipo o diarios cuando apliquen. Cada brecha lista para suplemento necesita una foto o referencia de medición en la versión actual del estimado.",
     relatedLinks: [
       {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
         label: "Guía de revisión de estimados y validación de alcance",
         href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
       },
@@ -6457,12 +6461,139 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/documentation-standards-guide",
       },
       {
-        label: "Lista de verificación de documentación de reclamaciones comerciales",
-        href: "/resources/blog/commercial-claims-documentation-checklist",
+        label: "¿Cómo deben los contratistas organizar los archivos de revisión de estimados?",
+        href: "/faq#faq-estimate-organization",
+      },
+    ],
+  },
+  {
+    id: "estimate-review-workflow",
+    category: "insurance_supplements",
+    question:
+      "¿Cuál es el flujo de trabajo de revisión de estimados para contratistas desde la recepción hasta el acuerdo?",
+    answer:
+      "Reciba y versiona el estimado de la aseguradora, asigne un responsable de revisión, revise la estructura del estimado, compárelo con la documentación de campo, valide alcance y cantidades, ejecute pases de código/condiciones generales/equipo/partidas faltantes, arme un paquete de documentación indexado, prepare y envíe el suplemento, apoye la reinspección, revise estimados revisados por versión y concilie el alcance aprobado con la producción en el acuerdo final. Mantenga controles de producción sobre brechas de alto valor no pagadas hasta documentarlas.",
+    relatedLinks: [
+      {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "Guía de revisión de estimados y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "¿Cómo ejecutan los contratistas un flujo de auditoría de alcance?",
+        href: "/faq#faq-scope-audit-workflow",
+      },
+      {
+        label: "¿Cómo deben los contratistas preparar suplementos después de la revisión del estimado?",
+        href: "/faq#faq-supplement-preparation",
+      },
+    ],
+  },
+  {
+    id: "scope-audit-workflow",
+    category: "insurance_supplements",
+    question:
+      "¿Cómo ejecutan los contratistas un flujo de auditoría de alcance en un estimado de la aseguradora?",
+    answer:
+      "Asigne un responsable de revisión y fije la versión más reciente del estimado, complete un pase de anatomía y estructura, recorra las áreas contra fotos y mediciones en una hoja de comparación escrita, termine las listas de alcance y cantidad, ejecute pases especializados de protección temporal, código, equipo/mano de obra y condiciones generales, y luego enrute las brechas listas para suplemento al empaquetado y los defectos de documentación a captura de campo el mismo día. No cierre un área hasta que fotos, cantidades y secciones del estimado concilien.",
+    relatedLinks: [
+      {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
       },
       {
         label: "¿Cómo validan los contratistas el alcance en un estimado de la aseguradora?",
         href: "/faq#faq-scope-validation-carrier-estimates",
+      },
+      {
+        label: "¿Cuál es el flujo de trabajo de revisión de estimados para contratistas?",
+        href: "/faq#faq-estimate-review-workflow",
+      },
+      {
+        label: "Guía de auditoría de expediente de reclamación",
+        href: "/resources/guides/general-claims/claim-file-audit-guide",
+      },
+    ],
+  },
+  {
+    id: "supplement-preparation",
+    category: "insurance_supplements",
+    question:
+      "¿Cómo deben los contratistas preparar suplementos después de la revisión del estimado?",
+    answer:
+      "Convierta solo las brechas listas para suplemento en renglones de estimado revisado con referencias a anexos y etiquetas de área. Redacte una carta de presentación factual — un párrafo por asunto más una tabla resumen que coincida con el delta en dólares del estimado —, exporte en el formato preferido de la aseguradora y complete una lista de preparación antes del envío. Reserve las brechas que necesitan más evidencia para captura; no empaquete adiciones sin respaldo. Siga el flujo de envío de suplementos para enrutamiento y seguimiento.",
+    relatedLinks: [
+      {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "Guía de envío de suplementos",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      {
+        label: "¿Cuál es el flujo de trabajo de revisión de estimados para contratistas?",
+        href: "/faq#faq-estimate-review-workflow",
+      },
+      {
+        label:
+          "¿Cómo deben los contratistas prepararse para una reinspección después de la revisión del estimado?",
+        href: "/faq#faq-reinspection-preparation",
+      },
+    ],
+  },
+  {
+    id: "estimate-organization",
+    category: "insurance_supplements",
+    question:
+      "¿Cómo deben los contratistas organizar los archivos y versiones de revisión de estimados?",
+    answer:
+      "Mantenga un archivo de trabajo que cualquier revisor pueda abrir: versiones del estimado de la aseguradora, hoja de alcance de campo independiente, hoja de comparación, lista de brechas y carpetas de evidencia con etiquetas de área consistentes. Versiona la hoja de comparación cada vez que llegue un estimado revisado — nunca mezcle diferencias entre versiones. Guarde subcarpetas de código, protección temporal y equipo como secciones de primer nivel, y entregue paquetes organizados a la auditoría de expediente y al envío de suplementos sin reconstruir la narrativa.",
+    relatedLinks: [
+      {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "Guía de estándares de documentación",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "¿Qué documentación se requiere para la revisión de estimados?",
+        href: "/faq#faq-estimate-documentation-requirements",
+      },
+      {
+        label: "Lista de verificación de documentación de reclamaciones comerciales",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+    ],
+  },
+  {
+    id: "reinspection-preparation",
+    category: "insurance_supplements",
+    question:
+      "¿Cómo deben los contratistas prepararse para una reinspección después de la revisión del estimado?",
+    answer:
+      "Arme un paquete de reinspección desde la hoja de comparación — brechas priorizadas, referencias fotográficas, mediciones y registros especializados —, confirme acceso al sitio y áreas aún visibles, asigne roles de recorrido/lista de brechas/fotos y prepare evidencia en las áreas en disputa. Responda con referencias a anexos y mediciones, no con opiniones. Registre resultados en el CRM el mismo día y revise el estimado dentro de una semana para que los renglones discutidos en sitio aparezcan en el alcance enviado.",
+    relatedLinks: [
+      {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "¿Cómo deben los contratistas preparar suplementos después de la revisión del estimado?",
+        href: "/faq#faq-supplement-preparation",
+      },
+      {
+        label: "¿Cuál es el flujo de trabajo de revisión de estimados para contratistas?",
+        href: "/faq#faq-estimate-review-workflow",
+      },
+      {
+        label: "Guía de revisión de estimados de la aseguradora",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
       },
     ],
   },

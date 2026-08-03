@@ -6358,6 +6358,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Assign a review owner within hours of receipt, file the latest estimate version, validate the sketch and room list against the site, then build a written comparison worksheet with carrier qty, field qty, delta, and photo refs. Run quantity and scope passes plus specialty checks for temporary protection, code, equipment, materials, and general conditions. Classify each gap as supplement-ready or needs more evidence before production absorbs unpaid scope.",
     relatedLinks: [
       {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
         label: "Insurance Estimate Review & Scope Validation Guide",
         href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
       },
@@ -6366,12 +6370,8 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/carrier-estimate-review-guide",
       },
       {
-        label: "How do contractors validate scope on a carrier estimate?",
-        href: "/faq#faq-scope-validation-carrier-estimates",
-      },
-      {
-        label: "What documentation is required for estimate review?",
-        href: "/faq#faq-estimate-documentation-requirements",
+        label: "What is the contractor estimate review workflow?",
+        href: "/faq#faq-estimate-review-workflow",
       },
     ],
   },
@@ -6383,16 +6383,16 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Scope validation confirms every damaged area and required phase appears in the estimate with matching labels — demolition, temporary protection, mitigation, and rebuild — supported by dated photos and logs. Flag truncated rooms, missing elevations, omitted attached structures, and multi-area indexing mismatches. Classify gaps as supplement-ready only when field evidence is complete; otherwise assign same-day recapture before packaging.",
     relatedLinks: [
       {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
         label: "Insurance Estimate Review & Scope Validation Guide",
         href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
       },
       {
-        label: "Documentation Standards Guide",
-        href: "/resources/guides/general-claims/documentation-standards-guide",
-      },
-      {
-        label: "How should contractors validate quantities on insurance estimates?",
-        href: "/faq#faq-quantity-validation-insurance-estimates",
+        label: "How do contractors run a scope audit workflow?",
+        href: "/faq#faq-scope-audit-workflow",
       },
       {
         label: "How should contractors review an insurance estimate against field conditions?",
@@ -6458,6 +6458,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Required documentation includes the latest carrier estimate version, an independent field scope worksheet, labeled overview-to-detail photos, measurement takeoffs, a line-by-line comparison worksheet, and a prioritized gap list. Add specialty logs by peril, code/AHJ files, temporary protection records, and equipment or daily reports when those categories apply. Every supplement-ready gap needs a photo or measurement reference on the current estimate version.",
     relatedLinks: [
       {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
         label: "Insurance Estimate Review & Scope Validation Guide",
         href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
       },
@@ -6466,12 +6470,133 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/documentation-standards-guide",
       },
       {
-        label: "Commercial Claims Documentation Checklist",
-        href: "/resources/blog/commercial-claims-documentation-checklist",
+        label: "How do contractors organize estimate review files?",
+        href: "/faq#faq-estimate-organization",
+      },
+    ],
+  },
+  {
+    id: "estimate-review-workflow",
+    category: "insurance_supplements",
+    question: "What is the contractor estimate review workflow from receipt to settlement?",
+    answer:
+      "Receive and version the carrier estimate, assign a review owner, review estimate structure, compare to field documentation, validate scope and quantities, run code/general conditions/equipment/missing-line passes, assemble an indexed documentation package, prepare and submit the supplement, support reinspection, review revised estimates by version, and reconcile approved scope to production at settlement. Keep production guardrails on unpaid high-value gaps until they are documented.",
+    relatedLinks: [
+      {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "How do contractors run a scope audit workflow?",
+        href: "/faq#faq-scope-audit-workflow",
+      },
+      {
+        label: "How should contractors prepare supplements after estimate review?",
+        href: "/faq#faq-supplement-preparation",
+      },
+    ],
+  },
+  {
+    id: "scope-audit-workflow",
+    category: "insurance_supplements",
+    question: "How do contractors run a scope audit workflow on a carrier estimate?",
+    answer:
+      "Assign a review owner and lock the latest estimate version, complete an anatomy and structure pass, walk areas against photos and measurements on a written comparison worksheet, finish scope and quantity checklists, run specialty passes for temporary protection, code, equipment/labor, and general conditions, then route supplement-ready gaps to packaging and documentation defects to same-day field recapture. Do not close an area until photos, quantities, and estimate sections reconcile.",
+    relatedLinks: [
+      {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
       },
       {
         label: "How do contractors validate scope on a carrier estimate?",
         href: "/faq#faq-scope-validation-carrier-estimates",
+      },
+      {
+        label: "What is the contractor estimate review workflow?",
+        href: "/faq#faq-estimate-review-workflow",
+      },
+      {
+        label: "Claim File Audit Guide",
+        href: "/resources/guides/general-claims/claim-file-audit-guide",
+      },
+    ],
+  },
+  {
+    id: "supplement-preparation",
+    category: "insurance_supplements",
+    question: "How should contractors prepare supplements after estimate review?",
+    answer:
+      "Convert only supplement-ready gaps into revised estimate lines with exhibit references and area labels. Draft a factual cover letter — one paragraph per issue plus a summary table that matches the estimate dollar delta — export in the carrier-preferred format, and complete a preparation checklist before submission. Park needs-more-evidence gaps for recapture; do not package unsupported additions. Follow the Supplement Submission Workflow for routing and follow-up.",
+    relatedLinks: [
+      {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "Supplement Submission Guide",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      {
+        label: "What is the contractor estimate review workflow?",
+        href: "/faq#faq-estimate-review-workflow",
+      },
+      {
+        label: "How should contractors prepare for reinspection after estimate review?",
+        href: "/faq#faq-reinspection-preparation",
+      },
+    ],
+  },
+  {
+    id: "estimate-organization",
+    category: "insurance_supplements",
+    question: "How should contractors organize estimate review files and versions?",
+    answer:
+      "Keep a working file any reviewer can open: carrier estimate versions, independent field worksheet, comparison sheet, gap list, and evidence folders with consistent area labels. Version the comparison worksheet whenever a revised carrier estimate arrives — never mix deltas across versions. Store code, temporary protection, and equipment subfolders as first-class sections, and hand organized packets to Claim File Audit and Supplement Submission without rebuilding the narrative.",
+    relatedLinks: [
+      {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "Documentation Standards Guide",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "What documentation is required for estimate review?",
+        href: "/faq#faq-estimate-documentation-requirements",
+      },
+      {
+        label: "Commercial Claims Documentation Checklist",
+        href: "/resources/blog/commercial-claims-documentation-checklist",
+      },
+    ],
+  },
+  {
+    id: "reinspection-preparation",
+    category: "insurance_supplements",
+    question: "How should contractors prepare for reinspection after estimate review?",
+    answer:
+      "Build a reinspection packet from the comparison worksheet — prioritized gaps, photo refs, measurements, and specialty logs — confirm site access and areas still viewable, assign walk/gap-list/photo roles, and stage evidence at disputed areas. Answer with exhibit references and measurements, not opinions. Log outcomes in CRM the same day and revise the estimate within one week so lines discussed on site appear in submitted scope.",
+    relatedLinks: [
+      {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "How should contractors prepare supplements after estimate review?",
+        href: "/faq#faq-supplement-preparation",
+      },
+      {
+        label: "What is the contractor estimate review workflow?",
+        href: "/faq#faq-estimate-review-workflow",
+      },
+      {
+        label: "Carrier Estimate Review Guide",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
       },
     ],
   },

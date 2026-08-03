@@ -37,6 +37,7 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     "Document commercial insurance claims for contractors: property identification, multi-area indexing, tenant improvements, code upgrades, equipment records, and indexed claim packages across commercial property types.",
   relatedGuideSlugs: [
     "commercial-insurance-supplement-playbook-for-contractors",
+    "insurance-estimate-review-playbook-for-contractors",
     "large-loss-commercial-insurance-claims-guide",
     "multifamily-apartment-insurance-claims-guide",
     "hoa-insurance-claims-guide",
@@ -671,6 +672,10 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Claim Documentation Standards",
       href: "/resources/guides/general-claims/documentation-standards-guide",
+    },
+    {
+      label: "Insurance Estimate Review Playbook for Contractors",
+      href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
     },
     {
       label: "Insurance Estimate Review & Scope Validation Guide for Contractors",

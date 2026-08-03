@@ -3,12 +3,14 @@ import { COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE } from "@/lib/guides/co
 import { COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS } from "@/lib/guides/commercial-insurance-supplement-playbook-for-contractors";
 import { HOA_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/hoa-insurance-claims-guide";
 import { INDUSTRIAL_WAREHOUSE_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/industrial-warehouse-insurance-claims-guide";
+import { INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS } from "@/lib/guides/insurance-estimate-review-playbook-for-contractors";
 import { INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE } from "@/lib/guides/insurance-estimate-review-scope-validation-guide";
 import { LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/large-loss-commercial-insurance-claims-guide";
 import { MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/multifamily-apartment-insurance-claims-guide";
 import { RETAIL_OFFICE_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/retail-office-insurance-claims-guide";
 
 export const GENERAL_CLAIMS_GUIDES = [
+  INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS,
   INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE,
   COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE,
   COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS,
@@ -42,6 +44,7 @@ export const GENERAL_CLAIMS_GUIDES = [
       "Contractor checklist for the first 48 hours after a carrier estimate: file setup, scope validation, documentation capture, and supplement gap identification before mobilizing production.",
     relatedBlogSlugs: ["first-48-hours-after-carrier-estimate"],
     relatedGuideSlugs: [
+      "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
       "claim-file-audit-guide",
       "documentation-standards-guide",
@@ -251,6 +254,7 @@ export const GENERAL_CLAIMS_GUIDES = [
     relatedBlogSlugs: ["claim-documentation-approval-rates"],
     relatedGuideSlugs: [
       "documentation-standards-guide",
+      "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
       "supplement-submission-guide",
       "carrier-estimate-review-guide",
@@ -457,6 +461,7 @@ export const GENERAL_CLAIMS_GUIDES = [
       "Contractor supplement submission workflow: package assembly, carrier routing, follow-up schedule, and documentation standards that improve approval rates.",
     relatedBlogSlugs: ["insurance-supplementing-guide-contractors", "most-overlooked-line-items-in-insurance-estimates"],
     relatedGuideSlugs: [
+      "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
       "carrier-estimate-review-guide",
       "claim-file-audit-guide",
@@ -667,6 +672,7 @@ export const GENERAL_CLAIMS_GUIDES = [
       "most-overlooked-line-items-in-insurance-estimates",
     ],
     relatedGuideSlugs: [
+      "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
       "supplement-submission-guide",
       "op-qualification-guide",

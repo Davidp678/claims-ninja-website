@@ -499,6 +499,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "quantity-validation-insurance-estimates",
       "carrier-estimate-anatomy-contractors",
       "estimate-documentation-requirements",
+      "estimate-review-workflow",
+      "scope-audit-workflow",
+      "supplement-preparation",
+      "estimate-organization",
+      "reinspection-preparation",
     ],
   },
   guides: {
@@ -611,6 +616,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "quantity-validation-insurance-estimates",
       "carrier-estimate-anatomy-contractors",
       "estimate-documentation-requirements",
+      "estimate-review-workflow",
+      "scope-audit-workflow",
+      "supplement-preparation",
+      "estimate-organization",
+      "reinspection-preparation",
     ],
   },
   caseStudies: {

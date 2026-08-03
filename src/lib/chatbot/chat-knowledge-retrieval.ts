@@ -3286,6 +3286,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "insurance estimate review playbook retrieves",
+    message: "insurance estimate review playbook for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /insurance-estimate-review-playbook-for-contractors|Insurance Estimate Review Playbook|operational playbook for reviewing insurance estimates/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "estimate review workflow FAQ retrieves",
+    message: "what is the contractor estimate review workflow from receipt to settlement",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /estimate-review-workflow|insurance-estimate-review-playbook-for-contractors|Receive and version the carrier estimate/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "scope audit workflow FAQ retrieves",
+    message: "how do contractors run a scope audit workflow on a carrier estimate",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /scope-audit-workflow|insurance-estimate-review-playbook-for-contractors|Assign a review owner and lock the latest estimate version/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "supplement preparation FAQ retrieves",
+    message: "how should contractors prepare supplements after estimate review",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /supplement-preparation|insurance-estimate-review-playbook-for-contractors|Convert only supplement-ready gaps/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "estimate organization FAQ retrieves",
+    message: "how should contractors organize estimate review files and versions",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /estimate-organization|insurance-estimate-review-playbook-for-contractors|Keep a working file any reviewer can open/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "reinspection preparation FAQ retrieves",
+    message: "how should contractors prepare for reinspection after estimate review",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /reinspection-preparation|insurance-estimate-review-playbook-for-contractors|Build a reinspection packet from the comparison worksheet/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "why mold insurance claims underpaid blog retrieves",
     message: "why mold insurance claims get underpaid documentation",
     assert: (result) =>

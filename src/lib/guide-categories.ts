@@ -23,6 +23,7 @@ export type GuideCategory = {
 /** Editorial hub order for /resources/guides/general-claims (curated Commercial + operational breadth). */
 export const GENERAL_CLAIMS_HUB_ORDER = [
   "commercial-insurance-supplement-playbook-for-contractors",
+  "insurance-estimate-review-playbook-for-contractors",
   "documentation-standards-guide",
   "insurance-estimate-review-scope-validation-guide",
   "large-loss-commercial-insurance-claims-guide",
@@ -42,6 +43,7 @@ export const GENERAL_CLAIMS_HUB_ORDER = [
 /** Curated Featured playbooks on /resources/guides (cross-category breadth). */
 export const FEATURED_GUIDE_SLUGS = [
   "commercial-insurance-supplement-playbook-for-contractors",
+  "insurance-estimate-review-playbook-for-contractors",
   "category-3-water-damage-documentation-guide",
   "roof-matching-documentation-guide",
 ] as const;

@@ -66,6 +66,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Flujo sistemático para revisar estimados Xactimate de aseguradoras: validación de la lista de habitaciones, análisis de brechas en partidas, verificación de cantidades y enrutamiento de suplementos antes de que la producción se comprometa con un alcance insuficiente.",
   },
+  "general-claims/insurance-estimate-review-playbook-for-contractors": {
+    title: "Playbook de revisión de estimados de seguros para contratistas",
+    excerpt:
+      "El playbook operativo definitivo para revisar estimados de seguros: desde recibir el estimado de la aseguradora hasta la revisión de estructura, comparación con documentación de campo, validación de alcance y cantidades, pases de código y condiciones generales, empaquetado de documentación, preparación de suplementos, comunicación con la aseguradora, apoyo a reinspección, revisión de revisiones y conciliación del acuerdo final.",
+  },
   "general-claims/insurance-estimate-review-scope-validation-guide": {
     title:
       "Guía de revisión de estimados de seguros y validación de alcance para contratistas",

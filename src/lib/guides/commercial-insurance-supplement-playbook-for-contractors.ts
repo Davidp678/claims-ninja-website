@@ -50,6 +50,7 @@ export const COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGu
     "commercial-roofing-documentation-guide",
     "multi-building-roofing-claims-guide",
     "supplement-submission-guide",
+    "insurance-estimate-review-playbook-for-contractors",
     "insurance-estimate-review-scope-validation-guide",
     "carrier-estimate-review-guide",
     "code-upgrade-documentation-guide",
@@ -611,6 +612,10 @@ export const COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGu
     {
       label: "Supplement Submission Workflow",
       href: "/resources/guides/general-claims/supplement-submission-guide",
+    },
+    {
+      label: "Insurance Estimate Review Playbook for Contractors",
+      href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
     },
     {
       label: "Insurance Estimate Review & Scope Validation Guide for Contractors",

@@ -3570,11 +3570,13 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "estimate-review-for-contractors": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
       "general-claims/insurance-estimate-review-scope-validation-guide",
       "general-claims/carrier-estimate-review-guide",
       "general-claims/documentation-standards-guide",
     ],
     relatedFaqIds: [
+      "estimate-review-workflow",
       "scope-validation-carrier-estimates",
       "quantity-validation-insurance-estimates",
       "carrier-estimate-anatomy-contractors",
@@ -3582,26 +3584,29 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "estimate-review-best-practices",
     ],
     internalLinkNotes:
-      "Cornerstone FAQ for estimate review against field conditions; anchors Estimate Review & Scope Validation Guide.",
+      "Cornerstone FAQ for estimate review against field conditions; anchors Estimate Review Playbook and Scope Validation Guide.",
   },
   "scope-validation-carrier-estimates": {
     searchIntent: "carrier-review",
     relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
       "general-claims/insurance-estimate-review-scope-validation-guide",
       "general-claims/documentation-standards-guide",
       "general-claims/claim-file-audit-guide",
     ],
     relatedFaqIds: [
       "estimate-review-for-contractors",
+      "scope-audit-workflow",
       "quantity-validation-insurance-estimates",
       "estimate-documentation-requirements",
     ],
     internalLinkNotes:
-      "Scope validation FAQ for carrier estimates; pairs with cornerstone guide and documentation standards.",
+      "Scope validation FAQ for carrier estimates; pairs with playbook, cornerstone guide, and documentation standards.",
   },
   "quantity-validation-insurance-estimates": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
       "general-claims/insurance-estimate-review-scope-validation-guide",
       "general-claims/carrier-estimate-review-guide",
     ],
@@ -3632,17 +3637,100 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "estimate-documentation-requirements": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
       "general-claims/insurance-estimate-review-scope-validation-guide",
       "general-claims/documentation-standards-guide",
       "general-claims/commercial-insurance-claims-documentation-guide",
     ],
     relatedFaqIds: [
       "estimate-review-for-contractors",
+      "estimate-organization",
       "scope-validation-carrier-estimates",
       "documentation-supporting-supplements",
     ],
     internalLinkNotes:
       "Documentation requirements for estimate review and scope validation packages.",
+  },
+  "estimate-review-workflow": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/carrier-estimate-review-guide",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "scope-audit-workflow",
+      "supplement-preparation",
+      "estimate-organization",
+      "reinspection-preparation",
+      "estimate-review-for-contractors",
+    ],
+    internalLinkNotes:
+      "Operational estimate review workflow FAQ; anchors Insurance Estimate Review Playbook.",
+  },
+  "scope-audit-workflow": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/claim-file-audit-guide",
+    ],
+    relatedFaqIds: [
+      "estimate-review-workflow",
+      "scope-validation-carrier-estimates",
+      "estimate-review-for-contractors",
+      "quantity-validation-insurance-estimates",
+    ],
+    internalLinkNotes:
+      "Scope audit workflow FAQ for operational estimate review execution.",
+  },
+  "supplement-preparation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/supplement-submission-guide",
+      "general-claims/claim-file-audit-guide",
+    ],
+    relatedFaqIds: [
+      "estimate-review-workflow",
+      "reinspection-preparation",
+      "estimate-organization",
+      "estimate-documentation-requirements",
+    ],
+    internalLinkNotes:
+      "Supplement preparation after validated estimate review gaps.",
+  },
+  "estimate-organization": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/documentation-standards-guide",
+      "general-claims/claim-file-audit-guide",
+    ],
+    relatedFaqIds: [
+      "estimate-documentation-requirements",
+      "estimate-review-workflow",
+      "supplement-preparation",
+    ],
+    internalLinkNotes:
+      "Estimate file and version organization for review packages.",
+  },
+  "reinspection-preparation": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/carrier-estimate-review-guide",
+      "general-claims/supplement-submission-guide",
+    ],
+    relatedFaqIds: [
+      "estimate-review-workflow",
+      "supplement-preparation",
+      "scope-audit-workflow",
+      "estimate-review-for-contractors",
+    ],
+    internalLinkNotes:
+      "Reinspection preparation after estimate review; operational playbook FAQ.",
   },
 };
 

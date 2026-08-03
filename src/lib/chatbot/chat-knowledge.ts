@@ -2864,7 +2864,6 @@ const FAQ_ID_BOOSTS: Record<
       "how should contractors review an insurance estimate against field conditions",
       "estimate review for contractors",
       "review insurance estimate against field conditions",
-      "contractor insurance estimate review workflow",
     ],
     keywords: [
       "estimate review",
@@ -2872,6 +2871,82 @@ const FAQ_ID_BOOSTS: Record<
       "comparison worksheet",
       "gap list",
       "scope validation",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "estimate-review-workflow": {
+    phrases: [
+      "what is the contractor estimate review workflow from receipt to settlement",
+      "contractor estimate review workflow",
+      "estimate review workflow from receipt to settlement",
+      "complete estimate review workflow",
+      "estimate review workflow for contractors",
+    ],
+    keywords: [
+      "estimate review workflow",
+      "receipt to settlement",
+      "operational estimate review",
+      "estimate review playbook",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "scope-audit-workflow": {
+    phrases: [
+      "how do contractors run a scope audit workflow on a carrier estimate",
+      "scope audit workflow",
+      "run a scope audit workflow",
+      "contractor scope audit workflow",
+    ],
+    keywords: [
+      "scope audit",
+      "scope audit workflow",
+      "comparison worksheet",
+      "specialty passes",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "supplement-preparation": {
+    phrases: [
+      "how should contractors prepare supplements after estimate review",
+      "supplement preparation after estimate review",
+      "prepare supplements after estimate review",
+      "supplement preparation checklist",
+    ],
+    keywords: [
+      "supplement preparation",
+      "supplement-ready gaps",
+      "cover letter",
+      "exhibit references",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "estimate-organization": {
+    phrases: [
+      "how should contractors organize estimate review files and versions",
+      "estimate organization for contractors",
+      "organize estimate review files",
+      "estimate version organization",
+    ],
+    keywords: [
+      "estimate organization",
+      "estimate versions",
+      "comparison worksheet",
+      "area labels",
+    ],
+    topics: ["supplements", "documentation"],
+  },
+  "reinspection-preparation": {
+    phrases: [
+      "how should contractors prepare for reinspection after estimate review",
+      "reinspection preparation after estimate review",
+      "prepare for reinspection after estimate review",
+      "reinspection checklist estimate review",
+    ],
+    keywords: [
+      "reinspection preparation",
+      "reinspection packet",
+      "disputed areas",
+      "briefing summary",
     ],
     topics: ["supplements", "xactimate", "documentation"],
   },

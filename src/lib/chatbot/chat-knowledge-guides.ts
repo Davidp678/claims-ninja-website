@@ -115,6 +115,31 @@ const GUIDE_SLUG_BOOSTS: Record<
     phrases: ["carrier estimate review guide", "review carrier estimate"],
     keywords: ["estimate review"],
   },
+  "insurance-estimate-review-playbook-for-contractors": {
+    phrases: [
+      "insurance estimate review playbook",
+      "insurance estimate review playbook for contractors",
+      "estimate review playbook for contractors",
+      "estimate review playbook",
+      "estimate review workflow for contractors",
+      "contractor estimate review workflow",
+      "complete estimate review workflow",
+      "scope audit workflow",
+      "supplement preparation after estimate review",
+      "estimate organization for contractors",
+      "reinspection preparation after estimate review",
+      "operational estimate review workflow",
+    ],
+    keywords: [
+      "estimate review playbook",
+      "estimate review workflow",
+      "scope audit workflow",
+      "supplement preparation",
+      "estimate organization",
+      "reinspection preparation",
+      "operational estimate review",
+    ],
+  },
   "insurance-estimate-review-scope-validation-guide": {
     phrases: [
       "insurance estimate review and scope validation guide",
@@ -135,7 +160,6 @@ const GUIDE_SLUG_BOOSTS: Record<
       "gap list",
       "missing line items",
       "temporary protection",
-      "reinspection preparation",
     ],
   },
   "fire-claim-intake-guide": {
