@@ -3165,6 +3165,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "five red flags missing scope blog retrieves",
+    message: "five red flags that an insurance estimate is missing scope",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /five-red-flags-that-an-insurance-estimate-is-missing-scope|Five Red Flags That an Insurance Estimate Is Missing Scope|missing scope/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "missing scope insurance estimates FAQ retrieves",
+    message: "what does missing scope mean on an insurance estimate",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /missing-scope-insurance-estimates|five-red-flags-that-an-insurance-estimate-is-missing-scope|Missing scope means the carrier estimate/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "estimate red flags missing scope FAQ retrieves",
+    message: "what are red flags that an insurance estimate is missing scope",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /estimate-red-flags-missing-scope|five-red-flags-that-an-insurance-estimate-is-missing-scope|Five common red flags/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "carrier estimate review missing scope FAQ retrieves",
+    message: "how should contractors review a carrier estimate for missing scope",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /carrier-estimate-review-missing-scope|five-red-flags-that-an-insurance-estimate-is-missing-scope|Assign a review owner within hours of receipt/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "identifying estimate omissions FAQ retrieves",
+    message: "how do contractors identify omissions on an insurance estimate",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /identifying-estimate-omissions|five-red-flags-that-an-insurance-estimate-is-missing-scope|Identify omissions by comparing documented field conditions/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "documentation supporting missing scope FAQ retrieves",
+    message: "what documentation supports missing scope findings",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /documentation-supporting-missing-scope|five-red-flags-that-an-insurance-estimate-is-missing-scope|Missing-scope findings are supported by labeled dated photos/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "overlooked insurance estimate items FAQ retrieves",
     message: "what are the most overlooked line items in insurance estimates",
     assert: (result) =>

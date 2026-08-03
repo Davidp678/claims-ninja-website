@@ -2859,6 +2859,81 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["supplements", "xactimate", "documentation"],
   },
+  "missing-scope-insurance-estimates": {
+    phrases: [
+      "what does missing scope mean on an insurance estimate",
+      "missing scope insurance estimate",
+      "insurance estimate missing scope",
+      "missing scope on carrier estimate",
+    ],
+    keywords: [
+      "missing scope",
+      "scope gap",
+      "estimate missing scope",
+      "under-scoped estimate",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "estimate-red-flags-missing-scope": {
+    phrases: [
+      "what are red flags that an insurance estimate is missing scope",
+      "insurance estimate red flags",
+      "estimate red flags missing scope",
+      "red flags carrier estimate missing scope",
+    ],
+    keywords: [
+      "estimate red flags",
+      "missing scope red flags",
+      "scope warning signs",
+      "under-scoped warning",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "carrier-estimate-review-missing-scope": {
+    phrases: [
+      "how should contractors review a carrier estimate for missing scope",
+      "carrier estimate review missing scope",
+      "review carrier estimate for missing scope",
+      "estimate review for missing scope",
+    ],
+    keywords: [
+      "carrier estimate review",
+      "missing scope review",
+      "estimate comparison",
+      "gap list",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "identifying-estimate-omissions": {
+    phrases: [
+      "how do contractors identify omissions on an insurance estimate",
+      "identifying estimate omissions",
+      "identify estimate omissions",
+      "find omissions on insurance estimate",
+    ],
+    keywords: [
+      "estimate omissions",
+      "identify omissions",
+      "scope omissions",
+      "gap list",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "documentation-supporting-missing-scope": {
+    phrases: [
+      "what documentation supports missing scope findings",
+      "documentation supporting missing scope",
+      "docs for missing scope",
+      "evidence for missing scope estimate",
+    ],
+    keywords: [
+      "missing scope documentation",
+      "scope evidence",
+      "attachment index",
+      "comparison worksheet",
+    ],
+    topics: ["documentation", "supplements", "xactimate"],
+  },
   "estimate-review-for-contractors": {
     phrases: [
       "how should contractors review an insurance estimate against field conditions",

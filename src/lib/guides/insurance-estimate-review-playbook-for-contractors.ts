@@ -66,13 +66,13 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     "large-loss-commercial-insurance-claims-guide",
   ],
   relatedBlogSlugs: [
+    "five-red-flags-that-an-insurance-estimate-is-missing-scope",
     "most-overlooked-line-items-in-insurance-estimates",
     "why-carrier-estimates-miss-line-items",
     "xactimate-estimate-review-checklist-contractors",
     "first-48-hours-after-carrier-estimate",
     "commercial-claims-documentation-checklist",
     "insurance-supplementing-guide-contractors",
-    "claim-documentation-approval-rates",
     "why-commercial-insurance-claims-get-underpaid",
   ],
   faqIds: [
@@ -828,6 +828,10 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     {
       label: "Large-Loss Commercial Insurance Claims Guide",
       href: "/resources/guides/general-claims/large-loss-commercial-insurance-claims-guide",
+    },
+    {
+      label: "Five Red Flags That an Insurance Estimate Is Missing Scope",
+      href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
     },
     {
       label: "The Most Overlooked Line Items in Insurance Estimates",

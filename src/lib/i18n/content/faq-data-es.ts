@@ -6253,6 +6253,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
       },
       {
+        label: "Cinco señales de alerta de que un estimado de seguro tiene alcance faltante",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
         label: "Por qué los estimados de la aseguradora omiten renglones",
         href: "/resources/blog/why-carrier-estimates-miss-line-items",
       },
@@ -6354,6 +6358,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
       },
       {
+        label: "Cinco señales de alerta de que un estimado de seguro tiene alcance faltante",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
         label: "Guía de revisión de estimados de la aseguradora",
         href: "/resources/guides/general-claims/carrier-estimate-review-guide",
       },
@@ -6377,6 +6385,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de revisión de estimados y validación de alcance",
         href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Cinco señales de alerta de que un estimado de seguro tiene alcance faltante",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
       },
       {
         label: "¿Cómo ejecutan los contratistas un flujo de auditoría de alcance?",
@@ -6594,6 +6606,132 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de revisión de estimados de la aseguradora",
         href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+    ],
+  },
+  // Missing-scope red flags FAQs (5)
+  {
+    id: "missing-scope-insurance-estimates",
+    category: "insurance_supplements",
+    question: "¿Qué significa alcance faltante en un estimado de seguro?",
+    answer:
+      "Alcance faltante significa que el estimado de la aseguradora no refleja por completo las condiciones documentadas en campo — habitaciones o elevaciones truncadas, oficios o fases omitidas, cantidades insuficientes, o trabajo de producción requerido sin renglones correspondientes. Es una brecha operativa y de documentación, no una interpretación de póliza. Los contratistas la detectan comparando el estimado con fotos etiquetadas, mediciones y registros dentro de horas de recibirlo y manteniendo una lista escrita de brechas antes de que la producción absorba trabajo no pagado.",
+    relatedLinks: [
+      {
+        label: "Cinco señales de alerta de que un estimado de seguro tiene alcance faltante",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
+        label: "Guía de revisión de estimados de seguros y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "¿Cuáles son las señales de alerta de que un estimado de seguro tiene alcance faltante?",
+        href: "/faq#faq-estimate-red-flags-missing-scope",
+      },
+    ],
+  },
+  {
+    id: "estimate-red-flags-missing-scope",
+    category: "insurance_supplements",
+    question: "¿Cuáles son las señales de alerta de que un estimado de seguro tiene alcance faltante?",
+    answer:
+      "Cinco señales comunes: las condiciones de campo exceden el alcance documentado; faltan fases de coordinación entre oficios; las cantidades no concilian con las mediciones de campo; la documentación de respaldo y las etiquetas del estimado no se alinean; y el trabajo requerido está ausente del estimado por completo. Trate cada señal como un impulso para comparar y capturar evidencia — no como una acusación — y luego canalice las brechas listas para suplemento mediante un flujo estructurado de revisión de estimados.",
+    relatedLinks: [
+      {
+        label: "Cinco señales de alerta de que un estimado de seguro tiene alcance faltante",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
+        label: "Los renglones más pasados por alto en estimados de seguros",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "¿Cómo identifican los contratistas omisiones en un estimado de seguro?",
+        href: "/faq#faq-identifying-estimate-omissions",
+      },
+      {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "carrier-estimate-review-missing-scope",
+    category: "insurance_supplements",
+    question: "¿Cómo deben los contratistas revisar un estimado de la aseguradora en busca de alcance faltante?",
+    answer:
+      "Asigne un responsable de revisión en las horas siguientes a la recepción, archive la versión más reciente del estimado, recorra el croquis y la lista de habitaciones contra el sitio, y construya una hoja de comparación con cantidad de la aseguradora, cantidad de campo, diferencia y referencias fotográficas. Verifique coordinación de oficios, conciliación de cantidades, alineación de documentación y trabajo requerido totalmente ausente. Clasifique cada brecha como lista para suplemento o necesita más evidencia antes de que la producción completa se comprometa.",
+    relatedLinks: [
+      {
+        label: "Cinco señales de alerta de que un estimado de seguro tiene alcance faltante",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "Flujo de trabajo de revisión de estimados de la aseguradora",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "¿Cómo deben los contratistas revisar un estimado de seguro frente a las condiciones de campo?",
+        href: "/faq#faq-estimate-review-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "identifying-estimate-omissions",
+    category: "insurance_supplements",
+    question: "¿Cómo identifican los contratistas omisiones en un estimado de seguro?",
+    answer:
+      "Identifique omisiones comparando las condiciones documentadas en campo con el estimado renglón por renglón: cada área dañada y fase requerida debe aparecer con etiquetas coincidentes; las cantidades de alto valor deben conciliar con mediciones independientes; fotos, registros e inventarios deben mapearse a las secciones del estimado. Mantenga una lista escrita de brechas con IDs de anexos. Las omisiones son estructurales cuando plantillas, inspecciones remotas o hallazgos tardíos dejan alcance fuera del primer estimado — capture evidencia mientras las condiciones sigan visibles.",
+    relatedLinks: [
+      {
+        label: "Cinco señales de alerta de que un estimado de seguro tiene alcance faltante",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
+        label: "Guía de revisión de estimados de seguros y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "¿Por qué faltan renglones en los estimados de seguros de la aseguradora?",
+        href: "/faq#faq-missing-line-items-insurance-estimates",
+      },
+      {
+        label: "¿Qué documentación respalda hallazgos de alcance faltante?",
+        href: "/faq#faq-documentation-supporting-missing-scope",
+      },
+    ],
+  },
+  {
+    id: "documentation-supporting-missing-scope",
+    category: "documentation",
+    question: "¿Qué documentación respalda hallazgos de alcance faltante?",
+    answer:
+      "Los hallazgos de alcance faltante se respaldan con fotos fechadas y etiquetadas de áreas omitidas, hojas de medición o cantidades que muestran diferencias, registros de secado y mapas de humedad, prueba de colocación de equipos, registros de contenidos o detach/reset, listas de verificación de fases para coordinación de oficios, y un índice de anexos de portada que mapea cada evidencia a la brecha del estimado. Capture evidencia durante el trabajo con IDs consistentes de habitación y elevación para que los revisores de escritorio puedan aprobar sin reconstruir el expediente de memoria.",
+    relatedLinks: [
+      {
+        label: "Cinco señales de alerta de que un estimado de seguro tiene alcance faltante",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
+        label: "Guía de estándares de documentación",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "Guía de auditoría de expediente de reclamación",
+        href: "/resources/guides/general-claims/claim-file-audit-guide",
+      },
+      {
+        label: "¿Qué documentación respalda los suplementos de estimados de seguros?",
+        href: "/faq#faq-documentation-supporting-supplements",
       },
     ],
   },

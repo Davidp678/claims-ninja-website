@@ -59,6 +59,12 @@ export const BLOG_SUMMARIES_ES: Record<string, BlogSummary> = {
     excerpt:
       "Lista de verificación de documentación de reclamaciones comerciales para contratistas: preparación previa, registros de edificio y ocupación, evidencia de daños y mitigación, índices multiárea, documentación MEP y TI, progreso diario, mejoras de código y paquete final de reclamación para equipos de restauración comercial.",
   },
+  "five-red-flags-that-an-insurance-estimate-is-missing-scope": {
+    title:
+      "Cinco señales de alerta de que un estimado de seguro tiene alcance faltante",
+    excerpt:
+      "Cinco señales de alerta de alcance faltante en estimados de seguros: condiciones de campo que exceden el alcance documentado, coordinación de oficios ausente, cantidades inconsistentes, documentación desalinhada y trabajo requerido ausente del estimado — más qué deben hacer los contratistas a continuación.",
+  },
 };
 
 export function getBlogSummaryEs(

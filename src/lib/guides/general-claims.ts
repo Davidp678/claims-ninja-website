@@ -251,7 +251,10 @@ export const GENERAL_CLAIMS_GUIDES = [
     seoTitle: "Insurance Claim File Audit Workflow for Contractors",
     seoDescription:
       "Step-by-step claim file audit for contractors: documentation checklist, estimate alignment, carrier requirements, and supplement readiness before submission.",
-    relatedBlogSlugs: ["claim-documentation-approval-rates"],
+    relatedBlogSlugs: [
+      "five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      "claim-documentation-approval-rates",
+    ],
     relatedGuideSlugs: [
       "documentation-standards-guide",
       "insurance-estimate-review-playbook-for-contractors",
@@ -668,6 +671,7 @@ export const GENERAL_CLAIMS_GUIDES = [
     seoDescription:
       "How contractors review carrier Xactimate estimates: room list validation, line item gaps, quantity checks, and supplement routing before production starts.",
     relatedBlogSlugs: [
+      "five-red-flags-that-an-insurance-estimate-is-missing-scope",
       "why-carrier-estimates-miss-line-items",
       "most-overlooked-line-items-in-insurance-estimates",
     ],
@@ -1068,6 +1072,7 @@ export const GENERAL_CLAIMS_GUIDES = [
     seoDescription:
       "Claim documentation standards for contractors: photo requirements, labeling conventions, file organization, and daily capture habits that improve supplement approval rates.",
     relatedBlogSlugs: [
+      "five-red-flags-that-an-insurance-estimate-is-missing-scope",
       "claim-documentation-approval-rates",
       "most-overlooked-line-items-in-insurance-estimates",
       "why-fire-damage-claims-get-underpaid",

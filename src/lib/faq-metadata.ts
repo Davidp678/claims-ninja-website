@@ -3732,6 +3732,90 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Reinspection preparation after estimate review; operational playbook FAQ.",
   },
+  "missing-scope-insurance-estimates": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/carrier-estimate-review-guide",
+    ],
+    relatedFaqIds: [
+      "estimate-red-flags-missing-scope",
+      "identifying-estimate-omissions",
+      "carrier-estimate-review-missing-scope",
+      "missing-line-items-insurance-estimates",
+      "scope-validation-carrier-estimates",
+    ],
+    internalLinkNotes:
+      "Missing scope definition FAQ; anchors Five Red Flags missing-scope educational blog.",
+  },
+  "estimate-red-flags-missing-scope": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "missing-scope-insurance-estimates",
+      "identifying-estimate-omissions",
+      "carrier-estimate-review-missing-scope",
+      "documentation-supporting-missing-scope",
+      "overlooked-insurance-estimate-items",
+    ],
+    internalLinkNotes:
+      "Estimate red flags FAQ; pairs with Five Red Flags blog and overlooked line items article.",
+  },
+  "carrier-estimate-review-missing-scope": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/carrier-estimate-review-guide",
+      "general-claims/first-48-hours-checklist",
+    ],
+    relatedFaqIds: [
+      "missing-scope-insurance-estimates",
+      "estimate-red-flags-missing-scope",
+      "estimate-review-for-contractors",
+      "identifying-estimate-omissions",
+    ],
+    internalLinkNotes:
+      "Carrier estimate review for missing scope; bridges red-flags blog to playbook and day-one workflow.",
+  },
+  "identifying-estimate-omissions": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/claim-file-audit-guide",
+    ],
+    relatedFaqIds: [
+      "missing-scope-insurance-estimates",
+      "estimate-red-flags-missing-scope",
+      "missing-line-items-insurance-estimates",
+      "documentation-supporting-missing-scope",
+    ],
+    internalLinkNotes:
+      "How contractors identify estimate omissions against field conditions.",
+  },
+  "documentation-supporting-missing-scope": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/documentation-standards-guide",
+      "general-claims/claim-file-audit-guide",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "missing-scope-insurance-estimates",
+      "estimate-red-flags-missing-scope",
+      "documentation-supporting-supplements",
+      "estimate-documentation-requirements",
+    ],
+    internalLinkNotes:
+      "Documentation that supports missing-scope findings; pairs with red-flags blog.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

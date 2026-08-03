@@ -51,6 +51,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "supplement-submission-guide",
     ],
   },
+  "five-red-flags-that-an-insurance-estimate-is-missing-scope": {
+    intro:
+      "You've learned how to recognize missing-scope red flags on carrier estimates. Now run the Insurance Estimate Review Playbook, the Scope Validation Guide, the day-one carrier estimate review workflow, and Documentation Standards so every flag becomes a comparison worksheet with evidence — not unpaid production.",
+    guideSlugs: [
+      "insurance-estimate-review-playbook-for-contractors",
+      "insurance-estimate-review-scope-validation-guide",
+      "carrier-estimate-review-guide",
+      "documentation-standards-guide",
+    ],
+  },
   "op-on-insurance-claims": {
     intro:
       "You've learned when O&P applies on insurance claims. Now document coordination and trade count the way desk reviewers expect before submission.",

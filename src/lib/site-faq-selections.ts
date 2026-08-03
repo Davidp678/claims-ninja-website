@@ -504,6 +504,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "supplement-preparation",
       "estimate-organization",
       "reinspection-preparation",
+      "missing-scope-insurance-estimates",
+      "estimate-red-flags-missing-scope",
+      "carrier-estimate-review-missing-scope",
+      "identifying-estimate-omissions",
+      "documentation-supporting-missing-scope",
     ],
   },
   guides: {
@@ -621,6 +626,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "supplement-preparation",
       "estimate-organization",
       "reinspection-preparation",
+      "missing-scope-insurance-estimates",
+      "estimate-red-flags-missing-scope",
+      "carrier-estimate-review-missing-scope",
+      "identifying-estimate-omissions",
+      "documentation-supporting-missing-scope",
     ],
   },
   caseStudies: {

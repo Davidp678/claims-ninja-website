@@ -6266,6 +6266,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
       },
       {
+        label: "Five Red Flags That an Insurance Estimate Is Missing Scope",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
         label: "Why carrier estimates miss line items",
         href: "/resources/blog/why-carrier-estimates-miss-line-items",
       },
@@ -6366,6 +6370,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
       },
       {
+        label: "Five Red Flags That an Insurance Estimate Is Missing Scope",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
         label: "Carrier Estimate Review Guide",
         href: "/resources/guides/general-claims/carrier-estimate-review-guide",
       },
@@ -6389,6 +6397,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Insurance Estimate Review & Scope Validation Guide",
         href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Five Red Flags That an Insurance Estimate Is Missing Scope",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
       },
       {
         label: "How do contractors run a scope audit workflow?",
@@ -6597,6 +6609,132 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Carrier Estimate Review Guide",
         href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+    ],
+  },
+  // Missing-scope red flags FAQs (5)
+  {
+    id: "missing-scope-insurance-estimates",
+    category: "insurance_supplements",
+    question: "What does missing scope mean on an insurance estimate?",
+    answer:
+      "Missing scope means the carrier estimate does not fully reflect documented field conditions — truncated rooms or elevations, omitted trades or phases, quantity shortfalls, or required production work with no matching lines. It is an operations and documentation gap, not a policy interpretation. Contractors catch it by comparing the estimate to labeled photos, measurements, and logs within hours of receipt and keeping a written gap list before production absorbs unpaid work.",
+    relatedLinks: [
+      {
+        label: "Five Red Flags That an Insurance Estimate Is Missing Scope",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "What are red flags that an insurance estimate is missing scope?",
+        href: "/faq#faq-estimate-red-flags-missing-scope",
+      },
+    ],
+  },
+  {
+    id: "estimate-red-flags-missing-scope",
+    category: "insurance_supplements",
+    question: "What are red flags that an insurance estimate is missing scope?",
+    answer:
+      "Five common red flags: field conditions exceed documented scope; trade coordination phases are missing; quantities cannot reconcile to field measurements; supporting documentation and estimate labels do not align; and required work is absent from the estimate entirely. Treat each flag as a prompt for comparison and evidence capture — not as an accusation — then route supplement-ready gaps through a structured estimate review workflow.",
+    relatedLinks: [
+      {
+        label: "Five Red Flags That an Insurance Estimate Is Missing Scope",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
+        label: "The Most Overlooked Line Items in Insurance Estimates",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "How do contractors identify omissions on an insurance estimate?",
+        href: "/faq#faq-identifying-estimate-omissions",
+      },
+      {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "carrier-estimate-review-missing-scope",
+    category: "insurance_supplements",
+    question: "How should contractors review a carrier estimate for missing scope?",
+    answer:
+      "Assign a review owner within hours of receipt, file the latest estimate version, walk the sketch and room list against the site, and build a comparison worksheet with carrier qty, field qty, delta, and photo refs. Check trade coordination, quantity reconciliation, documentation alignment, and entirely absent required work. Classify each gap as supplement-ready or needs more evidence before full production commits.",
+    relatedLinks: [
+      {
+        label: "Five Red Flags That an Insurance Estimate Is Missing Scope",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "Carrier Estimate Review Workflow",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "How should contractors review an insurance estimate against field conditions?",
+        href: "/faq#faq-estimate-review-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "identifying-estimate-omissions",
+    category: "insurance_supplements",
+    question: "How do contractors identify omissions on an insurance estimate?",
+    answer:
+      "Identify omissions by comparing documented field conditions to the estimate line by line: every damaged area and required phase should appear with matching labels; high-value quantities should reconcile to independent measurements; photos, logs, and inventories should map to estimate sections. Keep a written gap list with exhibit IDs. Omissions are structural when templates, remote inspections, or late discovery leave scope off the first-pass file — capture evidence while conditions remain visible.",
+    relatedLinks: [
+      {
+        label: "Five Red Flags That an Insurance Estimate Is Missing Scope",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Why are line items missing from carrier insurance estimates?",
+        href: "/faq#faq-missing-line-items-insurance-estimates",
+      },
+      {
+        label: "What documentation supports missing scope findings?",
+        href: "/faq#faq-documentation-supporting-missing-scope",
+      },
+    ],
+  },
+  {
+    id: "documentation-supporting-missing-scope",
+    category: "documentation",
+    question: "What documentation supports missing scope findings?",
+    answer:
+      "Missing-scope findings are supported by labeled dated photos of omitted areas, measurement or quantity worksheets showing deltas, dry logs and moisture maps, equipment placement proof, contents or detach/reset records, phase checklists for trade coordination, and a cover attachment index mapping each exhibit to the estimate gap. Capture evidence during the job with consistent room and elevation IDs so desk reviewers can approve without reconstructing the file from memory.",
+    relatedLinks: [
+      {
+        label: "Five Red Flags That an Insurance Estimate Is Missing Scope",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
+        label: "Documentation Standards Guide",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "Claim File Audit Guide",
+        href: "/resources/guides/general-claims/claim-file-audit-guide",
+      },
+      {
+        label: "What documentation supports insurance estimate supplements?",
+        href: "/faq#faq-documentation-supporting-supplements",
       },
     ],
   },

@@ -44,6 +44,7 @@ import { whatIsARoofSupplement } from "./what-is-a-roof-supplement";
 import { waterDamageMitigationSupplementPlaybook } from "./water-damage-mitigation-supplement-playbook";
 import { windDamageRoofClaimsWhatCarriersMiss } from "./wind-damage-roof-claims-what-carriers-miss";
 import { whenToBringInSupplementingPartner } from "./when-to-bring-in-supplementing-partner";
+import { fiveRedFlagsThatAnInsuranceEstimateIsMissingScope } from "./five-red-flags-that-an-insurance-estimate-is-missing-scope";
 import { mostOverlookedLineItemsInInsuranceEstimates } from "./most-overlooked-line-items-in-insurance-estimates";
 import { whyCarrierEstimatesMissLineItems } from "./why-carrier-estimates-miss-line-items";
 import { xactimateEstimateReviewChecklistContractors } from "./xactimate-estimate-review-checklist-contractors";
@@ -51,6 +52,7 @@ import { xactimateVsMarketPricing } from "./xactimate-vs-market-pricing";
 
 export const BLOG_POSTS: readonly BlogPost[] = [
   INSURANCE_SUPPLEMENTING_PILLAR,
+  fiveRedFlagsThatAnInsuranceEstimateIsMissingScope,
   mostOverlookedLineItemsInInsuranceEstimates,
   whyCarrierEstimatesMissLineItems,
   recoverRevenueWithoutInHouseClaims,

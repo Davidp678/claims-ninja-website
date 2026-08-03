@@ -588,6 +588,27 @@ const SLUG_BOOSTS: Record<
     ],
     topics: ["xactimate", "supplements", "documentation"],
   },
+  "five-red-flags-that-an-insurance-estimate-is-missing-scope": {
+    phrases: [
+      "five red flags that an insurance estimate is missing scope",
+      "insurance estimate missing scope",
+      "insurance estimate red flags",
+      "missing insurance estimate items",
+      "scope review insurance estimate",
+      "estimate review missing scope red flags",
+      "red flags carrier estimate missing scope",
+    ],
+    keywords: [
+      "missing scope",
+      "estimate red flags",
+      "scope review",
+      "estimate review",
+      "under-scoped",
+      "scope gaps",
+      "field conditions",
+    ],
+    topics: ["xactimate", "supplements", "documentation"],
+  },
   "op-on-insurance-claims": {
     phrases: ["overhead and profit", "o&p"],
     keywords: ["o&p", "overhead", "profit"],

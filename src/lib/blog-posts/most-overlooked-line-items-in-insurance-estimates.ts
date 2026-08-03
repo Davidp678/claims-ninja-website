@@ -25,6 +25,7 @@ export const mostOverlookedLineItemsInInsuranceEstimates: BlogPost = {
   seoDescription:
     "Overlooked insurance estimate line items contractors miss: temporary protection, general conditions, equipment, contents manipulation, detach/reset, code, access, moisture investigation, and documentation that supports supplements.",
   relatedPostSlugs: [
+    "five-red-flags-that-an-insurance-estimate-is-missing-scope",
     "why-carrier-estimates-miss-line-items",
     "xactimate-estimate-review-checklist-contractors",
     "first-48-hours-after-carrier-estimate",
@@ -32,7 +33,6 @@ export const mostOverlookedLineItemsInInsuranceEstimates: BlogPost = {
     "why-commercial-insurance-claims-get-underpaid",
     "insurance-supplementing-guide-contractors",
     "equipment-charges-water-damage-claims",
-    "moisture-mapping-best-practices-insurance-claims",
   ],
   faqIds: [
     "overlooked-insurance-estimate-items",
