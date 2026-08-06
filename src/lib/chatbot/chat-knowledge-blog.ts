@@ -609,6 +609,27 @@ const SLUG_BOOSTS: Record<
     ],
     topics: ["xactimate", "supplements", "documentation"],
   },
+  "how-contractors-find-quantity-errors-in-insurance-estimates": {
+    phrases: [
+      "how contractors find quantity errors in insurance estimates",
+      "quantity errors in insurance estimates",
+      "find quantity errors insurance estimate",
+      "insurance estimate quantities review",
+      "estimate quantity review for contractors",
+      "contractor quantity validation",
+      "estimate measurements quantity errors",
+    ],
+    keywords: [
+      "quantity errors",
+      "estimate quantities",
+      "estimate quantity review",
+      "contractor quantity validation",
+      "estimate measurements",
+      "quantity discrepancies",
+      "field measurements",
+    ],
+    topics: ["xactimate", "supplements", "documentation"],
+  },
   "op-on-insurance-claims": {
     phrases: ["overhead and profit", "o&p"],
     keywords: ["o&p", "overhead", "profit"],

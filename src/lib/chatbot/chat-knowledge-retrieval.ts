@@ -3396,6 +3396,50 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "quantity errors blog retrieves",
+    message: "how contractors find quantity errors in insurance estimates",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /how-contractors-find-quantity-errors-in-insurance-estimates|How Contractors Find Quantity Errors in Insurance Estimates|quantity errors/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "identifying quantity errors FAQ retrieves",
+    message: "how do contractors identify quantity errors on insurance estimates",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /identifying-quantity-errors-insurance-estimates|how-contractors-find-quantity-errors-in-insurance-estimates|Identify quantity errors by comparing/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "common quantity mistakes FAQ retrieves",
+    message: "what are common quantity mistakes on insurance estimates",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /common-quantity-mistakes-insurance-estimates|how-contractors-find-quantity-errors-in-insurance-estimates|Common quantity mistakes on first-pass estimates/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "when to remeasure estimate quantities FAQ retrieves",
+    message: "when should contractors remeasure estimate quantities",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /when-to-remeasure-estimate-quantities|how-contractors-find-quantity-errors-in-insurance-estimates|Remeasure when field conditions/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "scope audit guide for contractors retrieves",
     message: "scope audit guide for contractors",
     assert: (result) =>

@@ -3848,7 +3848,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
       "quantity-validation-for-contractors",
       "quantity-validation-insurance-estimates",
       "documenting-quantity-changes-insurance-estimates",
-      "overlooked-insurance-estimate-items",
+      "identifying-quantity-errors-insurance-estimates",
     ],
     internalLinkNotes:
       "Quantity discrepancies FAQ; carrier qty vs field qty comparison worksheet.",
@@ -3901,6 +3901,54 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     ],
     internalLinkNotes:
       "Documenting quantity changes for supplement packaging; pairs with Quantity Validation Guide.",
+  },
+  "identifying-quantity-errors-insurance-estimates": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/quantity-validation-guide-for-contractors",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+    ],
+    relatedFaqIds: [
+      "quantity-discrepancies-insurance-estimates",
+      "common-quantity-mistakes-insurance-estimates",
+      "estimate-quantities-contractor-review",
+      "when-to-remeasure-estimate-quantities",
+    ],
+    internalLinkNotes:
+      "Educational discovery FAQ for finding quantity errors; pairs with quantity-errors blog and Quantity Validation Guide.",
+  },
+  "common-quantity-mistakes-insurance-estimates": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/quantity-validation-guide-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/carrier-estimate-review-guide",
+    ],
+    relatedFaqIds: [
+      "identifying-quantity-errors-insurance-estimates",
+      "quantity-discrepancies-insurance-estimates",
+      "overlooked-insurance-estimate-items",
+      "when-to-remeasure-estimate-quantities",
+    ],
+    internalLinkNotes:
+      "Common quantity mistakes on first-pass estimates; educational companion to quantity-errors blog.",
+  },
+  "when-to-remeasure-estimate-quantities": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/quantity-validation-guide-for-contractors",
+      "general-claims/documentation-standards-guide",
+      "general-claims/carrier-estimate-review-guide",
+    ],
+    relatedFaqIds: [
+      "field-measurements-estimate-quantities",
+      "estimate-quantities-contractor-review",
+      "identifying-quantity-errors-insurance-estimates",
+      "documenting-quantity-changes-insurance-estimates",
+    ],
+    internalLinkNotes:
+      "When remeasurement is warranted vs trusting sketch/macros; pairs with quantity-errors blog.",
   },
   "scope-audit-for-contractors": {
     searchIntent: "documentation-standard",

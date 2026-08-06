@@ -6421,8 +6421,8 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/faq#faq-quantity-validation-for-contractors",
       },
       {
-        label: "Los renglones más pasados por alto en los estimados de seguros",
-        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+        label: "Cómo los contratistas encuentran errores de cantidad en estimados de seguros",
+        href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
       },
     ],
   },
@@ -6773,16 +6773,16 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
       },
       {
+        label: "Cómo los contratistas encuentran errores de cantidad en estimados de seguros",
+        href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
+      },
+      {
         label: "¿Qué es la validación de cantidades para contratistas?",
         href: "/faq#faq-quantity-validation-for-contractors",
       },
       {
         label: "¿Cómo deben los contratistas documentar cambios de cantidad?",
         href: "/faq#faq-documenting-quantity-changes-insurance-estimates",
-      },
-      {
-        label: "Los renglones más pasados por alto en estimados de seguros",
-        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
       },
     ],
   },
@@ -6823,12 +6823,12 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
       },
       {
-        label: "Playbook de revisión de estimados de seguros para contratistas",
-        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+        label: "Cómo los contratistas encuentran errores de cantidad en estimados de seguros",
+        href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
       },
       {
-        label: "Guía de revisión de estimados de la aseguradora",
-        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
       },
       {
         label: "¿Cómo deben los contratistas usar mediciones de campo?",
@@ -6858,6 +6858,82 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "¿Qué son las discrepancias de cantidad en estimados de seguros?",
         href: "/faq#faq-quantity-discrepancies-insurance-estimates",
+      },
+    ],
+  },
+  // Quantity errors educational FAQs (blog companions)
+  {
+    id: "identifying-quantity-errors-insurance-estimates",
+    category: "insurance_supplements",
+    question: "¿Cómo identifican los contratistas errores de cantidad en estimados de seguros?",
+    answer:
+      "Identifique errores de cantidad comparando la versión más reciente del estimado de la aseguradora con mediciones de campo independientes y documentación etiquetada — no leyendo solo el total en dólares. Recorra ensambles de alto valor (cuadros de techo, SF de interiores, aberturas, accesorios, días de equipo), registre cantidad de la aseguradora frente a cantidad de campo en una hoja de comparación, fotografie el contexto de medición y marque renglones redondeados, agrupados o de cantidad cero que subestimen las condiciones del sitio. Trate las diferencias grandes e inexplicadas como hallazgos operativos a clasificar como listos para suplemento o que necesitan más evidencia antes de que la producción se comprometa.",
+    relatedLinks: [
+      {
+        label: "Cómo los contratistas encuentran errores de cantidad en estimados de seguros",
+        href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
+      },
+      {
+        label: "Guía de validación de cantidades para contratistas",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "¿Qué son las discrepancias de cantidad en estimados de seguros?",
+        href: "/faq#faq-quantity-discrepancies-insurance-estimates",
+      },
+      {
+        label: "¿Cuáles son los errores comunes de cantidad en estimados de seguros?",
+        href: "/faq#faq-common-quantity-mistakes-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "common-quantity-mistakes-insurance-estimates",
+    category: "insurance_supplements",
+    question: "¿Cuáles son los errores comunes de cantidad en estimados de seguros?",
+    answer:
+      "Los errores comunes de cantidad en estimados de primer paso incluyen dimensiones de croquis truncadas, macros agrupadas que ocultan ensambles, SF o cuadros redondeados, marcadores de cantidad cero, aberturas y accesorios omitidos de los renglones de conteo, días de equipo más cortos de lo que respaldan los registros de secado, y zonas comerciales que ignoran suites indexadas o áreas comunes. Estos errores son brechas operativas de documentación — no disputas de precios. Los contratistas los detectan recalculando takeoffs de alto valor, alineando etiquetas de área entre fotos y secciones del estimado, y manteniendo una lista escrita de diferencias antes de la movilización.",
+    relatedLinks: [
+      {
+        label: "Cómo los contratistas encuentran errores de cantidad en estimados de seguros",
+        href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
+      },
+      {
+        label: "Guía de validación de cantidades para contratistas",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "¿Cómo identifican los contratistas errores de cantidad en estimados de seguros?",
+        href: "/faq#faq-identifying-quantity-errors-insurance-estimates",
+      },
+      {
+        label: "Los renglones más pasados por alto en estimados de seguros",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "when-to-remeasure-estimate-quantities",
+    category: "insurance_supplements",
+    question: "¿Cuándo deben los contratistas volver a medir las cantidades del estimado?",
+    answer:
+      "Vuelva a medir cuando las condiciones de campo discrepen visiblemente del croquis o de los renglones de alto valor de la aseguradora, cuando cambien las etiquetas de área, cuando el descubrimiento tras demolición o secado amplíe ensambles documentados, cuando un estimado revisado restablezca la versión que debe conciliar, o cuando el primer takeoff usó mediciones débiles o sin etiquetar. Prefiera una remedición contemporánea antes de que la demolición o el dry-in eliminen la prueba. Una pequeña variación de metodología en renglones de bajo valor puede quedar como nota; los déficits materiales e inexplicados en cuadros de techo, SF interiores grandes, conteos o días de equipo justifican una remedición completa y una actualización de la hoja de comparación.",
+    relatedLinks: [
+      {
+        label: "Cómo los contratistas encuentran errores de cantidad en estimados de seguros",
+        href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
+      },
+      {
+        label: "Guía de validación de cantidades para contratistas",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "¿Cómo deben los contratistas usar mediciones de campo?",
+        href: "/faq#faq-field-measurements-estimate-quantities",
+      },
+      {
+        label: "¿Cómo deben los contratistas revisar las cantidades del estimado?",
+        href: "/faq#faq-estimate-quantities-contractor-review",
       },
     ],
   },

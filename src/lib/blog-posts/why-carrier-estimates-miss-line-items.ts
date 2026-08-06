@@ -16,11 +16,11 @@ export const whyCarrierEstimatesMissLineItems: BlogPost = {
   seoDescription:
     "Understand why insurance carrier estimates miss profitable line items and how contractors identify scope gaps before they erode job margin.",
   relatedPostSlugs: [
+    "how-contractors-find-quantity-errors-in-insurance-estimates",
     "five-red-flags-that-an-insurance-estimate-is-missing-scope",
     "most-overlooked-line-items-in-insurance-estimates",
     "xactimate-vs-market-pricing",
     "insurance-supplementing-guide-contractors",
-    "what-is-a-roof-supplement",
   ],
   sections: [
     {

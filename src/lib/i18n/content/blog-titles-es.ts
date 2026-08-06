@@ -67,6 +67,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Por qué se deniegan los suplementos por moho: brechas de documentación que reducen las tasas de aprobación",
   "five-red-flags-that-an-insurance-estimate-is-missing-scope":
     "Cinco señales de alerta de que un estimado de seguro tiene alcance faltante",
+  "how-contractors-find-quantity-errors-in-insurance-estimates":
+    "Cómo los contratistas encuentran errores de cantidad en estimados de seguros",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

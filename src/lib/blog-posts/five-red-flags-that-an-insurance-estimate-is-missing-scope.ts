@@ -25,12 +25,12 @@ export const fiveRedFlagsThatAnInsuranceEstimateIsMissingScope: BlogPost = {
   seoDescription:
     "Insurance estimate red flags for contractors: missing scope, inconsistent quantities, trade coordination gaps, documentation misalignment, and required work absent from the carrier estimate — with a clear estimate review next step.",
   relatedPostSlugs: [
+    "how-contractors-find-quantity-errors-in-insurance-estimates",
     "most-overlooked-line-items-in-insurance-estimates",
     "why-carrier-estimates-miss-line-items",
     "xactimate-estimate-review-checklist-contractors",
     "first-48-hours-after-carrier-estimate",
     "commercial-claims-documentation-checklist",
-    "insurance-supplementing-guide-contractors",
   ],
   faqIds: [
     "missing-scope-insurance-estimates",

@@ -62,6 +62,7 @@ export const QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS = defineGuide({
     "large-loss-commercial-insurance-claims-guide",
   ],
   relatedBlogSlugs: [
+    "how-contractors-find-quantity-errors-in-insurance-estimates",
     "most-overlooked-line-items-in-insurance-estimates",
     "five-red-flags-that-an-insurance-estimate-is-missing-scope",
     "why-carrier-estimates-miss-line-items",
@@ -78,6 +79,9 @@ export const QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS = defineGuide({
     "estimate-quantities-contractor-review",
     "documenting-quantity-changes-insurance-estimates",
     "quantity-validation-insurance-estimates",
+    "identifying-quantity-errors-insurance-estimates",
+    "common-quantity-mistakes-insurance-estimates",
+    "when-to-remeasure-estimate-quantities",
   ],
   claimTypes: ["roofing", "water", "fire", "mold", "commercial", "large-loss"],
   purpose:
@@ -690,6 +694,10 @@ export const QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS = defineGuide({
     {
       label: "Commercial Mold Claims Guide",
       href: "/resources/guides/mold/commercial-mold-claims-guide",
+    },
+    {
+      label: "How Contractors Find Quantity Errors in Insurance Estimates",
+      href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
     },
     {
       label: "The Most Overlooked Line Items in Insurance Estimates",

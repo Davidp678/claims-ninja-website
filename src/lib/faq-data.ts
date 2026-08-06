@@ -6432,8 +6432,8 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/faq#faq-quantity-validation-for-contractors",
       },
       {
-        label: "The Most Overlooked Line Items in Insurance Estimates",
-        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+        label: "How Contractors Find Quantity Errors in Insurance Estimates",
+        href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
       },
     ],
   },
@@ -6776,16 +6776,16 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
       },
       {
+        label: "How Contractors Find Quantity Errors in Insurance Estimates",
+        href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
+      },
+      {
         label: "What is quantity validation for contractors?",
         href: "/faq#faq-quantity-validation-for-contractors",
       },
       {
         label: "How should contractors document quantity changes?",
         href: "/faq#faq-documenting-quantity-changes-insurance-estimates",
-      },
-      {
-        label: "The Most Overlooked Line Items in Insurance Estimates",
-        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
       },
     ],
   },
@@ -6826,12 +6826,12 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
       },
       {
-        label: "Insurance Estimate Review Playbook for Contractors",
-        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+        label: "How Contractors Find Quantity Errors in Insurance Estimates",
+        href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
       },
       {
-        label: "Carrier Estimate Review Guide",
-        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
       },
       {
         label: "How should contractors use field measurements?",
@@ -6861,6 +6861,82 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "What are quantity discrepancies on insurance estimates?",
         href: "/faq#faq-quantity-discrepancies-insurance-estimates",
+      },
+    ],
+  },
+  // Quantity errors educational FAQs (blog companions)
+  {
+    id: "identifying-quantity-errors-insurance-estimates",
+    category: "insurance_supplements",
+    question: "How do contractors identify quantity errors on insurance estimates?",
+    answer:
+      "Identify quantity errors by comparing the latest carrier estimate version to independent field measurements and labeled documentation — not by reading the dollar total alone. Walk high-value assemblies (roofing squares, interior SF, openings, fixtures, equipment days), record carrier qty vs field qty on a comparison worksheet, photograph measurement context, and flag rounded, bundled, or zero-quantity lines that understate site conditions. Treat large unexplained deltas as operational findings to classify as supplement-ready or needs more evidence before production commits.",
+    relatedLinks: [
+      {
+        label: "How Contractors Find Quantity Errors in Insurance Estimates",
+        href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
+      },
+      {
+        label: "Quantity Validation Guide for Contractors",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "What are quantity discrepancies on insurance estimates?",
+        href: "/faq#faq-quantity-discrepancies-insurance-estimates",
+      },
+      {
+        label: "What are common quantity mistakes on insurance estimates?",
+        href: "/faq#faq-common-quantity-mistakes-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "common-quantity-mistakes-insurance-estimates",
+    category: "insurance_supplements",
+    question: "What are common quantity mistakes on insurance estimates?",
+    answer:
+      "Common quantity mistakes on first-pass estimates include truncated sketch dimensions, bundled macros that hide assemblies, rounded SF or squares, zero-quantity placeholders, openings and fixtures omitted from count lines, equipment days shorter than dry logs support, and commercial zones that ignore indexed suites or common areas. These mistakes are operational documentation gaps — not pricing disputes. Contractors catch them by recalculating high-value takeoffs, aligning area labels across photos and estimate sections, and keeping a written delta list before mobilization.",
+    relatedLinks: [
+      {
+        label: "How Contractors Find Quantity Errors in Insurance Estimates",
+        href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
+      },
+      {
+        label: "Quantity Validation Guide for Contractors",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "How do contractors identify quantity errors on insurance estimates?",
+        href: "/faq#faq-identifying-quantity-errors-insurance-estimates",
+      },
+      {
+        label: "The Most Overlooked Line Items in Insurance Estimates",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "when-to-remeasure-estimate-quantities",
+    category: "insurance_supplements",
+    question: "When should contractors remeasure estimate quantities?",
+    answer:
+      "Remeasure when field conditions visibly disagree with the carrier sketch or high-value lines, when area labels changed, when discovery after tear-out or drying expands documented assemblies, when a revised carrier estimate resets the version you must reconcile, or when the first takeoff used weak unlabeled measurements. Prefer contemporaneous remeasurement before demo or dry-in removes proof. Small methodology variance on low-dollar lines may stay as notes; material unexplained shortfalls on roofing squares, large interior SF, counts, or equipment days warrant a full remeasure and worksheet update.",
+    relatedLinks: [
+      {
+        label: "How Contractors Find Quantity Errors in Insurance Estimates",
+        href: "/resources/blog/how-contractors-find-quantity-errors-in-insurance-estimates",
+      },
+      {
+        label: "Quantity Validation Guide for Contractors",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "How should contractors use field measurements?",
+        href: "/faq#faq-field-measurements-estimate-quantities",
+      },
+      {
+        label: "How should contractors review estimate quantities?",
+        href: "/faq#faq-estimate-quantities-contractor-review",
       },
     ],
   },

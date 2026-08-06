@@ -65,6 +65,12 @@ export const BLOG_SUMMARIES_ES: Record<string, BlogSummary> = {
     excerpt:
       "Cinco señales de alerta de alcance faltante en estimados de seguros: condiciones de campo que exceden el alcance documentado, coordinación de oficios ausente, cantidades inconsistentes, documentación desalinhada y trabajo requerido ausente del estimado — más qué deben hacer los contratistas a continuación.",
   },
+  "how-contractors-find-quantity-errors-in-insurance-estimates": {
+    title:
+      "Cómo los contratistas encuentran errores de cantidad en estimados de seguros",
+    excerpt:
+      "Cómo los contratistas encuentran errores de cantidad en estimados de seguros: por qué las cantidades no coinciden con las condiciones de campo, cómo comparar mediciones y documentación con los renglones de la aseguradora, dónde aparecen las discrepancias y cuándo las diferencias de cantidad justifican una revisión estructurada.",
+  },
 };
 
 export function getBlogSummaryEs(

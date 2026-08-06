@@ -68,6 +68,7 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     "large-loss-commercial-insurance-claims-guide",
   ],
   relatedBlogSlugs: [
+    "how-contractors-find-quantity-errors-in-insurance-estimates",
     "five-red-flags-that-an-insurance-estimate-is-missing-scope",
     "most-overlooked-line-items-in-insurance-estimates",
     "why-carrier-estimates-miss-line-items",

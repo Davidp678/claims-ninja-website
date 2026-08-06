@@ -63,6 +63,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "scope-audit-guide-for-contractors",
     ],
   },
+  "how-contractors-find-quantity-errors-in-insurance-estimates": {
+    intro:
+      "You've learned how contractors find quantity errors between carrier estimates and field conditions. Now run the Quantity Validation Guide for measurement and documentation depth, the Insurance Estimate Review Playbook for day-to-day execution, the Scope Validation Guide for what to validate, and Documentation Standards so every quantity delta becomes a labeled, reviewable exhibit.",
+    guideSlugs: [
+      "quantity-validation-guide-for-contractors",
+      "insurance-estimate-review-playbook-for-contractors",
+      "insurance-estimate-review-scope-validation-guide",
+      "documentation-standards-guide",
+    ],
+  },
   "op-on-insurance-claims": {
     intro:
       "You've learned when O&P applies on insurance claims. Now document coordination and trade count the way desk reviewers expect before submission.",

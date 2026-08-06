@@ -3136,6 +3136,51 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["supplements", "documentation"],
   },
+  "identifying-quantity-errors-insurance-estimates": {
+    phrases: [
+      "how do contractors identify quantity errors on insurance estimates",
+      "how contractors find quantity errors in insurance estimates",
+      "identify quantity errors insurance estimate",
+      "finding quantity errors on carrier estimates",
+    ],
+    keywords: [
+      "quantity errors",
+      "identify quantity errors",
+      "find quantity errors",
+      "estimate quantity errors",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "common-quantity-mistakes-insurance-estimates": {
+    phrases: [
+      "what are common quantity mistakes on insurance estimates",
+      "common quantity mistakes insurance estimates",
+      "quantity mistakes on carrier estimates",
+      "common estimate quantity mistakes contractors",
+    ],
+    keywords: [
+      "common quantity mistakes",
+      "quantity mistakes",
+      "estimate quantity mistakes",
+      "sketch quantity errors",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "when-to-remeasure-estimate-quantities": {
+    phrases: [
+      "when should contractors remeasure estimate quantities",
+      "when to remeasure estimate quantities",
+      "remeasure insurance estimate quantities",
+      "when contractors should remeasure carrier estimate",
+    ],
+    keywords: [
+      "remeasure",
+      "remeasure quantities",
+      "estimate measurements",
+      "field remeasurement",
+    ],
+    topics: ["supplements", "documentation", "xactimate"],
+  },
   "scope-audit-for-contractors": {
     phrases: [
       "what is a scope audit for contractors on insurance estimates",
