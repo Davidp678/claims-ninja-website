@@ -43,6 +43,7 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     "Contractor insurance estimate review playbook: receive and structure-check the carrier estimate, validate scope and quantities, run code/GC/equipment passes, assemble documentation, prepare supplements, support reinspection, and reconcile settlement.",
   relatedGuideSlugs: [
     "insurance-estimate-review-scope-validation-guide",
+    "quantity-validation-guide-for-contractors",
     "carrier-estimate-review-guide",
     "commercial-insurance-supplement-playbook-for-contractors",
     "commercial-insurance-claims-documentation-guide",
@@ -302,9 +303,10 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
         "Flag zero-quantity lines, bundled macros, and rounded quantities that understate assemblies visible on site.",
         "Prioritize quantity disputes by dollar impact and evidence strength — weak photos should be upgraded before the gap is marked supplement-ready.",
         "Run the Quantity Validation Checklist (asset below) as a gate before production or supplement packaging.",
+        "For the specialty deep-dive on roofing, interior, water, fire, and commercial quantity workflows — plus measurement, photo, and QC checklists — use the Quantity Validation Guide for Contractors.",
       ],
       notes:
-        "Quantity fights without measurement photos and takeoffs fail at desk review. Lead with documented shortfalls before disputing unit prices.",
+        "Quantity fights without measurement photos and takeoffs fail at desk review. Lead with documented shortfalls before disputing unit prices. Pair with the Quantity Validation Guide when high-value assemblies need a full specialty pass.",
     },
     {
       id: "phase-6-code",
@@ -752,6 +754,10 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     {
       label: "Insurance Estimate Review & Scope Validation Guide",
       href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+    },
+    {
+      label: "Quantity Validation Guide for Contractors",
+      href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
     },
     {
       label: "Carrier Estimate Review Workflow",

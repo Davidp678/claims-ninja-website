@@ -6420,16 +6420,16 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Recalculate high-value SF and count lines from independent field measurements — roofing squares, flooring, drywall, paint, openings, fixtures, and equipment days — and compare them to the carrier sketch and line items. Photograph measurement context, document methodology on large assemblies, and record deltas on a comparison worksheet. Prioritize disputes by dollar impact and evidence strength before marking gaps supplement-ready.",
     relatedLinks: [
       {
+        label: "Quantity Validation Guide for Contractors",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
         label: "Insurance Estimate Review & Scope Validation Guide",
         href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
       },
       {
-        label: "Carrier Estimate Review Guide",
-        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
-      },
-      {
-        label: "What is the anatomy of a carrier insurance estimate?",
-        href: "/faq#faq-carrier-estimate-anatomy-contractors",
+        label: "What is quantity validation for contractors?",
+        href: "/faq#faq-quantity-validation-for-contractors",
       },
       {
         label: "The Most Overlooked Line Items in Insurance Estimates",
@@ -6735,6 +6735,132 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "What documentation supports insurance estimate supplements?",
         href: "/faq#faq-documentation-supporting-supplements",
+      },
+    ],
+  },
+  // Quantity validation FAQs (5)
+  {
+    id: "quantity-validation-for-contractors",
+    category: "insurance_supplements",
+    question: "What is quantity validation for contractors on insurance estimates?",
+    answer:
+      "Quantity validation is the disciplined comparison of carrier estimate quantities — SF, squares, LF, counts, and days — to independent field measurements and documented conditions. Contractors measure high-value assemblies, photograph measurement context, record methodology, reconcile to the current estimate version, and classify deltas as supplement-ready or needs more evidence. It supports accurate claim documentation and estimate review; it is not estimating software instruction or public-adjusting guidance.",
+    relatedLinks: [
+      {
+        label: "Quantity Validation Guide for Contractors",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "How should contractors validate quantities on insurance estimates?",
+        href: "/faq#faq-quantity-validation-insurance-estimates",
+      },
+      {
+        label: "What are quantity discrepancies on insurance estimates?",
+        href: "/faq#faq-quantity-discrepancies-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "quantity-discrepancies-insurance-estimates",
+    category: "insurance_supplements",
+    question: "What are quantity discrepancies on insurance estimates?",
+    answer:
+      "Quantity discrepancies are differences between carrier estimate quantities and field-measured or documented quantities on the same assembly — understated roofing squares, interior SF, openings, fixtures, equipment days, or commercial zone totals. They often come from sketch errors, bundled macros, rounded dimensions, zero-quantity placeholders, or discovery after demolition. Record carrier qty, field qty, delta, and evidence refs on a comparison worksheet before production absorbs unpaid assemblies.",
+    relatedLinks: [
+      {
+        label: "Quantity Validation Guide for Contractors",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "What is quantity validation for contractors?",
+        href: "/faq#faq-quantity-validation-for-contractors",
+      },
+      {
+        label: "How should contractors document quantity changes?",
+        href: "/faq#faq-documenting-quantity-changes-insurance-estimates",
+      },
+      {
+        label: "The Most Overlooked Line Items in Insurance Estimates",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "field-measurements-estimate-quantities",
+    category: "insurance_supplements",
+    question: "How should contractors use field measurements to review estimate quantities?",
+    answer:
+      "Measure high-value assemblies independently with tape, laser, or documented takeoff; record who measured, when, tools used, and methodology for large planes or rooms. Photograph measurement context, note waste factors and openings, and reconcile field quantities to carrier sketch and line totals on a versioned worksheet. Prefer contemporaneous measurements before demo or dry-in removes proof. Weak or unlabeled measurement sets stay in needs-more-evidence until upgraded.",
+    relatedLinks: [
+      {
+        label: "Quantity Validation Guide for Contractors",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "Documentation Standards Guide",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "How should contractors review estimate quantities?",
+        href: "/faq#faq-estimate-quantities-contractor-review",
+      },
+      {
+        label: "Photo Documentation Standards Guide",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "estimate-quantities-contractor-review",
+    category: "insurance_supplements",
+    question: "How should contractors review estimate quantities on a carrier insurance estimate?",
+    answer:
+      "Start with the latest estimate version and area index — not the dollar total. Walk roofing, interior, water, fire, and commercial assemblies as applicable; recalculate SF, squares, LF, counts, and days from field measurements; and flag zero-quantity, bundled, or rounded lines that understate site conditions. Prioritize by dollar impact and evidence strength, then classify each delta for packaging or recapture. Pair day-one intake with the Carrier Estimate Review Workflow and the Quantity Validation Guide for specialty depth.",
+    relatedLinks: [
+      {
+        label: "Quantity Validation Guide for Contractors",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "Carrier Estimate Review Guide",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "How should contractors use field measurements?",
+        href: "/faq#faq-field-measurements-estimate-quantities",
+      },
+    ],
+  },
+  {
+    id: "documenting-quantity-changes-insurance-estimates",
+    category: "insurance_supplements",
+    question: "How should contractors document quantity changes on insurance estimates?",
+    answer:
+      "Package each revised quantity with carrier qty, field qty, delta, methodology notes, measurement-context photos, and the current estimate version on a comparison worksheet. Keep area labels consistent across estimate, photos, and notes. Route only supplement-ready quantity gaps through Supplement Submission; park weak evidence for field recapture. Update the worksheet within 24 hours after reinspection or a revised carrier estimate, and run Claim File Audit before packaging material quantity dollars.",
+    relatedLinks: [
+      {
+        label: "Quantity Validation Guide for Contractors",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "Supplement Submission Guide",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      {
+        label: "Claim File Audit Guide",
+        href: "/resources/guides/general-claims/claim-file-audit-guide",
+      },
+      {
+        label: "What are quantity discrepancies on insurance estimates?",
+        href: "/faq#faq-quantity-discrepancies-insurance-estimates",
       },
     ],
   },

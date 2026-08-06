@@ -763,6 +763,8 @@ export const ROOFING_CLAIMS_GUIDES = [
       "roofing-documentation-guide",
       "roofing-supplement-checklist",
       "roof-measurement-documentation-guide",
+      "quantity-validation-guide-for-contractors",
+      "insurance-estimate-review-scope-validation-guide",
     ],
     relatedBlogSlugs: ["roofing-supplement-playbook"],
     faqIds: ["roofing-code-items", "roofing-carrier-documentation"],

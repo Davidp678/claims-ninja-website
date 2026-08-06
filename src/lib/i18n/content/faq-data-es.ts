@@ -6409,16 +6409,16 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       "Recalcule renglones de alto valor en SF y conteos a partir de mediciones de campo independientes — cuadros de techo, pisos, drywall, pintura, aberturas, accesorios y días de equipo — y compárelos con el croquis y los renglones de la aseguradora. Fotografíe el contexto de medición, documente la metodología en ensambles grandes y registre diferencias en una hoja de comparación. Priorice disputas por impacto en dólares y solidez de la evidencia antes de marcar brechas como listas para suplemento.",
     relatedLinks: [
       {
+        label: "Guía de validación de cantidades para contratistas",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
         label: "Guía de revisión de estimados y validación de alcance",
         href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
       },
       {
-        label: "Guía de revisión de estimados de la aseguradora",
-        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
-      },
-      {
-        label: "¿Cuál es la anatomía de un estimado de seguros de la aseguradora?",
-        href: "/faq#faq-carrier-estimate-anatomy-contractors",
+        label: "¿Qué es la validación de cantidades para contratistas?",
+        href: "/faq#faq-quantity-validation-for-contractors",
       },
       {
         label: "Los renglones más pasados por alto en los estimados de seguros",
@@ -6732,6 +6732,132 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "¿Qué documentación respalda los suplementos de estimados de seguros?",
         href: "/faq#faq-documentation-supporting-supplements",
+      },
+    ],
+  },
+  // Quantity validation FAQs (5)
+  {
+    id: "quantity-validation-for-contractors",
+    category: "insurance_supplements",
+    question: "¿Qué es la validación de cantidades para contratistas en estimados de seguros?",
+    answer:
+      "La validación de cantidades es la comparación disciplinada de las cantidades del estimado de la aseguradora — SF, cuadros, LF, conteos y días — con mediciones de campo independientes y condiciones documentadas. Los contratistas miden ensambles de alto valor, fotografían el contexto de medición, registran la metodología, concilian con la versión actual del estimado y clasifican las diferencias como listas para suplemento o necesitan más evidencia. Apoya la documentación precisa de la reclamación y la revisión del estimado; no es instrucción de software de estimación ni orientación de ajuste público.",
+    relatedLinks: [
+      {
+        label: "Guía de validación de cantidades para contratistas",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "Guía de revisión de estimados de seguros y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "¿Cómo deben los contratistas validar cantidades en estimados de seguros?",
+        href: "/faq#faq-quantity-validation-insurance-estimates",
+      },
+      {
+        label: "¿Qué son las discrepancias de cantidad en estimados de seguros?",
+        href: "/faq#faq-quantity-discrepancies-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "quantity-discrepancies-insurance-estimates",
+    category: "insurance_supplements",
+    question: "¿Qué son las discrepancias de cantidad en estimados de seguros?",
+    answer:
+      "Las discrepancias de cantidad son diferencias entre las cantidades del estimado de la aseguradora y las cantidades medidas o documentadas en campo sobre el mismo ensamble — cuadros de techo subestimados, SF de interiores, aberturas, accesorios, días de equipo o totales de zonas comerciales. A menudo provienen de errores de croquis, macros agrupadas, dimensiones redondeadas, marcadores de cantidad cero o descubrimientos tras la demolición. Registre cantidad de la aseguradora, cantidad de campo, diferencia y referencias de evidencia en una hoja de comparación antes de que la producción absorba ensambles no pagados.",
+    relatedLinks: [
+      {
+        label: "Guía de validación de cantidades para contratistas",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "¿Qué es la validación de cantidades para contratistas?",
+        href: "/faq#faq-quantity-validation-for-contractors",
+      },
+      {
+        label: "¿Cómo deben los contratistas documentar cambios de cantidad?",
+        href: "/faq#faq-documenting-quantity-changes-insurance-estimates",
+      },
+      {
+        label: "Los renglones más pasados por alto en estimados de seguros",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "field-measurements-estimate-quantities",
+    category: "insurance_supplements",
+    question: "¿Cómo deben los contratistas usar mediciones de campo para revisar cantidades del estimado?",
+    answer:
+      "Mida ensambles de alto valor de forma independiente con cinta, láser o takeoff documentado; registre quién midió, cuándo, herramientas usadas y metodología para planos o habitaciones grandes. Fotografíe el contexto de medición, anote factores de desperdicio y aberturas, y concilie las cantidades de campo con el croquis y los totales de renglones de la aseguradora en una hoja versionada. Prefiera mediciones contemporáneas antes de que la demolición o el dry-in eliminen la prueba. Los conjuntos de medición débiles o sin etiquetar permanecen en necesita más evidencia hasta mejorarlos.",
+    relatedLinks: [
+      {
+        label: "Guía de validación de cantidades para contratistas",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "Guía de estándares de documentación",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "¿Cómo deben los contratistas revisar las cantidades del estimado?",
+        href: "/faq#faq-estimate-quantities-contractor-review",
+      },
+      {
+        label: "Guía de estándares de documentación fotográfica",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+    ],
+  },
+  {
+    id: "estimate-quantities-contractor-review",
+    category: "insurance_supplements",
+    question: "¿Cómo deben los contratistas revisar las cantidades en un estimado de seguros de la aseguradora?",
+    answer:
+      "Comience con la versión más reciente del estimado y el índice de áreas — no con el total en dólares. Recorra ensambles de techado, interiores, agua, fuego y comerciales según corresponda; recalcule SF, cuadros, LF, conteos y días a partir de mediciones de campo; y marque renglones de cantidad cero, agrupados o redondeados que subestimen las condiciones del sitio. Priorice por impacto en dólares y solidez de la evidencia, luego clasifique cada diferencia para empaquetado o recaptura. Combine la recepción del primer día con el Flujo de revisión de estimados de la aseguradora y la Guía de validación de cantidades para profundidad especializada.",
+    relatedLinks: [
+      {
+        label: "Guía de validación de cantidades para contratistas",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "Guía de revisión de estimados de la aseguradora",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "¿Cómo deben los contratistas usar mediciones de campo?",
+        href: "/faq#faq-field-measurements-estimate-quantities",
+      },
+    ],
+  },
+  {
+    id: "documenting-quantity-changes-insurance-estimates",
+    category: "insurance_supplements",
+    question: "¿Cómo deben los contratistas documentar cambios de cantidad en estimados de seguros?",
+    answer:
+      "Empaquete cada cantidad revisada con cantidad de la aseguradora, cantidad de campo, diferencia, notas de metodología, fotos de contexto de medición y la versión actual del estimado en una hoja de comparación. Mantenga etiquetas de área consistentes entre estimado, fotos y notas. Canalice solo brechas de cantidad listas para suplemento mediante Envío de suplementos; reserve evidencia débil para recaptura de campo. Actualice la hoja dentro de 24 horas tras reinspección o un estimado revisado, y ejecute la Auditoría de expediente antes de empaquetar dólares materiales de cantidad.",
+    relatedLinks: [
+      {
+        label: "Guía de validación de cantidades para contratistas",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "Guía de envío de suplementos",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      {
+        label: "Guía de auditoría de expediente de reclamación",
+        href: "/resources/guides/general-claims/claim-file-audit-guide",
+      },
+      {
+        label: "¿Qué son las discrepancias de cantidad en estimados de seguros?",
+        href: "/faq#faq-quantity-discrepancies-insurance-estimates",
       },
     ],
   },

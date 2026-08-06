@@ -3606,18 +3606,20 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "quantity-validation-insurance-estimates": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
+      "general-claims/quantity-validation-guide-for-contractors",
       "general-claims/insurance-estimate-review-playbook-for-contractors",
       "general-claims/insurance-estimate-review-scope-validation-guide",
       "general-claims/carrier-estimate-review-guide",
     ],
     relatedFaqIds: [
+      "quantity-validation-for-contractors",
+      "quantity-discrepancies-insurance-estimates",
       "estimate-review-for-contractors",
       "scope-validation-carrier-estimates",
-      "carrier-estimate-anatomy-contractors",
       "overlooked-insurance-estimate-items",
     ],
     internalLinkNotes:
-      "Quantity validation FAQ; measurement and takeoff reconciliation against carrier lines.",
+      "Quantity validation FAQ; measurement and takeoff reconciliation against carrier lines; pairs with Quantity Validation Guide.",
   },
   "carrier-estimate-anatomy-contractors": {
     searchIntent: "informational",
@@ -3815,6 +3817,88 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     ],
     internalLinkNotes:
       "Documentation that supports missing-scope findings; pairs with red-flags blog.",
+  },
+  "quantity-validation-for-contractors": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/quantity-validation-guide-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "quantity-validation-insurance-estimates",
+      "quantity-discrepancies-insurance-estimates",
+      "field-measurements-estimate-quantities",
+      "estimate-quantities-contractor-review",
+      "documenting-quantity-changes-insurance-estimates",
+    ],
+    internalLinkNotes:
+      "Quantity validation definition FAQ; anchors Quantity Validation Guide specialty resource.",
+  },
+  "quantity-discrepancies-insurance-estimates": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/quantity-validation-guide-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "quantity-validation-for-contractors",
+      "quantity-validation-insurance-estimates",
+      "documenting-quantity-changes-insurance-estimates",
+      "overlooked-insurance-estimate-items",
+    ],
+    internalLinkNotes:
+      "Quantity discrepancies FAQ; carrier qty vs field qty comparison worksheet.",
+  },
+  "field-measurements-estimate-quantities": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/quantity-validation-guide-for-contractors",
+      "general-claims/documentation-standards-guide",
+      "general-claims/photo-documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "quantity-validation-for-contractors",
+      "estimate-quantities-contractor-review",
+      "documenting-quantity-changes-insurance-estimates",
+      "quantity-validation-insurance-estimates",
+    ],
+    internalLinkNotes:
+      "Field measurements FAQ for estimate quantity review.",
+  },
+  "estimate-quantities-contractor-review": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "general-claims/quantity-validation-guide-for-contractors",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/carrier-estimate-review-guide",
+    ],
+    relatedFaqIds: [
+      "quantity-validation-for-contractors",
+      "field-measurements-estimate-quantities",
+      "quantity-discrepancies-insurance-estimates",
+      "estimate-review-for-contractors",
+    ],
+    internalLinkNotes:
+      "Contractor review of estimate quantities; bridges to Quantity Validation Guide and playbook.",
+  },
+  "documenting-quantity-changes-insurance-estimates": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/quantity-validation-guide-for-contractors",
+      "general-claims/supplement-submission-guide",
+      "general-claims/claim-file-audit-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "quantity-validation-for-contractors",
+      "quantity-discrepancies-insurance-estimates",
+      "field-measurements-estimate-quantities",
+      "documentation-supporting-supplements",
+    ],
+    internalLinkNotes:
+      "Documenting quantity changes for supplement packaging; pairs with Quantity Validation Guide.",
   },
 };
 

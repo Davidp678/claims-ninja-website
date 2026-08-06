@@ -6,12 +6,14 @@ import { INDUSTRIAL_WAREHOUSE_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/indust
 import { INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS } from "@/lib/guides/insurance-estimate-review-playbook-for-contractors";
 import { INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE } from "@/lib/guides/insurance-estimate-review-scope-validation-guide";
 import { LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/large-loss-commercial-insurance-claims-guide";
+import { QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS } from "@/lib/guides/quantity-validation-guide-for-contractors";
 import { MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/multifamily-apartment-insurance-claims-guide";
 import { RETAIL_OFFICE_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/retail-office-insurance-claims-guide";
 
 export const GENERAL_CLAIMS_GUIDES = [
   INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS,
   INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE,
+  QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS,
   COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE,
   COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS,
   LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE,
@@ -46,6 +48,7 @@ export const GENERAL_CLAIMS_GUIDES = [
     relatedGuideSlugs: [
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
+      "quantity-validation-guide-for-contractors",
       "claim-file-audit-guide",
       "documentation-standards-guide",
       "carrier-estimate-review-guide",
@@ -259,6 +262,7 @@ export const GENERAL_CLAIMS_GUIDES = [
       "documentation-standards-guide",
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
+      "quantity-validation-guide-for-contractors",
       "supplement-submission-guide",
       "carrier-estimate-review-guide",
     ],
@@ -466,6 +470,7 @@ export const GENERAL_CLAIMS_GUIDES = [
     relatedGuideSlugs: [
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
+      "quantity-validation-guide-for-contractors",
       "carrier-estimate-review-guide",
       "claim-file-audit-guide",
     ],
@@ -678,6 +683,7 @@ export const GENERAL_CLAIMS_GUIDES = [
     relatedGuideSlugs: [
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
+      "quantity-validation-guide-for-contractors",
       "supplement-submission-guide",
       "op-qualification-guide",
       "documentation-standards-guide",
@@ -1080,6 +1086,8 @@ export const GENERAL_CLAIMS_GUIDES = [
     relatedGuideSlugs: [
       "commercial-insurance-claims-documentation-guide",
       "insurance-estimate-review-scope-validation-guide",
+      "quantity-validation-guide-for-contractors",
+      "insurance-estimate-review-playbook-for-contractors",
       "photo-documentation-standards-guide",
       "claim-file-audit-guide",
       "commercial-fire-claims-guide",

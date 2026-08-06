@@ -3056,6 +3056,82 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["supplements", "xactimate", "documentation"],
   },
+  "quantity-validation-for-contractors": {
+    phrases: [
+      "what is quantity validation for contractors on insurance estimates",
+      "what is quantity validation for contractors",
+      "quantity validation for contractors",
+      "contractor quantity validation definition",
+    ],
+    keywords: [
+      "quantity validation",
+      "estimate quantities",
+      "field measurements",
+      "comparison worksheet",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "quantity-discrepancies-insurance-estimates": {
+    phrases: [
+      "what are quantity discrepancies on insurance estimates",
+      "quantity discrepancies insurance estimates",
+      "quantity discrepancy on carrier estimate",
+      "estimate quantity shortfalls",
+    ],
+    keywords: [
+      "quantity discrepancies",
+      "quantity shortfall",
+      "carrier qty",
+      "field qty",
+      "quantity delta",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "field-measurements-estimate-quantities": {
+    phrases: [
+      "how should contractors use field measurements to review estimate quantities",
+      "field measurements for estimate quantities",
+      "field measurements estimate review",
+      "independent field measurements insurance estimate",
+    ],
+    keywords: [
+      "field measurements",
+      "measurement context",
+      "takeoff methodology",
+      "estimate quantities",
+    ],
+    topics: ["supplements", "documentation"],
+  },
+  "estimate-quantities-contractor-review": {
+    phrases: [
+      "how should contractors review estimate quantities on a carrier insurance estimate",
+      "how should contractors review estimate quantities",
+      "estimate quantities contractor review",
+      "review carrier estimate quantities",
+    ],
+    keywords: [
+      "estimate quantities",
+      "quantity review",
+      "carrier estimate quantities",
+      "quantity validation",
+    ],
+    topics: ["supplements", "xactimate", "documentation"],
+  },
+  "documenting-quantity-changes-insurance-estimates": {
+    phrases: [
+      "how should contractors document quantity changes on insurance estimates",
+      "documenting quantity changes on insurance estimates",
+      "document quantity changes insurance estimate",
+      "how to document revised estimate quantities",
+    ],
+    keywords: [
+      "documenting quantity changes",
+      "revised quantities",
+      "quantity supplement",
+      "comparison worksheet",
+    ],
+    topics: ["supplements", "documentation"],
+  },
   "carrier-estimate-anatomy-contractors": {
     phrases: [
       "what is the anatomy of a carrier insurance estimate",

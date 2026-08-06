@@ -11,11 +11,12 @@ export type BlogGuideCompanionEntry = {
 export const BLOG_GUIDE_COMPANIONS = {
   "first-48-hours-after-carrier-estimate": {
     intro:
-      "You've learned what to prioritize in the first 48 hours after a carrier estimate. Now run the intake checklist and the Insurance Estimate Review Playbook — the operational workflow your office and field teams execute on every file.",
+      "You've learned what to prioritize in the first 48 hours after a carrier estimate. Now run the intake checklist, the Insurance Estimate Review Playbook, the scope validation cornerstone, and the Quantity Validation Guide so high-value quantities are measured and documented before production commits.",
     guideSlugs: [
       "first-48-hours-checklist",
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
+      "quantity-validation-guide-for-contractors",
     ],
   },
   "claim-documentation-approval-rates": {
@@ -34,20 +35,21 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "why-carrier-estimates-miss-line-items": {
     intro:
-      "You've learned why carrier estimates miss scope. Now use the Insurance Estimate Review Playbook, the scope validation cornerstone, and the day-one carrier estimate review workflow to catch gaps before production commits to under-scoped work.",
+      "You've learned why carrier estimates miss scope. Now use the Insurance Estimate Review Playbook, the scope validation cornerstone, the day-one carrier estimate review workflow, and the Quantity Validation Guide to catch quantity and scope gaps before production commits to under-scoped work.",
     guideSlugs: [
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
       "carrier-estimate-review-guide",
+      "quantity-validation-guide-for-contractors",
     ],
   },
   "most-overlooked-line-items-in-insurance-estimates": {
     intro:
-      "You've learned which line items get overlooked and how to document them. Now run the Insurance Estimate Review Playbook, the scope validation cornerstone, the day-one carrier estimate review workflow, and the submission workflow that turn gap lists into reviewer-ready packages.",
+      "You've learned which line items get overlooked and how to document them. Now run the Insurance Estimate Review Playbook, the scope validation cornerstone, the Quantity Validation Guide, and the submission workflow that turn quantity and scope gap lists into reviewer-ready packages.",
     guideSlugs: [
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
-      "carrier-estimate-review-guide",
+      "quantity-validation-guide-for-contractors",
       "supplement-submission-guide",
     ],
   },

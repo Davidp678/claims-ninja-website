@@ -40,6 +40,7 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
     "Evaluate carrier estimates against field documentation: quantity and scope validation, missing line items, code and temporary protection gaps, equipment and labor review, and QC gates before production absorbs unpaid scope.",
   relatedGuideSlugs: [
     "insurance-estimate-review-playbook-for-contractors",
+    "quantity-validation-guide-for-contractors",
     "carrier-estimate-review-guide",
     "documentation-standards-guide",
     "commercial-insurance-claims-documentation-guide",
@@ -80,7 +81,7 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
   ],
   claimTypes: ["roofing", "water", "fire", "mold", "commercial", "large-loss"],
   purpose:
-    "This guide is the cornerstone authority for insurance estimate review and scope validation concepts for restoration contractors, roofing contractors, mitigation companies, reconstruction contractors, and commercial contractors. Unlike documentation standards — which define how to capture field evidence — this resource focuses on evaluating carrier estimates against documented field conditions to identify omissions, quantity discrepancies, scope gaps, and opportunities for accurate supplemental documentation. Use it as the parent framework for estimate anatomy, quantity and scope validation, missing line items, code and temporary protection review, equipment and labor reconciliation, supporting documentation, scope audit workflow, reinspection preparation, and final quality-control gates. For the complete operational workflow — receive, validate, package, communicate, reinspect, and settle — use the Insurance Estimate Review Playbook for Contractors. Pair it with the shorter Carrier Estimate Review Workflow for day-one intake sequencing, Documentation Standards for evidence capture, and Supplement Submission for packaging validated gaps. Claims Ninja supports contractors with documentation standards, estimate review workflows, supplement packaging, and claim recovery operations — we are not a public adjuster, carrier representative, or legal counsel. This guide does not provide legal advice, policy interpretation, engineering opinions, or public-adjusting guidance.",
+    "This guide is the cornerstone authority for insurance estimate review and scope validation concepts for restoration contractors, roofing contractors, mitigation companies, reconstruction contractors, and commercial contractors. Unlike documentation standards — which define how to capture field evidence — this resource focuses on evaluating carrier estimates against documented field conditions to identify omissions, quantity discrepancies, scope gaps, and opportunities for accurate supplemental documentation. Use it as the parent framework for estimate anatomy, quantity and scope validation, missing line items, code and temporary protection review, equipment and labor reconciliation, supporting documentation, scope audit workflow, reinspection preparation, and final quality-control gates. For the complete operational workflow — receive, validate, package, communicate, reinspect, and settle — use the Insurance Estimate Review Playbook for Contractors. For the specialty deep-dive on measuring, documenting, and classifying quantity discrepancies across roofing, interior, water, fire, and commercial files, use the Quantity Validation Guide for Contractors. Pair it with the shorter Carrier Estimate Review Workflow for day-one intake sequencing, Documentation Standards for evidence capture, and Supplement Submission for packaging validated gaps. Claims Ninja supports contractors with documentation standards, estimate review workflows, supplement packaging, and claim recovery operations — we are not a public adjuster, carrier representative, or legal counsel. This guide does not provide legal advice, policy interpretation, engineering opinions, or public-adjusting guidance.",
   whenToUse: [
     {
       condition: "Carrier estimate received and must be compared to field conditions before production commits",
@@ -234,6 +235,7 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
         "Flag zero-quantity lines, bundled macros, and rounded quantities that understate assemblies visible on site.",
         "Prioritize quantity disputes by dollar impact and evidence strength — weak photos should be upgraded before the gap is marked supplement-ready.",
         "Use the Quantity Verification Checklist (below) as a gate before production or supplement packaging.",
+        "For the specialty deep-dive — roofing, interior, water, fire, and commercial quantity workflows, measurement documentation, photo and field-note standards, and QC checklists — use the Quantity Validation Guide for Contractors.",
       ],
     },
     {
@@ -619,6 +621,10 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
     {
       label: "Insurance Estimate Review Playbook for Contractors",
       href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+    },
+    {
+      label: "Quantity Validation Guide for Contractors",
+      href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
     },
     {
       label: "Carrier Estimate Review Workflow",

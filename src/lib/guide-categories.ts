@@ -26,6 +26,7 @@ export const GENERAL_CLAIMS_HUB_ORDER = [
   "insurance-estimate-review-playbook-for-contractors",
   "documentation-standards-guide",
   "insurance-estimate-review-scope-validation-guide",
+  "quantity-validation-guide-for-contractors",
   "large-loss-commercial-insurance-claims-guide",
   "carrier-estimate-review-guide",
   "retail-office-insurance-claims-guide",

@@ -3324,7 +3324,73 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
     assert: (result) =>
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
-        /quantity-validation-insurance-estimates|insurance-estimate-review-scope-validation-guide|Recalculate high-value SF and count lines/i.test(
+        /quantity-validation-insurance-estimates|quantity-validation-guide-for-contractors|insurance-estimate-review-scope-validation-guide|Recalculate high-value SF and count lines/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "quantity validation guide for contractors retrieves",
+    message: "quantity validation guide for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /quantity-validation-guide-for-contractors|Quantity Validation Guide for Contractors|validating insurance estimate quantities/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "quantity validation for contractors FAQ retrieves",
+    message: "what is quantity validation for contractors on insurance estimates",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /quantity-validation-for-contractors|quantity-validation-guide-for-contractors|Quantity validation is the disciplined comparison/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "quantity discrepancies insurance estimates FAQ retrieves",
+    message: "what are quantity discrepancies on insurance estimates",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /quantity-discrepancies-insurance-estimates|quantity-validation-guide-for-contractors|Quantity discrepancies are differences between carrier estimate quantities/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "field measurements estimate quantities FAQ retrieves",
+    message: "how should contractors use field measurements to review estimate quantities",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /field-measurements-estimate-quantities|quantity-validation-guide-for-contractors|Measure high-value assemblies independently/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "estimate quantities contractor review FAQ retrieves",
+    message: "how should contractors review estimate quantities on a carrier insurance estimate",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /estimate-quantities-contractor-review|quantity-validation-guide-for-contractors|Start with the latest estimate version and area index/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "documenting quantity changes insurance estimates FAQ retrieves",
+    message: "how should contractors document quantity changes on insurance estimates",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /documenting-quantity-changes-insurance-estimates|quantity-validation-guide-for-contractors|Package each revised quantity with carrier qty/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

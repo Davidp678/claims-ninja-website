@@ -77,6 +77,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Guía fundamental para evaluar estimados de aseguradoras frente a condiciones de campo documentadas: anatomía del estimado, validación de cantidades y alcance, partidas faltantes, código y protección temporal, equipo y mano de obra, documentación de respaldo, flujo de auditoría de alcance, preparación para reinspección y controles de calidad.",
   },
+  "general-claims/quantity-validation-guide-for-contractors": {
+    title: "Guía de validación de cantidades para contratistas",
+    excerpt:
+      "Guía operativa para validar cantidades de estimados de seguros frente a condiciones de campo: techado, interiores, agua, fuego y comercial; documentación de mediciones, fotografías y notas de campo; impactos de código; y listas de verificación de control de calidad para cantidades revisadas.",
+  },
   "general-claims/op-qualification-guide": {
     title: "Estándar de documentación para calificación de O&P",
     excerpt:

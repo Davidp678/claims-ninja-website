@@ -509,6 +509,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "carrier-estimate-review-missing-scope",
       "identifying-estimate-omissions",
       "documentation-supporting-missing-scope",
+      "quantity-validation-for-contractors",
+      "quantity-discrepancies-insurance-estimates",
+      "field-measurements-estimate-quantities",
+      "estimate-quantities-contractor-review",
+      "documenting-quantity-changes-insurance-estimates",
     ],
   },
   guides: {
@@ -631,6 +636,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "carrier-estimate-review-missing-scope",
       "identifying-estimate-omissions",
       "documentation-supporting-missing-scope",
+      "quantity-validation-for-contractors",
+      "quantity-discrepancies-insurance-estimates",
+      "field-measurements-estimate-quantities",
+      "estimate-quantities-contractor-review",
+      "documenting-quantity-changes-insurance-estimates",
     ],
   },
   caseStudies: {

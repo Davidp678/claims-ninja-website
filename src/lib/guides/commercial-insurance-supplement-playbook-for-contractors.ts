@@ -52,6 +52,7 @@ export const COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGu
     "supplement-submission-guide",
     "insurance-estimate-review-playbook-for-contractors",
     "insurance-estimate-review-scope-validation-guide",
+    "quantity-validation-guide-for-contractors",
     "carrier-estimate-review-guide",
     "code-upgrade-documentation-guide",
     "equipment-documentation-guide",
@@ -620,6 +621,10 @@ export const COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGu
     {
       label: "Insurance Estimate Review & Scope Validation Guide for Contractors",
       href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+    },
+    {
+      label: "Quantity Validation Guide for Contractors",
+      href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
     },
     {
       label: "Carrier Estimate Review Workflow",
