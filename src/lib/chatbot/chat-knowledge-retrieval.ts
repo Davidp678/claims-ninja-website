@@ -3027,7 +3027,7 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
     assert: (result) =>
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
-        /commercial-insurance-supplement-playbook-for-contractors|commercial-insurance-supplements|scope and quantity validation|missing buildings or suites/i.test(
+        /commercial-insurance-supplement-playbook-for-contractors|commercial-insurance-supplements|scope and quantity validation|missing buildings or suites|Commercial insurance supplements are the contractor packages/i.test(
           `${s.text} ${s.source}`,
         ),
       ),
@@ -3391,6 +3391,72 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
         /documenting-quantity-changes-insurance-estimates|quantity-validation-guide-for-contractors|Package each revised quantity with carrier qty/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "scope audit guide for contractors retrieves",
+    message: "scope audit guide for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /scope-audit-guide-for-contractors|Scope Audit Guide for Contractors|auditing insurance estimate scope/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "scope audit for contractors FAQ retrieves",
+    message: "what is a scope audit for contractors on insurance estimates",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /scope-audit-for-contractors|scope-audit-guide-for-contractors|A scope audit is the disciplined comparison/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "auditing insurance estimates for contractors FAQ retrieves",
+    message: "how do contractors audit insurance estimates for missing scope",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /auditing-insurance-estimates-for-contractors|scope-audit-guide-for-contractors|Lock the latest estimate version/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "missing scope contractor audit FAQ retrieves",
+    message: "how do contractors identify missing scope during an insurance estimate audit",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /missing-scope-contractor-audit|scope-audit-guide-for-contractors|Compare each documented field condition/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "reviewing insurance estimate scope FAQ retrieves",
+    message: "how should contractors review insurance estimate scope for completeness",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /reviewing-insurance-estimate-scope|scope-audit-guide-for-contractors|Start with the latest estimate version and area index/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "documenting omitted work insurance estimates FAQ retrieves",
+    message: "how should contractors document omitted work on insurance estimates",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /documenting-omitted-work-insurance-estimates|scope-audit-guide-for-contractors|Package each omitted or incomplete scope item/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

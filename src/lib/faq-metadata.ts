@@ -3674,18 +3674,20 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "scope-audit-workflow": {
     searchIntent: "carrier-review",
     relatedGuideSlugs: [
+      "general-claims/scope-audit-guide-for-contractors",
       "general-claims/insurance-estimate-review-playbook-for-contractors",
       "general-claims/insurance-estimate-review-scope-validation-guide",
       "general-claims/claim-file-audit-guide",
     ],
     relatedFaqIds: [
+      "scope-audit-for-contractors",
       "estimate-review-workflow",
       "scope-validation-carrier-estimates",
       "estimate-review-for-contractors",
       "quantity-validation-insurance-estimates",
     ],
     internalLinkNotes:
-      "Scope audit workflow FAQ for operational estimate review execution.",
+      "Scope audit workflow FAQ for operational estimate review execution; anchors Scope Audit Guide.",
   },
   "supplement-preparation": {
     searchIntent: "documentation-standard",
@@ -3899,6 +3901,90 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     ],
     internalLinkNotes:
       "Documenting quantity changes for supplement packaging; pairs with Quantity Validation Guide.",
+  },
+  "scope-audit-for-contractors": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/scope-audit-guide-for-contractors",
+      "general-claims/quantity-validation-guide-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "scope-audit-workflow",
+      "auditing-insurance-estimates-for-contractors",
+      "missing-scope-contractor-audit",
+      "reviewing-insurance-estimate-scope",
+      "documenting-omitted-work-insurance-estimates",
+    ],
+    internalLinkNotes:
+      "Scope audit definition FAQ; anchors Scope Audit Guide specialty resource.",
+  },
+  "auditing-insurance-estimates-for-contractors": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "general-claims/scope-audit-guide-for-contractors",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/carrier-estimate-review-guide",
+    ],
+    relatedFaqIds: [
+      "scope-audit-for-contractors",
+      "missing-scope-contractor-audit",
+      "reviewing-insurance-estimate-scope",
+      "scope-audit-workflow",
+    ],
+    internalLinkNotes:
+      "How contractors audit insurance estimates for missing scope; pairs with Scope Audit Guide.",
+  },
+  "missing-scope-contractor-audit": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/scope-audit-guide-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/carrier-estimate-review-guide",
+    ],
+    relatedFaqIds: [
+      "scope-audit-for-contractors",
+      "missing-scope-insurance-estimates",
+      "documenting-omitted-work-insurance-estimates",
+      "estimate-red-flags-missing-scope",
+    ],
+    internalLinkNotes:
+      "Identifying missing scope during contractor estimate audit; pairs with Scope Audit Guide and missing-scope blog.",
+  },
+  "reviewing-insurance-estimate-scope": {
+    searchIntent: "carrier-review",
+    relatedGuideSlugs: [
+      "general-claims/scope-audit-guide-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/carrier-estimate-review-guide",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "scope-audit-for-contractors",
+      "auditing-insurance-estimates-for-contractors",
+      "scope-validation-carrier-estimates",
+      "estimate-review-for-contractors",
+    ],
+    internalLinkNotes:
+      "Reviewing insurance estimate scope for completeness; bridges Scope Audit Guide and scope validation cornerstone.",
+  },
+  "documenting-omitted-work-insurance-estimates": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/scope-audit-guide-for-contractors",
+      "general-claims/supplement-submission-guide",
+      "general-claims/claim-file-audit-guide",
+      "general-claims/documentation-standards-guide",
+    ],
+    relatedFaqIds: [
+      "scope-audit-for-contractors",
+      "missing-scope-contractor-audit",
+      "auditing-insurance-estimates-for-contractors",
+      "documentation-supporting-supplements",
+    ],
+    internalLinkNotes:
+      "Documenting omitted work for supplement packaging; pairs with Scope Audit Guide.",
   },
 };
 

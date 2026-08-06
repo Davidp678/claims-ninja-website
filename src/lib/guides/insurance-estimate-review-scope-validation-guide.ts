@@ -41,6 +41,7 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
   relatedGuideSlugs: [
     "insurance-estimate-review-playbook-for-contractors",
     "quantity-validation-guide-for-contractors",
+    "scope-audit-guide-for-contractors",
     "carrier-estimate-review-guide",
     "documentation-standards-guide",
     "commercial-insurance-claims-documentation-guide",
@@ -625,6 +626,10 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
     {
       label: "Quantity Validation Guide for Contractors",
       href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+    },
+    {
+      label: "Scope Audit Guide for Contractors",
+      href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
     },
     {
       label: "Carrier Estimate Review Workflow",

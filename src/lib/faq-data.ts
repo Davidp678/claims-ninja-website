@@ -6517,19 +6517,19 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "insurance_supplements",
     question: "How do contractors run a scope audit workflow on a carrier estimate?",
     answer:
-      "Assign a review owner and lock the latest estimate version, complete an anatomy and structure pass, walk areas against photos and measurements on a written comparison worksheet, finish scope and quantity checklists, run specialty passes for temporary protection, code, equipment/labor, and general conditions, then route supplement-ready gaps to packaging and documentation defects to same-day field recapture. Do not close an area until photos, quantities, and estimate sections reconcile.",
+      "Assign a review owner and lock the latest estimate version, complete an anatomy and structure pass, walk areas against photos and measurements on a written comparison worksheet, finish scope and quantity checklists, run specialty passes for temporary protection, code, equipment/labor, and general conditions, then route supplement-ready gaps to packaging and documentation defects to same-day field recapture. Do not close an area until photos, quantities, and estimate sections reconcile. For specialty depth on completeness of work — omitted trades, incomplete demo/rebuild, and unsupported assumptions — follow the Scope Audit Guide for Contractors.",
     relatedLinks: [
+      {
+        label: "Scope Audit Guide for Contractors",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
       {
         label: "Insurance Estimate Review Playbook for Contractors",
         href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
       },
       {
-        label: "How do contractors validate scope on a carrier estimate?",
-        href: "/faq#faq-scope-validation-carrier-estimates",
-      },
-      {
-        label: "What is the contractor estimate review workflow?",
-        href: "/faq#faq-estimate-review-workflow",
+        label: "What is a scope audit for contractors?",
+        href: "/faq#faq-scope-audit-for-contractors",
       },
       {
         label: "Claim File Audit Guide",
@@ -6861,6 +6861,132 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "What are quantity discrepancies on insurance estimates?",
         href: "/faq#faq-quantity-discrepancies-insurance-estimates",
+      },
+    ],
+  },
+  // Scope audit FAQs (5)
+  {
+    id: "scope-audit-for-contractors",
+    category: "insurance_supplements",
+    question: "What is a scope audit for contractors on insurance estimates?",
+    answer:
+      "A scope audit is the disciplined comparison of documented field conditions to the carrier estimate’s written scope of work — area by area and trade by trade. Contractors identify missing work, incomplete demolition and reconstruction, omitted trades, sequencing gaps, and unsupported assumptions, then classify each gap as supplement-ready or needs more evidence. It focuses on completeness of work, not measurement accuracy; use the Quantity Validation Guide when SF, squares, counts, or days must be verified independently.",
+    relatedLinks: [
+      {
+        label: "Scope Audit Guide for Contractors",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "Quantity Validation Guide for Contractors",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "How do contractors audit insurance estimates for missing scope?",
+        href: "/faq#faq-auditing-insurance-estimates-for-contractors",
+      },
+      {
+        label: "How do contractors run a scope audit workflow?",
+        href: "/faq#faq-scope-audit-workflow",
+      },
+    ],
+  },
+  {
+    id: "auditing-insurance-estimates-for-contractors",
+    category: "insurance_supplements",
+    question: "How do contractors audit insurance estimates for missing scope?",
+    answer:
+      "Lock the latest estimate version, publish a consistent area index, and walk documented field conditions against estimate sections on a scope comparison worksheet. Record omitted, incomplete, sequencing, and assumption gaps with photo and note refs. Run specialty passes for roofing, water, fire, mold, commercial, and code when applicable, then route supplement-ready items to packaging and weak evidence to same-day field recapture. Follow the Scope Audit Guide for checklists and QC gates.",
+    relatedLinks: [
+      {
+        label: "Scope Audit Guide for Contractors",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "What is a scope audit for contractors?",
+        href: "/faq#faq-scope-audit-for-contractors",
+      },
+      {
+        label: "How do contractors identify missing scope during an audit?",
+        href: "/faq#faq-missing-scope-contractor-audit",
+      },
+    ],
+  },
+  {
+    id: "missing-scope-contractor-audit",
+    category: "insurance_supplements",
+    question: "How do contractors identify missing scope during an insurance estimate audit?",
+    answer:
+      "Compare each documented field condition to the estimate and ask whether required work is present, complete through demolition and reconstruction, and free of unsupported assumptions. Build an omitted-work list grouped by trade and area ID, with evidence refs for every candidate. Common misses include temporary protection, detach/reset, containment, pack-out, HVAC, matching, and specialty protocol steps — still require file-specific photos and notes before marking anything supplement-ready.",
+    relatedLinks: [
+      {
+        label: "Scope Audit Guide for Contractors",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "Five Red Flags That an Insurance Estimate Is Missing Scope",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
+        label: "What is missing scope on an insurance estimate?",
+        href: "/faq#faq-missing-scope-insurance-estimates",
+      },
+      {
+        label: "How should contractors document omitted work?",
+        href: "/faq#faq-documenting-omitted-work-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "reviewing-insurance-estimate-scope",
+    category: "insurance_supplements",
+    question: "How should contractors review insurance estimate scope for completeness?",
+    answer:
+      "Start with the latest estimate version and area index — not the dollar total. Walk rooms, planes, and zones against labeled photos and field notes; reconcile trade sequencing, demolition, and reconstruction as pairs; and test silent assumptions against evidence. Prioritize by dollar impact and reinspection risk, classify each gap, and complete applicable specialty passes before packaging. Pair day-one intake with the Carrier Estimate Review Workflow and the Scope Audit Guide for specialty depth.",
+    relatedLinks: [
+      {
+        label: "Scope Audit Guide for Contractors",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "Insurance Estimate Review & Scope Validation Guide",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Carrier Estimate Review Guide",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "How do contractors audit insurance estimates for missing scope?",
+        href: "/faq#faq-auditing-insurance-estimates-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "documenting-omitted-work-insurance-estimates",
+    category: "insurance_supplements",
+    question: "How should contractors document omitted work on insurance estimates?",
+    answer:
+      "Package each omitted or incomplete scope item with a field condition summary, estimate gap, evidence refs, area ID, and the current estimate version on a scope comparison worksheet. Keep labels consistent across estimate, photos, and notes. Route only supplement-ready gaps through Supplement Submission; park weak evidence for field recapture. Update the worksheet within 24 hours after reinspection or a revised carrier estimate, and run Claim File Audit before packaging material scope dollars.",
+    relatedLinks: [
+      {
+        label: "Scope Audit Guide for Contractors",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "Supplement Submission Guide",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      {
+        label: "Claim File Audit Guide",
+        href: "/resources/guides/general-claims/claim-file-audit-guide",
+      },
+      {
+        label: "How do contractors identify missing scope during an audit?",
+        href: "/faq#faq-missing-scope-contractor-audit",
       },
     ],
   },

@@ -6510,19 +6510,19 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     question:
       "¿Cómo ejecutan los contratistas un flujo de auditoría de alcance en un estimado de la aseguradora?",
     answer:
-      "Asigne un responsable de revisión y fije la versión más reciente del estimado, complete un pase de anatomía y estructura, recorra las áreas contra fotos y mediciones en una hoja de comparación escrita, termine las listas de alcance y cantidad, ejecute pases especializados de protección temporal, código, equipo/mano de obra y condiciones generales, y luego enrute las brechas listas para suplemento al empaquetado y los defectos de documentación a captura de campo el mismo día. No cierre un área hasta que fotos, cantidades y secciones del estimado concilien.",
+      "Asigne un responsable de revisión y fije la versión más reciente del estimado, complete un pase de anatomía y estructura, recorra las áreas contra fotos y mediciones en una hoja de comparación escrita, termine las listas de alcance y cantidad, ejecute pases especializados de protección temporal, código, equipo/mano de obra y condiciones generales, y luego enrute las brechas listas para suplemento al empaquetado y los defectos de documentación a captura de campo el mismo día. No cierre un área hasta que fotos, cantidades y secciones del estimado concilien. Para profundidad especializada en completitud del trabajo — oficios omitidos, demolición/reconstrucción incompletas y supuestos no respaldados — siga la Guía de auditoría de alcance para contratistas.",
     relatedLinks: [
+      {
+        label: "Guía de auditoría de alcance para contratistas",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
       {
         label: "Playbook de revisión de estimados de seguros para contratistas",
         href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
       },
       {
-        label: "¿Cómo validan los contratistas el alcance en un estimado de la aseguradora?",
-        href: "/faq#faq-scope-validation-carrier-estimates",
-      },
-      {
-        label: "¿Cuál es el flujo de trabajo de revisión de estimados para contratistas?",
-        href: "/faq#faq-estimate-review-workflow",
+        label: "¿Qué es una auditoría de alcance para contratistas?",
+        href: "/faq#faq-scope-audit-for-contractors",
       },
       {
         label: "Guía de auditoría de expediente de reclamación",
@@ -6858,6 +6858,132 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "¿Qué son las discrepancias de cantidad en estimados de seguros?",
         href: "/faq#faq-quantity-discrepancies-insurance-estimates",
+      },
+    ],
+  },
+  // Scope audit FAQs (5)
+  {
+    id: "scope-audit-for-contractors",
+    category: "insurance_supplements",
+    question: "¿Qué es una auditoría de alcance para contratistas en estimados de seguros?",
+    answer:
+      "Una auditoría de alcance es la comparación disciplinada de las condiciones de campo documentadas con el alcance escrito del estimado de la aseguradora — área por área y oficio por oficio. Los contratistas identifican trabajo faltante, demolición y reconstrucción incompletas, oficios omitidos, brechas de secuencia y supuestos no respaldados, y luego clasifican cada brecha como lista para suplemento o que necesita más evidencia. Se centra en la completitud del trabajo, no en la exactitud de las mediciones; use la Guía de validación de cantidades cuando SF, cuadros, conteos o días deban verificarse de forma independiente.",
+    relatedLinks: [
+      {
+        label: "Guía de auditoría de alcance para contratistas",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "Guía de validación de cantidades para contratistas",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+      {
+        label: "¿Cómo auditan los contratistas estimados de seguros por alcance faltante?",
+        href: "/faq#faq-auditing-insurance-estimates-for-contractors",
+      },
+      {
+        label: "¿Cómo ejecutan los contratistas un flujo de auditoría de alcance?",
+        href: "/faq#faq-scope-audit-workflow",
+      },
+    ],
+  },
+  {
+    id: "auditing-insurance-estimates-for-contractors",
+    category: "insurance_supplements",
+    question: "¿Cómo auditan los contratistas estimados de seguros por alcance faltante?",
+    answer:
+      "Fije la versión más reciente del estimado, publique un índice de áreas consistente y recorra las condiciones de campo documentadas contra las secciones del estimado en una hoja de comparación de alcance. Registre brechas omitidas, incompletas, de secuencia y de supuestos con referencias a fotos y notas. Ejecute pases especializados de techado, agua, fuego, moho, comercial y código cuando aplique, y luego enrute los ítems listos para suplemento al empaquetado y la evidencia débil a captura de campo el mismo día. Siga la Guía de auditoría de alcance para listas de verificación y puertas de control de calidad.",
+    relatedLinks: [
+      {
+        label: "Guía de auditoría de alcance para contratistas",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "Playbook de revisión de estimados de seguros para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+      },
+      {
+        label: "¿Qué es una auditoría de alcance para contratistas?",
+        href: "/faq#faq-scope-audit-for-contractors",
+      },
+      {
+        label: "¿Cómo identifican los contratistas alcance faltante durante una auditoría?",
+        href: "/faq#faq-missing-scope-contractor-audit",
+      },
+    ],
+  },
+  {
+    id: "missing-scope-contractor-audit",
+    category: "insurance_supplements",
+    question: "¿Cómo identifican los contratistas alcance faltante durante una auditoría de estimado de seguros?",
+    answer:
+      "Compare cada condición de campo documentada con el estimado y pregunte si el trabajo requerido está presente, completo a través de demolición y reconstrucción, y libre de supuestos no respaldados. Construya una lista de trabajo omitido agrupada por oficio e ID de área, con referencias de evidencia para cada candidato. Las omisiones comunes incluyen protección temporal, desmontar/reponer, contención, pack-out, HVAC, coincidencia y pasos de protocolo especializado — aún así exija fotos y notas específicas del expediente antes de marcar algo como listo para suplemento.",
+    relatedLinks: [
+      {
+        label: "Guía de auditoría de alcance para contratistas",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "Cinco señales de alerta de que un estimado de seguros tiene alcance faltante",
+        href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
+      },
+      {
+        label: "¿Qué es el alcance faltante en un estimado de seguros?",
+        href: "/faq#faq-missing-scope-insurance-estimates",
+      },
+      {
+        label: "¿Cómo deben los contratistas documentar trabajo omitido?",
+        href: "/faq#faq-documenting-omitted-work-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "reviewing-insurance-estimate-scope",
+    category: "insurance_supplements",
+    question: "¿Cómo deben los contratistas revisar el alcance de un estimado de seguros para verificar completitud?",
+    answer:
+      "Comience con la versión más reciente del estimado y el índice de áreas — no con el total en dólares. Recorra habitaciones, planos y zonas contra fotos etiquetadas y notas de campo; concilie la secuencia de oficios, demolición y reconstrucción como pares; y pruebe supuestos silenciosos contra la evidencia. Priorice por impacto en dólares y riesgo de reinspección, clasifique cada brecha y complete los pases especializados aplicables antes del empaquetado. Combine la recepción del primer día con el Flujo de revisión de estimados de la aseguradora y la Guía de auditoría de alcance para profundidad especializada.",
+    relatedLinks: [
+      {
+        label: "Guía de auditoría de alcance para contratistas",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "Guía de revisión de estimados de seguros y validación de alcance",
+        href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+      },
+      {
+        label: "Guía de revisión de estimados de la aseguradora",
+        href: "/resources/guides/general-claims/carrier-estimate-review-guide",
+      },
+      {
+        label: "¿Cómo auditan los contratistas estimados de seguros por alcance faltante?",
+        href: "/faq#faq-auditing-insurance-estimates-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "documenting-omitted-work-insurance-estimates",
+    category: "insurance_supplements",
+    question: "¿Cómo deben los contratistas documentar trabajo omitido en estimados de seguros?",
+    answer:
+      "Empaquete cada ítem de alcance omitido o incompleto con un resumen de la condición de campo, la brecha del estimado, referencias de evidencia, ID de área y la versión actual del estimado en una hoja de comparación de alcance. Mantenga etiquetas consistentes entre estimado, fotos y notas. Canalice solo brechas listas para suplemento mediante Envío de suplementos; reserve evidencia débil para recaptura de campo. Actualice la hoja dentro de 24 horas tras reinspección o un estimado revisado, y ejecute la Auditoría de expediente antes de empaquetar dólares materiales de alcance.",
+    relatedLinks: [
+      {
+        label: "Guía de auditoría de alcance para contratistas",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "Guía de envío de suplementos",
+        href: "/resources/guides/general-claims/supplement-submission-guide",
+      },
+      {
+        label: "Guía de auditoría de expediente de reclamación",
+        href: "/resources/guides/general-claims/claim-file-audit-guide",
+      },
+      {
+        label: "¿Cómo identifican los contratistas alcance faltante durante una auditoría?",
+        href: "/faq#faq-missing-scope-contractor-audit",
       },
     ],
   },

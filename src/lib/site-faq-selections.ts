@@ -514,6 +514,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "field-measurements-estimate-quantities",
       "estimate-quantities-contractor-review",
       "documenting-quantity-changes-insurance-estimates",
+      "scope-audit-for-contractors",
+      "auditing-insurance-estimates-for-contractors",
+      "missing-scope-contractor-audit",
+      "reviewing-insurance-estimate-scope",
+      "documenting-omitted-work-insurance-estimates",
     ],
   },
   guides: {
@@ -641,6 +646,11 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "field-measurements-estimate-quantities",
       "estimate-quantities-contractor-review",
       "documenting-quantity-changes-insurance-estimates",
+      "scope-audit-for-contractors",
+      "auditing-insurance-estimates-for-contractors",
+      "missing-scope-contractor-audit",
+      "reviewing-insurance-estimate-scope",
+      "documenting-omitted-work-insurance-estimates",
     ],
   },
   caseStudies: {

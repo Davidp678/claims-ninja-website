@@ -82,6 +82,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Guía operativa para validar cantidades de estimados de seguros frente a condiciones de campo: techado, interiores, agua, fuego y comercial; documentación de mediciones, fotografías y notas de campo; impactos de código; y listas de verificación de control de calidad para cantidades revisadas.",
   },
+  "general-claims/scope-audit-guide-for-contractors": {
+    title: "Guía de auditoría de alcance para contratistas",
+    excerpt:
+      "Guía operativa para auditar el alcance de estimados de seguros frente a condiciones de campo documentadas: trabajo faltante, demolición y reconstrucción incompletas, oficios omitidos, auditorías de techado, agua, fuego y moho, consideraciones comerciales, impactos de código, supuestos no respaldados y documentación que sustenta un alcance revisado.",
+  },
   "general-claims/op-qualification-guide": {
     title: "Estándar de documentación para calificación de O&P",
     excerpt:

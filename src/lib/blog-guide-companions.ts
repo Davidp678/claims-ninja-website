@@ -45,22 +45,22 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "most-overlooked-line-items-in-insurance-estimates": {
     intro:
-      "You've learned which line items get overlooked and how to document them. Now run the Insurance Estimate Review Playbook, the scope validation cornerstone, the Quantity Validation Guide, and the submission workflow that turn quantity and scope gap lists into reviewer-ready packages.",
+      "You've learned which line items get overlooked and how to document them. Now run the Insurance Estimate Review Playbook, the scope validation cornerstone, the Quantity Validation Guide, and the Scope Audit Guide so quantity and completeness gap lists become reviewer-ready packages.",
     guideSlugs: [
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
       "quantity-validation-guide-for-contractors",
-      "supplement-submission-guide",
+      "scope-audit-guide-for-contractors",
     ],
   },
   "five-red-flags-that-an-insurance-estimate-is-missing-scope": {
     intro:
-      "You've learned how to recognize missing-scope red flags on carrier estimates. Now run the Insurance Estimate Review Playbook, the Scope Validation Guide, the day-one carrier estimate review workflow, and Documentation Standards so every flag becomes a comparison worksheet with evidence — not unpaid production.",
+      "You've learned how to recognize missing-scope red flags on carrier estimates. Now run the Insurance Estimate Review Playbook, the Scope Validation Guide, the day-one carrier estimate review workflow, and the Scope Audit Guide so every flag becomes a comparison worksheet with evidence — not unpaid production.",
     guideSlugs: [
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
       "carrier-estimate-review-guide",
-      "documentation-standards-guide",
+      "scope-audit-guide-for-contractors",
     ],
   },
   "op-on-insurance-claims": {

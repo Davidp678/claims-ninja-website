@@ -40,6 +40,7 @@ export const QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS = defineGuide({
   relatedGuideSlugs: [
     "insurance-estimate-review-playbook-for-contractors",
     "insurance-estimate-review-scope-validation-guide",
+    "scope-audit-guide-for-contractors",
     "documentation-standards-guide",
     "carrier-estimate-review-guide",
     "commercial-insurance-supplement-playbook-for-contractors",
@@ -80,7 +81,7 @@ export const QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS = defineGuide({
   ],
   claimTypes: ["roofing", "water", "fire", "mold", "commercial", "large-loss"],
   purpose:
-    "This guide is the specialty authority for quantity validation inside the Estimate Review & Scope Validation cluster. The Insurance Estimate Review & Scope Validation Guide teaches estimate anatomy and what to validate across scope and quantity. The Insurance Estimate Review Playbook is the operational hub for the full receive-to-settlement workflow. This resource goes deep on how contractors evaluate, verify, and document quantity discrepancies in carrier insurance estimates — roofing squares, interior SF and counts, water and fire quantity review, commercial area indexing, measurement documentation, supporting photographs, field notes, and code-related quantity impacts. Use it when high-value quantities must reconcile to independent field measurements before production absorbs under-scoped work or before a quantity delta is marked supplement-ready. Pair it with Documentation Standards for evidence capture, Carrier Estimate Review for day-one intake sequencing, Claim File Audit and Supplement Submission for packaging, and the Commercial Insurance Supplement Playbook on multi-building files. Claims Ninja supports contractors with documentation standards, estimate review workflows, supplement packaging, and claim recovery operations — we are not a public adjuster, carrier representative, or legal counsel. This guide does not provide estimating software instruction, legal advice, policy interpretation, engineering opinions, or public-adjusting guidance.",
+    "This guide is the specialty authority for quantity validation inside the Estimate Review & Scope Validation cluster. The Insurance Estimate Review & Scope Validation Guide teaches estimate anatomy and what to validate across scope and quantity. The Insurance Estimate Review Playbook is the operational hub for the full receive-to-settlement workflow. The Scope Audit Guide focuses on completeness of work — missing trades, incomplete demolition and reconstruction, and omitted assemblies. This resource goes deep on how contractors evaluate, verify, and document quantity discrepancies in carrier insurance estimates — roofing squares, interior SF and counts, water and fire quantity review, commercial area indexing, measurement documentation, supporting photographs, field notes, and code-related quantity impacts. Use it when high-value quantities must reconcile to independent field measurements before production absorbs under-scoped work or before a quantity delta is marked supplement-ready. Pair it with the Scope Audit Guide when work is missing entirely, Documentation Standards for evidence capture, Carrier Estimate Review for day-one intake sequencing, Claim File Audit and Supplement Submission for packaging, and the Commercial Insurance Supplement Playbook on multi-building files. Claims Ninja supports contractors with documentation standards, estimate review workflows, supplement packaging, and claim recovery operations — we are not a public adjuster, carrier representative, or legal counsel. This guide does not provide estimating software instruction, legal advice, policy interpretation, engineering opinions, or public-adjusting guidance.",
   whenToUse: [
     {
       condition:
@@ -574,6 +575,12 @@ export const QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS = defineGuide({
   faq: [
     {
       question:
+        "How is this guide different from the Scope Audit Guide for Contractors?",
+      answer:
+        "Scope Audit focuses on completeness of work — missing trades, incomplete demolition and reconstruction, and omitted assemblies. This guide focuses on measurement accuracy — whether SF, squares, counts, and days match the field. Use both when a file has completeness and measurement issues.",
+    },
+    {
+      question:
         "How is this guide different from the Insurance Estimate Review & Scope Validation Guide?",
       answer:
         "The Scope Validation Guide is the cluster cornerstone for estimate anatomy, scope validation, and an overview of quantity checks. This guide is the specialty deep-dive on quantity validation — measurement workflows, peril-specific quantity review, documentation checklists, and QC gates for revised quantities.",
@@ -607,6 +614,10 @@ export const QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS = defineGuide({
     {
       label: "Insurance Estimate Review & Scope Validation Guide",
       href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+    },
+    {
+      label: "Scope Audit Guide for Contractors",
+      href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
     },
     {
       label: "Claim Documentation Standards",
