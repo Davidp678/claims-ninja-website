@@ -83,6 +83,10 @@ export type IntakeFileSummary = {
   contentType?: string;
   /** Masked correlation / support reference — never a secret. */
   scanReferenceId?: string;
+  /** Stable reject reason code from platform projection. */
+  rejectionReasonCode?: string;
+  /** Safe user-facing rejection explanation. */
+  rejectionMessage?: string;
 };
 
 export type IntakeSessionProjection = {

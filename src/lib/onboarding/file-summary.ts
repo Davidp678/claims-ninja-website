@@ -41,7 +41,30 @@ export function normalizeIntakeFileSummary(
         ? raw.scan_reference_id
         : undefined;
 
-  return { id, filename, sizeBytes, securityState, contentType, scanReferenceId };
+  const rejectionReasonCode =
+    typeof raw.rejectionReasonCode === "string"
+      ? raw.rejectionReasonCode
+      : typeof raw.rejection_reason_code === "string"
+        ? raw.rejection_reason_code
+        : undefined;
+
+  const rejectionMessage =
+    typeof raw.rejectionMessage === "string"
+      ? raw.rejectionMessage
+      : typeof raw.rejection_message === "string"
+        ? raw.rejection_message
+        : undefined;
+
+  return {
+    id,
+    filename,
+    sizeBytes,
+    securityState,
+    contentType,
+    scanReferenceId,
+    rejectionReasonCode,
+    rejectionMessage,
+  };
 }
 
 export function normalizeIntakeFileList(raw: unknown): IntakeFileSummary[] {

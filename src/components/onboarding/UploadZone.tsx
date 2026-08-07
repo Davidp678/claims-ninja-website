@@ -147,6 +147,7 @@ export function UploadZone({
             const scanning = isScanning(file.securityState);
             const ready = file.securityState === "ready";
             const scanProblem = isScanProblem(file.securityState);
+            const rejected = file.securityState === "rejected";
             const showRetryProgress = retryingId === file.id;
             return (
               <li
@@ -190,6 +191,21 @@ export function UploadZone({
                               {" "}
                               Reference:{" "}
                               <span className="font-mono text-amber-100/90">
+                                {file.scanReferenceId}
+                              </span>
+                            </>
+                          ) : null}
+                        </p>
+                      ) : null}
+                      {rejected ? (
+                        <p className="mt-1 text-xs text-rose-200/90">
+                          {file.rejectionMessage ??
+                            "This file was rejected. Please replace it with a supported PDF or photo."}
+                          {file.scanReferenceId ? (
+                            <>
+                              {" "}
+                              Reference:{" "}
+                              <span className="font-mono text-rose-100/90">
                                 {file.scanReferenceId}
                               </span>
                             </>
