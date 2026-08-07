@@ -46,3 +46,17 @@ test("terminal security states", () => {
   assert.equal(isTerminalSecurityState("preparing"), false);
   assert.equal(isTerminalSecurityState("scan_pending"), false);
 });
+
+test("normalizeIntakeFileSummary maps rejection reason fields", () => {
+  const summary = normalizeIntakeFileSummary({
+    id: "f3",
+    fileName: "Photo Report.pdf",
+    sizeBytes: 10,
+    securityState: "rejected",
+    rejectionReasonCode: "POLICY_BLOCKED",
+    rejectionMessage:
+      "This file doesn’t meet our upload security requirements.",
+  });
+  assert.equal(summary?.rejectionReasonCode, "POLICY_BLOCKED");
+  assert.match(summary?.rejectionMessage ?? "", /security requirements/);
+});

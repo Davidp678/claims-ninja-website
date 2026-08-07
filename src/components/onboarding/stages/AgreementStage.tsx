@@ -20,6 +20,7 @@ import {
   assertPlatformAgreementMatchesCanonical,
   type PlatformAgreementMeta,
 } from "@/lib/onboarding/agreement-canonical";
+import { formatLegalDisplayText } from "@/lib/onboarding/format-legal-display-text";
 
 type AgreementPackage = PlatformAgreementMeta & {
   documentId?: string;
@@ -266,8 +267,11 @@ export function AgreementStage() {
               }
             >
               <pre className="whitespace-pre-wrap font-sans">
-                {(activeDoc === "privacy" ? privacyText : termsText) ||
-                  "Loading document…"}
+                {/* Display-only formatting — acceptance still hashes canonical bytes. */}
+                {formatLegalDisplayText(
+                  (activeDoc === "privacy" ? privacyText : termsText) ||
+                    "Loading document…",
+                )}
               </pre>
             </div>
             <p className="mt-3 text-xs text-zinc-500">
