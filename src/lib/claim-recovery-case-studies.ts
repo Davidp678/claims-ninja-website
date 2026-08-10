@@ -154,6 +154,7 @@ export const CLAIM_RECOVERY_CASE_STUDIES: readonly ClaimRecoveryCaseStudy[] = [
       },
     ],
     relatedBlogSlugs: [
+      "why-carrier-estimates-miss-required-trades",
       "fire-damage-supplement-playbook-for-contractors",
       "smoke-and-soot-damage-documentation-guide",
       "how-to-choose-insurance-supplementing-partner",

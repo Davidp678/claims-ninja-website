@@ -6310,12 +6310,12 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
       },
       {
-        label: "Por qué los estimados de la aseguradora omiten renglones",
-        href: "/resources/blog/why-carrier-estimates-miss-line-items",
+        label: "Por qué los estimados de la aseguradora omiten oficios requeridos",
+        href: "/resources/blog/why-carrier-estimates-miss-required-trades",
       },
       {
-        label: "¿Cuáles son las mejores prácticas de revisión de estimados para contratistas?",
-        href: "/faq#faq-estimate-review-best-practices",
+        label: "Por qué los estimados de la aseguradora omiten renglones",
+        href: "/resources/blog/why-carrier-estimates-miss-line-items",
       },
     ],
   },
@@ -7160,12 +7160,12 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
       },
       {
-        label: "¿Cómo deben los contratistas documentar trabajo omitido en estimados de seguros?",
-        href: "/faq#faq-documenting-omitted-work-insurance-estimates",
+        label: "¿Cómo puede la secuencia de oficios revelar alcance faltante en el estimado?",
+        href: "/faq#faq-trade-sequencing-reveals-missing-scope",
       },
       {
-        label: "¿Por qué los renglones faltantes siguen sin respaldo después de una auditoría de alcance?",
-        href: "/faq#faq-why-missing-line-items-remain-unsupported",
+        label: "Por qué los estimados de la aseguradora omiten oficios requeridos",
+        href: "/resources/blog/why-carrier-estimates-miss-required-trades",
       },
     ],
   },
@@ -7192,6 +7192,58 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "¿Cómo deben los contratistas documentar trabajo omitido en estimados de seguros?",
         href: "/faq#faq-documenting-omitted-work-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "why-estimate-includes-repairs-omits-required-trade",
+    category: "insurance_supplements",
+    question:
+      "¿Por qué un estimado de seguro incluiría reparaciones pero omitiría un oficio requerido?",
+    answer:
+      "Un estimado puede incluir la reparación principal y omitir un oficio requerido cuando las operaciones de apoyo — acceso, desmontar/reponer, mano de obra especializada, reconstrucción o acabados — se separan del componente dañado obvio en supuestos de primera pasada, inspecciones limitadas o documentación incompleta. El expediente parece desarrollado porque la reparación principal está presente, pero la secuencia de oficios y las condiciones de campo aún requieren trabajo que nunca aparece. Compare el estimado con las condiciones documentadas como secuencia de construcción, mantenga una lista escrita de brechas de oficios y encamine las omisiones identificadas a la auditoría de alcance y a la documentación de renglones faltantes antes de comprometer la producción.",
+    relatedLinks: [
+      {
+        label: "Por qué los estimados de la aseguradora omiten oficios requeridos",
+        href: "/resources/blog/why-carrier-estimates-miss-required-trades",
+      },
+      {
+        label: "Guía de documentación de renglones faltantes para contratistas",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
+      {
+        label: "Guía de auditoría de alcance para contratistas",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "¿Cómo puede la secuencia de oficios revelar alcance faltante en el estimado?",
+        href: "/faq#faq-trade-sequencing-reveals-missing-scope",
+      },
+    ],
+  },
+  {
+    id: "trade-sequencing-reveals-missing-scope",
+    category: "insurance_supplements",
+    question:
+      "¿Cómo puede la secuencia de oficios revelar alcance faltante en el estimado?",
+    answer:
+      "La secuencia de oficios revela alcance faltante cuando los contratistas recorren el estimado en orden de construcción — demolición, acceso, oficio especializado, reconstrucción, acabados — en lugar de solo leer renglones valorizados. Los oficios predecesores o sucesores requeridos por las condiciones de campo documentadas se vuelven visibles cuando existe un renglón de reparación sin las fases de acceso, especialidad o reconstrucción que hacen posible la producción. Marque las brechas de fase en una lista de verificación con IDs de área y luego documente la secuencia omitida con la Guía de documentación de renglones faltantes después de identificar las brechas.",
+    relatedLinks: [
+      {
+        label: "Por qué los estimados de la aseguradora omiten oficios requeridos",
+        href: "/resources/blog/why-carrier-estimates-miss-required-trades",
+      },
+      {
+        label: "¿Cómo deben los contratistas documentar la secuencia de oficios para trabajo omitido?",
+        href: "/faq#faq-documenting-trade-sequencing-omitted-work",
+      },
+      {
+        label: "Guía de auditoría de alcance para contratistas",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "Guía de documentación de renglones faltantes para contratistas",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
       },
     ],
   },

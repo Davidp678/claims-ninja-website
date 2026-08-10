@@ -63,6 +63,7 @@ export const SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS = defineGuide({
     "large-loss-commercial-insurance-claims-guide",
   ],
   relatedBlogSlugs: [
+    "why-carrier-estimates-miss-required-trades",
     "most-overlooked-line-items-in-insurance-estimates",
     "five-red-flags-that-an-insurance-estimate-is-missing-scope",
     "why-carrier-estimates-miss-line-items",

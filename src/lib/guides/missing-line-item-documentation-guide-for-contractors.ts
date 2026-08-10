@@ -64,6 +64,7 @@ export const MISSING_LINE_ITEM_DOCUMENTATION_GUIDE_FOR_CONTRACTORS = defineGuide
     "large-loss-commercial-insurance-claims-guide",
   ],
   relatedBlogSlugs: [
+    "why-carrier-estimates-miss-required-trades",
     "most-overlooked-line-items-in-insurance-estimates",
     "five-red-flags-that-an-insurance-estimate-is-missing-scope",
     "how-contractors-find-quantity-errors-in-insurance-estimates",

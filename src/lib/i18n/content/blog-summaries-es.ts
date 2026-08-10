@@ -71,6 +71,11 @@ export const BLOG_SUMMARIES_ES: Record<string, BlogSummary> = {
     excerpt:
       "Cómo los contratistas encuentran errores de cantidad en estimados de seguros: por qué las cantidades no coinciden con las condiciones de campo, cómo comparar mediciones y documentación con los renglones de la aseguradora, dónde aparecen las discrepancias y cuándo las diferencias de cantidad justifican una revisión estructurada.",
   },
+  "why-carrier-estimates-miss-required-trades": {
+    title: "Por qué los estimados de la aseguradora omiten oficios requeridos",
+    excerpt:
+      "Por qué los estimados de la aseguradora omiten oficios requeridos: cómo un estimado de seguro puede incluir reparaciones principales y aun así omitir oficios de apoyo, secuencia, acceso y trabajo de desmontar/reponer — y cómo los contratistas reconocen brechas de alcance a nivel de oficio antes de comprometer la producción.",
+  },
 };
 
 export function getBlogSummaryEs(

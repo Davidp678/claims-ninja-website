@@ -4062,7 +4062,7 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     relatedFaqIds: [
       "documenting-omitted-work-insurance-estimates",
       "why-missing-line-items-remain-unsupported",
-      "reviewing-insurance-estimate-scope",
+      "trade-sequencing-reveals-missing-scope",
       "documentation-supporting-missing-scope",
     ],
     internalLinkNotes:
@@ -4084,6 +4084,40 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     ],
     internalLinkNotes:
       "Why identified missing line items stay unsupported; QC companion to Missing Line Item Documentation Guide.",
+  },
+  "why-estimate-includes-repairs-omits-required-trade": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/missing-line-item-documentation-guide-for-contractors",
+      "general-claims/scope-audit-guide-for-contractors",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+    ],
+    relatedFaqIds: [
+      "trade-sequencing-reveals-missing-scope",
+      "missing-scope-insurance-estimates",
+      "identifying-estimate-omissions",
+      "documenting-omitted-work-insurance-estimates",
+      "missing-line-items-insurance-estimates",
+    ],
+    internalLinkNotes:
+      "Why primary repairs can appear while required trades are omitted; anchors Why Carrier Estimates Miss Required Trades blog.",
+  },
+  "trade-sequencing-reveals-missing-scope": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/scope-audit-guide-for-contractors",
+      "general-claims/missing-line-item-documentation-guide-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+    ],
+    relatedFaqIds: [
+      "why-estimate-includes-repairs-omits-required-trade",
+      "documenting-trade-sequencing-omitted-work",
+      "identifying-estimate-omissions",
+      "missing-scope-insurance-estimates",
+    ],
+    internalLinkNotes:
+      "How construction-order review reveals missing trades; diagnostic companion to Why Carrier Estimates Miss Required Trades blog.",
   },
 };
 

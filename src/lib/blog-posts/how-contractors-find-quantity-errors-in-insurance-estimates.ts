@@ -28,6 +28,7 @@ export const howContractorsFindQuantityErrorsInInsuranceEstimates: BlogPost = {
     "Find quantity errors in insurance estimates: compare field measurements and documentation to carrier quantities, spot common discrepancy areas, and route findings into contractor quantity validation.",
   relatedPostSlugs: [
     "five-red-flags-that-an-insurance-estimate-is-missing-scope",
+    "why-carrier-estimates-miss-required-trades",
     "most-overlooked-line-items-in-insurance-estimates",
     "why-carrier-estimates-miss-line-items",
     "first-48-hours-after-carrier-estimate",

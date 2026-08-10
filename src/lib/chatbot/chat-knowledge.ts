@@ -3301,6 +3301,37 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["supplements", "documentation"],
   },
+  "why-estimate-includes-repairs-omits-required-trade": {
+    phrases: [
+      "why would an insurance estimate include repairs but leave out a required trade",
+      "estimate includes repairs but missing trade",
+      "insurance estimate left out a required trade",
+      "carrier estimate missing required trade",
+      "why is a required trade missing from the estimate",
+    ],
+    keywords: [
+      "required trade omitted",
+      "repairs without required trade",
+      "missing required trade",
+      "supporting trade omitted",
+    ],
+    topics: ["supplements", "documentation", "xactimate"],
+  },
+  "trade-sequencing-reveals-missing-scope": {
+    phrases: [
+      "how can trade sequencing reveal missing estimate scope",
+      "trade sequencing reveal missing scope",
+      "construction sequence missing estimate scope",
+      "how trade sequencing shows missing trades",
+    ],
+    keywords: [
+      "trade sequencing reveals",
+      "construction order review",
+      "phase gap",
+      "predecessor trade missing",
+    ],
+    topics: ["supplements", "documentation"],
+  },
   "why-missing-line-items-remain-unsupported": {
     phrases: [
       "why do missing line items remain unsupported after a scope audit",

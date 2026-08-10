@@ -49,11 +49,13 @@ import { fiveRedFlagsThatAnInsuranceEstimateIsMissingScope } from "./five-red-fl
 import { howContractorsFindQuantityErrorsInInsuranceEstimates } from "./how-contractors-find-quantity-errors-in-insurance-estimates";
 import { mostOverlookedLineItemsInInsuranceEstimates } from "./most-overlooked-line-items-in-insurance-estimates";
 import { whyCarrierEstimatesMissLineItems } from "./why-carrier-estimates-miss-line-items";
+import { whyCarrierEstimatesMissRequiredTrades } from "./why-carrier-estimates-miss-required-trades";
 import { xactimateEstimateReviewChecklistContractors } from "./xactimate-estimate-review-checklist-contractors";
 import { xactimateVsMarketPricing } from "./xactimate-vs-market-pricing";
 
 export const BLOG_POSTS: readonly BlogPost[] = [
   INSURANCE_SUPPLEMENTING_PILLAR,
+  whyCarrierEstimatesMissRequiredTrades,
   howContractorsFindQuantityErrorsInInsuranceEstimates,
   fiveRedFlagsThatAnInsuranceEstimateIsMissingScope,
   mostOverlookedLineItemsInInsuranceEstimates,

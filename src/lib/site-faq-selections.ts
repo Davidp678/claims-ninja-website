@@ -530,6 +530,8 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "documenting-detach-reset-missing-line-items",
       "documenting-trade-sequencing-omitted-work",
       "why-missing-line-items-remain-unsupported",
+      "why-estimate-includes-repairs-omits-required-trade",
+      "trade-sequencing-reveals-missing-scope",
     ],
   },
   guides: {
@@ -668,6 +670,8 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "documenting-detach-reset-missing-line-items",
       "documenting-trade-sequencing-omitted-work",
       "why-missing-line-items-remain-unsupported",
+      "why-estimate-includes-repairs-omits-required-trade",
+      "trade-sequencing-reveals-missing-scope",
     ],
   },
   caseStudies: {

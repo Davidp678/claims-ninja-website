@@ -69,6 +69,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Cinco señales de alerta de que un estimado de seguro tiene alcance faltante",
   "how-contractors-find-quantity-errors-in-insurance-estimates":
     "Cómo los contratistas encuentran errores de cantidad en estimados de seguros",
+  "why-carrier-estimates-miss-required-trades":
+    "Por qué los estimados de la aseguradora omiten oficios requeridos",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

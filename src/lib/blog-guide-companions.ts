@@ -33,6 +33,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "You've learned how supplementing works strategically. Now follow the submission workflow that packages evidence adjusters can approve on first review.",
     guideSlugs: ["supplement-submission-guide"],
   },
+  "why-carrier-estimates-miss-required-trades": {
+    intro:
+      "You've learned why required trades and trade-dependent work can be absent from an otherwise developed carrier estimate. Now use the Missing Line Item Documentation Guide to package omitted trades, the Scope Audit Guide for completeness, the Insurance Estimate Review Playbook for day-to-day execution, and the Scope Validation Guide for what to validate — so trade gaps become reviewer-ready exhibits before production commits.",
+    guideSlugs: [
+      "missing-line-item-documentation-guide-for-contractors",
+      "scope-audit-guide-for-contractors",
+      "insurance-estimate-review-playbook-for-contractors",
+      "insurance-estimate-review-scope-validation-guide",
+    ],
+  },
   "why-carrier-estimates-miss-line-items": {
     intro:
       "You've learned why carrier estimates miss scope. Now use the Insurance Estimate Review Playbook, the scope validation cornerstone, the day-one carrier estimate review workflow, and the Missing Line Item Documentation Guide so identified omissions become reviewer-ready exhibit packages before production commits to under-scoped work.",

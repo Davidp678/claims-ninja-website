@@ -3642,6 +3642,73 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
       ),
   },
   {
+    label: "missing required trades blog retrieves",
+    message: "carrier estimate missing required trades",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /why-carrier-estimates-miss-required-trades|Why Carrier Estimates Miss Required Trades|required trades and trade-dependent work/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "insurance estimate left out a trade retrieves missing trades blog",
+    message: "insurance estimate left out a trade",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /why-carrier-estimates-miss-required-trades|Why Carrier Estimates Miss Required Trades|required trade/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "reconstruction work missing from estimate retrieves missing trades blog",
+    message: "why is reconstruction work missing from estimate",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /why-carrier-estimates-miss-required-trades|Why Carrier Estimates Miss Required Trades|reconstruction/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "trade sequencing missing scope retrieves missing trades blog",
+    message: "trade sequencing missing scope",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /why-carrier-estimates-miss-required-trades|Why Carrier Estimates Miss Required Trades|trade sequencing|Trade Sequencing Exposes/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "why estimate omits required trade FAQ retrieves",
+    message:
+      "why would an insurance estimate include repairs but leave out a required trade",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /why-estimate-includes-repairs-omits-required-trade|why-carrier-estimates-miss-required-trades|include the primary repair while omitting a required trade/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "trade sequencing reveals missing scope FAQ retrieves",
+    message: "how can trade sequencing reveal missing estimate scope",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /trade-sequencing-reveals-missing-scope|Trade sequencing reveals missing scope|why-carrier-estimates-miss-required-trades/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
     label: "carrier estimate anatomy contractors FAQ retrieves",
     message: "what is the anatomy of a carrier insurance estimate",
     assert: (result) =>

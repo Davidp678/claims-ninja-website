@@ -6323,12 +6323,12 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
       },
       {
-        label: "Why carrier estimates miss line items",
-        href: "/resources/blog/why-carrier-estimates-miss-line-items",
+        label: "Why Carrier Estimates Miss Required Trades",
+        href: "/resources/blog/why-carrier-estimates-miss-required-trades",
       },
       {
-        label: "What are estimate review best practices for contractors?",
-        href: "/faq#faq-estimate-review-best-practices",
+        label: "Why carrier estimates miss line items",
+        href: "/resources/blog/why-carrier-estimates-miss-line-items",
       },
     ],
   },
@@ -7163,12 +7163,12 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
       },
       {
-        label: "How should contractors document omitted work on insurance estimates?",
-        href: "/faq#faq-documenting-omitted-work-insurance-estimates",
+        label: "How can trade sequencing reveal missing estimate scope?",
+        href: "/faq#faq-trade-sequencing-reveals-missing-scope",
       },
       {
-        label: "Why do missing line items remain unsupported after a scope audit?",
-        href: "/faq#faq-why-missing-line-items-remain-unsupported",
+        label: "Why Carrier Estimates Miss Required Trades",
+        href: "/resources/blog/why-carrier-estimates-miss-required-trades",
       },
     ],
   },
@@ -7195,6 +7195,57 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "How should contractors document omitted work on insurance estimates?",
         href: "/faq#faq-documenting-omitted-work-insurance-estimates",
+      },
+    ],
+  },
+  {
+    id: "why-estimate-includes-repairs-omits-required-trade",
+    category: "insurance_supplements",
+    question:
+      "Why would an insurance estimate include repairs but leave out a required trade?",
+    answer:
+      "An estimate can include the primary repair while omitting a required trade when supporting operations — access, detach/reset, specialty labor, reconstruction, or finish work — are separated from the obvious damaged component in first-pass assumptions, limited inspections, or incomplete documentation. The file looks developed because the primary repair is present, yet trade sequencing and field conditions still require work that never appears. Compare the estimate to documented conditions as a construction sequence, keep a written trade gap list, and route identified omissions into scope audit and missing-line-item documentation before production commits.",
+    relatedLinks: [
+      {
+        label: "Why Carrier Estimates Miss Required Trades",
+        href: "/resources/blog/why-carrier-estimates-miss-required-trades",
+      },
+      {
+        label: "Missing Line Item Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
+      {
+        label: "Scope Audit Guide for Contractors",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "How can trade sequencing reveal missing estimate scope?",
+        href: "/faq#faq-trade-sequencing-reveals-missing-scope",
+      },
+    ],
+  },
+  {
+    id: "trade-sequencing-reveals-missing-scope",
+    category: "insurance_supplements",
+    question: "How can trade sequencing reveal missing estimate scope?",
+    answer:
+      "Trade sequencing reveals missing scope when contractors walk the estimate in construction order — demolition, access, specialty trade, reconstruction, finish work — instead of only reading priced lines. Predecessor or successor trades required by documented field conditions become visible when a repair line exists without the access, specialty, or rebuild phases that make production possible. Mark phase gaps on a checklist with area IDs, then document omitted sequencing with the Missing Line Item Documentation Guide after the gaps are identified.",
+    relatedLinks: [
+      {
+        label: "Why Carrier Estimates Miss Required Trades",
+        href: "/resources/blog/why-carrier-estimates-miss-required-trades",
+      },
+      {
+        label: "How should contractors document trade sequencing for omitted work?",
+        href: "/faq#faq-documenting-trade-sequencing-omitted-work",
+      },
+      {
+        label: "Scope Audit Guide for Contractors",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "Missing Line Item Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
       },
     ],
   },
