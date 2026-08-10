@@ -46,7 +46,7 @@ export async function GET() {
             : "BILLING_PROFILE_INCOMPLETE",
           authorization: {
             acceptanceLanguage:
-              "I understand Claims Ninja will collect my payment method securely through QuickBooks before payment is processed, and that payment is handled only according to my agreement and approved invoice workflow.",
+              "I authorize Claims Ninja to securely collect and store my payment method with QuickBooks Payments for invoices under my Consulting Agreement. Claims Ninja does not store my full card or bank account numbers. Completing onboarding does not charge me. Charges occur only for amounts authorized under my agreement and after I approve an invoice (or as otherwise authorized in that agreement), and are processed through QuickBooks.",
             accepted: false,
             legalApprovalPending: false,
           },

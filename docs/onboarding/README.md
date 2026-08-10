@@ -16,7 +16,7 @@ Verified journey order in code: `claim → company → agreement → billing →
 | `/onboarding/claim` | Claim draft |
 | `/onboarding/company` | Company / contractor |
 | `/onboarding/agreement` | Native clickwrap (Terms `2026-06-10` + Privacy `counsel-approved-2026-07-24`) |
-| `/onboarding/billing` | Billing profile + disclosure acknowledgement (QuickBooks ops handoff) |
+| `/onboarding/billing` | Billing profile + disclosure; ops handoff by default, or QuickBooks Payments vault when capture enabled |
 | `/onboarding/account` | Password |
 | `/onboarding/verify` | Email OTP |
 | `/onboarding/activated` | Workspace ready + handoff |
@@ -69,15 +69,21 @@ No signed storage URLs are returned to the browser.
 
 ## Billing / QuickBooks boundary
 
-`EXTERNAL_INTAKE_PAYMENT_CAPTURE_ENABLED` defaults **off**. QuickBooks is the billing/payment processor.
+`EXTERNAL_INTAKE_PAYMENT_CAPTURE_ENABLED` defaults **off**. QuickBooks is the billing/payment processor and financial source of truth.
 
 When capture is off (default):
 
 - Complete billing profile (contact, AP, address) autosave is required
-- Card/bank fields are **not** collected; UI shows honest “Payment method on file” recovery copy (no saved method)
-- “How billing works” disclosure + durable acknowledgement required before continue
-- Continue uses `quickbooks_ops_handoff` after complete profile + acknowledgement (no payment method collected)
-- Secure payment-method setup is completed later with billing team through QuickBooks before invoice payment
+- Card/bank fields are **not** collected; UI shows honest “Payment method on file” recovery copy
+- Disclosure + durable acknowledgement required before continue
+- Continue uses `quickbooks_ops_handoff`
+
+When capture is on (Preview/sandbox first):
+
+- Browser tokenizes card data directly with Intuit Payments Tokens API
+- Opaque token only is POSTed to `/api/onboarding/billing/instruments`
+- Platform vaults QBO Customer + Payments card-on-file; continue requires `vaulted`
+- No onboarding charge; invoice charges remain separately gated on the platform
 - `POST /api/onboarding/billing/instruments` with raw PAN/CVV remains rejected
 - Optional Preview synthetic instruments are Preview-only QA and are not QuickBooks transactions
 
