@@ -45,6 +45,7 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     "insurance-estimate-review-scope-validation-guide",
     "quantity-validation-guide-for-contractors",
     "scope-audit-guide-for-contractors",
+    "missing-line-item-documentation-guide-for-contractors",
     "carrier-estimate-review-guide",
     "commercial-insurance-supplement-playbook-for-contractors",
     "commercial-insurance-claims-documentation-guide",
@@ -90,7 +91,7 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
   ],
   claimTypes: ["roofing", "water", "fire", "mold", "commercial", "large-loss"],
   purpose:
-    "This playbook is the operational capstone of the Estimate Review & Scope Validation authority cluster. The Insurance Estimate Review & Scope Validation Guide teaches concepts — estimate anatomy, what to validate, and why gaps appear. This playbook walks contractors through the complete operational workflow used to review insurance estimates, validate scope, organize documentation, prepare supplements, support reinspections, and improve claim outcomes. Use it as the day-to-day execution standard for restoration contractors, roofing contractors, water mitigation contractors, fire restoration contractors, mold remediation contractors, and commercial contractors. Pair it with the Carrier Estimate Review Workflow for day-one intake sequencing, Documentation Standards for evidence capture, Supplement Submission for packaging, and the Commercial Insurance Supplement Playbook when the file is commercial or multi-building. Claims Ninja supports contractors with documentation standards, estimate review workflows, supplement packaging, and claim recovery operations — we are not a public adjuster, carrier representative, or legal counsel. This playbook does not provide legal advice, policy interpretation, engineering opinions, or public-adjusting guidance.",
+    "This playbook is the operational capstone of the Estimate Review & Scope Validation authority cluster. The Insurance Estimate Review & Scope Validation Guide teaches concepts — estimate anatomy, what to validate, and why gaps appear. This playbook walks contractors through the complete operational workflow used to review insurance estimates, validate scope, organize documentation, prepare supplements, support reinspections, and improve claim outcomes. Use it as the day-to-day execution standard for restoration contractors, roofing contractors, water mitigation contractors, fire restoration contractors, mold remediation contractors, and commercial contractors. Pair it with the Carrier Estimate Review Workflow for day-one intake sequencing, Documentation Standards for evidence capture, the Scope Audit Guide and Missing Line Item Documentation Guide when omitted work must be identified and supported with exhibits, Supplement Submission for packaging, and the Commercial Insurance Supplement Playbook when the file is commercial or multi-building. Claims Ninja supports contractors with documentation standards, estimate review workflows, supplement packaging, and claim recovery operations — we are not a public adjuster, carrier representative, or legal counsel. This playbook does not provide legal advice, policy interpretation, engineering opinions, or public-adjusting guidance.",
   whenToUse: [
     {
       condition: "Carrier estimate received and must be reviewed before production commits",
@@ -764,6 +765,10 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     {
       label: "Scope Audit Guide for Contractors",
       href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+    },
+    {
+      label: "Missing Line Item Documentation Guide for Contractors",
+      href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
     },
     {
       label: "Carrier Estimate Review Workflow",

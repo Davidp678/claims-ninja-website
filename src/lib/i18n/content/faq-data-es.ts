@@ -6768,8 +6768,12 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     category: "documentation",
     question: "¿Qué documentación respalda hallazgos de alcance faltante?",
     answer:
-      "Los hallazgos de alcance faltante se respaldan con fotos fechadas y etiquetadas de áreas omitidas, hojas de medición o cantidades que muestran diferencias, registros de secado y mapas de humedad, prueba de colocación de equipos, registros de contenidos o detach/reset, listas de verificación de fases para coordinación de oficios, y un índice de anexos de portada que mapea cada evidencia a la brecha del estimado. Capture evidencia durante el trabajo con IDs consistentes de habitación y elevación para que los revisores de escritorio puedan aprobar sin reconstruir el expediente de memoria.",
+      "Los hallazgos de alcance faltante se respaldan con fotos fechadas y etiquetadas de áreas omitidas, hojas de medición o cantidades que muestran diferencias, registros de secado y mapas de humedad, prueba de colocación de equipos, registros de contenidos o detach/reset, listas de verificación de fases para coordinación de oficios, y un índice de anexos de portada que mapea cada evidencia a la brecha del estimado. Capture evidencia durante el trabajo con IDs consistentes de habitación y elevación para que los revisores de escritorio puedan aprobar sin reconstruir el expediente de memoria. Para mapear anexos después de una auditoría de alcance, use la Guía de documentación de renglones faltantes.",
     relatedLinks: [
+      {
+        label: "Guía de documentación de renglones faltantes para contratistas",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
       {
         label: "Cinco señales de alerta de que un estimado de seguro tiene alcance faltante",
         href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
@@ -6777,10 +6781,6 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de estándares de documentación",
         href: "/resources/guides/general-claims/documentation-standards-guide",
-      },
-      {
-        label: "Guía de auditoría de expediente de reclamación",
-        href: "/resources/guides/general-claims/claim-file-audit-guide",
       },
       {
         label: "¿Qué documentación respalda los suplementos de estimados de seguros?",
@@ -7096,8 +7096,12 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     category: "insurance_supplements",
     question: "¿Cómo deben los contratistas documentar trabajo omitido en estimados de seguros?",
     answer:
-      "Empaquete cada ítem de alcance omitido o incompleto con un resumen de la condición de campo, la brecha del estimado, referencias de evidencia, ID de área y la versión actual del estimado en una hoja de comparación de alcance. Mantenga etiquetas consistentes entre estimado, fotos y notas. Canalice solo brechas listas para suplemento mediante Envío de suplementos; reserve evidencia débil para recaptura de campo. Actualice la hoja dentro de 24 horas tras reinspección o un estimado revisado, y ejecute la Auditoría de expediente antes de empaquetar dólares materiales de alcance.",
+      "Empaquete cada ítem de alcance omitido o incompleto con un resumen de la condición de campo, la brecha del estimado, referencias de evidencia, ID de área y la versión actual del estimado en una hoja de comparación de alcance y un índice de anexos. Mantenga etiquetas consistentes entre estimado, fotos y notas. Canalice solo brechas listas para suplemento mediante Envío de suplementos; reserve evidencia débil para recaptura de campo. Actualice la hoja dentro de 24 horas tras reinspección o un estimado revisado, y ejecute la Auditoría de expediente antes de empaquetar dólares materiales de alcance. Use la Guía de documentación de renglones faltantes para mapear anexos después de que una auditoría de alcance identifique las brechas.",
     relatedLinks: [
+      {
+        label: "Guía de documentación de renglones faltantes para contratistas",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
       {
         label: "Guía de auditoría de alcance para contratistas",
         href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
@@ -7107,12 +7111,87 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/supplement-submission-guide",
       },
       {
+        label: "¿Qué documentación respalda hallazgos de alcance faltante?",
+        href: "/faq#faq-documentation-supporting-missing-scope",
+      },
+    ],
+  },
+  // Missing line item documentation FAQs (guide companions)
+  {
+    id: "documenting-detach-reset-missing-line-items",
+    category: "insurance_supplements",
+    question:
+      "¿Cómo deben los contratistas documentar ítems de detach/reset faltantes en un estimado de seguros?",
+    answer:
+      "Inventarie los ítems que deben desmontarse y reinstalarse para realizar las reparaciones — accesorios, gabinetes, equipos o contenidos en la ruta de trabajo. Fotografíe los ítems en su lugar antes del desmontaje, documente el almacenamiento protegido cuando corresponda y fotografíe el área de reparación que requirió la remoción. Mantenga un registro de detach/reset con descripción del ítem, ID de área, fecha, motivo de la remoción y referencias fotográficas, y luego mapee cada fila del registro a la brecha del estimado en un índice de anexos. La claridad a nivel de ítem supera una sola foto general de una habitación desordenada.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de renglones faltantes para contratistas",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
+      {
+        label: "Los renglones más pasados por alto en los estimados de seguros",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "¿Cómo deben los contratistas documentar trabajo omitido en estimados de seguros?",
+        href: "/faq#faq-documenting-omitted-work-insurance-estimates",
+      },
+      {
+        label: "¿Qué documentación respalda hallazgos de alcance faltante?",
+        href: "/faq#faq-documentation-supporting-missing-scope",
+      },
+    ],
+  },
+  {
+    id: "documenting-trade-sequencing-omitted-work",
+    category: "insurance_supplements",
+    question:
+      "¿Cómo deben los contratistas documentar la secuencia de oficios para trabajo omitido en estimados de seguros?",
+    answer:
+      "Elabore una lista de verificación de fases desde la protección hasta la demolición, el secado o limpieza, la reparación de sustratos y los acabados — y marque qué fases omite el estimado. Fotografíe la evidencia del trabajo predecesor requerido que falta y use reportes diarios fechados para mostrar el orden cronológico por ID de área. Para agua, fuego y moho, adjunte registros especializados que prueben las dependencias de secuencia. Empaquete las omisiones de secuencia como brechas de fase con referencias de anexos, no como una disputa narrativa sin fechas ni etiquetas.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de renglones faltantes para contratistas",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
+      {
+        label: "Guía de auditoría de alcance para contratistas",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "¿Cómo deben los contratistas documentar trabajo omitido en estimados de seguros?",
+        href: "/faq#faq-documenting-omitted-work-insurance-estimates",
+      },
+      {
+        label: "¿Por qué los renglones faltantes siguen sin respaldo después de una auditoría de alcance?",
+        href: "/faq#faq-why-missing-line-items-remain-unsupported",
+      },
+    ],
+  },
+  {
+    id: "why-missing-line-items-remain-unsupported",
+    category: "insurance_supplements",
+    question:
+      "¿Por qué los renglones faltantes siguen sin respaldo después de una auditoría de alcance?",
+    answer:
+      "Las brechas siguen sin respaldo cuando se identifican pero nunca se fotografían antes de cubrirlas; cuando las fotos carecen de etiquetas de área o del mapeo a la brecha del estimado; cuando las notas se reconstruyen días después; cuando detach/reset, la secuencia o la protección se tratan como obvios y quedan sin anexos a nivel de ítem; cuando se mezclan versiones del estimado; o cuando las omisiones comerciales carecen de IDs de ubicación. Una brecha en una hoja de comparación no está lista para suplemento hasta que los anexos etiquetados y un índice de anexos se reconcilien con la versión actual del estimado.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de renglones faltantes para contratistas",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
+      {
+        label: "¿Qué documentación respalda hallazgos de alcance faltante?",
+        href: "/faq#faq-documentation-supporting-missing-scope",
+      },
+      {
         label: "Guía de auditoría de expediente de reclamación",
         href: "/resources/guides/general-claims/claim-file-audit-guide",
       },
       {
-        label: "¿Cómo identifican los contratistas alcance faltante durante una auditoría?",
-        href: "/faq#faq-missing-scope-contractor-audit",
+        label: "¿Cómo deben los contratistas documentar trabajo omitido en estimados de seguros?",
+        href: "/faq#faq-documenting-omitted-work-insurance-estimates",
       },
     ],
   },

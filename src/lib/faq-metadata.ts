@@ -3806,19 +3806,20 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "documentation-supporting-missing-scope": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
+      "general-claims/missing-line-item-documentation-guide-for-contractors",
       "general-claims/documentation-standards-guide",
       "general-claims/claim-file-audit-guide",
       "general-claims/insurance-estimate-review-scope-validation-guide",
-      "general-claims/insurance-estimate-review-playbook-for-contractors",
     ],
     relatedFaqIds: [
+      "documenting-omitted-work-insurance-estimates",
       "missing-scope-insurance-estimates",
       "estimate-red-flags-missing-scope",
       "documentation-supporting-supplements",
-      "estimate-documentation-requirements",
+      "why-missing-line-items-remain-unsupported",
     ],
     internalLinkNotes:
-      "Documentation that supports missing-scope findings; pairs with red-flags blog.",
+      "Documentation that supports missing-scope findings; anchors Missing Line Item Documentation Guide and pairs with red-flags blog.",
   },
   "quantity-validation-for-contractors": {
     searchIntent: "documentation-standard",
@@ -4020,19 +4021,69 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
   "documenting-omitted-work-insurance-estimates": {
     searchIntent: "documentation-standard",
     relatedGuideSlugs: [
+      "general-claims/missing-line-item-documentation-guide-for-contractors",
       "general-claims/scope-audit-guide-for-contractors",
       "general-claims/supplement-submission-guide",
       "general-claims/claim-file-audit-guide",
+    ],
+    relatedFaqIds: [
+      "documentation-supporting-missing-scope",
+      "documenting-detach-reset-missing-line-items",
+      "documenting-trade-sequencing-omitted-work",
+      "why-missing-line-items-remain-unsupported",
+      "missing-scope-contractor-audit",
+    ],
+    internalLinkNotes:
+      "Documenting omitted work for supplement packaging; anchors Missing Line Item Documentation Guide after Scope Audit identification.",
+  },
+  "documenting-detach-reset-missing-line-items": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/missing-line-item-documentation-guide-for-contractors",
+      "general-claims/documentation-standards-guide",
+      "general-claims/scope-audit-guide-for-contractors",
+    ],
+    relatedFaqIds: [
+      "documenting-omitted-work-insurance-estimates",
+      "documentation-supporting-missing-scope",
+      "overlooked-insurance-estimate-items",
+      "why-missing-line-items-remain-unsupported",
+    ],
+    internalLinkNotes:
+      "Detach/reset documentation for missing line items; specialty companion to Missing Line Item Documentation Guide.",
+  },
+  "documenting-trade-sequencing-omitted-work": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/missing-line-item-documentation-guide-for-contractors",
+      "general-claims/scope-audit-guide-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+    ],
+    relatedFaqIds: [
+      "documenting-omitted-work-insurance-estimates",
+      "why-missing-line-items-remain-unsupported",
+      "reviewing-insurance-estimate-scope",
+      "documentation-supporting-missing-scope",
+    ],
+    internalLinkNotes:
+      "Trade sequencing documentation for omitted work; specialty companion to Missing Line Item Documentation Guide.",
+  },
+  "why-missing-line-items-remain-unsupported": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/missing-line-item-documentation-guide-for-contractors",
+      "general-claims/claim-file-audit-guide",
+      "general-claims/scope-audit-guide-for-contractors",
       "general-claims/documentation-standards-guide",
     ],
     relatedFaqIds: [
-      "scope-audit-for-contractors",
-      "missing-scope-contractor-audit",
-      "auditing-insurance-estimates-for-contractors",
-      "documentation-supporting-supplements",
+      "documenting-omitted-work-insurance-estimates",
+      "documentation-supporting-missing-scope",
+      "documenting-detach-reset-missing-line-items",
+      "documenting-trade-sequencing-omitted-work",
     ],
     internalLinkNotes:
-      "Documenting omitted work for supplement packaging; pairs with Scope Audit Guide.",
+      "Why identified missing line items stay unsupported; QC companion to Missing Line Item Documentation Guide.",
   },
 };
 

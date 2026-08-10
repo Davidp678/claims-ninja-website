@@ -6771,8 +6771,12 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "documentation",
     question: "What documentation supports missing scope findings?",
     answer:
-      "Missing-scope findings are supported by labeled dated photos of omitted areas, measurement or quantity worksheets showing deltas, dry logs and moisture maps, equipment placement proof, contents or detach/reset records, phase checklists for trade coordination, and a cover attachment index mapping each exhibit to the estimate gap. Capture evidence during the job with consistent room and elevation IDs so desk reviewers can approve without reconstructing the file from memory.",
+      "Missing-scope findings are supported by labeled dated photos of omitted areas, measurement or quantity worksheets showing deltas, dry logs and moisture maps, equipment placement proof, contents or detach/reset records, phase checklists for trade coordination, and a cover attachment index mapping each exhibit to the estimate gap. Capture evidence during the job with consistent room and elevation IDs so desk reviewers can approve without reconstructing the file from memory. For exhibit mapping after a scope audit, use the Missing Line Item Documentation Guide.",
     relatedLinks: [
+      {
+        label: "Missing Line Item Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
       {
         label: "Five Red Flags That an Insurance Estimate Is Missing Scope",
         href: "/resources/blog/five-red-flags-that-an-insurance-estimate-is-missing-scope",
@@ -6780,10 +6784,6 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Documentation Standards Guide",
         href: "/resources/guides/general-claims/documentation-standards-guide",
-      },
-      {
-        label: "Claim File Audit Guide",
-        href: "/resources/guides/general-claims/claim-file-audit-guide",
       },
       {
         label: "What documentation supports insurance estimate supplements?",
@@ -7099,8 +7099,12 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     category: "insurance_supplements",
     question: "How should contractors document omitted work on insurance estimates?",
     answer:
-      "Package each omitted or incomplete scope item with a field condition summary, estimate gap, evidence refs, area ID, and the current estimate version on a scope comparison worksheet. Keep labels consistent across estimate, photos, and notes. Route only supplement-ready gaps through Supplement Submission; park weak evidence for field recapture. Update the worksheet within 24 hours after reinspection or a revised carrier estimate, and run Claim File Audit before packaging material scope dollars.",
+      "Package each omitted or incomplete scope item with a field condition summary, estimate gap, evidence refs, area ID, and the current estimate version on a scope comparison worksheet and attachment index. Keep labels consistent across estimate, photos, and notes. Route only supplement-ready gaps through Supplement Submission; park weak evidence for field recapture. Update the worksheet within 24 hours after reinspection or a revised carrier estimate, and run Claim File Audit before packaging material scope dollars. Use the Missing Line Item Documentation Guide for exhibit mapping after a scope audit identifies the gaps.",
     relatedLinks: [
+      {
+        label: "Missing Line Item Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
       {
         label: "Scope Audit Guide for Contractors",
         href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
@@ -7110,12 +7114,87 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         href: "/resources/guides/general-claims/supplement-submission-guide",
       },
       {
+        label: "What documentation supports missing scope findings?",
+        href: "/faq#faq-documentation-supporting-missing-scope",
+      },
+    ],
+  },
+  // Missing line item documentation FAQs (guide companions)
+  {
+    id: "documenting-detach-reset-missing-line-items",
+    category: "insurance_supplements",
+    question:
+      "How should contractors document detach/reset items missing from an insurance estimate?",
+    answer:
+      "Inventory items that must be detached and reset to perform repairs — fixtures, cabinets, equipment, or contents in the work path. Photograph items in place before detach, document protected storage when relevant, and photograph the repair area that required removal. Keep a detach/reset log with item description, area ID, date, reason for removal, and photo refs, then map each log row to the estimate gap on an attachment index. Item-level clarity beats a single overview photo of a cluttered room.",
+    relatedLinks: [
+      {
+        label: "Missing Line Item Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
+      {
+        label: "The Most Overlooked Line Items in Insurance Estimates",
+        href: "/resources/blog/most-overlooked-line-items-in-insurance-estimates",
+      },
+      {
+        label: "How should contractors document omitted work on insurance estimates?",
+        href: "/faq#faq-documenting-omitted-work-insurance-estimates",
+      },
+      {
+        label: "What documentation supports missing scope findings?",
+        href: "/faq#faq-documentation-supporting-missing-scope",
+      },
+    ],
+  },
+  {
+    id: "documenting-trade-sequencing-omitted-work",
+    category: "insurance_supplements",
+    question:
+      "How should contractors document trade sequencing for omitted work on insurance estimates?",
+    answer:
+      "Build a phase checklist from protection through demolition, drying or cleaning, substrate repair, and finishes — then mark which phases the estimate skips. Photograph evidence of required predecessor work that is missing, and use dated daily reports to show chronological order by area ID. For water, fire, and mold, attach specialty logs that prove sequencing dependencies. Package sequencing omissions as phase gaps with exhibit refs, not as a narrative dispute without dates and labels.",
+    relatedLinks: [
+      {
+        label: "Missing Line Item Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
+      {
+        label: "Scope Audit Guide for Contractors",
+        href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+      },
+      {
+        label: "How should contractors document omitted work on insurance estimates?",
+        href: "/faq#faq-documenting-omitted-work-insurance-estimates",
+      },
+      {
+        label: "Why do missing line items remain unsupported after a scope audit?",
+        href: "/faq#faq-why-missing-line-items-remain-unsupported",
+      },
+    ],
+  },
+  {
+    id: "why-missing-line-items-remain-unsupported",
+    category: "insurance_supplements",
+    question:
+      "Why do missing line items remain unsupported after a scope audit?",
+    answer:
+      "Gaps stay unsupported when they are identified but never photographed before cover-up; when photos lack area labels or mapping to the estimate gap; when notes are reconstructed days later; when detach/reset, sequencing, or protection is treated as obvious and left without item-level exhibits; when estimate versions are mixed; or when commercial omissions lack location IDs. A gap on a comparison worksheet is not supplement-ready until labeled exhibits and an attachment index reconcile to the current estimate version.",
+    relatedLinks: [
+      {
+        label: "Missing Line Item Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
+      {
+        label: "What documentation supports missing scope findings?",
+        href: "/faq#faq-documentation-supporting-missing-scope",
+      },
+      {
         label: "Claim File Audit Guide",
         href: "/resources/guides/general-claims/claim-file-audit-guide",
       },
       {
-        label: "How do contractors identify missing scope during an audit?",
-        href: "/faq#faq-missing-scope-contractor-audit",
+        label: "How should contractors document omitted work on insurance estimates?",
+        href: "/faq#faq-documenting-omitted-work-insurance-estimates",
       },
     ],
   },

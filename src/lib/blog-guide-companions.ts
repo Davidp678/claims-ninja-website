@@ -35,32 +35,32 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "why-carrier-estimates-miss-line-items": {
     intro:
-      "You've learned why carrier estimates miss scope. Now use the Insurance Estimate Review Playbook, the scope validation cornerstone, the day-one carrier estimate review workflow, and the Quantity Validation Guide to catch quantity and scope gaps before production commits to under-scoped work.",
+      "You've learned why carrier estimates miss scope. Now use the Insurance Estimate Review Playbook, the scope validation cornerstone, the day-one carrier estimate review workflow, and the Missing Line Item Documentation Guide so identified omissions become reviewer-ready exhibit packages before production commits to under-scoped work.",
     guideSlugs: [
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
       "carrier-estimate-review-guide",
-      "quantity-validation-guide-for-contractors",
+      "missing-line-item-documentation-guide-for-contractors",
     ],
   },
   "most-overlooked-line-items-in-insurance-estimates": {
     intro:
-      "You've learned which line items get overlooked and how to document them. Now run the Insurance Estimate Review Playbook, the scope validation cornerstone, the Quantity Validation Guide, and the Scope Audit Guide so quantity and completeness gap lists become reviewer-ready packages.",
+      "You've learned which line items get overlooked and how to document them. Now run the Insurance Estimate Review Playbook, the scope validation cornerstone, the Scope Audit Guide, and the Missing Line Item Documentation Guide so completeness gap lists become reviewer-ready packages.",
     guideSlugs: [
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
-      "quantity-validation-guide-for-contractors",
       "scope-audit-guide-for-contractors",
+      "missing-line-item-documentation-guide-for-contractors",
     ],
   },
   "five-red-flags-that-an-insurance-estimate-is-missing-scope": {
     intro:
-      "You've learned how to recognize missing-scope red flags on carrier estimates. Now run the Insurance Estimate Review Playbook, the Scope Validation Guide, the day-one carrier estimate review workflow, and the Scope Audit Guide so every flag becomes a comparison worksheet with evidence — not unpaid production.",
+      "You've learned how to recognize missing-scope red flags on carrier estimates. Now run the Insurance Estimate Review Playbook, the Scope Validation Guide, the Scope Audit Guide, and the Missing Line Item Documentation Guide so every flag becomes a comparison worksheet with mapped exhibits — not unpaid production.",
     guideSlugs: [
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
-      "carrier-estimate-review-guide",
       "scope-audit-guide-for-contractors",
+      "missing-line-item-documentation-guide-for-contractors",
     ],
   },
   "how-contractors-find-quantity-errors-in-insurance-estimates": {

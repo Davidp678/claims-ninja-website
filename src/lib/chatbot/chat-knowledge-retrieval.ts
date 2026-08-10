@@ -3536,7 +3536,107 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
     assert: (result) =>
       result.snippets.length > 0 &&
       result.snippets.some((s) =>
-        /documenting-omitted-work-insurance-estimates|scope-audit-guide-for-contractors|Package each omitted or incomplete scope item/i.test(
+        /documenting-omitted-work-insurance-estimates|missing-line-item-documentation-guide-for-contractors|Package each omitted or incomplete scope item/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "missing line item documentation guide retrieves",
+    message: "missing line item documentation guide for contractors",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /missing-line-item-documentation-guide-for-contractors|Missing Line Item Documentation Guide for Contractors|documenting omitted work after a scope audit/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "document missing line items query retrieves new guide",
+    message: "how do I document missing line items",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /missing-line-item-documentation-guide-for-contractors|documenting-omitted-work-insurance-estimates|document missing line items/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "carrier estimate left out work retrieves documentation guide",
+    message: "carrier estimate left out work",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /missing-line-item-documentation-guide-for-contractors|Missing Line Item Documentation Guide|Package each omitted or incomplete scope item|documenting omitted work after a scope audit/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "what supports omitted scope retrieves",
+    message: "what supports omitted scope",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /missing-line-item-documentation-guide-for-contractors|Missing-scope findings are supported|Missing Line Item Documentation Guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "missing detach and reset items retrieves",
+    message: "missing detach and reset items",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /missing-line-item-documentation-guide-for-contractors|Inventory items that must be detached|detach\/reset log|Missing Line Item Documentation Guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "prove missing scope on a supplement retrieves",
+    message: "how to prove missing scope on a supplement",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /missing-line-item-documentation-guide-for-contractors|Missing-scope findings are supported|Package each omitted or incomplete scope item|Missing Line Item Documentation Guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "documenting detach reset FAQ retrieves",
+    message:
+      "how should contractors document detach reset items missing from an insurance estimate",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /Inventory items that must be detached|missing-line-item-documentation-guide-for-contractors|Missing Line Item Documentation Guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "documenting trade sequencing FAQ retrieves",
+    message: "how should contractors document trade sequencing for omitted work",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /Build a phase checklist|missing-line-item-documentation-guide-for-contractors|Missing Line Item Documentation Guide/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "why missing line items remain unsupported FAQ retrieves",
+    message: "why do missing line items remain unsupported after a scope audit",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /Gaps stay unsupported when|missing-line-item-documentation-guide-for-contractors|Missing Line Item Documentation Guide/i.test(
           `${s.text} ${s.source}`,
         ),
       ),

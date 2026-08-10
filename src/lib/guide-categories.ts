@@ -28,6 +28,7 @@ export const GENERAL_CLAIMS_HUB_ORDER = [
   "insurance-estimate-review-scope-validation-guide",
   "quantity-validation-guide-for-contractors",
   "scope-audit-guide-for-contractors",
+  "missing-line-item-documentation-guide-for-contractors",
   "large-loss-commercial-insurance-claims-guide",
   "carrier-estimate-review-guide",
   "retail-office-insurance-claims-guide",

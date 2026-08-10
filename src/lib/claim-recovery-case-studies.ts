@@ -104,8 +104,8 @@ export const CLAIM_RECOVERY_CASE_STUDIES: readonly ClaimRecoveryCaseStudy[] = [
         href: "/resources/guides/water-damage/dry-log-collection-guide",
       },
       {
-        label: "Insurance Estimate Review Playbook for Contractors",
-        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+        label: "Missing Line Item Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
       },
     ],
     relatedBlogSlugs: [

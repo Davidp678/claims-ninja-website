@@ -6,6 +6,7 @@ import { INDUSTRIAL_WAREHOUSE_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/indust
 import { INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS } from "@/lib/guides/insurance-estimate-review-playbook-for-contractors";
 import { INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE } from "@/lib/guides/insurance-estimate-review-scope-validation-guide";
 import { LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/large-loss-commercial-insurance-claims-guide";
+import { MISSING_LINE_ITEM_DOCUMENTATION_GUIDE_FOR_CONTRACTORS } from "@/lib/guides/missing-line-item-documentation-guide-for-contractors";
 import { QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS } from "@/lib/guides/quantity-validation-guide-for-contractors";
 import { SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS } from "@/lib/guides/scope-audit-guide-for-contractors";
 import { MULTIFAMILY_APARTMENT_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/multifamily-apartment-insurance-claims-guide";
@@ -16,6 +17,7 @@ export const GENERAL_CLAIMS_GUIDES = [
   INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE,
   QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS,
   SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS,
+  MISSING_LINE_ITEM_DOCUMENTATION_GUIDE_FOR_CONTRACTORS,
   COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE,
   COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS,
   LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE,

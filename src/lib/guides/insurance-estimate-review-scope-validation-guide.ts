@@ -42,6 +42,7 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
     "insurance-estimate-review-playbook-for-contractors",
     "quantity-validation-guide-for-contractors",
     "scope-audit-guide-for-contractors",
+    "missing-line-item-documentation-guide-for-contractors",
     "carrier-estimate-review-guide",
     "documentation-standards-guide",
     "commercial-insurance-claims-documentation-guide",
@@ -83,7 +84,7 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
   ],
   claimTypes: ["roofing", "water", "fire", "mold", "commercial", "large-loss"],
   purpose:
-    "This guide is the cornerstone authority for insurance estimate review and scope validation concepts for restoration contractors, roofing contractors, mitigation companies, reconstruction contractors, and commercial contractors. Unlike documentation standards — which define how to capture field evidence — this resource focuses on evaluating carrier estimates against documented field conditions to identify omissions, quantity discrepancies, scope gaps, and opportunities for accurate supplemental documentation. Use it as the parent framework for estimate anatomy, quantity and scope validation, missing line items, code and temporary protection review, equipment and labor reconciliation, supporting documentation, scope audit workflow, reinspection preparation, and final quality-control gates. For the complete operational workflow — receive, validate, package, communicate, reinspect, and settle — use the Insurance Estimate Review Playbook for Contractors. For the specialty deep-dive on measuring, documenting, and classifying quantity discrepancies across roofing, interior, water, fire, and commercial files, use the Quantity Validation Guide for Contractors. Pair it with the shorter Carrier Estimate Review Workflow for day-one intake sequencing, Documentation Standards for evidence capture, and Supplement Submission for packaging validated gaps. Claims Ninja supports contractors with documentation standards, estimate review workflows, supplement packaging, and claim recovery operations — we are not a public adjuster, carrier representative, or legal counsel. This guide does not provide legal advice, policy interpretation, engineering opinions, or public-adjusting guidance.",
+    "This guide is the cornerstone authority for insurance estimate review and scope validation concepts for restoration contractors, roofing contractors, mitigation companies, reconstruction contractors, and commercial contractors. Unlike documentation standards — which define how to capture field evidence — this resource focuses on evaluating carrier estimates against documented field conditions to identify omissions, quantity discrepancies, scope gaps, and opportunities for accurate supplemental documentation. Use it as the parent framework for estimate anatomy, quantity and scope validation, missing line items, code and temporary protection review, equipment and labor reconciliation, supporting documentation, scope audit workflow, reinspection preparation, and final quality-control gates. For the complete operational workflow — receive, validate, package, communicate, reinspect, and settle — use the Insurance Estimate Review Playbook for Contractors. For the specialty deep-dive on measuring, documenting, and classifying quantity discrepancies across roofing, interior, water, fire, and commercial files, use the Quantity Validation Guide for Contractors. For completeness audits, use the Scope Audit Guide; for documenting omitted work after gaps are identified, use the Missing Line Item Documentation Guide for Contractors. Pair it with the shorter Carrier Estimate Review Workflow for day-one intake sequencing, Documentation Standards for evidence capture, and Supplement Submission for packaging validated gaps. Claims Ninja supports contractors with documentation standards, estimate review workflows, supplement packaging, and claim recovery operations — we are not a public adjuster, carrier representative, or legal counsel. This guide does not provide legal advice, policy interpretation, engineering opinions, or public-adjusting guidance.",
   whenToUse: [
     {
       condition: "Carrier estimate received and must be compared to field conditions before production commits",
@@ -262,6 +263,7 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
         "Separate true omissions from items that exist under different line codes or bundled descriptions — avoid duplicate requests that damage credibility.",
         "Cross-reference The Most Overlooked Line Items in Insurance Estimates for common patterns, then validate each against this file’s field conditions.",
         "Hand high-confidence omissions to the supplement workflow with line hints and evidence refs; park low-confidence items until documentation improves.",
+        "For exhibit mapping after omissions are identified — detach/reset, sequencing, protection, equipment, and code support — use the Missing Line Item Documentation Guide for Contractors.",
       ],
     },
     {
@@ -631,6 +633,10 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
     {
       label: "Scope Audit Guide for Contractors",
       href: "/resources/guides/general-claims/scope-audit-guide-for-contractors",
+    },
+    {
+      label: "Missing Line Item Documentation Guide for Contractors",
+      href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
     },
     {
       label: "Carrier Estimate Review Workflow",

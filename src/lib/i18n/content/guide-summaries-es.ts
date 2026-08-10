@@ -87,6 +87,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Guía operativa para auditar el alcance de estimados de seguros frente a condiciones de campo documentadas: trabajo faltante, demolición y reconstrucción incompletas, oficios omitidos, auditorías de techado, agua, fuego y moho, consideraciones comerciales, impactos de código, supuestos no respaldados y documentación que sustenta un alcance revisado.",
   },
+  "general-claims/missing-line-item-documentation-guide-for-contractors": {
+    title: "Guía de documentación de renglones faltantes para contratistas",
+    excerpt:
+      "Guía operativa para documentar trabajo omitido después de una auditoría de alcance: demolición, reconstrucción, mano de obra, materiales, detach/reset, acceso, secuencia de oficios, protección temporal, equipo y omisiones relacionadas con código — con mediciones, fotografías, notas de campo y anexos organizados para la revisión de suplementos del contratista.",
+  },
   "general-claims/op-qualification-guide": {
     title: "Estándar de documentación para calificación de O&P",
     excerpt:

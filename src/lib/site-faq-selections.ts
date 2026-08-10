@@ -527,6 +527,9 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "missing-scope-contractor-audit",
       "reviewing-insurance-estimate-scope",
       "documenting-omitted-work-insurance-estimates",
+      "documenting-detach-reset-missing-line-items",
+      "documenting-trade-sequencing-omitted-work",
+      "why-missing-line-items-remain-unsupported",
     ],
   },
   guides: {
@@ -662,6 +665,9 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "missing-scope-contractor-audit",
       "reviewing-insurance-estimate-scope",
       "documenting-omitted-work-insurance-estimates",
+      "documenting-detach-reset-missing-line-items",
+      "documenting-trade-sequencing-omitted-work",
+      "why-missing-line-items-remain-unsupported",
     ],
   },
   caseStudies: {

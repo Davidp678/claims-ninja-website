@@ -40,6 +40,7 @@ export const SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS = defineGuide({
   relatedGuideSlugs: [
     "insurance-estimate-review-playbook-for-contractors",
     "insurance-estimate-review-scope-validation-guide",
+    "missing-line-item-documentation-guide-for-contractors",
     "quantity-validation-guide-for-contractors",
     "documentation-standards-guide",
     "carrier-estimate-review-guide",
@@ -81,7 +82,7 @@ export const SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS = defineGuide({
   ],
   claimTypes: ["roofing", "water", "fire", "mold", "commercial", "large-loss"],
   purpose:
-    "This guide is the specialty authority for scope audits inside the Estimate Review & Scope Validation cluster. The Insurance Estimate Review & Scope Validation Guide teaches estimate anatomy and what to validate across scope and quantity. The Insurance Estimate Review Playbook is the operational hub for the full receive-to-settlement workflow. The Quantity Validation Guide focuses on measurement accuracy — whether SF, squares, counts, and days match the field. This resource goes deep on completeness of work: how contractors systematically audit a carrier insurance estimate against documented field conditions to find missing work, incomplete demolition and reconstruction, omitted trades, unsupported assumptions, and peril-specific scope gaps across roofing, water, fire, mold, and commercial files. Use it when the estimate’s line list must be tested for omitted assemblies before production absorbs unpaid scope or before a scope gap is marked supplement-ready. Pair it with Quantity Validation when numbers also need independent measurement, Documentation Standards for evidence capture, Carrier Estimate Review for day-one intake sequencing, Claim File Audit and Supplement Submission for packaging, and the Commercial Insurance Supplement Playbook on multi-building files. Claims Ninja supports contractors with documentation standards, estimate review workflows, supplement packaging, and claim recovery operations — we are not a public adjuster, carrier representative, or legal counsel. This guide does not provide estimating software instruction, legal advice, policy interpretation, engineering opinions, or public-adjusting guidance.",
+    "This guide is the specialty authority for scope audits inside the Estimate Review & Scope Validation cluster. The Insurance Estimate Review & Scope Validation Guide teaches estimate anatomy and what to validate across scope and quantity. The Insurance Estimate Review Playbook is the operational hub for the full receive-to-settlement workflow. The Quantity Validation Guide focuses on measurement accuracy — whether SF, squares, counts, and days match the field. The Missing Line Item Documentation Guide documents and supports omitted work after gaps are identified so exhibits are reviewable. This resource goes deep on completeness of work: how contractors systematically audit a carrier insurance estimate against documented field conditions to find missing work, incomplete demolition and reconstruction, omitted trades, unsupported assumptions, and peril-specific scope gaps across roofing, water, fire, mold, and commercial files. Use it when the estimate’s line list must be tested for omitted assemblies before production absorbs unpaid scope or before a scope gap is marked supplement-ready. Hand identified gaps to the Missing Line Item Documentation Guide for exhibit mapping, pair with Quantity Validation when numbers also need independent measurement, Documentation Standards for evidence capture, Carrier Estimate Review for day-one intake sequencing, Claim File Audit and Supplement Submission for packaging, and the Commercial Insurance Supplement Playbook on multi-building files. Claims Ninja supports contractors with documentation standards, estimate review workflows, supplement packaging, and claim recovery operations — we are not a public adjuster, carrier representative, or legal counsel. This guide does not provide estimating software instruction, legal advice, policy interpretation, engineering opinions, or public-adjusting guidance.",
   whenToUse: [
     {
       condition:
@@ -182,7 +183,7 @@ export const SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS = defineGuide({
         "Quantity Validation asks whether the numbers match the field. Scope audit asks whether the work is present at all, complete through demolition and reconstruction, and free of unsupported assumptions.",
         "Treat the audit as a documentation workflow: assemble evidence, walk areas against estimate sections, record omissions and incompleteness, classify gaps, and route supplement-ready items.",
         "Scope audits support accurate claim documentation and estimate review; they are not estimating software instruction or public-adjusting guidance.",
-        "Use this specialty guide when the Scope Validation cornerstone’s completeness pass needs depth across roofing, water, fire, mold, and commercial files. Hand finished scope gaps to the Insurance Estimate Review Playbook for packaging and settlement.",
+        "Use this specialty guide when the Scope Validation cornerstone’s completeness pass needs depth across roofing, water, fire, mold, and commercial files. Hand identified gaps to the Missing Line Item Documentation Guide for exhibit mapping, then to the Insurance Estimate Review Playbook for packaging and settlement.",
       ],
     },
     {
@@ -399,7 +400,7 @@ export const SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS = defineGuide({
         "Step 4 — Compare: fill scope comparison worksheet (condition / estimate presence / gap type / refs); classify each item.",
         "Step 5 — Specialty: run sequencing, demo, reconstruction, roofing, water, fire, mold, commercial, and code passes as applicable.",
         "Step 6 — Assumptions: list and test silent assumptions against evidence; upgrade weak items to needs-more-evidence.",
-        "Step 7 — Route: send supplement-ready gaps to packaging; send weak evidence to field recapture; set production guardrails.",
+        "Step 7 — Route: send supplement-ready gaps to Missing Line Item Documentation for exhibit packages, then packaging; send weak evidence to field recapture; set production guardrails.",
         "Gate: no high-value omitted or incomplete scope marked complete until photo, note, and estimate section reconcile.",
       ],
     },
@@ -658,6 +659,10 @@ export const SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS = defineGuide({
     {
       label: "Insurance Estimate Review & Scope Validation Guide",
       href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+    },
+    {
+      label: "Missing Line Item Documentation Guide for Contractors",
+      href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
     },
     {
       label: "Quantity Validation Guide for Contractors",
