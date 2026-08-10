@@ -40,11 +40,20 @@ export function BlogPostHero({ post }: BlogPostHeroProps) {
           {post.title}
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-zinc-300">{post.excerpt}</p>
-        <p className="mt-6 text-sm text-zinc-500">
-          By{" "}
-          <span className="font-medium text-zinc-300">{author.name}</span>
-          {author.role ? <span className="text-zinc-500"> · {author.role}</span> : null}
-        </p>
+        <div className="mt-6 space-y-2">
+          <p className="text-sm text-zinc-500">
+            By{" "}
+            <span className="font-medium text-zinc-300">{author.name}</span>
+            {author.role ? (
+              <span className="text-zinc-500"> · {author.role}</span>
+            ) : null}
+          </p>
+          {author.bio ? (
+            <p className="max-w-2xl text-sm leading-relaxed text-zinc-500">
+              {author.bio}
+            </p>
+          ) : null}
+        </div>
       </Container>
     </section>
   );

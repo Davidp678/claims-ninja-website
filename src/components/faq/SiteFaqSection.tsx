@@ -18,6 +18,25 @@ type SiteFaqSectionProps = {
   locale?: Locale;
 };
 
+function buildVisibleFaqPageSchema(
+  items: readonly { question: string; answer: string }[],
+) {
+  if (items.length === 0) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
 export function SiteFaqSection({
   topic,
   faqIds,
@@ -26,9 +45,16 @@ export function SiteFaqSection({
   const items = getLocalizedFaqItems(faqIds, locale);
   const faqCopy = getCommonContent(locale).faq;
   const localizedTopic = translateFaqTopic(topic, locale);
+  const faqSchema = buildVisibleFaqPageSchema(items);
 
   return (
     <Section bordered compact>
+      {faqSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      ) : null}
       <div className="max-w-[850px] lg:-ml-6 xl:-ml-8">
         <SectionHeading
           title={faqCopy.title}

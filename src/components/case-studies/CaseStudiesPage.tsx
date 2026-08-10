@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { HeroBackdrop } from "@/components/sections/HeroBackdrop";
 import { MarketingCtaPanel } from "@/components/marketing/MarketingCtaPanel";
 import { SiteFaqSection } from "@/components/faq/SiteFaqSection";
@@ -6,9 +8,14 @@ import { ConversionCtaGroup } from "@/components/ui/ConversionCtaGroup";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CASE_STUDIES_CARD_CLASS } from "@/lib/case-studies-page";
+import {
+  getCaseStudyPath,
+  getClaimRecoveryCaseStudyByHubExampleId,
+} from "@/lib/claim-recovery-case-studies";
 import type { Locale } from "@/lib/i18n/config";
 import { getCommonContent } from "@/lib/i18n/content/common";
 import { getCompanyContent } from "@/lib/i18n/content/company";
+import { localizePath } from "@/lib/i18n/paths";
 import { SITE_FAQ } from "@/lib/site-faq-selections";
 import { cn } from "@/lib/cn";
 
@@ -30,7 +37,6 @@ function BulletList({ items }: { items: readonly string[] }) {
 export function CaseStudiesPage({ locale = "en" }: { locale?: Locale }) {
   const cs = getCompanyContent(locale).caseStudies;
   const cta = getCommonContent(locale);
-
   return (
     <>
       {/* Hero */}
@@ -163,37 +169,101 @@ export function CaseStudiesPage({ locale = "en" }: { locale?: Locale }) {
           className="max-w-3xl"
         />
         <ul className="mt-14 grid gap-6 lg:grid-cols-3">
-          {cs.recoveryExamples.map((example) => (
-            <li
-              key={example.id}
-              className={cn(
-                CASE_STUDIES_CARD_CLASS,
-                "border-white/10 p-5 shadow-[0_0_32px_-28px_rgba(220,38,38,0.15)]",
-              )}
-            >
-              <h3 className="font-display text-base font-semibold text-white">
-                {example.title}
-              </h3>
-              <dl className="mt-4 space-y-3 border-b border-white/10 pb-4">
-                <div className="flex justify-between gap-4 text-sm">
-                  <dt className={CARD_SUBLABEL_CLASS}>Carrier estimate</dt>
-                  <dd className="font-medium text-white">{example.carrierEstimate}</dd>
+          {cs.recoveryExamples.map((example) => {
+            const detail = getClaimRecoveryCaseStudyByHubExampleId(example.id);
+            const href = detail ? getCaseStudyPath(detail.slug) : null;
+
+            return (
+              <li
+                key={example.id}
+                className={cn(
+                  CASE_STUDIES_CARD_CLASS,
+                  "border-white/10 p-5 shadow-[0_0_32px_-28px_rgba(220,38,38,0.15)]",
+                )}
+              >
+                <h3 className="font-display text-base font-semibold text-white">
+                  {href ? (
+                    <Link
+                      href={href}
+                      className="transition-colors hover:text-brand-red-light"
+                    >
+                      {example.title}
+                    </Link>
+                  ) : (
+                    example.title
+                  )}
+                </h3>
+                <dl className="mt-4 space-y-3 border-b border-white/10 pb-4">
+                  <div className="flex justify-between gap-4 text-sm">
+                    <dt className={CARD_SUBLABEL_CLASS}>Carrier estimate</dt>
+                    <dd className="font-medium text-white">{example.carrierEstimate}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4 text-sm">
+                    <dt className={CARD_SUBLABEL_CLASS}>Additional recovery identified</dt>
+                    <dd className="font-medium text-brand-red-light">
+                      {example.additionalRecovery}
+                    </dd>
+                  </div>
+                  <div className="flex justify-between gap-4 text-sm">
+                    <dt className={CARD_SUBLABEL_CLASS}>Recovery increase</dt>
+                    <dd className="font-medium text-white">{example.recoveryIncrease}</dd>
+                  </div>
+                </dl>
+                <div className="mt-4">
+                  <h4 className={CARD_SUBLABEL_CLASS}>Key findings</h4>
+                  <BulletList items={example.keyFindings} />
                 </div>
-                <div className="flex justify-between gap-4 text-sm">
-                  <dt className={CARD_SUBLABEL_CLASS}>Additional recovery identified</dt>
-                  <dd className="font-medium text-brand-red-light">
-                    {example.additionalRecovery}
-                  </dd>
-                </div>
-                <div className="flex justify-between gap-4 text-sm">
-                  <dt className={CARD_SUBLABEL_CLASS}>Recovery increase</dt>
-                  <dd className="font-medium text-white">{example.recoveryIncrease}</dd>
-                </div>
-              </dl>
-              <div className="mt-4">
-                <h4 className={CARD_SUBLABEL_CLASS}>Key findings</h4>
-                <BulletList items={example.keyFindings} />
-              </div>
+                {href ? (
+                  <Link
+                    href={href}
+                    className="mt-5 inline-block text-sm font-medium text-brand-red-light transition-colors hover:text-white"
+                  >
+                    Read case study
+                  </Link>
+                ) : null}
+              </li>
+            );
+          })}
+        </ul>
+      </Section>
+
+      {/* Related solution entry points */}
+      <Section bordered compact>
+        <SectionHeading
+          eyebrow="Connected resources"
+          title="Explore trade solutions and playbooks"
+          description="Connect Results & Insights patterns to the solution pages and operational guides contractors use in the field."
+          align="left"
+          className="max-w-3xl"
+        />
+        <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+          {[
+            { label: "Roofing claims", href: "/solutions/roofing" },
+            { label: "Water damage claims", href: "/solutions/water-damage" },
+            { label: "Fire damage claims", href: "/solutions/fire-damage" },
+            { label: "Mold claims", href: "/solutions/mold" },
+            { label: "Commercial claims", href: "/solutions/commercial" },
+            { label: "Claim guides", href: "/resources/guides" },
+            {
+              label: "Estimate Review Playbook",
+              href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
+            },
+            {
+              label: "Estimate Review & Scope Validation",
+              href: "/resources/guides/general-claims/insurance-estimate-review-scope-validation-guide",
+            },
+            {
+              label: "How to choose a supplementing partner",
+              href: "/resources/blog/how-to-choose-insurance-supplementing-partner",
+            },
+          ].map((link) => (
+            <li key={link.href}>
+              <Link
+                href={localizePath(locale, link.href)}
+                className="font-medium text-brand-red-light transition-colors hover:text-white"
+              >
+                {link.label}
+              </Link>
             </li>
           ))}
         </ul>

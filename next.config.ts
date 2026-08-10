@@ -54,6 +54,16 @@ const nextConfig: NextConfig = {
         destination: "/resources/blog",
         permanent: true,
       },
+      {
+        source: "/results-insights",
+        destination: "/case-studies",
+        permanent: true,
+      },
+      {
+        source: "/results-insights/",
+        destination: "/case-studies",
+        permanent: true,
+      },
     ];
   },
 };

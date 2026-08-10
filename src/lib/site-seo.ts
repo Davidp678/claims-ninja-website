@@ -2,6 +2,10 @@ import type { MetadataRoute } from "next";
 
 import { getAllCategorySlugs, getCategoryPath } from "@/lib/blog-categories";
 import { BLOG_BASE_PATH, getAllBlogPosts, getBlogPostPath } from "@/lib/blog-page";
+import {
+  getAllClaimRecoveryCaseStudies,
+  getCaseStudyPath,
+} from "@/lib/claim-recovery-case-studies";
 import { getAllGuideCategorySlugs, getGuideCategoryPath } from "@/lib/guide-categories";
 import { CLAIM_GUIDES } from "@/lib/guide-data";
 import { GUIDE_BASE_PATH, getGuidePathForGuide } from "@/lib/guide-page";
@@ -104,6 +108,15 @@ export function getGuideCategorySitemapEntries(): MetadataRoute.Sitemap {
   }));
 }
 
+export function getCaseStudySitemapEntries(): MetadataRoute.Sitemap {
+  return getAllClaimRecoveryCaseStudies().map((study) => ({
+    url: getAbsoluteUrl(getCaseStudyPath(study.slug)),
+    lastModified: getSitemapLastModified(study.updatedAt ?? study.publishedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+}
+
 export function getSpanishSitemapEntries(): MetadataRoute.Sitemap {
   if (!ES_INDEXING_ENABLED) {
     return [];
@@ -129,5 +142,6 @@ export function getFullSitemap(): MetadataRoute.Sitemap {
     ...getBlogSitemapEntries(),
     ...getGuideCategorySitemapEntries(),
     ...getGuideSitemapEntries(),
+    ...getCaseStudySitemapEntries(),
   ];
 }

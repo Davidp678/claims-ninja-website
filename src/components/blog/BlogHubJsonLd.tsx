@@ -1,8 +1,9 @@
 import { buildBlogHubCollectionSchema } from "@/lib/blog-seo";
 import { getAllBlogPosts } from "@/lib/blog-registry";
+import type { Locale } from "@/lib/i18n/config";
 
-export function BlogHubJsonLd() {
-  const schema = buildBlogHubCollectionSchema(getAllBlogPosts());
+export function BlogHubJsonLd({ locale = "en" }: { locale?: Locale }) {
+  const schema = buildBlogHubCollectionSchema(getAllBlogPosts(), locale);
 
   return (
     <script

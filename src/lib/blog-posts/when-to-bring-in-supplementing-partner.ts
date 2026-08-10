@@ -16,11 +16,16 @@ export const whenToBringInSupplementingPartner: BlogPost = {
   seoDescription:
     "When should contractors bring in a supplementing partner? Framework for claim complexity, volume, and recovery economics.",
   relatedPostSlugs: [
+    "how-to-choose-insurance-supplementing-partner",
     "recover-revenue-without-in-house-claims",
     "insurance-supplementing-guide-contractors",
-    "why-carrier-estimates-miss-line-items",
   ],
-  faqIds: ["getting-started-who-for", "getting-started-onboarding", "pricing-fee-structure"],
+  faqIds: [
+    "getting-started-who-for",
+    "getting-started-onboarding",
+    "pricing-fee-structure",
+    "supplements-what-to-look-for",
+  ],
   sections: [
     {
       id: "signals",

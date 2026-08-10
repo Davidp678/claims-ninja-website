@@ -5,6 +5,7 @@ export const LEGACY_PAGE_REDIRECTS = [
   { from: "/water-damage-claim", to: "/solutions/water-damage" },
   { from: "/fire-claim", to: "/solutions/fire-damage" },
   { from: "/case-study", to: "/case-studies" },
+  { from: "/results-insights", to: "/case-studies" },
 ] as const;
 
 export function resolveLegacyPageRedirect(pathname: string): string | null {

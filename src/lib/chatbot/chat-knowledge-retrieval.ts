@@ -505,8 +505,25 @@ const TOPIC_KEYWORD_MAP: Record<string, readonly string[]> = {
     "pricing discrepancies",
     "o&p",
     "trade recovery",
+    "case study",
+    "case studies",
+    "recovery case study",
+    "claim recovery case study",
+    "commercial roofing portfolio",
+    "multi-family water loss",
+    "fire restoration project",
   ],
 };
+
+const CASE_STUDY_INTENT_TERMS = [
+  "case study",
+  "case studies",
+  "recovery case study",
+  "claim recovery case study",
+  "representative recovery",
+] as const;
+
+const CASE_STUDY_CHUNK_BOOST = 12;
 
 function matchesWordBoundary(input: string, token: string): boolean {
   const pattern = new RegExp(
@@ -597,6 +614,14 @@ function scoreChunk(
     score += PARTNER_CHUNK_BOOST;
   }
 
+  if (
+    (chunk.id.startsWith("results-insights:case-study:") ||
+      chunk.id === "results-insights:recovery-examples") &&
+    CASE_STUDY_INTENT_TERMS.some((term) => normalizedMessage.includes(term))
+  ) {
+    score += CASE_STUDY_CHUNK_BOOST;
+  }
+
   return score;
 }
 
@@ -674,6 +699,17 @@ type RetrievalCheck = {
 };
 
 const RETRIEVAL_CHECKS: RetrievalCheck[] = [
+  {
+    label: "case study question retrieves anonymized recovery benchmarks",
+    message: "Tell me about the commercial roofing portfolio recovery case study",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some(
+        (s) =>
+          /commercial roofing portfolio/i.test(s.text) &&
+          /\$840,000|\$312,000|37%/i.test(s.text),
+      ),
+  },
   {
     label: "pricing question retrieves pricing context",
     message: "How much do you charge?",

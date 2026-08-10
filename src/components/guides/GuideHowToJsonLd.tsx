@@ -1,5 +1,5 @@
 import type { Guide } from "@/lib/guide-data";
-import { buildGuideDetailSchema, buildGuideFaqSchema } from "@/lib/guide-seo";
+import { buildGuideDetailFaqSchema, buildGuideDetailSchema } from "@/lib/guide-seo";
 
 type GuideHowToJsonLdProps = {
   guide: Guide;
@@ -7,7 +7,7 @@ type GuideHowToJsonLdProps = {
 
 export function GuideHowToJsonLd({ guide }: GuideHowToJsonLdProps) {
   const detailSchema = buildGuideDetailSchema(guide);
-  const faqSchema = guide.faq ? buildGuideFaqSchema(guide.faq) : null;
+  const faqSchema = buildGuideDetailFaqSchema(guide);
 
   return (
     <>

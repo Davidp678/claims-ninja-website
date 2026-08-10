@@ -12,6 +12,10 @@ import {
   CASE_STUDIES_TRADE_CARDS,
   CASE_STUDIES_TRADE_RESULTS,
 } from "@/lib/case-studies-page";
+import {
+  getAllClaimRecoveryCaseStudies,
+  getCaseStudyPath,
+} from "@/lib/claim-recovery-case-studies";
 import { caseStudiesPage } from "@/lib/marketing-pages";
 
 type ResultsInsightsChunk = {
@@ -218,5 +222,43 @@ export function resultsInsightsToChunks(): ResultsInsightsChunk[] {
         `URL: ${caseStudiesPage.path}`,
       ].join("\n\n"),
     },
+    ...getAllClaimRecoveryCaseStudies().map((study) => ({
+      id: `results-insights:case-study:${study.slug}`,
+      source: `results & insights — case study ${study.title}`,
+      topics: ["results_insights", "contractor_fit"] as const,
+      phrases: [
+        study.title.toLowerCase(),
+        study.lossType.toLowerCase(),
+        `${study.lossType.toLowerCase()} recovery`,
+        `${study.tradeFocus.toLowerCase()} case study`,
+        "claim recovery case study",
+        "recovery case study",
+        "case study",
+      ],
+      keywords: [
+        "case study",
+        "anonymized",
+        "benchmark",
+        "recovery increase",
+        "carrier estimate",
+        "additional recovery",
+        study.slug.replaceAll("-", " "),
+      ],
+      text: [
+        study.title,
+        study.summary,
+        `Loss type: ${study.lossType}`,
+        `Trade focus: ${study.tradeFocus}`,
+        `Carrier estimate: ${study.carrierEstimate}`,
+        `Additional recovery: ${study.additionalRecovery}`,
+        `Recovery increase: ${study.recoveryIncrease}`,
+        `Situation: ${study.situation}`,
+        `Documentation gaps: ${study.documentationGaps.join("; ")}`,
+        `Recovery approach: ${study.recoveryApproach.join("; ")}`,
+        `Outcome: ${study.outcomeSummary}`,
+        study.methodologyNote,
+        `URL: ${getCaseStudyPath(study.slug)}`,
+      ].join("\n"),
+    })),
   ];
 }

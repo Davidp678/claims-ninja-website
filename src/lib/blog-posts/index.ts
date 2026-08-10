@@ -44,6 +44,7 @@ import { whatIsARoofSupplement } from "./what-is-a-roof-supplement";
 import { waterDamageMitigationSupplementPlaybook } from "./water-damage-mitigation-supplement-playbook";
 import { windDamageRoofClaimsWhatCarriersMiss } from "./wind-damage-roof-claims-what-carriers-miss";
 import { whenToBringInSupplementingPartner } from "./when-to-bring-in-supplementing-partner";
+import { howToChooseInsuranceSupplementingPartner } from "./how-to-choose-insurance-supplementing-partner";
 import { fiveRedFlagsThatAnInsuranceEstimateIsMissingScope } from "./five-red-flags-that-an-insurance-estimate-is-missing-scope";
 import { howContractorsFindQuantityErrorsInInsuranceEstimates } from "./how-contractors-find-quantity-errors-in-insurance-estimates";
 import { mostOverlookedLineItemsInInsuranceEstimates } from "./most-overlooked-line-items-in-insurance-estimates";
@@ -99,6 +100,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
   xactimateEstimateReviewChecklistContractors,
   xactimateVsMarketPricing,
   whenToBringInSupplementingPartner,
+  howToChooseInsuranceSupplementingPartner,
   claimDocumentationApprovalRates,
   whyCommercialInsuranceClaimsGetUnderpaid,
   commercialClaimsDocumentationChecklist,

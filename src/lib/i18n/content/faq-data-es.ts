@@ -371,6 +371,59 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     ],
   },
   {
+    id: "supplements-how-to-choose-partner",
+    category: "insurance_supplements",
+    question:
+      "¿Cómo deben los contratistas elegir una empresa de suplementos de seguros?",
+    answer:
+      "Evalúe a los socios por estándares de documentación, cobertura por oficio, transparencia de tarifas, proceso de comunicación con la aseguradora, visibilidad en la plataforma, tiempos de respuesta y si fortalecen su expediente sin reemplazar el control de campo. Pida un flujo de trabajo claro, qué ocurre con las denegaciones y cómo se mide la recuperación — no solo la promesa de cifras más altas.",
+    relatedLinks: [
+      {
+        label: "Cómo elegir un socio de suplementos",
+        href: "/resources/blog/how-to-choose-insurance-supplementing-partner",
+      },
+      { label: "Precios", href: "/pricing" },
+      { label: "Resumen de la plataforma", href: "/platform" },
+    ],
+  },
+  {
+    id: "supplements-what-to-look-for",
+    category: "insurance_supplements",
+    question:
+      "¿Qué deben buscar los contratistas en un socio de suplementos?",
+    answer:
+      "Busque comparación organizada de estimados, justificación defendible de partidas, estándares consistentes de fotos y registros, experiencia multi-oficio, propiedad clara del seguimiento con la aseguradora y un portal o sistema de seguimiento que su equipo pueda usar. Un buen socio explica las brechas de alcance con documentación — no con tácticas de presión — y alinea las tarifas a la recuperación documentada.",
+    relatedLinks: [
+      {
+        label: "Cómo elegir un socio de suplementos",
+        href: "/resources/blog/how-to-choose-insurance-supplementing-partner",
+      },
+      {
+        label: "Cuándo incorporar un socio",
+        href: "/resources/blog/when-to-bring-in-supplementing-partner",
+      },
+    ],
+  },
+  {
+    id: "supplements-how-to-compare",
+    category: "insurance_supplements",
+    question:
+      "¿Cómo pueden los contratistas comparar empresas de suplementos de seguros?",
+    answer:
+      "Compare proveedores con los mismos criterios: qué servicios incluye, qué oficios cubren, modelo de tarifas y mínimos, requisitos de documentación, manejo de denegaciones, reportes y quién habla con la aseguradora. Califique cada opción según su volumen, mezcla de reclamaciones y capacidad interna en lugar de clasificar empresas solo por afirmaciones de marketing.",
+    relatedLinks: [
+      {
+        label: "Cómo elegir un socio de suplementos",
+        href: "/resources/blog/how-to-choose-insurance-supplementing-partner",
+      },
+      { label: "Precios", href: "/pricing" },
+      {
+        label: "Reclamaciones externalizadas vs. internas",
+        href: "/resources/blog/recover-revenue-without-in-house-claims",
+      },
+    ],
+  },
+  {
     id: "help-denied-supplements",
     category: "insurance_supplements",
     question: "¿Puede Claims Ninja ayudar con suplementos denegados?",

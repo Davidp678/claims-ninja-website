@@ -17,9 +17,9 @@ export const recoverRevenueWithoutInHouseClaims: BlogPost = {
   seoDescription:
     "How restoration and roofing contractors recover more insurance claim revenue without hiring an in-house claims department — documentation, partners, and workflow.",
   relatedPostSlugs: [
+    "how-to-choose-insurance-supplementing-partner",
     "when-to-bring-in-supplementing-partner",
     "insurance-supplementing-guide-contractors",
-    "claim-documentation-approval-rates",
   ],
   sections: [
     {

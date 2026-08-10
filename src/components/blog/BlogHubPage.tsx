@@ -22,7 +22,7 @@ export function BlogHubPage({ locale = "en" }: { locale?: Locale }) {
 
   return (
     <>
-      <BlogHubJsonLd />
+      <BlogHubJsonLd locale={locale} />
       <BlogHero locale={locale} />
       {featured ? <BlogFeaturedArticle post={featured} locale={locale} /> : null}
       <BlogHubContent

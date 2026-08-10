@@ -1,18 +1,57 @@
 import type { BlogPost } from "@/lib/blog-types";
-import { resolveBlogAuthor } from "@/lib/blog-authors";
+import {
+  resolveBlogAuthorProfile,
+  type BlogAuthorProfile,
+} from "@/lib/blog-authors";
 import { getCategoryName } from "@/lib/blog-categories";
 import { BLOG_META, getBlogPostPath } from "@/lib/blog-page";
-import { SITE } from "@/lib/constants";
 import { getFaqItemsByIds } from "@/lib/faq-page";
+import type { Locale } from "@/lib/i18n/config";
+import { localizePath } from "@/lib/i18n/paths";
+import { organizationRef } from "@/lib/site-schema";
 import {
   DEFAULT_OG_IMAGE_PATH,
   getAbsoluteUrl,
   SITE_URL,
 } from "@/lib/site-seo";
 
+function buildAuthorSchema(profile: BlogAuthorProfile) {
+  if (profile.schemaType === "Organization") {
+    // Keep editorial as a named Organization node linked to the site entity —
+    // do not reuse ORGANIZATION_ID with a different display name.
+    return {
+      "@type": "Organization" as const,
+      name: profile.name,
+      url: SITE_URL,
+      parentOrganization: organizationRef(),
+    };
+  }
+
+  const person: Record<string, unknown> = {
+    "@type": "Person",
+    name: profile.name,
+  };
+
+  if (profile.role) {
+    person.jobTitle = profile.role;
+  }
+  if (profile.profilePath) {
+    person.url = getAbsoluteUrl(profile.profilePath);
+  }
+  if (profile.sameAs && profile.sameAs.length > 0) {
+    person.sameAs = [...profile.sameAs];
+  }
+  if (profile.worksForOrganization !== false) {
+    person.worksFor = organizationRef();
+  }
+
+  return person;
+}
+
 export function buildBlogPostingSchema(post: BlogPost) {
   const url = getAbsoluteUrl(getBlogPostPath(post.slug));
   const dateModified = post.updatedAt ?? post.publishedAt;
+  const authorProfile = resolveBlogAuthorProfile(post);
 
   return {
     "@context": "https://schema.org",
@@ -21,15 +60,8 @@ export function buildBlogPostingSchema(post: BlogPost) {
     description: post.seoDescription,
     datePublished: post.publishedAt,
     dateModified,
-    author: {
-      "@type": "Person",
-      name: resolveBlogAuthor(post).name,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: SITE.name,
-      url: SITE_URL,
-    },
+    author: buildAuthorSchema(authorProfile),
+    publisher: organizationRef(),
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": url,
@@ -76,13 +108,16 @@ export function buildBlogFaqSchema(post: BlogPost) {
   };
 }
 
-export function buildBlogHubCollectionSchema(posts: readonly BlogPost[]) {
+export function buildBlogHubCollectionSchema(
+  posts: readonly BlogPost[],
+  locale: Locale = "en",
+) {
   return {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: BLOG_META.metaTitle,
     description: BLOG_META.metaDescription,
-    url: getAbsoluteUrl(BLOG_META.path),
+    url: getAbsoluteUrl(localizePath(locale, BLOG_META.path)),
     numberOfItems: posts.length,
     mainEntity: {
       "@type": "ItemList",
@@ -90,6 +125,7 @@ export function buildBlogHubCollectionSchema(posts: readonly BlogPost[]) {
         "@type": "ListItem",
         position: index + 1,
         name: post.title,
+        // Blog detail pages are EN-only; keep item URLs on the canonical EN posts.
         url: getAbsoluteUrl(getBlogPostPath(post.slug)),
       })),
     },

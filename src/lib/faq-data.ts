@@ -371,6 +371,59 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     ],
   },
   {
+    id: "supplements-how-to-choose-partner",
+    category: "insurance_supplements",
+    question:
+      "How should contractors choose an insurance supplementing company?",
+    answer:
+      "Evaluate partners on documentation standards, trade coverage, fee transparency, carrier communication process, platform visibility, turnaround expectations, and whether they strengthen your file without replacing your field control. Ask for a clear workflow, what happens on denials, and how recovery is measured — not just a promise of higher numbers.",
+    relatedLinks: [
+      {
+        label: "How to choose a supplementing partner",
+        href: "/resources/blog/how-to-choose-insurance-supplementing-partner",
+      },
+      { label: "Pricing", href: "/pricing" },
+      { label: "Platform overview", href: "/platform" },
+    ],
+  },
+  {
+    id: "supplements-what-to-look-for",
+    category: "insurance_supplements",
+    question:
+      "What should contractors look for in a supplementing partner?",
+    answer:
+      "Look for organized estimate comparison, defensible line-item justification, consistent photo and log standards, multi-trade experience, clear ownership of carrier follow-up, and a portal or tracking system your team can use. A strong partner explains scope gaps with documentation — not pressure tactics — and aligns fees to documented recovery.",
+    relatedLinks: [
+      {
+        label: "How to choose a supplementing partner",
+        href: "/resources/blog/how-to-choose-insurance-supplementing-partner",
+      },
+      {
+        label: "When to bring in a partner",
+        href: "/resources/blog/when-to-bring-in-supplementing-partner",
+      },
+    ],
+  },
+  {
+    id: "supplements-how-to-compare",
+    category: "insurance_supplements",
+    question:
+      "How can contractors compare insurance supplementing companies?",
+    answer:
+      "Compare vendors with the same criteria: what services are included, which trades they support, fee model and minimums, documentation requirements, denial handling, reporting, and who talks to the carrier. Score each option against your volume, claim mix, and internal capacity instead of ranking companies by marketing claims alone.",
+    relatedLinks: [
+      {
+        label: "How to choose a supplementing partner",
+        href: "/resources/blog/how-to-choose-insurance-supplementing-partner",
+      },
+      { label: "Pricing", href: "/pricing" },
+      {
+        label: "Outsourced claims vs in-house",
+        href: "/resources/blog/recover-revenue-without-in-house-claims",
+      },
+    ],
+  },
+  {
     id: "help-denied-supplements",
     category: "insurance_supplements",
     question: "Can Claims Ninja help with denied supplements?",

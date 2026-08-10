@@ -49,4 +49,51 @@ describe("chat knowledge retrieval", () => {
     assert.equal(result.snippets.length, 0);
     assert.equal(result.formatted, "");
   });
+
+  it("retrieves buyer-intent partner selection guidance", () => {
+    const result = retrieveKnowledgeSnippets(
+      "How should contractors choose an insurance supplementing company?",
+    );
+    assert.ok(result.snippets.length > 0);
+    assert.ok(
+      result.snippets.some(
+        (s) =>
+          /choose|scorecard|criteria|compare/i.test(s.text) ||
+          /how-to-choose|supplements-how-to-choose|partner/i.test(s.source),
+      ),
+      result.snippets.map((s) => s.source).join(" | "),
+    );
+  });
+
+  it("retrieves anonymized case-study benchmarks without inventing named customers", () => {
+    const result = retrieveKnowledgeSnippets(
+      "Tell me about the commercial roofing portfolio recovery case study",
+    );
+    assert.ok(result.snippets.length > 0);
+    assert.ok(
+      result.snippets.some(
+        (s) =>
+          /commercial roofing portfolio/i.test(s.text) &&
+          /\$840,000|\$312,000|37%/i.test(s.text),
+      ),
+      result.snippets.map((s) => s.source).join(" | "),
+    );
+    assert.ok(
+      result.snippets.every((s) => !/guaranteed recovery/i.test(s.text)),
+    );
+  });
+
+  it("retrieves new compare-partner FAQ content", () => {
+    const result = retrieveKnowledgeSnippets(
+      "How can contractors compare insurance supplementing companies?",
+    );
+    assert.ok(result.snippets.length > 0);
+    assert.ok(
+      result.snippets.some((s) =>
+        /compare|fee model|documentation requirements|who talks to the carrier/i.test(
+          s.text,
+        ),
+      ),
+    );
+  });
 });

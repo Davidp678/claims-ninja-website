@@ -26,7 +26,7 @@ export function GuideHubPage({ locale = "en" }: { locale?: Locale }) {
 
   return (
     <>
-      <GuideHubJsonLd />
+      <GuideHubJsonLd locale={locale} />
       <GuideHero locale={locale} />
       <GuideFeaturedPlaybooks guides={featured} locale={locale} />
       <Suspense fallback={null}>
