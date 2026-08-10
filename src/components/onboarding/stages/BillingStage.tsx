@@ -14,6 +14,7 @@ import { OnboardingLoading } from "@/components/onboarding/OnboardingLoading";
 import { OnboardingShell } from "@/components/onboarding/OnboardingShell";
 import { useOnboardingSession } from "@/components/onboarding/useOnboardingSession";
 import { onboardingFetchJson } from "@/lib/onboarding/client-api";
+import { tokenizeCardWithIntuit } from "@/lib/onboarding/intuit-tokenize";
 import type {
   BillingAddressDraft,
   BillingContactDraft,
@@ -28,7 +29,7 @@ const US_STATES = [
 ];
 
 const ACKNOWLEDGEMENT_FALLBACK =
-  "I understand Claims Ninja will collect my payment method securely through QuickBooks before payment is processed, and that payment is handled only according to my agreement and approved invoice workflow.";
+  "I authorize Claims Ninja to securely collect and store my payment method with QuickBooks Payments for invoices under my Consulting Agreement. Claims Ninja does not store my full card or bank account numbers. Completing onboarding does not charge me. Charges occur only for amounts authorized under my agreement and after I approve an invoice (or as otherwise authorized in that agreement), and are processed through QuickBooks.";
 
 type BillingStatus = {
   captureEnabled: boolean;
@@ -147,6 +148,12 @@ export function BillingStage() {
   const [busy, setBusy] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
   const [hydrated, setHydrated] = useState(false);
+  const [cardNumber, setCardNumber] = useState("");
+  const [cardExpMonth, setCardExpMonth] = useState("");
+  const [cardExpYear, setCardExpYear] = useState("");
+  const [cardCvc, setCardCvc] = useState("");
+  const [cardName, setCardName] = useState("");
+  const [vaultedDisplay, setVaultedDisplay] = useState<string | null>(null);
   const autosaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -169,6 +176,9 @@ export function BillingStage() {
         setAddress(nextAddress);
         if (result.data.authorization?.accepted) {
           setAuthorized(true);
+        }
+        if (result.data.instrument?.maskedDisplay) {
+          setVaultedDisplay(result.data.instrument.maskedDisplay);
         }
       } else {
         setStatus({
@@ -337,6 +347,74 @@ export function BillingStage() {
       return;
     }
 
+    if (status?.captureEnabled && !vaultedDisplay) {
+      const holder =
+        cardName.trim() ||
+        [contact.firstName, contact.lastName].filter(Boolean).join(" ");
+      const tokenized = await tokenizeCardWithIntuit({
+        number: cardNumber,
+        expMonth: cardExpMonth.trim(),
+        expYear: cardExpYear.trim(),
+        cvc: cardCvc.trim(),
+        name: holder,
+        address: {
+          streetAddress: address.streetAddress,
+          city: address.city,
+          region: address.state,
+          postalCode: address.postalCode,
+          country: "US",
+        },
+      });
+      // Clear sensitive fields from React state immediately after tokenize attempt.
+      setCardNumber("");
+      setCardCvc("");
+      if (!tokenized.ok) {
+        setBusy(false);
+        setLocalError(tokenized.message);
+        return;
+      }
+
+      const instrument = await runSerialized(async () => {
+        const send = (expectedVersion: number) =>
+          onboardingFetchJson<{
+            instrument?: { maskedDisplay?: string | null };
+            version?: number;
+          }>("/api/onboarding/billing/instruments", {
+            method: "POST",
+            json: {
+              expectedVersion,
+              method: "card",
+              tokenPayload: {
+                token: tokenized.token,
+                methodType: "card",
+                cardholderName: holder,
+              },
+            },
+          });
+        let result = await send(versionRef.current);
+        if (
+          !result.ok &&
+          result.code === "VERSION_MISMATCH" &&
+          result.status === 409
+        ) {
+          await softRefresh();
+          result = await send(versionRef.current);
+        }
+        if (result.ok && typeof result.data.version === "number") {
+          syncVersion(result.data.version);
+        }
+        return result;
+      });
+      if (!instrument.ok) {
+        setBusy(false);
+        setLocalError(instrument.message);
+        return;
+      }
+      setVaultedDisplay(
+        instrument.data.instrument?.maskedDisplay ?? "Card on file",
+      );
+    }
+
     const cont = await runSerialized(async () => {
       const send = (expectedVersion: number) =>
         onboardingFetchJson<{
@@ -391,7 +469,15 @@ export function BillingStage() {
   const authLanguage =
     status?.authorization?.acceptanceLanguage ?? ACKNOWLEDGEMENT_FALLBACK;
   const sameAsCompany = Boolean(contact.sameAsCompanyAddress);
-  const canContinue = profileComplete && authorized && !busy;
+  const captureEnabled = Boolean(status?.captureEnabled);
+  const cardReady =
+    !captureEnabled ||
+    Boolean(vaultedDisplay) ||
+    (cardNumber.replace(/\s+/g, "").length >= 13 &&
+      cardExpMonth.trim().length === 2 &&
+      cardExpYear.trim().length === 4 &&
+      cardCvc.trim().length >= 3);
+  const canContinue = profileComplete && authorized && cardReady && !busy;
 
   return (
     <OnboardingShell
@@ -405,12 +491,18 @@ export function BillingStage() {
           ? "Continue to account →"
           : !profileComplete
             ? "Complete billing profile to continue"
-            : "Confirm acknowledgement to continue"
+            : !authorized
+              ? "Confirm acknowledgement to continue"
+              : "Secure payment method to continue"
       }
       onContinue={() => void handleContinue()}
       continueDisabled={!canContinue}
       continueLoading={busy}
-      hint="Payment method setup happens later through QuickBooks with our billing team."
+      hint={
+        captureEnabled
+          ? "Card details go directly to QuickBooks Payments. Claims Ninja never stores full card numbers."
+          : "Payment method setup happens later through QuickBooks with our billing team."
+      }
     >
       {localError ? (
         <p className="mb-4 text-sm text-brand-red-light" role="alert">
@@ -617,11 +709,88 @@ export function BillingStage() {
         </div>
       </SectionCard>
 
-      <SectionCard title="Payment method on file" className="mt-6">
-        <p className="text-sm text-zinc-300">
-          Secure payment-method setup will be completed with our billing team
-          through QuickBooks before any invoice payment is processed.
-        </p>
+      <SectionCard
+        title={
+          captureEnabled
+            ? "Secure your billing method"
+            : "Payment method on file"
+        }
+        className="mt-6"
+      >
+        {captureEnabled ? (
+          vaultedDisplay ? (
+            <p className="text-sm text-zinc-200">
+              Payment method saved with QuickBooks:{" "}
+              <span className="font-medium text-white">{vaultedDisplay}</span>
+            </p>
+          ) : (
+            <div className="space-y-4">
+              <p className="text-sm text-zinc-300">
+                Enter your card details. They are tokenized directly with
+                QuickBooks Payments in your browser. Claims Ninja never receives
+                or stores the full card number.
+              </p>
+              <div>
+                <FieldLabel htmlFor="cardName">Name on card</FieldLabel>
+                <TextInput
+                  id="cardName"
+                  value={cardName}
+                  onChange={(e) => setCardName(e.target.value)}
+                  autoComplete="cc-name"
+                />
+              </div>
+              <div>
+                <FieldLabel htmlFor="cardNumber">Card number</FieldLabel>
+                <TextInput
+                  id="cardNumber"
+                  value={cardNumber}
+                  onChange={(e) => setCardNumber(e.target.value)}
+                  autoComplete="cc-number"
+                  inputMode="numeric"
+                />
+              </div>
+              <div className="grid gap-4 sm:grid-cols-3">
+                <div>
+                  <FieldLabel htmlFor="cardExpMonth">Exp month</FieldLabel>
+                  <TextInput
+                    id="cardExpMonth"
+                    value={cardExpMonth}
+                    onChange={(e) => setCardExpMonth(e.target.value)}
+                    placeholder="MM"
+                    autoComplete="cc-exp-month"
+                    inputMode="numeric"
+                  />
+                </div>
+                <div>
+                  <FieldLabel htmlFor="cardExpYear">Exp year</FieldLabel>
+                  <TextInput
+                    id="cardExpYear"
+                    value={cardExpYear}
+                    onChange={(e) => setCardExpYear(e.target.value)}
+                    placeholder="YYYY"
+                    autoComplete="cc-exp-year"
+                    inputMode="numeric"
+                  />
+                </div>
+                <div>
+                  <FieldLabel htmlFor="cardCvc">CVC</FieldLabel>
+                  <TextInput
+                    id="cardCvc"
+                    value={cardCvc}
+                    onChange={(e) => setCardCvc(e.target.value)}
+                    autoComplete="cc-csc"
+                    inputMode="numeric"
+                  />
+                </div>
+              </div>
+            </div>
+          )
+        ) : (
+          <p className="text-sm text-zinc-300">
+            Secure payment-method setup will be completed with our billing team
+            through QuickBooks before any invoice payment is processed.
+          </p>
+        )}
       </SectionCard>
 
       <SectionCard title="How billing works" className="mt-6">

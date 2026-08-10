@@ -60,13 +60,23 @@ export async function POST(request: Request) {
     const tokenPayload = body.tokenPayload ?? {};
     const rawKey =
       /^(cardNumber|card_number|pan|cvv|cvc|securityCode|accountNumber|routingNumber|iban)$/i;
-    for (const key of Object.keys(tokenPayload)) {
+    for (const [key, value] of Object.entries(tokenPayload)) {
       if (rawKey.test(key)) {
         return jsonError(
           400,
           "VALIDATION_ERROR",
           "Raw card or bank values are not accepted.",
         );
+      }
+      if (typeof value === "string") {
+        // Reject PAN-/routing-shaped values even under opaque key names.
+        if (/(?:\d[ -]*?){13,19}/.test(value) || /^\d{9}$/.test(value.trim())) {
+          return jsonError(
+            400,
+            "VALIDATION_ERROR",
+            "Raw card or bank values are not accepted.",
+          );
+        }
       }
     }
 
