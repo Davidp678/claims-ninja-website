@@ -1,5 +1,3 @@
-import { HOMEPAGE_INTAKE_HREF } from "@/lib/homepage-intake";
-
 export const HERO_VIDEO_URL =
   "https://customer-qmgpb08arenbn1zo.cloudflarestream.com/1df6b7b88fc207a3eb3fa6f7323f6420/downloads/default.mp4";
 
@@ -58,10 +56,15 @@ export const SOCIAL_LINKS = [
   { label: "YouTube", href: "https://www.youtube.com/@TheClaimsNinja" },
 ] as const;
 
-/** Live conversion destinations — homepage intake vs strategy call. */
+/**
+ * Public conversion destinations during the production-model transition.
+ *
+ * Keep the secure website/platform onboarding infrastructure intact, but do not
+ * send new public traffic into it until the Claims Production Plan flow is ready.
+ */
 export const CTA_LINKS = {
-  startHere: HOMEPAGE_INTAKE_HREF,
-  onboardingForm: HOMEPAGE_INTAKE_HREF,
+  startHere: "/starthere",
+  onboardingForm: "https://form.jotform.com/260536051303041",
   schedule: "https://meetings.hubspot.com/taylor-handsel/team",
 } as const;
 
