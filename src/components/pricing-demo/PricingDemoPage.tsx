@@ -11,69 +11,79 @@ type Tier = { name: string; eyebrow: string; description: string; price: string;
 type AddOn = { name: string; price: string; description: string };
 type MarketContent = { label: string; kicker: string; title: string; description: string; tiers: Tier[]; addOns?: AddOn[] };
 
+const claimsReadyFeatures = [
+  "Estimate Production plus complete claim file",
+  "Organized photo evidence",
+  "Structured documentation + estimate notes",
+  "Missing-item flags",
+];
+
+const residentialClaimsReady: Tier[] = [
+  { name: "Starter", eyebrow: "1–5 claims / month", description: "Claims-ready file production for teams that want to try the service with a smaller monthly commitment.", price: "$250", unit: "per claim", features: claimsReadyFeatures, extras: ["Try us out!", "Defined monthly capacity"] },
+  { name: "Small", eyebrow: "6–15 claims / month", description: "A lower per-claim rate for consistent monthly claims-ready file production.", price: "$200", unit: "per claim", features: claimsReadyFeatures, extras: ["20% off", "Defined monthly capacity"] },
+  { name: "Mid-Size", eyebrow: "16–30 claims / month", description: "Volume pricing for established teams that need dependable claims-ready production every month.", price: "$187.50", unit: "per claim", featured: true, features: claimsReadyFeatures, extras: ["25% off", "Defined monthly capacity"] },
+  { name: "Enterprise", eyebrow: "30+ claims / month", description: "Custom high-volume claims-ready production capacity configured around your operation.", price: "Custom", unit: "pricing", features: claimsReadyFeatures, extras: ["Save up to 30%", "Custom capacity planning"] },
+];
+
 const marketCopy: Record<Market, MarketContent> = {
   residential: {
     label: "Residential",
-    kicker: "Property Claims Production",
-    title: "More estimating capacity. Less production drag.",
-    description: "A clean starting point for residential contractors who want dependable claims production without building a larger back office.",
-    tiers: [
-      { name: "Starter", eyebrow: "1–5 claims / month", description: "Core estimate production for lower-volume contractor teams.", price: "$112", unit: "base package · per claim", features: ["Estimate Production", "Native Xactimate ESX + estimate PDF", "Supporting documentation", "Professional QA + release"], extras: ["Standard turnaround", "Defined monthly capacity"] },
-      { name: "Small", eyebrow: "6–15 claims / month", description: "A lower per-claim rate for consistent monthly production.", price: "$89.60", unit: "base package · per claim", features: ["Estimate Production", "Native Xactimate ESX + estimate PDF", "Supporting documentation", "Professional QA + release"], extras: ["20% volume discount", "Defined monthly capacity"] },
-      { name: "Medium", eyebrow: "16–30 claims / month", description: "A stronger production rate for established claims volume.", price: "$84", unit: "base package · per claim", featured: true, features: ["Estimate Production", "Native Xactimate ESX + estimate PDF", "Supporting documentation", "Professional QA + release"], extras: ["25% volume discount", "Defined monthly capacity"] },
-      { name: "Enterprise", eyebrow: "30+ claims / month", description: "High-volume production capacity with the lowest base rate.", price: "$78.40", unit: "base package · per claim", features: ["Estimate Production", "Native Xactimate ESX + estimate PDF", "Supporting documentation", "Professional QA + release"], extras: ["30% volume discount", "Custom capacity planning"] },
-    ],
+    kicker: "Residential Claims Production",
+    title: "Flexible production capacity for residential claims.",
+    description: "Choose estimate-only production or scale into complete claims-ready file production, with specialist support available when your files need it.",
+    tiers: residentialClaimsReady,
     addOns: [
-      { name: "Claims-Ready File Production", price: "+ base package rate", description: "Adds complete file assembly, organized evidence, estimate notes, and missing-item flags." },
-      { name: "Program Compliance / TPA-MGA Review", price: "+$44.80 / claim", description: "When applied across your monthly volume." },
-      { name: "Negotiation Preparation", price: "+$44.80 / claim", description: "When applied across your monthly volume." },
-      { name: "Research or Supplement Production", price: "+$56 / claim", description: "Defined production support for the files that need it." },
+      { name: "Estimate Production", price: "$125 / claim", description: "Native Xactimate ESX + estimate PDF, supporting documentation, and professional QA + release." },
+      { name: "Program Compliance / TPA-MGA Review", price: "$40 / claim", description: "Applied to all claims. Program requirement check, required-document validation, pre-submission QA, deficiency-prevention work, and program reporting." },
+      { name: "Negotiation Preparation", price: "$80 / claim", description: "Applied to all claims. Scope comparison, variance breakdown, evidence exhibits, supporting records, revised estimate support, and contractor-facing negotiation preparation." },
+      { name: "Added Support", price: "$50 / claim", description: "Code & Documentation Research, Supplements, and more. Additional support on your claims when you need it." },
     ],
   },
   commercial: {
     label: "Commercial",
     kicker: "Commercial Claims Production",
-    title: "Serious production capacity for complex property files.",
-    description: "The same production programs, configured around commercial documentation density, scope complexity, and job volume.",
+    title: "Serious production capacity for complex commercial files.",
+    description: "The same production model, configured around commercial documentation density, scope complexity, and higher production requirements.",
     tiers: [
-      { name: "Starter", eyebrow: "1–5 claims / month", description: "Core commercial estimate production for lower-volume teams.", price: "$224", unit: "base package · per claim", features: ["Estimate Production", "Native Xactimate ESX + estimate PDF", "Supporting documentation", "Professional QA + release"], extras: ["Commercial complexity weighting", "Defined monthly capacity"] },
-      { name: "Small", eyebrow: "6–15 claims / month", description: "A lower rate for steady commercial production volume.", price: "$179.20", unit: "base package · per claim", features: ["Estimate Production", "Native Xactimate ESX + estimate PDF", "Supporting documentation", "Professional QA + release"], extras: ["20% volume discount", "Defined monthly capacity"] },
-      { name: "Medium", eyebrow: "16–30 claims / month", description: "Stronger production pricing for established commercial volume.", price: "$168", unit: "base package · per claim", featured: true, features: ["Estimate Production", "Native Xactimate ESX + estimate PDF", "Supporting documentation", "Professional QA + release"], extras: ["25% volume discount", "Defined monthly capacity"] },
-      { name: "Enterprise", eyebrow: "30+ claims / month", description: "High-volume commercial capacity with the lowest base rate.", price: "$156.80", unit: "base package · per claim", features: ["Estimate Production", "Native Xactimate ESX + estimate PDF", "Supporting documentation", "Professional QA + release"], extras: ["30% volume discount", "Custom capacity planning"] },
+      { name: "Starter", eyebrow: "1–5 claims / month", description: "Claims-ready commercial file production for teams starting with a smaller monthly commitment.", price: "$500", unit: "per claim", features: claimsReadyFeatures, extras: ["Try us out!", "Commercial production capacity"] },
+      { name: "Small", eyebrow: "6–15 claims / month", description: "A lower per-claim rate for steady commercial claims-ready production.", price: "$400", unit: "per claim", features: claimsReadyFeatures, extras: ["20% off", "Commercial production capacity"] },
+      { name: "Mid-Size", eyebrow: "16–30 claims / month", description: "Volume pricing for established commercial claims-ready production needs.", price: "$375", unit: "per claim", featured: true, features: claimsReadyFeatures, extras: ["25% off", "Commercial production capacity"] },
+      { name: "Enterprise", eyebrow: "30+ claims / month", description: "Custom high-volume commercial claims-ready capacity configured around your operation.", price: "Custom", unit: "pricing", features: claimsReadyFeatures, extras: ["Save up to 30%", "Custom capacity planning"] },
     ],
     addOns: [
-      { name: "Claims-Ready File Production", price: "+ base package rate", description: "Adds complete file assembly, organized evidence, estimate notes, and documentation-gap flags." },
-      { name: "Program Compliance / TPA-MGA Review", price: "+$89.60 / claim", description: "When applied across your monthly volume." },
-      { name: "Negotiation Preparation", price: "+$89.60 / claim", description: "When applied across your monthly volume." },
-      { name: "Research or Supplement Production", price: "+$112 / claim", description: "Defined production support for the files that need it." },
+      { name: "Estimate Production", price: "$300 / claim", description: "Native Xactimate ESX + estimate PDF, supporting documentation, and professional QA + release." },
+      { name: "Program Compliance / TPA-MGA Review", price: "$80 / claim", description: "Applied to all claims. Program requirement check, required-document validation, pre-submission QA, deficiency-prevention work, and program reporting." },
+      { name: "Negotiation Preparation", price: "$160 / claim", description: "Applied to all claims. Scope comparison, variance breakdown, evidence exhibits, supporting records, revised estimate support, and contractor-facing negotiation preparation." },
+      { name: "Added Support", price: "$100 / claim", description: "Code & Documentation Research, Supplements, and more. Additional support on your claims when you need it." },
     ],
   },
   contents: {
     label: "Contents",
-    kicker: "Contents & Inventory Production",
-    title: "Turn contents evidence into a professional inventory.",
-    description: "Structured contents production from photos, video, receipts, pack-out records, and existing inventories—with human review before release.",
-    tiers: [
-      { name: "Inventory", eyebrow: "Core", description: "Build a clean, organized inventory from the evidence your team provides.", price: "$—", unit: "custom monthly plan", features: ["Item identification", "Room + location organization", "Category + quantity", "Photo/evidence references"], extras: ["Exception flags", "Professional QA + release"] },
-      { name: "Researched", eyebrow: "Most complete", description: "Add replacement research and stronger product detail to the structured inventory.", price: "$—", unit: "custom monthly plan", featured: true, features: ["Everything in Inventory", "Brand/model/specification when supportable", "Replacement-product research", "Like-kind-and-quality research", "Replacement pricing sources"], extras: ["Uncertainty flags", "Source-linked research"] },
-      { name: "Complex Contents", eyebrow: "Expanded", description: "Higher-touch production for dense residential inventories and commercial contents or FF&E.", price: "$—", unit: "custom monthly plan", features: ["Everything in Researched", "Commercial FF&E organization", "High-volume evidence structuring", "Complex item research", "Custom inventory output structure"], extras: ["Custom volume configuration", "Custom SLA options"] },
+    kicker: "Contents Claims Production",
+    title: "The same simple production model for contents claims.",
+    description: "Residential and contents use the same pricing structure: estimate production, volume-based claims-ready files, and defined specialist support.",
+    tiers: residentialClaimsReady,
+    addOns: [
+      { name: "Estimate Production", price: "$125 / claim", description: "Native Xactimate ESX + estimate PDF, supporting documentation, and professional QA + release." },
+      { name: "Program Compliance / TPA-MGA Review", price: "$40 / claim", description: "Applied to all claims. Program requirement check, required-document validation, pre-submission QA, deficiency-prevention work, and program reporting." },
+      { name: "Negotiation Preparation", price: "$80 / claim", description: "Applied to all claims. Scope comparison, variance breakdown, evidence exhibits, supporting records, revised estimate support, and contractor-facing negotiation preparation." },
+      { name: "Added Support", price: "$50 / claim", description: "Code & Documentation Research, Supplements, and more. Additional support on your claims when you need it." },
     ],
   },
   carrierMGA: {
     label: "Carrier / MGA",
     kicker: "FNOL & Intake File Production",
     title: "Cleaner first-notice files. Less downstream production drag.",
-    description: "Fixed-scope documentation production for carrier, MGA, TPA, and program teams that need complete, structured intake files before internal handling moves forward.",
+    description: "Fixed-scope FNOL and claims-ready file production for carriers, MGAs, TPAs, and program teams that need complete, structured intake files.",
     tiers: [
-      { name: "Starter", eyebrow: "1–5 files / month", description: "Base FNOL document production for lower-volume program teams.", price: "$112", unit: "base package · per file", features: ["Structured FNOL production", "Source-material organization", "Document + photo indexing", "Missing-information flags", "Professional QA + release"], extras: ["Standard turnaround", "Defined monthly capacity"] },
-      { name: "Small", eyebrow: "6–15 files / month", description: "A lower per-file rate for dependable monthly intake volume.", price: "$89.60", unit: "base package · per file", features: ["Structured FNOL production", "Source-material organization", "Document + photo indexing", "Missing-information flags", "Professional QA + release"], extras: ["20% volume discount", "Defined monthly capacity"] },
-      { name: "Medium", eyebrow: "16–30 files / month", description: "Stronger intake-production pricing for established program volume.", price: "$84", unit: "base package · per file", featured: true, features: ["Structured FNOL production", "Source-material organization", "Document + photo indexing", "Missing-information flags", "Professional QA + release"], extras: ["25% volume discount", "Defined monthly capacity"] },
-      { name: "Enterprise", eyebrow: "30+ files / month", description: "High-volume FNOL capacity with the lowest base rate.", price: "$78.40", unit: "base package · per file", features: ["Structured FNOL production", "Source-material organization", "Document + photo indexing", "Missing-information flags", "Professional QA + release"], extras: ["30% volume discount", "Custom capacity planning"] },
+      { name: "Starter", eyebrow: "1–5 claims / month", description: "Claims-ready FNOL file production for lower-volume program teams.", price: "$250", unit: "per claim", features: ["FNOL Production plus complete claim file", "Organized photo evidence", "Structured documentation + estimate notes", "Missing-item flags"], extras: ["Try us out!", "Defined monthly capacity"] },
+      { name: "Small", eyebrow: "6–15 claims / month", description: "A lower per-claim rate for dependable monthly FNOL and claims-ready production.", price: "$200", unit: "per claim", features: ["FNOL Production plus complete claim file", "Organized photo evidence", "Structured documentation + estimate notes", "Missing-item flags"], extras: ["20% off", "Defined monthly capacity"] },
+      { name: "Mid-Size", eyebrow: "16–30 claims / month", description: "Volume pricing for established FNOL and claims-ready file production.", price: "$187.50", unit: "per claim", featured: true, features: ["FNOL Production plus complete claim file", "Organized photo evidence", "Structured documentation + estimate notes", "Missing-item flags"], extras: ["25% off", "Defined monthly capacity"] },
+      { name: "Enterprise", eyebrow: "30+ claims / month", description: "Custom high-volume FNOL and claims-ready capacity configured around your program.", price: "Custom", unit: "pricing", features: ["FNOL Production plus complete claim file", "Organized photo evidence", "Structured documentation + estimate notes", "Missing-item flags"], extras: ["Save up to 30%", "Custom capacity planning"] },
     ],
     addOns: [
-      { name: "Claims-Ready File Assembly", price: "+ base package rate", description: "Adds organized evidence, loss summary, structured notes, and required-document validation." },
-      { name: "Program-Ready Intake QA", price: "+$44.80 / file", description: "Program-specific form assembly, pre-submission QA, and deficiency flags." },
-      { name: "Priority Turnaround", price: "Custom scope", description: "Reserved for defined service-level requirements and intake capacity." },
+      { name: "FNOL Production", price: "$125 / claim", description: "Structured FNOL production, source-material organization, document + photo indexing, missing-information flags, and professional QA + release." },
+      { name: "Program Compliance / TPA-MGA Review", price: "$40 / claim", description: "Applied to all claims. Program requirement check, required-document validation, pre-submission QA, deficiency-prevention work, and program reporting." },
     ],
   },
 };
@@ -120,14 +130,14 @@ export function PricingDemoPage() {
               <div className="mt-7 border-y border-zinc-100 py-6"><div className="font-display text-4xl font-semibold tracking-tight">{tier.price}</div><div className="mt-1 text-xs font-medium uppercase tracking-wider text-zinc-400">{tier.unit}</div></div>
             </div>
             <ul className="mt-7 space-y-3.5">{tier.features.map(feature => <li key={feature} className="flex gap-3 text-sm leading-5 text-zinc-700"><span className="text-brand-red"><Check /></span><span>{feature}</span></li>)}</ul>
-            <div className="mt-auto pt-8"><div className="mb-5 rounded-2xl bg-zinc-50 p-4">{tier.extras.map(extra => <p key={extra} className="py-1 text-xs font-medium text-zinc-500">+ {extra}</p>)}</div><Button href="#plan-builder" className={cn("w-full", tier.featured && "shadow-[0_12px_35px_-12px_rgba(220,38,38,.75)]")}>Build this plan <span aria-hidden>→</span></Button></div>
+            <div className="mt-auto pt-8"><div className="mb-5 rounded-2xl bg-zinc-50 p-4">{tier.extras.map(extra => <p key={extra} className="py-1 text-xs font-medium text-zinc-500">+ {extra}</p>)}</div><Button href="#plan-builder" className={cn("w-full", tier.featured && "shadow-[0_12px_35px_-12px_rgba(220,38,38,.75)]")}>{tier.name === "Enterprise" ? "Talk to sales" : "Build this plan"} <span aria-hidden>→</span></Button></div>
           </article>)}
         </div>
         {content.addOns && <div className="mx-auto mt-12 max-w-6xl">
-          <div className="mx-auto mb-6 max-w-2xl text-center"><p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-red">Add-on production</p><h3 className="mt-2 font-display text-3xl font-semibold tracking-tight">Add only the work each file needs.</h3><p className="mt-3 text-sm leading-6 text-zinc-600">Your base package is set by monthly volume. Add-ons are applied only to the files that require them, unless noted.</p></div>
+          <div className="mx-auto mb-6 max-w-2xl text-center"><p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-red">Additional production</p><h3 className="mt-2 font-display text-3xl font-semibold tracking-tight">Add only the work each file needs.</h3><p className="mt-3 text-sm leading-6 text-zinc-600">Choose estimate or FNOL production on its own, or add specialist production support to your claims-ready plan as needed.</p></div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{content.addOns.map((addOn) => <div key={addOn.name} className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-[0_18px_45px_-38px_rgba(0,0,0,.45)]"><p className="text-sm font-semibold text-zinc-900">{addOn.name}</p><p className="mt-3 font-display text-2xl font-semibold tracking-tight text-brand-red">{addOn.price}</p><p className="mt-2 text-xs leading-5 text-zinc-500">{addOn.description}</p></div>)}</div>
         </div>}
-        <p className="mt-7 text-center text-xs leading-5 text-zinc-500">All pricing is configured to the documented scope, monthly volume, and required turnaround. Claims Ninja provides production work—not claim strategy, negotiation, or settlement responsibility.</p>
+        <p className="mt-7 text-center text-xs leading-5 text-zinc-500">Claims Ninja provides production work—not claim strategy, negotiation, or settlement responsibility. Pricing reflects the current internal prototype and may be configured around documented scope, volume, and turnaround.</p>
       </Container>
     </section>
 
@@ -146,7 +156,7 @@ export function PricingDemoPage() {
           <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-red/20 blur-3xl" />
           <div className="relative grid gap-10 lg:grid-cols-[1fr_.72fr] lg:items-end">
             <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-red-light">Next step</p><h2 className="mt-3 max-w-2xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">Your workload should shape the plan—not the other way around.</h2><p className="mt-5 max-w-2xl leading-7 text-zinc-400">Next we can layer in monthly job volume, residential/commercial/contents/intake mix, program allocation, required documentation, and turnaround to turn this pricing baseline into an interactive plan builder.</p></div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5"><p className="text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">Current selection</p><p className="mt-2 font-display text-2xl font-semibold">{content.label} {market === "carrierMGA" ? "Claims Production" : "Production"}</p><p className="mt-2 text-sm leading-6 text-zinc-400">Volume-based base packages · defined add-ons · professional QA and release.</p></div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5"><p className="text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">Current selection</p><p className="mt-2 font-display text-2xl font-semibold">{content.label} {market === "carrierMGA" ? "Claims Production" : "Production"}</p><p className="mt-2 text-sm leading-6 text-zinc-400">Volume-based claims-ready packages · defined production options · professional QA and release.</p></div>
           </div>
         </div>
       </Container>
