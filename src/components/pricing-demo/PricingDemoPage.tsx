@@ -141,10 +141,12 @@ export function PricingDemoPage() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-white">Base Offering</p>
             </div>
             <article className="relative mt-5 flex min-h-[34rem] flex-1 flex-col overflow-hidden rounded-[2rem] border border-zinc-200 bg-white p-7 shadow-[0_24px_70px_-42px_rgba(0,0,0,.35)] sm:p-6">
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-red">{content.estimateTier.eyebrow}</p>
-              <h3 className="mt-2 font-display text-3xl font-semibold tracking-tight">{content.estimateTier.name}</h3>
-              <p className="mt-3 min-h-16 text-sm leading-6 text-zinc-600">{content.estimateTier.description}</p>
-              <div className="mt-7 border-y border-zinc-100 py-6"><div className="font-display text-4xl font-semibold tracking-tight">{content.estimateTier.price}</div><div className="mt-1 text-xs font-medium uppercase tracking-wider text-zinc-400">{content.estimateTier.unit}</div></div>
+              <div className="min-h-[10rem]">
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-red">{content.estimateTier.eyebrow}</p>
+                <h3 className="mt-2 font-display text-3xl font-semibold tracking-tight">{content.estimateTier.name}</h3>
+                <p className="mt-3 text-sm leading-6 text-zinc-600">{content.estimateTier.description}</p>
+              </div>
+              <div className="border-y border-zinc-100 py-6"><div className="font-display text-4xl font-semibold tracking-tight">{content.estimateTier.price}</div><div className="mt-1 text-xs font-medium uppercase tracking-wider text-zinc-400">{content.estimateTier.unit}</div></div>
               <ul className="mt-7 space-y-3.5">{content.estimateTier.features.map(feature => <li key={feature} className="flex gap-3 text-sm leading-5 text-zinc-700"><span className="text-brand-red"><Check /></span><span>{feature}</span></li>)}</ul>
               <div className="mt-auto pt-8"><div className="mb-5 rounded-2xl bg-zinc-50 p-4">{content.estimateTier.extras.map(extra => <p key={extra} className="py-1 text-xs font-medium text-zinc-500">+ {extra}</p>)}</div><Button href="#plan-builder" className="w-full">Build this plan <span aria-hidden>→</span></Button></div>
             </article>
@@ -155,16 +157,15 @@ export function PricingDemoPage() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-white">{content.claimsReadyTitle}</p>
             </div>
             <div className="mt-5 grid flex-1 items-stretch gap-5 lg:grid-cols-2 2xl:grid-cols-4">
-              {content.tiers.map((tier) => <article key={tier.name} className={cn("relative flex min-h-[34rem] h-full flex-col overflow-hidden rounded-[2rem] border bg-white p-7 shadow-[0_24px_70px_-42px_rgba(0,0,0,.35)] sm:p-6", tier.featured ? "border-zinc-950 ring-1 ring-zinc-950" : "border-zinc-200")}>
-                {tier.featured && <div className="absolute inset-x-0 top-0 bg-zinc-950 py-2 text-center text-[10px] font-bold uppercase tracking-[0.2em] text-white">Recommended starting point</div>}
-                <div className={tier.featured ? "pt-5" : ""}>
+              {content.tiers.map((tier) => <article key={tier.name} className="relative flex min-h-[34rem] h-full flex-col overflow-hidden rounded-[2rem] border border-zinc-200 bg-white p-7 shadow-[0_24px_70px_-42px_rgba(0,0,0,.35)] sm:p-6">
+                <div className="min-h-[10rem]">
                   <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-red">{tier.eyebrow}</p>
                   <h3 className="mt-2 font-display text-3xl font-semibold tracking-tight">{tier.name}</h3>
-                  <p className="mt-3 min-h-16 text-sm leading-6 text-zinc-600">{tier.description}</p>
-                  <div className="mt-7 border-y border-zinc-100 py-6"><div className="font-display text-4xl font-semibold tracking-tight">{tier.price}</div><div className="mt-1 text-xs font-medium uppercase tracking-wider text-zinc-400">{tier.unit}</div></div>
+                  <p className="mt-3 text-sm leading-6 text-zinc-600">{tier.description}</p>
                 </div>
+                <div className="border-y border-zinc-100 py-6"><div className="font-display text-4xl font-semibold tracking-tight">{tier.price}</div><div className="mt-1 text-xs font-medium uppercase tracking-wider text-zinc-400">{tier.unit}</div></div>
                 <ul className="mt-7 space-y-3.5">{tier.features.map(feature => <li key={feature} className="flex gap-3 text-sm leading-5 text-zinc-700"><span className="text-brand-red"><Check /></span><span>{feature}</span></li>)}</ul>
-                <div className="mt-auto pt-8"><div className="mb-5 rounded-2xl bg-zinc-50 p-4">{tier.extras.map(extra => <p key={extra} className={cn("py-1 text-xs font-semibold", extra.toLowerCase().includes("save") || extra.toLowerCase().includes("try") ? "text-brand-red" : "text-zinc-500")}>{extra.toLowerCase().includes("save") || extra.toLowerCase().includes("try") ? "★ " : "+ "}{extra}</p>)}</div><Button href="#plan-builder" className={cn("w-full", tier.featured && "shadow-[0_12px_35px_-12px_rgba(220,38,38,.75)]")}>{tier.name === "Enterprise" ? "Talk to sales" : "Build this plan"} <span aria-hidden>→</span></Button></div>
+                <div className="mt-auto pt-8"><div className="mb-5 rounded-2xl bg-zinc-50 p-4">{tier.extras.map(extra => <p key={extra} className={cn("py-1 text-xs font-semibold", extra.toLowerCase().includes("save") || extra.toLowerCase().includes("try") ? "text-brand-red" : "text-zinc-500")}>{extra.toLowerCase().includes("save") || extra.toLowerCase().includes("try") ? "★ " : "+ "}{extra}</p>)}</div><Button href="#plan-builder" className="w-full">{tier.name === "Enterprise" ? "Talk to sales" : "Build this plan"} <span aria-hidden>→</span></Button></div>
               </article>)}
             </div>
           </div>
