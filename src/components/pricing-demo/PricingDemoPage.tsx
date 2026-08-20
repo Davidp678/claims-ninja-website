@@ -26,10 +26,10 @@ const estimateFeatures = [
 ];
 
 const residentialClaimsReady: Tier[] = [
-  { name: "Starter", eyebrow: "1–5 claims / month", description: "Claims-ready file production for teams that want to try the service with a smaller monthly commitment.", price: "$250", unit: "per claim", features: claimsReadyFeatures, extras: ["Try us out!", "Defined monthly capacity"] },
-  { name: "Small", eyebrow: "6–15 claims / month", description: "A lower per-claim rate for consistent monthly claims-ready file production.", price: "$200", unit: "per claim", features: claimsReadyFeatures, extras: ["Save 20%", "Defined monthly capacity"] },
-  { name: "Mid-Size", eyebrow: "16–30 claims / month", description: "Volume pricing for established teams that need dependable claims-ready production every month.", price: "$187.50", unit: "per claim", featured: true, features: claimsReadyFeatures, extras: ["Save 25%", "Defined monthly capacity"] },
-  { name: "Enterprise", eyebrow: "30+ claims / month", description: "Custom high-volume claims-ready production capacity configured around your operation.", price: "Custom", unit: "pricing", features: claimsReadyFeatures, extras: ["Save up to 30%", "Custom capacity planning"] },
+  { name: "Starter", eyebrow: "1–5 claims / month", description: "Claims-ready production for lower-volume teams.", price: "$250", unit: "per claim", features: claimsReadyFeatures, extras: ["Try us out!", "Defined monthly capacity"] },
+  { name: "Small", eyebrow: "6–15 claims / month", description: "Lower per-claim pricing for steady monthly volume.", price: "$200", unit: "per claim", features: claimsReadyFeatures, extras: ["Save 20%", "Defined monthly capacity"] },
+  { name: "Mid-Size", eyebrow: "16–30 claims / month", description: "Volume pricing for established production teams.", price: "$187.50", unit: "per claim", featured: true, features: claimsReadyFeatures, extras: ["Save 25%", "Defined monthly capacity"] },
+  { name: "Enterprise", eyebrow: "30+ claims / month", description: "Custom high-volume capacity for larger operations.", price: "Custom", unit: "pricing", features: claimsReadyFeatures, extras: ["Save up to 30%", "Custom capacity planning"] },
 ];
 
 const marketCopy: Record<Market, MarketContent> = {
@@ -57,10 +57,10 @@ const marketCopy: Record<Market, MarketContent> = {
     claimsReadyTitle: "Claims-Ready File Production",
     claimsReadyDescription: "Commercial claims-ready files with clear volume discounts for growing production demand.",
     tiers: [
-      { name: "Starter", eyebrow: "1–5 claims / month", description: "Claims-ready commercial file production for teams starting with a smaller monthly commitment.", price: "$500", unit: "per claim", features: claimsReadyFeatures, extras: ["Try us out!", "Commercial production capacity"] },
-      { name: "Small", eyebrow: "6–15 claims / month", description: "A lower per-claim rate for steady commercial claims-ready production.", price: "$400", unit: "per claim", features: claimsReadyFeatures, extras: ["Save 20%", "Commercial production capacity"] },
-      { name: "Mid-Size", eyebrow: "16–30 claims / month", description: "Volume pricing for established commercial claims-ready production needs.", price: "$375", unit: "per claim", featured: true, features: claimsReadyFeatures, extras: ["Save 25%", "Commercial production capacity"] },
-      { name: "Enterprise", eyebrow: "30+ claims / month", description: "Custom high-volume commercial claims-ready capacity configured around your operation.", price: "Custom", unit: "pricing", features: claimsReadyFeatures, extras: ["Save up to 30%", "Custom capacity planning"] },
+      { name: "Starter", eyebrow: "1–5 claims / month", description: "Claims-ready commercial production for lower-volume teams.", price: "$500", unit: "per claim", features: claimsReadyFeatures, extras: ["Try us out!", "Commercial production capacity"] },
+      { name: "Small", eyebrow: "6–15 claims / month", description: "Lower per-claim pricing for steady commercial volume.", price: "$400", unit: "per claim", features: claimsReadyFeatures, extras: ["Save 20%", "Commercial production capacity"] },
+      { name: "Mid-Size", eyebrow: "16–30 claims / month", description: "Volume pricing for established commercial teams.", price: "$375", unit: "per claim", featured: true, features: claimsReadyFeatures, extras: ["Save 25%", "Commercial production capacity"] },
+      { name: "Enterprise", eyebrow: "30+ claims / month", description: "Custom high-volume capacity for larger commercial operations.", price: "Custom", unit: "pricing", features: claimsReadyFeatures, extras: ["Save up to 30%", "Custom capacity planning"] },
     ],
     addOns: [
       { name: "Program Compliance / TPA-MGA Review", price: "$80 / claim", description: "Applied to all claims. Program requirement check, required-document validation, pre-submission QA, deficiency-prevention work, and program reporting." },
@@ -92,10 +92,10 @@ const marketCopy: Record<Market, MarketContent> = {
     claimsReadyTitle: "Claims-Ready File Production",
     claimsReadyDescription: "Complete FNOL and claims-ready file production with volume savings for program teams.",
     tiers: [
-      { name: "Starter", eyebrow: "1–5 claims / month", description: "Claims-ready FNOL file production for lower-volume program teams.", price: "$250", unit: "per claim", features: ["FNOL Production plus complete claim file", "Organized photo evidence", "Structured documentation + estimate notes", "Missing-item flags"], extras: ["Try us out!", "Defined monthly capacity"] },
-      { name: "Small", eyebrow: "6–15 claims / month", description: "A lower per-claim rate for dependable monthly FNOL and claims-ready production.", price: "$200", unit: "per claim", features: ["FNOL Production plus complete claim file", "Organized photo evidence", "Structured documentation + estimate notes", "Missing-item flags"], extras: ["Save 20%", "Defined monthly capacity"] },
-      { name: "Mid-Size", eyebrow: "16–30 claims / month", description: "Volume pricing for established FNOL and claims-ready file production.", price: "$187.50", unit: "per claim", featured: true, features: ["FNOL Production plus complete claim file", "Organized photo evidence", "Structured documentation + estimate notes", "Missing-item flags"], extras: ["Save 25%", "Defined monthly capacity"] },
-      { name: "Enterprise", eyebrow: "30+ claims / month", description: "Custom high-volume FNOL and claims-ready capacity configured around your program.", price: "Custom", unit: "pricing", features: ["FNOL Production plus complete claim file", "Organized photo evidence", "Structured documentation + estimate notes", "Missing-item flags"], extras: ["Save up to 30%", "Custom capacity planning"] },
+      { name: "Starter", eyebrow: "1–5 claims / month", description: "Claims-ready FNOL production for lower-volume teams.", price: "$250", unit: "per claim", features: ["FNOL Production plus complete claim file", "Organized photo evidence", "Structured documentation + estimate notes", "Missing-item flags"], extras: ["Try us out!", "Defined monthly capacity"] },
+      { name: "Small", eyebrow: "6–15 claims / month", description: "Lower per-claim pricing for steady FNOL volume.", price: "$200", unit: "per claim", features: ["FNOL Production plus complete claim file", "Organized photo evidence", "Structured documentation + estimate notes", "Missing-item flags"], extras: ["Save 20%", "Defined monthly capacity"] },
+      { name: "Mid-Size", eyebrow: "16–30 claims / month", description: "Volume pricing for established FNOL programs.", price: "$187.50", unit: "per claim", featured: true, features: ["FNOL Production plus complete claim file", "Organized photo evidence", "Structured documentation + estimate notes", "Missing-item flags"], extras: ["Save 25%", "Defined monthly capacity"] },
+      { name: "Enterprise", eyebrow: "30+ claims / month", description: "Custom high-volume capacity for larger programs.", price: "Custom", unit: "pricing", features: ["FNOL Production plus complete claim file", "Organized photo evidence", "Structured documentation + estimate notes", "Missing-item flags"], extras: ["Save up to 30%", "Custom capacity planning"] },
     ],
     addOns: [
       { name: "Program Compliance / TPA-MGA Review", price: "$40 / claim", description: "Applied to all claims. Program requirement check, required-document validation, pre-submission QA, deficiency-prevention work, and program reporting." },
@@ -146,13 +146,11 @@ export function PricingDemoPage() {
           </article>
 
           <div>
-            <div className="rounded-[2rem] bg-zinc-950 px-6 py-5 text-white shadow-[0_24px_70px_-42px_rgba(0,0,0,.35)]">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-red-light">{content.claimsReadyTitle}</p>
-              <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight">Grouped volume pricing with visible savings.</h3>
-              <p className="mt-2 max-w-3xl text-sm leading-6 text-zinc-300">{content.claimsReadyDescription}</p>
+            <div className="rounded-2xl bg-zinc-950 px-5 py-3 text-white shadow-[0_18px_45px_-38px_rgba(0,0,0,.45)]">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-white">{content.claimsReadyTitle}</p>
             </div>
             <div className="mt-5 grid items-stretch gap-5 lg:grid-cols-2 2xl:grid-cols-4">
-              {content.tiers.map((tier) => <article key={tier.name} className={cn("relative flex min-h-[34rem] flex-col overflow-hidden rounded-[2rem] border bg-white p-7 shadow-[0_24px_70px_-42px_rgba(0,0,0,.35)] sm:p-6", tier.featured ? "border-zinc-950 ring-1 ring-zinc-950 lg:-translate-y-3" : "border-zinc-200")}>
+              {content.tiers.map((tier) => <article key={tier.name} className={cn("relative flex min-h-[34rem] flex-col overflow-hidden rounded-[2rem] border bg-white p-7 shadow-[0_24px_70px_-42px_rgba(0,0,0,.35)] sm:p-6", tier.featured ? "border-zinc-950 ring-1 ring-zinc-950" : "border-zinc-200")}>
                 {tier.featured && <div className="absolute inset-x-0 top-0 bg-zinc-950 py-2 text-center text-[10px] font-bold uppercase tracking-[0.2em] text-white">Recommended starting point</div>}
                 <div className={tier.featured ? "pt-5" : ""}>
                   <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-red">{tier.eyebrow}</p>
