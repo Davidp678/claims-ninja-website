@@ -31,6 +31,7 @@ export const GENERAL_CLAIMS_HUB_ORDER = [
   "missing-line-item-documentation-guide-for-contractors",
   "large-loss-commercial-insurance-claims-guide",
   "carrier-estimate-review-guide",
+  "general-conditions-documentation-guide-for-contractors",
   "retail-office-insurance-claims-guide",
   "first-48-hours-checklist",
   "multifamily-apartment-insurance-claims-guide",

@@ -46,6 +46,7 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     "quantity-validation-guide-for-contractors",
     "scope-audit-guide-for-contractors",
     "missing-line-item-documentation-guide-for-contractors",
+    "general-conditions-documentation-guide-for-contractors",
     "carrier-estimate-review-guide",
     "commercial-insurance-supplement-playbook-for-contractors",
     "commercial-insurance-claims-documentation-guide",
@@ -338,6 +339,7 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
         "Inventory temporary protection performed or still required: board-up, tarp, temporary roof, contents protection, site security, and weatherization — with dated photos and location labels.",
         "Keep general conditions and temporary protection evidence chronological — daily reports and in-place photos beat end-of-job narratives.",
         "Do not inflate general conditions without production records; unsupported GC lines are a common credibility failure at desk review.",
+        "For project-level documentation depth — supervision, trade coordination, logistics, temporary facilities, and duration — use the General Conditions Documentation Guide for Contractors. Keep O&P eligibility on the O&P Qualification Documentation Standard.",
       ],
       notes:
         "Temporary protection and general conditions are among the most overlooked categories. Photograph them in place before removal.",
@@ -770,6 +772,10 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     {
       label: "Missing Line Item Documentation Guide for Contractors",
       href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+    },
+    {
+      label: "General Conditions Documentation Guide for Contractors",
+      href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
     },
     {
       label: "Carrier Estimate Review Workflow",

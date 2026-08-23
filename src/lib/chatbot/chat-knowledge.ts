@@ -2808,7 +2808,6 @@ const FAQ_ID_BOOSTS: Record<
       "overlooked line items",
       "overlooked estimate",
       "temporary protection",
-      "general conditions",
       "detach reset",
     ],
     topics: ["supplements", "xactimate", "documentation"],
@@ -3378,6 +3377,64 @@ const FAQ_ID_BOOSTS: Record<
       "field scope worksheet",
     ],
     topics: ["documentation", "supplements", "xactimate"],
+  },
+  "general-conditions-documentation": {
+    phrases: [
+      "what documentation supports general conditions on a restoration project",
+      "documentation supports general conditions",
+      "general conditions documentation",
+      "document general conditions on a restoration project",
+    ],
+    keywords: [
+      "general conditions documentation",
+      "project-level general conditions",
+      "condition activity documentation estimate",
+      "site logistics",
+    ],
+    topics: ["documentation", "supplements"],
+  },
+  "documenting-project-supervision": {
+    phrases: [
+      "how should contractors document project supervision",
+      "documenting project supervision",
+      "document project supervision",
+      "contractor project supervision documentation",
+    ],
+    keywords: [
+      "project supervision documentation",
+      "supervision logs",
+      "site meeting notes",
+    ],
+    topics: ["documentation", "supplements"],
+  },
+  "documenting-trade-coordination": {
+    phrases: [
+      "how can contractors document trade coordination on a restoration project",
+      "documenting trade coordination",
+      "document trade coordination",
+      "restoration project coordination",
+    ],
+    keywords: [
+      "trade coordination documentation",
+      "project-level coordination",
+      "multi-trade coordination records",
+    ],
+    topics: ["documentation", "supplements"],
+  },
+  "documenting-project-duration": {
+    phrases: [
+      "what records help document project duration",
+      "what records support project duration",
+      "records support project duration",
+      "documenting project duration",
+      "document project duration",
+    ],
+    keywords: [
+      "project duration records",
+      "project duration documentation",
+      "phase dates",
+    ],
+    topics: ["documentation", "supplements"],
   },
 };
 

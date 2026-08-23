@@ -4119,6 +4119,69 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "How construction-order review reveals missing trades; diagnostic companion to Why Carrier Estimates Miss Required Trades blog.",
   },
+  "general-conditions-documentation": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/general-conditions-documentation-guide-for-contractors",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+      "general-claims/insurance-estimate-review-scope-validation-guide",
+      "general-claims/op-qualification-guide",
+    ],
+    relatedFaqIds: [
+      "documenting-project-supervision",
+      "documenting-trade-coordination",
+      "documenting-project-duration",
+      "estimate-documentation-requirements",
+      "overlooked-insurance-estimate-items",
+    ],
+    internalLinkNotes:
+      "Canonical FAQ for project-level general-conditions documentation; distinct from O&P qualification and overlooked-items listing.",
+  },
+  "documenting-project-supervision": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/general-conditions-documentation-guide-for-contractors",
+      "general-claims/op-qualification-guide",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "general-conditions-documentation",
+      "documenting-project-duration",
+      "documenting-trade-coordination",
+    ],
+    internalLinkNotes:
+      "How contractors document project supervision that actually occurred; not an O&P eligibility FAQ.",
+  },
+  "documenting-trade-coordination": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/general-conditions-documentation-guide-for-contractors",
+      "general-claims/missing-line-item-documentation-guide-for-contractors",
+      "general-claims/scope-audit-guide-for-contractors",
+    ],
+    relatedFaqIds: [
+      "general-conditions-documentation",
+      "documenting-trade-sequencing-omitted-work",
+      "documenting-project-supervision",
+    ],
+    internalLinkNotes:
+      "Project-level trade-coordination records; distinct from omitted-work sequencing documentation.",
+  },
+  "documenting-project-duration": {
+    searchIntent: "documentation-standard",
+    relatedGuideSlugs: [
+      "general-claims/general-conditions-documentation-guide-for-contractors",
+      "general-claims/quantity-validation-guide-for-contractors",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "general-conditions-documentation",
+      "documenting-project-supervision",
+      "quantity-validation-insurance-estimates",
+    ],
+    internalLinkNotes:
+      "Project-duration records for general conditions; distinct from water drying-duration and quantity-day disputes.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

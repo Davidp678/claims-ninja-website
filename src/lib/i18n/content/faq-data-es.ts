@@ -6292,6 +6292,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "¿Por qué faltan renglones en los estimados de la aseguradora?",
         href: "/faq#faq-missing-line-items-insurance-estimates",
       },
+      {
+        label: "Guía de documentación de condiciones generales para contratistas",
+        href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
+      },
     ],
   },
   {
@@ -7244,6 +7248,108 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de documentación de renglones faltantes para contratistas",
         href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "general-conditions-documentation",
+    category: "insurance_supplements",
+    question:
+      "¿Qué documentación respalda las condiciones generales en un proyecto de restauración?",
+    answer:
+      "La documentación que respalda las condiciones generales registra el trabajo operativo a nivel de proyecto que realmente ocurrió — no una lista copiada de ítems supuestos en toda reclamación. Los registros útiles incluyen fotografías etiquetadas, bitácoras de proyecto, cronogramas, reportes diarios, facturas y recibos que se reconcilian con esas bitácoras, registros de subcontratistas, notas de reuniones, notas de condiciones del sitio, correspondencia, líneas de tiempo y documentación de cambios. Organice cada fila como Condición → Actividad → Documentación → Estimado para que un revisor vea por qué se requirió la actividad, qué se hizo, qué registros lo prueban y qué sección del estimado respalda. Las condiciones generales varían según tamaño, duración, ocupación, oficios, acceso y logística. No son intercambiables con gastos generales y beneficio (O&P). Use la Guía de documentación de condiciones generales para contratistas para el flujo operativo, y el Estándar de documentación para calificación de O&P cuando la pregunta sea elegibilidad de O&P.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de condiciones generales para contratistas",
+        href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
+      },
+      {
+        label: "Estándar de documentación para calificación de O&P",
+        href: "/resources/guides/general-claims/op-qualification-guide",
+      },
+      {
+        label: "¿Cómo deben los contratistas documentar la supervisión de proyecto?",
+        href: "/faq#faq-documenting-project-supervision",
+      },
+      {
+        label: "¿Qué documentación se requiere para la revisión de estimados y la validación de alcance?",
+        href: "/faq#faq-estimate-documentation-requirements",
+      },
+    ],
+  },
+  {
+    id: "documenting-project-supervision",
+    category: "insurance_supplements",
+    question: "¿Cómo deben los contratistas documentar la supervisión de proyecto?",
+    answer:
+      "Documente la supervisión solo donde realmente ocurrió. Mantenga bitácoras fechadas con la persona o el rol en el sitio, las áreas visitadas y las decisiones del día. Registre la programación, la coordinación de oficios, las notas de reuniones de obra, los registros de avance y la documentación diaria a lo largo de la duración del proyecto. No trate una bitácora de supervisión como respaldo automático de un cargo particular, y no sustituya los registros de supervisión por la calificación de gastos generales y beneficio. Use la Guía de documentación de condiciones generales para contratistas para la lista de verificación de supervisión, y mantenga la elegibilidad de O&P en el Estándar de documentación para calificación de O&P.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de condiciones generales para contratistas",
+        href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
+      },
+      {
+        label: "¿Qué documentación respalda las condiciones generales en un proyecto de restauración?",
+        href: "/faq#faq-general-conditions-documentation",
+      },
+      {
+        label: "Estándar de documentación para calificación de O&P",
+        href: "/resources/guides/general-claims/op-qualification-guide",
+      },
+      {
+        label: "¿Qué registros ayudan a documentar la duración del proyecto?",
+        href: "/faq#faq-documenting-project-duration",
+      },
+    ],
+  },
+  {
+    id: "documenting-trade-coordination",
+    category: "insurance_supplements",
+    question:
+      "¿Cómo pueden los contratistas documentar la coordinación de oficios en un proyecto de restauración?",
+    answer:
+      "Documente la coordinación que realmente ocurrió entre los oficios en el sitio — no una lista teórica de oficios. Registre quién estuvo presente, qué área ocupó, qué esperó y qué entregó, usando notas de reuniones, cronogramas de oficios, reportes diarios y registros de subcontratistas alineados a los mismos IDs de ubicación que las fotos y el estimado. La restauración con varios oficios suele secuenciar mitigación, demolición, techado, electricidad, plomería, HVAC, drywall, pisos, pintura y oficios especializados; escriba la secuencia que ocurrió en este trabajo. Esto es distinto de documentar la secuencia de trabajo omitido después de una auditoría de alcance — use la Guía de documentación de renglones faltantes cuando la pregunta sean fases de reparación faltantes, y esta FAQ cuando la pregunta sean registros de coordinación a nivel de proyecto.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de condiciones generales para contratistas",
+        href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
+      },
+      {
+        label: "¿Cómo deben los contratistas documentar la secuencia de oficios para trabajo omitido?",
+        href: "/faq#faq-documenting-trade-sequencing-omitted-work",
+      },
+      {
+        label: "¿Qué documentación respalda las condiciones generales en un proyecto de restauración?",
+        href: "/faq#faq-general-conditions-documentation",
+      },
+      {
+        label: "Por qué los estimados de la aseguradora omiten oficios requeridos",
+        href: "/resources/blog/why-carrier-estimates-miss-required-trades",
+      },
+    ],
+  },
+  {
+    id: "documenting-project-duration",
+    category: "insurance_supplements",
+    question: "¿Qué registros ayudan a documentar la duración del proyecto?",
+    answer:
+      "Los registros de duración muestran cuándo ocurrieron las actividades a nivel de proyecto. Conserve fechas de inicio y fin, fechas de fases, cronogramas de oficios y bitácoras diarias o de proyecto contemporáneas. Cuando la duración cambió por condiciones de sitio documentadas — límites de acceso, ocupación, protección contra el clima o esperas de oficios — escriba la condición, la fecha y el efecto operativo. No interprete cobertura de demoras ni plazos de póliza, y no complete días ficticios. Si la disputa son días de equipo o cantidades medidas, use la Guía de validación de cantidades. Use la Guía de documentación de condiciones generales para contratistas para la lista de verificación de duración.",
+    relatedLinks: [
+      {
+        label: "Guía de documentación de condiciones generales para contratistas",
+        href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
+      },
+      {
+        label: "¿Qué documentación respalda las condiciones generales en un proyecto de restauración?",
+        href: "/faq#faq-general-conditions-documentation",
+      },
+      {
+        label: "¿Cómo deben los contratistas documentar la supervisión de proyecto?",
+        href: "/faq#faq-documenting-project-supervision",
+      },
+      {
+        label: "Guía de validación de cantidades para contratistas",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
       },
     ],
   },

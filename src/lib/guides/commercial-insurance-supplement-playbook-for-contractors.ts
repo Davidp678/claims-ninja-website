@@ -54,6 +54,7 @@ export const COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGu
     "insurance-estimate-review-scope-validation-guide",
     "quantity-validation-guide-for-contractors",
     "scope-audit-guide-for-contractors",
+    "general-conditions-documentation-guide-for-contractors",
     "carrier-estimate-review-guide",
     "code-upgrade-documentation-guide",
     "equipment-documentation-guide",
@@ -260,6 +261,7 @@ export const COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGu
         "Photograph protection and GC items in place — not only on invoices — and label by building and zone.",
         "Reconcile billed protection and GC lines to dated photos and tickets before supplement submission.",
         "Do not bundle undocumented general conditions into a single unexplained lump sum — adjusters cut unsupported GC blocks first.",
+        "Use the General Conditions Documentation Guide for Contractors for project-level documentation standards; this phase stays the commercial supplement workflow, not the documentation deep-dive.",
       ],
       notes:
         "Temporary protection and general conditions are among the most commonly missed commercial supplement opportunities. Contemporaneous photos beat end-of-job narrative.",
@@ -626,6 +628,10 @@ export const COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS = defineGu
     {
       label: "Quantity Validation Guide for Contractors",
       href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+    },
+    {
+      label: "General Conditions Documentation Guide for Contractors",
+      href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
     },
     {
       label: "Scope Audit Guide for Contractors",

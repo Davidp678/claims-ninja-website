@@ -85,8 +85,11 @@ export const BLOG_GUIDE_COMPANIONS = {
   },
   "op-on-insurance-claims": {
     intro:
-      "You've learned when O&P applies on insurance claims. Now document coordination and trade count the way desk reviewers expect before submission.",
-    guideSlugs: ["op-qualification-guide"],
+      "You've learned when O&P applies on insurance claims. Now document coordination and trade count the way desk reviewers expect — and keep project-level general conditions on their own documentation standard so the two concepts stay separate.",
+    guideSlugs: [
+      "op-qualification-guide",
+      "general-conditions-documentation-guide-for-contractors",
+    ],
   },
   "roofing-supplement-playbook": {
     intro:

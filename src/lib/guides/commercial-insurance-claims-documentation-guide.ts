@@ -49,6 +49,7 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     "commercial-roofing-documentation-guide",
     "documentation-standards-guide",
     "insurance-estimate-review-scope-validation-guide",
+    "general-conditions-documentation-guide-for-contractors",
     "photo-documentation-standards-guide",
     "fire-damage-documentation-guide",
     "mold-damage-documentation-guide",
@@ -672,6 +673,10 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     {
       label: "Claim Documentation Standards",
       href: "/resources/guides/general-claims/documentation-standards-guide",
+    },
+    {
+      label: "General Conditions Documentation Guide for Contractors",
+      href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
     },
     {
       label: "Insurance Estimate Review Playbook for Contractors",

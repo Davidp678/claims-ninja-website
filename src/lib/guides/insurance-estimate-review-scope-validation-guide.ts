@@ -43,6 +43,7 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
     "quantity-validation-guide-for-contractors",
     "scope-audit-guide-for-contractors",
     "missing-line-item-documentation-guide-for-contractors",
+    "general-conditions-documentation-guide-for-contractors",
     "carrier-estimate-review-guide",
     "documentation-standards-guide",
     "commercial-insurance-claims-documentation-guide",
@@ -325,6 +326,7 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
         "Keep general conditions evidence chronological — daily reports and photos beat end-of-job narratives.",
         "Do not inflate general conditions without production records; unsupported GC lines are a common credibility failure at desk review.",
         "Link each GC gap to a daily report date and photo when marking it supplement-ready.",
+        "Use the General Conditions Documentation Guide for Contractors when the file needs project-level records for supervision, coordination, protection, logistics, facilities, or duration — not a universal payable list, and not O&P qualification.",
       ],
     },
     {
@@ -638,6 +640,10 @@ export const INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE = defineGuide({
     {
       label: "Missing Line Item Documentation Guide for Contractors",
       href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+    },
+    {
+      label: "General Conditions Documentation Guide for Contractors",
+      href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
     },
     {
       label: "Carrier Estimate Review Workflow",

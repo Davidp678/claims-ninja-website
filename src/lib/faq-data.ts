@@ -6305,6 +6305,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Why are line items missing from carrier insurance estimates?",
         href: "/faq#faq-missing-line-items-insurance-estimates",
       },
+      {
+        label: "General Conditions Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
+      },
     ],
   },
   {
@@ -7246,6 +7250,108 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Missing Line Item Documentation Guide for Contractors",
         href: "/resources/guides/general-claims/missing-line-item-documentation-guide-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "general-conditions-documentation",
+    category: "insurance_supplements",
+    question:
+      "What documentation supports general conditions on a restoration project?",
+    answer:
+      "Documentation that supports general conditions records the project-level operational work that actually occurred — not a copied list of items assumed on every claim. Useful records include labeled photographs, project logs, schedules, daily reports, invoices and receipts that reconcile to those logs, subcontractor records, meeting notes, site-condition notes, correspondence, timelines, and change documentation. Organize each row as Condition → Activity → Documentation → Estimate so a reviewer can see why the activity was required, what was done, which records prove it, and which estimate section it supports. General conditions vary by size, duration, occupancy, trades, access, and logistics. They are not interchangeable with overhead & profit. Use the General Conditions Documentation Guide for Contractors for the operational workflow, and the O&P Qualification Documentation Standard when the question is O&P eligibility.",
+    relatedLinks: [
+      {
+        label: "General Conditions Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
+      },
+      {
+        label: "O&P Qualification Documentation Standard",
+        href: "/resources/guides/general-claims/op-qualification-guide",
+      },
+      {
+        label: "How should contractors document project supervision?",
+        href: "/faq#faq-documenting-project-supervision",
+      },
+      {
+        label: "What documentation is required for estimate review and scope validation?",
+        href: "/faq#faq-estimate-documentation-requirements",
+      },
+    ],
+  },
+  {
+    id: "documenting-project-supervision",
+    category: "insurance_supplements",
+    question: "How should contractors document project supervision?",
+    answer:
+      "Document supervision only where supervision actually occurred. Keep dated project logs with the person or role on site, areas visited, and decisions made. Record scheduling, trade coordination, site-meeting notes, progress records, and daily documentation across the project duration. Do not treat a supervision log as automatic support for a particular charge, and do not substitute supervision records for overhead & profit qualification. Use the General Conditions Documentation Guide for Contractors for the supervision checklist, and keep O&P eligibility on the O&P Qualification Documentation Standard.",
+    relatedLinks: [
+      {
+        label: "General Conditions Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
+      },
+      {
+        label: "What documentation supports general conditions on a restoration project?",
+        href: "/faq#faq-general-conditions-documentation",
+      },
+      {
+        label: "O&P Qualification Documentation Standard",
+        href: "/resources/guides/general-claims/op-qualification-guide",
+      },
+      {
+        label: "What records help document project duration?",
+        href: "/faq#faq-documenting-project-duration",
+      },
+    ],
+  },
+  {
+    id: "documenting-trade-coordination",
+    category: "insurance_supplements",
+    question:
+      "How can contractors document trade coordination on a restoration project?",
+    answer:
+      "Document the coordination that actually occurred among the trades on site — not a theoretical trade list. Record who was present, which area they occupied, what they waited on, and what they handed off, using meeting notes, trade schedules, daily reports, and subcontractor records aligned to the same location IDs as photos and the estimate. Multi-trade restoration often sequences mitigation, demolition, roofing, electrical, plumbing, HVAC, drywall, flooring, painting, and specialty trades; write the sequence that happened on this job. This is different from documenting omitted-work sequencing after a scope audit — use the Missing Line Item Documentation Guide when the question is missing repair phases, and this FAQ when the question is project-level coordination records.",
+    relatedLinks: [
+      {
+        label: "General Conditions Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
+      },
+      {
+        label: "How should contractors document trade sequencing for omitted work?",
+        href: "/faq#faq-documenting-trade-sequencing-omitted-work",
+      },
+      {
+        label: "What documentation supports general conditions on a restoration project?",
+        href: "/faq#faq-general-conditions-documentation",
+      },
+      {
+        label: "Why Carrier Estimates Miss Required Trades",
+        href: "/resources/blog/why-carrier-estimates-miss-required-trades",
+      },
+    ],
+  },
+  {
+    id: "documenting-project-duration",
+    category: "insurance_supplements",
+    question: "What records help document project duration?",
+    answer:
+      "Duration records show when project-level activities occurred. Keep start and end dates, phase dates, trade schedules, and contemporaneous daily or project logs. When duration changed because of documented site conditions — access limits, occupancy, weather protection, or trade holds — write the condition, the date, and the operational effect. Do not interpret delay coverage or policy time limits, and do not backfill fictional days. If the dispute is equipment days or measured quantities, use the Quantity Validation Guide. Use the General Conditions Documentation Guide for Contractors for the duration checklist.",
+    relatedLinks: [
+      {
+        label: "General Conditions Documentation Guide for Contractors",
+        href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
+      },
+      {
+        label: "What documentation supports general conditions on a restoration project?",
+        href: "/faq#faq-general-conditions-documentation",
+      },
+      {
+        label: "How should contractors document project supervision?",
+        href: "/faq#faq-documenting-project-supervision",
+      },
+      {
+        label: "Quantity Validation Guide for Contractors",
+        href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
       },
     ],
   },

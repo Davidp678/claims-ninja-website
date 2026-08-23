@@ -532,6 +532,10 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "why-missing-line-items-remain-unsupported",
       "why-estimate-includes-repairs-omits-required-trade",
       "trade-sequencing-reveals-missing-scope",
+      "general-conditions-documentation",
+      "documenting-project-supervision",
+      "documenting-trade-coordination",
+      "documenting-project-duration",
     ],
   },
   guides: {
@@ -672,6 +676,10 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "why-missing-line-items-remain-unsupported",
       "why-estimate-includes-repairs-omits-required-trade",
       "trade-sequencing-reveals-missing-scope",
+      "general-conditions-documentation",
+      "documenting-project-supervision",
+      "documenting-trade-coordination",
+      "documenting-project-duration",
     ],
   },
   caseStudies: {

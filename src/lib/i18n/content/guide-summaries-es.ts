@@ -92,6 +92,11 @@ export const GUIDE_SUMMARIES_ES: Record<string, GuideSummary> = {
     excerpt:
       "Guía operativa para documentar trabajo omitido después de una auditoría de alcance: demolición, reconstrucción, mano de obra, materiales, detach/reset, acceso, secuencia de oficios, protección temporal, equipo y omisiones relacionadas con código — con mediciones, fotografías, notas de campo y anexos organizados para la revisión de suplementos del contratista.",
   },
+  "general-claims/general-conditions-documentation-guide-for-contractors": {
+    title: "Guía de documentación de condiciones generales para contratistas",
+    excerpt:
+      "Guía operativa para documentar condiciones generales a nivel de proyecto en restauración y construcción relacionada con seguros: supervisión, coordinación de oficios, protección temporal, logística de obra, instalaciones temporales y duración — con registros que conectan las condiciones reales del sitio con el estimado en revisión.",
+  },
   "general-claims/op-qualification-guide": {
     title: "Estándar de documentación para calificación de O&P",
     excerpt:

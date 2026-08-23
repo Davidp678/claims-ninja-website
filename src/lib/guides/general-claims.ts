@@ -6,6 +6,7 @@ import { INDUSTRIAL_WAREHOUSE_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/indust
 import { INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS } from "@/lib/guides/insurance-estimate-review-playbook-for-contractors";
 import { INSURANCE_ESTIMATE_REVIEW_SCOPE_VALIDATION_GUIDE } from "@/lib/guides/insurance-estimate-review-scope-validation-guide";
 import { LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE } from "@/lib/guides/large-loss-commercial-insurance-claims-guide";
+import { GENERAL_CONDITIONS_DOCUMENTATION_GUIDE_FOR_CONTRACTORS } from "@/lib/guides/general-conditions-documentation-guide-for-contractors";
 import { MISSING_LINE_ITEM_DOCUMENTATION_GUIDE_FOR_CONTRACTORS } from "@/lib/guides/missing-line-item-documentation-guide-for-contractors";
 import { QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS } from "@/lib/guides/quantity-validation-guide-for-contractors";
 import { SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS } from "@/lib/guides/scope-audit-guide-for-contractors";
@@ -18,6 +19,7 @@ export const GENERAL_CLAIMS_GUIDES = [
   QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS,
   SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS,
   MISSING_LINE_ITEM_DOCUMENTATION_GUIDE_FOR_CONTRACTORS,
+  GENERAL_CONDITIONS_DOCUMENTATION_GUIDE_FOR_CONTRACTORS,
   COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE,
   COMMERCIAL_INSURANCE_SUPPLEMENT_PLAYBOOK_FOR_CONTRACTORS,
   LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE,
@@ -269,6 +271,7 @@ export const GENERAL_CLAIMS_GUIDES = [
       "insurance-estimate-review-scope-validation-guide",
       "quantity-validation-guide-for-contractors",
       "scope-audit-guide-for-contractors",
+      "general-conditions-documentation-guide-for-contractors",
       "supplement-submission-guide",
       "carrier-estimate-review-guide",
     ],
@@ -692,6 +695,7 @@ export const GENERAL_CLAIMS_GUIDES = [
       "insurance-estimate-review-scope-validation-guide",
       "quantity-validation-guide-for-contractors",
       "scope-audit-guide-for-contractors",
+      "general-conditions-documentation-guide-for-contractors",
       "supplement-submission-guide",
       "op-qualification-guide",
       "documentation-standards-guide",
@@ -892,12 +896,13 @@ export const GENERAL_CLAIMS_GUIDES = [
       "When overhead and profit applies on insurance claims: O&P documentation requirements, multi-trade evidence, and supplement inclusion standards for contractors.",
     relatedBlogSlugs: ["op-on-insurance-claims"],
     relatedGuideSlugs: [
+      "general-conditions-documentation-guide-for-contractors",
       "carrier-estimate-review-guide",
       "insurance-estimate-review-scope-validation-guide",
       "supplement-submission-guide",
     ],
     purpose:
-      "Document O&P eligibility with evidence carriers can approve — not blanket requests on every file. O&P compensates general contractor coordination on complex multi-trade losses; this standard defines when to pursue it and what proof to assemble.",
+      "Document O&P eligibility with evidence carriers can approve — not blanket requests on every file. O&P compensates general contractor coordination on complex multi-trade losses; this standard defines when to pursue it and what proof to assemble. General conditions are a separate concept — project-level operational records belong in the General Conditions Documentation Guide for Contractors, not in this O&P qualification file.",
     whenToUse: [
       {
         condition: "Claim involves three or more distinct trades under contractor coordination",
@@ -974,7 +979,7 @@ export const GENERAL_CLAIMS_GUIDES = [
           "Collect subcontractor agreements, permits, and trade schedule for the file.",
           "Extract PM daily logs or site visit records showing cross-trade oversight.",
           "Build scope-by-trade table cross-referenced to estimate line items.",
-          "Identify and remove duplicate supervision already billed in individual labor lines.",
+          "Identify and remove duplicate supervision already billed in individual labor lines. Project-level supervision, protection, logistics, and duration records are general conditions documentation — not O&P proof by themselves.",
         ],
       },
       {
@@ -1096,6 +1101,7 @@ export const GENERAL_CLAIMS_GUIDES = [
       "insurance-estimate-review-scope-validation-guide",
       "quantity-validation-guide-for-contractors",
       "scope-audit-guide-for-contractors",
+      "general-conditions-documentation-guide-for-contractors",
       "insurance-estimate-review-playbook-for-contractors",
       "photo-documentation-standards-guide",
       "claim-file-audit-guide",

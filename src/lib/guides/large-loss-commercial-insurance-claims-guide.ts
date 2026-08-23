@@ -49,6 +49,7 @@ export const LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE = defineGuide({
     "commercial-roofing-documentation-guide",
     "multi-building-roofing-claims-guide",
     "documentation-standards-guide",
+    "general-conditions-documentation-guide-for-contractors",
     "photo-documentation-standards-guide",
     "moisture-mapping-guide",
     "dry-log-collection-guide",
@@ -796,6 +797,10 @@ export const LARGE_LOSS_COMMERCIAL_INSURANCE_CLAIMS_GUIDE = defineGuide({
     {
       label: "Commercial Insurance Supplement Playbook for Contractors",
       href: "/resources/guides/general-claims/commercial-insurance-supplement-playbook-for-contractors",
+    },
+    {
+      label: "General Conditions Documentation Guide for Contractors",
+      href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
     },
     {
       label: "Multifamily & Apartment Insurance Claims Guide",

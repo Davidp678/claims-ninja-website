@@ -4699,6 +4699,94 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
         ),
       ),
   },
+  {
+    label: "document general conditions retrieves new guide",
+    message: "how do contractors document general conditions",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /general-conditions-documentation-guide-for-contractors|General Conditions Documentation Guide for Contractors|general-conditions-documentation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "general conditions documentation restoration retrieves new guide",
+    message: "general conditions documentation restoration",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /general-conditions-documentation-guide-for-contractors|General Conditions Documentation Guide for Contractors|general-conditions-documentation/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "documenting project supervision retrieves GC guide or FAQ",
+    message: "documenting project supervision",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /documenting-project-supervision|general-conditions-documentation-guide-for-contractors|How should contractors document project supervision/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "documenting trade coordination retrieves GC guide or FAQ",
+    message: "documenting trade coordination",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /documenting-trade-coordination|general-conditions-documentation-guide-for-contractors|How can contractors document trade coordination/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "restoration project site logistics retrieves GC guide",
+    message: "restoration project site logistics",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /general-conditions-documentation-guide-for-contractors|General Conditions Documentation Guide for Contractors|general-conditions-documentation|Site Logistics and Access|site logistics/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "commercial restoration general conditions retrieves GC guide",
+    message: "general conditions on commercial restoration project",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /general-conditions-documentation-guide-for-contractors|General Conditions Documentation Guide for Contractors|commercial restoration general conditions/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "project duration records retrieve GC guide or FAQ",
+    message: "what records support project duration",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /documenting-project-duration|general-conditions-documentation-guide-for-contractors|What records help document project duration/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "O&P qualification still retrieves O&P guide",
+    message: "overhead and profit documentation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /op-qualification-guide|O&P Qualification Documentation Standard|o&p qualification/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
 ];
 
 export function runKnowledgeRetrievalChecks(): {

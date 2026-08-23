@@ -41,6 +41,7 @@ export const SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS = defineGuide({
     "insurance-estimate-review-playbook-for-contractors",
     "insurance-estimate-review-scope-validation-guide",
     "missing-line-item-documentation-guide-for-contractors",
+    "general-conditions-documentation-guide-for-contractors",
     "quantity-validation-guide-for-contractors",
     "documentation-standards-guide",
     "carrier-estimate-review-guide",
@@ -668,6 +669,10 @@ export const SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS = defineGuide({
     {
       label: "Quantity Validation Guide for Contractors",
       href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+    },
+    {
+      label: "General Conditions Documentation Guide for Contractors",
+      href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
     },
     {
       label: "Claim Documentation Standards",

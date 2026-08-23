@@ -152,9 +152,13 @@ export const mostOverlookedLineItemsInInsuranceEstimates: BlogPost = {
       paragraphs: [
         "General conditions include temporary facilities, dumpsters, debris handling, supervision, permits, and coordination time that make the job runnable. They are among the first lines trimmed on template estimates because they are easy to understate when the adjuster never sees occupied-site constraints.",
         "Example: A multifamily corridor water loss with evening work windows needs dumpster staging, corridor protection, and PM coordination across units. If the carrier estimate shows only room finishes and no general conditions, production still incurs those costs — unless your gap list captures them with photos of staging, access constraints, and permit or management requirements.",
-        "Treat general conditions as evidence-backed scope: photograph staging areas, note occupancy and access rules in daily reports, and keep permit or property-management directives in the claim file with the same area index as your photos.",
+        "Treat general conditions as evidence-backed scope: photograph staging areas, note occupancy and access rules in daily reports, and keep permit or property-management directives in the claim file with the same area index as your photos. For the contractor workflow that turns those records into Condition → Activity → Documentation → Estimate rows, use the General Conditions Documentation Guide for Contractors.",
       ],
       links: [
+        {
+          label: "General Conditions Documentation Guide for Contractors",
+          href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
+        },
         {
           label: "Commercial Claims Documentation Checklist",
           href: "/resources/blog/commercial-claims-documentation-checklist",

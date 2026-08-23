@@ -42,6 +42,7 @@ export const MISSING_LINE_ITEM_DOCUMENTATION_GUIDE_FOR_CONTRACTORS = defineGuide
     "insurance-estimate-review-playbook-for-contractors",
     "insurance-estimate-review-scope-validation-guide",
     "quantity-validation-guide-for-contractors",
+    "general-conditions-documentation-guide-for-contractors",
     "documentation-standards-guide",
     "carrier-estimate-review-guide",
     "claim-file-audit-guide",
@@ -714,6 +715,10 @@ export const MISSING_LINE_ITEM_DOCUMENTATION_GUIDE_FOR_CONTRACTORS = defineGuide
     {
       label: "Quantity Validation Guide for Contractors",
       href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+    },
+    {
+      label: "General Conditions Documentation Guide for Contractors",
+      href: "/resources/guides/general-claims/general-conditions-documentation-guide-for-contractors",
     },
     {
       label: "Claim Documentation Standards",
