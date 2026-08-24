@@ -50,11 +50,13 @@ import { howContractorsFindQuantityErrorsInInsuranceEstimates } from "./how-cont
 import { mostOverlookedLineItemsInInsuranceEstimates } from "./most-overlooked-line-items-in-insurance-estimates";
 import { whyCarrierEstimatesMissLineItems } from "./why-carrier-estimates-miss-line-items";
 import { whyCarrierEstimatesMissRequiredTrades } from "./why-carrier-estimates-miss-required-trades";
+import { whatMakesAContractorClaimFileEasyToReview } from "./what-makes-a-contractor-claim-file-easy-to-review";
 import { xactimateEstimateReviewChecklistContractors } from "./xactimate-estimate-review-checklist-contractors";
 import { xactimateVsMarketPricing } from "./xactimate-vs-market-pricing";
 
 export const BLOG_POSTS: readonly BlogPost[] = [
   INSURANCE_SUPPLEMENTING_PILLAR,
+  whatMakesAContractorClaimFileEasyToReview,
   whyCarrierEstimatesMissRequiredTrades,
   howContractorsFindQuantityErrorsInInsuranceEstimates,
   fiveRedFlagsThatAnInsuranceEstimateIsMissingScope,

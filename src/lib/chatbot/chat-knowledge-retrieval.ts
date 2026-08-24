@@ -4787,6 +4787,127 @@ const RETRIEVAL_CHECKS: RetrievalCheck[] = [
         ),
       ),
   },
+  {
+    label: "what makes a claim file easy to review retrieves new blog",
+    message: "what makes a claim file easy to review",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /what-makes-a-contractor-claim-file-easy-to-review|What Makes a Contractor Claim File Easy to Review|contractor-claim-file-easy-to-review/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "organize claim documentation retrieves new blog",
+    message: "how should contractors organize claim documentation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /what-makes-a-contractor-claim-file-easy-to-review|What Makes a Contractor Claim File Easy to Review|contractor-claim-file-easy-to-review/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "restoration claim file contents retrieves new blog",
+    message: "what should be in a restoration claim file",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /what-makes-a-contractor-claim-file-easy-to-review|What Makes a Contractor Claim File Easy to Review|reviewer-understand-claim-file/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "make insurance claim file easier to review retrieves new blog",
+    message: "how do I make an insurance claim file easier to review",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /what-makes-a-contractor-claim-file-easy-to-review|What Makes a Contractor Claim File Easy to Review|contractor-claim-file-easy-to-review/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "contractor claim file organization retrieves new blog",
+    message: "contractor claim file organization",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /what-makes-a-contractor-claim-file-easy-to-review|What Makes a Contractor Claim File Easy to Review|contractor-claim-file-easy-to-review/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "review ready claim documentation retrieves new blog",
+    message: "review ready claim documentation",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /what-makes-a-contractor-claim-file-easy-to-review|What Makes a Contractor Claim File Easy to Review|contractor-claim-file-easy-to-review/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "another reviewer understand claim file retrieves new FAQ or blog",
+    message: "what should another reviewer be able to understand from a claim file",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /reviewer-understand-claim-file|what-makes-a-contractor-claim-file-easy-to-review|What should another reviewer be able to understand/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "unresolved items claim file retrieves new FAQ or blog",
+    message: "how should contractors identify unresolved items in a claim file",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /unresolved-items-claim-file|what-makes-a-contractor-claim-file-easy-to-review|How should contractors identify unresolved items/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "documentation standards still retrieves documentation standards guide",
+    message: "documentation standards",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /documentation-standards-guide|Documentation Standards Guide|claim documentation standard/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "claim file audit still retrieves claim file audit guide",
+    message: "claim file audit",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /claim-file-audit-guide|Claim File Audit|audit claim file/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
+  {
+    label: "formal file audit still retrieves claim file audit guide",
+    message: "formal claim file audit",
+    assert: (result) =>
+      result.snippets.length > 0 &&
+      result.snippets.some((s) =>
+        /claim-file-audit-guide|Claim File Audit|audit claim file/i.test(
+          `${s.text} ${s.source}`,
+        ),
+      ),
+  },
 ];
 
 export function runKnowledgeRetrievalChecks(): {

@@ -4182,6 +4182,50 @@ export const FAQ_METADATA: Partial<Record<string, FaqMetadataEntry>> = {
     internalLinkNotes:
       "Project-duration records for general conditions; distinct from water drying-duration and quantity-day disputes.",
   },
+  "contractor-claim-file-easy-to-review": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/documentation-standards-guide",
+      "general-claims/claim-file-audit-guide",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "reviewer-understand-claim-file",
+      "unresolved-items-claim-file",
+      "estimate-organization",
+      "documentation-photos",
+    ],
+    internalLinkNotes:
+      "Educational review-readiness FAQ; capture stays on Documentation Standards and formal QC stays on Claim File Audit.",
+  },
+  "reviewer-understand-claim-file": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/documentation-standards-guide",
+      "general-claims/claim-file-audit-guide",
+    ],
+    relatedFaqIds: [
+      "contractor-claim-file-easy-to-review",
+      "unresolved-items-claim-file",
+      "estimate-organization",
+    ],
+    internalLinkNotes:
+      "What another qualified reviewer should reconstruct from a contractor claim file.",
+  },
+  "unresolved-items-claim-file": {
+    searchIntent: "informational",
+    relatedGuideSlugs: [
+      "general-claims/claim-file-audit-guide",
+      "general-claims/insurance-estimate-review-playbook-for-contractors",
+    ],
+    relatedFaqIds: [
+      "contractor-claim-file-easy-to-review",
+      "reviewer-understand-claim-file",
+      "estimate-organization",
+    ],
+    internalLinkNotes:
+      "How contractors make unresolved claim-file items visible; not a formal file-audit workflow FAQ.",
+  },
 };
 
 export function assertFaqMetadataValid(): void {

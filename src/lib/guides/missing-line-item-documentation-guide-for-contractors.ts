@@ -75,6 +75,7 @@ export const MISSING_LINE_ITEM_DOCUMENTATION_GUIDE_FOR_CONTRACTORS = defineGuide
     "commercial-claims-documentation-checklist",
     "why-commercial-insurance-claims-get-underpaid",
     "insurance-supplementing-guide-contractors",
+    "what-makes-a-contractor-claim-file-easy-to-review",
   ],
   faqIds: [
     "documenting-omitted-work-insurance-estimates",

@@ -686,6 +686,30 @@ const SLUG_BOOSTS: Record<
     phrases: ["documentation approval rates", "approval rates"],
     keywords: ["approval rate", "documentation"],
   },
+  "what-makes-a-contractor-claim-file-easy-to-review": {
+    phrases: [
+      "what makes a claim file easy to review",
+      "what makes a contractor claim file easy to review",
+      "review-ready claim file",
+      "review ready claim documentation",
+      "organize claim documentation",
+      "contractors organize claim documentation",
+      "contractor claim file organization",
+      "how do i make an insurance claim file easier to review",
+      "how should contractors organize claim documentation",
+      "what should be in a restoration claim file",
+      "restoration claim file",
+    ],
+    keywords: [
+      "review-ready claim file",
+      "claim file organization",
+      "easy to review",
+      "review ready",
+      "organized claim file",
+      "organize claim documentation",
+    ],
+    topics: ["documentation"],
+  },
 };
 
 function truncateExcerpt(text: string): string {

@@ -19,6 +19,16 @@ export const BLOG_GUIDE_COMPANIONS = {
       "quantity-validation-guide-for-contractors",
     ],
   },
+  "what-makes-a-contractor-claim-file-easy-to-review": {
+    intro:
+      "You've learned the characteristics of a review-ready claim file. Now use Documentation Standards for capture and labeling, Claim File Audit for a structured completeness pass, the Insurance Estimate Review Playbook when the next task is comparing the estimate to field conditions, and Photo Documentation Standards so every image a reviewer opens has usable context.",
+    guideSlugs: [
+      "documentation-standards-guide",
+      "claim-file-audit-guide",
+      "insurance-estimate-review-playbook-for-contractors",
+      "photo-documentation-standards-guide",
+    ],
+  },
   "claim-documentation-approval-rates": {
     intro:
       "You've learned why documentation drives approval rates. Now apply the standards and audit workflows that keep claim files carrier-ready.",

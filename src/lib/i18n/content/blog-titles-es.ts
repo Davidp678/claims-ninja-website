@@ -71,6 +71,8 @@ export const BLOG_TITLES_ES: Record<string, string> = {
     "Cómo los contratistas encuentran errores de cantidad en estimados de seguros",
   "why-carrier-estimates-miss-required-trades":
     "Por qué los estimados de la aseguradora omiten oficios requeridos",
+  "what-makes-a-contractor-claim-file-easy-to-review":
+    "¿Qué hace que un archivo de reclamación de contratista sea fácil de revisar?",
 };
 
 export function getBlogTitleEs(slug: string, fallback: string): string {

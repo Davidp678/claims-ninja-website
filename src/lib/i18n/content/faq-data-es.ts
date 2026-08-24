@@ -5064,6 +5064,16 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
     question: "¿Cómo deben organizarse las fotos para la revisión de la aseguradora?",
     answer:
       "Agrupe las fotos por habitación, elevación u oficio con etiquetas y fechas claras. Las secuencias de antes y después ayudan a los ajustadores a seguir el trabajo. Los volcados aleatorios de fotos ralentizan la revisión e invitan a reducciones de alcance.",
+    relatedLinks: [
+      {
+        label: "Guía de estándares de documentación fotográfica",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+      {
+        label: "¿Qué hace que un archivo de reclamación de contratista sea fácil de revisar?",
+        href: "/resources/blog/what-makes-a-contractor-claim-file-easy-to-review",
+      },
+    ],
   },
   {
     id: "documentation-estimates",
@@ -6638,6 +6648,10 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
         label: "Lista de verificación de documentación de reclamaciones comerciales",
         href: "/resources/blog/commercial-claims-documentation-checklist",
       },
+      {
+        label: "¿Qué hace que un archivo de reclamación de contratista sea fácil de revisar?",
+        href: "/resources/blog/what-makes-a-contractor-claim-file-easy-to-review",
+      },
     ],
   },
   {
@@ -7350,6 +7364,81 @@ export const FAQ_ITEMS_ES: readonly FaqItem[] = [
       {
         label: "Guía de validación de cantidades para contratistas",
         href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "contractor-claim-file-easy-to-review",
+    category: "documentation",
+    question: "¿Qué hace que un archivo de reclamación de contratista sea fácil de revisar?",
+    answer:
+      "Un archivo de reclamación de contratista es fácil de revisar cuando otra persona calificada puede reconstruir el proyecto a partir de los registros sin adivinar cómo encajan. ¿Cómo deben los contratistas organizar la documentación de la reclamación? Conserve cronología, fotos con contexto, mediciones rastreables, estimados alineados, trabajo faltante explicado, registros de respaldo organizados, nombres consistentes y asuntos abiertos visibles en un archivo que otro revisor pueda seguir. El volumen por sí solo no basta: cientos de fotos sin etiquetar y PDF mezclados siguen retrasando la revisión. Use Estándares de documentación para la captura, Auditoría de archivo de reclamación para un control de integridad, y el artículo sobre archivos listos para revisión para las características educativas.",
+    relatedLinks: [
+      {
+        label: "¿Qué hace que un archivo de reclamación de contratista sea fácil de revisar?",
+        href: "/resources/blog/what-makes-a-contractor-claim-file-easy-to-review",
+      },
+      {
+        label: "Guía de estándares de documentación",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "Guía de auditoría de archivo de reclamación",
+        href: "/resources/guides/general-claims/claim-file-audit-guide",
+      },
+      {
+        label: "¿Qué debería entender otro revisor de un archivo de reclamación?",
+        href: "/faq#faq-reviewer-understand-claim-file",
+      },
+    ],
+  },
+  {
+    id: "reviewer-understand-claim-file",
+    category: "documentation",
+    question: "¿Qué debería entender otro revisor de un archivo de reclamación?",
+    answer:
+      "Otro revisor calificado debería entender qué ocurrió, qué se observó, qué trabajo se realizó o se requiere, cómo se establecieron las cantidades, qué documentación respalda el alcance, qué asuntos del estimado requieren revisión y qué permanece sin resolver. Si esa historia vive solo en la memoria de una persona o en un hilo de correo, el archivo no está listo para revisión. Organice la cronología, las fotos, las mediciones y los registros de respaldo para que un nuevo estimador, gerente de reclamaciones o compañero pueda tomar el archivo sin una reunión previa.",
+    relatedLinks: [
+      {
+        label: "¿Qué hace que un archivo de reclamación de contratista sea fácil de revisar?",
+        href: "/resources/blog/what-makes-a-contractor-claim-file-easy-to-review",
+      },
+      {
+        label: "¿Cómo deben los contratistas identificar asuntos sin resolver en un archivo de reclamación?",
+        href: "/faq#faq-unresolved-items-claim-file",
+      },
+      {
+        label: "Guía de estándares de documentación",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "¿Cómo deben los contratistas organizar archivos y versiones de revisión de estimados?",
+        href: "/faq#faq-estimate-organization",
+      },
+    ],
+  },
+  {
+    id: "unresolved-items-claim-file",
+    category: "documentation",
+    question: "¿Cómo deben los contratistas identificar asuntos sin resolver en un archivo de reclamación?",
+    answer:
+      "Mantenga los asuntos sin resolver visibles en un solo lugar en lugar de enterrarlos en la correspondencia. Los pendientes típicos incluyen una discrepancia de cantidad, alcance omitido, un documento de respaldo faltante, un informe especializado pendiente, un renglón de estimado sin resolver o un asunto de reinspección. Liste el asunto, el área, lo que aún falta y quién es dueño de la siguiente captura. Un archivo listo para revisión hace ese estado evidente para que otra persona calificada vea qué todavía requiere atención.",
+    relatedLinks: [
+      {
+        label: "¿Qué hace que un archivo de reclamación de contratista sea fácil de revisar?",
+        href: "/resources/blog/what-makes-a-contractor-claim-file-easy-to-review",
+      },
+      {
+        label: "¿Qué debería entender otro revisor de un archivo de reclamación?",
+        href: "/faq#faq-reviewer-understand-claim-file",
+      },
+      {
+        label: "Guía de auditoría de archivo de reclamación",
+        href: "/resources/guides/general-claims/claim-file-audit-guide",
+      },
+      {
+        label: "Manual de revisión de estimados de seguro para contratistas",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
       },
     ],
   },

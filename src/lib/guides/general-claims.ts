@@ -262,6 +262,7 @@ export const GENERAL_CLAIMS_GUIDES = [
     seoDescription:
       "Step-by-step claim file audit for contractors: documentation checklist, estimate alignment, carrier requirements, and supplement readiness before submission.",
     relatedBlogSlugs: [
+      "what-makes-a-contractor-claim-file-easy-to-review",
       "five-red-flags-that-an-insurance-estimate-is-missing-scope",
       "claim-documentation-approval-rates",
     ],
@@ -475,7 +476,11 @@ export const GENERAL_CLAIMS_GUIDES = [
     seoTitle: "Insurance Supplement Submission Workflow for Contractors",
     seoDescription:
       "Contractor supplement submission workflow: package assembly, carrier routing, follow-up schedule, and documentation standards that improve approval rates.",
-    relatedBlogSlugs: ["insurance-supplementing-guide-contractors", "most-overlooked-line-items-in-insurance-estimates"],
+    relatedBlogSlugs: [
+      "insurance-supplementing-guide-contractors",
+      "most-overlooked-line-items-in-insurance-estimates",
+      "what-makes-a-contractor-claim-file-easy-to-review",
+    ],
     relatedGuideSlugs: [
       "insurance-estimate-review-playbook-for-contractors",
       "insurance-estimate-review-scope-validation-guide",
@@ -1091,6 +1096,7 @@ export const GENERAL_CLAIMS_GUIDES = [
     seoDescription:
       "Claim documentation standards for contractors: photo requirements, labeling conventions, file organization, and daily capture habits that improve supplement approval rates.",
     relatedBlogSlugs: [
+      "what-makes-a-contractor-claim-file-easy-to-review",
       "five-red-flags-that-an-insurance-estimate-is-missing-scope",
       "claim-documentation-approval-rates",
       "most-overlooked-line-items-in-insurance-estimates",
@@ -1317,7 +1323,10 @@ export const GENERAL_CLAIMS_GUIDES = [
     seoTitle: "Insurance Claim Photo Documentation Standards for Field Teams",
     seoDescription:
       "Field photo documentation procedure for insurance claims: shot lists, room labeling, overview-to-detail sequencing, and upload standards for supplement approval.",
-    relatedBlogSlugs: ["claim-documentation-approval-rates"],
+    relatedBlogSlugs: [
+      "what-makes-a-contractor-claim-file-easy-to-review",
+      "claim-documentation-approval-rates",
+    ],
     relatedGuideSlugs: ["documentation-standards-guide"],
     purpose:
       "Capture photos that adjusters approve on first review — labeled, sequenced, and tied to scope. Photos are the primary evidence in supplement disputes; this procedure ensures field teams produce adjuster-ready documentation every visit.",

@@ -822,8 +822,8 @@ const GUIDE_SLUG_BOOSTS: Record<
     topics: ["fire_damage_claims", "documentation"],
   },
   "claim-file-audit-guide": {
-    phrases: ["claim file audit", "audit claim file"],
-    keywords: ["claim audit", "file audit"],
+    phrases: ["claim file audit", "audit claim file", "formal claim file audit"],
+    keywords: ["claim audit", "file audit", "formal file audit"],
   },
   "op-qualification-guide": {
     phrases: ["o&p qualification", "overhead and profit documentation", "op documentation"],

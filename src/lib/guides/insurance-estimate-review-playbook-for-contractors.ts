@@ -80,6 +80,7 @@ export const INSURANCE_ESTIMATE_REVIEW_PLAYBOOK_FOR_CONTRACTORS = defineGuide({
     "commercial-claims-documentation-checklist",
     "insurance-supplementing-guide-contractors",
     "why-commercial-insurance-claims-get-underpaid",
+    "what-makes-a-contractor-claim-file-easy-to-review",
   ],
   faqIds: [
     "estimate-review-workflow",

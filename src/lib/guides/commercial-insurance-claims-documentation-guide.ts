@@ -74,6 +74,7 @@ export const COMMERCIAL_INSURANCE_CLAIMS_DOCUMENTATION_GUIDE = defineGuide({
     "why-fire-damage-claims-get-underpaid",
     "why-mold-insurance-claims-get-underpaid",
     "documentation-gaps-that-trigger-water-claim-denials",
+    "what-makes-a-contractor-claim-file-easy-to-review",
   ],
   faqIds: [
     "commercial-property-claims-underpaid",

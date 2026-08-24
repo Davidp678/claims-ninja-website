@@ -73,6 +73,7 @@ export const GENERAL_CONDITIONS_DOCUMENTATION_GUIDE_FOR_CONTRACTORS = defineGuid
     "first-48-hours-after-carrier-estimate",
     "xactimate-estimate-review-checklist-contractors",
     "insurance-supplementing-guide-contractors",
+    "what-makes-a-contractor-claim-file-easy-to-review",
   ],
   faqIds: [
     "general-conditions-documentation",

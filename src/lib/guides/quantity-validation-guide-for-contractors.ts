@@ -73,6 +73,7 @@ export const QUANTITY_VALIDATION_GUIDE_FOR_CONTRACTORS = defineGuide({
     "commercial-claims-documentation-checklist",
     "why-commercial-insurance-claims-get-underpaid",
     "insurance-supplementing-guide-contractors",
+    "what-makes-a-contractor-claim-file-easy-to-review",
   ],
   faqIds: [
     "quantity-validation-for-contractors",

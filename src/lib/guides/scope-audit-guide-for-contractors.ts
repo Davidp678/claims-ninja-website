@@ -73,6 +73,7 @@ export const SCOPE_AUDIT_GUIDE_FOR_CONTRACTORS = defineGuide({
     "commercial-claims-documentation-checklist",
     "why-commercial-insurance-claims-get-underpaid",
     "insurance-supplementing-guide-contractors",
+    "what-makes-a-contractor-claim-file-easy-to-review",
   ],
   faqIds: [
     "scope-audit-for-contractors",

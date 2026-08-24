@@ -536,6 +536,9 @@ export const SITE_FAQ: Record<SiteFaqPageKey, SiteFaqConfig> = {
       "documenting-project-supervision",
       "documenting-trade-coordination",
       "documenting-project-duration",
+      "contractor-claim-file-easy-to-review",
+      "reviewer-understand-claim-file",
+      "unresolved-items-claim-file",
     ],
   },
   guides: {

@@ -76,6 +76,12 @@ export const BLOG_SUMMARIES_ES: Record<string, BlogSummary> = {
     excerpt:
       "Por qué los estimados de la aseguradora omiten oficios requeridos: cómo un estimado de seguro puede incluir reparaciones principales y aun así omitir oficios de apoyo, secuencia, acceso y trabajo de desmontar/reponer — y cómo los contratistas reconocen brechas de alcance a nivel de oficio antes de comprometer la producción.",
   },
+  "what-makes-a-contractor-claim-file-easy-to-review": {
+    title:
+      "¿Qué hace que un archivo de reclamación de contratista sea fácil de revisar?",
+    excerpt:
+      "Un archivo de reclamación de contratista puede tener cientos de fotos, estimados, facturas y notas y aun así ser difícil de revisar. Conozca las características que hacen que la documentación de restauración sea clara, rastreable y usable por otro revisor calificado.",
+  },
 };
 
 export function getBlogSummaryEs(

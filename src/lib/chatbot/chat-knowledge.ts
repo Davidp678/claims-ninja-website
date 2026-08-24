@@ -3436,6 +3436,50 @@ const FAQ_ID_BOOSTS: Record<
     ],
     topics: ["documentation", "supplements"],
   },
+  "contractor-claim-file-easy-to-review": {
+    phrases: [
+      "what makes a contractor claim file easy to review",
+      "what makes a claim file easy to review",
+      "review-ready claim file",
+      "review ready claim documentation",
+      "how should contractors organize claim documentation",
+      "organize claim documentation",
+      "contractors organize claim documentation",
+    ],
+    keywords: [
+      "easy to review",
+      "review-ready",
+      "review ready claim file",
+      "organize claim documentation",
+    ],
+    topics: ["documentation"],
+  },
+  "reviewer-understand-claim-file": {
+    phrases: [
+      "what should another reviewer be able to understand from a claim file",
+      "what should a reviewer understand from a claim file",
+      "another reviewer understand claim file",
+    ],
+    keywords: [
+      "another reviewer",
+      "reconstruct the project",
+      "reviewer understand",
+    ],
+    topics: ["documentation"],
+  },
+  "unresolved-items-claim-file": {
+    phrases: [
+      "how should contractors identify unresolved items in a claim file",
+      "identify unresolved items in a claim file",
+      "unresolved items in a claim file",
+    ],
+    keywords: [
+      "unresolved items",
+      "open issues claim file",
+      "unresolved claim file",
+    ],
+    topics: ["documentation"],
+  },
 };
 
 function faqToChunks(items: readonly FaqItem[]): ChatKnowledgeChunk[] {

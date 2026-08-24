@@ -5077,6 +5077,16 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "How should photos be organized for carrier review?",
     answer:
       "Group photos by room, elevation, or trade with clear labels and dates. Before-and-after sequences help adjusters follow the work. Random photo dumps slow review and invite scope reductions.",
+    relatedLinks: [
+      {
+        label: "Photo Documentation Standards Guide",
+        href: "/resources/guides/general-claims/photo-documentation-standards-guide",
+      },
+      {
+        label: "What Makes a Contractor Claim File Easy to Review?",
+        href: "/resources/blog/what-makes-a-contractor-claim-file-easy-to-review",
+      },
+    ],
   },
   {
     id: "documentation-estimates",
@@ -6642,6 +6652,10 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
         label: "Commercial Claims Documentation Checklist",
         href: "/resources/blog/commercial-claims-documentation-checklist",
       },
+      {
+        label: "What Makes a Contractor Claim File Easy to Review?",
+        href: "/resources/blog/what-makes-a-contractor-claim-file-easy-to-review",
+      },
     ],
   },
   {
@@ -7352,6 +7366,81 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       {
         label: "Quantity Validation Guide for Contractors",
         href: "/resources/guides/general-claims/quantity-validation-guide-for-contractors",
+      },
+    ],
+  },
+  {
+    id: "contractor-claim-file-easy-to-review",
+    category: "documentation",
+    question: "What makes a contractor claim file easy to review?",
+    answer:
+      "A contractor claim file is easy to review when another qualified person can reconstruct the project from the records without guessing how they fit together. How should contractors organize claim documentation? Keep chronology, photos with context, traceable measurements, aligned estimates, explained missing work, organized supporting records, consistent names, and visible open issues in a file another reviewer can follow. Volume alone is not enough — hundreds of unlabeled photos and mixed PDFs still slow review. Use Documentation Standards for capture, Claim File Audit for a structured completeness pass, and the review-ready claim file article for the educational characteristics.",
+    relatedLinks: [
+      {
+        label: "What Makes a Contractor Claim File Easy to Review?",
+        href: "/resources/blog/what-makes-a-contractor-claim-file-easy-to-review",
+      },
+      {
+        label: "Documentation Standards Guide",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "Claim File Audit Guide",
+        href: "/resources/guides/general-claims/claim-file-audit-guide",
+      },
+      {
+        label: "What should another reviewer be able to understand from a claim file?",
+        href: "/faq#faq-reviewer-understand-claim-file",
+      },
+    ],
+  },
+  {
+    id: "reviewer-understand-claim-file",
+    category: "documentation",
+    question: "What should another reviewer be able to understand from a claim file?",
+    answer:
+      "Another qualified reviewer should be able to understand what happened, what was observed, what work was performed or is required, how quantities were established, what documentation supports the scope, which estimate issues need review, and what remains unresolved. If that story lives only in one person's memory or a scattered email thread, the file is not review-ready. Organize chronology, photos, measurements, and supporting records so a new estimator, claim manager, or teammate can pick up the file without a briefing.",
+    relatedLinks: [
+      {
+        label: "What Makes a Contractor Claim File Easy to Review?",
+        href: "/resources/blog/what-makes-a-contractor-claim-file-easy-to-review",
+      },
+      {
+        label: "How should contractors identify unresolved items in a claim file?",
+        href: "/faq#faq-unresolved-items-claim-file",
+      },
+      {
+        label: "Documentation Standards Guide",
+        href: "/resources/guides/general-claims/documentation-standards-guide",
+      },
+      {
+        label: "How should contractors organize estimate review files and versions?",
+        href: "/faq#faq-estimate-organization",
+      },
+    ],
+  },
+  {
+    id: "unresolved-items-claim-file",
+    category: "documentation",
+    question: "How should contractors identify unresolved items in a claim file?",
+    answer:
+      "Keep unresolved items visible in one place instead of burying them in correspondence. Typical open items include a quantity discrepancy, omitted scope, a missing supporting document, a pending specialty report, an unresolved estimate line, or a reinspection item. List the item, the area, what is still missing, and who owns the next capture. A review-ready file makes that status obvious so another qualified person can see what still needs attention.",
+    relatedLinks: [
+      {
+        label: "What Makes a Contractor Claim File Easy to Review?",
+        href: "/resources/blog/what-makes-a-contractor-claim-file-easy-to-review",
+      },
+      {
+        label: "What should another reviewer be able to understand from a claim file?",
+        href: "/faq#faq-reviewer-understand-claim-file",
+      },
+      {
+        label: "Claim File Audit Guide",
+        href: "/resources/guides/general-claims/claim-file-audit-guide",
+      },
+      {
+        label: "Insurance Estimate Review Playbook for Contractors",
+        href: "/resources/guides/general-claims/insurance-estimate-review-playbook-for-contractors",
       },
     ],
   },

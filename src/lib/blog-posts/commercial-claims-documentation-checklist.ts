@@ -25,6 +25,7 @@ export const commercialClaimsDocumentationChecklist: BlogPost = {
   seoDescription:
     "Commercial claims documentation checklist for contractors: commercial insurance checklist, inspection checklist, restoration documentation, photo standards, and final submission package for commercial property claims.",
   relatedPostSlugs: [
+    "what-makes-a-contractor-claim-file-easy-to-review",
     "why-commercial-insurance-claims-get-underpaid",
     "most-overlooked-line-items-in-insurance-estimates",
     "common-documentation-mistakes-on-commercial-water-losses",
